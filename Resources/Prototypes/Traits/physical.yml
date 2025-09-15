@@ -106,10 +106,6 @@
       jobs:
         - Borg
         - MedicalBorg
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Lethargy
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -160,10 +156,6 @@
       inverted: true
       species:
         - IPC
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - AdrenalDysfunction
   functions:
     - !type:TraitReplaceComponent
       components:
