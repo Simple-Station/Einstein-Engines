@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 09/16/2025 04:04:39
-  entityCount: 369
+  time: 09/16/2025 04:44:48
+  entityCount: 371
 maps: []
 grids:
 - 1
@@ -272,6 +272,7 @@ entities:
             370: 3,4
             457: 3,4
             519: 3,4
+            581: 3,4
         - node:
             zIndex: 1
             angle: -3.141592653589793 rad
@@ -284,6 +285,7 @@ entities:
             369: 3,4
             456: 3,4
             518: 3,4
+            580: 3,4
         - node:
             zIndex: 1
             angle: -1.5707963267948966 rad
@@ -296,6 +298,7 @@ entities:
             365: 3,4
             452: 3,4
             514: 3,4
+            576: 3,4
         - node:
             zIndex: 1
             id: FloorTechMaintDirectionalCorner
@@ -307,6 +310,7 @@ entities:
             367: 3,4
             454: 3,4
             516: 3,4
+            578: 3,4
         - node:
             angle: -4.71238898038469 rad
             id: FloorTechMaintDirectionalEdge
@@ -318,6 +322,7 @@ entities:
             368: 3,4
             455: 3,4
             517: 3,4
+            579: 3,4
         - node:
             angle: -3.141592653589793 rad
             id: FloorTechMaintDirectionalEdge
@@ -329,6 +334,7 @@ entities:
             363: 3,4
             450: 3,4
             512: 3,4
+            574: 3,4
         - node:
             angle: -1.5707963267948966 rad
             id: FloorTechMaintDirectionalEdge
@@ -340,6 +346,7 @@ entities:
             364: 3,4
             451: 3,4
             513: 3,4
+            575: 3,4
         - node:
             id: FloorTechMaintDirectionalEdge
           decals:
@@ -350,6 +357,7 @@ entities:
             366: 3,4
             453: 3,4
             515: 3,4
+            577: 3,4
         - node:
             color: '#FFFFFFFF'
             id: FloorTechMaintDirectionalEdge
@@ -378,6 +386,9 @@ entities:
             555: -3,3
             567: -8,-3
             570: -4,-4
+            617: -3,3
+            629: -8,-3
+            632: -4,-4
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -401,6 +412,9 @@ entities:
             527: 4,3
             540: 5,-4
             543: 9,-3
+            589: 4,3
+            602: 5,-4
+            605: 9,-3
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -447,6 +461,12 @@ entities:
             558: -3,4
             561: -2,5
             564: -1,6
+            608: -7,0
+            611: -6,2
+            615: -3,3
+            620: -3,4
+            623: -2,5
+            626: -1,6
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -493,6 +513,12 @@ entities:
             530: 4,4
             534: 7,2
             537: 8,0
+            573: 2,6
+            584: 3,5
+            588: 4,3
+            592: 4,4
+            596: 7,2
+            599: 8,0
         - node:
             id: LatticeEdgeE
           decals:
@@ -550,6 +576,14 @@ entities:
             563: -1,6
             565: -8,-3
             568: -4,-4
+            607: -7,0
+            610: -6,2
+            614: -3,3
+            619: -3,4
+            622: -2,5
+            625: -1,6
+            627: -8,-3
+            630: -4,-4
         - node:
             id: LatticeEdgeN
           decals:
@@ -591,6 +625,12 @@ entities:
             554: -3,3
             566: -8,-3
             569: -4,-4
+            586: 4,3
+            600: 5,-4
+            603: 9,-3
+            616: -3,3
+            628: -8,-3
+            631: -4,-4
         - node:
             id: LatticeEdgeS
           decals:
@@ -692,6 +732,20 @@ entities:
             556: -3,4
             559: -2,5
             562: -1,6
+            571: 2,6
+            582: 3,5
+            585: 4,3
+            590: 4,4
+            593: 6,3
+            594: 7,2
+            597: 8,0
+            606: -7,0
+            609: -6,2
+            612: -5,3
+            613: -3,3
+            618: -3,4
+            621: -2,5
+            624: -1,6
         - node:
             id: LatticeEdgeW
           decals:
@@ -749,6 +803,14 @@ entities:
             536: 8,0
             539: 5,-4
             542: 9,-3
+            572: 2,6
+            583: 3,5
+            587: 4,3
+            591: 4,4
+            595: 7,2
+            598: 8,0
+            601: 5,-4
+            604: 9,-3
         - node:
             color: '#FFFFFFFF'
             id: TechE
@@ -941,6 +1003,26 @@ entities:
       - 231
     - type: Physics
       canCollide: False
+- proto: AirAlarm
+  entities:
+  - uid: 370
+    components:
+    - type: Transform
+      pos: 2.5,2.5
+      parent: 1
+    - type: DeviceList
+      devices:
+      - 260
+      - 257
+  - uid: 371
+    components:
+    - type: Transform
+      pos: -0.5,5.5
+      parent: 1
+    - type: DeviceList
+      devices:
+      - 259
+      - 261
 - proto: AirCanister
   entities:
   - uid: 6
@@ -2415,6 +2497,9 @@ entities:
       rot: 3.141592653589793 rad
       pos: 2.5,-0.5
       parent: 1
+    - type: DeviceNetwork
+      deviceLists:
+      - 370
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 258
@@ -2431,6 +2516,9 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 2.5,3.5
       parent: 1
+    - type: DeviceNetwork
+      deviceLists:
+      - 371
     - type: AtmosPipeColor
       color: '#0055CCFF'
 - proto: GasVentScrubber
@@ -2441,6 +2529,9 @@ entities:
       rot: 3.141592653589793 rad
       pos: -0.5,-0.5
       parent: 1
+    - type: DeviceNetwork
+      deviceLists:
+      - 370
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 261
@@ -2448,6 +2539,9 @@ entities:
     - type: Transform
       pos: 0.5,3.5
       parent: 1
+    - type: DeviceNetwork
+      deviceLists:
+      - 371
     - type: AtmosPipeColor
       color: '#990000FF'
 - proto: Girder
@@ -2687,7 +2781,7 @@ entities:
       pos: -2.5,1.5
       parent: 1
     - type: Battery
-      startingCharge: 16687.988
+      startingCharge: 16324.898
     - type: ApcPowerReceiverBattery
       enabled: True
   - uid: 289
@@ -2697,7 +2791,7 @@ entities:
       pos: 4.5,1.5
       parent: 1
     - type: Battery
-      startingCharge: 16694.463
+      startingCharge: 16331.411
     - type: ApcPowerReceiverBattery
       enabled: True
 - proto: SignalButton
