@@ -1095,3 +1095,27 @@
     - state: idquartermaster
   - type: PresetIdCard
     job: GliessianDockmaster
+
+- type: entity
+  parent: IDCardStandard
+  id: DockhandIDCard
+  name: Dockhand ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idpassenger
+  - type: PresetIdCard
+    job: Dockhand
+
+- type: entity
+  parent: IDCardStandard
+  id: SpacerIDCard
+  name: Spacer ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idpassenger
+  - type: PresetIdCard
+    job: Spacer

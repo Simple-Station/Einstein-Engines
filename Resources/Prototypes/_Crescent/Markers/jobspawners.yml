@@ -773,6 +773,18 @@
       - state: passenger
 
 - type: entity
+  id: SpawnPointDockhand
+  parent: SpawnPointJobBase
+  name: Dockhand
+  components:
+  - type: SpawnPoint
+    job_id: Dockhand
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
   id: SpawnPointGliessDockmaster
   parent: SpawnPointJobBase
   name: GliessDockmaster

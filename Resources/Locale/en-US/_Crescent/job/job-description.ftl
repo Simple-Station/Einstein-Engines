@@ -105,6 +105,7 @@ job-description-spacer = Be an independent citizen of Taypan.
 job-description-gliess-sheriff = Keep the law in Gliess Santo.
 job-description-gliess-deputy = Assist the Sheriff in keeping the law in Gliess Santo.
 job-description-gliess-dockmaster = Make sure nobody blows up your station.
+job-description-dockhand = Assist the Dockmaster in upkeeping Gliess Santo.
 
 # conscript-ncwl - for PLANETFALL
 job-description-conscript-ncwl-ship-captain = Pilot the Clementine. Ensure it's safety and use its armaments well. Go down with the ship.

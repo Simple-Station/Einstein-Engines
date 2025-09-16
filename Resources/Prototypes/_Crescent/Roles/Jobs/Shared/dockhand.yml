@@ -1,18 +1,21 @@
 - type: job
-  id: Spacer
-  name: job-name-spacer
-  description: job-description-spacer
-  playTimeTracker: JobSpacer
+  id: Dockhand
+  name: job-name-dockhand
+  description: job-description-dockhand
+  playTimeTracker: JobDockhand
   startingGear: ContractorGear
   icon: "JobIconPassenger"
-  supervisors: job-supervisors-hire
+  supervisors: job-supervisors-gliess
   accessGroups:
   - GeneralAccess
+  access:
+  - GliessSheriff
+
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-ind-spacer
+        rank: crescent-rank-ind-dockhand
       - type: LanguageAdder
         addSpoken:
           - Tradeband
@@ -23,7 +26,7 @@
   id: ContractorGear
   equipment:
     ears: ClothingHeadsetGrey
-    id: SpacerPDA
+    id: DockhandPDA
     jumpsuit: ClothingUniformSpacer
     back: ClothingBackpackFilled
     shoes: ClothingShoesColorBlack
