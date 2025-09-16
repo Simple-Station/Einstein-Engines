@@ -12,7 +12,7 @@
   canBeAntag: false
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 20000
+      min: 1000
     - !type:FactionRequirement
       factionID: "NCWL"
     - !type:CharacterSpeciesRequirement
@@ -90,5 +90,5 @@
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesColorYellow
     head: ClothingHeadHatNCWLCapsoft
-    eyes: ClothingEyesHudSecurity
+    eyes: ClothingEyesGlassesMeson
     ears: ClothingHeadsetNCWL
