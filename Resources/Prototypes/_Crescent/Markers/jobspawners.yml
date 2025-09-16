@@ -51,7 +51,7 @@
 - type: entity
   id: SpawnPointNCWLArtificer
   parent: SpawnPointJobBase
-  name: NCWLIndustryTaskmaster
+  name: NCWLArtificer
   components:
   - type: SpawnPoint
     job_id: ArtificerNCWL
@@ -75,7 +75,7 @@
 - type: entity
   id: SpawnPointNCWLCoordinator
   parent: SpawnPointJobBase
-  name: NCWLWorkerOverboss
+  name: NCWLCoordinator
   components:
   - type: SpawnPoint
     job_id: CoordinatorNCWL

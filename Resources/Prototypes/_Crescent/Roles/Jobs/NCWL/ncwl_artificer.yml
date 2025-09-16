@@ -83,13 +83,12 @@
   id: DockmasterNCWLGear
   equipment:
     shoes: ClothingShoesBootsSalvage
-    jumpsuit: ClothingUniformJumpsuitNCWLTelnikSleeved
+    jumpsuit: ClothingUniformJumpsuitNCWLArtificer
     id: NCWLLogisticLeaderPDA
-    outerClothing: ClothingOuterArmorNCWLLogi
-    belt: ClothingBeltSalvageWebbing
+    belt: ClothingBeltUtilityEngineering
     pocket1: WeaponPistolHKUSP
     back: ClothingBackpackNCWL
-    gloves: ClothingHandsGlovesFingerless
-    head: ClothingHeadHatBeretQM
+    gloves: ClothingHandsGlovesColorYellow
+    head: ClothingHeadHatNCWLCapsoft
     eyes: ClothingEyesHudSecurity
     ears: ClothingHeadsetNCWL
