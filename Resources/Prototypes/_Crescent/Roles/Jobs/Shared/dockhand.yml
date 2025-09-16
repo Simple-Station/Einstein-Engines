@@ -9,10 +9,6 @@
   startingGear: ContractorGear
   icon: "JobIconDockhand"
   supervisors: job-supervisors-gliess
-  accessGroups:
-  - GeneralAccess
-  access:
-  - GliessSheriff
 
   special:
   - !type:AddComponentSpecial
@@ -24,6 +20,10 @@
           - Tradeband
         addUnderstood:
           - Tradeband
+    accessGroups:
+  - GeneralAccess
+  access:
+  - GliessSheriff
 
 - type: startingGear
   id: ContractorGear

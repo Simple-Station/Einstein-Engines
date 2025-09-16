@@ -1104,7 +1104,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: idpassenger
+    - state: idquartermaster
   - type: PresetIdCard
     job: Dockhand
 
