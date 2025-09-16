@@ -16,7 +16,7 @@
   mapPath: /Maps/_Crescent/Shuttles/Civilian/exhumermk2.yml
   minPlayers: 0
   stations:
-    Exhumermk2:
+    Exhumerkmk2:
       stationProto: StandardCrescentExpeditionVessel
       components:
         - type: VesselIcon
