@@ -1,0 +1,34 @@
+# Author Info
+# Discord: rubeebee
+
+- type: vessel
+  id: Exhumermk2
+  name: Exhumer MKII
+  description: Made out of wrecked Exhumers, the Exhumer MKII is a combined Industrial/Combat ship, capable of doing both, but not excelling in either field. Comes with both Ore and Scrap magnets.
+  price: 60000
+  category: Small
+  group: Scrap
+  path: /Maps/_Crescent/Shuttles/Civilian/exhumermk2.yml
+
+- type: gameMap
+  id: Exhumermk2
+  mapName: 'Exhumer MKII'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/exhumermk2.yml
+  minPlayers: 0
+  stations:
+    Exhumermk2:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: industrial
+        - type: StationNameSetup
+          mapNameTemplate: 'Exhumer MKII {1}'
+          nameGenerator:
+           !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-salvage
+        - type: VesselDescription
+          description: Made out of destroyed exhumers, this ones armed to hopefully avoid the same 
