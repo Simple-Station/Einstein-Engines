@@ -49,12 +49,12 @@
       - state: passenger
 
 - type: entity
-  id: SpawnPointNCWLIndustryTaskmaster
+  id: SpawnPointNCWLArtificer
   parent: SpawnPointJobBase
   name: NCWLIndustryTaskmaster
   components:
   - type: SpawnPoint
-    job_id: IndustryTaskmasterNCWL
+    job_id: ArtificerNCWL
   - type: Sprite
     layers:
       - state: green
@@ -73,12 +73,12 @@
       - state: passenger
 
 - type: entity
-  id: SpawnPointNCWLWorkerOverboss
+  id: SpawnPointNCWLCoordinator
   parent: SpawnPointJobBase
   name: NCWLWorkerOverboss
   components:
   - type: SpawnPoint
-    job_id: WorkerOverbossNCWL
+    job_id: CoordinatorNCWL
   - type: Sprite
     layers:
       - state: green

@@ -1,13 +1,13 @@
 - type: job
-  id: IndustryTaskmasterNCWL
-  name: job-name-ncwl-industry-taskmaster
-  description: job-description-ncwl-industry-taskmaster
+  id: ArtificerNCWL
+  name: job-name-ncwl-artificer
+  description: job-description-ncwl-artificer
   playTimeTracker: JobLogisticLeaderNCWL
-  weight: 5
+  weight: 2
   startingGear: DockmasterNCWLGear
   alwaysUseSpawner: true
   requireAdminNotify: false
-  icon: "JobIconNCWLLogisticLeader"
+  icon: "JobIconNCWLArtificer"
   supervisors: job-supervisors-ncwl-leaders
   canBeAntag: false
   requirements:
@@ -36,10 +36,8 @@
       - type: LanguageAdder
         addSpoken:
           - Dockta
-          - Tradeband
         addUnderstood:
           - Dockta
-          - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain

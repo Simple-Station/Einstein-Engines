@@ -1,13 +1,13 @@
 - type: job
-  id: WorkerOverbossNCWL
-  name: job-name-ncwl-worker-overboss
-  description: job-description-ncwl-worker-overboss
+  id: CoordinatorNCWL
+  name: job-name-ncwl-coordinator
+  description: job-description-ncwl-coordinator
   playTimeTracker: JobEngineeringLeaderNCWL
   weight: 4
   startingGear: SupervisorNCWLGear
   alwaysUseSpawner: true
   requireAdminNotify: false
-  icon: "JobIconNCWLEngineeringLeader"
+  icon: "JobIconNCWLCoordinator"
   supervisors: job-supervisors-ncwl-leaders
   canBeAntag: false
   requirements:
