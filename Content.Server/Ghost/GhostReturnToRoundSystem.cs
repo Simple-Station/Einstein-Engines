@@ -59,7 +59,14 @@ public sealed class GhostReturnToRoundSystem : EntitySystem
             return;
         }
 
-        var deathTime = EnsureComp<GhostComponent>(uid).TimeOfDeath;
+        if (!TryComp<GhostComponent>(uid, out var ghostComp))
+        {
+            message = Loc.GetString("ghost-respawn-error", ("players", maxPlayers));
+            wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", message));
+            return;
+        }
+
+        var deathTime = ghostComp.TimeOfDeath;
         // WD EDIT START
         if (_mindSystem.TryGetMind(uid, out _, out var mind) && mind.TimeOfDeath.HasValue)
             deathTime = mind.TimeOfDeath.Value;
