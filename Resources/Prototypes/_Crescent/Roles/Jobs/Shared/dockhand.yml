@@ -3,8 +3,11 @@
   name: job-name-dockhand
   description: job-description-dockhand
   playTimeTracker: JobDockhand
+  requirements:
+  - !type:CharacterOverallTimeRequirement
+    min: 3600
   startingGear: ContractorGear
-  icon: "JobIconPassenger"
+  icon: "JobIconDockhand"
   supervisors: job-supervisors-gliess
   accessGroups:
   - GeneralAccess
