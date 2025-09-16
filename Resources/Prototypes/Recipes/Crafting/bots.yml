@@ -190,5 +190,5 @@
   objectType: Item
   description: This bot is an extremely advanced AI controlled engineer.
   icon:
-    sprite: _Imp/Drone/drone.rsi
+    sprite: _Impstation/Drone/drone.rsi
     state: shell

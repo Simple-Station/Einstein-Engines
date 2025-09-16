@@ -1,6 +1,5 @@
 using Content.Shared._Goobstation.MartialArts.Components;
 using Content.Shared._Shitmed.Targeting;
-using Content.Shared._White.Grab;
 using Content.Shared.Actions;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
@@ -19,6 +18,7 @@ using Content.Shared.Stunnable;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Events;
+using Content.Shared.WhiteDream.Grab;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
@@ -203,7 +203,7 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
             var pullerComponent = EnsureComp<PullerComponent>(user);
             if (!_proto.TryIndex<MartialArtPrototype>(comp.MartialArtsForm.ToString(), out var martialArtsPrototype))
                 return false;
-                
+
             martialArtsKnowledgeComponent.MartialArtsForm = martialArtsPrototype.MartialArtsForm;
             LoadCombos(martialArtsPrototype.RoundstartCombos, canPerformComboComponent);
             martialArtsKnowledgeComponent.Blocked = false;
