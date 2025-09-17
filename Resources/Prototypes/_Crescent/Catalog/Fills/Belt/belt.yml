@@ -247,8 +247,6 @@
     - 0,0,7,1
   - type: StorageFill
     contents:
-  - type: StorageFill
-    contents:
     - id: MagazineRifle
       amount: 4
     - id: SHIHG3TearGasHandgrenade
