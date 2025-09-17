@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingEscaveLaborerApparel
+  name: escave laborer apparel
+  description: A durable suit worn by the escave laborers.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Vanger14/laborer.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Vanger14/laborer.rsi
