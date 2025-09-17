@@ -1,0 +1,20 @@
+- type: entity
+  parent: ClothingMaskPullableBase
+  id: ClothingRespiratorLaborer
+  name: laborer respirator
+  description: An advanced softie respirator.
+  components:
+  - type: Sprite
+    sprite: Clothing/Vanger14/respirator.rsi
+  - type: Clothing
+    sprite: Clothing/Vanger14/respirator.rsi
+  - type: BreathMask
+  - type: IngestionBlocker
+  - type: IdentityBlocker
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    hideOnToggle: true
