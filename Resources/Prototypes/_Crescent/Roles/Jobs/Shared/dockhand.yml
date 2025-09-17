@@ -26,7 +26,7 @@
           - Tradeband
 
 - type: startingGear
-  id: ContractorGear
+  id: DockhandGear
   equipment:
     ears: ClothingHeadsetCMM
     id: DockhandPDA
