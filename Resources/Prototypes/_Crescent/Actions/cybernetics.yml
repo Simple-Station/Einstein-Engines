@@ -25,7 +25,7 @@
     useDelay: 1
     itemIconStyle: NoItem
     icon:
-      sprite: _Crescent/Objects/Weapons/mantis_blade.rsi
+      sprite: _Crescent/Objects/Weapons/Melee/mantis_blade.rsi
       state: icon
     event: !type:MantisBladeToggledEvent
 

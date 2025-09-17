@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "",
+    "copyright": "Sprited by hyenh for Hullrot. All rights reserved. Do not modify, publish, use, relicense, or edit.",
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "base"
+        },
+        {
+            "name": "mag-1"
+        },
+        {
+            "name": "mag-2"
+        }
+    ]
+}

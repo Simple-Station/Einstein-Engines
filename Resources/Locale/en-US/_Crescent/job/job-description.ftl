@@ -40,7 +40,7 @@ job-description-foremanimp = Coordinate the workers of your liege, the Lord Admi
 job-description-scribe = Explore, discover new technologies, and recover derelicts.
 job-description-archmaester = Coordinate the Scribes Guild, discover new technologies for the Lord Admiral.
 job-description-surgeon = Tend to the bodily ails of your comrades.
-job-description-advocatus = Scrutinise the loyalty of your liege, the Lord Admiral's subjects. Question violators of His will. Ensure compliance to the Mandate.
+job-description-advocatus = Scrutinise the loyalty of your liege, the Kaiser's subjects. Question violators of His will. Ensure compliance to the Mandate.
 job-description-advocatustemplar = Protect the Advocatus and carry out their will. Ensure compliance to the Mandate.
 
 # srm#

@@ -1,0 +1,41 @@
+{
+    "version": 1,
+    "license": "",
+    "copyright": "Made by the Sector Crescent team for the Hullrot Project. All rights reserved. Do not modify, publish, use, relicense, or edit.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "frag"
+        },
+        {
+            "name": "frag-spent"
+        },
+        {
+            "name": "thermo"
+        },
+        {
+            "name": "thermo-spent"
+        },
+        {
+            "name": "hedp"
+        },
+        {
+            "name": "hedp-spent"
+        },
+        {
+            "name": "can"
+        },
+        {
+            "name": "can-spent"
+        },
+        {
+            "name": "smoke"
+        },
+        {
+            "name": "smoke-spent"
+        }
+    ]
+}

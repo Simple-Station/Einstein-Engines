@@ -1,50 +1,50 @@
 
-- type: cargoProduct
-  id: EvaKitcommie
-  icon:
-    sprite: Clothing/Head/Helmets/eva.rsi
-    state: icon
-  product: CrateEvaKit
-  cost: 5000
-  category: cargoproduct-category-name-engineering
-  group: commie
+# # - type: cargoProduct
+# #   id: EvaKitcommie
+# #   icon:
+# #     sprite: Clothing/Head/Helmets/eva.rsi
+# #     state: icon
+# #   product: CrateEvaKit
+# #   cost: 5000
+# #   category: cargoproduct-category-name-engineering
+# #   group: commie
 
-- type: cargoProduct
-  id: EngineeringRCDAmmocommie
-  icon:
-    sprite: Objects/Tools/rcd.rsi
-    state: ammo
-  product: CrateRCDAmmo
-  cost: 2500
-  category: cargoproduct-category-name-engineering
-  group: commie
+# - type: cargoProduct
+#   id: EngineeringRCDAmmocommie
+#   icon:
+#     sprite: Objects/Tools/rcd.rsi
+#     state: ammo
+#   product: CrateRCDAmmo
+#   cost: 2500
+#   category: cargoproduct-category-name-engineering
+#   group: commie
 
-- type: cargoProduct
-  id: EngineeringSpaceHeatercommie
-  icon:
-    sprite: Structures/Piping/Atmospherics/Portable/portable_sheater.rsi
-    state: sheaterOff
-  product: SpaceHeaterAnchored
-  cost: 600
-  category: cargoproduct-category-name-engineering
-  group: commie
+# # - type: cargoProduct
+# #   id: EngineeringSpaceHeatercommie
+# #   icon:
+# #     sprite: Structures/Piping/Atmospherics/Portable/portable_sheater.rsi
+# #     state: sheaterOff
+# #   product: SpaceHeaterAnchored
+# #   cost: 600
+# #   category: cargoproduct-category-name-engineering
+# #   group: commie
 
-- type: cargoProduct
-  id: EngineAmeJarCommie
-  icon:
-    sprite: Objects/Power/AME/ame_jar.rsi
-    state: jar
-  product: CrateEngineeringAMEJar
-  cost: 2000
-  category: cargoproduct-category-name-engineering
-  group: commie
+# - type: cargoProduct
+#   id: EngineAmeJarCommie
+#   icon:
+#     sprite: Objects/Power/AME/ame_jar.rsi
+#     state: jar
+#   product: CrateEngineeringAMEJar
+#   cost: 2000
+#   category: cargoproduct-category-name-engineering
+#   group: commie
 
-- type: cargoProduct
-  id: MetalFoamCommie
-  icon:
-    sprite: Objects/Weapons/Grenades/smoke.rsi
-    state: icon
-  product: CrateEngineeringMetalFoamFast
-  cost: 4000
-  category: cargoproduct-category-name-engineering
-  group: commie
+# - type: cargoProduct
+#   id: MetalFoamCommie
+#   icon:
+#     sprite: Objects/Weapons/Grenades/smoke.rsi
+#     state: icon
+#   product: CrateEngineeringMetalFoamFast
+#   cost: 4000
+#   category: cargoproduct-category-name-engineering
+#   group: commie

@@ -5,11 +5,14 @@ using Content.Shared.Construction;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
+using Content.Shared.Forensics;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Maps;
 using Content.Shared.Physics;
 using Content.Shared.Popups;
+using Content.Shared.Random;
+using Content.Shared.Random.Helpers;
 using Content.Shared.RCD.Components;
 using Content.Shared.Tag;
 using Content.Shared.Tiles;
@@ -21,6 +24,7 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Collision.Shapes;
 using Robust.Shared.Physics.Dynamics;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using System.Diagnostics.CodeAnalysis;
@@ -46,6 +50,8 @@ public class RCDSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly TagSystem _tags = default!;
+
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     private readonly int _instantConstructionDelay = 0;
     private readonly EntProtoId _instantConstructionFx = "EffectRCDConstruct0";
@@ -523,10 +529,21 @@ public class RCDSystem : EntitySystem
 
                 return false;
             }
+            if (component.IsScrapper && !deconstructible.RcdScrappable)
+            {
+                if (popMsgs)
+                    _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
 
+                return false;
+            }
             // The object is not in the whitelist
             if (!deconstructible.Deconstructable)
             {
+                if (deconstructible.RcdScrappable && component.IsScrapper)
+                {
+                    return true;
+                }
+                else
                 if (popMsgs)
                     _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
 
@@ -593,6 +610,16 @@ public class RCDSystem : EntitySystem
                 {
                     // Deconstruct object
                     _adminLogger.Add(LogType.RCD, LogImpact.High, $"{ToPrettyString(user):user} used RCD to delete {ToPrettyString(target):target}");
+                    if (TryComp<RCDDeconstructableComponent>(target, out var deconstructible) &&
+                        deconstructible.RcdScrappable &&
+                        deconstructible.ScrapResults != null)
+                    {
+                        foreach (var weightedProto in deconstructible.ScrapResults)
+                        {
+                            var item = _protoManager.Index(weightedProto).Pick(_random);
+                            EntityManager.SpawnNextToOrDrop(item, target.Value);
+                        }
+                    }
                     QueueDel(target);
                 }
 

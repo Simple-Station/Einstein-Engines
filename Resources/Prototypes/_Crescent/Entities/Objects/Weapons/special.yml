@@ -53,70 +53,63 @@
   - type: Appearance
 
 - type: entity
-  name: PTA 400c Mako handheld plasma repeater
+  name: PTA LAS-98 Mako laser cutter 200c
   parent: BaseWeaponBattery
   id: WeaponSpecialMako
-  description: A shoulder-carried version of the NanoTrasen plasma repeater intended for infantry use by field operatives. Developed by Pang Tai Arms.
+  description: A Pang Tai Arms knockoff of the NanoTrasen laser emitter. Originaly built for cutting ships apart during salvage ops, but reporpoused due to its capability of causing extreme burns to biological targets. Has a self charing battery.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/mako.rsi
     layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-unshaded-1
-      visible: false
-      map: ["enum.GunVisualLayers.MagUnshaded"]
-      shader: unshaded
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-1
+        map: ["enum.GunVisualLayers.Mag"]
+        shader: unshaded
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/mako.rsi
   - type: Appearance
+  - type: Wieldable
+  - type: GunRequiresWield
   - type: Item
     shape:
     - 0,0,5,2
   - type: MagazineVisuals
     magState: mag
-    steps: 3
-    zeroVisible: false
-  - type: Clothing
-    sprite: _Crescent/Objects/Weapons/Guns/mako.rsi
-  - type: Battery
-    maxCharge: 1000
-    startingCharge: 1000
+    steps: 19
+    zeroVisible: true
   - type: Gun
-    projectileSpeed: 15
-    fireRate: 0.5
+    fireRate: 20
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/ship_svalinn.ogg
-  - type: ProjectileBatteryAmmoProvider
-    proto: MakoPlasmaBullet
-    fireCost: 250
-  - type: MultiHandedItem
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/laser1.ogg
+  - type: Battery
+    maxCharge: 1800
+    startingCharge: 1800
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 20
+  - type: HitscanBatteryAmmoProvider
+    proto: MakoLaser
+    fireCost: 10
 
-- type: entity
-  id: MakoPlasmaBullet
-  name: plasma bolt
-  parent: BaseBulletTrigger
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Projectile
-    damage:
-      types:
-        Structural: 90
-        Radiation: 10
-        Heat: 150
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: Default
-    maxIntensity: 15
-    intensitySlope: 25
-    totalIntensity: 20
-    maxTileBreak: 2
-  - type: PointLight
-    radius: 3.5
-    color: orange
-    energy: 0.5
-  - type: Sprite
-    sprite: _NF/Objects/SpaceArtillery/plasmahardpoint.rsi
-    layers:
-      - state: icon
+- type: hitscan
+  id: MakoLaser
+  damage:
+    types:
+      Heat: 7
+      Structural: 120
+  muzzleFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: muzzle_omni
+  travelFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: beam_omni
+  impactFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_omni
 
 - type: entity
   name: SCHK-2 plasma hardlight sword
@@ -158,7 +151,7 @@
             Heat: 20
             Structural: 20
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/plas_sword.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/plas_sword.rsi
     layers:
       - state: e_sword
       - state: e_sword_blade
@@ -174,7 +167,7 @@
         Blunt: 4.5
   - type: Item
     size: Small
-    sprite: _Crescent/Objects/Weapons/plas_sword-inhands.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/plas_sword-inhands.rsi
   - type: UseDelay
     delay: 1.0
   - type: PointLight
@@ -209,7 +202,7 @@
   components:
   - type: Sharp
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/halberd.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/halberd.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 135
@@ -248,7 +241,7 @@
   description: A robust warclub made by the Families.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/plashammer.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/plashammer.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -155 #onehanded stance allows for wider swing
@@ -314,7 +307,7 @@
   description: Cinched by silver-gold, the dark artificial crystal at the head is both focus and instrument for the psionic, allowing one to channel their powers through it and shift reality with suitable control and training. The titanium shaft is suitably durable for the rigours of combat and, in the extreme, for rudimentary self defence.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/boundlightstaff.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/boundlightstaff.rsi
     state: icon
   - type: Clothing
     slots:

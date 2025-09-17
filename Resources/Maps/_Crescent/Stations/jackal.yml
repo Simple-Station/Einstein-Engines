@@ -3615,7 +3615,7 @@ entities:
       - 3.44176466910227 rad: 4.366565299128015 rad
     - type: Anchorable
       flags: None
-- proto: BaseWeaponTurretSwarmer
+- proto: BaseWeaponTurretSwarmerFilled
   entities:
   - uid: 176
     components:

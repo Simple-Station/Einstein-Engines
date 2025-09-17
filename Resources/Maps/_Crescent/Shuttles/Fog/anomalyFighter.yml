@@ -329,7 +329,7 @@ entities:
       originalPowerLoad: 1500
     - type: ApcPowerReceiver
       powerLoad: 1
-- proto: NTVulcanTurret
+- proto: NTVulcanTurretFilled
   entities:
   - uid: 3
     components:

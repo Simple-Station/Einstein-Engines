@@ -18,6 +18,7 @@
   parent:
     - BaseStation
     - BaseStationShuttles
+    - BaseStationCargo
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform

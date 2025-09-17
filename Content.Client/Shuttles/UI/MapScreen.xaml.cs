@@ -303,11 +303,14 @@ public sealed partial class MapScreen : BoxContainer
             _mapHeadings.Add(mapComp.MapId, gridContents);
             foreach (var grid in _mapManager.GetAllMapGrids(mapComp.MapId))
             {
+                var gridName = _entManager.GetComponent<MetaDataComponent>(grid.Owner).EntityName;
+                if (gridName == "grid")
+                    continue;
                 _entManager.TryGetComponent(grid.Owner, out IFFComponent? iffComp);
 
                 var gridObj = new GridMapObject()
                 {
-                    Name = _entManager.GetComponent<MetaDataComponent>(grid.Owner).EntityName,
+                    Name = gridName,
                     Entity = grid.Owner,
                     HideButton = iffComp != null && (iffComp.Flags & IFFFlags.HideLabel) != 0x0,
                 };

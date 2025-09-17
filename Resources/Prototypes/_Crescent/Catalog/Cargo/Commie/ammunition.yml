@@ -1,39 +1,203 @@
-- type: cargoProduct
-  id: ShuttleSumitomoAmmocommie
-  icon:
-    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
-    state: baton
-  product: CrateSumitomoAmmo
-  cost: 15000
-  category: cargoproduct-category-name-shuttle
-  group: commie
+# - type: cargoProduct
+#   id: ShuttleSumitomoAmmoNCWL
+#   icon:
+#     sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+#     state: baton
+#   product: CrateSumitomoAmmo
+#   cost: 15000
+#   category: cargoproduct-category-name-shuttle
+#   group: commie
 
-- type: cargoProduct
-  id: ShuttleCrateVulcanAmmocommie
-  icon:
-    sprite: _Crescent/Ammunition/vulcan.rsi
-    state: base
-  product: CrateVulcanAmmo
-  cost: 15000
-  category: cargoproduct-category-name-shuttle
-  group: commie
+# - type: cargoProduct
+#   id: ShuttleSumitomoAmmoEMPNCWL
+#   icon:
+#     sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+#     state: emp
+#   product: CrateSumitomoAmmoEMP
+#   cost: 20000
+#   category: cargoproduct-category-name-shuttle
+#   group: commie
 
-- type: cargoProduct
-  id: CrateVulcanAmmocommie
-  icon:
-    sprite: _NF/Objects/SpaceArtillery/50_armorpiercing_machinegun_casing.rsi
-    state: base
-  product: CrateSlugthrowerAmmo
-  cost: 10000
-  category: cargoproduct-category-name-shuttle
-  group: commie
+# - type: cargoProduct
+#   id: ShuttleSumitomoAmmoHYNCWL
+#   icon:
+#     sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+#     state: blast
+#   product: CrateSumitomoAmmoHighYield
+#   cost: 20000
+#   category: cargoproduct-category-name-shuttle
+#   group: commie
 
-- type: cargoProduct
-  id: ShuttleCoolantcommie
-  icon:
-    sprite: _Crescent/Objects/Misc/coolant.rsi
-    state: icon
-  product: CrateCoolant
-  cost: 15000
-  category: cargoproduct-category-name-shuttle
-  group: commie
+# - type: cargoProduct
+#   id: ShuttleCrateVulcanAmmoNCWL
+#   icon:
+#     sprite: _Crescent/Ammunition/vulcan.rsi
+#     state: base
+#   product: CrateVulcanAmmo
+#   cost: 10000
+#   category: cargoproduct-category-name-shuttle
+#   group: commie
+
+# - type: cargoProduct
+#   id: ShuttleCrateSlugAmmoNCWL
+#   icon:
+#     sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
+#     state: base
+#   product: CrateSlugthrowerAmmo
+#   cost: 10000
+#   category: cargoproduct-category-name-shuttle
+#   group: commie
+
+# - type: cargoProduct
+#   id: ShuttleCrateSlugAmmoExplosiveNCWL
+#   icon:
+#     sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
+#     state: base
+#   product: CrateSlugthrowerAmmoExplosive
+#   cost: 20000
+#   category: cargoproduct-category-name-shuttle
+#   group: commie
+
+# - type: cargoProduct
+#   id: ShuttleCoolantNCWL
+#   icon:
+#     sprite: _Crescent/Objects/Misc/coolant.rsi
+#     state: icon
+#   product: CrateCoolant
+#   cost: 10000
+#   category: cargoproduct-category-name-shuttle
+#   group: commie
+
+
+# - type: cargoProduct
+#   id: ShuttleGargoyleAmmoNCWL
+#   icon:
+#     sprite: _Crescent/Objects/ShuttleWeapons/torp.rsi
+#     state: base
+#   product: CrateGargoyleAmmo
+#   cost: 25000
+#   category: cargoproduct-category-name-shuttle
+#   group: commie
+
+
+# - type: cargoProduct
+#   id: ShuttleLancerAmmoNCWL
+#   icon:
+#     sprite: _Crescent/Objects/ShuttleWeapons/lance.rsi
+#     state: base
+#   product: CrateLancerAmmo
+#   cost: 15000
+#   category: cargoproduct-category-name-shuttle
+#   group: commie
+
+
+# - type: cargoProduct
+#   id: ShuttleAssaultMortarAmmoNCWL
+#   icon:
+#     sprite: _Crescent/Objects/ShuttleWeapons/battleshell.rsi
+#     state: base
+#   product: CrateAssaultMortarAmmo
+#   cost: 20000
+#   category: cargoproduct-category-name-shuttle
+#   group: commie
+
+
+# - type: cargoProduct
+#   id: ShuttleIdnaAmmoNCWL
+#   icon:
+#     sprite: _Crescent/Objects/ShuttleWeapons/torpedop.rsi
+#     state: base
+#   product: CrateIdnaAmmo
+#   cost: 15000
+#   category: cargoproduct-category-name-shuttle
+#   group: commie
+
+# - type: cargoProduct
+#   id: Shuttle120mmAmmoNCWL
+#   icon:
+#     sprite: _NF/Objects/SpaceArtillery/630_armorpiercing_shell_casing.rsi
+#     state: base
+#   product: CrateArtilleryAmmo
+#   cost: 20000
+#   category: cargoproduct-category-name-shuttle
+#   group: commie
+
+# - type: cargoProduct
+#   id: Shuttle120mmAmmoNCWL
+#   icon:
+#     sprite: _NF/Objects/SpaceArtillery/630_highexplosive_shell_casing.rsi
+#     state: base
+#   product: CrateArtilleryAmmoExplosive
+#   cost: 25000
+#   category: cargoproduct-category-name-shuttle
+#   group: commie
+
+# - type: cargoProduct
+#   id: ShuttleAutomortarAmmoNCWL
+#   icon:
+#     sprite: _Crescent/Ammunition/mortar.rsi
+#     state: base
+#   product: CrateMortarAmmo
+#   cost: 20000
+#   category: cargoproduct-category-name-shuttle
+#   group: commie
+
+# - type: cargoProduct
+#   id: ShuttleSwarmerAmmoNCWL
+#   icon:
+#     sprite: _Crescent/Ammunition/coil.rsi
+#     state: base
+#   product: CrateSwarmerAmmo
+#   cost: 15000
+#   category: cargoproduct-category-name-shuttle
+#   group: commie
+
+# - type: cargoProduct
+#   id: ShuttleCompaktAmmoNCWL
+#   icon:
+#     sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
+#     state: infraredlens
+#   product: CrateCompaktAmmoInfrared
+#   cost: 50000
+#   category: cargoproduct-category-name-shuttle
+#   group: commie
+
+# - type: cargoProduct
+#   id: ShuttleCompaktAmmoNCWL
+#   icon:
+#     sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
+#     state: plasmalens
+#   product: CrateCompaktAmmoPlasma
+#   cost: 75000
+#   category: cargoproduct-category-name-shuttle
+#   group: commie
+
+# - type: cargoProduct
+#   id: ShuttleSolarisAmmoNCWL
+#   icon:
+#     sprite: _Crescent/Objects/ShuttleWeapons/amcanister.rsi
+#     state: base
+#   product: CrateSolarisAmmo
+#   cost: 50000
+#   category: cargoproduct-category-name-shuttle
+#   group: commie
+
+# - type: cargoProduct
+#   id: ShuttleSolarisAmmoGuidedNCWL
+#   icon:
+#     sprite: _Crescent/Objects/ShuttleWeapons/amcanisterguided.rsi
+#     state: base
+#   product: CrateSolarisAmmoGuided
+#   cost: 75000
+#   category: cargoproduct-category-name-shuttle
+#   group: commie
+
+# - type: cargoProduct
+#   id: ShuttleSolarisAmmoPlasmaNCWL
+#   icon:
+#     sprite: _Crescent/Objects/ShuttleWeapons/amcanisterplas.rsi
+#     state: base
+#   product: CrateSolarisAmmoPlasma
+#   cost: 75000
+#   category: cargoproduct-category-name-shuttle
+#   group: commie

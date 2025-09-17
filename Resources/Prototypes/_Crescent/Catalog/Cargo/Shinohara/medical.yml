@@ -67,3 +67,23 @@
   cost: 750
   category: cargoproduct-category-name-medical
   group: shinohara
+
+- type: cargoProduct
+  id: VitalsTrackingShinoharaSuppliesShi
+  icon:
+    sprite: Objects/Specific/Medical/implanter.rsi
+    state: implanter0
+  product: CrateVitalsTrackingShinohara
+  cost: 500
+  category: cargoproduct-category-name-medical
+  group: shinohara
+
+- type: cargoProduct
+  id: VitalsTrackingInterdyneSuppliesShi
+  icon:
+    sprite: Objects/Specific/Medical/implanter.rsi
+    state: implanter0
+  product: CrateVitalsTrackingIPM
+  cost: 1000
+  category: cargoproduct-category-name-medical
+  group: shinohara

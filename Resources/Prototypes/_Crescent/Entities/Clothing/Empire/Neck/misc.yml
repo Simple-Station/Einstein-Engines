@@ -35,7 +35,7 @@
   parent: ClothingNeckBase
   id: ClothingNeckCloakInspector
   name: advocati shoulder cape
-  description: Adorned with Advocati Corps livery.
+  description: Adorned with Advocati Corps livery, an old design no longer in use.
   components:
    - type: Sprite
      sprite: _Crescent/Clothing/Empire/Neck/inspector.rsi

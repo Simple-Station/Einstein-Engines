@@ -11,7 +11,13 @@
             "name": "base"
         },
         {
+            "name": "icon"
+        },
+        {
             "name": "mag-1"
+        },
+        {
+            "name": "mag-2"
         }
     ]
 }

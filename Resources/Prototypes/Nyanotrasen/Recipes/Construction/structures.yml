@@ -17,24 +17,6 @@
     - !type:TileNotBlocked
 
 - type: construction
-  name: shuttle wall
-  id: ShuttleWall
-  graph: Girder
-  startNode: start
-  targetNode: shuttleWall
-  category: construction-category-structures
-  description: Keeps the air in and the greytide out.
-  icon:
-    sprite: Structures/Walls/shuttle.rsi
-    state: full
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: false
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
   name: interior shuttle wall
   id: InteriorShuttleWall
   graph: Girder
@@ -89,4 +71,3 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: false
-  
