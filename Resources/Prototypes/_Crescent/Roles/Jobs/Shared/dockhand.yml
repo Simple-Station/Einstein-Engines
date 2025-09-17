@@ -28,7 +28,7 @@
 - type: startingGear
   id: ContractorGear
   equipment:
-    ears: ClothingHeadsetGrey
+    ears: ClothingHeadsetCMM
     id: DockhandPDA
     jumpsuit: ClothingUniformSpacer
     back: ClothingBackpackFilled
