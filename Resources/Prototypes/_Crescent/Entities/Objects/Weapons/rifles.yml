@@ -49,6 +49,39 @@
       - CartridgeRifle
 
 - type: entity
+  name: SHI M28 Nimrod 7.62x51mm
+  parent: [BaseWeaponSniper, BaseGunWieldable]
+  id: WeaponRifleSHINimrod
+  description: An absurdly cheap-to-make hunting rifle sold at a major mark-up to desperate spacers and militiamen. Chambered in 7.62x51mm.
+  components:
+  - type: Item
+    size: Ginormous
+  - type: StaticPrice
+    price: 2000
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/nimrod.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/nimrod.rsi
+  - type: Gun
+    fireRate: 3
+    projectileSpeed: 45
+    damageModifier: 1.25
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/UnionfallWeapons/lever_fire.ogg
+  - type: BallisticAmmoProvider
+    soundInsert:
+      collection: LeverReload
+    capacity: 6
+    autoCycle: true
+    proto: CartridgeRifle
+    whitelist:
+      tags:
+      - CartridgeRifle
+
+- type: entity
   name: IRM DA-11 legionnaire 7.62x51mm
   id: WeaponRifleDSMLegionnaire
   parent: BaseWeaponRifle
