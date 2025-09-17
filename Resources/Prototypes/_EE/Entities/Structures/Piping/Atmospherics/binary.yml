@@ -31,4 +31,4 @@
   components:
     - type: GasVentPump
       maxPressure: 13500
-      PumpPower: 6
+      pumpPower: 6
