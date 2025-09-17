@@ -239,7 +239,7 @@
   name: SHI HSRPG-38M13 Hammerhead smart-missile launcher 65mm
   parent: [BaseWeaponLauncher, BaseGunWieldable]
   id: WeaponLauncherHammerhead
-  description: A modified ancient rocket-propelled grenade launcher. Stamped with the Shinohara Heavy Industries logo and capable of firing guided projectiles.
+  description: A fancy heat-seeking rocket launcher. Stamped with the Shinohara Heavy Industries logo.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/hammerhead.rsi
@@ -257,46 +257,24 @@
   - type: Gun
     fireRate: 0.5
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/rpg_fire.ogg
   - type: BallisticAmmoProvider
-    proto: BulletRocketSmart
-    capacity: 3
-    cycleable: false
+    proto: CartridgeHammerheadRocket
+    capacity: 1
+    autoCycle: false
     soundInsert:
-      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
-  - type: MagazineVisuals
-    magState: mag
-    steps: 3
-    zeroVisible: true
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/rpg_load.ogg
+    fillWithDoAfter: true
+    fillDelay: 1
+    whitelist:
+      tags:
+      - RocketHammerhead
   - type: Appearance
   - type: Contraband
-
-- type: entity
-  id: BulletRocketSmart
-  name: smart missile
-  parent: BaseBulletTrigger
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: ProjectileIFF
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    layers:
-      - state: frag
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: Default
-    maxIntensity: 1500
-    intensitySlope: 500
-    totalIntensity: 3000
-    maxTileBreak: 5
-  - type: PointLight
-    radius: 3.5
-    color: orange
-    energy: 0.5
-  - type: HeatSeeking
-    rotationSpeed: 40
-    acceleration: 25
-    topSpeed: 125
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
 
     defaultSeekingRange: 400
     guidanceAlgorithm: PredictiveGuidance
@@ -408,3 +386,89 @@
         amount: 1
       - id: SpeedLoader127x99
         amount: 1
+
+# @witchblaade (evergreenBloom) donor gun
+- type: entity
+  name: IRM DA-11C Courroux du Kaiser 15.2x169mm Anti-materiel rifle
+  description: A one of a kind heirloom wielded by the Lord Admiral of The Countsman. A relic of Empire and Faith, it serves as tool of authority and the Countsman's last defense. Chambered in 15.2x169mm.
+  parent: WeaponAntimaterielDSMLeveller
+  id: WeaponAntimaterielCourroux
+  components:
+  - type: GunRequiresWield
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/corrux.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+  - type: Item
+    sprite: _Crescent/Objects/Weapons/Guns/corrux.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/corrux.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: Gun
+    fireRate: 2
+  - type: HeldSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+
+# @baldy (baldy) donor gun
+- type: entity
+  name: SAW Plasma Cutter
+  parent: WeaponLaserCarbine
+  id: WeaponDonorPlasmaCutter
+  description: This compact cutter fires bolts of ionized plasma that cut easily through most surfaces, making it a cheap but versatile mining tool. This one has been haphazardly modified to work as a self defense tool.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/plasmacutter.rsi
+  - type: RCD
+    isScrapper: true
+    availablePrototypes:
+    - Deconstruct
+  - type: Gun
+    fireRate: 1
+    projectileSpeed: 30
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+    soundEmpty:
+      path: /Audio/DeltaV/Weapons/Guns/Empty/dry_fire.ogg
+  - type: GunRequiresWield
+  - type: Battery
+    maxCharge: 1005
+    startingCharge: 1005
+  - type: HitscanBatteryAmmoProvider
+    proto: PlasmaCutterBolt
+    fireCost: 250
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 125
+    autoRechargePause: true
+    autoRechargePauseTime: 4
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,2,1
+    sprite: _Crescent/Objects/Weapons/plasmacutter.rsi
+
+- type: hitscan
+  id: PlasmaCutterBolt
+  damage:
+    types:
+      Structural: 40
+      Heat: 20
+      Piercing: 10
+  muzzleFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: muzzle_beam_heavy
+  travelFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: beam_heavy
+  impactFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_beam_heavy
+
+
+
+

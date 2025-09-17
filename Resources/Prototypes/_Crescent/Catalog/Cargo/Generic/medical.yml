@@ -1,0 +1,79 @@
+- type: cargoProduct
+  id: ChemvendRestockGeneric
+  icon:
+    sprite: Structures/Storage/Crates/chemcrate_secure.rsi
+    state: icon
+  product: VendingMachineRestockChemVend
+  cost: 5000
+  category: cargoproduct-category-name-medical
+  group: generic
+
+- type: cargoProduct
+  id: MedicalSuppliesGeneric
+  icon:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: firstaid
+  product: CrateMedicalSupplies
+  cost: 5000
+  category: cargoproduct-category-name-medical
+  group: generic
+
+# - type: cargoProduct
+#   id: MedicalChemistrySupplies
+#   icon:
+#     sprite: Objects/Specific/Chemistry/beaker.rsi
+#     state: beaker
+#   product: CrateChemistrySupplies
+#   cost: 750
+#   category: cargoproduct-category-name-medical
+#   group:
+
+# - type: cargoProduct
+#   id: MedicalChemistryVials
+#   icon:
+#     sprite: Objects/Specific/Chemistry/vial.rsi
+#     state: vial
+#   product: CrateChemistryVials
+#   cost: 1000
+#   category: cargoproduct-category-name-medical
+#   group:
+
+# - type: cargoProduct
+#   id: MedicalBodybags
+#   icon:
+#     sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+#     state: bag_folded
+#   product: CrateBodyBags
+#   cost: 700
+#   category: cargoproduct-category-name-medical
+#   group:
+
+# - type: cargoProduct
+#   id: ChemistryP
+#   icon:
+#     sprite: Structures/Storage/Crates/chemcrate_secure.rsi
+#     state: icon
+#   product: CrateChemistryP
+#   cost: 850
+#   category: cargoproduct-category-name-medical
+#   group:
+
+# - type: cargoProduct
+#   id: ChemistryS
+#   icon:
+#     sprite: Structures/Storage/Crates/chemcrate_secure.rsi
+#     state: icon
+#   product: CrateChemistryS
+#   cost: 750
+#   category: cargoproduct-category-name-medical
+#   group:
+
+# - type: cargoProduct
+#   id: CrateChemistryD
+#   icon:
+#     sprite: Structures/Storage/Crates/chemcrate_secure.rsi
+#     state: icon
+#   product: CrateChemistryD
+#   cost: 750
+#   category: cargoproduct-category-name-medical
+#   group:

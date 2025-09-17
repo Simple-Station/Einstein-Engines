@@ -1,5 +1,5 @@
 - type: cargoProduct
-  id: ShuttleSumitomoAmmo
+  id: ShuttleSumitomoAmmoCargoShuttle
   icon:
     sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
     state: baton
@@ -9,7 +9,7 @@
   group: market
 
 - type: cargoProduct
-  id: ShuttleIdnaAmmo
+  id: ShuttleIdnaAmmoCargoShuttle
   icon:
     sprite: _Crescent/Objects/ShuttleWeapons/torpedop.rsi
     state: base
@@ -19,7 +19,7 @@
   group: market
 
 - type: cargoProduct
-  id: ShuttleGargoyleAmmo
+  id: ShuttleGargoyleAmmoCargoShuttle
   icon:
     sprite: _Crescent/Objects/ShuttleWeapons/torp.rsi
     state: base
@@ -29,7 +29,7 @@
   group: market
 
 - type: cargoProduct
-  id: ShuttleLancerAmmo
+  id: ShuttleLancerAmmoCargoShuttle
   icon:
     sprite: _Crescent/Objects/ShuttleWeapons/lance.rsi
     state: base
@@ -39,7 +39,7 @@
   group: market
 
 - type: cargoProduct
-  id: ShuttleAssaultMortarAmmo
+  id: ShuttleAssaultMortarAmmoCargoShuttle
   icon:
     sprite: _Crescent/Objects/ShuttleWeapons/battleshell.rsi
     state: base
@@ -49,7 +49,7 @@
   group: market
 
 - type: cargoProduct
-  id: ShuttleCrateVulcanAmmo
+  id: ShuttleCrateVulcanAmmoCargoShuttle
   icon:
     sprite: _Crescent/Ammunition/vulcan.rsi
     state: base
@@ -59,7 +59,7 @@
   group: market
 
 - type: cargoProduct
-  id: CrateVulcanAmmo
+  id: CrateVulcanAmmoCargoShuttle
   icon:
     sprite: _NF/Objects/SpaceArtillery/50_armorpiercing_machinegun_casing.rsi
     state: base
@@ -69,7 +69,7 @@
   group: market
 
 - type: cargoProduct
-  id: ShuttleCoolant
+  id: ShuttleCoolantCargoShuttle
   icon:
     sprite: _Crescent/Objects/Misc/coolant.rsi
     state: icon
@@ -79,7 +79,7 @@
   group: market
 
 - type: cargoProduct
-  id: ShuttleArtilleryAmmo
+  id: ShuttleArtilleryAmmoCargoShuttle
   icon:
     sprite: _NF/Objects/SpaceArtillery/630_armorpiercing_shell_casing.rsi 
     state: base
@@ -89,7 +89,7 @@
   group: market
 
 - type: cargoProduct
-  id: ShuttleNeedlerAmmo
+  id: ShuttleNeedlerAmmoCargoShuttle
   icon:
     sprite: _Crescent/Ammunition/needler.rsi
     state: base
@@ -99,7 +99,7 @@
   group: market
 
 - type: cargoProduct
-  id: ShuttleMortarAmmo
+  id: ShuttleMortarAmmoCargoShuttle
   icon:
     sprite: _Crescent/Ammunition/mortar.rsi
     state: base
@@ -109,7 +109,7 @@
   group: market
 
 - type: cargoProduct
-  id: ShuttleSwarmerAmmo
+  id: ShuttleSwarmerAmmoCargoShuttle
   icon:
     sprite: _Crescent/Objects/ShuttleWeapons/swarmermissile.rsi
     state: base

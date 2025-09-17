@@ -35,7 +35,7 @@
   name:  cmm_smg_name
   description: cmm_smg_desc
   productEntity: WeaponSubMachineGunMP49
-  icon: { sprite: _Crescent/Objects/Weapons/mp49.rsi, state: icon }
+  icon: { sprite: _Crescent/Objects/Weapons/Guns/mp49.rsi, state: icon }
   cost:
     FrontierUplinkCoin: 3
   categories:
@@ -83,7 +83,7 @@
   name:  cmm_pistol_name
   description: cmm_pistol_desc
   productEntity: WeaponRevolverSnubnose
-  icon: { sprite: _Crescent/Objects/Weapons/snubnose.rsi, state: icon }
+  icon: { sprite: _Crescent/Objects/Weapons/Guns/bulldog.rsi, state: icon }
   cost:
     FrontierUplinkCoin: 2
   categories:

@@ -2,7 +2,7 @@
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   id: BulletAntiMateriel
-  name: bullet (15.2×169 mm )
+  name: bullet (15.2×169mm)
   components:
   - type: Projectile
     damage:
@@ -14,8 +14,39 @@
   #  gibsOnHit: true # hilarious but overpowered. use for rockets and ship guns maybe? .2 | 2025
 
 - type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseBulletUranium
+  id: BulletAntiMaterielUranium
+  name: bullet (15.2×169mm AP-DU)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 50
+        Structural: 1250
+    harmorPenetration: 200
+    stoppingPower: 35
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseBulletIncendiary
+  id: BulletAntiMaterielIncendiary
+  name: bullet (15.2×169mm incendiary)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 15
+        Heat: 25
+        Structural: 200
+    harmorPenetration: 25
+    stoppingPower: 35
+  - type: IgniteOnCollide
+    fireStacks: 1
+
+- type: entity
   id: BulletAntiMaterielShrapnel
-  name: bullet (15.2×169 mm shrapnel)
+  name: bullet (15.2×169mm shrapnel)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:

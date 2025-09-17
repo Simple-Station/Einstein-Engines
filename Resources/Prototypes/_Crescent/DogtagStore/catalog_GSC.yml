@@ -116,11 +116,22 @@
 #EXPLOSIVES
 
 - type: listing
-  id: StoreListingGSCRPG2Ammo
+  id: StoreListingGSCRPG2HeatAmmo
   name: PG-2 Rocket.
-  description: Ammunition for the NCSP RP-2 rocket launcher.
-  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Ammunition/Casings/small_rocket.rsi, state: he }
-  productEntity: CartridgeSmallRocket
+  description: Ammunition for the NCSP RPG-2 rocket launcher, this one has a HEAT warhead.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Ammunition/Casings/rpg2_rocket.rsi, state: heat }
+  productEntity: CartridgeRPG2Heat
+  cost:
+    PlunderGSC: 1.5
+  categories:
+  - StoreCategoryGSCExplosives
+
+- type: listing
+  id: StoreListingGSCRPG2FragAmmo
+  name: B40 M2 Rocket.
+  description: Ammunition for the NCSP RPG-2 rocket launcher, this one has a HE-Frag warhead.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Ammunition/Casings/rpg2_rocket.rsi, state: frag }
+  productEntity: CartridgeRPG2Frag
   cost:
     PlunderGSC: 1
   categories:
@@ -128,12 +139,67 @@
 
 - type: listing
   id: StoreListingGSCRPG2
-  name: NCSP RP-2.
+  name: NCSP RPG-2.
   description: An ancient rocket launcher design continuously produced from old schematics by SAW.
   icon: { sprite: /Textures/_Crescent/Objects/Weapons/Guns/rpg2.rsi, state: icon }
   productEntity: WeaponLauncherSmallRocket
   cost:
     PlunderGSC: 8
+  categories:
+  - StoreCategoryGSCExplosives
+
+- type: listing
+  id: StoreListingGSCRPG7HeatAmmo
+  name: PG-7M Rocket.
+  description: Ammunition for the NCSP RPG-7 rocket launcher, this one has a HEAT warhead.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Ammunition/Casings/rpg7_rocket.rsi, state: heat }
+  productEntity: CartridgeRPG7Heat
+  cost:
+    PlunderGSC: 2
+  categories:
+  - StoreCategoryGSCExplosives
+
+- type: listing
+  id: StoreListingGSCRPG7TandemAmmo
+  name: PG-7T Rocket.
+  description: Ammunition for the NCSP RPG-7 rocket launcher, this one has a Tandem HEAT warhead.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Ammunition/Casings/rpg7_rocket.rsi, state: tandem }
+  productEntity: CartridgeRPG7Tandem
+  cost:
+    PlunderGSC: 4
+  categories:
+  - StoreCategoryGSCExplosives
+
+- type: listing
+  id: StoreListingGSCRPG7FragAmmo
+  name: OGF-7 Rocket.
+  description: Ammunition for the NCSP RPG-7 rocket launcher, this one has a HE-Frag warhead.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Ammunition/Casings/rpg7_rocket.rsi, state: frag }
+  productEntity: CartridgeRPG7Frag
+  cost:
+    PlunderGSC: 1.5
+  categories:
+  - StoreCategoryGSCExplosives
+
+- type: listing
+  id: StoreListingGSCRPG7ThermoAmmo
+  name: GTB-7S Rocket.
+  description: Ammunition for the NCSP RPG-7 rocket launcher, this one has a HE-Frag warhead.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Ammunition/Casings/rpg7_rocket.rsi, state: thermo }
+  productEntity: CartridgeRPG7Thermobaric
+  cost:
+    PlunderGSC: 2
+  categories:
+  - StoreCategoryGSCExplosives
+
+- type: listing
+  id: StoreListingGSCRPG7
+  name: NCSP RPG-7.
+  description: A bit less ancient rocket launcher design continuously produced from old schematics by SAW.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Guns/rpg7.rsi, state: icon }
+  productEntity: WeaponLauncherRocket
+  cost:
+    PlunderGSC: 12
   categories:
   - StoreCategoryGSCExplosives
 
@@ -202,8 +268,20 @@
 
 - type: listing
   id: StoreListingGSC12.7x99mm
+  name: 15.2x169mm High Caliber Magazine
+  description: A 6-round 15.2x169mm magazine.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Ammunition/Magazine/amr_mag.rsi, state: icon }
+  productEntity: MagazineAntiMateriel
+  cost:
+    PlunderGSC: 1
+  categories:
+  - StoreCategoryGSCAmmo
+
+- type: listing
+  id: StoreListingGSC15.2x169mm
   name: 12.7x99mm High Caliber Magazine
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_mag.rsi, state: base }
+  description: A 16-round 12.7x99mm magazine.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Ammunition/Magazine/heavy_mag.rsi, state: icon }
   productEntity: MagazineHeavyRifle
   cost:
     PlunderGSC: 1
@@ -213,6 +291,7 @@
 - type: listing
   id: StoreListingGSC12gauge
   name: 12 Gauge Shotgun Magazine
+  description: A 8-round 12 gauge magazine.
   icon: { sprite: /Textures/_Crescent/Objects/Weapons/Ammunition/Magazine/shotgun_mag.rsi, state: base }
   productEntity: MagazineShotgun
   cost:
@@ -223,6 +302,7 @@
 - type: listing
   id: StoreListingGSC7.62mmDrum
   name: 7.62mm Rifle Drum
+  description: A 80-round 7.62x51mm drum magazine.
   icon: { sprite: /Textures/_Crescent/Objects/Weapons/Ammunition/Magazine/762_drum.rsi, state: base }
   productEntity: MagazineRifleDrum
   cost:
@@ -233,7 +313,8 @@
 - type: listing
   id: StoreListingGSC7.62mm
   name: 7.62mm Rifle Magazine
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_mag.rsi, state: base }
+  description: A 25-round 7.62x51mm magazine.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Ammunition/Magazine/rifle_mag.rsi, state: icon }
   productEntity: MagazineRifle
   cost:
     PlunderGSC: 1
@@ -243,6 +324,7 @@
 - type: listing
   id: StoreListingGSC5.56mm
   name: 5.56x45mm Rifle Magazine
+  description: A 30-round 5.56x45mm magazine.
   icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_mag.rsi, state: base }
   productEntity: MagazineLightRifle
   cost:
@@ -253,6 +335,7 @@
 - type: listing
   id: StoreListingGSC9x19mm
   name: SMG Magazine 9x19mm
+  description: A 30-round 9x19mm magazine.
   icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/smg_mag.rsi, state: base }
   productEntity: MagazinePistolSubMachineGun
   cost:
@@ -304,6 +387,17 @@
   productEntity: WeaponRifleMayflower
   cost:
     PlunderGSC: 10
+  categories:
+  - StoreCategoryGSCWeapons
+
+- type: listing
+  id: StoreListingGSCAK60
+  name: NCSP AK-60 15.2x169mm Anti-Materiel Rifle
+  description: An AK platform gun in .60, note that this weapon infringes on the AK naming rights of the Kalashnikov Group.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Guns/ak60.rsi, state: icon }
+  productEntity: WeaponSniperAK60
+  cost:
+    PlunderGSC: 20
   categories:
   - StoreCategoryGSCWeapons
 

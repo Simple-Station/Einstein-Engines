@@ -1,5 +1,5 @@
 - type: cargoProduct
-  id: ShuttleSumitomoAmmoshinohara
+  id: ShuttleSumitomoAmmoShinohara
   icon:
     sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
     state: baton
@@ -9,21 +9,131 @@
   group: shinohara
 
 - type: cargoProduct
-  id: ShuttleCrateVulcanAmmoshinohara
+  id: ShuttleIdnaAmmoShinohara
   icon:
-    sprite: _Crescent/Ammunition/vulcan.rsi
+    sprite: _Crescent/Objects/ShuttleWeapons/torpedop.rsi
     state: base
-  product: CrateVulcanAmmo
+  product: CrateIdnaAmmo
   cost: 5000
   category: cargoproduct-category-name-shuttle
   group: shinohara
 
 - type: cargoProduct
-  id: CrateVulcanAmmoshinohara
+  id: ShuttleCrateVulcanAmmoShinohara
+  icon:
+    sprite: _Crescent/Ammunition/vulcan.rsi
+    state: base
+  product: CrateVulcanAmmo
+  cost: 3300
+  category: cargoproduct-category-name-shuttle
+  group: shinohara
+
+- type: cargoProduct
+  id: CrateVulcanAmmoShinohara
   icon:
     sprite: _NF/Objects/SpaceArtillery/50_armorpiercing_machinegun_casing.rsi
     state: base
   product: CrateSlugthrowerAmmo
-  cost: 2500
+  cost: 3300
+  category: cargoproduct-category-name-shuttle
+  group: shinohara
+
+- type: cargoProduct
+  id: ShuttleCoolantShinohara
+  icon:
+    sprite: _Crescent/Objects/Misc/coolant.rsi
+    state: icon
+  product: CrateCoolant
+  cost: 3300
+  category: cargoproduct-category-name-shuttle
+  group: shinohara
+
+- type: cargoProduct
+  id: ShuttleNeedlerAmmoShinohara
+  icon:
+    sprite: _Crescent/Ammunition/needler.rsi
+    state: base
+  product: CrateAutogunAmmo
+  cost: 7000
+  category: cargoproduct-category-name-shuttle
+  group: shinohara
+
+- type: cargoProduct
+  id: ShuttleMortarAmmoShinohara
+  icon:
+    sprite: _Crescent/Ammunition/mortar.rsi
+    state: base
+  product: CrateMortarAmmo
+  cost: 7000
+  category: cargoproduct-category-name-shuttle
+  group: shinohara
+
+- type: cargoProduct
+  id: ShuttleSwarmerAmmoShinohara
+  icon:
+    sprite: _Crescent/Objects/ShuttleWeapons/swarmermissile.rsi
+    state: base
+  product: CrateSwarmerAmmo
+  cost: 5000
+  category: cargoproduct-category-name-shuttle
+  group: shinohara
+
+- type: cargoProduct
+  id: ShuttleGargoyleShinohara
+  icon:
+    sprite: _Crescent/Objects/ShuttleWeapons/torp.rsi
+    state: base
+  product: CrateGargoyleAmmo
+  cost: 5000
+  category: cargoproduct-category-name-shuttle
+  group: shinohara
+
+- type: cargoProduct
+  id: CrateHammerheadAmmo
+  icon:
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/hammerhead_rocket.rsi
+    state: hammer
+  product: Crate65mmHammerheadRocket
+  cost: 9000
+  category: cargoproduct-category-name-shuttle
+  group: shinohara
+
+- type: cargoProduct
+  id: Crate40mmGrenadeAPAmmoShinohara
+  icon:
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/40mm_grenade.rsi
+    state: frag
+  product: Crate40mmGrenadeAP
+  cost: 4500
+  category: cargoproduct-category-name-shuttle
+  group: shinohara
+
+- type: cargoProduct
+  id: Crate40mmGrenadeATAmmoShinohara
+  icon:
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/40mm_grenade.rsi
+    state: hedp
+  product: Crate40mmGrenadeAT
+  cost: 6000
+  category: cargoproduct-category-name-shuttle
+  group: shinohara
+
+- type: cargoProduct
+  id: Crate40mmGrenadeSupAmmoShinohara
+  icon:
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/40mm_grenade.rsi
+    state: smoke
+  product: Crate40mmGrenadeSup
+  cost: 3000
+  category: cargoproduct-category-name-shuttle
+  group: shinohara
+
+- type: cargoProduct
+  id: Crate40mmGrenadeASAmmoShinohara
+  icon:
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/40mm_grenade.rsi
+    state: thermo
+  product: Crate40mmGrenadeAS
+  cost: 6000
   category: cargoproduct-category-name-shuttle
   group: shinohara
