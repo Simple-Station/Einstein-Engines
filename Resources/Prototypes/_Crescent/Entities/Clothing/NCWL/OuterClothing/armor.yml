@@ -449,8 +449,8 @@
         Heat: 35
         Caustic: 25
   - type: ClothingSpeedModifier
-    walkModifier: 0.6
-    sprintModifier: 0.6
+    walkModifier: 0.7
+    sprintModifier: 0.7
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitNCWLJuggernaut

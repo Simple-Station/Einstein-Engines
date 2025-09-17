@@ -61,8 +61,8 @@
         Heat: 15
         Caustic: 15
   - type: ClothingSpeedModifier
-    walkModifier: 0.7
-    sprintModifier: 0.7
+    walkModifier: 0.80
+    sprintModifier: 0.80
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCorpsec
 
