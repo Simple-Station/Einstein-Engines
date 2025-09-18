@@ -1062,9 +1062,9 @@
   productEntity: Emag
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 10
+    Telecrystal: 25
   cost:
-    Telecrystal: 20
+    Telecrystal: 40
   categories:
   - UplinkDisruption
 

@@ -257,9 +257,6 @@
         - type: AutoRecharge
           rechargeDuration: 15
         - type: Emag
-          whitelist:
-            components:
-            - Airlock
         soundStateActivate:
           collection: sparks
           params:
