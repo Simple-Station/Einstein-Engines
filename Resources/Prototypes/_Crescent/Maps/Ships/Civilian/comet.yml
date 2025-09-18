@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Cometa
+  name: ICM Comet
+  description: A medium-sized expedition vessel equipped with many modern modules for long-term voyages.
+  price: 80000
+  category: Medium
+  group: Civilian
+  path: /Maps/_Crescent/Shuttles/Civilian/comet.yml
+
+- type: gameMap
+  id: Cometa
+  mapName: 'ICM Comet'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/comet.yml
+  minPlayers: 0
+  stations:
+    Cometa:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: industrial
+        - type: StationNameSetup
+          mapNameTemplate: 'ICM Comet {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation
