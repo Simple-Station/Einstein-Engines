@@ -12,6 +12,7 @@ using Content.Shared.GameTicking;
 using Content.Shared.Inventory;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Salvage;
+using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
 using Content.Shared.Throwing;
 using JetBrains.Annotations;
@@ -73,6 +74,7 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
     private EntityQuery<TransformComponent> _xformQuery;
 
     public const float TileMassMultiplier = 0.5f;
+    public float accumulator = 0f;
 
     public override void Initialize()
     {
@@ -101,6 +103,33 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
+        accumulator += frameTime;
+        if (accumulator >= 1f)
+        {
+            accumulator = 0f;
+            var query = EntityQueryEnumerator<IFFConsoleComponent>();
+            while (query.MoveNext(out var uid, out var comp))
+            {
+                if (!comp.active)
+                {
+                    comp.CurrentHeat = float.Clamp(comp.CurrentHeat - comp.HeatDissipation, 0f, comp.HeatCapacity);
+                    UpdateIFFInterface(uid, comp);
+                    continue;
+                }
+
+                comp.CurrentHeat = float.Clamp(comp.CurrentHeat + comp.HeatGeneration, 0f, comp.HeatCapacity);
+                UpdateIFFInterface(uid, comp);
+                if (comp.CurrentHeat != comp.HeatCapacity)
+                    continue;
+                var grid = Transform(uid).GridUid;
+                if (grid is null)
+                    continue;
+                RemoveIFFFlag(grid.Value, IFFFlags.Hide);
+                comp.active = false;
+
+            }
+        }
+
         UpdateHyperspace();
     }
 
