@@ -17,7 +17,7 @@
 - type: gameMap
   id: Ohio
   mapName: 'NAP Ohio'
-  mapPath: /Maps/_Crescent/Shuttles/NAP/Ohio.yml
+  mapPath: /Maps/_Crescent/Shuttles/NAP/ohio.yml
   minPlayers: 0
   stations:
     Ohio:
