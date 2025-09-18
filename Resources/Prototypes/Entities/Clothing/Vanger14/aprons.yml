@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: VangerClothingOuterApronV
+  name: leather apron
+  description: A regular leather apron.
+  components:
+  - type: Sprite
+    sprite: Clothing/Vanger14/apron.rsi
+  - type: Clothing
+    sprite: Clothing/Vanger14/apron.rsi
