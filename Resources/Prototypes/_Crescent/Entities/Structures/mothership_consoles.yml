@@ -221,3 +221,12 @@
     shuttles:
     - Tick
     - Gnat
+
+- type: entity
+  id: NAPMothershipComputer
+  parent: BaseMothershipComputer
+  name: NAP military shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Ohio
