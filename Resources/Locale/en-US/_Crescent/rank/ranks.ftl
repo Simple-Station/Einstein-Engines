@@ -58,9 +58,11 @@ crescent-rank-ncwl-faction-leader = Major
 crescent-rank-ncwl-home-leader = Kommissar
 crescent-rank-ncwl-home-squad-lead = Kapitan
 crescent-rank-ncwl-home-soldat = Partisan
-crescent-rank-ncwl-logi-leader = Overseer
-crescent-rank-ncwl-engi-leader = Coordinator
+crescent-rank-ncwl-engi-leader = Overseer
+crescent-rank-ncwl-engi-worker = Artificer
+crescent-rank-ncwl-medi-leader = Director
 crescent-rank-ncwl-medi-worker = Sanitar
+crescent-rank-ncwl-logi-leader = Coordinator
 crescent-rank-ncwl-worker = Comrade
 
 

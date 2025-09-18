@@ -77,6 +77,21 @@
 
 - type: entity
   parent: IDCardStandard
+  id: NCWLIDCardMedicalLeader
+  name: NCWL ID card
+  components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcentcom
+  - type: PresetIdCard
+    job: DirectorNCWL
+
+- type: entity
+  parent: IDCardStandard
   id: NCWLIDCardMedicalWorker
   name: NCWL ID card
   components:
@@ -103,8 +118,22 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: IndustryTaskmasterNCWL
+    job: WorkerOverbossNCWL
 
+- type: entity
+  parent: IDCardStandard
+  id: NCWLIDCardLogisticWorker
+  name: NCWL ID card
+  components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcentcom
+  - type: PresetIdCard
+    job: LogisticWorkerNCWL
 
 - type: entity
   parent: IDCardStandard
@@ -119,7 +148,22 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: WorkerOverbossNCWL
+    job: IndustryTaskmasterNCWL
+
+- type: entity
+  parent: IDCardStandard
+  id: NCWLIDCardEngineeringWorker
+  name: NCWL ID card
+  components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcentcom
+  - type: PresetIdCard
+    job: ArtificerNCWL
 
 #syndicate#
 

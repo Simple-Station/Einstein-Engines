@@ -660,6 +660,20 @@
 
 - type: jobIcon
   parent: JobIcon
+  id: JobIconNCWLLogisticWorker
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hl_ncwl_cargo_worker
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNCWLMedicalLeader
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hl_ncwl_medsci_leader
+
+- type: jobIcon
+  parent: JobIcon
   id: JobIconNCWLMedicalWorker
   icon:
     sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
@@ -671,6 +685,13 @@
   icon:
     sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
     state: hl_ncwl_engi_leader
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNCWLEngineeringWorker
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hl_ncwl_engi_worker
 
 - type: jobIcon
   parent: JobIcon

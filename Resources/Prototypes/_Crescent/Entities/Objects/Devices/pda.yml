@@ -66,8 +66,24 @@
 
 - type: entity
   parent: BasePDA
+  id: NCWLMedicalLeaderPDA
+  name: director's PDA
+  description: Brown for communard.
+  components:
+  - type: Pda
+    id: NCWLIDCardMedicalLeader
+    state: pda-militiaman
+  - type: PdaBorderColor
+    borderColor: "#3d251e"
+    accentHColor: "#d4d4d4"
+    accentVColor: "#d4d4d4"
+  - type: Icon
+    state: pda-militiaman
+
+- type: entity
+  parent: BasePDA
   id: NCWLMedicalWorkerPDA
-  name: doctor's PDA
+  name: sanitar's PDA
   description: Brown for communard.
   components:
   - type: Pda
@@ -83,7 +99,7 @@
 - type: entity
   parent: BasePDA
   id: NCWLLogisticLeaderPDA
-  name: dockmaster's PDA
+  name: coordinator's PDA
   description: Brown for communard.
   components:
   - type: Pda
@@ -98,12 +114,44 @@
 
 - type: entity
   parent: BasePDA
+  id: NCWLLogisticWorkerPDA
+  name: dockhand's PDA
+  description: Brown for communard.
+  components:
+  - type: Pda
+    id: NCWLIDCardLogisticWorker
+    state: pda-militiaman
+  - type: PdaBorderColor
+    borderColor: "#3d251e"
+    accentHColor: "#d4d4d4"
+    accentVColor: "#d4d4d4"
+  - type: Icon
+    state: pda-militiaman
+
+- type: entity
+  parent: BasePDA
   id: NCWLEngineeringLeaderPDA
-  name: supervisor's PDA
+  name: overseer's PDA
   description: Brown for communard.
   components:
   - type: Pda
     id: NCWLIDCardEngineeringLeader
+    state: pda-militiaman
+  - type: PdaBorderColor
+    borderColor: "#3d251e"
+    accentHColor: "#d4d4d4"
+    accentVColor: "#d4d4d4"
+  - type: Icon
+    state: pda-militiaman
+
+- type: entity
+  parent: BasePDA
+  id: NCWLEngineeringWorkerPDA
+  name: artificer's PDA
+  description: Brown for communard.
+  components:
+  - type: Pda
+    id: NCWLIDCardEngineeringWorker
     state: pda-militiaman
   - type: PdaBorderColor
     borderColor: "#3d251e"

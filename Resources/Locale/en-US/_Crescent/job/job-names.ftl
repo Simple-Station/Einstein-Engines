@@ -4,10 +4,13 @@ job-name-ncwl-faction-leader = Kommandante
 job-name-ncwl-kommissar = Kommissar
 job-name-ncwl-fleetkapitan = Fleetkapitan
 job-name-ncwl-partisan = Partisan
-job-name-ncwl-industry-taskmaster = Technician-Overseer
-job-name-ncwl-medical-doctor = Sanitar
-job-name-ncwl-worker-overboss = Union Coordinator
-job-name-ncwl-newbie = Union Worker
+job-name-ncwl-industry-taskmaster = Sindikat Overseer
+job-name-ncwl-industry-artificer = Sindikat Artificer
+job-name-ncwl-medical-director = Alyans Director
+job-name-ncwl-medical-doctor = Alyans Sanitar
+job-name-ncwl-worker-overboss = Freight Coordinator
+job-name-ncwl-worker-dockhand = Freight Crew
+job-name-ncwl-newbie = League Worker
 
 # syndicate
 
