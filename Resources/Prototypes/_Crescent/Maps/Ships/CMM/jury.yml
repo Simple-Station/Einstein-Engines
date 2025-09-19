@@ -16,7 +16,7 @@
 - type: gameMap
   id: Jury
   mapName: 'Jury'
-  mapPath: /Maps/_Crescent/Shuttles/Civilian/jury.yml
+  mapPath: /Maps/_Crescent/Shuttles/CMM/jury.yml
   minPlayers: 0
   stations:
     Jury:
