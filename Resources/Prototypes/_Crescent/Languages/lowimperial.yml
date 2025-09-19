@@ -2,7 +2,7 @@
   id: LowImperial
   isVisibleLanguage: true
   speech:
-    color: "#cf277b"
+    color: "#908fe2"
     fontId: Lymphatic
   obfuscation:
     !type:SyllableObfuscation

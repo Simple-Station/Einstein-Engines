@@ -27,7 +27,7 @@
   name: NCWL MK-1 Rezerv 7.62x51mm
   parent: [BaseWeaponSniper, BaseGunWieldable]
   id: WeaponRifleNCWLRezerv
-  description: A rifle based on ancient schematics, built with the simplicity and cost-effectiveness of an AK. Chambered in 7.62x51mm.
+  description: A simple, rugged 7.62x51mm battle rifle issued to Homeguard Protection units. Troops prefer it to the bulky Batanya when they need better handling without sacrificing stopping power.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/rezerv.rsi
@@ -43,6 +43,39 @@
       path: /Audio/_Crescent/Weapons/Guns/dmr_1/dmr_gunshot_2.ogg
   - type: BallisticAmmoProvider
     capacity: 15
+    proto: CartridgeRifle
+    whitelist:
+      tags:
+      - CartridgeRifle
+
+- type: entity
+  name: SHI M28 Nimrod 7.62x51mm
+  parent: [BaseWeaponSniper, BaseGunWieldable]
+  id: WeaponRifleSHINimrod
+  description: An absurdly cheap-to-make hunting rifle sold at a major mark-up to desperate spacers and militiamen. Chambered in 7.62x51mm.
+  components:
+  - type: Item
+    size: Ginormous
+  - type: StaticPrice
+    price: 2000
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/nimrod.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/nimrod.rsi
+  - type: Gun
+    fireRate: 3
+    projectileSpeed: 45
+    damageModifier: 1.25
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/UnionfallWeapons/lever_fire.ogg
+  - type: BallisticAmmoProvider
+    soundInsert:
+      collection: LeverReload
+    capacity: 6
+    autoCycle: true
     proto: CartridgeRifle
     whitelist:
       tags:
@@ -857,7 +890,7 @@
         priority: 1
         whitelist:
           tags:
-            - CartridgeRifle
+            - CartridgeLightRifle
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
@@ -985,3 +1018,195 @@
   - type: Appearance
   - type: StaticPrice
     price: 3000
+
+- type: entity
+  name: K&K KM7 Taft 7.62x51mm
+  parent: BaseWeaponRifle
+  id: WeaponRifleTaft
+  description: The next generation weapon system rifle produced by Kane & Knox. Fielded with a standard supressor and vertical foregrip. Chambered in 7.62x51mm.
+  components:
+  - type: Item
+    shape:
+    - 0,0,4,1
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/xm7.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/xm7.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/supressed_1/supressed_gunshot_4.ogg
+    selectedMode: FullAuto
+    availableModes:
+      - SemiAuto
+      - FullAuto
+    fireRate: 5.5
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 2000
+
+- type: entity
+  name: K&K K4A1 Hayes 5.56x45mm
+  parent: BaseWeaponRifle
+  id: WeaponRifleHayes
+  description: A standard carbine rifle produced by Kane & Knox. Was used extensively before being slowly phased out. Chambered in 5.56x45mm.
+  components:
+  - type: Item
+    shape:
+    - 0,0,4,1
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/m4a1.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/m4a1.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/rifle_1/rifle_gunshot_2.ogg
+    selectedMode: FullAuto
+    availableModes:
+      - SemiAuto
+      - FullAuto
+    fireRate: 5.5
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineLightRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeLightRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeLightRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 2000
+
+- type: entity
+  name: K&K K16 Carter 5.56x45mm
+  parent: BaseWeaponRifle
+  id: WeaponRifleCarter
+  description: An outdated assault rifle produced by Kane & Knox. Comes with a fixed bayonet for those unlucky enough. Chambered in 5.56x45mm.
+  components:
+  - type: Item
+    shape:
+    - 0,0,5,1
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/m16.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/m16.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/rifle_1/rifle_gunshot_2.ogg
+    selectedMode: Burst
+    availableModes:
+      - SemiAuto
+      - Burst
+    fireRate: 5.5
+    shotsPerBurst: 3
+    burstFireRate: 7
+    burstCooldown: 1.1
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineLightRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeLightRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeLightRifle
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    range: 1.75
+    damage:
+      types:
+        Piercing: 20
+        Slash: 5
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.15
+    clickPartDamageMultiplier: 1.25
+    maxTargets: 3
+    angle: 20
+    animation: WeaponArcThrust
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 25
+    staminaCost: 6
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 2000

@@ -221,3 +221,21 @@
     shuttles:
     - Tick
     - Gnat
+
+- type: entity
+  id: NAPMothershipComputer
+  parent: BaseMothershipComputer
+  name: NAP military shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Mojave
+
+- type: entity
+  id: TrashcanMothershipComputer
+  parent: BaseMothershipComputer
+  name: trashcan internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Wasp
