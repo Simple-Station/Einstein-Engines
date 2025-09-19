@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 09/16/2025 12:30:40
-  entityCount: 150
+  time: 09/19/2025 18:39:46
+  entityCount: 152
 maps: []
 grids:
 - 1
@@ -194,6 +194,8 @@ entities:
             162: -3,0
             179: -3,-2
             187: -3,0
+            204: -3,-2
+            212: -3,0
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -216,6 +218,10 @@ entities:
             190: -3,2
             193: -2,4
             196: -1,7
+            210: -3,0
+            215: -3,2
+            218: -2,4
+            221: -1,7
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -225,6 +231,7 @@ entities:
             125: 2,7
             150: 2,7
             175: 2,7
+            200: 2,7
         - node:
             id: LatticeEdgeE
           decals:
@@ -266,6 +273,14 @@ entities:
             189: -3,2
             192: -2,4
             195: -1,7
+            201: -4,-1
+            202: -3,-2
+            205: -5,1
+            206: -4,1
+            209: -3,0
+            214: -3,2
+            217: -2,4
+            220: -1,7
         - node:
             id: LatticeEdgeN
           decals:
@@ -277,6 +292,8 @@ entities:
             161: -3,0
             178: -3,-2
             186: -3,0
+            203: -3,-2
+            211: -3,0
         - node:
             id: LatticeEdgeS
           decals:
@@ -308,6 +325,12 @@ entities:
             188: -3,2
             191: -2,4
             194: -1,7
+            197: 0,8
+            198: 2,7
+            208: -3,0
+            213: -3,2
+            216: -2,4
+            219: -1,7
         - node:
             id: LatticeEdgeW
           decals:
@@ -321,6 +344,8 @@ entities:
             157: -4,1
             174: 2,7
             182: -4,1
+            199: 2,7
+            207: -4,1
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
@@ -503,6 +528,11 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 0.5,6.5
       parent: 1
+  - uid: 151
+    components:
+    - type: Transform
+      pos: -1.5,0.5
+      parent: 1
 - proto: AtmosFixBlockerMarker
   entities:
   - uid: 11
@@ -589,6 +619,11 @@ entities:
     components:
     - type: Transform
       pos: -0.5,-2.5
+      parent: 1
+  - uid: 152
+    components:
+    - type: Transform
+      pos: -2.5,0.5
       parent: 1
 - proto: BaseAPC
   entities:
@@ -1209,14 +1244,14 @@ entities:
           - Toggle
 - proto: SubstationBasic
   entities:
-  - uid: 114
+  - uid: 113
     components:
     - type: Transform
       pos: 1.5,-0.5
       parent: 1
 - proto: Thruster
   entities:
-  - uid: 113
+  - uid: 114
     components:
     - type: Transform
       rot: 3.141592653589793 rad
