@@ -23,7 +23,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
         - Blindness
         - WheelchairBound
   special:
@@ -31,9 +30,12 @@
     components:
       - type: ChatRank
         rank: crescent-rank-acolytetap
-  - !type:AddComponentSpecial
-    components:
       - type: Telepathic
+      - type: LanguageAdder
+        addSpoken:
+          - OldTaypani
+        addUnderstood:
+          - OldTaypani
   access:
   - EmergencyShuttleRepealAll
   - Captain

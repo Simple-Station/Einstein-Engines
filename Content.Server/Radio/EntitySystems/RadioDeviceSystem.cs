@@ -20,6 +20,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Network;
 using Robust.Shared.Player; // Nuclear-14
 using Robust.Shared.Prototypes;
+using Content.Shared.IdentityManagement;
 
 namespace Content.Server.Radio.EntitySystems;
 
@@ -37,13 +38,14 @@ public sealed class RadioDeviceSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly INetManager _netMan = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     // Used to prevent a shitter from using a bunch of radios to spam chat.
     private HashSet<(string, EntityUid)> _recentlySent = new();
 
     // Frontier: minimum, maximum radio frequencies
     private const int MinRadioFrequency = 1000;
-    private const int MaxRadioFrequency = 3000;
+    private const int MaxRadioFrequency = 9999;
 
     public override void Initialize()
     {
@@ -229,7 +231,7 @@ public sealed class RadioDeviceSystem : EntitySystem
 
     private void OnReceiveRadio(EntityUid uid, RadioSpeakerComponent component, ref RadioReceiveEvent args)
     {
-        var parent = Transform(uid).ParentUid;
+    /*    var parent = Transform(uid).ParentUid;
         if (TryComp(parent, out ActorComponent? actor))
         {
             var canUnderstand = _language.CanUnderstand(parent, args.Language.ID);
@@ -238,7 +240,14 @@ public sealed class RadioDeviceSystem : EntitySystem
                 Message = canUnderstand ? args.OriginalChatMsg : args.LanguageObfuscatedChatMsg
             };
             _netMan.ServerSendMessage(msg, actor.PlayerSession.Channel);
-        }
+        }*/
+
+        var speaker = uid;
+        var message = args.OriginalChatMsg.Message;
+        var nameOverride = Identity.Name(args.MessageSource, EntityManager);
+        IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<ChatSystem>()
+                .TrySendInGameICMessage(speaker, message, InGameICChatType.Whisper, ChatTransmitRange.GhostRangeLimit, true, null, null, nameOverride, false, false, args.Language);
+        //Old Code: _netMan.ServerSendMessage(msg, actor.PlayerSession.Channel);
     }
 
     private void OnIntercomEncryptionChannelsChanged(Entity<IntercomComponent> ent, ref EncryptionChannelsChangedEvent args)

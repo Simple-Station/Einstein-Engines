@@ -23,8 +23,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
         - Pacifist
@@ -61,10 +59,8 @@
   equipment:
     id: TemplarPDA
     ears: ClothingHeadsetEmpire
-    neck: ClothingNeckCloakInspector
     jumpsuit: ClothingUniformJumpsuitImperialCombat
     back: ClothingBackpackDSMFilledSoldier
     shoes: ClothingShoesBootsJack
     gloves: ClothingHandsGlovesImperialLonggloves
-    pocket1: ImperialPassportBareLegit
     pocket2: RomaineBible

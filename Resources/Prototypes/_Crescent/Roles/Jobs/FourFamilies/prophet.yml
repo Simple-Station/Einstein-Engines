@@ -20,7 +20,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
         - Muted
         - Blindness
         - WheelchairBound
@@ -29,9 +28,14 @@
     components:
       - type: ChatRank
         rank: crescent-rank-prophet
-  - !type:AddComponentSpecial
-    components:
       - type: Telepathic
+      - type: LanguageAdder
+        addSpoken:
+          - Tradeband
+          - OldTaypani
+        addUnderstood:
+          - Tradeband
+          - OldTaypani
   access:
   - EmergencyShuttleRepealAll
   - Captain

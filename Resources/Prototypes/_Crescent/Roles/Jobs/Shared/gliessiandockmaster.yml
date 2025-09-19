@@ -3,17 +3,14 @@
   name: job-name-gliess-dockmaster
   description: job-description-gliess-dockmaster
   playTimeTracker: JobGliessDockmaster
+  weight: 50
   startingGear: GliessDockmasterGear
   icon: "JobIconCaptain"
   supervisors: job-supervisors-lols
   requirements:
+    - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
-      min: 8000
-  accessGroups:
-  - GeneralAccess
-  access:
-  - GliessSheriff
-  - GliessDockmaster
+      min: 25000
   special:
   - !type:AddComponentSpecial
     components:
@@ -24,11 +21,16 @@
           - Tradeband
         addUnderstood:
           - Tradeband
+  accessGroups:
+  - GeneralAccess
+  access:
+  - GliessSheriff
+  - GliessDockmaster
 
 - type: startingGear
   id: GliessDockmasterGear
   equipment:
-    ears: ClothingHeadsetGrey
+    ears: ClothingHeadsetCMM
     shoes: ClothingShoesBootsLaceup
     jumpsuit: ClothingUniformJumpsuitCapFormal
     head: ClothingHeadHatCapcap

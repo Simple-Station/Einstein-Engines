@@ -160,9 +160,9 @@
   description: A communard jacket. Layered with kevlar nanoweave.
   components:
   - type: Sprite
-    sprite: _Crescent/Clothing/NCWL/OuterClothing/cargojacket.rsi
+    sprite: _Crescent/Clothing/NCWL/OuterClothing/engijacket.rsi
   - type: Clothing
-    sprite: _Crescent/Clothing/NCWL/OuterClothing/cargojacket.rsi
+    sprite: _Crescent/Clothing/NCWL/OuterClothing/engijacket.rsi
   - type: DegradeableArmor
     armorMaxHealth: 750
     armorType: Metallic
@@ -187,7 +187,7 @@
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterArmorNCWLEngi
-  name: overboss armored jacket
+  name: coordinator's armored jacket
   description: A communard jacket. Layered with kevlar nanoweave. Boss around your fellow proletariat in style and comfort!
   components:
   - type: Sprite
@@ -449,8 +449,8 @@
         Heat: 35
         Caustic: 25
   - type: ClothingSpeedModifier
-    walkModifier: 0.6
-    sprintModifier: 0.6
+    walkModifier: 0.7
+    sprintModifier: 0.7
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitNCWLJuggernaut

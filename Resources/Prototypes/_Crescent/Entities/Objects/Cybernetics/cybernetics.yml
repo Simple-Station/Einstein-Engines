@@ -45,11 +45,11 @@
   id: CyberneticsBloodPump
   parent: HullrotCyberneticBase
   name: IPM TT-92 overclocked blood pump
-  description: A small, fist-sized device meant to be a total replacement tool for a humanoid heart. Consumes nutrients from the external dermis and speeds up platelet production for accelerated healing.
+  description: A small, fist-sized device meant to be a total replacement tool for a humanoid heart. Consumes nutrients from the external dermis and speeds up platelet production for accelerated healing. Replaces the heart.
   components:
     - type: Heart
     - type: Metabolizer
-      maxReagents: 2
+      maxReagents: 10
       metabolizerTypes: [Human]
       groups:
         - id: Medicine
@@ -83,7 +83,7 @@
   components:
     - type: Heart
     - type: Metabolizer
-      maxReagents: 2
+      maxReagents: 10
       metabolizerTypes: [Human]
       groups:
         - id: Medicine
@@ -228,7 +228,7 @@
   id: CyberneticsAdrenal
   parent: HullrotCyberneticBase
   name: IPM TT-86 adrenal accelerator
-  description: A miniaturized, optimized version of the average humanoid liver. Comes with automated, expanded adrenal glands that allow for faster movement. These models are known to cause agitation, paranoia, and personality shifts with prolonged use.
+  description: A miniaturized, optimized version of the average humanoid liver. Comes with automated, expanded adrenal glands that allow for faster movement. These models are known to cause agitation, paranoia, and personality shifts with prolonged use. Replaces the liver.
   components:
     - type: Sprite
       sprite: _Crescent/Objects/Misc/cybernetics.rsi
@@ -238,7 +238,7 @@
     - type: Organ #eris give this a movespeed component too pretty please
       slotId: liver
     - type: Metabolizer
-      maxReagents: 1
+      maxReagents: 10
       metabolizerTypes: [Human]
       groups:
         - id: Alcohol
@@ -248,7 +248,7 @@
   id: CyberneticsPainEditor
   parent: HullrotCyberneticBase
   name: IPM TT-46 pain editor
-  description: A miniaturized, optimized version of the average humanoid liver. Developed by Interdyne Pharmaceuticals, this cybernetic organ interfaces with the spinal nerves to nullify pain signals from reaching the brain, allowing the user to fight longer.
+  description: A miniaturized, optimized version of the average humanoid liver. Developed by Interdyne Pharmaceuticals, this cybernetic organ interfaces with the spinal nerves to nullify pain signals from reaching the brain, allowing the user to fight longer. Replaces the liver.
   components:
     - type: Sprite
       sprite: _Crescent/Objects/Misc/cybernetics.rsi
@@ -258,9 +258,36 @@
     - type: Organ #give this an onAdd modifier that raises the Alive to Critical threshhold later
       slotId: liver
     - type: Metabolizer
-      maxReagents: 1
+      maxReagents: 10
       metabolizerTypes: [Human]
       groups:
         - id: Alcohol
           rateModifier: 0.3 #Removes alcohol moderately fast.
 
+- type: entity
+  parent: LeftArmCybernetic
+  id: CrowbarLeftArm
+  name: IPM TT-42l pryarm
+  description: A cybernetic left arm that can easily pry open unpowered doors.
+  components:
+  - type: BodyPart
+    onAdd:
+    - type: Prying
+      speedModifier: 2
+  - type: Sprite
+    sprite: Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi
+    state: "iconpry"
+
+- type: entity
+  parent: RightArmCybernetic
+  id: CrowbarRightArm
+  name: IPM TT-42r pryarm
+  description: A cybernetic right arm that can easily pry open unpowered doors.
+  components:
+  - type: BodyPart
+    onAdd:
+    - type: Prying
+      speedModifier: 2
+  - type: Sprite
+    sprite: Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi
+    state: "iconpry"

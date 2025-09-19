@@ -397,3 +397,45 @@
       #  weight: 10
       #- id: MobArgocyteFounder
       #  weight: 25
+
+
+- type: entity
+  parent: MarkerBase
+  id: SalvageSpawnerHighTierMechantronics
+  name: T3 Mechatronics Spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _Crescent/Objects/Materials/materials.rsi
+      state: bluespacemechatronics
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - id: NanotrasenMechatronics1
+        weight: 40
+      - id: NanotrasenMechatronics3
+        weight: 35
+      - id: NanotrasenMechatronics5
+        weight: 15
+
+- type: entity
+  parent: MarkerBase
+  id: SalvageSpawnerHighTierElectronics
+  name: T3 Electronics Spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _Crescent/Objects/Materials/materials.rsi
+      state: nanotrasenelectronics
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - id: NanotrasenElectronics1
+        weight: 40
+      - id: NanotrasenElectronics3
+        weight: 35
+      - id: NanotrasenElectronics5
+        weight: 15
+

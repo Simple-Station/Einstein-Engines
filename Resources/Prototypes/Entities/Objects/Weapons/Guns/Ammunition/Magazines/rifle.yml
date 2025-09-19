@@ -20,7 +20,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Rifle/rifle_mag.rsi
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/rifle_mag.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -28,7 +28,7 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: MagazineVisuals
     magState: mag
-    steps: 2
+    steps: 3
     zeroVisible: false
   - type: Appearance
 
@@ -40,12 +40,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRifle
-  - type: Sprite
-    layers:
-    - state: red
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazineRifleEmpty
@@ -55,10 +49,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: null
-  - type: Sprite
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
 
 - type: entity
   id: MagazineRifleIncendiary
@@ -75,12 +65,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRiflePractice
-  - type: Sprite
-    layers:
-    - state: practice
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazineRifleRubber
@@ -89,12 +73,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRifleRubber
-  - type: Sprite
-    layers:
-    - state: rubber
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazineRifleUranium
@@ -103,12 +81,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRifleUranium
-  - type: Sprite
-    layers:
-    - state: uranium
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazineRifleShrapnel
@@ -117,9 +89,3 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRifleShrapnel
-  - type: Sprite
-    layers:
-    - state: red
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]

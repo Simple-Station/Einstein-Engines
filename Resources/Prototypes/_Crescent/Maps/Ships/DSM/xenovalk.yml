@@ -1,0 +1,29 @@
+- type: vessel
+  id: Xenovalk
+  name: DSM Xenovalk
+  description: An Imperial light medical shuttle.
+  price: 75000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/DSM/xenovalk.yml
+
+- type: gameMap
+  id: Xenovalk
+  mapName: 'DSM Xenovalk'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/xenovalk.yml
+  minPlayers: 0
+  stations:
+    Xenovalk:
+      stationProto: StandardCrescentCivilianVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: industrial
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Xenovalk {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-salvage

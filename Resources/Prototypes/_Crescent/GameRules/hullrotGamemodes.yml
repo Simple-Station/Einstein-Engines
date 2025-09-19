@@ -84,6 +84,12 @@
         posY: -4500
         IFFColor: IndianRed
         IFFFaction: TFSC
+      Dawnbreaker:
+        gameMapID: Dawnbreaker
+        posX: -6500
+        posY: -2500
+        IFFColor: IndianRed
+        IFFFaction: TFSC
       Graveyard:
         gameMapID: Graveyard
         posX: 4200
@@ -150,6 +156,8 @@
         gameMapID: Hayes
         posX: 4000
         posY: 2800
+        IFFColor: IndianRed
+        IFFFaction: TFSC
       AncientBattlefield:
         gameMapID: AncientBattlefield
         posX: 600

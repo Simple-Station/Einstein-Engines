@@ -20,8 +20,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
         - Pacifist
@@ -33,6 +31,11 @@
   - !type:AddComponentSpecial
     components:
       - type: Telepathic
+      - type: LanguageAdder
+        addSpoken:
+          - OldTaypani
+        addUnderstood:
+          - OldTaypani
   access:
   - EmergencyShuttleRepealAll
   - Captain

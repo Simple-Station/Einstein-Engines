@@ -6,7 +6,7 @@
 
 - type: storeCategory
   id: StoreCategorySAWshipmods
-  name: Shipfitting
+  name: Shipfitting Flatpacks
   priority: 10
 
 - type: storeCategory
@@ -14,14 +14,63 @@
   name: Salvaged and Retrofitted Ships
   priority: 8
 
+- type: storeCategory
+  id: StoreCategorySAWGuns
+  name: Ship Weapons
+  priority: 9
+
 - type: listing
-  id: StoreListingSAWKalash
-  name: NCSP AKMS Kalash 7.62x51mm
-  description: An ancient design from pre-bluespace collapse times. Works just fine against rock-spawns.
-  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Guns/akms.rsi, state: icon }
-  productEntity: WeaponRifleAk
+  id: StoreListingSAWHephaeustus
+  name: 230mm 'Haephaeustus' assault artillery flatpack
+  description: An artillery for large ballistic hardpoint.
+  icon: { sprite: _Crescent/Objects/Autoturrets/battlemortar.rsi, state: syndie_lethal }
+  productEntity: HephCannonTurretFlatpack
+  cost:
+    ScrapSAW: 55
+  categories:
+  - StoreCategorySAWGuns
+
+- type: listing
+  id: StoreListingSAWMortar
+  name: 90mm heavy mortar-pounder flatpack
+  description: An artillery for medium ballistic hardpoint.
+  icon: { sprite: _Crescent/Objects/Autoturrets/heavymortar.rsi, state: syndie_lethal }
+  productEntity: AutomortarFlatpack
   cost:
     ScrapSAW: 25
+  categories:
+  - StoreCategorySAWGuns
+
+- type: listing
+  id: StoreListingSAWOperator
+  name: 20mm vulcan turret flatpack
+  description: A turret for small ballistic hardpoint.
+  icon: { sprite: _Crescent/Objects/Autoturrets/vulcangatling.rsi, state: syndie_lethal }
+  productEntity: OperatorFlatpack
+  cost:
+    ScrapSAW: 15
+  categories:
+  - StoreCategorySAWGuns
+
+- type: listing
+  id: StoreListingSAWPlasmaCaster
+  name: 400c Plasma repeater flatpack
+  description: A "go-to" ship weapon for salvaging ships, made for universal hardpoints
+  icon: { sprite: _Crescent/Objects/ShuttleWeapons/lasersmall.rsi, state: lse-400c }
+  productEntity: PlasmaRepeaterFlatpack
+  cost:
+    ScrapSAW: 13
+  categories:
+  - StoreCategorySAWGuns
+
+- type: listing
+  id: StoreListingSAWMachete
+  name: Kinetic Machete
+  description: A great "tool" for hand scrapping wrecked sites.
+  icon: { sprite: _Lavaland/Objects/Weapons/Crushers/crusher_machete.rsi, state: icon }
+  productEntity: LavalandWeaponKineticMachete
+  cost:
+    ScrapSAW: 5
   categories:
   - StoreCategorySAW
 
@@ -43,14 +92,14 @@
   icon: { sprite: /Textures/_Crescent/Clothing/Syndicate/Head/syndicateramzi.rsi, state: icon }
   productEntity: ClothingOuterHardsuitRamzi
   cost:
-    ScrapSAW: 35
+    ScrapSAW: 10 #SAWs start only with 3 suits + they are kinda bad
   categories:
   - StoreCategorySAW
 
 - type: listing
   id: StoreListingSAWSuitDonator
   name: UNIONIZER modified combat technician's hardsuit
-  description: A more fancier variant of an old classic. Made for those who lead the true Revolution.
+  description: An even older variant of an old classic. Made for those who lead the true Revolution.
   icon: { sprite: /Textures/_Crescent/Clothing/Syndicate/Head/syndicatedonator.rsi, state: icon }
   productEntity: ClothingOuterHardsuitSyndieDonator
   cost:
@@ -65,62 +114,95 @@
   icon: { sprite: /Textures/Objects/Tools/rcd.rsi, state: icon }
   productEntity: RCDRecharging
   cost:
-    ScrapSAW: 115
+    ScrapSAW: 65
   categories:
   - StoreCategorySAW
 
 - type: listing
-  id: StoreListingSAWCrash
-  name: Smuggled Crash Injection
-  description: A smuggled injection of crash to help a scrapaloid to remove all the back pain from moving scrap-crates.
-  icon: { sprite: /Textures/_Crescent/Objects/Autoinjectors/crash.rsi, state: medipen }
-  productEntity: CrashAutoinjector
+  id: StoreListingSAWPlasmaCutter
+  name: SAW Plasma Cutter
+  description: This compact cutter fires bolts of ionized plasma that cut easily through most surfaces, making it a cheap but versatile mining tool. This one has been haphazardly modified to work as a self defense tool.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/plasmacutter.rsi, state: icon }
+  productEntity: WeaponDonorPlasmaCutter
   cost:
-    ScrapSAW: 30
+    ScrapSAW: 65
   categories:
   - StoreCategorySAW
+
+- type: listing
+  id: StoreListingSAWScrapMagnet
+  name: Scrap Magnet
+  description: A great tool, allows a hands free salvage collection.
+  icon: { sprite: /Textures/Structures/Storage/orebox.rsi, state: magnet }
+  productEntity: ScrapMagnetFlatpack
+  cost:
+    ScrapSAW: 10
+  categories:
+  - StoreCategorySAWshipmods
+
+- type: listing
+  id: StoreListingSAWHardpointBallisticLarge
+  name: Salvaged large ballistic hardpoint
+  description: A large ballistic hardpoint fit for turrets.
+  icon: { sprite: _Crescent/Structures/hardpoints.rsi, state: Large }
+  productEntity: LargeBallisticHardpointFlatpack
+  cost:
+    ScrapSAW: 44
+  categories:
+  - StoreCategorySAWshipmods
+
+- type: listing
+  id: StoreListingSAWHardpointBallisticMedium
+  name: Salvaged medium ballistic hardpoint
+  description: A medium ballistic hardpoint fit for turrets.
+  icon: { sprite: _Crescent/Structures/hardpoints.rsi, state: Medium }
+  productEntity: MediumBallisticHardpointFlatpack
+  cost:
+    ScrapSAW: 21
+  categories:
+  - StoreCategorySAWshipmods
+
+- type: listing
+  id: StoreListingSAWHardpointBallisticSmall
+  name: Salvaged small ballistic hardpoint
+  description: A small ballistic hardpoint fit for low-caliber ship weapons such as point-defenses.
+  icon: { sprite: _Crescent/Structures/hardpoints.rsi, state: Small }
+  productEntity: SmallBallisticHardpointFlatpack
+  cost:
+    ScrapSAW: 12
+  categories:
+  - StoreCategorySAWshipmods
 
 - type: listing
   id: StoreListingSAWHardpoint
   name: Salvaged fixed hardpoint
-  description: A true desire of every shipbreaker, provided for you from all the salvaged ships which were hauled to Dochenskaya over the years
-  icon: { sprite: /Textures/Objects/Devices/flatpack.rsi, state: kit }
+  description: A true desire of every shipbreaker, provided for you from all the salvaged ships which were hauled to Dochenskaya over the years.
+  icon: { sprite: _Crescent/Structures/fixedHardpoint.rsi, state: large }
   productEntity: FixedHardpointFlatpack
   cost:
-    ScrapSAW: 60
+    ScrapSAW: 30
   categories:
   - StoreCategorySAWshipmods
 
 - type: listing
   id: StoreListingSAWGyroscope
   name: Salvaged Gyroscope Flatpack
-  description: A true desire of every shipbreaker, provided for you from all the salvaged ships which were hauled to Dochenskaya over the years
-  icon: { sprite: /Textures/Objects/Devices/flatpack.rsi, state: kit }
+  description: A gyroscope salvaged of desperate waves of Termites surronding Gliess Santo.
+  icon: { sprite: Structures/Shuttles/gyroscope.rsi, state: base }
   productEntity: GyroscopeFlatpack
   cost:
-    ScrapSAW: 35
+    ScrapSAW: 10
   categories:
   - StoreCategorySAWshipmods
 
 - type: listing
   id: StoreListingSAWFighter
-  name: Salvaged Fighter Thruster Flatpack
-  description: A true desire of every shipbreaker, provided for you from all the salvaged ships which were hauled to Dochenskaya over the years
-  icon: { sprite: /Textures/Objects/Devices/flatpack.rsi, state: kit }
+  name: Salvaged Thruster Flatpack
+  description: Recycled thrusters from lost ultra-light designs such as Valor and Broadsword.
+  icon: { sprite: _Crescent/Structures/thrustersyn.rsi, state: base }
   productEntity: NCSPFighterThrusterFlatpack
   cost:
-    ScrapSAW: 20
-  categories:
-  - StoreCategorySAWshipmods
-
-- type: listing
-  id: StoreListingSAWFighterWarship
-  name: Salvaged Warship Thruster Flatpack
-  description: A true desire of every shipbreaker, provided for you from all the salvaged ships which were hauled to Dochenskaya over the years
-  icon: { sprite: /Textures/Objects/Devices/flatpack.rsi, state: kit }
-  productEntity: NCSPWarshipThrusterFlatpack
-  cost:
-    ScrapSAW: 55
+    ScrapSAW: 10
   categories:
   - StoreCategorySAWshipmods
 

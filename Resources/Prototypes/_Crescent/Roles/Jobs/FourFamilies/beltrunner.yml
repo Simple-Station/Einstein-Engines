@@ -30,6 +30,15 @@
   - !type:AddComponentSpecial
     components:
       - type: Telepathic
+      - type: LanguageAdder
+        addSpoken:
+          - Tradeband
+          - OldTaypani
+          - Freespeak
+        addUnderstood:
+          - Tradeband
+          - OldTaypani
+          - Freespeak
   access:
   - EmergencyShuttleRepealAll
   - Captain
