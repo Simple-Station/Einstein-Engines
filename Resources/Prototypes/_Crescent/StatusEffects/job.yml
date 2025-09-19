@@ -653,21 +653,21 @@
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconNCWLLogisticLeader
+  id: JobIconNCWLArtificer
   icon:
     sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
-    state: hl_ncwl_cargo_leader
+    state: hl_ncwl_cargo_worker
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconNCWLMedicalWorker
+  id: JobIconNCWLSanitar
   icon:
     sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
     state: hl_ncwl_medsci_worker
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconNCWLEngineeringLeader
+  id: JobIconNCWLCoordinator
   icon:
     sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
     state: hl_ncwl_engi_leader

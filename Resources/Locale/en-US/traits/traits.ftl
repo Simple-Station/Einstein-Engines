@@ -240,9 +240,11 @@ trait-description-NovuNederic =
     Built on centuries of seafaring, land reclamation, and commerce, it thrives among those who shape entire worlds — just as their ancestors shaped the land from the sea.
 
 trait-name-Tradeband = Tradeband
-trait-description-Tradeband =
-    Descended from latin and romance languages of old Earth - Tradeband remains the main tongue of the upper class of humanity.
-    The language sounds elegant and well structured to most ears. It remains in popular use with traders - diplomats - and those seeking to hold onto a piece of a romantic past.
+trait-description-Tradeband =[color=green]
+    This is an intermediary language, available for all factions to acquire. Spacers, Independents, TAP and trade-focused roles know this language automatically.[/color]
+    The medium language of Sector Crescent. Rooted in terran Slavic languages, but retrofitted
+    by speakers to accomodate nonhuman vocal chords as well.[color=green]
+    A translator device for this language is available, for all factions, to produce roundstart at a Pristine Microforge.[color]
 
 trait-name-Elyran = Elyran Standard
 trait-description-Elyran =

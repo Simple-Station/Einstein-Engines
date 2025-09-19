@@ -246,3 +246,20 @@
     layers:
     - state: crypt_blue
     - state: common_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyAmerican
+  name: american protectorate encryption key
+  description: An encryption key used by the New American Protectorate.
+  components:
+  - type: EncryptionKey
+    channels:
+    - NAP
+    - Common
+    - Traffic
+    defaultChannel: Common
+  - type: Sprite
+    layers:
+    - state: crypt_silver
+    - state: common_label
