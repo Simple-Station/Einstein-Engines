@@ -304,6 +304,7 @@
       layers:
         - state: cerebraltrainer
     - type: Organ
+      slotId: head_implant
       onImplantFunctions:
       - !type:TraitAddSlot
         slots:
