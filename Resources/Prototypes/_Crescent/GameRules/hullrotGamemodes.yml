@@ -156,6 +156,8 @@
         gameMapID: Hayes
         posX: 4000
         posY: 2800
+        IFFColor: IndianRed
+        IFFFaction: TFSC
       AncientBattlefield:
         gameMapID: AncientBattlefield
         posX: 600

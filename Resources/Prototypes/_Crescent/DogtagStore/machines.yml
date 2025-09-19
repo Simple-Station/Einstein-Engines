@@ -127,3 +127,9 @@
   id: GSCDogtagStore
   name: GSCs requisitions autopeddler
   description: A stolen Shinohara-patented autopeddler machine. Uses an integrated, lobotomized zircon-class artifical intelligence subcore to sell you things. Provided you have the Bounty.
+
+- type: entity
+  parent: [ BaseStructureUnanchorable, BaseStore, StorePresetHullrotDogtagIPM ]
+  id: IPMDogtagStore
+  name: Interdyne blackmarket autopeddler
+  description: A stolen Shinohara-patented autopeddler machine. Uses an integrated, lobotomized zircon-class artifical intelligence subcore to sell you things. Provided you have the Samples.

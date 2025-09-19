@@ -1,0 +1,41 @@
+- type: entity
+  name: IPM T-33 medical multitool
+  description: A complex, refined medical multitool, designed by Interdyne Pharmaceuticals to speed up operation times, as well as conserve space.
+  id: OmnimedTool
+  parent: BaseToolSurgery
+  components:
+  - type: Sprite
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/omnimed.rsi
+    state: omnimed
+  - type: Item
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/omnimed.rsi
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/_Shitmed/Medical/Surgery/saw.ogg
+  - type: Hemostat
+    speed: 2
+  - type: Scalpel
+    speed: 2
+  - type: Drill
+    speed: 2
+  - type: BoneSetter
+    speed: 2
+  - type: Retractor
+    speed: 2
+  - type: Cautery
+    speed: 2
+  - type: BoneGel
+    speed: 2
+  - type: BoneSaw
+    speed: 2
+  - type: Tweezers
+    speed: 2
+  - type: Tending
+    speed: 2
+  - type: MeleeWeapon
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 4
+        Slash: 4
+        Heat: 10

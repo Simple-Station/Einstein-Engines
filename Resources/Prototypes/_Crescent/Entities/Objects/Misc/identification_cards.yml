@@ -103,7 +103,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: IndustryTaskmasterNCWL
+    job: ArtificerNCWL
 
 
 - type: entity
@@ -119,7 +119,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: WorkerOverbossNCWL
+    job: CoordinatorNCWL
 
 #syndicate#
 
