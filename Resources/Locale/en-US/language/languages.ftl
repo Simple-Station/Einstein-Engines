@@ -41,8 +41,8 @@ language-TauCetiBasic-description =
 
 language-Tradeband-name = Tradeband
 language-Tradeband-description =
-    Descended from latin and romance languages of old Earth - Tradeband remains the main tongue of the upper class of humanity.
-    The language sounds elegant and well structured to most ears. It remains in popular use with traders - diplomats - and those seeking to hold onto a piece of a romantic past.
+    The medium language of Sector Crescent. Rooted in terran Slavic languages, but retrofitted
+    by speakers to accomodate nonhuman vocal chords as well. 
 
 language-Freespeak-name = Freespeak
 language-Freespeak-description =

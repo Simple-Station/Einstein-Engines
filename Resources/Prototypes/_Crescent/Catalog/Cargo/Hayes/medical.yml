@@ -1,12 +1,12 @@
-- type: cargoProduct
-  id: MedicalSuppliesHayes
-  icon:
-    sprite: Objects/Specific/Medical/firstaidkits.rsi
-    state: firstaid
-  product: CrateMedicalSupplies
-  cost: 3000
-  category: cargoproduct-category-name-medical
-  group: hayes
+# - type: cargoProduct
+#   id: MedicalSuppliesHayes
+#   icon:
+#     sprite: Objects/Specific/Medical/firstaidkits.rsi
+#     state: firstaid
+#   product: CrateMedicalSupplies
+#   cost: 3000
+#   category: cargoproduct-category-name-medical
+#   group: hayes
 
 - type: cargoProduct
   id: PhoronHayes

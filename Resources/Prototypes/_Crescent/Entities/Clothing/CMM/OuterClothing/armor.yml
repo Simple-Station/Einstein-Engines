@@ -58,7 +58,7 @@
   parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorCMM
   name: patrolman's cuirass
-  description: A beaten titanium cuirass, layered with ballistic durathread for reinforcement and to prevent chafing..
+  description: A beaten titanium cuirass, layered with ballistic durathread for reinforcement and to prevent chafing.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/CMM/OuterClothing/steelplate.rsi
@@ -87,8 +87,8 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitMidshipman
-  name: minuteman midshipman armored hardsuit
-  description: A modular hardsuit, color faded with age and UV radiation. A military surplus used by the Minutemen.
+  name: midshipman armored hardsuit
+  description: A modular hardsuit belonging to the past century. Used en masse by the defunct Minutemen, this relic is still found in the hands of security forces, militias, and nostalgics.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/CMM/OuterClothing/midshipman.rsi
@@ -111,8 +111,8 @@
         Heat: 15
         Caustic: 15
   - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
+    walkModifier: 0.85
+    sprintModifier: 0.85
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitMidshipman
   - type: StaticPrice
@@ -121,8 +121,8 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitCMMPatrol
-  name: minuteman's ballistic-reinforced patrolsuit
-  description: A bulky hardsuit, color faded with age and UV radiation. A military surplus used by the Minutemen.
+  name: ballistic-reinforced patrol suit
+  description: A bulky hardsuit belonging to the past century. An iconic and rare piece worn by high-ranking Minutemen, prized by collectors and lawmen alike. 
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/CMM/OuterClothing/patrol.rsi
@@ -145,8 +145,8 @@
         Heat: 10
         Caustic: 15
   - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
+    walkModifier: 0.85
+    sprintModifier: 0.85
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCMMPatrol
   - type: StaticPrice
