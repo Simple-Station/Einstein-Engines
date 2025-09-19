@@ -9,6 +9,7 @@ crescent-rank-ind-gliess-sheriff = Sheriff
 crescent-rank-ind-gliess-deputy = Deputy
 crescent-rank-ind-gliess-dockmaster = Dockmaster
 crescent-rank-ind-spacer = Spacer
+crescent-rank-ind-dockhand = Dockhand
 
 # shi
 crescent-rank-shi-executive = Manager
