@@ -1,0 +1,64 @@
+#hardsuits
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitNAPRangerMEPA
+  name: american ranger Mk.V(B) 'MEPA' combat hardsuit
+  description: a beaten and well worn combat hardsuit design, the Multiple Environment Personal Armour has been built up from its introduction at the founding of the New American Ranger corps and served its soldiers from foul smelling reservist suits in boot camp to the modern plated harness. The iterative design process has left it particularly weak to blunt impact however.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NAP/OuterClothing/mepahardsuit.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NAP/OuterClothing/mepahardsuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 700
+    armorType: Ceramic
+    armorRepair: PlasteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 15
+        Slash: 25
+        Piercing: 80
+        Heat: 25
+        Caustic: 20
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitNAPRangerMEPA
+  - type: StaticPrice
+    price: 4000
+
+# armor
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorNAPRangerBIPArmorVest
+  name: american ranger 'BIP' armor vest
+  description: The Ballistic Insert Plated Vest is typically issued to New American Ranger and Marine reservists for in-atmosphere theatres. Concentrating ballistic protection to center mass allows the wearer to retain mobility and lowers weight.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NAP/OuterClothing/bipvest.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NAP/OuterClothing/bipvest.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Ceramic
+    armorRepair: NTCeramic
+    initialModifiers:
+      flatReductions:
+        Blunt: 25
+        Slash: 25
+        Piercing: 70
+        Heat: 20
+        Caustic: 25
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: AllowSuitStorage
+  - type: StaticPrice
+    price: 2000

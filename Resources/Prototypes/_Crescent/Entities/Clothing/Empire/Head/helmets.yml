@@ -488,6 +488,7 @@
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetImperialRitter
+  categories: [ HideSpawnMenu ]
   name: ritter's neurohelm
   description: A skulljack interface within this airsealed helm allows a Ritter to see from their Exoplate's eyes as though they were their own. Unaugmented humans are known to suffer cerebral overheating from excessive use, although some heavily augmented or psionically enhanced nobles are known to forego the use of their helm entirely. It cannot be expected to stop a bullet, though it will maintain a Ritter's oxygen supply should they be dismounted in space.
   components:
