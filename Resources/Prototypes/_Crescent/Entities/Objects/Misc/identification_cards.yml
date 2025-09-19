@@ -103,7 +103,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: IndustryTaskmasterNCWL
+    job: ArtificerNCWL
 
 
 - type: entity
@@ -119,7 +119,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: WorkerOverbossNCWL
+    job: CoordinatorNCWL
 
 #syndicate#
 
@@ -1095,3 +1095,27 @@
     - state: idquartermaster
   - type: PresetIdCard
     job: GliessianDockmaster
+
+- type: entity
+  parent: IDCardStandard
+  id: DockhandIDCard
+  name: spacer ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idpassenger
+  - type: PresetIdCard
+    job: GliessianDockhand
+
+- type: entity
+  parent: IDCardStandard
+  id: SpacerIDCard
+  name: spacer ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idpassenger
+  - type: PresetIdCard
+    job: Spacer

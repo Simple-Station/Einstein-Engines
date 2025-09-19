@@ -149,7 +149,7 @@
   name: IRM L5 5.56x45mm
   id: WeaponLightMachineDSMSurplus
   parent: [BaseWeaponSniper, BaseGunWieldable]
-  description: A budget mass-production model, the L5 finds its home in mercenary brigades and the lower Imperial Houses as a midway between an LMG and an assault weapon, hampered by its horrifically designed internal magazine. The distinct chatter of its firing is dreaded by both sides as overzealous and under-trained machinegunners rake the battlefield indiscriminately, followed by a painfully long loading process.
+  description: A light machinegun common among Imperial levy forces. Built to be serviceable by even the most poorly equipped domains.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_lmg.rsi
@@ -190,7 +190,7 @@
   name: NCWL DP-29 7.62x51mm
   id: WeaponLightMachineGunNCWLSurplus
   parent: BaseWeaponLightMachineGun
-  description: A scaled-up and elongated relic proof that war hasn't changed. This Terran design, barely altered since its inception, still floats across battlefields in every corner of the sector. Chambered in 7.62mm and the bulkiest of its lineup, the DP-29 was never elegant. A belt-fed, open-bolt light machine gun drawn straight from some old stockpile, it remains a general-purpose killer. Unlike most weapons within or beyond the sector, enough of these were brought into space that new ones don't even need to be microprinted or assembled from shoddy parts. Despite its age, it remains one of the most reliable built from pre-Collapse components to outlast even the Terrans themselves. The battlefield might have changed. But this thing never needed to.
+  description: A bulky, belt-fed 7.62mm LMG  cheap to produce and somewhat reliable. HomeGuard rear battalions keep them mounted on transport decks to maintain control over detainees during long ferry runs from Taypan to Malpais. Its simple feed mechanism accepts specialty pan-drum boxes for cost-effective, high-capacity firing. Not efficient, but serviceable.
   components:
   - type: Item
     size: Ginormous

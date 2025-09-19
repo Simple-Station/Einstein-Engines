@@ -508,6 +508,16 @@
       - DSMRapier
 
 - type: entity
+  id: ClothingBeltSheathDSMDuelingKhopeshFilled
+  parent: ClothingBeltSheathKhopesh
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - DSMDuelingKhopesh
+
+- type: entity
   id: ClothingBeltSheathNCWLKukriFilled
   parent: ClothingBeltSheathNCWLKukri
   suffix: Filled
