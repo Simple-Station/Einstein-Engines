@@ -3,7 +3,7 @@
   name: job-name-gliess-sheriff
   description: job-description-gliess-sheriff
   playTimeTracker: JobGliessSheriff
-  Weight: 40
+  weight: 40
   startingGear: GliessSheriffGear
   icon: "JobIconMarshal"
   supervisors: job-supervisors-gliess

@@ -3,7 +3,7 @@
   name: job-name-gliess-dockhand
   description: job-description-dockhand
   playTimeTracker: JobDockhand
-  Weight: 20
+  weight: 20
   requirements:
   - !type:CharacterOverallTimeRequirement
     min: 3600

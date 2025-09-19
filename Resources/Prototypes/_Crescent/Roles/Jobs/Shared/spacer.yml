@@ -3,7 +3,7 @@
   name: job-name-spacer
   description: job-description-spacer
   playTimeTracker: JobSpacer
-  Weight: 10
+  weight: 10
   startingGear: ContractorGear
   icon: "JobIconPassenger"
   supervisors: job-supervisors-hire

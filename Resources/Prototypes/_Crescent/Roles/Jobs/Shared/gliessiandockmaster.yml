@@ -3,7 +3,7 @@
   name: job-name-gliess-dockmaster
   description: job-description-gliess-dockmaster
   playTimeTracker: JobGliessDockmaster
-  Weight: 50
+  weight: 50
   startingGear: GliessDockmasterGear
   icon: "JobIconCaptain"
   supervisors: job-supervisors-lols

@@ -3,7 +3,7 @@
   name: job-name-gliess-deputy
   description: job-description-gliess-deputy
   playTimeTracker: JobContractor
-  Weight: 30
+  weight: 30
   startingGear: GliessDeputyGear
   icon: "JobIconMinuteman"
   supervisors: job-supervisors-gliess
