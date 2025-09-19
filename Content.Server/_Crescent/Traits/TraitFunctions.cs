@@ -67,7 +67,7 @@ public sealed partial class TraitAddSlot : TraitFunction
 public sealed partial class TraitRemoveSlot : TraitFunction
 {
     [DataField, AlwaysPushInheritance]
-    public List<ItemSlot> Slots { get; private set; } = new();
+    public List<string> Slots { get; private set; } = new();
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
@@ -75,5 +75,13 @@ public sealed partial class TraitRemoveSlot : TraitFunction
         ISerializationManager serializationManager)
     {
         var slotSystem = IoCManager.Resolve<ItemSlotsSystem>();
+
+        foreach (var slotId in Slots)
+        {
+            if (!slotSystem.TryGetSlot(uid, slotId, out var itemSlot))
+                continue;
+
+            slotSystem.RemoveItemSlot(uid, itemSlot);
+        }
     }
 }
