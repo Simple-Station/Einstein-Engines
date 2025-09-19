@@ -326,3 +326,27 @@
         Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 9.5
+
+- type: entity
+  name: K&K K870 Bush 12g
+  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: WeaponShotgunBush
+  description: A pump-action shotgun produced by Kane & Knox. Equipped with a shortened grip and reduced internal tube for ease of mobility. Fires 12g shells.
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,0
+    sprite: _Crescent/Objects/Weapons/Guns/r870.rsi
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/r870.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/r870.rsi
+  - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
+  - type: BallisticAmmoProvider
+    capacity: 4
+    autoCycle: false
+  - type: Wieldable
+  - type: Gun
+    shotgunSpreadMultiplier: 1.2
+    damageModifier: 1.3
