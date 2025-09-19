@@ -107063,7 +107063,7 @@ entities:
     - type: Transform
       pos: -10.5,-7.5
       parent: 1
-- proto: SpawnPointNCWLIndustryTaskmaster
+- proto: SpawnPointNCWLArtificer
   entities:
   - uid: 5868
     components:
@@ -107141,7 +107141,7 @@ entities:
     - type: Transform
       pos: 1.5,-3.5
       parent: 1
-- proto: SpawnPointNCWLWorkerOverboss
+- proto: SpawnPointNCWLCoordinator
   entities:
   - uid: 5882
     components:
