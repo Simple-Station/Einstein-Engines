@@ -16,14 +16,9 @@
       min: 36000
     - !type:FactionRequirement
       factionID: "SHI"
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Human
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
         - WheelchairBound
