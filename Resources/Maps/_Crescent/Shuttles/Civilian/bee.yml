@@ -4,7 +4,7 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 09/16/2025 14:29:23
+  time: 09/19/2025 01:30:33
   entityCount: 55
 maps: []
 grids:
@@ -74,6 +74,8 @@ entities:
             36: -1,0
             53: -1,0
             58: -1,2
+            75: -1,0
+            80: -1,2
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -85,6 +87,8 @@ entities:
             39: 1,0
             42: 1,0
             47: 1,2
+            64: 1,0
+            69: 1,2
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -93,6 +97,8 @@ entities:
             33: -1,3
             56: -1,2
             61: -1,3
+            78: -1,2
+            83: -1,3
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -101,6 +107,8 @@ entities:
             25: 1,3
             46: 1,2
             50: 1,3
+            68: 1,2
+            72: 1,3
         - node:
             id: LatticeEdgeE
           decals:
@@ -113,6 +121,9 @@ entities:
             51: -1,0
             55: -1,2
             60: -1,3
+            73: -1,0
+            77: -1,2
+            82: -1,3
         - node:
             id: LatticeEdgeN
           decals:
@@ -130,6 +141,10 @@ entities:
             44: 1,2
             52: -1,0
             57: -1,2
+            62: 1,0
+            66: 1,2
+            74: -1,0
+            79: -1,2
         - node:
             id: LatticeEdgeS
           decals:
@@ -141,6 +156,10 @@ entities:
             48: 1,3
             54: -1,2
             59: -1,3
+            65: 1,2
+            70: 1,3
+            76: -1,2
+            81: -1,3
         - node:
             id: LatticeEdgeW
           decals:
@@ -153,6 +172,9 @@ entities:
             41: 1,0
             45: 1,2
             49: 1,3
+            63: 1,0
+            67: 1,2
+            71: 1,3
     - type: RadiationGridResistance
     - type: GridAtmosphere
       version: 2
@@ -202,7 +224,7 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: BecomesStation
-      id: Reaper
+      id: Bee
 - proto: AAAHardpointFixed
   entities:
   - uid: 2
@@ -445,7 +467,7 @@ entities:
     - type: ChamberMagazineAmmoProvider
       boltClosed: True
     - type: Battery
-      startingCharge: 19245.459
+      startingCharge: 19146.68
     - type: ApcPowerReceiverBattery
       enabled: True
 - proto: PoweredSmallLightMaintenanceRed

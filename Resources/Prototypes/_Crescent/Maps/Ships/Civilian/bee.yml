@@ -2,8 +2,8 @@
 # Discord: rubeebee
 
 - type: vessel
-  id: Reaper
-  name: Reaper
+  id: Bee
+  name: Bee
   description: |
     A fighter derived from the Warthog hull, barely functional, barely safe for use. Not used by the sane. Strangely holds atmosphere.
     LOADOUT: 1x 20mm Vulcan cannon
@@ -11,15 +11,15 @@
   price: 10000
   category: Small
   group: Scrap
-  path: /Maps/_Crescent/Shuttles/Civilian/reaper.yml
+  path: /Maps/_Crescent/Shuttles/Civilian/bee.yml
 
 - type: gameMap
-  id: Reaper
-  mapName: 'Reaper'
-  mapPath: /Maps/_Crescent/Shuttles/Civilian/reaper.yml
+  id: Bee
+  mapName: 'Bee'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/bee.yml
   minPlayers: 0
   stations:
-    Reaper:
+    Bee:
       stationProto: StandardCrescentExpeditionVessel
       components:
         - type: VesselIcon
@@ -27,11 +27,11 @@
             sprite: _Crescent/ShipIcons/ifficons.rsi
             state: fighter
         - type: StationNameSetup
-          mapNameTemplate: 'Reaper {1}'
+          mapNameTemplate: 'Bee {1}'
           nameGenerator:
            !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-fighter
         - type: VesselDescription
-          description: The Reaper is the most minimalist fighter in the market. Prepare your will.
+          description: The Bee is the most minimalist fighter in the market. Prepare your will.
