@@ -29,3 +29,7 @@ chat-language-Kaishago-name = Kaishago
 language-OldTaypani-name = Old Taypani
 language-OldTaypani-description = Formed out of desperation and constant migration - Old Taypani is a language descended from various Unathi and Atyrian dialects. Glottal and guttural at times, speaking this language is a mark of piety in the circles of the Matron and a sign of destitution to many.
 chat-language-OldTaypani-name = Old Taypani
+
+language-American-name = American
+language-American-description = An amalgamation of various ancient languages originating from Old Terra, spoken by those of the New American Protectorate.
+chat-language-American-name = American
