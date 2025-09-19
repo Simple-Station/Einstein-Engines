@@ -1106,7 +1106,7 @@
     - state: default
     - state: idpassenger
   - type: PresetIdCard
-    job: Dockhand
+    job: GliessianDockhand
 
 - type: entity
   parent: IDCardStandard
