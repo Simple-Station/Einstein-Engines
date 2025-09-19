@@ -1,18 +1,18 @@
 - type: job
-  id: WorkerOverbossNCWL
-  name: job-name-ncwl-worker-overboss
-  description: job-description-ncwl-worker-overboss
-  playTimeTracker: JobEngineeringLeaderNCWL
-  weight: 4
-  startingGear: SupervisorNCWLGear
+  id: ArtificerNCWL
+  name: job-name-ncwl-artificer
+  description: job-description-ncwl-artificer
+  playTimeTracker: JobLogisticLeaderNCWL
+  weight: 2
+  startingGear: DockmasterNCWLGear
   alwaysUseSpawner: true
   requireAdminNotify: false
-  icon: "JobIconNCWLEngineeringLeader"
+  icon: "JobIconNCWLArtificer"
   supervisors: job-supervisors-ncwl-leaders
   canBeAntag: false
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 20000
+      min: 1000
     - !type:FactionRequirement
       factionID: "NCWL"
     - !type:CharacterSpeciesRequirement
@@ -30,14 +30,12 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-ncwl-engi-leader
+        rank: crescent-rank-ncwl-logi-leader
       - type: LanguageAdder
         addSpoken:
           - Dockta
-          - Tradeband
         addUnderstood:
           - Dockta
-          - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -80,16 +78,15 @@
   - NCWLCommand
 
 - type: startingGear
-  id: SupervisorNCWLGear
+  id: DockmasterNCWLGear
   equipment:
     shoes: ClothingShoesBootsSalvage
     jumpsuit: ClothingUniformJumpsuitNCWLArtificer
-    id: NCWLEngineeringLeaderPDA
-    outerClothing: ClothingOuterArmorNCWLEngi
-    belt: ClothingBeltUtilityFilled
+    id: NCWLLogisticLeaderPDA
+    belt: ClothingBeltUtilityEngineering
     pocket1: WeaponPistolHKUSP
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesColorYellow
-    head: ClothingHeadHatBeretEngineering
+    head: ClothingHeadHatNCWLCapsoft
+    eyes: ClothingEyesGlassesMeson
     ears: ClothingHeadsetNCWL
-    eyes: ClothingEyesHudSecurity

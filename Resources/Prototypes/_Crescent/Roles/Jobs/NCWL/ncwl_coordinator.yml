@@ -1,13 +1,13 @@
 - type: job
-  id: IndustryTaskmasterNCWL
-  name: job-name-ncwl-industry-taskmaster
-  description: job-description-ncwl-industry-taskmaster
-  playTimeTracker: JobLogisticLeaderNCWL
-  weight: 5
-  startingGear: DockmasterNCWLGear
+  id: CoordinatorNCWL
+  name: job-name-ncwl-coordinator
+  description: job-description-ncwl-coordinator
+  playTimeTracker: JobEngineeringLeaderNCWL
+  weight: 4
+  startingGear: SupervisorNCWLGear
   alwaysUseSpawner: true
   requireAdminNotify: false
-  icon: "JobIconNCWLLogisticLeader"
+  icon: "JobIconNCWLCoordinator"
   supervisors: job-supervisors-ncwl-leaders
   canBeAntag: false
   requirements:
@@ -30,7 +30,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-ncwl-logi-leader
+        rank: crescent-rank-ncwl-engi-leader
       - type: LanguageAdder
         addSpoken:
           - Dockta
@@ -80,16 +80,16 @@
   - NCWLCommand
 
 - type: startingGear
-  id: DockmasterNCWLGear
+  id: SupervisorNCWLGear
   equipment:
     shoes: ClothingShoesBootsSalvage
-    jumpsuit: ClothingUniformJumpsuitNCWLTelnikSleeved
-    id: NCWLLogisticLeaderPDA
-    outerClothing: ClothingOuterArmorNCWLLogi
-    belt: ClothingBeltSalvageWebbing
+    jumpsuit: ClothingUniformJumpsuitNCWLArtificer
+    id: NCWLEngineeringLeaderPDA
+    outerClothing: ClothingOuterArmorNCWLEngi
+    belt: ClothingBeltUtilityFilled
     pocket1: WeaponPistolHKUSP
     back: ClothingBackpackNCWL
-    gloves: ClothingHandsGlovesFingerless
-    head: ClothingHeadHatBeretQM
-    eyes: ClothingEyesHudSecurity
+    gloves: ClothingHandsGlovesColorYellow
+    head: ClothingHeadHatBeretEngineering
     ears: ClothingHeadsetNCWL
+    eyes: ClothingEyesHudSecurity
