@@ -1,39 +1,39 @@
-- type: cargoProduct
-  id: ShuttleThrusterFreeport
-  icon:
-    sprite: Structures/Shuttles/thruster.rsi
-    state: base
-  product: CrateEngineeringThruster
-  cost: 1500
-  category: cargoproduct-category-name-shuttle
-  group: freeport
+# - type: cargoProduct
+#   id: ShuttleThrusterFreeport
+#   icon:
+#     sprite: Structures/Shuttles/thruster.rsi
+#     state: base
+#   product: CrateEngineeringThruster
+#   cost: 1500
+#   category: cargoproduct-category-name-shuttle
+#   group: freeport
 
-- type: cargoProduct
-  id: ShuttleFreeport
-  icon:
-    sprite: Structures/Shuttles/gyroscope.rsi
-    state: base
-  product: CrateEngineeringGyroscope
-  cost: 4000
-  category: cargoproduct-category-name-shuttle
-  group: freeport
+# - type: cargoProduct
+#   id: ShuttleFreeport
+#   icon:
+#     sprite: Structures/Shuttles/gyroscope.rsi
+#     state: base
+#   product: CrateEngineeringGyroscope
+#   cost: 4000
+#   category: cargoproduct-category-name-shuttle
+#   group: freeport
 
-- type: cargoProduct
-  id: ShuttleThrusterShip
-  icon:
-    sprite: Structures/Shuttles/thruster.rsi
-    state: base
-  product: CrateEngineeringThruster
-  cost: 3500
-  category: cargoproduct-category-name-shuttle
-  group: ship
+# - type: cargoProduct
+#   id: ShuttleThrusterShip
+#   icon:
+#     sprite: Structures/Shuttles/thruster.rsi
+#     state: base
+#   product: CrateEngineeringThruster
+#   cost: 3500
+#   category: cargoproduct-category-name-shuttle
+#   group: ship
 
-- type: cargoProduct
-  id: ShuttleShip
-  icon:
-    sprite: Structures/Shuttles/gyroscope.rsi
-    state: base
-  product: CrateEngineeringGyroscope
-  cost: 6000
-  category: cargoproduct-category-name-shuttle
-  group: ship
+# - type: cargoProduct
+#   id: ShuttleShip
+#   icon:
+#     sprite: Structures/Shuttles/gyroscope.rsi
+#     state: base
+#   product: CrateEngineeringGyroscope
+#   cost: 6000
+#   category: cargoproduct-category-name-shuttle
+#   group: ship

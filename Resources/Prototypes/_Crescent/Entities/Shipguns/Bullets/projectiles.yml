@@ -531,7 +531,7 @@
     visualType: Diamond
     color: White
 
-# prince flak projectile
+# regent flak projectile
 
 - type: entity
   id: FlakProjectileHE
@@ -551,7 +551,7 @@
     tags:
       - FlakShell
   - type: TimedDespawn
-    lifetime: 10
+    lifetime: 15
   - type: Sprite
     sprite: _Crescent/Objects/ShuttleWeapons/flak.rsi
     layers:
@@ -559,13 +559,12 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 250
-    intensitySlope: 1
-    maxIntensity: 35
-    maxTileBreak: 7
+    totalIntensity: 3000
+    intensitySlope: 30
+    maxIntensity: 100
+    maxTileBreak: 1
   - type: ProximityFuse
-    maxRange: 15
-    minRange: 2
+    maxRange: 7.5
   - type: PointLight
     radius: 3.5
     color: orange
@@ -573,6 +572,8 @@
   - type: ProjectileIFF
     visualType: Circle
     color: White
+
+#prince flak projectile
 
 - type: entity
   id: FlakProjectile
@@ -592,7 +593,7 @@
     tags:
       - FlakShell
   - type: TimedDespawn
-    lifetime: 10
+    lifetime: 15
   - type: Sprite
     sprite: _Crescent/Objects/ShuttleWeapons/flak.rsi
     layers:
@@ -600,13 +601,12 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 150
-    intensitySlope: 0.2
-    maxIntensity: 2
-    maxTileBreak: 5
+    totalIntensity: 2000
+    intensitySlope: 5
+    maxIntensity: 30
+    maxTileBreak: 0
   - type: ProximityFuse
-    maxRange: 15
-    minRange: 2
+    maxRange: 20
   - type: PointLight
     radius: 3.5
     color: orange

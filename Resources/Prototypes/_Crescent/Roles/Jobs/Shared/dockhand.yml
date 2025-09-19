@@ -1,0 +1,43 @@
+- type: job
+  id: GliessianDockhand
+  name: job-name-gliess-dockhand
+  description: job-description-dockhand
+  playTimeTracker: JobDockhand
+  weight: 20
+  requirements:
+  - !type:CharacterOverallTimeRequirement
+    min: 3600
+  startingGear: DockhandGear
+  icon: "JobIconDockhand"
+  supervisors: job-supervisors-gliess
+  accessGroups:
+  - GeneralAccess
+  access:
+  - GliessSheriff
+
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ind-dockhand
+      - type: LanguageAdder
+        addSpoken:
+          - Tradeband
+        addUnderstood:
+          - Tradeband
+
+- type: startingGear
+  id: DockhandGear
+  equipment:
+    ears: ClothingHeadsetCMM
+    head: ClothingHeadHelmetCMMMachinist
+    id: DockhandPDA
+    jumpsuit: ClothingUniformJumpsuitCMMMachinist
+    belt: ClothingBeltSalvageWebbingFilledNF
+    back: ClothingBackpackFilled
+    gloves: ClothingHandsGlovesFingerlessInsulated
+    shoes: ClothingShoesBootsSalvage
+    eyes: ClothingEyesGlassesCheapSunglassesBig
+    pocket1: WeaponPistolHKUSP
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled

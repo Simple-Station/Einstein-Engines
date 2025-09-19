@@ -106,10 +106,6 @@
       jobs:
         - Borg
         - MedicalBorg
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Lethargy
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -121,30 +117,30 @@
       decayModifier: 0.6
       cooldownModifier: -0.75
 
-- type: trait
-  id: Lethargy
-  category: Physical
-  points: 4
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Vigor
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Felinid
-        - Tajaran
-  functions:
-    - !type:TraitModifyStamina
-      staminaModifier: -15
-      decayModifier: -0.6
-      cooldownModifier: 0.75
+# - type: trait
+#   id: Lethargy
+#   category: Physical
+#   points: 4
+#   requirements:
+#     - !type:CharacterJobRequirement
+#       inverted: true
+#       jobs:
+#         - Borg
+#         - MedicalBorg
+#     - !type:CharacterTraitRequirement
+#       inverted: true
+#       traits:
+#         - Vigor
+#     - !type:CharacterSpeciesRequirement
+#       inverted: true
+#       species:
+#         - Felinid
+#         - Tajaran
+#   functions:
+#     - !type:TraitModifyStamina
+#       staminaModifier: -15
+#       decayModifier: -0.6
+#       cooldownModifier: 0.75
 
 - type: trait
   id: HighAdrenaline
@@ -160,10 +156,6 @@
       inverted: true
       species:
         - IPC
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - AdrenalDysfunction
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -171,70 +163,70 @@
           rangeModifier: 0.4
           inverse: true
 
-- type: trait
-  id: AdrenalDysfunction
-  category: Physical
-  points: 2
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - IPC
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - HighAdrenaline
-  functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: Adrenaline
-          rangeModifier: 0.8
+# - type: trait
+#   id: AdrenalDysfunction
+#   category: Physical
+#   points: 2
+#   requirements:
+#     - !type:CharacterJobRequirement
+#       inverted: true
+#       jobs:
+#         - Borg
+#         - MedicalBorg
+#     - !type:CharacterSpeciesRequirement
+#       inverted: true
+#       species:
+#         - IPC
+#     - !type:CharacterTraitRequirement
+#       inverted: true
+#       traits:
+#         - HighAdrenaline
+#   functions:
+#     - !type:TraitReplaceComponent
+#       components:
+#         - type: Adrenaline
+#           rangeModifier: 0.8
 
-- type: trait
-  id: Masochism
-  category: Physical
-  points: -2
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - LowPainTolerance
-  functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: PainTolerance
-          rangeModifier: 0.4
-          inverse: true
+# - type: trait
+#   id: Masochism
+#   category: Physical
+#   points: -2
+#   requirements:
+#     - !type:CharacterJobRequirement
+#       inverted: true
+#       jobs:
+#         - Borg
+#         - MedicalBorg
+#     - !type:CharacterTraitRequirement
+#       inverted: true
+#       traits:
+#         - LowPainTolerance
+#   functions:
+#     - !type:TraitReplaceComponent
+#       components:
+#         - type: PainTolerance
+#           rangeModifier: 0.4
+#           inverse: true
 
-- type: trait
-  id: LowPainTolerance
-  category: Physical
-  points: 3
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Masochism
-  functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: PainTolerance
-          rangeModifier: 0.6
+# - type: trait
+#   id: LowPainTolerance
+#   category: Physical
+#   points: 3
+#   requirements:
+#     - !type:CharacterJobRequirement
+#       inverted: true
+#       jobs:
+#         - Borg
+#         - MedicalBorg
+#     - !type:CharacterTraitRequirement
+#       inverted: true
+#       traits:
+#         - Masochism
+#   functions:
+#     - !type:TraitReplaceComponent
+#       components:
+#         - type: PainTolerance
+#           rangeModifier: 0.6
 
 - type: trait
   id: Steadfast
@@ -360,132 +352,132 @@
 # These traits largely exist to demonstrate more of the "Component Removals" functionality. This way contributors
 # can get used to seeing that they can "Remove and Replace" a pre-existing component.
 # When declared, componentRemovals work like a "RemComp" that activates upon joining a round.
-- type: trait
-  id: Talons
-  category: Physical
-  points: 0
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy # Harpies already have talons
-        - Arachnid # Apparently they have a "piercing" bite
-        - Xelthia # Talons don't make sense on tentacle arms
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Claws
-  functions:
-    - !type:TraitModifyUnarmed
-      soundHit:
-        collection: AlienClaw
-      animation: WeaponArcClaw
-      damage:
-        types:
-          Piercing: 5 # No, this isn't "OP", this is literally the worst brute damage type in the game.
-                      # Same deal as Slash, except that a majority of all armor provides Piercing resistance.
-    - !type:TraitRemoveComponent # Plasmamen have self-damage on melee attacks
-      components:
-        - type: DamageOnHit
-          damage:
-            types:
-              Blunt: 0
+# - type: trait
+#   id: Talons
+#   category: Physical
+#   points: 0
+#   requirements:
+#     - !type:CharacterSpeciesRequirement
+#       inverted: true
+#       species:
+#         - Harpy # Harpies already have talons
+#         - Arachnid # Apparently they have a "piercing" bite
+#         - Xelthia # Talons don't make sense on tentacle arms
+#     - !type:CharacterTraitRequirement
+#       inverted: true
+#       traits:
+#         - Claws
+#   functions:
+#     - !type:TraitModifyUnarmed
+#       soundHit:
+#         collection: AlienClaw
+#       animation: WeaponArcClaw
+#       damage:
+#         types:
+#           Piercing: 5 # No, this isn't "OP", this is literally the worst brute damage type in the game.
+#                       # Same deal as Slash, except that a majority of all armor provides Piercing resistance.
+#     - !type:TraitRemoveComponent # Plasmamen have self-damage on melee attacks
+#       components:
+#         - type: DamageOnHit
+#           damage:
+#             types:
+#               Blunt: 0
 
 
-- type: trait
-  id: Claws
-  category: Physical
-  points: -1
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Felinid # Felinids already have cat claws.
-        - Tajaran # Tajaran also have cat claws
-        - Reptilian # Reptilians also have cat claws.
-        - Voidborn # Voidborns also have claws.
-        - Xelthia # Claws don't make sense on tentacle arms
-        # - Vulpkanin # Vulpkanin have "Blunt" claws. One could argue this trait "Sharpens" their claws.
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Talons
-  functions:
-    - !type:TraitModifyUnarmed
-      soundHit:
-        collection: AlienClaw
-      animation: WeaponArcClaw
-      damage:
-        types:
-          Slash: 5 # Trade stamina damage on hit for a very minor amount of extra bleed.
-                  # Blunt also deals bleed damage, so this is more of a sidegrade.
-    - !type:TraitRemoveComponent
-      components:
-        - type: DamageOnHit
-          damage:
-            types:
-              Blunt: 0
+# - type: trait
+#   id: Claws
+#   category: Physical
+#   points: -1
+#   requirements:
+#     - !type:CharacterSpeciesRequirement
+#       inverted: true
+#       species:
+#         - Felinid # Felinids already have cat claws.
+#         - Tajaran # Tajaran also have cat claws
+#         - Reptilian # Reptilians also have cat claws.
+#         - Voidborn # Voidborns also have claws.
+#         - Xelthia # Claws don't make sense on tentacle arms
+#         # - Vulpkanin # Vulpkanin have "Blunt" claws. One could argue this trait "Sharpens" their claws.
+#     - !type:CharacterTraitRequirement
+#       inverted: true
+#       traits:
+#         - Talons
+#   functions:
+#     - !type:TraitModifyUnarmed
+#       soundHit:
+#         collection: AlienClaw
+#       animation: WeaponArcClaw
+#       damage:
+#         types:
+#           Slash: 5 # Trade stamina damage on hit for a very minor amount of extra bleed.
+#                   # Blunt also deals bleed damage, so this is more of a sidegrade.
+#     - !type:TraitRemoveComponent
+#       components:
+#         - type: DamageOnHit
+#           damage:
+#             types:
+#               Blunt: 0
 
-- type: trait
-  id: NaturalWeaponRemoval
-  category: Physical
-  points: 0
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Human
-        - Oni
-        - SlimePerson
-        - Diona
-        - Dwarf
-        - Arachne
-        - IPC # Other species could justify getting this trait for Blunt stamina damage,
-              # but 6 blunt -> 5 blunt is a straight up downgrade.
-        - Xelthia # Their tentacles aren't really weapons probably
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Talons
-        - Claws
-  functions:
-    - !type:TraitModifyUnarmed
-      soundHit:
-        collection: Punch
-      animation: WeaponArcFist
-      damage:
-        types:
-          Blunt: 5
-    - !type:TraitRemoveComponent
-      components:
-        - type: DamageOnHit
-          damage:
-            types:
-              Blunt: 0
+# - type: trait
+#   id: NaturalWeaponRemoval
+#   category: Physical
+#   points: 0
+#   requirements:
+#     - !type:CharacterSpeciesRequirement
+#       inverted: true
+#       species:
+#         - Human
+#         - Oni
+#         - SlimePerson
+#         - Diona
+#         - Dwarf
+#         - Arachne
+#         - IPC # Other species could justify getting this trait for Blunt stamina damage,
+#               # but 6 blunt -> 5 blunt is a straight up downgrade.
+#         - Xelthia # Their tentacles aren't really weapons probably
+#     - !type:CharacterTraitRequirement
+#       inverted: true
+#       traits:
+#         - Talons
+#         - Claws
+#   functions:
+#     - !type:TraitModifyUnarmed
+#       soundHit:
+#         collection: Punch
+#       animation: WeaponArcFist
+#       damage:
+#         types:
+#           Blunt: 5
+#     - !type:TraitRemoveComponent
+#       components:
+#         - type: DamageOnHit
+#           damage:
+#             types:
+#               Blunt: 0
 
-- type: trait
-  id: StrikingCalluses
-  category: Physical
-  points: -2
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Claws
-        - Talons
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Xelthia # this would fall off
-  functions:
-    - !type:TraitModifyUnarmed
-      flatDamageIncrease:
-        types:
-          Blunt: 2
+# - type: trait
+#   id: StrikingCalluses
+#   category: Physical
+#   points: -2
+#   requirements:
+#     - !type:CharacterJobRequirement
+#       inverted: true
+#       jobs:
+#         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+#     - !type:CharacterTraitRequirement
+#       inverted: true
+#       traits:
+#         - Claws
+#         - Talons
+#     - !type:CharacterSpeciesRequirement
+#       inverted: true
+#       species:
+#         - Xelthia # this would fall off
+#   functions:
+#     - !type:TraitModifyUnarmed
+#       flatDamageIncrease:
+#         types:
+#           Blunt: 2
 
 - type: trait
   id: PlateletFactories
