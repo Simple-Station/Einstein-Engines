@@ -14,7 +14,7 @@
     sprite: Objects/Specific/Medical/firstaidkits.rsi
     state: firstaid
   product: CrateMedicalSupplies
-  cost: 5000
+  cost: 1000
   category: cargoproduct-category-name-medical
   group: generic
 

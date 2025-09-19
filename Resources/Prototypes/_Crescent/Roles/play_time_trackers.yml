@@ -266,6 +266,9 @@
   id: JobSpacer
 
 - type: playTimeTracker
+  id: JobDockhand
+
+- type: playTimeTracker
   id: JobGliessSheriff
 
 - type: playTimeTracker

@@ -289,3 +289,65 @@
     steps: 6
     zeroVisible: true
   - type: Appearance
+
+- type: entity
+  name: K&K KM250 Washington 7.62x51mm
+  id: WeaponLightMachineGunWashington
+  parent: BaseWeaponLightMachineGun
+  description: The next generation weapon system light machine gun produced by Kane & Knox. Packaged with a suppressor. Chambered in 7.62x51mm.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/xm250.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/xm250.rsi
+    quickEquip: false
+    slots:
+    - Back
+  - type: Gun
+    minAngle: 21
+    maxAngle: 36
+    angleIncrease: 4
+    angleDecay: 16
+    fireRate: 10
+    damageModifier: 0.80
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/supressed_1/supressed_gunshot_4.ogg
+    soundEmpty:
+      path: /Audio/_Crescent/Weapons/Guns/MG42/empty.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifleDrum
+        insertSound: /Audio/_Crescent/Weapons/Guns/MG42/bolt_close.ogg
+        ejectSound: /Audio/_Crescent/Weapons/Guns/MG42/bolt_open.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineRifleDrum
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeRifle
+  - type: Item
+    shape:
+    - 0,0,5,2
+  - type: GunWieldBonus
+    minAngle: -20
+    maxAngle: -30
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance

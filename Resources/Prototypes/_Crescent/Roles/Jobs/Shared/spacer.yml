@@ -3,6 +3,7 @@
   name: job-name-spacer
   description: job-description-spacer
   playTimeTracker: JobSpacer
+  weight: 10
   startingGear: ContractorGear
   icon: "JobIconPassenger"
   supervisors: job-supervisors-hire
@@ -18,19 +19,6 @@
           - Tradeband
         addUnderstood:
           - Tradeband
-
-- type: entity
-  parent: IDCardStandard
-  id: SpacerIDCard
-  name: Spacer ID card
-  components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: idpassenger
-  - type: PresetIdCard
-    job: Spacer
-
 
 - type: startingGear
   id: ContractorGear

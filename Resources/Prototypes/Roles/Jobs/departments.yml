@@ -21,6 +21,7 @@
   - GliessianSheriff
   - GliessianDeputy
   - Spacer
+  - GliessianDockhand
   editorHidden: false
 
 - type: department
@@ -91,8 +92,8 @@
   - FleetkapitanNCWL
   - PartisanNCWL
   - DoctorNCWL
-  - WorkerOverbossNCWL
-  - IndustryTaskmasterNCWL
+  - CoordinatorNCWL
+  - ArtificerNCWL
   - WorkerNCWL
   editorHidden: false
 

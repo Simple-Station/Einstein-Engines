@@ -1,0 +1,66 @@
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitNAPRangerMEPA
+  categories: [ HideSpawnMenu ]
+  name: american ranger mk.V(B) MEPA hardsuit helmet
+  description: Spaceworthy protection for your fragile skull. An American design.
+  components:
+  - type: BreathMask
+  - type: FlashImmunity
+  - type: Sprite
+    sprite: _Crescent/Clothing/NAP/Head/mepahelmet.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NAP/Head/mepahelmet.rsi
+  - type: PointLight
+    radius: 6
+    color: "#638bb7"
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+        Caustic: 0.9
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetNAPRangerHelmetGCP
+  name: american ranger GCP helmet
+  description: the General Cranial Protection helmet is shared between all service branches of the NAP for providing standard cranial protection against shrapnel and glancing blows. In concession to spaceborne deployments, the low cut allows a wearer to use a headset in tandem for ship communication.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NAP/Head/naphelmet.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NAP/Head/naphelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+        Caustic: 0.9
+  - type: Tag
+    tags:
+    - HidesHair
+  - type: HideLayerClothing
+    slots:
+    - Snout
+  - type: IdentityBlocker
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatNAPRangerCapsoft
+  name: american patrol cap
+  description: A patrol cap in american colors.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NAP/Head/napcap.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NAP/Head/napcap.rsi

@@ -2,7 +2,7 @@
   id: Tradeband
   isVisibleLanguage: true
   speech:
-    color: "#597d35"
+    color: "#8ac451"
     fontId: NovaFlat
   obfuscation:
     !type:SyllableObfuscation
