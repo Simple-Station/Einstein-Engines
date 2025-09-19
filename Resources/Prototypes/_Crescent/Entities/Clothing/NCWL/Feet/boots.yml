@@ -20,11 +20,3 @@
     state: icon
   - type: Clothing
     sprite: _Crescent/Clothing/NCWL/Feet/magboots_ncwl.rsi
-  - type: Magboots
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 13
-    staminaCost: 15
-  - type: StaticPrice
-    price: 750
