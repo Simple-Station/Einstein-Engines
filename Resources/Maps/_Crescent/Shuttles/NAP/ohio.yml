@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 09/18/2025 18:10:24
-  entityCount: 2070
+  time: 09/19/2025 02:09:52
+  entityCount: 2072
 maps: []
 grids:
 - 1
@@ -444,6 +444,7 @@ entities:
             429: -5,0
             823: -5,0
             1049: -5,0
+            1275: -5,0
         - node:
             zIndex: 1
             angle: -3.141592653589793 rad
@@ -452,6 +453,7 @@ entities:
             428: -5,0
             822: -5,0
             1048: -5,0
+            1274: -5,0
         - node:
             zIndex: 1
             angle: -1.5707963267948966 rad
@@ -460,6 +462,7 @@ entities:
             422: -4,0
             826: -4,0
             1052: -4,0
+            1278: -4,0
         - node:
             zIndex: 1
             id: ErisBlueCircuitCorner
@@ -467,6 +470,7 @@ entities:
             424: -4,0
             828: -4,0
             1054: -4,0
+            1280: -4,0
         - node:
             angle: -4.71238898038469 rad
             id: ErisBlueCircuitEdge
@@ -474,6 +478,7 @@ entities:
             427: -5,0
             821: -5,0
             1047: -5,0
+            1273: -5,0
         - node:
             angle: -3.141592653589793 rad
             id: ErisBlueCircuitEdge
@@ -484,6 +489,8 @@ entities:
             824: -4,0
             1045: -5,0
             1050: -4,0
+            1271: -5,0
+            1276: -4,0
         - node:
             angle: -1.5707963267948966 rad
             id: ErisBlueCircuitEdge
@@ -491,6 +498,7 @@ entities:
             421: -4,0
             825: -4,0
             1051: -4,0
+            1277: -4,0
         - node:
             id: ErisBlueCircuitEdge
           decals:
@@ -500,6 +508,8 @@ entities:
             827: -4,0
             1046: -5,0
             1053: -4,0
+            1272: -5,0
+            1279: -4,0
         - node:
             color: '#FFFFFFFF'
             id: FloorTechMaintDirectionalEdge
@@ -556,6 +566,17 @@ entities:
             1136: -8,-19
             1139: -6,-20
             1145: -2,-21
+            1246: -9,4
+            1252: -8,1
+            1260: -7,8
+            1293: -1,10
+            1327: 0,-22
+            1330: 1,-23
+            1339: 8,-21
+            1359: -9,-18
+            1362: -8,-19
+            1365: -6,-20
+            1371: -2,-21
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -605,6 +626,17 @@ entities:
             1124: 14,-19
             1127: 15,-18
             1147: -2,-21
+            1176: 7,10
+            1203: 13,8
+            1211: 14,1
+            1217: 15,4
+            1333: 5,-23
+            1336: 6,-22
+            1341: 8,-21
+            1347: 12,-20
+            1350: 14,-19
+            1353: 15,-18
+            1373: -2,-21
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -658,6 +690,18 @@ entities:
             1065: -1,10
             1081: -9,-16
             1090: -8,-13
+            1158: 0,10
+            1169: 6,10
+            1188: 8,9
+            1196: 12,8
+            1249: -9,6
+            1255: -8,7
+            1258: -7,8
+            1268: -6,8
+            1286: -2,9
+            1291: -1,10
+            1307: -9,-16
+            1316: -8,-13
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -711,6 +755,18 @@ entities:
             1008: 15,-16
             1044: -6,8
             1062: -2,9
+            1160: 0,10
+            1171: 6,10
+            1175: 7,10
+            1190: 8,9
+            1198: 12,8
+            1202: 13,8
+            1214: 14,7
+            1220: 15,6
+            1223: 14,-13
+            1234: 15,-16
+            1270: -6,8
+            1288: -2,9
         - node:
             id: LatticeEdgeE
           decals:
@@ -887,6 +943,49 @@ entities:
             1143: -2,-21
             1148: 16,-17
             1153: 16,5
+            1157: 0,10
+            1168: 6,10
+            1187: 8,9
+            1195: 12,8
+            1224: 14,-10
+            1226: 14,-7
+            1228: 14,-5
+            1230: 14,-2
+            1236: 15,-7
+            1238: 15,-5
+            1241: -11,5
+            1242: -10,5
+            1244: -9,4
+            1248: -9,6
+            1250: -8,1
+            1254: -8,7
+            1257: -7,8
+            1267: -6,8
+            1285: -2,9
+            1290: -1,10
+            1303: -10,-7
+            1304: -10,-5
+            1306: -9,-16
+            1308: -9,-10
+            1309: -9,-7
+            1311: -9,-5
+            1313: -9,-2
+            1315: -8,-13
+            1317: -8,-10
+            1319: -8,-7
+            1321: -8,-5
+            1323: -8,-2
+            1325: 0,-22
+            1328: 1,-23
+            1337: 8,-21
+            1354: -11,-17
+            1355: -10,-17
+            1357: -9,-18
+            1360: -8,-19
+            1363: -6,-20
+            1369: -2,-21
+            1374: 16,-17
+            1379: 16,5
         - node:
             id: LatticeEdgeN
           decals:
@@ -1052,6 +1151,46 @@ entities:
             1140: -3,-23
             1142: -3,-22
             1144: -2,-21
+            1162: 1,13
+            1165: 5,13
+            1173: 7,10
+            1178: 7,11
+            1180: 7,12
+            1182: 7,13
+            1184: 7,14
+            1192: 9,10
+            1200: 13,8
+            1205: 13,9
+            1207: 13,10
+            1209: 14,1
+            1215: 15,4
+            1245: -9,4
+            1251: -8,1
+            1259: -7,8
+            1262: -7,9
+            1264: -7,10
+            1282: -3,10
+            1292: -1,10
+            1295: -1,11
+            1297: -1,12
+            1299: -1,13
+            1301: -1,14
+            1326: 0,-22
+            1329: 1,-23
+            1331: 5,-23
+            1334: 6,-22
+            1338: 8,-21
+            1342: 9,-23
+            1344: 9,-22
+            1345: 12,-20
+            1348: 14,-19
+            1351: 15,-18
+            1358: -9,-18
+            1361: -8,-19
+            1364: -6,-20
+            1366: -3,-23
+            1368: -3,-22
+            1370: -2,-21
         - node:
             id: LatticeEdgeS
           decals:
@@ -1233,6 +1372,50 @@ entities:
             1088: -8,-13
             1117: 9,-22
             1141: -3,-22
+            1156: 0,10
+            1161: 1,13
+            1163: 1,14
+            1164: 5,13
+            1166: 5,14
+            1167: 6,10
+            1172: 7,10
+            1177: 7,11
+            1179: 7,12
+            1181: 7,13
+            1183: 7,14
+            1185: 7,15
+            1186: 8,9
+            1191: 9,10
+            1193: 9,11
+            1194: 12,8
+            1199: 13,8
+            1204: 13,9
+            1206: 13,10
+            1208: 13,11
+            1212: 14,7
+            1218: 15,6
+            1221: 14,-13
+            1232: 15,-16
+            1247: -9,6
+            1253: -8,7
+            1256: -7,8
+            1261: -7,9
+            1263: -7,10
+            1265: -7,11
+            1266: -6,8
+            1281: -3,10
+            1283: -3,11
+            1284: -2,9
+            1289: -1,10
+            1294: -1,11
+            1296: -1,12
+            1298: -1,13
+            1300: -1,14
+            1302: -1,15
+            1305: -9,-16
+            1314: -8,-13
+            1343: 9,-22
+            1367: -3,-22
         - node:
             id: LatticeEdgeW
           decals:
@@ -1409,6 +1592,49 @@ entities:
             1152: 16,-5
             1154: 16,5
             1155: 17,5
+            1159: 0,10
+            1170: 6,10
+            1174: 7,10
+            1189: 8,9
+            1197: 12,8
+            1201: 13,8
+            1210: 14,1
+            1213: 14,7
+            1216: 15,4
+            1219: 15,6
+            1222: 14,-13
+            1225: 14,-10
+            1227: 14,-7
+            1229: 14,-5
+            1231: 14,-2
+            1233: 15,-16
+            1235: 15,-10
+            1237: 15,-7
+            1239: 15,-5
+            1240: 15,-2
+            1243: -10,5
+            1269: -6,8
+            1287: -2,9
+            1310: -9,-7
+            1312: -9,-5
+            1318: -8,-10
+            1320: -8,-7
+            1322: -8,-5
+            1324: -8,-2
+            1332: 5,-23
+            1335: 6,-22
+            1340: 8,-21
+            1346: 12,-20
+            1349: 14,-19
+            1352: 15,-18
+            1356: -10,-17
+            1372: -2,-21
+            1375: 16,-17
+            1376: 17,-17
+            1377: 16,-7
+            1378: 16,-5
+            1380: 16,5
+            1381: 17,5
         - node:
             angle: -1.5707963267948966 rad
             color: '#EFB34196'
@@ -3337,7 +3563,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 260
+  - uid: 261
     components:
     - type: Transform
       parent: 257
@@ -3346,7 +3572,7 @@ entities:
     - type: InsideEntityStorage
 - proto: BoxShotgunUranium
   entities:
-  - uid: 261
+  - uid: 260
     components:
     - type: Transform
       parent: 257
@@ -7786,15 +8012,15 @@ entities:
     - type: TargetingConsole
       cannonGroups:
         all:
-        - 224
-        - 225
-        - 226
         - 227
+        - 226
+        - 225
+        - 224
         SHI 180mm "Magwell" torpedo launcher:
-        - 224
-        - 225
-        - 226
         - 227
+        - 226
+        - 225
+        - 224
 - proto: ConveyorBelt
   entities:
   - uid: 1113
@@ -10861,14 +11087,6 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-- proto: MachineFrame
-  entities:
-  - uid: 1530
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -4.5,0.5
-      parent: 1
 - proto: MachineFrameDestroyed
   entities:
   - uid: 1531
@@ -10878,14 +11096,14 @@ entities:
       parent: 1
 - proto: MagazineBoxLightRifleBig
   entities:
-  - uid: 1533
+  - uid: 1534
     components:
     - type: Transform
       parent: 1532
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 1534
+  - uid: 1541
     components:
     - type: Transform
       parent: 1532
@@ -10894,14 +11112,7 @@ entities:
     - type: InsideEntityStorage
 - proto: MagazineLightRifleUranium
   entities:
-  - uid: 1535
-    components:
-    - type: Transform
-      parent: 1532
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 1536
+  - uid: 1533
     components:
     - type: Transform
       parent: 1532
@@ -10936,14 +11147,21 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 1541
+  - uid: 1542
     components:
     - type: Transform
       parent: 1532
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 1542
+  - uid: 1543
+    components:
+    - type: Transform
+      parent: 1532
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 1544
     components:
     - type: Transform
       parent: 1532
@@ -11245,10 +11463,10 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 258
-          - 260
-          - 261
           - 259
+          - 261
+          - 260
+          - 258
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -11264,18 +11482,18 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 1534
-          - 1542
-          - 1535
-          - 1543
-          - 1536
-          - 1544
-          - 1537
-          - 1538
-          - 1539
-          - 1540
-          - 1541
           - 1533
+          - 1541
+          - 1540
+          - 1539
+          - 1538
+          - 1537
+          - 1544
+          - 1536
+          - 1543
+          - 1535
+          - 1542
+          - 1534
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -11567,11 +11785,6 @@ entities:
       bodyType: Static
 - proto: OxygenCanister
   entities:
-  - uid: 1605
-    components:
-    - type: Transform
-      pos: 1.5,-19.5
-      parent: 1
   - uid: 1606
     components:
     - type: Transform
@@ -12945,6 +13158,13 @@ entities:
     - type: Transform
       pos: 4.5,9.5
       parent: 1
+- proto: TelecomServerFilledShuttle
+  entities:
+  - uid: 1530
+    components:
+    - type: Transform
+      pos: -4.5,0.5
+      parent: 1
 - proto: Thruster
   entities:
   - uid: 1773
@@ -13125,6 +13345,13 @@ entities:
           - Reverse
         - - Middle
           - Off
+- proto: VendingMachineAstroVend
+  entities:
+  - uid: 1605
+    components:
+    - type: Transform
+      pos: 1.5,-19.5
+      parent: 1
 - proto: VendingMachineCigs
   entities:
   - uid: 1799
@@ -13141,6 +13368,14 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 6.5,-4.5
       parent: 1
+- proto: VendingMachineEngivend
+  entities:
+  - uid: 2070
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 11.5,-16.5
+      parent: 1
 - proto: VendingMachineMedical
   entities:
   - uid: 1801
@@ -13154,6 +13389,14 @@ entities:
     components:
     - type: Transform
       pos: 5.5,-19.5
+      parent: 1
+- proto: VendingMachineYouTool
+  entities:
+  - uid: 2071
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -4.5,-16.5
       parent: 1
 - proto: WallPlastitanium
   entities:
@@ -14498,23 +14741,23 @@ entities:
     - type: Transform
       pos: 3.5,-5.5
       parent: 1
-- proto: WeaponCaptainRevolverShotgun
+- proto: WeaponPistolZodum
   entities:
-  - uid: 2060
+  - uid: 2072
     components:
     - type: Transform
-      pos: 2.4585752,9.763536
+      pos: 2.5557165,9.661503
       parent: 1
 - proto: WeaponRifleHunter
   entities:
-  - uid: 1543
+  - uid: 1535
     components:
     - type: Transform
       parent: 1532
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 1544
+  - uid: 1536
     components:
     - type: Transform
       parent: 1532
@@ -14523,14 +14766,14 @@ entities:
     - type: InsideEntityStorage
 - proto: WeaponShotgunDoubleBarreled
   entities:
-  - uid: 2061
+  - uid: 2060
     components:
     - type: Transform
       pos: 1.4720039,2.5042553
       parent: 1
 - proto: WeaponTurretMortarFilled
   entities:
-  - uid: 2062
+  - uid: 2061
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -14560,7 +14803,7 @@ entities:
           ents: []
     - type: PointCannon
       linkedConsoleId: 1112
-  - uid: 2063
+  - uid: 2062
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -14592,7 +14835,7 @@ entities:
       linkedConsoleId: 1112
 - proto: WeaponTurretNeedlerFilled
   entities:
-  - uid: 2064
+  - uid: 2063
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -14622,7 +14865,7 @@ entities:
           ents: []
     - type: PointCannon
       linkedConsoleId: 1112
-  - uid: 2065
+  - uid: 2064
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -14654,7 +14897,7 @@ entities:
       linkedConsoleId: 1112
 - proto: WeaponTurretVulcanFilled
   entities:
-  - uid: 2066
+  - uid: 2065
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -14684,7 +14927,7 @@ entities:
           ents: []
     - type: PointCannon
       linkedConsoleId: 1112
-  - uid: 2067
+  - uid: 2066
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -14714,7 +14957,7 @@ entities:
           ents: []
     - type: PointCannon
       linkedConsoleId: 1112
-  - uid: 2068
+  - uid: 2067
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -14744,7 +14987,7 @@ entities:
           ents: []
     - type: PointCannon
       linkedConsoleId: 1112
-  - uid: 2069
+  - uid: 2068
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -14776,7 +15019,7 @@ entities:
       linkedConsoleId: 1112
 - proto: WorkbenchTools
   entities:
-  - uid: 2070
+  - uid: 2069
     components:
     - type: Transform
       pos: 1.5,2.5
