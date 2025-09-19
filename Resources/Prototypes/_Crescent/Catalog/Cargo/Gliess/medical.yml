@@ -1,22 +1,22 @@
-- type: cargoProduct
-  id: MedicalBodybagsGliess
-  icon:
-    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
-    state: bag_folded
-  product: CrateBodyBags
-  cost: 700
-  category: cargoproduct-category-name-medical
-  group: gliess
+# - type: cargoProduct
+#   id: MedicalBodybagsGliess
+#   icon:
+#     sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+#     state: bag_folded
+#   product: CrateBodyBags
+#   cost: 700
+#   category: cargoproduct-category-name-medical
+#   group: gliess
 
-- type: cargoProduct
-  id: MedicalSuppliesGliess
-  icon:
-    sprite: Objects/Specific/Medical/firstaidkits.rsi
-    state: firstaid
-  product: CrateMedicalSupplies
-  cost: 3000
-  category: cargoproduct-category-name-medical
-  group: gliess
+# - type: cargoProduct
+#   id: MedicalSuppliesGliess
+#   icon:
+#     sprite: Objects/Specific/Medical/firstaidkits.rsi
+#     state: firstaid
+#   product: CrateMedicalSupplies
+#   cost: 3000
+#   category: cargoproduct-category-name-medical
+#   group: gliess
 
 - type: cargoProduct
   id: VitalsTrackingSuppliesGliess
