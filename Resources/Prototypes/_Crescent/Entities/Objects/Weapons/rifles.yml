@@ -27,7 +27,7 @@
   name: NCWL MK-1 Rezerv 7.62x51mm
   parent: [BaseWeaponSniper, BaseGunWieldable]
   id: WeaponRifleNCWLRezerv
-  description: A rifle based on ancient schematics, built with the simplicity and cost-effectiveness of an AK. Chambered in 7.62x51mm.
+  description: A simple, rugged 7.62x51mm battle rifle issued to Homeguard Protection units. Troops prefer it to the bulky Batanya when they need better handling without sacrificing stopping power.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/rezerv.rsi
