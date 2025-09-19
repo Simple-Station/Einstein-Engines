@@ -155,7 +155,7 @@
 - type: entity
   id: CrateArtilleryAmmoExplosive
   parent: CrateSecgear
-  name: 120mm DU shell crate
+  name: 120mm HE shell crate
   description: 12 rounds of High Explosive shells for the 120mm Type-99 artillery cannon. Devastating effect.
   components:
   - type: StorageFill
