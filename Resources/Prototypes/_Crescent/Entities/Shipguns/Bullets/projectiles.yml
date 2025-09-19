@@ -531,7 +531,7 @@
     visualType: Diamond
     color: White
 
-# prince flak projectile
+# regent flak projectile
 
 - type: entity
   id: FlakProjectileHE
@@ -562,7 +562,7 @@
     totalIntensity: 3000
     intensitySlope: 30
     maxIntensity: 100
-    maxTileBreak: 7
+    maxTileBreak: 1
   - type: ProximityFuse
     maxRange: 7.5
   - type: PointLight
@@ -572,6 +572,8 @@
   - type: ProjectileIFF
     visualType: Circle
     color: White
+
+#prince flak projectile
 
 - type: entity
   id: FlakProjectile
@@ -602,7 +604,7 @@
     totalIntensity: 2000
     intensitySlope: 5
     maxIntensity: 30
-    maxTileBreak: 3
+    maxTileBreak: 0
   - type: ProximityFuse
     maxRange: 20
   - type: PointLight
