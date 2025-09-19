@@ -1206,9 +1206,9 @@
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherArchonStrike
-  name: ATH 'Strike Archon' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a Central Sol Authority Strike Archon-class Strike Frigate pattern. Has to be redeemed at a shipyard console.
+  id: ShipVoucherLictor
+  name: ATH 'Lictor' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a Central Sol Authority Lictor-class Strike Frigate pattern. Has to be redeemed at a shipyard console.
   components:
   - type: Item
     size: Small
@@ -1219,7 +1219,7 @@
   - type: StaticPrice
     price: 60000
   - type: ShipVoucher
-    ship: ArchonStrike
+    ship: Lictor
 
 - type: entity
   parent: BaseItem
