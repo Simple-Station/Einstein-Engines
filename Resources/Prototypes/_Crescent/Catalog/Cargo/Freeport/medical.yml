@@ -118,15 +118,15 @@
   category: cargoproduct-category-name-medical
   group: ship
 
-- type: cargoProduct
-  id: MedicalSuppliesShip
-  icon:
-    sprite: Objects/Specific/Medical/firstaidkits.rsi
-    state: firstaid
-  product: CrateMedicalSupplies
-  cost: 6000
-  category: cargoproduct-category-name-medical
-  group: ship
+# - type: cargoProduct
+#   id: MedicalSuppliesShip
+#   icon:
+#     sprite: Objects/Specific/Medical/firstaidkits.rsi
+#     state: firstaid
+#   product: CrateMedicalSupplies
+#   cost: 6000
+#   category: cargoproduct-category-name-medical
+#   group: ship
 
 - type: cargoProduct
   id: VitalsTrackingIPMSuppliesFreeport

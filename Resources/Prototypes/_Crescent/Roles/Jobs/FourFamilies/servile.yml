@@ -27,13 +27,16 @@
     components:
       - type: ChatRank
         rank: crescent-rank-servile
+  - !type:AddComponentSpecial
+    components:
+      - type: Telepathic
       - type: LanguageAdder
         addSpoken:
-        - OldTaypani
-        - Draconic
+          - Tradeband
+          - OldTaypani
         addUnderstood:
-        - OldTaypani
-        - Draconic
+          - Tradeband
+          - OldTaypani
   access:
   - EmergencyShuttleRepealAll
   - Captain
