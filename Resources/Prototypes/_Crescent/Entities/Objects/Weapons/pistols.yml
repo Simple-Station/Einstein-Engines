@@ -592,3 +592,28 @@
       path: /Audio/_Crescent/Weapons/Guns/pistol_3/pistol_gunshot_3.ogg
   - type: StaticPrice
     price: 900
+
+- type: entity
+  name: K&K K25 Snake 9x19mm
+  parent: BaseWeaponPistol
+  id: WeaponPistolSnake
+  description: A bulky weapon system produced by Kane & Knox. Fielded with a suppressor and hefty laser aiming module. Chambered in 9x19mm PSTF.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/socom.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    fireRate: 4
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/supressed_1/supressed_gunshot_2.ogg
+      params:
+        volume: -10
+  - type: StaticPrice
+    price: 900
