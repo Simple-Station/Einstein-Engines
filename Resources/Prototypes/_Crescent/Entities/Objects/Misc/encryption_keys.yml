@@ -184,8 +184,8 @@
 - type: entity
   parent: EncryptionKey
   id: EncryptionKeyMinutemen
-  name: minutemen encryption key
-  description: An encryption key used by the Colonial Minutemen.
+  name: gliessian encryption key
+  description: An encryption key used by Gliess Santo staff.
   components:
   - type: EncryptionKey
     channels:
