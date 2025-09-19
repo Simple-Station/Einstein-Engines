@@ -82,6 +82,13 @@
   frequency: 6220
   color: "#3b5a72"
 
+- type: radioChannel
+  id: NAP
+  name: chat-radio-american
+  keycode: "z"
+  frequency: 6221
+  color: "#98a150"
+
 # these below are for compatibility with upstream
 - type: radioChannel
   id: Security

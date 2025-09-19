@@ -18,8 +18,6 @@
     - !type:CharacterTraitRequirement
         inverted: true
         traits:
-          - Foreigner
-          - ForeignerLight
           - Muted
           - Blindness
           - Pacifist

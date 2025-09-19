@@ -1,12 +1,12 @@
-- type: cargoProduct
-  id: MedicalSuppliesShi
-  icon:
-    sprite: Objects/Specific/Medical/firstaidkits.rsi
-    state: firstaid
-  product: CrateMedicalSupplies
-  cost: 2000
-  category: cargoproduct-category-name-medical
-  group: shinohara
+# - type: cargoProduct
+#   id: MedicalSuppliesShi
+#   icon:
+#     sprite: Objects/Specific/Medical/firstaidkits.rsi
+#     state: firstaid
+#   product: CrateMedicalSupplies
+#   cost: 2000
+#   category: cargoproduct-category-name-medical
+#   group: shinohara
 
 - type: cargoProduct
   id: MedicalChemistrySuppliesshinohara
