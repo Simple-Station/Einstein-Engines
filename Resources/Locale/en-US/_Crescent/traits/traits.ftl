@@ -39,3 +39,6 @@ trait-description-Freespeak = [color = green]
 
 trait-name-OldTaypani = Old Taypani
 trait-description-OldTaypani = Formed out of desperation and constant migration - Old Taypani is a language descended from various Unathi and Atyrian dialects. Glottal and guttural at times, speaking this language is a mark of piety in the circles of the Matron and a sign of destitution to many.
+
+trait-name-American = American
+trait-description-American = An amalgamation of various ancient languages originating from Old Terra, spoken by those of the New American Protectorate.
