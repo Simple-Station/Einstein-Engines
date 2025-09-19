@@ -2,8 +2,8 @@
 # Discord: rubeebee
 
 - type: vessel
-  id: Bee
-  name: Bee
+  id: Wasp
+  name: Wasp
   description: |
     A fighter derived from the Warthog hull, barely functional, barely safe for use. Not used by the sane. Strangely holds atmosphere.
     LOADOUT: 1x 20mm Vulcan cannon
@@ -11,15 +11,15 @@
   price: 10000
   category: Small
   group: Scrap
-  path: /Maps/_Crescent/Shuttles/Civilian/bee.yml
+  path: /Maps/_Crescent/Shuttles/Civilian/wasp.yml
 
 - type: gameMap
-  id: Bee
-  mapName: 'Bee'
-  mapPath: /Maps/_Crescent/Shuttles/Civilian/bee.yml
+  id: Wasp
+  mapName: 'Wasp'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/wasp.yml
   minPlayers: 0
   stations:
-    Bee:
+    Wasp:
       stationProto: StandardCrescentExpeditionVessel
       components:
         - type: VesselIcon
@@ -27,11 +27,11 @@
             sprite: _Crescent/ShipIcons/ifficons.rsi
             state: fighter
         - type: StationNameSetup
-          mapNameTemplate: 'Bee {1}'
+          mapNameTemplate: 'Wasp {1}'
           nameGenerator:
            !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-fighter
         - type: VesselDescription
-          description: The Bee is the most minimalist fighter in the market. Prepare your will.
+          description: The Wasp is the most minimalist fighter in the market. Prepare your will.
