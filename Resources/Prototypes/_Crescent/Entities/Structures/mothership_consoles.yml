@@ -153,6 +153,7 @@
     shuttles:
     - Provost
     - Adjudicator
+    - Warden
 
 - type: entity
   id: RefugeMothershipComputer
