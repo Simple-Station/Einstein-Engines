@@ -109,7 +109,6 @@
 #       languagesUnderstood:
 #         - Clarizian
 
-
 # - type: trait
 #   id: SolBasic
 #   category: TraitsSpeechLanguages
@@ -140,3 +139,19 @@
 #         - OldTaypani
 #       languagesUnderstood:
 #         - OldTaypani
+
+- type: trait
+  id: American
+  category: TraitsSpeechLanguages
+  points: -4
+  requirements:
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Bieselite # NAP
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - American
+      languagesUnderstood:
+        - American
