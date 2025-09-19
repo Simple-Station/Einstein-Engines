@@ -8,15 +8,15 @@
   price: 75000
   category: Medium
   group: None
-  path: /Maps/_Crescent/Shuttles/ATH/archonStrike.yml
+  path: /Maps/_Crescent/Shuttles/ATH/lictor.yml
 
 - type: gameMap
   id: Lictor
   mapName: 'Lictor'
-  mapPath: /Maps/_Crescent/Shuttles/ATH/archonStrike.yml
+  mapPath: /Maps/_Crescent/Shuttles/ATH/lictor.yml
   minPlayers: 0
   stations:
-    ArchonStrike:
+    Lictor:
       stationProto: FlagshipCrescentVessel
       components:
       - type: StationNameSetup
