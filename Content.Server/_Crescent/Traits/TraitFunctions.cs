@@ -50,7 +50,7 @@ public sealed partial class TraitAddSlot : TraitFunction
         IEntityManager entityManager,
         ISerializationManager serializationManager)
     {
-        var slotSystem = IoCManager.Resolve<ItemSlotsSystem>();
+        var slotSystem = entityManager.System<ItemSlotsSystem>();
 
         foreach (var (slotId, slot) in Slots)
         {
@@ -74,7 +74,7 @@ public sealed partial class TraitRemoveSlot : TraitFunction
         IEntityManager entityManager,
         ISerializationManager serializationManager)
     {
-        var slotSystem = IoCManager.Resolve<ItemSlotsSystem>();
+        var slotSystem = entityManager.System<ItemSlotsSystem>();
 
         foreach (var slotId in Slots)
         {
