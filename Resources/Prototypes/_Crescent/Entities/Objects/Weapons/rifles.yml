@@ -27,7 +27,7 @@
   name: NCWL MK-1 Rezerv 7.62x51mm
   parent: [BaseWeaponSniper, BaseGunWieldable]
   id: WeaponRifleNCWLRezerv
-  description: A rifle based on ancient schematics, built with the simplicity and cost-effectiveness of an AK. Chambered in 7.62x51mm.
+  description: A simple, rugged 7.62x51mm battle rifle issued to Homeguard Protection units. Troops prefer it to the bulky Batanya when they need better handling without sacrificing stopping power.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/rezerv.rsi
@@ -43,6 +43,39 @@
       path: /Audio/_Crescent/Weapons/Guns/dmr_1/dmr_gunshot_2.ogg
   - type: BallisticAmmoProvider
     capacity: 15
+    proto: CartridgeRifle
+    whitelist:
+      tags:
+      - CartridgeRifle
+
+- type: entity
+  name: SHI M28 Nimrod 7.62x51mm
+  parent: [BaseWeaponSniper, BaseGunWieldable]
+  id: WeaponRifleSHINimrod
+  description: An absurdly cheap-to-make hunting rifle sold at a major mark-up to desperate spacers and militiamen. Chambered in 7.62x51mm.
+  components:
+  - type: Item
+    size: Ginormous
+  - type: StaticPrice
+    price: 2000
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/nimrod.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/nimrod.rsi
+  - type: Gun
+    fireRate: 3
+    projectileSpeed: 45
+    damageModifier: 1.25
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/UnionfallWeapons/lever_fire.ogg
+  - type: BallisticAmmoProvider
+    soundInsert:
+      collection: LeverReload
+    capacity: 6
+    autoCycle: true
     proto: CartridgeRifle
     whitelist:
       tags:

@@ -82,7 +82,7 @@
   name: IRM Matusa 12g
   parent: BaseWeaponSniper
   id: WeaponShotgunDSMMatusa
-  description: The Matusa has only recently fallen out of favour with the Imperial Subjugation Corps as the civil war has pivoted arsenals towards armour-piercing firepower for whom the shotgun falls short. However, Matusas can be found in shock-assault divisions and peacekeeping forces across the sectors which once comprised the Imperial Mandate as the revolving street-sweeper requires no advanced machining and is effective at clearing fortified positions and unruly crowds alike.
+  description: A mass-produced Imperial shotgun with simple internals, intended for easy maintenance by levy forces.
   components:
   - type: Item
     size: Ginormous
@@ -116,7 +116,7 @@
   name: NCWL Pioneer Double-Barrel 12g
   parent: BaseWeaponSniperNoWield
   id: WeaponShotgunDoubleBarreledNCWL
-  description: A short, rugged scattergun based on ancient Terran designs. Cheap to print, easy to maintain, and reliable enough for frontier defense and penal use. Favored by proletariat civilians, shipboard crews, and disciplinary squads for its close quarters effectiveness and ease of storage compared to more advanced pump-action or automatic models. An inscription on the side reads "Property of—" though the rest has been scorched off with a laser engraver, replaced by a crude ID serial. The wooden buttstock still has a splinter jutting out—like everything else about this gun, it’s functional, not comfortable.
+  description: A short, rugged double-barrel shotgun built in-house by NCWL Homeguard workshops. Partisans prize its compact size and reliability for clearing tight ship corridors; Kommissars often carry one as a backup.
   components:
   - type: Item
     size: Normal
