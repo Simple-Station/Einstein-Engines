@@ -8,6 +8,7 @@ ghost-respawn-seconds-left = Please wait {$time} {$time ->
 } before trying to respawn.
 
 ghost-respawn-max-players = Cannot respawn right now. There should be fewer than {$players} players.
+ghost-respawn-error = Something went wrong while trying to respawn. Try again and contact an admin if the issue persists.
 ghost-respawn-window-title = Respawn rules
 ghost-respawn-window-rules-footer = By respawning, you [color=#ff7700]agree[/color] [color=#ff0000]not to use any knowledge gained as your previous character[/color]. Violation of this rule may constitute a server ban. Please read the server rules for more details.
 ghost-respawn-same-character = You cannot respawn as the same character. Please select a different one in character preferences.

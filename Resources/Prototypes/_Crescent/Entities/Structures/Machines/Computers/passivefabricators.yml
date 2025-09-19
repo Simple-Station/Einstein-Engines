@@ -1,0 +1,23 @@
+- type: entityList
+  id: excelsiorUplinkDropTable
+  entities:
+  - SheetPlasma1
+  - SheetPlasma
+  - SheetUranium1
+
+- type: entity
+  parent: MedicalBiofabricator
+  id: PassiveSpawnerDebugPrototype
+  name: Excelsior Material Drop-In Uplink
+  description: A advanced machine used by the Excelsior revolutionary group to bring material support to violent revolutions at points of interest.
+  components:
+  - type: Sprite
+    sprite: _Shitmed/Structures/Machines/limbgrower.rsi
+    snapCardinals: true
+    layers:
+    - state: limbgrower_idleoff
+      map: ["enum.LatheVisualLayers.IsRunning"]
+  - type: PassiveSpawningMachine
+    entityListProto: excelsiorUplinkDropTable
+    spawnDelay: 5
+    requirePower: true

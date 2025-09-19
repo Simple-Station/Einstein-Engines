@@ -70,7 +70,7 @@
     guides:
     - Cargo
 
-# surezai
+# suzerai
 
 - type: entity
   id: ComputerCargoOrdersSurezai
@@ -105,7 +105,7 @@
       state: tech_key
   - type: CargoOrderConsole
     allowedGroups:
-    - surezai
+    - suzerai
     - generic
     - genericAmmo
   - type: ActiveRadio

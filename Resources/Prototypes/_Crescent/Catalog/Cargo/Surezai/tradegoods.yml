@@ -6,7 +6,7 @@
   product: TradeGoodScrap
   cost: 750
   category: cargoproduct-category-name-tradegoods
-  group: surezai
+  group: suzerai
 
 - type: cargoProduct
   id: AmmoGoodsSurezai
@@ -16,7 +16,7 @@
   product: TradeGoodAmmo
   cost: 750
   category: cargoproduct-category-name-tradegoods
-  group: surezai
+  group: suzerai
 
 - type: cargoProduct
   id: RiceGoodsSurezai
@@ -26,4 +26,4 @@
   product: TradeGoodRice
   cost: 500
   category: cargoproduct-category-name-tradegoods
-  group: surezai
+  group: suzerai
