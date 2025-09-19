@@ -1,26 +1,26 @@
-# Author Info
-# Discord: @fleshangel
+
+
 
 - type: vessel
-  id: Archon
-  name: ATH Archon
-  description: A light Authoritat frigate, often seen escorting larger targets or leading light patrols.
+  id: Lictor
+  name: ATH Lictor
+  description: A trimmed down Archon, heavily refitted and upgraded by the 43rd for independent operations within Sector Crescent.
   price: 75000
   category: Medium
   group: None
-  path: /Maps/_Crescent/Shuttles/ATH/archon.yml
+  path: /Maps/_Crescent/Shuttles/ATH/lictor.yml
 
 - type: gameMap
-  id: Archon
-  mapName: 'Archon'
-  mapPath: /Maps/_Crescent/Shuttles/ATH/archon.yml
+  id: Lictor
+  mapName: 'Lictor'
+  mapPath: /Maps/_Crescent/Shuttles/ATH/lictor.yml
   minPlayers: 0
   stations:
-    Archon:
+    Lictor:
       stationProto: FlagshipCrescentVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Archon {1}'
+        mapNameTemplate: 'Lictor {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'
@@ -29,11 +29,10 @@
           sprite: _Crescent/ShipIcons/ifficons.rsi
           state: frigate
       - type: VesselDesignation
-        designation: vessel-designation-lightfrigate
+        designation: vessel-designation-strikefrigate
       - type: StationJobs
         overflowJobs: []
         availableJobs:
-          SoldatATH: [ 2, 2 ]
-          SanitatATH: [ 1, 1 ]
-          KanoneerATH: [ 1, 1 ]
-
+          APRTKanoneerATH: [ 1, 1 ]
+          APRTSanitatATH: [ 1, 1 ]
+          APRTSoldatATH: [ 2, 2 ]
