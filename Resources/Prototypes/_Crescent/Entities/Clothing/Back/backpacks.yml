@@ -185,3 +185,14 @@
     sprite: _Crescent/Clothing/Back/minutemanduff.rsi
   - type: ExplosionResistance
     damageCoefficient: 0.1
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackNAPRangerSatchel
+  name: american ranger 'Coyote' rucksack
+  description: A robust rucksack in NAP livery.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Back/napbackpack.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
