@@ -310,6 +310,7 @@
         slots:
           skillchip_slot:
             name: flatpacker-item-slot-name
+            selfEjectOnly: true
             whitelist:
               components:
               - MachineBoard

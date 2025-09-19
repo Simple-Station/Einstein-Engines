@@ -80,6 +80,7 @@ namespace Content.Shared.Containers.ItemSlots
 
         [DataField]
         public EntityWhitelist? Blacklist;
+        public bool SelfEjectOnly = false;
 
         [DataField]
         public SoundSpecifier InsertSound = new SoundPathSpecifier("/Audio/Weapons/Guns/MagIn/revolver_magin.ogg");

@@ -460,7 +460,7 @@ namespace Content.Shared.Containers.ItemSlots
                 return false;
             }
 
-            if (slot.ContainerSlot?.ContainedEntity is not {} item)
+            if (slot.ContainerSlot?.ContainedEntity is not {} item || slot.SelfEjectOnly && user != uid)
                 return false;
 
             var ev = new ItemSlotEjectAttemptEvent(uid, item, user, slot);
