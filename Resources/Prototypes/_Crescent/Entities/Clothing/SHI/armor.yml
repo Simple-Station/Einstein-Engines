@@ -57,12 +57,12 @@
       flatReductions:
         Blunt: 25
         Slash: 35
-        Piercing: 80
+        Piercing: 70
         Heat: 15
         Caustic: 15
   - type: ClothingSpeedModifier
-    walkModifier: 0.7
-    sprintModifier: 0.7
+    walkModifier: 0.8
+    sprintModifier: 0.85
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCorpsec
 
@@ -131,8 +131,8 @@
         Heat: 35
         Caustic: 35
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 1.0
+    sprintModifier: 1.0
   - type: ExplosionResistance
     damageCoefficient: 0.80
   - type: GroupExamine

@@ -16,10 +16,6 @@
       min: 14400
     - !type:FactionRequirement
       factionID: "SHI"
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Oni
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
