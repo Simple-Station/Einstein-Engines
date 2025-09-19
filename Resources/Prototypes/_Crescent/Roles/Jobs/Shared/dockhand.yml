@@ -1,12 +1,13 @@
 - type: job
-  id: Dockhand
-  name: job-name-dockhand
+  id: GliessianDockhand
+  name: job-name-gliess-dockhand
   description: job-description-dockhand
   playTimeTracker: JobDockhand
+  Weight: 20
   requirements:
   - !type:CharacterOverallTimeRequirement
     min: 3600
-  startingGear: ContractorGear
+  startingGear: DockhandGear
   icon: "JobIconDockhand"
   supervisors: job-supervisors-gliess
   accessGroups:
@@ -29,9 +30,14 @@
   id: DockhandGear
   equipment:
     ears: ClothingHeadsetCMM
+    head: ClothingHeadHelmetCMMMachinist
     id: DockhandPDA
-    jumpsuit: ClothingUniformSpacer
+    jumpsuit: ClothingUniformJumpsuitCMMMachinist
+    belt: ClothingBeltSalvageWebbingFilledNF
     back: ClothingBackpackFilled
-    shoes: ClothingShoesColorBlack
+    gloves: ClothingHandsGlovesFingerlessInsulated
+    shoes: ClothingShoesBootsSalvage
+    eyes: ClothingEyesGlassesCheapSunglassesBig
+    pocket1: WeaponPistolHKUSP
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled

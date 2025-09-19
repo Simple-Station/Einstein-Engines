@@ -100,7 +100,7 @@ job-name-arbeiter = Arbeiter
 
 job-name-antiquarian = Izdari Antiquarian
 job-name-spacer = Spacer
-job-name-dockhand = Dockhand
+job-name-gliess-dockhand = Gliessian Dockhand
 job-name-gliess-sheriff = Gliessian Sheriff
 job-name-gliess-deputy = Gliessian Deputy
 job-name-gliess-dockmaster = Gliessian Dockmaster
