@@ -63,11 +63,15 @@
   - type: ComponentToggler
     components:
     - type: NoSlip
-  - type: Magboots
-    changeClothingVisuals: true
   - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
+    walkModifier: 1
+    sprintModifier: 1
+  - type: Magboots
+    activeWalkModifier: 0.9
+    activeSprintModifier: 0.9
+    inactiveWalkModifier: 1
+    inactiveSprintModifier: 1
+    changeClothingVisuals: true
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -96,12 +100,14 @@
     state: icon
   - type: Clothing
     sprite: Clothing/Shoes/Boots/magboots-advanced.rsi
-  - type: Magboots
-    activeWalkModifier: 1
-    activeSprintModifier: 1
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 1
+  - type: Magboots
+    activeWalkModifier: 1
+    activeSprintModifier: 1
+    inactiveWalkModifier: 1
+    inactiveSprintModifier: 1
   - type: Tag
     tags:
     - WhitelistChameleon
@@ -110,11 +116,6 @@
     price: 1000
   - type: StealTarget
     stealGroup: ClothingShoesBootsMagAdv
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 13
-    staminaCost: 15
 
 - type: entity
   parent: ClothingShoesBootsMag
@@ -122,17 +123,19 @@
   name: magboots of blinding speed
   description: These would look fetching on a fetcher like you.
   components:
-  - type: Magboots
-    activeWalkModifier: 1.1
-    activeSprintModifier: 1.1
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 1
+  - type: Magboots
+    activeWalkModifier: 1.1
+    activeSprintModifier: 1.1
+    inactiveWalkModifier: 1.1
+    inactiveSprintModifier: 1.1
   - type: StaticPrice
     price: 3000
 
 - type: entity
-  parent: [ClothingShoesBootsMagBase, BaseJetpack]
+  parent: [ClothingShoesBootsMag, BaseJetpack]
   id: ClothingShoesBootsMagSyndie
   name: blood-red magboots
   description: Reverse-engineered magnetic boots that have a heavy magnetic pull and integrated thrusters.
@@ -142,10 +145,14 @@
     state: icon
   - type: Clothing
     sprite: Clothing/Shoes/Boots/magboots-syndicate.rsi
-  - type: Magboots
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 1
+    sprintModifier: 1
+  - type: Magboots
+    activeWalkModifier: 0.95
+    activeSprintModifier: 0.95
+    inactiveWalkModifier: 1
+    inactiveSprintModifier: 1
   - type: GasTank
     outputPressure: 42.6
     air:
@@ -191,19 +198,17 @@
     state: icon
   - type: Clothing
     sprite: Clothing/Shoes/Boots/magboots.rsi
-  - type: Magboots
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 1
+    sprintModifier: 1
+  - type: Magboots
+    activeWalkModifier: 0.95
+    activeSprintModifier: 0.95
+    inactiveWalkModifier: 1
+    inactiveSprintModifier: 1
   - type: Tag
     tags:
     - WhitelistChameleon
-  - type: StaticPrice
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 13
-    staminaCost: 15
 
 - type: entity
   parent: ClothingShoesBootsMag
@@ -216,20 +221,19 @@
     state: icon
   - type: Clothing
     sprite: Clothing/Shoes/Boots/magboots-combat.rsi
-  - type: Magboots
   - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.85
+    walkModifier: 1
+    sprintModifier: 1
+  - type: Magboots
+    activeWalkModifier: 0.9
+    activeSprintModifier: 0.9
+    inactiveWalkModifier: 1
+    inactiveSprintModifier: 1
   - type: Tag
     tags:
     - WhitelistChameleon
   - type: StaticPrice
     price: 1000
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 13
-    staminaCost: 15
   - type: Matchbox
   - type: ItemSlots
     slots:
