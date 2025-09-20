@@ -4,12 +4,18 @@ namespace Content.Server._Crescent.ProximityFuse;
 public sealed partial class ProximityFuseComponent : Component
 {
     [DataField]
-    public float MaxRange = 25f; 
+    public float MaxRange = 10f;
 
     [DataField]
-    public float MinRange = 5f;
+    public float Safety = 0.5f;
 
-    public float Fuse = 0.05f;
+    [DataField]
+    public List<Target> Targets = new();
+}
 
-    public float SafetyTime = 0f;
+public class Target
+{
+    public EntityUid ent { get; set; }
+    public float Distance { get; set; }
+    public float LastDistance { get; set; }
 }

@@ -1586,7 +1586,7 @@
           pitch: 1.2
           variation: 0.08
     - type: BasicEntityAmmoProvider
-      proto: FlakProjectileHE
+      proto: 88mmFlakSpreadHE
       capacity: 6
       count: 10
     - type: ApcPowerReceiver

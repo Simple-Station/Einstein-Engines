@@ -224,12 +224,14 @@
     - 0,0,7,1
   - type: StorageFill
     contents:
-    - id: MagazineRifle
-      amount: 5
+    - id: MagazineRifleDrum
+      amount: 1
+    - id: MagazineRifleDrumBlackTip
+      amount: 2
     - id: PTAWarcrimeHandgrenade
-      amount: 2
-    - id: PTAImpactHandgrenade
-      amount: 2
+      amount: 1
+    - id: Tourniquet
+      amount: 1
 
 - type: entity
   id: ClothingBeltAuthorityBattleBeltFilled
@@ -245,12 +247,18 @@
     - 0,0,7,1
   - type: StorageFill
     contents:
-    - id: MagazineBoxRifle
+    - id: MagazineRifle
       amount: 4
-    - id: PTAWarcrimeHandgrenade
-      amount: 2
-    - id: Gauze
-      amount: 2
+    - id: SHIHG3TearGasHandgrenade
+      amount: 1
+    - id: SHIHG7FlashbangHandgrenade
+      amount: 1
+    - id: SHIHG17SmartHandgrenade
+      amount: 1
+    - id: Tourniquet
+      amount: 1
+    - id: Zipties
+      amount: 1
 
 - type: entity
   id: ClothingBeltAuthorityPouchesFilled
@@ -267,11 +275,17 @@
   - type: StorageFill
     contents:
     - id: MagazineRifle
-      amount: 5
-    - id: PTAWarcrimeHandgrenade
-      amount: 2
-    - id: PTAImpactHandgrenade
-      amount: 2
+      amount: 4
+    - id: SHIHG3TearGasHandgrenade
+      amount: 1
+    - id: SHIHG7FlashbangHandgrenade
+      amount: 1
+    - id: SHIHG17SmartHandgrenade
+      amount: 1
+    - id: Tourniquet
+      amount: 1
+    - id: Zipties
+      amount: 1
 
 - type: entity
   id: ClothingBeltAuthorityDroppouchesFilled
@@ -281,7 +295,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: MagazineRifle
+    - id: MagazinePistolSubMachineGunUranium
       amount: 3
     - id: EpinephrineChemistryBottle
       amount: 1
@@ -291,7 +305,7 @@
     - id: MedkitCombatFilled
     - id: Syringe
       amount: 1
-    - id: Gauze
+    - id: Zipties
       amount: 1
 
 # Anti Psionic Response Team - SRM
@@ -506,6 +520,16 @@
     containers:
       item:
       - DSMRapier
+
+- type: entity
+  id: ClothingBeltSheathDSMDuelingKhopeshFilled
+  parent: ClothingBeltSheathKhopesh
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - DSMDuelingKhopesh
 
 - type: entity
   id: ClothingBeltSheathNCWLKukriFilled

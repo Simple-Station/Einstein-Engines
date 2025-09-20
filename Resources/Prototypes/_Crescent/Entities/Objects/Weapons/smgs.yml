@@ -402,7 +402,7 @@
   - type: Appearance
 
 - type: entity
-  name: HGS KleMG-Neo Kevyt .327
+  name: HGS KleMG-Neo Kevyt 9x19mm
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunKebyt
   description: The Neo Kleines Maschinengewehr. Derived fom an older design and revitalized for swift subjugation. Chambered in 9x19mm.

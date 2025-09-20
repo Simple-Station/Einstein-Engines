@@ -1,12 +1,12 @@
 # ncwl
 
-job-name-ncwl-faction-leader = Kommandante
+job-name-ncwl-faction-leader = Major
 job-name-ncwl-kommissar = Kommissar
 job-name-ncwl-fleetkapitan = Fleetkapitan
 job-name-ncwl-partisan = Partisan
-job-name-ncwl-industry-taskmaster = Technician-Overseer
+job-name-ncwl-artificer = Artificer
 job-name-ncwl-medical-doctor = Sanitar
-job-name-ncwl-worker-overboss = Union Coordinator
+job-name-ncwl-coordinator = Union Coordinator
 job-name-ncwl-newbie = Union Worker
 
 # syndicate
@@ -100,6 +100,7 @@ job-name-arbeiter = Arbeiter
 
 job-name-antiquarian = Izdari Antiquarian
 job-name-spacer = Spacer
+job-name-gliess-dockhand = Gliessian Dockhand
 job-name-gliess-sheriff = Gliessian Sheriff
 job-name-gliess-deputy = Gliessian Deputy
 job-name-gliess-dockmaster = Gliessian Dockmaster
