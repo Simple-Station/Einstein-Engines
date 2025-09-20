@@ -1,3 +1,4 @@
+using System.Reflection.Metadata.Ecma335;
 using Content.Shared.Construction;
 using Content.Shared.Construction.Components;
 using Content.Shared.Construction.EntitySystems;
@@ -17,6 +18,7 @@ public class SharedHardpointSystem : EntitySystem
     [Dependency] public readonly EntityLookupSystem _lookupSystem = default!;
     [Dependency] public readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly EntityManager _entMan = default!;
 
     //used for logging, don't touch this
     private ISawmill _sawmill = default!;
@@ -40,6 +42,11 @@ public class SharedHardpointSystem : EntitySystem
     }
     public void OnAnchorChange(EntityUid uid, HardpointAnchorableOnlyComponent component, ref AnchorStateChangedEvent args)
     {
+        //this is here to prevent this code from running at the start of the round OR when you spawn a new ship.
+        //otherwise, targeting computers do not see turrets. only sometimes.
+        if (_entMan.GetComponent<MetaDataComponent>(uid).EntityLifeStage != EntityLifeStage.MapInitialized)
+            return;
+        _sawmill.Debug("ON ANCHOR CHANGE RAN" + args.Anchored.ToString());
         //LOGIC:
         /*
         "im a shipgun"
@@ -91,6 +98,7 @@ public class SharedHardpointSystem : EntitySystem
 
     public void Deanchor(EntityUid target, EntityUid anchor, EntityUid grid, HardpointAnchorableOnlyComponent component)
     {
+        _sawmill.Debug("DEANCHOR RAN");
         if (component.anchoredTo is null)
         {
             _sawmill.Debug($"SharedHardpointSystem had a anchored entity that wasn't attached to a hardpoint!");
@@ -119,6 +127,7 @@ public class SharedHardpointSystem : EntitySystem
     /// <returns></returns>
     public bool TryAnchorToHardpoint(EntityUid uid, HardpointAnchorableOnlyComponent component)
     {
+        _sawmill.Debug("TRY ANCHOR TO HARDPOINT RAN");
         var gridUid = Transform(uid).GridUid;
         if (gridUid is null)
             return false;
@@ -148,6 +157,7 @@ public class SharedHardpointSystem : EntitySystem
 
     public void AnchorEntityToHardpoint(EntityUid target, EntityUid anchor, HardpointAnchorableOnlyComponent targetComp, HardpointComponent hardpoint, EntityUid grid)
     {
+        _sawmill.Debug("ANCHOR ENTITY TO HARDPOINT RAN");
         hardpoint.anchoring = target;
         targetComp.anchoredTo = anchor;
         _transformSystem.SetLocalRotation(target, Transform(anchor).LocalRotation);
