@@ -31,6 +31,7 @@
       machine_board: !type:Container
       machine_parts: !type:Container
   - type: Gun
+    fireOnDropChance: 0
     projectileSpeed: 95
     fireRate: 1.2
     selectedMode: FullAuto
@@ -97,6 +98,7 @@
       machine_board: !type:Container
       machine_parts: !type:Container
   - type: Gun
+    fireOnDropChance: 0
     projectileSpeed: 65
     fireRate: 3
     selectedMode: SemiAuto
@@ -163,6 +165,7 @@
       machine_board: !type:Container
       machine_parts: !type:Container
   - type: Gun
+    fireOnDropChance: 0
     projectileSpeed: 95
     fireRate: 2.4
     selectedMode: SemiAuto
@@ -232,6 +235,7 @@
       machine_parts: !type:Container
       ballistic-ammo: !type:Container
   - type: Gun
+    fireOnDropChance: 0
     projectileSpeed: 30
     fireRate: 0.4
     angleDecay: 45
@@ -315,6 +319,7 @@
       machine_parts: !type:Container
       ballistic-ammo: !type:Container
   - type: Gun
+    fireOnDropChance: 0
     projectileSpeed: 135
     fireRate: 1
     angleDecay: 45
@@ -397,6 +402,7 @@
       machine_parts: !type:Container
       gun_magazine: !type:ContainerSlot
   - type: Gun
+    fireOnDropChance: 0
     projectileSpeed: 100
     fireRate: 0.3
     soundGunshot:
@@ -486,6 +492,7 @@
       ballistic-ammo: !type:Container
         ents: []
   - type: Gun
+    fireOnDropChance: 0
     fireRate: 3
     projectileSpeed: 80
     soundGunshot:
@@ -579,6 +586,7 @@
   - type: BasicEntityAmmoProvider
     proto: BulletMachineGunPlasmaShuttleLarge
   - type: Gun
+    fireOnDropChance: 0
     fireRate: 0.7
     projectileSpeed: 70
     selectedMode: FullAuto
@@ -655,6 +663,7 @@
       tags:
       - CartridgeShell
   - type: Gun
+    fireOnDropChance: 0
     fireRate: 0.5
     projectileSpeed: 95
     soundGunshot:
@@ -731,6 +740,7 @@
       tags:
       - Cartridge
   - type: Gun
+    fireOnDropChance: 0
     fireRate: 0.1
     projectileSpeed: 135
     soundGunshot:
@@ -829,6 +839,7 @@
           tags:
             - VulcanCartridgeBox
   - type: Gun
+    fireOnDropChance: 0
     fireRate: 12
     projectileSpeed: 135
     soundGunshot:
@@ -927,6 +938,7 @@
           tags:
             - VulcanCartridgeBox
   - type: Gun
+    fireOnDropChance: 0
     fireRate: 36
     maxAngle: 4
     minAngle: 0
@@ -1023,6 +1035,7 @@
             pitch: 2
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
   - type: Gun
+    fireOnDropChance: 0
     projectileSpeed: 60
     fireRate: 3.4
     selectedMode: FullAuto
