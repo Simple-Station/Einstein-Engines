@@ -1,5 +1,8 @@
 using Content.Shared.Construction;
 using Content.Shared.Construction.Components;
+using Content.Shared.Construction.EntitySystems;
+using Content.Shared.Popups;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 
@@ -13,39 +16,68 @@ public class SharedHardpointSystem : EntitySystem
     [Dependency] public readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] public readonly EntityLookupSystem _lookupSystem = default!;
     [Dependency] public readonly SharedMapSystem _mapSystem = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+
+    //used for logging, don't touch this
+    private ISawmill _sawmill = default!;
     /// <inheritdoc/>
     public override void Initialize()
     {
-        SubscribeLocalEvent<HardpointAnchorableOnlyComponent, AnchorAttemptEvent>(OnAnchorTry);
         SubscribeLocalEvent<HardpointAnchorableOnlyComponent, AnchorStateChangedEvent>(OnAnchorChange);
         SubscribeLocalEvent<HardpointAnchorableOnlyComponent, MapInitEvent>(OnMapLoad);
         SubscribeLocalEvent<HardpointComponent, AnchorStateChangedEvent>(OnHardpointAnchor);
+        _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("crescent.hardpoints");
     }
 
     public void OnMapLoad(EntityUid uid, HardpointAnchorableOnlyComponent comp, ref MapInitEvent args)
     {
         if (Transform(uid).MapUid == null)
             return;
-        if (TryAnchorToAnyHardpoint(uid, comp))
+        if (TryAnchorToHardpoint(uid, comp))
             return;
-        Logger.Error(
+        _sawmill.Debug(
             $"Hardpoint-only weapon had no hardpoint under itself at mapInit. {uid} , {MetaData(uid).EntityName}");
     }
     public void OnAnchorChange(EntityUid uid, HardpointAnchorableOnlyComponent component, ref AnchorStateChangedEvent args)
     {
+        //LOGIC:
+        /*
+        "im a shipgun"
+        "i just got anchored or deanchored!"
+        "if i got anchored, let me check if I've got a valid hardpoint under me."
+            "if yes, then set the values properly and stay anchored."
+            "if no, then and send a popup. the values were never set, so the gun can't fire anyway."
+        "if i just got deanchored,"
+            "de-set all the values, then de-anchor the gun too."
+        */
         if (args.Anchored)
-            return;
-        if (component.anchoredTo is null)
         {
-            // Fuck my chungus life just ignore this error. Auto-generated component states can't transmit entity uids properly , SPCR 2025
-            Logger.Error($"SharedHardpointSystem had a anchored entity that wasn't attached to a hardpoint!");
+            if (TryAnchorToHardpoint(uid, component)) //if it's a valid hardpoint, then we're good. this function also sets the values properly.
+            {
+                return;
+            }
+            else
+            {
+                //_transformSystem.Unanchor(uid); //if it's not / we dont have a hardpoint under it, kick that shit out
+                //play sound effect
+                _popup.PopupPredicted(Loc.GetString("WARNING! This weapon is not mounted on a compatible hardpoint and will not function!"), uid, null);
+                return;
+            }
+        }
+
+        //else, if we UNanchored
+        if (component.anchoredTo == null) //this should literally never happen
+        {
             return;
         }
 
         var gridUid = Transform(component.anchoredTo.Value).GridUid;
         if (gridUid is null)
             return;
-        Deanchor(uid, component.anchoredTo.Value, gridUid.Value, component);
+
+        Deanchor(uid, component.anchoredTo.Value, gridUid.Value, component); //otherwise, kick that shit out
+        _transformSystem.Unanchor(uid);
+
     }
 
     public void OnHardpointAnchor(EntityUid target, HardpointComponent comp, ref AnchorStateChangedEvent args)
@@ -61,7 +93,7 @@ public class SharedHardpointSystem : EntitySystem
     {
         if (component.anchoredTo is null)
         {
-            Logger.Error($"SharedHardpointSystem had a anchored entity that wasn't attached to a hardpoint!");
+            _sawmill.Debug($"SharedHardpointSystem had a anchored entity that wasn't attached to a hardpoint!");
             return;
         }
         var hardpointComp = Comp<HardpointComponent>(component.anchoredTo.Value);
@@ -76,14 +108,16 @@ public class SharedHardpointSystem : EntitySystem
         DirtyEntity(anchor);
         //Dirty(arg.CannonUid, component);
     }
-    public void OnAnchorTry(EntityUid uid, HardpointAnchorableOnlyComponent component, ref AnchorAttemptEvent args)
-    {
-        if (TryAnchorToAnyHardpoint(uid, component))
-            return;
-        args.Cancel();
-    }
 
-    public bool TryAnchorToAnyHardpoint(EntityUid uid, HardpointAnchorableOnlyComponent component)
+    /// <summary>
+    /// Returns true/false based on if we are able to anchor something here or not.
+    /// TRUE: we're good to anchor here, hardpoint fits/exists.
+    /// FALSE: there is no hardpoint/it's of the wrong type
+    /// </summary>
+    /// <param name="uid"></param>
+    /// <param name="component"></param>
+    /// <returns></returns>
+    public bool TryAnchorToHardpoint(EntityUid uid, HardpointAnchorableOnlyComponent component)
     {
         var gridUid = Transform(uid).GridUid;
         if (gridUid is null)
@@ -112,7 +146,7 @@ public class SharedHardpointSystem : EntitySystem
         return false;
     }
 
-    public void AnchorEntityToHardpoint(EntityUid target, EntityUid anchor,HardpointAnchorableOnlyComponent targetComp, HardpointComponent hardpoint, EntityUid grid)
+    public void AnchorEntityToHardpoint(EntityUid target, EntityUid anchor, HardpointAnchorableOnlyComponent targetComp, HardpointComponent hardpoint, EntityUid grid)
     {
         hardpoint.anchoring = target;
         targetComp.anchoredTo = anchor;

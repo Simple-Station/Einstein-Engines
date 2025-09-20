@@ -30,6 +30,7 @@
       containers:
         ballistic-ammo: !type:Container
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 145
       fireRate: 5
       selectedMode: FullAuto
@@ -66,6 +67,7 @@
   name: SHI MG-213 light dual machinegun 20x135mm Mk. II
   components:
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 145
       fireRate: 5.5
     - type: Machine
@@ -103,6 +105,7 @@
         ballistic-ammo: !type:Container
           ents: []
     - type: Gun
+      fireOnDropChance: 0
       fireRate: 12
       projectileSpeed: 120
       selectedMode: FullAuto
@@ -196,6 +199,7 @@
         ballistic-ammo: !type:Container
           ents: []
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 75
       fireRate: 0.5
       selectedMode: FullAuto
@@ -286,6 +290,7 @@
               sound:
                 collection: MetalGlassBreak
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 130
       fireRate: 2
       selectedMode: FullAuto
@@ -347,6 +352,7 @@
         ballistic-ammo: !type:Container
           ents: []
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 130
       fireRate: 0.2
       selectedMode: FullAuto
@@ -439,6 +445,7 @@
       containers:
         ballistic-ammo: !type:Container
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 95
       fireRate: 4
       selectedMode: FullAuto
@@ -499,6 +506,7 @@
       containers:
         ballistic-ammo: !type:Container
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 14
       fireRate: 0.09
       selectedMode: FullAuto
@@ -565,6 +573,7 @@
         ballistic-ammo: !type:Container
           ents: []
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 130
       fireRate: 0.6
       selectedMode: FullAuto
@@ -658,6 +667,7 @@
       containers:
         ballistic-ammo: !type:Container
     - type: Gun
+      fireOnDropChance: 0
       fireRate: 7
       projectileSpeed: 145
       selectedMode: FullAuto
@@ -712,6 +722,7 @@
         ballistic-ammo: !type:Container
           ents: []
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 30
       fireRate: 0.4
       selectedMode: FullAuto
@@ -783,6 +794,7 @@
         ballistic-ammo: !type:Container
           ents: []
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 85
       fireRate: 0.9
       selectedMode: FullAuto
@@ -854,6 +866,7 @@
         ballistic-ammo: !type:Container
           ents: []
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 130
       fireRate: 0.2
       selectedMode: FullAuto
@@ -925,6 +938,7 @@
         ballistic-ammo: !type:Container
           ents: []
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 90
       fireRate: 0.8
       selectedMode: FullAuto
@@ -1018,6 +1032,7 @@
         ballistic-ammo: !type:Container
           ents: []
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 30
       fireRate: 0.2
       selectedMode: FullAuto
@@ -1088,6 +1103,7 @@
       containers:
         ballistic-ammo: !type:Container
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 75
       fireRate: 1.7
       selectedMode: FullAuto
@@ -1149,6 +1165,7 @@
       containers:
         ballistic-ammo: !type:Container
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 95
       fireRate: 12
       selectedMode: FullAuto
@@ -1228,6 +1245,7 @@
       containers:
         ballistic-ammo: !type:Container
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 95
       fireRate: 3.5
       selectedMode: FullAuto
@@ -1307,6 +1325,7 @@
       containers:
         ballistic-ammo: !type:Container
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 60
       fireRate: 3.4
       selectedMode: FullAuto
@@ -1392,6 +1411,7 @@
       containers:
         ballistic-ammo: !type:Container
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 30
       fireRate: 0.5
       selectedMode: FullAuto
@@ -1470,6 +1490,7 @@
         ballistic-ammo: !type:Container
           ents: []
     - type: Gun
+      fireOnDropChance: 0
       fireRate: 3
       projectileSpeed: 80
       soundGunshot:
@@ -1550,6 +1571,7 @@
                 collection: MetalGlassBreak
     - type: ProjectileIFF
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 95
       fireRate: 0.6
       selectedMode: FullAuto
@@ -1609,6 +1631,7 @@
                 collection: MetalGlassBreak
     - type: ProjectileIFF
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 95
       fireRate: 5
       selectedMode: FullAuto
@@ -1670,6 +1693,7 @@
       containers:
         ballistic-ammo: !type:Container
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 95
       fireRate: 3
       selectedMode: FullAuto
