@@ -416,7 +416,7 @@
 
 # @baldy (baldy) donor gun
 - type: entity
-  name: SAW Plasma Cutter
+  name: SAW L-200 plasma saw
   parent: WeaponLaserCarbine
   id: WeaponDonorPlasmaCutter
   description: This compact cutter fires bolts of ionized plasma that cut easily through most surfaces, making it a cheap but versatile mining tool. This one has been haphazardly modified to work as a self defense tool.

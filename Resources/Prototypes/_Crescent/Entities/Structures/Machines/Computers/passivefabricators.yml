@@ -1,14 +1,16 @@
+#DEBUG - DO NOT USE
+
 - type: entityList
   id: excelsiorUplinkDropTable
   entities:
   - SheetPlasma1
-  - SheetPlasma
   - SheetUranium1
 
 - type: entity
   parent: MedicalBiofabricator
   id: PassiveSpawnerDebugPrototype
   name: Excelsior Material Drop-In Uplink
+  suffix: DEBUG, DO NOT MAP
   description: A advanced machine used by the Excelsior revolutionary group to bring material support to violent revolutions at points of interest.
   components:
   - type: Sprite
@@ -21,3 +23,140 @@
     entityListProto: excelsiorUplinkDropTable
     spawnDelay: 5
     requirePower: true
+
+#AUTOMINER
+
+- type: entityList
+  id: autominerDropTable
+  entities:
+  - TungstenOre1
+  - Coal1
+  - UraniumOre1
+  - SilverOre1
+  - PlasmaOre1
+  - GoldOre1
+  - CopperOre1
+  - SteelOre1
+
+- type: entity
+  parent: PassiveSpawnerDebugPrototype
+  id: AutominerPassiveFactory
+  name: antique NT-AD-2 automated drill
+  description: An antique NanoTrasen mining drill that cuts into the asteroid floor below. Looks like you could get it back in working order with some effort.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/purifier.rsi
+    snapCardinals: true
+    layers:
+    - state: base_machine
+  - type: PassiveSpawningMachine
+    entityListProto: autominerDropTable
+    spawnDelay: 8
+    requirePower: true
+
+#AUTOFOUNDRY
+
+- type: entityList
+  id: autofoundryDropTable
+  entities:
+  - IdnaTorpedo
+  - TorpGarg
+  - TorpGargEMP
+  - LanceRocketCartridge
+  - HeavyMortarCartridge
+  - MagazineFlak
+  - TorpCatapult
+  - MagazineVulcan
+  - MagazineLightRifleBoxSlug
+  - MagazineLightRifleBoxSlugHE
+  - MagazineMortar
+  - BaseMagazineLens
+  - LensXray
+  - LensInfared
+  - LensMicrowave
+  - LensPlasma
+  - StandardAntimatterCanister
+  - PlasmaAntimatterCanister
+  - GuidedAntimatterCanister
+  - SwarmrocketClip
+  - MagazineNeedler
+  - MagazineRocketHighYield
+
+- type: entity
+  parent: PassiveSpawnerDebugPrototype
+  id: AutofoundryPassiveFactory
+  name: derelict NT-TGF-70 automated foundry
+  description: An old, worn-down industrial block that is fed sorted goods through internal piping to output munitions and military equipment. Looks like this one can still operate if maintained.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/furnacefactory.rsi
+    snapCardinals: true
+    layers:
+    - state: furnace
+  - type: PassiveSpawningMachine
+    entityListProto: autofoundryDropTable
+    spawnDelay: 60
+    requirePower: true
+
+#AUTOSCRAPPER
+
+- type: entityList
+  id: autoscrapperDropTable
+  entities:
+  - SteelScrap1
+  - TitaniumScrap1
+  - ScrapCircuit1
+  - BasicElectronics1
+  - BasicMechatronics1
+  - LaserLocus1
+  - BallisticCycler1
+  - TubeLoader1
+  - HardlightGenerator
+  - ScrapPlasma1
+  - ScrapUranium1
+
+- type: entity
+  parent: PassiveSpawnerDebugPrototype
+  id: AutoscrapperPassiveFactory
+  name: derelict NT-IAC-2 scrap assorter
+  description: An old, worn-down industrial block that is fed unsorted scrap through internal piping to output scavengable goods. Looks like this one can still operate if maintained.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/bigfactorystructure.rsi
+    snapCardinals: true
+    layers:
+    - state: scrapforge
+  - type: PassiveSpawningMachine
+    entityListProto: autoscrapperDropTable
+    spawnDelay: 20
+    requirePower: true
+
+#AUTOSMELTER
+
+- type: entityList
+  id: autosmelterDropTable
+  entities:
+  - SheetSteel1
+  - SheetPlasteel1
+  - IngotGold1
+  - IngotCopper1
+  - IngotSilver1
+  - IngotTungsten1
+
+- type: entity
+  parent: PassiveSpawnerDebugPrototype
+  id: AutosmelterPassiveFactory
+  name: derelict NT-940 smelter
+  description: An antiquated machine. Fed with raw ore through internal tubing to output refined materials in set, stable intervals. Looks like this one still has a bit of juice left.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/bigfactorystructure.rsi
+    snapCardinals: true
+    layers:
+    - state: crucibleforge
+      map: ["enum.LatheVisualLayers.IsRunning"]
+  - type: PassiveSpawningMachine
+    entityListProto: autosmelterDropTable
+    spawnDelay: 10
+    requirePower: true
+
