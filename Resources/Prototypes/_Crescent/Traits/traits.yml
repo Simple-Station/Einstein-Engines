@@ -140,18 +140,18 @@
 #       languagesUnderstood:
 #         - OldTaypani
 
-- type: trait
-  id: American
-  category: TraitsSpeechLanguages
-  points: -4
-  requirements:
-    - !type:CharacterNationalityRequirement
-      inverted: true
-      nationalities:
-        - Bieselite # NAP
-  functions:
-    - !type:TraitModifyLanguages
-      languagesSpoken:
-        - American
-      languagesUnderstood:
-        - American
+# - type: trait
+#   id: American
+#   category: TraitsSpeechLanguages
+#   points: -4
+#   requirements:
+#     - !type:CharacterNationalityRequirement
+#       inverted: true
+#       nationalities:
+#         - Bieselite # NAP
+#   functions:
+#     - !type:TraitModifyLanguages
+#       languagesSpoken:
+#         - American
+#       languagesUnderstood:
+#         - American
