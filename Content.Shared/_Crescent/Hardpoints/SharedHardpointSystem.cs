@@ -17,7 +17,7 @@ public class SharedHardpointSystem : EntitySystem
     /// <inheritdoc/>
     public override void Initialize()
     {
-        SubscribeLocalEvent<HardpointAnchorableOnlyComponent, AnchorAttemptEvent>(OnAnchorTry);
+        //SubscribeLocalEvent<HardpointAnchorableOnlyComponent, AnchorAttemptEvent>(OnAnchorTry);
         SubscribeLocalEvent<HardpointAnchorableOnlyComponent, AnchorStateChangedEvent>(OnAnchorChange);
         SubscribeLocalEvent<HardpointAnchorableOnlyComponent, MapInitEvent>(OnMapLoad);
         SubscribeLocalEvent<HardpointComponent, AnchorStateChangedEvent>(OnHardpointAnchor);
@@ -34,18 +34,36 @@ public class SharedHardpointSystem : EntitySystem
     }
     public void OnAnchorChange(EntityUid uid, HardpointAnchorableOnlyComponent component, ref AnchorStateChangedEvent args)
     {
-        if (args.Anchored)
-            return;
+        //CONCEPT:
+        /*
+        "im a shipgun"
+        "i just got anchored or deanchored!"
+        "if i got anchored, let me check if I've got a valid hardpoint under me."
+            "if yes, then set the values properly and stay anchored."
+            "if no, then immediately deanchor and send a popup, and a console error message."
+        "if i just got deanchored, continue with the deanchoring process that sets the values."
+        */
         if (component.anchoredTo is null)
         {
             // Fuck my chungus life just ignore this error. Auto-generated component states can't transmit entity uids properly , SPCR 2025
-            Logger.Error($"SharedHardpointSystem had a anchored entity that wasn't attached to a hardpoint!");
+            //Logger.Error($"SharedHardpointSystem had a anchored entity that wasn't attached to a hardpoint!");
             return;
         }
-
         var gridUid = Transform(component.anchoredTo.Value).GridUid;
         if (gridUid is null)
             return;
+
+        if (args.Anchored) //the hardpoint just got anchored, so we run the test if we should make it be valid.
+        {
+            if (TryAnchorToAnyHardpoint(uid, component)) //if it's a valid hardpoint, then we're good
+                return;
+            else
+            {
+                Deanchor(uid, component.anchoredTo.Value, gridUid.Value, component); //otherwise, kick that shit out
+                _transformSystem.Unanchor(uid);
+            }
+        }
+
         Deanchor(uid, component.anchoredTo.Value, gridUid.Value, component);
     }
 
@@ -77,13 +95,24 @@ public class SharedHardpointSystem : EntitySystem
         DirtyEntity(anchor);
         //Dirty(arg.CannonUid, component);
     }
-    public void OnAnchorTry(EntityUid uid, HardpointAnchorableOnlyComponent component, ref AnchorAttemptEvent args)
-    {
-        if (TryAnchorToAnyHardpoint(uid, component))
-            return;
-        args.Cancel();
-    }
+    // public void OnAnchorTry(EntityUid uid, HardpointAnchorableOnlyComponent component, ref AnchorAttemptEvent args)
+    // {
+    //     if (TryAnchorToAnyHardpoint(uid, component))
+    //     {
+    //         //AnchorEntityToHardpoint(uid, entity, component, hardComp, gridUid.Value);
+    //         return;
+    //     }
+    //     args.Cancel();
+    // }
 
+    /// <summary>
+    /// Returns true/false based on if we are able to anchor something here or not.
+    /// TRUE: we're good to anchor here, hardpoint fits/exists.
+    /// FALSE: there is no hardpoint/it's of the wrong type
+    /// </summary>
+    /// <param name="uid"></param>
+    /// <param name="component"></param>
+    /// <returns></returns>
     public bool TryAnchorToAnyHardpoint(EntityUid uid, HardpointAnchorableOnlyComponent component)
     {
         var gridUid = Transform(uid).GridUid;
@@ -107,6 +136,8 @@ public class SharedHardpointSystem : EntitySystem
             if (hardComp.CompatibleSizes < component.CompatibleSizes)
                 continue;
             AnchorEntityToHardpoint(uid, entity, component, hardComp, gridUid.Value);
+            //instead of doing it here, let's try to use the return true / return false and figure out if we can do it somewhere else
+            //and cancel it based on the return true/false
             return true;
         }
 
