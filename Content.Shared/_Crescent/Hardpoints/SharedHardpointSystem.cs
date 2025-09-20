@@ -17,7 +17,7 @@ public class SharedHardpointSystem : EntitySystem
     /// <inheritdoc/>
     public override void Initialize()
     {
-        SubscribeLocalEvent<HardpointAnchorableOnlyComponent, AnchorAttemptEvent>(OnAnchorTry, after: [typeof(AnchorableSystem)]);
+        SubscribeLocalEvent<HardpointAnchorableOnlyComponent, AnchorAttemptEvent>(OnAnchorTry);
         SubscribeLocalEvent<HardpointAnchorableOnlyComponent, AnchorStateChangedEvent>(OnAnchorChange);
         SubscribeLocalEvent<HardpointAnchorableOnlyComponent, MapInitEvent>(OnMapLoad);
         SubscribeLocalEvent<HardpointComponent, AnchorStateChangedEvent>(OnHardpointAnchor);
@@ -79,11 +79,8 @@ public class SharedHardpointSystem : EntitySystem
     }
     public void OnAnchorTry(EntityUid uid, HardpointAnchorableOnlyComponent component, ref AnchorAttemptEvent args)
     {
-        if (args.Cancelled)
-            return;
         if (TryAnchorToAnyHardpoint(uid, component))
             return;
-        AnchorEntityToHardpoint(uid, entity, component, hardComp, gridUid.Value);
         args.Cancel();
     }
 
@@ -109,6 +106,7 @@ public class SharedHardpointSystem : EntitySystem
                 continue;
             if (hardComp.CompatibleSizes < component.CompatibleSizes)
                 continue;
+            AnchorEntityToHardpoint(uid, entity, component, hardComp, gridUid.Value);
             return true;
         }
 
