@@ -211,3 +211,13 @@
   cost: 50000
   category: cargoproduct-category-name-shuttleammo
   group: genericAmmo
+
+- type: cargoProduct
+  id: ShuttlePrinceAmmoGeneric
+  icon:
+    sprite: _Crescent/Ammunition/flak.rsi
+    state: base
+  product: CratePrinceAmmo
+  cost: 25000
+  category: cargoproduct-category-name-shuttleammo
+  group: genericAmmo
