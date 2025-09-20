@@ -601,9 +601,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 2000
+    totalIntensity: 1250
     intensitySlope: 5
-    maxIntensity: 30
+    maxIntensity: 20
     maxTileBreak: 0
   - type: ProximityFuse
     maxRange: 20
