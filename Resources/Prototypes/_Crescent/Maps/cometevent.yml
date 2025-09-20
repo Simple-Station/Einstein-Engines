@@ -1,10 +1,10 @@
 - type: gameMap
-  id: Comet
+  id: Cometa
   mapName: 'NCWL Katyusha'
   mapPath: /Maps/_Crescent/Stations/cometevent.yml
   minPlayers: 0
   stations:
-    Comet:
+    Cometa:
       stationProto: StandardCrescentStation
       components:
         - type: BlockShipWeaponProjectileGrid
