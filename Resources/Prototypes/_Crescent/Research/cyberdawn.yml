@@ -148,7 +148,7 @@
 
 # tier 3
 
-- type: technology removed until fix
+- type: technology
   id: CyberdawnEgui
   name: research-technology-cyberdawn-egui
   icon:
