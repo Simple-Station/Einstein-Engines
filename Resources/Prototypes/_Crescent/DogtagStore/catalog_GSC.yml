@@ -229,7 +229,7 @@
 
 #SUITS
 
-- type: listing  Removed until fix for the suit
+- type: listing
   id: StoreListingGSCEgui
   name: CDT mk-1 "Egui" tacsuit
   description: The crown jewel of Cyberdawn's technological prowess. Bargaining it out is going to be costly.
