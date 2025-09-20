@@ -93,37 +93,37 @@
       languagesUnderstood:
         - Kaishago
 
-# - type: trait
-#   id: Clarizian
-#   category: TraitsSpeechLanguages
-#   points: -4
-#   requirements:
-#     - !type:CharacterNationalityRequirement
-#       inverted: true
-#       nationalities:
-#         - Clarizian
-#   functions:
-#     - !type:TraitModifyLanguages
-#       languagesSpoken:
-#         - Clarizian
-#       languagesUnderstood:
-#         - Clarizian
+- type: trait
+  id: Clarizian
+  category: TraitsSpeechLanguages
+  points: -2
+  requirements:
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Clarizian
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Clarizian
+      languagesUnderstood:
+        - Clarizian
 
-# - type: trait
-#   id: SolBasic
-#   category: TraitsSpeechLanguages
-#   points: -4
-#   requirements:
-#     - !type:CharacterNationalityRequirement
-#       inverted: true
-#       nationalities:
-#         - Authority
-#   functions:
-#     - !type:TraitModifyLanguages
-#       languagesSpoken:
-#         - SolBasic
-#       languagesUnderstood:
-#         - SolBasic
+- type: trait
+  id: SolBasic
+  category: TraitsSpeechLanguages
+  points: -2
+  requirements:
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Authority
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - SolBasic
+      languagesUnderstood:
+        - SolBasic
 
 # - type: trait
 #   id: OldTaypani
@@ -140,18 +140,18 @@
 #       languagesUnderstood:
 #         - OldTaypani
 
-# - type: trait
-#   id: American
-#   category: TraitsSpeechLanguages
-#   points: -4
-#   requirements:
-#     - !type:CharacterNationalityRequirement
-#       inverted: true
-#       nationalities:
-#         - Bieselite # NAP
-#   functions:
-#     - !type:TraitModifyLanguages
-#       languagesSpoken:
-#         - American
-#       languagesUnderstood:
-#         - American
+- type: trait
+  id: American
+  category: TraitsSpeechLanguages
+  points: -2
+  requirements:
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Bieselite # NAP
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - American
+      languagesUnderstood:
+        - American

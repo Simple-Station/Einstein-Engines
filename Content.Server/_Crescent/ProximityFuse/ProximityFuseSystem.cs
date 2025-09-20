@@ -41,14 +41,15 @@ public sealed class ProximityFuseSystem : EntitySystem
                     (!TryComp(txform.GridUid, out theirPhysics) && !TryComp(tuid, out theirPhysics)))
                     return;
 
-                float nextDistance = Vector2.Distance(_transform.ToMapCoordinates(txform.Coordinates).Position + theirPhysics.LinearVelocity, _transform.ToMapCoordinates(xform.Coordinates).Position + ourPhysics.LinearVelocity);
+                // float nextDistance = Vector2.Distance(_transform.ToMapCoordinates(txform.Coordinates).Position + theirPhysics.LinearVelocity, _transform.ToMapCoordinates(xform.Coordinates).Position + ourPhysics.LinearVelocity);
 
                 var t = comp.Targets.Find(x => x.ent == tuid);
                 if (t != null && distance <= comp.MaxRange)
                 {
                     t.LastDistance = t.Distance;
                     t.Distance = distance;
-                    if (t.Distance > t.LastDistance || t.Distance < nextDistance)
+                    // if (t.Distance > t.LastDistance || t.Distance < nextDistance)
+                    if (t.Distance > t.LastDistance)
                         Detonate(uid);
                 }
                 else if (t != null && distance > comp.MaxRange)
