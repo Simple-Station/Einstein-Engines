@@ -83,7 +83,12 @@
   - type: ReverseEngineering # Nyano
     difficulty: 3
     recipes:
-      - HolofanProjector
+    - HolofanProjector
+  - type: GuideHelp
+    guides:
+    - AtmosTools
+    - Fires
+    - Spacing
 
 - type: entity
   parent: HolofanProjector
@@ -115,7 +120,7 @@
     - type: ReverseEngineering # Nyano
       difficulty: 3
       recipes:
-        - HoloprojectorField
+      - HoloprojectorField
 
 - type: entity
   parent: HoloprojectorField
@@ -142,6 +147,7 @@
     - type: Tag
       tags:
         - HolofanProjector
+        - SecBeltEquip
     - type: StaticPrice
       price: 50
 

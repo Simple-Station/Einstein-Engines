@@ -41,7 +41,7 @@ public abstract class SharedAirlockSystem : EntitySystem
         // the initial power-check.
 
         if (TryComp(uid, out DoorComponent? door)
-            && !door.Partial
+            && !args.Partial
             && !CanChangeState(uid, airlock))
         {
             args.Cancel();

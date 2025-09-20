@@ -28,16 +28,6 @@
       - SurplusBundle
 
 - type: listing
-  id: UplinkDoorjack
-  name: uplink-doorjack-name
-  description: uplink-doorjack-desc
-  productEntity: Doorjack
-  cost:
-    Telecrystal: 30
-  categories:
-  - UplinkDisruption
-
-- type: listing
   id: BaseBallBatHomeRun
   name: uplink-home-run-bat-name
   description: uplink-home-run-bat-desc

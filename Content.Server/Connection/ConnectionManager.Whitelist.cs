@@ -17,7 +17,7 @@ public sealed partial class ConnectionManager
 {
     private PlayerConnectionWhitelistPrototype[]? _whitelists;
 
-    public void PostInit()
+    private void InitializeWhitelist()
     {
         _cfg.OnValueChanged(CCVars.WhitelistPrototypeList, UpdateWhitelists, true);
     }
@@ -121,7 +121,7 @@ public sealed partial class ConnectionManager
 
     private async Task<bool> CheckConditionManualWhitelist(NetUserData data)
     {
-        return !(await _db.GetWhitelistStatusAsync(data.UserId));
+        return await _db.GetWhitelistStatusAsync(data.UserId);
     }
 
     private async Task<bool> CheckConditionManualBlacklist(NetUserData data)

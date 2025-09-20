@@ -28,9 +28,8 @@
     locked: true
     lockOnClick: false
     unlockOnClick: false
-    breakOnEmag: false
+    breakOnAccessBreaker: false
   - type: AccessReader
-    breakOnEmag: true
     ownerHasAccess: true
   - type: NpcFactionMember
     factions:

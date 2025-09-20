@@ -71,6 +71,10 @@
     - type: Weldable
     - type: AtmosMonitoringConsoleDevice
       navMapBlip: GasVentOpening
+    - type: GuideHelp
+      guides:
+      - AirVent
+      - DeviceMonitoringAndControl
 
 - type: entity
   parent: GasUnaryBase
@@ -98,6 +102,9 @@
       node: passivevent
     - type: AtmosMonitoringConsoleDevice
       navMapBlip: GasVentOpening
+    - type: GuideHelp
+      guides:
+      - PassiveVent
 
 - type: entity
   parent: [GasUnaryBase, AirSensorBase]
@@ -150,6 +157,10 @@
     - type: Weldable
     - type: AtmosMonitoringConsoleDevice
       navMapBlip: GasVentScrubber
+    - type: GuideHelp
+      guides:
+      - AirScrubber
+      - DeviceMonitoringAndControl
 
 - type: entity
   parent: GasUnaryBase
@@ -191,6 +202,9 @@
       - enum.LightLayers.Unshaded
     - type: AtmosMonitoringConsoleDevice
       navMapBlip: GasVentOpening
+    - type: GuideHelp
+      guides:
+      - AirInjector
 
 - type: entity
   parent: [ BaseMachinePowered, ConstructibleMachine ]
@@ -218,7 +232,7 @@
       key: enum.ThermomachineUiKey.Key
     - type: WiresPanel
     - type: WiresVisuals
-    #- type: PipeRestrictOverlap  Allow for pipe stacking
+    # - type: PipeRestrictOverlap  Allow for pipe stacking
     - type: NodeContainer
       nodes:
         pipe:
@@ -237,6 +251,9 @@
     - type: PowerSwitch
     - type: AtmosMonitoringConsoleDevice
       navMapBlip: Thermoregulator
+    - type: GuideHelp
+      guides:
+      - Thermomachines
 
 - type: entity
   parent: BaseGasThermoMachine
@@ -397,7 +414,7 @@
   - type: GasCondenser
   - type: AtmosPipeColor
   - type: AtmosDevice
-  #- type: PipeRestrictOverlap # Allow pipe stacking on device.
+  # - type: PipeRestrictOverlap # Allow pipe stacking on device.
   - type: ApcPowerReceiver
     powerLoad: 10000
   - type: Machine
@@ -444,3 +461,6 @@
   - type: PowerSwitch
   - type: AtmosMonitoringConsoleDevice
     navMapBlip: Thermoregulator
+  - type: GuideHelp
+    guides:
+    - GasCondensing
