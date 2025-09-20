@@ -32,6 +32,7 @@ public abstract class SharedMaterialReclaimerSystem : EntitySystem
     [Dependency] protected readonly SharedContainerSystem Container = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly EmagSystem _emag = default!;
 
     public const string ActiveReclaimerContainerId = "active-material-reclaimer-container";
 
@@ -63,6 +64,12 @@ public abstract class SharedMaterialReclaimerSystem : EntitySystem
 
     private void OnEmagged(EntityUid uid, MaterialReclaimerComponent component, ref GotEmaggedEvent args)
     {
+        if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
+            return;
+
+        if (_emag.CheckFlag(uid, EmagType.Interaction))
+            return;
+
         args.Handled = true;
     }
 
@@ -197,7 +204,7 @@ public abstract class SharedMaterialReclaimerSystem : EntitySystem
         if (HasComp<ActiveMaterialReclaimerComponent>(uid))
             return false;
 
-        return component.Powered && component.Enabled;
+        return component.Powered && component.Enabled  && !component.Broken;
     }
 
     /// <summary>
@@ -211,7 +218,7 @@ public abstract class SharedMaterialReclaimerSystem : EntitySystem
             && component.Enabled
             && !component.Broken
             && HasComp<BodyComponent>(victim)
-            && HasComp<EmaggedComponent>(uid);
+            && _emag.CheckFlag(uid, EmagType.Interaction);
     }
 
     /// <summary>

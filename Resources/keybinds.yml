@@ -282,6 +282,16 @@ binds:
   type: State
   key: MouseMiddle
   canFocus: true
+- function: RotateObjectClockwise
+  type: State
+  key: R
+- function: RotateObjectCounterclockwise
+  type: State
+  key: R
+  mod1: Shift
+- function: FlipObject
+  type: State
+  key: F
 - function: TextCursorLeft
   type: State
   key: Left
@@ -468,6 +478,9 @@ binds:
 - function: OpenDecalSpawnWindow
   type: State
   key: F8
+- function: ToggleRoundEndSummaryWindow
+  type: Toggle
+  key: F9
 - function: OpenSandboxWindow
   type: State
   key: B
@@ -590,9 +603,11 @@ binds:
   type: State
   key: Num9
   mod1: Shift
+# WD EDIT START
 - function: LookUp
   type: State
   key: Space
+# WD EDIT END
 - function: MappingUnselect
   type: State
   key: MouseRight

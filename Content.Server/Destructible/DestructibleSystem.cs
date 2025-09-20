@@ -110,7 +110,7 @@ namespace Content.Server.Destructible
                 if (!TryComp(child, out EmbeddableProjectileComponent? embed))
                     continue;
 
-                _projectile.RemoveEmbed(child, embed);
+                _projectile.UnEmbed(child, embed);
                 _throwing.TryThrow(child, Random.NextVector2(), 1f, friction: 100f); // very short distance
             }
         }

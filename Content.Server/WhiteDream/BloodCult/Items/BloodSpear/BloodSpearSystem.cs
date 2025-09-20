@@ -74,8 +74,8 @@ public sealed class BloodSpearSystem : EntitySystem
         var cultistCoords = _transform.GetWorldPosition(cultist);
 
         if (TryComp<EmbeddableProjectileComponent>(spearUid, out var embeddableProjectile)
-            && embeddableProjectile.Target.HasValue)
-            _projectile.RemoveEmbed(spearUid.Value, embeddableProjectile);
+            && embeddableProjectile.EmbeddedIntoUid.HasValue)
+            _projectile.UnEmbed(spearUid.Value, embeddableProjectile);
 
         _transform.AttachToGridOrMap(spearUid.Value, spearXform);
         _transform.SetWorldPosition(spearXform, cultistCoords);

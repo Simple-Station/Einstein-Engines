@@ -1081,7 +1081,7 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: Doorjack
+- proto: AccessBreaker
   entities:
   - uid: 61
     components:

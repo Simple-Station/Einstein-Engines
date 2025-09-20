@@ -24,7 +24,7 @@ namespace Content.Client.Administration.Systems
             OnBwoinkTextMessageRecieved?.Invoke(this, message);
         }
 
-        public void Send(NetUserId channelId, string text, bool playSound)
+        public void Send(NetUserId channelId, string text, bool playSound, bool adminOnly)
         {
             var info = _adminSystem.PlayerInfos.GetValueOrDefault(channelId)?.Connected ?? true;
             _audio.PlayGlobal(info ? AHelpUIController.AHelpSendSound : AHelpUIController.AHelpErrorSound,
@@ -32,7 +32,7 @@ namespace Content.Client.Administration.Systems
 
             // Reuse the channel ID as the 'true sender'.
             // Server will ignore this and if someone makes it not ignore this (which is bad, allows impersonation!!!), that will help.
-            RaiseNetworkEvent(new BwoinkTextMessage(channelId, channelId, text, playSound: playSound));
+            RaiseNetworkEvent(new BwoinkTextMessage(channelId, channelId, text, playSound: playSound, adminOnly: adminOnly));
             SendInputTextUpdated(channelId, false);
         }
 

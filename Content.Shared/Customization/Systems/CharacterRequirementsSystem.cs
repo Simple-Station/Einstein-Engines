@@ -27,7 +27,7 @@ public sealed class CharacterRequirementsSystem : EntitySystem
     [Dependency] private readonly ISharedPlaytimeManager _playtimeManager = default!;
 
     public bool CheckRequirementValid(CharacterRequirement requirement, JobPrototype job,
-        HumanoidCharacterProfile profile, Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
+        HumanoidCharacterProfile profile, IReadOnlyDictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out string? reason, int depth = 0)
     {
@@ -66,7 +66,7 @@ public sealed class CharacterRequirementsSystem : EntitySystem
     }
 
     public bool CheckRequirementsValid(List<CharacterRequirement> requirements, JobPrototype job,
-        HumanoidCharacterProfile profile, Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
+        HumanoidCharacterProfile profile, IReadOnlyDictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out List<string> reasons, int depth = 0, MindComponent? mind = null)
     {

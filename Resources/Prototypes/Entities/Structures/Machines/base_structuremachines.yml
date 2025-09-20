@@ -3,6 +3,7 @@
   parent: BaseStructure
   id: BaseMachine
   components:
+  - type: Animateable
   - type: InteractionOutline
   - type: Anchorable
     delay: 2
@@ -66,6 +67,7 @@
   abstract: true
   id: ConstructibleMachine
   components:
+  - type: Animateable
   - type: Machine
   - type: ContainerContainer
     containers:

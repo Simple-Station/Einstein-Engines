@@ -2,6 +2,7 @@ using Content.Server.Forensics;
 using Content.Server.Humanoid;
 using Content.Shared._Shitmed.StatusEffects;
 using Content.Shared.Forensics;
+using Content.Shared.Forensics.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Preferences;
 using Content.Shared.Popups;

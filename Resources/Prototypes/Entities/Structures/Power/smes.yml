@@ -28,6 +28,8 @@
         - map: ["enum.SmesVisualLayers.Output"]
           state: "smes-op1"
           shader: unshaded
+        - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+          state: smes-open
     - type: Smes
     - type: UpgradeBattery
       maxChargeMultiplier: 2
@@ -72,6 +74,7 @@
       color: "#c9c042"
       castShadows: false
     - type: WiresPanel
+    - type: WiresVisuals
     - type: Machine
       board: SMESMachineCircuitboard
     - type: StationInfiniteBatteryTarget
@@ -94,6 +97,11 @@
       sendBroadcastAttemptEvent: true
       examinableAddress: true
     - type: WiredNetworkConnection
+    - type: GuideHelp
+      guides:
+      - PowerStorage
+      - VoltageNetworks
+      - Power
 
 # SMES' in use
 

@@ -109,7 +109,7 @@ public sealed partial class TraitPreferenceSelector : Control
                 if (requirement is CharacterLogicRequirement logicRequirement)
                 {
                     requirement.IsValid(
-                        highJob, profile, new(), jobRequirementsManager.IsWhitelisted(), trait,
+                        highJob, profile, new Dictionary<string, TimeSpan>(), jobRequirementsManager.IsWhitelisted(), trait,
                         entityManager, prototypeManager, configManager, out var reason);
                     box.AddChild(new RichTextLabel { Text = reason?.Split("\n")[0], Margin = new(8, 2), });
                     var newBox = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical, };
@@ -129,7 +129,7 @@ public sealed partial class TraitPreferenceSelector : Control
                 else
                 {
                     requirement.IsValid(
-                        highJob, profile, new(), jobRequirementsManager.IsWhitelisted(), trait,
+                        highJob, profile, new Dictionary<string, TimeSpan>(), jobRequirementsManager.IsWhitelisted(), trait,
                         entityManager, prototypeManager, configManager, out var reason);
                     box.AddChild(new RichTextLabel
                     {
