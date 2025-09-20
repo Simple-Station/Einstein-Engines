@@ -2778,7 +2778,7 @@ entities:
     - type: Transform
       pos: -3.681958,-0.8625565
       parent: 1
-- proto: ShuttleGunTorpedoFilled
+- proto: ShuttleGunTorpedo
   entities:
   - uid: 290
     components:
