@@ -2,6 +2,7 @@ using Content.Shared.Construction;
 using Content.Shared.Construction.Components;
 using Content.Shared.Construction.EntitySystems;
 using Content.Shared.Popups;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 
@@ -39,23 +40,26 @@ public class SharedHardpointSystem : EntitySystem
     }
     public void OnAnchorChange(EntityUid uid, HardpointAnchorableOnlyComponent component, ref AnchorStateChangedEvent args)
     {
-        //CONCEPT:
+        //LOGIC:
         /*
         "im a shipgun"
         "i just got anchored or deanchored!"
         "if i got anchored, let me check if I've got a valid hardpoint under me."
             "if yes, then set the values properly and stay anchored."
-            "if no, then immediately deanchor and send a popup, and a console error message."
-        "if i just got deanchored, "
+            "if no, then and send a popup. the values were never set, so the gun can't fire anyway."
+        "if i just got deanchored,"
+            "de-set all the values, then de-anchor the gun too."
         */
         if (args.Anchored)
         {
             if (TryAnchorToHardpoint(uid, component)) //if it's a valid hardpoint, then we're good. this function also sets the values properly.
+            {
                 return;
+            }
             else
             {
                 //_transformSystem.Unanchor(uid); //if it's not / we dont have a hardpoint under it, kick that shit out
-                _sawmill.Debug("no valid hardpoint - sending error message");
+                //play sound effect
                 _popup.PopupPredicted(Loc.GetString("WARNING! This weapon is not mounted on a compatible hardpoint and will not function!"), uid, null);
                 return;
             }
@@ -64,7 +68,6 @@ public class SharedHardpointSystem : EntitySystem
         //else, if we UNanchored
         if (component.anchoredTo == null) //this should literally never happen
         {
-            _sawmill.Debug("Shipgun unanchored with no hardpoint under it.");
             return;
         }
 
@@ -74,7 +77,6 @@ public class SharedHardpointSystem : EntitySystem
 
         Deanchor(uid, component.anchoredTo.Value, gridUid.Value, component); //otherwise, kick that shit out
         _transformSystem.Unanchor(uid);
-        _sawmill.Debug("deanchored succesfully");
 
     }
 
