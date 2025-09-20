@@ -3,11 +3,11 @@
   name: job-name-ncwl-medical-doctor
   description: job-description-ncwl-medical-doctor
   playTimeTracker: JobMedicalWorkerNCWL
-  weight: 2
+  weight: 3
   startingGear: DoctorNCWLGear
   alwaysUseSpawner: true
   requireAdminNotify: false
-  icon: "JobIconNCWLMedicalWorker"
+  icon: "JobIconNCWLSanitar"
   supervisors: job-supervisors-ncwl-partisan
   canBeAntag: false
   requirements:
@@ -22,8 +22,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
         - Pacifist

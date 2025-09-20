@@ -284,7 +284,7 @@
   name: NCWL Novo-mosin 7.62x51mm
   parent: [BaseWeaponSniper, BaseGunWieldable]
   id: WeaponSniperNCWLNovomosin
-  description: A desperate weapon, hastily resurrected from ancient bolt action blueprints scavenged from an Imperial Scribe Guild archive. The bolts barely hold the receiver together, and its tolerances are more rumor than engineering. Originally meant to arm the first wave of communards during the revolution, the design was quietly shelved once the Batyana rifle was finalized. Most of these were dumped on Typan Prime. If you’re seeing one now, something has gone terribly wrong.
+  description: A resurrected bolt-action rifle cobbled from ancient blueprints. Crude and unreliable, but still deadly in trained hands.
   components:
   - type: Item
     size: Ginormous
@@ -317,7 +317,7 @@
   name: IRM Legax 5.56x45mm
   parent: [BaseWeaponSniper, BaseGunWieldable]
   id: WeaponSniperDSMLegax
-  description: A lucky few households in Imperial fiefs maintain small armouries of heraldic equipment, passed down from father to son, brother to brother for the day that the horn sounds and they are levied to fight for their liege-lord. For those households without, there is the Legax. Stamped metal, bakelite grips and minimal production time - a weapon of reservists, policemen and bullet fodder.
+  description: A mass-produced Imperial rifle made of stamped metal and bakelite. Standard issue for reservists and planetary police forces.
   components:
   - type: Item
     size: Ginormous
@@ -351,7 +351,7 @@
   name: NCWL Häyhä 15.2x169mm Anti-materiel rifle
   parent: BaseItem
   id: WeaponAntimaterielNCWLHayha
-  description: An anti-materiel rifle of revolutionary make, featuring an oversized barrel crudely welded to a tangle of nanosteel pipes and freighter tubing. Odd and clunky by all accounts, Chambered in the massive 15×169mm, it's capable of punching through light armor and exosuits with relative ease. More than once, it’s been used to Loudly silence Union foremen caught lining their pockets during wartime.
+  description: A ramshackle anti-materiel rifle built from scavenged parts. Chambered in massive 15×169mm, it punches through light armor despite its crude construction.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/surplus_ncwl_amr.rsi
@@ -406,7 +406,7 @@
   name: IRM Leveller 15.2x169mm Anti-materiel rifle
   parent: BaseItem
   id: WeaponAntimaterielDSMLeveller
-  description: A controversial tool of war, anti-tank rifles have gained much disdain among the greater Imperial Houses for providing levymen with the firepower necessary to fell a mounted Knight from his exo-armour. However, needs must - the guardsmen of lesser domains maintain stockpiles of the outdated Leveller for meeting brigand hedge-knights and communard incursions on the field.
+  description: An old but effective anti-materiel rifle. While controversial among Imperial nobility for its armor-piercing capabilities, it remains a standard issue weapon for planetary defense forces.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_amr.rsi

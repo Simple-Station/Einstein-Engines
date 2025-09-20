@@ -4,10 +4,10 @@ job-description-ncwl-faction-leader = Lead the League from the external end. Mai
 job-description-ncwl-kommissar = Lead the League from the internal end. Make sure the Homeguard and Union does their job. Execute traitors.
 job-description-ncwl-fleetkapitan = Command the mass of Partisans. Listen to the Kommissar. Maintain battlefield cohesion.
 job-description-ncwl-partisan = Defend the League. Listen to your Fleetkapitan. Do what you're told.
-job-description-ncwl-industry-taskmaster = Ensure materials are being refined into trade goods and ammo. Organize trade routes. Work with the Overseer.
+job-description-ncwl-artificer = Ensure materials are being refined into trade goods and ammo. Conduct research.
 job-description-ncwl-medical-doctor = Keep the Workers and the Homeguard alive. Run with the Homeguard on missions. Make drugs, save those lost in space.
-job-description-ncwl-worker-overboss = Organize salvage and mining. Make sure workers are working. Keep resources flowing to the Coordinator.
-job-description-ncwl-newbie = Do what work needs doing. Serve the League. Listen to the Overseer and Coordinator.
+job-description-ncwl-coordinator = Organize salvage and mining. Make sure workers are working. Keep resources flowing to the league.
+job-description-ncwl-newbie = Do what work needs doing. Serve the League. Listen to your superiors.
 
 # syndicate
 
@@ -105,6 +105,7 @@ job-description-spacer = Be an independent citizen of Taypan.
 job-description-gliess-sheriff = Keep the law in Gliess Santo.
 job-description-gliess-deputy = Assist the Sheriff in keeping the law in Gliess Santo.
 job-description-gliess-dockmaster = Make sure nobody blows up your station.
+job-description-dockhand = Assist the Dockmaster in upkeeping Gliess Santo.
 
 # conscript-ncwl - for PLANETFALL
 job-description-conscript-ncwl-ship-captain = Pilot the Clementine. Ensure it's safety and use its armaments well. Go down with the ship.

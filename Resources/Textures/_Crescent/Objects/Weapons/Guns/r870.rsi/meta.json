@@ -1,0 +1,44 @@
+{
+    "version": 1,
+    "license": "",
+    "copyright": "Made by the Sector Crescent team for the Hullrot Project. All rights reserved. Do not modify, publish, use, relicense, or edit.",
+    "size": {
+        "x": 48,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "base"
+        },
+        {
+            "name": "bolt-open"
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "wielded-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "wielded-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "equipped-BACKPACK",
+            "directions": 4
+        },
+        {
+            "name": "equipped-SUITSTORAGE",
+            "directions": 4
+        }
+    ]
+}

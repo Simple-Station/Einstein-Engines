@@ -21,7 +21,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-foreman
+        rank: crescent-rank-freeholder
       - type: LanguageAdder
         addSpoken:
           - LowImperial

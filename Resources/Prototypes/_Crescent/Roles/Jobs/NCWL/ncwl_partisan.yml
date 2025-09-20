@@ -3,7 +3,7 @@
   name: job-name-ncwl-partisan
   description: job-description-ncwl-partisan
   playTimeTracker: JobHomeguardSoldatNCWL
-  weight: 3
+  weight: 5
   startingGear: SoldatNCWLGear
   alwaysUseSpawner: true
   requireAdminNotify: false
@@ -20,8 +20,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
         - Pacifist
