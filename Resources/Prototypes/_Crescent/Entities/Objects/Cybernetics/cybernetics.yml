@@ -296,7 +296,7 @@
   parent: HullrotCyberneticBase
   id: SkillshardSlot
   name: placeholder cerebral cybernetic (skillshard)
-  descrption: TBD - Have Aisha write a description pre-release for this.
+  description: TBD - Have Aisha write a description pre-release for this.
   components:
     - type: CerebralImplant
     - type: Sprite
