@@ -138,7 +138,7 @@
   name: PTA XCR-6 Charge rifle 6x24mm
   parent: BaseWeaponRifle
   id: WeaponSpecialChargeRifle
-  description: A canceled experimental rifle developed by Pang Tai Arms. Only a few exist. This one has the serial number M-18. Chambered in 6×24mm.
+  description: A experimental rifle developed by Pang Tai Arms. Extremly rare. This one has the serial number M-18. Chambered in 6×24mm.
   components:
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/charge_rifle.rsi
