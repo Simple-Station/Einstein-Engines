@@ -4,7 +4,7 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 09/21/2025 23:48:39
+  time: 09/22/2025 13:08:48
   entityCount: 58
 maps: []
 grids:
@@ -149,6 +149,7 @@ entities:
             79: -1,2
             86: 0,5
             88: 0,5
+            91: 0,5
         - node:
             id: LatticeEdgeS
           decals:
@@ -168,6 +169,8 @@ entities:
             85: 0,5
             87: 0,5
             89: 0,6
+            90: 0,5
+            92: 0,6
         - node:
             id: LatticeEdgeW
           decals:
@@ -443,6 +446,17 @@ entities:
       - Module C
       - Module D
       - Module E
+- proto: Gyroscope
+  entities:
+  - uid: 38
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,3.5
+      parent: 1
+    - type: Thruster
+      baseThrust: 50
+      thrust: 50
 - proto: PlasmaReinforcedWindowDirectional
   entities:
   - uid: 31
@@ -491,16 +505,9 @@ entities:
       pos: 0.5,4.5
       parent: 1
     - type: Battery
-      startingCharge: 18664.072
+      startingCharge: 4737.2554
     - type: ApcPowerReceiverBattery
       enabled: True
-- proto: SmallGyroscope
-  entities:
-  - uid: 38
-    components:
-    - type: Transform
-      pos: 0.5,3.5
-      parent: 1
 - proto: SubstationBasic
   entities:
   - uid: 39
