@@ -1,8 +1,8 @@
 - type: vessel
   id: Tyche
   name: DSM Tyche
-  description: The Dutchess. A Laelaps convert into a broadside-heavy elite cruiser with spaces converted to fit Throne for house Valkenrath-Zehring and materials to supply the members of court, at this time 4 people.
-  price: 50000
+  description: The Tyche, A stealth-based personal cruiser created for Ser Bosco Yore.
+  price: 45000
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/DSM/tyche.yml
@@ -22,4 +22,4 @@
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
-          designation: vessel-designation-carrier
+          designation: vessel-designation-stealth-boarder
