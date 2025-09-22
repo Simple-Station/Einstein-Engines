@@ -12,7 +12,8 @@ public sealed partial class SkillchipImplantHolderComponent : Component
 public sealed partial class SkillchipHolderComponent : Component
 {
     [DataField]
-    public int SkillchipAmount = 3;
+    public int SkillchipSlotAmount = 3;
+    public readonly string SkillchipSlotPrefix = "skillchip_";
 }
 
 [RegisterComponent]
