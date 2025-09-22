@@ -309,9 +309,8 @@
       - !type:TraitAddSlot
         slots:
           skillchip_slot:
-            name: flatpacker-item-slot-name
+            name: skilldeck-slot-name
             selfEjectOnly: true
             whitelist:
               components:
-              - MachineBoard
-              - ComputerBoard
+              - Skilldeck

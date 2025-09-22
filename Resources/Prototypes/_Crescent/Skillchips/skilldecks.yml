@@ -1,0 +1,12 @@
+- type: entity
+  parent: HullrotCyberneticBase
+  id: SkilldeckAdmemery
+  name: NT TR-01 "Admemery" skill deck
+  description: If you're a non-admin seeing this description, this is heavily concerning. Stop looking at this item and act as if it doesn't exist.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Misc/cybernetics.rsi
+      layers:
+        - state: cerebraltrainer
+    - type: Skilldeck
+      skillchipSlotAmount: 10
