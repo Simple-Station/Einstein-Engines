@@ -9,7 +9,7 @@ public sealed partial class SkillchipImplantHolderComponent : Component
 }
 
 [RegisterComponent]
-public sealed partial class SkillchipHolderComponent : Component
+public sealed partial class SkilldeckComponent : Component
 {
     [DataField]
     public int SkillchipSlotAmount = 3;

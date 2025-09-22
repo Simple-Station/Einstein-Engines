@@ -22,7 +22,7 @@ public sealed partial class SkillchipSystem : EntitySystem
     {
         var skillchipHolder = args.Item;
 
-        if (!TryComp<SkillchipHolderComponent>(skillchipHolder, out var holderComp))
+        if (!TryComp<SkilldeckComponent>(skillchipHolder, out var holderComp))
             return;
 
         // evil loop
@@ -47,7 +47,7 @@ public sealed partial class SkillchipSystem : EntitySystem
     {
         var skillchipHolder = args.Item;
 
-        if (!TryComp<SkillchipHolderComponent>(skillchipHolder, out var holderComp))
+        if (!TryComp<SkilldeckComponent>(skillchipHolder, out var holderComp))
             return;
 
         // evil loop
