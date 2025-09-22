@@ -295,4 +295,19 @@ namespace Content.Shared.Containers.ItemSlots
     /// </summary>
     [ByRefEvent]
     public record struct ItemSlotEjectAttemptEvent(EntityUid SlotEntity, EntityUid Item, EntityUid? User, ItemSlot Slot, bool Cancelled = false);
+
+    // If you have a problem with me adding the following events take it up with my fucking supervisor.
+    // My job is to code, not deal with the consequences of my actions.
+
+    /// <summary>
+    /// Event raised on the slot entity and the item being inserted to inform that an item was inserted into an item slot.
+    /// </summary>
+    [ByRefEvent]
+    public record struct ItemSlotInsertEvent(EntityUid SlotEntity, EntityUid Item, EntityUid? User, ItemSlot Slot);
+
+    /// <summary>
+    /// Event raised on the slot entity and the item being inserted to inform that an item was ejected from an item slot.
+    /// </summary>
+    [ByRefEvent]
+    public record struct ItemSlotEjectEvent(EntityUid SlotEntity, EntityUid Item, EntityUid? User, ItemSlot Slot);
 }
