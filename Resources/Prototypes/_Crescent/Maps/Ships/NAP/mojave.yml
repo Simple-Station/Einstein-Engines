@@ -1,0 +1,38 @@
+# Author Info
+# Discord: rubeebee
+
+- type: vessel
+  id: Mojave
+  name: NAP Mojave
+  description: |
+    An a retrofitted cargoship, the Mojave now serves the NAP as a combat freighter, delivering goods with an armament that'll make any pirate think twice. 
+    LOADOUT: 2x 60mm Needlers, 2x 90mm Automortars, 4x 180mm Magwells, 2x 20mm Operators, 8x 20x135 NT-MG02.
+    MINIMUM CREW: 1x Pilot, 1x Gunner, 2x Crew/Loaders
+    EVENT ONLY, NOT MADE FOR FREEPLAY
+  price: 200000
+  category: Large
+  group: None
+  path: /Maps/_Crescent/Shuttles/NAP/mojave.yml
+
+- type: gameMap
+  id: Mojave
+  mapName: 'NAP Mojave'
+  mapPath: /Maps/_Crescent/Shuttles/NAP/mojave.yml
+  minPlayers: 0
+  stations:
+    Mojave:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: battleship
+        - type: StationNameSetup
+          mapNameTemplate: 'NAP Mojave {1}'
+          nameGenerator:
+           !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-expeditions
+        - type: VesselDescription
+          description: The Mojave was made for hauling goods across pirate infested sectors. Pray it's enough to survive taypan.

@@ -52,14 +52,14 @@
     size: Huge
   - type: Clothing
     sprite: _Crescent/Clothing/Syndicate/OuterClothing/cybersunstealth.rsi
-    onEquipFunctions:
-      - !type:TraitAddComponent
-        components:
-          - type: BreakStealthOnAttack
-    onUnequipFunctions:
-      - !type:TraitRemoveComponent
-        components:
-          - type: BreakStealthOnAttack
+    #onEquipFunctions:
+    #  - !type:TraitAddComponent
+    #    components:
+   #       - type: BreakStealthOnAttack
+   # onUnequipFunctions:
+    #  - !type:TraitRemoveComponent
+     #   components:
+     #     - type: BreakStealthOnAttack
   - type: PressureProtection
     highPressureMultiplier: 0.05
     lowPressureMultiplier: 1000
@@ -87,11 +87,6 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
-  - type: ClothingGrantComponent
-    component:
-    - type: StealthOnMove
-      passiveVisibilityRate: -0.75
-      movementVisibilityRate: 0.375
   - type: EmitsSoundOnMove
     soundCollection:
       collection: FootstepHardsuitLight

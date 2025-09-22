@@ -5,8 +5,10 @@
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
+        #- American
         - Sign
       languagesUnderstood:
+        #- American
         - Sign
   passportPrototype: AmericanPassport
 

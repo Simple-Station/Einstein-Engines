@@ -1,11 +1,8 @@
 using Content.Server.Explosion.Components;
 using Content.Server.Explosion.EntitySystems;
-using System.Numerics;
-using Robust.Shared.Random;
-using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Projectiles;
-using Content.Server.Shuttles.Components;
 using Robust.Shared.Physics.Components;
+using System.Numerics;
 
 
 namespace Content.Server._Crescent.ProximityFuse;
@@ -14,7 +11,6 @@ public sealed class ProximityFuseSystem : EntitySystem
 {
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -22,50 +18,45 @@ public sealed class ProximityFuseSystem : EntitySystem
         while (query.MoveNext(out var uid, out var comp, out var xform))
         {
             if (!TryComp<ProjectileComponent>(uid, out var projectile) ||
-                !TryComp<GunComponent>(projectile.Shooter, out var shooterGunComp) ||
                 !TryComp<TransformComponent>(projectile.Shooter, out var shooterTransform))
                 continue;
-            var closestDistance = float.MaxValue;
-            var collisionSpeedMagnitude = shooterGunComp.ProjectileSpeed;
 
-            var shipQuery = EntityQueryEnumerator<ProximityFuseTargetComponent, TransformComponent>();
-            while (shipQuery.MoveNext(out var tUid, out var tComp, out var tXform)) // output the closest grid and relative velocities
+            if (comp.Safety > 0)
             {
-                if (shooterTransform.GridUid == tXform.GridUid)
-                    return;
+                comp.Safety -= frameTime;
+                continue;
+            }
+
+            var targetQuery = EntityQueryEnumerator<ProximityFuseTargetComponent, TransformComponent>();
+            while (targetQuery.MoveNext(out var tuid, out var tcomp, out var txform))
+            {
+                float distance = Vector2.Distance(_transform.ToMapCoordinates(txform.Coordinates).Position, _transform.ToMapCoordinates(xform.Coordinates).Position);
+
+                if (shooterTransform.GridUid == txform.GridUid)
+                    continue;
 
                 PhysicsComponent? theirPhysics = null;
 
                 if (!TryComp<PhysicsComponent>(uid, out var ourPhysics) ||
-                    (!TryComp(tXform.GridUid, out theirPhysics) && !TryComp(tUid, out theirPhysics)))
+                    (!TryComp(txform.GridUid, out theirPhysics) && !TryComp(tuid, out theirPhysics)))
                     return;
 
-                var ourVelocity = ourPhysics.LinearVelocity;
-                var velocity = theirPhysics.LinearVelocity;
+                // float nextDistance = Vector2.Distance(_transform.ToMapCoordinates(txform.Coordinates).Position + theirPhysics.LinearVelocity, _transform.ToMapCoordinates(xform.Coordinates).Position + ourPhysics.LinearVelocity);
 
-                var speedVector = Vector2.Subtract(ourVelocity, velocity);
-                collisionSpeedMagnitude = Math.Abs(speedVector.Length());
-                var distance = Vector2.Distance(
-                    _transform.ToMapCoordinates(xform.Coordinates).Position,
-                    _transform.ToMapCoordinates(tXform.Coordinates).Position
-                );
-                if (distance < closestDistance)
-                    closestDistance = distance;
+                var t = comp.Targets.Find(x => x.ent == tuid);
+                if (t != null && distance <= comp.MaxRange)
+                {
+                    t.LastDistance = t.Distance;
+                    t.Distance = distance;
+                    // if (t.Distance > t.LastDistance || t.Distance < nextDistance)
+                    if (t.Distance > t.LastDistance)
+                        Detonate(uid);
+                }
+                else if (t != null && distance > comp.MaxRange)
+                    comp.Targets.Remove(t);
+                else if (distance <= comp.MaxRange)
+                    comp.Targets.Add(new Target() { ent = tuid, Distance = distance, LastDistance = distance });
             }
-            if (comp.SafetyTime >= 0.5f)
-            {
-                if (closestDistance >= comp.MaxRange)
-                    comp.Fuse = comp.MaxRange / collisionSpeedMagnitude * _random.NextFloat(0.6f, 1.5f); // calculate how long it will take to get to the target then add some noise
-                else
-                    comp.Fuse -= frameTime;
-                if (closestDistance <= comp.MinRange)
-                    Detonate(uid);
-
-                if (comp.Fuse <= 0f)
-                    Detonate(uid);
-            }
-            else
-                comp.SafetyTime += frameTime;
         }
     }
     /// <summary>

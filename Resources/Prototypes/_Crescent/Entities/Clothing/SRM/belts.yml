@@ -2,8 +2,8 @@
 - type: entity
   parent: [ClothingBeltBase, ClothingSlotBase]
   id: ClothingBeltSheathKhopesh
-  name: vibrokhopesh scabbard
-  description: A scabbard meant to hold a Hunter's vibrokhopesh.
+  name: khopesh scabbard
+  description: A scabbard meant to hold a khopesh.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/SRM/Belt/sheath.rsi
