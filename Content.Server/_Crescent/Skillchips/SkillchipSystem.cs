@@ -1,4 +1,5 @@
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Whitelist;
 using Robust.Shared.Containers;
 using Robust.Shared.Serialization.Manager;
 
@@ -9,6 +10,7 @@ public sealed partial class SkillchipSystem : EntitySystem
     [Dependency] private readonly IComponentFactory _componentFactory = default!;
     [Dependency] private readonly ISerializationManager _serializationManager = default!;
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
     private ISawmill _logger = Logger.GetSawmill("skillchip");
     public override void Initialize()
@@ -16,9 +18,31 @@ public sealed partial class SkillchipSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<SkillchipImplantHolderComponent, ItemSlotInsertEvent>(OnSkillchipSlotInsertion);
         SubscribeLocalEvent<SkillchipImplantHolderComponent, ItemSlotEjectEvent>(OnSkillchipSlotEjection);
+
+        SubscribeLocalEvent<SkilldeckComponent, MapInitEvent>(OnSkilldeckInitialized);
     }
 
-    private void OnSkillchipSlotInsertion(Entity<SkillchipImplantHolderComponent> skillchipUser, ref ItemSlotInsertEvent args)
+    private void OnSkilldeckInitialized(Entity<SkilldeckComponent> skilldeck, ref MapInitEvent args)
+    {
+        for (int i = 1; i <= skilldeck.Comp.SkillchipSlotAmount; i++)
+        {
+            var itemSlotName = $"{skilldeck.Comp.SkillchipSlotPrefix}{i}";
+
+            if (_itemSlots.TryGetSlot(skilldeck.Owner, itemSlotName, out var _))
+                continue;
+
+            var slot = new ItemSlot();
+
+            var whitelist = new EntityWhitelist();
+            whitelist.Components = ["Skillchip"]; // I hate everything about writing this.
+            slot.Whitelist = whitelist;
+            slot.Name = $"skillchip slot {i}";
+
+            _itemSlots.AddItemSlot(skilldeck.Owner, itemSlotName, slot);
+        }
+    }
+
+    private void OnSkillchipSlotInsertion(Entity<SkillchipImplantHolderComponent> skillchip, ref ItemSlotInsertEvent args)
     {
         var skillchipHolder = args.Item;
 
@@ -36,7 +60,7 @@ public sealed partial class SkillchipSystem : EntitySystem
             if (!TryComp<SkillchipComponent>(itemSlot.Item, out var comp))
                 continue;
 
-            AddFunctions(skillchipUser.Owner, comp);
+            AddFunctions(skillchip.Owner, comp);
 
             // holy shitcode
         }
