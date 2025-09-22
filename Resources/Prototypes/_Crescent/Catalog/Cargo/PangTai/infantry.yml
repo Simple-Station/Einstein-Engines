@@ -208,6 +208,16 @@
   category: cargoproduct-category-name-military
   group: pangtai
 
+- type: cargoProduct
+  id: ChargeRiflePangTai
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/charge_rifle.rsi
+    state: base
+  product: CratePangtaiChargeRifle
+  cost: 35000
+  category: cargoproduct-category-name-military
+  group: pangtai
+
 
 #- type: cargoProduct
 #  id: KevlarPangTai
