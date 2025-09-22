@@ -4,7 +4,7 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 09/21/2025 23:07:21
+  time: 09/22/2025 12:18:13
   entityCount: 57
 maps: []
 grids:
@@ -427,9 +427,19 @@ entities:
       - Module C
       - Module D
       - Module E
+- proto: Gyroscope
+  entities:
+  - uid: 31
+    components:
+    - type: Transform
+      pos: 0.5,3.5
+      parent: 1
+    - type: Thruster
+      baseThrust: 50
+      thrust: 50
 - proto: NTVulcanTurretFilled
   entities:
-  - uid: 30
+  - uid: 29
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -462,22 +472,15 @@ entities:
     - type: ChamberMagazineAmmoProvider
       boltClosed: True
     - type: Battery
-      startingCharge: 17532.51
+      startingCharge: 17373.135
     - type: ApcPowerReceiverBattery
       enabled: True
 - proto: PoweredSmallLightMaintenanceRed
   entities:
-  - uid: 31
+  - uid: 30
     components:
     - type: Transform
       pos: 0.5,1.5
-      parent: 1
-- proto: SmallGyroscope
-  entities:
-  - uid: 50
-    components:
-    - type: Transform
-      pos: 0.5,3.5
       parent: 1
 - proto: SubstationBasic
   entities:
@@ -544,53 +547,53 @@ entities:
       parent: 1
 - proto: WindowReinforcedDirectional
   entities:
-  - uid: 29
+  - uid: 42
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 0.5,3.5
       parent: 1
-  - uid: 42
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 0.5,0.5
-      parent: 1
   - uid: 43
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
+      rot: -1.5707963267948966 rad
       pos: 0.5,0.5
       parent: 1
   - uid: 44
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: 1.5,1.5
+      pos: 0.5,0.5
       parent: 1
   - uid: 45
     components:
     - type: Transform
-      pos: -0.5,1.5
+      rot: 1.5707963267948966 rad
+      pos: 1.5,1.5
       parent: 1
   - uid: 46
     components:
     - type: Transform
-      pos: 1.5,1.5
+      pos: -0.5,1.5
       parent: 1
   - uid: 47
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 1.5,1.5
       parent: 1
   - uid: 48
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: -0.5,1.5
+      pos: 1.5,1.5
       parent: 1
   - uid: 49
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -0.5,1.5
+      parent: 1
+  - uid: 50
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
