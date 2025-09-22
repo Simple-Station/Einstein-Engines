@@ -274,7 +274,7 @@ public sealed class WieldableSystem : EntitySystem
 
         _appearance.SetData(used, WieldableVisuals.Wielded, true); // Goobstation
 
-        var targEv = new ItemWieldedEvent();
+        var targEv = new ItemWieldedEvent(user); // Goob edit
         RaiseLocalEvent(used, ref targEv);
 
         Dirty(used, component);
