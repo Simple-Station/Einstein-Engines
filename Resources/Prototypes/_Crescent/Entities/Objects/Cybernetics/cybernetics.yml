@@ -314,3 +314,6 @@
             whitelist:
               components:
               - Skilldeck
+      - !type:TraitAddComponent
+        components:
+          - type: SkillchipImplantHolder

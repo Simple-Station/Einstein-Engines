@@ -37,6 +37,7 @@ public sealed partial class SkillchipSystem : EntitySystem
             whitelist.Components = ["Skillchip"]; // I hate everything about writing this.
             slot.Whitelist = whitelist;
             slot.Name = $"skillchip slot {i}";
+            slot.Swap = false;
 
             _itemSlots.AddItemSlot(skilldeck.Owner, itemSlotName, slot);
         }

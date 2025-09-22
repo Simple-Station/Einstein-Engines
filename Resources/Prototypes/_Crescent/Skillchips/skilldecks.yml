@@ -1,5 +1,5 @@
 - type: entity
-  parent: HullrotCyberneticBase
+  parent: BaseItem
   id: SkilldeckAdmemery
   name: NT TR-01 "Admemery" skill deck
   description: If you're a non-admin seeing this description, this is heavily concerning. Stop looking at this item and act as if it doesn't exist.
