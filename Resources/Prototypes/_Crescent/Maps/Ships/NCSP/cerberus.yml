@@ -5,7 +5,7 @@
   id: Cerberus
   name: NCSP Cerberus
   description: A shielded Syndicate destroyer.
-  price: 70000
+  price: 85000 #77000 appraisegrid
   category: Medium
   group: None
   path: /Maps/_Crescent/Shuttles/NCSP/cerberus.yml

@@ -3,6 +3,13 @@
   name: job-name-hangartech
   description: job-description-hangartech
   playTimeTracker:  JobHangarTechTAP
+  weight: 1
+  startingGear: HangarTechGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconHangarTech"
+  supervisors: job-supervisors-tap
+  canBeAntag: false
   requirements:
     - !type:FactionRequirement
       factionID: "TAP"
@@ -15,13 +22,6 @@
       traits:
         - Blindness
         - WheelchairBound
-  weight: 52
-  startingGear: HangarTechGear
-  alwaysUseSpawner: true
-  icon: "JobIconHangarTech"
-  requireAdminNotify: false
-  supervisors: job-supervisors-tap
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
@@ -30,6 +30,11 @@
   - !type:AddComponentSpecial
     components:
       - type: Telepathic
+      - type: LanguageAdder
+        addSpoken:
+          - OldTaypani
+        addUnderstood:
+          - OldTaypani
   access:
   - EmergencyShuttleRepealAll
   - Captain

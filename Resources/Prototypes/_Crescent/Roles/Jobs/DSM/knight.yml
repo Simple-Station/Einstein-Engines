@@ -21,8 +21,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Pacifist
         - WheelchairBound
@@ -58,6 +56,7 @@
     ears: ClothingHeadsetEmpire
     jumpsuit: ClothingUniformJumpsuitImperialCombat
     shoes: ClothingShoesBootsImperialJackboots
+    back: ClothingBackpackDSMFilledSoldier
     head: ClothingHeadHelmetImperialKnightCommanderHelmet
     outerClothing: ClothingOuterArmorImperialArmorPrestige
     gloves: ClothingHandsGlovesImperialLonggloves

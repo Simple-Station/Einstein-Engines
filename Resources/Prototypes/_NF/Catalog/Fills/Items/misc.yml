@@ -4,23 +4,53 @@
 
 - type: entity
   id: ClothingShoesBootsMagNfsdFilled
-  parent: [ClothingShoesBootsMagNfsd, ClothingShoesBootsCombatFilled]
+  parent: ClothingShoesBootsMagNfsd
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - CombatKnife
 
 - type: entity
   id: ClothingShoesBootsMagPirateFilled
-  parent: [ClothingShoesBootsMagPirate, ClothingShoesBootsCombatFilled]
+  parent: ClothingShoesBootsMagPirate
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - CombatKnife
 
 - type: entity
   id: ClothingShoesBootsMagMercenaryFilled
-  parent: [ClothingShoesBootsMagMercenary]
+  parent: ClothingShoesBootsMagMercenary
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - CombatKnife
 
 - type: entity
   id: ClothingShoesBootsNfsdBrownFilled
-  parent: [ClothingShoesBootsNfsdBrown, ClothingShoesBootsCombatFilled]
+  parent: ClothingShoesBootsNfsdBrown
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - CombatKnife
 
 - type: entity
   id: ClothingShoesBootsNfsdCreamFilled
-  parent: [ClothingShoesBootsNfsdCream, ClothingShoesBootsCombatFilled]
+  parent: ClothingShoesBootsNfsdCream
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - CombatKnife
 
 - type: entity
   parent: DrinkFlaskBar

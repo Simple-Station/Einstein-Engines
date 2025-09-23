@@ -1,19 +1,19 @@
-- type: cargoProduct
-  id: ArtifactContainercommie
-  icon:
-    sprite: Structures/Storage/Crates/artifact.rsi
-    state: artifact_container_icon
-  product: CrateArtifactContainer
-  cost: 500
-  category: cargoproduct-category-name-science
-  group: commie
+# - type: cargoProduct
+#   id: ArtifactContainercommie
+#   icon:
+#     sprite: Structures/Storage/Crates/artifact.rsi
+#     state: artifact_container_icon
+#   product: CrateArtifactContainer
+#   cost: 500
+#   category: cargoproduct-category-name-science
+#   group: commie
 
-- type: cargoProduct
-  id: ScienceBiosuitcommie
-  icon:
-    sprite: Clothing/Head/Hoods/Bio/scientist.rsi
-    state: icon
-  product: CrateScienceBiosuit
-  cost: 800
-  category: cargoproduct-category-name-science
-  group: commie
+# - type: cargoProduct
+#   id: ScienceBiosuitcommie
+#   icon:
+#     sprite: Clothing/Head/Hoods/Bio/scientist.rsi
+#     state: icon
+#   product: CrateScienceBiosuit
+#   cost: 800
+#   category: cargoproduct-category-name-science
+#   group: commie

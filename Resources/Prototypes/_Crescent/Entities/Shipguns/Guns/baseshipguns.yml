@@ -4,6 +4,17 @@
   name: fixed shipgun
   abstract: true
   components:
+  - type: Fixtures #DOUBLE CHECK IF THE ANCHORED HITBOX IS TOO SMALL!
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
   - type: Transform
     noRot: false
   - type: Rotatable
@@ -12,6 +23,8 @@
   - type: Battery
     maxCharge: 20000
     startingCharge: 20000
+  - type: ApcPowerReceiverBattery
+    batteryRechargeRate: 5000
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallicStrong
@@ -26,9 +39,9 @@
       - SpaceArtilleryDetectedMalfunction
       - SpaceArtilleryDetectedSafetyChange
   - type: SpaceArtillery
-    powerChargeRate: 5000
+    powerChargeRate: 1000
     powerUsePassive: 0
-    powerUseActive: 2000
+    powerUseActive: 250
     isArmed: true
     isPowerRequiredToFire: true
   - type: ExtensionCableReceiver
@@ -41,6 +54,17 @@
   name: turret shipgun
   abstract: true
   components:
+  - type: Fixtures #DOUBLE CHECK IF THE ANCHORED HITBOX IS TOO SMALL!
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
   - type: Transform
     noRot: false
   - type: Rotatable

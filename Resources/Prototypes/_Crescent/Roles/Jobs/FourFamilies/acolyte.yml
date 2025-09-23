@@ -3,6 +3,13 @@
   name: job-name-acolytetap
   description: job-description-acolytetap
   playTimeTracker: JobAcolyteTAP
+  weight: 5
+  startingGear: AcolyteTAPGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconAcolyteFamilies"
+  supervisors: job-supervisors-tap
+  canBeAntag: false
   requirements:
     - !type:FactionRequirement
       factionID: "TAP"
@@ -16,24 +23,19 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
         - Blindness
         - WheelchairBound
-  weight: 54
-  startingGear: AcolyteTAPGear
-  alwaysUseSpawner: true
-  icon: "JobIconAcolyteFamilies"
-  requireAdminNotify: false
-  supervisors: job-supervisors-tap
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-acolytetap
-  - !type:AddComponentSpecial
-    components:
       - type: Telepathic
+      - type: LanguageAdder
+        addSpoken:
+          - OldTaypani
+        addUnderstood:
+          - OldTaypani
   access:
   - EmergencyShuttleRepealAll
   - Captain

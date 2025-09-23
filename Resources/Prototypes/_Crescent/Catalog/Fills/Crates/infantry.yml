@@ -33,7 +33,7 @@
       - id: WeaponPistolHKUSP
         amount: 2
       - id: WeaponSubMachineGunSabre
-        amount: 2     
+        amount: 2
 
 #pangtai
 
@@ -48,7 +48,26 @@
       - id: WeaponRifleTakemura
         amount: 1
       - id: MagazineRifle
-        amount: 2    
+        amount: 2
+
+- type: entity
+  id: CratePangtaiChargeRifle
+  parent: WeaponCaseRifle
+  name: pang tai arms "XCR-6 Charge rifle" case
+  description: A experimental rifle developed by Pang Tai Arms. Extremly rare.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSpecialChargeRifle
+        amount: 1
+      - id: Magazine6x24mmShock
+        amount: 1
+      - id: Magazine6x24mmIncendiary
+        amount: 1
+      - id: Magazine6x24mmIon
+        amount: 1
+      - id: Magazine6x24mmConcentrated
+        amount: 1
 
 - type: entity
   id: CratePangtaiHalyad
@@ -61,7 +80,7 @@
       - id: WeaponRifleHalyadMarksman
         amount: 1
       - id: MagazineHeavyRifle
-        amount: 2    
+        amount: 2
 
 - type: entity
   id: CratePangtaiCheshyre
@@ -74,7 +93,7 @@
       - id: WeaponSubMachineGunCheshyre
         amount: 1
       - id: MagazinePistolSubMachineGunHeavy
-        amount: 2    
+        amount: 2
 
 - type: entity
   id: CratePangtaiRongyu
@@ -87,7 +106,7 @@
       - id: WeaponPistolRongyu
         amount: 1
       - id: MagazinePistol6mm
-        amount: 2  
+        amount: 2
 
 - type: entity
   id: CratePangtaiViper
@@ -100,7 +119,7 @@
       - id: WeaponPistolViper
         amount: 1
       - id: MagazinePistol
-        amount: 2  
+        amount: 2
 
 - type: entity
   id: CratePangtaiDrozd
@@ -113,7 +132,7 @@
       - id: WeaponSubMachineGunDrozd
         amount: 1
       - id: MagazineMagnumSub
-        amount: 2  
+        amount: 2
 
 - type: entity
   id: CratePangtaiVektor
@@ -126,7 +145,7 @@
       - id: WeaponSubMachineGunPTAVektor
         amount: 1
       - id: MagazinePistol6mmSmg
-        amount: 2  
+        amount: 2
 
 - type: entity
   id: CratePangtaiPozhar
@@ -139,7 +158,7 @@
       - id: WeaponShotgunBulldog
         amount: 1
       - id: MagazineShotgun
-        amount: 2  
+        amount: 2
 
 - type: entity
   id: CratePangtaiTwinshot
@@ -152,7 +171,7 @@
       - id: WeaponShotgunPTATwinshot
         amount: 1
       - id: BoxLethalshot
-        amount: 2 
+        amount: 2
 
 - type: entity
   id: CratePangtaiKarabin
@@ -165,7 +184,7 @@
       - id: WeaponShotgunKS23
         amount: 1
       - id: BoxLethalshot4g
-        amount: 2 
+        amount: 2
 
 - type: entity
   id: CratePangtaiLancer
@@ -181,12 +200,45 @@
 - type: entity
   id: CratePangtaiMako
   parent: WeaponCaseRpg
-  name: pang tai arms "Mako" case
-  description: A shoulder-operated plasma caster packaged in a stamped weapon case.
+  name: pang tai arms "LAS-98 Mako" case
+  description: A shoulder-operated laser cutter packaged in a stamped weapon case.
   components:
   - type: StorageFill
     contents:
       - id: WeaponSpecialMako
+        amount: 1
+
+- type: entity
+  id: CratePangtaiGustaf
+  parent: WeaponCaseRpg
+  name: pang tai arms "M-5 Carl Gustaf" case
+  description: A 84mm recoilless rifle packaged in a stamped weapon case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponLauncherGustav
+        amount: 1
+
+- type: entity
+  id: CratePangtaiCommando
+  parent: WeaponCaseRpg
+  name: pang tai arms "M-32 Commando" case
+  description: A 4-shot 44mm rocket launcher packaged in a stamped weapon case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponLauncherCommando
+        amount: 1
+
+- type: entity
+  id: CratePangtaiSpear
+  parent: WeaponCaseRpg
+  name: pang tai arms "AC-8 Spear" case
+  description: A high end 15.2x169mm AMR packaged in a stamped weapon case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSniperSpear
         amount: 1
 
 - type: entity
@@ -233,13 +285,13 @@
       - id: ClothingUniformJumpsuitMilitaryColorGrey
         amount: 1
       - id: ClothingShoesBootsJack
-        amount: 1  
+        amount: 1
       - id: ClothingHandsGlovesFingerless
-        amount: 1  
+        amount: 1
       - id: ClothingHeadHatPangtaiCorvidHelmet
-        amount: 1 
+        amount: 1
       - id: ClothingOuterArmorPangTaiVest
-        amount: 1 
+        amount: 1
 
 - type: entity
   id: CratePangtaiHighArmor
@@ -252,13 +304,13 @@
       - id: ClothingUniformJumpsuitMilitaryColorGrey
         amount: 1
       - id: ClothingShoesBootsJack
-        amount: 1  
+        amount: 1
       - id: ClothingHandsGlovesFingerless
-        amount: 1  
+        amount: 1
       - id: ClothingHeadHatPangtaiKorundHelmet
-        amount: 1 
+        amount: 1
       - id: ClothingOuterArmorPangTaiKorund
-        amount: 1 
+        amount: 1
 
 - type: entity
   id: CratePangtaiHardsuitArmor
@@ -271,11 +323,11 @@
       - id: ClothingUniformJumpsuitMilitaryColorGrey
         amount: 1
       - id: ClothingShoesBootsJack
-        amount: 1  
+        amount: 1
       - id: ClothingHandsGlovesFingerless
-        amount: 1  
+        amount: 1
       - id: ClothingOuterHardsuitPangTai
-        amount: 1 
+        amount: 1
 
 #shinohara
 
@@ -290,7 +342,7 @@
       - id: WeaponRifleGoro
         amount: 1
       - id: MagazineRifle
-        amount: 2   
+        amount: 2
 
 - type: entity
   id: CrateShinoharaHristov
@@ -303,7 +355,7 @@
       - id: WeaponSniperHristov
         amount: 1
       - id: MagazineAntiMateriel
-        amount: 2   
+        amount: 2
 
 - type: entity
   id: CrateShinoharaLecter
@@ -316,7 +368,7 @@
       - id: WeaponRifleLecter
         amount: 1
       - id: MagazineRifle
-        amount: 2   
+        amount: 2
 
 - type: entity
   id: CrateShinoharaHound
@@ -329,7 +381,7 @@
       - id: WeaponRifleHoundMarksman
         amount: 1
       - id: MagazineLightRifle
-        amount: 2   
+        amount: 2
 
 - type: entity
   id: CrateShinoharaMP49
@@ -342,7 +394,7 @@
       - id: WeaponSubMachineGunMP49
         amount: 1
       - id: MagazinePistolSubMachineGun
-        amount: 2   
+        amount: 2
 
 - type: entity
   id: CrateShinoharaM211s
@@ -355,7 +407,7 @@
       - id: WeaponSubMachineGunSabre
         amount: 1
       - id: MagazinePistol6mmSmg
-        amount: 2   
+        amount: 2
 
 - type: entity
   id: CrateShinoharaHimehabu
@@ -368,7 +420,7 @@
       - id: WeaponPistolHimehabu
         amount: 1
       - id: MagazinePistol
-        amount: 2   
+        amount: 2
 
 - type: entity
   id: CrateShinoharaHiPo
@@ -381,7 +433,7 @@
       - id: WeaponPistolMk58
         amount: 1
       - id: MagazinePistol6mm
-        amount: 2   
+        amount: 2
 
 - type: entity
   id: CrateShinoharaShinobi
@@ -394,7 +446,7 @@
       - id: WeaponPistolSmartpistol
         amount: 1
       - id: MagazinePistolSmartgun
-        amount: 2   
+        amount: 2
 
 - type: entity
   id: CrateShinoharaSAW
@@ -418,7 +470,7 @@
       - id: WeaponRifleBarghest
         amount: 1
       - id: MagazineHeavyRifle
-        amount: 2   
+        amount: 2
 
 - type: entity
   id: CrateShinoharaMilkor
@@ -430,7 +482,7 @@
     contents:
       - id: WeaponLauncherMilkor
         amount: 1
- 
+
 - type: entity
   id: CrateShinoharaHardsuit
   parent: CrateSecgear
@@ -453,9 +505,9 @@
       - id: ClothingUniformJumpsuitMilitaryColorGrey
         amount: 1
       - id: ClothingShoesBootsJack
-        amount: 1  
+        amount: 1
       - id: ClothingHandsGlovesFingerless
-        amount: 1  
+        amount: 1
       - id: ClothingHeadHatShinoharaHelmet
         amount: 1
       - id: ClothingOuterArmorShinoharaArmorHighsec
@@ -472,9 +524,9 @@
       - id: ClothingUniformJumpsuitMilitaryColorGrey
         amount: 1
       - id: ClothingShoesBootsJack
-        amount: 1  
+        amount: 1
       - id: ClothingHandsGlovesFingerless
-        amount: 1  
+        amount: 1
       - id: ClothingHeadHatShinoharaNonevaHelm
         amount: 1
       - id: ClothingOuterArmorShinoharaArmorBulwark

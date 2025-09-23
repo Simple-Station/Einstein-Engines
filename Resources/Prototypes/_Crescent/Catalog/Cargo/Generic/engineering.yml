@@ -1,0 +1,50 @@
+- type: cargoProduct
+  id: EngineeringRCDAmmoGeneric
+  icon:
+    sprite: Objects/Tools/rcd.rsi
+    state: ammo
+  product: CrateRCDAmmo
+  cost: 2500
+  category: cargoproduct-category-name-engineering
+  group: generic
+
+- type: cargoProduct
+  id: EngineAmeJarGeneric
+  icon:
+    sprite: Objects/Power/AME/ame_jar.rsi
+    state: jar
+  product: CrateEngineeringAMEJar
+  cost: 10000
+  category: cargoproduct-category-name-engineering
+  group: generic
+
+- type: cargoProduct
+  id: MetalFoamGeneric
+  icon:
+    sprite: Objects/Weapons/Grenades/smoke.rsi
+    state: icon
+  product: CrateEngineeringMetalFoamFast
+  cost: 1000
+  category: cargoproduct-category-name-engineering
+  group: generic
+
+# - type: cargoProduct
+#   id: EngineeringSpaceHeater
+#   icon:
+#     sprite: Structures/Piping/Atmospherics/Portable/portable_sheater.rsi
+#     state: sheaterOff
+#   product: SpaceHeaterAnchored
+#   cost: 600
+#   category: cargoproduct-category-name-engineering
+#   group:
+
+
+# - type: cargoProduct
+#   id: EvaKit
+#   icon:
+#     sprite: Clothing/Head/Helmets/eva.rsi
+#     state: icon
+#   product: CrateEvaKit
+#   cost: 5000
+#   category: cargoproduct-category-name-engineering
+#   group:

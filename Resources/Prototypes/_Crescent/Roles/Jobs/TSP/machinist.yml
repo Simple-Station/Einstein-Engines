@@ -4,26 +4,25 @@
   description: job-description-machinist
   playTimeTracker: JobMachinistCMM
   weight: 22
+  startingGear: MachinistGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconMachinist"
+  supervisors: You answer to your Colonial Marshal, Deputy Marshal and Watchmaster.
+  canBeAntag: false
   requirements:
-  - !type:FactionRequirement
-      factionID: "TSP"
-  - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Foreigner
-        - Blindness
-        - WheelchairBound
+    - !type:FactionRequirement
+        factionID: "TSP"
+    - !type:CharacterTraitRequirement
+        inverted: true
+        traits:
+          - Blindness
+          - WheelchairBound
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-machinist
-  startingGear: MachinistGear
-  alwaysUseSpawner: true
-  icon: "JobIconMachinist"
-  requireAdminNotify: false
-  supervisors: You answer to your Colonial Marshal , Deputy Marshal and Watchmaster.
-  canBeAntag: false
   access:
   - Command
   - Maintenance

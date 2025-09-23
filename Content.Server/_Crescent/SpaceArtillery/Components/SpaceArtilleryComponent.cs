@@ -106,7 +106,7 @@ public sealed partial class SpaceArtilleryComponent : Component
     /// Amount of power used when firing
     /// </summary>
     [DataField("powerUseActive"), ViewVariables(VVAccess.ReadWrite)]
-    public int PowerUseActive = 6000;
+    public int PowerUseActive = 2000;
 
 
     /// <summary>

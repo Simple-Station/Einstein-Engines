@@ -19,12 +19,10 @@
     shuttles:
     - Reaver
     - Itch
-    - Bodybag
-    - Wolf
-    - Ouroboros
-    - Cleaver
-    - Eradicator
     - Sinn
+    - Cerberus
+    - Corvax
+    - Ouroboros
 
 - type: entity
   id: CountsmanMothershipComputer
@@ -111,7 +109,6 @@
   - type: ShipyardListing
     shuttles:
     - Velator
-    - Wisp
     - Taipan
     - Wreck
 
@@ -155,6 +152,8 @@
     shuttles:
     - Provost
     - Adjudicator
+    - Warden
+    - Jury
 
 - type: entity
   id: RefugeMothershipComputer
@@ -206,6 +205,15 @@
     - Hearth
 
 - type: entity
+  id: IzdariMothershipComputer
+  parent: BaseMothershipComputer
+  name: izdari tribal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Lucifer
+
+- type: entity
   id: OuroborosMothershipComputer
   parent: BaseMothershipComputer
   name: ouroboros internal shipyard
@@ -214,3 +222,21 @@
     shuttles:
     - Tick
     - Gnat
+
+- type: entity
+  id: NAPMothershipComputer
+  parent: BaseMothershipComputer
+  name: NAP military shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Mojave
+
+- type: entity
+  id: TrashcanMothershipComputer
+  parent: BaseMothershipComputer
+  name: trashcan internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Wasp

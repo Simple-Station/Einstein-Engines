@@ -3,16 +3,22 @@
   name: job-name-technician
   description: job-description-technician
   playTimeTracker: JobTechnicianNCSP
+  weight: 9
+  startingGear: TechnicianGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconSyndieNewblood"
+  supervisors: You answer to the Ringleader of the New Crescent Syndicate Privateers.
+  canBeAntag: false
   requirements:
-    - !type:FactionRequirement
-      factionID: "TFSC"
     - !type:CharacterOverallTimeRequirement
       min: 21600 # 6 hours
       inverted: true # Leave slots open for newer, less confident players.
+    - !type:FactionRequirement
+      factionID: "TFSC"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
         - Blindness
         - Pacifist
         - WheelchairBound
@@ -26,13 +32,6 @@
           - Freespeak
         addUnderstood:
           - Freespeak
-  weight: 18
-  startingGear: TechnicianGear
-  alwaysUseSpawner: true
-  icon: "JobIconSyndieNewblood"
-  requireAdminNotify: false
-  supervisors: You answer to all Gorlex Security personnel and the Station Administrator
-  canBeAntag: false
   access:
   - Command
   - Maintenance

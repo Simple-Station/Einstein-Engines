@@ -1,11 +1,49 @@
 - type: trait
+  id: LowImperial
+  category: TraitsSpeechLanguages
+  points: -4
+  requirements:
+    - !type:FactionRequirement
+      inverted: true
+      factionID: "DSM"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Dockta
+        - Freespeak
+        - Kaishago
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - LowImperial
+      languagesUnderstood:
+        - LowImperial
+
+#- type: trait
+#  id: HighImperial
+#  category: TraitsSpeechLanguages
+#  points: -6
+#  functions:
+#    - !type:TraitModifyLanguages
+#      languagesSpoken:
+#        - HighImperial
+#      languagesUnderstood:
+#        - HighImperial
+
+- type: trait
   id: Dockta
   category: TraitsSpeechLanguages
-  points: -7
+  points: -4
   requirements:
     - !type:FactionRequirement
       inverted: true
       factionID: "NCWL"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowImperial
+        - Freespeak
+        - Kaishago
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -16,11 +54,17 @@
 - type: trait
   id: Freespeak
   category: TraitsSpeechLanguages
-  points: -7
+  points: -4
   requirements:
     - !type:FactionRequirement
       inverted: true
       factionID: "TFSC"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowImperial
+        - Dockta
+        - Kaishago
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -31,40 +75,83 @@
 - type: trait
   id: Kaishago
   category: TraitsSpeechLanguages
-  points: -7
+  points: -4
   requirements:
     - !type:FactionRequirement
       inverted: true
       factionID: "SHI"
-  functions:
-    - !type:TraitModifyLanguages
-      languagesSpoken:
-        - Kaishago
-      languagesUnderstood:
-        - Kaishago
-
-- type: trait
-  id: LowImperial
-  category: TraitsSpeechLanguages
-  points: -7
-  requirements:
-    - !type:FactionRequirement
+    - !type:CharacterTraitRequirement
       inverted: true
-      factionID: "DSM"
+      traits:
+        - LowImperial
+        - Dockta
+        - Freespeak
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
-        - LowImperial
+        - Kaishago
       languagesUnderstood:
-        - LowImperial
+        - Kaishago
 
 - type: trait
-  id: HighImperial
+  id: Clarizian
   category: TraitsSpeechLanguages
-  points: -9
+  points: -2
+  requirements:
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Clarizian
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
-        - HighImperial
+        - Clarizian
       languagesUnderstood:
-        - HighImperial
+        - Clarizian
+
+- type: trait
+  id: SolBasic
+  category: TraitsSpeechLanguages
+  points: -2
+  requirements:
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Authority
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - SolBasic
+      languagesUnderstood:
+        - SolBasic
+
+# - type: trait
+#   id: OldTaypani
+#   category: TraitsSpeechLanguages
+#   points: -6
+#   requirements:
+#     - !type:FactionRequirement
+#       inverted: true
+#       factionID: "TAP"
+#   functions:
+#     - !type:TraitModifyLanguages
+#       languagesSpoken:
+#         - OldTaypani
+#       languagesUnderstood:
+#         - OldTaypani
+
+- type: trait
+  id: American
+  category: TraitsSpeechLanguages
+  points: -2
+  requirements:
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Bieselite # NAP
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - American
+      languagesUnderstood:
+        - American

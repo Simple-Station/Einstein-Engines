@@ -1,51 +1,37 @@
 - type: entity
   id: BulletMechLightRifle
   name: bullet (30mm USTF)
-  parent: BaseBullet
+  parent: BulletMachineGunVulcan
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 45
+        Piercing: 75 #Dummy but holy shit these are massive
         Structural: 60
-    harmorPenetration: 60
-    stoppingPower: 8
+    ignoreWeaponGrid: false
 
 - type: entity
   id: BulletMechAutocannon
   name: bullet (90mm USTF)
-  parent: BaseBullet
+  parent: BulletMachineGunMortarTurret
   categories: [ HideSpawnMenu ]
   components:
-  - type: Projectile
-    damage:
-      types:
-        Piercing: 90
-        Structural: 400
-    harmorPenetration: 80
-    stoppingPower: 12
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: Default
-    maxIntensity: 12
-    intensitySlope: 15
-    totalIntensity: 13
-    maxTileBreak: 2
+   - type: Projectile
+     ignoreWeaponGrid: false
 
 - type: entity
   id: BulletMechHeavyRifle
   name: bullet (43mm USTF) #The Proverbial .50
-  parent: BaseBullet
+  parent: BulletMachineGunVulcan
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 65 #Dummy but holy shit these are massive
+        Piercing: 95 #Dummy but holy shit these are massive
         Structural: 80
-    harmorPenetration: 70
-    stoppingPower: 9
+    ignoreWeaponGrid: false
 
 - type: entity
   id: ExosuitAutoshotgunPellet
@@ -122,9 +108,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 8
-    intensitySlope: 14
-    totalIntensity: 20
+    maxIntensity: 300
+    intensitySlope: 100
+    totalIntensity: 300
     maxTileBreak: 2
   - type: PointLight
     radius: 3.5
@@ -156,9 +142,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 10
-    intensitySlope: 20
-    totalIntensity: 100
+    maxIntensity: 1500
+    intensitySlope: 300
+    totalIntensity: 1500
     maxTileBreak: 4
   - type: PointLight
     radius: 3.5

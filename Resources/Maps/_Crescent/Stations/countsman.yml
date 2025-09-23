@@ -167,7 +167,7 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
-      baseMaxLinearVelocity: 7.5
+      baseMaxLinearVelocity: 10
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
@@ -55666,7 +55666,7 @@ entities:
     - type: Transform
       pos: -19.270203,-33.365627
       parent: 1
-- proto: ColonyShellComplete
+- proto: CartridgeRailHighExplosive
   entities:
   - uid: 4158
     components:
@@ -58551,7 +58551,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -13.5,39.5
       parent: 1
-- proto: FlakCannonTurret
+- proto: FlakCannonTurretFilled
   entities:
   - uid: 4563
     components:

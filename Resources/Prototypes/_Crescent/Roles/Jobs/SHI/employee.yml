@@ -3,22 +3,21 @@
   name: job-name-employee
   description: job-description-employee
   playTimeTracker: JobEmployeeSHI
+  weight: 1
+  startingGear: EmployeeGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconEmployee"
+  supervisors: job-supervisors-shi
+  canBeAntag: false
   requirements:
     - !type:FactionRequirement
         factionID: "SHI"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
         - Muted
         - WheelchairBound
-  weight: 25
-  startingGear: EmployeeGear
-  alwaysUseSpawner: true
-  icon: "JobIconEmployee"
-  requireAdminNotify: false
-  supervisors: job-supervisors-shi
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:

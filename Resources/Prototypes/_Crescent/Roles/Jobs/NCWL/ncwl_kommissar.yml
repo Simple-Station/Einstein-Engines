@@ -3,7 +3,7 @@
   name: job-name-ncwl-kommissar
   description: job-description-ncwl-kommissar
   playTimeTracker: JobHomeguardLeaderNCWL
-  weight: 99
+  weight: 7
   startingGear: OverseerNCWLGear
   alwaysUseSpawner: true
   requireAdminNotify: false
@@ -12,10 +12,10 @@
   canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
-    - !type:FactionRequirement
-      factionID: "NCWL"
     - !type:CharacterOverallTimeRequirement
       min: 30000
+    - !type:FactionRequirement
+      factionID: "NCWL"
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -23,8 +23,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
         - Pacifist

@@ -58,9 +58,9 @@
     armorRepair: SteelPlate
     initialModifiers:
       flatReductions:
-        Blunt: 10
-        Slash: 10
-        Piercing: 35
+        Blunt: 15
+        Slash: 15
+        Piercing: 45
         Heat: 15
         Caustic: 15
         Radiation: 35
@@ -68,7 +68,7 @@
     walkModifier: 1
     sprintModifier: 1
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetSyndiDonator
+    clothingPrototype: ClothingHeadHelmetSyndieDonator
   - type: StaticPrice
     price: 1000
   - type: Contraband
@@ -114,9 +114,9 @@
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.5
+    damageCoefficient: 0.9
   - type: DegradeableArmor
-    armorMaxHealth: 700
+    armorMaxHealth: 550
     armorType: Ceramic
     armorRepair: NTCeramic
     initialModifiers:
@@ -150,7 +150,7 @@
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.6
+    damageCoefficient: 1
   - type: DegradeableArmor
     armorMaxHealth: 700
     armorType: Ceramic
@@ -159,12 +159,12 @@
       flatReductions:
         Blunt: 20
         Slash: 20
-        Piercing: 80
+        Piercing: 50
         Heat: 15
         Caustic: 15
   - type: ClothingSpeedModifier
-    walkModifier: 1
-    sprintModifier: 1
+    walkModifier: 0.9
+    sprintModifier: 0.9
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitTraumasec
   - type: Contraband
@@ -184,7 +184,7 @@
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.6
+    damageCoefficient: 0.8
   - type: DegradeableArmor
     armorMaxHealth: 700
     armorType: Ceramic
@@ -193,7 +193,7 @@
       flatReductions:
         Blunt: 20
         Slash: 20
-        Piercing: 80
+        Piercing: 70
         Heat: 15
         Caustic: 15
   - type: ClothingSpeedModifier

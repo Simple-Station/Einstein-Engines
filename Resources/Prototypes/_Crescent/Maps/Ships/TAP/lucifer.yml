@@ -1,0 +1,29 @@
+- type: vessel
+  id: Lucifer
+  name: TAP Lucifer
+  description: A smuggling and boarding pod
+  price: 40000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/TAP/lucifer.yml
+
+- type: gameMap
+  id: Lucifer
+  mapName: 'TAP Lucifer'
+  mapPath: /Maps/_Crescent/Shuttles/TAP/lucifer.yml
+  minPlayers: 0
+  stations:
+    Lucifer:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'TAP Lucifer {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter

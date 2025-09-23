@@ -3,6 +3,13 @@
   name: job-name-foreman
   description: job-description-foreman
   playTimeTracker: JobForemanNCSP
+  weight: 2
+  startingGear: ForemanGear
+  alwaysUseSpawner: true
+  requireAdminNotify: true
+  icon: "JobIconSyndieForeman"
+  supervisors: You're the leader of the SAW. You answer to your own interests
+  canBeAntag: false
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 20000
@@ -11,8 +18,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
         - WheelchairBound
@@ -28,14 +33,6 @@
         addUnderstood:
           - Freespeak
           - Tradeband
-
-  weight: 8
-  startingGear: ForemanGear
-  alwaysUseSpawner: true
-  icon: "JobIconSyndieForeman"
-  requireAdminNotify: true
-  supervisors: You're the leader of the SAW. You answer to your own interests
-  canBeAntag: false
   access:
   - Command
   - Maintenance

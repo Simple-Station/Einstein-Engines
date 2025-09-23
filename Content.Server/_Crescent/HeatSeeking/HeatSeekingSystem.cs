@@ -23,12 +23,15 @@ public sealed class HeatSeekingSystem : EntitySystem
         while (query.MoveNext(out var uid, out var comp, out var xform))
         {
             if (TryComp<ProjectileComponent>(uid, out var projectile) && TryComp<GunComponent>(projectile.Shooter, out var shooterGunComp))
-            {
                 comp.InitialSpeed = shooterGunComp.ProjectileSpeed;
-            }
-            if (comp.Speed < comp.InitialSpeed) { comp.Speed = comp.InitialSpeed; } // start at initial speed
-            if (comp.Speed < comp.TopSpeed) { comp.Speed += comp.Acceleration * frameTime; } // accelerate to top speed once target is locked
+
+            if (comp.Speed < comp.InitialSpeed)
+                comp.Speed = comp.InitialSpeed; // start at initial speed
+            if (comp.Speed < comp.TopSpeed)
+                comp.Speed += comp.Acceleration * frameTime; // accelerate to top speed once target is locked
+
             _physics.SetLinearVelocity(uid, _transform.GetWorldRotation(xform).ToWorldVec() * comp.Speed); // move missile forward at current speed
+
             if (comp.TargetEntity.HasValue) // if the missile has a target, run its guidance algorithm
             {
                 if ((comp.GuidanceAlgorithm & GuidanceType.PredictiveGuidance) != 0) { PredictiveGuidance(uid, comp, xform, frameTime); }
@@ -42,11 +45,14 @@ public sealed class HeatSeekingSystem : EntitySystem
         }
     }
 
-    public void GetNewTarget(EntityUid uid, HeatSeekingComponent component, TransformComponent transform) // Get the best valid target
+    /// <summary>
+    /// Gets the best valid target given the properties of a HeatSeekingComponent. Locks onto entities with the <see cref="CanBeHeatTrackedComponent"/> component.
+    /// </summary>
+    public void GetNewTarget(EntityUid uid, HeatSeekingComponent component, TransformComponent transform)
     {
         Angle closestAngle = 4;
         EntityUid? bestGrid = null;
-        var shipQuery = EntityQueryEnumerator<ThrusterComponent, TransformComponent>(); // get all shuttle consoles
+        var shipQuery = EntityQueryEnumerator<CanBeHeatTrackedComponent, TransformComponent>(); // get all shuttle consoles
         while (shipQuery.MoveNext(out var shipUid, out var shipComp, out var shipXform)) // go through each existing thruster component to find the best valid target
         {
             var angle = (
@@ -87,7 +93,11 @@ public sealed class HeatSeekingSystem : EntitySystem
             component.TargetEntity = bestGrid;
         }
     }
-    public void PredictiveGuidance(EntityUid uid, HeatSeekingComponent comp, TransformComponent xform, float frameTime) // Predictive Guidance, predicts targets position at impact time.
+
+    /// <summary>
+    /// Attempts to predict the target's position at impact time.
+    /// </summary>
+    public void PredictiveGuidance(EntityUid uid, HeatSeekingComponent comp, TransformComponent xform, float frameTime)
     {
         if (comp.TargetEntity.HasValue)
         {
@@ -124,7 +134,10 @@ public sealed class HeatSeekingSystem : EntitySystem
         }
     }
 
-    public void PurePursuit(EntityUid uid, HeatSeekingComponent comp, TransformComponent xform, float frameTime) // Pure Pursuit, points directly at target.
+    /// <summary>
+    /// Aims the missile directly at target.
+    /// </summary>
+    public void PurePursuit(EntityUid uid, HeatSeekingComponent comp, TransformComponent xform, float frameTime)
     {
         if (comp.TargetEntity.HasValue)
         {

@@ -45,11 +45,11 @@
   id: CyberneticsBloodPump
   parent: HullrotCyberneticBase
   name: IPM TT-92 overclocked blood pump
-  description: A small, fist-sized device meant to be a total replacement tool for a humanoid heart. Consumes nutrients from the external dermis and speeds up platelet production for accelerated healing.
+  description: A small, fist-sized device meant to be a total replacement tool for a humanoid heart. Consumes nutrients from the external dermis and speeds up platelet production for accelerated healing. Replaces the heart.
   components:
     - type: Heart
     - type: Metabolizer
-      maxReagents: 2
+      maxReagents: 10
       metabolizerTypes: [Human]
       groups:
         - id: Medicine
@@ -83,7 +83,7 @@
   components:
     - type: Heart
     - type: Metabolizer
-      maxReagents: 2
+      maxReagents: 10
       metabolizerTypes: [Human]
       groups:
         - id: Medicine
@@ -110,7 +110,7 @@
       layers:
         - state: higgsanchor
     - type: Organ #ERIS this badly needs its own organ component so we dont HAVE to have it replace an organ, can you look at it. also give this the no psionics trait
-      slotId: cybernetic_anchor # done
+      slotId: head_implant # done
       onAdd:
         - type: BluespaceShunt # PLACEHOLDER, adding real stuff soon
 
@@ -126,7 +126,7 @@
       layers:
         - state: cerebraltrainer
     - type: Organ #ERIS this badly needs its own organ component so we dont HAVE to have it replace an organ, can you look at it. give it the same organ component as the Anchor so players cant use them both at once. also give this the psionics trait + power overwhelming
-      slotId: cybernetic_anchor # done
+      slotId: head_implant # done
       onAdd:
         - type: BluespaceShunt # PLACEHOLDER, adding real stuff soon
 
@@ -228,17 +228,24 @@
   id: CyberneticsAdrenal
   parent: HullrotCyberneticBase
   name: IPM TT-86 adrenal accelerator
-  description: A miniaturized, optimized version of the average humanoid liver. Comes with automated, expanded adrenal glands that allow for faster movement. These models are known to cause agitation, paranoia, and personality shifts with prolonged use.
+  description: A miniaturized, optimized version of the average humanoid liver. Comes with automated, expanded adrenal glands that allow for faster movement. These models are known to cause agitation, paranoia, and personality shifts with prolonged use. Replaces the liver.
   components:
     - type: Sprite
       sprite: _Crescent/Objects/Misc/cybernetics.rsi
       layers:
         - state: cherenzikovaccelerator
     - type: Liver
-    - type: Organ #eris give this a movespeed component too pretty please
+    - type: Organ
       slotId: liver
+      onAdd:
+        - type: TraitSpeedModifier # 25% movespeed increase
+          sprintModifier: 1.25
+          walkModifier: 1.25
+        - type: Stamina
+          critThreshold: 125 # 25% more stamina
+          decay: 4.5 # 50% more regeneration per tick
     - type: Metabolizer
-      maxReagents: 1
+      maxReagents: 10
       metabolizerTypes: [Human]
       groups:
         - id: Alcohol
@@ -248,19 +255,82 @@
   id: CyberneticsPainEditor
   parent: HullrotCyberneticBase
   name: IPM TT-46 pain editor
-  description: A miniaturized, optimized version of the average humanoid liver. Developed by Interdyne Pharmaceuticals, this cybernetic organ interfaces with the spinal nerves to nullify pain signals from reaching the brain, allowing the user to fight longer.
+  description: A miniaturized, optimized version of the average humanoid liver. Developed by Interdyne Pharmaceuticals, this cybernetic organ interfaces with the spinal nerves to nullify pain signals from reaching the brain, allowing the user to fight longer. Replaces the liver.
   components:
     - type: Sprite
       sprite: _Crescent/Objects/Misc/cybernetics.rsi
       layers:
         - state: paineditor
     - type: Liver
-    - type: Organ #give this an onAdd modifier that raises the Alive to Critical threshhold later
+    - type: Organ
       slotId: liver
+      onAdd:
+        - type: MobThresholds
+          thresholds:
+            0: Alive
+            150: Critical
+            200: Dead
+        - type: SlowOnDamage # without this the player gets no slowdown thresholds since they're removed for some reason
+          speedModifierThresholds: # doubled thresholds
+            120: 0.9  # 0.7 is base speed.
+            160: 0.8  # 0.5 is base speed.
     - type: Metabolizer
-      maxReagents: 1
+      maxReagents: 10
       metabolizerTypes: [Human]
       groups:
         - id: Alcohol
           rateModifier: 0.3 #Removes alcohol moderately fast.
 
+- type: entity
+  parent: LeftArmCybernetic
+  id: CrowbarLeftArm
+  name: IPM TT-42l pryarm
+  description: A cybernetic left arm that can easily pry open unpowered doors.
+  components:
+  - type: BodyPart
+    onAdd:
+    - type: Prying
+      speedModifier: 2
+  - type: Sprite
+    sprite: Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi
+    state: "iconpry"
+
+- type: entity
+  parent: RightArmCybernetic
+  id: CrowbarRightArm
+  name: IPM TT-42r pryarm
+  description: A cybernetic right arm that can easily pry open unpowered doors.
+  components:
+  - type: BodyPart
+    onAdd:
+    - type: Prying
+      speedModifier: 2
+  - type: Sprite
+    sprite: Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi
+    state: "iconpry"
+    
+- type: entity
+  parent: HullrotCyberneticBase
+  id: SkillshardSlot
+  name: placeholder cerebral cybernetic (skillshard)
+  description: TBD - Have Aisha write a description pre-release for this.
+  components:
+    - type: CerebralImplant
+    - type: Sprite
+      sprite: _Crescent/Objects/Misc/cybernetics.rsi
+      layers:
+        - state: cerebraltrainer
+    - type: Organ
+      slotId: head_implant
+      onImplantFunctions:
+      - !type:TraitAddSlot
+        slots:
+          skillchip_slot:
+            name: skilldeck-slot-name
+            selfEjectOnly: true
+            whitelist:
+              components:
+              - Skilldeck
+      - !type:TraitAddComponent
+        components:
+          - type: SkillchipImplantHolder

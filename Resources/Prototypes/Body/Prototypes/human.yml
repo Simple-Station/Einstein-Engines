@@ -10,7 +10,7 @@
       organs:
         brain: OrganHumanBrain
         eyes: OrganHumanEyes
-        cybernetic_anchor: OrganCrescentDummy # Seriously. Why.
+        head_implant: OrganCrescentDummy # Seriously. Why.
     torso:
       part: TorsoHuman
       connections:

@@ -125,7 +125,7 @@ public sealed partial class CCVars
     /// the Entropic decay of energy combined with the minimal but existent particles that would slow the vessel down
     ///</summary>
     public static readonly CVarDef<float> SpaceFrictionStrength =
-        CVarDef.Create("shuttle.space_friction_strength", 0.005f, CVar.REPLICATED);
+        CVarDef.Create("shuttle.space_friction_strength", 0f, CVar.REPLICATED);
 
     ///<summary>
     /// the strength of drag when the inertia dampeners are set to anchor to slow the vessel down and hold it in place

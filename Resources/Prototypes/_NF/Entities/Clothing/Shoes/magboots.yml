@@ -9,15 +9,14 @@
     state: icon
   - type: Clothing
     sprite: _NF/Clothing/Shoes/Boots/magboots-combat.rsi
-  - type: Magboots
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 13
-    staminaCost: 15
+    walkModifier: 1
+    sprintModifier: 1
+  - type: Magboots
+    activeWalkModifier: 0.95
+    activeSprintModifier: 0.95
+    inactiveWalkModifier: 1
+    inactiveSprintModifier: 1
   - type: StaticPrice
     price: 750
 
@@ -31,7 +30,6 @@
     state: icon
   - type: Clothing
     sprite: _NF/Clothing/Shoes/Boots/magboots-nfsd.rsi
-  - type: Magboots
 
 - type: entity
   parent: ClothingShoesBootsMagCombat
@@ -44,7 +42,6 @@
     state: icon
   - type: Clothing
     sprite: _NF/Clothing/Shoes/Boots/magboots-pirate.rsi
-  - type: Magboots
 
 - type: entity
   parent: ClothingShoesBootsMagCombat
@@ -57,7 +54,6 @@
     state: icon
   - type: Clothing
     sprite: _NF/Clothing/Shoes/Boots/magboots-mercenary.rsi
-  - type: Magboots
 
 - type: entity
   parent: ClothingShoesBootsMag
@@ -70,7 +66,6 @@
     state: icon
   - type: Clothing
     sprite: _NF/Clothing/Shoes/Boots/magboots-galoshes.rsi
-  - type: Magboots
   - type: NoSlip
 
 - type: entity

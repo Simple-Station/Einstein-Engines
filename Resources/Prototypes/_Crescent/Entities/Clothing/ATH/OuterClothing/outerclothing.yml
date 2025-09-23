@@ -27,8 +27,8 @@
         Heat: 25
         Caustic: 15
   - type: ClothingSpeedModifier
-    walkModifier: 0.80
-    sprintModifier: 0.80
+    walkModifier: 0.85
+    sprintModifier: 0.85
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitAuthorityPanzer
   - type: StaticPrice
@@ -58,8 +58,8 @@
         Heat: 25
         Caustic: 15
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 1
+    sprintModifier: 1
   - type: StaticPrice
     price: 1500
 
@@ -85,8 +85,8 @@
         Heat: 25
         Caustic: 15
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 1
+    sprintModifier: 1
   - type: StaticPrice
     price: 1500
 
@@ -110,6 +110,68 @@
   - type: StaticPrice
     price: 1500
 
+#armor
+
+- type: entity
+  parent: ClothingOuterArmorBasic
+  id: ClothingOuterArmorAuthoritySoldat
+  name: soldat's armoured vest
+  description: The standard-issued protective vest worn by the Authoritat.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/OuterClothing/soldat.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/OuterClothing/soldat.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 1250
+    armorType: Metallic
+    armorRepair: NTPolymer
+    initialModifiers:
+      flatReductions:
+        Blunt: 35
+        Slash: 25
+        Piercing: 45
+        Heat: 25
+        Caustic: 25
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: AllowSuitStorage
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
+  id: ClothingOuterArmorAuthorityShocktrooper
+  name: shocktrooper's armoured vest
+  description: The improved specialized protective vest worn by shock units and kommandos.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/OuterClothing/shocktrooper.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/OuterClothing/shocktrooper.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 1250
+    armorType: Metallic
+    armorRepair: NTPolymer
+    initialModifiers:
+      flatReductions:
+        Blunt: 35
+        Slash: 25
+        Piercing: 50
+        Heat: 25
+        Caustic: 25
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: AllowSuitStorage
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: StaticPrice
+    price: 1500
+ 
 #regular
 
 - type: entity

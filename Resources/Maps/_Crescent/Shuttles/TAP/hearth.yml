@@ -4847,7 +4847,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: WeaponTurretVulcan
+- proto: WeaponTurretVulcanFilled
   entities:
   - uid: 159
     components:

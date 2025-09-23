@@ -1,25 +1,47 @@
 - type: entity
   id: CrateSumitomoAmmo
-  parent: CrateSecgear
-  name: 48mm crate
-  description: Ammunition for the SHI Sumitomo and SHI Kurosawa rocket launchers.
+  parent: N14CrateAluminium
+  name: 48mm low-yield rocket crate
+  description: 24 low-yield rockets, 5 magazines for the SHI Sumitomo & Kurosawa rocket launchers.
   components:
   - type: StorageFill
     contents:
       - id: MagazineRocketEmpty
-        amount: 3
-      - id: CartridgeRocketEMP
-        amount: 6
-      - id: CartridgeRocketHighYield
-        amount: 6
+        amount: 5
       - id: CartridgeRocketLowYield
+        amount: 24
+
+- type: entity
+  id: CrateSumitomoAmmoEMP
+  parent: N14CrateAluminium
+  name: 48mm EMP rocket crate
+  description: 12 EMP rockets and 2 magazines for the SHI Sumitomo & Kurosawa rocket launchers.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineRocketEmpty
+        amount: 2
+      - id: CartridgeRocketEMP
+        amount: 12
+
+- type: entity
+  id: CrateSumitomoAmmoHighYield
+  parent: N14CrateAluminium
+  name: 48mm high-yield rocket crate
+  description: 12 high-yield rockets and 2 magazines for the SHI Sumitomo & Kurosawa rocket launchers.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineRocketEmpty
+        amount: 5
+      - id: CartridgeRocketHighYield
         amount: 12
 
 - type: entity
   id: CrateGargoyleAmmo
-  parent: CrateSecgear
-  name: cruise missile crate
-  description: Ammunition for the Gargoyle cruise missile launcher.
+  parent: N14CrateAluminium
+  name: gargoyle cruise missile crate
+  description: 10 explosive and 10 EMP warheads for the Gargoyle cruise missile launcher.
   components:
   - type: StorageFill
     contents:
@@ -30,9 +52,9 @@
 
 - type: entity
   id: CrateLancerAmmo
-  parent: CrateSecgear
+  parent: N14CrateAluminium
   name: lancer rocket crate
-  description: Ammunition for the Lancer swarm missile launcher.
+  description: 30 individual rockets for the Lancer swarm missile launcher.
   components:
   - type: StorageFill
     contents:
@@ -41,9 +63,9 @@
 
 - type: entity
   id: CrateAssaultMortarAmmo
-  parent: CrateSecgear
-  name: assault mortar crate
-  description: Ammunition for the assault mortar platform.
+  parent: N14CrateAluminium
+  name: 230mm assault mortar shell crate
+  description: Ammunition for the 230mm "Hephaestus" assault mortar platform.
   components:
   - type: StorageFill
     contents:
@@ -52,9 +74,9 @@
 
 - type: entity
   id: CrateIdnaAmmo
-  parent: CrateSecgear
-  name: light torpedo crate
-  description: A crate of light 'Idna' heat guided torpedoes.
+  parent: N14CrateAluminium
+  name: 180mm torpedo crate
+  description: A crate of ten 180mm heat-seeking torpedoes for the Idna and Magwell launchers.
   components:
   - type: StorageFill
     contents:
@@ -63,7 +85,7 @@
 
 - type: entity
   id: CrateBoriatic
-  parent: CrateSecgear
+  parent: N14CrateAluminium
   name: boriatic crate
   description: Fuel for Boriatic-powered engines.
   components:
@@ -76,35 +98,43 @@
 
 - type: entity
   id: CrateVulcanAmmo
-  parent: CrateSecgear
-  name: vulcan crate
-  description: Ammunition for the NT Vulcan.
+  parent: N14CrateAluminium
+  name: 20mm vulcan ammo crate
+  description: Six 500 round ammo boxes for the Vulcan, Cleanser and Operator machinegun platforms.
   components:
   - type: StorageFill
     contents:
       - id: MagazineVulcan
-        amount: 10
+        amount: 6
 
 - type: entity
   id: CrateSlugthrowerAmmo
-  parent: CrateSecgear
-  name: slug cartridge crate
-  description: Ammunition the SHI slugthrower.
+  parent: N14CrateAluminium
+  name: 43mm DU slugthrower ammo crate
+  description: Sixteen 100 round boxes of DU ammunition the "Dasher" slugthrower or slugspitter platforms.
   components:
   - type: StorageFill
     contents:
       - id: MagazineLightRifleBoxSlug
-        amount: 8
-      - id: MagazineLightRifleBoxSlugInert
-        amount: 4
+        amount: 16
+
+- type: entity
+  id: CrateSlugthrowerAmmoExplosive
+  parent: N14CrateAluminium
+  name: 43mm HE slugthrower ammo crate
+  description: Eight 100 round boxes of explosive ammunition the "Dasher" slugthrower or slugspitter platforms. More efficient.
+  components:
+  - type: StorageFill
+    contents:
       - id: MagazineLightRifleBoxSlugHE
-        amount: 4
+        amount: 8
+
 
 - type: entity
   id: CrateCoolant
-  parent: CrateSecgear
+  parent: N14CrateAluminium
   name: coolant crate
-  description: Contains coolant for laser turrets.
+  description: 15 cartridges of coolant for various heavy weaponry.
   components:
   - type: StorageFill
     contents:
@@ -113,48 +143,122 @@
 
 - type: entity
   id: CrateArtilleryAmmo
-  parent: CrateSecgear
-  name: type-99 crate
-  description: Ammunition for 120mm artilleries.
+  parent: N14CrateAluminium
+  name: 120mm DU shell crate
+  description: 24 rounds of Depleted Uranium impact shells for the 120mm Type-99 artillery cannon.
   components:
   - type: StorageFill
     contents:
       - id: CartridgeShellArmorPiercing
-        amount: 15
+        amount: 24
+
+- type: entity
+  id: CrateArtilleryAmmoExplosive
+  parent: N14CrateAluminium
+  name: 120mm HE shell crate
+  description: 12 rounds of High Explosive shells for the 120mm Type-99 artillery cannon. Devastating effect.
+  components:
+  - type: StorageFill
+    contents:
       - id: CartridgeShellHighExplosive
-        amount: 10
-      - id: CartridgeShellPractice
-        amount: 5
+        amount: 12
 
 - type: entity
   id: CrateAutogunAmmo
-  parent: CrateSecgear
-  name: autogun crate
-  description: Ammunition for autogun artilleries.
+  parent: N14CrateAluminium
+  name: needler autogun magazine crate
+  description: 8 magazines of ammunition for "Needler" autogun turrets.
   components:
   - type: StorageFill
     contents:
       - id: MagazineNeedler
-        amount: 5
+        amount: 8
 
 - type: entity
   id: CrateMortarAmmo
-  parent: CrateSecgear
-  name: automortar crate
-  description: Ammunition for automortar artilleries.
+  parent: N14CrateAluminium
+  name: 90mm automortar magazine crate
+  description: 8 boxes of ammunition for 90mm automortar artillery turrets.
   components:
   - type: StorageFill
     contents:
       - id: MagazineMortar
-        amount: 5
+        amount: 8
 
 - type: entity
   id: CrateSwarmerAmmo
-  parent: CrateSecgear
+  parent: N14CrateAluminium
   name: swarmer rocket crate
-  description: Ammunition for swarmer rocket artilleries.
+  description: 5 bundles of ammunition for swarmer rocket artilleries.
   components:
   - type: StorageFill
     contents:
       - id: MagazineSwarmer
         amount: 5
+
+- type: entity
+  id: CrateSolarisAmmo
+  parent: N14CrateAluminium
+  name: solaris antimatter tube crate
+  description: 6 tubes of fuel for the Solaris antimatter blaster.
+  components:
+  - type: StorageFill
+    contents:
+      - id: StandardAntimatterCanister
+        amount: 6
+
+- type: entity
+  id: CrateSolarisAmmoGuided
+  parent: N14CrateAluminium
+  name: solaris guided antimatter tube crate
+  description: 4 tubes of special fuel for the Solaris antimatter blaster, equipped with basic mid-flight guidance for accuracy.
+  components:
+  - type: StorageFill
+    contents:
+      - id: GuidedAntimatterCanister
+        amount: 4
+
+- type: entity
+  id: CrateSolarisAmmoPlasma
+  parent: N14CrateAluminium
+  name: solaris plasma-charged antimatter tube crate
+  description: 4 tubes of special fuel for the Solaris antimatter blaster, charged with plasma for extra destructive effect.
+  components:
+  - type: StorageFill
+    contents:
+      - id: PlasmaAntimatterCanister
+        amount: 4
+
+- type: entity
+  id: CrateCompaktAmmoInfrared
+  parent: N14CrateAluminium
+  name: compakt infrared lens crate
+  description: 6 lenses tuned to infrared frequency, similar in performance to vulcan-type weapons.
+  components:
+  - type: StorageFill
+    contents:
+      - id: LensInfared
+        amount: 6
+
+- type: entity
+  id: CrateCompaktAmmoPlasma
+  parent: N14CrateAluminium
+  name: compakt plasma lens crate
+  description: 4 lenses tuned to plasma frequency, resulting in a devastating explosive barrage.
+  components:
+  - type: StorageFill
+    contents:
+      - id: LensPlasma
+        amount: 4
+
+- type: entity
+  id: CratePrinceAmmo
+  parent: N14CrateAluminium
+  name: 88mm 'Prince' flak cannon box crate
+  description: 4 flak cannon ammo boxes, resulting in a shotgun spread of lightly explosive pellets.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineFlak
+        amount: 4
+

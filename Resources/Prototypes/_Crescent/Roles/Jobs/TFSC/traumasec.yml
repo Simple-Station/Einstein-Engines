@@ -3,6 +3,13 @@
   name: job-name-traumasec
   description: job-description-traumasec
   playTimeTracker: JobTraumasecNCSP
+  weight: 7
+  startingGear: TraumasecGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconSyndieTraumasec"
+  supervisors: You answer to the interests of the Interdyne Pharmaceuticals company's coordinator and your peers.
+  canBeAntag: false
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 8000
@@ -11,7 +18,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
         - Blindness
   special:
   - !type:AddComponentSpecial
@@ -24,13 +30,6 @@
           - Freespeak
         addUnderstood:
           - Freespeak
-  weight: 16
-  startingGear: TraumasecGear
-  alwaysUseSpawner: true
-  icon: "JobIconSyndieTraumasec"
-  requireAdminNotify: false
-  supervisors: You answer to the interests of the Interdyne Pharmaceuticals Company. Whichever you decide with your colleagues they be.
-  canBeAntag: false
   access:
   - Command
   - Maintenance

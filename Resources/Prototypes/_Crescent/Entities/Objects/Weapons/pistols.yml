@@ -453,7 +453,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+      path: /Audio/_Crescent/Weapons/Guns/pistol_1/pistol_gunshot_3.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -524,3 +524,96 @@
             - CartridgePistol6mm
   - type: StaticPrice
     price: 750
+
+- type: entity
+  name: HGS P05 Brenner 9x19mm
+  parent: BaseWeaponPistol
+  id: WeaponPistolLuger
+  description: A small firearm of foreign origin produced for select militias. Chambered in 9x19mm PSTF.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/luger.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    fireRate: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/pistol_1/pistol_gunshot_3.ogg
+  - type: StaticPrice
+    price: 900
+
+- type: entity
+  name: HGS VAP-3P Sivuase .327
+  parent: BaseWeaponPistol
+  id: WeaponPistolSivuase
+  description: The Vihainen Aseperhe 3P. The choice sidearm for subjugators. Fires .327 rounds.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/sivuase.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineMagnum
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineMagnum
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMagnum
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeMagnum
+  - type: Gun
+    minAngle: 1
+    maxAngle: 20
+    angleIncrease: 8
+    angleDecay: 9
+    fireRate: 4
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/pistol_3/pistol_gunshot_3.ogg
+  - type: StaticPrice
+    price: 900
+
+- type: entity
+  name: K&K K25 Snake 9x19mm
+  parent: BaseWeaponPistol
+  id: WeaponPistolSnake
+  description: A bulky weapon system produced by Kane & Knox. Fielded with a suppressor and hefty laser aiming module. Chambered in 9x19mm PSTF.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/socom.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    fireRate: 4
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/supressed_1/supressed_gunshot_2.ogg
+      params:
+        volume: -10
+  - type: StaticPrice
+    price: 900

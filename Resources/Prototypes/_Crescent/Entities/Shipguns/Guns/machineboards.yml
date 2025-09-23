@@ -1,0 +1,443 @@
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: ShuttleGunPlasmaRepeaterCircuitboard
+  name: SHI 400c plasma bolt repeater machine board
+  description: A machine printed circuit board for a SHI plasma bolt repeater.
+  components:
+    - type: MachineBoard
+      prototype: ShuttleGunPlasmaRepeater
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: ShuttleGunExhumerCircuitboard
+  name: SHI 250c "Exhumer" kinetic pulser machine board
+  description: A machine printed circuit board for a SHI 250c "Exhumer" kinetic pulser
+  components:
+    - type: MachineBoard
+      prototype: ShuttleGunExhumer
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: ShuttleGunBizmuthCircuitboard
+  name: 500i "Bizmuth" ion gatling machine board
+  description: A machine printed circuit board for a 500i "Bizmuth" ion gatling
+  components:
+    - type: MachineBoard
+      prototype: ShuttleGunBizmuth
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: ShuttleGunTorpedoCircuitboard
+  name: SHI 180mm "Idna" small torpedo pod machine board
+  description: A machine printed circuit board for a SHI 180mm "Idna" small torpedo pod
+  components:
+    - type: MachineBoard
+      prototype: ShuttleGunTorpedo
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: ShuttleGunKurosawaCircuitboard
+  name: NCWL-3 48mm "Kurosawa" rocket pod machine board
+  description: A machine printed circuit board for a NCWL-3 48mm "Kurosawa" rocket pod
+  components:
+    - type: MachineBoard
+      prototype: ShuttleGunKurosawa
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: ShuttleGunMissileRackCircuitboard
+  name: NT-6 48mm "Sumitomo" missile rack machine board
+  description: A machine printed circuit board for a NT-6 48mm "Sumitomo" missile rack
+  components:
+    - type: MachineBoard
+      prototype: ShuttleGunMissileRack
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: SlugthrowerCannonCircuitboard
+  name: SHI 43mm "Dasher" ballistic slugthrower machine board
+  description: A machine printed circuit board for a SHI 43mm "Dasher" ballistic slugthrower
+  components:
+    - type: MachineBoard
+      prototype: SlugthrowerCannon
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: HardlineBeamPulserCircuitboard
+  name: NT-9 3100c 'Hardliner' plasma lance turret machine board
+  description: A machine printed circuit board for a NT-9 3100c 'Hardliner' plasma lance turret
+  components:
+    - type: MachineBoard
+      prototype: HardlineBeamPulser
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: Type99ArtilleryCircuitboard
+  name: SHI Type 99 120mm artillery machine board
+  description: A machine printed circuit board for a SHI Type 99 120mm artillery
+  components:
+    - type: MachineBoard
+      prototype: Type99Artillery
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: AcceleratorCannonCircuitboard
+  name: 320mm Imperial high-frequency accelerator cannon machine board
+  description: A machine printed circuit board for a 320mm Imperial high-frequency accelerator cannon
+  components:
+    - type: MachineBoard
+      prototype: AcceleratorCannon
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: NTVulcanTurretCircuitboard
+  name: NT 20mm "Vulcan" machineturret machine board
+  description: A machine printed circuit board for a NT 20mm "Vulcan" machineturret
+  components:
+    - type: MachineBoard
+      prototype: NTVulcanTurret
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: SAWCleanserCircuitboard
+  name: SAW 20mm "Cleanser" gatlingun machine board
+  description: A machine printed circuit board for a SAW 20mm "Cleanser" gatlingun
+  components:
+    - type: MachineBoard
+      prototype: SAWCleanser
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: WaspSwarmPlatformCircuitboard
+  name: ATH 70mm 'Wasp' swarmrocket platform machine board
+  description: A machine printed circuit board for a ATH 70mm 'Wasp' swarmrocket platform
+  components:
+    - type: MachineBoard
+      prototype: WaspSwarmPlatform
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: WeaponTurretPDTCircuitboard
+  name: SHI MG-213 light dual machinegun 20x135mm machine board
+  description: A machine printed circuit board for a SHI MG-213 light dual machinegun 20x135mm
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretPDT
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: WeaponTurretPDTNCSPCircuitboard
+  name: SHI MG-213 light dual machinegun 20x135mm Mk. II machine board
+  description: A machine printed circuit board for a SHI MG-213 light dual machinegun 20x135mm Mk. II
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretPDTNCSP
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: WeaponTurretVulcanCircuitboard
+  name: 20mm PTA "Operator" gatling turret platform machine board
+  description: A machine printed circuit board for a 20mm PTA "Operator" gatling turret
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretVulcan
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: BaseWeaponTurretSwarmerCircuitboard
+  name: swarmer missile launcher machine board
+  description: A machine printed circuit board for a swarmer missile launcher
+  components:
+    - type: MachineBoard
+      prototype: BaseWeaponTurretSwarmer
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: WeaponTurretCoilgunCircuitboard
+  name: 60mm NT "Derecho" exotic blaster machine board
+  description: A machine printed circuit board for a 60mm NT "Derecho" exotic blaster
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretCoilgun
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: WeaponTurretMortarCircuitboard
+  name: 90mm heavy mortar-pounder machine board
+  description: A machine printed circuit board for a 90mm heavy mortar-pounder
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretMortar
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: WeaponTurretLaserCircuitboard
+  name: SHI 180c 'Torch' pressure gatling machine board
+  description: A machine printed circuit board for a SHI 180c 'Torch' pressure gatling
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretLaser
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: BaseWeaponTurretSmartbombCircuitboard
+  name: NCWL 88mm 'Pilum' propelled mine launcher machine board
+  description: A machine printed circuit board for a NCWL 88mm 'Pilum' propelled mine launcher
+  components:
+    - type: MachineBoard
+      prototype: BaseWeaponTurretSmartbomb
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: WeaponTurretNeedlerCircuitboard
+  name: 60mm PTA 'Needler' heavy precision autogun machine board
+  description: A machine printed circuit board for a 60mm PTA 'Needler' heavy precision autogun
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretNeedler
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: PointNFireCannonExampleCircuitboard
+  name: NT MG-02 dual machinegun 20x135mm machine board
+  description: A machine printed circuit board for a NT MG-02 dual machinegun 20x135mm
+  components:
+    - type: MachineBoard
+      prototype: PointNFireCannonExample
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: BaseWeaponTurretGargoyleCircuitboard
+  name: heavy 'Gargoyle' LRM cruise missile launcher machine board
+  description: A machine printed circuit board for a heavy 'Gargoyle' LRM cruise missile launcher
+  components:
+    - type: MachineBoard
+      prototype: BaseWeaponTurretGargoyle
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: BaseWeaponTurretLancerCircuitboard
+  name: medium 'Lancer' MRM missile system machine board
+  description: A machine printed circuit board for a medium 'Lancer' MRM missile system
+  components:
+    - type: MachineBoard
+      prototype: BaseWeaponTurretLancer
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: BaseWeaponTurretBattlemortarCircuitboard
+  name: 230mm 'Hephaeustus' assault artillery platform machine board
+  description: A machine printed circuit board for a 230mm 'Hephaeustus' assault artillery platform
+  components:
+    - type: MachineBoard
+      prototype: BaseWeaponTurretBattlemortar
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: FlakCannonTurretCircuitboard
+  name: 88mm 'Prince' flak-screen turret machine board
+  description: A machine printed circuit board for a 88mm 'Prince' flak-screen turret
+  components:
+    - type: MachineBoard
+      prototype: FlakCannonTurret
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: CatapultTorpedoCircuitboard
+  name: MU91 323mm "Catapult" LRM torpedo launcher machine board
+  description: A machine printed circuit board for a MU91 323mm "Catapult" LRM torpedo launcher
+  components:
+    - type: MachineBoard
+      prototype: CatapultTorpedo
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: BaseWeaponTurretHeavyPlasmaRimwardCircuitboard
+  name: 800c "Rimward" hybrid plasma blaster machine board
+  description: A machine printed circuit board for a 800c "Rimward" hybrid plasma blaster
+  components:
+    - type: MachineBoard
+      prototype: BaseWeaponTurretHeavyPlasmaRimward
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: BaseWeaponTurretHeavyPlasmaCircuitboard
+  name: 350c "Compakt" hybrid energy gatling machine board
+  description: A machine printed circuit board for a 350c "Compakt" hybrid energy gatling
+  components:
+    - type: MachineBoard
+      prototype: BaseWeaponTurretHeavyPlasma
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: BaseWeaponTurretSolarisCircuitboard
+  name: 90mm "Solaris" antimatter blaster machine board
+  description: A machine printed circuit board for a 90mm "Solaris" antimatter blaster
+  components:
+    - type: MachineBoard
+      prototype: BaseWeaponTurretSolaris
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: BaseWeaponTurretJeongCircuitboard
+  name: 70mm "Jeong" swarmrocket platform machine board
+  description: A machine printed circuit board for a 70mm "Jeong" swarmrocket platform
+  components:
+    - type: MachineBoard
+      prototype: BaseWeaponTurretJeong
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: BaseWeaponTurretMagwellCircuitboard
+  name: SHI 180mm "Magwell" torpedo launcher machine board
+  description: A machine printed circuit board for a SHI 180mm "Magwell" torpedo launcher
+  components:
+    - type: MachineBoard
+      prototype: BaseWeaponTurretMagwell
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: BaseWeaponTurretSlugspitterCircuitboard
+  name: SHI 43mm "Hullpiercer" slugspitter machine board
+  description: A machine printed circuit board for a SHI 43mm "Hullpiercer" slugspitter
+  components:
+    - type: MachineBoard
+      prototype: BaseWeaponTurretSlugspitter
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: FlakCannonRegentCircuitboard
+  name: NT 88mm 'Regent' flak-screen turret machine board
+  description: A machine printed circuit board for a NT 88mm 'Regent' flak-screen turret
+  components:
+    - type: MachineBoard
+      prototype: FlakCannonRegent
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  id: MissilePodSnapdragonCircuitboard
+  name: NT 'Snapdragon' SRM missile system machine board
+  description: A machine printed circuit board for a NT 'Snapdragon' SRM missile system
+  components:
+    - type: MachineBoard
+      prototype: MissilePodSnapdragon
+      requirements:
+        MatterBin: 1
+
+- type: entity
+  id: BaseWeaponTurretKomodoCircuitboard
+  suffix: ShipGunMachineCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: NT 400c 'Komodo' chemical blaster machine board
+  description: A machine printed circuit board for a NT 400c 'Komodo' chemical blaster
+  components:
+    - type: MachineBoard
+      prototype: BaseWeaponTurretKomodo
+      requirements:
+        MatterBin: 1

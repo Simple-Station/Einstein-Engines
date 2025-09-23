@@ -81,14 +81,15 @@
   - type: ShipyardListing
     shuttles:
     - gazpachov
-    - Hammerhead
-    - Cometa
     - Exhumer
     - Homesteader
+    - Hammerhead
+    - Comet
     - Kite
     - Mercury
     - Paracelsus
     - Qian
+    - Pear
     - Termite
 # Hardcoded consoles
 - type: entity
@@ -166,6 +167,9 @@
     shuttles:
     - Anthead
     - Cockroach
-    - Termite
-    - KiteScrap
     - Warthog
+    - Hive
+    - Kitemk2
+    - Exhumermk2
+    - Pearmk2
+    - Termitemk2

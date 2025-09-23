@@ -5,15 +5,19 @@
   playTimeTracker: JobPhysicianCMM
   weight: 24
   startingGear: PhysicianGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconCMMPhysician"
+  supervisors: You answer to your Colonial Marshal, Deputy Marshal and Watchmaster.
+  canBeAntag: false
   requirements:
-  - !type:FactionRequirement
-      factionID: "TSP"
-  - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Foreigner
-        - Blindness
-        - WheelchairBound
+    - !type:FactionRequirement
+        factionID: "TSP"
+    - !type:CharacterTraitRequirement
+        inverted: true
+        traits:
+          - Blindness
+          - WheelchairBound
   special:
   - !type:AddComponentSpecial
     components:
@@ -22,11 +26,6 @@
       - type: CPRTraining
       - type: SurgerySpeedModifier
         speedModifier: 2
-  alwaysUseSpawner: true
-  icon: "JobIconCMMPhysician"
-  requireAdminNotify: false
-  supervisors: You answer to your Colonial Marshal , Deputy Marshal and Watchmaster.
-  canBeAntag: false
   access:
   - Command
   - Maintenance

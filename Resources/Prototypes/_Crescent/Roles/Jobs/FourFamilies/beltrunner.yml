@@ -3,6 +3,13 @@
   name: job-name-beltrunner
   description: job-description-beltrunner
   playTimeTracker:  JobBeltrunnerTAP
+  weight: 4
+  startingGear: BeltrunnerGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconBeltrunner"
+  supervisors: job-supervisors-tap
+  canBeAntag: false
   requirements:
     - !type:FactionRequirement
       factionID: "TAP"
@@ -15,13 +22,6 @@
         - Blindness
         - Pacifist
         - WheelchairBound
-  weight: 52
-  startingGear: BeltrunnerGear
-  alwaysUseSpawner: true
-  icon: "JobIconBeltrunner"
-  requireAdminNotify: false
-  supervisors: job-supervisors-tap
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
@@ -30,6 +30,15 @@
   - !type:AddComponentSpecial
     components:
       - type: Telepathic
+      - type: LanguageAdder
+        addSpoken:
+          - Tradeband
+          - OldTaypani
+          - Freespeak
+        addUnderstood:
+          - Tradeband
+          - OldTaypani
+          - Freespeak
   access:
   - EmergencyShuttleRepealAll
   - Captain

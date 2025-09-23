@@ -18,8 +18,7 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
-  - type: SpaceGarbage
-  
+
 #mortar cartridge
 
 - type: entity
@@ -40,13 +39,12 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
-  - type: SpaceGarbage
   - type: Tag
     tags:
       - MortarShell
-      
+
  #idna cartridge
- 
+
 - type: entity
   id: IdnaTorpedo
   name: 180mm heat-guided torpedo
@@ -68,8 +66,7 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
-  - type: SpaceGarbage
-  
+
 #gargoyle cartridge
 
 - type: entity
@@ -94,8 +91,7 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
-  - type: SpaceGarbage
-  
+
 #emp gargoyle cartridge
 
 - type: entity
@@ -120,8 +116,7 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
-  - type: SpaceGarbage
-  
+
 #lancer cartridge
 
 - type: entity
@@ -145,7 +140,7 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
-  
+
 #hephaestus (230mm) cartridge
 
 - type: entity
@@ -169,8 +164,7 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
-  - type: SpaceGarbage
-  
+
 #prince flak cartridge
 
 - type: entity
@@ -185,7 +179,7 @@
   - type: Item
     size: Small
   - type: CartridgeAmmo
-    proto: FlakProjectile
+    proto: 88mmFlakSpreadLY
     deleteOnSpawn: true
   - type: Sprite
     sprite: _Crescent/Objects/ShuttleWeapons/flak.rsi
@@ -194,13 +188,10 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
-  - type: SpaceGarbage
-  
-#prince flak AP cartridge
-  
+
 - type: entity
   id: MagazineFlak
-  name: "88mm 'Prince' flakcannon AP"
+  name: "88mm 'Prince' flakcannon low-yield"
   parent: BaseMagazineLightRifle
   components:
   - type: BallisticAmmoProvider
@@ -217,7 +208,27 @@
   - type: Tag
     tags:
       - FlakBox
-      
+
+- type: entity
+  id: 88mmFlakSpreadLY
+  categories: [ HideSpawnMenu ]
+  parent: FlakProjectile
+  components:
+  - type: ProjectileSpread
+    proto: FlakProjectile
+    count: 6
+    spread: 25
+
+- type: entity
+  id: 88mmFlakSpreadHE
+  categories: [ HideSpawnMenu ]
+  parent: FlakProjectileHE
+  components:
+  - type: ProjectileSpread
+    proto: FlakProjectileHE
+    count: 3
+    spread: 15
+
 #323mm catapult cartridge
 
 - type: entity
@@ -241,7 +252,7 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
-  
+
 #xray compakt cartridge
 
 - type: entity
@@ -265,8 +276,7 @@
     - state: base-spent
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
-  - type: SpaceGarbage
-  
+
 #infrared compakt cartridge
 
 - type: entity
@@ -289,8 +299,7 @@
     - state: base-spent
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
-  - type: SpaceGarbage
-  
+
 #microwave compakt cartridge
 
 - type: entity
@@ -313,8 +322,7 @@
     - state: base-spent
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
-  - type: SpaceGarbage
-  
+
 #plasma compakt cartridge
 
 - type: entity
@@ -337,8 +345,7 @@
     - state: base-spent
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
-  - type: SpaceGarbage
-  
+
 #standard solaris cartridge
 
 - type: entity
@@ -361,8 +368,7 @@
     - state: base-spent
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
-  - type: SpaceGarbage
-  
+
 #plasma solaris cartridge
 
 - type: entity
@@ -385,8 +391,7 @@
     - state: base-spent
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
-  - type: SpaceGarbage
- 
+
 #guided solaris cartridge
 
 - type: entity
@@ -409,8 +414,7 @@
     - state: base-spent
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
-  - type: SpaceGarbage
-  
+
 #jeong/osiris cartridge
 
 - type: entity
@@ -433,8 +437,7 @@
     - state: base-spent
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
-  - type: SpaceGarbage
-  
+
 #needler cartridge
 
 - type: entity
@@ -458,8 +461,7 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
-  - type: SpaceGarbage
-  
+
 #pilum cartridge
 
 - type: entity
@@ -470,6 +472,9 @@
   components:
   - type: Item
     size: Normal
+  - type: Tag
+    tags:
+      - SmartBomb
   - type: CartridgeAmmo
     proto: SmartBombBase
     deleteOnSpawn: true
@@ -480,8 +485,7 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
-  - type: SpaceGarbage
-  
+
 #swarmer cartridge
 
 - type: entity
@@ -505,8 +509,7 @@
   - type: Tag
     tags:
       - SwarmRocket
-  - type: SpaceGarbage
-  
+
 #pdt cartridge
 
 - type: entity
@@ -527,8 +530,7 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
-  - type: SpaceGarbage
-  
+
 #320mm cartridge
 
 - type: entity
@@ -554,8 +556,7 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
-  - type: SpaceGarbage
-  
+
 #inert 43mm (slugthrower) cartridge
 
 - type: entity
@@ -580,8 +581,7 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
-  - type: SpaceGarbage
-  
+
 #low yield 43mm (slugthrower) cartridge
 
 - type: entity
@@ -606,8 +606,7 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
-  - type: SpaceGarbage
-  
+
 #armor piercing 43mm (slugthrower) cartridge
 
 - type: entity
@@ -632,8 +631,7 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
-  - type: SpaceGarbage
-  
+
 #emp 43mm (slugthrower) cartridge
 
 - type: entity
@@ -658,8 +656,7 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
-  - type: SpaceGarbage
-  
+
 #practice 120mm cartridge
 
 - type: entity
@@ -684,7 +681,7 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
-  
+
 #low yield 120mm cartridge
 
 - type: entity
@@ -709,7 +706,7 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
-  
+
 #armor piercing 120mm cartridge
 
 - type: entity

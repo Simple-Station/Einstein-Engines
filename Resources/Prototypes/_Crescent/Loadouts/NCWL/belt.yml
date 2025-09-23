@@ -14,8 +14,8 @@
         - FleetkapitanNCWL
         - PartisanNCWL
         - DoctorNCWL
-        - WorkerOverbossNCWL
-        - IndustryTaskmasterNCWL
+        - CoordinatorNCWL
+        - ArtificerNCWL
         - WorkerNCWL
 
 - type: loadout
@@ -34,8 +34,8 @@
         - FleetkapitanNCWL
         - PartisanNCWL
         - DoctorNCWL
-        - WorkerOverbossNCWL
-        - IndustryTaskmasterNCWL
+        - CoordinatorNCWL
+        - ArtificerNCWL
         - WorkerNCWL
 - type: loadout
   id: LoadoutBeltNCWLDoubleHolster

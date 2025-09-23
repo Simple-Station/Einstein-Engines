@@ -82,7 +82,7 @@
   name: IRM Matusa 12g
   parent: BaseWeaponSniper
   id: WeaponShotgunDSMMatusa
-  description: The Matusa has only recently fallen out of favour with the Imperial Subjugation Corps as the civil war has pivoted arsenals towards armour-piercing firepower for whom the shotgun falls short. However, Matusas can be found in shock-assault divisions and peacekeeping forces across the sectors which once comprised the Imperial Mandate as the revolving street-sweeper requires no advanced machining and is effective at clearing fortified positions and unruly crowds alike.
+  description: A mass-produced Imperial shotgun with simple internals, intended for easy maintenance by levy forces.
   components:
   - type: Item
     size: Ginormous
@@ -116,7 +116,7 @@
   name: NCWL Pioneer Double-Barrel 12g
   parent: BaseWeaponSniperNoWield
   id: WeaponShotgunDoubleBarreledNCWL
-  description: A short, rugged scattergun based on ancient Terran designs. Cheap to print, easy to maintain, and reliable enough for frontier defense and penal use. Favored by proletariat civilians, shipboard crews, and disciplinary squads for its close quarters effectiveness and ease of storage compared to more advanced pump-action or automatic models. An inscription on the side reads "Property of—" though the rest has been scorched off with a laser engraver, replaced by a crude ID serial. The wooden buttstock still has a splinter jutting out—like everything else about this gun, it’s functional, not comfortable.
+  description: A short, rugged double-barrel shotgun built in-house by NCWL Homeguard workshops. Partisans prize its compact size and reliability for clearing tight ship corridors; Kommissars often carry one as a backup.
   components:
   - type: Item
     size: Normal
@@ -198,11 +198,18 @@
           - MagazineShotgun
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+      gun_chamber:
+        name: Chamber
+        startingItem: ShellShotgun
+        priority: 1
+        whitelist:
+          tags:
+            - ShellShotgun
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
-  - type: MagazineAmmoProvider
+  - type: ChamberMagazineAmmoProvider
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -229,3 +236,117 @@
         Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 9.5
+
+- type: entity
+  name: HGS VAP-16S Haulikko 12g
+  # Don't parent to BaseWeaponShotgun because it differs significantly
+  parent: [BaseItem, BaseGunWieldable]
+  id: WeaponShotgunHaulikko
+  description: The Vihainen Aseperhe 16S. An automatic shotgun designed to excell in close-quarters subjugation. Uses 12 gauge shotgun shells.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/haulikko.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,4,2
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/haulikko.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: AmmoCounter
+  - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
+  - type: Gun
+    fireRate: 4.5
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/shotgun_1/shotgun_gunshot_3.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+    fireOnDropChance: 0.3
+    shotgunSpreadMultiplier: 1.5
+    shotgunProjectileCountModifier: 1.33
+  - type: Wieldable
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineShotgun
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineShotgun
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+      gun_chamber:
+        name: Chamber
+        startingItem: ShellShotgun
+        priority: 1
+        whitelist:
+          tags:
+            - ShellShotgun
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: ChamberMagazineAmmoProvider
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 500
+  - type: Execution
+  - type: MeleeWeapon
+    attackRate: 1.4
+    damage:
+      types:
+        Blunt: 10
+    bluntStaminaDamageFactor: 1.3333
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 180
+    soundHit:
+      collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2.5
+  - type: DamageOtherOnHit
+    staminaCost: 9.5
+
+- type: entity
+  name: K&K K870 Bush 12g
+  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: WeaponShotgunBush
+  description: A pump-action shotgun produced by Kane & Knox. Equipped with a shortened grip and reduced internal tube for ease of mobility. Fires 12g shells.
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,0
+    sprite: _Crescent/Objects/Weapons/Guns/r870.rsi
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/r870.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/r870.rsi
+  - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
+  - type: BallisticAmmoProvider
+    capacity: 4
+    autoCycle: false
+  - type: Wieldable
+  - type: Gun
+    shotgunSpreadMultiplier: 1.2
+    damageModifier: 1.3

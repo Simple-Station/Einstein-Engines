@@ -3,6 +3,13 @@
   name: job-name-lieutenant
   description: job-description-lieutenant
   playTimeTracker: JobLieutenantNCSP
+  weight: 11
+  startingGear: LieutenantGear
+  alwaysUseSpawner: true
+  requireAdminNotify: true
+  icon: "JobIconSyndieLieutenant"
+  supervisors: You answer to the Ringleader.
+  canBeAntag: false
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 30000
@@ -11,8 +18,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
         - Pacifist
@@ -28,13 +33,6 @@
         addUnderstood:
           - Freespeak
           - Tradeband
-  weight: 45
-  startingGear: LieutenantGear
-  alwaysUseSpawner: true
-  icon: "JobIconSyndieLieutenant"
-  requireAdminNotify: true
-  supervisors: You answer to the Station Administrator.
-  canBeAntag: false
   access:
   - EmergencyShuttleRepealAll
   - Captain

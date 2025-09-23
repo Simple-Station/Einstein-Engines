@@ -3,6 +3,13 @@
   name: job-name-marshal
   description: job-description-marshal
   playTimeTracker: JobMarshalCMM
+  weight: 39
+  startingGear: MarshalGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconMarshal"
+  supervisors: You answer to your heart's contempt, whether it be protecting the sector's civilians or aiding criminal organizations.
+  canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
@@ -10,8 +17,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
         - Pacifist
@@ -20,13 +25,6 @@
     components:
       - type: ChatRank
         rank: crescent-rank-marshallie
-  weight: 39
-  startingGear: MarshalGear
-  alwaysUseSpawner: true
-  icon: "JobIconMarshal"
-  requireAdminNotify: false
-  supervisors: You answer to your heart's contempt, wheter it be protecting the sector's civilians or aiding criminal organizations.
-  canBeAntag: false
   access:
   - Command
   - Maintenance

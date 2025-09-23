@@ -3,33 +3,38 @@
   name: job-name-oberartz
   description: job-description-oberartz
   playTimeTracker: JobOberartzATH
+  weight: 94
+  startingGear: OberartzGear
+  alwaysUseSpawner: true
+  requireAdminNotify: true
+  icon: "JobIconOberartz"
+  supervisors: job-supervisors-ath
+  canBeAntag: false
   requirements:
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Human
     - !type:CharacterOverallTimeRequirement
       min: 36000
     - !type:FactionRequirement
       factionID: "ATH"
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
-  weight: 85
-  startingGear: OberartzGear
-  alwaysUseSpawner: true
-  icon: "JobIconOberartz"
-  requireAdminNotify: true
-  supervisors: job-supervisors-ath
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-smarts
+      - type: LanguageAdder
+        addSpoken:
+          - SolBasic
+          - Tradeband
+        addUnderstood:
+          - SolBasic
+          - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain

@@ -14773,7 +14773,7 @@ entities:
     - type: Transform
       pos: -6.5,-15.5
       parent: 1
-- proto: SHISlugthrowerTurretDSM
+- proto: SlugthrowerCannonFilled
   entities:
   - uid: 39
     components:

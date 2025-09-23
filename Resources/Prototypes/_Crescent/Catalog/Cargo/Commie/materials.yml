@@ -1,59 +1,59 @@
-- type: cargoProduct
-  id: MaterialGlasscommie
-  icon:
-    sprite: Objects/Materials/Sheets/glass.rsi
-    state: glass_3
-  product: CrateMaterialGlass
-  cost: 15000 # TODO: Lower the cost back when possible
-  category: cargoproduct-category-name-materials
-  group: commie
+# - type: cargoProduct
+#   id: MaterialGlasscommie
+#   icon:
+#     sprite: Objects/Materials/Sheets/glass.rsi
+#     state: glass_3
+#   product: CrateMaterialGlass
+#   cost: 15000 # TODO: Lower the cost back when possible
+#   category: cargoproduct-category-name-materials
+#   group: commie
 
-- type: cargoProduct
-  id: MaterialSteelcommie
-  icon:
-    sprite: Objects/Materials/Sheets/metal.rsi
-    state: steel_3
-  product: CrateMaterialSteel
-  cost: 15000 # TODO: Lower the cost back when possible
-  category: cargoproduct-category-name-materials
-  group: commie
+# - type: cargoProduct
+#   id: MaterialSteelcommie
+#   icon:
+#     sprite: Objects/Materials/Sheets/metal.rsi
+#     state: steel_3
+#   product: CrateMaterialSteel
+#   cost: 15000 # TODO: Lower the cost back when possible
+#   category: cargoproduct-category-name-materials
+#   group: commie
 
-- type: cargoProduct
-  id: MaterialPlasticcommie
-  icon:
-    sprite: Objects/Materials/Sheets/other.rsi
-    state: plastic_3
-  product: CrateMaterialPlastic
-  cost: 10000 # TODO: Lower the cost back when possible
-  category: cargoproduct-category-name-materials
-  group: commie
+# - type: cargoProduct
+#   id: MaterialPlasticcommie
+#   icon:
+#     sprite: Objects/Materials/Sheets/other.rsi
+#     state: plastic_3
+#   product: CrateMaterialPlastic
+#   cost: 10000 # TODO: Lower the cost back when possible
+#   category: cargoproduct-category-name-materials
+#   group: commie
 
-- type: cargoProduct
-  id: MaterialClothcommie
-  icon:
-    sprite: Objects/Materials/materials.rsi
-    state: cloth_3
-  product: CrateMaterialTextiles
-  cost: 5000
-  category: cargoproduct-category-name-materials
-  group: commie
+# - type: cargoProduct
+#   id: MaterialClothcommie
+#   icon:
+#     sprite: Objects/Materials/materials.rsi
+#     state: cloth_3
+#   product: CrateMaterialTextiles
+#   cost: 5000
+#   category: cargoproduct-category-name-materials
+#   group: commie
 
-- type: cargoProduct
-  id: MaterialFuelTankcommie
-  icon:
-    sprite: Structures/Storage/tanks.rsi
-    state: fueltank
-  product: WeldingFuelTankFull
-  cost: 2500
-  category: cargoproduct-category-name-materials
-  group: commie
+# - type: cargoProduct
+#   id: MaterialFuelTankcommie
+#   icon:
+#     sprite: Structures/Storage/tanks.rsi
+#     state: fueltank
+#   product: WeldingFuelTankFull
+#   cost: 2500
+#   category: cargoproduct-category-name-materials
+#   group: commie
 
-- type: cargoProduct
-  id: MaterialWaterTankcommie
-  icon:
-    sprite: Structures/Storage/tanks.rsi
-    state: watertank
-  product: WaterTankFull
-  cost: 3000
-  category: cargoproduct-category-name-materials
-  group: commie
+# # - type: cargoProduct
+# #   id: MaterialWaterTankcommie
+# #   icon:
+# #     sprite: Structures/Storage/tanks.rsi
+# #     state: watertank
+# #   product: WaterTankFull
+# #   cost: 3000
+# #   category: cargoproduct-category-name-materials
+# #   group: commie

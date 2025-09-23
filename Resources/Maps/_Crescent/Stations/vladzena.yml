@@ -36701,7 +36701,7 @@ entities:
     - type: Transform
       pos: 22.619436,-28.454348
       parent: 1
-- proto: TrackingImplanterNCWL
+- proto: VitalsTrackingImplanterNCWL
   entities:
   - uid: 1367
     components:

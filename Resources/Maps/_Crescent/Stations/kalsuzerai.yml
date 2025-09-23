@@ -39766,7 +39766,7 @@ entities:
     - type: Transform
       pos: 29.400703,-38.65979
       parent: 1
-- proto: TrackingImplanterDSMCiv
+- proto: VitalsTrackingImplanterDSMCivilian
   entities:
   - uid: 6914
     components:
@@ -39818,7 +39818,7 @@ entities:
     - type: Transform
       pos: -6.265203,-28.644875
       parent: 1
-- proto: TrackingImplanterDSMSec
+- proto: VitalsTrackingImplanterDSMCommand
   entities:
   - uid: 6907
     components:

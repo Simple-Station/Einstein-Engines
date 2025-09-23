@@ -3,7 +3,7 @@
   name: job-name-ncwl-fleetkapitan
   description: job-description-ncwl-fleetkapitan
   playTimeTracker: JobHomeguardSquadCaptainNCWL
-  weight: 98
+  weight: 6
   startingGear: CaptainNCWLGear
   alwaysUseSpawner: true
   requireAdminNotify: false
@@ -12,10 +12,10 @@
   canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
-    - !type:FactionRequirement
-      factionID: "NCWL"
     - !type:CharacterOverallTimeRequirement
       min: 20000
+    - !type:FactionRequirement
+      factionID: "NCWL"
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -23,8 +23,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
         - Pacifist

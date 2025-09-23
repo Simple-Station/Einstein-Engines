@@ -3,30 +3,25 @@
   name: job-name-executive
   description: job-description-executive
   playTimeTracker: JobExecutiveSHI
+  weight: 100
+  startingGear: ExecutiveGear
+  alwaysUseSpawner: true
+  requireAdminNotify: true
+  icon: "JobIconExecutive"
+  supervisors: job-supervisors-shi
+  canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
       min: 36000
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Human
     - !type:FactionRequirement
       factionID: "SHI"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
         - WheelchairBound
-  weight: 55
-  startingGear: ExecutiveGear
-  alwaysUseSpawner: true
-  icon: "JobIconExecutive"
-  requireAdminNotify: true
-  supervisors: job-supervisors-shi
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:

@@ -62,7 +62,7 @@ namespace Content.Server.Body.Components
         ///     What percentage of current blood is necessary to avoid dealing blood loss damage?
         /// </summary>
         [DataField]
-        public float BloodlossThreshold = 0.9f;
+        public float BloodlossThreshold = 0.8f;
 
         /// <summary>
         ///     The base bloodloss damage to be incurred if below <see cref="BloodlossThreshold"/>
@@ -91,7 +91,7 @@ namespace Content.Server.Body.Components
         /// </summary>
         /// <remarks>Those will have no effect if the entity has no hunger/thirst components.</remarks>
         [DataField]
-        public float BloodRegenerationHunger = 1f, BloodRegenerationThirst = 1f;
+        public float BloodRegenerationHunger = 0.1f, BloodRegenerationThirst = 0.1f;
 
         /// <summary>
         ///     How much blood needs to be in the temporary solution in order to create a puddle?

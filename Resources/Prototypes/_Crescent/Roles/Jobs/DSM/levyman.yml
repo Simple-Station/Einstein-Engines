@@ -17,11 +17,10 @@
       species:
         - Human
         - Oni
+        - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
         - Pacifist
@@ -50,8 +49,9 @@
   id: LevymanGear
   equipment:
     id: LevymanPDA
-    ears: ClothingHeadsetEmpire
+    ears: ClothingHeadsetEmpireCiv
     shoes: ClothingShoesBootsImperialJackboots
+    back: ClothingBackpackDSMFilledSoldier
     head: ClothingHeadHelmetImperialTrooperHelmet
     jumpsuit: ClothingUniformJumpsuitImperialCombat
     outerClothing: ClothingOuterArmorImperialTrooperArmor

@@ -3,6 +3,13 @@
   name: job-name-antiquarian
   description: job-description-antiquarian
   playTimeTracker: JobAntiquarian
+  weight: 49
+  startingGear: AntiquarianGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconAntiquarian"
+  supervisors: job-supervisors-tap
+  canBeAntag: false
   requirements:
     - !type:FactionRequirement
       factionID: "TAP"
@@ -14,13 +21,6 @@
       traits:
         - Muted
         - Blindness
-  weight: 1
-  startingGear: AntiquarianGear
-  alwaysUseSpawner: true
-  icon: "JobIconAntiquarian"
-  requireAdminNotify: false
-  supervisors: job-supervisors-tap
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
@@ -29,6 +29,15 @@
   - !type:AddComponentSpecial
     components:
       - type: Telepathic
+      - type: LanguageAdder
+        addSpoken:
+          - Tradeband
+          - OldTaypani
+          - Freespeak
+        addUnderstood:
+          - Tradeband
+          - OldTaypani
+          - Freespeak
   access:
   - Families
   - Izdari

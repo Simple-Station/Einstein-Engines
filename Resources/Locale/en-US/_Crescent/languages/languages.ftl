@@ -15,7 +15,7 @@ language-SolBasic-description = A derived form of High Imperial and Tau Ceti Bas
 chat-language-SolBasic-name = Solarian
 
 language-Clarizian-name = Clarizian Common
-language-Clarizian-description = Clarizian Standard is the official tongue of the Free Clarizian Duchies. Constructed using elements of Farsi - Arabic - and Turkish, used by both highborn and commoners.
+language-Clarizian-description = Clarizian Common is the official tongue of the Free Clarizian Duchies. Constructed using elements of Farsi - Arabic - and Turkish, used by both highborn and commoners.
 chat-language-Clarizian-name = Clarizian Common
 
 language-Atyrian-name = Atyrian
@@ -25,3 +25,11 @@ chat-language-Atyrian-name = Atyrian
 language-Kaishago-name = Kaishago
 language-Kaishago-description = A bizzare compaction of ancient Japanese, made to deliver the most information in the shortest amount of time. All SHI employees have a brainchip that auto-teaches this...form of communication.
 chat-language-Kaishago-name = Kaishago
+
+language-OldTaypani-name = Old Taypani
+language-OldTaypani-description = Formed out of desperation and constant migration - Old Taypani is a language descended from various Unathi and Atyrian dialects. Glottal and guttural at times, speaking this language is a mark of piety in the circles of the Matron and a sign of destitution to many.
+chat-language-OldTaypani-name = Old Taypani
+
+language-American-name = American
+language-American-description = An amalgamation of various ancient languages originating from Old Terra, spoken by those of the New American Protectorate.
+chat-language-American-name = American

@@ -3,13 +3,19 @@
   name: job-name-shipbreaker
   description: job-description-shipbreaker
   playTimeTracker: JobShipbreakerNCSP
+  weight: 1
+  startingGear: ShipbreakerGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconSyndieShipbreaker"
+  supervisors: You answer to the Shipfitters Aerodynamic & Worker's union interests and its foreman's.
+  canBeAntag: false
   requirements:
     - !type:FactionRequirement
       factionID: "TFSC"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
         - Blindness
         - WheelchairBound
   special:
@@ -22,13 +28,6 @@
           - Freespeak
         addUnderstood:
           - Freespeak
-  weight: 8
-  startingGear: ShipbreakerGear
-  alwaysUseSpawner: true
-  icon: "JobIconSyndieShipbreaker"
-  requireAdminNotify: false
-  supervisors: You answer to the Shipfitters Aerodynamic & Worker's union interests, which your Foreman will decide.
-  canBeAntag: false
   access:
   - Command
   - Maintenance
