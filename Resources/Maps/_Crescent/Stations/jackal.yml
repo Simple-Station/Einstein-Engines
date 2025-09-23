@@ -12630,6 +12630,8 @@ entities:
     - type: Transform
       pos: -0.5,-15.5
       parent: 1
+    - type: FaxMachine
+      name: GSC Grinning Jackal
   - uid: 1720
     components:
     - type: Transform
@@ -17154,13 +17156,15 @@ entities:
     - type: Transform
       pos: 0.2587645,-27.403717
       parent: 1
-- proto: NFHolopadShipAntag
+- proto: HolopadLongRange
   entities:
   - uid: 2332
     components:
     - type: Transform
       pos: -3.5,-15.5
       parent: 1
+    - type: Label
+      currentLabel: The Grinning Jackal
 - proto: OxygenCanister
   entities:
   - uid: 2333

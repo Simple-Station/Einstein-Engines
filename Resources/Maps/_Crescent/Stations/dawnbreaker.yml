@@ -16409,7 +16409,7 @@ entities:
       pos: -1.5,19.5
       parent: 1
     - type: FaxMachine
-      name: Cyberdawn - Bridge
+      name: CyberDawn - Bridge
 - proto: filingCabinetDrawerRandom
   entities:
   - uid: 1331
@@ -19804,13 +19804,15 @@ entities:
     - type: Transform
       pos: -0.66068864,25.718084
       parent: 1
-- proto: NFHolopadShip
+- proto: HolopadLongRange
   entities:
   - uid: 1864
     components:
     - type: Transform
       pos: 0.5,20.5
       parent: 1
+    - type: Label
+      currentLabel: CyberDawn Dawnbreaker
 - proto: OnionSeeds
   entities:
   - uid: 133

@@ -25065,7 +25065,7 @@ entities:
       pos: -0.5,47.5
       parent: 1
     - type: FaxMachine
-      name: Dochenskaya Engineering Outpost
+      name: SAW Dochenskaya-Hyundari Engineering Outpost
 - proto: FireAxeCabinetFilled
   entities:
   - uid: 1370
@@ -27880,13 +27880,15 @@ entities:
     - type: Transform
       pos: 11.420877,34.595802
       parent: 1
-- proto: NFHolopadShip
+- proto: HolopadLongRange
   entities:
   - uid: 1836
     components:
     - type: Transform
       pos: 0.5,44.5
       parent: 1
+    - type: Label
+      currentLabel: SAW Dochenskaya-Hyundari Engineering Outpost
 - proto: OreProcessorIndustrial
   entities:
   - uid: 1837

@@ -10084,13 +10084,15 @@ entities:
     - type: Transform
       pos: -4.7471523,-17.443995
       parent: 1
-- proto: NFHolopadShip
+- proto: HolopadLongRange
   entities:
   - uid: 827
     components:
     - type: Transform
       pos: 0.5,-8.5
       parent: 1
+    - type: Label
+      currentLabel: Interdyne Medical Waystation Hayes
 - proto: OmnimedToolSyndie
   entities:
   - uid: 828
