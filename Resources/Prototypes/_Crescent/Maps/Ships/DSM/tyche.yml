@@ -1,0 +1,25 @@
+- type: vessel
+  id: Tyche
+  name: DSM Tyche
+  description: The Tyche, A stealth-based personal cruiser created for Ser Bosco Yore.
+  price: 45000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/DSM/tyche.yml
+
+- type: gameMap
+  id: Tyche
+  mapName: 'DSM Tyche'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/tyche.yml
+  minPlayers: 0
+  stations:
+    Tyche:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Tyche {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-stealth-boarder
