@@ -108222,25 +108222,21 @@ entities:
     - type: Transform
       pos: -9.5,-4.5
       parent: 1
-      name: Nova Balreska A
   - uid: 3799
     components:
     - type: Transform
       pos: 18.5,18.5
       parent: 1
-      name: Nova Balreska A
   - uid: 3800
     components:
     - type: Transform
       pos: -21.5,1.5
       parent: 1
-      name: Nova Balreska A
   - uid: 3801
     components:
     - type: Transform
       pos: -7.5,5.5
       parent: 1
-      name: Nova Balreska A
 - proto: filingCabinetDrawerRandom
   entities:
   - uid: 3802
@@ -116277,15 +116273,13 @@ entities:
     - type: Transform
       pos: -4.479228,11.707247
       parent: 1
-- proto: HolopadLongRange
+- proto: HolopadBluespace
   entities:
   - uid: 4874
     components:
     - type: Transform
       pos: -16.5,0.5
       parent: 1
-    - type: Label
-      currentLabel: Nova Balreska
 - proto: HospitalCurtainsOpen
   entities:
   - uid: 4875
