@@ -1,11 +1,12 @@
+using Robust.Shared.GameStates;
+using Robust.Shared.Serialization;
 using System.Numerics;
-
-namespace Content.Server._Crescent.HeatSeeking;
+namespace Content.Shared._Crescent.HeatSeeking;
 
 /// <summary>
-/// This is used for storing active data and the configuration of a heat seeking missile.
+/// This is used for...
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class HeatSeekingComponent : Component
 {
     /// <summary>
@@ -44,18 +45,6 @@ public sealed partial class HeatSeekingComponent : Component
     public float Acceleration = 50f;
 
     /// <summary>
-    /// What is the missiles top speed in m/s?
-    /// </summary>
-    [DataField]
-    public float TopSpeed = 50f;
-
-    /// <summary>
-    /// What is the missiles initial speed in m/s?
-    /// </summary>
-    [DataField]
-    public float InitialSpeed = 30f;
-
-    /// <summary>
     /// What is the missiles current speed in m/s?
     /// </summary>
     [DataField]
@@ -64,16 +53,49 @@ public sealed partial class HeatSeekingComponent : Component
     /// <summary>
     /// What is the missiles field of view in degrees?
     /// </summary>
-    [DataField("fov")]
-    public float FOV = 90f;
+    [DataField]
+    public float FieldOfView = 90f;
 
-    public float oldDistance;
+    /// <summary>
+    /// The delay before the missile starts seeking from launch in seconds.
+    /// </summary>
+    [DataField]
+    public float StartDelay = 0.15f;
 
-    public Vector2 oldPosition;
+    /// <summary>
+    /// The amount of time in seconds that the missile will seek for
+    /// </summary>
+    [DataField]
+    public float Fuel = 120f;
+
+    /// <summary>
+    /// What is the missiles top speed in m/s?
+    /// </summary>
+    [DataField]
+    public float TopSpeed = 50f;
+
+    /// <summary>
+    /// The list of targets visible to this missile sorted by their value as a target
+    /// </summary>
+    [DataField]
+    public List<SeekerTargets> TargetList = new List<SeekerTargets>();
+
+    [DataField]
+    public float RefreshRate = 0.5f; // How often the seeker updates its target in seconds
+
+    public float RefreshTicker;
 }
 
+[Serializable, NetSerializable]
 public enum GuidanceType
 {
-    PredictiveGuidance = 1<<1,
-    PurePursuit = 1<<2
+    PredictiveGuidance = 1,
+    PurePursuit = 2
+}
+
+[Serializable]
+public class SeekerTargets
+{
+    public EntityUid Target { get; set; }
+    public float Weight { get; set; }
 }
