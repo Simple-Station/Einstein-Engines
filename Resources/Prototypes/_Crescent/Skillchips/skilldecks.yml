@@ -1,6 +1,7 @@
 - type: entity
   parent: BaseItem
   id: SkilldeckAdmemery
+  suffix: DEBUG
   name: NT TR-01 "Admemery" skill deck
   description: If you're a non-admin seeing this description, this is heavily concerning. Stop looking at this item and act as if it doesn't exist.
   components:
@@ -10,3 +11,46 @@
         - state: cerebraltrainer
     - type: Skilldeck
       skillchipSlotAmount: 10
+
+- type: entity
+  parent: BaseItem
+  id: SkilldeckIhijerika
+  suffix: Basic
+  name: ICM PvN-2 'Courser' integrated cyberdeck
+  description: The one and only cyberdeck to be ever produced by Ihijerika Civilian Manufacturing - the Courser model is so widespread, cheap, and poor-performing that the word 'courser' has become an insult for underperforming members of spacer communities. Nevertheless, this piece of junk comes with an integrated slot for datashards, allowing a minimal amount of data transfer to it's parent neural interface.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Misc/cybernetics.rsi
+      layers:
+        - state: icm_os
+    - type: Skilldeck
+      skillchipSlotAmount: 1
+
+- type: entity
+  parent: BaseItem
+  id: SkilldeckInterdyne
+  suffix: Basic
+  name: IPM T-20 'Operator' integrated cyberdeck
+  description: A midline cerebral computer for use alongside a neural interface implant - the Operator is one of the more common models seen amongst the well-to-do mercenaries and wealthy traders of the system, whether the deck be used for combat training, language translations, or advanced arithmetic.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Misc/cybernetics.rsi
+      layers:
+        - state: ipm_os
+    - type: Skilldeck
+      skillchipSlotAmount: 2
+
+- type: entity
+  parent: BaseItem
+  id: SkilldeckShinohara
+  suffix: Advanced
+  name: SHI pF-300 'Kaisei' integrated cyberdeck
+  description: A high-end cerebral computer with a state-of-the-art internal processor to support three high-stress datashard programs at the same time without overloading the parent neural interface and the brain it's attached to. A top of the shelf product for those who can afford it.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Misc/cybernetics.rsi
+      layers:
+        - state: shi_os
+    - type: Skilldeck
+      skillchipSlotAmount: 3
+
