@@ -236,7 +236,7 @@
     rotationSpeed: 25
     acceleration: 25
     topSpeed: 50
-    fov: 30
+    fieldOfView: 40
     defaultSeekingRange: 600
     guidanceAlgorithm: PredictiveGuidance
   - type: PointLight
@@ -307,7 +307,7 @@
     rotationSpeed: 7 # slow turn rate
     acceleration: 5
     topSpeed: 40
-    fov: 20
+    fieldOfView: 30
     defaultSeekingRange: 1500 # long range
     guidanceAlgorithm: PredictiveGuidance
   - type: PointLight
@@ -383,7 +383,7 @@
     rotationSpeed: 5 # slow turn rate
     acceleration: 5
     topSpeed: 40
-    fov: 20
+    fieldOfView: 30
     defaultSeekingRange: 1500 # long range
     guidanceAlgorithm: PredictiveGuidance
   - type: PointLight
@@ -462,7 +462,7 @@
     rotationSpeed: 15 # slow rotation so it isnt aimbot, still fairly accurate though
     acceleration: 120
     topSpeed: 120
-    fov: 30
+    fieldOfView: 30
     defaultSeekingRange: 400
     guidanceAlgorithm: PredictiveGuidance
   - type: Fixtures
@@ -951,7 +951,7 @@
     rotationSpeed: 20 # slow rotation so it isnt aimbot, still fairly accurate though
     acceleration: 85
     topSpeed: 85
-    fov: 20
+    fieldOfView: 20
     defaultSeekingRange: 400
     guidanceAlgorithm: PredictiveGuidance
   - type: Fixtures
@@ -1019,7 +1019,7 @@
     rotationSpeed: 15
     acceleration: 25
     topSpeed: 125
-    fov: 30
+    fieldOfView: 30
     defaultSeekingRange: 400
     guidanceAlgorithm: PredictiveGuidance
   - type: Fixtures
@@ -1151,7 +1151,6 @@
     rotationSpeed: 25
     acceleration: 5
     topSpeed: 20
-    initialSpeed: 10
     defaultSeekingRange: 300
     guidanceAlgorithm: PredictiveGuidance
   - type: PointLight
