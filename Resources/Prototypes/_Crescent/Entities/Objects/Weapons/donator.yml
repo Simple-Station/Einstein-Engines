@@ -138,7 +138,7 @@
   name: PTA XCR-6 Charge rifle 6x24mm
   parent: BaseWeaponRifle
   id: WeaponSpecialChargeRifle
-  description: A canceled experimental rifle developed by Pang Tai Arms. Only a few exist. This one has the serial number M-18. Chambered in 6×24mm.
+  description: A experimental rifle developed by Pang Tai Arms. Extremly rare. This one has the serial number M-18. Chambered in 6×24mm.
   components:
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/charge_rifle.rsi
@@ -469,6 +469,54 @@
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: impact_beam_heavy
 
+# @BoskiYourk (boskiyourk) donor gun
+- type: entity
+  name: PVDNC KZ23 Custom Bruiser 4g
+  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: WeaponShotgunBruiser
+  description: An exotic four gauge shotgun with mysterious origins. Found in the fog, it has been refurbished into something lethal.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/bruiser.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/bruiser.rsi
+  - type: GunRequiresWield
+  - type: Item
+    shape:
+    - 0,0,4,1
+  - type: Gun
+    fireRate: 1
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_1.ogg
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    shotgunSpreadMultiplier: 0.5
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - ShellShotgun4g
+    capacity: 4
+    autoCycle: true
+    proto: ShellShotgun4gBuckshot
+  - type: ItemSlots
+  - type: ExtendDescription
+    descriptionList:
+      - description: "gun-modifier-choke"
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
 
-
+- type: entity
+  id: CrateShotgunBruiser
+  parent: WeaponCaseShotgun
+  name: KZ23 Custom Bruiser case
+  description: An exotic shotgun packaged in a stamped weapon case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponShotgunBruiser
+        amount: 1
+      - id: BoxLethalshot4g
+        amount: 2 
 
