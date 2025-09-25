@@ -16,7 +16,7 @@
   icon: { sprite: /Textures/_Crescent/Objects/Misc/cybernetics.rsi, state: heartpump }
   productEntity: CyberneticsBloodPump
   cost:
-    SampleIPM: 46
+    SampleIPM: 15
   categories:
   - StoreCategoryIPMCybernetics
 
@@ -27,7 +27,7 @@
   icon: { sprite: /Textures/_Crescent/Objects/Misc/cybernetics.rsi, state: interdyneoptics }
   productEntity: InterdyneOptics
   cost:
-    SampleIPM: 46
+    SampleIPM: 15
   categories:
   - StoreCategoryIPMCybernetics
 
@@ -38,7 +38,7 @@
   icon: { sprite: /Textures/Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi, state: iconpry }
   productEntity: CrowbarLeftArm
   cost:
-    SampleIPM: 17.25
+    SampleIPM: 7.5
   categories:
   - StoreCategoryIPMCybernetics
 
@@ -49,7 +49,7 @@
   icon: { sprite: /Textures/Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi, state: iconpry }
   productEntity: CrowbarRightArm
   cost:
-    SampleIPM: 17.25
+    SampleIPM: 7.5
   categories:
   - StoreCategoryIPMCybernetics
 
@@ -60,7 +60,7 @@
   icon: { sprite: /Textures/_Crescent/Objects/Misc/cybernetics.rsi, state: cherenzikovaccelerator }
   productEntity: CyberneticsAdrenal
   cost:
-    SampleIPM: 57.5
+    SampleIPM: 20
   categories:
   - StoreCategoryIPMCybernetics
 
@@ -71,7 +71,7 @@
   icon: { sprite: /Textures/_Crescent/Objects/Misc/cybernetics.rsi, state: paineditor }
   productEntity: CyberneticsPainEditor
   cost:
-    SampleIPM: 57.5
+    SampleIPM: 20
   categories:
   - StoreCategoryIPMCybernetics
 
@@ -82,7 +82,7 @@
   icon: { sprite: /Textures/_Crescent/Objects/Autoinjectors/crash.rsi, state: medipen }
   productEntity: CrashAutoinjector
   cost:
-    SampleIPM: 11.5
+    SampleIPM: 10
   categories:
   - StoreCategoryIPMEquipment
 
@@ -93,7 +93,7 @@
   icon: { sprite: /Textures/_Crescent/Clothing/Syndicate/OuterClothing/trauma_suit.rsi, state: icon }
   productEntity: ClothingOuterHardsuitTraumasec
   cost:
-    SampleIPM: 17.25
+    SampleIPM: 10
   categories:
   - StoreCategoryIPMEquipment
 
@@ -104,7 +104,7 @@
   icon: { sprite: /Textures/_Shitmed/Objects/Specific/Medical/Surgery/omnimed.rsi, state: evil }
   productEntity: OmnimedToolSyndie
   cost:
-    SampleIPM: 34.5
+    SampleIPM: 10
   categories:
   - StoreCategoryIPMEquipment
 
@@ -115,7 +115,7 @@
   icon: { sprite: /Textures/Objects/Specific/Medical/defibsyndi.rsi, state: icon }
   productEntity: DefibrillatorSyndicate
   cost:
-    SampleIPM: 34.5
+    SampleIPM: 10
   categories:
   - StoreCategoryIPMEquipment
 
