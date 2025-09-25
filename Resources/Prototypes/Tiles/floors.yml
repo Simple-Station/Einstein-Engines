@@ -1990,5 +1990,5 @@
   baseTurf: Space
   isSubfloor: true
   footstepSounds:
-    collection: FootstepMeat
+    collection: FootstepFloor
   heatCapacity: 10000
