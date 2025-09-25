@@ -256,6 +256,7 @@
     - 0,0,5,2
   - type: Gun
     fireRate: 0.5
+    projectileSpeed: 15
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/non_collection/rpg_fire.ogg
   - type: BallisticAmmoProvider
@@ -275,9 +276,6 @@
     magState: mag
     steps: 2
     zeroVisible: false
-
-    defaultSeekingRange: 400
-    guidanceAlgorithm: PredictiveGuidance
 
 # @Tomahawk101 (Tomahawk101) donor gun
 - type: entity
@@ -469,6 +467,54 @@
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: impact_beam_heavy
 
+# @BoskiYourk (boskiyourk) donor gun
+- type: entity
+  name: PVDNC KZ23 Custom Bruiser 4g
+  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: WeaponShotgunBruiser
+  description: An exotic four gauge shotgun with mysterious origins. Found in the fog, it has been refurbished into something lethal.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/bruiser.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/bruiser.rsi
+  - type: GunRequiresWield
+  - type: Item
+    shape:
+    - 0,0,4,1
+  - type: Gun
+    fireRate: 1
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_1.ogg
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    shotgunSpreadMultiplier: 0.5
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - ShellShotgun4g
+    capacity: 4
+    autoCycle: true
+    proto: ShellShotgun4gBuckshot
+  - type: ItemSlots
+  - type: ExtendDescription
+    descriptionList:
+      - description: "gun-modifier-choke"
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
 
-
+- type: entity
+  id: CrateShotgunBruiser
+  parent: WeaponCaseShotgun
+  name: KZ23 Custom Bruiser case
+  description: An exotic shotgun packaged in a stamped weapon case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponShotgunBruiser
+        amount: 1
+      - id: BoxLethalshot4g
+        amount: 2 
 
