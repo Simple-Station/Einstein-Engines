@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 09/26/2025 13:45:58
-  entityCount: 2692
+  time: 09/26/2025 13:47:44
+  entityCount: 2691
 maps: []
 grids:
 - 1
@@ -21930,7 +21930,7 @@ entities:
       pos: -7.5,41.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -1149.7351
+      secondsUntilStateChange: -1254.7642
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -21991,7 +21991,7 @@ entities:
       pos: -0.5,7.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -2747.8843
+      secondsUntilStateChange: -2852.913
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -37907,48 +37907,40 @@ entities:
     - type: Transform
       pos: 10.5,39.5
       parent: 1
-- proto: WeaponFighterMachinegun
-  entities:
-  - uid: 2672
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 9.653373,19.176414
-      parent: 1
 - proto: WeaponMechCombatAutoshotgun
   entities:
-  - uid: 2673
+  - uid: 2672
     components:
     - type: Transform
       pos: -0.5,4.5
       parent: 1
 - proto: WeaponMechCombatGrenadeLauncher
   entities:
-  - uid: 2674
+  - uid: 2673
     components:
     - type: Transform
       pos: 1.5,4.5
       parent: 1
 - proto: WeaponPistolViperWood
   entities:
-  - uid: 2675
+  - uid: 2674
     components:
     - type: Transform
       pos: 10.602888,34.46201
       parent: 1
-  - uid: 2676
+  - uid: 2675
     components:
     - type: Transform
       pos: 10.602888,34.26875
       parent: 1
-  - uid: 2677
+  - uid: 2676
     components:
     - type: Transform
       pos: 10.588016,34.060623
       parent: 1
 - proto: WeaponRevolverSnubnose
   entities:
-  - uid: 2678
+  - uid: 2677
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -37956,19 +37948,19 @@ entities:
       parent: 1
 - proto: WeaponRifleKrinkov
   entities:
-  - uid: 2679
+  - uid: 2678
     components:
     - type: Transform
       pos: 13.648549,34.778305
       parent: 1
-  - uid: 2680
+  - uid: 2679
     components:
     - type: Transform
       pos: 13.648549,34.570175
       parent: 1
 - proto: WeaponShotgunNCSPSaiga12
   entities:
-  - uid: 2681
+  - uid: 2680
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -37976,14 +37968,14 @@ entities:
       parent: 1
 - proto: Welder
   entities:
-  - uid: 2682
+  - uid: 2681
     components:
     - type: Transform
       pos: 6.475522,44.65174
       parent: 1
 - proto: WindoorSecure
   entities:
-  - uid: 2683
+  - uid: 2682
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -37991,7 +37983,7 @@ entities:
       parent: 1
 - proto: WindoorSecureNCSPSaws
   entities:
-  - uid: 2684
+  - uid: 2683
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -37999,13 +37991,13 @@ entities:
       parent: 1
 - proto: WindowDirectional
   entities:
-  - uid: 2685
+  - uid: 2684
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -10.5,18.5
       parent: 1
-  - uid: 2686
+  - uid: 2685
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -38013,37 +38005,37 @@ entities:
       parent: 1
 - proto: WindowReinforcedDirectional
   entities:
-  - uid: 2687
+  - uid: 2686
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 2.5,16.5
       parent: 1
-  - uid: 2688
+  - uid: 2687
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 2.5,15.5
       parent: 1
-  - uid: 2689
+  - uid: 2688
     components:
     - type: Transform
       pos: 4.5,15.5
       parent: 1
-  - uid: 2690
+  - uid: 2689
     components:
     - type: Transform
       pos: 2.5,15.5
       parent: 1
 - proto: Wrench
   entities:
-  - uid: 2691
+  - uid: 2690
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 9.355923,19.607534
       parent: 1
-  - uid: 2692
+  - uid: 2691
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
