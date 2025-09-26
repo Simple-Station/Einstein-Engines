@@ -20459,6 +20459,8 @@ entities:
     - type: Transform
       pos: 57.5,1.5
       parent: 1
+    - type: Label
+      currentLabel: Tatsumoto Shipworks
 - proto: HospitalCurtainsOpen
   entities:
   - uid: 2569
