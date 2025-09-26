@@ -142,9 +142,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 200
-    intensitySlope: 150
-    maxIntensity: 100
+    totalIntensity: 3000
+    intensitySlope: 2250
+    maxIntensity: 1500
     maxTileBreak: 4
   - type: PointLight
     radius: 3.5
@@ -229,9 +229,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 75
-    intensitySlope: 20
-    totalIntensity: 450
+    maxIntensity: 1125
+    intensitySlope: 300
+    totalIntensity: 6750
   - type: HeatSeeking
     rotationSpeed: 25
     acceleration: 25
@@ -375,9 +375,9 @@
     disableDuration: 14
   - type: Explosive
     explosionType: Default
-    maxIntensity: 50
-    intensitySlope: 50
-    totalIntensity: 120
+    maxIntensity: 750
+    intensitySlope: 750
+    totalIntensity: 1800
     maxTileBreak: 5
   - type: HeatSeeking
     rotationSpeed: 5 # slow turn rate
@@ -930,9 +930,9 @@
         Radiation: 20
   - type: Explosive
     explosionType: Default
-    maxIntensity: 20
-    intensitySlope: 10
-    totalIntensity: 50
+    maxIntensity: 300
+    intensitySlope: 150
+    totalIntensity: 750
     maxTileBreak: 7
   - type: TimedDespawn
     lifetime: 14
@@ -1143,9 +1143,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 40
-    intensitySlope: 35
-    totalIntensity: 145
+    maxIntensity: 200
+    intensitySlope: 175
+    totalIntensity: 725
     maxTileBreak: 7
   - type: HeatSeeking
     rotationSpeed: 25
@@ -1185,9 +1185,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 20
-    intensitySlope: 12
-    totalIntensity: 100
+    maxIntensity: 300
+    intensitySlope: 180
+    totalIntensity: 1500
     maxTileBreak: 7
   - type: PointLight
     radius: 3.5
@@ -1530,9 +1530,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 60
-    intensitySlope: 50
-    totalIntensity: 60
+    maxIntensity: 900
+    intensitySlope: 750
+    totalIntensity: 900
     maxTileBreak: 5
   - type: PointLight
     radius: 3.5
