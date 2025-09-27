@@ -31,6 +31,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-medi-worker
+      - type: CPRTraining
+      - type: SurgerySpeedModifier
       - type: LanguageAdder
         addSpoken:
           - Dockta
