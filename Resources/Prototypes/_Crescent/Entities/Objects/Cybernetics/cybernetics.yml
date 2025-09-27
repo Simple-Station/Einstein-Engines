@@ -108,7 +108,7 @@
     - type: Sprite
       sprite: _Crescent/Objects/Misc/cybernetics.rsi
       layers:
-        - state: higgsanchor
+        - state: lobotomychip
     - type: Organ #ERIS this badly needs its own organ component so we dont HAVE to have it replace an organ, can you look at it. also give this the no psionics trait
       slotId: head_implant # done
       onAdd:
@@ -312,14 +312,14 @@
 - type: entity
   parent: HullrotCyberneticBase
   id: SkillshardSlot
-  name: placeholder cerebral cybernetic (skillshard)
-  description: TBD - Have Aisha write a description pre-release for this.
+  name: NT-02 cerebral interface implant
+  description: A basic cerebral operating system developed by NanoTrasen mounted by the parietal lobe that allows neural interfacing with electronic devices. Extensions allow a companion cyberdeck module slot just under the operator's ear where a compatible deck can be inserted for a direct neural connection. These were historically used to mark those born on NanoTrasen-operated outposts as a digital passport, but that use has been phased out over time with the destruction of the company.
   components:
     - type: CerebralImplant
     - type: Sprite
       sprite: _Crescent/Objects/Misc/cybernetics.rsi
       layers:
-        - state: cerebraltrainer
+        - state: higgsanchor
     - type: Organ
       slotId: head_implant
       onImplantFunctions:
