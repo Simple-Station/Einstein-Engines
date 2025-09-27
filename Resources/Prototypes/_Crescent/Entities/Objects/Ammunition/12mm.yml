@@ -1,0 +1,37 @@
+- type: entity
+  id: MagazinePistolSmartgun
+  name: 25-round smartpistol magazine (12mm)
+  parent: BaseMagazinePistol
+  components:
+  - type: Tag
+    tags:
+      - MagazinePistolSmartgun
+  - type: BallisticAmmoProvider
+    proto: CartridgePistol12mm
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgePistolSmart
+    capacity: 25
+
+- type: entity
+  id: Bullet12mm
+  name: bullet (12mm auto)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 20
+
+- type: entity
+  id: CartridgePistol12mm
+  name: cartridge (12mm)
+  parent: BaseCartridgePistol
+  components:
+  - type: Tag
+    tags:
+      - CartridgePistolSmart
+  - type: CartridgeAmmo
+    proto: Bullet12mm

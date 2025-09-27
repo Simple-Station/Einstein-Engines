@@ -1,0 +1,139 @@
+- type: entity
+  id: BaseMagazineRifleDrum
+  name: "80-round drum magazine (7.62x51mm USM)"
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - MagazineRifleDrum
+  - type: Item
+    size: Normal
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeRifle
+    capacity: 80
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/762_drum.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineRifleDrumEmpty
+  name: "80-round drum magazine (7.62x51mm USM any)"
+  suffix: empty
+  parent: BaseMagazineRifleDrum
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+      
+- type: entity
+  id: MagazineRifleDrum
+  name: "80-round drum magazine (7.62x51mm USM)"
+  parent: BaseMagazineRifleDrum
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRifle
+
+- type: entity
+  id: MagazineRifleDrumIncendiary
+  name: "80-round drum magazine (7.62x51mm USM incendiary)"
+  parent: BaseMagazineRifleDrum
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRifleIncendiary
+
+- type: entity
+  id: MagazineRifleDrumPractice
+  name: "80-round drum magazine (7.62x51mm USM practice)"
+  parent: BaseMagazineRifleDrum
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRiflePractice
+
+- type: entity
+  id: MagazineRifleDrumRubber
+  name: "80-round drum magazine (7.62x51mm USM rubber)"
+  parent: BaseMagazineRifleDrum
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRifleRubber
+
+- type: entity
+  id: MagazineRifleDrumBlackTip
+  name: "80-round drum magazine (7.62x51mm USM black-tip)"
+  parent: BaseMagazineRifleDrum
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRifleUranium
+
+- type: entity
+  id: MagazineRifleDrumShrapnel
+  name: "80-round drum magazine (7.62x51mm USM shrapnel)"
+  parent: BaseMagazineRifleDrum
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRifleShrapnel
+
+- type: entity
+  id: BaseMagazineRiflePan
+  name: "47-round pan magazine (7.62x51mm USM)"
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - MagazineRiflePan
+  - type: Item
+    size: Normal
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeRifle
+    capacity: 47
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/762_pan.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineRiflePanEmpty
+  name: "47-round pan magazine (7.62x51mm USM any)"
+  suffix: empty
+  parent: BaseMagazineRiflePan
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+      
+- type: entity
+  id: MagazineRiflePan
+  name: "47-round pan magazine (7.62x51mm USM)"
+  parent: BaseMagazineRiflePan
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRifle
