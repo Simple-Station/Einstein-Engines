@@ -56,6 +56,7 @@
     pocket1: Handcuffs
     pocket2: TradePassport
     back: ClothingBackpackSHISatchel
+    belt: WeaponPistolLiquidator
 
 - type: job
   id: HosSHI
@@ -120,3 +121,4 @@
     head: ClothingHeadHatShinoharaBeretHOS
     mask: ClothingMaskSHIHOSMask
     outerClothing: ClothingOuterArmorShinoharaHOSVest
+    belt: WeaponPistolLiquidator

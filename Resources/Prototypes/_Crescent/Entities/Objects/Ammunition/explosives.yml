@@ -1,3 +1,82 @@
+# 27mm Autocannon shell
+
+- type: entity
+  id: SpeedLoader27mmAutocannonHE
+  name: 5-round clip (27mmR Freeporti)
+  description: A clip capable of holding 5 27mmR Freeporti rounds.
+  parent: BaseItem
+  components:
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+      - SpeedLoader27mmAutocannon
+  - type: SpeedLoader
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - 27mmAutocannon
+    capacity: 5
+    proto: 27mmAutocannonHE
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/27mm_clip.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-5
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: false
+  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+
+- type: entity
+  parent: BaseCartridge
+  id: 27mmAutocannonHE
+  name: shell (27mmR Freeporti)
+  components:
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - Cartridge
+    - 27mmAutocannon
+  - type: CartridgeAmmo
+    proto: Projectile27mmHE
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/27mm_autocannon.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 20
+
+- type: entity
+  id: Projectile27mmHE
+  name: shell
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Fragmentation
+    maxIntensity: 100
+    intensitySlope: 4
+    totalIntensity: 100
+    canCreateVacuum: false
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+
 # 40mm Grenade
 
 - type: entity
@@ -1096,9 +1175,9 @@
   components:
   - type: ProjectileIFF
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Ammunition/Projectiles/hammerhead.rsi
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
-      - state: base
+      - state: frag
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Thermobaric
@@ -1114,5 +1193,3 @@
     rotationSpeed: 40
     acceleration: 25
     topSpeed: 125
-    startDelay: 1
-    fieldOfView: 40

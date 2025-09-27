@@ -1,53 +1,136 @@
 - type: entity
-  name: BaseWeaponLightMachineGunConscript
-  parent: BaseItem
-  id: BaseWeaponLightMachineGunConscript
-  description: A rooty tooty point and shooty.
-  abstract: true
+  name: CDT C-54 Compakt 5.56x45mm
+  id: WeaponLightMachineGunCompakt
+  parent: BaseWeaponLightMachineGun
+  description: A compact LMG designed sacraficing damage for size. Made by Cyberdawn for Cyberdawn.
   components:
   - type: Sprite
-  - type: Item
-    size: Huge
-  - type: MultiHandedItem
-  - type: Gun
-    minAngle: 2
-    maxAngle: 25
-    angleIncrease: 10
-    angleDecay: 2
-    fireRate: 1.5
-    selectedMode: FullAuto
-    availableModes:
-      - FullAuto
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/50cal.ogg
-    soundEmpty:
-      path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
-  - type: ChamberMagazineAmmoProvider
-    soundRack:
-      path: /Audio/Weapons/Guns/Cock/lmg_cock.ogg
-  - type: AmmoCounter
+    sprite: _Crescent/Objects/Weapons/Guns/compakt.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineLightRifleBoxConscriptAP
+        startingItem: MagazineLightRifleBox
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazineNCWLConscriptBox
+            - MagazineLightRifleBox
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeMachineGunArmorPiercingConscript
+        startingItem: CartridgeLightRifle
         priority: 1
         whitelist:
           tags:
-            - CartridgeMachineGun
-  - type: ContainerContainer
-    containers:
-      gun_magazine: !type:ContainerSlot
-      gun_chamber: !type:ContainerSlot
+            - CartridgeLightRifle
+  - type: Item
+    shape:
+    - 0,0,4,2
+  - type: Gun
+    damageModifier: 0.85
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    fireRate: 7.5
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/conscript/gunshot.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 3000
+  - type: ExtendDescription
+    descriptionList:
+      - description: This lmg comes with a shorter barrel. It deals 15% lower damage per shot.
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
+
+- type: entity
+  name: NCWL MK-13 Conscript 12.7x99mm
+  id: WeaponLightMachineGunConscript
+  parent: BaseItem
+  description: A ripped out .50 cal PDT gun adapted to be fired from the hip. Heavy as shit and innacurate as shit but it turns people into a fine red mist.
+  components:
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/conscript.rsi
+    quickEquip: false
+    slots:
+    - Back
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/conscript.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineHeavyRifleBoxmag
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineHeavyRifleBox
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeHeavyRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeHeavyRifle
+  - type: MultiHandedItem
+  - type: AmmoCounter
+  - type: Item
+    sprite: _Crescent/Objects/Weapons/Guns/conscript.rsi
+    size: Ginormous
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.80
+  - type: HeldSpeedModifier
+  - type: Gun
+    minAngle: 2
+    maxAngle: 25
+    angleIncrease: 10
+    angleDecay: 2
+    damageModifier: 0.70
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    fireRate: 6
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/conscript/gunshot.ogg
+    soundEmpty:
+      path: /Audio/_Crescent/Weapons/Guns/conscript/empty.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/_Crescent/Weapons/Guns/conscript/rack.ogg
+    soundBoltOpened:
+      path: /Audio/_Crescent/Weapons/Guns/conscript/bolt_open.ogg
+    soundBoltClosed:
+      path: /Audio/_Crescent/Weapons/Guns/conscript/bolt_close.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+    zeroVisible: true
+  - type: Appearance
+  - type: ExtendDescription
+    descriptionList:
+      - description: This lmg has loose tolerances. It deals 30% lower damage per shot.
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
   - type: StaticPrice
     price: 5500
   - type: UseDelay
@@ -55,26 +138,10 @@
   - type: Contraband
   - type: DisarmMalus
     malus: -1
-
-- type: entity
-  name: NCWL .50 Conscript
-  id: WeaponLightMachineGunConscript
-  parent: BaseWeaponLightMachineGunConscript
-  description: A bulky .50 autocannon, ripped straight from a shuttle turret. You have to be insane to actually use this.
-  components:
-  - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Guns/conscript.rsi
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-  - type: MagazineVisuals
-    magState: mag
-    steps: 3
-    zeroVisible: true
-  - type: Appearance
-  - type: Contraband
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
 
 - type: entity
   name: NCSP RPD 7.62x51mm
