@@ -95,7 +95,6 @@ public sealed partial class ShuttleSystem
         if (TryComp<ShipShieldedComponent>(args.OurEntity, out var ShipShieldedComponent) || TryComp<ShipShieldedComponent>(args.OtherEntity, out var OtherShipShieldedComponent))
 
             return;
-        else
         {
             if (TerminatingOrDeleted(uid) || EntityManager.IsQueuedForDeletion(uid)
                 || TerminatingOrDeleted(args.OtherEntity) || EntityManager.IsQueuedForDeletion(args.OtherEntity)
