@@ -246,8 +246,19 @@
   - /Audio/Effects/Footsteps/gear5.ogg
   - /Audio/Effects/Footsteps/gear6.ogg
 
-- type: soundCollection # Crescent and yes, this is shitcode
+
+- type: soundCollection # Hullrot and yes, this is shitcode
   id: FootstepSilent
   files:
   - /Audio/Effects/Footsteps/silent.ogg
+
+- type: soundCollection
+  id: FootstepMeatFloor #hullrot remnant ships
+  files:
+  - /Audio/Effects/Footsteps/gear1.ogg
+  - /Audio/Effects/Footsteps/gear2.ogg
+  - /Audio/Effects/Footsteps/gear3.ogg
+  - /Audio/Effects/Footsteps/gear4.ogg
+  - /Audio/Effects/Footsteps/gear5.ogg
+  - /Audio/Effects/Footsteps/gear6.ogg
 
