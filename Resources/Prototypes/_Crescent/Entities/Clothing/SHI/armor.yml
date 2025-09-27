@@ -83,7 +83,7 @@
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitSHIJuggernaut
   name: Svbt-XA "KAMADO" juggernaut hardsuit
-  description: Experimental model of the svbt-2 heavily reinforced with multi layer Kevlar ceramic plates meant for use by  shinobi liquidators.
+  description: Experimental model of the svbt-2 heavily reinforced with multi layer Kevlar ceramic plates meant for use by shinobi liquidators.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/SHI/OuterClothing/juggsuit.rsi
