@@ -5,10 +5,10 @@
   id: Bee
   name: Bee
   description: |
-    A variant of the Wasp, the Bee carries a 48mm rocket pod with two rockets pre-loaded, requiring frequent reloading for continuous use. It is wise to consider hit-and-run tactics with this fighter.
-    LOADOUT: 1x 48mm Kurosawa Rocket Pod. 
+    A variant of the Wasp, the Bee carries a 180mm Idna Launcher with two torpedoes pre-loaded, requiring frequent reloading for continuous use. It is wise to consider hit-and-run tactics with this fighter.
+    LOADOUT: 1x 180mm Idna Torpedo Launcher. 
     MINIMUM CREW: 1x Brave Pilot
-  price: 11000
+  price: 12000
   category: Small
   group: Scrap
   path: /Maps/_Crescent/Shuttles/Civilian/bee.yml

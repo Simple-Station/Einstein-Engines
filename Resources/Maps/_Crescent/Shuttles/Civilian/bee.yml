@@ -4,7 +4,7 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 09/22/2025 13:08:48
+  time: 09/27/2025 12:18:24
   entityCount: 58
 maps: []
 grids:
@@ -26,7 +26,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: grid
+      name: Shuttle BET-725
     - type: Transform
       pos: -0.4765625,1.6328125
       parent: invalid
@@ -150,6 +150,7 @@ entities:
             86: 0,5
             88: 0,5
             91: 0,5
+            94: 0,5
         - node:
             id: LatticeEdgeS
           decals:
@@ -171,6 +172,8 @@ entities:
             89: 0,6
             90: 0,5
             92: 0,6
+            93: 0,5
+            95: 0,6
         - node:
             id: LatticeEdgeW
           decals:
@@ -201,6 +204,7 @@ entities:
             0: 128
           0,1:
             1: 1
+            2: 272
         uniqueMixes:
         - volume: 2500
           temperature: 293.15
@@ -232,10 +236,32 @@ entities:
           - 0
           - 0
           - 0
+        - volume: 2500
+          immutable: True
+          moles:
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
         chunkSize: 4
     - type: GasTileOverlay
     - type: BecomesStation
       id: Bee
+    - type: IFF
+      relations: {}
+      color: '#F6CE9C9C'
+      flags: IsPlayerShuttle
+    - type: ShuttleDeed
+      shuttleName: Shuttle BET-725
+      shuttleUid: 1
 - proto: AAAHardpointFixed
   entities:
   - uid: 2
@@ -418,13 +444,6 @@ entities:
     - type: Transform
       pos: 0.5,1.5
       parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        2:
-        - - Group1
-          - Toggle
-        - - Group2
-          - SpaceArtilleryFire
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -439,16 +458,23 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+    - type: DeviceLinkSource
+      linkedPorts:
+        2:
+        - - Group1
+          - Toggle
+        - - Group2
+          - SpaceArtilleryFire
     - type: NamedModules
       buttonNames:
-      - Toggle 48mm
-      - Fire 48mm
+      - Toggle Idnas
+      - Fire Idna
       - Module C
       - Module D
       - Module E
 - proto: Gyroscope
   entities:
-  - uid: 38
+  - uid: 31
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -459,31 +485,31 @@ entities:
       thrust: 50
 - proto: PlasmaReinforcedWindowDirectional
   entities:
-  - uid: 31
+  - uid: 32
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 0.5,0.5
       parent: 1
-  - uid: 32
+  - uid: 33
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 0.5,3.5
       parent: 1
-  - uid: 33
+  - uid: 34
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 0.5,0.5
       parent: 1
-  - uid: 34
+  - uid: 35
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -0.5,1.5
       parent: 1
-  - uid: 35
+  - uid: 36
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -491,21 +517,21 @@ entities:
       parent: 1
 - proto: PoweredSmallLightMaintenanceRed
   entities:
-  - uid: 36
+  - uid: 37
     components:
     - type: Transform
       pos: 0.5,1.5
       parent: 1
-- proto: ShuttleGunKurosawaFilled
+- proto: ShuttleGunTorpedoFilled
   entities:
-  - uid: 37
+  - uid: 38
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 0.5,4.5
       parent: 1
     - type: Battery
-      startingCharge: 4737.2554
+      startingCharge: 19649.043
     - type: ApcPowerReceiverBattery
       enabled: True
 - proto: SubstationBasic

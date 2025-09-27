@@ -5,10 +5,10 @@
   id: Hornet
   name: Hornet
   description: |
-    A variant of the Wasp, the Hornet is mounted with an Ion EMP cannon, able to provide support by disabling enemy ships for their allies and mothership to take down- but it cannot kill anything on it's own. Wolf pack tactics recommended.
-    LOADOUT: 1x Ion EMP cannon
+    A variant of the Wasp, the Hornet is mounted with an 60mm Autocannon, able to provide a scary amount of firepower in a small package. Weak on their own, terrifying when in a group with their carrier. 
+    LOADOUT: 1x 60mm Needler
     MINIMUM CREW: 1x Pilot
-  price: 14000
+  price: 12000
   category: Small
   group: Scrap
   path: /Maps/_Crescent/Shuttles/Civilian/hornet.yml

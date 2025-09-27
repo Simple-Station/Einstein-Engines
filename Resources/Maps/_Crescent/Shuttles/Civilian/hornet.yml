@@ -4,7 +4,7 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 09/22/2025 13:15:07
+  time: 09/27/2025 12:21:34
   entityCount: 60
 maps: []
 grids:
@@ -81,6 +81,7 @@ entities:
             93: 0,5
             102: 0,5
             113: 0,5
+            124: 0,5
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -97,6 +98,7 @@ entities:
             96: 0,5
             105: 0,5
             116: 0,5
+            127: 0,5
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -110,6 +112,7 @@ entities:
             91: 0,5
             100: 0,5
             111: 0,5
+            122: 0,5
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -123,6 +126,7 @@ entities:
             95: 0,5
             104: 0,5
             115: 0,5
+            126: 0,5
         - node:
             id: LatticeEdgeE
           decals:
@@ -144,6 +148,8 @@ entities:
             108: -1,5
             110: 0,5
             119: -1,5
+            121: 0,5
+            130: -1,5
         - node:
             id: LatticeEdgeN
           decals:
@@ -169,6 +175,7 @@ entities:
             92: 0,5
             101: 0,5
             112: 0,5
+            123: 0,5
         - node:
             id: LatticeEdgeS
           decals:
@@ -192,6 +199,8 @@ entities:
             106: 0,6
             109: 0,5
             117: 0,6
+            120: 0,5
+            128: 0,6
         - node:
             id: LatticeEdgeW
           decals:
@@ -213,6 +222,8 @@ entities:
             107: 1,5
             114: 0,5
             118: 1,5
+            125: 0,5
+            129: 1,5
     - type: RadiationGridResistance
     - type: GridAtmosphere
       version: 2
@@ -473,13 +484,6 @@ entities:
     - type: Transform
       pos: 0.5,1.5
       parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        2:
-        - - Group1
-          - Toggle
-        - - Group2
-          - SpaceArtilleryFire
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -494,16 +498,23 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+    - type: DeviceLinkSource
+      linkedPorts:
+        2:
+        - - Group1
+          - Toggle
+        - - Group2
+          - SpaceArtilleryFire
     - type: NamedModules
       buttonNames:
-      - Toggle EMP
-      - Fire EMP
+      - Toggle Needler
+      - Fire Needler
       - Module C
       - Module D
       - Module E
 - proto: Gyroscope
   entities:
-  - uid: 46
+  - uid: 33
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -514,65 +525,65 @@ entities:
       thrust: 50
 - proto: PlasmaReinforcedWindowDirectional
   entities:
-  - uid: 33
+  - uid: 34
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -0.5,1.5
       parent: 1
-  - uid: 34
-    components:
-    - type: Transform
-      pos: 1.5,1.5
-      parent: 1
   - uid: 35
     components:
     - type: Transform
-      pos: -0.5,1.5
+      pos: 1.5,1.5
       parent: 1
   - uid: 36
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 1.5,1.5
+      pos: -0.5,1.5
       parent: 1
   - uid: 37
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 1.5,1.5
       parent: 1
   - uid: 38
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: 0.5,3.5
+      pos: 1.5,1.5
       parent: 1
   - uid: 39
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
+      rot: 3.141592653589793 rad
       pos: 0.5,3.5
       parent: 1
   - uid: 40
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
+      rot: 1.5707963267948966 rad
       pos: 0.5,3.5
       parent: 1
   - uid: 41
     components:
     - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 0.5,3.5
+      parent: 1
+  - uid: 42
+    components:
+    - type: Transform
       rot: 1.5707963267948966 rad
       pos: 0.5,0.5
       parent: 1
-  - uid: 42
+  - uid: 43
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -0.5,1.5
       parent: 1
-  - uid: 43
+  - uid: 44
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -580,25 +591,11 @@ entities:
       parent: 1
 - proto: PoweredSmallLightMaintenanceRed
   entities:
-  - uid: 44
+  - uid: 45
     components:
     - type: Transform
       pos: 0.5,1.5
       parent: 1
-- proto: ShuttleGunBizmuth
-  entities:
-  - uid: 45
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 0.5,4.5
-      parent: 1
-    - type: ApcPowerReceiver
-      powerLoad: 1000
-    - type: Battery
-      startingCharge: 17635.771
-    - type: ApcPowerReceiverBattery
-      enabled: True
 - proto: SubstationBasic
   entities:
   - uid: 47
@@ -662,6 +659,36 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 0.5,2.5
       parent: 1
+- proto: WeaponTurretNeedlerFilled
+  entities:
+  - uid: 46
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,4.5
+      parent: 1
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        gun_magazine: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        gun_chamber: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        machine_board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        machine_parts: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
 - proto: WindowReinforcedDirectional
   entities:
   - uid: 57
