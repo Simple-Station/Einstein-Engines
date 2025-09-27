@@ -33,6 +33,7 @@
         rank: crescent-rank-ncwl-medi-worker
       - type: CPRTraining
       - type: SurgerySpeedModifier
+        speedModifier: 1.75
       - type: LanguageAdder
         addSpoken:
           - Dockta
