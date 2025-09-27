@@ -1,0 +1,79 @@
+- type: entity
+  id: C8XAutocannonPartBarrel
+  parent: BaseItem
+  name: C-8X barrel
+  description: A 42 inch barrel for a 27mm autocannon.
+  suffix: DO NOT MAP OR SPAWN
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,5,1
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/gun_parts/barrel.rsi
+    layers:
+    - state: base
+  - type: Tag
+    tags:
+    - GunParts
+    - C8XAutocannonPartBarrel
+
+- type: entity
+  id: C8XAutocannonPartMisc
+  parent: BaseItem
+  name: C-8X miscellaneous parts
+  description: Miscellaneous parts such as grips, charging handle, stock padding and the magazine for a 27mm autocannon.
+  suffix: DO NOT MAP OR SPAWN
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,1
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/gun_parts/misc.rsi
+    layers:
+    - state: base
+  - type: Tag
+    tags:
+    - GunParts
+    - C8XAutocannonPartMisc
+
+- type: entity
+  id: C8XAutocannonPartReceiver
+  parent: BaseItem
+  name: C-8X receiver parts
+  description: Receiver parts for a 27mm autocannon
+  suffix: DO NOT MAP OR SPAWN
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,3,1
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/gun_parts/reicever.rsi
+    layers:
+    - state: base
+  - type: Tag
+    tags:
+    - GunParts
+    - C8XAutocannonPartReceiver
+
+- type: entity
+  id: C8XAutocannonPartBlueprint
+  parent: BaseItem
+  name: C-8X blueprints
+  description: Real blueprints on ancient blueprint paper, the kind you hardly see since everything went digital. The sheets map out the experimental CyberDawn C-8X autocannon in exhaustive detail, has a note attached saying "thanks asshole now the patriarch is threathening to wipe my cloning records if he finds out i stole the autocannon".
+  suffix: DO NOT MAP OR SPAWN
+  components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,1
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/gun_parts/blueprint.rsi
+    layers:
+    - state: base
+  - type: Tag
+    tags:
+    - GunParts
+    - C8XAutocannonPartBlueprint

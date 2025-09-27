@@ -1,55 +1,92 @@
 - type: entity
-  name: SHI M038s Liquidator 12g
+  name: CDT C-35S Ansem 11mm
+  parent: BaseWeaponPistol
+  id: WeaponPistolAnsem
+  description: A fancy 11mm auto pistol with elongated iron sights and a supressor. Made by Cyberdawn for Cyberdawn.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/ansem.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    shape:
+    - 0,0,2,0
+    - 0,1,0,1
+  - type: Gun
+    fireRate: 4
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/supressed_1/supressed_gunshot_2.ogg
+      params:
+        volume: -10
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolHeavy
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineHeavyPistol
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeHeavyPistol
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeHeavyPistol
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  name: SHI M038s Liquidator 11mm
   parent: BaseItem
   id: WeaponPistolLiquidator
-  description: A single shot 12 gauge pistol used in ethical contract termiation procedures.
+  description: An integrally suppressed 11mm pistol, commonly used in ethical contract termination procedures. Incredibly quiet, the only sound anyone might hear is the manual cycling of the action.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/liquidator.rsi
     layers:
-      - state: base
-        map: ["enum.GunVisualLayers.Base"]
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
   - type: Item
-    size: Small
     shape:
-    - 0,0,1,0
+    - 0,0,2,0
     - 0,1,0,1
-    sprite: _Crescent/Objects/Weapons/Guns/liquidator.rsi
-  - type: Execution
-  - type: ItemSlots
-    slots:
-      gun_chamber:
-        name: Chamber
-        startingItem: ShellShotgun
-        priority: 1
-        whitelist:
-          tags:
-            - ShellShotgun
-  - type: ContainerContainer
-    containers:
-      gun_chamber: !type:ContainerSlot
-  - type: ChamberMagazineAmmoProvider
-    autoCycle: false
-    boltClosed: true
-    canRack: false
-    soundBoltClosed: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
-    soundBoltOpened: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
-    soundRack: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
-  - type: Clothing
-    quickEquip: false
-    slots:
-    - Belt
-    - suitStorage
-  - type: Appearance
   - type: Gun
-    fireRate: 2
+    damageModifier: 1.25
+    fireRate: 3
     selectedMode: SemiAuto
     availableModes:
-      - SemiAuto
+    - SemiAuto
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/non_collection/liquidator.ogg
       params:
-        volume: -10
+        volume: -15
+  - type: StaticPrice
+    price: 250
+  - type: BallisticAmmoProvider
+    capacity: 7
+    autoCycle: false
+    proto: CartridgeHeavyPistol
+    whitelist:
+      tags:
+      - CartridgeHeavyPistol
+  - type: ExtendDescription
+    descriptionList:
+      - description: This pistol comes with a booster device. It deals 25% higher damage per shot.
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
+  - type: AmmoCounter
 
 - type: entity
   name: NCWL T-18 Comrade 9x19mm
@@ -141,6 +178,29 @@
             - CartridgeMagnum
   - type: StaticPrice
     price: 1250
+
+- type: entity
+  parent: WeaponPistolDeagle
+  id: WeaponPistolDeagleAP
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineMagnumUranium
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineMagnum
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMagnumUranium
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeMagnum
 
 - type: entity
   name: NCWL T-91 Quasar .327

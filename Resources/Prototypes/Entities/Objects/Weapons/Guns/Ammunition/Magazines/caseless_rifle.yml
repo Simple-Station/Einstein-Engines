@@ -1,6 +1,6 @@
 - type: entity
   id: BaseMagazineCaselessRifle
-  name: "magazine (9x39mm caseless)"
+  name: "30-round magazine (9x39mm caseless)"
   parent: BaseItem
   abstract: true
   components:
@@ -34,7 +34,7 @@
 
 - type: entity
   id: BaseMagazineCaselessRifleShort
-  name: "caseless rifle short magazine (9x39mm caseless)"
+  name: "10-round caseless rifle short magazine (9x39mm caseless)"
   parent: BaseMagazineCaselessRifle
   abstract: true
   components:
@@ -53,7 +53,7 @@
 
 - type: entity
   id: BaseMagazinePistolCaselessRifle
-  name: "pistol magazine (9x39mm caseless)"
+  name: "10-round pistol magazine (9x39mm caseless)"
   parent: BaseMagazineCaselessRifle
   abstract: true
   components:
@@ -69,7 +69,7 @@
   - type: Item
     size: Small
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_pistol_mag.rsi
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/caseless_pistol_mag.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -77,13 +77,13 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: MagazineVisuals
     magState: mag
-    steps: 6
+    steps: 10
     zeroVisible: false
   - type: Appearance
 
 - type: entity
   id: MagazineCaselessRifle10x24
-  name: "box magazine (9x39mm caseless)"
+  name: "99-round box magazine (9x39mm caseless)"
   parent: BaseMagazineCaselessRifle
   components:
   - type: BallisticAmmoProvider
@@ -94,64 +94,31 @@
 
 - type: entity
   id: MagazinePistolCaselessRifle
-  name: "pistol magazine (9x39mm caseless)"
+  name: "10-round pistol magazine (9x39mm caseless)"
   parent: BaseMagazinePistolCaselessRifle
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifle
-  - type: Sprite
-    slayers:
-    - state: red
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-  - type: MagazineVisuals
-    magState: mag
-    steps: 6
-    zeroVisible: false
-  - type: Appearance
 
 - type: entity
   id: MagazinePistolCaselessRiflePractice
-  name: "pistol magazine (9x39mm caseless practice)"
+  name: "10-round pistol magazine (9x39mm caseless practice)"
   parent: BaseMagazinePistolCaselessRifle
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRiflePractice
-  - type: Sprite
-    layers:
-    - state: practice
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-  - type: MagazineVisuals
-    magState: mag
-    steps: 6
-    zeroVisible: false
-  - type: Appearance
 
 - type: entity
   id: MagazinePistolCaselessRifleRubber
-  name: "pistol magazine (9x39mm caseless rubber)"
+  name: "10-round pistol magazine (9x39mm caseless rubber)"
   parent: BaseMagazinePistolCaselessRifle
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifleRubber
-  - type: Sprite
-    layers:
-    - state: rubber
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-  - type: MagazineVisuals
-    magState: mag
-    steps: 6
-    zeroVisible: false
-  - type: Appearance
 
 - type: entity
   id: MagazinePistolCaselessRifleIncendiary
-  name: "pistol magazine (9x39mm caseless incendiary)"
+  name: "10-round pistol magazine (9x39mm caseless incendiary)"
   parent: BaseMagazinePistolCaselessRifle
   components:
   - type: BallisticAmmoProvider
@@ -159,7 +126,7 @@
 
 - type: entity
   id: MagazinePistolCaselessRifleUranium
-  name: "pistol magazine (9x39mm caseless uranium)"
+  name: "10-round pistol magazine (9x39mm caseless uranium)"
   parent: BaseMagazinePistolCaselessRifle
   components:
   - type: BallisticAmmoProvider
@@ -167,7 +134,7 @@
 
 - type: entity
   id: MagazinePistolCaselessRifleShrapnel
-  name: "pistol magazine (9x39mm caseless shrapnel)"
+  name: "10-round pistol magazine (9x39mm caseless shrapnel)"
   parent: BaseMagazinePistolCaselessRifle
   components:
   - type: BallisticAmmoProvider
@@ -175,7 +142,7 @@
 
 - type: entity
   id: MagazineCaselessRifle
-  name: "magazine (9x39mm caseless)"
+  name: "30-round magazine (9x39mm caseless)"
   parent: BaseMagazineCaselessRifle
   components:
   - type: BallisticAmmoProvider
@@ -189,7 +156,7 @@
 
 - type: entity
   id: MagazineCaselessRiflePractice
-  name: "magazine (9x39mm caseless practice)"
+  name: "30-round magazine (9x39mm caseless practice)"
   parent: BaseMagazineCaselessRifle
   components:
   - type: BallisticAmmoProvider
@@ -203,7 +170,7 @@
 
 - type: entity
   id: MagazineCaselessRifleRubber
-  name: "magazine (9x39mm caseless rubber)"
+  name: "30-round magazine (9x39mm caseless rubber)"
   parent: BaseMagazineCaselessRifle
   components:
   - type: BallisticAmmoProvider
@@ -217,7 +184,7 @@
 
 - type: entity
   id: MagazineCaselessRifleIncendiary
-  name: "magazine (9x39mm caseless incendiary)"
+  name: "30-round magazine (9x39mm caseless incendiary)"
   parent: MagazineCaselessRifle
   components:
   - type: BallisticAmmoProvider
@@ -225,7 +192,7 @@
 
 - type: entity
   id: MagazineCaselessRifleUranium
-  name: "magazine (9x39mm caseless uranium)"
+  name: "30-round magazine (9x39mm caseless uranium)"
   parent: MagazineCaselessRifle
   components:
   - type: BallisticAmmoProvider
@@ -233,7 +200,7 @@
 
 - type: entity
   id: MagazineCaselessRifleShrapnel
-  name: "magazine (9x39mm caseless shrapnel)"
+  name: "30-round magazine (9x39mm caseless shrapnel)"
   parent: MagazineCaselessRifle
   components:
   - type: BallisticAmmoProvider
@@ -241,7 +208,7 @@
 
 - type: entity
   id: MagazineCaselessRifleShort
-  name: "short magazine (9x39mm caseless)"
+  name: "20-round short magazine (9x39mm caseless)"
   parent: BaseMagazineCaselessRifleShort
   components:
   - type: BallisticAmmoProvider
@@ -256,7 +223,7 @@
 
 - type: entity
   id: MagazineCaselessRifleShortPractice
-  name: "short magazine (9x39mm caseless practice)"
+  name: "20-round short magazine (9x39mm caseless practice)"
   parent: BaseMagazineCaselessRifleShort
   components:
   - type: BallisticAmmoProvider
@@ -270,7 +237,7 @@
 
 - type: entity
   id: MagazineCaselessRifleShortRubber
-  name: "short magazine (9x39mm caseless rubber)"
+  name: "20-round short magazine (9x39mm caseless rubber)"
   parent: BaseMagazineCaselessRifleShort
   components:
   - type: BallisticAmmoProvider
@@ -284,7 +251,7 @@
 
 - type: entity
   id: MagazineCaselessRifleShortIncendiary
-  name: "short magazine (9x39mm caseless incendiary)"
+  name: "20-round short magazine (9x39mm caseless incendiary)"
   parent: BaseMagazineCaselessRifleShort
   components:
   - type: BallisticAmmoProvider
@@ -292,7 +259,7 @@
 
 - type: entity
   id: MagazineCaselessRifleShortUranium
-  name: "short magazine (9x39mm caseless uranium)"
+  name: "20-round short magazine (9x39mm caseless uranium)"
   parent: BaseMagazineCaselessRifleShort
   components:
   - type: BallisticAmmoProvider
@@ -300,7 +267,7 @@
 
 - type: entity
   id: MagazineCaselessRifleShortShrapnel
-  name: "short magazine (9x39mm caseless shrapnel)"
+  name: "20-round short magazine (9x39mm caseless shrapnel)"
   parent: BaseMagazineCaselessRifleShort
   components:
   - type: BallisticAmmoProvider

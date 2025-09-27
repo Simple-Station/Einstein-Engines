@@ -1,4 +1,46 @@
 - type: entity
+  name: CDT C-12R Tuber 12g
+  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: WeaponShotgunTuber
+  description: Top of the line pump shotgun with 2 ammo tubes allowing for a massive 12 shell capacity and can even be slam fired, although this system makes the shotgun very bulky. Made by Cyberdawn for Cyberdawn.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/tuber.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-1
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/tuber.rsi
+  - type: Gun
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,4,2
+    sprite: _Crescent/Objects/Weapons/Guns/tuber.rsi
+  - type: BallisticAmmoProvider
+    capacity: 12
+    autoCycle: false
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: Wieldable
+  - type: GunRequiresWield
+  - type: MeleeWeapon
+    attackRate: 1.4
+    damage:
+      types:
+        Blunt: 9
+  - type: DamageOtherOnHit
+    staminaCost: 8.0
+  - type: Appearance
+
+- type: entity
   name: PTA MOD-1 Twinshot 12g
   parent: [BaseWeaponShotgun, BaseGunWieldable]
   id: WeaponShotgunPTATwinshot
@@ -27,6 +69,36 @@
   - type: Wieldable
   - type: BallisticAmmoProvider
     capacity: 10
+
+- type: entity
+  name: PTA MOD-23 Karabin 4g
+  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: WeaponShotgunKS23
+  description: An oversized shotgun. Packs devastating 4 Gauge punches. Developed as part of Pang Tai's elite mercenary package.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
+  - type: GunRequiresWield
+  - type: Item
+    shape:
+    - 0,0,4,1
+  - type: Gun
+    fireRate: 2
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_1.ogg
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - ShellShotgun4g
+    capacity: 4
+    autoCycle: false
+    proto: ShellShotgun4gBuckshot
+  - type: ItemSlots
 
 - type: entity
   name: SHI M135 double-barreled shotgun 4g
