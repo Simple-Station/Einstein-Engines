@@ -11,11 +11,13 @@
   supervisors: job-supervisors-shi
   canBeAntag: false
   requirements:
-    - !type:FactionRequirement
+      - !type:CharacterOverallTimeRequirement
+       min: 10800
+      - !type:FactionRequirement
         factionID: "SHI"
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
+      - !type:CharacterTraitRequirement
+       inverted: true
+       traits:
         - Muted
         - WheelchairBound
   special:
