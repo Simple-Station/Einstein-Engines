@@ -6,9 +6,9 @@
   name: Kite MKII
   description: |
     A combat capable retrofit of the kite.It's hull has been carved out to make way for it's modifications, with the wings being exposed to vaccum as a concequence. 
-    LOADOUT: 2x 180mm Idna torpedoes, 2x Medium Ballistic Hardpoint.
+    LOADOUT: 2x 180mm Idna torpedoes, 2x Fixed Universal Hardpoints
     MINIMUM CREW: 1x Pilot, 1x Gun Loader
-  price: 40000
+  price: 37000
   category: Small
   group: Scrap
   path: /Maps/_Crescent/Shuttles/Civilian/kitemk2.yml
