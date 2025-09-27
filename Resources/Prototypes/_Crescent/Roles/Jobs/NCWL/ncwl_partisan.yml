@@ -61,8 +61,8 @@
     ears: ClothingHeadsetNCWL
   storage:
     back:
-    - id: Flash
-    - id: Tourniquet
-    - id: Zipties
-    - id: MagazinePistol
-    - id: CombatKnife
+    - Flash
+    - Tourniquet
+    - Zipties
+    - MagazinePistol
+    - CombatKnife
