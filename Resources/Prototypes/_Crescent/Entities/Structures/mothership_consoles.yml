@@ -111,6 +111,7 @@
     - Velator
     - Taipan
     - Wreck
+    - Spriggan
 
 - type: entity
   id: ZhipovMothershipComputer
@@ -240,6 +241,8 @@
   - type: ShipyardListing
     shuttles:
     - Wasp
+    - Bee
+    - Hornet
 
 - type: entity
   id: CockroachMothershipComputer
