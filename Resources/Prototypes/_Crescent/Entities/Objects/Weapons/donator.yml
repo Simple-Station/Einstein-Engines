@@ -256,6 +256,7 @@
     - 0,0,5,2
   - type: Gun
     fireRate: 0.5
+    projectileSpeed: 15
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/non_collection/rpg_fire.ogg
   - type: BallisticAmmoProvider
@@ -275,9 +276,6 @@
     magState: mag
     steps: 2
     zeroVisible: false
-
-    defaultSeekingRange: 400
-    guidanceAlgorithm: PredictiveGuidance
 
 # @Tomahawk101 (Tomahawk101) donor gun
 - type: entity
@@ -410,6 +408,7 @@
     - suitStorage
   - type: Gun
     fireRate: 2
+  - type: LaserPointer
   - type: HeldSpeedModifier
     walkModifier: 1
     sprintModifier: 1
@@ -518,5 +517,5 @@
       - id: WeaponShotgunBruiser
         amount: 1
       - id: BoxLethalshot4g
-        amount: 2 
+        amount: 2
 
