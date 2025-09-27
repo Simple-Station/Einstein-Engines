@@ -1374,3 +1374,37 @@
     price: 18000
   - type: ShipVoucher
     ship: Scabrak
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherLockjaw
+  name: SAW 'Lockjaw' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a custom Lockjaw-class blockade runner. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 80000
+  - type: ShipVoucher
+    ship: Lockjaw
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherAutoscout
+  name: Ancient NT 'Autoscout' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an autonomous Nanotrasen Autoscout.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 10000
+  - type: ShipVoucher
+    ship: Autoscout
