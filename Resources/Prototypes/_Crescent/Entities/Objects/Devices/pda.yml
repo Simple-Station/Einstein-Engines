@@ -543,6 +543,10 @@
     borderColor: "#ffffff"
   - type: Icon
     state: hunter
+  - type: HealthAnalyzer
+    scanDelay: 1
+    scanningEndSound:
+      path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
   parent: BasePDA
@@ -685,6 +689,10 @@
     borderColor: "#535961"
   - type: Icon
     state: pda-bartender
+  - type: HealthAnalyzer
+    scanDelay: 1
+    scanningEndSound:
+      path: "/Audio/Items/Medical/healthscanner.ogg"
 
 #cmm
 
@@ -729,6 +737,10 @@
     borderColor: "#5191e0"
   - type: Icon
     state: cmm
+  - type: HealthAnalyzer
+    scanDelay: 1
+    scanningEndSound:
+      path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
   parent: BasePDA
@@ -1043,6 +1055,10 @@
     borderColor: "#535961"
   - type: Icon
     state: pda-bartender
+  - type: HealthAnalyzer
+    scanDelay: 1
+    scanningEndSound:
+      path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
   parent: BasePDA
@@ -1127,6 +1143,10 @@
     borderColor: "#535961"
   - type: Icon
     state: pda-bartender
+  - type: HealthAnalyzer
+    scanDelay: 1
+    scanningEndSound:
+      path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
   parent: BasePDA
@@ -1185,6 +1205,10 @@
     borderColor: "#535961"
   - type: Icon
     state: pda-bartender
+  - type: HealthAnalyzer
+    scanDelay: 1
+    scanningEndSound:
+      path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
   parent: BasePDA
