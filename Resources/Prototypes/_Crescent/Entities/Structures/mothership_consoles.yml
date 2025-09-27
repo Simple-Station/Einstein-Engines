@@ -243,3 +243,13 @@
     - Wasp
     - Bee
     - Hornet
+
+- type: entity
+  id: CockroachMothershipComputer
+  parent: BaseMothershipComputer
+  name: cockroach internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Roachling
+    - Dungbeetle
