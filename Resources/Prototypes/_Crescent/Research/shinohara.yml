@@ -425,3 +425,16 @@
   cost: 8000
   recipeUnlocks:
   - SHIShiverBlade
+
+- type: technology
+  id: ShinoharaAdvanceArmor
+  name: research-technology-shinohara-advance-armor
+  icon:
+    sprite: _Crescent/Clothing/SHI/OuterClothing/juggsuit.rsi
+    state: icon
+  discipline: Corporate
+  tier: 3
+  cost: 9000
+  recipeUnlocks:
+  - ClothingOuterHardsuitSHIJuggernaut
+  - ClothingOuterHardsuitSHISpeedsuit
