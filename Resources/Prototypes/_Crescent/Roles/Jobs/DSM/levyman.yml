@@ -57,6 +57,7 @@
     outerClothing: ClothingOuterArmorImperialTrooperArmor
     gloves: ClothingHandsGlovesImperialLonggloves
     pocket1: WeaponPistolComplianceImperial
+    belt: ClothingBeltAssault
   storage:
     back:
     - Flash
