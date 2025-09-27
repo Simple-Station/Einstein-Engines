@@ -6,7 +6,7 @@
   name: Cockroach
   description: |
     The Cockroach is an Industrial Carrier, capable of fielding ships for both mining and salvaging. The ships it fields mines for it, while it collects the ores via it's ore array magnets. Equipped for long-term mining, a promising vessel.
-    LOADOUT: 9x 20x135 Machinegun PDTs, 4x Fixed Universal Hardpoints
+    LOADOUT: 6x 20x135 Machinegun PDTs
     MINIMUM CREW: 1x Captain, 2x Miner Crew
   price: 85000
   category: Large
