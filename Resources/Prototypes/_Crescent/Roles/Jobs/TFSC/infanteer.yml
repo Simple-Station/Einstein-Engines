@@ -53,4 +53,11 @@
     belt: ClothingBeltSyndicateWebbing
     pocket1: WeaponPistolHKUSP
     gloves: ClothingHandsGlovesFingerless
-    back: ClothingBackpackNCSPFilledInfanteer
+    back: ClothingBackpackNCSP
+  storage:
+    back:
+    - id: Flash
+    - id: Tourniquet
+    - id: Zipties
+    - id: MagazinePistol
+    - id: CombatKnife
