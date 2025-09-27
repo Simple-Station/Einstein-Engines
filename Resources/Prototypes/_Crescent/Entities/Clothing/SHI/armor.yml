@@ -83,6 +83,34 @@
 
 - type: entity
   parent: ClothingOuterArmorBasic
+  id: ClothingOuterArmorShinoharaHOSVest
+  name: SHI BULWARK-1 combat vest
+  description: A kevlar-intervowen durathread vest padded with ballistic gel.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/OuterClothing/hosvest.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/OuterClothing/hosvest.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: PlasteelEncasedKevlar
+    initialModifiers:
+      flatReductions:
+        Blunt: 10
+        Slash: 10
+        Piercing: 30
+        Heat: 20
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+
+- type: entity
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorShinoharaArmor
   name: SHI CIV-1 combat vest
   description: A kevlar-intervowen durathread vest padded with ballistic gel. Sold on the civilian self-defense market.
