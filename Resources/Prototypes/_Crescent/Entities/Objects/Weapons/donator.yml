@@ -408,6 +408,7 @@
     - suitStorage
   - type: Gun
     fireRate: 2
+  - type: LaserPointer
   - type: HeldSpeedModifier
     walkModifier: 1
     sprintModifier: 1
@@ -516,5 +517,5 @@
       - id: WeaponShotgunBruiser
         amount: 1
       - id: BoxLethalshot4g
-        amount: 2 
+        amount: 2
 
