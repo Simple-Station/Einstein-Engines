@@ -1,4 +1,58 @@
 - type: entity
+  name: CDT C-20R Corsair 11mm
+  parent: BaseWeaponSubMachineGun
+  id: WeaponSubMachineGunCorsair
+  description: A compact 11 mm submachine gun made by Cyberdawn. Commonly called the C-20R, though Cyberdawn recently tried to force the nickname Corsair on it.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/corsair.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    minAngle: 21
+    maxAngle: 32
+    fireRate: 8
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/smg_3/smg_gunshot_1.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolSubMachineGunHeavy
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineHeavySMG
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeHeavyPistol
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeHeavyPistol
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 400
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: GunWieldBonus
+    minAngle: -19
+    maxAngle: -16
+
+- type: entity
   name: PTA P-M50 Vektor 6mm
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunPTAVektor

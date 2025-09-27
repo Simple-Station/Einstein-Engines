@@ -403,6 +403,39 @@
       - Cartridge
 
 - type: entity
+  name: kingpin case
+  abstract: true
+  id: WeaponCaseKingpin
+  parent: ToolboxBase
+  description: A reinforced casing for storing weapons and accessories.
+  suffix: Donor - Kingpin
+  components:
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Sprite
+    sprite: _Crescent/Objects/Tools/kingpincase.rsi
+    layers:
+    - map: [ base ]
+      state: icon
+    - state: unshaded
+      shader: unshaded
+  - type: Item
+    sprite: _Crescent/Objects/Tools/kingpincase.rsi
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,6,3
+    whitelist:
+      tags:
+      - GunParts
+
+- type: entity
   name: charge rifle case
   abstract: true
   id: WeaponCaseChargeRifle

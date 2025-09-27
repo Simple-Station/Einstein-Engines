@@ -203,36 +203,145 @@
         amount: 2
       - id: Magazine6x24mmShock
         amount: 1
+
 # @willybillygilly (WillyBillyGilly) donor gun
 - type: entity
-  name: PTA 23AX Karabin 4g
-  parent: [BaseWeaponShotgun, BaseGunWieldable]
-  id: WeaponShotgunKS23
-  description: An oversized shotgun. Packs devastating 4 Gauge punches. Developed as part of Pang Tai's elite mercenary package.
+  name: CDT C-8X Kingpin 27mmR
+  parent: BaseItem
+  id: WeaponSpecialKingpin
+  suffix: Spawn case instead unless youre feeling generous
+  description: A heavy, unwieldly and too big to put in a bag what more could you ask not to have. has a toggle lock just like the P05 Brenner, Reloaded using 27mmR stripper clips or loose rounds.
   components:
-  - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
-  - type: Clothing
-    sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
-  - type: GunRequiresWield
   - type: Item
-    shape:
-    - 0,0,4,1
+    sprite: _Crescent/Objects/Weapons/Guns/kingpin.rsi
+    size: Ginormous
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/kingpin.rsi
+    quickEquip: false
+    slots:
+    - Back
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/kingpin.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 0.85
+  - type: HeldSpeedModifier
   - type: Gun
+    minAngle: 1
+    maxAngle: 75
+    angleIncrease: 40
+    angleDecay: 30
     fireRate: 2
-    soundGunshot:
-      path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_1.ogg
     selectedMode: SemiAuto
     availableModes:
-      - SemiAuto
+    - SemiAuto
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/kingpin/gunshot.ogg
+    soundEmpty:
+      path: /Audio/_Crescent/Weapons/Guns/kingpin/empty.ogg
   - type: BallisticAmmoProvider
+    soundRack: /Audio/_Crescent/Weapons/Guns/kingpin/rack.ogg
+    capacity: 10
+    proto: null
     whitelist:
       tags:
-        - ShellShotgun4g
-    capacity: 4
-    autoCycle: false
-    proto: ShellShotgun4gBuckshot
-  - type: ItemSlots
+      - 27mmAutocannon
+  - type: AmmoCounter
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: true
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: GunRequiresWield
+  - type: StaticPrice
+    price: 5000
+  - type: Appearance
+  - type: Construction
+    graph: C8XAutocannonGraph
+    node: C8XAutocannon
+
+- type: construction
+  name: C-8X 27mmR autocannon
+  id: C8XAutocannonCraft
+  graph: C8XAutocannonGraph
+  startNode: start
+  targetNode: C8XAutocannon
+  category: construction-category-tools
+  description: "A handcrafted 27mm autocannon."
+  icon: { sprite: _Crescent/Objects/Weapons/Guns/kingpin.rsi, state: icon }
+  objectType: Item
+
+- type: constructionGraph
+  id: C8XAutocannonGraph
+  start: start
+  graph:
+    - node: start
+      edges:
+      - to: C8XAutocannon
+        steps:
+        - tag: C8XAutocannonPartBarrel
+          icon:
+            sprite: _Crescent/Objects/Misc/gun_parts/barrel.rsi
+            state: icon
+          name: C-8X barrel
+          doAfter: 2
+        - tag: C8XAutocannonPartMisc
+          icon:
+            sprite: _Crescent/Objects/Misc/gun_parts/misc.rsi
+            state: icon
+          name: C-8X miscellaneous parts
+          doAfter: 2
+        - tag: C8XAutocannonPartReceiver
+          icon:
+            sprite: _Crescent/Objects/Misc/gun_parts/reicever.rsi
+            state: icon
+          name: C-8X receiver
+          doAfter: 2
+        - tag: C8XAutocannonPartBlueprint
+          icon:
+            sprite: _Crescent/Objects/Misc/gun_parts/blueprint.rsi
+            state: icon
+          name: C-8X blueprint
+          doAfter: 2
+        - material: AdvancedMechatronics
+          amount: 10
+          doAfter: 2
+        - material: TubeLoader
+          amount: 5
+          doAfter: 2
+        - material: BallisticCycler
+          amount: 5
+          doAfter: 2
+        - material: Steel
+          amount: 20
+          doAfter: 2
+    - node: C8XAutocannon
+      entity: WeaponSpecialKingpin
+
+- type: entity
+  id: CaseKingpin
+  parent: WeaponCaseKingpin
+  name: Cyberdawn C-8X case
+  suffix: Donor - Kingpin
+  description: A large Cyberdawn case with a experimental 27mm autocannon designed by Cyberdawn
+  components:
+  - type: StorageFill
+    contents:
+      - id: C8XAutocannonPartBlueprint
+        amount: 1
+      - id: C8XAutocannonPartMisc
+        amount: 1
+      - id: C8XAutocannonPartReceiver
+        amount: 1
+      - id: C8XAutocannonPartBarrel
+        amount: 1
 
 # @a_person5660 (Reggie) donor gun
 - type: entity

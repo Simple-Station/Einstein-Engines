@@ -1,6 +1,6 @@
 - type: entity
   id: BaseMagazinePistol
-  name: pistol magazine (9x19mm PSTF auto)
+  name: 12-round pistol magazine (9x19mm PSTF auto)
   parent: BaseItem
   abstract: true
   components:
@@ -12,7 +12,7 @@
     whitelist:
       tags:
         - CartridgePistol
-    capacity: 12
+    capacity: 18
   - type: Item
     size: Small
   - type: ContainerContainer
@@ -33,7 +33,7 @@
 
 - type: entity
   id: BaseMagazinePistolHighCapacity
-  name: machine pistol magazine (9x19mm PSTF auto)
+  name: 26-round extended pistol magazine (9x19mm PSTF auto)
   parent: BaseItem
   abstract: true
   components:
@@ -45,7 +45,7 @@
     whitelist:
       tags:
         - CartridgePistol
-    capacity: 16
+    capacity: 26
   - type: Item
     size: Small
   - type: ContainerContainer
@@ -66,7 +66,7 @@
 
 - type: entity
   id: BaseMagazinePistolSubMachineGun  # Yeah it's weird but it's pistol caliber
-  name: SMG magazine (9x19mm PSTF auto)
+  name: 35-round SMG magazine (9x19mm PSTF auto)
   parent: BaseItem
   abstract: true
   components:
@@ -99,7 +99,7 @@
 
 - type: entity
   id: MagazinePistolSubMachineGunTopMounted
-  name: top-mounted magazine (11mm PSTF auto)
+  name: 50-round top-mounted magazine (11mm PSTF auto)
   parent: BaseItem
   components:
   - type: Tag
@@ -131,7 +131,7 @@
 
 - type: entity
   id: MagazinePistolSubMachineGunTopMountedEmpty
-  name: WT550 magazine (9x19mm PSTF auto top-mounted any)
+  name: 50-round top-mounted magazine (11mm PSTF auto any)
   parent: MagazinePistolSubMachineGunTopMounted
   components:
   - type: BallisticAmmoProvider
@@ -153,7 +153,7 @@
 
 - type: entity
   id: MagazinePistolEmpty
-  name: pistol magazine (9x19mm PSTF auto any)
+  name: 18-round pistol magazine (9x19mm PSTF auto any)
   suffix: empty
   parent: MagazinePistol
   components:
@@ -167,7 +167,7 @@
 
 - type: entity
   id: MagazinePistolIncendiary
-  name: pistol magazine (9x19mm PSTF auto incendiary)
+  name: 18-round pistol magazine (9x19mm PSTF auto incendiary)
   parent: MagazinePistol
   components:
   - type: BallisticAmmoProvider
@@ -175,7 +175,7 @@
 
 - type: entity
   id: MagazinePistolPractice
-  name: pistol magazine (9x19mm PSTF auto practice)
+  name: 18-round pistol magazine (9x19mm PSTF auto practice)
   parent: BaseMagazinePistol
   components:
   - type: BallisticAmmoProvider
@@ -189,7 +189,7 @@
 
 - type: entity
   id: MagazinePistolRubber
-  name: pistol magazine (9x19mm PSTF auto rubber)
+  name: 18-round pistol magazine (9x19mm PSTF auto rubber)
   parent: BaseMagazinePistol
   components:
   - type: BallisticAmmoProvider
@@ -203,7 +203,7 @@
 
 - type: entity
   id: MagazinePistolUranium
-  name: pistol magazine (9x19mm PSTF auto uranium)
+  name: 18-round pistol magazine (9x19mm PSTF auto uranium)
   parent: BaseMagazinePistol
   components:
   - type: BallisticAmmoProvider
@@ -217,7 +217,7 @@
 
 - type: entity
   id: MagazinePistolShrapnel
-  name: pistol magazine (9x19mm PSTF auto shrapnel)
+  name: 18-round pistol magazine (9x19mm PSTF auto shrapnel)
   parent: BaseMagazinePistol
   components:
   - type: BallisticAmmoProvider
@@ -231,7 +231,7 @@
 
 - type: entity
   id: MagazinePistolHighCapacityEmpty
-  name: machine pistol magazine (9x19mm PSTF auto any)
+  name: 26-round extended pistol magazine (9x19mm PSTF auto any)
   suffix: empty
   parent: BaseMagazinePistolHighCapacity
   components:
@@ -244,7 +244,7 @@
 
 - type: entity
   id: MagazinePistolHighCapacity
-  name: machine pistol magazine (9x19mm PSTF auto)
+  name: 26-round extended pistol magazine (9x19mm PSTF auto)
   parent: BaseMagazinePistolHighCapacity
   components:
   - type: BallisticAmmoProvider
@@ -258,7 +258,7 @@
 
 - type: entity
   id: MagazinePistolHighCapacityPractice
-  name: machine pistol magazine (9x19mm PSTF auto practice)
+  name: 26-round extended pistol magazine (9x19mm PSTF auto practice)
   parent: BaseMagazinePistolHighCapacity
   components:
   - type: BallisticAmmoProvider
@@ -272,7 +272,7 @@
 
 - type: entity
   id: MagazinePistolHighCapacityRubber
-  name: machine pistol magazine (9x19mm PSTF auto rubber)
+  name: 26-round extended pistol magazine (9x19mm PSTF auto rubber)
   parent: BaseMagazinePistolHighCapacity
   components:
   - type: BallisticAmmoProvider
@@ -286,7 +286,7 @@
 
 - type: entity
   id: MagazinePistolHighCapacityShrapnel
-  name: machine pistol magazine (9x19mm PSTF auto shrapnel)
+  name: 26-round extended pistol magazine (9x19mm PSTF auto shrapnel)
   parent: BaseMagazinePistolHighCapacity
   components:
   - type: BallisticAmmoProvider
@@ -300,11 +300,10 @@
 
 - type: entity
   id: MagazinePistolSubMachineGun
-  name: SMG magazine (9x19mm PSTF auto)
+  name: 35-round SMG magazine (9x19mm PSTF auto)
   parent: BaseMagazinePistolSubMachineGun
   components:
   - type: BallisticAmmoProvider
-    capacity: 30
     proto: CartridgePistol
     whitelist:
       tags:
@@ -320,7 +319,7 @@
 
 - type: entity
   id: MagazinePistolSubMachineGunEmpty
-  name: SMG magazine (9x19mm PSTF auto any)
+  name: 35-round SMG magazine (9x19mm PSTF auto any)
   suffix: empty
   parent: BaseMagazinePistolSubMachineGun
   components:
@@ -333,7 +332,7 @@
 
 - type: entity
   id: MagazinePistolSubMachineGunPractice
-  name: SMG magazine (9x19mm PSTF auto practice)
+  name: 35-round SMG magazine (9x19mm PSTF auto practice)
   parent: BaseMagazinePistolSubMachineGun
   components:
   - type: BallisticAmmoProvider
@@ -348,7 +347,7 @@
 - type: entity
   id: MagazinePistolSubMachineGunRubber
 
-  name: SMG magazine (9x19mm PSTF auto rubber)
+  name: 35-round SMG magazine (9x19mm PSTF auto rubber)
   parent: BaseMagazinePistolSubMachineGun
   components:
   - type: BallisticAmmoProvider
@@ -362,7 +361,7 @@
 
 - type: entity
   id: MagazinePistolSubMachineGunIncendiary
-  name: SMG magazine (9x19mm PSTF auto incendiary)
+  name: 35-round SMG magazine (9x19mm PSTF auto incendiary)
   parent: BaseMagazinePistolSubMachineGun
   components:
   - type: BallisticAmmoProvider
@@ -376,7 +375,7 @@
 
 - type: entity
   id: MagazinePistolSubMachineGunUranium
-  name: SMG magazine (9x19mm PSTF auto black-tip)
+  name: 35-round SMG magazine (9x19mm PSTF auto black-tip)
   parent: BaseMagazinePistolSubMachineGun
   components:
   - type: BallisticAmmoProvider
@@ -390,7 +389,7 @@
 
 - type: entity
   id: MagazinePistolSubMachineGunShrapnel
-  name: SMG magazine (9x19mm PSTF auto shrapnel)
+  name: 35-round SMG magazine (9x19mm PSTF auto shrapnel)
   parent: BaseMagazinePistolSubMachineGun
   components:
   - type: BallisticAmmoProvider
