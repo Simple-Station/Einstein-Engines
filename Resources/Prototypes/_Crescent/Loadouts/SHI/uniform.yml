@@ -6,7 +6,7 @@
     - ClothingUniformSkirtShinoharaHumanResources
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniform
+      group: LoadoutUniformsCivilian
     - !type:CharacterJobRequirement
       jobs:
         - BoardSHI
