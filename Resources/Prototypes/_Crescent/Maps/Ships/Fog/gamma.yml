@@ -8,12 +8,12 @@
   price: 48000
   category: Large
   group: None
-  path: /Maps/_Crescent/Shuttles/Fog/beta.yml
+  path: /Maps/_Crescent/Shuttles/Fog/gamma.yml
 
 - type: gameMap
-  id: Beta
+  id: Gamma
   mapName: 'NT Gamma'
-  mapPath: /Maps/_Crescent/Shuttles/Fog/beta.yml
+  mapPath: /Maps/_Crescent/Shuttles/Fog/gamma.yml
   minPlayers: 0
   stations:
      Gamma:
