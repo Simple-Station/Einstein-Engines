@@ -11,15 +11,15 @@
   supervisors: job-supervisors-shi
   canBeAntag: false
   requirements:
-          - !type:CharacterOverallTimeRequirement
-           min: 10800 
-          - !type:FactionRequirement
-           factionID: "SHI"
-          - !type:CharacterTraitRequirement
-           inverted: true
-           traits:
-          - Blindness
-          - WheelchairBound
+    - !type:CharacterOverallTimeRequirement
+      min: 10800
+    - !type:FactionRequirement
+      factionID: "SHI"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Blindness
+        - WheelchairBound
   special:
   - !type:AddComponentSpecial
     components:
