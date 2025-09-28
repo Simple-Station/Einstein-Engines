@@ -122,6 +122,8 @@ public class ProjectilePhasePreventerSystem : EntitySystem
                 // will be removed through events. Just skip for now
                 if (TerminatingOrDeleted(owner))
                     continue;
+                if (Deleted(owner)) //.2 2025 - MLG said we should do this because it fixes the metadata error
+                    continue;         // its trying to run this shit on a deleting entity so
                 worldPos = _trans.GetWorldPosition(owner);
                 if ((worldPos - phase.start).IsLengthZero())
                     continue;
@@ -181,7 +183,7 @@ public class ProjectilePhasePreventerSystem : EntitySystem
                 {
                     count++;
                     RaiseLocalEvent(eventData.selfEntity, ref fEv, true);
-                    Logger.Debug($"Raised event on {MetaData(eventData.selfEntity).EntityName}");
+                    //Logger.Debug($"Raised event on {MetaData(eventData.selfEntity).EntityName}"); //dont think we need this anymore .2 | 2025
                 }
                 catch (Exception e)
                 {
