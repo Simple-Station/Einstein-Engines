@@ -310,8 +310,8 @@
             state: icon
           name: C-8X blueprint
           doAfter: 2
-        - material: AdvancedMechatronics
-          amount: 10
+        - material: BasicMechatronics
+          amount: 15
           doAfter: 2
         - material: TubeLoader
           amount: 5
@@ -320,7 +320,7 @@
           amount: 5
           doAfter: 2
         - material: Steel
-          amount: 20
+          amount: 30
           doAfter: 2
     - node: C8XAutocannon
       entity: WeaponSpecialKingpin
