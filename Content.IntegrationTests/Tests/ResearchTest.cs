@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Content.Shared.Lathe;
 using Content.Shared.Research.Prototypes;
+using Content.Shared.ReverseEngineering;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
 
@@ -52,13 +53,17 @@ public sealed class ResearchTest
         await using var pair = await PoolManager.GetServerClient();
         var server = pair.Server;
 
+        var entMan = server.ResolveDependency<IEntityManager>();
         var protoManager = server.ResolveDependency<IPrototypeManager>();
         var compFact = server.ResolveDependency<IComponentFactory>();
+
+        var latheSys = entMan.System<SharedLatheSystem>();
 
         await server.WaitAssertion(() =>
         {
             var allEnts = protoManager.EnumeratePrototypes<EntityPrototype>();
-            var allLathes = new HashSet<LatheComponent>();
+            var latheTechs = new HashSet<ProtoId<LatheRecipePrototype>>();
+            var unlockedTechs = new HashSet<ProtoId<LatheRecipePrototype>>();
             foreach (var proto in allEnts)
             {
                 if (proto.Abstract)
@@ -67,31 +72,34 @@ public sealed class ResearchTest
                 if (pair.IsTestPrototype(proto))
                     continue;
 
+                if (proto.TryGetComponent<ReverseEngineeringComponent>(out var reverseEngineering, compFact) && reverseEngineering.Recipes != null)
+                    unlockedTechs.UnionWith(reverseEngineering.Recipes);
+
                 if (!proto.TryGetComponent<LatheComponent>(out var lathe, compFact))
                     continue;
-                allLathes.Add(lathe);
-            }
 
-            var latheTechs = new HashSet<string>();
-            foreach (var lathe in allLathes)
-            {
-                if (lathe.DynamicRecipes == null)
-                    continue;
+                latheSys.AddRecipesFromPacks(latheTechs, lathe.DynamicPacks);
 
-                foreach (var recipe in lathe.DynamicRecipes)
-                {
-                    latheTechs.Add(recipe);
-                }
+                if (proto.TryGetComponent<EmagLatheRecipesComponent>(out var emag, compFact))
+                    latheSys.AddRecipesFromPacks(latheTechs, emag.EmagDynamicPacks);
             }
 
             Assert.Multiple(() =>
             {
+                // check that every recipe a tech adds can be made on some lathe
                 foreach (var tech in protoManager.EnumeratePrototypes<TechnologyPrototype>())
                 {
+                    unlockedTechs.UnionWith(tech.RecipeUnlocks);
                     foreach (var recipe in tech.RecipeUnlocks)
                     {
-                        Assert.That(latheTechs, Does.Contain(recipe), $"Recipe \"{recipe}\" cannot be unlocked on any lathes.");
+                        Assert.That(latheTechs, Does.Contain(recipe), $"Recipe '{recipe}' from tech '{tech.ID}' cannot be unlocked on any lathes.");
                     }
+                }
+
+                // now check that every dynamic recipe a lathe lists can be unlocked
+                foreach (var recipe in latheTechs)
+                {
+                    Assert.That(unlockedTechs, Does.Contain(recipe), $"Recipe '{recipe}' is dynamic on a lathe but cannot be unlocked by research.");
                 }
             });
         });

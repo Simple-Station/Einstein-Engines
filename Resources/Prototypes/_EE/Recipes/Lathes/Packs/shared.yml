@@ -1,0 +1,13 @@
+- type: latheRecipePack
+  id: Parts
+  recipes:
+  - AdvancedCapacitorStockPart
+  - AdvancedMatterBinStockPart
+  - NanoManipulatorStockPart
+  - SuperCapacitorStockPart
+  - SuperMatterBinStockPart
+  - PicoManipulatorStockPart
+  - BluespaceCapacitorStockPart
+  - BluespaceManipulatorStockPart
+  - BluespaceMatterBinStockPart
+  - RPED

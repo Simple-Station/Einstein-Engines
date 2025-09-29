@@ -32,7 +32,7 @@
 - type: entity
   id: ShellShotgunBeanbag
   name: shell (.50 beanbag)
-  parent: BaseShellShotgun
+  parent: [ BaseShellShotgun, BaseSecurityBartenderContraband ]
   components:
   - type: Tag
     tags:
@@ -61,6 +61,25 @@
     proto: PelletShotgunSlug
   - type: SpentAmmoVisuals
     state: "slug"
+
+- type: entity
+  id: ShellShotgunFlare
+  name: shell (.50 flare)
+  parent: [ BaseShellShotgun, BaseSecurityBartenderContraband ]
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - ShellShotgun
+    - ShellShotgunLight
+  - type: Sprite
+    layers:
+    - state: flare
+      map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunFlare
+  - type: SpentAmmoVisuals
+    state: "flare"
 
 - type: entity
   id: ShellShotgunLumen
@@ -220,22 +239,3 @@
       map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
     proto: PelletShotgunSpread0000Buckshot
-
-- type: entity
-  id: ShellShotgunFlare
-  name: shell (.50 flare)
-  parent: BaseShellShotgun
-  components:
-  - type: Tag
-    tags:
-    - Cartridge
-    - ShellShotgun
-    - ShellShotgunLight
-  - type: Sprite
-    layers:
-    - state: flare
-      map: [ "enum.AmmoVisualLayers.Base" ]
-  - type: CartridgeAmmo
-    proto: PelletShotgunFlare
-  - type: SpentAmmoVisuals
-    state: "flare"

@@ -45,14 +45,14 @@ public sealed partial class CharacterPickerButton : ContainerButton
         }
         else
         {
-            var highPriorityJob = humanoid.JobPriorities.SingleOrDefault(p => p.Value == JobPriority.High).Key;
-            var jod = prototypeManager.Index(highPriorityJob);
             _previewDummy = UserInterfaceManager.GetUIController<LobbyUIController>()
-                .LoadProfileEntity(humanoid, jod, true, true);
+                .LoadProfileEntity(humanoid, null, true, true);
 
+            var highPriorityJob = humanoid.JobPriorities.SingleOrDefault(p => p.Value == JobPriority.High).Key;
             if (highPriorityJob != default)
             {
-                description = $"{description}\n{jod.LocalizedName}";
+                var jobName = prototypeManager.Index(highPriorityJob).LocalizedName;
+                description = $"{description}\n{jobName}";
             }
         }
 

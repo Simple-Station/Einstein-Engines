@@ -1,0 +1,30 @@
+## Static
+
+- type: latheRecipePack
+  id: TranslatorStatic
+  recipes:
+  - CanilunztTranslator
+  - BubblishTranslator
+  - NekomimeticTranslator
+  - DraconicTranslator
+  - SolCommonTranslator
+  - NovuNedericTranslator
+  - RootSpeakTranslator
+  - MofficTranslator
+  - BasicGalaticCommonTranslatorImplanter
+
+## Dynamic
+
+- type: latheRecipePack
+  id: Translator
+  recipes:
+  - AnimalTranslator
+  - XenoTranslator
+  - AdvancedGalaticCommonTranslatorImplanter
+  - BubblishTranslatorImplanter
+  - NekomimeticTranslatorImplanter
+  - DraconicTranslatorImplanter
+  - CanilunztTranslatorImplanter
+  - SolCommonTranslatorImplanter
+  - RootSpeakTranslatorImplanter
+  - MofficTranslatorImplanter

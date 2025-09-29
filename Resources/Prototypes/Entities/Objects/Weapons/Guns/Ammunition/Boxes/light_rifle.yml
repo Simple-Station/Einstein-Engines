@@ -20,7 +20,7 @@
     sprite: Objects/Weapons/Guns/Ammunition/Boxes/light_rifle.rsi
   - type: MagazineVisuals
     magState: mag
-    steps: 2
+    steps: 4
     zeroVisible: false
   - type: Appearance
 
@@ -28,54 +28,18 @@
 - type: entity
   parent: BaseMagazineBoxLightRifle
   id: MagazineBoxLightRifleBig
-  name: bulk ammunition box (.30 rifle)
+  name: ammunition box (.30 rifle)
+  suffix: Big
   components:
   - type: BallisticAmmoProvider
     capacity: 200
     proto: CartridgeLightRifle
   - type: Sprite
     layers:
-    - state: base-b
+    - state: base
       map: ["enum.GunVisualLayers.Base"]
-    - state: magb-1
+    - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
-  - type: MagazineVisuals
-    magState: magb
-    steps: 2
-    zeroVisible: false
-  - type: Appearance
-
-- type: entity
-  parent: MagazineBoxLightRifleBig
-  id: MagazineBoxLightRifleBigPractice
-  name: bulk ammunition box (.30 rifle practice)
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeLightRiflePractice
-
-- type: entity
-  parent: MagazineBoxLightRifleBig
-  id: MagazineBoxLightRifleBigIncendiary
-  name: bulk ammunition box (.30 rifle incendiary)
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeLightRifleIncendiary
-
-- type: entity
-  parent: MagazineBoxLightRifleBig
-  id: MagazineBoxLightRifleBigUranium
-  name: bulk ammunition box (.30 rifle uranium)
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeLightRifleUranium
-
-- type: entity
-  parent: MagazineBoxLightRifleBig
-  id: MagazineBoxLightRifleBigShrapnel
-  name: bulk ammunition box (.30 rifle shrapnel)
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeLightRifleShrapnel
 
 - type: entity
   parent: BaseMagazineBoxLightRifle
@@ -140,6 +104,38 @@
   parent: MagazineBoxLightRifle
   id: MagazineBoxLightRifleShrapnel
   name: ammunition box (.30 rifle shrapnel)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightRifleShrapnel
+
+- type: entity
+  parent: MagazineBoxLightRifleBig
+  id: MagazineBoxLightRifleBigPractice
+  name: bulk ammunition box (.30 rifle practice)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightRiflePractice
+
+- type: entity
+  parent: MagazineBoxLightRifleBig
+  id: MagazineBoxLightRifleBigIncendiary
+  name: bulk ammunition box (.30 rifle incendiary)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightRifleIncendiary
+
+- type: entity
+  parent: MagazineBoxLightRifleBig
+  id: MagazineBoxLightRifleBigUranium
+  name: bulk ammunition box (.30 rifle uranium)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightRifleUranium
+
+- type: entity
+  parent: MagazineBoxLightRifleBig
+  id: MagazineBoxLightRifleBigShrapnel
+  name: bulk ammunition box (.30 rifle shrapnel)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifleShrapnel

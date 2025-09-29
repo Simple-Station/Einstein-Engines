@@ -136,8 +136,9 @@ public sealed partial class AtmosAlarmEntryContainer : BoxContainer
                 GasGridContainer.RemoveAllChildren();
 
                 var gasData = focusData.Value.GasData.Where(g => g.Key != Gas.Oxygen);
+                var keyValuePairs = gasData.ToList();
 
-                if (gasData.Count() == 0)
+                if (keyValuePairs.Count == 0)
                 {
                     // No other gases
                     var gasLabel = new Label()
@@ -158,7 +159,7 @@ public sealed partial class AtmosAlarmEntryContainer : BoxContainer
                 else
                 {
                     // Add an entry for each gas
-                    foreach ((var gas, (var mol, var percent, var alert)) in gasData)
+                    foreach ((var gas, (var mol, var percent, var alert)) in keyValuePairs)
                     {
                         FixedPoint2 gasPercent = percent * 100f;
                         var gasAbbreviation = Atmospherics.GasAbbreviations.GetValueOrDefault(gas, Loc.GetString("gas-unknown-abbreviation"));

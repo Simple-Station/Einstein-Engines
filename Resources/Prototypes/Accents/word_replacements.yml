@@ -425,9 +425,33 @@
     chatsan-word-42: chatsan-replacement-42
     chatsan-word-43: chatsan-replacement-43
     chatsan-word-44: chatsan-replacement-44
+    chatsan-word-45: chatsan-replacement-45
+    chatsan-word-46: chatsan-replacement-46
+    chatsan-word-47: chatsan-replacement-47
+    chatsan-word-48: chatsan-replacement-48
+    chatsan-word-49: chatsan-replacement-49
+    chatsan-word-50: chatsan-replacement-50
+    chatsan-word-51: chatsan-replacement-51
+    chatsan-word-52: chatsan-replacement-52
+    chatsan-word-53: chatsan-replacement-53
+    chatsan-word-54: chatsan-replacement-54
+    chatsan-word-55: chatsan-replacement-55
+    chatsan-word-56: chatsan-replacement-56
+    chatsan-word-57: chatsan-replacement-57
+    chatsan-word-58: chatsan-replacement-58
+    chatsan-word-59: chatsan-replacement-59
+    chatsan-word-60: chatsan-replacement-60
+    chatsan-word-61: chatsan-replacement-61
+    chatsan-word-62: chatsan-replacement-62
+    chatsan-word-63: chatsan-replacement-63
+    chatsan-word-64: chatsan-replacement-64
+    chatsan-word-65: chatsan-replacement-65
+    chatsan-word-66: chatsan-replacement-66
+    chatsan-word-67: chatsan-replacement-67
 
 - type: accent
   id: liar
+  replacementChance: 0.15
   wordReplacements:
     liar-word-1: liar-word-replacement-1
     liar-word-2: liar-word-replacement-2
