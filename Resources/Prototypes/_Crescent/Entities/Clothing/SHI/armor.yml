@@ -35,7 +35,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitHEV
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, StreeCredRedeemable]
   id: ClothingOuterHardsuitHighsec
   name: shinohara SVBT-2 combat hardsuit
   description: A modular combat hardsuit developed by Shinohara Heavy Industries. Sold to elite mercs and corporate deathsquads everywhere.
