@@ -2,8 +2,8 @@
 # Discord: fungus2589
 
 - type: vessel
-  id: Radiant
-  name: NT Radiant
+  id: Fulgur
+  name: NT Fulgur
   description: A remnant of the autonomous AI fleets developed by the NanoTrasen Corporation.
   price: 400000
   category: Large
@@ -29,6 +29,6 @@
            !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
-          designation: vessel-designation-expeditions
+          designation: vessel-designation-missile
         - type: VesselDescription
           description: Created in response to the spread of the abyssal phenomena emerging from the fracture.

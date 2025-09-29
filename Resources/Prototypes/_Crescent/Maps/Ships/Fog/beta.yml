@@ -6,7 +6,7 @@
   name: NT Beta
   description: A remnant of the autonomous AI fleets developed by the NanoTrasen Corporation.
   price: 36000
-  category: Large
+  category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/Fog/beta.yml
 
@@ -16,19 +16,19 @@
   mapPath: /Maps/_Crescent/Shuttles/Fog/beta.yml
   minPlayers: 0
   stations:
-     Alpha:
+     Beta:
       stationProto: StandardCrescentVessel
       components:
         - type: VesselIcon
           iffIcon:
             sprite: _Crescent/ShipIcons/ifficons.rsi
-            state: corvette
+            state: fighter
         - type: StationNameSetup
           mapNameTemplate: 'NT Beta {1}'
           nameGenerator:
            !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
-          designation: vessel-designation-expeditions
+          designation: vessel-designation-fighter
         - type: VesselDescription
           description: Created in response to the spread of the abyssal phenomena emerging from the fracture.

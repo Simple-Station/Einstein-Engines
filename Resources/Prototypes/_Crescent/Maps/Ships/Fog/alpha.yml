@@ -6,7 +6,7 @@
   name: NT Alpha
   description: A remnant of the autonomous AI fleets developed by the NanoTrasen Corporation.
   price: 42000
-  category: Large
+  category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/Fog/alpha.yml
 
@@ -22,13 +22,13 @@
         - type: VesselIcon
           iffIcon:
             sprite: _Crescent/ShipIcons/ifficons.rsi
-            state: corvette
+            state: fighter
         - type: StationNameSetup
           mapNameTemplate: 'NT Alpha {1}'
           nameGenerator:
            !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
-          designation: vessel-designation-expeditions
+          designation: vessel-designation-fighter
         - type: VesselDescription
           description: Created in response to the spread of the abyssal phenomena emerging from the fracture.

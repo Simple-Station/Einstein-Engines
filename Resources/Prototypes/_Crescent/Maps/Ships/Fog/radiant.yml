@@ -29,6 +29,6 @@
            !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
-          designation: vessel-designation-expeditions
+          designation: vessel-designation-flagship
         - type: VesselDescription
-          description: Created in response to the spread of the abyssal phenomena emerging from the fracture.
+          description: A shambling behemoth, created out of necessity combat the spread of abyssal phenomena.
