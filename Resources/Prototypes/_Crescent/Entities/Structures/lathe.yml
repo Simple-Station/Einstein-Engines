@@ -630,8 +630,6 @@
       - ClothingHeadHatShinoharaNonevaHelm
       - TelescopicBatonSHI
       - ShinoharaOptics
-      - WeaponFighterMachinegun
-      - WeaponFighterAutocannon
       - WeaponMechCombatAutoshotgun
       - WeaponMechCombatLightRifle
       - WeaponMechSword
@@ -686,6 +684,8 @@
       - SHIKatana
       - SHIShiverBlade
       - BallisticCycler1Craft
+      - ClothingOuterHardsuitSHIJuggernaut
+      - ClothingOuterHardsuitSHISpeedsuit
 
   - type: Machine
     board: MicroforgeCircuitboard
