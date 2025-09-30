@@ -13,7 +13,7 @@
   requirements:
     - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
-      min: 14400
+      min: 18000
     - !type:FactionRequirement
       factionID: "SHI"
     - !type:CharacterTraitRequirement
