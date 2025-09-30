@@ -63709,18 +63709,18 @@ entities:
       parent: 1
 - proto: CargoTelepad
   entities:
-  - uid: 3454
-    components:
-    - type: Transform
-      pos: 24.5,-15.5
-      parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 4175
   - uid: 3455
     components:
     - type: Transform
       pos: 24.5,-14.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 4175
+  - uid: 3454
+    components:
+    - type: Transform
+      pos: 24.5,-15.5
       parent: 1
     - type: DeviceLinkSink
       links:
