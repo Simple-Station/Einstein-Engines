@@ -3,7 +3,7 @@
   name: job-name-board
   description: job-description-board
   playTimeTracker: JobBoardSHI
-  weight: 99
+  weight: 6
   startingGear: BoardGear
   alwaysUseSpawner: true
   requireAdminNotify: true
@@ -51,6 +51,63 @@
     shoes: ClothingShoesBootsLaceup
     neck: ClothingNeckTieRed
     outerClothing: ClothingOuterShinoharaSuitJacket
+    id: BoardPDA
+    pocket1: TradePassport
+    ears: ClothingHeadsetShinohara
+    back: ClothingBackpackSHISatchel
+
+- type: job
+  id: BoardHRSHI
+  name: job-name-boardhr
+  description: job-description-boardhr
+  playTimeTracker: JobBoardHRSHI
+  weight: 7
+  startingGear: BoardHRGear
+  alwaysUseSpawner: true
+  requireAdminNotify: true
+  icon: "JobIconBoard"
+  supervisors: job-supervisors-shi
+  canBeAntag: false
+  requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:CharacterOverallTimeRequirement
+      min: 14400
+    - !type:FactionRequirement
+      factionID: "SHI"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Muted
+        - Blindness
+        - WheelchairBound
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-shi-board
+      - type: LanguageAdder
+        addSpoken:
+          - Kaishago
+          - Tradeband
+        addUnderstood:
+          - Kaishago
+          - Tradeband
+  access:
+  - Command
+  - Maintenance
+  - Shinohara
+  - ShinoharaOfficer
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: BoardHRGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitShinoharaHumanResources
+    shoes: ClothingShoesBootsLaceup
+    neck: ClothingNeckTieRed
     id: BoardPDA
     pocket1: TradePassport
     ears: ClothingHeadsetShinohara
