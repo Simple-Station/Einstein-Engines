@@ -145,3 +145,14 @@
     sprite: _Crescent/Clothing/SHI/Head/highsec_ua.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/SHI/Head/highsec_ua.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatShinoharaBeretHOS
+  name: hos beret
+  description: A formal beret with the CSEC logo, used mainly by the corpo HoS.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Head/beret_hos.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Head/beret_hos.rsi
