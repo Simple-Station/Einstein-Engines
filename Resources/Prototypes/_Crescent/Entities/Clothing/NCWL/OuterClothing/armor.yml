@@ -438,8 +438,8 @@
   - type: ExplosionResistance
     damageCoefficient: 0.4
   - type: DegradeableArmor
-    armorMaxHealth: 1500
-    armorType: Metallic
+    armorMaxHealth: 3000
+    armorType: Ceramic
     armorRepair: HomelandAlloy
     initialModifiers:
       flatReductions:

@@ -85,3 +85,36 @@
     sprite: _Crescent/Clothing/SHI/Uniform/securityturtleneck.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/SHI/Uniform/securityturtleneck.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitShinoharaHOS
+  name: head of security specialist's jumpsuit
+  description: A uniform used by the head of security of the corporate security in Shinohara.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Uniform/hos.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Uniform/hos.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitShinoharaHumanResources
+  name: shinohara human resources jumpsuit
+  description: A uniform used by corpo agent of HR.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Uniform/humanresources.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Uniform/humanresources.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformSkirtShinoharaHumanResources
+  name: shinohara human resources skirt
+  description: A skirt used by corpo agent of HR.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Uniform/humanresourcesskirt.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Uniform/humanresourcesskirt.rsi
