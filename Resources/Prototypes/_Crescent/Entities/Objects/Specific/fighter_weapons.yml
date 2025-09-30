@@ -1,156 +1,156 @@
-- type: Tag
-  id: LightFighterEquipment
+# - type: Tag
+#   id: LightFighterEquipment
 
-- type: Tag
-  id: MediumFighterEquipment
+# - type: Tag
+#   id: MediumFighterEquipment
 
-- type: entity
-  id: BaseFighter
-  abstract: true
-  components:
-  - type: Mech
-  - type: CanBeHeatTracked
-  - type: ProximityFuseTarget
-  - type: Physics
-    bodyType: Dynamic
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 1
-        density: 21390 # 15 Tonnes
-        mask:
-        - FighterImpassable
-        layer:
-        - FighterMask
+# - type: entity
+#   id: BaseFighter
+#   abstract: true
+#   components:
+#   - type: Mech
+#   - type: CanBeHeatTracked
+#   - type: ProximityFuseTarget
+#   - type: Physics
+#     bodyType: Dynamic
+#   - type: Fixtures
+#     fixtures:
+#       fix1:
+#         shape:
+#           !type:PhysShapeCircle
+#           radius: 1
+#         density: 21390
+#         mask:
+#         - FighterImpassable
+#         layer:
+#         - FighterMask
 
-- type: entity
-  id: LightFighter
-  parent: BaseFighter
-  abstract: true
-  components:
-  - type: Mech
-    equipmentWhitelist:
-      tags:
-      - LightFighterEquipment
-  - type: RangeBasedPvs
-    sendRange: 1500
-  - type: EntityIFFDesignation
-    name: "Fighter Without Name - get one!"
+# - type: entity
+#   id: LightFighter
+#   parent: BaseFighter
+#   abstract: true
+#   components:
+#   - type: Mech
+#     equipmentWhitelist:
+#       tags:
+#       - LightFighterEquipment
+#   - type: RangeBasedPvs
+#     sendRange: 1500
+#   - type: EntityIFFDesignation
+#     name: "Fighter Without Name - get one!"
 
 
-- type: entity
-  id: MediumFighter
-  parent: BaseFighter
-  abstract: true
-  components:
-  - type: Mech
-    equipmentWhitelist:
-      tags:
-      - MediumFighterEquipment
-      - LightFighterEquipment
-  - type: RangeBasedPvs
-    sendRange: 1500
-  - type: EntityIFFDesignation
-    name: "Fighter Without Name - get one!"
+# - type: entity
+#   id: MediumFighter
+#   parent: BaseFighter
+#   abstract: true
+#   components:
+#   - type: Mech
+#     equipmentWhitelist:
+#       tags:
+#       - MediumFighterEquipment
+#       - LightFighterEquipment
+#   - type: RangeBasedPvs
+#     sendRange: 1500
+#   - type: EntityIFFDesignation
+#     name: "Fighter Without Name - get one!"
 
-- type: entity
-  id: LightFighterEquipment
-  abstract: true
-  components:
-  - type: Tag
-    tags:
-    - LightFighter
-  - type: StaticPrice
-    price: 500
+# - type: entity
+#   id: LightFighterEquipment
+#   abstract: true
+#   components:
+#   - type: Tag
+#     tags:
+#     - LightFighter
+#   - type: StaticPrice
+#     price: 500
 
-- type: entity
-  id: MediumFighterEquipment
-  abstract: true
-  components:
-  - type: Tag
-    tags:
-    - MediumFighter
-    - LightFighter
-  - type: StaticPrice
-    price: 500
+# - type: entity
+#   id: MediumFighterEquipment
+#   abstract: true
+#   components:
+#   - type: Tag
+#     tags:
+#     - MediumFighter
+#     - LightFighter
+#   - type: StaticPrice
+#     price: 500
 
-- type: entity
-  id: WeaponFighterIdna
-  name: PTA 60mm "Idna" LRM torpedo system
-  description: A miniatured version of the original Idna, this system only holds one charge at a time and has a lengthy munitions fabrication timer.
-  suffix: Fighter, Combat, Torpedo
-  parent: [ BaseMechWeaponRange, MediumFighterEquipment ]
-  components:
-  - type: Sprite
-    sprite: _Crescent/Objects/Specific/fighterweapons.rsi
-    state: torpedo
-  - type: Gun
-    fireRate: 0.1
-    selectedMode: SemiAuto
-    availableModes:
-      - SemiAuto
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
-  - type: ProjectileBatteryAmmoProvider
-    proto: BulletRocketSmart
-    fireCost: 100
-  - type: Appearance
-  - type: AmmoCounter
-  - type: Tag
-    tags:
-    - MediumFighterEquipment
+# - type: entity
+#   id: WeaponFighterIdna
+#   name: PTA 60mm "Idna" LRM torpedo system
+#   description: A miniatured version of the original Idna, this system only holds one charge at a time and has a lengthy munitions fabrication timer.
+#   suffix: Fighter, Combat, Torpedo
+#   parent: [ BaseMechWeaponRange, MediumFighterEquipment ]
+#   components:
+#   - type: Sprite
+#     sprite: _Crescent/Objects/Specific/fighterweapons.rsi
+#     state: torpedo
+#   - type: Gun
+#     fireRate: 0.1
+#     selectedMode: SemiAuto
+#     availableModes:
+#       - SemiAuto
+#     soundGunshot:
+#       path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+#   - type: ProjectileBatteryAmmoProvider
+#     proto: BulletRocketSmart
+#     fireCost: 100
+#   - type: Appearance
+#   - type: AmmoCounter
+#   - type: Tag
+#     tags:
+#     - MediumFighterEquipment
 
-- type: entity
-  id: WeaponFighterAutocannon
-  name: SHI 'Kizoku' 90mm fighter autocannon system
-  description: A downscaled variant of the common Type 99 developed by Shinohara for use on heavier gunships. Fires depleted uranium 90mm rounds and is modified for an internal munitions assembler.
-  suffix: Fighter, Combat, Cannon
-  parent: [ BaseMechWeaponRange, MediumFighterEquipment ]
-  components:
-  - type: Sprite
-    sprite: _Crescent/Objects/Specific/fighterweapons.rsi
-    state: auto_cannon
-  - type: Gun
-    fireRate: 0.5
-    projectileSpeed: 95
-    availableModes:
-      - FullAuto
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/ship_duster.ogg
-  - type: ProjectileBatteryAmmoProvider
-    proto: BulletMechAutocannon
-    fireCost: 50
-  - type: Appearance
-  - type: AmmoCounter
-  - type: Tag
-    tags:
-    - MediumFighterEquipment
+# - type: entity
+#   id: WeaponFighterAutocannon
+#   name: SHI 'Kizoku' 90mm fighter autocannon system
+#   description: A downscaled variant of the common Type 99 developed by Shinohara for use on heavier gunships. Fires depleted uranium 90mm rounds and is modified for an internal munitions assembler.
+#   suffix: Fighter, Combat, Cannon
+#   parent: [ BaseMechWeaponRange, MediumFighterEquipment ]
+#   components:
+#   - type: Sprite
+#     sprite: _Crescent/Objects/Specific/fighterweapons.rsi
+#     state: auto_cannon
+#   - type: Gun
+#     fireRate: 0.5
+#     projectileSpeed: 95
+#     availableModes:
+#       - FullAuto
+#     soundGunshot:
+#       path: /Audio/Weapons/Guns/Gunshots/ship_duster.ogg
+#   - type: ProjectileBatteryAmmoProvider
+#     proto: BulletMechAutocannon
+#     fireCost: 50
+#   - type: Appearance
+#   - type: AmmoCounter
+#   - type: Tag
+#     tags:
+#     - MediumFighterEquipment
 
-- type: entity
-  id: WeaponFighterMachinegun
-  name: SHI 'Nambu' .50 light machinegun system
-  description: A miniaturized SHI-MG intended to intercept incoming missiles or other starfighters. Modified to have an internal munitions cycler.
-  suffix: Fighter, Combat, MG
-  parent: [ BaseMechWeaponRange, LightFighterEquipment ]
-  components:
-  - type: Sprite
-    sprite: _Crescent/Objects/Specific/fighterweapons.rsi
-    state: heavy_slugger
-  - type: Gun
-    fireRate: 8
-    projectileSpeed: 135
-    selectedMode: FullAuto
-    availableModes:
-      - FullAuto
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/vulcan.ogg
-  - type: ProjectileBatteryAmmoProvider
-    proto: BulletMechHeavyRifle
-    fireCost: 7
-  - type: Appearance
-  - type: AmmoCounter
-  - type: Tag
-    tags:
-    - LightFighterEquipment
+# - type: entity
+#   id: WeaponFighterMachinegun
+#   name: SHI 'Nambu' .50 light machinegun system
+#   description: A miniaturized SHI-MG intended to intercept incoming missiles or other starfighters. Modified to have an internal munitions cycler.
+#   suffix: Fighter, Combat, MG
+#   parent: [ BaseMechWeaponRange, LightFighterEquipment ]
+#   components:
+#   - type: Sprite
+#     sprite: _Crescent/Objects/Specific/fighterweapons.rsi
+#     state: heavy_slugger
+#   - type: Gun
+#     fireRate: 8
+#     projectileSpeed: 135
+#     selectedMode: FullAuto
+#     availableModes:
+#       - FullAuto
+#     soundGunshot:
+#       path: /Audio/Weapons/Guns/Gunshots/vulcan.ogg
+#   - type: ProjectileBatteryAmmoProvider
+#     proto: BulletMechHeavyRifle
+#     fireCost: 7
+#   - type: Appearance
+#   - type: AmmoCounter
+#   - type: Tag
+#     tags:
+#     - LightFighterEquipment

@@ -97,19 +97,6 @@
   - WeaponMechSword
 
 - type: technology
-  id: ShinoharaBasicFighterGuns
-  name: research-technology-shinohara-basicfighterguns
-  icon:
-    sprite: _Crescent/Objects/Specific/fighterweapons.rsi
-    state: auto_cannon
-  discipline: Corporate
-  tier: 1
-  cost: 7500
-  recipeUnlocks:
-  - WeaponFighterMachinegun
-  - WeaponFighterAutocannon
-
-- type: technology
   id: ShinoharaHighsec
   name: research-technology-shinohara-highsec
   icon:
@@ -425,3 +412,16 @@
   cost: 8000
   recipeUnlocks:
   - SHIShiverBlade
+
+- type: technology
+  id: ShinoharaAdvanceArmor
+  name: research-technology-shinohara-advance-armor
+  icon:
+    sprite: _Crescent/Clothing/SHI/OuterClothing/juggsuit.rsi
+    state: icon
+  discipline: Corporate
+  tier: 3
+  cost: 9000
+  recipeUnlocks:
+  - ClothingOuterHardsuitSHIJuggernaut
+  - ClothingOuterHardsuitSHISpeedsuit

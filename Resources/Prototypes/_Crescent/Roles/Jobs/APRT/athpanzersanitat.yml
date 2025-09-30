@@ -26,7 +26,7 @@
       - type: BibleUser
       - type: CPRTraining
       - type: SurgerySpeedModifier
-        speedModifier: 2
+        speedModifier: 1.75
 
   access:
   - EmergencyShuttleRepealAll

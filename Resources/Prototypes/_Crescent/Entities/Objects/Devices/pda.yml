@@ -79,6 +79,10 @@
     accentVColor: "#d4d4d4"
   - type: Icon
     state: pda-militiaman
+  - type: HealthAnalyzer
+    scanDelay: 1
+    scanningEndSound:
+      path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
   parent: BasePDA
@@ -244,6 +248,10 @@
     accentVColor: "#d4d4d4"
   - type: Icon
     state: pda-syndimedic
+  - type: HealthAnalyzer
+    scanDelay: 1
+    scanningEndSound:
+      path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
   parent: BasePDA
@@ -389,6 +397,10 @@
     borderColor: "#6d5f8a"
   - type: Icon
     state: basic
+  - type: HealthAnalyzer
+    scanDelay: 1
+    scanningEndSound:
+      path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
   parent: BasePDA
@@ -531,6 +543,10 @@
     borderColor: "#ffffff"
   - type: Icon
     state: hunter
+  - type: HealthAnalyzer
+    scanDelay: 1
+    scanningEndSound:
+      path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
   parent: BasePDA
@@ -673,6 +689,10 @@
     borderColor: "#535961"
   - type: Icon
     state: pda-bartender
+  - type: HealthAnalyzer
+    scanDelay: 1
+    scanningEndSound:
+      path: "/Audio/Items/Medical/healthscanner.ogg"
 
 #cmm
 
@@ -717,6 +737,10 @@
     borderColor: "#5191e0"
   - type: Icon
     state: cmm
+  - type: HealthAnalyzer
+    scanDelay: 1
+    scanningEndSound:
+      path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
   parent: BasePDA
@@ -1031,6 +1055,10 @@
     borderColor: "#535961"
   - type: Icon
     state: pda-bartender
+  - type: HealthAnalyzer
+    scanDelay: 1
+    scanningEndSound:
+      path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
   parent: BasePDA
@@ -1115,6 +1143,10 @@
     borderColor: "#535961"
   - type: Icon
     state: pda-bartender
+  - type: HealthAnalyzer
+    scanDelay: 1
+    scanningEndSound:
+      path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
   parent: BasePDA
@@ -1173,6 +1205,10 @@
     borderColor: "#535961"
   - type: Icon
     state: pda-bartender
+  - type: HealthAnalyzer
+    scanDelay: 1
+    scanningEndSound:
+      path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
   parent: BasePDA
