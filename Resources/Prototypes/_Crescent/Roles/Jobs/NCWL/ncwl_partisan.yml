@@ -59,3 +59,10 @@
     head: ClothingHeadHelmetNCWLBasic
     mask: ClothingMaskNCWLGasmask
     ears: ClothingHeadsetNCWL
+  storage:
+    back:
+    - Flash
+    - Tourniquet
+    - Zipties
+    - MagazinePistol
+    - CombatKnife
