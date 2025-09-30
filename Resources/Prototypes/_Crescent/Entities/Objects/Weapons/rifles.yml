@@ -52,7 +52,7 @@
 
 - type: entity
   name: IRM DA-1R Muster 5.56x45mm
-  parent: [BaseWeaponSniper, BaseGunWieldable]
+  parent: [BaseWeaponSniper, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponRifleDSMMuster
   description: A simple and cheap semi-auto rifle with a internal magazine, issued to rearline and reserve units. Chambered in 5.56x45mm Imperial.
   components:
@@ -77,7 +77,7 @@
 
 - type: entity
   name: NCWL MK-1 Rezerv 7.62x51mm
-  parent: [BaseWeaponSniper, BaseGunWieldable]
+  parent: [BaseWeaponSniper, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponRifleNCWLRezerv
   description: A simple, rugged 7.62x51mm battle rifle issued to Homeguard Protection units. Troops prefer it to the bulky Batanya when they need better handling without sacrificing stopping power.
   components:
@@ -102,7 +102,7 @@
 
 - type: entity
   name: SHI M28 Nimrod 7.62x51mm
-  parent: [BaseWeaponSniper, BaseGunWieldable]
+  parent: [BaseWeaponSniper, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponRifleSHINimrod
   description: An absurdly cheap-to-make hunting rifle sold at a major mark-up to desperate spacers and militiamen. Chambered in 7.62x51mm.
   components:
@@ -136,7 +136,7 @@
 - type: entity
   name: IRM DA-11 legionnaire 7.62x51mm
   id: WeaponRifleDSMLegionnaire
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
   description: An overengineered rifle, sharing multiple features with the C-20R SMG, such as a odd magazine angle and automatic magazine ejection. Chambered in 7.62x51mm USM rounds.
   components:
   - type: Item
@@ -185,7 +185,7 @@
 
 - type: entity
   name: PTA T3 Whisper 9x39mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponSubMachineGunPTAAsVal
   description: A robust rifle with an inbuilt suppressor. Features a special fast-burst mode to increase hit probability. Chambered in 9x39mm caseless rounds.
   components:
@@ -239,7 +239,7 @@
 
 - type: entity
   name: NCWL MK-3 Batanya 7.62x51mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponRifleNCWLBatanya
   description: An iconic weapon of war from the Union Foundry. Developed for use by their Homeguard. Comes equipped with NightGlo tracer dot sights. Chambered in 7.62x51mm, the proletariat's chamber.
   components:
@@ -294,7 +294,7 @@
 
 - type: entity
   name: SHI M55 Goro 7.62x51mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponRifleGoro
   description: A clunky battle rifle produced by Shinohara Heavy Industries for the civilian market. Often overlooked by more experienced solos and mercs for more rapid-firing alternatives - it's only saving grace is the heavy caliber.
   components:
@@ -350,7 +350,7 @@
 
 - type: entity
   name: PTA D5 Takemura 7.62x51mm/5.56x45mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponRifleTakemura
   description: A multicaliber fast shooting battle rifle from the Pang Tai Arms design labs. Cabable of shooting both 7.62x51mm and 5.56x45mm. Chambered in 7.62x51mm.
   components:
@@ -407,7 +407,7 @@
 
 - type: entity
   name: IRM DA-8 Miller 5.56x45mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponRifleMiller
   description: A mil-grade assault rifle produced by Olywir Armaments, primarily for the Imperial Garrison and Imperial Naval Forces. Comes chambered in light rounds. All flair.
   components:
@@ -459,7 +459,7 @@
 
 - type: entity
   name: NCWL MK-2 Falin 5.56x45mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponRifleFAL
   description: Reverse-engineered from Imperial light battle rifle designs. Sacrifices heavier calibers for better rifling, allowing for more rapid fire.
   components:
@@ -570,7 +570,7 @@
 
 - type: entity
   name: PTA 3AX Halyad 12.7x99mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponRifleHalyadMarksman
   description: A hefty long-range precision rifle. Packs devastating 12.7x99mm punches. Developed as part of Pang Tai's mercenary package.
   components:
@@ -626,7 +626,7 @@
 
 - type: entity
   name: SHI M215 Hound 5.56x45mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponRifleHoundMarksman
   description: A cheap marksman's rifle, one of the few weapons produced for an external market by Shinohara Heavy Industries. Often seen in the hands of wanna-be mercs and thugs.
   components:
@@ -680,7 +680,7 @@
 
 - type: entity
   name: HP M17-SA Hunter 5.56x45mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponRifleHunter
   description: A marksman's rifle of foreign make, repurposed as a mainline battle carbine amongst the predators of this Sector.
   components:
@@ -787,7 +787,7 @@
 
 - type: entity
   name: SHI M335 Barghest 12.7x99mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponRifleBarghest
   description: A hefty CQC battle rifle, built with a fast-burst mode copied from the PTA T3 Whisper. Chambered in the devastating 12.7x99mm round.
   components:
@@ -901,7 +901,7 @@
 
 - type: entity
   name: HGS ZoG-44 Hund 5.56x45mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponRifleSTG44
   description: The Zorngewehr 44. A foreign antique assault rifle design salvaged and hastily manufactured for specialized use. Chambered in 5.56x45.
   components:
@@ -968,7 +968,7 @@
 
 - type: entity
   name: HGS VAP-9B Ruusu  7.62x51mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponRifleRuusu
   description: The Vihainen Aseperhe 9B. A sleek advanced battle rifle paired with an integral supressor. Chambered in 7.62x51mm.
   components:
@@ -1021,7 +1021,7 @@
 
 - type: entity
   name: HGS VAP-10K Karbiini 5.56x45mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponRifleKarbiini
   description: The Vihainen Aseperhe 10K. An advanced rapid deployment rifle delivered in a lightweight and compact package. Chambered in 5.56x45mm.
   components:
@@ -1073,7 +1073,7 @@
 
 - type: entity
   name: K&K KM7 Taft 7.62x51mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponRifleTaft
   description: The next generation weapon system rifle produced by Kane & Knox. Fielded with a standard supressor and vertical foregrip. Chambered in 7.62x51mm.
   components:
@@ -1129,7 +1129,7 @@
 
 - type: entity
   name: K&K K4A1 Hayes 5.56x45mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponRifleHayes
   description: A standard carbine rifle produced by Kane & Knox. Was used extensively before being slowly phased out. Chambered in 5.56x45mm.
   components:
@@ -1185,7 +1185,7 @@
 
 - type: entity
   name: K&K K16 Carter 5.56x45mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponRifleCarter
   description: An outdated assault rifle produced by Kane & Knox. Comes with a fixed bayonet for those unlucky enough. Chambered in 5.56x45mm.
   components:
