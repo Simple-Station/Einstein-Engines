@@ -142,9 +142,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 200
-    intensitySlope: 150
-    maxIntensity: 100
+    totalIntensity: 3000
+    intensitySlope: 750
+    maxIntensity: 750
     maxTileBreak: 4
   - type: PointLight
     radius: 3.5
@@ -200,9 +200,9 @@
   components:
   - type: Explosive
     explosionType: Default
-    maxIntensity: 600
-    intensitySlope: 100
-    totalIntensity: 1800
+    maxIntensity: 800
+    intensitySlope: 200
+    totalIntensity: 10000
 
 - type: entity
   id: TorpedoBase
@@ -229,9 +229,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 75
-    intensitySlope: 20
-    totalIntensity: 450
+    maxIntensity: 800
+    intensitySlope: 200
+    totalIntensity: 10000
   - type: HeatSeeking
     rotationSpeed: 25
     acceleration: 25
@@ -300,8 +300,8 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 8000
-    intensitySlope: 500
+    totalIntensity: 40000
+    intensitySlope: 250
     maxIntensity: 2500
   - type: HeatSeeking
     rotationSpeed: 7 # slow turn rate
@@ -375,9 +375,9 @@
     disableDuration: 14
   - type: Explosive
     explosionType: Default
-    maxIntensity: 50
-    intensitySlope: 50
-    totalIntensity: 120
+    totalIntensity: 10000
+    intensitySlope: 250
+    maxIntensity: 2500
     maxTileBreak: 5
   - type: HeatSeeking
     rotationSpeed: 5 # slow turn rate
@@ -519,9 +519,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 7000
-    intensitySlope: 200
-    maxIntensity: 5000
+    totalIntensity: 25000
+    intensitySlope: 300
+    maxIntensity: 100
     maxTileBreak: 27
   - type: PointLight
     radius: 3.5
@@ -559,7 +559,7 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 3000
+    totalIntensity: 3000 #power is bumped up by tilebreak. i guess
     intensitySlope: 30
     maxIntensity: 100
     maxTileBreak: 1
@@ -678,10 +678,10 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 500
+    maxIntensity: 1250
     intensitySlope: 350
-    totalIntensity: 500
-    maxTileBreak: 6
+    totalIntensity: 250
+    maxTileBreak: 0
   - type: PointLight
     radius: 3.5
     color: red
@@ -930,9 +930,9 @@
         Radiation: 20
   - type: Explosive
     explosionType: Default
-    maxIntensity: 20
-    intensitySlope: 10
-    totalIntensity: 50
+    maxIntensity: 300
+    intensitySlope: 150
+    totalIntensity: 750
     maxTileBreak: 7
   - type: TimedDespawn
     lifetime: 14
@@ -1007,9 +1007,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 600
+    maxIntensity: 2000
     intensitySlope: 200
-    totalIntensity: 600
+    totalIntensity: 250
     maxTileBreak: 1
   - type: PointLight
     radius: 3.5
@@ -1143,9 +1143,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 40
-    intensitySlope: 35
-    totalIntensity: 145
+    maxIntensity: 20000
+    intensitySlope: 700
+    totalIntensity: 800
     maxTileBreak: 7
   - type: HeatSeeking
     rotationSpeed: 25
@@ -1184,9 +1184,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 20
-    intensitySlope: 12
-    totalIntensity: 100
+    maxIntensity: 300
+    intensitySlope: 200
+    totalIntensity: 2000
     maxTileBreak: 7
   - type: PointLight
     radius: 3.5
@@ -1220,7 +1220,7 @@
     explosionType: Default
     maxIntensity: 400
     intensitySlope: 350
-    totalIntensity: 400
+    totalIntensity: 1000
     maxTileBreak: 4
   - type: PointLight
     radius: 3.5
@@ -1529,9 +1529,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 60
-    intensitySlope: 50
-    totalIntensity: 60
+    maxIntensity: 900
+    intensitySlope: 750
+    totalIntensity: 900
     maxTileBreak: 5
   - type: PointLight
     radius: 3.5

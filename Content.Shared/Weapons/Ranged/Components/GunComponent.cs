@@ -210,7 +210,7 @@ public sealed partial class GunComponent : Component
     /// The base value for how fast the projectile moves.
     /// </summary>
     [DataField]
-    public float ProjectileSpeed = 37.5f; // 25f was vanilla projectile speed - hullrot edit
+    public float ProjectileSpeed = 25f;
 
     /// <summary>
     /// How fast the projectile moves.
@@ -261,14 +261,6 @@ public sealed partial class GunComponent : Component
     /// </summary>
     [DataField]
     public bool ClumsyProof = false;
-
-    /// <summary>
-    /// Goobstation
-    /// Whether the system won't change gun target when we stop aiming at it while firing in burst mode.
-    /// </summary>
-    [DataField]
-    public bool LockOnTargetBurst;
-
 
     /// <summary>
     /// Firing direction for an item not being held (e.g. shuttle cannons, thrown guns still firing).

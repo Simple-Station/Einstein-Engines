@@ -243,6 +243,12 @@
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
+  - type: ExtendDescription
+    descriptionList:
+      - description: This pistol comes with a muzzle booster. It deals 25% higher damage per shot.
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
 
 - type: entity
   name: PTA T2 Cobra 9x39mm
