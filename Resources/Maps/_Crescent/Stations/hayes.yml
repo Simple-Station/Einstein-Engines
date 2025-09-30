@@ -13125,7 +13125,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: WallReinforced
+- proto: WallReinforcedCapital
   entities:
   - uid: 1532
     components:
