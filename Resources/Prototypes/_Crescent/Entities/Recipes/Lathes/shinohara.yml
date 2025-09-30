@@ -1,4 +1,6 @@
+# Going to try to sort this shit
 
+# MARK: Uniforms
 - type: latheRecipe
   id: ClothingUniformJumpsuitExecutiveShinoharaSuit
   result: ClothingUniformJumpsuitExecutiveShinoharaSuit
@@ -47,6 +49,8 @@
   completetime: 2
   materials:
     Cloth: 500
+
+# MARK: Armor
 
 - type: latheRecipe
   id: ClothingUniformJumpsuitShinoharaHighsec
@@ -106,6 +110,8 @@
     Steel: 500
     Tungsten: 250
 
+#MARK: Hardsuits
+
 - type: latheRecipe
   id: ClothingOuterHardsuitHighsec
   result: ClothingOuterHardsuitHighsec
@@ -124,6 +130,28 @@
     Cloth: 1000
     Steel: 2000
     HardsuitElectronics: 500
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitSHISpeedsuit
+  result: ClothingOuterHardsuitSHISpeedsuit
+  completetime: 3
+  materials:
+    Durathread: 3000
+    Steel: 2500
+    Tungsten: 500
+    HardsuitElectronics: 1000
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitSHIJuggernaut
+  result: ClothingOuterHardsuitSHIJuggernaut
+  completetime: 3
+  materials:
+    Durathread: 1500
+    Steel: 5000
+    Tungsten: 2000
+    HardsuitElectronics: 1000
+
+# MARK: Weapons
 
 - type: latheRecipe
   id: WeaponPistolBlastpopRed
@@ -316,23 +344,42 @@
     AdvancedElectronics: 1000
 
 - type: latheRecipe
-  id: WeaponFighterMachinegun
-  result: WeaponFighterMachinegun
+  id: WeaponLauncherMilkor
+  result: WeaponLauncherMilkor
   completetime: 2
   materials:
-    Steel: 3000
-    BallisticCycler: 1000
-    BasicMechatronics: 2000
+    Steel: 2500
+    Gold: 1000
+    TubeLoader: 500
 
 - type: latheRecipe
-  id: WeaponFighterAutocannon
-  result: WeaponFighterAutocannon
+  id: WeaponLauncherDisposableRocket
+  result: WeaponLauncherDisposableRocket
   completetime: 2
   materials:
-    Steel: 3000
-    Uranium: 2000
-    TubeLoader: 1000
-    BasicMechatronics: 3000
+    Steel: 2500
+    Silver: 500
+
+# MARK: Mech Weapons
+
+# - type: latheRecipe
+#   id: WeaponFighterMachinegun
+#   result: WeaponFighterMachinegun
+#   completetime: 2
+#   materials:
+#     Steel: 3000
+#     BallisticCycler: 1000
+#     BasicMechatronics: 2000
+
+# - type: latheRecipe
+#   id: WeaponFighterAutocannon
+#   result: WeaponFighterAutocannon
+#   completetime: 2
+#   materials:
+#     Steel: 3000
+#     Uranium: 2000
+#     TubeLoader: 1000
+#     BasicMechatronics: 3000
 
 - type: latheRecipe
   id: WeaponMechCombatTaikotyo
@@ -362,23 +409,6 @@
     BasicMechatronics: 1000
 
 - type: latheRecipe
-  id: ShipyardManufactorumFlatpack
-  result: ShipyardManufactorumFlatpack
-  completetime: 2
-  materials:
-    Steel: 3000
-    AdvancedMechatronics: 1000
-    BasicMechatronics: 1000
-
-- type: latheRecipe
-  id: ScrapRefinerFlatpack
-  result: ScrapRefinerFlatpack
-  completetime: 2
-  materials:
-    Steel: 3000
-    Gold: 1000
-
-- type: latheRecipe
   id: WeaponMechCombatAutopuntgun
   result: WeaponMechCombatAutopuntgun
   completetime: 2
@@ -405,22 +435,24 @@
     Plasma: 2000
     AdvancedMechatronics: 1000
 
-- type: latheRecipe
-  id: WeaponLauncherMilkor
-  result: WeaponLauncherMilkor
-  completetime: 2
-  materials:
-    Steel: 2500
-    Gold: 1000
-    TubeLoader: 500
+# MARK: Flatpacks
 
 - type: latheRecipe
-  id: WeaponLauncherDisposableRocket
-  result: WeaponLauncherDisposableRocket
+  id: ShipyardManufactorumFlatpack
+  result: ShipyardManufactorumFlatpack
   completetime: 2
   materials:
-    Steel: 2500
-    Silver: 500
+    Steel: 3000
+    AdvancedMechatronics: 1000
+    BasicMechatronics: 1000
+
+- type: latheRecipe
+  id: ScrapRefinerFlatpack
+  result: ScrapRefinerFlatpack
+  completetime: 2
+  materials:
+    Steel: 3000
+    Gold: 1000
 
 - type: latheRecipe
   id: FleaLPC
@@ -482,36 +514,6 @@
     Silver: 5000
     Steel: 12500
     Tungsten: 2500
-
-- type: latheRecipe
-  id: CyberneticsDermalArmor
-  result: CyberneticsDermalArmor
-  completetime: 2
-  materials:
-    AdvancedElectronics: 2000
-    Biomass: 1000
-    Silver: 2000
-    Tungsten: 2500
-
-- type: latheRecipe
-  id: ShinoharaOptics
-  result: ShinoharaOptics
-  completetime: 2
-  materials:
-    AdvancedElectronics: 1000
-    Glass: 1000
-    Gold: 750
-
-- type: latheRecipe
-  id: CyberneticsMantisBladeRight
-  result: CyberneticsMantisBladeRight
-  completetime: 2
-  materials:
-    BasicElectronics: 1500
-    AdvancedMechatronics: 3000
-    Gold: 1000
-    Plasma: 500
-    Steel: 750
 
 - type: latheRecipe
   id: BoriaticComposterFlatpack
@@ -616,6 +618,8 @@
     Silver: 1000
     Steel: 1000
 
+#MARK:Components
+
 - type: latheRecipe
   id: HardlightGenerator1
   result: HardlightGenerator1
@@ -686,6 +690,8 @@
     AdvancedMechatronics: 1000
     Steel: 1500
 
+#MARK: Melee
+
 - type: latheRecipe
   id: TelescopicBatonSHI
   result: TelescopicBaton
@@ -717,3 +723,35 @@
     AdvancedElectronics: 1000
     Plasma: 500
     WeakLaserLocus: 500
+
+#MARK: Cybernetics
+
+- type: latheRecipe
+  id: CyberneticsDermalArmor
+  result: CyberneticsDermalArmor
+  completetime: 2
+  materials:
+    AdvancedElectronics: 2000
+    Biomass: 1000
+    Silver: 2000
+    Tungsten: 2500
+
+- type: latheRecipe
+  id: ShinoharaOptics
+  result: ShinoharaOptics
+  completetime: 2
+  materials:
+    AdvancedElectronics: 1000
+    Glass: 1000
+    Gold: 750
+
+- type: latheRecipe
+  id: CyberneticsMantisBladeRight
+  result: CyberneticsMantisBladeRight
+  completetime: 2
+  materials:
+    BasicElectronics: 1500
+    AdvancedMechatronics: 3000
+    Gold: 1000
+    Plasma: 500
+    Steel: 750
