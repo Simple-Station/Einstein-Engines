@@ -445,6 +445,28 @@
     Tungsten: 1500
 
 - type: latheRecipe
+  id: WeaponMechCombatImperialSMG
+  result: WeaponMechCombatImperialSMG
+  completetime: 2
+  materials:
+    Steel: 2000
+    Copper: 1500
+    BasicElectronics: 1250
+    BasicMechatronics: 750
+
+- type: latheRecipe
+  id: WeaponMechCombatImperialAutolaser
+  result: WeaponMechCombatImperialAutolaser
+  completetime: 2
+  materials:
+    Steel: 1500
+    Plasma: 500
+    Copper: 1000
+    BasicElectronics: 1500
+    BasicMechatronics: 750
+    WeakLaserLocus: 2000
+
+- type: latheRecipe
   id: WeaponMechCombatPlasmaRifle
   result: WeaponMechCombatPlasmaRifle
   completetime: 2
