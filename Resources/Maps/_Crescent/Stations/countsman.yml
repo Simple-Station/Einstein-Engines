@@ -61998,18 +61998,18 @@ entities:
       parent: 1
 - proto: CargoTelepad
   entities:
-  - uid: 3454
-    components:
-    - type: Transform
-      pos: 24.5,-15.5
-      parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 4173
   - uid: 3455
     components:
     - type: Transform
       pos: 24.5,-14.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 4173
+  - uid: 3454
+    components:
+    - type: Transform
+      pos: 24.5,-15.5
       parent: 1
     - type: DeviceLinkSink
       links:
@@ -66129,39 +66129,13 @@ entities:
       parent: 1
     - type: ApcPowerReceiver
       needsPower: False
-- proto: ComputerCargoOrdersSurezai
+- proto: ComputerPalletConsoleNFVeryLowMarket
   entities:
   - uid: 4173
     components:
     - type: Transform
       pos: 19.5,-11.5
       parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        3457:
-        - - OrderSender
-          - OrderReceiver
-        3459:
-        - - OrderSender
-          - OrderReceiver
-        3456:
-        - - OrderSender
-          - OrderReceiver
-        3455:
-        - - OrderSender
-          - OrderReceiver
-        3461:
-        - - OrderSender
-          - OrderReceiver
-        3458:
-        - - OrderSender
-          - OrderReceiver
-        3454:
-        - - OrderSender
-          - OrderReceiver
-        3462:
-        - - OrderSender
-          - OrderReceiver
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -66212,13 +66186,39 @@ entities:
       rot: 3.141592653589793 rad
       pos: 6.5,-15.5
       parent: 1
-- proto: ComputerPalletConsoleNFVeryLowMarket
+- proto: ComputerCargoOrdersSurezai
   entities:
   - uid: 4180
     components:
     - type: Transform
       pos: 25.5,-11.5
       parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        3457:
+        - - OrderSender
+          - OrderReceiver
+        3459:
+        - - OrderSender
+          - OrderReceiver
+        3456:
+        - - OrderSender
+          - OrderReceiver
+        3455:
+        - - OrderSender
+          - OrderReceiver
+        3461:
+        - - OrderSender
+          - OrderReceiver
+        3458:
+        - - OrderSender
+          - OrderReceiver
+        3454:
+        - - OrderSender
+          - OrderReceiver
+        3462:
+        - - OrderSender
+          - OrderReceiver
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -77132,7 +77132,7 @@ entities:
       pos: 0.5,-14.5
       parent: 1
     - type: Label
-      currentLabel: The Countsman 
+      currentLabel: The Countsman
 - proto: HospitalCurtainsOpen
   entities:
   - uid: 5613
