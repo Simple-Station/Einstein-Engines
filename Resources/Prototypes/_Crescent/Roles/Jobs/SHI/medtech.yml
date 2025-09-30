@@ -25,7 +25,7 @@
     components:
       - type: CPRTraining
       - type: SurgerySpeedModifier
-        speedModifier: 1.5
+        speedModifier: 1.75
       - type: ChatRank
         rank: crescent-rank-shi-medtech
       - type: LanguageAdder

@@ -48,12 +48,20 @@
   id: HighsecGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitShinoharaHighsec
+    outerClothing: ClothingOuterArmorShinoharaArmorHighsec
+    head: ClothingHeadHatShinoharaHelmet
     shoes: ClothingShoesBootsCombat
     gloves: ClothingHandsGlovesCombat
     id: HighsecPDA
     eyes: ClothingEyesGlassesSunglasses
     ears: ClothingHeadsetShinohara
-    pocket1: Handcuffs
+    pocket1: WeaponPistolLiquidator
     pocket2: TradePassport
     back: ClothingBackpackSHISatchel
-    belt: WeaponPistolLiquidator
+    belt: ClothingBeltAssault
+  storage:
+    back:
+    - Flash
+    - Tourniquet
+    - Handcuffs
+    - CombatKnife

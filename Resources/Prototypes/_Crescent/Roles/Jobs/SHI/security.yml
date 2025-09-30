@@ -46,11 +46,20 @@
   id: CorpsecGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitShinoharaSecurity
+    outerClothing: ClothingOuterArmorShinoharaArmor
+    head: ClothingHeadHatShinoharaBeret
     shoes: ClothingShoesBootsCombat
     gloves: ClothingHandsGlovesCombat
     id: CorpsecPDA
     ears: ClothingHeadsetShinohara
-    pocket1: Handcuffs
+    pocket1: WeaponPistolHimehabu
     pocket2: TradePassport
     back: ClothingBackpackSHISatchel
-    belt: WeaponPistolHimehabu
+    belt: ClothingBeltSecurityFilled
+  storage:
+    back:
+    - Flash
+    - Tourniquet
+    - Zipties
+    - MagazinePistol
+    - CombatKnife
