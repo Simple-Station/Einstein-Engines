@@ -1,6 +1,6 @@
 - type: entity
   id: BaseMagazineHeavyRifle
-  name: "magazine (12.7×99mm USM)"
+  name: "16-round magazine (12.7×99mm USM)"
   parent: BaseItem
   abstract: true
   components:
@@ -32,7 +32,7 @@
 
 - type: entity
   id: MagazineBoxRifleMinigun
-  name: "Minigun Ammo Box (.10 rifle)"
+  name: "500-round Minigun Ammo Box (.10 rifle)"
   parent: BaseMagazineHeavyRifle
   components:
   - type: Tag

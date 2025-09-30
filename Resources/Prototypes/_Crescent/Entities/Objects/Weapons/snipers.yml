@@ -52,7 +52,6 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
-  - type: LaserPointer
   - type: StaticPrice
     price: 3000
 
@@ -109,7 +108,6 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
-  - type: LaserPointer
   - type: StaticPrice
     price: 2000
 
@@ -166,7 +164,6 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
-  - type: LaserPointer
   - type: StaticPrice
     price: 2000
 
@@ -223,7 +220,6 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
-  - type: LaserPointer
   - type: StaticPrice
     price: 2000
 
@@ -280,6 +276,5 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
-  - type: LaserPointer
   - type: StaticPrice
     price: 5000

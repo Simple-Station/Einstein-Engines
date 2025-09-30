@@ -1,4 +1,31 @@
 - type: Tag
+  id: BulletHeavyPistol
+
+- type: Tag
+  id: C8XAutocannonPartBlueprint
+
+- type: Tag
+  id: C8XAutocannonPartBarrel
+
+- type: Tag
+  id: C8XAutocannonPartMisc
+
+- type: Tag
+  id: C8XAutocannonPartReceiver
+
+- type: Tag
+  id: GunParts
+
+- type: Tag
+  id: SpeedLoader27mmAutocannon
+
+- type: Tag
+  id: 27mmAutocannon
+
+- type: Tag
+  id: MagazineHeavyPistol
+
+- type: Tag
   id: Rocket84mmRecoilless
 
 - type: Tag

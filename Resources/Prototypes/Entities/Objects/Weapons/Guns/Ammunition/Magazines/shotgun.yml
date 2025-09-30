@@ -1,6 +1,6 @@
 - type: entity
   id: BaseMagazineShotgun
-  name: ammo drum (12g shells)
+  name: 8-round magazine (12g shells)
   parent: BaseItem
   abstract: true
   components:
@@ -35,7 +35,7 @@
 
 - type: entity
   id: MagazineShotgunEmpty
-  name: ammo drum (12g shells any)
+  name: 8-round magazine (12g shells any)
   suffix: empty
   parent: BaseMagazineShotgun
   components:
@@ -44,7 +44,7 @@
 
 - type: entity
   id: MagazineShotgun
-  name: ammo drum (12g pellet)
+  name: 8-round magazine (12g pellet)
   parent: BaseMagazineShotgun
   components:
   - type: BallisticAmmoProvider
@@ -58,7 +58,7 @@
 
 - type: entity
   id: MagazineShotgunBeanbag
-  name: ammo drum (12g beanbags)
+  name: 8-round magazine (12g beanbags)
   parent: BaseMagazineShotgun
   components:
   - type: BallisticAmmoProvider
@@ -72,7 +72,7 @@
 
 - type: entity
   id: MagazineShotgunSlug
-  name: ammo drum (12g slug)
+  name: 8-round magazine (12g slug)
   parent: BaseMagazineShotgun
   components:
   - type: BallisticAmmoProvider
@@ -86,7 +86,7 @@
 
 - type: entity
   id: MagazineShotgunIncendiary
-  name: ammo drum (12g incendiary)
+  name: 8-round magazine (12g incendiary)
   parent: BaseMagazineShotgun
   components:
   - type: BallisticAmmoProvider
@@ -100,7 +100,7 @@
 
 - type: entity
   id: MagazineShotgunUranium
-  name: ammo drum (12g uranium slug)
+  name: 8-round magazine (12g uranium slug)
   parent: BaseMagazineShotgun
   components:
   - type: BallisticAmmoProvider
@@ -114,7 +114,7 @@
 
 - type: entity
   id: MagazineShotgunBirdshot
-  name: ammo drum (12g birdshot)
+  name: 8-round magazine (12g birdshot)
   parent: BaseMagazineShotgun
   components:
   - type: BallisticAmmoProvider
@@ -128,7 +128,7 @@
 
 - type: entity
   id: MagazineShotgun00Buckshot
-  name: ammo drum (12g 00-Buckshot)
+  name: 8-round magazine (12g 00-Buckshot)
   parent: BaseMagazineShotgun
   components:
   - type: BallisticAmmoProvider
@@ -142,7 +142,7 @@
 
 - type: entity
   id: MagazineShotgun0000Buckshot
-  name: ammo drum (12g 0000-Buckshot)
+  name: 8-round magazine (12g 0000-Buckshot)
   parent: BaseMagazineShotgun
   components:
   - type: BallisticAmmoProvider

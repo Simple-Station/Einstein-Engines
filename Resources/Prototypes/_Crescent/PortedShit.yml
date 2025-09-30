@@ -127,19 +127,6 @@
     guides:
     - Science
 
-- type: entity
-  id: BulletHeavyPistol
-  name: bullet (11mm PSTF)
-  parent: BaseBullet
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Projectile
-    damage:
-      types:
-        Piercing: 24
-    harmorPenetration: 6.5
-    stoppingPower : 2
-
   # Machines
 # Engineering
 - type: entity
@@ -220,35 +207,10 @@
       tags: # Frontier
       - Sidearm # Frontier
 
-
-- type: entity
-  id: MagazinePistolSubMachineGunHeavy
-  name: SMG magazine (11mm PSTF auto)
-  parent: BaseMagazinePistolSubMachineGun
-  components:
-  - type: BallisticAmmoProvider
-    capacity: 25
-    proto: CartridgeHeavyPistol
-    whitelist:
-      tags:
-        - CartridgeHeavyPistol
-    soundInsert:
-      path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg
-  - type: Tag
-    tags:
-      - MagazineHeavySMG
-  - type: Sprite
-    layers:
-    - state: red
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-
-
 - type: entity
   id: MagazineMagnumSub
   suffix: Submachinegun
-  name: extended pistol magazine (.327 Imperial magnum)
+  name: 25-round extended pistol magazine (.327 Imperial magnum)
   parent: BaseMagazineMagnumSubMachineGun
   components:
   - type: BallisticAmmoProvider
@@ -264,7 +226,7 @@
 
 - type: entity
   id: MagazineHeavyRifle
-  name: heavy magazine (12.7×99mm USM)
+  name: 16-round heavy magazine (12.7×99mm USM)
   parent: BaseMagazineHeavyRifle
   components:
   - type: BallisticAmmoProvider
@@ -418,18 +380,6 @@
     steps: 9
     zeroVisible: false
   - type: Appearance
-
-- type: entity
-  id: CartridgeHeavyPistol
-  name: cartridge (11mm PSTF auto)
-  parent: BaseCartridgePistol
-  components:
-  - type: Tag
-    tags:
-      - CartridgeHeavyPistol
-      - Cartridge
-  - type: CartridgeAmmo
-    proto: BulletHeavyPistol
 
 - type: entity
   id: CartridgeLightRifleRubber
