@@ -3,7 +3,7 @@
   name: job-name-board
   description: job-description-board
   playTimeTracker: JobBoardSHI
-  weight: 99
+  weight: 6
   startingGear: BoardGear
   alwaysUseSpawner: true
   requireAdminNotify: true
@@ -61,7 +61,7 @@
   name: job-name-boardhr
   description: job-description-boardhr
   playTimeTracker: JobBoardHRSHI
-  weight: 99
+  weight: 7
   startingGear: BoardHRGear
   alwaysUseSpawner: true
   requireAdminNotify: true

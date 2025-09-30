@@ -3,7 +3,7 @@
   name: job-name-highsec
   description: job-description-highsec
   playTimeTracker: JobHighsecSHI
-  weight: 50
+  weight: 4
   startingGear: HighsecGear
   alwaysUseSpawner: true
   requireAdminNotify: false
@@ -63,7 +63,7 @@
   name: job-name-hos-shi
   description: job-description-hos-shi
   playTimeTracker: JobHosSHI
-  weight: 50
+  weight: 5
   startingGear: HosGear
   alwaysUseSpawner: true
   requireAdminNotify: false
