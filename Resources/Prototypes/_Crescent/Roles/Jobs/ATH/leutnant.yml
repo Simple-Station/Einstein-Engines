@@ -24,6 +24,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-leutnant
+      - type: HullrotFaction
+        faction: ATH
       - type: LanguageAdder
         addSpoken:
           - SolBasic
