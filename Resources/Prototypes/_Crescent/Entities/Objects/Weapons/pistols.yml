@@ -335,11 +335,11 @@
             - MagazinePistolSmartgun
       gun_chamber:
         name: Chamber
-        startingItem: CartridgePistol
+        startingItem: CartridgePistol12mm
         priority: 1
         whitelist:
           tags:
-            - CartridgePistol
+            - CartridgePistolSmart
   - type: StaticPrice
     price: 3500
 
