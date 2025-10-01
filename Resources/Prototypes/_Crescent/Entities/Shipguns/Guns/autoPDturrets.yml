@@ -118,11 +118,11 @@
         SoundTargetInLOS: !type:SoundPathSpecifier
           path: /Audio/Effects/double_beep.ogg
         VisionRadius: !type:Single
-          128 #might be divided by 8 for some reason
+          2048 #might be divided by 8 for some reason
         RangedRange: !type:Single
-          128
-        # AggroVisionRadius: !type:Single
-        #   2048 #this is divided by 8 for some reason
+          2048
+        AggroVisionRadius: !type:Single
+          2048 #this is divided by 8 for some reason
 
 
 - type: entity
