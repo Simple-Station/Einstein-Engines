@@ -1569,7 +1569,8 @@
   description: A plastic model of a Nuclear Fission Explosive. No uranium included... probably.
   components:
   - type: Sprite
-    state: nuketoy
+    sprite: Objects/Fun/toy_nuke.rsi
+    state: icon
   - type: Tag
     tags:
     - Payload
@@ -1890,11 +1891,11 @@
   description: Mass-produced by a sadistic corporate conglomerate!
   components:
   - type: Sprite
-    sprite: Objects/Fun/toys.rsi
-    state: singularitytoy
+    sprite: Objects/Fun/toy_singularity.rsi
+    state: icon
   - type: Icon
-    sprite: Objects/Fun/toys.rsi
-    state: singularitytoy
+    sprite: Objects/Fun/toy_singularity.rsi
+    state: icon
   - type: SingularityDistortion
     intensity: 2000
     falloffPower: 2.6
