@@ -33,9 +33,11 @@
     clothingPrototype: ClothingHeadHelmetHardsuitImperialWorker
   - type: StaticPrice
     price: 2500
+  - type: ClothingAddFaction
+    faction: DSM
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, StreeCredRedeemableHigh]
   id: ClothingOuterHardsuitInspector
   name: mk. IV 'ORATEUR' combat hardsuit
   description: A modular combat hardsuit for the Advocati Compliance Corps. Bears the colors of the Kaiser's administration.
@@ -67,6 +69,8 @@
     clothingPrototype: ClothingHeadHelmetHardsuitInspector
   - type: StaticPrice
     price: 3500
+  - type: ClothingAddFaction
+    faction: DSM
 
 - type: entity
   parent: ClothingOuterHardsuitBase
@@ -101,6 +105,8 @@
     clothingPrototype: ClothingHeadHelmetHardsuitClarizeWorker
   - type: StaticPrice
     price: 2500
+  - type: ClothingAddFaction
+    faction: DSM
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -125,6 +131,8 @@
         Caustic: 25
   - type: StaticPrice
     price: 500
+  - type: ClothingAddFaction
+    faction: DSM
 
 - type: entity
   parent: ClothingOuterHardsuitBase
@@ -159,9 +167,11 @@
     clothingPrototype: ClothingHeadHelmetHardsuitClarize
   - type: StaticPrice
     price: 2500
+  - type: ClothingAddFaction
+    faction: DSM
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, StreeCredRedeemableHigh]
   id: ClothingOuterHardsuitImperialCommand
   name: imperial command hardsuit
   description: A modular commander's hardsuit, bearing the colors of House Olywir.
@@ -193,9 +203,11 @@
     clothingPrototype: ClothingHeadHelmetHardsuitImperialCommand
   - type: StaticPrice
     price: 5000
+  - type: ClothingAddFaction
+    faction: DSM
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase,StreeCredRedeemableLow]
   id: ClothingOuterHardsuitImperialSoldier
   name: imperial 'JANNISSARY' mk I combat hardsuit
   description: A modular soldier's hardsuit, bears the colors of the Kaiser and House Olywir.
@@ -227,9 +239,11 @@
     clothingPrototype: ClothingHeadHelmetHardsuitImperialSoldier
   - type: StaticPrice
     price: 4500
+  - type: ClothingAddFaction
+    faction: DSM
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, StreeCredRedeemable]
   id: ClothingOuterHardsuitImperialKnight
   name: imperial 'KONIGSCHILD' mk II combat hardsuit
   description: A modular knight's hardsuit, bears the colors of the Kaiser and House Olywir.
@@ -261,6 +275,8 @@
     clothingPrototype: ClothingHeadHelmetHardsuitImperialKnight
   - type: StaticPrice
     price: 6000
+  - type: ClothingAddFaction
+    faction: DSM
 
 # armor
 
@@ -290,6 +306,8 @@
   - type: AllowSuitStorage
   - type: StaticPrice
     price: 1500
+  - type: ClothingAddFaction
+    faction: DSM
 
 - type: entity
   parent: ClothingOuterArmorBasic
@@ -316,6 +334,8 @@
     damageCoefficient: 0.80
   - type: StaticPrice
     price: 1500
+  - type: ClothingAddFaction
+    faction: DSM
 
 - type: entity
   parent: ClothingOuterBaseLarge
@@ -343,6 +363,9 @@
   - type: StaticPrice
     price: 3000
   - type: AllowSuitStorage
+  - type: ClothingAddFaction
+    faction: DSM
+
 #coats
 
 - type: entity
@@ -368,6 +391,8 @@
         Caustic: 25
   - type: StaticPrice
     price: 1500
+  - type: ClothingAddFaction
+    faction: DSM
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -392,6 +417,8 @@
         Caustic: 25
   - type: StaticPrice
     price: 1500
+  - type: ClothingAddFaction
+    faction: DSM
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -416,6 +443,8 @@
         Caustic: 25
   - type: StaticPrice
     price: 1500
+  - type: ClothingAddFaction
+    faction: DSM
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -440,6 +469,8 @@
         Caustic: 25
   - type: StaticPrice
     price: 2000
+  - type: ClothingAddFaction
+    faction: DSM
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -453,6 +484,8 @@
     sprite: _Crescent/Clothing/Empire/OuterClothing/mandateparade.rsi
   - type: StaticPrice
     price: 1000
+  - type: ClothingAddFaction
+    faction: DSM
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -466,6 +499,8 @@
     sprite: _Crescent/Clothing/Empire/OuterClothing/clarizianofficer.rsi
   - type: StaticPrice
     price: 1000
+  - type: ClothingAddFaction
+    faction: DSM
 
 - type: entity
   parent: ClothingOuterEVASuitBase
@@ -487,6 +522,8 @@
     size: Large
     shape:
     - 0,0,3,3
+  - type: ClothingAddFaction
+    faction: DSM
 
 - type: entity
   parent: ClothingOuterHardsuitBase
@@ -521,6 +558,8 @@
     clothingPrototype: ClothingHeadHelmetImperialRitter
   - type: StaticPrice
     price: 2000
+  - type: ClothingAddFaction
+    faction: DSM
 
 - type: entity
   parent: ClothingOuterHardsuitBase
@@ -555,3 +594,5 @@
     clothingPrototype: ClothingHeadHelmetHardsuitImperialNullweavePsion
   - type: StaticPrice
     price: 2500
+  - type: ClothingAddFaction
+    faction: DSM

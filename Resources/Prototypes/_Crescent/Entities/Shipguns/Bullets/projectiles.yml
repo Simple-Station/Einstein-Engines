@@ -143,8 +143,8 @@
   - type: Explosive
     explosionType: Default
     totalIntensity: 3000
-    intensitySlope: 2250
-    maxIntensity: 1500
+    intensitySlope: 750
+    maxIntensity: 750
     maxTileBreak: 4
   - type: PointLight
     radius: 3.5
@@ -200,9 +200,9 @@
   components:
   - type: Explosive
     explosionType: Default
-    maxIntensity: 600
-    intensitySlope: 100
-    totalIntensity: 1800
+    maxIntensity: 1000
+    intensitySlope: 400
+    totalIntensity: 15000
 
 - type: entity
   id: TorpedoBase
@@ -229,14 +229,14 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 1125
-    intensitySlope: 300
-    totalIntensity: 6750
+    maxIntensity: 1000
+    intensitySlope: 400
+    totalIntensity: 15000
   - type: HeatSeeking
     rotationSpeed: 25
     acceleration: 25
     topSpeed: 50
-    fov: 30
+    fieldOfView: 40
     defaultSeekingRange: 600
     guidanceAlgorithm: PredictiveGuidance
   - type: PointLight
@@ -300,14 +300,14 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 8000
-    intensitySlope: 500
+    totalIntensity: 40000
+    intensitySlope: 250
     maxIntensity: 2500
   - type: HeatSeeking
     rotationSpeed: 7 # slow turn rate
     acceleration: 5
     topSpeed: 40
-    fov: 20
+    fieldOfView: 30
     defaultSeekingRange: 1500 # long range
     guidanceAlgorithm: PredictiveGuidance
   - type: PointLight
@@ -375,15 +375,15 @@
     disableDuration: 14
   - type: Explosive
     explosionType: Default
-    maxIntensity: 750
-    intensitySlope: 750
-    totalIntensity: 1800
+    totalIntensity: 10000
+    intensitySlope: 250
+    maxIntensity: 2500
     maxTileBreak: 5
   - type: HeatSeeking
     rotationSpeed: 5 # slow turn rate
     acceleration: 5
     topSpeed: 40
-    fov: 20
+    fieldOfView: 30
     defaultSeekingRange: 1500 # long range
     guidanceAlgorithm: PredictiveGuidance
   - type: PointLight
@@ -462,7 +462,7 @@
     rotationSpeed: 15 # slow rotation so it isnt aimbot, still fairly accurate though
     acceleration: 120
     topSpeed: 120
-    fov: 30
+    fieldOfView: 30
     defaultSeekingRange: 400
     guidanceAlgorithm: PredictiveGuidance
   - type: Fixtures
@@ -519,9 +519,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 7000
-    intensitySlope: 200
-    maxIntensity: 5000
+    totalIntensity: 25000
+    intensitySlope: 300
+    maxIntensity: 100
     maxTileBreak: 27
   - type: PointLight
     radius: 3.5
@@ -559,7 +559,7 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 3000
+    totalIntensity: 3000 #power is bumped up by tilebreak. i guess
     intensitySlope: 30
     maxIntensity: 100
     maxTileBreak: 1
@@ -678,10 +678,10 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 500
+    maxIntensity: 1250
     intensitySlope: 350
-    totalIntensity: 500
-    maxTileBreak: 6
+    totalIntensity: 250
+    maxTileBreak: 0
   - type: PointLight
     radius: 3.5
     color: red
@@ -951,7 +951,7 @@
     rotationSpeed: 20 # slow rotation so it isnt aimbot, still fairly accurate though
     acceleration: 85
     topSpeed: 85
-    fov: 20
+    fieldOfView: 20
     defaultSeekingRange: 400
     guidanceAlgorithm: PredictiveGuidance
   - type: Fixtures
@@ -1007,9 +1007,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 600
+    maxIntensity: 2000
     intensitySlope: 200
-    totalIntensity: 600
+    totalIntensity: 250
     maxTileBreak: 1
   - type: PointLight
     radius: 3.5
@@ -1019,7 +1019,7 @@
     rotationSpeed: 15
     acceleration: 25
     topSpeed: 125
-    fov: 30
+    fieldOfView: 30
     defaultSeekingRange: 400
     guidanceAlgorithm: PredictiveGuidance
   - type: Fixtures
@@ -1143,15 +1143,14 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 200
-    intensitySlope: 175
-    totalIntensity: 725
+    maxIntensity: 20000
+    intensitySlope: 700
+    totalIntensity: 800
     maxTileBreak: 7
   - type: HeatSeeking
     rotationSpeed: 25
     acceleration: 5
     topSpeed: 20
-    initialSpeed: 10
     defaultSeekingRange: 300
     guidanceAlgorithm: PredictiveGuidance
   - type: PointLight
@@ -1186,8 +1185,8 @@
   - type: Explosive
     explosionType: Default
     maxIntensity: 300
-    intensitySlope: 180
-    totalIntensity: 1500
+    intensitySlope: 200
+    totalIntensity: 2000
     maxTileBreak: 7
   - type: PointLight
     radius: 3.5
@@ -1221,7 +1220,7 @@
     explosionType: Default
     maxIntensity: 400
     intensitySlope: 350
-    totalIntensity: 400
+    totalIntensity: 1000
     maxTileBreak: 4
   - type: PointLight
     radius: 3.5

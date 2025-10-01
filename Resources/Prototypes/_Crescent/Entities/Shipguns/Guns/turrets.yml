@@ -62,7 +62,7 @@
 
 - type: entity
   parent: WeaponTurretPDT
-  id: WeaponTurretPDTNCSP
+  id: WeaponTurretPDTAdvanced
   suffix: ShipGun, Tier 2
   name: SHI MG-213 light dual machinegun 20x135mm Mk. II
   components:
@@ -71,7 +71,7 @@
       projectileSpeed: 145
       fireRate: 5.5
     - type: Machine
-      board: WeaponTurretPDTNCSPCircuitboard
+      board: WeaponTurretPDTAdvancedCircuitboard
 
 # VULCAN TURRET
 
@@ -433,7 +433,7 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 500
+            damage: 1000
           # TODO: Construction graph
           behaviors:
             - !type:ChangeConstructionNodeBehavior
@@ -447,7 +447,7 @@
     - type: Gun
       fireOnDropChance: 0
       projectileSpeed: 95
-      fireRate: 4
+      fireRate: 8
       selectedMode: FullAuto
       availableModes:
         - FullAuto

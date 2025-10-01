@@ -30333,7 +30333,7 @@ entities:
     - type: PointCannon
       obstructedRanges:
       - 0.6806784082777885 rad: 3.3510321638291125 rad
-- proto: WeaponTurretPDTNCSP
+- proto: WeaponTurretPDTAdvanced
   entities:
   - uid: 4074
     components:

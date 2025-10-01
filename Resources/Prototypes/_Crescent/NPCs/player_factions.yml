@@ -1,0 +1,47 @@
+# USED FOR FACTION DISGUISING AND AUTOPD SYSTEM
+# .2 | 2025
+
+- type: npcFaction
+  id: NCWL
+  hostile:
+    # - NCWL
+    - TFSC
+    - DSM
+    - SHI
+    - IND
+
+- type: npcFaction
+  id: TFSC
+  hostile:
+    - NCWL
+    # - TFSC
+    - DSM
+    - SHI
+    - IND
+
+- type: npcFaction
+  id: DSM
+  hostile:
+    - NCWL
+    - TFSC
+    # - DSM
+    - SHI
+    - IND
+
+- type: npcFaction
+  id: SHI
+  hostile:
+    - NCWL
+    - TFSC
+    - DSM
+    # - SHI
+    - IND
+
+- type: npcFaction
+  id: IND #independents
+  hostile:
+    - NCWL
+    - TFSC
+    - DSM
+    - SHI
+    # - IND

@@ -27,11 +27,13 @@
   special:
   - !type:AddComponentSpecial
     components:
+      - type: HullrotFaction
+        faction: SRM
       - type: Telepathic
       - type: BibleUser
       - type: CPRTraining
       - type: SurgerySpeedModifier
-        speedModifier: 2
+        speedModifier: 1.75
 
 - type: startingGear
   id: TenderGear

@@ -26,6 +26,9 @@
   id: MagazineNCWLConscriptBox
 
 - type: Tag
+  id: CartridgeAutoPD
+
+- type: Tag
   id: CartridgeMachineGunConscript
 
 - type: Tag # Frontier Space Artillery

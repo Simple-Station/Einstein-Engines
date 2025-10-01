@@ -1,6 +1,48 @@
 - type: entity
-  name: PTA MOD-1 Twinshot 12g
+  name: CDT C-12R Tuber 12g
   parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: WeaponShotgunTuber
+  description: Top of the line pump shotgun with 2 ammo tubes allowing for a massive 12 shell capacity and can even be slam fired, although this system makes the shotgun very bulky. Made by Cyberdawn for Cyberdawn.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/tuber.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-1
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/tuber.rsi
+  - type: Gun
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,4,2
+    sprite: _Crescent/Objects/Weapons/Guns/tuber.rsi
+  - type: BallisticAmmoProvider
+    capacity: 12
+    autoCycle: false
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: Wieldable
+  - type: GunRequiresWield
+  - type: MeleeWeapon
+    attackRate: 1.4
+    damage:
+      types:
+        Blunt: 9
+  - type: DamageOtherOnHit
+    staminaCost: 8.0
+  - type: Appearance
+
+- type: entity
+  name: PTA MOD-1 Twinshot 12g
+  parent: [BaseWeaponShotgun, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponShotgunPTATwinshot
   description: A semi-automatic shotgun with a high-capacity magazine, capable of firing two shells at once. Chambered in 12g shells.
   components:
@@ -29,8 +71,38 @@
     capacity: 10
 
 - type: entity
+  name: PTA MOD-23 Karabin 4g
+  parent: [BaseWeaponShotgun, BaseGunWieldable, StreeCredRedeemable]
+  id: WeaponShotgunKS23
+  description: An oversized shotgun. Packs devastating 4 Gauge punches. Developed as part of Pang Tai's elite mercenary package.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
+  - type: GunRequiresWield
+  - type: Item
+    shape:
+    - 0,0,4,1
+  - type: Gun
+    fireRate: 2
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_1.ogg
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - ShellShotgun4g
+    capacity: 4
+    autoCycle: false
+    proto: ShellShotgun4gBuckshot
+  - type: ItemSlots
+
+- type: entity
   name: SHI M135 double-barreled shotgun 4g
-  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  parent: [BaseWeaponShotgun, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponShotgunSHIDoubleBarreled4g
   description: A cheap, oversized shotgun. Manufactured by Shinora for their BudgetArms line. Chambered in 4g shells.
   components:
@@ -63,7 +135,7 @@
 
 - type: entity
   name: NT SPAS-13 12g
-  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  parent: [BaseWeaponShotgun, BaseGunWieldable, StreeCredRedeemableHigh]
   id: WeaponShotgunSpas
   description: A premium combat shotgun with a folding stock. Originates from the now-defunct NanoTrasen.
   components:
@@ -80,7 +152,7 @@
 
 - type: entity
   name: IRM Matusa 12g
-  parent: BaseWeaponSniper
+  parent: [BaseWeaponSniper, StreeCredRedeemable]
   id: WeaponShotgunDSMMatusa
   description: A mass-produced Imperial shotgun with simple internals, intended for easy maintenance by levy forces.
   components:
@@ -114,7 +186,7 @@
 
 - type: entity
   name: NCWL Pioneer Double-Barrel 12g
-  parent: BaseWeaponSniperNoWield
+  parent: [BaseWeaponSniperNoWield, StreeCredRedeemable]
   id: WeaponShotgunDoubleBarreledNCWL
   description: A short, rugged double-barrel shotgun built in-house by NCWL Homeguard workshops. Partisans prize its compact size and reliability for clearing tight ship corridors; Kommissars often carry one as a backup.
   components:
@@ -240,7 +312,7 @@
 - type: entity
   name: HGS VAP-16S Haulikko 12g
   # Don't parent to BaseWeaponShotgun because it differs significantly
-  parent: [BaseItem, BaseGunWieldable]
+  parent: [BaseItem, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponShotgunHaulikko
   description: The Vihainen Aseperhe 16S. An automatic shotgun designed to excell in close-quarters subjugation. Uses 12 gauge shotgun shells.
   components:
@@ -329,7 +401,7 @@
 
 - type: entity
   name: K&K K870 Bush 12g
-  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  parent: [BaseWeaponShotgun, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponShotgunBush
   description: A pump-action shotgun produced by Kane & Knox. Equipped with a shortened grip and reduced internal tube for ease of mobility. Fires 12g shells.
   components:

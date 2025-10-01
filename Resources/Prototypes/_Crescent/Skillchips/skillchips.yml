@@ -1,13 +1,13 @@
 - type: entity
   parent: BaseItem
   id: SkillchipHackDoor
-  name: door sequencer skillchip
-  description: Contains a fragment of code that abuses a bug in standard airlocks to force them open.
+  name: makeshift door sequencer quickhack datashard
+  description: Contains a fragment of code that abuses a bug in standard airlocks to force them open. Seems cobbled together from a variety of scrap electronics.
   components:
     - type: Sprite
-      sprite: Objects/Devices/encryption_keys.rsi
+      sprite: _Crescent/Objects/Misc/skillchips.rsi
       layers:
-        - state: crypt_gray
+        - state: makeshiftchip
     - type: Skillchip
 
 - type: entity
@@ -33,23 +33,3 @@
         - description: examine-dermal-armor-message
           fontSize: 12
           requireDetailRange: true
-
-- type: entity
-  parent: BaseItem
-  id: SHI HALO-III
-  name: SHI HALO-III Ballistic Coprocessor
-  description: Allows use of Smart Weapons.
-  components:
-    - type: Sprite
-      sprite: Objects/Devices/encryption_keys.rsi
-      layers:
-        - state: crypt_gray
-    - type: Skillchip
-      onImplantFunctions:
-      - !type:TraitAddComponent
-        components:
-        - type: SmartGunUser
-      onRemoveFunctions:
-      - !type:TraitRemoveComponent
-        components:
-        - type: SmartGunUser

@@ -1,7 +1,7 @@
 # Empty mags
 - type: entity
   id: BaseMagazineRifle
-  name: "magazine (7.62x51mm USM rifle)"
+  name: "25-round magazine (7.62x51mm USM rifle)"
   parent: BaseItem
   abstract: true
   components:
@@ -35,7 +35,7 @@
 # Magazines
 - type: entity
   id: MagazineRifle
-  name: "magazine (7.62x51mm USM rifle)"
+  name: "25-round magazine (7.62x51mm USM rifle)"
   parent: BaseMagazineRifle
   components:
   - type: BallisticAmmoProvider
@@ -43,7 +43,7 @@
 
 - type: entity
   id: MagazineRifleEmpty
-  name: "magazine (7.62x51mm USM any)"
+  name: "25-round magazine (7.62x51mm USM any)"
   suffix: empty
   parent: MagazineRifle
   components:
@@ -52,7 +52,7 @@
 
 - type: entity
   id: MagazineRifleIncendiary
-  name: "magazine (.7.62x51mm USM incendiary)"
+  name: "25-round magazine (.7.62x51mm USM incendiary)"
   parent: MagazineRifle
   components:
   - type: BallisticAmmoProvider
@@ -60,7 +60,7 @@
 
 - type: entity
   id: MagazineRiflePractice
-  name: "magazine (7.62x51mm USM practice)"
+  name: "25-round magazine (7.62x51mm USM practice)"
   parent: BaseMagazineRifle
   components:
   - type: BallisticAmmoProvider
@@ -68,7 +68,7 @@
 
 - type: entity
   id: MagazineRifleRubber
-  name: "magazine (7.62x51mm USM rubber)"
+  name: "25-round magazine (7.62x51mm USM rubber)"
   parent: BaseMagazineRifle
   components:
   - type: BallisticAmmoProvider
@@ -76,7 +76,7 @@
 
 - type: entity
   id: MagazineRifleUranium
-  name: "magazine (7.62x51mm USM black-tip)"
+  name: "25-round magazine (7.62x51mm USM black-tip)"
   parent: BaseMagazineRifle
   components:
   - type: BallisticAmmoProvider
@@ -84,7 +84,7 @@
 
 - type: entity
   id: MagazineRifleShrapnel
-  name: "magazine (7.62x51mm USM shrapnel)"
+  name: "25-round magazine (7.62x51mm USM shrapnel)"
   parent: BaseMagazineRifle
   components:
   - type: BallisticAmmoProvider

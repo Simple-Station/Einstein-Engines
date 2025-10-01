@@ -1,0 +1,67 @@
+- type: job
+  id: CorpsecSHI
+  name: job-name-corpsec
+  description: job-description-corpsec
+  playTimeTracker: JobSecuritySHI
+  weight: 3
+  startingGear: CorpsecGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconCorpsec"
+  supervisors: job-supervisors-shi
+  canBeAntag: false
+  requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 16000
+    - !type:FactionRequirement
+      factionID: "SHI"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-shi-board
+      - type: HullrotFaction
+        faction: SHI
+      - type: LanguageAdder
+        addSpoken:
+          - Kaishago
+        addUnderstood:
+          - Kaishago
+  access:
+  - Command
+  - Maintenance
+  - Shinohara
+  - ShinoharaSecurity
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: CorpsecGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitShinoharaSecurity
+    outerClothing: ClothingOuterArmorShinoharaArmor
+    head: ClothingHeadHatShinoharaBeret
+    shoes: ClothingShoesBootsCombat
+    gloves: ClothingHandsGlovesCombat
+    id: CorpsecPDA
+    ears: ClothingHeadsetShinohara
+    pocket1: WeaponPistolHimehabu
+    pocket2: TradePassport
+    back: ClothingBackpackSHISatchel
+    belt: ClothingBeltSecurityFilled
+  storage:
+    back:
+    - Flash
+    - Tourniquet
+    - Zipties
+    - MagazinePistol
+    - CombatKnife

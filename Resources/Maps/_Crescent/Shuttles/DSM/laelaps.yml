@@ -8104,7 +8104,7 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
-- proto: WeaponTurretPDTNCSP
+- proto: WeaponTurretPDTAdvanced
   entities:
   - uid: 910
     components:

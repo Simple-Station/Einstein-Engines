@@ -23,9 +23,11 @@
     components:
       - type: ChatRank
         rank: crescent-rank-sanitat
+      - type: HullrotFaction
+        faction: ATH
       - type: CPRTraining
       - type: SurgerySpeedModifier
-        speedModifier: 2
+        speedModifier: 1.75
       - type: LanguageAdder
         addSpoken:
           - SolBasic

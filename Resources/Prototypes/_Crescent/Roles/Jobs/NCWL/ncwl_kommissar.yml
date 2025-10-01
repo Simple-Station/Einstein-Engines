@@ -32,6 +32,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-home-leader
+      - type: HullrotFaction
+        faction: NCWL
       - type: LanguageAdder
         addSpoken:
           - Dockta
@@ -89,7 +91,7 @@
     id: NCWLHomeguardLeaderPDA
     outerClothing: ClothingOuterArmorNCWLCarapace
     belt: ClothingBeltNCWLPouches
-    pocket1: WeaponRevolverPython
+    pocket1: WeaponShotgunDoubleBarreledNCWL
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesCombat
     head: ClothingHeadHatNCWLKommissarHat

@@ -1,5 +1,14 @@
 
 # RIFLE AMMUNITIONS
+
+- type: latheRecipe
+  id: MagazineHeavyRifleBoxmag
+  result: MagazineHeavyRifleBoxmag
+  completetime: 1
+  materials:
+    Steel: 2500
+    Uranium: 800
+
 - type: latheRecipe
   id: MagazineBoxAntiMateriel
   result: MagazineBoxAntiMateriel
@@ -124,6 +133,29 @@
     Steel: 400
 
 # SMALL ARMS AMMUNITIONS
+- type: latheRecipe
+  id: MagazinePistolHeavy
+  result: MagazinePistolHeavy
+  completetime: 1
+  materials:
+    Steel: 300
+
+- type: latheRecipe
+  id: MagazineBoxHeavyPistol
+  result: MagazineBoxHeavyPistol
+  completetime: 1
+  materials:
+    Steel: 800
+
+- type: latheRecipe
+  id: SpeedLoader27mmAutocannonHE
+  result: SpeedLoader27mmAutocannonHE
+  completetime: 1
+  materials:
+    Steel: 2500
+    Uranium: 1000
+    Plastic: 1000
+
 - type: latheRecipe
   id: SpeedLoader127x99
   result: SpeedLoader127x99

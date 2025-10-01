@@ -252,6 +252,10 @@
     idleState: fab-idle
     runningState: fab-active
     staticRecipes:
+      - MagazineHeavyRifleBoxmag
+      - MagazinePistolHeavy
+      - MagazineBoxHeavyPistol
+      - SpeedLoader27mmAutocannonHE
       - MagazineBoxAntiMateriel
       - MagazineBoxHeavyRifle
       - MagazineBoxRifle
@@ -626,8 +630,6 @@
       - ClothingHeadHatShinoharaNonevaHelm
       - TelescopicBatonSHI
       - ShinoharaOptics
-      - WeaponFighterMachinegun
-      - WeaponFighterAutocannon
       - WeaponMechCombatAutoshotgun
       - WeaponMechCombatLightRifle
       - WeaponMechSword
@@ -682,6 +684,8 @@
       - SHIKatana
       - SHIShiverBlade
       - BallisticCycler1Craft
+      - ClothingOuterHardsuitSHIJuggernaut
+      - ClothingOuterHardsuitSHISpeedsuit
 
   - type: Machine
     board: MicroforgeCircuitboard

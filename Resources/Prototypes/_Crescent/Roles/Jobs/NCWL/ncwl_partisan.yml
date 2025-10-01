@@ -29,6 +29,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-home-soldat
+      - type: HullrotFaction
+        faction: NCWL
       - type: LanguageAdder
         addSpoken:
           - Dockta
@@ -59,3 +61,10 @@
     head: ClothingHeadHelmetNCWLBasic
     mask: ClothingMaskNCWLGasmask
     ears: ClothingHeadsetNCWL
+  storage:
+    back:
+    - Flash
+    - Tourniquet
+    - Zipties
+    - MagazinePistol
+    - CombatKnife

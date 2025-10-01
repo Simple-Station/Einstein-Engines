@@ -53,6 +53,9 @@
     tags:
     - DoorBumpOpener
     - FootstepSound
+  - type: NpcFactionMember
+    factions:
+      - DSM
 
 - type: entity
   id: MechDSMCarrionBattery
@@ -121,6 +124,9 @@
     tags:
     - DoorBumpOpener
     - FootstepSound
+  - type: NpcFactionMember
+    factions:
+      - NCWL
 
 - type: entity
   id: MechNCWLBogatyrBattery
@@ -186,6 +192,9 @@
     tags:
     - DoorBumpOpener
     - FootstepSound
+  - type: NpcFactionMember
+    factions:
+      - NCWL
 
 - type: entity
   id: MechNCWLLancerBattery
@@ -250,6 +259,9 @@
     tags:
     - DoorBumpOpener
     - FootstepSound
+  - type: NpcFactionMember
+    factions:
+      - TFSC
 
 - type: entity
   id: MechGSCMarauderBattery
@@ -319,6 +331,9 @@
     - DoorBumpOpener
     - FootstepSound
     - Durand
+  - type: NpcFactionMember
+    factions:
+      - SHI
 
 - type: entity
   id: MechSHIGilgameshBattery
@@ -387,6 +402,9 @@
     tags:
     - DoorBumpOpener
     - FootstepSound
+  - type: NpcFactionMember
+    factions:
+      - DSM
 
 - type: entity
   id: MechDSMPaladinBattery
@@ -465,6 +483,9 @@
     tags:
     - DoorBumpOpener
     - FootstepSound
+  - type: NpcFactionMember
+    factions:
+      - DSM
 
 - type: entity
   id: MechDSMWandererBattery

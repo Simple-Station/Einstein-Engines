@@ -101,46 +101,61 @@
   - type: Appearance
 
 - type: entity
-  name: IRM C-20r 9x19mm
+  name: IRM DA-20 Talon 11mm
   parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
   id: WeaponSubMachineGunC20r
-  description: A compact submachinegun produced by Olywir Armaments for the Imperial Navy. Sees little use in the hands of actual troopers due to the cost of manufacturing.
+  description: A slick submachinegun produced by Olywir Armaments for the Imperial Navy. Sees little use in the hands of actual troopers due to the cost of manufacturing.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Guns/c20r.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/talon.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/Guns/c20r.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/talon.rsi
   - type: Wieldable
   - type: GunWieldBonus
     minAngle: -19
     maxAngle: -16
   - type: Gun
+    fireRate: 7
     minAngle: 21
     maxAngle: 32
-    fireRate: 10
-    shotsPerBurst: 5
     availableModes:
     - SemiAuto
-    - Burst
     - FullAuto
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/smg_2/smg_gunshot_3.ogg
-    fireOnDropChance: 0.3
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolSubMachineGunHeavy
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineHeavySMG
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeHeavyPistol
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeHeavyPistol
   - type: ChamberMagazineAmmoProvider
     autoEject: true
   - type: MagazineVisuals
     magState: mag
-    steps: 6
+    steps: 1
     zeroVisible: true
   - type: Appearance
 
 - type: entity
-  name: antique IRM C-20r 9x19mm
+  name: antique IRM DA-20R 11mm
   parent: WeaponSubMachineGunC20r
   id: WeaponSubMachineGunC20rHoS
   description: This heavily worn submachine gun is engraved with the words, "Remember Nova Balreska".

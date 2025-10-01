@@ -29,6 +29,7 @@ using Content.Client.Lobby;
 using System.Diagnostics;
 using System.Threading;
 using Robust.Shared.Timing;
+using Content.Shared._Crescent.HullrotFaction;
 
 namespace Content.Client.Audio;
 
@@ -276,17 +277,20 @@ public sealed partial class ContentAudioSystem
 
         bool currentCombatState = _combatModeSystem.IsInCombatMode();
 
-
-        if (currentCombatState)
-            Timer.Spawn(_combatStartUpTime, SwitchCombatMusic, _combatMusicCancelToken.Token);
+        _sawmill.Debug("ToggleCombatActionEvent performer: " + ev.Performer);
+        string faction = "";
+        if (!TryComp<HullrotFactionComponent>(ev.Performer, out HullrotFactionComponent? factionComp))
+            _sawmill.Debug("NO HULLROT FACTION COMPONENT FOUND! YOU NEED TO ADD A FACTION COMPONENT TO THIS ROLE!");
         else
-            Timer.Spawn(_combatWindDownTime, SwitchCombatMusic, _combatMusicCancelToken.Token);
+            faction = factionComp.Faction;
+        if (currentCombatState)
+            Timer.Spawn(_combatStartUpTime, () => SwitchCombatMusic(faction), _combatMusicCancelToken.Token);
+        else
+            Timer.Spawn(_combatWindDownTime, () => SwitchCombatMusic(faction), _combatMusicCancelToken.Token);
 
     }
-    private void SwitchCombatMusic()
+    private void SwitchCombatMusic(string factionComponentString)
     {
-        // if (_combatMusicToggle == false) // someone's boring and wants no combat music.
-        //     return;                      // this also creates an edge case where if someone has combat music on and turns this setting off it does weird shit but w/e
 
         _ambientMusicCancelToken.Cancel();
         _ambientMusicCancelToken = new CancellationTokenSource();
@@ -305,14 +309,18 @@ public sealed partial class ContentAudioSystem
         {
             string combatFactionSuffix = ""; //this is added to "combatmode" to create "combatmodeNCWL", "combatmodeDSM", etc, to fetch combat tracks.
 
-            if (_prefsManager.Preferences != null) //this literally cannot be null unless you're in lobby or something
-            {
-                var profile = (HumanoidCharacterProfile) _prefsManager.Preferences.SelectedCharacter;
+            // .2 | 2025 - this is an old variant that looked at your character's preferences prototype.
+            // baldy fileld in hullrotfactioncomponent for every job so now we can #deprecateThisGarbage
+            // if (_prefsManager.Preferences != null) //this literally cannot be null unless you're in lobby or something
+            // {
+            //     var profile = (HumanoidCharacterProfile) _prefsManager.Preferences.SelectedCharacter;
 
-                combatFactionSuffix = profile.Faction; //becomes NCWL, DSM, etc.
+            //     combatFactionSuffix = profile.Faction; //becomes NCWL, DSM, etc.
 
-                //_sawmill.Debug($"FACTION: {faction}");
-            }
+            //     //_sawmill.Debug($"FACTION: {faction}");
+            // }
+
+            combatFactionSuffix = factionComponentString;
 
             //if we find a ambient music prototype for our faction, then pick that one!
             if (_proto.TryIndex<AmbientMusicPrototype>("combatmode" + combatFactionSuffix, out var factionCombatMusicPrototype))
