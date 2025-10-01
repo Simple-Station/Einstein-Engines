@@ -111,12 +111,16 @@
       size: Small
     - type: HTN
       rootTask:
-        task: PDTTurretCompound
+        task: TurretCompound
       blackboard:
         RotateSpeed: !type:Single
           3.141
         SoundTargetInLOS: !type:SoundPathSpecifier
           path: /Audio/Effects/double_beep.ogg
+        VisionRadius: !type:Single
+          2048 #this is dividied by 8 for some reason
+        AggroVisionRadius: !type:Single
+          2048 #this is divided by 8 for some reason
 
 
 - type: entity

@@ -22,14 +22,14 @@
             - !type:TargetInLOSPrecondition
               targetKey: Target
               rangeKey: PDTRange
-              ignoreHostileObstruction: true
+              # ignoreHostileObstruction: true
           operator: !type:GunOperator
             preconditions:
               - !type:PoweredPrecondition
               - !type:SignalControlPrecondition
             targetKey: Target
-            requireLOS: false
-            ignoreHostileObstruction: true
+            requireLOS: true
+            # ignoreHostileObstruction: true
           services:
             - !type:UtilityService
               id: RangedService
