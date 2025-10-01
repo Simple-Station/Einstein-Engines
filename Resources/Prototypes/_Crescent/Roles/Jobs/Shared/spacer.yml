@@ -15,7 +15,7 @@
       - type: ChatRank
         rank: crescent-rank-ind-spacer
       - type: HullrotFaction
-        faction: INDEP
+        faction: IND
       - type: LanguageAdder
         addSpoken:
           - Tradeband
