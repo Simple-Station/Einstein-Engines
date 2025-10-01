@@ -5,16 +5,16 @@
   id: NCWL
   hostile:
     # - NCWL
-    - NCSP
+    - TFSC
     - DSM
     - SHI
     - IND
 
 - type: npcFaction
-  id: NCSP
+  id: TFSC
   hostile:
     - NCWL
-    # - NCSP
+    # - TFSC
     - DSM
     - SHI
     - IND
@@ -23,7 +23,7 @@
   id: DSM
   hostile:
     - NCWL
-    - NCSP
+    - TFSC
     # - DSM
     - SHI
     - IND
@@ -32,7 +32,7 @@
   id: SHI
   hostile:
     - NCWL
-    - NCSP
+    - TFSC
     - DSM
     # - SHI
     - IND
@@ -41,7 +41,7 @@
   id: IND #independents
   hostile:
     - NCWL
-    - NCSP
+    - TFSC
     - DSM
     - SHI
     # - IND
