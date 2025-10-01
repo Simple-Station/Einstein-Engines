@@ -93469,4 +93469,11 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
+- proto: ChemDispenser
+  entities:
+  - uid: 7858
+    components:
+    - type: Transform
+      pos: -8.5,-26.5
+      parent: 1
 ...
