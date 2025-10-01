@@ -167,6 +167,30 @@
     - /Audio/_Crescent/Ambience/CombatMode/TAP_1.ogg
     - /Audio/_Crescent/Ambience/CombatMode/TAP_2.ogg
 
+#Spacers/Independent | STATE: Dummy
+- type: ambientMusic
+  id: combatmodeIND
+  priority: 3
+  sound:
+    collection: combatmodeIND
+
+- type: soundCollection
+  id: combatmodeIND
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/fallback.ogg
+
+#Gliess Santo | STATE: Dummy
+- type: ambientMusic
+  id: combatmodeGS
+  priority: 3
+  sound:
+    collection: combatmodeGS
+
+- type: soundCollection
+  id: combatmodeGS
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/fallback.ogg
+
 ## DEPRECATED!!! AMBIENT MUSIC TRACKS
 ## ID MUST BE IDENTICAL TO BIOME ID FROM space_biomes.yml!
 
