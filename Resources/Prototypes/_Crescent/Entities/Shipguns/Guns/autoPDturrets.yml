@@ -70,10 +70,10 @@
     # TODO: Power ammo provider?
     - type: BasicEntityAmmoProvider
       proto: CartridgeAutoPDBasic
-      capacity: 200
-      count: 200
+      capacity: 300
+      count: 300
     - type: RechargeBasicEntityAmmo
-      rechargeCooldown: 5
+      rechargeCooldown: 2
       rechargeSound:
         path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
         params:
@@ -138,7 +138,6 @@
 - type: entity
   parent: BaseWeaponTurretAutoPD
   name: SHI 7.62x51mm 'Tsui' anti-boarder turret
-  categories: [ HideSpawnMenu ]
   id: WeaponTurretAutoPDSHI
   suffix: SHI PDT
   components:
@@ -149,7 +148,6 @@
 - type: entity
   parent: BaseWeaponTurretAutoPD
   name: DSM 7.62x51mm 'Lady' anti-boarder turret
-  categories: [ HideSpawnMenu ]
   id: WeaponTurretAutoPDDSM
   suffix: DSM PDT
   components:
@@ -160,7 +158,6 @@
 - type: entity
   parent: BaseWeaponTurretAutoPD
   name: NCSP 7.62x51mm 'Vagrant' anti-boarder turret
-  categories: [ HideSpawnMenu ]
   id: WeaponTurretAutoPDNCSP
   suffix: NCSP PDT
   components:
@@ -171,7 +168,6 @@
 - type: entity
   parent: BaseWeaponTurretAutoPD
   name: ICM 7.62x51mm 'FAL' anti-boarder turret
-  categories: [ HideSpawnMenu ]
   id: WeaponTurretAutoPDIND
   suffix: IND PDT
   components:

@@ -39,7 +39,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 10
+        Piercing: 15
     harmorPenetration: 10
     stoppingPower: 2
   - type: ProjectileIFF
