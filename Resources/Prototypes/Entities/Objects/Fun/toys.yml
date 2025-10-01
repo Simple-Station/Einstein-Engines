@@ -141,6 +141,7 @@
     sprite: DeltaV/Mobs/Ghosts/revenant.rsi # DeltaV - Custom revenant sprite
     state: icon
     noRot: true
+  - type: MultiHandedItem
   - type: Construction
     graph: PlushieGhostRevenant
     node: plushie
@@ -187,7 +188,8 @@
   description: A cute stuffed toy that resembles a hamster. Its face looks squished.
   components:
   - type: Sprite
-    state: plushie_hampter
+    sprite: Objects/Fun/Plushies/hampter.rsi
+    state: icon
   - type: EmitSoundOnUse
     sound:
       path: /Audio/Items/Toys/mousesqueek.ogg
@@ -208,6 +210,15 @@
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/Items/Toys/mousesqueek.ogg
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/Plushies/hampter.rsi
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.04"
 
 - type: entity
   parent: PlushieBee
@@ -241,9 +252,25 @@
   description: A stuffed toy that resembles a syndicate nuclear operative. The tag claims operatives to be purely fictitious.
   components:
   - type: Sprite
-    state: plushie_nuke
+    sprite: Objects/Fun/Plushies/nukie.rsi
+    state: icon
   - type: Item
+    sprite: Objects/Fun/Plushies/nukie.rsi
     heldPrefix: plushienuke
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/Plushies/nukie.rsi
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.03"
 
 - type: entity
   parent: BasePlushie
@@ -252,8 +279,18 @@
   description: Rouny.
   components:
   - type: Sprite
-    state: plushie_rouny
+    sprite: Objects/Fun/Plushies/rouny.rsi
+    state: icon
   - type: Rotatable
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/Plushies/rouny.rsi
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.03"
 
 - type: entity
   parent: BasePlushie
@@ -262,7 +299,8 @@
   description: A light emitting friend!
   components:
   - type: Sprite
-    state: plushie_lamp
+    sprite: Objects/Fun/Plushies/lamp.rsi
+    state: icon
   - type: PointLight
     radius: 1.5
     energy: 2
@@ -275,7 +313,8 @@
   description: An adorable stuffed toy that resembles an arachnid. It feels silky..
   components:
   - type: Sprite
-    state: plushie_arachnid
+    sprite: Objects/Fun/Plushies/arachnid.rsi
+    state: icon
   - type: EmitSoundOnUse
     sound:
       path: /Audio/Voice/Arachnid/arachnid_laugh.ogg
@@ -296,6 +335,11 @@
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/Voice/Arachnid/arachnid_laugh.ogg
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/Plushies/arachnid.rsi
+    slots:
+    - HEAD
 
 - type: entity
   parent: BasePlushie
@@ -499,6 +543,7 @@
   description: An adorable stuffed toy that resembles a diona. Love water and cuddles. Do not wet!
   components:
   - type: Sprite
+    sprite: Objects/Fun/Plushies/diona.rsi
     layers:
     - state: plushie_diona
     - state: plushie_diona1
@@ -567,6 +612,15 @@
         - LowImpassable
   - type: CollisionWake
     enabled: false
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/Plushies/diona.rsi
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.09"
 
 - type: entity
   parent: BasePlushie
@@ -637,23 +691,38 @@
   parent: BasePlushie
   id: PlushieRatvar
   name: ratvar plushie
-  description: A small stuffed doll of the elder god Ratvar.
+  description: A large stuffed doll of the elder god Ratvar.
   components:
   - type: Item
     size: Normal
   - type: Sprite
-    state: plushie_ratvar
+    sprite: Objects/Fun/Plushies/ratvar.rsi
+    state: icon
+  - type: MultiHandedItem
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/Plushies/ratvar.rsi
+    slots:
+    - neck
 
 - type: entity
   parent: BasePlushie
   id: PlushieNar
   name: nar'sie plushie
-  description: A small stuffed doll of the elder goddess Nar'Sie.
+  description: A large stuffed doll of the elder goddess Nar'Sie.
   components:
   - type: Item
     size: Normal
+    sprite: Objects/Fun/Plushies/narsie.rsi
   - type: Sprite
-    state: narplush
+    sprite: Objects/Fun/Plushies/narsie.rsi
+    state: icon
+  - type: MultiHandedItem
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/Plushies/narsie.rsi
+    slots:
+    - neck
 
 - type: entity
   parent: BasePlushie
@@ -742,7 +811,29 @@
   description: An adorable stuffed toy that resembles a slime. It's basically a hacky sack.
   components:
   - type: Sprite
-    state: plushie_slime
+    sprite: Objects/Fun/Plushies/slime.rsi
+    state: icon
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Voice/Slime/slime_squish.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Voice/Slime/slime_squish.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Voice/Slime/slime_squish.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Voice/Slime/slime_squish.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/Voice/Slime/slime_squish.ogg
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/Plushies/slime.rsi
+    slots:
+    - HEAD
 
 - type: entity
   parent: BasePlushie
@@ -751,7 +842,15 @@
   description: An adorable stuffed toy that resembles a snake.
   components:
   - type: Sprite
-    state: plushie_snake
+    sprite: Objects/Fun/Plushies/snake.rsi
+    state: icon
+  - type: Item
+    heldPrefix: plushiesnake
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
   - type: EmitSoundOnUse
     sound:
       path: /Audio/Items/Toys/rattle.ogg
@@ -766,6 +865,11 @@
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/Items/Toys/rattle.ogg
+  - type: Clothing
+    sprite: Objects/Fun/Plushies/snake.rsi
+    quickEquip: false
+    slots:
+    - NECK
 
 - type: entity
   parent: BasePlushie
@@ -853,7 +957,8 @@
   description: SKREEEEEEEEEEEE!
   components:
   - type: Sprite
-    state: plushie_vox
+    sprite: Objects/Fun/Plushies/vox.rsi
+    state: icon
   - type: EmitSoundOnUse
     sound:
       path: /Audio/Voice/Vox/shriek1.ogg
@@ -871,6 +976,15 @@
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/Voice/Vox/shriek1.ogg
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/Plushies/vox.rsi
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.09"
 
 - type: entity
   parent: BasePlushie
@@ -879,7 +993,17 @@
   description: An adorable stuffed toy that resembles a brave atmosian. Unfortunately, he won't fix those depressurizations for you.
   components:
   - type: Sprite
-    state: plushie_atmosian
+    sprite: Objects/Fun/Plushies/atmosian.rsi
+    state: icon
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/Plushies/atmosian.rsi
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.04"
 
 - type: entity
   parent: BasePlushie
@@ -890,7 +1014,8 @@
   - type: Item
     size: Normal
   - type: Sprite
-    state: plushie_xeno
+    sprite: Objects/Fun/Plushies/xeno.rsi
+    state: icon
   - type: EmitSoundOnUse
     sound:
       path: /Audio/Weapons/Xeno/alien_spitacid.ogg
@@ -911,6 +1036,15 @@
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/Plushies/xeno.rsi
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.03"
 
 - type: entity
   parent: BasePlushie
@@ -919,7 +1053,13 @@
   description: I use arch btw!
   components:
   - type: Sprite
-    state: plushie_penguin
+    sprite: Objects/Fun/Plushies/penguin.rsi
+    state: icon
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/Plushies/penguin.rsi
+    slots:
+    - HEAD
 
 - type: entity
   parent: BasePlushie
@@ -928,7 +1068,8 @@
   description: This is a felt plush of a human. All craftsmanship is of the lowest quality. The human is naked. The human is crying. The human is screaming.
   components:
   - type: Sprite
-    state: plushie_human
+    sprite: Objects/Fun/Plushies/human.rsi
+    state: icon
   - type: EmitSoundOnUse
     sound:
       path: /Audio/Voice/Human/malescream_1.ogg
@@ -948,6 +1089,11 @@
   - type: EmitSoundOnTrigger
     sound:
       path: /Audio/Voice/Human/malescream_5.ogg
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/Plushies/human.rsi
+    slots:
+    - HEAD
 
 - type: entity
   parent: BasePlushie
@@ -984,7 +1130,8 @@
   description: Cute and fluffy moth plushie. Enjoy, bz!
   components:
   - type: Sprite
-    state: plushie_moth
+    sprite: Objects/Fun/Plushies/moth.rsi
+    state: icon
   - type: EmitSoundOnUse
     sound:
       path: /Audio/Voice/Moth/moth_squeak.ogg # DeltaV - Give back the mothplushie the squeak
@@ -1007,6 +1154,11 @@
     requiresSpecialDigestion: true
     useSound:
       path: /Audio/Voice/Moth/moth_chitter.ogg
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/Plushies/moth.rsi
+    slots:
+    - HEAD
 
 - type: entity
   parent: BasePlushie
@@ -1398,6 +1550,15 @@
   components:
   - type: Sprite
     state: AI
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/AI.rsi
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.06"
 
 - type: entity
   parent: BaseFigurineCheapo
@@ -1430,6 +1591,15 @@
       params:
         volume: -5
         maxDistance: 10
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/toy_nuke.rsi
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.12"
 
 - type: entity
   parent: BasePlushie
@@ -1454,6 +1624,15 @@
     requiresSpecialDigestion: true
     useSound:
       path: /Audio/Items/Toys/ian.ogg
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/toy_ian.rsi
+    slots:
+      - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.06"
 
 ## Toyweapons
 
@@ -1718,8 +1897,15 @@
     falloffPower: 2.6
   - type: Item
     size: Normal
-    sprite: Objects/Fun/toys.rsi
+    sprite: Objects/Fun/toy_singularity.rsi
     heldPrefix: singularitytoy
+    inhandVisuals:
+      left:
+      - state: singu-inhand-left
+        shader: unshaded
+      right:
+      - state: singu-inhand-right
+        shader: unshaded
 
 - type: entity
   parent: BaseItem
@@ -1746,6 +1932,14 @@
       params:
         variation: 0.65
         volume: -10
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: tesla-inhand-left
+        shader: unshaded
+      right:
+      - state: tesla-inhand-right
+        shader: unshaded
 
 - type: entity
   parent: BaseItem
@@ -1876,6 +2070,22 @@
     available:
     - enum.DamageStateVisualLayers.Base:
         base: Sixteen
+  - type: Clothing
+    sprite: Objects/Fun/pequeno.rsi
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET-body
+      - state: equipped-HELMET-vis
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-body
+      - state: inhand-left-vis
+      right:
+      - state: inhand-right-body
+      - state: inhand-right-vis
 
 - type: entity
   parent: BaseItem
