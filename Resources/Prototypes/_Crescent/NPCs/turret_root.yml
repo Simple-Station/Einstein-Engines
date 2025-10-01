@@ -1,0 +1,38 @@
+# Tries to shoot a target in LOS in range.
+- type: htnCompound
+  id: HullrotAutoPD
+  branches:
+    - preconditions:
+      - !type:PoweredPrecondition
+      - !type:SignalControlPrecondition
+      tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UtilityOperator
+            proto: NearbyPDTTargets
+        - !type:HTNPrimitiveTask
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: Target
+            - !type:TargetInRangePrecondition
+              targetKey: Target
+              #this sucks
+              rangeKey: RangedRange
+            - !type:TargetInLOSPrecondition
+              targetKey: Target
+              rangeKey: RangedRange
+          operator: !type:GunOperator
+            targetKey: Target
+            requireLOS: true
+          services:
+            - !type:UtilityService
+              id: RangedService
+              proto: NearbyPDTTargets
+              key: Target
+
+    - preconditions:
+      - !type:PoweredPrecondition
+      tasks:
+      - !type:HTNCompoundTask
+          task: IdleSpinCompound
+
+
