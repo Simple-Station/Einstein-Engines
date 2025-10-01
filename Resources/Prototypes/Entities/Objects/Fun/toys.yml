@@ -878,7 +878,8 @@
   description: A colorful toy mouse!
   components:
   - type: Sprite
-    state: toy_mouse
+    sprite: Objects/Fun/toy_mouse.rsi
+    state: icon
   - type: EmitSoundOnUse
     sound:
       path: /Audio/Items/Toys/mousesqueek.ogg
@@ -1546,10 +1547,11 @@
   parent: BaseFigurineCheapo
   id: ToyAi
   name: AI toy
-  description: A scaled-down toy AI core.
+  description: A scaled-dowtoy AI core.
   components:
   - type: Sprite
-    state: AI
+    sprite: Objects/Fun/AI.rsi
+    state: icon
   - type: Clothing
     quickEquip: false
     sprite: Objects/Fun/AI.rsi
@@ -1610,7 +1612,8 @@
   - type: Item
     size: Tiny
   - type: Sprite
-    state: ian
+    sprite: Objects/Fun/toy_ian.rsi
+    state: icon
   - type: EmitSoundOnUse
     sound:
       path: /Audio/Items/Toys/ian.ogg
@@ -2359,7 +2362,8 @@
   description: A stress inducing parody of nature's most delectable avian.
   components:
   - type: Sprite
-    state: rubber_chicken
+    sprite: Objects/Fun/rubber_chicken.rsi
+    state: icon
   - type: EmitSoundOnUse
     sound:
       collection: RubberChicken
