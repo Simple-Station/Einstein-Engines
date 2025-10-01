@@ -29,7 +29,7 @@ using Content.Client.Lobby;
 using System.Diagnostics;
 using System.Threading;
 using Robust.Shared.Timing;
-using Content.Server._Crescent.HullrotFaction;
+using Content.Shared._Crescent.HullrotFaction;
 
 namespace Content.Client.Audio;
 

@@ -1,13 +1,15 @@
-namespace Content.Server._Crescent.HullrotFaction;
+using Robust.Shared.GameStates;
+
+namespace Content.Shared._Crescent.HullrotFaction;
 
 /// <summary>
 /// Stores "rank" of the user for certain contexts.
 /// Mostly given by role.
 /// </summary>
 
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
 public sealed partial class HullrotFactionComponent : Component
 {
-    [DataField]
+    [DataField, AutoNetworkedField]
     public string Faction = "";
 }
