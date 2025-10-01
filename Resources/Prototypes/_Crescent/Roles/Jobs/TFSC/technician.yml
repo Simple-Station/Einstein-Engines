@@ -8,7 +8,7 @@
   alwaysUseSpawner: true
   requireAdminNotify: false
   icon: "JobIconSyndieNewblood"
-  supervisors: You answer to the Ringleader of the New Crescent Syndicate Privateers.
+  supervisors: You answer to the Ringleader of the Gorlex Security Consulting.
   canBeAntag: false
   requirements:
     - !type:CharacterOverallTimeRequirement
@@ -27,6 +27,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-op
+      - type: HullrotFaction
+        faction: GSC
       - type: LanguageAdder
         addSpoken:
           - Freespeak

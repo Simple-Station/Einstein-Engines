@@ -28,6 +28,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-logistat
+      - type: HullrotFaction
+        faction: ATH
       - type: LanguageAdder
         addSpoken:
           - SolBasic

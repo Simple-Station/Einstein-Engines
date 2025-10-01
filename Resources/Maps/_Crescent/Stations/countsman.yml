@@ -92679,7 +92679,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 2.4467368,-41.41695
       parent: 1
-- proto: WeaponTurretPDTNCSP
+- proto: WeaponTurretPDTAdvanced
   entities:
   - uid: 7801
     components:

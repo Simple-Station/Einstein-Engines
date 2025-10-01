@@ -28,6 +28,8 @@
   - type: StaticPrice
     price: 1000
   - type: AllowSuitStorage
+  - type: ClothingAddFaction
+    faction: NCWL
 
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
@@ -58,6 +60,8 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 1000
+  - type: ClothingAddFaction
+    faction: NCWL
 
 - type: entity
   parent: ClothingOuterBaseLarge
@@ -89,6 +93,8 @@
   - type: StaticPrice
     price: 750
   - type: AllowSuitStorage
+  - type: ClothingAddFaction
+    faction: NCWL
 
 - type: entity
   parent: ClothingOuterArmorBasic
@@ -119,6 +125,8 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 800
+  - type: ClothingAddFaction
+    faction: NCWL
 
 - type: entity
   parent: ClothingOuterArmorBasic
@@ -150,6 +158,8 @@
   - type: StaticPrice
     price: 900
   - type: AllowSuitStorage
+  - type: ClothingAddFaction
+    faction: NCWL
 
 ## ncwl revamp clothing
 
@@ -183,6 +193,8 @@
   - type: StaticPrice
     price: 900
   - type: AllowSuitStorage
+  - type: ClothingAddFaction
+    faction: NCWL
 
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
@@ -214,6 +226,8 @@
   - type: StaticPrice
     price: 900
   - type: AllowSuitStorage
+  - type: ClothingAddFaction
+    faction: NCWL
 
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
@@ -245,6 +259,8 @@
   - type: StaticPrice
     price: 900
   - type: AllowSuitStorage
+  - type: ClothingAddFaction
+    faction: NCWL
 
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
@@ -276,6 +292,8 @@
   - type: StaticPrice
     price: 900
   - type: AllowSuitStorage
+  - type: ClothingAddFaction
+    faction: NCWL
 
 ## hardsuits ncwl revamp
 
@@ -313,6 +331,8 @@
     clothingPrototype: ClothingHeadHelmetHardsuitNCWLMedi
   - type: StaticPrice
     price: 2000
+  - type: ClothingAddFaction
+    faction: NCWL
 
 - type: entity
   parent: ClothingOuterHardsuitBase
@@ -348,6 +368,8 @@
     clothingPrototype: ClothingHeadHelmetHardsuitNCWLEngi
   - type: StaticPrice
     price: 2000
+  - type: ClothingAddFaction
+    faction: NCWL
 
 
 ## hardsuits
@@ -386,6 +408,8 @@
     clothingPrototype: ClothingHeadHelmetHardsuitNCWLInfantry
   - type: StaticPrice
     price: 2000
+  - type: ClothingAddFaction
+    faction: NCWL
 
 - type: entity
   parent: [ClothingOuterHardsuitBase, StreeCredRedeemable]
@@ -421,6 +445,8 @@
     clothingPrototype: ClothingHeadHelmetHardsuitNCWLPetya
   - type: StaticPrice
     price: 2000
+  - type: ClothingAddFaction
+    faction: NCWL
 
 - type: entity
   parent: [ClothingOuterHardsuitBase, StreeCredRedeemableHigh]
@@ -456,6 +482,8 @@
     clothingPrototype: ClothingHeadHelmetHardsuitNCWLJuggernaut
   - type: StaticPrice
     price: 5000
+  - type: ClothingAddFaction
+    faction: NCWL
 
 ##softsuits
 
@@ -479,3 +507,5 @@
     size: Large
     shape:
     - 0,0,3,3
+  - type: ClothingAddFaction
+    faction: NCWL

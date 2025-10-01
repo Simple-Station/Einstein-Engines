@@ -13668,7 +13668,7 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-- proto: WeaponTurretPDTNCSP
+- proto: WeaponTurretPDTAdvanced
   entities:
   - uid: 108
     components:

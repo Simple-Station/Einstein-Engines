@@ -19217,7 +19217,7 @@ entities:
     - type: Transform
       pos: 8.5,14.5
       parent: 1
-- proto: WeaponTurretPDTNCSP
+- proto: WeaponTurretPDTAdvanced
   entities:
   - uid: 994
     components:
@@ -19359,7 +19359,7 @@ entities:
       spokenLanguages:
       - TauCetiBasic
       currentLanguage: TauCetiBasic
-- proto: WeaponTurretPDTNCSPCircuitboard
+- proto: WeaponTurretPDTAdvancedCircuitboard
   entities:
   - uid: 996
     components:
