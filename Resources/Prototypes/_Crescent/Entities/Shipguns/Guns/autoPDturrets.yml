@@ -127,32 +127,54 @@
 
 - type: entity
   parent: BaseWeaponTurretAutoPD
-  name: NCWL 30mm 'Dogshit' point defense turret
+  name: NCWL 7.62x51mm 'Sickle' anti-boarder turret
   id: WeaponTurretPDTNCWL
   suffix: DSM PDT
   components:
     - type: NpcFactionMember
       factions:
-        - NCWLFighter
+        - NCWL
 
 - type: entity
   parent: BaseWeaponTurretAutoPD
-  name: SHI 30mm 'Tsui' point defense turret
+  name: SHI 7.62x51mm 'Tsui' anti-boarder turret
   categories: [ HideSpawnMenu ]
   id: WeaponTurretPDTSHI
   suffix: SHI PDT
   components:
     - type: NpcFactionMember
       factions:
-        - SHIFighter
+        - SHI
 
 - type: entity
   parent: BaseWeaponTurretAutoPD
-  name: DSM 30mm 'Lady' point defense turret
+  name: DSM 7.62x51mm 'Lady' anti-boarder turret
   categories: [ HideSpawnMenu ]
   id: WeaponTurretPDTDSM
   suffix: DSM PDT
   components:
     - type: NpcFactionMember
       factions:
-        - DSMFighter
+        - DSM
+
+- type: entity
+  parent: BaseWeaponTurretAutoPD
+  name: NCSP 7.62x51mm 'Vagrant' anti-boarder turret
+  categories: [ HideSpawnMenu ]
+  id: WeaponTurretPDTNCSP
+  suffix: NCSP PDT
+  components:
+    - type: NpcFactionMember
+      factions:
+        - NCSP
+
+- type: entity
+  parent: BaseWeaponTurretAutoPD
+  name: ICM 7.62x51mm 'FAL' anti-boarder turret
+  categories: [ HideSpawnMenu ]
+  id: WeaponTurretPDTIND
+  suffix: IND PDT
+  components:
+    - type: NpcFactionMember
+      factions:
+        - IND
