@@ -69,7 +69,7 @@
       soundGunshot: /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
     # TODO: Power ammo provider?
     - type: BasicEntityAmmoProvider
-      proto: CartridgeAutoPD
+      proto: CartridgeAutoPDBasic
       capacity: 200
       count: 200
     - type: RechargeBasicEntityAmmo
@@ -128,8 +128,8 @@
 - type: entity
   parent: BaseWeaponTurretAutoPD
   name: NCWL 7.62x51mm 'Sickle' anti-boarder turret
-  id: WeaponTurretPDTNCWL
-  suffix: DSM PDT
+  id: WeaponTurretAutoPDNCWL
+  suffix: NCWL PDT
   components:
     - type: NpcFactionMember
       factions:
@@ -139,7 +139,7 @@
   parent: BaseWeaponTurretAutoPD
   name: SHI 7.62x51mm 'Tsui' anti-boarder turret
   categories: [ HideSpawnMenu ]
-  id: WeaponTurretPDTSHI
+  id: WeaponTurretAutoPDSHI
   suffix: SHI PDT
   components:
     - type: NpcFactionMember
@@ -150,7 +150,7 @@
   parent: BaseWeaponTurretAutoPD
   name: DSM 7.62x51mm 'Lady' anti-boarder turret
   categories: [ HideSpawnMenu ]
-  id: WeaponTurretPDTDSM
+  id: WeaponTurretAutoPDDSM
   suffix: DSM PDT
   components:
     - type: NpcFactionMember
@@ -161,7 +161,7 @@
   parent: BaseWeaponTurretAutoPD
   name: NCSP 7.62x51mm 'Vagrant' anti-boarder turret
   categories: [ HideSpawnMenu ]
-  id: WeaponTurretPDTSyndicate
+  id: WeaponTurretAutoPDNCSP
   suffix: NCSP PDT
   components:
     - type: NpcFactionMember
@@ -172,7 +172,7 @@
   parent: BaseWeaponTurretAutoPD
   name: ICM 7.62x51mm 'FAL' anti-boarder turret
   categories: [ HideSpawnMenu ]
-  id: WeaponTurretPDTIND
+  id: WeaponTurretAutoPDIND
   suffix: IND PDT
   components:
     - type: NpcFactionMember

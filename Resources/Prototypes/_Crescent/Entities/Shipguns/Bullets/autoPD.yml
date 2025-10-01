@@ -1,6 +1,6 @@
 - type: entity
-  id: CartridgeAutoPD
-  name: cartridge (autoPD)
+  id: BaseCartridgeAutoPD
+  name: base cartridge (autoPD)
   parent: BaseCartridge
   abstract: true
   components:
@@ -20,23 +20,31 @@
   - type: SpentAmmoVisuals
   - type: StaticPrice
     price: 10
+
+- type: entity
+  id: CartridgeAutoPDBasic
+  name: cartridge (autoPD)
+  parent: BaseCartridgeAutoPD
+  components:
   - type: CartridgeAmmo
     proto: BulletAutoPD
 
 
 - type: entity
   id: BulletAutoPD
-  name: AutoPD bullet
-  parent: BaseCartridge
+  name: bullet (autoPD)
+  parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
-  - type: ProjectileIFF
-    visualType: Circle
-    color: White
   - type: Projectile
     damage:
       types:
         Piercing: 10
+    harmorPenetration: 10
+    stoppingPower: 2
+  - type: ProjectileIFF
+    visualType: Circle
+    color: White
   - type: PointLight
     radius: 3.5
     color: orange
