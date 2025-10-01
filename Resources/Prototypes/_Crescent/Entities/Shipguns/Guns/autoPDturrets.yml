@@ -26,7 +26,7 @@
         ballistic-ammo: !type:Container
     - type: MobState
     - type: Sprite
-      sprite: _Crescent/Objects/Autoturrets/lightautoturret.rsi
+      sprite: /Textures/_NF/Objects/SpaceArtillery/space_artillery.rsi
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
