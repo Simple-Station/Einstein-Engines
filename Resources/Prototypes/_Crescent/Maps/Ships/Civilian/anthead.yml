@@ -4,7 +4,10 @@
 - type: vessel
   id: Anthead
   name: Anthead
-  description: The Anthead is what remains out of the cockpit of a much larger corvette, refitted to support itself as an independent "ship". Don't expect to get very far.
+  description: |
+    The Anthead is what remains out of the cockpit of a much larger corvette, refitted to support itself as a combat/escort ship. Cheap enough for a new captain seeking combat to use.
+    LOADOUT: 2x 20x135mm PDT
+    MINIMUM CREW: 1x Pilot
   price: 16000
   category: Small
   group: Scrap

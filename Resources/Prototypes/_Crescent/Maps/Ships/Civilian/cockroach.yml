@@ -4,9 +4,12 @@
 - type: vessel
   id: Cockroach
   name: Cockroach
-  description: A reclaimed mining barge.
+  description: |
+    A massive salvaging carrier made of the remains of a DSM warship turned into an industrial powerhouse, best for spreading work with large crews.
+    LOADOUT: 6x 20x135mm PDT
+    MINIMUM CREW: 1x Pilot, 1x Gunner, 2x Drone/Fighter Pilots
   price: 80000
-  category: Small
+  category: Large
   group: Scrap
   path: /Maps/_Crescent/Shuttles/Civilian/cockroach.yml
 
