@@ -22,3 +22,29 @@
   id: SampleIPM
   displayName: Exotic Samples
   canWithdraw: false
+
+# Gorlex Street cred
+
+- type: entity
+  id: StreeCredRedeemableLow
+  abstract: true
+  components:
+  - type: Currency
+    price:
+      PlunderGSC: 1
+
+- type: entity
+  id: StreeCredRedeemable
+  abstract: true
+  components:
+  - type: Currency
+    price:
+      PlunderGSC: 5
+
+- type: entity
+  id: StreeCredRedeemableHigh
+  abstract: true
+  components:
+  - type: Currency
+    price:
+      PlunderGSC: 10

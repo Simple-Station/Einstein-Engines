@@ -1,7 +1,7 @@
 #NCWL
 
 - type: entity
-  parent: BaseItem
+  parent: [BaseItem, StreeCredRedeemableLow]
   id: NCWLPassportBareLegit
   name: union passport
   description: A small booklet with a verification of identity for the bearer.
@@ -27,7 +27,7 @@
     delay: 1.0
 
 - type: entity
-  parent: BaseItem
+  parent: [BaseItem, StreeCredRedeemableLow]
   id: NCWLPassportBareFake
   name: union passport
   description: A small booklet with a verification of identity for the bearer.
@@ -54,7 +54,7 @@
   - type: Contraband
 
 - type: entity
-  parent: BaseItem
+  parent: [BaseItem, StreeCredRedeemableLow]
   id: NCWLPassportDenied
   name: union passport
   description: A small booklet with a verification of identity for the bearer. This one is marked as a fraud.
@@ -78,7 +78,7 @@
     delay: 1.0
 
 - type: entity
-  parent: BaseItem
+  parent: [BaseItem, StreeCredRedeemableLow]
   id: NCWLPassportAccepted
   name: union passport
   description: A small booklet with a verification of identity for the bearer. This one has been already cleared for entry.
@@ -104,7 +104,7 @@
 #imperial
 
 - type: entity
-  parent: BaseItem
+  parent: [BaseItem, StreeCredRedeemableLow]
   id: ImperialPassportBareLegit
   name: imperial passport
   description: A small booklet with a verification of identity for the bearer.
@@ -130,7 +130,7 @@
     delay: 1.0
 
 - type: entity
-  parent: BaseItem
+  parent: [BaseItem, StreeCredRedeemableLow]
   id: ImperialPassportBareFake
   name: imperial passport
   description: A small booklet with a verification of identity for the bearer.
@@ -159,7 +159,7 @@
 #trade permit
 
 - type: entity
-  parent: BaseItem
+  parent: [BaseItem, StreeCredRedeemableLow]
   id: TradePassport
   name: trade permit
   description: A small booklet with a verification of identity for the bearer. Often issued to merchants and corporate employees.
