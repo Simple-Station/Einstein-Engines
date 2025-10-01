@@ -6940,7 +6940,7 @@ entities:
       links:
       - 900
       - 949
-- proto: WeaponTurretPDTNCSP
+- proto: WeaponTurretPDTAdvanced
   entities:
   - uid: 348
     components:

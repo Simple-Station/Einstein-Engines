@@ -61,17 +61,17 @@
                   max: 5
     - type: TurretIFF
     - type: Gun
-      projectileSpeed: 145
-      fireRate: 5
+      projectileSpeed: 20
+      fireRate: 10
       selectedMode: FullAuto
       availableModes:
         - FullAuto
       soundGunshot: /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
     # TODO: Power ammo provider?
     - type: BasicEntityAmmoProvider
-      proto: PDTBullet
-      capacity: 300
-      count: 300
+      proto: CartridgeAutoPD
+      capacity: 200
+      count: 200
     - type: RechargeBasicEntityAmmo
       rechargeCooldown: 5
       rechargeSound:
@@ -161,7 +161,7 @@
   parent: BaseWeaponTurretAutoPD
   name: NCSP 7.62x51mm 'Vagrant' anti-boarder turret
   categories: [ HideSpawnMenu ]
-  id: WeaponTurretPDTNCSP
+  id: WeaponTurretPDTSyndicate
   suffix: NCSP PDT
   components:
     - type: NpcFactionMember

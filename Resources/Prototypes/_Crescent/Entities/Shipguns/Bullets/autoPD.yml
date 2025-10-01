@@ -1,0 +1,45 @@
+- type: entity
+  id: CartridgeAutoPD
+  name: cartridge (autoPD)
+  parent: BaseCartridge
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - CartridgeAutoPD
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+  - type: Sprite
+    noRot: false
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/caseless.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 10
+  - type: CartridgeAmmo
+    proto: BulletAutoPD
+
+
+- type: entity
+  id: BulletAutoPD
+  name: AutoPD bullet
+  parent: BaseCartridge
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileIFF
+    visualType: Circle
+    color: White
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 10
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: TimedDespawn
+    lifetime: 4
