@@ -2,57 +2,64 @@
   id: ChemVendInventory
   startingInventory:
     Jug: 4
-    JugAluminium: 2
-    JugCarbon: 4
-    JugChlorine: 1
-    JugCopper: 2
-    JugEthanol: 2
-    JugFluorine: 1
-    JugHydrogen: 3
-    JugIodine: 1
-    JugIron: 2
-    JugLithium: 2
-    JugMercury: 1
-    JugNitrogen: 3
-    JugOxygen: 3
-    JugPhosphorus: 1
-    JugPotassium: 2
-    JugRadium: 1
-    JugSilicon: 2
-    JugSodium: 2
-    JugSugar: 3
-    JugSulfur: 1
+    JugAluminium: 4
+    JugCarbon: 8
+    JugChlorine: 2
+    JugCopper: 4
+    JugEthanol: 4
+    JugFluorine: 2
+    JugHydrogen: 6
+    JugIodine: 2
+    JugIron: 4
+    JugLithium: 4
+    JugMercury: 2
+    JugNitrogen: 6
+    JugOxygen: 6
+    JugPhosphorus: 2
+    JugPotassium: 4
+    JugRadium: 2
+    JugSilicon: 4
+    JugSodium: 4
+    JugSugar: 6
+    JugSulfur: 2
+    JugWeldingFuel: 2
+    JugGold: 1
+    JugSilver: 1
   emaggedInventory:
+    PaxChemistryBottle: 3
+    MuteToxinChemistryBottle: 3
+    LeadChemistryBottle: 2
     ToxinChemistryBottle: 1
 
 - type: vendingMachineInventory
   id: ChemVendInventorySyndicate
   startingInventory:
     Jug: 4
-    JugAluminium: 2
-    JugCarbon: 4
-    JugChlorine: 1
-    JugCopper: 2
-    JugEthanol: 2
-    JugFluorine: 1
-    JugHydrogen: 3
-    JugIodine: 1
-    JugIron: 2
-    JugLithium: 2
-    JugMercury: 1
-    JugNitrogen: 3
-    JugOxygen: 3
-    JugPhosphorus: 1
-    JugPotassium: 2
-    JugRadium: 1
-    JugSilicon: 2
-    JugSodium: 2
-    JugSugar: 3
-    JugSulfur: 1
-    JugWeldingFuel: 1
+    JugAluminium: 4
+    JugCarbon: 8
+    JugChlorine: 2
+    JugCopper: 4
+    JugEthanol: 4
+    JugFluorine: 2
+    JugHydrogen: 6
+    JugIodine: 2
+    JugIron: 4
+    JugLithium: 4
+    JugMercury: 2
+    JugNitrogen: 6
+    JugOxygen: 6
+    JugPhosphorus: 2
+    JugPotassium: 4
+    JugRadium: 2
+    JugSilicon: 4
+    JugSodium: 4
+    JugSugar: 6
+    JugSulfur: 2
+    JugWeldingFuel: 2
+    JugGold: 1
+    JugSilver: 1
   emaggedInventory:
     PaxChemistryBottle: 3
     MuteToxinChemistryBottle: 3
     LeadChemistryBottle: 2
     ToxinChemistryBottle: 1
-    

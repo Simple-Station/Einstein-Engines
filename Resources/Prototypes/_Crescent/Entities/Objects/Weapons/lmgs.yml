@@ -1,7 +1,7 @@
 - type: entity
   name: CDT C-54 Compakt 5.56x45mm
   id: WeaponLightMachineGunCompakt
-  parent: BaseWeaponLightMachineGun
+  parent: [BaseWeaponLightMachineGun, StreeCredRedeemable]
   description: A compact LMG designed sacraficing damage for size. Made by Cyberdawn for Cyberdawn.
   components:
   - type: Sprite
@@ -57,7 +57,7 @@
 - type: entity
   name: NCWL MK-13 Conscript 12.7x99mm
   id: WeaponLightMachineGunConscript
-  parent: BaseItem
+  parent: [BaseItem, StreeCredRedeemable]
   description: A ripped out .50 cal PDT gun adapted to be fired from the hip. Heavy as shit and innacurate as shit but it turns people into a fine red mist.
   components:
   - type: Clothing
@@ -191,7 +191,7 @@
 - type: entity
   name: IRM DA-12S Dominion 5.56x45mm
   id: WeaponLightMachineGunDSMDominion
-  parent: BaseWeaponLightMachineGun
+  parent: [BaseWeaponLightMachineGun, StreeCredRedeemable]
   description: A Imperial LMG with a quick 6 shot burst, chambered in 5.56x45mm Imperial.
   components:
   - type: Sprite
@@ -241,7 +241,7 @@
 - type: entity
   name: HGS GrMG-4 Baum 7.62x51mm
   id: WeaponLightMachineGunMG42
-  parent: BaseWeaponLightMachineGun
+  parent: [BaseWeaponLightMachineGun, StreeCredRedeemable]
   description: The Großes Maschinengewehr. A long and bulky machinegun made from ancient schematics. Notorious for its high RPM. Chambered in 7.62x51mm.
   components:
   - type: Sprite
@@ -294,7 +294,7 @@
 - type: entity
   name: HGS GrMG-Neo Koneruusu 7.62x51mm
   id: WeaponLightMachineGunKoneruusu
-  parent: BaseWeaponLightMachineGun
+  parent: [BaseWeaponLightMachineGun, StreeCredRedeemable]
   description: The Neo Großes Maschinengewehr. A machinegun revived from ancient schematics and modified for modern combat. Notorious for its high RPM. Chambered in 7.62x51mm.
   components:
   - type: Sprite
@@ -360,7 +360,7 @@
 - type: entity
   name: K&K KM250 Washington 7.62x51mm
   id: WeaponLightMachineGunWashington
-  parent: BaseWeaponLightMachineGun
+  parent: [BaseWeaponLightMachineGun, StreeCredRedeemable]
   description: The next generation weapon system light machine gun produced by Kane & Knox. Packaged with a suppressor. Chambered in 7.62x51mm.
   components:
   - type: Sprite

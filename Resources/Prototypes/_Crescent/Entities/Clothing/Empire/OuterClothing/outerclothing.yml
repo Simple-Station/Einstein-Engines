@@ -37,7 +37,7 @@
     faction: DSM
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, StreeCredRedeemableHigh]
   id: ClothingOuterHardsuitInspector
   name: mk. IV 'ORATEUR' combat hardsuit
   description: A modular combat hardsuit for the Advocati Compliance Corps. Bears the colors of the Kaiser's administration.
@@ -171,7 +171,7 @@
     faction: DSM
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, StreeCredRedeemableHigh]
   id: ClothingOuterHardsuitImperialCommand
   name: imperial command hardsuit
   description: A modular commander's hardsuit, bearing the colors of House Olywir.
@@ -207,7 +207,7 @@
     faction: DSM
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase,StreeCredRedeemableLow]
   id: ClothingOuterHardsuitImperialSoldier
   name: imperial 'JANNISSARY' mk I combat hardsuit
   description: A modular soldier's hardsuit, bears the colors of the Kaiser and House Olywir.
@@ -243,7 +243,7 @@
     faction: DSM
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, StreeCredRedeemable]
   id: ClothingOuterHardsuitImperialKnight
   name: imperial 'KONIGSCHILD' mk II combat hardsuit
   description: A modular knight's hardsuit, bears the colors of the Kaiser and House Olywir.

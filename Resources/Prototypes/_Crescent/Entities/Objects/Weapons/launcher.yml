@@ -1,6 +1,6 @@
 - type: entity
   name: NCWL GPGL-94 Thumper 40mm
-  parent: [BaseWeaponLauncher, BaseGunWieldable]
+  parent: [BaseWeaponLauncher, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponLauncherGM94
   description: An NCWL grenade launcher based on ancient schematics.
   components:
@@ -37,7 +37,7 @@
 
 - type: entity
   name: SHI MGL-6 Milkor 40mm
-  parent: [BaseWeaponRevolver, BaseGunWieldable]
+  parent: [BaseWeaponRevolver, BaseGunWieldable,StreeCredRedeemable]
   id: WeaponLauncherMilkor
   description: A large grenade launcher designed by Shinora. For when you need to make hell rain on the enemy.
   components:
@@ -94,7 +94,7 @@
 
 - type: entity
   name: SHI LAM-17 84mm
-  parent: [BaseWeaponLauncher, BaseGunWieldable]
+  parent: [BaseWeaponLauncher, BaseGunWieldable,StreeCredRedeemable]
   id: WeaponLauncherDisposableRocket
   description: A single-shot, throwaway rocket launcher designed by Shinora for combating mechs in the field. Quite compact when folded.
   components:
@@ -129,7 +129,7 @@
 
 - type: entity
   name: PTA M-32 Commando 44mm
-  parent: [BaseWeaponLauncher, BaseGunWieldable]
+  parent: [BaseWeaponLauncher, BaseGunWieldable,StreeCredRedeemable]
   id: WeaponLauncherCommando
   description: A four-shot, throwaway rocket launcher designed by Pang Tai Arms for obliterating any infantry and damaging mechs
   components:
@@ -171,7 +171,7 @@
 
 - type: entity
   name: IRM M320 40mm
-  parent: BaseItem
+  parent: [BaseItem, StreeCredRedeemable]
   id: WeaponLauncherM320
   description: A cheap and light single-shot grenade launcher, designed by Olywir Armaments.
   components:
@@ -219,7 +219,7 @@
 
 - type: entity
   name: PTA M-5 Carl Gustaf 84mm
-  parent: [BaseWeaponLauncher, BaseGunWieldable]
+  parent: [BaseWeaponLauncher, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponLauncherGustav
   description: A ruggid, breach-loaded recoiless rifle. Suitable for a variety of large targets.
   components:
@@ -342,7 +342,7 @@
 
 - type: entity
   name: PTA 10AX Chinalake 40mm
-  parent: [BaseWeaponLauncher, BaseGunWieldable]
+  parent: [BaseWeaponLauncher, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponLauncherChinaLake
   description: A pump action grenade launcher manufactured by Pang Tai Arms.
   components:
