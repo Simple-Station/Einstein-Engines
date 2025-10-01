@@ -50,7 +50,7 @@ public sealed class SacrificialAltarSystem : SharedSacrificialAltarSystem
         // lower glimmer by a random amount
         _glimmer.DeltaGlimmerInput(ent.Comp.GlimmerReduction * psionic.CurrentAmplification);
 
-        if (ent.Comp.RewardPool is not null)
+        if (ent.Comp.RewardPool is not null && _random.Prob(ent.Comp.BaseItemChance * psionic.CurrentDampening))
         {
             var proto = _proto.Index(_random.Pick(ent.Comp.RewardPool));
             Spawn(proto.ToString(), Transform(ent).Coordinates);
@@ -87,6 +87,14 @@ public sealed class SacrificialAltarSystem : SharedSacrificialAltarSystem
         if (!HasComp<HumanoidAppearanceComponent>(user))
         {
             _popup.PopupEntity(Loc.GetString("altar-failure-reason-user-humanoid"), ent, user, PopupType.SmallCaution);
+            return;
+        }
+
+        // prevent psichecking SSD people...
+        // notably there is no check in OnDoAfter so you can't alt f4 to survive being sacrificed
+        if (!HasComp<ActorComponent>(target) || _mind.GetMind(target) == null)
+        {
+            _popup.PopupEntity(Loc.GetString("altar-failure-reason-target-catatonic", ("target", target)), ent, user, PopupType.SmallCaution);
             return;
         }
 
