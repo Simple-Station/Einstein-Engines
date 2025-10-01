@@ -251,6 +251,7 @@
         color: "#ff4f00"
         requireDetailRange: false
 
+- type: entity
   name: PTA T4 Whisper 9x39mm
   parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponSubMachineGunPTAAsVal

@@ -148,6 +148,58 @@
         amount: 2
 
 - type: entity
+  id: WeaponCaseCobra
+  parent: WeaponCasePistol
+  name: pang tai arms "T2 Cobra" case
+  description: A robust pistol with a integrated supressor.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponPistolCobra
+        amount: 1
+      - id: MagazinePistolCaselessRifle
+        amount: 2
+
+- type: entity
+  id: WeaponCaseGhost
+  parent: WeaponCaseSmg
+  name: pang tai arms "T3 Ghost" case
+  description: A smart smg with a integrated supressor.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSubMachineGunGhost
+        amount: 1
+      - id: MagazinePistolSmartgun
+        amount: 2
+
+- type: entity
+  id: WeaponCasePhantom
+  parent: WeaponCaseRifle
+  name: pang tai arms "T4 Phantom" case
+  description: A robust rifle with a integrated supressor.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSubMachineGunPTAAsVal
+        amount: 1
+      - id: MagazineCaselessRifle
+        amount: 2
+
+- type: entity
+  id: WeaponCaseVintorez
+  parent: WeaponCaseRifle
+  name: pang tai arms "T4-Pro Vintorez" case
+  description: A robust rifle with a integrated supressor, that trades ROF for damage.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponRifleVintorez
+        amount: 1
+      - id: MagazineCaselessRifle
+        amount: 2
+
+- type: entity
   id: CratePangtaiPozhar
   parent: WeaponCaseRifle
   name: pang tai arms "MOD-2 Pozhar" case
@@ -176,7 +228,7 @@
 - type: entity
   id: CratePangtaiKarabin
   parent: WeaponCaseShotgun
-  name: pang tai arms "23AX Karabin" case
+  name: pang tai arms "MOD-23 Karabin" case
   description: A large shotgun packaged in a stamped weapon case.
   components:
   - type: StorageFill

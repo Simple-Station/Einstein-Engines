@@ -1,4 +1,44 @@
 - type: cargoProduct
+  id: VintorezPangtai
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/vintorez.rsi
+    state: icon
+  product: WeaponCaseVintorez
+  cost: 13000
+  category: cargoproduct-category-name-military
+  group: pangtai
+
+- type: cargoProduct
+  id: PhantomPangtai
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/asval.rsi
+    state: icon
+  product: WeaponCasePhantom
+  cost: 10000
+  category: cargoproduct-category-name-military
+  group: pangtai
+
+- type: cargoProduct
+  id: GhostPangtai
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/ghost.rsi
+    state: icon
+  product: WeaponCaseGhost
+  cost: 8000
+  category: cargoproduct-category-name-military
+  group: pangtai
+
+- type: cargoProduct
+  id: CobraPangtai
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/cobra.rsi
+    state: icon
+  product: WeaponCaseCobra
+  cost: 5000
+  category: cargoproduct-category-name-military
+  group: pangtai
+
+- type: cargoProduct
   id: TakemuraPangtai
   icon:
     sprite: _Crescent/Objects/Weapons/Guns/takemura.rsi

@@ -1,6 +1,6 @@
 - type: entity
   name: PTA T3 Ghost 12mm
-  parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
+  parent: [BaseWeaponSubMachineGun, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponSubMachineGunGhost
   description: A internally supressed supressed SMG, chambered in 12mm Smart.
   components:

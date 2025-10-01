@@ -7,9 +7,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 17
-    harmorPenetration: 30
-    stoppingPower: 2
+        Piercing: 27
+    harmorPenetration: 20
 
 - type: entity
   id: BulletCaselessRiflePractice
@@ -54,8 +53,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 17
-    harmorPenetration: 45
+        Piercing: 27
+    harmorPenetration: 40
 
 - type: entity
   id: BulletCaselessRifleShrapnel
