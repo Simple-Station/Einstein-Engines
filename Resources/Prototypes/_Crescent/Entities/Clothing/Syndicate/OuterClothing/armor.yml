@@ -105,7 +105,7 @@
         Heat: 15
         Caustic: 15
   - type: ClothingAddFaction 
-  faction: NCSP
+    faction: NCSP
 
 - type: entity
   parent: ClothingOuterHardsuitBase
