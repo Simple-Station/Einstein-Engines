@@ -71,18 +71,60 @@
     - /Audio/_Crescent/Ambience/CombatMode/NCWL_2.ogg
 
 
-# TFSC | STATE: happy with em
+### TFSC (Balkanized) | STATE: redone by Baldy, needs custom tracks for each subfaction - leaving GSC with their Brigador OST
+
+#GSC | STATE: Has their Brigador OST
 - type: ambientMusic
-  id: combatmodeTFSC
+  id: combatmodeGSC
   priority: 3
   sound:
-    collection: combatmodeTFSC
+    collection: combatmodeGSC
 
 - type: soundCollection
-  id: combatmodeTFSC
+  id: combatmodeGSC
   files:
     - /Audio/_Crescent/Ambience/CombatMode/TFSC_1.ogg
     - /Audio/_Crescent/Ambience/CombatMode/TFSC_2.ogg
+    
+# SAW | STATE: Heavy industrial tracks
+- type: ambientMusic
+  id: combatmodeSAW
+  priority: 3
+  sound:
+    collection: combatmodeSAW
+
+- type: soundCollection
+  id: combatmodeSAW
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/TFSC_1.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/TFSC_2.ogg
+    
+#IPM | STATE: Left with default TFSC track, needs replacement
+- type: ambientMusic
+  id: combatmodeIPM
+  priority: 3
+  sound:
+    collection: combatmodeIPM
+
+- type: soundCollection
+  id: combatmodeIPM
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/TFSC_1.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/TFSC_2.ogg
+
+#CD | STATE: Left with default TFSC track
+- type: ambientMusic
+  id: combatmodeCD
+  priority: 3
+  sound:
+    collection: combatmodeCD
+
+- type: soundCollection
+  id: combatmodeCD
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/TFSC_1.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/TFSC_2.ogg
+
 
 # DSM | STATE: theyre ok
 - type: ambientMusic
