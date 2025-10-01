@@ -157,13 +157,13 @@
 
 - type: entity
   parent: BaseWeaponTurretAutoPD
-  name: NCSP 7.62x51mm 'Vagrant' anti-boarder turret
-  id: WeaponTurretAutoPDNCSP
-  suffix: NCSP PDT
+  name: TFSC 7.62x51mm 'Vagrant' anti-boarder turret
+  id: WeaponTurretAutoPDTFSC
+  suffix: TFSC PDT
   components:
     - type: NpcFactionMember
       factions:
-        - NCSP
+        - TFSC
 
 - type: entity
   parent: BaseWeaponTurretAutoPD

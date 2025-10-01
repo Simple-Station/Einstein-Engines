@@ -37,7 +37,7 @@
   - type: Contraband
     value: 8
   - type: ClothingAddFaction 
-    faction: NCSP
+    faction: TFSC
 
 
 - type: entity
@@ -77,7 +77,7 @@
   - type: Contraband
     value: 8
   - type: ClothingAddFaction 
-    faction: NCSP
+    faction: TFSC
 
 - type: entity
   parent: ClothingOuterHardsuitRamzi
@@ -105,7 +105,7 @@
         Heat: 15
         Caustic: 15
   - type: ClothingAddFaction 
-    faction: NCSP
+    faction: TFSC
 
 - type: entity
   parent: ClothingOuterHardsuitBase
@@ -143,7 +143,7 @@
   - type: Contraband
     value: 15
   - type: ClothingAddFaction 
-    faction: NCSP
+    faction: TFSC
 
 - type: entity
   parent: ClothingOuterHardsuitBase
@@ -179,7 +179,7 @@
   - type: Contraband
     value: 5
   - type: ClothingAddFaction 
-    faction: NCSP
+    faction: TFSC
 
 - type: entity
   parent: ClothingOuterHardsuitBase
@@ -215,7 +215,7 @@
   - type: Contraband
     value: 5
   - type: ClothingAddFaction 
-    faction: NCSP
+    faction: TFSC
 
 #regular shit. if you put hardsuit below here i'm going to explode your cock
 
@@ -249,7 +249,7 @@
   - type: StaticPrice
     price: 250
   - type: ClothingAddFaction 
-    faction: NCSP
+    faction: TFSC
 
 - type: entity
   parent: ClothingOuterBaseLarge
@@ -281,7 +281,7 @@
   - type: StaticPrice
     price: 250
   - type: ClothingAddFaction 
-    faction: NCSP
+    faction: TFSC
 
 - type: entity
   parent: ClothingOuterBaseLarge
@@ -302,7 +302,7 @@
   - type: StaticPrice
     price: 100
   - type: ClothingAddFaction 
-    faction: NCSP
+    faction: TFSC
 
 - type: entity
   parent: ClothingOuterBaseLarge
@@ -330,7 +330,7 @@
   - type: StaticPrice
     price: 100
   - type: ClothingAddFaction 
-    faction: NCSP
+    faction: TFSC
 
 - type: entity
   parent: ClothingOuterArmorBasic
@@ -362,7 +362,7 @@
   - type: StaticPrice
     price: 100
   - type: ClothingAddFaction 
-    faction: NCSP
+    faction: TFSC
 
 - type: entity
   parent: ClothingOuterArmorBasic
@@ -394,7 +394,7 @@
   - type: StaticPrice
     price: 250
   - type: ClothingAddFaction 
-    faction: NCSP
+    faction: TFSC
 
 - type: entity
   parent: ClothingOuterArmorBasic
@@ -426,7 +426,7 @@
   - type: StaticPrice
     price: 250
   - type: ClothingAddFaction 
-    faction: NCSP
+    faction: TFSC
 
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
@@ -458,7 +458,7 @@
   - type: StaticPrice
     price: 350
   - type: ClothingAddFaction 
-    faction: NCSP
+    faction: TFSC
 
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
@@ -490,7 +490,7 @@
   - type: StaticPrice
     price: 450
   - type: ClothingAddFaction 
-    faction: NCSP
+    faction: TFSC
 
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
@@ -522,4 +522,4 @@
   - type: StaticPrice
     price: 500
   - type: ClothingAddFaction 
-    faction: NCSP
+    faction: TFSC
