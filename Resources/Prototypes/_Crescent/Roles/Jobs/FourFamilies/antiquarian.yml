@@ -13,6 +13,8 @@
   requirements:
     - !type:FactionRequirement
       factionID: "TAP"
+    - !type:CharacterOverallTimeRequirement
+      min: 36000
     - !type:CharacterSpeciesRequirement
       species:
         - Human
