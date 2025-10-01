@@ -22,7 +22,7 @@
       - type: ChatRank
         rank: crescent-rank-steward
       - type: HullrotFaction
-        faction: 
+        faction: ATH
       - type: LanguageAdder
         addSpoken:
           - SolBasic
