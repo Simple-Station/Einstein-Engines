@@ -35,7 +35,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitHEV
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, StreeCredRedeemable]
   id: ClothingOuterHardsuitHighsec
   name: shinohara SVBT-2 combat hardsuit
   description: A modular combat hardsuit developed by Shinohara Heavy Industries. Sold to elite mercs and corporate deathsquads everywhere.
@@ -78,6 +78,81 @@
     sprite: _Crescent/Clothing/SHI/OuterClothing/corpsec_ua.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCorpsecUA
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitSHIJuggernaut
+  name: Svbt-XA "KAMADO" juggernaut hardsuit
+  description: Experimental model of the svbt-2 heavily reinforced with multi layer Kevlar ceramic plates meant for use by shinobi liquidators.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/OuterClothing/juggsuit.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/OuterClothing/juggsuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: DegradeableArmor
+    armorMaxHealth: 2000
+    armorType: Ceramic
+    armorRepair: NTCeramic
+    initialModifiers:
+      flatReductions:
+        Blunt: 35
+        Slash: 25
+        Piercing: 90
+        Heat: 35
+        Caustic: 25
+  - type: ClothingSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.6
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitSHIJuggernaut
+  - type: StaticPrice
+    price: 5000
+
+- type: entity
+  parent: ClothingOuterArmorBasic
+  id: ClothingOuterHardsuitSHISpeedsuit
+  name: Svbt-XB "RAIKU" liquidator suit
+  description: Experimental model of the svbt 2 with most of the Armor replaced with durathread, the suit comes equipped with a soft sole silencing footsteps.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/OuterClothing/speedsuit.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/OuterClothing/speedsuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    coefficient: 0.01
+  - type: FireProtection
+    reduction: 0.75
+  - type: ExplosionResistance
+    damageCoefficient: 1
+  - type: DegradeableArmor
+    armorMaxHealth: 500
+    armorType: Ceramic
+    armorRepair: NTCeramic
+    initialModifiers:
+      flatReductions:
+        Blunt: 20
+        Slash: 20
+        Piercing: 50
+        Heat: 15
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    sprintModifier: 1.3
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepSilent
+  - type: Magboots
+  - type: ToggleableClothing
+    slot: head
+    clothingPrototype: ClothingHeadHelmetHardsuitSHISpeedsuit
 
 #armor
 

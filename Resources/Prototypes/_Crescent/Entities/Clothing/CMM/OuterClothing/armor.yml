@@ -85,7 +85,7 @@
 #hardsuit
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, StreeCredRedeemableLow]
   id: ClothingOuterHardsuitMidshipman
   name: midshipman armored hardsuit
   description: A modular hardsuit belonging to the past century. Used en masse by the defunct Minutemen, this relic is still found in the hands of security forces, militias, and nostalgics.
@@ -119,10 +119,10 @@
     price: 1250
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, StreeCredRedeemableLow]
   id: ClothingOuterHardsuitCMMPatrol
   name: ballistic-reinforced patrol suit
-  description: A bulky hardsuit belonging to the past century. An iconic and rare piece worn by high-ranking Minutemen, prized by collectors and lawmen alike. 
+  description: A bulky hardsuit belonging to the past century. An iconic and rare piece worn by high-ranking Minutemen, prized by collectors and lawmen alike.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/CMM/OuterClothing/patrol.rsi

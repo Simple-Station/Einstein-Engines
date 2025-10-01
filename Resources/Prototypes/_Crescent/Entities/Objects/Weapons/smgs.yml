@@ -54,7 +54,7 @@
 
 - type: entity
   name: PTA P-M50 Vektor 6mm
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable]
   id: WeaponSubMachineGunPTAVektor
   description: A cheap, open-bolt copy of the Vector. Unlike the real vector this one doesnt have the signature Super V recoil mitigation system. Chambered in small 6mm rounds.
   components:
@@ -104,7 +104,7 @@
 
 - type: entity
   name: NCWL DS1 Watchdog 9x19mm
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable]
   id: WeaponSubMachineGunNCWLWatchdog
   description: A light submachinegun of communard design. Union Foundries makes these for the common grunt, and the cheap materials probably reflect that.
   components:
@@ -131,7 +131,7 @@
 
 - type: entity
   name: SHI MP49 Warden 9x19mm
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable]
   id: WeaponSubMachineGunMP49
   description: Shinohara's attempt at copying the vintage NanoTrasen MP5 and outsourcing it to the open market. Seen as an inferior model at first, most mercs and solos have taken a liking to this cheaper alternative.
   components:
@@ -158,7 +158,7 @@
 
 - type: entity
   name: NT MP5 9x19mm
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable]
   id: WeaponSubMachineGunMP5
   description: A light Terran submachinegun originating from the now-defunct NanoTrasen Industries. Seen as a superior alternative to most light SMGs on the market and often used by elite militias everywhere.
   components:
@@ -206,7 +206,7 @@
 
 - type: entity
   name: NCWL DS2 Liberator .327
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable]
   id: WeaponSubMachineGunBloodhound
   description: Manufactured for internal use by the Homeguard, the second entry of the Union Foundries focuses primarily on stopping power while sacrificing speed and agility.
   components:
@@ -252,7 +252,7 @@
 
 - type: entity
   name: SHI M221s Phantom 6mm
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemableLow]
   id: WeaponSubMachineGunSabre
   description: A cheap submachine gun that cuts a corners and features to deliver a reliable enough product, but hey, at least it comes with a free suppressor . Chambered in 6mm PSTF.
   components:
@@ -305,7 +305,7 @@
 
 - type: entity
   name: HP Mak-11 Beetle 9x19mm
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable]
   id: WeaponSubMachineGunBeetle
   description: A crude weapon manufactured by the Hunter's Pride merchant's guild. Intended as nothing more than cheap armament to stuff into the hands of expendable fodder.
   components:
@@ -360,7 +360,7 @@
 
 - type: entity
   name: PTA P-M100 Cheshyre 11mm
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable]
   id: WeaponSubMachineGunCheshyre
   description: A heavy operator's SMG developed by Pang Tai Arms. Sold to independent contractors and security forces everywhere.
   components:
@@ -409,7 +409,7 @@
 
 - type: entity
   name: HGS KleMG-40 Blume 9x19mm
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable]
   id: WeaponSubMachineGunMP40
   description: The Kleines Maschinengewehr 40. An antique light SMG of a past conflict. Chambered in 9x19mm.
   components:
@@ -457,7 +457,7 @@
 
 - type: entity
   name: HGS KleMG-Neo Kevyt 9x19mm
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable]
   id: WeaponSubMachineGunKebyt
   description: The Neo Kleines Maschinengewehr. Derived fom an older design and revitalized for swift subjugation. Chambered in 9x19mm.
   components:
