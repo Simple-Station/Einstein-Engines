@@ -8,18 +8,7 @@
   },
   "states": [
     {
-      "name": "syndie_off",
-      "directions": 4
-    },
-    {
-      "name": "syndie_lethal",
-      "directions": 4
-    },
-    {
-      "name": "syndie_broken"
-    },
-    {
-      "name": "syndie_stun",
+      "name": "space_artillery",
       "directions": 4
     }
   ]
