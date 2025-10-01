@@ -22,6 +22,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-smarts
+      - type: HullrotFaction
+        faction: ATH
       - type: CPRTraining
       - type: SurgerySpeedModifier
         speedModifier: 2.5

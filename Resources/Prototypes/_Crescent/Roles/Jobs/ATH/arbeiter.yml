@@ -21,6 +21,8 @@
   special:
   - !type:AddComponentSpecial
     components:
+      - type: HullrotFaction
+        faction: ATH 
       - type: LanguageAdder
         addSpoken:
           - SolBasic
