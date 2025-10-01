@@ -2,11 +2,13 @@
 - type: htnCompound
   id: HullrotAutoPD
   branches:
-    - tasks:
+    - preconditions:
+      - !type:PoweredPrecondition
+      - !type:SignalControlPrecondition
+      tasks:
         - !type:HTNPrimitiveTask
           operator: !type:UtilityOperator
             proto: NearbyPDTTargets
-
         - !type:HTNPrimitiveTask
           preconditions:
             - !type:KeyExistsPrecondition
@@ -27,7 +29,9 @@
               proto: NearbyPDTTargets
               key: Target
 
-    - tasks:
+    - preconditions:
+      - !type:PoweredPrecondition
+      tasks:
       - !type:HTNCompoundTask
           task: IdleSpinCompound
 
