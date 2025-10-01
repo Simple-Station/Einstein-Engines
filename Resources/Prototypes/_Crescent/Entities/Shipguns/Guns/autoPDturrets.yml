@@ -111,16 +111,18 @@
       size: Small
     - type: HTN
       rootTask:
-        task: TurretCompound
+        task: HullrotAutoPD
       blackboard:
         RotateSpeed: !type:Single
           3.141
         SoundTargetInLOS: !type:SoundPathSpecifier
           path: /Audio/Effects/double_beep.ogg
         VisionRadius: !type:Single
-          2048 #this is dividied by 8 for some reason
-        AggroVisionRadius: !type:Single
-          2048 #this is divided by 8 for some reason
+          128 #might be divided by 8 for some reason
+        RangedRange: !type:Single
+          128
+        # AggroVisionRadius: !type:Single
+        #   2048 #this is divided by 8 for some reason
 
 
 - type: entity
