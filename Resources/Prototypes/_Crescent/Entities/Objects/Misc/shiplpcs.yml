@@ -465,9 +465,9 @@
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherEmirasy
-  name: NCWL 'Emirasy' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Emirasy-class assault frigate pattern. Has to be redeemed at a shipyard console.
+  id: ShipVoucherGrishingrad
+  name: NCWL 'Grishingrad' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Grishingrad-class assault frigate pattern. Has to be redeemed at a shipyard console.
   components:
   - type: Item
     size: Small
@@ -478,7 +478,7 @@
   - type: StaticPrice
     price: 75000
   - type: ShipVoucher
-    ship: Emirasy
+    ship: Grishingrad
 
 #Donator END
 
