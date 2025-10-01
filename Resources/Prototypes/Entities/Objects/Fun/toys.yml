@@ -1547,7 +1547,7 @@
   parent: BaseFigurineCheapo
   id: ToyAi
   name: AI toy
-  description: A scaled-dowtoy AI core.
+  description: A scaled-down toy AI core.
   components:
   - type: Sprite
     sprite: Objects/Fun/AI.rsi
