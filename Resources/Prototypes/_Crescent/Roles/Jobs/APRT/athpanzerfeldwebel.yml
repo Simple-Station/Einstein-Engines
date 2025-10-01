@@ -24,7 +24,7 @@
       - type: ChatRank
         rank: crescent-rank-kanoneer
       - type: HullrotFaction
-        faction: 
+        faction: ATH
       - type: BibleUser
   access:
   - EmergencyShuttleRepealAll
