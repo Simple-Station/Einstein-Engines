@@ -1,7 +1,9 @@
 using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
+using Content.Server.Lightning;
 using Content.Shared._Crescent;
+using Content.Shared._Lavaland.Weapons;
 using Content.Shared.Projectiles;
 using Robust.Server.GameObjects;
 using Robust.Shared.Physics;
@@ -134,8 +136,10 @@ public class ProjectilePhasePreventerSystem : EntitySystem
                 var bulletFixtures = fixtureQuery.GetComponent(owner);
                 var bulletString = bulletFixtures.Fixtures.Keys.First();
                 var checkUid = EntityUid.Invalid;
-                if (projectile.Weapon is not null && Transform(projectile.Weapon.Value).GridUid is not null )
-                    checkUid = Transform(projectile.Weapon.Value).GridUid!.Value;
+                if (!TryComp<TransformComponent>(projectile.Weapon, out var projectileWeaponTransform))
+                    continue;
+                if (projectile.Weapon is not null && projectileWeaponTransform.GridUid is not null)
+                    checkUid = projectileWeaponTransform.GridUid!.Value;
                 foreach (var hit in _phys.IntersectRay(_trans.GetMapId(owner), ray,rayLength, projectile.Weapon, false))
                 {
                     // whilst the raycast supports a filter function . i do not want to package variabiles in lambdas in bulk
@@ -143,8 +147,9 @@ public class ProjectilePhasePreventerSystem : EntitySystem
                         continue;
                     if (projectile.IgnoredEntities.Contains(hit.HitEntity))
                         continue;
+                    if (!TryComp<TransformComponent>(hit.HitEntity, out var hitTransform))
+                        continue;
                     // dont raise these. We cut some slack for the main thread by running it here.
-                    var hitTransform = Transform(hit.HitEntity);
                     if (hitTransform.GridUid is not null && checkUid == hitTransform.GridUid && projectile.IgnoreWeaponGrid)
                         continue;
                     var targetPhysics = physQuery.GetComponent(hit.HitEntity);

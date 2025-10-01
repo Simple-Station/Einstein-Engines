@@ -54,7 +54,7 @@ crescent-rank-ncwl-grunt = Soldat
 crescent-rank-ncwl-new = Cadet
 crescent-rank-ncwl-doctor = Doktor
 
-#ncwl
+# ncwl
 crescent-rank-ncwl-faction-leader = Major
 crescent-rank-ncwl-home-leader = Kommissar
 crescent-rank-ncwl-home-squad-lead = Kapitan

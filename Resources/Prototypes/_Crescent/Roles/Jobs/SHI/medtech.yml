@@ -11,6 +11,8 @@
   supervisors: job-supervisors-shi
   canBeAntag: false
   requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 10800
     - !type:FactionRequirement
       factionID: "SHI"
     - !type:CharacterTraitRequirement
@@ -23,7 +25,7 @@
     components:
       - type: CPRTraining
       - type: SurgerySpeedModifier
-        speedModifier: 1.5
+        speedModifier: 1.75
       - type: ChatRank
         rank: crescent-rank-shi-medtech
       - type: LanguageAdder

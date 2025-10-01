@@ -8,12 +8,12 @@
   path: /Maps/_Crescent/Shuttles/DSM/covetor.yml
 
 - type: gameMap
-  id: Imp
+  id: Covetor
   mapName: 'DSM Covetor'
   mapPath: /Maps/_Crescent/Shuttles/DSM/covetor.yml
   minPlayers: 0
   stations:
-    Imp:
+    Covetor:
       stationProto: StandardCrescentCivilianVessel
       components:
         - type: VesselIcon

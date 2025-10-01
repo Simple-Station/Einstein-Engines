@@ -200,9 +200,9 @@
   components:
   - type: Explosive
     explosionType: Default
-    maxIntensity: 800
-    intensitySlope: 200
-    totalIntensity: 10000
+    maxIntensity: 1000
+    intensitySlope: 400
+    totalIntensity: 15000
 
 - type: entity
   id: TorpedoBase
@@ -229,9 +229,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 800
-    intensitySlope: 200
-    totalIntensity: 10000
+    maxIntensity: 1000
+    intensitySlope: 400
+    totalIntensity: 15000
   - type: HeatSeeking
     rotationSpeed: 25
     acceleration: 25
