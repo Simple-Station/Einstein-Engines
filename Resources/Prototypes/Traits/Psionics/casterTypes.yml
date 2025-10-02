@@ -79,3 +79,57 @@
           inverted: true
           species:
             - IPC
+
+- type: trait
+  id: Biomancer
+  category: Psionics
+  points: -2
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Psionic
+          powerPool: BiomancerPowerPool
+    - !type:TraitAddPsionics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsCasterType
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+        - Chaplain
+        - Prisoner
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+
+- type: trait
+  id: Pyromancer
+  category: Psionics
+  points: -2
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Psionic
+          powerPool: PyromancerPowerPool
+    - !type:TraitAddPsionics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsCasterType
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+        - Chaplain
+        - Prisoner
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC

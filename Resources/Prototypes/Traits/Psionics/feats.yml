@@ -9,6 +9,8 @@
           traits:
             - LatentPsychic
             - PsychoHistorian
+            - Biomancer
+            - Pyromancer
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -37,6 +39,8 @@
           traits:
             - LatentPsychic
             - PsychoHistorian
+            - Biomancer
+            - Pyromancer
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
