@@ -109,8 +109,8 @@
 - type: soundCollection
   id: combatmodeIPM
   files:
-    - /Audio/_Crescent/Ambience/CombatMode/TFSC_1.ogg
-    - /Audio/_Crescent/Ambience/CombatMode/TFSC_2.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/IPM_1.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/IPM_2.ogg
 
 #CD | STATE: Left with default TFSC track
 - type: ambientMusic
