@@ -74,7 +74,7 @@
   parent: ClothingOuterHardsuitHighsec
   id: ClothingOuterHardsuitHighsecUA
   name: shinohara independent SVBT-2 combat hardsuit
-  description: A modular combat hardsuit developed by Shinohara Heavy Industries. Sold to elite mercs and corporate deathsquads everywhere.
+  description: A modular combat hardsuit developed by Shinohara Heavy Industries. Sold to elite mercs and corporate deathsquads everywhere. Customized by the subsidiary group United Arsenal.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/SHI/OuterClothing/corpsec_ua.rsi

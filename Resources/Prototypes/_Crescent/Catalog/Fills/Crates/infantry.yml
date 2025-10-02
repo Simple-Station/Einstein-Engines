@@ -491,7 +491,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingOuterHardsuitHighsecUA
+      - id: ClothingOuterHardsuitHighsecIndependent
         amount: 1
 
 - type: entity
