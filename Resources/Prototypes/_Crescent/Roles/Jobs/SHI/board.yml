@@ -27,6 +27,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-shi-board
+      - type: HullrotFaction
+        faction: SHI
       - type: LanguageAdder
         addSpoken:
           - Kaishago

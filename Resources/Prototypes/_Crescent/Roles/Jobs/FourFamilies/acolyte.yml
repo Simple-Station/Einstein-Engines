@@ -30,6 +30,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-acolytetap
+      - type: HullrotFaction
+        faction: TAP
       - type: Telepathic
       - type: LanguageAdder
         addSpoken:

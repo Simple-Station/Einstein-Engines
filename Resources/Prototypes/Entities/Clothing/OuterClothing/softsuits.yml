@@ -59,6 +59,8 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:Container {}
+  - type: ClothingAddFaction #not on my watch .2 | 2025
+    faction: IND
 
 #Prisoner EVA
 - type: entity

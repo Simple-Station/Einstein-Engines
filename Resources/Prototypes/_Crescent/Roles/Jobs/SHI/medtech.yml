@@ -28,6 +28,8 @@
         speedModifier: 1.75
       - type: ChatRank
         rank: crescent-rank-shi-medtech
+      - type: HullrotFaction
+        faction: SHI
       - type: LanguageAdder
         addSpoken:
           - Kaishago

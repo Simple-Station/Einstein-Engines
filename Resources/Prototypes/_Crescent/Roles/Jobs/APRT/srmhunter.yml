@@ -29,6 +29,8 @@
   special:
     - !type:AddComponentSpecial
       components:
+        - type: HullrotFaction
+          faction: SRM
         - type: Telepathic
         - type: BibleUser
 

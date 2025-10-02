@@ -26,6 +26,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-patriarch
+      - type: HullrotFaction
+        faction: CD
       - type: LanguageAdder
         addSpoken:
           - Freespeak
