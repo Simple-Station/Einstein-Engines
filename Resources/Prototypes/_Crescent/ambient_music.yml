@@ -451,6 +451,19 @@
    - /Audio/_Crescent/Stations/TFSC/Jackal/jackal_3.ogg
    - /Audio/_Crescent/Stations/TFSC/Jackal/jackal_4.ogg
 
+#DOCHENSKAYA
+- type: ambientMusic
+  id: DochenskayaMusic
+  priority: 1
+  sound:
+    collection: DochenskayaMusic
+
+- type: soundCollection
+  id: DochenskayaMusic
+  files:
+   - /Audio/_Crescent/Stations/TFSC/Dochenskaya/dochenskaya_1.ogg
+   - /Audio/_Crescent/Stations/TFSC/Dochenskaya/dochenskaya_2.ogg
+
 #COUNTSMAN
 - type: ambientMusic
   id: CountsmanMusic
