@@ -461,6 +461,27 @@
 
 #T3 END
 
+#Donator
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherGrishingrad
+  name: NCWL 'Grishingrad' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Grishingrad-class assault frigate pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 75000
+  - type: ShipVoucher
+    ship: Grishingrad
+
+#Donator END
+
 #SHI
 
 - type: entity

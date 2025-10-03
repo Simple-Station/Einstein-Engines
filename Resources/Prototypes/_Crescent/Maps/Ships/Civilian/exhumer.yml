@@ -4,7 +4,10 @@
 - type: vessel
   id: Exhumer
   name: ICM Exhumer
-  description: An entry-level mining corvette.
+  description: |
+    An entry-level mining corvette, equipped with basic salvaging equipment and mining plusers to allow for automated mining.
+    LOADOUT: 2x SHI 250c "Exhumer" kinetic Pulser
+    MINIMUM CREW: 1x Pilot
   price: 50000
   category: Small
   group: Civilian

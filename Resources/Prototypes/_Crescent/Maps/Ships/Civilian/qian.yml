@@ -4,7 +4,10 @@
 - type: vessel
   id: Qian
   name: PTA Qian
-  description: A medium-sized hauler equipped with many modern modules for long-term voyages. Equipped minimally with ballistic turrets.
+  description: |
+    A medium-sized hauler equipped with medical and security modules for long-term voyages. Equipped minimally with ballistic turrets.
+    LOADOUT: x4 20x135mm PDT
+    MINIMUM CREW: 1x Pilot
   price: 130000
   category: Medium
   group: Civilian
