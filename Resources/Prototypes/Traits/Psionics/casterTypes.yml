@@ -83,7 +83,7 @@
 - type: trait
   id: Biomancer
   category: Psionics
-  points: -2
+  points: -4
   functions:
     - !type:TraitAddComponent
       components:
@@ -110,7 +110,7 @@
 - type: trait
   id: Pyromancer
   category: Psionics
-  points: -2
+  points: -4
   functions:
     - !type:TraitAddComponent
       components:
