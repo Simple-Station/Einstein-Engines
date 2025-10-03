@@ -488,8 +488,8 @@
     ShipHull: 9000
 
 - type: latheRecipe
-  id: PadparadschaLPC
-  result: ShipVoucherPadparadscha
+  id: SuzerainLPC
+  result: ShipVoucherSuzerain
   completetime: 1
   materials:
     StarshipEngineComponents: 12500
