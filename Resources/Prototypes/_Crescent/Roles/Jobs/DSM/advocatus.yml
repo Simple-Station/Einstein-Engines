@@ -14,11 +14,11 @@
     - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
       factionID: "DSM"
+    - !type:CharacterOverallTimeRequirement
+      min: 36000
     - !type:CharacterSpeciesRequirement
       species:
         - Human
-    - !type:CharacterOverallTimeRequirement
-      min: 36000
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -31,6 +31,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-advocatus
+      - type: HullrotFaction
+        faction: DSM
       - type: LanguageAdder
         addSpoken:
           - HighImperial

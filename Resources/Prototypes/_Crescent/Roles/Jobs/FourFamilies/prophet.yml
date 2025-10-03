@@ -14,6 +14,8 @@
     - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
       factionID: "TAP"
+    - !type:CharacterOverallTimeRequirement
+      min: 36000
     - !type:CharacterSpeciesRequirement
       species:
         - Moth
@@ -28,6 +30,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-prophet
+      - type: HullrotFaction
+        faction: TAP
       - type: Telepathic
       - type: LanguageAdder
         addSpoken:

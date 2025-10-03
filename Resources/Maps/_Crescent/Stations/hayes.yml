@@ -14125,13 +14125,15 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 7.5,7.5
       parent: 1
-- proto: WarpPointShip
+- proto: WarpPoint
   entities:
   - uid: 1699
     components:
     - type: Transform
       pos: -6.5,0.5
       parent: 1
+    - type: WarpPoint
+      location: IPM Hayes Medical Waystation
 - proto: WeaponCapacitorRecharger
   entities:
   - uid: 1700

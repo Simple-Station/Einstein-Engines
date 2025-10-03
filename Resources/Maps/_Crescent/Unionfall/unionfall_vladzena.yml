@@ -59593,7 +59593,7 @@ entities:
       linkedConsoleId: invalid
       obstructedRanges:
       - 4.805064782192553 rad: 4.497634078941265 rad
-- proto: WeaponTurretPDTNCSP
+- proto: WeaponTurretPDTAdvanced
   entities:
   - uid: 6695
     components:

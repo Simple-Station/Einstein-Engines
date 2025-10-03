@@ -33,9 +33,11 @@
     sprintModifier: 0.9
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitHEV
+  - type: ClothingAddFaction
+    faction: SHI
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, StreeCredRedeemable]
   id: ClothingOuterHardsuitHighsec
   name: shinohara SVBT-2 combat hardsuit
   description: A modular combat hardsuit developed by Shinohara Heavy Industries. Sold to elite mercs and corporate deathsquads everywhere.
@@ -65,6 +67,8 @@
     sprintModifier: 0.85
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCorpsec
+  - type: ClothingAddFaction
+    faction: SHI
 
 - type: entity
   parent: ClothingOuterHardsuitHighsec
@@ -78,6 +82,8 @@
     sprite: _Crescent/Clothing/SHI/OuterClothing/corpsec_ua.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCorpsecUA
+  - type: ClothingAddFaction
+    faction: SHI
 
 - type: entity
   parent: ClothingOuterHardsuitBase
@@ -211,6 +217,8 @@
   - type: ExplosionResistance
     damageCoefficient: 0.90
   - type: GroupExamine
+  - type: ClothingAddFaction
+    faction: SHI
 
 - type: entity
   parent: ClothingOuterArmorBasic
@@ -239,6 +247,8 @@
   - type: ExplosionResistance
     damageCoefficient: 0.80
   - type: GroupExamine
+  - type: ClothingAddFaction
+    faction: SHI
 
 - type: entity
   parent: ClothingOuterArmorShinoharaArmorHighsec
@@ -250,6 +260,8 @@
     sprite: _Crescent/Clothing/SHI/OuterClothing/highsec_ua.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/SHI/OuterClothing/highsec_ua.rsi
+  - type: ClothingAddFaction
+    faction: SHI
 
 #clothes
 
@@ -266,6 +278,8 @@
   - type: ExplosionResistance
     damageCoefficient: 0.90
   - type: GroupExamine
+  - type: ClothingAddFaction
+    faction: SHI
 
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
@@ -280,6 +294,8 @@
   - type: ExplosionResistance
     damageCoefficient: 0.90
   - type: GroupExamine
+  - type: ClothingAddFaction
+    faction: SHI
 
 - type: entity
   parent: ClothingOuterBaseLarge
@@ -291,6 +307,8 @@
     sprite: _Crescent/Clothing/SHI/OuterClothing/suitjacket.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/SHI/OuterClothing/suitjacket.rsi
+  - type: ClothingAddFaction
+    faction: SHI
 
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
@@ -302,6 +320,8 @@
     sprite: _Crescent/Clothing/SHI/OuterClothing/execsuitjacket.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/SHI/OuterClothing/execsuitjacket.rsi
+  - type: ClothingAddFaction
+    faction: SHI
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -313,3 +333,5 @@
     sprite: _Crescent/Clothing/SHI/OuterClothing/rndcoat.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/SHI/OuterClothing/rndcoat.rsi
+  - type: ClothingAddFaction
+    faction: SHI

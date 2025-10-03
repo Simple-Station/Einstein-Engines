@@ -27,7 +27,7 @@
             sprite: _Crescent/ShipIcons/ifficons.rsi
             state: corvette
         - type: StationNameSetup
-          mapNameTemplate: 'ICM Pear {1}'
+          mapNameTemplate: 'Jury {1}'
           nameGenerator:
            !type:NanotrasenNameGenerator
             prefixCreator: '14'

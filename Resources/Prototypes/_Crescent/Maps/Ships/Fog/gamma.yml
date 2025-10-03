@@ -1,0 +1,34 @@
+# Author Info
+# Discord: fungus2589
+
+- type: vessel
+  id: Gamma
+  name: NT Gamma
+  description: A remnant of the autonomous AI fleets developed by the NanoTrasen Corporation.
+  price: 48000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/Fog/gamma.yml
+
+- type: gameMap
+  id: Gamma
+  mapName: 'NT Gamma'
+  mapPath: /Maps/_Crescent/Shuttles/Fog/gamma.yml
+  minPlayers: 0
+  stations:
+     Gamma:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'NT Gamma {1}'
+          nameGenerator:
+           !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter
+        - type: VesselDescription
+          description: Created in response to the spread of the abyssal phenomena emerging from the fracture.

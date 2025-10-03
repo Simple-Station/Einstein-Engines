@@ -1,7 +1,7 @@
 #ncwl-2#
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: NCWLIDCardWorker
   name: NCWL ID card
   components:
@@ -16,7 +16,7 @@
     job: WorkerNCWL
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemable]
   id: NCWLIDCardFactionLeader
   name: NCWL ID card
   components:
@@ -31,7 +31,7 @@
     job: CommandantNCWL
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: NCWLIDCardHomeguardLeader
   name: NCWL ID card
   components:
@@ -46,7 +46,7 @@
     job: KommissarNCWL
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: NCWLIDCardHomeguardSquadCaptain
   name: NCWL ID card
   components:
@@ -61,7 +61,7 @@
     job: FleetkapitanNCWL
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: NCWLIDCardHomeguardSoldat
   name: NCWL ID card
   components:
@@ -76,7 +76,7 @@
     job: PartisanNCWL
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: NCWLIDCardMedicalWorker
   name: NCWL ID card
   components:
@@ -91,7 +91,7 @@
     job: DoctorNCWL
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: NCWLIDCardLogisticLeader
   name: NCWL ID card
   components:
@@ -107,7 +107,7 @@
 
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: NCWLIDCardEngineeringLeader
   name: NCWL ID card
   components:
@@ -258,7 +258,7 @@
 #empire
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: DSMIDCardFreeholder
   name: imperial ID card
   components:
@@ -273,7 +273,7 @@
     job: FreeholderDSM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: DSMIDCardTemplar
   name: imperial ID card
   components:
@@ -288,7 +288,7 @@
     job: TemplarDSM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: DSMIDCardAdvocatus
   name: imperial ID card
   components:
@@ -303,7 +303,7 @@
     job: AdvocatusDSM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: DSMIDCardArchmaester
   name: imperial ID card
   components:
@@ -318,7 +318,7 @@
     job: ArchmaesterDSM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: DSMIDCardSurgeon
   name: imperial ID card
   components:
@@ -333,7 +333,7 @@
     job: SurgeonDSM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: DSMIDCardWealth
   name: imperial ID card
   components:
@@ -348,7 +348,7 @@
     job: WealthDSM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: DSMIDCardForeman
   name: imperial ID card
   components:
@@ -363,7 +363,7 @@
     job: ForemanDSM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: DSMIDCardScribe
   name: imperial ID card
   components:
@@ -378,7 +378,7 @@
     job: ScribeDSM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: DSMIDCardLevyman
   name: imperial ID card
   components:
@@ -393,7 +393,7 @@
     job: LevymanDSM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: DSMIDCardKnight
   name: imperial ID card
   components:
@@ -408,7 +408,7 @@
     job: KnightDSM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: DSMIDCardRitter
   name: imperial ID card
   components:
@@ -423,7 +423,7 @@
     job: RitterDSM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: DSMIDCardLabor
   name: imperial ID card
   components:
@@ -438,7 +438,7 @@
     job: LaborDSM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: DSMIDCardCourtier
   name: imperial ID card
   components:
@@ -453,7 +453,7 @@
     job: CourtierDSM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: DSMIDCardAdjutant
   name: imperial ID card
   components:
@@ -468,7 +468,7 @@
     job: AdjutantDSM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemable]
   id: DSMIDCardGovernor
   name: imperial ID card
   components:
@@ -485,7 +485,7 @@
 #srm
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: SRMIDCardTender
   name: hunter ID card
   components:
@@ -497,7 +497,7 @@
     job: TenderSRM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: SRMIDCardAcolyte
   name: hunter ID card
   components:
@@ -509,7 +509,7 @@
     job: AcolyteSRM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: SRMIDCardHunter
   name: hunter ID card
   components:
@@ -521,7 +521,7 @@
     job: HunterSRM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: SRMIDCardOverseer
   name: overseer ID card
   components:
@@ -533,7 +533,7 @@
     job: OverseerSRM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemable]
   id: SRMIDCardMontagne
   name: hunter montagne's ID card
   components:
@@ -548,7 +548,7 @@
 
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemable]
   id: SHIIDCardExecutive
   name: corporate ID card
   components:
@@ -560,7 +560,7 @@
     job: ExecutiveSHI
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: SHIIDCardBoard
   name: corporate ID card
   components:
@@ -572,7 +572,7 @@
     job: BoardSHI
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: SHIIDCardCorpSec
   name: corporate ID card
   components:
@@ -584,7 +584,7 @@
     job: CorpsecSHI
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: SHIIDCardHighSec
   name: corporate ID card
   components:
@@ -596,7 +596,7 @@
     job: HighsecSHI
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: SHIIDCardEmployee
   name: corporate ID card
   components:
@@ -608,7 +608,7 @@
     job: EmployeeSHI
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: SHIIDCardMedtech
   name: corporate ID card
   components:
@@ -622,7 +622,7 @@
 #cmm
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: CMMIDCardOrdnanceman
   name: minuteman ID card
   components:
@@ -634,7 +634,7 @@
     job: OrdnancemanCMM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: CMMIDCardMachinist
   name: minuteman ID card
   components:
@@ -646,7 +646,7 @@
     job: MachinistCMM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: CMMIDCardPhysician
   name: minuteman ID card
   components:
@@ -658,7 +658,7 @@
     job: PhysicianCMM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: CMMIDCardMinuteman
   name: minuteman ID card
   components:
@@ -670,7 +670,7 @@
     job: MinutemanCMM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: CMMIDCardWatchmaster
   name: minuteman ID card
   components:
@@ -682,7 +682,7 @@
     job: WatchmasterCMM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: CMMIDCardDeputyMarshal
   name: minuteman ID card
   components:
@@ -694,7 +694,7 @@
     job: DeputyMarshalCMM
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemable]
   id: CMMIDCardMarshal
   name: minuteman ID card
   components:
@@ -708,7 +708,7 @@
 #misc
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: IDCardAntiquarian
   name: nomadic ID card
   components:
@@ -720,7 +720,7 @@
     job: Antiquarian
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: MercenaryIDCard
   name: mercenary ID card
   components:
@@ -735,7 +735,7 @@
     sprite: _NF/Objects/Misc/id_cards.rsi
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: PilotIDCard
   name: pilot ID card
   components:
@@ -751,7 +751,7 @@
 
 - type: entity
   name: "magnate ID card"
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: DeparmentPassMagnate
   components:
   - type: Access
@@ -765,7 +765,7 @@
 #families
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemable]
   id: TAPIDCardProphet
   name: nomadic ID card
   components:
@@ -777,7 +777,7 @@
     job: ProphetTAP
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: TAPIDCardAcolyte
   name: nomadic ID card
   components:
@@ -789,7 +789,7 @@
     job: AcolyteTAP
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: TAPIDCardTinkerer
   name: nomadic ID card
   components:
@@ -801,7 +801,7 @@
     job: TinkererTAP
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: TAPIDCardTechminer
   name: nomadic ID card
   components:
@@ -813,7 +813,7 @@
     job: TechminerTAP
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: TAPIDCardHangarTech
   name: nomadic ID card
   components:
@@ -825,7 +825,7 @@
     job: HangarTechTAP
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: TAPIDCardBeltrunner
   name: nomadic ID card
   components:
@@ -837,7 +837,7 @@
     job: BeltrunnerTAP
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: TAPIDCardDraugr
   name: nomadic ID card
   components:
@@ -849,7 +849,7 @@
     job: DraugrTAP
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: TAPIDCardServile
   name: nomadic ID card
   components:
@@ -863,7 +863,7 @@
 #ath
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemable]
   id: ATHIDCardKommandant
   name: 43rd battlegroup ID card
   components:
@@ -875,7 +875,7 @@
     job: KommandantATH
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: ATHIDCardLeutnant
   name: 43rd battlegroup ID card
   components:
@@ -887,7 +887,7 @@
     job: LeutnantATH
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: ATHIDCardSoldat
   name: 43rd battlegroup ID card
   components:
@@ -899,7 +899,7 @@
     job: SoldatATH
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: ATHIDCardKanoneer
   name: 43rd battlegroup ID card
   components:
@@ -911,7 +911,7 @@
     job: KanoneerATH
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: ATHIDCardSanitat
   name: 43rd battlegroup ID card
   components:
@@ -923,7 +923,7 @@
     job: SanitatATH
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: ATHIDCardSteward
   name: 43rd battlegroup ID card
   components:
@@ -935,7 +935,7 @@
     job: StewardATH
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: ATHIDCardOberartz
   name: 43rd battlegroup ID card
   components:
@@ -947,7 +947,7 @@
     job: OberartzATH
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: ATHIDCardLogistat
   name: 43rd battlegroup ID card
   components:
@@ -959,7 +959,7 @@
     job: LogistatATH
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: ATHIDCardHandels
   name: 43rd battlegroup ID card
   components:
@@ -971,7 +971,7 @@
     job: HandelsATH
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: ATHIDCardForscher
   name: 43rd battlegroup ID card
   components:
@@ -983,7 +983,7 @@
     job: ForscherATH
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: ATHIDCardChirurgeon
   name: 43rd battlegroup ID card
   components:
@@ -995,7 +995,7 @@
     job: ChirurgeonATH
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: ATHIDCardVorarbeiter
   name: 43rd battlegroup ID card
   components:
@@ -1007,7 +1007,7 @@
     job: VorarbeiterATH
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: ATHIDCardArbeiter
   name: 43rd battlegroup ID card
   components:
@@ -1021,7 +1021,7 @@
 #anti psionic response team
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: APRTIDCardKanoneer
   name: 43rd battlegroup ID card
   components:
@@ -1033,7 +1033,7 @@
     job: APRTKanoneerATH
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: APRTIDCardSanitat
   name: 43rd battlegroup ID card
   components:
@@ -1045,7 +1045,7 @@
     job: APRTSanitatATH
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: APRTIDCardSoldat
   name: 43rd battlegroup ID card
   components:
@@ -1060,7 +1060,7 @@
 #misc
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: GliessIDCardSheriff
   name: spacer ID card
   components:
@@ -1072,7 +1072,7 @@
     job: GliessianSheriff
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: GliessIDCardDeputy
   name: spacer ID card
   components:
@@ -1085,7 +1085,7 @@
 
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: GliessIDCardDockmaster
   name: spacer ID card
   components:
@@ -1097,7 +1097,7 @@
     job: GliessianDockmaster
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: DockhandIDCard
   name: spacer ID card
   components:
@@ -1109,7 +1109,7 @@
     job: GliessianDockhand
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, StreeCredRedeemableLow]
   id: SpacerIDCard
   name: spacer ID card
   components:
@@ -1119,3 +1119,4 @@
     - state: idpassenger
   - type: PresetIdCard
     job: Spacer
+

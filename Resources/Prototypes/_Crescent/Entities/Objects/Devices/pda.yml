@@ -1,7 +1,7 @@
 #ncwl
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: NCWLFactionLeaderPDA
   name: commandant's PDA
   description: Brown for communard.
@@ -17,7 +17,7 @@
     state: pda-militiaman
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemable]
   id: NCWLHomeguardLeaderPDA
   name: overseer's PDA
   description: Brown for communard.
@@ -33,7 +33,7 @@
     state: pda-militiaman
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: NCWLHomeguardSquadCaptainPDA
   name: fleetkapitan's PDA
   description: Brown for communard.
@@ -49,7 +49,7 @@
     state: pda-militiaman
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: NCWLHomeguardSoldatPDA
   name: soldat's PDA
   description: Brown for communard.
@@ -65,7 +65,7 @@
     state: pda-militiaman
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: NCWLMedicalWorkerPDA
   name: doctor's PDA
   description: Brown for communard.
@@ -85,7 +85,7 @@
       path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: NCWLLogisticLeaderPDA
   name: dockmaster's PDA
   description: Brown for communard.
@@ -101,7 +101,7 @@
     state: pda-militiaman
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: NCWLEngineeringLeaderPDA
   name: supervisor's PDA
   description: Brown for communard.
@@ -117,7 +117,7 @@
     state: pda-militiaman
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: NCWLWorkerPDA
   name: comrade's PDA
   description: Brown for communard.
@@ -328,7 +328,7 @@
 #empire
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: FreeholderPDA
   name: freeholder's PDA
   description: Purple for Imperial.
@@ -342,7 +342,7 @@
     state: basic
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: TemplarPDA
   name: knight templar's PDA
   description: Purple for Imperial.
@@ -356,7 +356,7 @@
     state: basic
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: AdvocatusPDA
   name: advocati's PDA
   description: Purple for Imperial.
@@ -371,7 +371,7 @@
 
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: ArchmaesterPDA
   name: archmaester's PDA
   description: Purple for Imperial.
@@ -385,7 +385,7 @@
     state: pda-rd
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: SurgeonPDA
   name: surgeon's PDA
   description: Purple for Imperial.
@@ -403,7 +403,7 @@
       path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: ForemanImpPDA
   name: foreman's PDA
   description: Purple for Imperial.
@@ -417,7 +417,7 @@
     state: basic
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: ScribePDA
   name: scribe's PDA
   description: Purple for Imperial.
@@ -431,7 +431,7 @@
     state: pda-science
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: WealthPDA
   name: minister's PDA
   description: Purple for Imperial.
@@ -445,7 +445,7 @@
     state: basic
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: LevymanPDA
   name: levyman's PDA
   description: Purple for Imperial.
@@ -459,7 +459,7 @@
     state: basic
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: KnightPDA
   name: knight's PDA
   description: Purple for Imperial.
@@ -473,7 +473,7 @@
     state: noble
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: RitterPDA
   name: ritter's PDA
   description: Purple for Imperial.
@@ -487,7 +487,7 @@
     state: noble
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: CourtierPDA
   name: courtier's PDA
   description: Purple for Imperial.
@@ -501,7 +501,7 @@
     state: noble
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: AdjutantPDA
   name: adjutant's PDA
   description: Purple for Imperial.
@@ -515,7 +515,7 @@
     state: noble
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemable]
   id: GovernorPDA
   name: governor's PDA
   description: Purple for Imperial.
@@ -531,7 +531,7 @@
 #srm
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: TenderPDA
   name: tender's PDA
   description: Decorated for the Hunt.
@@ -549,7 +549,7 @@
       path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: AcolytePDA
   name: acolyte's PDA
   description: Decorated for the Hunt.
@@ -563,7 +563,7 @@
     state: hunter
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: HunterPDA
   name: hunter's PDA
   description: Decorated for the Hunt.
@@ -577,7 +577,7 @@
     state: hunter
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: MontagnePDA
   name: hunter montagne's PDA
   description: Decorated for the Hunt.
@@ -591,7 +591,7 @@
     state: hunter
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemable]
   id: OverseerPDA
   name: overseer's PDA
   description: Decorated for the Hunt.
@@ -607,7 +607,7 @@
 #shi
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemable]
   id: ExecutivePDA
   name: executive's PDA
   description: Gunmetal gray.
@@ -621,7 +621,7 @@
     state: pda-bartender
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: BoardPDA
   name: board member's PDA
   description: Gunmetal gray.
@@ -635,7 +635,7 @@
     state: pda-bartender
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: CorpsecPDA
   name: security agent's PDA
   description: Gunmetal gray.
@@ -649,7 +649,7 @@
     state: pda-bartender
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: HighsecPDA
   name: liquidation officer's PDA
   description: Gunmetal gray.
@@ -663,7 +663,7 @@
     state: pda-bartender
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: EmployeePDA
   name: corporate employee's PDA
   description: Gunmetal gray.
@@ -677,7 +677,7 @@
     state: pda-bartender
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: MedtechPDA
   name: medtech's PDA
   description: Gunmetal gray.
@@ -697,7 +697,7 @@
 #cmm
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: OrdnancemanPDA
   name: ordnanceman's PDA
   description: Blue for cops.
@@ -711,7 +711,7 @@
     state: cmm
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: MachinistPDA
   name: machinist's PDA
   description: Blue for cops.
@@ -725,7 +725,7 @@
     state: cmm
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: PhysicianPDA
   name: physician's PDA
   description: Blue for cops.
@@ -743,7 +743,7 @@
       path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: MinutemanPDA
   name: minuteman's PDA
   description: Blue for cops.
@@ -757,7 +757,7 @@
     state: cmm
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: WatchmasterPDA
   name: watchmaster's PDA
   description: Blue for cops.
@@ -771,7 +771,7 @@
     state: cmm
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: DeputyMarshalPDA
   name: deputy marshal's PDA
   description: Blue for cops.
@@ -785,7 +785,7 @@
     state: cmm
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemable]
   id: MarshalPDA
   name: marshal's PDA
   description: Blue for cops.
@@ -801,7 +801,7 @@
 #misc
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: AntiquarianPDA
   name: antiquarian's PDA
   description: Why is it gray?
@@ -815,7 +815,7 @@
     state: pda
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: PilotPDA
   name: pilot PDA
   description: This PDA smells like thruster exhaust fumes.
@@ -843,7 +843,7 @@
     state: pda-pilot
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: MercenaryPDA
   name: mercenary PDA
   description: This PDA smells of war.
@@ -873,7 +873,7 @@
 #fourfamilies
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemable]
   id: ProphetPDA
   name: prophet's PDA
   description: How clerical.
@@ -887,7 +887,7 @@
     state: hunter
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: AcolyteTAPPDA
   name: devoted's PDA
   description: How clerical.
@@ -901,7 +901,7 @@
     state: hunter
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: TinkererPDA
   name: tinkerer's PDA
   description: How tinker-y.
@@ -915,7 +915,7 @@
     state: hunter
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: TechminerPDA
   name: techminer's PDA
   description: Green for family.
@@ -929,7 +929,7 @@
     state: hunter
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: HangarTechPDA
   name: hangar technician's PDA
   description: Green for family.
@@ -943,7 +943,7 @@
     state: hunter
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: BeltrunnerPDA
   name: beltrunner's PDA
   description: Green for family.
@@ -957,7 +957,7 @@
     state: hunter
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: DraugrPDA
   name: draugr's PDA
   description: Green for family.
@@ -971,7 +971,7 @@
     state: hunter
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: ServilePDA
   name: servile's PDA
   description: Green for family.
@@ -987,7 +987,7 @@
 #ath
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemable]
   id: KommandantPDA
   name: kommandant's PDA
   description: Gunmetal gray.
@@ -1001,7 +1001,7 @@
     state: pda-bartender
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: LeutnantPDA
   name: leutnant's PDA
   description: Gunmetal gray.
@@ -1015,7 +1015,7 @@
     state: pda-bartender
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: SoldatPDA
   name: jaeger's PDA
   description: Gunmetal gray.
@@ -1029,7 +1029,7 @@
     state: pda-bartender
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: KanoneerPDA
   name: kanoneer's PDA
   description: Gunmetal gray.
@@ -1043,7 +1043,7 @@
     state: pda-bartender
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: SanitatPDA
   name: sanitat's PDA
   description: Gunmetal gray.
@@ -1061,7 +1061,7 @@
       path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: StewardPDA
   name: first steward's PDA
   description: Gunmetal gray.
@@ -1075,7 +1075,7 @@
     state: pda-bartender
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: OberartzPDA
   name: oberartz's PDA
   description: Gunmetal gray.
@@ -1089,7 +1089,7 @@
     state: pda-bartender
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: LogistatPDA
   name: logistat marshallie's PDA
   description: Gunmetal gray.
@@ -1103,7 +1103,7 @@
     state: pda-bartender
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: HandelsPDA
   name: handels's PDA
   description: Gunmetal gray.
@@ -1117,7 +1117,7 @@
     state: pda-bartender
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: ForscherPDA
   name: forscher's PDA
   description: Gunmetal gray.
@@ -1131,7 +1131,7 @@
     state: pda-bartender
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: ChirurgeonPDA
   name: chirurgeon's PDA
   description: Gunmetal gray.
@@ -1149,7 +1149,7 @@
       path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: VorarbeiterPDA
   name: vorarbeiter's PDA
   description: Gunmetal gray.
@@ -1163,7 +1163,7 @@
     state: pda-bartender
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: ArbeiterPDA
   name: arbeiter's PDA
   description: Gunmetal gray.
@@ -1179,7 +1179,7 @@
 #anti psionic response team
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: APRTKanoneerPDA
   name: panzerfeldwebel's PDA
   description: Gunmetal gray.
@@ -1193,7 +1193,7 @@
     state: pda-bartender
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: APRTSanitatPDA
   name: panzersanitat's PDA
   description: Gunmetal gray.
@@ -1211,7 +1211,7 @@
       path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: APRTSoldatPDA
   name: panzergrenadier's PDA
   description: Gunmetal gray.
@@ -1228,7 +1228,7 @@
 #misc
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: GliessSheriffPDA
   name: sheriff's PDA
   description: You are the law.
@@ -1242,7 +1242,7 @@
     state: pda-corpsec
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: GliessDeputyPDA
   name: deputy's PDA
   description: You are the law.
@@ -1256,7 +1256,7 @@
     state: pda-corpsec
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: GliessDockmasterPDA
   name: dockmaster's PDA
   description: You are the law.
@@ -1270,7 +1270,7 @@
     state: pda-corpsec
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: SpacerPDA
   name: Spacer's PDA
   description: You aren't the law.
@@ -1284,7 +1284,7 @@
     state: pda-corpsec
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: DockhandPDA
   name: Dockhand's PDA
   description: You aren't the law.

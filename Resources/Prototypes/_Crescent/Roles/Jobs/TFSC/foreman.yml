@@ -26,6 +26,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-foreman
+      - type: HullrotFaction
+        faction: SAW
       - type: LanguageAdder
         addSpoken:
           - Freespeak
