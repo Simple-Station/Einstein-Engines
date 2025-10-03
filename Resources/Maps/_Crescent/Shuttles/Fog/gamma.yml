@@ -4,7 +4,7 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 10/03/2025 09:57:41
+  time: 10/03/2025 10:29:55
   entityCount: 177
 maps: []
 grids:
@@ -28,7 +28,7 @@ entities:
     - type: MetaData
       name: grid
     - type: Transform
-      pos: 20.397385,10.556317
+      pos: 0,0
       parent: invalid
     - type: MapGrid
       chunks:
@@ -73,8 +73,8 @@ entities:
             color: '#8D1C9996'
             id: Delivery
           decals:
-            283: -1,1
             284: 3,1
+            384: -2,0
         - node:
             zIndex: 1
             id: LatticeCornerNE
@@ -473,7 +473,7 @@ entities:
             235: 1,3
             236: -1,3
             237: -3,2
-            285: -2,0
+            383: -1,1
         - node:
             color: '#8D1C9996'
             id: WarnEndS
@@ -1183,10 +1183,10 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 6
-          - 7
-          - 9
           - 8
+          - 9
+          - 7
+          - 6
   - uid: 97
     components:
     - type: Transform
@@ -1199,16 +1199,17 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 101
-          - 100
-          - 99
           - 98
+          - 99
+          - 100
+          - 101
 - proto: ComputerIFF
   entities:
-  - uid: 102
+  - uid: 176
     components:
     - type: Transform
-      pos: -0.5,1.5
+      rot: 1.5707963267948966 rad
+      pos: -1.5,0.5
       parent: 1
 - proto: ComputerShuttle
   entities:
@@ -1754,10 +1755,9 @@ entities:
       parent: 1
 - proto: WeaponTurretHostile
   entities:
-  - uid: 176
+  - uid: 102
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -1.5,0.5
+      pos: -0.5,1.5
       parent: 1
 ...

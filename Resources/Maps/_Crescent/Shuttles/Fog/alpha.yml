@@ -4,7 +4,7 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 10/03/2025 10:10:24
+  time: 10/03/2025 10:30:59
   entityCount: 183
 maps: []
 grids:
@@ -29,8 +29,7 @@ entities:
     - type: MetaData
       name: grid
     - type: Transform
-      rot: 6.283185307179586 rad
-      pos: 5.5872188,-0.53858614
+      pos: 0,0
       parent: invalid
     - type: MapGrid
       chunks:
@@ -75,9 +74,9 @@ entities:
             color: '#8D1C9996'
             id: Delivery
           decals:
-            254: 0,-6
             255: -2,-2
             256: -3,-3
+            349: -1,-6
         - node:
             zIndex: 1
             id: LatticeCornerNE
@@ -436,9 +435,9 @@ entities:
             id: WarnBox
           decals:
             190: 1,0
-            191: -1,-6
             192: -1,0
             193: -3,6
+            350: 0,-6
         - node:
             color: '#8D1C9996'
             id: WarnCornerNW
@@ -1186,7 +1185,7 @@ entities:
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: 0.5,-5.5
+      pos: -0.5,-5.5
       parent: 1
 - proto: ComputerShuttle
   entities:
@@ -1734,7 +1733,7 @@ entities:
   - uid: 183
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -0.5,-5.5
+      rot: 3.141592653589793 rad
+      pos: 0.5,-5.5
       parent: 1
 ...
