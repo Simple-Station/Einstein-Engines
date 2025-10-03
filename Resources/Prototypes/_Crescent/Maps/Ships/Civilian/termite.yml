@@ -4,7 +4,9 @@
 - type: vessel
   id: Termite
   name: ICM Termite
-  description: A frugal mining pod.
+  description: |
+    A frugal mining pod, or otherwise used as a cheap cargo hauler, Has the skeleton necessities for spaceflight and EVA.
+    MINIMUM CREW: 1x Pilot
   price: 15000
   category: Small
   group: Civilian
