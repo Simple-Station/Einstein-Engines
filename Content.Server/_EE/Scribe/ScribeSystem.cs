@@ -39,7 +39,8 @@ public sealed partial class ScribeSystem : EntitySystem
                 var embed = new WebhookEmbed();
 
                 if (scribeComp.NameFormat is { } nameLoc)
-                    embed.Title = Loc.GetString(nameLoc, ("name", "Urist McHands")); //TODO: Need to work out how to hold on to people's names.
+                    // embed.Title = Loc.GetString(nameLoc, ("name", "Urist McHands")); //TODO: Need to work out how to hold on to people's names.
+                    embed.Title = Loc.GetString(nameLoc);
 
                 embed.Description = scribeComp.ContentFormat is { } contentLoc
                     ? Loc.GetString(contentLoc, ("content", paperComp.Content))
