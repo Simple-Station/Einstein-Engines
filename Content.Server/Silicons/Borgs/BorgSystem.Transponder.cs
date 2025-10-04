@@ -1,3 +1,4 @@
+using Content.Server._Impstation.Drone;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.Emag.Components;
 using Content.Shared.Movement.Components;
@@ -10,8 +11,7 @@ using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Explosion.Components;
 using Content.Shared.Emag.Systems;
 using Robust.Shared.Utility;
-using Content.Server._Imp.Drone; //Goobstation drone
-using Robust.Shared.Player; //Goobstation drone
+using Robust.Shared.Player;
 namespace Content.Server.Silicons.Borgs;
 
 /// <inheritdoc/>

@@ -433,13 +433,13 @@
 - type: alert
   id: Pulling
   icons:
-  - sprite: /Textures/_White/Interface/Alerts/pull.rsi
+  - sprite: /Textures/WhiteDream/Interface/Alerts/pull.rsi
     state: pulling
-  - sprite: /Textures/_White/Interface/Alerts/pull.rsi
+  - sprite: /Textures/WhiteDream/Interface/Alerts/pull.rsi
     state: grab-soft
-  - sprite: /Textures/_White/Interface/Alerts/pull.rsi
+  - sprite: /Textures/WhiteDream/Interface/Alerts/pull.rsi
     state: grab-hard
-  - sprite: /Textures/_White/Interface/Alerts/pull.rsi
+  - sprite: /Textures/WhiteDream/Interface/Alerts/pull.rsi
     state: grab-choke
   clickEvent: !type:StopPullingAlertEvent
   name: alerts-pulling-name

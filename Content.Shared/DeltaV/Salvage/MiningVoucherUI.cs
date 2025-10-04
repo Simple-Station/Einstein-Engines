@@ -1,6 +1,6 @@
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._DV.Salvage;
+namespace Content.Shared.DeltaV.Salvage;
 
 /// <summary>
 /// Message for a mining voucher kit to be selected.
