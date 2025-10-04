@@ -1,6 +1,6 @@
 using System.Linq;
 using Content.Server.GameTicking;
-using Content.Server.Paper;
+using Content.Shared.Paper;
 using Content.Server.Discord;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
@@ -12,7 +12,7 @@ public sealed partial class ScribeSystem : EntitySystem
     [Dependency] private readonly DiscordWebhook _discord = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
 
-    private Dictionary<string, WebhookIdentifier> _webHooks = new ();
+    private Dictionary<string, WebhookIdentifier> _webHooks = new();
 
     public override void Initialize()
     {
@@ -47,7 +47,7 @@ public sealed partial class ScribeSystem : EntitySystem
 
                 if (scribeComp.Footer is { } footer)
                 {
-                    embed.Footer = new ()
+                    embed.Footer = new()
                     {
                         Text = Loc.GetString(footer, ("round-id", ev.RoundId)),
                     };
@@ -58,7 +58,7 @@ public sealed partial class ScribeSystem : EntitySystem
                 embeds.Add(embed);
             }
 
-            _discord.CreateMessage(identifier, new () { Embeds = embeds, });
+            var _ = _discord.CreateMessage(identifier, new() { Embeds = embeds, });
         }
     }
 
@@ -84,7 +84,7 @@ public sealed partial class ScribeSystem : EntitySystem
             if (Split(keyValue.Item2, '/') is not { } idToken)
                 continue;
 
-            dict.Add(keyValue.Item1.Trim(), new (idToken.Item1.Trim(), idToken.Item2.Trim()));
+            dict.Add(keyValue.Item1.Trim(), new(idToken.Item1.Trim(), idToken.Item2.Trim()));
 
             // Helper function to split the lines.
             (string, string)? Split(string input, char c)
