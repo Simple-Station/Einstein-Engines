@@ -1,5 +1,5 @@
 - type: cargoProduct
-  id: ShuttleSumitomoAmmoGeneric
+  id: ShuttleSumitomoAmmoShinohara
   icon:
     sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
     state: baton
@@ -9,7 +9,7 @@
   group: shinohara
 
 - type: cargoProduct
-  id: ShuttleSumitomoAmmoEMPGeneric
+  id: ShuttleSumitomoAmmoEMPShinohara
   icon:
     sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
     state: emp
@@ -19,7 +19,7 @@
   group: shinohara
 
 - type: cargoProduct
-  id: ShuttleSumitomoAmmoHYGeneric
+  id: ShuttleSumitomoAmmoHYShinohara
   icon:
     sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
     state: blast
@@ -29,7 +29,7 @@
   group: shinohara
 
 - type: cargoProduct
-  id: ShuttleCrateVulcanAmmoGeneric
+  id: ShuttleCrateVulcanAmmoShinohara
   icon:
     sprite: _Crescent/Ammunition/vulcan.rsi
     state: base
@@ -39,7 +39,7 @@
   group: shinohara
 
 - type: cargoProduct
-  id: ShuttleCrateSlugAmmoGeneric
+  id: ShuttleCrateSlugAmmoShinohara
   icon:
     sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
     state: base
@@ -49,7 +49,7 @@
   group: shinohara
 
 - type: cargoProduct
-  id: ShuttleCrateSlugAmmoExplosiveGeneric
+  id: ShuttleCrateSlugAmmoExplosiveShinohara
   icon:
     sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
     state: base
@@ -59,7 +59,7 @@
   group: shinohara
 
 - type: cargoProduct
-  id: ShuttleCoolantGeneric
+  id: ShuttleCoolantShinohara
   icon:
     sprite: _Crescent/Objects/Misc/coolant.rsi
     state: icon
@@ -69,7 +69,7 @@
   group: shinohara
 
 - type: cargoProduct
-  id: ShuttleGargoyleAmmoGeneric
+  id: ShuttleGargoyleAmmoShinohara
   icon:
     sprite: _Crescent/Objects/ShuttleWeapons/torp.rsi
     state: base
@@ -79,7 +79,7 @@
   group: shinohara
 
 - type: cargoProduct
-  id: ShuttleLancerAmmoGeneric
+  id: ShuttleLancerAmmoShinohara
   icon:
     sprite: _Crescent/Objects/ShuttleWeapons/lance.rsi
     state: base
@@ -89,7 +89,7 @@
   group: shinohara
 
 - type: cargoProduct
-  id: ShuttleAssaultMortarAmmoGeneric
+  id: ShuttleAssaultMortarAmmoShinohara
   icon:
     sprite: _Crescent/Objects/ShuttleWeapons/battleshell.rsi
     state: base
@@ -99,7 +99,7 @@
   group: shinohara
 
 - type: cargoProduct
-  id: ShuttleIdnaAmmoGeneric
+  id: ShuttleIdnaAmmoShinohara
   icon:
     sprite: _Crescent/Objects/ShuttleWeapons/torpedop.rsi
     state: base
@@ -109,7 +109,7 @@
   group: shinohara
 
 - type: cargoProduct
-  id: Shuttle120mmAmmoGeneric
+  id: Shuttle120mmAmmoShinohara
   icon:
     sprite: _NF/Objects/SpaceArtillery/630_armorpiercing_shell_casing.rsi
     state: base
@@ -119,7 +119,7 @@
   group: shinohara
 
 - type: cargoProduct
-  id: Shuttle120mmAmmoExplosiveGeneric
+  id: Shuttle120mmAmmoExplosiveShinohara
   icon:
     sprite: _NF/Objects/SpaceArtillery/630_highexplosive_shell_casing.rsi
     state: base
@@ -129,7 +129,7 @@
   group: shinohara
 
 - type: cargoProduct
-  id: ShuttleAutomortarAmmoGeneric
+  id: ShuttleAutomortarAmmoShinohara
   icon:
     sprite: _Crescent/Ammunition/mortar.rsi
     state: base
@@ -139,7 +139,7 @@
   group: shinohara
 
 - type: cargoProduct
-  id: ShuttleNeedlerAmmoGeneric
+  id: ShuttleNeedlerAmmoShinohara
   icon:
     sprite: _Crescent/Ammunition/mortar.rsi
     state: base
@@ -149,7 +149,7 @@
   group: shinohara
 
 - type: cargoProduct
-  id: ShuttleSwarmerAmmoGeneric
+  id: ShuttleSwarmerAmmoShinohara
   icon:
     sprite: _Crescent/Ammunition/coil.rsi
     state: base
@@ -159,7 +159,7 @@
   group: shinohara
 
 - type: cargoProduct
-  id: ShuttleCompaktAmmoGeneric
+  id: ShuttleCompaktAmmoShinohara
   icon:
     sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
     state: infraredlens
@@ -169,7 +169,7 @@
   group: shinohara
 
 - type: cargoProduct
-  id: ShuttleCompaktAmmoPlasmaGeneric
+  id: ShuttleCompaktAmmoPlasmaShinohara
   icon:
     sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
     state: plasmalens
@@ -179,7 +179,7 @@
   group: shinohara
 
 - type: cargoProduct
-  id: ShuttleSolarisAmmoGeneric
+  id: ShuttleSolarisAmmoShinohara
   icon:
     sprite: _Crescent/Objects/ShuttleWeapons/amcanister.rsi
     state: base
@@ -189,7 +189,7 @@
   group: shinohara
 
 - type: cargoProduct
-  id: ShuttleSolarisAmmoGuidedGeneric
+  id: ShuttleSolarisAmmoGuidedShinohara
   icon:
     sprite: _Crescent/Objects/ShuttleWeapons/amcanisterguided.rsi
     state: base
@@ -199,7 +199,7 @@
   group: shinohara
 
 - type: cargoProduct
-  id: ShuttleSolarisAmmoPlasmaGeneric
+  id: ShuttleSolarisAmmoPlasmaShinohara
   icon:
     sprite: _Crescent/Objects/ShuttleWeapons/amcanisterplas.rsi
     state: base
@@ -209,7 +209,7 @@
   group: shinohara
 
 - type: cargoProduct
-  id: ShuttlePrinceAmmoGeneric
+  id: ShuttlePrinceAmmoShinohara
   icon:
     sprite: _Crescent/Ammunition/flak.rsi
     state: base
@@ -219,7 +219,7 @@
   group: shinohara
 
 - type: cargoProduct
-  id: ShuttleJeongAmmoGeneric
+  id: ShuttleJeongAmmoShinohara
   icon:
     sprite: _Crescent/Ammunition/flak.rsi
     state: base
