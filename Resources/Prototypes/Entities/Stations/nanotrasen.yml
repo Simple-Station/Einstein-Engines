@@ -25,7 +25,7 @@
     - BaseStationSiliconLawAsimov
     - BaseStationAllEventsEligible
     - BaseStationNanotrasen
-    - BaseStationMail # Nyano component, required for station mail to function
+    - BaseStationDeliveries
     - BaseStationCaptainState # DeltaV
     - BaseStationStockMarket # DeltaV
   categories: [ HideSpawnMenu ]
@@ -72,7 +72,7 @@
   - BaseStationSiliconLawAsimov
   - BaseStationAllEventsEligible
   - BaseStationNanotrasen
-  - BaseStationMail
+  - BaseStationDeliveries
   categories: [ HideSpawnMenu ]
   components:
   - type: Transform
@@ -95,7 +95,7 @@
   - BaseStationSiliconLawAsimov
   - BaseStationAllEventsEligible
   - BaseStationNanotrasen
-  - BaseStationMail
+  - BaseStationDeliveries
   categories: [HideSpawnMenu]
   components:
   - type: Transform
@@ -119,7 +119,7 @@
   - BaseStationSiliconLawAsimov
   - BaseStationAllEventsEligible
   - BaseStationNanotrasen
-  - BaseStationMail
+  - BaseStationDeliveries
   categories: [HideSpawnMenu]
   components:
   - type: Transform

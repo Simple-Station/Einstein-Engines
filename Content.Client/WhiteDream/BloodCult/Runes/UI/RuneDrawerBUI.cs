@@ -59,10 +59,7 @@ public sealed class RuneDrawerBUI : BoundUserInterface
         if (runes is null)
             return;
 
-        var container = new RadialContainer
-        {
-            Radius = 48f + 24f * MathF.Log(runes.Count)
-        };
+        var container = new RadialContainer();
 
         _menu.AddChild(container);
 

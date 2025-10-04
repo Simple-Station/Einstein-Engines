@@ -87,12 +87,6 @@ namespace Content.Shared.Chemistry
     }
 
     [Serializable, NetSerializable]
-    public sealed class ChemMasterSortMethodUpdated(int sortMethod) : BoundUserInterfaceMessage
-    {
-        public readonly int SortMethod = sortMethod;
-    }
-
-    [Serializable, NetSerializable]
     public sealed class ChemMasterTransferringAmountUpdated(int transferringAmount) : BoundUserInterfaceMessage
     {
         public readonly int TransferringAmount = transferringAmount;
@@ -109,6 +103,17 @@ namespace Content.Shared.Chemistry
         Transfer,
         Discard,
     }
+
+    public enum ChemMasterSortingType : byte
+    {
+        None = 0,
+        Alphabetical = 1,
+        Quantity = 2,
+        Latest = 3,
+    }
+
+    [Serializable, NetSerializable]
+    public sealed class ChemMasterSortingTypeCycleMessage : BoundUserInterfaceMessage;
 
     /// <summary>
     /// Information about the capacity and contents of a container for display in the UI
@@ -149,6 +154,7 @@ namespace Content.Shared.Chemistry
     [Serializable, NetSerializable]
     public sealed class ChemMasterBoundUserInterfaceState(
         ChemMasterMode mode,
+        ChemMasterSortingType sortingType,
         ContainerInfo? containerInfo,
         IReadOnlyList<ReagentQuantity> bufferReagents,
         IReadOnlyList<ReagentQuantity> pillBufferReagents,
@@ -157,7 +163,6 @@ namespace Content.Shared.Chemistry
         uint selectedPillType,
         uint pillDosageLimit,
         bool updateLabel,
-        int sortMethod,
         int transferringAmount,
         List<int> amounts)
         : BoundUserInterfaceState
@@ -176,6 +181,8 @@ namespace Content.Shared.Chemistry
 
         public readonly ChemMasterMode Mode = mode;
 
+        public readonly ChemMasterSortingType SortingType = sortingType;
+
         public readonly FixedPoint2? BufferCurrentVolume = bufferCurrentVolume;
         public readonly FixedPoint2? PillBufferCurrentVolume = pillBufferCurrentVolume;
         public readonly uint SelectedPillType = selectedPillType;
@@ -184,7 +191,6 @@ namespace Content.Shared.Chemistry
 
         public readonly bool UpdateLabel = updateLabel;
 
-        public readonly int SortMethod = sortMethod;
         public readonly int TransferringAmount = transferringAmount;
 
         public readonly List<int> Amounts = amounts;

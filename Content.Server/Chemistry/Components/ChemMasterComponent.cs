@@ -18,14 +18,14 @@ namespace Content.Server.Chemistry.Components
         [DataField("mode"), ViewVariables(VVAccess.ReadWrite)]
         public ChemMasterMode Mode = ChemMasterMode.Transfer;
 
+        [DataField]
+        public ChemMasterSortingType SortingType = ChemMasterSortingType.None;
+
         [DataField("pillDosageLimit", required: true), ViewVariables(VVAccess.ReadWrite)]
         public uint PillDosageLimit;
 
         [DataField("clickSound"), ViewVariables(VVAccess.ReadWrite)]
         public SoundSpecifier ClickSound = new SoundPathSpecifier("/Audio/Machines/machine_switch.ogg");
-
-        [DataField]
-        public int SortMethod;
 
         [DataField]
         public int TransferringAmount = 1;

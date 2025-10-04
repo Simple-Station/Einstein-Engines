@@ -104,7 +104,7 @@ CrateFunPlushie: CrateFunToyBox
 CrateFunLizardPlushieBulk: CrateFunToyBox
 
 # 2024-08-22 - Frontier Mail - Add more to these when they come up as mapped. Part of the Frontier Mail port, blame Tortuga.
-MailPAI: MailNFPAI
+MailNFPAI: null
 
 # 2024-08-27
 Oracle: OracleSpawner
@@ -155,3 +155,6 @@ SpawnPointCourier: SpawnPointMailCarrier # Courier -  It doesn't load correctly,
 
 #2025-09-19
 Doorjack: AccessBreaker
+
+#2025-10-04
+MailTeleporter: CargoMailTeleporter

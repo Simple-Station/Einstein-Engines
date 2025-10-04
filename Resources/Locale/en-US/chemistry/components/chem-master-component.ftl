@@ -26,10 +26,6 @@ chem-master-window-pill-buffer-low-text = Not enough solution in pill buffer
 chem-master-window-save-as-frequent-label = Save as Frequent
 chem-master-window-set-amount-label = Set Amount
 chem-master-window-transfer-button = Transfer
-chem-master-window-sort-method-tooltip = Choose your buffer's sort method.
-chem-master-window-sort-method-Time-text = Last Added
-chem-master-window-sort-method-Alphabetical-text = Alphabetical Order
-chem-master-window-sort-method-Amount-text = Quantity
 chem-master-window-transferring-label =    Transferring: [color={$color}]{$quantity}[/color]
 chem-master-window-transferring-default-label =    Transferring: [color=#ffffff]50[/color]
 chem-master-window-reagent-move-button = Move
@@ -43,3 +39,7 @@ chem-master-window-dose-label = Dose (u):
 chem-master-window-create-button = Create
 chem-master-window-bottles-label = Bottles:
 chem-master-window-unknown-reagent-text = Unknown reagent
+chem-master-window-sort-type-none = Sort by: Oldest First
+chem-master-window-sort-type-alphabetical = Sort by: Alphabetical
+chem-master-window-sort-type-quantity = Sort by: Quantity
+chem-master-window-sort-type-latest = Sort by: Recent First

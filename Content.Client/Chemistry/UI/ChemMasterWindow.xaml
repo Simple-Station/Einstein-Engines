@@ -12,7 +12,7 @@
                     <Label Text="{Loc 'chem-master-window-buffer-text'}" />
                     <Control HorizontalExpand="True" />
                     <Button MinSize="80 0" Name="BufferTransferButton" Access="Public" Text="{Loc 'chem-master-window-transfer-button'}" ToggleMode="True" StyleClasses="OpenRight" />
-                    <OptionButton Name="SortMethod" Access="Public" ToolTip="{Loc 'chem-master-window-sort-method-tooltip'}" StyleClasses="OpenBoth" />
+                    <Button MinSize="80 0" Name="BufferSortButton" Access="Public" Text="{Loc 'chem-master-window-sort-type-none'}" StyleClasses="OpenBoth" />
                     <Button MinSize="80 0" Name="BufferDiscardButton" Access="Public" Text="{Loc 'chem-master-window-discard-button'}" ToggleMode="True" StyleClasses="OpenLeft" />
                 </BoxContainer>
 
@@ -37,7 +37,7 @@
                     <Label Text="{Loc 'chem-master-window-pill-buffer-text'}" />
                     <Control HorizontalExpand="True" />
                     <Button MinSize="80 0" Name="PillBufferTransferButton" Access="Public" Text="{Loc 'chem-master-window-transfer-button'}" ToggleMode="True" StyleClasses="OpenRight" />
-                    <OptionButton Name="PillSortMethod" Access="Public" ToolTip="{Loc 'chem-master-window-sort-method-tooltip'}" StyleClasses="OpenBoth" />
+                    <Button MinSize="80 0" Name="PillBufferSortButton" Access="Public" Text="{Loc 'chem-master-window-sort-type-none'}" StyleClasses="OpenBoth" />
                     <Button MinSize="80 0" Name="PillBufferDiscardButton" Access="Public" Text="{Loc 'chem-master-window-discard-button'}" ToggleMode="True" StyleClasses="OpenLeft" />
                 </BoxContainer>
 
