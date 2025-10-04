@@ -36,6 +36,9 @@ public sealed partial class ScribeSystem : EntitySystem
 
             foreach (var (scribeComp, paperComp) in result)
             {
+                if (paperComp.Content == string.Empty)
+                    continue;
+
                 var embed = new WebhookEmbed();
 
                 if (scribeComp.NameFormat is { } nameLoc)
