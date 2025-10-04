@@ -221,3 +221,14 @@
   cost: 25000
   category: cargoproduct-category-name-shuttleammo
   group: genericAmmo
+
+- type: cargoProduct
+  id: ShuttleJeongAmmoGeneric
+  icon:
+    sprite: _Crescent/Ammunition/flak.rsi
+    state: base
+  product: CrateJeongAmmo
+  cost: 15000
+  category: cargoproduct-category-name-shuttleammo
+  group: genericAmmo
+
