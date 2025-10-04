@@ -1,19 +1,22 @@
+# Author Info
+# Discord: fungus2589
+
 - type: vessel
-  id: Padparadscha
-  name: DSM Padparadscha
+  id: Suzerain
+  name: DSM Suzerain
   description: A robust siege battlecruiser developed as a response to the Stern-class. Fares very well at long range.
-  price: 160000
+  price: 190000
   category: Large
   group: None
-  path: /Maps/_Crescent/Shuttles/DSM/padparadscha.yml
+  path: /Maps/_Crescent/Shuttles/DSM/suzerain.yml
 
 - type: gameMap
-  id: Padparadscha
-  mapName: 'DSM Padparadscha'
-  mapPath: /Maps/_Crescent/Shuttles/DSM/padparadscha.yml
+  id: Suzerain
+  mapName: 'DSM Suzerain'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/suzerain.yml
   minPlayers: 0
   stations:
-    Padparadscha:
+    Suzerain:
       stationProto: StandardCrescentVessel
       components:
         - type: VesselIcon
@@ -21,8 +24,9 @@
             sprite: _Crescent/ShipIcons/ifficons.rsi
             state: battleship
         - type: StationNameSetup
-          mapNameTemplate: 'DSM Padparadscha {1}'
+          mapNameTemplate: 'DSM Suzerain {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
+        
