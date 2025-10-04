@@ -91,7 +91,7 @@
 - type: cargoProduct
   id: ShinoharaHardsuit
   icon:
-    sprite: _Crescent/Clothing/SHI/OuterClothing/corpsec.rsi
+    sprite: _Crescent/Clothing/SHI/OuterClothing/corpsec_ua.rsi
     state: icon
   product: CrateShinoharaHardsuit
   cost: 12500
