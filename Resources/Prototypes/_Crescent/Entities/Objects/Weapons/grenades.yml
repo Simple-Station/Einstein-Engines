@@ -497,6 +497,7 @@
   components:
   - type: OnUseTimerTrigger
     delay: 2.5
+    delayOptions: [2.5, 3.5, 5]
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Grenades/shi_smart.rsi
   - type: ExplodeOnTrigger

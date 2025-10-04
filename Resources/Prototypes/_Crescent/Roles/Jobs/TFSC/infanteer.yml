@@ -27,6 +27,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-pfc
+      - type: HullrotFaction
+        faction: GSC
       - type: LanguageAdder
         addSpoken:
           - Freespeak
@@ -53,4 +55,11 @@
     belt: ClothingBeltSyndicateWebbing
     pocket1: WeaponPistolViperWood
     gloves: ClothingHandsGlovesFingerless
-    back: ClothingBackpackNCSPFilledInfanteer
+    back: ClothingBackpackNCSP
+  storage:
+    back:
+    - Flash
+    - Tourniquet
+    - Zipties
+    - MagazinePistol
+    - CombatKnife

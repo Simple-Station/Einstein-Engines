@@ -33,23 +33,3 @@
         - description: examine-dermal-armor-message
           fontSize: 12
           requireDetailRange: true
-
-- type: entity
-  parent: BaseItem
-  id: BallisticCoprocessorDatashard
-  name: IRC 'Wreathe' mk-II ballistic coprocessor datashard
-  description: A cyberdeck-compatible datashard that holds software to link the user's neural interface implant to a smartgun developed by the Iron Ring Company.
-  components:
-    - type: Sprite
-      sprite: _Crescent/Objects/Misc/skillchips.rsi
-      layers:
-        - state: ballisticcoprocessor
-    - type: Skillchip
-      onImplantFunctions:
-      - !type:TraitAddComponent
-        components:
-        - type: SmartGunUser
-      onRemoveFunctions:
-      - !type:TraitRemoveComponent
-        components:
-        - type: SmartGunUser

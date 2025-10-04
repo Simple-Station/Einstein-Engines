@@ -280,3 +280,33 @@
   name: Skaven - Deep In Her Eyes
   path:
     path: "/Audio/_Crescent/Jukebox/deepinhereyes.ogg"
+
+- type: jukebox
+  id: AmarilloByMorningSong
+  name: George Strait - Amarillo by Morning
+  path:
+    path: "/Audio/_Crescent/Jukebox/amarillobymorning.ogg"
+
+- type: jukebox
+  id: BigJohnSong
+  name: Jimmy Dean - Big John
+  path:
+    path: "/Audio/_Crescent/Jukebox/bigjohn.ogg"
+
+- type: jukebox
+  id: HeStoppedLovingHerTodaySong
+  name: George Jones - He Stopped Loving Her Today
+  path:
+    path: "/Audio/_Crescent/Jukebox/hestoppedlovinghertoday.ogg"
+
+- type: jukebox
+  id: BigIronSong
+  name: Marty Robbins - Big Iron (Texas Red)
+  path:
+    path: "/Audio/_Crescent/Jukebox/bigiron.ogg"
+
+- type: jukebox
+  id: CountryRoadsSong
+  name: John Denver - Take Me Home, Country Roads
+  path:
+    path: "/Audio/_Crescent/Jukebox/countryroads.ogg"

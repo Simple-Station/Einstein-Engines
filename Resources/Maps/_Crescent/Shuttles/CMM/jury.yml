@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 09/19/2025 10:18:23
-  entityCount: 212
+  time: 09/29/2025 01:02:59
+  entityCount: 213
 maps: []
 grids:
 - 1
@@ -123,6 +123,9 @@ entities:
             66: -4,-6
             72: -3,-7
             76: -1,-9
+            98: -4,-6
+            104: -3,-7
+            108: -1,-9
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -133,6 +136,9 @@ entities:
             79: 2,-9
             82: 4,-7
             86: 5,-6
+            111: 2,-9
+            114: 4,-7
+            118: 5,-6
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -141,6 +147,8 @@ entities:
             25: -4,-4
             63: -1,1
             69: -4,-4
+            95: -1,1
+            101: -4,-4
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -149,6 +157,8 @@ entities:
             19: 5,-4
             60: 2,1
             89: 5,-4
+            92: 2,1
+            121: 5,-4
         - node:
             id: LatticeEdgeE
           decals:
@@ -162,6 +172,11 @@ entities:
             68: -4,-4
             70: -3,-7
             74: -1,-9
+            94: -1,1
+            96: -4,-6
+            100: -4,-4
+            102: -3,-7
+            106: -1,-9
         - node:
             id: LatticeEdgeN
           decals:
@@ -177,6 +192,12 @@ entities:
             77: 2,-9
             80: 4,-7
             84: 5,-6
+            97: -4,-6
+            103: -3,-7
+            107: -1,-9
+            109: 2,-9
+            112: 4,-7
+            116: 5,-6
         - node:
             id: LatticeEdgeS
           decals:
@@ -192,6 +213,12 @@ entities:
             73: -3,-1
             83: 4,-1
             87: 5,-4
+            90: 2,1
+            93: -1,1
+            99: -4,-4
+            105: -3,-1
+            115: 4,-1
+            119: 5,-4
         - node:
             id: LatticeEdgeW
           decals:
@@ -205,6 +232,11 @@ entities:
             81: 4,-7
             85: 5,-6
             88: 5,-4
+            91: 2,1
+            110: 2,-9
+            113: 4,-7
+            117: 5,-6
+            120: 5,-4
         - node:
             color: '#DE3A3A96'
             id: StandClear
@@ -1285,7 +1317,7 @@ entities:
     - type: ApcPowerReceiver
       powerLoad: 1000
     - type: Battery
-      startingCharge: 13130.338
+      startingCharge: 13044.003
     - type: ApcPowerReceiverBattery
       enabled: True
   - uid: 157
@@ -1297,7 +1329,7 @@ entities:
     - type: ApcPowerReceiver
       powerLoad: 1000
     - type: Battery
-      startingCharge: 13125.161
+      startingCharge: 13038.826
     - type: ApcPowerReceiverBattery
       enabled: True
 - proto: SignalButton
@@ -1636,6 +1668,13 @@ entities:
     components:
     - type: Transform
       pos: 2.5,-3.5
+      parent: 1
+- proto: WarpPointShip
+  entities:
+  - uid: 213
+    components:
+    - type: Transform
+      pos: 1.5,-5.5
       parent: 1
 - proto: WeaponTurretPDT
   entities:

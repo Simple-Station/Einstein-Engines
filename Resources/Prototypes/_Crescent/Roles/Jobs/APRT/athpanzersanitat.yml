@@ -23,10 +23,12 @@
     components:
       - type: ChatRank
         rank: crescent-rank-sanitat
+      - type: HullrotFaction
+        faction: ATH
       - type: BibleUser
       - type: CPRTraining
       - type: SurgerySpeedModifier
-        speedModifier: 2
+        speedModifier: 1.75
 
   access:
   - EmergencyShuttleRepealAll

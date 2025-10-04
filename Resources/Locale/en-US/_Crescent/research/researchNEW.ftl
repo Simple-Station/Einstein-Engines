@@ -88,7 +88,7 @@ research-technology-imperial-advancedrifling = Advanced Rifling
 research-technology-imperial-srmimitation = Sixth Fireteam Imitation
 research-technology-imperial-bomblauncher = M320 Launcher
 research-technology-imperial-triumphant = Imperial Cruiser
-research-technology-imperial-padparadscha = Imperial Siege Battlecruiser
+research-technology-imperial-suzerain = Imperial Siege Battlecruiser
 
 # NCWL
 research-technology-communard-clothes = Communard Clothes
@@ -145,3 +145,4 @@ research-technology-shinohara-gilgamesh = mR-815 Prototype Exosuit
 research-technology-shinohara-ballisticfab = TF-22 Armaments Foundry
 research-technology-shinohara-dermalarmor = KOURINDO-U Dermal Armor
 research-technology-shinohara-shiverblade = SHI-RIP9 Shiver Blade
+research-technology-shinohara-advance-armor = Svbt Experimental Armors

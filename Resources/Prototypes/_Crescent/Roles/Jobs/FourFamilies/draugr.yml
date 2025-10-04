@@ -28,8 +28,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-draugr
-  - !type:AddComponentSpecial
-    components:
+      - type: HullrotFaction
+        faction: TAP
       - type: Telepathic
       - type: LanguageAdder
         addSpoken:

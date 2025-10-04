@@ -155,6 +155,12 @@
 - type: playTimeTracker
   id: JobMedtechSHI
 
+- type: playTimeTracker
+  id: JobBoardHRSHI
+
+- type: playTimeTracker
+  id: JobHosSHI
+
 #cmm
 
 - type: playTimeTracker

@@ -8,7 +8,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Preferences;
 using Content.Server.Preferences.Managers;
 using Robust.Shared.Network;
-using Content.Server._Crescent.HullrotFaction;
+using Content.Shared._Crescent.HullrotFaction;
 using Robust.Shared.Player;
 using Content.Server.Announcements.Systems;
 using Content.Server.GameTicking;

@@ -69,6 +69,7 @@
     categories:
     - StoreCategoryIPMCybernetics
     - StoreCategoryIPMEquipment
+    - StoreCategoryIPMMedicalEquipment
     currencyWhitelist:
     - SampleIPM
     balance:

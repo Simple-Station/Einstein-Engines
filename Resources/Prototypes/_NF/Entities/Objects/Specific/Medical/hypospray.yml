@@ -1,7 +1,7 @@
 - type: entity
-  name: NTCS-101 hypospray
+  name: SHI hypospray
   parent: BaseItem
-  description: A commercial hypospray designed by Nanotrasen Chemical Supply. It has two built in safety features for the consumer market, a small chemical reservoir and an injection delay.
+  description: A commercial hypospray developed by Shinohara Heavy Industries. It has two built in safety features for the consumer market, a small chemical reservoir and an injection delay.
   id: HypoMini
   components:
   - type: Sprite
@@ -20,14 +20,14 @@
   - type: Hypospray
     onlyAffectsMobs: false
   - type: UseDelay
-    delay: 0.5
+    delay: 0.75
   - type: StaticPrice
     price: 550
 
 - type: entity
-  name: NTCS-102 hypospray
+  name: IPM RMA-2 hypospray
   parent: HypoMini
-  description: A commercial hypospray designed by Nanotrasen Chemical Supply. It has two built in safety features for the consumer market, a small chemical reservoir and an injection delay. This one is branded for use by law-enforcement.
+  description: A hypospray designed by Interdyne Phramaceuticals. An advanced design configured to store a larger chemical reservoir and have seamless injection experience.
   id: HypoBrigmedic
   components:
   - type: Sprite
@@ -35,11 +35,19 @@
     state: hypo
   - type: Item
     sprite: _NF/Objects/Specific/Medical/hypobrigmedic.rsi
+  - type: SolutionContainerManager
+    solutions:
+      hypospray:
+        maxVol: 25
+  - type: UseDelay
+    delay: 0.33
+  - type: StaticPrice
+    price: 750
 
 - type: entity
-  name: NTCS-103 hypospray
+  name: IRM-103 hypospray
   parent: HypoMini
-  description: A commercial hypospray designed by Nanotrasen Chemical Supply. It has two built in safety features for the consumer market, a small chemical reservoir and an injection delay. This one seems to be a limited edition, lucky you!
+  description: A hypospray designed for use by the divine mandate's surgeons. An advanced design configured to take in a larger chemical reservoir than usual.
   id: HypoMiniLimitedEdition
   components:
   - type: Sprite
@@ -47,3 +55,11 @@
     state: hypo
   - type: Item
     sprite: _NF/Objects/Specific/Medical/hypominilimitededition.rsi
+  - type: SolutionContainerManager
+    solutions:
+      hypospray:
+        maxVol: 30
+  - type: UseDelay
+    delay: 0.66
+  - type: StaticPrice
+    price: 750

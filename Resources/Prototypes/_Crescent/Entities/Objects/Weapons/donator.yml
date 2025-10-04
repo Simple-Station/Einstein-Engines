@@ -1,7 +1,7 @@
 # @ezo_rb (ezo) donor gun
 - type: entity
   name: SHI001P Zodum .327
-  parent: BaseWeaponPistol
+  parent: [BaseWeaponPistol, StreeCredRedeemableLow]
   id: WeaponPistolZodum
   description: A custom hand-cannon from the SHI development team that was never meant to be released. Chambered in heavy .327 Imperial.
   components:
@@ -63,7 +63,7 @@
 # @theassassin25 (Volgin) donor gun
 - type: entity
   name: NCWL-AR02 Porodschok 5.56x45mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemableLow]
   id: PorodschokDonator
   description: A high-end Communard rifle, used to be produced in a Chengridz-based foundry. Recalled from production after Imperial sabotage. Only a few of these actually remain.
   components:
@@ -136,7 +136,7 @@
 # @m18hellcat76mmgunmotorcarriage (Hellcat) donor gun
 - type: entity
   name: PTA XCR-6 Charge rifle 6x24mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemableLow]
   id: WeaponSpecialChargeRifle
   description: A experimental rifle developed by Pang Tai Arms. Extremly rare. This one has the serial number M-18. Chambered in 6×24mm.
   components:
@@ -310,8 +310,8 @@
             state: icon
           name: C-8X blueprint
           doAfter: 2
-        - material: AdvancedMechatronics
-          amount: 10
+        - material: BasicMechatronics
+          amount: 15
           doAfter: 2
         - material: TubeLoader
           amount: 5
@@ -320,7 +320,7 @@
           amount: 5
           doAfter: 2
         - material: Steel
-          amount: 20
+          amount: 30
           doAfter: 2
     - node: C8XAutocannon
       entity: WeaponSpecialKingpin
@@ -346,7 +346,7 @@
 # @a_person5660 (Reggie) donor gun
 - type: entity
   name: SHI HSRPG-38M13 Hammerhead smart-missile launcher 65mm
-  parent: [BaseWeaponLauncher, BaseGunWieldable]
+  parent: [BaseWeaponLauncher, BaseGunWieldable, StreeCredRedeemableLow]
   id: WeaponLauncherHammerhead
   description: A fancy heat-seeking rocket launcher. Stamped with the Shinohara Heavy Industries logo.
   components:
@@ -389,7 +389,7 @@
 # @Tomahawk101 (Tomahawk101) donor gun
 - type: entity
   name: DEW-17-Mod Cycler 95c
-  parent: BaseWeaponBatterySmall
+  parent: [BaseWeaponBatterySmall, StreeCredRedeemableLow]
   id: WeaponDonorCycler
   description: A heavily modified DEW-17 laser pistol, its battery connection point has ben replaced with a miniature RTG capable of recharging the weapon indefinitely.
   components:
@@ -439,7 +439,7 @@
 # @no_originality (Original) donor gun
 - type: entity
   name: HP Madrugad 12.7x99mm
-  parent: BaseWeaponRevolver
+  parent: [BaseWeaponRevolver, StreeCredRedeemableLow]
   id: WeaponDonorRevolverMadrugad
   description: An ornate percussion revolver, hand-crafted to have once served a Hunter Montagne in the Great Hunt, now pilfered from their cold hands so it may serve yours.
   components:
@@ -480,7 +480,7 @@
 
 - type: entity
   id: CaseMadrugada
-  parent: WeaponCaseMadrugada
+  parent: [WeaponCaseMadrugada, StreeCredRedeemableLow]
   name: hunter's pride Madrugad case
   suffix: Donor - Madrugad
   description: A fancy wooden case with the 6th Saint Romaine's Militia flag draped over it
@@ -498,7 +498,7 @@
 - type: entity
   name: IRM DA-11C Courroux du Kaiser 15.2x169mm Anti-materiel rifle
   description: A one of a kind heirloom wielded by the Lord Admiral of The Countsman. A relic of Empire and Faith, it serves as tool of authority and the Countsman's last defense. Chambered in 15.2x169mm.
-  parent: WeaponAntimaterielDSMLeveller
+  parent: [WeaponAntimaterielDSMLeveller, StreeCredRedeemableLow]
   id: WeaponAntimaterielCourroux
   components:
   - type: GunRequiresWield
@@ -517,7 +517,6 @@
     - suitStorage
   - type: Gun
     fireRate: 2
-  - type: LaserPointer
   - type: HeldSpeedModifier
     walkModifier: 1
     sprintModifier: 1
@@ -580,7 +579,7 @@
 # @BoskiYourk (boskiyourk) donor gun
 - type: entity
   name: PVDNC KZ23 Custom Bruiser 4g
-  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  parent: [BaseWeaponShotgun, BaseGunWieldable, StreeCredRedeemableLow]
   id: WeaponShotgunBruiser
   description: An exotic four gauge shotgun with mysterious origins. Found in the fog, it has been refurbished into something lethal.
   components:

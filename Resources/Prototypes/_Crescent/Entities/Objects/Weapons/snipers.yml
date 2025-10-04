@@ -1,6 +1,6 @@
 - type: entity
   name: SHI PLCR-3M2 Hristov 15.2x169mm
-  parent: [BaseWeaponRifle, BaseGunWieldable]
+  parent: [BaseWeaponRifle, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponSniperHristov
   description: A portable anti-materiel rifle, equipped with a long range scope. Fires the large 15.2×169mm round.
   components:
@@ -52,13 +52,12 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
-  - type: LaserPointer
   - type: StaticPrice
     price: 3000
 
 - type: entity
   name: IRM AVR-H Imperator 15.2x169mm
-  parent: [BaseWeaponRifle, BaseGunWieldable]
+  parent: [BaseWeaponRifle, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponSniperImperator
   description: A imperial anti-materiel rifle. Fires the large 15.2×169mm round.
   components:
@@ -109,13 +108,12 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
-  - type: LaserPointer
   - type: StaticPrice
     price: 2000
 
 - type: entity
   name: NCWL PTRD-94 Molot 15.2x169mm
-  parent: [BaseWeaponRifle, BaseGunWieldable]
+  parent: [BaseWeaponRifle, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponSniperMolot
   description: A cheap communard anti-materiel. Fires the large 15.2×169mm round.
   components:
@@ -166,7 +164,6 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
-  - type: LaserPointer
   - type: StaticPrice
     price: 2000
 
@@ -223,13 +220,12 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
-  - type: LaserPointer
   - type: StaticPrice
     price: 2000
 
 - type: entity
   name: PTA AC-8 Spear 15.2x169mm
-  parent: [BaseWeaponRifle, BaseGunWieldable]
+  parent: [BaseWeaponRifle, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponSniperSpear
   description: A high-end AMR by Pang Tai Arms, capable of firing significantly faster than its competitors.
   components:
@@ -280,6 +276,5 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
-  - type: LaserPointer
   - type: StaticPrice
     price: 5000

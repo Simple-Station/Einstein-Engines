@@ -97,8 +97,7 @@ namespace Content.Shared.Abilities.Psionics
         }
 
         /// <summary>
-        ///     Returns the CurrentAmplification of a given Entity, multiplied by the result of that Entity's MoodContest.
-        ///     Higher mood means more Amplification, Lower mood means less Amplification.
+        ///     Returns the CurrentAmplification of a given Entity.
         /// </summary>
         public float ModifiedAmplification(EntityUid uid)
         {
@@ -109,17 +108,15 @@ namespace Content.Shared.Abilities.Psionics
         }
 
         /// <summary>
-        ///     Returns the CurrentAmplification of a given Entity, multiplied by the result of that Entity's MoodContest.
-        ///     Higher mood means more Amplification, Lower mood means less Amplification.
+        ///     Returns the CurrentAmplification of a given Entity.
         /// </summary>
         public float ModifiedAmplification(EntityUid uid, PsionicComponent component)
         {
-            return component.CurrentAmplification * _contests.MoodContest(uid, true);
+            return component.CurrentAmplification;
         }
 
         /// <summary>
-        ///     Returns the CurrentDampening of a given Entity, multiplied by the result of that Entity's MoodContest.
-        ///     Lower mood means more Dampening, higher mood means less Dampening.
+        ///     Returns the CurrentDampening of a given Entity.
         /// </summary>
         public float ModifiedDampening(EntityUid uid)
         {
@@ -130,11 +127,10 @@ namespace Content.Shared.Abilities.Psionics
         }
 
         /// <summary>
-        ///     Returns the CurrentDampening of a given Entity, multiplied by the result of that Entity's MoodContest.
-        ///     Lower mood means more Dampening, higher mood means less Dampening.
+        ///     Returns the CurrentDampening of a given Entity.
         /// </summary>
         public float ModifiedDampening(EntityUid uid, PsionicComponent component) =>
-         component.CurrentDampening / _contests.MoodContest(uid, true);
+         component.CurrentDampening;
     }
 
     public sealed class PsionicPowerUsedEvent : HandledEntityEventArgs

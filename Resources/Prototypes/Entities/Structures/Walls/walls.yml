@@ -707,7 +707,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 600
+        damage: 800
       behaviors:
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
@@ -716,7 +716,7 @@
             collection: MetalSlam
     - trigger:
         !type:DamageTrigger
-        damage: 300
+        damage: 400
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -725,7 +725,7 @@
         acts: ["Destruction"]
     - trigger: #this trigger is a Nyano addition
         !type:DamageTrigger
-        damage: 300
+        damage: 400
       behaviors:
       - !type:ChangeConstructionNodeBehavior
         node: girder
@@ -748,25 +748,34 @@
   - type: Icon
     sprite: Structures/Walls/shuttle.rsi
     state: full
-#  - type: Destructible
-#    thresholds:
-#    - trigger:
-#        !type:DamageTrigger
-#        damage: 1000
-#      behaviors:
-#        - !type:DoActsBehavior
-#          acts: [ "Destruction" ]
-#    - trigger:
-#        !type:DamageTrigger
-#        damage: 500
-#      behaviors:
-#      - !type:PlaySoundBehavior
-#        sound:
-#          path: /Audio/Effects/metalbreak.ogg
-#      - !type:DoActsBehavior
-#        acts: ["Destruction"]
-#    destroySound:
-#      path: /Audio/Effects/metalbreak.ogg
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 800
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalSlam
+      - trigger:
+          !type:DamageTrigger
+          damage: 400
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalSlam
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+      - trigger: #this trigger is a Nyano addition
+          !type:DamageTrigger
+          damage: 400
+        behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: girder
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
   - type: Construction
     graph: Girder
     node: shuttleWall

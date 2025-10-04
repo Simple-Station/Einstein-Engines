@@ -4,7 +4,7 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 09/24/2025 22:22:13
+  time: 09/28/2025 02:26:29
   entityCount: 80
 maps: []
 grids:
@@ -123,12 +123,14 @@ entities:
           decals:
             10: -1,-3
             60: -1,-3
+            80: -1,-3
         - node:
             zIndex: 1
             id: LatticeCornerNW
           decals:
             15: 1,-3
             65: 1,-3
+            85: 1,-3
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -137,6 +139,8 @@ entities:
             8: -1,-3
             55: -2,-1
             58: -1,-3
+            75: -2,-1
+            78: -1,-3
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -145,6 +149,8 @@ entities:
             14: 1,-3
             64: 1,-3
             68: 2,-1
+            84: 1,-3
+            88: 2,-1
         - node:
             id: LatticeEdgeE
           decals:
@@ -152,6 +158,8 @@ entities:
             7: -1,-3
             54: -2,-1
             57: -1,-3
+            74: -2,-1
+            77: -1,-3
         - node:
             id: LatticeEdgeN
           decals:
@@ -161,6 +169,10 @@ entities:
             52: -1,0
             59: -1,-3
             62: 1,-3
+            70: 1,0
+            72: -1,0
+            79: -1,-3
+            82: 1,-3
         - node:
             id: LatticeEdgeS
           decals:
@@ -174,6 +186,12 @@ entities:
             56: -1,-3
             61: 1,-3
             66: 2,-1
+            69: 1,0
+            71: -1,0
+            73: -2,-1
+            76: -1,-3
+            81: 1,-3
+            86: 2,-1
         - node:
             id: LatticeEdgeW
           decals:
@@ -181,6 +199,8 @@ entities:
             13: 1,-3
             63: 1,-3
             67: 2,-1
+            83: 1,-3
+            87: 2,-1
         - node:
             color: '#EFB34196'
             id: WarnLineN
@@ -559,6 +579,13 @@ entities:
     - type: Transform
       pos: 0.5,-1.5
       parent: 1
+    - type: NamedModules
+      buttonNames:
+      - Toggle Exhumers
+      - Fire Exhumers
+      - Module C
+      - Module D
+      - Module E
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -682,7 +709,7 @@ entities:
     - type: ApcPowerReceiver
       powerLoad: 1000
     - type: Battery
-      startingCharge: 12849.29
+      startingCharge: 12624.352
     - type: ApcPowerReceiverBattery
       enabled: True
   - uid: 69
@@ -694,7 +721,7 @@ entities:
     - type: ApcPowerReceiver
       powerLoad: 1000
     - type: Battery
-      startingCharge: 12851.795
+      startingCharge: 12626.856
     - type: ApcPowerReceiverBattery
       enabled: True
 - proto: SubstationBasic

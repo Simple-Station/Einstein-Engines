@@ -28,9 +28,11 @@
     components:
       - type: ChatRank
         rank: crescent-rank-smarts
+      - type: HullrotFaction
+        faction: DSM
       - type: CPRTraining
       - type: SurgerySpeedModifier
-        speedModifier: 2
+        speedModifier: 1.75
       - type: LanguageAdder
         addSpoken:
           - LowImperial
