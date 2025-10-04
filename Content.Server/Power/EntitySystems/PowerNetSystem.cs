@@ -318,6 +318,7 @@ namespace Content.Server.Power.EntitySystems
             _powerNetReconnectQueue.Clear();
         }
 
+        // lorem ipsum
         private void UpdateApcPowerReceiver(float frameTime)
         {
             var enumerator = AllEntityQuery<ApcPowerReceiverComponent>();
