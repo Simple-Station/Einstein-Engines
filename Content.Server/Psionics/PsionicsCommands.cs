@@ -81,7 +81,7 @@ public sealed class AddRandomPsionicPowerCommand : IConsoleCommand
             return;
         }
 
-        psionicPowers.AddRandomPsionicPower(uid, true);
+        psionicPowers.AddRandomPsionicPower(uid);
     }
 }
 
