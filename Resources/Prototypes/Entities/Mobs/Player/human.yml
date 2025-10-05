@@ -11,16 +11,16 @@
   name: syndicate agent
   suffix: Human, Base
   components:
-    - type: RandomHumanoidAppearance
-      randomizeName: false
-      hair: HairBald
-    - type: Loadout
-      prototypes: [SyndicateOperativeGearExtremelyBasic]
-    - type: RandomMetadata
-      nameSegments: [names_death_commando]
-    - type: NpcFactionMember
-      factions:
-      - Syndicate
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+    hair: HairBald
+  - type: Loadout
+    prototypes: [SyndicateOperativeGearExtremelyBasic]
+  - type: RandomMetadata
+    nameSegments: [names_death_commando]
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
 
 - type: entity
   parent: MobHumanSyndicateAgentBase
@@ -61,13 +61,13 @@
   id: MobHumanSyndicateAgentNukeops # Reinforcement exclusive to nukeops uplink
   suffix: Human, NukeOps
   components:
-    - type: NukeOperative
-    - type: RandomMetadata
-      nameSegments:
-      - nukeops-role-operator
-      - SyndicateNamesNormal
-    - type: Loadout
-      prototypes: [SyndicateOperativeGearFullNoUplink]
+  - type: NukeOperative
+  - type: RandomMetadata
+    nameSegments:
+    - nukeops-role-operator
+    - SyndicateNamesNormal
+  - type: Loadout
+    prototypes: [SyndicateOperativeGearFullNoUplink]
 
 # Nuclear Operative
 - type: entity
@@ -76,10 +76,10 @@
   parent: MobHuman
   id: MobHumanNukeOp
   components:
-    - type: NukeOperative
-    - type: RandomHumanoidAppearance
-    - type: Psionic
-      powerRollMultiplier: 7
+  - type: NukeOperative
+  - type: RandomHumanoidAppearance
+  - type: Psionic
+    powerRollMultiplier: 7
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -87,17 +87,29 @@
   id: MobHumanLoneNuclearOperative
   name: Lone Operative
   components:
-    - type: RandomHumanoidAppearance
-      randomizeName: false
-    - type: NukeOperative
-    - type: Loadout
-      prototypes: [SyndicateLoneOperativeGearFull]
-    - type: RandomMetadata
-      nameSegments:
-      - SyndicateNamesPrefix
-      - SyndicateNamesNormal
-    - type: NpcFactionMember
-      factions:
-      - Syndicate
-    - type: Psionic
-      powerRollMultiplier: 7
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: NukeOperative
+  - type: Loadout
+    prototypes: [SyndicateLoneOperativeGearFull]
+  - type: RandomMetadata
+    nameSegments:
+    - SyndicateNamesPrefix
+    - SyndicateNamesNormal
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  - type: Psionic
+    powerRollMultiplier: 7
+
+# Wizard
+- type: entity
+  categories: [ HideSpawnMenu ]
+  name: Wizard
+  parent: MobHuman
+  id: MobHumanWizard
+  components:
+  - type: RandomHumanoidAppearance
+  - type: NpcFactionMember
+    factions:
+    - Wizard

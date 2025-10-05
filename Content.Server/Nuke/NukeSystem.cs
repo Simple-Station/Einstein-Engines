@@ -41,6 +41,7 @@ public sealed class NukeSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly AppearanceSystem _appearance = default!;
@@ -50,7 +51,7 @@ public sealed class NukeSystem : EntitySystem
     ///     Used to calculate when the nuke song should start playing for maximum kino with the nuke sfx
     /// </summary>
     private float _nukeSongLength;
-    private string _selectedNukeSong = String.Empty;
+    private ResolvedSoundSpecifier _selectedNukeSong = String.Empty;
 
     /// <summary>
     ///     Time to leave between the nuke song and the nuke alarm playing.
@@ -169,12 +170,21 @@ public sealed class NukeSystem : EntitySystem
         if (component.Status == NukeStatus.ARMED)
             return;
 
+        // Nuke has to have the disk in it to be moved
+        if (!component.DiskSlot.HasItem)
+        {
+            var msg = Loc.GetString("nuke-component-cant-anchor-toggle");
+            _popups.PopupEntity(msg, uid, args.Actor, PopupType.MediumCaution);
+            return;
+        }
+
         // manually set transform anchor (bypassing anchorable)
         // todo: it will break pullable system
         var xform = Transform(uid);
         if (xform.Anchored)
         {
             _transform.Unanchor(uid, xform);
+            _itemSlots.SetLock(uid, component.DiskSlot, true);
         }
         else
         {
@@ -183,7 +193,7 @@ public sealed class NukeSystem : EntitySystem
 
             var worldPos = _transform.GetWorldPosition(xform);
 
-            foreach (var tile in grid.GetTilesIntersecting(new Circle(worldPos, component.RequiredFloorRadius), false))
+            foreach (var tile in _map.GetTilesIntersecting(xform.GridUid.Value, grid, new Circle(worldPos, component.RequiredFloorRadius), false))
             {
                 if (!tile.IsSpace(_tileDefManager))
                     continue;
@@ -196,6 +206,7 @@ public sealed class NukeSystem : EntitySystem
 
             _transform.SetCoordinates(uid, xform, xform.Coordinates.SnapToGrid());
             _transform.AnchorEntity(uid, xform);
+            _itemSlots.SetLock(uid, component.DiskSlot, false);
         }
 
         UpdateUserInterface(uid, component);
@@ -226,7 +237,7 @@ public sealed class NukeSystem : EntitySystem
 
     private void OnClearButtonPressed(EntityUid uid, NukeComponent component, NukeKeypadClearMessage args)
     {
-        _audio.PlayEntity(component.KeypadPressSound, Filter.Pvs(uid), uid, true);
+        _audio.PlayPvs(component.KeypadPressSound, uid);
 
         if (component.Status != NukeStatus.AWAIT_CODE)
             return;
@@ -293,7 +304,7 @@ public sealed class NukeSystem : EntitySystem
 
         // Start playing the nuke event song so that it ends a couple seconds before the alert sound
         // should play
-        if (nuke.RemainingTime <= _nukeSongLength + nuke.AlertSoundTime + NukeSongBuffer && !nuke.PlayedNukeSong && !string.IsNullOrEmpty(_selectedNukeSong))
+        if (nuke.RemainingTime <= _nukeSongLength + nuke.AlertSoundTime + NukeSongBuffer && !nuke.PlayedNukeSong && !ResolvedSoundSpecifier.IsNullOrEmpty(_selectedNukeSong))
         {
             _sound.DispatchStationEventMusic(uid, _selectedNukeSong, StationEventMusicType.Nuke);
             nuke.PlayedNukeSong = true;
@@ -302,7 +313,7 @@ public sealed class NukeSystem : EntitySystem
         // play alert sound if time is running out
         if (nuke.RemainingTime <= nuke.AlertSoundTime && !nuke.PlayedAlertSound)
         {
-            _sound.PlayGlobalOnStation(uid, _audio.GetSound(nuke.AlertSound), new AudioParams{Volume = -5f});
+            _sound.PlayGlobalOnStation(uid, _audio.ResolveSound(nuke.AlertSound), new AudioParams{Volume = -5f});
             _sound.StopStationEventMusic(uid, StationEventMusicType.Nuke);
             nuke.PlayedAlertSound = true;
             UpdateAppearance(uid, nuke);
@@ -342,12 +353,12 @@ public sealed class NukeSystem : EntitySystem
                 {
                     component.Status = NukeStatus.AWAIT_ARM;
                     component.RemainingTime = component.Timer;
-                    _audio.PlayEntity(component.AccessGrantedSound, Filter.Pvs(uid), uid, true);
+                    _audio.PlayPvs(component.AccessGrantedSound, uid);
                 }
                 else
                 {
                     component.EnteredCode = "";
-                    _audio.PlayEntity(component.AccessDeniedSound, Filter.Pvs(uid), uid, true);
+                    _audio.PlayPvs(component.AccessDeniedSound, uid);
                 }
 
                 break;
@@ -416,7 +427,9 @@ public sealed class NukeSystem : EntitySystem
         // Don't double-dip on the octave shifting
         component.LastPlayedKeypadSemitones = number == 0 ? component.LastPlayedKeypadSemitones : semitoneShift;
 
-        _audio.PlayEntity(component.KeypadPressSound, Filter.Pvs(uid), uid, true, AudioHelpers.ShiftSemitone(semitoneShift).WithVolume(-5f));
+        var opts = component.KeypadPressSound.Params;
+        opts = AudioHelpers.ShiftSemitone(opts, semitoneShift).AddVolume(-5f);
+        _audio.PlayPvs(component.KeypadPressSound, uid, opts);
     }
 
     public string GenerateRandomNumberString(int length)
@@ -453,7 +466,7 @@ public sealed class NukeSystem : EntitySystem
             _alertLevel.SetLevel(stationUid.Value, component.AlertLevelOnActivate, true, true, true, true);
 
         // We are collapsing the randomness here, otherwise we would get separate random song picks for checking duration and when actually playing the song afterwards
-        _selectedNukeSong = _audio.GetSound(component.ArmMusic);
+        _selectedNukeSong = _audio.ResolveSound(component.ArmMusic);
 
         _announcer.SendAnnouncementMessage(
             _announcer.GetAnnouncementId("NukeArm"),
@@ -467,7 +480,7 @@ public sealed class NukeSystem : EntitySystem
             ("location", FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString((uid, nukeXform))))
         );
 
-        _sound.PlayGlobalOnStation(uid, _audio.GetSound(component.ArmSound));
+        _sound.PlayGlobalOnStation(uid, _audio.ResolveSound(component.ArmSound));
         _nukeSongLength = (float) _audio.GetAudioLength(_selectedNukeSong).TotalSeconds;
 
         // turn on the spinny light
@@ -510,8 +523,11 @@ public sealed class NukeSystem : EntitySystem
         );
 
         component.PlayedNukeSong = false;
-        _sound.PlayGlobalOnStation(uid, _audio.GetSound(component.DisarmSound));
+        _sound.PlayGlobalOnStation(uid, _audio.ResolveSound(component.DisarmSound));
         _sound.StopStationEventMusic(uid, StationEventMusicType.Nuke);
+
+        // reset nuke remaining time to either itself or the minimum time, whichever is higher
+        component.RemainingTime = Math.Max(component.RemainingTime, component.MinimumTime);
 
         // disable sound and reset it
         component.PlayedAlertSound = false;

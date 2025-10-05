@@ -6,13 +6,13 @@
   components:
   - type: Tag
     tags:
-      - MagazinePistol
-      - Magazine
+    - MagazinePistol
+    - Magazine
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
       tags:
-        - CartridgePistol
+      - CartridgePistol
     capacity: 12
   - type: Item
     size: Small
@@ -40,13 +40,13 @@
   components:
   - type: Tag
     tags:
-      - MagazinePistolHighCapacity
-      - Magazine
+    - MagazinePistolHighCapacity
+    - Magazine
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
       tags:
-        - CartridgePistol
+      - CartridgePistol
     capacity: 16
   - type: Item
     size: Small
@@ -74,13 +74,13 @@
   components:
   - type: Tag
     tags:
-      - MagazinePistolSubMachineGun
-      - Magazine
+    - MagazinePistolSubMachineGun
+    - Magazine
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
       tags:
-        - CartridgePistol
+      - CartridgePistol
     capacity: 35
   - type: Item
     size: Small
@@ -107,8 +107,8 @@
   components:
   - type: Tag
     tags:
-      - MagazinePistolSubMachineGunTopMounted
-      - Magazine
+    - MagazinePistolSubMachineGunTopMounted
+    - Magazine
   - type: BallisticAmmoProvider
     mayTransfer: true
     proto: CartridgePistol
@@ -118,11 +118,11 @@
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/smg_mag_top_mounted.rsi
     layers:
-      - state: base
-        map: ["enum.GunVisualLayers.Base"]
-      - state: mag-unshaded-1
-        map: ["enum.GunVisualLayers.MagUnshaded"]
-        shader: unshaded
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-1
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
   - type: MagazineVisuals
     magState: mag
     steps: 6
@@ -260,20 +260,6 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  id: MagazinePistolHighCapacityRubber
-  name: machine pistol magazine (.35 auto rubber)
-  parent: BaseMagazinePistolHighCapacity
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgePistol
-  - type: Sprite
-    layers:
-    - state: rubber
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-
-- type: entity
   id: MagazinePistolHighCapacityShrapnel
   name: machine pistol magazine (.35 auto shrapnel)
   parent: BaseMagazinePistolHighCapacity
@@ -297,7 +283,7 @@
     proto: CartridgePistol
     whitelist:
       tags:
-        - CartridgePistol
+      - CartridgePistol
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg
   - type: Sprite
@@ -335,20 +321,6 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  id: MagazinePistolSubMachineGunIncendiary
-  name: SMG magazine (.35 auto incendiary)
-  parent: BaseMagazinePistolSubMachineGun
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgePistolIncendiary
-  - type: Sprite
-    layers:
-    - state: red
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-
-- type: entity
   id: MagazinePistolSubMachineGunUranium
   name: SMG magazine (.35 auto uranium)
   parent: BaseMagazinePistolSubMachineGun
@@ -361,6 +333,14 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  parent: BaseMagazinePistolSubMachineGun
+  id: MagazinePistolSubMachineGunIncendiary
+  name: SMG magazine (.35 auto incendiary)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistolIncendiary
 
 - type: entity
   id: MagazinePistolSubMachineGunShrapnel

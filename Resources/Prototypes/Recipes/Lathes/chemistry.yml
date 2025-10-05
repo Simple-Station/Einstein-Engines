@@ -45,35 +45,26 @@
     Steel: 25
 
 - type: latheRecipe
-  id: DisposableSyringe
-  result: DisposableSyringe
-  completetime: 0.1
-  materials:
-    Plastic: 10
-    Steel: 2
-
-- type: latheRecipe
   id: BluespaceBeaker
   result: BluespaceBeaker
   completetime: 2
   materials:
-    Steel: 200  #Cheaper Due to Needing Bluespace
+    Steel: 200
     Plastic: 200
     Plasma: 50
     Silver: 50
-    Bluespace: 100 #DeltaV: Bluespace
+    Bluespace: 100
 
 - type: latheRecipe
   id: SyringeBluespace
   result: SyringeBluespace
   completetime: 2
   materials:
-    Steel: 100  #Cheaper Due to Needing Bluespace
+    Steel: 100
     Plastic: 100
     Glass: 200
     Plasma: 50
-    Bluespace: 100 #DeltaV: Bluespace
-   #Silver: 50
+    Bluespace: 100
 
 - type: latheRecipe
   id: PillCanister
@@ -89,12 +80,12 @@
   materials:
     Glass: 50
 
-# - type: latheRecipe # DeltaV - Disable the Vape
+# - type: latheRecipe
 #   id: Vape
+#   result: Vape
 #   icon:
 #     sprite: Objects/Consumable/Smokeables/Vapes/vape-standard.rsi
 #     state: icon
-#   result: Vape
 #   completetime: 2
 #   materials:
 #     Plastic: 100
@@ -108,3 +99,11 @@
     Steel: 200
     Plastic: 300
     Glass: 500
+
+- type: latheRecipe
+  id: DisposableSyringe
+  result: DisposableSyringe
+  completetime: 0.1
+  materials:
+    Plastic: 10
+    Steel: 2

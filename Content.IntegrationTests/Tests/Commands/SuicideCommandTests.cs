@@ -357,14 +357,13 @@ public sealed class SuicideCommandTests
             consoleHost.GetSessionShell(playerMan.Sessions.First()).ExecuteCommand("suicide");
             var lethalDamageThreshold = mobThresholdsComp.Thresholds.Keys.Last();
 
-            if (damageableComp.DamageContainerID is not "Silicon")
-                Assert.Multiple(() =>
-                {
-                    Assert.That(mobStateSystem.IsDead(player, mobStateComp));
-                    Assert.That(entManager.TryGetComponent<GhostComponent>(mindComponent.CurrentEntity, out var ghostComp) &&
-                                !ghostComp.CanReturnToBody);
-                    Assert.That(damageableComp.Damage.DamageDict["Slash"], Is.AtLeast(lethalDamageThreshold / 2));
-                });
+            Assert.Multiple(() =>
+            {
+                Assert.That(mobStateSystem.IsDead(player, mobStateComp));
+                Assert.That(entManager.TryGetComponent<GhostComponent>(mindComponent.CurrentEntity, out var ghostComp) &&
+                    !ghostComp.CanReturnToBody);
+                Assert.That(damageableComp.Damage.DamageDict["Slash"], Is.AtLeast(lethalDamageThreshold / 2));
+            });
         });
 
         await pair.CleanReturnAsync();

@@ -71408,7 +71408,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 66.5,-43.5
       parent: 2
-- proto: FloraTree03
+- proto: FloraTree
   entities:
   - uid: 10931
     components:
@@ -71421,8 +71421,6 @@ entities:
     - type: Transform
       pos: 22.372498,-45.194687
       parent: 2
-- proto: FloraTree06
-  entities:
   - uid: 10933
     components:
     - type: Transform

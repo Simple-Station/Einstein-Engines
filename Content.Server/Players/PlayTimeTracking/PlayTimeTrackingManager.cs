@@ -212,7 +212,7 @@ public sealed partial class PlayTimeTrackingManager : ISharedPlaytimeManager, IP
         }
     }
 
-    public Dictionary<string, TimeSpan> GetPlayTimes(ICommonSession session)
+    public IReadOnlyDictionary<string, TimeSpan> GetPlayTimes(ICommonSession session)
     {
         return GetTrackerTimes(session);
     }

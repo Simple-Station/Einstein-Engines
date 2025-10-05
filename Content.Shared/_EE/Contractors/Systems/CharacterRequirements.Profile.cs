@@ -31,7 +31,7 @@ public sealed partial class CharacterNationalityRequirement : CharacterRequireme
     public override bool IsValid(
         JobPrototype job,
         HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
+        IReadOnlyDictionary<string, TimeSpan> playTimes,
         bool whitelisted,
         IPrototype prototype,
         IEntityManager entityManager,
@@ -72,7 +72,7 @@ public sealed partial class CharacterEmployerRequirement : CharacterRequirement
     public override bool IsValid(
         JobPrototype job,
         HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
+        IReadOnlyDictionary<string, TimeSpan> playTimes,
         bool whitelisted,
         IPrototype prototype,
         IEntityManager entityManager,
@@ -113,7 +113,7 @@ public sealed partial class CharacterLifepathRequirement : CharacterRequirement
     public override bool IsValid(
         JobPrototype job,
         HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
+        IReadOnlyDictionary<string, TimeSpan> playTimes,
         bool whitelisted,
         IPrototype prototype,
         IEntityManager entityManager,

@@ -14,6 +14,7 @@ using Content.Shared.Damage.Prototypes;
 using Content.Shared.Drunk;
 using Content.Shared.FixedPoint;
 using Content.Shared.Forensics;
+using Content.Shared.Forensics.Components;
 using Content.Shared.HealthExaminable;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Nutrition.Components;
@@ -252,7 +253,7 @@ public sealed class BloodstreamSystem : EntitySystem
 
         // Heat damage will cauterize, causing the bleed rate to be reduced.
         else if (ent.Comp.CauterizeMessage is not null
-            && totalFloat < 0 && oldBleedAmount > 0)
+            && totalFloat <= ent.Comp.BloodHealedSoundThreshold && oldBleedAmount > 0)
         {
             // Magically, this damage has healed some bleeding, likely
             // because it's burn damage that cauterized their wounds.
@@ -501,7 +502,7 @@ public sealed class BloodstreamSystem : EntitySystem
             return;
         }
 
-        var currentVolume = bloodSolution.RemoveReagent(component.BloodReagent, bloodSolution.Volume);
+        var currentVolume = bloodSolution.RemoveReagent(component.BloodReagent, bloodSolution.Volume, ignoreReagentData: true);
 
         component.BloodReagent = reagent;
 

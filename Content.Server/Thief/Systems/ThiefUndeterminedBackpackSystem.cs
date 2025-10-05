@@ -81,7 +81,7 @@ public sealed class ThiefUndeterminedBackpackSystem : EntitySystem
                 appearance.LastProfileLoaded != null &&
                 !_characterRequirements.CheckRequirementsValid(
                     set.Requirements, new JobPrototype() /* not gonna bother with jobs */,
-                    appearance.LastProfileLoaded, new(), false, set, EntityManager, _proto, _config, out _))
+                    appearance.LastProfileLoaded, new Dictionary<string, TimeSpan>(), false, set, EntityManager, _proto, _config, out _))
                 continue;
 
             var selected = component.SelectedSets.Contains(i);

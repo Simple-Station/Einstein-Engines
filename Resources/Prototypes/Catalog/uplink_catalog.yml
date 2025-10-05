@@ -593,7 +593,7 @@
   id: UplinkMagazineCaselessRifleIncendiary
   name: uplink-magazine-caseless-incendiary-name
   description: uplink-magazine-caseless-incendiary-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_rifle_mag.rsi, state: rubber }
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_rifle_mag.rsi, state: practice }
   productEntity: MagazineCaselessRifleIncendiary
   cost:
     Telecrystal: 14
@@ -604,7 +604,7 @@
   id: UplinkMagazineCaselessRifleShrapnel
   name: uplink-magazine-caseless-shrapnel-name
   description: uplink-magazine-caseless-shrapnel-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_rifle_mag.rsi, state: rubber }
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_rifle_mag.rsi, state: practice }
   productEntity: MagazineCaselessRifleShrapnel
   cost:
     Telecrystal: 12
@@ -1056,17 +1056,28 @@
 # Disruption
 
 - type: listing
+  id: UplinkAccessBreaker
+  name: uplink-access-breaker-name
+  description: uplink-access-breaker-desc
+  productEntity: AccessBreaker
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 15
+  cost:
+    Telecrystal: 25
+  categories:
+  - UplinkDisruption
+
+- type: listing
   id: UplinkEmag
   name: uplink-emag-name
   description: uplink-emag-desc
   productEntity: Emag
-  discountCategory: veryRareDiscounts
+  discountCategory: rareDiscounts
   discountDownTo:
     Telecrystal: 10
   cost:
     Telecrystal: 20
-  categories:
-  - UplinkDisruption
 
 - type: listing
   id: UplinkRadioJammer
@@ -1473,6 +1484,20 @@
   icon: { sprite: /Textures/Objects/Magic/magicactions.rsi, state: shield }
   productEntity: EmpImplanter
   discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 5
+  cost:
+    Telecrystal: 10
+  categories:
+  - UplinkImplants
+
+- type: listing
+  id: UplinkRadioImplanter
+  name: uplink-radio-implanter-name
+  description: uplink-radio-implanter-desc
+  icon: { sprite: /Textures/Objects/Devices/encryption_keys.rsi, state: synd_label }
+  productEntity: RadioImplanter
+  discountCategory: usualDiscounts
   discountDownTo:
     Telecrystal: 5
   cost:

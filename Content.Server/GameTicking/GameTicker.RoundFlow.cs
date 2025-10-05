@@ -344,9 +344,6 @@ namespace Content.Server.GameTicking
                 if (!_playerManager.TryGetSessionById(userId, out _))
                     continue;
 
-                if (_banManager.GetRoleBans(userId) == null)
-                    continue;
-
                 total++;
             }
 
@@ -591,7 +588,7 @@ namespace Content.Server.GameTicking
 
             // This ordering mechanism isn't great (no ordering of minds) but functions
             var listOfPlayerInfoFinal = listOfPlayerInfo.OrderBy(pi => pi.PlayerOOCName).ToArray();
-            var sound = RoundEndSoundCollection == null ? null : _audio.GetSound(new SoundCollectionSpecifier(RoundEndSoundCollection));
+            var sound = RoundEndSoundCollection == null ? null : _audio.ResolveSound(new SoundCollectionSpecifier(RoundEndSoundCollection));
 
             var roundEndMessageEvent = new RoundEndMessageEvent(
                 gamemodeTitle,
@@ -783,11 +780,6 @@ namespace Content.Server.GameTicking
             {
                 LoadMaps();
             }
-        }
-
-        public new TimeSpan RoundDuration()
-        {
-            return _gameTiming.CurTime.Subtract(RoundStartTimeSpan);
         }
 
         private void AnnounceRound()

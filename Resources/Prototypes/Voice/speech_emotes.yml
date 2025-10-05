@@ -194,10 +194,25 @@
     - BorgChassis
   chatMessages: ["chat-emote-msg-clap"]
   chatTriggers:
-  - clap
   - claps
   - clapping
   - clapped
+
+- type: emote
+  id: ClapSingle
+  name: chat-emote-name-clap-single
+  category: Hands
+  icon: Interface/Emotes/clap.png #TODO: Needs a sprite that distinguishes it better from clap
+  whitelist:
+    components:
+    - Hands
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [ "chat-emote-msg-clap-single" ]
+  chatTriggers:
+  - clap
+  - claps their hands together
 
 - type: emote
   id: Snap
@@ -340,13 +355,18 @@
   id: Chirp
   name: chat-emote-name-chirp
   category: Vocal
+  available: false
   icon: Interface/Emotes/chirp.png
   whitelist:
     requireAll: false
     components:
     - Nymph
+    - Vocal
     tags:
     - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
   chatMessages: ["chat-emote-msg-chirp"]
   chatTriggers:
   - chirp

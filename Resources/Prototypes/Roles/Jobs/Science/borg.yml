@@ -8,6 +8,7 @@
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
   jobEntity: StationAiBrain
+  jobPreviewEntity: PlayerStationAiPreview
   nameDataset: NamesAI
   applyTraits: false
   spawnLoadout: false

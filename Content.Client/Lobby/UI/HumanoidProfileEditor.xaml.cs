@@ -881,7 +881,7 @@ namespace Content.Client.Lobby.UI
             if (Profile == null || !_prototypeManager.HasIndex(Profile.Species))
                 return;
 
-            PreviewDummy = _controller.LoadProfileEntity(Profile, ShowClothes.Pressed, ShowLoadouts.Pressed);
+            PreviewDummy = _controller.LoadProfileEntity(Profile, null, ShowClothes.Pressed, ShowLoadouts.Pressed);
             SpriteViewS.SetEntity(PreviewDummy);
             SpriteViewN.SetEntity(PreviewDummy);
             SpriteViewE.SetEntity(PreviewDummy);

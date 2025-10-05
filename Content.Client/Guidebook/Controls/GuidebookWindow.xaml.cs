@@ -16,15 +16,18 @@ namespace Content.Client.Guidebook.Controls;
 [GenerateTypedNameReferences]
 public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler
 {
-    [Dependency] private readonly IResourceManager _resourceManager = default!;
     [Dependency] private readonly DocumentParsingManager _parsingMan = default!;
+    [Dependency] private readonly IResourceManager _resourceManager = default!;
 
     private Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry> _entries = new();
+
+    private readonly ISawmill _sawmill;
 
     public GuidebookWindow()
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
+        _sawmill = Logger.GetSawmill("Guidebook");
 
         Tree.OnSelectedItemChanged += OnSelectionChanged;
 
@@ -32,6 +35,20 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler
         {
             HandleFilter();
         };
+    }
+
+    public void HandleClick(string link)
+    {
+        if (!_entries.TryGetValue(link, out var entry))
+            return;
+
+        if (Tree.TryGetIndexFromMetadata(entry, out var index))
+        {
+            Tree.ExpandParentEntries(index.Value);
+            Tree.SetSelectedIndex(index);
+        }
+        else
+            ShowGuide(entry);
     }
 
     private void OnSelectionChanged(TreeItem? item)
@@ -69,8 +86,9 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler
 
         if (!_parsingMan.TryAddMarkup(EntryContainer, file.ReadToEnd()))
         {
-            EntryContainer.AddChild(new Label() { Text = "ERROR: Failed to parse document." });
-            Logger.GetSawmill("guidebook.window").Error($"Failed to parse contents of guide document {entry.Id}.");
+            // The guidebook will automatically display the in-guidebook error if it fails
+
+            _sawmill.Error($"Failed to parse contents of guide document {entry.Id}.");
         }
     }
 
@@ -111,43 +129,39 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler
             HashSet<ProtoId<GuideEntryPrototype>> entries = new(_entries.Keys);
             foreach (var entry in _entries.Values)
             {
-                if (entry.Children.Count > 0)
-                {
-                    var sortedChildren = entry.Children
-                        .Select(childId => _entries[childId])
-                        .OrderBy(childEntry => childEntry.Priority)
-                        .ThenBy(childEntry => Loc.GetString(childEntry.Name))
-                        .Select(childEntry => new ProtoId<GuideEntryPrototype>(childEntry.Id))
-                        .ToList();
-
-                    entry.Children = sortedChildren;
-                }
                 entries.ExceptWith(entry.Children);
             }
             rootEntries = entries.ToList();
         }
 
+        // Only roots need to be sorted.
+        // As defined in the SS14 Dev Wiki, children are already sorted based on their child field order within their parent's prototype definition.
+        // Roots are sorted by priority. If there is no defined priority for a root then it is by definition sorted undefined.
         return rootEntries
             .Select(rootEntryId => _entries[rootEntryId])
             .OrderBy(rootEntry => rootEntry.Priority)
             .ThenBy(rootEntry => Loc.GetString(rootEntry.Name));
     }
 
-    private void RepopulateTree(List<ProtoId<GuideEntryPrototype>>? roots = null, ProtoId<GuideEntryPrototype>? forcedRoot = null)
+    private void RepopulateTree(List<ProtoId<GuideEntryPrototype>>? roots = null,
+        ProtoId<GuideEntryPrototype>? forcedRoot = null)
     {
         Tree.Clear();
 
         HashSet<ProtoId<GuideEntryPrototype>> addedEntries = new();
 
-        TreeItem? parent = forcedRoot == null ? null : AddEntry(forcedRoot.Value, null, addedEntries);
+        var parent = forcedRoot == null ? null : AddEntry(forcedRoot.Value, null, addedEntries);
         foreach (var entry in GetSortedEntries(roots))
         {
             AddEntry(entry.Id, parent, addedEntries);
         }
+
         Tree.SetAllExpanded(true);
     }
 
-    private TreeItem? AddEntry(ProtoId<GuideEntryPrototype> id, TreeItem? parent, HashSet<ProtoId<GuideEntryPrototype>> addedEntries)
+    private TreeItem? AddEntry(ProtoId<GuideEntryPrototype> id,
+        TreeItem? parent,
+        HashSet<ProtoId<GuideEntryPrototype>> addedEntries)
     {
         if (!_entries.TryGetValue(id, out var entry))
             return null;
@@ -177,22 +191,6 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler
         return item;
     }
 
-    public void HandleClick(string link)
-    {
-        if (!_entries.TryGetValue(link, out var entry))
-            return;
-
-        if (Tree.TryGetIndexFromMetadata(entry, out var index))
-        {
-            Tree.ExpandParentEntries(index.Value);
-            Tree.SetSelectedIndex(index);
-        }
-        else
-        {
-            ShowGuide(entry);
-        }
-    }
-
     private void HandleFilter()
     {
         var emptySearch = SearchBar.Text.Trim().Length == 0;
@@ -206,6 +204,5 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler
                 element.SetHiddenState(true, SearchBar.Text.Trim());
             }
         }
-
     }
 }
