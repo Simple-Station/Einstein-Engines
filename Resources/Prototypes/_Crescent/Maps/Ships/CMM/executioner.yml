@@ -19,7 +19,7 @@
   mapPath: /Maps/_Crescent/Shuttles/CMM/executioner.yml
   minPlayers: 0
   stations:
-    Jury:
+    Executioner:
       stationProto: StandardCrescentExpeditionVessel
       components:
         - type: VesselIcon
