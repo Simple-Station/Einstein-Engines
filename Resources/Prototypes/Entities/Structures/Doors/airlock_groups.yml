@@ -16,6 +16,7 @@
     maintenance_cargo: _Funkystation/Structures/Doors/Airlocks/Standard/maint_cargo.rsi
     maintenance_science: _Funkystation/Structures/Doors/Airlocks/Standard/maint_science.rsi
     maintenance_medical: _Funkystation/Structures/Doors/Airlocks/Standard/maint_medical.rsi
+    maintenance_medsci: _Funkystation/Structures/Doors/Airlocks/Standard/maint_medsci.rsi
     maintenance_command: _Funkystation/Structures/Doors/Airlocks/Standard/maint_command.rsi
     maintenance_service: _Funkystation/Structures/Doors/Airlocks/Standard/maint_service.rsi
     maintenance_chemistry: _Funkystation/Structures/Doors/Airlocks/Standard/maint_chemistry.rsi
@@ -90,9 +91,10 @@
     maintenance_engi: Engineering
     maintenance_atmos: Engineering
     maintenance_security: Security
-    maintenance_cargo: Cargo
-    maintenance_science: Science
+    maintenance_cargo: Logistics
+    maintenance_science: Epistemics
     maintenance_medical: Medical
+    maintenance_medsci: Epistemics
     maintenance_command: Command
     maintenance_service: Civilian
     maintenance_chemistry: Medical
