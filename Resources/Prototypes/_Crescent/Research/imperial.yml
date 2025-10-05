@@ -279,8 +279,8 @@
   - TriumphantLPC
 
 - type: technology
-  id: ImperialPadparadscha
-  name: research-technology-imperial-padparadscha
+  id: ImperialSuzerain
+  name: research-technology-imperial-suzerain
   icon:
     sprite: _Crescent/Objects/Misc/lpcchip.rsi
     state: icon
@@ -288,4 +288,4 @@
   tier: 3
   cost: 12000
   recipeUnlocks:
-  - PadparadschaLPC
+  - SuzerainLPC

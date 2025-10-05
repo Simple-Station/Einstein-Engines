@@ -1,0 +1,30 @@
+# Author Info
+# Discord: speedycss
+
+- type: vessel
+  id: Birdie
+  name: ICM Birdie
+  description: A civilian ferry shuttle, refitted with medical supplies to act as a nimble medevac carrier.
+  price: 32000
+  category: Small
+  group: Civilian
+  path: /Maps/_Crescent/Shuttles/Civilian/birdie.yml
+
+- type: gameMap
+  id: Birdie
+  mapName: 'ICM Birdie'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/birdie.yml
+  minPlayers: 0
+  stations:
+    Birdie:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'ICM Birdie {1}'
+          nameGenerator:
+           !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-expeditions
+        - type: VesselDescription
+          description: Perfect for trauma response.

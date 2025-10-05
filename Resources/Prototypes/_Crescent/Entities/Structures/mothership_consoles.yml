@@ -84,7 +84,6 @@
     - Scabrak
     - Geode
     - Thanapod
-    - Rattler
 
 - type: entity
   id: TatsumotoMothershipComputer
@@ -100,6 +99,7 @@
     - Flea
     - Bison
     - Nazaar
+    - colossus
 
 - type: entity
   id: RamziMothershipComputer
@@ -155,6 +155,7 @@
     - Adjudicator
     - Warden
     - Jury
+    - Executioner
 
 - type: entity
   id: RefugeMothershipComputer

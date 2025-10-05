@@ -73,7 +73,7 @@
 - type: entity
   parent: ClothingOuterHardsuitHighsec
   id: ClothingOuterHardsuitHighsecUA
-  name: shinohara united arsenal SVBT-2 combat hardsuit
+  name: SHI UA SVBT-2 combat hardsuit
   description: A modular combat hardsuit developed by Shinohara Heavy Industries. Sold to elite mercs and corporate deathsquads everywhere. Customized by the subsidiary group United Arsenal.
   components:
   - type: Sprite
@@ -86,7 +86,7 @@
     faction: SHI
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, StreeCredRedeemable]
   id: ClothingOuterHardsuitSHIJuggernaut
   name: Svbt-XA "KAMADO" juggernaut hardsuit
   description: Experimental model of the svbt-2 heavily reinforced with multi layer Kevlar ceramic plates meant for use by shinobi liquidators.
@@ -121,7 +121,7 @@
     price: 5000
 
 - type: entity
-  parent: ClothingOuterArmorBasic
+  parent: [ClothingOuterArmorBasic, StreeCredRedeemable]
   id: ClothingOuterHardsuitSHISpeedsuit
   name: Svbt-XB "RAIKU" liquidator suit
   description: Experimental model of the svbt 2 with most of the Armor replaced with durathread, the suit comes equipped with a soft sole silencing footsteps.

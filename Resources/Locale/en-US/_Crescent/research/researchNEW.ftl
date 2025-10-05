@@ -89,7 +89,7 @@ research-technology-imperial-advancedrifling = Advanced Rifling
 research-technology-imperial-srmimitation = Sixth Fireteam Imitation
 research-technology-imperial-bomblauncher = M320 Launcher
 research-technology-imperial-triumphant = Imperial Cruiser
-research-technology-imperial-padparadscha = Imperial Siege Battlecruiser
+research-technology-imperial-suzerain = Imperial Siege Battlecruiser
 
 # NCWL
 research-technology-communard-clothes = Communard Clothes

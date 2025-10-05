@@ -29,7 +29,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-manatarm
+        rank: crescent-rank-manatarms
       - type: HullrotFaction
         faction: DSM
       - type: LanguageAdder

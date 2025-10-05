@@ -36,9 +36,9 @@
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherPadparadscha
-  name: DSM 'Padparadscha' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with an Imperial Padparadscha-class battlecruiser. Has to be redeemed at a shipyard console.
+  id: ShipVoucherSuzerain
+  name: DSM 'Suzerain' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Suzerain-class battlecruiser. Has to be redeemed at a shipyard console.
   components:
   - type: Item
     size: Small
@@ -47,9 +47,9 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 75000
+    price: 95000
   - type: ShipVoucher
-    ship: Padparadscha
+    ship: Suzerain
 
 - type: entity
   parent: BaseItem
@@ -534,6 +534,23 @@
     price: 22000
   - type: ShipVoucher
     ship: gazpachov
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherColossus
+  name: SHI 'Colossus' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a civilian Colossus-class cargo hauler pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 40000
+  - type: ShipVoucher
+    ship: colossus
 
 - type: entity
   parent: BaseItem
