@@ -476,6 +476,15 @@
   snapCardinals: true
   sprite:
     sprite: _Nuclear14/Decals/curb.rsi
+    state: sidewalk-141
+
+- type: decal
+  id: CurbSidewalk143
+  tags: ["road","curb"]
+  parent: Curb
+  snapCardinals: true
+  sprite:
+    sprite: _Nuclear14/Decals/curb.rsi
     state: sidewalk-143
 
 - type: decal
