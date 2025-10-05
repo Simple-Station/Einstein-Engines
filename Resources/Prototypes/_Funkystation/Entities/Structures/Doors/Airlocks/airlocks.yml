@@ -66,6 +66,16 @@
 
 - type: entity
   parent: AirlockMaint
+  id: AirlockMaintRnDMed
+  name: science medical maintenance access
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Structures/Doors/Airlocks/Standard/maint_medsci.rsi
+  - type: Wires
+    layoutId: AirlockScienceMed
+
+- type: entity
+  parent: AirlockMaint
   id: AirlockMaintSec
   name: security maintenance access
   components:

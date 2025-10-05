@@ -1000,7 +1000,7 @@
       board: [ DoorElectronicsResearch ]
 
 - type: entity
-  parent: AirlockMaintRnDLocked
+  parent: AirlockMaintRnDMed
   id: AirlockMaintRnDMedLocked
   suffix: Medical/Epistemics, Locked # DeltaV - Epistemics Department replacing Science
   components:
