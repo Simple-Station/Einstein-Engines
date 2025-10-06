@@ -179,7 +179,7 @@
   files:
     - /Audio/_Crescent/Ambience/CombatMode/fallback.ogg
 
-#Gliess Santo | STATE: Police themed, such as GS_1 with police sirens sampled
+#Gliess Santo | STATE: Could be better
 - type: ambientMusic
   id: combatmodeGS
   priority: 3
