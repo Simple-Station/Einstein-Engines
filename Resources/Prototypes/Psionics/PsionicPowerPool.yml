@@ -36,3 +36,14 @@
     TelekineticPulsePower: 0.75
     PyrokineticFlare: 0.5
     NoosphericZapPower: 0.25
+
+- type: weightedRandom
+  id: BiomancerPowerPool # Handles bio-energy, focusing on medical applications.
+  weights:
+    PsionicRegenerationPower: 0.5
+    HealingWordPower: 2 #this leads to revivify
+
+- type: weightedRandom
+  id: PyromancerPowerPool # Only pyrokinetic flare, which leads to other upgrades.
+  weights:
+    PyrokineticFlare: 1 # Leads to summon imp and pyrokenisis

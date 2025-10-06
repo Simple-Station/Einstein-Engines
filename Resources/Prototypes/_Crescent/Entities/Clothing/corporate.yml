@@ -228,3 +228,35 @@
   - type: ExplosionResistance
     damageCoefficient: 0.80
   - type: GroupExamine
+
+- type: entity
+  parent: [ClothingOuterHardsuitBase, StreeCredRedeemableHigh]
+  id: ClothingOuterHardsuitHighsecIndependent
+  name: SHI SVBT-2 combat hardsuit
+  description: A modular combat hardsuit developed by Shinohara Heavy Industries. Sold to elite mercs and corporate deathsquads everywhere.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/OuterClothing/corpsecinde.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/OuterClothing/corpsecinde.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 900
+    armorType: Ceramic
+    armorRepair: NTCeramic
+    initialModifiers:
+      flatReductions:
+        Blunt: 25
+        Slash: 35
+        Piercing: 70
+        Heat: 15
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.85
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitCorpsec

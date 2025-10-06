@@ -1245,16 +1245,20 @@
   - type: Ammo
     muzzleFlash: MuzzleFlashEffectHeavyLaser
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Crescent/Objects/Weapons/Projectiles/Laser/medium.rsi
     layers:
-    - state: heavylaser
+    - state: icon
       shader: unshaded
+  - type: PointLight
+    enabled: true
+    color: "#ff4300"
   - type: Projectile
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
         Heat: 28
         Structural: 375
+  - type: ProjectileIFF
 
 - type: entity
   name : disabler bolt

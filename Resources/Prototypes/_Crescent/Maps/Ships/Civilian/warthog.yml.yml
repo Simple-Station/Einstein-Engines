@@ -4,7 +4,9 @@
 - type: vessel
   id: Warthog
   name: Warthog
-  description: A scrap pod put together from welded rods and other bits of waste. Almost useless.
+  description: |
+    A scrap pod put together from welded rods and other bits of waste, cheapest option for when you must escape or get to a location, lacks EVA.
+    MINIMUM CREW: 1x Pilot
   price: 8000
   category: Small
   group: Scrap

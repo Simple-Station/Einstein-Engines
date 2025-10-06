@@ -59,25 +59,25 @@
           cost: 2
         - proto: RandomCargoCorpseSpawner
           cost: 2
-          prob: 0.5
+          prob: 0.1
         - proto: RandomCommandCorpseSpawner
           cost: 5
-          prob: 0.5
+          prob: 0.1
         - proto: RandomEngineerCorpseSpawner
           cost: 2
-          prob: 0.5
+          prob: 0.1
         - proto: RandomMedicCorpseSpawner
           cost: 2
-          prob: 0.5
+          prob: 0.1
         - proto: RandomScienceCorpseSpawner
           cost: 2
-          prob: 0.5
+          prob: 0.1
         - proto: RandomSecurityCorpseSpawner
           cost: 2
-          prob: 0.5
+          prob: 0.1
         - proto: RandomServiceCorpseSpawner
           cost: 2
-          prob: 0.5
+          prob: 0.1
         - proto: ResearchAndDevelopmentServerMachineCircuitboard
           cost: 5
           prob: 0.5
