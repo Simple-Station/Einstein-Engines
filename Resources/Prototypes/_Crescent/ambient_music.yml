@@ -167,7 +167,7 @@
     - /Audio/_Crescent/Ambience/CombatMode/TAP_1.ogg
     - /Audio/_Crescent/Ambience/CombatMode/TAP_2.ogg
 
-#Spacers/Independent | STATE: Dummy
+#Spacers/Independent | STATE: .2 approved
 - type: ambientMusic
   id: combatmodeIND
   priority: 3
