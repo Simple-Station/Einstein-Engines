@@ -473,11 +473,11 @@ namespace Content.Client.Lobby.UI
                 Loc.GetString(
                     "humanoid-profile-editor-preference-unavailable-stay-in-lobby-button"),
                     (int) PreferenceUnavailableMode.StayInLobby);
-            PreferenceUnavailableButton.AddItem(
-                Loc.GetString(
-                    "humanoid-profile-editor-preference-unavailable-spawn-as-overflow-button",
-                    ("overflowJob", Loc.GetString(SharedGameTicker.FallbackOverflowJobName))),
-                    (int) PreferenceUnavailableMode.SpawnAsOverflow);
+            // PreferenceUnavailableButton.AddItem(
+            //     Loc.GetString(
+            //         "humanoid-profile-editor-preference-unavailable-spawn-as-overflow-button",
+            //         ("overflowJob", Loc.GetString(SharedGameTicker.FallbackOverflowJobName))),
+            //         (int) PreferenceUnavailableMode.SpawnAsOverflow);
 
             PreferenceUnavailableButton.OnItemSelected += args =>
             {

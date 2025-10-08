@@ -190,15 +190,15 @@
   color: "#50c878"
   weight: 55
   roles:
-  - ProphetTAP
-  - AcolyteTAP
-  - TinkererTAP
-  - TechminerTAP
-  - HangarTechTAP
+  # - ProphetTAP #commented the rest until TAP comes back .2 | 2025
+  # - AcolyteTAP
+  # - TinkererTAP
+  # - TechminerTAP
+  # - HangarTechTAP
   - Antiquarian
   - BeltrunnerTAP
   - DraugrTAP
-  - ServileTAP
+  # - ServileTAP
   editorHidden: false
 
 - type: department

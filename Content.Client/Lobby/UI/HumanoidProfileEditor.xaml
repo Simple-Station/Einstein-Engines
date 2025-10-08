@@ -182,7 +182,7 @@
                 <!-- Jobs -->
                 <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
                     <BoxContainer HorizontalExpand="True" Orientation="Vertical">
-                        <OptionButton Name="PreferenceUnavailableButton" StyleClasses="OpenBoth" />
+                        <OptionButton Name="PreferenceUnavailableButton" StyleClasses="OpenRight" />
                         <BoxContainer Name="JobList" Orientation="Vertical" />
                     </BoxContainer>
                 </ScrollContainer>

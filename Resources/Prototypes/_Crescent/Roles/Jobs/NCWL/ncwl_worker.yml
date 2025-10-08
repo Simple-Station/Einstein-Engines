@@ -11,17 +11,10 @@
   supervisors: job-supervisors-ncwl-worker
   canBeAntag: false
   requirements:
-    - !type:FactionRequirement
-      factionID: "NCWL"
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - Voidborn
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Muted
-        - Blindness
   special:
   - !type:AddComponentSpecial
     components:

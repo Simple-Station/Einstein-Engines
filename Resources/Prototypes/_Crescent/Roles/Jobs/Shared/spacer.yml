@@ -10,6 +10,8 @@
   accessGroups:
   - GeneralAccess
   special:
+  - !type:CharacterOverallTimeRequirement
+    min: 10800
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
