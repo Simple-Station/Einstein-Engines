@@ -22,6 +22,7 @@
 - type: entity
   parent: DefaultStationBeaconCommand
   id: StationBeaconCrescentCommand
+  name: map beacon
   suffix: Command
   components:
     - type: NavMapBeacon
@@ -30,6 +31,7 @@
 - type: entity
   parent: DefaultStationBeaconCommand
   id: StationBeaconCrescentBridge
+  name: map beacon
   suffix: Bridge
   components:
     - type: NavMapBeacon
@@ -38,6 +40,7 @@
 - type: entity
   parent: DefaultStationBeaconCommand
   id: StationBeaconCrescentCockpit
+  name: map beacon
   suffix: Cockpit
   components:
     - type: NavMapBeacon
@@ -46,6 +49,7 @@
 - type: entity
   parent: DefaultStationBeaconCommand
   id: StationBeaconCrescentOffice
+  name: map beacon
   suffix: Office
   components:
     - type: NavMapBeacon
@@ -54,6 +58,7 @@
 - type: entity
   parent: DefaultStationBeaconCommand
   id: StationBeaconCrescentMajor
+  name: map beacon
   suffix: Major
   components:
     - type: NavMapBeacon
@@ -62,6 +67,7 @@
 - type: entity
   parent: DefaultStationBeaconCommand
   id: StationBeaconCrescentKommissar
+  name: map beacon
   suffix: Kommissar
   components:
     - type: NavMapBeacon
@@ -70,6 +76,7 @@
 - type: entity
   parent: DefaultStationBeaconCommand
   id: StationBeaconCrescentThrone
+  name: map beacon
   suffix: Throne
   components:
     - type: NavMapBeacon
@@ -78,6 +85,7 @@
 - type: entity
   parent: DefaultStationBeaconCommand
   id: StationBeaconCrescentAdmiral
+  name: map beacon
   suffix: Admiral
   components:
     - type: NavMapBeacon
@@ -86,6 +94,7 @@
 - type: entity
   parent: DefaultStationBeaconCommand
   id: StationBeaconCrescentHoQ
+  name: map beacon
   suffix: HoQ
   components:
     - type: NavMapBeacon
@@ -94,6 +103,7 @@
 - type: entity
   parent: DefaultStationBeaconCommand
   id: StationBeaconCrescentBriefing
+  name: map beacon
   suffix: Briefing
   components:
     - type: NavMapBeacon
@@ -102,6 +112,7 @@
 - type: entity
   parent: DefaultStationBeaconCommand
   id: StationBeaconCrescentConference
+  name: map beacon
   suffix: Conference
   components:
     - type: NavMapBeacon
@@ -110,6 +121,7 @@
 - type: entity
   parent: DefaultStationBeaconCommand
   id: StationBeaconCrescentPDTConsole
+  name: map beacon
   suffix: PDTConsole
   components:
     - type: NavMapBeacon
@@ -120,6 +132,7 @@
 - type: entity
   parent: DefaultStationBeaconSecurity
   id: StationBeaconCrescentSecurity
+  name: map beacon
   suffix: Security
   components:
     - type: NavMapBeacon
@@ -128,6 +141,7 @@
 - type: entity
   parent: DefaultStationBeaconSecurity
   id: StationBeaconCrescentArmory
+  name: map beacon
   suffix: Armory
   components:
     - type: NavMapBeacon
@@ -136,6 +150,7 @@
 - type: entity
   parent: DefaultStationBeaconSecurity
   id: StationBeaconCrescentGunnery
+  name: map beacon
   suffix: Gunnery
   components:
     - type: NavMapBeacon
@@ -144,6 +159,7 @@
 - type: entity
   parent: DefaultStationBeaconSecurity
   id: StationBeaconCrescentAmmoStorage
+  name: map beacon
   suffix: AmmoStorage
   components:
     - type: NavMapBeacon
@@ -152,6 +168,7 @@
 - type: entity
   parent: DefaultStationBeaconSecurity
   id: StationBeaconCrescentGunport
+  name: map beacon
   suffix: Gunport
   components:
     - type: NavMapBeacon
@@ -160,6 +177,7 @@
 - type: entity
   parent: DefaultStationBeaconSecurity
   id: StationBeaconCrescentArtillery
+  name: map beacon
   suffix: Artillery
   components:
     - type: NavMapBeacon
@@ -168,6 +186,7 @@
 - type: entity
   parent: DefaultStationBeaconSecurity
   id: StationBeaconCrescentBrig
+  name: map beacon
   suffix: Brig
   components:
     - type: NavMapBeacon
@@ -176,6 +195,7 @@
 - type: entity
   parent: DefaultStationBeaconSecurity
   id: StationBeaconCrescentCheckpoint
+  name: map beacon
   suffix: Checkpoint
   components:
     - type: NavMapBeacon
@@ -186,6 +206,7 @@
 - type: entity
   parent: DefaultStationBeaconMedical
   id: StationBeaconCrescentMedical
+  name: map beacon
   suffix: Medical
   components:
     - type: NavMapBeacon
@@ -194,6 +215,7 @@
 - type: entity
   parent: DefaultStationBeaconMedical
   id: StationBeaconCrescentMedbay
+  name: map beacon
   suffix: Medbay
   components:
     - type: NavMapBeacon
@@ -202,6 +224,7 @@
 - type: entity
   parent: DefaultStationBeaconMedical
   id: StationBeaconCrescentChemistry
+  name: map beacon
   suffix: Chemistry
   components:
     - type: NavMapBeacon
@@ -210,6 +233,7 @@
 - type: entity
   parent: DefaultStationBeaconMedical
   id: StationBeaconCrescentCloning
+  name: map beacon
   suffix: Cloning
   components:
     - type: NavMapBeacon
@@ -218,6 +242,7 @@
 - type: entity
   parent: DefaultStationBeaconMedical
   id: StationBeaconCrescentMorgue
+  name: map beacon
   suffix: Morgue
   components:
     - type: NavMapBeacon
@@ -226,16 +251,17 @@
 - type: entity
   parent: DefaultStationBeaconMedical
   id: StationBeaconCrescentSurgery
+  name: map beacon
   suffix: Surgery
   components:
     - type: NavMapBeacon
       defaultText: station-beacon-crescent-surgery
-
 # COLOR: SUPPLY
 
 - type: entity
   parent: DefaultStationBeaconSupply
   id: StationBeaconCrescentSupply
+  name: map beacon
   suffix: Supply
   components:
     - type: NavMapBeacon
@@ -244,6 +270,7 @@
 - type: entity
   parent: DefaultStationBeaconSupply
   id: StationBeaconCrescentCargo
+  name: map beacon
   suffix: Cargo
   components:
     - type: NavMapBeacon
@@ -252,6 +279,7 @@
 - type: entity
   parent: DefaultStationBeaconSupply
   id: StationBeaconCrescentManufacturing
+  name: map beacon
   suffix: Manufacturing
   components:
     - type: NavMapBeacon
@@ -260,6 +288,7 @@
 - type: entity
   parent: DefaultStationBeaconSupply
   id: StationBeaconCrescentDepot
+  name: map beacon
   suffix: Depot
   components:
     - type: NavMapBeacon
@@ -268,6 +297,7 @@
 - type: entity
   parent: DefaultStationBeaconSupply
   id: StationBeaconCrescentFactory
+  name: map beacon
   suffix: Factory
   components:
     - type: NavMapBeacon
@@ -276,6 +306,7 @@
 - type: entity
   parent: DefaultStationBeaconSupply
   id: StationBeaconCrescentLogistics
+  name: map beacon
   suffix: Logistics
   components:
     - type: NavMapBeacon
@@ -284,6 +315,7 @@
 - type: entity
   parent: DefaultStationBeaconSupply
   id: StationBeaconCrescentAssembly
+  name: map beacon
   suffix: Assembly
   components:
     - type: NavMapBeacon
@@ -292,6 +324,7 @@
 - type: entity
   parent: DefaultStationBeaconSupply
   id: StationBeaconCrescentSalvage
+  name: map beacon
   suffix: Salvage
   components:
     - type: NavMapBeacon
@@ -300,6 +333,7 @@
 - type: entity
   parent: DefaultStationBeaconSupply
   id: StationBeaconCrescentCommissary
+  name: map beacon
   suffix: Commissary
   components:
     - type: NavMapBeacon
@@ -308,6 +342,7 @@
 - type: entity
   parent: DefaultStationBeaconSupply
   id: StationBeaconCrescentDispensary
+  name: map beacon
   suffix: Dispensary
   components:
     - type: NavMapBeacon
@@ -316,6 +351,7 @@
 - type: entity
   parent: DefaultStationBeaconSupply
   id: StationBeaconCrescentDeedConsole
+  name: map beacon
   suffix: DeedConsole
   components:
     - type: NavMapBeacon
@@ -326,6 +362,7 @@
 - type: entity
   parent: DefaultStationBeaconEngineering
   id: StationBeaconCrescentEngineering
+  name: map beacon
   suffix: Engine
   components:
     - type: NavMapBeacon
@@ -334,6 +371,7 @@
 - type: entity
   parent: DefaultStationBeaconEngineering
   id: StationBeaconCrescentEngine
+  name: map beacon
   suffix: Engine
   components:
     - type: NavMapBeacon
@@ -342,6 +380,7 @@
 - type: entity
   parent: DefaultStationBeaconEngineering
   id: StationBeaconCrescentAME
+  name: map beacon
   suffix: AME
   components:
     - type: NavMapBeacon
@@ -350,6 +389,7 @@
 - type: entity
   parent: DefaultStationBeaconEngineering
   id: StationBeaconCrescentSolars
+  name: map beacon
   suffix: Solars
   components:
     - type: NavMapBeacon
@@ -358,6 +398,7 @@
 - type: entity
   parent: DefaultStationBeaconEngineering
   id: StationBeaconCrescentPowerMonitoring
+  name: map beacon
   suffix: PowerMonitoring
   components:
     - type: NavMapBeacon
@@ -366,6 +407,7 @@
 - type: entity
   parent: DefaultStationBeaconEngineering
   id: StationBeaconCrescentAPC
+  name: map beacon
   suffix: APC
   components:
     - type: NavMapBeacon
@@ -374,6 +416,7 @@
 - type: entity
   parent: DefaultStationBeaconEngineering
   id: StationBeaconCrescentSMES
+  name: map beacon
   suffix: SMES
   components:
     - type: NavMapBeacon
@@ -382,6 +425,7 @@
 - type: entity
   parent: DefaultStationBeaconEngineering
   id: StationBeaconCrescentSubstation
+  name: map beacon
   suffix: Substation
   components:
     - type: NavMapBeacon
@@ -390,6 +434,7 @@
 - type: entity
   parent: DefaultStationBeaconEngineering
   id: StationBeaconCrescentAtmospherics
+  name: map beacon
   suffix: Atmospherics
   components:
     - type: NavMapBeacon
@@ -398,6 +443,7 @@
 - type: entity
   parent: DefaultStationBeaconEngineering
   id: StationBeaconCrescentGasMiner
+  name: map beacon
   suffix: GasMiner
   components:
     - type: NavMapBeacon
@@ -406,6 +452,7 @@
 - type: entity
   parent: DefaultStationBeaconEngineering
   id: StationBeaconCrescentBackupPower
+  name: map beacon
   suffix: BackupPower
   components:
     - type: NavMapBeacon
@@ -414,6 +461,7 @@
 - type: entity
   parent: DefaultStationBeaconEngineering
   id: StationBeaconCrescentGravgen
+  name: map beacon
   suffix: Gravgen
   components:
     - type: NavMapBeacon
@@ -422,6 +470,7 @@
 - type: entity
   parent: DefaultStationBeaconEngineering
   id: StationBeaconCrescentAnchor
+  name: map beacon
   suffix: Anchor
   components:
     - type: NavMapBeacon
@@ -430,6 +479,7 @@
 - type: entity
   parent: DefaultStationBeaconEngineering
   id: StationBeaconCrescentShield
+  name: map beacon
   suffix: Shield
   components:
     - type: NavMapBeacon
@@ -438,6 +488,7 @@
 - type: entity
   parent: DefaultStationBeaconEngineering
   id: StationBeaconCrescentMechBay
+  name: map beacon
   suffix: MechBay
   components:
     - type: NavMapBeacon
@@ -448,6 +499,7 @@
 - type: entity
   parent: DefaultStationBeaconService
   id: StationBeaconCrescentService
+  name: map beacon
   suffix: Service
   components:
     - type: NavMapBeacon
@@ -456,6 +508,7 @@
 - type: entity
   parent: DefaultStationBeaconService
   id: StationBeaconCrescentKitchen
+  name: map beacon
   suffix: Kitchen
   components:
     - type: NavMapBeacon
@@ -464,6 +517,7 @@
 - type: entity
   parent: DefaultStationBeaconService
   id: StationBeaconCrescentBar
+  name: map beacon
   suffix: Bar
   components:
     - type: NavMapBeacon
@@ -472,6 +526,7 @@
 - type: entity
   parent: DefaultStationBeaconService
   id: StationBeaconCrescentBotany
+  name: map beacon
   suffix: Botany
   components:
     - type: NavMapBeacon
@@ -480,6 +535,7 @@
 - type: entity
   parent: DefaultStationBeaconService
   id: StationBeaconCrescentJanitor
+  name: map beacon
   suffix: Janitor
   components:
     - type: NavMapBeacon
@@ -488,6 +544,7 @@
 - type: entity
   parent: DefaultStationBeaconService
   id: StationBeaconCrescentEVAStorage
+  name: map beacon
   suffix: EVAStorage
   components:
     - type: NavMapBeacon
@@ -496,6 +553,7 @@
 - type: entity
   parent: DefaultStationBeaconService
   id: StationBeaconCrescentShipyard
+  name: map beacon
   suffix: Shipyard
   components:
     - type: NavMapBeacon
@@ -504,6 +562,7 @@
 - type: entity
   parent: DefaultStationBeaconService
   id: StationBeaconCrescentDock
+  name: map beacon
   suffix: Dock
   components:
     - type: NavMapBeacon
@@ -512,6 +571,7 @@
 - type: entity
   parent: DefaultStationBeaconService
   id: StationBeaconCrescentDocking
+  name: map beacon
   suffix: Docking
   components:
     - type: NavMapBeacon
@@ -520,6 +580,7 @@
 - type: entity
   parent: DefaultStationBeaconService
   id: StationBeaconCrescentChurch
+  name: map beacon
   suffix: Church
   components:
     - type: NavMapBeacon
@@ -528,6 +589,7 @@
 - type: entity
   parent: DefaultStationBeaconService
   id: StationBeaconCrescentLibrary
+  name: map beacon
   suffix: Library
   components:
     - type: NavMapBeacon
@@ -536,6 +598,7 @@
 - type: entity
   parent: DefaultStationBeaconService
   id: StationBeaconCrescentDorms
+  name: map beacon
   suffix: Dorms
   components:
     - type: NavMapBeacon
@@ -546,6 +609,7 @@
 - type: entity
   parent: DefaultStationBeacon
   id: StationBeaconCrescentCryosleep
+  name: map beacon
   suffix: Cryosleep
   components:
     - type: NavMapBeacon
@@ -554,6 +618,7 @@
 - type: entity
   parent: DefaultStationBeacon
   id: StationBeaconCrescentDisposals
+  name: map beacon
   suffix: Disposals
   components:
     - type: NavMapBeacon
@@ -562,6 +627,7 @@
 - type: entity
   parent: DefaultStationBeacon
   id: StationBeaconCrescentEscapePods
+  name: map beacon
   suffix: EscapePods
   components:
     - type: NavMapBeacon
@@ -570,6 +636,7 @@
 - type: entity
   parent: DefaultStationBeacon
   id: StationBeaconCrescentTools
+  name: map beacon
   suffix: Tools
   components:
     - type: NavMapBeacon
@@ -578,6 +645,7 @@
 - type: entity
   parent: DefaultStationBeacon
   id: StationBeaconCrescentATM
+  name: map beacon
   suffix: ATM
   components:
     - type: NavMapBeacon
@@ -586,6 +654,7 @@
 - type: entity
   parent: DefaultStationBeacon
   id: StationBeaconCrescentCams
+  name: map beacon
   suffix: Cams
   components:
     - type: NavMapBeacon
