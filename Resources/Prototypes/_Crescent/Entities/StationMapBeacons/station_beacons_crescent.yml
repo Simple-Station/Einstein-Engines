@@ -1,0 +1,600 @@
+# parent prototypes for colors:
+# command: DefaultStationBeaconCommand
+# security: DefaultStationBeaconSecurity
+# science: DefaultStationBeaconScience
+# supply: DefaultStationBeaconSupply
+# engineering: DefaultStationBeaconEngineering
+# service: DefaultStationBeaconService
+# medical: DefaultStationBeaconMedical
+# AI: DefaultStationBeaconAI
+#
+
+# - type: entity
+#   parent: DefaultStationBeacon<category>
+#   id: StationBeaconCrescent<name>
+#   suffix: <name>
+#   components:
+#   - type: NavMapBeacon
+#     defaultText: station-beacon-<category_lowercase>
+
+# COLOR: COMMAND
+
+- type: entity
+  parent: DefaultStationBeaconCommand
+  id: StationBeaconCrescentCommand
+  suffix: Command
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-command
+
+- type: entity
+  parent: DefaultStationBeaconCommand
+  id: StationBeaconCrescentBridge
+  suffix: Bridge
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-command
+
+- type: entity
+  parent: DefaultStationBeaconCommand
+  id: StationBeaconCrescentCockpit
+  suffix: Cockpit
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-command
+
+- type: entity
+  parent: DefaultStationBeaconCommand
+  id: StationBeaconCrescentOffice
+  suffix: Office
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-command
+
+- type: entity
+  parent: DefaultStationBeaconCommand
+  id: StationBeaconCrescentMajor
+  suffix: Major
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-command
+
+- type: entity
+  parent: DefaultStationBeaconCommand
+  id: StationBeaconCrescentKommissar
+  suffix: Kommissar
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-command
+
+- type: entity
+  parent: DefaultStationBeaconCommand
+  id: StationBeaconCrescentThrone
+  suffix: Throne
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-command
+
+- type: entity
+  parent: DefaultStationBeaconCommand
+  id: StationBeaconCrescentAdmiral
+  suffix: Admiral
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-command
+
+- type: entity
+  parent: DefaultStationBeaconCommand
+  id: StationBeaconCrescentHoQ
+  suffix: HoQ
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-command
+
+- type: entity
+  parent: DefaultStationBeaconCommand
+  id: StationBeaconCrescentBriefing
+  suffix: Briefing
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-command
+
+- type: entity
+  parent: DefaultStationBeaconCommand
+  id: StationBeaconCrescentConference
+  suffix: Conference
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-command
+
+- type: entity
+  parent: DefaultStationBeaconCommand
+  id: StationBeaconCrescentPDTConsole
+  suffix: PDTConsole
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-command
+
+# COLOR: SECURITY
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: StationBeaconCrescentSecurity
+  suffix: Security
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-security
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: StationBeaconCrescentArmory
+  suffix: Armory
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-security
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: StationBeaconCrescentGunnery
+  suffix: Gunnery
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-security
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: StationBeaconCrescentAmmoStorage
+  suffix: AmmoStorage
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-security
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: StationBeaconCrescentGunport
+  suffix: Gunport
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-security
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: StationBeaconCrescentArtillery
+  suffix: Artillery
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-security
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: StationBeaconCrescentBrig
+  suffix: Brig
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-security
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: StationBeaconCrescentCheckpoint
+  suffix: Checkpoint
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-security
+
+# COLOR: MEDICAL
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: StationBeaconCrescentSecurity
+  suffix: Security
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-security
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: StationBeaconCrescentArmory
+  suffix: Armory
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-security
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: StationBeaconCrescentGunnery
+  suffix: Gunnery
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-security
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: StationBeaconCrescentAmmoStorage
+  suffix: AmmoStorage
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-security
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: StationBeaconCrescentGunport
+  suffix: Gunport
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-security
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: StationBeaconCrescentArtillery
+  suffix: Artillery
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-security
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: StationBeaconCrescentBrig
+  suffix: Brig
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-security
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: StationBeaconCrescentCheckpoint
+  suffix: Checkpoint
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-security
+
+# COLOR: SUPPLY
+
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: StationBeaconCrescentSupply
+  suffix: Supply
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-supply
+
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: StationBeaconCrescentCargo
+  suffix: Cargo
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-supply
+
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: StationBeaconCrescentManufacturing
+  suffix: Manufacturing
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-supply
+
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: StationBeaconCrescentDepot
+  suffix: Depot
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-supply
+
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: StationBeaconCrescentFactory
+  suffix: Factory
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-supply
+
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: StationBeaconCrescentLogistics
+  suffix: Logistics
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-supply
+
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: StationBeaconCrescentAssembly
+  suffix: Assembly
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-supply
+
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: StationBeaconCrescentSalvage
+  suffix: Salvage
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-supply
+
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: StationBeaconCrescentCommissary
+  suffix: Commissary
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-supply
+
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: StationBeaconCrescentDispensary
+  suffix: Dispensary
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-supply
+
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: StationBeaconCrescentDeedConsole
+  suffix: DeedConsole
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-supply
+
+# COLOR: ENGINEERING
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: StationBeaconCrescentEngine
+  suffix: Engine
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-engineering
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: StationBeaconCrescentAME
+  suffix: AME
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-engineering
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: StationBeaconCrescentSolars
+  suffix: Solars
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-engineering
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: StationBeaconCrescentPowerMonitoring
+  suffix: PowerMonitoring
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-engineering
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: StationBeaconCrescentAPC
+  suffix: APC
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-engineering
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: StationBeaconCrescentSMES
+  suffix: SMES
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-engineering
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: StationBeaconCrescentSubstation
+  suffix: Substation
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-engineering
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: StationBeaconCrescentAtmospherics
+  suffix: Atmospherics
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-engineering
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: StationBeaconCrescentGasMiner
+  suffix: GasMiner
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-engineering
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: StationBeaconCrescentBackupPower
+  suffix: BackupPower
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-engineering
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: StationBeaconCrescentGravgen
+  suffix: Gravgen
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-engineering
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: StationBeaconCrescentAnchor
+  suffix: Anchor
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-engineering
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: StationBeaconCrescentShield
+  suffix: Shield
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-engineering
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: StationBeaconCrescentMechBay
+  suffix: MechBay
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-engineering
+
+# CATEGORY: SERVICE
+
+- type: entity
+  parent: DefaultStationBeaconService
+  id: StationBeaconCrescentService
+  suffix: Service
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-service
+
+- type: entity
+  parent: DefaultStationBeaconService
+  id: StationBeaconCrescentKitchen
+  suffix: Kitchen
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-service
+
+- type: entity
+  parent: DefaultStationBeaconService
+  id: StationBeaconCrescentBar
+  suffix: Bar
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-service
+
+- type: entity
+  parent: DefaultStationBeaconService
+  id: StationBeaconCrescentBotany
+  suffix: Botany
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-service
+
+- type: entity
+  parent: DefaultStationBeaconService
+  id: StationBeaconCrescentJanitor
+  suffix: Janitor
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-service
+
+- type: entity
+  parent: DefaultStationBeaconService
+  id: StationBeaconCrescentEVAStorage
+  suffix: EVAStorage
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-service
+
+- type: entity
+  parent: DefaultStationBeaconService
+  id: StationBeaconCrescentShipyard
+  suffix: Shipyard
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-service
+
+- type: entity
+  parent: DefaultStationBeaconService
+  id: StationBeaconCrescentDock
+  suffix: Dock
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-service
+
+- type: entity
+  parent: DefaultStationBeaconService
+  id: StationBeaconCrescentDocking
+  suffix: Docking
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-service
+
+- type: entity
+  parent: DefaultStationBeaconService
+  id: StationBeaconCrescentChurch
+  suffix: Church
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-service
+
+- type: entity
+  parent: DefaultStationBeaconService
+  id: StationBeaconCrescentLibrary
+  suffix: Library
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-service
+
+- type: entity
+  parent: DefaultStationBeaconService
+  id: StationBeaconCrescentDorms
+  suffix: Dorms
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-service
+
+# COLOR: NONE!! SO ITS WHITE I THINK
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: StationBeaconCrescentCryosleep
+  suffix: Cryosleep
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-cryosleep
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: StationBeaconCrescentDisposals
+  suffix: Disposals
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-disposals
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: StationBeaconCrescentEscapePods
+  suffix: EscapePods
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-escapepods
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: StationBeaconCrescentTools
+  suffix: Tools
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-tools
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: StationBeaconCrescentATM
+  suffix: ATM
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-atm
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: StationBeaconCrescentCams
+  suffix: Cams
+  components:
+    - type: NavMapBeacon
+      defaultText: station-beacon-cams
