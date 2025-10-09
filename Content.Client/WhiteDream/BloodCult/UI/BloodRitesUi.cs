@@ -75,7 +75,6 @@ public sealed class BloodRitesUi : BoundUserInterface
         var container = new RadialContainer
         {
             Name = "Blood Rites",
-            Radius = 64f + 32f * MathF.Log(crafts.Count),
         };
 
         _menu.AddChild(container);

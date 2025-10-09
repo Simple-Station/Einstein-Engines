@@ -79,10 +79,10 @@ public abstract class SharedWieldableSystem : EntitySystem
             if (component.FumbleOnAttempt)
             {
                 args.Message = Loc.GetString("wieldable-component-requires-fumble", ("item", uid));
-                var playSound = !_statusEffects.HasStatusEffect(args.PlayerUid, "KnockedDown");
-                _stun.TryKnockdown(args.PlayerUid, TimeSpan.FromSeconds(1.5f), true);
+                var playSound = !_statusEffects.HasStatusEffect(args.User, "KnockedDown");
+                _stun.TryKnockdown(args.User, TimeSpan.FromSeconds(1.5f), true);
                 if (playSound)
-                    _audio.PlayPredicted(new SoundPathSpecifier("/Audio/Effects/slip.ogg"), args.PlayerUid, args.PlayerUid);
+                    _audio.PlayPredicted(new SoundPathSpecifier("/Audio/Effects/slip.ogg"), args.User, args.User);
             }
             else
             {

@@ -57,7 +57,7 @@
   - type: Cartridge
     programName: mail-metrics-program-name
     icon:
-      sprite: Objects/Specific/Mail/mail.rsi
+      sprite: Objects/Specific/Cargo/mail.rsi
       state: icon
 
 - type: entity

@@ -26,7 +26,6 @@ namespace Content.Client.Chemistry.UI
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         public event Action<BaseButton.ButtonEventArgs, ReagentButton, int, bool>? OnReagentButtonPressed;
         public event Action<int>? OnAmountButtonPressed;
-        public event Action<int>? OnSortMethodChanged;
         public event Action<int>? OnTransferAmountChanged;
         public event Action<List<int>>? OnUpdateAmounts;
 
@@ -35,7 +34,6 @@ namespace Content.Client.Chemistry.UI
         private List<int> _amounts = new();
 
         private const string TransferringAmountColor = "#ffffff";
-        private ReagentSortMethod _currentSortMethod = ReagentSortMethod.Alphabetical;
         private ChemMasterBoundUserInterfaceState? _lastState;
         private int _transferAmount = 50;
 
@@ -106,33 +104,6 @@ namespace Content.Client.Chemistry.UI
             Tabs.SetTabTitle(0, Loc.GetString("chem-master-window-input-tab"));
             Tabs.SetTabTitle(1, Loc.GetString("chem-master-window-output-tab"));
 
-            SortMethod.AddItem(
-                Loc.GetString("chem-master-window-sort-method-Alphabetical-text"),
-                (int) ReagentSortMethod.Alphabetical);
-
-            SortMethod.AddItem(
-                Loc.GetString("chem-master-window-sort-method-Amount-text"),
-                (int) ReagentSortMethod.Amount);
-
-            SortMethod.AddItem(
-                Loc.GetString("chem-master-window-sort-method-Time-text"),
-                (int) ReagentSortMethod.Time);
-
-            SortMethod.OnItemSelected += HandleChildPressed;
-
-            PillSortMethod.AddItem(
-                Loc.GetString(
-                    "chem-master-window-sort-method-Alphabetical-text"),
-                (int) ReagentSortMethod.Alphabetical);
-            PillSortMethod.AddItem(Loc.GetString(
-                    "chem-master-window-sort-method-Amount-text"),
-                (int) ReagentSortMethod.Amount);
-            PillSortMethod.AddItem(
-                Loc.GetString("chem-master-window-sort-method-Time-text"),
-                (int) ReagentSortMethod.Time);
-
-            PillSortMethod.OnItemSelected += HandleChildPressed;
-
             BufferTransferButton.OnPressed += HandleDiscardTransferPress;
             BufferDiscardButton.OnPressed += HandleDiscardTransferPress;
 
@@ -192,24 +163,6 @@ namespace Content.Client.Chemistry.UI
                 var text = BufferTransferButton.Pressed ? "transfer" : "discard";
                 button.Text = Loc.GetString($"chem-master-window-{text}-button-text");
             }
-        }
-
-        private void HandleSortMethodChange(int newSortMethod)
-        {
-            if (newSortMethod == (int) _currentSortMethod)
-                return;
-
-            _currentSortMethod = (ReagentSortMethod) newSortMethod;
-            SortMethod.SelectId(newSortMethod);
-            PillSortMethod.SelectId(newSortMethod);
-
-            SortUpdated();
-        }
-
-        private void HandleChildPressed(OptionButton.ItemSelectedEventArgs args)
-        {
-            HandleSortMethodChange(args.Id);
-            OnSortMethodChanged?.Invoke(args.Id);
         }
 
         private void SortUpdated()
@@ -295,7 +248,6 @@ namespace Content.Client.Chemistry.UI
 
             // Ensure the Panel Info is updated, including UI elements for Buffer Volume, Output Container and so on
             UpdatePanelInfo(castState);
-            HandleSortMethodChange(castState.SortMethod);
             SetAmountText(castState.TransferringAmount.ToString(), false);
 
             if (_amounts != castState.Amounts)
@@ -373,6 +325,17 @@ namespace Content.Client.Chemistry.UI
         {
             BufferInfo.Children.Clear();
 
+            // This has to happen here due to people possibly
+            // setting sorting before putting any chemicals
+            BufferSortButton.Text = state.SortingType switch
+            {
+                ChemMasterSortingType.Alphabetical => Loc.GetString("chem-master-window-sort-type-alphabetical"),
+                ChemMasterSortingType.Quantity => Loc.GetString("chem-master-window-sort-type-quantity"),
+                ChemMasterSortingType.Latest => Loc.GetString("chem-master-window-sort-type-latest"),
+                _ => Loc.GetString("chem-master-window-sort-type-none")
+            };
+
+
             if (!state.BufferReagents.Any())
             {
                 BufferInfo.Children.Add(new Label { Text = Loc.GetString("chem-master-window-buffer-empty-text") });
@@ -395,17 +358,22 @@ namespace Content.Client.Chemistry.UI
             };
             bufferHBox.AddChild(bufferVol);
 
-            var bufferReagents = state.BufferReagents.OrderBy(x => x.Reagent.Prototype);
-
-            if (_currentSortMethod == ReagentSortMethod.Amount)
-                bufferReagents = bufferReagents.OrderByDescending(x => x.Quantity);
-
-            HandleBuffer(_currentSortMethod == ReagentSortMethod.Time ? state.BufferReagents : bufferReagents, false);
+            HandleBuffer(state.BufferReagents, state.SortingType, false);
         }
 
         private void BuildPillBufferInfo(ChemMasterBoundUserInterfaceState state)
         {
             PillBufferInfo.Children.Clear();
+
+            // This has to happen here due to people possibly
+            // setting sorting before putting any chemicals
+            PillBufferSortButton.Text = state.SortingType switch
+            {
+                ChemMasterSortingType.Alphabetical => Loc.GetString("chem-master-window-sort-type-alphabetical"),
+                ChemMasterSortingType.Quantity => Loc.GetString("chem-master-window-sort-type-quantity"),
+                ChemMasterSortingType.Latest => Loc.GetString("chem-master-window-sort-type-latest"),
+                _ => Loc.GetString("chem-master-window-sort-type-none")
+            };
 
             if (!state.PillBufferReagents.Any())
             {
@@ -428,30 +396,55 @@ namespace Content.Client.Chemistry.UI
             };
             bufferHBox.AddChild(bufferVol);
 
-            var bufferReagents = state.PillBufferReagents.OrderBy(x => x.Reagent.Prototype);
-
-            if (_currentSortMethod == ReagentSortMethod.Amount)
-                bufferReagents = bufferReagents.OrderByDescending(x => x.Quantity);
-
-            HandleBuffer(_currentSortMethod == ReagentSortMethod.Time ? state.PillBufferReagents : bufferReagents, true);
+            HandleBuffer(state.PillBufferReagents, state.SortingType, true);
         }
 
-        private void HandleBuffer(IEnumerable<ReagentQuantity> reagents, bool pillBuffer)
+        private void HandleBuffer(IEnumerable<ReagentQuantity> reagents, ChemMasterSortingType sortingType, bool pillBuffer)
         {
-            var rowCount = 0;
+            // This sets up the needed data for sorting later in a list
+            // Its done this way to not repeat having to use same code twice (once for sorting
+            // and once for displaying)
+            var reagentList = new List<(ReagentId reagentId, string name, Color color, FixedPoint2 quantity)>();
             foreach (var (reagentId, quantity) in reagents)
             {
                 _prototypeManager.TryIndex(reagentId.Prototype, out ReagentPrototype? proto);
 
                 var name = proto?.LocalizedName ?? Loc.GetString("chem-master-window-unknown-reagent-text");
                 var reagentColor = proto?.SubstanceColor ?? default(Color);
+                reagentList.Add(new (reagentId, name, reagentColor, quantity));
+            }
 
+            // We sort here since we need sorted list to be filled first.
+            // You can easily add any new params you need to it.
+            switch (sortingType)
+            {
+                case ChemMasterSortingType.Alphabetical:
+                    reagentList = reagentList.OrderBy(x => x.name).ToList();
+                    break;
+
+                case ChemMasterSortingType.Quantity:
+                    reagentList = reagentList.OrderByDescending(x => x.quantity).ToList();
+                    break;
+                case ChemMasterSortingType.Latest:
+                    reagentList = Enumerable.Reverse(reagentList).ToList();
+                    break;
+
+                case ChemMasterSortingType.None:
+                default:
+                    // This case is pointless but it is there for readability
+                    break;
+            }
+
+            // initialises rowCount to allow for striped rows
+            var rowCount = 0;
+            foreach (var reagent in reagentList)
+            {
                 if (pillBuffer)
                     PillBufferInfo.Children.Add(
-                        BuildReagentRow(reagentColor, rowCount++, name, reagentId, quantity, true, true));
+                        BuildReagentRow(reagent.color, rowCount++, reagent.name, reagent.reagentId, reagent.quantity, true, true));
                 else
                     BufferInfo.Children.Add(
-                        BuildReagentRow(reagentColor, rowCount++, name, reagentId, quantity, true, true));
+                        BuildReagentRow(reagent.color, rowCount++, reagent.name, reagent.reagentId, reagent.quantity, true, true));
             }
         }
 
@@ -582,12 +575,5 @@ namespace Content.Client.Chemistry.UI
             Id = id;
             IsBuffer = isBuffer;
         }
-    }
-
-    public enum ReagentSortMethod
-    {
-        Time,
-        Alphabetical,
-        Amount
     }
 }

@@ -2,7 +2,6 @@
   id: LockerFillQuarterMaster
   table: !type:AllSelector
     children:
-    - id: AstroNavCartridge
     - id: BoxEncryptionKeyCargo
     - id: BoxFolderQmClipboard
     - id: BoxPDACargo
@@ -23,6 +22,8 @@
     - id: RubberStampApproved
     - id: RubberStampDenied
     - id: RubberStampQm
+    - id: AstroNavCartridge
+    - id: MailTeleporterMachineCircuitboard
     - id: SpaceCashLuckyBill
 
 - type: entity
@@ -179,7 +180,7 @@
   id: FillChiefEngineerHardsuit
   table: !type:AllSelector
     children:
-    - id: ClothingMaskBreath
+    - id: ClothingMaskGasAtmos
     - id: ClothingOuterHardsuitEngineeringWhite
     - id: ClothingShoesBootsMagAdv
     - id: JetpackVoidFilled
@@ -364,6 +365,7 @@
     - id: WeaponEnergyShotgun
     - id: WeaponDisabler
     - id: WantedListCartridge
+    - id: DrinkHosFlask
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable

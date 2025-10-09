@@ -42,19 +42,3 @@
     - type: ReverseEngineering
       recipes:
         - DeepFryerMachineCircuitboard
-
-- type: entity
-  id: MailTeleporterMachineCircuitboard
-  parent: BaseMachineCircuitboard
-  name: mail teleporter machine board
-  components:
-    - type: Sprite
-      state: supply
-    - type: MachineBoard
-      prototype: MailTeleporter
-      machinePartRequirements:
-        Capacitor: 1
-        MatterBin: 1
-      stackRequirements:
-        Steel: 4
-        Cable: 4
