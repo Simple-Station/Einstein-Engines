@@ -111,6 +111,19 @@
   - WeaponMechMeleeDrillImperial
 
 - type: technology
+  id: ImperialAntiInfantryMechGuns
+  name: research-technology-imperial-antiinfantrymechguns
+  icon:
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: plasmalaser
+  discipline: Imperial
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - WeaponMechCombatImperialSMG
+  - WeaponMechCombatImperialAutolaser
+
+- type: technology
   id: ImperialCovetor
   name: research-technology-imperial-covetor
   icon:
