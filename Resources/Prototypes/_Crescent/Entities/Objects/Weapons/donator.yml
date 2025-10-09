@@ -311,10 +311,13 @@
           name: C-8X blueprint
           doAfter: 2
         - material: BasicMechatronics
-          amount: 15
+          amount: 10
           doAfter: 2
-        - material: TubeLoader
-          amount: 5
+        - material: BasicElectronics
+          amount: 10
+          doAfter: 2
+        - material: Plasteel
+          amount: 20
           doAfter: 2
         - material: BallisticCycler
           amount: 5
