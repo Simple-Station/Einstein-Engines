@@ -4,7 +4,7 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 10/09/2025 06:04:10
+  time: 10/09/2025 13:28:09
   entityCount: 475
 maps: []
 grids:
@@ -443,6 +443,11 @@ entities:
             1033: -3,1
             1055: 4,-6
             1080: -2,-7
+            1103: 7,7
+            1109: 8,6
+            1128: -3,1
+            1150: 4,-6
+            1175: -2,-7
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -516,6 +521,14 @@ entities:
             1068: 7,-2
             1072: 10,-1
             1085: -1,-5
+            1112: 8,6
+            1122: 11,2
+            1147: 2,-7
+            1156: 5,-6
+            1160: 6,-3
+            1163: 7,-2
+            1167: 10,-1
+            1180: -1,-5
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -586,6 +599,14 @@ entities:
             1036: -3,5
             1039: -2,6
             1078: -2,-7
+            1092: 3,5
+            1097: 4,6
+            1101: 7,7
+            1107: 8,6
+            1115: 8,7
+            1131: -3,5
+            1134: -2,6
+            1173: -2,-7
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -646,6 +667,13 @@ entities:
             1030: 11,7
             1051: 2,-7
             1060: 5,-6
+            1089: 2,6
+            1094: 3,5
+            1111: 8,6
+            1117: 8,7
+            1125: 11,7
+            1146: 2,-7
+            1155: 5,-6
         - node:
             id: LatticeEdgeE
           decals:
@@ -771,6 +799,21 @@ entities:
             1074: -3,-1
             1077: -2,-7
             1081: -1,-7
+            1091: 3,5
+            1096: 4,6
+            1100: 7,7
+            1106: 8,6
+            1114: 8,7
+            1126: -3,1
+            1130: -3,5
+            1133: -2,6
+            1138: 0,-7
+            1140: 1,-7
+            1148: 4,-6
+            1168: -3,-5
+            1169: -3,-1
+            1172: -2,-7
+            1176: -1,-7
         - node:
             id: LatticeEdgeN
           decals:
@@ -913,6 +956,23 @@ entities:
             1075: -2,-8
             1079: -2,-7
             1083: -1,-5
+            1102: 7,7
+            1108: 8,6
+            1120: 11,2
+            1127: -3,1
+            1136: -1,7
+            1142: 2,-8
+            1144: 2,-7
+            1149: 4,-6
+            1151: 5,-7
+            1153: 5,-6
+            1158: 6,-3
+            1161: 7,-2
+            1164: 9,-2
+            1165: 10,-1
+            1170: -2,-8
+            1174: -2,-7
+            1178: -1,-5
         - node:
             id: LatticeEdgeS
           decals:
@@ -1061,6 +1121,24 @@ entities:
             1048: 2,-7
             1057: 5,-6
             1076: -2,-7
+            1086: 1,7
+            1087: 2,6
+            1090: 3,5
+            1095: 4,6
+            1098: 5,7
+            1099: 7,7
+            1104: 7,8
+            1105: 8,6
+            1113: 8,7
+            1118: 9,8
+            1123: 11,7
+            1129: -3,5
+            1132: -2,6
+            1135: -1,7
+            1137: -1,8
+            1143: 2,-7
+            1152: 5,-6
+            1171: -2,-7
         - node:
             id: LatticeEdgeW
           decals:
@@ -1206,6 +1284,23 @@ entities:
             1071: 10,-1
             1082: -1,-7
             1084: -1,-5
+            1088: 2,6
+            1093: 3,5
+            1110: 8,6
+            1116: 8,7
+            1119: 11,0
+            1121: 11,2
+            1124: 11,7
+            1139: 0,-7
+            1141: 1,-7
+            1145: 2,-7
+            1154: 5,-6
+            1157: 6,-5
+            1159: 6,-3
+            1162: 7,-2
+            1166: 10,-1
+            1177: -1,-7
+            1179: -1,-5
         - node:
             angle: -1.5707963267948966 rad
             color: '#DE3A3A96'
@@ -2088,7 +2183,7 @@ entities:
       parent: 1
 - proto: BoxPaperOffice
   entities:
-  - uid: 129
+  - uid: 126
     components:
     - type: Transform
       parent: 125
@@ -2594,7 +2689,7 @@ entities:
       parent: 1
 - proto: CableApcStack10
   entities:
-  - uid: 230
+  - uid: 229
     components:
     - type: Transform
       parent: 228
@@ -2817,7 +2912,7 @@ entities:
       parent: 1
 - proto: CableMVStack10
   entities:
-  - uid: 231
+  - uid: 230
     components:
     - type: Transform
       parent: 228
@@ -2928,10 +3023,10 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 129
           - 126
           - 127
           - 128
+          - 129
   - uid: 228
     components:
     - type: Transform
@@ -2944,12 +3039,12 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 229
-          - 233
           - 236
+          - 233
           - 232
           - 231
           - 230
+          - 229
 - proto: ClothingMaskWeldingGas
   entities:
   - uid: 24
@@ -3461,18 +3556,17 @@ entities:
       color: '#990000FF'
 - proto: GravityGeneratorMini
   entities:
+  - uid: 342
+    components:
+    - type: Transform
+      pos: 9.5,5.5
+      parent: 1
+- proto: Gyroscope
+  entities:
   - uid: 341
     components:
     - type: Transform
       pos: 4.5,-2.5
-      parent: 1
-- proto: Gyroscope
-  entities:
-  - uid: 342
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 9.5,5.5
       parent: 1
 - proto: InflatableDoor
   entities:
@@ -3500,14 +3594,14 @@ entities:
       parent: 1
 - proto: JugBoriaticFuel
   entities:
-  - uid: 232
+  - uid: 231
     components:
     - type: Transform
       parent: 228
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 236
+  - uid: 232
     components:
     - type: Transform
       parent: 228
@@ -3530,7 +3624,7 @@ entities:
       parent: 1
 - proto: Multitool
   entities:
-  - uid: 235
+  - uid: 234
     components:
     - type: Transform
       parent: 233
@@ -3690,7 +3784,7 @@ entities:
       parent: 1
 - proto: Pen
   entities:
-  - uid: 126
+  - uid: 127
     components:
     - type: Transform
       parent: 125
@@ -3813,7 +3907,7 @@ entities:
       parent: 1
 - proto: Screwdriver
   entities:
-  - uid: 234
+  - uid: 235
     components:
     - type: Transform
       parent: 233
@@ -3982,7 +4076,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 127
+  - uid: 128
     components:
     - type: Transform
       parent: 125
@@ -4045,7 +4139,7 @@ entities:
       parent: 1
 - proto: ToolboxElectricalFilled
   entities:
-  - uid: 229
+  - uid: 236
     components:
     - type: Transform
       parent: 228
@@ -4060,10 +4154,10 @@ entities:
       parent: 228
     - type: Storage
       storedItems:
-        234:
+        235:
           position: 0,0
           _rotation: East
-        235:
+        234:
           position: 2,0
           _rotation: South
     - type: ContainerContainer
@@ -4072,8 +4166,8 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 234
           - 235
+          - 234
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -4515,7 +4609,7 @@ entities:
     - type: InsideEntityStorage
 - proto: WeaponPistolBlastpopGold
   entities:
-  - uid: 128
+  - uid: 129
     components:
     - type: Transform
       parent: 125
