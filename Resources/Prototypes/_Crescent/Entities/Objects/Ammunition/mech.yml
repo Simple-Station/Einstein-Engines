@@ -100,9 +100,9 @@
   - type: Projectile
     damage:
       types:
-        Heat: 50
-        Radiation: 15
-        Structural: 100
+        Heat: 40
+        Radiation: 5
+        Structural: 60
     harmorPenetration: 60
     stoppingPower: 6
   - type: ExplodeOnTrigger

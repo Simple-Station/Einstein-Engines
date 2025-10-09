@@ -24,7 +24,7 @@
     baseState: carrion
     openState: carrion-open
     brokenState: carrion-broken
-    mechToPilotDamageMultiplier: 0.7
+    mechToPilotDamageMultiplier: 0.5
     airtight: true
     pilotWhitelist:
       components:
@@ -38,8 +38,8 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.5
     baseSprintSpeed: 4.5
-    weightlessFriction: 0
-    weightlessAcceleration: 0.3
+    weightlessFriction: 0.4
+    weightlessAcceleration: 0.33
     weightlessModifier: 4.5 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
@@ -163,7 +163,7 @@
     baseState: lancer
     openState: lancer-open
     brokenState: lancer-broken
-    mechToPilotDamageMultiplier: 0.4
+    mechToPilotDamageMultiplier: 0.25
     airtight: true
     pilotWhitelist:
       components:
@@ -175,11 +175,11 @@
       types:
         Blunt: 25
   - type: MovementSpeedModifier
-    baseWalkSpeed: 1.9
-    baseSprintSpeed: 3.5
-    weightlessFriction: 0
-    weightlessAcceleration: 0.2
-    weightlessModifier: 6.25 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 4
+    weightlessFriction: 0.4
+    weightlessAcceleration: 0.33
+    weightlessModifier: 6 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: ProjectileIFF
@@ -230,7 +230,7 @@
     baseState: marauder
     openState: marauder-open
     brokenState: marauder-broken
-    mechToPilotDamageMultiplier: 0.35
+    mechToPilotDamageMultiplier: 0.33
     airtight: true
     pilotWhitelist:
       components:
@@ -244,8 +244,8 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 3.5
     baseSprintSpeed: 5.5
-    weightlessFriction: 0
-    weightlessAcceleration: 0.25
+    weightlessFriction: 0.4
+    weightlessAcceleration: 0.4
     weightlessModifier: 4 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
@@ -372,7 +372,7 @@
     baseState: paladin
     openState: paladin-open
     brokenState: paladin-broken
-    mechToPilotDamageMultiplier: 0.25
+    mechToPilotDamageMultiplier: 0.2
     airtight: true
     pilotWhitelist:
       components:
@@ -466,11 +466,11 @@
       types:
         Blunt: 25
   - type: MovementSpeedModifier
-    baseWalkSpeed: 1.9
-    baseSprintSpeed: 3.5
-    weightlessFriction: 0
-    weightlessAcceleration: 0.2
-    weightlessModifier: 6.25 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 4
+    weightlessFriction: 0.4
+    weightlessAcceleration: 0.33
+    weightlessModifier: 6 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: ProjectileIFF
