@@ -29,6 +29,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-home-soldat
+      - type: HullrotFaction
+        faction: NCWL
       - type: LanguageAdder
         addSpoken:
           - Dockta

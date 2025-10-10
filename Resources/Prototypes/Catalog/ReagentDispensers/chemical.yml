@@ -21,6 +21,8 @@
   - JugSilicon
   - JugSodium
   - JugSulfur
+  - JugWeldingFuel
+  - JugSilver
 
 - type: reagentDispenserInventory
   id: EmptyInventory

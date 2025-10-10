@@ -31,6 +31,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-medi-worker
+      - type: HullrotFaction
+        faction: NCWL
       - type: CPRTraining
       - type: SurgerySpeedModifier
         speedModifier: 1.75

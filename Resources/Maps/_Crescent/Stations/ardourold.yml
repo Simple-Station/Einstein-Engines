@@ -22734,7 +22734,7 @@ entities:
     - type: Transform
       pos: 7.442156,-30.169516
       parent: 1
-- proto: WeaponTurretPDTNCSP
+- proto: WeaponTurretPDTAdvanced
   entities:
   - uid: 2905
     components:

@@ -28,6 +28,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-smarts
+      - type: HullrotFaction
+        faction: ATH
       - type: LanguageAdder
         addSpoken:
           - SolBasic

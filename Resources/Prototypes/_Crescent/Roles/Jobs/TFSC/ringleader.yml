@@ -25,6 +25,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-synadmin
+      - type: HullrotFaction
+        faction: GSC
       - type: LanguageAdder
         addSpoken:
           - Freespeak

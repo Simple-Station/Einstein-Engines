@@ -4,7 +4,10 @@
 - type: vessel
   id: Paracelsus
   name: ICM Paracelsus
-  description: An entry-level medical corvette.
+  description: |
+    A medium-sized expedition and rescue vessel equipped with medical rooms for long-term voyages, Comes with a crew monitoring console for finding patients.
+    LOADOUT: 2x Plasma Bolt Repeater
+    MINIMUM CREW: 1x Pilot
   price: 80000
   category: Small
   group: Civilian

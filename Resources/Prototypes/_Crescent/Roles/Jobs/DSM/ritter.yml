@@ -30,6 +30,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-knight
+      - type: HullrotFaction
+        faction: DSM
       - type: LanguageAdder
         addSpoken:
           - HighImperial

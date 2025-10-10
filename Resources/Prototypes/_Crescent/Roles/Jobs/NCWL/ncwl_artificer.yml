@@ -31,6 +31,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-logi-leader
+      - type: HullrotFaction
+        faction: NCWL
       - type: LanguageAdder
         addSpoken:
           - Dockta

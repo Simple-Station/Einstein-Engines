@@ -27,6 +27,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-coordinator
+      - type: HullrotFaction
+        faction: IPM
       - type: CPRTraining
       - type: SurgerySpeedModifier
         speedModifier: 2.5

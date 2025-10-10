@@ -4,7 +4,10 @@
 - type: vessel
   id: Comet
   name: ICM Comet
-  description: A medium-sized expedition vessel equipped with many modern modules for long-term voyages.
+  description: |
+    A medium-sized personal luxury "Yacht", modules including: Bar/Kitchen, Library, Medbay, Bedroom for two and minor self-defense capability.
+    LOADOUT: 2x SHI 400c Plasma Bolt Repeater, 4x SHI 180c "Torch" Pressure Gatling
+    MINIMUM CREW: 1x Pilot, 1x Gunner
   price: 90000
   category: Medium
   group: Civilian

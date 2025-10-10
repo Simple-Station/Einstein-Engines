@@ -111,6 +111,19 @@
   - WeaponMechMeleeDrillImperial
 
 - type: technology
+  id: ImperialAntiInfantryMechGuns
+  name: research-technology-imperial-antiinfantrymechguns
+  icon:
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: plasmalaser
+  discipline: Imperial
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - WeaponMechCombatImperialSMG
+  - WeaponMechCombatImperialAutolaser
+
+- type: technology
   id: ImperialCovetor
   name: research-technology-imperial-covetor
   icon:
@@ -266,8 +279,8 @@
   - TriumphantLPC
 
 - type: technology
-  id: ImperialPadparadscha
-  name: research-technology-imperial-padparadscha
+  id: ImperialSuzerain
+  name: research-technology-imperial-suzerain
   icon:
     sprite: _Crescent/Objects/Misc/lpcchip.rsi
     state: icon
@@ -275,4 +288,4 @@
   tier: 3
   cost: 12000
   recipeUnlocks:
-  - PadparadschaLPC
+  - SuzerainLPC

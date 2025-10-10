@@ -205,6 +205,8 @@
     reflects:
       - Energy
       - NonEnergy
+  - type: ClothingAddFaction #HULLROT EDIT
+    faction: IND
 
 - type: entity
   abstract: true
