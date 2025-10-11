@@ -1,4 +1,60 @@
 - type: entity
+  name: NCWL Toz-123 Maul 4g
+  parent: [BaseWeaponShotgun, BaseGunWieldable, StreeCredRedeemable]
+  id: WeaponShotgunToz123
+  description: A licensed copy of the Mod-23 shotgun by Pang Tai Arms, shortened for ease of use in cramped spaces.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/maul.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/maul.rsi
+  - type: GunRequiresWield
+  - type: Item
+    shape:
+    - 0,0,3,1
+  - type: Gun
+    shotgunSpreadMultiplier: 1.25
+    fireRate: 2
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_1.ogg
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - ShellShotgun4g
+    capacity: 3
+    autoCycle: false
+    proto: ShellShotgun4gBuckshot
+  - type: ItemSlots
+
+- type: entity
+  name: NCWL Toz-97 Proletar 12g
+  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: WeaponShotgunProletar
+  description: A 12-gauge pump-action shotgun with the magazine tube mounted above the barrel and a reversed pumping action.
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,4,1
+    sprite: _Crescent/Objects/Weapons/Guns/proletar.rsi
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/proletar.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/proletar.rsi
+  - type: GunRequiresWield
+  - type: BallisticAmmoProvider
+    capacity: 6
+    autoCycle: false
+  - type: Tag
+    tags:
+    - WeaponShotgunKammerer
+  - type: Wieldable
+
+
+- type: entity
   name: CDT C-12R Tuber 12g
   parent: [BaseWeaponShotgun, BaseGunWieldable]
   id: WeaponShotgunTuber
@@ -183,7 +239,6 @@
       tags:
       - ShellShotgun
 
-
 - type: entity
   name: NCWL Pioneer Double-Barrel 12g
   parent: [BaseWeaponSniperNoWield, StreeCredRedeemable]
@@ -257,7 +312,6 @@
       path: /Audio/Weapons/Guns/Empty/empty.ogg
     fireOnDropChance: 0.3
     shotgunSpreadMultiplier: 1.5
-    shotgunProjectileCountModifier: 1.33
   - type: Wieldable
   - type: ItemSlots
     slots:
@@ -347,7 +401,6 @@
       path: /Audio/Weapons/Guns/Empty/empty.ogg
     fireOnDropChance: 0.3
     shotgunSpreadMultiplier: 1.5
-    shotgunProjectileCountModifier: 1.33
   - type: Wieldable
   - type: ItemSlots
     slots:

@@ -9,3 +9,95 @@
     state: icon
   - type: Item
     sprite: _Crescent/Objects/Fun/Plushies/pearcat.rsi
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieChudjak
+  name: chudjak plushie
+  description: What the fuck is this?
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Fun/Plushies/chudjak.rsi
+    state: icon
+  - type: Item
+    sprite: _Crescent/Objects/Fun/Plushies/chudjak.rsi
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieTroll
+  name: troll plushie
+  description: Feels mischevious.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Fun/Plushies/troll.rsi
+    state: icon
+  - type: Item
+    sprite: _Crescent/Objects/Fun/Plushies/troll.rsi
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/_Crescent/Weapons/Grenades/troll_nade/trigger.ogg
+      params:
+        variation: 0.25
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_Crescent/Weapons/Grenades/troll_nade/trigger.ogg
+      params:
+        variation: 0.25
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/_Crescent/Weapons/Grenades/troll_nade/trigger.ogg
+      params:
+        variation: 0.25
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/_Crescent/Weapons/Grenades/troll_nade/trigger.ogg
+      params:
+        variation: 0.25
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieOrange
+  name: orange plushie
+  description: Annoying asshole.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Fun/Plushies/orange.rsi
+    state: icon
+  - type: Item
+    sprite: _Crescent/Objects/Fun/Plushies/orange.rsi
+  - type: EmitSoundOnActivate
+    sound:
+      collection: AnnoyingOrange
+      params:
+        variation: 0.25
+  - type: EmitSoundOnUse
+    sound:
+      collection: AnnoyingOrange
+      params:
+        variation: 0.25
+  - type: EmitSoundOnTrigger
+    sound:
+      collection: AnnoyingOrange
+      params:
+        variation: 0.25
+  - type: MeleeWeapon
+    soundHit:
+      collection: AnnoyingOrange
+      params:
+        variation: 0.25
+  - type: SpamEmitSound
+    minInterval: 20
+    maxInterval: 60
+    sound:
+      collection: AnnoyingOrange
+      params:
+        variation: 0.25
+
+- type: soundCollection
+  id: AnnoyingOrange
+  files:
+  - "/Audio/_Crescent/Fun/OrangePlushCollection/orange1.ogg"
+  - "/Audio/_Crescent/Fun/OrangePlushCollection/orange2.ogg"
+  - "/Audio/_Crescent/Fun/OrangePlushCollection/orange3.ogg"
+  - "/Audio/_Crescent/Fun/OrangePlushCollection/orange4.ogg"
+  - "/Audio/_Crescent/Fun/OrangePlushCollection/orange5.ogg"

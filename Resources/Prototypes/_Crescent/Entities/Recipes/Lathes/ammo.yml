@@ -2,6 +2,35 @@
 # RIFLE AMMUNITIONS
 
 - type: latheRecipe
+  id: DrumMagazineShotgunEmpty
+  result: DrumMagazineShotgunEmpty
+  completetime: 1
+  materials:
+    Steel: 100
+
+- type: latheRecipe
+  id: DrumMagazineShotgunBuck
+  result: DrumMagazineShotgunBuck
+  completetime: 1
+  materials:
+    Steel: 500
+
+- type: latheRecipe
+  id: DrumMagazineShotgunSlug
+  result: DrumMagazineShotgunSlug
+  completetime: 1
+  materials:
+    Steel: 300
+    Plastic: 300
+
+- type: latheRecipe
+  id: MagazineSmgSmartgun
+  result: MagazineSmgSmartgun
+  completetime: 1
+  materials:
+    Steel: 1000
+
+- type: latheRecipe
   id: MagazineHeavyRifleBoxmag
   result: MagazineHeavyRifleBoxmag
   completetime: 1
