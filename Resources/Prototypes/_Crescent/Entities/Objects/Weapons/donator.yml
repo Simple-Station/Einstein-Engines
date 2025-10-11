@@ -639,7 +639,7 @@
   description: A plasma weapon of ancient, long-forgotten design. Only through the care and maintenance of its holders has it managed to last through these turbulent centuries. Its blade glows bright blue, the heat it radiates is immense, and you'd rather not end up on the other side of it.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Melee/Plasma_Sword.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/plasma_sword.rsi
   - type: Tag
     tags:
     - PlasmaSword
