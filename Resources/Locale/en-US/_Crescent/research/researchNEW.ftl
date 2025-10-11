@@ -90,6 +90,7 @@ research-technology-imperial-srmimitation = Sixth Fireteam Imitation
 research-technology-imperial-bomblauncher = M320 Launcher
 research-technology-imperial-triumphant = Imperial Cruiser
 research-technology-imperial-suzerain = Imperial Siege Battlecruiser
+research-technology-imperial-torturer = Imperial Stealth Bomber
 
 # NCWL
 research-technology-communard-clothes = Communard Clothes

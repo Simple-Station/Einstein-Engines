@@ -1219,6 +1219,10 @@
         - MagazineVulcan
         - MagazineFlak
         #Hullrot edit start
+        - DrumMagazineShotgunSlug
+        - DrumMagazineShotgunEmpty
+        - DrumMagazineShotgunBuck
+        - MagazineSmgSmartgun
         - MagazineHeavyRifleBoxmag
         - MagazinePistolHeavy
         - MagazineBoxHeavyPistol

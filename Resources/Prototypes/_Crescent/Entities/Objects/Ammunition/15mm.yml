@@ -13,6 +13,8 @@
       - CartridgeRailgun15mm
   - type: CartridgeAmmo
     deleteOnSpawn: true
+  - type: Item
+    size: Small
   - type: Sprite
     noRot: false
     sprite: _Crescent/Objects/Weapons/Ammunition/Casings/railgun_slug.rsi
@@ -89,12 +91,12 @@
     proto: null
     capacity: 4
   - type: Item
-    size: Small
+    size: Normal
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/railgun_mag.rsi
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/15mm_mag.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
