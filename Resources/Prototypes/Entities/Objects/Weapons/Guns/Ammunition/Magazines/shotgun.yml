@@ -1,4 +1,9 @@
 - type: entity
+  id: MagazineShotgun00Buckshot # I my self hold my self NOT accountable i fully shift the blame on nirub for being a dumbass and mapping this into the SAW station
+  parent: MagazineShotgun
+  categories: [ HideSpawnMenu ]
+
+- type: entity
   id: BaseMagazineShotgun
   name: 10-round magazine (12g shells)
   parent: BaseItem
