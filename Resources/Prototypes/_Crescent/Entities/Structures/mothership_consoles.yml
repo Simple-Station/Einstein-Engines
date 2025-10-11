@@ -32,11 +32,11 @@
   - type: ShipyardListing
     shuttles:
     - Redemptor
-    - Torturer
     - Ibis
     - Impel
     - Gnosis
     - Praxis
+    - Imparator
 
 - type: entity
   id: NemesisMothershipComputer
@@ -46,7 +46,7 @@
   - type: ShipyardListing
     shuttles:
     - Praxis
-    - Torturer
+    - Imparator
 
 - type: entity
   id: UnionfallNemesisMothershipComputer
