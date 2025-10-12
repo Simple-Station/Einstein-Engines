@@ -229,7 +229,7 @@
   group: shinoharastation
 
 - type: cargoProduct
-  id: CrateHammerheadAmmo
+  id: CrateHammerheadAmmoShinoharaStation
   icon:
     sprite: _Crescent/Objects/Weapons/Ammunition/Casings/hammerhead_rocket.rsi
     state: hammer
