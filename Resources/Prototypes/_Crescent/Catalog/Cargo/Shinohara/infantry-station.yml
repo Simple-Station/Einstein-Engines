@@ -51,7 +51,7 @@
 - type: cargoProduct
   id: ShinoharaStationC4
   icon:
-    sprite: /Objects/Weapons/Bombs/c4.rsi
+    sprite: Objects/Weapons/Bombs/c4.rsi
     state: icon
   product: CrateShinoharaC4
   cost: 15000
