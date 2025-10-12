@@ -194,7 +194,7 @@
     sprite: _Crescent/Clothing/Corpo/OuterClothing/carapace.rsi
     state: icon
   product: CratePangtaiHighArmor
-  cost: 10000
+  cost: 5000
   category: cargoproduct-category-name-military
   group: pangtai
 
@@ -204,7 +204,7 @@
     sprite: _Crescent/Clothing/Corpo/OuterClothing/pangtaivest.rsi
     state: icon
   product: CratePangtaiLowArmor
-  cost: 2500
+  cost: 1000
   category: cargoproduct-category-name-military
   group: pangtai
 

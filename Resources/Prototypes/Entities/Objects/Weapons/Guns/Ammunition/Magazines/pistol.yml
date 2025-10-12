@@ -1,6 +1,6 @@
 - type: entity
   id: BaseMagazinePistol
-  name: 12-round pistol magazine (9x19mm PSTF auto)
+  name: 18-round pistol magazine (9x19mm PSTF auto)
   parent: BaseItem
   abstract: true
   components:
@@ -19,7 +19,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_mag.rsi
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/9x19mm_pistol.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -27,7 +27,7 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: MagazineVisuals
     magState: mag
-    steps: 5
+    steps: 3
     zeroVisible: false
   - type: Appearance
 
@@ -52,7 +52,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_high_capacity_mag.rsi
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/9x19mm_extend_pistol.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -60,7 +60,7 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: MagazineVisuals
     magState: mag
-    steps: 6
+    steps: 3
     zeroVisible: false
   - type: Appearance
 
@@ -85,7 +85,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/smg_mag.rsi
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/9x19mm_mag.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -93,7 +93,7 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: MagazineVisuals
     magState: mag
-    steps: 6
+    steps: 3
     zeroVisible: false
   - type: Appearance
 
@@ -139,17 +139,11 @@
 
 - type: entity
   id: MagazinePistol
-  name: pistol magazine (9x19mm PSTF auto)
+  name: 18-round pistol magazine (9x19mm PSTF auto)
   parent: BaseMagazinePistol
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistol
-  - type: Sprite
-    layers:
-    - state: red
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazinePistolEmpty
@@ -159,11 +153,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: null
-  - type: Sprite
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-
 
 - type: entity
   id: MagazinePistolIncendiary
@@ -180,12 +169,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolPractice
-  - type: Sprite
-    layers:
-    - state: practice
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazinePistolRubber
@@ -194,12 +177,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolRubber
-  - type: Sprite
-    layers:
-    - state: rubber
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazinePistolUranium
@@ -208,12 +185,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolUranium
-  - type: Sprite
-    layers:
-    - state: uranium
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazinePistolShrapnel
@@ -222,12 +193,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolShrapnel
-  - type: Sprite
-    layers:
-    - state: red
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazinePistolHighCapacityEmpty
@@ -237,10 +202,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: null
-  - type: Sprite
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
 
 - type: entity
   id: MagazinePistolHighCapacity
@@ -249,12 +210,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistol
-  - type: Sprite
-    layers:
-    - state: red
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazinePistolHighCapacityPractice
@@ -263,12 +218,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistol
-  - type: Sprite
-    layers:
-    - state: practice
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazinePistolHighCapacityRubber
@@ -277,12 +226,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistol
-  - type: Sprite
-    layers:
-    - state: rubber
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazinePistolHighCapacityShrapnel
@@ -291,12 +234,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolShrapnel
-  - type: Sprite
-    layers:
-    - state: red
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazinePistolSubMachineGun
@@ -305,17 +242,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistol
-    whitelist:
-      tags:
-        - CartridgePistol
-    soundInsert:
-      path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg
-  - type: Sprite
-    layers:
-    - state: red
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazinePistolSubMachineGunEmpty
@@ -325,10 +251,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: null
-  - type: Sprite
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
 
 - type: entity
   id: MagazinePistolSubMachineGunPractice
@@ -337,12 +259,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolPractice
-  - type: Sprite
-    layers:
-    - state: practice
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazinePistolSubMachineGunRubber
@@ -352,12 +268,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolRubber
-  - type: Sprite
-    layers:
-    - state: rubber
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazinePistolSubMachineGunIncendiary
@@ -366,12 +276,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolIncendiary
-  - type: Sprite
-    layers:
-    - state: red
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazinePistolSubMachineGunUranium
@@ -380,12 +284,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolUranium
-  - type: Sprite
-    layers:
-    - state: uranium
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazinePistolSubMachineGunShrapnel

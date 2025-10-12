@@ -1,8 +1,11 @@
 - type: vessel
   id: Torturer
   name: DSM Torturer
-  description: A light Imperial picket and stealth bomber.
-  price: 30000
+  description: |
+    A stealth bomber, made for imperial use. Comes with little crew accomodations, and a fragile hull, but in exchange- it sports an IFF cloak for sneaky engagements, capable of ending battles before they start. 
+    LOADOUT: 2x 180mm Magwell Torpedo Launchers, 1x SHI 20x135mm MKII PDT
+    MINIMUM CREW: 1x Pilot
+  price: 33000
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/DSM/torturer.yml
@@ -27,3 +30,5 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-fighter
+        - type: VesselDescription
+          description: Any smart ritter can turn this little ship into a terror weapon. 
