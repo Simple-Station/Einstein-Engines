@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingBackpack
+  parent: [ClothingBackpack,  BaseSubfloorAnchorStorage]
   id: ClothingBackpackSatchel
   name: satchel
   description: A trendy looking satchel.

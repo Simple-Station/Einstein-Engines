@@ -9,6 +9,8 @@
     - CartridgeAntiMateriel
   - type: CartridgeAmmo
     proto: BulletAntiMateriel
+  - type: Item
+    size: Small
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Ammunition/Casings/large_rifle.rsi
     layers:

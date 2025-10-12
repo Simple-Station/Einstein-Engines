@@ -1,0 +1,37 @@
+# Author Info
+# Discord: rubeebee
+
+- type: vessel
+  id: Fridge
+  name: IPM Fridge
+  description: | 
+    The IPM Fridge is a converted cargo vessel, now serving it's second life as an IPM utility vessel, capable of transfering cargo and bodies, preserving them with the on-board freezer atmosphere. It has multiple ballistic PDs in order to protect itself.
+    LOADOUT: 4x 20mm PTA Operator PD, 1x SHI 20x135mm PDT
+    MINIMUM CREW: 1x Pilot, 1x Gunner
+  price: 37000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/NCSP/fridge.yml
+
+- type: gameMap
+  id: Fridge
+  mapName: 'IPM Fridge'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/fridge.yml
+  minPlayers: 0
+  stations:
+    Fridge:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'IPM Fridge {1}'
+          nameGenerator:
+           !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-gunship
+        - type: VesselDescription
+          description: Made from the civilian foodtruck, the Fridge now carries a diffferent type of meat.

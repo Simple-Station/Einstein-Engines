@@ -1,0 +1,71 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "",
+    "copyright": "Made by the Sector Crescent team for the Hullrot Project. All rights reserved. Do not modify, publish, use, relicense, or edit.",
+    "states": [
+        {
+            "name": "base"
+        },
+        {
+            "name": "icon"
+        },
+        {
+            "name": "mag-1"
+        },
+        {
+            "name": "mag-2"
+        },
+        {
+            "name": "mag-3"
+        },
+        {
+            "name": "mag-4"
+        },
+        {
+            "name": "mag-5"
+        },
+        {
+            "name": "mag-6"
+        },
+        {
+            "name": "mag-7"
+        },
+        {
+            "name": "mag-8"
+        },
+        {
+            "name": "mag-9"
+        },
+        {
+            "name": "mag-10"
+        },
+        {
+            "name": "mag-11"
+        },
+        {
+            "name": "mag-12"
+        },
+        {
+            "name": "mag-13"
+        },
+        {
+            "name": "mag-14"
+        },
+        {
+            "name": "mag-15"
+        },
+        {
+            "name": "mag-16"
+        },
+        {
+            "name": "mag-17"
+        },
+        {
+            "name": "mag-18"
+        }
+    ]
+}

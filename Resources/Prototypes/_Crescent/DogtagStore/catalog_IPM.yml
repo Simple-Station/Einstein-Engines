@@ -17,7 +17,7 @@
 # Cybernetics
 - type: listing
   id: StoreListingIPMCyberneticsBloodPump
-  name: IPM TT-92 Overclocked Blood Pump 
+  name: IPM TT-92 Overclocked Blood Pump
   description: A small, fist-sized device meant to be a total replacement tool for a humanoid heart. Consumes nutrients from the external dermis and speeds up platelet production for accelerated healing. Replaces the heart.
   icon: { sprite: /Textures/_Crescent/Objects/Misc/cybernetics.rsi, state: heartpump }
   productEntity: CyberneticsBloodPump
@@ -157,6 +157,17 @@
   productEntity: SyringeCase
   cost:
     SampleIPM: 1
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+- type: listing
+  id: StoreListingIPMMedicalEquipmentVestineVial
+  name: Vestine
+  description: 30 units of Vestine a precursor to more powerful drugs.
+  icon: { sprite: Objects/Specific/Chemistry/vial.rsi, state: vial-1 }
+  productEntity: VestineChemistryVial
+  cost:
+    SampleIPM: 5
   categories:
   - StoreCategoryIPMMedicalEquipment
 

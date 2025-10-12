@@ -1,10 +1,13 @@
 # Author Info
-# Discord: @fleshangel
+# Discord: @fleshangel (remapped by @Rubeebee)
 
 - type: vessel
   id: Glaive
   name: Glaive
-  description: A light torpedo bomber with a vulcan gatling as a sidearm.
+  description: |
+    A light torpedo bomber with a vulcan gatling as a sidearm.
+    LOADOUT: 1x 20mm Vulcan, 2x 180mm Idna Torpedoes
+    MINIMUM CREW: 1x Pilot
   price: 20000
   category: Small
   group: None

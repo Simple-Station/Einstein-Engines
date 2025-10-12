@@ -114,9 +114,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 65
-    harmorPenetration: 19
-    stoppingPower : 16
+        Piercing: 80
 
 - type: entity
   name: 4g slug box
@@ -159,9 +157,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 35
+        Piercing: 60
     harmorPenetration: 40
-    stoppingPower : 12
 
 - type: entity
   name: 4g sabot box
@@ -202,9 +199,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 19
-    harmorPenetration: 4
-    stoppingPower: 3
+        Piercing: 27 # 27 x 10 = 270
 
 - type: entity
   id: PelletShotgunSpread4g
@@ -213,8 +208,8 @@
   components:
   - type: ProjectileSpread
     proto: PelletShotgun4g
-    count: 7
-    spread: 15
+    count: 10
+    spread: 12.5
 
 - type: entity
   name: 4g buckshot box
@@ -255,9 +250,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 32
-    harmorPenetration: 6
-    stoppingPower: 5
+        Piercing: 40 # 40 x 8 = 320
 
 - type: entity
   id: PelletShotgunMagnumSpread4g
@@ -266,8 +259,8 @@
   components:
   - type: ProjectileSpread
     proto: PelletShotgunMagnum4g
-    count: 4
-    spread: 15
+    count: 8
+    spread: 17.5
 
 - type: entity
   name: 4g magnum buckshot box
@@ -310,8 +303,8 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 5
-        Heat: 10
+        Blunt: 20 # 20 x 8 = 160
+        Heat: 5  # 5 x 8 = 40
   - type: IgnitionSource
     ignited: true
 
@@ -322,8 +315,8 @@
   components:
   - type: ProjectileSpread
     proto: PelletShotgunIncendiary4g
-    count: 7
-    spread: 15
+    count: 8
+    spread: 12.5
 
 - type: entity
   name: 4g dragon's breath box
@@ -366,8 +359,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 12
-    harmorPenetration: 19
+        Piercing: 27 # 27 x 10 = 270
+    harmorPenetration: 13
 
 - type: entity
   id: PelletShotgunUraniumSpread4g
@@ -376,8 +369,8 @@
   components:
   - type: ProjectileSpread
     proto: PelletShotgunUranium4g
-    count: 8
-    spread: 6
+    count: 10
+    spread: 12.5
 
 - type: entity
   name: 4g flechette box
