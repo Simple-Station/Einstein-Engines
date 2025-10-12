@@ -227,6 +227,39 @@
     tags:
     - ScoutMechEquipment
 
+
+- type: entity
+  id: WeaponMechSepulchreGatling
+  name: IRM 'Dirge' 11mm Burst Chaingun
+  description: A gilded weapon commissioned by the noble houses to honor a fallen ritter champion. When this nitrogen-cooled chaingun speaks, you listen.
+  suffix: Mech Weapon, Gun, Combat, Chaingun
+  parent: [ BaseMechWeaponRange, MediumMechEquipment ]
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: chaingun
+  - type: Gun
+    shotsPerBurst: 25
+    burstFireRate: 30
+    burstCooldown: 4
+    fireRate: 20
+    minAngle: 6
+    maxAngle: 30
+    selectedMode: Burst
+    availableModes:
+      - Burst
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/gau.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: CartridgeHeavyPistol
+    fireCost: 15
+  - type: Appearance
+  - type: AmmoCounter
+  - type: Tag
+    tags:
+    - MediumMechEquipment
+
+
 - type: entity
   id: WeaponMechCombatGatling
   name: PTA 'Loyal' 30mm gatling exosuit chaingun
