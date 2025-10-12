@@ -170,7 +170,7 @@
     contents:
       - id: WeaponSubMachineGunGhost
         amount: 1
-      - id: MagazinePistolSmartgun
+      - id: MagazineSmgSmartgun
         amount: 2
 
 - type: entity
