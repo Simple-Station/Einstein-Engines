@@ -5,7 +5,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/heavy_pistol_mag.rsi
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/.327_mag.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -22,7 +22,7 @@
     capacity: 7
   - type: MagazineVisuals
     magState: mag
-    steps: 7
+    steps: 6
     zeroVisible: false
   - type: Appearance
 

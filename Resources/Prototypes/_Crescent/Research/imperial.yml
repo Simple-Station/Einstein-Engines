@@ -148,6 +148,18 @@
   - IbisLPC
 
 - type: technology
+  id: ImperialTorturer
+  name: research-technology-imperial-torturer
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Imperial
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - TorturerLPC
+
+- type: technology
   id: ImperialNobleWeapons
   name: research-technology-imperial-nobleweapons
   icon:

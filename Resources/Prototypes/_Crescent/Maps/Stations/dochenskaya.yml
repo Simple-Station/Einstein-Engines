@@ -9,6 +9,8 @@
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Dochenskaya-Hyundari Engineering Outpost'
+        - type: VesselMusic
+          ambientMusicPrototype: DochenskayaMusic
         - type: Grammar
           attributes:
             proper: true
