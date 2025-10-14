@@ -381,6 +381,7 @@
     availableModes:
       - SemiAuto
       - Burst
+      - FullAuto
     shotsPerBurst: 3
     burstFireRate: 12
     burstCooldown: 1.5
@@ -717,9 +718,13 @@
   - type: Gun
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/M16/rifle_gunshot_2.ogg
-    selectedMode: SemiAuto
+    selectedMode: Burst
     availableModes:
       - SemiAuto
+      - Burst
+    shotsPerBurst: 2
+    burstFireRate: 24
+    burstCooldown: 0.75
   - type: ItemSlots
     slots:
       gun_magazine:
