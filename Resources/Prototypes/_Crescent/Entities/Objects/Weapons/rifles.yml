@@ -377,6 +377,13 @@
     sprite: _Crescent/Objects/Weapons/Guns/goro.rsi
   - type: Gun
     fireRate: 3.75
+    selectedMode: Burst
+    availableModes:
+      - SemiAuto
+      - Burst
+    shotsPerBurst: 3
+    burstFireRate: 12
+    burstCooldown: 1.5
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/rifle_1/rifle_gunshot_2.ogg
   - type: ChamberMagazineAmmoProvider
