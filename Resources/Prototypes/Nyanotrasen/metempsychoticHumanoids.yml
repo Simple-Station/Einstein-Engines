@@ -1,15 +1,13 @@
 - type: weightedRandom
   id: MetempsychoticHumanoidPool # Species prototypes
   weights:
-    Human: 1
-    Felinid: 1
-    Oni: 1
-    Arachnid: 1
-    Harpy: 1
-    Moth: 1
-    Tajaran: 1 # Einstein Engines
-    Diona: 0.5
-    Reptilian: 0.5
-    SlimePerson: 0.5
-    Vulpkanin: 0.5
-    Plasmaman: 0.25
+    Moth: 2
+    Felinid: 0.5
+    Oni: 0.5
+    Harpy: 0.1
+    Arachnid: 1.5
+    Tajaran: 0.5 # Einstein Engines
+    Diona: 0.1
+    Reptilian: 1
+    SlimePerson: 0.1
+    Human: 0
