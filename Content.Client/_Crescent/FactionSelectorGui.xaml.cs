@@ -101,8 +101,7 @@ namespace Content.Client._Crescent
                 // SHORTENED FOR UI's sake
                 factionButton.Text = faction.ID;
 
-                if (faction.DescriptionPrefix != null)
-                    factionButton.ModulateSelfOverride = Color.Red;
+                factionButton.ModulateSelfOverride = faction.FactionButtonColor;
 
                 var factionName = new Label();
                 factionName.HorizontalAlignment = HAlignment.Center;
