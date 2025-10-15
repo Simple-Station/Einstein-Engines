@@ -92,6 +92,8 @@ namespace Content.Client._Crescent
                 return;
             _factionList.RemoveAllChildren();
             var factions = _prototypeManager.EnumeratePrototypes<FactionPrototype>().ToArray();
+            // sorts the factions by their weight
+            factions = factions.OrderByDescending(x => x.Weight).ToArray();
             foreach (var faction in factions)
             {
                 if (!faction.Enabled)

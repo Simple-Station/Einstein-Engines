@@ -5,7 +5,7 @@
     MINIMUM PLAYTIME: NONE
     One of the two major players in the Taypan Sector.
     Good for new players, and represents the core Hullrot experience.
-  buttonColor: DarkSlateGray
+  buttonColor: DarkSlateBlue
   description: |
     Controlling much of human space outside the Crescent, the Divine Sol Mandate, or simply
     'the Empire' to laymen, are a product of early space-era corporate classism and
@@ -38,7 +38,7 @@
     MINIMUM PLAYTIME: NONE
     One of the two major players in the Taypan Sector.
     Good for new players, and represents the core Hullrot experience.
-  buttonColor: DarkSlateGray
+  buttonColor: FireBrick
   description: |
     Stitched together from the still-warm corpses of many labor unions that were in disorganized rebellion
     against Imperial forces in the Feudal Era before the collapse of Bluespace lanes leading in and out of the
@@ -61,7 +61,7 @@
     MINIMUM PLAYTIME: 3 HOURS / 1 ROUND
     An industrial giant, with trade-heavy gameplay and high tech.
     Expect heavy profit quotas, pirate raids and little support.
-  buttonColor: DarkSlateBlue
+  buttonColor: DarkSlateGray
   description: |
     Currently the holder of many patents and technologies from the now-defunct NanoTrasen Industries, SHI is the
     unmatched and unrivaled corporate powerhouse in the Sector. Fingers in every pie, they manage logistics
@@ -84,7 +84,7 @@
     Other factions may offer contracts or ask for your services.
     Other factions may be suspicious or immediately hostile.
     Your allies may betray you for a higher paycheck.
-  buttonColor: DarkSlateBlue
+  buttonColor: DarkSlateGray
   description: |
     A conglomerate of pirate gangs, shipbreakers, and unsavory PMC groups, the Syndicate was formed shortly
     after the initial arrival of the Empire into the Sector, disembodied station gangs and pirate reavers at
@@ -107,7 +107,7 @@
     This faction has only a very small outpost in the Taypan system.
     A small, hidden station with only four roles is their only presence.
     Play at your own risk.
-  buttonColor: Red
+  buttonColor: DarkGreen
   description: |
     A loosely organized tribal community of nomadic starfarers, the Taypani-Atyrian Pact consists of several nomadic
     families of various racial backgrounds. Primarily made up of the spiritual Arabet, the militaristic Al'Seik,
@@ -128,7 +128,7 @@
     MINIMUM PLAYTIME: 10 HOURS / 3 ROUNDS
     This faction is only very rarely present in the Taypan system.
     Restricted to Special Midround Spawns
-  buttonColor: Red
+  buttonColor: Black
   description: |
     Formerly several fireteams of the Imperial Compliance Corps united under a single wing, the SRM have
     found their new identity in the reclamation of escaped Imperial 'assets', as well as the 'conscription'
@@ -149,7 +149,7 @@
     MINIMUM PLAYTIME: 10 HOURS / 3 ROUNDS
     This faction is only very rarely present in the Taypan system at present.
     Restricted to Special Midround Spawns
-  buttonColor: Red
+  buttonColor: Black
   description: |
     The victors of an undisputed internal war that broke out in Sol over the Kaiser's turbulent and
     violent reign, the Authority was born out of a need for reform. Lead by the Jovian ideals of
