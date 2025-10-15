@@ -560,7 +560,7 @@
   id: HardlineBeamPulser
   name: NT-9 3100c 'Hardliner' plasma lance turret
   suffix: ShipGun
-  description: A ship-mounted, fixed-point artillery turret using military laser technology as a base - an outdated model from the now-defunct NanoTrasen, although tried and tested in many battles. Requires upkeep in the form of liquid coolant to stay operational.
+  description: A ship-mounted, fixed-point artillery turret using military laser technology as a base - an outdated model from the now-defunct NanoTrasen, although tried and tested in many battles. Requires upkeep in the form of plasma power cells to stay operational.
   components:
   - type: ApcPowerReceiver
     powerLoad: 1000
