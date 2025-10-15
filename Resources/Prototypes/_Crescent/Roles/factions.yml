@@ -1,37 +1,11 @@
-
-- type: faction
-  name: "Central Sol Authority"
-  id: ATH
-  descriptionPrefix: |
-    This faction is only very rarely present in the Taypan system at present.
-    Restricted to Special Midround Spawns
-  description: |
-    The victors of an undisputed internal war that broke out in Sol over the Kaiser's turbulent and
-    violent reign, the Authority was born out of a need for reform. Lead by the Jovian ideals of
-    psionic purity, the Central Sol Authority has minimal interest in feudal reign like their precursors,
-    instead focusing on violent conquests made with the purpose of eradicating species and communities
-    that they've found to be linked to the Boundary, Taypan, and other psionic phenomena. It is believed
-    by Authority officials that the source of the Boundary itself comes from the combined, manifested
-    thought of all psionically-enabled people in the Imperial Supercluster, and with every spell cast,
-    every psionicist born, it only becomes larger and more aggressive.
-
-    Effectively the prime superpower of all of humanity, the Authority allows for a good amount of
-    economic freedom for its non-psionicists and promotes loyalty in a manner not too dissimilar to
-    the megacorporations of old Earth, with aspiring members climbing up the military ladder of
-    different militias, such as the 43rd Battlegroup of the Sol system. Forschers thinking that they
-    can speak up against the current regime quickly find themselves screened against and detained,
-    however, with tight information control preventing widespread dissent and often rewriting history
-    itself to suit the needs of the Authority.
-  color: "#ffffed"
-  weight: 1
-  enabled: true
-  icon:
-    sprite: /Textures/_Crescent/faction_icons.rsi
-    state: csa
-
 - type: faction
   name: "Divine Sol Mandate"
   id: DSM
+  descriptionPrefix: |
+    MINIMUM PLAYTIME: NONE
+    One of the two major players in the Taypan Sector.
+    Good for new players, and represents the core Hullrot experience.
+  buttonColor: DarkSlateBlue
   description: |
     Controlling much of human space outside the Crescent, the Divine Sol Mandate, or simply
     'the Empire' to laymen, are a product of early space-era corporate classism and
@@ -51,7 +25,7 @@
     often rewriting history itself to suit the needs of the Empire. Other races are permitted within Imperial
     ranks, but often subject to increased scrutiny and formal or informal discrimination
   color: "#9FED58"
-  weight: 1
+  weight: 8
   enabled: true
   icon:
     sprite: /Textures/_Crescent/faction_icons.rsi
@@ -60,6 +34,11 @@
 - type: faction
   name: "New Crescent Worker's League"
   id: NCWL
+  descriptionPrefix: |
+    MINIMUM PLAYTIME: NONE
+    One of the two major players in the Taypan Sector.
+    Good for new players, and represents the core Hullrot experience.
+  buttonColor: FireBrick
   description: |
     Stitched together from the still-warm corpses of many labor unions that were in disorganized rebellion
     against Imperial forces in the Feudal Era before the collapse of Bluespace lanes leading in and out of the
@@ -69,16 +48,43 @@
     against the Taypan system in the Outer Rim, the League are finally throwing their hats in the pile to make
     their bid for the untamed frontier.
   color: "#9FED58"
-  weight: 0
+  weight: 7
   enabled: true
   icon:
     sprite: /Textures/_Crescent/faction_icons.rsi
     state: ncwl
 
+- type: faction
+  name: "Shinohara Heavy Industries"
+  id: SHI
+  descriptionPrefix: |
+    MINIMUM PLAYTIME: 3 HOURS / 1 ROUND
+    An industrial giant, with trade-heavy gameplay and high tech.
+    Expect heavy profit quotas, pirate raids and little support.
+  buttonColor: DarkSlateGray
+  description: |
+    Currently the holder of many patents and technologies from the now-defunct NanoTrasen Industries, SHI is the
+    unmatched and unrivaled corporate powerhouse in the Sector. Fingers in every pie, they manage logistics
+    between systems, development of new technologies, mining operations, and even dabble in the manufacturing of
+    space-capable vessels. Sharing the system with the Syndicate, they have made their headquarters in Taypan,
+    enjoying access to ore-rich asteroid veins.
+  color: "#9FED58"
+  weight: 6
+  enabled: true
+  icon:
+    sprite: /Textures/_Crescent/faction_icons.rsi
+    state: shi
 
 - type: faction
-  name: "Taypan FreeStations Coalitions"
+  name: "Taypani Freestations Coalition"
   id: TFSC
+  descriptionPrefix: |
+    MINIMUM PLAYTIME: 3 HOURS / 1 ROUND
+    Four individual corporations united under one flag, for profit and freedom.
+    Other factions may offer contracts or ask for your services.
+    Other factions may be suspicious or immediately hostile.
+    Your allies may betray you for a higher paycheck.
+  buttonColor: DarkSlateGray
   description: |
     A conglomerate of pirate gangs, shipbreakers, and unsavory PMC groups, the Syndicate was formed shortly
     after the initial arrival of the Empire into the Sector, disembodied station gangs and pirate reavers at
@@ -87,31 +93,21 @@
     from the overreaching grasp of the NCWL and reasonably far enough from the Empire's remnants still roaming
     the Sector.
   color: "#9FED58"
-  weight: -3
+  weight: 5
   enabled: true
   icon:
     sprite: /Textures/_Crescent/faction_icons.rsi
     state: tfsc
 
 - type: faction
-  name: "Shinohara Heavy Industries"
-  id: SHI
-  description: |
-    Currently the holder of many patents and technologies from the now-defunct NanoTrasen Industries, SHI is the
-    unmatched and unrivaled corporate powerhouse in the Sector. Fingers in every pie, they manage logistics
-    between systems, development of new technologies, mining operations, and even dabble in the manufacturing of
-    space-capable vessels. Sharing the system with the Syndicate, they have made their headquarters in Taypan,
-    enjoying access to ore-rich asteroid veins.
-  color: "#9FED58"
-  weight: -4
-  enabled: true
-  icon:
-    sprite: /Textures/_Crescent/faction_icons.rsi
-    state: shi
-
-- type: faction
   name: "The Taypani-Atyrian Pact"
   id: TAP
+  descriptionPrefix: |
+    MINIMUM PLAYTIME: 10 HOURS / 3 ROUNDS
+    This faction has only a very small outpost in the Taypan system.
+    A small, hidden station with only four roles is their only presence.
+    Play at your own risk.
+  buttonColor: DarkGreen
   description: |
     A loosely organized tribal community of nomadic starfarers, the Taypani-Atyrian Pact consists of several nomadic
     families of various racial backgrounds. Primarily made up of the spiritual Arabet, the militaristic Al'Seik,
@@ -119,7 +115,7 @@
     moving from site to site to eke out a living. Most nomads carry the foul reputations of mercenaries, lowlives,
     smugglers, racketeers, and gamblers.
   color: "#9FED58"
-  weight: -7
+  weight: 4
   enabled: true
   icon:
     sprite: /Textures/_Crescent/faction_icons.rsi
@@ -129,8 +125,10 @@
   name: "Saint Romaine's Militia"
   id: SRM
   descriptionPrefix: |
+    MINIMUM PLAYTIME: 10 HOURS / 3 ROUNDS
     This faction is only very rarely present in the Taypan system.
     Restricted to Special Midround Spawns
+  buttonColor: Black
   description: |
     Formerly several fireteams of the Imperial Compliance Corps united under a single wing, the SRM have
     found their new identity in the reclamation of escaped Imperial 'assets', as well as the 'conscription'
@@ -138,11 +136,44 @@
     Domain system under their Imperial overlords, but often stray into Taypan to capture victims for
     the rebuilding effort.
   color: "#9FED58"
-  weight: -5
+  weight: 3
   enabled: true
   icon:
     sprite: /Textures/_Crescent/faction_icons.rsi
     state: srm
+
+- type: faction
+  name: "Central Sol Authority"
+  id: ATH
+  descriptionPrefix: |
+    MINIMUM PLAYTIME: 10 HOURS / 3 ROUNDS
+    This faction is only very rarely present in the Taypan system at present.
+    Restricted to Special Midround Spawns
+  buttonColor: Black
+  description: |
+    The victors of an undisputed internal war that broke out in Sol over the Kaiser's turbulent and
+    violent reign, the Authority was born out of a need for reform. Lead by the Jovian ideals of
+    psionic purity, the Central Sol Authority has minimal interest in feudal reign like their precursors,
+    instead focusing on violent conquests made with the purpose of eradicating species and communities
+    that they've found to be linked to the Boundary, Taypan, and other psionic phenomena. It is believed
+    by Authority officials that the source of the Boundary itself comes from the combined, manifested
+    thought of all psionically-enabled people in the Imperial Supercluster, and with every spell cast,
+    every psionicist born, it only becomes larger and more aggressive.
+
+    Effectively the prime superpower of all of humanity, the Authority allows for a good amount of
+    economic freedom for its non-psionicists and promotes loyalty in a manner not too dissimilar to
+    the megacorporations of old Earth, with aspiring members climbing up the military ladder of
+    different militias, such as the 43rd Battlegroup of the Sol system. Forschers thinking that they
+    can speak up against the current regime quickly find themselves screened against and detained,
+    however, with tight information control preventing widespread dissent and often rewriting history
+    itself to suit the needs of the Authority.
+  color: "#ffffed"
+  weight: 2
+  enabled: true
+  icon:
+    sprite: /Textures/_Crescent/faction_icons.rsi
+    state: csa
+   
 
 - type: faction
   name: "Colonial Minutemen"
@@ -154,7 +185,7 @@
     tendency to draw their members from within impoverished circles leave them susceptible to corruption - which
     the major powers of the system often has little manpower or resources to mitigate or mend.
   color: "#9FED58"
-  weight: -5
+  weight: 1
   enabled: false
   icon:
     sprite: /Textures/_Crescent/faction_icons.rsi
