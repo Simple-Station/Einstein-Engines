@@ -11,8 +11,6 @@
   supervisors: job-supervisors-imperial
   canBeAntag: false
   requirements:
-    - !type:FactionRequirement
-      factionID: "DSM"
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
