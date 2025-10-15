@@ -38,7 +38,7 @@
     MINIMUM PLAYTIME: NONE
     One of the two major players in the Taypan Sector.
     Good for new players, and represents the core Hullrot experience.
-  buttonColor: FireBrick
+  buttonColor: "#a46106"
   description: |
     Stitched together from the still-warm corpses of many labor unions that were in disorganized rebellion
     against Imperial forces in the Feudal Era before the collapse of Bluespace lanes leading in and out of the
@@ -84,7 +84,7 @@
     Other factions may offer contracts or ask for your services.
     Other factions may be suspicious or immediately hostile.
     Your allies may betray you for a higher paycheck.
-  buttonColor: DarkSlateGray
+  buttonColor: DarkRed
   description: |
     A conglomerate of pirate gangs, shipbreakers, and unsavory PMC groups, the Syndicate was formed shortly
     after the initial arrival of the Empire into the Sector, disembodied station gangs and pirate reavers at
