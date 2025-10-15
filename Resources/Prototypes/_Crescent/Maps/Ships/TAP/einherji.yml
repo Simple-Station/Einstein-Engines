@@ -4,8 +4,10 @@
 - type: vessel
   id: Einherji
   name: Einherji
-  description: A heavy frontliner fighter with energy-heavy weaponry.
-  price: 30000
+  description: |
+    A heavy frontliner fighter with energy-heavy weaponry.
+    LOADOUT: 2x 400c Plasmacasters, 1x 180mm Idna Torpedo Pod
+  price: 31000
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/TAP/einherji.yml
