@@ -582,37 +582,33 @@
           node: machineFrame
   - type: ContainerContainer
     containers:
-      SpaceArtillery-CoolantSlot: !type:ContainerSlot {}
-  - type: BasicEntityAmmoProvider
-    proto: BulletMachineGunPlasmaShuttleLarge
+      gun_magazine: !type:ContainerSlot
   - type: Gun
     fireOnDropChance: 0
     fireRate: 0.7
     projectileSpeed: 70
-    selectedMode: FullAuto
+    selectedMode: Burst
     availableModes:
     - SemiAuto
-    - FullAuto
+    - Burst
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ship_perforator.ogg
     soundEmpty:
-      path: /Audio/Items/hiss.ogg
+      path: /Audio/Items/beep.ogg
   - type: HardpointAnchorableOnly
     class: Energy
     size: Large
-  - type: SpaceArtillery
-    powerUseActive: 25000
-    isCoolantRequiredToFire: true
-    coolantConsumed: 5
-    SpaceArtillery-CoolantSlot:
-            name:  SpaceArtillery-CoolantSlot
-            insertSound: /Audio/Machines/scanning.ogg
-            ejectSound: /Audio/Machines/tray_eject.ogg
-            ejectOnBreak: true
-            swap: false
-            whitelist:
-                components:
-                - Stack
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: PowerCageHardliner
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        whitelist:
+          tags:
+            - HardlinerCell
+  - type: MagazineAmmoProvider
   - type: Construction
     graph: Machine
     node: machine
