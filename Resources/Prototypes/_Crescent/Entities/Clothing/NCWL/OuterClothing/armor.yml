@@ -479,8 +479,12 @@
     sprintModifier: 0.7
   - type: HeldSpeedModifier
   - type: Reflect
-    enabled: true
+    spread: 270
     reflectProb: 0.10
+    innate: true
+    reflects:
+      - Energy
+      - NonEnergy
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitNCWLJuggernaut
   - type: StaticPrice
