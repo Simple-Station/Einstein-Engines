@@ -13,9 +13,14 @@ public sealed partial class FactionPrototype : IPrototype
     [DataField("name", required: true)] public string Name = default!;
 
     /// <summary>
-    ///     Used to add certain conditions to the faction like spawn restrictions, makes their attributed factionButton red if set or not empty.
+    ///     Used to add certain conditions to the faction like spawn restrictions. Text is red.
     /// </summary>
     [DataField("descriptionPrefix")] public string DescriptionPrefix = default!;
+
+    /// <summary>
+    ///     Used to set the color of the faction button. Default is dark gray.
+    /// </summary>
+    [DataField("buttonColor")] public Color FactionButtonColor = Color.DarkSlateGray;
 
     [DataField("description", required: true)] public string Description = default!;
 

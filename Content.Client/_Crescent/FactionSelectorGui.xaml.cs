@@ -92,6 +92,8 @@ namespace Content.Client._Crescent
                 return;
             _factionList.RemoveAllChildren();
             var factions = _prototypeManager.EnumeratePrototypes<FactionPrototype>().ToArray();
+            // sorts the factions by their weight
+            factions = factions.OrderByDescending(x => x.Weight).ToArray();
             foreach (var faction in factions)
             {
                 if (!faction.Enabled)
@@ -101,8 +103,7 @@ namespace Content.Client._Crescent
                 // SHORTENED FOR UI's sake
                 factionButton.Text = faction.ID;
 
-                if (faction.DescriptionPrefix != null)
-                    factionButton.ModulateSelfOverride = Color.Red;
+                factionButton.ModulateSelfOverride = faction.FactionButtonColor;
 
                 var factionName = new Label();
                 factionName.HorizontalAlignment = HAlignment.Center;
