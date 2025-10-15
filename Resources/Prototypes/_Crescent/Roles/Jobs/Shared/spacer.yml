@@ -4,14 +4,15 @@
   description: job-description-spacer
   playTimeTracker: JobSpacer
   weight: 10
-  startingGear: ContractorGear
+  startingGear: SpacerGear
   icon: "JobIconPassenger"
   supervisors: job-supervisors-hire
+  requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 10800
   accessGroups:
   - GeneralAccess
   special:
-  - !type:CharacterOverallTimeRequirement
-    min: 10800
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
@@ -25,7 +26,7 @@
           - Tradeband
 
 - type: startingGear
-  id: ContractorGear
+  id: SpacerGear
   equipment:
     ears: ClothingHeadsetGrey
     id: SpacerPDA
