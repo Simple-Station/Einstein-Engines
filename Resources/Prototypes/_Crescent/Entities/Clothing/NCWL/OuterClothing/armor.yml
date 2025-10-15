@@ -478,6 +478,9 @@
     walkModifier: 0.7
     sprintModifier: 0.7
   - type: HeldSpeedModifier
+  - type: Reflect
+    enabled: true
+    reflectProb: 0.10
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitNCWLJuggernaut
   - type: StaticPrice

@@ -828,6 +828,9 @@
       flatReductions:
         Blunt: 3
         Piercing: 3
+  - type: Reflect
+    enabled: true
+    reflectProb: 0.10
         Slash: 3
       coefficients:
         Blunt: 0.4
