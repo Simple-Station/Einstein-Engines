@@ -47,6 +47,16 @@
         {
             "name": "paladin-broken"
         },
+		{
+            "name": "sepulchre",
+            "directions": 4
+        },
+        {
+            "name": "sepulchre-open"
+        },
+        {
+            "name": "sepulchre-broken"
+        },
         {
             "name": "gilgamesh",
             "directions": 4

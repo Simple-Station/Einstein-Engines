@@ -15,12 +15,12 @@
     proto: null
     capacity: 6
   - type: Item
-    size: Small
+    size: Normal
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/amr_mag.rsi
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/15.2mm_mag.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -28,7 +28,7 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: MagazineVisuals
     magState: mag
-    steps: 2
+    steps: 3
     zeroVisible: false
   - type: Appearance
  
