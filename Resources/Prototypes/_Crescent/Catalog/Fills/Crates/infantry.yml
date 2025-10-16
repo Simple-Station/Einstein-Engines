@@ -170,7 +170,7 @@
     contents:
       - id: WeaponSubMachineGunGhost
         amount: 1
-      - id: MagazinePistolSmartgun
+      - id: MagazineSmgSmartgun
         amount: 2
 
 - type: entity
@@ -651,3 +651,14 @@
     contents:
       - id: SHIHG17SmartHandgrenade
         amount: 5
+
+- type: entity
+  id: CrateShinoharaC4
+  parent: GrenadeCase
+  name: shinohara C4 explosive set case
+  description: A set of C4 packaged in a stamped case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: C4
+        amount: 10

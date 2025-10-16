@@ -12,7 +12,7 @@
   canBeAntag: false
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 6000
+      min: 10800
     - !type:FactionRequirement
       factionID: "TFSC"
     - !type:CharacterTraitRequirement

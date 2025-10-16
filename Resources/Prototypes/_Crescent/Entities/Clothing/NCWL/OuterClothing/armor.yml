@@ -427,14 +427,14 @@
   - type: ExplosionResistance
     damageCoefficient: 0.7
   - type: DegradeableArmor
-    armorMaxHealth: 750
+    armorMaxHealth: 900
     armorType: Metallic
     armorRepair: HomelandAlloy
     initialModifiers:
       flatReductions:
         Blunt: 25
         Slash: 25
-        Piercing: 55
+        Piercing: 60
         Heat: 10
         Caustic: 25
   - type: ClothingSpeedModifier

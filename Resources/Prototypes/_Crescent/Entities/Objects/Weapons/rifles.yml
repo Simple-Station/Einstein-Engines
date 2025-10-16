@@ -474,7 +474,7 @@
   name: IRM DA-8 Miller 5.56x45mm
   parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponRifleMiller
-  description: A mil-grade assault rifle produced by Olywir Armaments, primarily for the Imperial Garrison and Imperial Naval Forces. Comes chambered in light rounds. All flair.
+  description: A mil-grade assault rifle produced by Olywir Armaments, primarily for the Imperial Garrison and Imperial Naval Forces. Unlike other firearms made by Olywir the miller actually stayed under budget, even if by only a few thousand credits.
   components:
   - type: Item
     shape:

@@ -357,7 +357,7 @@
     guides:
     - Cargo
 
-# shinohara
+# shinohara Station
 #
 - type: entity
   id: ComputerCargoOrdersShinoharaStation
@@ -392,9 +392,8 @@
       state: tech_key
   - type: CargoOrderConsole
     allowedGroups:
-    - shinohara
+    - shinoharastation
     - generic
-    - genericAmmo
   - type: ActiveRadio
     channels:
     - Traffic

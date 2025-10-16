@@ -1,0 +1,64 @@
+- type: entity
+  name: annoying orange
+  id: AdmemeMobOrange
+  parent: [ SimpleSpaceMobBase, FlyingMobBase, MobCombat ]
+  suffix: Admeme (if you couldnt tell already)
+  description: God this guy is fucking annoying
+  components:
+    - type: Absorbable
+    - type: InputMover
+    - type: MobMover
+    - type: HTN
+      rootTask:
+        task: SimpleHostileCompound
+      blackboard:
+        NavSmash: !type:Bool
+          true
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: _Crescent/Objects/Fun/Plushies/orange.rsi
+      layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: base
+    - type: CombatMode
+    - type: Physics
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.40
+          density: 80
+          mask:
+            - FlyingMobMask
+          layer:
+            - FlyingMobLayer
+    - type: MobState
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        99999998: Dead
+    - type: Stamina
+      critThreshold: 99999998
+    - type: MeleeWeapon
+      altDisarm: false
+      angle: 0
+      animation: WeaponArcBite
+      soundHit:
+        collection: AnnoyingOrange
+        params:
+          variation: 0.25
+      damage:
+        types:
+          Blunt: 99999998
+          Structural: 99999998
+    - type: SpamEmitSound
+      minInterval: 10
+      maxInterval: 30
+      sound:
+        collection: AnnoyingOrange
+        params:
+          variation: 0.25
+    - type: Reflect
+      reflectProb: 1
+      spread: 0

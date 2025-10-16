@@ -103,7 +103,6 @@
       path: /Audio/Weapons/Guns/Empty/empty.ogg
     fireOnDropChance: 0.3
     shotgunSpreadMultiplier: 1.5
-    shotgunProjectileCountModifier: 1.33
   - type: Wieldable
   - type: ItemSlots
     slots:
@@ -272,10 +271,10 @@
     - WeaponShotgunKammerer
   - type: Wieldable
   - type: Gun
-    shotgunSpreadMultiplier: 0.5
+    damageModifier: 1.25
   - type: ExtendDescription
     descriptionList:
-      - description: "gun-modifier-choke"
+      - description: This shotgun comes with a booster device. It deals 25% higher damage per shot.
         fontSize: 12
         color: "#ff4f00"
         requireDetailRange: false

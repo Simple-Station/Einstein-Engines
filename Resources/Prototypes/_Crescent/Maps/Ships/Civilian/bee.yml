@@ -3,10 +3,10 @@
 
 - type: vessel
   id: Bee
-  name: Bee
+  name: TS Bee
   description: |
     A variant of the Wasp, the Bee carries a 180mm Idna Launcher with two torpedoes pre-loaded, requiring frequent reloading for continuous use. It is wise to consider hit-and-run tactics with this fighter.
-    LOADOUT: 1x 180mm Idna Torpedo Launcher. 
+    LOADOUT: 1x 180mm Idna Torpedo Launcher.
     MINIMUM CREW: 1x Brave Pilot
   price: 12000
   category: Small
