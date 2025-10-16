@@ -1,0 +1,124 @@
+- type: species
+  id: Scurret
+  name: species-name-scurret
+  roundStart: false # sad...
+  prototype: MobScurret
+  sprites: MobScurretSprites
+  dollPrototype: MobMonkeyDummy
+  skinColoration: Hues
+  markingLimits: MobMonkeyMarkingLimits
+
+
+- type: speciesBaseSprites
+  id: MobScurretSprites
+  sprites:
+    Head: MobScurretHead
+    HeadTop: MobMonkeyAnyMarking
+    Chest: MobScurretTorso
+    Tail: MobScurretTail
+    Eyes: MobScurretEyes
+    LArm: MobScurretLArm
+    RArm: MobScurretRArm
+    LHand: MobScurretLHand
+    RHand: MobScurretRHand
+    LLeg: MobScurretLLeg
+    RLeg: MobScurretRLeg
+    LFoot: MobScurretLFoot
+    RFoot: MobScurretRFoot
+
+- type: humanoidBaseSprite
+  id: MobScurretHead
+  baseSprite:
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobScurretHeadMale
+  baseSprite:
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobScurretHeadFemale
+  baseSprite:
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: head_f
+
+- type: humanoidBaseSprite
+  id: MobScurretTorso
+  baseSprite:
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: MobScurretTorsoMale
+  baseSprite:
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: MobScurretTorsoFemale
+  baseSprite:
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: torso_f
+
+- type: humanoidBaseSprite
+  id: MobScurretLLeg
+  baseSprite:
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: MobScurretLArm
+  baseSprite:
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: MobScurretLHand
+  baseSprite:
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: MobScurretLFoot
+  baseSprite:
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: MobScurretRLeg
+  baseSprite:
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: MobScurretRArm
+  baseSprite:
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: MobScurretRHand
+  baseSprite:
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: MobScurretRFoot
+  baseSprite:
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: r_foot
+
+- type: humanoidBaseSprite
+  id: MobScurretTail
+  baseSprite:
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: tail
+
+- type: humanoidBaseSprite
+  id: MobScurretEyes
+  baseSprite:
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: eyes
+

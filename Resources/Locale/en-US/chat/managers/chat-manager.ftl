@@ -185,3 +185,9 @@ chat-speech-verb-Psychomantic-1 = resonates
 chat-speech-verb-Psychomantic-2 = projects
 chat-speech-verb-Psychomantic-3 = impresses
 chat-speech-verb-Psychomantic-4 = radiates
+
+chat-speech-verb-name-wawa = Wawa
+chat-speech-verb-wawa-1 = intones
+chat-speech-verb-wawa-2 = states
+chat-speech-verb-wawa-3 = declares
+chat-speech-verb-wawa-4 = ponders
