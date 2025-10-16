@@ -13,8 +13,9 @@ namespace Content.Server.Shuttles.Components
 
         /// <summary>
         /// Thrust gets multiplied by this value if it's for braking.
+        /// Hullrot edit: buffed to 3f from 1.5f. .2 | 2025
         /// </summary>
-        public const float BrakeCoefficient = 1.5f;
+        public const float BrakeCoefficient = 3f;
 
         /// <summary>
         /// Maximum velocity assuming unupgraded, tier 1 thrusters
