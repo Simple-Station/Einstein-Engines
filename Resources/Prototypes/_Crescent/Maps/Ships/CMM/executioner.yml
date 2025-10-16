@@ -1,0 +1,37 @@
+# Author Info
+# Discord: memetasticproductions
+
+- type: vessel
+  id: Executioner
+  name: TS Executioner
+  description: |
+    An experimental, high-tech NT design thought lost to time, now in the hands of the Gliessian Sheriffs.
+    LOADOUT: 2x 800c "Rimward" Plasma Gatling, 2x NT-6 "Sumitomo" 48mm Missile Launcher
+    MINIMUM CREW: 1x Pilot, 1x Loader
+  price: 100000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/CMM/executioner.yml
+
+- type: gameMap
+  id: Executioner
+  mapName: 'Executioner'
+  mapPath: /Maps/_Crescent/Shuttles/CMM/executioner.yml
+  minPlayers: 0
+  stations:
+    Executioner:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'Executioner {1}'
+          nameGenerator:
+           !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-gunship
+        - type: VesselDescription
+          description: A remnant of a more beautiful age. Fly high, and fly high well.

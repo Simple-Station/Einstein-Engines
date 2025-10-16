@@ -69,7 +69,7 @@
   - type: Explosive
     explosionType: Fragmentation
     maxIntensity: 100
-    intensitySlope: 4
+    intensitySlope: 5.5
     totalIntensity: 100
     canCreateVacuum: false
   - type: PointLight

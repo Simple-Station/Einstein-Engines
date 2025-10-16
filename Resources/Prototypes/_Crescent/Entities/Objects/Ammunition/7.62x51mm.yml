@@ -19,7 +19,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/762_drum.rsi
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/7.62mm_drum.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -27,7 +27,7 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: MagazineVisuals
     magState: mag
-    steps: 2
+    steps: 3
     zeroVisible: false
   - type: Appearance
 
@@ -109,7 +109,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/762_pan.rsi
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/7.62mm_pan.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]

@@ -4,7 +4,9 @@
 - type: vessel
   id: Homesteader
   name: ICM Homesteader
-  description: An entry-level colonization corvette.
+  description: |
+    An entry-level jack-of-all traits corvette-sized hull, with a research lab, Medbay, Kitchen/Bar and, a Mining bay.
+    MINIMUM CREW: 1x Pilot
   price: 50000
   category: Small
   group: Civilian

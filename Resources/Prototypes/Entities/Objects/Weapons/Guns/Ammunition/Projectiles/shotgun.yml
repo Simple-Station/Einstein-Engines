@@ -10,25 +10,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 43
-    harmorPenetration: 15
-    stoppingPower : 12
-
-- type: entity
-  id: PelletShotgunSabot
-  name: pellet (12g sabot)
-  categories: [ HideSpawnMenu ]
-  parent: BaseBullet
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    state: slug
-  - type: Projectile
-    damage:
-      types:
-        Piercing: 20
-    harmorPenetration: 30
-    stoppingPower : 8 # overpenetration
+        Piercing: 80
 
 - type: entity
   id: PelletShotgunBeanbag
@@ -58,9 +40,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 15
-    harmorPenetration: 3
-    stoppingPower: 2
+        Piercing: 22 # 22 x 8 = 174
 
 - type: entity
   id: PelletShotgunSpread
@@ -69,8 +49,8 @@
   components:
   - type: ProjectileSpread
     proto: PelletShotgun
-    count: 6
-    spread: 15
+    count: 8
+    spread: 12.5
 
 - type: entity
   id: PelletShotgunIncendiary
@@ -84,8 +64,8 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 3
-        Heat: 7
+        Piercing: 15 # 15 x 8 = 120
+        Heat: 4 # 5 x 8 = 32
   - type: IgnitionSource
     ignited: true
 
@@ -96,7 +76,7 @@
   components:
   - type: ProjectileSpread
     proto: PelletShotgunIncendiary
-    count: 6
+    count: 8
     spread: 15
 
 - type: entity
@@ -216,8 +196,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 10
-    harmorPenetration: 15
+        Piercing: 23 # 23 x 8 = 182
+    harmorPenetration: 12
 
 - type: entity
   id: PelletShotgunUraniumSpread
@@ -226,7 +206,7 @@
   components:
   - type: ProjectileSpread
     proto: PelletShotgunUranium
-    count: 5
+    count: 8
     spread: 6
 
 - type: entity

@@ -13,17 +13,14 @@
     sprite: _Crescent/Clothing/Corpo/Head/eyehelmet.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/Corpo/Head/eyehelmet.rsi
-  - type: DegradeableArmor
-    armorMaxHealth: 1250
-    armorType: Metallic
-    armorRepair: PlasteelPlate
-    initialModifiers:
-      flatReductions:
-        Blunt: 5
-        Slash: 5
-        Piercing: 8
-        Heat: 3
-        Caustic: 15
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Caustic: 0.9
 
 - type: entity
   parent: ClothingHeadHelmetBasic
@@ -31,6 +28,7 @@
   name: PTA KORUND-X2 ballistic helmet
   description: A ballistic helmet of Pang Tai design. An electronized visor feeds combat data to the wearer.
   components:
+  - type: FlashImmunity
   - type: HideLayerClothing
     slots:
     - Hair
@@ -39,17 +37,16 @@
     sprite: _Crescent/Clothing/Corpo/Head/korundhelmet.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/Corpo/Head/korundhelmet.rsi
-  - type: DegradeableArmor
-    armorMaxHealth: 1500
-    armorType: Metallic
-    armorRepair: NTCeramic
-    initialModifiers:
-      flatReductions:
-        Blunt: 5
-        Slash: 5
-        Piercing: 13
-        Heat: 3
-        Caustic: 15
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.85
+        Caustic: 0.85
+  - type: StaticPrice
+    price: 300
 
 - type: entity
   parent: ClothingHeadHelmetBasic
@@ -66,17 +63,14 @@
     sprite: _Crescent/Clothing/Corpo/Head/corvid.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/Corpo/Head/corvid.rsi
-  - type: DegradeableArmor
-    armorMaxHealth: 1500
-    armorType: Metallic
-    armorRepair: Durathread
-    initialModifiers:
-      flatReductions:
-        Blunt: 5
-        Slash: 5
-        Piercing: 12
-        Heat: 3
-        Caustic: 15
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Caustic: 0.9
 
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
@@ -101,12 +95,12 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.95
-        Slash: 0.95
-        Piercing: 0.95
-        Heat: 0.95
-        Radiation: 0.95
-        Caustic: 0.95
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+        Caustic: 0.9
   - type: EyeProtection
 
 # SUITS
@@ -127,19 +121,19 @@
   - type: ExplosionResistance
     damageCoefficient: 0.6
   - type: DegradeableArmor
-    armorMaxHealth: 2500
-    armorType: Metallic
+    armorMaxHealth: 1500
+    armorType: Ceramic
     armorRepair: NTCeramic
     initialModifiers:
       flatReductions:
         Blunt: 15
         Slash: 15
-        Piercing: 35
-        Heat: 5
+        Piercing: 60
+        Heat: 15
         Caustic: 15
   - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.85
+    walkModifier: 0.90
+    sprintModifier: 0.90
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitPangTai
   - type: StaticPrice
@@ -185,7 +179,7 @@
     sprite: _Crescent/Clothing/Corpo/OuterClothing/carapace.rsi
   - type: DegradeableArmor
     armorMaxHealth: 2000
-    armorType: Ceramic
+    armorType: Ceramic  
     armorRepair: NTCeramic
     initialModifiers:
       flatReductions:
@@ -200,6 +194,8 @@
   - type: ExplosionResistance
     damageCoefficient: 0.50
   - type: GroupExamine
+  - type: StaticPrice
+    price: 2000
 
 - type: entity
   parent: ClothingOuterArmorBasic
@@ -213,7 +209,7 @@
     sprite: _Crescent/Clothing/Corpo/OuterClothing/pangtaivest.rsi
   - type: DegradeableArmor
     armorMaxHealth: 1500
-    armorType: Metallic
+    armorType: Ceramic
     armorRepair: PlasteelEncasedKevlar
     initialModifiers:
       flatReductions:
@@ -228,3 +224,35 @@
   - type: ExplosionResistance
     damageCoefficient: 0.80
   - type: GroupExamine
+
+- type: entity
+  parent: [ClothingOuterHardsuitBase, StreeCredRedeemableHigh]
+  id: ClothingOuterHardsuitHighsecIndependent
+  name: SHI SVBT-2 combat hardsuit
+  description: A modular combat hardsuit developed by Shinohara Heavy Industries. Sold to elite mercs and corporate deathsquads everywhere.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/OuterClothing/corpsecinde.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/OuterClothing/corpsecinde.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 900
+    armorType: Ceramic
+    armorRepair: NTCeramic
+    initialModifiers:
+      flatReductions:
+        Blunt: 25
+        Slash: 35
+        Piercing: 70
+        Heat: 15
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.85
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitCorpsec

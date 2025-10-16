@@ -262,3 +262,14 @@
       - id: MagazineFlak
         amount: 4
 
+- type: entity
+  id: CrateJeongAmmo
+  parent: N14CrateAluminium
+  name: 70mm 'Jeong' missile drum box crate
+  description: 5 missile drums, to be used in high-firerate missile launchers.
+  components:
+  - type: StorageFill
+    contents:
+      - id: SwarmrocketClip
+        amount: 5
+

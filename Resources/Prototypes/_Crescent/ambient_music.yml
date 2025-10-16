@@ -71,18 +71,60 @@
     - /Audio/_Crescent/Ambience/CombatMode/NCWL_2.ogg
 
 
-# TFSC | STATE: happy with em
+### TFSC (Balkanized) | STATE: redone by Baldy, needs custom tracks for each subfaction - leaving GSC with their Brigador OST
+
+#GSC | STATE: Has their Brigador OST
 - type: ambientMusic
-  id: combatmodeTFSC
+  id: combatmodeGSC
   priority: 3
   sound:
-    collection: combatmodeTFSC
+    collection: combatmodeGSC
 
 - type: soundCollection
-  id: combatmodeTFSC
+  id: combatmodeGSC
   files:
     - /Audio/_Crescent/Ambience/CombatMode/TFSC_1.ogg
     - /Audio/_Crescent/Ambience/CombatMode/TFSC_2.ogg
+    
+# SAW | STATE: Heavy industrial tracks
+- type: ambientMusic
+  id: combatmodeSAW
+  priority: 3
+  sound:
+    collection: combatmodeSAW
+
+- type: soundCollection
+  id: combatmodeSAW
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/SAW_1.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/SAW_2.ogg
+    
+#IPM | STATE: Left with default TFSC track, needs replacement
+- type: ambientMusic
+  id: combatmodeIPM
+  priority: 3
+  sound:
+    collection: combatmodeIPM
+
+- type: soundCollection
+  id: combatmodeIPM
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/IPM_1.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/IPM_2.ogg
+
+#CD | STATE: Left with default TFSC track
+- type: ambientMusic
+  id: combatmodeCD
+  priority: 3
+  sound:
+    collection: combatmodeCD
+
+- type: soundCollection
+  id: combatmodeCD
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/TFSC_1.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/TFSC_2.ogg
+
 
 # DSM | STATE: theyre ok
 - type: ambientMusic
@@ -124,6 +166,32 @@
   files:
     - /Audio/_Crescent/Ambience/CombatMode/TAP_1.ogg
     - /Audio/_Crescent/Ambience/CombatMode/TAP_2.ogg
+
+#Spacers/Independent | STATE: .2 approved
+- type: ambientMusic
+  id: combatmodeIND
+  priority: 3
+  sound:
+    collection: combatmodeIND
+
+- type: soundCollection
+  id: combatmodeIND
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/fallback.ogg
+
+#Gliess Santo | STATE: Could be better
+- type: ambientMusic
+  id: combatmodeGS
+  priority: 3
+  sound:
+    collection: combatmodeGS
+
+- type: soundCollection
+  id: combatmodeGS
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/GS_1.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/GS_2.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/GS_3.ogg
 
 ## DEPRECATED!!! AMBIENT MUSIC TRACKS
 ## ID MUST BE IDENTICAL TO BIOME ID FROM space_biomes.yml!
@@ -384,6 +452,19 @@
    - /Audio/_Crescent/Stations/TFSC/Jackal/jackal_2.ogg
    - /Audio/_Crescent/Stations/TFSC/Jackal/jackal_3.ogg
    - /Audio/_Crescent/Stations/TFSC/Jackal/jackal_4.ogg
+
+#DOCHENSKAYA
+- type: ambientMusic
+  id: DochenskayaMusic
+  priority: 1
+  sound:
+    collection: DochenskayaMusic
+
+- type: soundCollection
+  id: DochenskayaMusic
+  files:
+   - /Audio/_Crescent/Stations/TFSC/Dochenskaya/dochenskaya_1.ogg
+   - /Audio/_Crescent/Stations/TFSC/Dochenskaya/dochenskaya_2.ogg
 
 #COUNTSMAN
 - type: ambientMusic

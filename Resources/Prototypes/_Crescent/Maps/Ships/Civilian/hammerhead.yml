@@ -4,7 +4,10 @@
 - type: vessel
   id: Hammerhead
   name: PTA Hammerhead
-  description: A common warship designed by Pang Tai Arms, intended as a generalized frontliner bessel.
+  description: |
+    Common warship designed by Pang Tai Arms, intended as a generalized frontliner vessel, having medical, cargo, mining, and security modules.
+    LOADOUT: 6x 20x135mm PDT, 2x 100m "Lancer" Missile Lanuchers
+    MINIMUM CREW: 1x Pilot, 1x Gunner
   price: 160000
   category: Large
   group: Civilian

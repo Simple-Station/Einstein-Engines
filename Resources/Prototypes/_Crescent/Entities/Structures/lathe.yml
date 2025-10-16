@@ -252,6 +252,10 @@
     idleState: fab-idle
     runningState: fab-active
     staticRecipes:
+      - DrumMagazineShotgunSlug
+      - DrumMagazineShotgunEmpty
+      - DrumMagazineShotgunBuck
+      - MagazineSmgSmartgun
       - MagazineHeavyRifleBoxmag
       - MagazinePistolHeavy
       - MagazineBoxHeavyPistol
@@ -551,6 +555,7 @@
       - WeaponPistolComplianceImperial
       - CovetorLPC
       - IbisLPC
+      - TorturerLPC
       - SunesisLPC
       - ClothingBeltSheathDSMRapier
       - ClothingBeltSheathDSMSabre
@@ -560,6 +565,8 @@
       - LaelapsLPC
       - PaladinFlatpack
       - WandererFlatpack
+      - WeaponMechCombatImperialSMG
+      - WeaponMechCombatImperialAutolaser
       - WeaponMechCombatPlasmaRifle
       - WeaponMechCombatPlasmaCannon
       - WeaponRifleDSMLegionnaire
@@ -572,7 +579,7 @@
       - ClothingOuterHardsuitHunterElite
       - WeaponLauncherM320
       - TriumphantLPC
-      - PadparadschaLPC
+      - SuzerainLPC
       - ClothingHeadHelmetNCWLEVA
       - ClothingOuterNCWLEVA
       - ClothingHeadHatNCWLCapsoft

@@ -1,4 +1,25 @@
 - type: entity
+  id: MagazineHeavyRifle
+  name: 16-round heavy magazine (12.7×99mm USM)
+  parent: BaseMagazineHeavyRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeHeavyRifle
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/12.7mm_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
   id: CartridgeHeavyRifle
   name: cartridge (12.7×99mm USM)
   parent: BaseCartridgeHeavyRifle
@@ -29,7 +50,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/heavy_box.rsi
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/12.7mm_box.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]

@@ -185,15 +185,18 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/charge_mag.rsi
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/6x24mm_mag.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-1
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
   - type: MagazineVisuals
     magState: mag
-    steps: 9
+    steps: 17
     zeroVisible: false
   - type: Appearance
 
@@ -205,12 +208,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge6x24mmCharge
-  - type: Sprite
-    layers:
-    - state: yellow
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 #---------- 6x24mm Railgun (Concentrated) ----------  
 - type: entity
@@ -220,12 +217,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge6x24mmConcentrated
-  - type: Sprite
-    layers:
-    - state: red
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 #---------- 6x24mm Railgun (Ion) ----------  
 - type: entity
@@ -235,12 +226,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge6x24mmIon
-  - type: Sprite
-    layers:
-    - state: blue
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 #---------- 6x24mm Railgun (Incendiary) ----------  
 - type: entity
@@ -250,12 +235,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge6x24mmIncendiary
-  - type: Sprite
-    layers:
-    - state: orange
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
       
 #---------- 6x24mm Railgun (Shock) ----------  
 - type: entity
@@ -265,9 +244,3 @@
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge6x24mmShock
-  - type: Sprite
-    layers:
-    - state: green
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]

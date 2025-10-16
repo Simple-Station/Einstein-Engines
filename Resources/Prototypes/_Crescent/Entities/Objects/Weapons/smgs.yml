@@ -1,4 +1,105 @@
 - type: entity
+  name: NCWL DS3 Militant 9x39mm
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
+  id: WeaponSubMachineGunMilitant
+  description: A 9x39 submachinegun designed for the NCWL internal police, comes with a huge supressor that makes it a pain in the ass to holster.
+  components:
+  - type: Item
+    shape:
+    - 0,0,5,1
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/militant.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/militant.rsi
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineCaselessRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineCaselessRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeCaselessRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeCaselessRifle
+  - type: Gun
+    availableModes:
+    - SemiAuto
+    - FullAuto
+    fireRate: 7
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/supressed_2/supressed_gunshot_2.ogg
+      params:
+        volume: -10
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+
+- type: entity
+  name: PTA T3 Ghost 12mm
+  parent: [BaseWeaponSubMachineGun, BaseGunWieldable, StreeCredRedeemable]
+  id: WeaponSubMachineGunGhost
+  description: A internally supressed supressed SMG, chambered in 12mm Smart.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/ghost.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    fireRate: 6
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/supressed_2/supressed_gunshot_2.ogg
+      params:
+        volume: -10
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineSmgSmartgun
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineSmgSmartgun
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol12mm
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistolSmart
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 400
+
+
+- type: entity
   name: CDT C-20R Corsair 11mm
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunCorsair

@@ -4,7 +4,10 @@
 - type: vessel
   id: Kite
   name: ICM Kite
-  description: A small all-rounder shuttle with expedition capabilities for beginner pilots, armed with dual plasmacasters. Expedition-worthy.
+  description: |
+    A small all-rounder shuttle with expedition capabilities for beginner pilots, armed with dual plasmacasters.
+    LOADOUT: 2x SHI 400c  Plasma Bolt Repeater
+    MINIMUM CREW: 1x Pilot
   price: 35000
   category: Small
   group: Civilian

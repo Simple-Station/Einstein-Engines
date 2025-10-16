@@ -132,6 +132,12 @@
     whitelist:
       tags:
       - CartridgeRifle
+  - type: ExtendDescription
+    descriptionList:
+      - description: This rifle comes with a booster device. It deals 25% higher damage per shot.
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
 
 - type: entity
   name: IRM DA-11 legionnaire 7.62x51mm
@@ -184,10 +190,72 @@
   - type: Appearance
 
 - type: entity
-  name: PTA T3 Whisper 9x39mm
+  name: PTA T4-Pro Vintorez 9x39mm
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
+  id: WeaponRifleVintorez
+  description: A robust rifle with an inbuilt suppressor. equipped with a ProKit for the T4 rifle made by PTA, trading rate of fire for damage.
+  components:
+  - type: Item
+    shape:
+    - 0,0,5,1
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/vintorez.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/vintorez.rsi
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineCaselessRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineCaselessRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeCaselessRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeCaselessRifle
+  - type: Gun
+    damageModifier: 1.35
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    - Burst
+    burstFireRate: 24
+    burstCooldown: 0.5
+    fireRate: 6
+    shotsPerBurst: 2
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/supressed_2/supressed_gunshot_2.ogg
+      params:
+        volume: -10
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: ExtendDescription
+    descriptionList:
+      - description: This rifle comes with a extended barrel. It deals 35% higher damage per shot.
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
+
+- type: entity
+  name: PTA T4 Whisper 9x39mm
   parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponSubMachineGunPTAAsVal
-  description: A robust rifle with an inbuilt suppressor. Features a special fast-burst mode to increase hit probability. Chambered in 9x39mm caseless rounds.
+  description: A fast shooting rifle with an inbuilt suppressor, used by special ops units all over Taypan. Chambered in 9x39mm caseless rounds.
   components:
   - type: Item
     shape:
@@ -220,13 +288,10 @@
           tags:
             - CartridgeCaselessRifle
   - type: Gun
-    shotsPerBurst: 2
     availableModes:
-    - Burst
+    - SemiAuto
     - FullAuto
-    burstFireRate: 24
-    burstCooldown: 0.5
-    fireRate: 6
+    fireRate: 8
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/supressed_2/supressed_gunshot_2.ogg
       params:
@@ -312,6 +377,14 @@
     sprite: _Crescent/Objects/Weapons/Guns/goro.rsi
   - type: Gun
     fireRate: 3.75
+    selectedMode: Burst
+    availableModes:
+      - SemiAuto
+      - Burst
+      - FullAuto
+    shotsPerBurst: 3
+    burstFireRate: 12
+    burstCooldown: 1.5
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/rifle_1/rifle_gunshot_2.ogg
   - type: ChamberMagazineAmmoProvider
@@ -409,7 +482,7 @@
   name: IRM DA-8 Miller 5.56x45mm
   parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponRifleMiller
-  description: A mil-grade assault rifle produced by Olywir Armaments, primarily for the Imperial Garrison and Imperial Naval Forces. Comes chambered in light rounds. All flair.
+  description: A mil-grade assault rifle produced by Olywir Armaments, primarily for the Imperial Garrison and Imperial Naval Forces. Unlike other firearms made by Olywir the miller actually stayed under budget, even if by only a few thousand credits.
   components:
   - type: Item
     shape:
@@ -645,9 +718,13 @@
   - type: Gun
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/M16/rifle_gunshot_2.ogg
-    selectedMode: SemiAuto
+    selectedMode: Burst
     availableModes:
       - SemiAuto
+      - Burst
+    shotsPerBurst: 2
+    burstFireRate: 24
+    burstCooldown: 0.75
   - type: ItemSlots
     slots:
       gun_magazine:

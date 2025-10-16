@@ -2,7 +2,7 @@
   name: chainsaw
   parent: BaseItem
   id: Chainsaw
-  description: A very large chainsaw. Usually you use this for cutting down trees... usually.
+  description: We will send unto them... only you. Rip and tear, until it is done.
   components:
   - type: Wieldable
     wieldSound: !type:SoundPathSpecifier
@@ -21,14 +21,14 @@
       types:
         Slash: 4
         Blunt: 4
-        Structural: 4
+        Structural: 10
     heavyDamageBaseModifier: 1
-    heavyStaminaCost: 4
+    heavyStaminaCost: 10
     heavyRateModifier: 0.33
     clickPartDamageMultiplier: 1.5
     lightRangeModifier: 1.5
     maxTargets: 3
-    angle: 160
+    angle: 10
     soundHit:
       path: /Audio/Weapons/chainsaw.ogg
       params:
@@ -36,8 +36,9 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Slash: 8
-        Structural: 4
+        Slash: 4
+        Blunt: 4
+        Structural: 20
   - type: Item
     size: Normal
     shape:
