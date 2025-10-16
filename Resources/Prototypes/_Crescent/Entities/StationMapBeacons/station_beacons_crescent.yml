@@ -370,15 +370,6 @@
 
 - type: entity
   parent: DefaultStationBeaconEngineering
-  id: StationBeaconCrescentEngine
-  name: map beacon
-  suffix: Engine
-  components:
-    - type: NavMapBeacon
-      defaultText: station-beacon-crescent-engine
-
-- type: entity
-  parent: DefaultStationBeaconEngineering
   id: StationBeaconCrescentAME
   name: map beacon
   suffix: AME
