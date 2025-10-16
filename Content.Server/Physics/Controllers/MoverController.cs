@@ -444,13 +444,15 @@ namespace Content.Server.Physics.Controllers
                     if (brakeInput.Equals(0f))
                         _thruster.DisableLinearThrusters(shuttle);
                 }
-                else
+                else //when we are NOT braking and we are wanting to move in a direction by holding a key down.
                 {
                     PhysicsSystem.SetSleepingAllowed(shuttleUid, body, false);
                     var angle = linearInput.ToWorldAngle();
                     var linearDir = angle.GetDir();
                     var dockFlag = linearDir.AsFlag();
                     var totalForce = Vector2.Zero;
+                    //hullrot edit: checking shuttle velocity so we add braking force when we're moving opposite a direction.
+                    var shuttleVelocity = (-shuttleNorthAngle).RotateVec(body.LinearVelocity);
 
                     // Won't just do cardinal directions.
                     foreach (DirectionFlag dir in Enum.GetValues(typeof(DirectionFlag)))
@@ -477,27 +479,39 @@ namespace Content.Server.Physics.Controllers
                         var index = (int) Math.Log2((int) dir);
                         var thrust = shuttle.LinearThrust[index];
 
-                        switch (dir)
+                        switch (dir) // 1. this is effectively checking what keys we're holding down,
                         {
                             case DirectionFlag.North:
-                                force.Y += thrust;
+                                if (shuttleVelocity.Y < 0f)
+                                    force.Y += thrust * ShuttleComponent.BrakeCoefficient;
+                                else
+                                    force.Y += thrust;
                                 break;
                             case DirectionFlag.South:
-                                force.Y -= thrust;
+                                if (shuttleVelocity.Y > 0f)
+                                    force.Y -= thrust * ShuttleComponent.BrakeCoefficient;
+                                else
+                                    force.Y -= thrust;
                                 break;
                             case DirectionFlag.East:
-                                force.X += thrust;
+                                if (shuttleVelocity.X < 0f)
+                                    force.X += thrust * ShuttleComponent.BrakeCoefficient;
+                                else
+                                    force.X += thrust;
                                 break;
                             case DirectionFlag.West:
-                                force.X -= thrust;
+                                if (shuttleVelocity.X > 0f)
+                                    force.X -= thrust * ShuttleComponent.BrakeCoefficient;
+                                else
+                                    force.X -= thrust;
                                 break;
                             default:
                                 throw new ArgumentOutOfRangeException($"Attempted to apply thrust to shuttle {shuttleUid} along invalid dir {dir}.");
                         }
 
-                        _thruster.EnableLinearThrustDirection(shuttle, dir);
-                        var impulse = force * linearInput.Length();
-                        totalForce += impulse;
+                        _thruster.EnableLinearThrustDirection(shuttle, dir); // 2. turning on the thruster sprites...
+                        var impulse = force * linearInput.Length(); // 3. creating an impulse value from force (important!)
+                        totalForce += impulse; // 4. and adding that thrust to totalForce, which is then applied at the end.
                     }
 
                     var forceMul = frameTime * body.InvMass;
