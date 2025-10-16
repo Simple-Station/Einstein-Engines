@@ -4,7 +4,7 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 10/13/2025 00:39:49
+  time: 10/16/2025 16:40:15
   entityCount: 247
 maps: []
 grids:
@@ -265,6 +265,9 @@ entities:
             386: -3,-11
             392: -3,-6
             395: -1,-12
+            428: -3,-11
+            434: -3,-6
+            437: -1,-12
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -291,6 +294,9 @@ entities:
             398: 1,-12
             404: 3,-11
             410: 3,-6
+            440: 1,-12
+            446: 3,-11
+            452: 3,-6
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -317,6 +323,9 @@ entities:
             377: -2,3
             384: -3,-11
             389: -3,-8
+            419: -2,3
+            426: -3,-11
+            431: -3,-8
         - node:
             color: '#FFFFFFFF'
             id: LatticeCornerSE
@@ -349,6 +358,9 @@ entities:
             374: 2,3
             403: 3,-11
             407: 3,-8
+            416: 2,3
+            445: 3,-11
+            449: 3,-8
         - node:
             id: LatticeEdgeE
           decals:
@@ -392,6 +404,11 @@ entities:
             388: -3,-8
             390: -3,-6
             393: -1,-12
+            418: -2,3
+            425: -3,-11
+            430: -3,-8
+            432: -3,-6
+            435: -1,-12
         - node:
             id: LatticeEdgeN
           decals:
@@ -452,6 +469,16 @@ entities:
             399: 3,-12
             401: 3,-11
             408: 3,-6
+            412: 1,4
+            421: -1,4
+            423: -3,-12
+            427: -3,-11
+            433: -3,-6
+            436: -1,-12
+            438: 1,-12
+            441: 3,-12
+            443: 3,-11
+            450: 3,-6
         - node:
             color: '#FFFFFFFF'
             id: LatticeEdgeN
@@ -515,6 +542,16 @@ entities:
             387: -3,-8
             400: 3,-11
             405: 3,-8
+            411: 1,4
+            413: 1,5
+            414: 2,3
+            417: -2,3
+            420: -1,4
+            422: -1,5
+            424: -3,-11
+            429: -3,-8
+            442: 3,-11
+            447: 3,-8
         - node:
             color: '#FFFFFFFF'
             id: LatticeEdgeS
@@ -564,6 +601,11 @@ entities:
             402: 3,-11
             406: 3,-8
             409: 3,-6
+            415: 2,3
+            439: 1,-12
+            444: 3,-11
+            448: 3,-8
+            451: 3,-6
         - node:
             color: '#FFFFFFFF'
             id: LatticeEdgeW
@@ -1763,6 +1805,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,2.5
       parent: 1
+    - type: Anchorable
+      flags: Anchorable
     - type: ApcPowerReceiver
       powerLoad: 5000
     - type: ContainerContainer
@@ -1788,7 +1832,7 @@ entities:
           occludes: True
           ent: null
     - type: Battery
-      startingCharge: 12502.948
+      startingCharge: 12233.924
     - type: ApcPowerReceiverBattery
       enabled: True
 - proto: Screwdriver
