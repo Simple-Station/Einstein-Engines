@@ -312,10 +312,10 @@
     zeroVisible: true
   - type: Gun
     minAngle: 1
-    maxAngle: 19
-    angleIncrease: 6
+    maxAngle: 10
+    angleIncrease: 2
     angleDecay: 7
-    fireRate: 3
+    fireRate: 6 #on par with smgs of T2 tech. See Liberator.
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto

@@ -69,7 +69,9 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 20
+        Piercing: 26 #only 2 more than 11mm to balance out the higher capacity magazines and common sense
+    harmorPenetration: 10 #Depleted uranium core and bigger caliber
+    stoppingPower: 10 
 
 - type: entity
   id: CartridgePistol12mm

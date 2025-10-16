@@ -115,6 +115,13 @@
     walkModifier: 0.7
     sprintModifier: 0.6
   - type: HeldSpeedModifier
+  - type: Reflect
+    spread: 270
+    reflectProb: 0.10
+    innate: true
+    reflects:
+      - Energy
+      - NonEnergy
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSHIJuggernaut
   - type: StaticPrice

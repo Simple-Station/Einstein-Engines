@@ -200,7 +200,7 @@
         friction: 0.2
   - type: Reflect
     spread: 270
-    reflectProb: 0.03
+    reflectProb: 0.00
     innate: true
     reflects:
       - Energy
@@ -240,7 +240,7 @@
     unequipDelay: 4
   - type: Reflect
     spread: 270
-    reflectProb: 0.04
+    reflectProb: 0.00
     innate: true
     reflects:
       - Energy
