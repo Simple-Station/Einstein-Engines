@@ -595,13 +595,15 @@
     shape:
     - 0,0,4,1
   - type: Gun
-    fireRate: 1
+    fireRate: 1.25
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_1.ogg
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
     shotgunSpreadMultiplier: 0.5
+  - type: UseDelay
+    delay: 1
   - type: BallisticAmmoProvider
     whitelist:
       tags:

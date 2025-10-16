@@ -16,7 +16,7 @@
       sprite: Objects/Magic/magicactions.rsi
       state: knock
     event: !type:LesserHackSpellEvent
-      speech: GLAS TITIM!
+      speech: OPEN!!!
 
 - type: entity
   id: ActionLesserKnockdown
@@ -25,14 +25,14 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: WorldTargetAction
-    useDelay: 10
+    useDelay: 30
     range: 15
     itemIconStyle: BigAction
     icon:
       sprite: Objects/Weapons/Melee/baseball_bat.rsi
       state: icon
     event: !type:LesserKnockdownSpellEvent
-      speech: LA'AL PARAMITA!
+      speech: Fall.
       range: 3
       knockdownForce: 40
       staminaDamage: 99
@@ -44,14 +44,14 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: WorldTargetAction
-    useDelay: 12.5
+    useDelay: 40
     range: 15
     itemIconStyle: BigAction
     icon:
       sprite: Objects/Magic/magicactions.rsi
       state: gib
     event: !type:LesserSuppressSpellEvent
-      speech: SCHARFER HALT!
+      speech: YOU WILL BLEED!!!
       range: 2
       bleedStacks: 6
 
@@ -68,7 +68,7 @@
       sprite: Objects/Magic/magicactions.rsi
       state: gib
     event: !type:GreaterSuppressSpellEvent
-      speech: GIESTIG STIRB!
+      speech: I BLEED!!!
       range: 7
       bleedStacks: 10
       selfDamage: 5
