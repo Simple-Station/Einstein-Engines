@@ -39,7 +39,7 @@ station-beacon-crescent-commissary = Commissary
 station-beacon-crescent-dispensary = Dispensary
 station-beacon-crescent-deedconsole = Deed Console
 
-station-beacon-crescent-engine = Engine
+station-beacon-crescent-engineering = Engineering
 station-beacon-crescent-ame = AME
 station-beacon-crescent-solars = Solars
 station-beacon-crescent-powermonitoring = Power Monitor

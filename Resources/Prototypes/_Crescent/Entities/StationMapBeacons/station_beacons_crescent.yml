@@ -163,7 +163,7 @@
   suffix: AmmoStorage
   components:
     - type: NavMapBeacon
-      defaultText: station-beacon-crescent-ammostoragae
+      defaultText: station-beacon-crescent-ammostorage
 
 - type: entity
   parent: DefaultStationBeaconSecurity
