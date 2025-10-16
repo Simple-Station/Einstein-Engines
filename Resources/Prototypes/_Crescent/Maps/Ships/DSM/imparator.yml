@@ -1,0 +1,34 @@
+- type: vessel
+  id: Imparator
+  name: DSM Imparator
+  description: |
+    An imperial artillery ship, made to shoot from the backlines and provide firepower from a distance. It suffers from close-quarters combat, only having 1 PDT as a secondary weapon. 
+    LOADOUT: 1x SHI 120mm Cannon, 1x SHI 20x135mm PDT
+    MINIMUM CREW: 1x Pilot, 1x Gun Loader (optional)
+  price: 37000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/DSM/imparator.yml
+
+- type: gameMap
+  id: Imparator
+  mapName: 'DSM Imparator'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/imparator.yml
+  minPlayers: 0
+  stations:
+    Imparator:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: fighter
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Imparator {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter
+        - type: VesselDescription
+          description: Wise ritters know that this small but powerful ship can cause some righteous trouble.

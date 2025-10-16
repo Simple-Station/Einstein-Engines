@@ -80,6 +80,7 @@ research-technology-imperial-laelaps = Imperial Assault Frigate
 research-technology-imperial-nobleweapons = Imperial Nobility Swords
 research-technology-imperial-sunesis = Imperial Exploration Cruiser
 research-technology-imperial-frigate = Imperial Assault Frigate
+research-technology-imperial-antiinfantrymechguns = Anti Infantry Mechasuit Weaponry
 research-technology-imperial-plasmamechguns = Plasma Mechasuit Weaponry
 research-technology-imperial-paladin = Imperial Combat Exosuit
 research-technology-imperial-wanderer = Imperial Scout Exosuit
@@ -89,6 +90,7 @@ research-technology-imperial-srmimitation = Sixth Fireteam Imitation
 research-technology-imperial-bomblauncher = M320 Launcher
 research-technology-imperial-triumphant = Imperial Cruiser
 research-technology-imperial-suzerain = Imperial Siege Battlecruiser
+research-technology-imperial-torturer = Imperial Stealth Bomber
 
 # NCWL
 research-technology-communard-clothes = Communard Clothes
