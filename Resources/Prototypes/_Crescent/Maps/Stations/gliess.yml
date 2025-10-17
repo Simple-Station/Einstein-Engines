@@ -62,6 +62,6 @@
           availableJobs:
             GliessianDockmaster: [ 1, 1 ]
             GliessianSheriff: [ 1, 1 ]
-            GliessianDeputy: [ 6, 6 ]
+            GliessianDeputy: [ 4, 4 ]
             GliessianDockhand: [ 4, 4 ]
-            Spacer: [ 25, 25 ]
+            Spacer: [ 10, 10 ]
