@@ -1,7 +1,7 @@
 # this holds borgs n shit for remnant ships and fogshit
 - type: entity
-  name: Nanotrasen Remnant Chassis
   id: BorgChassisRemnant
+  name: Remnant Chassis
   parent: BaseBorgChassisNT
   components:
   - type: Sprite
@@ -24,13 +24,11 @@
     maxModules: 2
     hasMindState: remnant_e
     noMindState: remnant_e_r
-  - type: InteractionPopup
-    interactSuccessString: petting-success-generic-cyborg
-    interactFailureString: petting-failure-generic-cyborg
   - type: BorgTransponder
     sprite:
-      sprite: _Crescent/Mobs/Remnants/remnant.rsi
-      state: remnant
+      sprite: Mobs/Silicon/chassis.rsi
+      state: robot
+    name: cyborg
   - type: IntrinsicRadioTransmitter
     channels:
     - Binary
@@ -39,6 +37,8 @@
     channels:
     - Binary
     - Common
+  - type: Speech
+    speechVerb: Robotic
   - type: ContainerFill
     containers:
       borg_brain:
@@ -51,4 +51,3 @@
       cell_slot:
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellHyper
-  
