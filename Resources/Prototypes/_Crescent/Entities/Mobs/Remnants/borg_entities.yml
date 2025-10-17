@@ -1,0 +1,44 @@
+# this holds borgs n shit for remnant ships and fogshit
+- type: entity
+  id: BorgChassisRemnant
+  parent: BaseBorgChassisNT
+  components:
+  - type: Sprite
+    layers:
+    - state: robot
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: robot_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: robot_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  - type: BorgChassis
+    # they wont get more modules anyway
+    maxModules: 10
+    hasMindState: robot_e
+    noMindState: robot_e_r
+  - type: InteractionPopup
+    interactSuccessString: petting-success-generic-cyborg
+    interactFailureString: petting-failure-generic-cyborg
+  - type: BorgSwitchableType
+    inherentRadioChannels:
+    - Common #longwave
+    - Traffic #shortwave
+    - Binary #for inter-borg comms
+  - type: ContainerFill
+    containers:
+      borg_brain:
+        - PositronicBrain
+      borg_module:
+        - BorgModuleOperative #todo - switch these
+        - BorgModuleL6C
+        - BorgModuleEsword
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellHyper
+  
