@@ -1,7 +1,7 @@
 - type: entity
-  id: BorgModuleRemnant
-  parent: [ BaseProviderBorgModule ]
-  name: remnant cyborg module
+  id: BorgModuleRemnantUtility
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  name: remnant cyborg module (utility)
   description: changeme
   components:
     - type: Sprite
@@ -10,8 +10,10 @@
       - state: icon-syndicate
     - type: ItemBorgModule
       items:
-      - Crowbar
+      - Omnitool
+      - WelderExperimental
+      - NetworkConfigurator
+      - JetpackBorgFilled
       - Emag
-      - PinpointerSyndicateNuclear
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-operative-module }

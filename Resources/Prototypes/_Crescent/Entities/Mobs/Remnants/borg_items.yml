@@ -1,0 +1,16 @@
+- type: entity
+  id: JetpackBorgFilled
+  parent: JetpackVoid
+  name: borg jetpack
+  suffix: Filled
+  components:
+  - type: GasTank
+    outputPressure: 42.6
+    air:
+      # 4x void jetpack, so about 50 minutes lol
+      volume: 20
+      temperature: 293.15
+      moles:
+        - 1.025689525 # oxygen
+        - 1.025689525 # nitrogen
+
