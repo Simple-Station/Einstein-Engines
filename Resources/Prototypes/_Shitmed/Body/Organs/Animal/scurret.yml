@@ -1,0 +1,119 @@
+# TODO: Add descriptions (many)
+
+- type: entity
+  id: PartScurret
+  parent: [BaseItem, BasePart]
+  name: "scurret body part"
+  abstract: true
+  components:
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 3
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: TorsoScurret
+  name: "scurret torso"
+  parent: [PartScurret, BaseTorso]
+  components:
+  - type: Sprite
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: "torso_m"
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 10
+      - ReagentId: Blood
+        Quantity: 20
+
+- type: entity
+  id: HeadScurret
+  name: "scurret head"
+  parent: [PartScurret, BaseHead]
+  components:
+  - type: Sprite
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: "head_m"
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: LeftArmScurret
+  name: "left scurret arm"
+  parent: [PartScurret, BaseLeftArm]
+  components:
+  - type: Sprite
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: "l_arm"
+
+- type: entity
+  id: RightArmScurret
+  name: "right scurret arm"
+  parent: [PartScurret, BaseRightArm]
+  components:
+  - type: Sprite
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: "r_arm"
+
+- type: entity
+  id: LeftHandScurret
+  name: "left scurret hand"
+  parent: [PartScurret, BaseLeftHand]
+  components:
+  - type: Sprite
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: "l_hand"
+
+- type: entity
+  id: RightHandScurret
+  name: "right scurret hand"
+  parent: [PartScurret, BaseRightHand]
+  components:
+  - type: Sprite
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: "r_hand"
+
+- type: entity
+  id: LeftLegScurret
+  name: "left scurret leg"
+  parent: [PartScurret, BaseLeftLeg]
+  components:
+  - type: Sprite
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: "l_leg"
+
+- type: entity
+  id: RightLegScurret
+  name: "right scurret leg"
+  parent: [PartScurret, BaseRightLeg]
+  components:
+  - type: Sprite
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: "r_leg"
+
+- type: entity
+  id: LeftFootScurret
+  name: "left scurret foot"
+  parent: [PartScurret, BaseLeftFoot]
+  components:
+  - type: Sprite
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: "l_foot"
+
+- type: entity
+  id: RightFootScurret
+  name: "right scurret foot"
+  parent: [PartScurret, BaseRightFoot]
+  components:
+  - type: Sprite
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: "r_foot"
