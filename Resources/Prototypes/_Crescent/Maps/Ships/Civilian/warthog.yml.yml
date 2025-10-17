@@ -1,5 +1,5 @@
 # Author Info
-# Discord: @fleshangel
+# Discord: @fleshangel (edited by Rubeebee)
 
 - type: vessel
   id: Warthog
@@ -21,6 +21,10 @@
     Warthog:
       stationProto: StandardCrescentCivilianVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: fighter
         - type: StationNameSetup
           mapNameTemplate: 'Warthog {1}'
           nameGenerator:
@@ -28,3 +32,5 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-civilian
+        - type: VesselDescription
+          description: And I looked, and behold a pale horse: and his name that sat on him was Death, and Hell followed with him
