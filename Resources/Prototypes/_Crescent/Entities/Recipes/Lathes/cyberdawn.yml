@@ -142,6 +142,15 @@
     Gold: 250
 
 - type: latheRecipe
+  id: DoormagCyberdawn
+  result: Doorjack
+  completetime: 1.5
+  materials:
+    AdvancedElectronics: 1000
+    Plastic: 250
+    Gold: 250
+
+- type: latheRecipe
   id: DnaScramblerImplanter
   result: DnaScramblerImplanter
   completetime: 1.5
@@ -161,7 +170,7 @@
 
 - type: latheRecipe
   id: EnergyDagger
-  result: EnergyDagger
+  result: EnergyDaggerBox
   completetime: 1.5
   materials:
     AdvancedElectronics: 1000
@@ -239,7 +248,7 @@
   completetime: 1.5
   materials:
     Steel: 1500
-    BasicMechatronics: 1000
+    TubeLoader: 500
     Silver: 750
 
 - type: latheRecipe
@@ -259,3 +268,47 @@
   materials:
     BasicMechatronics: 500
     Steel: 250
+
+- type: latheRecipe
+  id:  TubeLoader1Craft
+  result: TubeLoader1
+  completetime: 1.5
+  materials:
+    BallisticCycler: 500
+    Steel: 2000
+
+- type: latheRecipe
+  id: LaserLocus1Craft
+  result: LaserLocus1
+  completetime: 2
+  materials:
+    BasicElectronics: 1500
+    Silver: 1500
+
+- type: latheRecipe
+  id: HardlightGenerator1Craft
+  result: HardlightGenerator1
+  completetime: 2
+  materials:
+    AdvancedElectronics: 300
+    Gold: 300
+    Silver: 300
+    Glass: 500
+
+- type: latheRecipe
+  id: AdvancedMechatronics1Craft
+  result: AdvancedMechatronics1
+  completetime: 2
+  materials:
+    BasicMechatronics: 1000
+    Gold: 1500
+    Steel: 1500
+
+- type: latheRecipe
+  id: AdvancedElectronics1Craft
+  result: AdvancedElectronics1
+  completetime: 2
+  materials:
+    BasicMechatronics: 1000
+    Copper: 1500
+    Silver: 1500

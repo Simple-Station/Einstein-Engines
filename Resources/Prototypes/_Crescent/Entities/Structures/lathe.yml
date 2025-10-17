@@ -514,6 +514,13 @@
       - DnaScramblerImplanter
       - EmpImplanter
       - EnergyDagger
+      - BallisticCycler1Craft
+      - TubeLoader1Craft
+      - LaserLocus1Craft
+      - HardlightGenerator1Craft
+      - DoormagCyberdawn
+      - AdvancedMechatronics1Craft
+      - AdvancedElectronics1Craft
       - ClothingOuterHardsuitSyndieMedicCyberdawn
       - ClothingOuterHardsuitCybersunStealthCyberdawn
       - MagazinePistolSpecialMindbreakerCyberdawn
@@ -690,7 +697,6 @@
       - CyberneticsDermalArmor
       - SHIKatana
       - SHIShiverBlade
-      - BallisticCycler1Craft
       - ClothingOuterHardsuitSHIJuggernaut
       - ClothingOuterHardsuitSHISpeedsuit
 

@@ -31,7 +31,6 @@
   - WeaponRifleAkCyberdawn
   - WeaponRifleKrinkovCyberdawn
   - WeaponPistolViperWoodCyberdawn
-  - BallisticCycler1Craft
 
 - type: technology
   id: CyberdawnPowersink
@@ -94,6 +93,7 @@
   cost: 6000
   recipeUnlocks:
   - EmagCyberdawn
+  - DoormagCyberdawn
 
 - type: technology
   id: CyberdawnEmpImplanter
@@ -121,6 +121,35 @@
   - WeaponLightMachineGunNCSPRPD
   - WeaponRifleMayflower
   - WeaponRifleSVDMarksmanNCSP
+
+- type: technology
+  id: CDTAdvancedFirearmcomponents
+  name: research-technology-cyberdawn-CDTAdvancedFirearmcomponents
+  icon:
+    sprite: _Crescent/Objects/Materials/materials.rsi
+    state: tubeloaderrobotics
+  discipline: Cyberdawn
+  tier: 2
+  cost: 9000
+  recipeUnlocks:
+  - BallisticCycler1Craft
+  - TubeLoader1Craft
+  - LaserLocus1Craft
+  - HardlightGenerator1Craft
+
+
+- type: technology
+  id: CDTAdvancedComponents
+  name: research-technology-cyberdawn-CDTAdvancedComponents
+  icon:
+    sprite: _Crescent/Objects/Materials/materials.rsi
+    state: advancedmechanic
+  discipline: Cyberdawn
+  tier: 2
+  cost: 9000
+  recipeUnlocks:
+  - AdvancedMechatronics1Craft
+  - AdvancedElectronics1Craft
 
 - type: technology
   id: CyberdawnEnergyDagger
