@@ -13,7 +13,7 @@
 #  - type: Sprite # Disabled because shitmed. TO DO: DELETE THIS ONCE FIX WORKS
 #    layers:
 #    - map: ["enum.DamageStateVisualLayers.Base"]
-#      sprite: Mobs/Animals/scurret/scurret.rsi
+#      sprite: _EE/Mobs/Animals/scurret/scurret.rsi
 #      state: scurret
 #    - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
 #      color: "#ffffff"
@@ -117,9 +117,9 @@
     interactFailureString: petting-failure-scurret
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
-      path: /Audio/Animals/wawa_chillin.ogg
+      path: _EE/Audio/Animals/wawa_chillin.ogg
     interactFailureSound:
-      path: /Audio/Animals/wawa_chatter.ogg
+      path: _EE/Audio/Animals/wawa_chatter.ogg
   # They nyoom
   - type: MovementSpeedModifier
     baseWalkSpeed: 5 # nyoom
@@ -139,22 +139,22 @@
       jumpsuit:
         sizeMaps:
           32:
-            sprite: Mobs/Animals/scurret/displacement.rsi
+            sprite: _EE/Mobs/Animals/scurret/displacement.rsi
             state: jumpsuit
       id:
         sizeMaps:
           32:
-            sprite: Mobs/Animals/scurret/displacement.rsi
+            sprite: _EE/Mobs/Animals/scurret/displacement.rsi
             state: id
       gloves:
         sizeMaps:
           32:
-            sprite: Mobs/Animals/scurret/displacement.rsi
+            sprite: _EE/Mobs/Animals/scurret/displacement.rsi
             state: gloves
       neck:
         sizeMaps:
           32:
-            sprite: Mobs/Animals/scurret/displacement.rsi
+            sprite: _EE/Mobs/Animals/scurret/displacement.rsi
             state: neck
   - type: InventorySlots
   - type: Food
@@ -185,10 +185,11 @@
     - NamesLastScurret
     nameFormat: name-format-standard
   # They come in a variety of colours
-  - type: RandomSprite
-    available:
-    - enum.DamageStateVisualLayers.Base:
-        scurret: ScurretColors
+  # Obsolete because of shitmed i guess. and also im too lazy to figure out the replacement.
+#  - type: RandomSprite
+#    available:
+#    - enum.DamageStateVisualLayers.Base:
+#        scurret: ScurretColors
 
 # Emotional Support Scurrets have a ghost role and equipment. At the moment, these are intended to be used for admemes, but
 # feel free to hook them into random content.
