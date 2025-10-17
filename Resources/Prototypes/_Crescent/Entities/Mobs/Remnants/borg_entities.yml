@@ -27,6 +27,10 @@
   - type: InteractionPopup
     interactSuccessString: petting-success-generic-cyborg
     interactFailureString: petting-failure-generic-cyborg
+  - type: BorgTransponder
+    sprite:
+      sprite: Mobs/Silicon/chassis.rsi
+      state: robot
   - type: IntrinsicRadioTransmitter
     channels:
     - Binary
