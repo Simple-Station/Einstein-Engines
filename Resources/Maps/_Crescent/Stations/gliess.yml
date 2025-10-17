@@ -4,7 +4,7 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 10/16/2025 20:46:16
+  time: 10/17/2025 01:17:42
   entityCount: 8380
 maps: []
 grids:
@@ -5980,6 +5980,7 @@ entities:
             16034: 23,-2
             16876: 23,-2
             17725: 23,-2
+            18497: 23,-2
         - node:
             zIndex: 1
             angle: -3.141592653589793 rad
@@ -6007,6 +6008,8 @@ entities:
             16883: 25,-3
             17724: 23,-2
             17732: 25,-3
+            18496: 23,-2
+            18504: 25,-3
         - node:
             zIndex: 1
             angle: -1.5707963267948966 rad
@@ -6023,6 +6026,7 @@ entities:
             16039: 25,-3
             16881: 25,-3
             17730: 25,-3
+            18502: 25,-3
         - node:
             zIndex: 1
             id: ErisBlueCircuitCorner
@@ -6038,6 +6042,7 @@ entities:
             16044: 25,-2
             16886: 25,-2
             17735: 25,-2
+            18507: 25,-2
         - node:
             angle: -4.71238898038469 rad
             id: ErisBlueCircuitEdge
@@ -6064,6 +6069,8 @@ entities:
             16882: 25,-3
             17723: 23,-2
             17731: 25,-3
+            18495: 23,-2
+            18503: 25,-3
         - node:
             angle: -3.141592653589793 rad
             id: ErisBlueCircuitEdge
@@ -6101,6 +6108,9 @@ entities:
             17721: 23,-2
             17726: 24,-2
             17728: 25,-3
+            18493: 23,-2
+            18498: 24,-2
+            18500: 25,-3
         - node:
             angle: -1.5707963267948966 rad
             id: ErisBlueCircuitEdge
@@ -6127,6 +6137,8 @@ entities:
             16884: 25,-2
             17729: 25,-3
             17733: 25,-2
+            18501: 25,-3
+            18505: 25,-2
         - node:
             id: ErisBlueCircuitEdge
           decals:
@@ -6163,6 +6175,9 @@ entities:
             17722: 23,-2
             17727: 24,-2
             17734: 25,-2
+            18494: 23,-2
+            18499: 24,-2
+            18506: 25,-2
         - node:
             zIndex: 1
             angle: -3.141592653589793 rad
@@ -6179,6 +6194,7 @@ entities:
             16045: 25,-2
             16887: 25,-2
             17736: 25,-2
+            18508: 25,-2
         - node:
             angle: -1.5707963267948966 rad
             color: '#FFFFFFFF'
@@ -8120,6 +8136,72 @@ entities:
             18330: 1,-51
             18346: 3,-60
             18363: -49,-9
+            18380: 0,13
+            18387: 0,14
+            18395: 0,15
+            18406: 1,13
+            18418: 1,15
+            18459: -1,13
+            18466: -1,14
+            18471: -1,15
+            18477: 10,-30
+            18483: 14,-30
+            18489: -12,-30
+            18511: -29,-17
+            18514: -26,-19
+            18519: -25,-18
+            18525: -24,-22
+            18528: -23,-30
+            18533: -22,-29
+            18539: -18,-30
+            18547: 22,-29
+            18558: 24,-22
+            18567: 25,-19
+            18574: 25,-18
+            18598: -27,1
+            18614: -23,10
+            18622: 23,10
+            18638: 26,2
+            18654: 0,16
+            18676: 1,17
+            18690: 1,21
+            18704: 1,25
+            18742: -8,16
+            18748: -8,24
+            18770: -1,16
+            18775: -1,17
+            18789: -1,21
+            18803: -1,25
+            18815: -9,-38
+            18821: -8,-46
+            18833: -2,-41
+            18842: -1,-47
+            18850: -1,-46
+            18855: -1,-45
+            18863: -1,-44
+            18871: -1,-41
+            18876: 0,-47
+            18883: 0,-46
+            18891: 0,-45
+            18899: 0,-44
+            18910: 0,-41
+            18919: 1,-47
+            18932: 1,-45
+            18948: 1,-41
+            18959: 2,-41
+            18976: -45,-10
+            18987: -37,-15
+            18993: -36,-16
+            19000: -33,-1
+            19017: 41,-10
+            19026: -8,-56
+            19032: -7,-60
+            19052: -1,-55
+            19066: -1,-51
+            19088: 1,-55
+            19102: 1,-51
+            19118: 3,-60
+            19135: -49,-9
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -9123,6 +9205,74 @@ entities:
             18349: 7,-60
             18352: 8,-56
             18369: 49,-9
+            18382: 0,13
+            18390: 0,14
+            18398: 0,15
+            18408: 1,13
+            18413: 1,14
+            18421: 1,15
+            18461: -1,13
+            18474: -1,15
+            18480: 12,-30
+            18486: -14,-30
+            18492: -10,-30
+            18522: -25,-18
+            18536: -22,-29
+            18542: 18,-30
+            18550: 22,-29
+            18553: 23,-30
+            18561: 24,-22
+            18564: 25,-23
+            18569: 25,-19
+            18577: 25,-18
+            18582: 26,-18
+            18585: 29,-17
+            18601: -27,1
+            18617: -23,10
+            18625: 23,10
+            18641: 26,2
+            18646: 27,1
+            18657: 0,16
+            18671: 1,16
+            18679: 1,17
+            18693: 1,21
+            18707: 1,25
+            18730: 8,16
+            18736: 8,24
+            18778: -1,17
+            18792: -1,21
+            18806: -1,25
+            18835: -2,-41
+            18845: -1,-47
+            18858: -1,-45
+            18873: -1,-41
+            18878: 0,-47
+            18886: 0,-46
+            18894: 0,-45
+            18902: 0,-44
+            18912: 0,-41
+            18922: 1,-47
+            18927: 1,-46
+            18935: 1,-45
+            18940: 1,-44
+            18950: 1,-41
+            18961: 2,-41
+            18964: 8,-46
+            18970: 9,-38
+            18979: -41,-10
+            18995: -36,-16
+            19005: 33,-1
+            19008: 36,-16
+            19011: 37,-15
+            19023: 45,-10
+            19035: -3,-60
+            19055: -1,-55
+            19069: -1,-51
+            19091: 1,-55
+            19105: 1,-51
+            19121: 7,-60
+            19124: 8,-56
+            19141: 49,-9
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -10107,6 +10257,70 @@ entities:
             18328: 1,-51
             18358: 32,0
             18366: -49,-5
+            18375: 0,11
+            18385: 0,14
+            18393: 0,15
+            18401: 1,11
+            18416: 1,15
+            18424: 2,11
+            18439: -15,12
+            18442: -11,14
+            18445: -2,11
+            18454: -1,11
+            18464: -1,14
+            18469: -1,15
+            18517: -25,-18
+            18531: -22,-29
+            18545: 22,-29
+            18556: 24,-22
+            18572: 25,-18
+            18588: -32,0
+            18593: -28,2
+            18596: -27,1
+            18604: -26,2
+            18609: -24,11
+            18612: -23,10
+            18620: 23,10
+            18628: 23,11
+            18636: 26,2
+            18652: 0,16
+            18660: 0,17
+            18674: 1,17
+            18688: 1,21
+            18702: 1,25
+            18724: 3,30
+            18745: -8,20
+            18751: -8,28
+            18754: -7,30
+            18768: -1,16
+            18773: -1,17
+            18787: -1,21
+            18801: -1,25
+            18818: -9,-34
+            18824: -8,-42
+            18840: -1,-47
+            18848: -1,-46
+            18853: -1,-45
+            18861: -1,-44
+            18866: -1,-43
+            18881: 0,-46
+            18889: 0,-45
+            18897: 0,-44
+            18905: 0,-43
+            18917: 1,-47
+            18930: 1,-45
+            18943: 1,-43
+            18982: -41,-4
+            18985: -37,-15
+            18998: -33,-1
+            19014: 37,-4
+            19029: -8,-52
+            19050: -1,-55
+            19064: -1,-51
+            19086: 1,-55
+            19100: 1,-51
+            19130: 32,0
+            19138: -49,-5
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -11087,6 +11301,71 @@ entities:
             18355: 8,-52
             18360: 32,0
             18372: 49,-5
+            18377: 0,11
+            18389: 0,14
+            18397: 0,15
+            18403: 1,11
+            18412: 1,14
+            18420: 1,15
+            18426: 2,11
+            18433: 11,14
+            18436: 15,12
+            18447: -2,11
+            18456: -1,11
+            18473: -1,15
+            18521: -25,-18
+            18535: -22,-29
+            18549: 22,-29
+            18560: 24,-22
+            18576: 25,-18
+            18581: 26,-18
+            18590: -32,0
+            18600: -27,1
+            18606: -26,2
+            18616: -23,10
+            18624: 23,10
+            18630: 23,11
+            18633: 24,11
+            18640: 26,2
+            18645: 27,1
+            18649: 27,3
+            18656: 0,16
+            18662: 0,17
+            18670: 1,16
+            18678: 1,17
+            18692: 1,21
+            18706: 1,25
+            18727: 7,30
+            18733: 8,20
+            18739: 8,28
+            18757: -3,30
+            18777: -1,17
+            18791: -1,21
+            18805: -1,25
+            18844: -1,-47
+            18857: -1,-45
+            18868: -1,-43
+            18885: 0,-46
+            18893: 0,-45
+            18901: 0,-44
+            18907: 0,-43
+            18921: 1,-47
+            18926: 1,-46
+            18934: 1,-45
+            18939: 1,-44
+            18945: 1,-43
+            18967: 8,-42
+            18973: 9,-34
+            18990: -37,-4
+            19004: 33,-1
+            19020: 41,-4
+            19054: -1,-55
+            19068: -1,-51
+            19090: 1,-55
+            19104: 1,-51
+            19127: 8,-52
+            19132: 32,0
+            19144: 49,-5
         - node:
             id: LatticeEdgeE
           decals:
@@ -13008,6 +13287,127 @@ entities:
             18357: 32,0
             18361: -49,-9
             18365: -49,-5
+            18374: 0,11
+            18378: 0,13
+            18384: 0,14
+            18392: 0,15
+            18400: 1,11
+            18404: 1,13
+            18415: 1,15
+            18423: 2,11
+            18427: 2,13
+            18429: 2,15
+            18438: -15,12
+            18441: -11,14
+            18444: -2,11
+            18448: -2,13
+            18450: -2,15
+            18453: -1,11
+            18457: -1,13
+            18463: -1,14
+            18468: -1,15
+            18475: 10,-30
+            18481: 14,-30
+            18487: -12,-30
+            18509: -29,-17
+            18512: -26,-19
+            18516: -25,-18
+            18523: -24,-22
+            18526: -23,-30
+            18530: -22,-29
+            18537: -18,-30
+            18544: 22,-29
+            18555: 24,-22
+            18565: 25,-19
+            18571: 25,-18
+            18587: -32,0
+            18592: -28,2
+            18595: -27,1
+            18603: -26,2
+            18608: -24,11
+            18611: -23,10
+            18619: 23,10
+            18627: 23,11
+            18635: 26,2
+            18651: 0,16
+            18659: 0,17
+            18663: 0,21
+            18665: 0,25
+            18673: 1,17
+            18687: 1,21
+            18701: 1,25
+            18714: 2,17
+            18716: 2,21
+            18718: 2,25
+            18720: 2,29
+            18723: 3,30
+            18740: -8,16
+            18744: -8,20
+            18746: -8,24
+            18750: -8,28
+            18753: -7,30
+            18758: -2,17
+            18760: -2,21
+            18762: -2,25
+            18764: -2,29
+            18767: -1,16
+            18772: -1,17
+            18786: -1,21
+            18800: -1,25
+            18813: -9,-38
+            18817: -9,-34
+            18819: -8,-46
+            18823: -8,-42
+            18825: -2,-47
+            18827: -2,-45
+            18829: -2,-43
+            18831: -2,-41
+            18839: -1,-47
+            18847: -1,-46
+            18852: -1,-45
+            18860: -1,-44
+            18865: -1,-43
+            18869: -1,-41
+            18874: 0,-47
+            18880: 0,-46
+            18888: 0,-45
+            18896: 0,-44
+            18904: 0,-43
+            18908: 0,-41
+            18916: 1,-47
+            18929: 1,-45
+            18942: 1,-43
+            18946: 1,-41
+            18951: 2,-47
+            18953: 2,-45
+            18955: 2,-43
+            18957: 2,-41
+            18974: -45,-10
+            18981: -41,-4
+            18984: -37,-15
+            18991: -36,-16
+            18997: -33,-1
+            19013: 37,-4
+            19015: 41,-10
+            19024: -8,-56
+            19028: -8,-52
+            19030: -7,-60
+            19036: -2,-59
+            19038: -2,-55
+            19040: -2,-51
+            19049: -1,-55
+            19063: -1,-51
+            19074: 0,-55
+            19076: 0,-51
+            19085: 1,-55
+            19099: 1,-51
+            19110: 2,-59
+            19112: 2,-55
+            19114: 2,-51
+            19116: 3,-60
+            19129: 32,0
+            19133: -49,-9
+            19137: -49,-5
         - node:
             id: LatticeEdgeN
           decals:
@@ -15030,6 +15430,134 @@ entities:
             18350: 8,-56
             18362: -49,-9
             18367: 49,-9
+            18379: 0,13
+            18386: 0,14
+            18394: 0,15
+            18405: 1,13
+            18410: 1,14
+            18417: 1,15
+            18458: -1,13
+            18465: -1,14
+            18470: -1,15
+            18476: 10,-30
+            18478: 12,-30
+            18482: 14,-30
+            18484: -14,-30
+            18488: -12,-30
+            18490: -10,-30
+            18510: -29,-17
+            18513: -26,-19
+            18518: -25,-18
+            18524: -24,-22
+            18527: -23,-30
+            18532: -22,-29
+            18538: -18,-30
+            18540: 18,-30
+            18546: 22,-29
+            18551: 23,-30
+            18557: 24,-22
+            18562: 25,-23
+            18566: 25,-19
+            18573: 25,-18
+            18579: 26,-18
+            18583: 29,-17
+            18597: -27,1
+            18613: -23,10
+            18621: 23,10
+            18637: 26,2
+            18643: 27,1
+            18653: 0,16
+            18668: 1,16
+            18675: 1,17
+            18681: 1,18
+            18683: 1,19
+            18685: 1,20
+            18689: 1,21
+            18695: 1,22
+            18697: 1,23
+            18699: 1,24
+            18703: 1,25
+            18709: 1,26
+            18711: 1,27
+            18713: 1,28
+            18728: 8,16
+            18734: 8,24
+            18741: -8,16
+            18747: -8,24
+            18769: -1,16
+            18774: -1,17
+            18780: -1,18
+            18782: -1,19
+            18784: -1,20
+            18788: -1,21
+            18794: -1,22
+            18796: -1,23
+            18798: -1,24
+            18802: -1,25
+            18808: -1,26
+            18810: -1,27
+            18812: -1,28
+            18814: -9,-38
+            18820: -8,-46
+            18832: -2,-41
+            18837: -1,-48
+            18841: -1,-47
+            18849: -1,-46
+            18854: -1,-45
+            18862: -1,-44
+            18870: -1,-41
+            18875: 0,-47
+            18882: 0,-46
+            18890: 0,-45
+            18898: 0,-44
+            18909: 0,-41
+            18914: 1,-48
+            18918: 1,-47
+            18924: 1,-46
+            18931: 1,-45
+            18937: 1,-44
+            18947: 1,-41
+            18958: 2,-41
+            18962: 8,-46
+            18968: 9,-38
+            18975: -45,-10
+            18977: -41,-10
+            18986: -37,-15
+            18992: -36,-16
+            18999: -33,-1
+            19002: 33,-1
+            19006: 36,-16
+            19009: 37,-15
+            19016: 41,-10
+            19021: 45,-10
+            19025: -8,-56
+            19031: -7,-60
+            19033: -3,-60
+            19043: -1,-58
+            19045: -1,-57
+            19047: -1,-56
+            19051: -1,-55
+            19057: -1,-54
+            19059: -1,-53
+            19061: -1,-52
+            19065: -1,-51
+            19071: -1,-50
+            19073: -1,-49
+            19079: 1,-58
+            19081: 1,-57
+            19083: 1,-56
+            19087: 1,-55
+            19093: 1,-54
+            19095: 1,-53
+            19097: 1,-52
+            19101: 1,-51
+            19107: 1,-50
+            19109: 1,-49
+            19117: 3,-60
+            19119: 7,-60
+            19122: 8,-56
+            19134: -49,-9
+            19139: 49,-9
         - node:
             id: LatticeEdgeS
           decals:
@@ -16973,6 +17501,127 @@ entities:
             18356: 32,0
             18364: -49,-5
             18370: 49,-5
+            18373: 0,11
+            18383: 0,14
+            18391: 0,15
+            18399: 1,11
+            18409: 1,14
+            18414: 1,15
+            18422: 2,11
+            18431: 11,14
+            18434: 15,12
+            18437: -15,12
+            18440: -11,14
+            18443: -2,11
+            18452: -1,11
+            18462: -1,14
+            18467: -1,15
+            18515: -25,-18
+            18529: -22,-29
+            18543: 22,-29
+            18554: 24,-22
+            18570: 25,-18
+            18578: 26,-18
+            18586: -32,0
+            18591: -28,2
+            18594: -27,1
+            18602: -26,2
+            18607: -24,11
+            18610: -23,10
+            18618: 23,10
+            18626: 23,11
+            18631: 24,11
+            18634: 26,2
+            18642: 27,1
+            18647: 27,3
+            18650: 0,16
+            18658: 0,17
+            18667: 1,16
+            18672: 1,17
+            18680: 1,18
+            18682: 1,19
+            18684: 1,20
+            18686: 1,21
+            18694: 1,22
+            18696: 1,23
+            18698: 1,24
+            18700: 1,25
+            18708: 1,26
+            18710: 1,27
+            18712: 1,28
+            18722: 3,30
+            18725: 7,30
+            18731: 8,20
+            18737: 8,28
+            18743: -8,20
+            18749: -8,28
+            18752: -7,30
+            18755: -3,30
+            18766: -1,16
+            18771: -1,17
+            18779: -1,18
+            18781: -1,19
+            18783: -1,20
+            18785: -1,21
+            18793: -1,22
+            18795: -1,23
+            18797: -1,24
+            18799: -1,25
+            18807: -1,26
+            18809: -1,27
+            18811: -1,28
+            18816: -9,-34
+            18822: -8,-42
+            18836: -1,-48
+            18838: -1,-47
+            18846: -1,-46
+            18851: -1,-45
+            18859: -1,-44
+            18864: -1,-43
+            18879: 0,-46
+            18887: 0,-45
+            18895: 0,-44
+            18903: 0,-43
+            18913: 1,-48
+            18915: 1,-47
+            18923: 1,-46
+            18928: 1,-45
+            18936: 1,-44
+            18941: 1,-43
+            18965: 8,-42
+            18971: 9,-34
+            18980: -41,-4
+            18983: -37,-15
+            18988: -37,-4
+            18996: -33,-1
+            19001: 33,-1
+            19012: 37,-4
+            19018: 41,-4
+            19027: -8,-52
+            19042: -1,-58
+            19044: -1,-57
+            19046: -1,-56
+            19048: -1,-55
+            19056: -1,-54
+            19058: -1,-53
+            19060: -1,-52
+            19062: -1,-51
+            19070: -1,-50
+            19072: -1,-49
+            19078: 1,-58
+            19080: 1,-57
+            19082: 1,-56
+            19084: 1,-55
+            19092: 1,-54
+            19094: 1,-53
+            19096: 1,-52
+            19098: 1,-51
+            19106: 1,-50
+            19108: 1,-49
+            19125: 8,-52
+            19128: 32,0
+            19136: -49,-5
+            19142: 49,-5
         - node:
             id: LatticeEdgeW
           decals:
@@ -18886,6 +19535,129 @@ entities:
             18359: 32,0
             18368: 49,-9
             18371: 49,-5
+            18376: 0,11
+            18381: 0,13
+            18388: 0,14
+            18396: 0,15
+            18402: 1,11
+            18407: 1,13
+            18411: 1,14
+            18419: 1,15
+            18425: 2,11
+            18428: 2,13
+            18430: 2,15
+            18432: 11,14
+            18435: 15,12
+            18446: -2,11
+            18449: -2,13
+            18451: -2,15
+            18455: -1,11
+            18460: -1,13
+            18472: -1,15
+            18479: 12,-30
+            18485: -14,-30
+            18491: -10,-30
+            18520: -25,-18
+            18534: -22,-29
+            18541: 18,-30
+            18548: 22,-29
+            18552: 23,-30
+            18559: 24,-22
+            18563: 25,-23
+            18568: 25,-19
+            18575: 25,-18
+            18580: 26,-18
+            18584: 29,-17
+            18589: -32,0
+            18599: -27,1
+            18605: -26,2
+            18615: -23,10
+            18623: 23,10
+            18629: 23,11
+            18632: 24,11
+            18639: 26,2
+            18644: 27,1
+            18648: 27,3
+            18655: 0,16
+            18661: 0,17
+            18664: 0,21
+            18666: 0,25
+            18669: 1,16
+            18677: 1,17
+            18691: 1,21
+            18705: 1,25
+            18715: 2,17
+            18717: 2,21
+            18719: 2,25
+            18721: 2,29
+            18726: 7,30
+            18729: 8,16
+            18732: 8,20
+            18735: 8,24
+            18738: 8,28
+            18756: -3,30
+            18759: -2,17
+            18761: -2,21
+            18763: -2,25
+            18765: -2,29
+            18776: -1,17
+            18790: -1,21
+            18804: -1,25
+            18826: -2,-47
+            18828: -2,-45
+            18830: -2,-43
+            18834: -2,-41
+            18843: -1,-47
+            18856: -1,-45
+            18867: -1,-43
+            18872: -1,-41
+            18877: 0,-47
+            18884: 0,-46
+            18892: 0,-45
+            18900: 0,-44
+            18906: 0,-43
+            18911: 0,-41
+            18920: 1,-47
+            18925: 1,-46
+            18933: 1,-45
+            18938: 1,-44
+            18944: 1,-43
+            18949: 1,-41
+            18952: 2,-47
+            18954: 2,-45
+            18956: 2,-43
+            18960: 2,-41
+            18963: 8,-46
+            18966: 8,-42
+            18969: 9,-38
+            18972: 9,-34
+            18978: -41,-10
+            18989: -37,-4
+            18994: -36,-16
+            19003: 33,-1
+            19007: 36,-16
+            19010: 37,-15
+            19019: 41,-4
+            19022: 45,-10
+            19034: -3,-60
+            19037: -2,-59
+            19039: -2,-55
+            19041: -2,-51
+            19053: -1,-55
+            19067: -1,-51
+            19075: 0,-55
+            19077: 0,-51
+            19089: 1,-55
+            19103: 1,-51
+            19111: 2,-59
+            19113: 2,-55
+            19115: 2,-51
+            19120: 7,-60
+            19123: 8,-56
+            19126: 8,-52
+            19131: 32,0
+            19140: 49,-9
+            19143: 49,-5
         - node:
             color: '#EFB34196'
             id: LoadingArea
@@ -20354,14 +21126,14 @@ entities:
       canCollide: False
 - proto: ActionToggleInternals
   entities:
-  - uid: 33
+  - uid: 30
     mapInit: true
     paused: true
     components:
     - type: Transform
-      parent: 32
+      parent: 29
     - type: InstantAction
-      container: 32
+      container: 29
   - uid: 42
     mapInit: true
     paused: true
@@ -20380,14 +21152,14 @@ entities:
       container: 47
 - proto: ActionToggleJetpack
   entities:
-  - uid: 34
+  - uid: 31
     mapInit: true
     paused: true
     components:
     - type: Transform
-      parent: 32
+      parent: 29
     - type: InstantAction
-      container: 32
+      container: 29
   - uid: 49
     mapInit: true
     paused: true
@@ -21016,7 +21788,7 @@ entities:
       pos: -9.5,6.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -102709.11
+      secondsUntilStateChange: -103070.86
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -21080,7 +21852,7 @@ entities:
       pos: 16.5,3.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -60714.766
+      secondsUntilStateChange: -61076.52
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -42188,18 +42960,18 @@ entities:
           - 4221
           - 4220
           - 4219
-          - 4210
+          - 4218
+          - 4212
           - 4216
           - 4217
           - 4224
-          - 4223
-          - 4213
-          - 4211
-          - 4214
-          - 4215
-          - 4212
           - 4222
-          - 4218
+          - 4210
+          - 4211
+          - 4215
+          - 4214
+          - 4213
+          - 4223
           - 4225
         paper_label: !type:ContainerSlot
           showEnts: False
@@ -42639,6 +43411,13 @@ entities:
     - type: Transform
       pos: 19.1213,1.7263601
       parent: 1
+  - uid: 4300
+    components:
+    - type: Transform
+      parent: 4299
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
   - uid: 4301
     components:
     - type: Transform
@@ -42646,21 +43425,14 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+  - uid: 4302
+    components:
+    - type: Transform
+      parent: 4299
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
   - uid: 4303
-    components:
-    - type: Transform
-      parent: 4299
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 4304
-    components:
-    - type: Transform
-      parent: 4299
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 4307
     components:
     - type: Transform
       parent: 4299
@@ -42791,7 +43563,7 @@ entities:
     - type: InsideEntityStorage
 - proto: ClothingNeckScarfCMMCloak
   entities:
-  - uid: 30
+  - uid: 32
     components:
     - type: Transform
       parent: 28
@@ -42860,7 +43632,7 @@ entities:
     - type: InsideEntityStorage
 - proto: ClothingOuterArmorCMM
   entities:
-  - uid: 4300
+  - uid: 4304
     components:
     - type: Transform
       parent: 4299
@@ -42881,7 +43653,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 4320
+  - uid: 4307
     components:
     - type: Transform
       parent: 4299
@@ -42915,7 +43687,7 @@ entities:
     - type: InsideEntityStorage
 - proto: ClothingOuterHardsuitCMMPatrol
   entities:
-  - uid: 35
+  - uid: 33
     components:
     - type: Transform
       parent: 28
@@ -43163,7 +43935,7 @@ entities:
     - type: InsideEntityStorage
 - proto: ClothingShoesBootsMagCombatFilled
   entities:
-  - uid: 31
+  - uid: 34
     components:
     - type: Transform
       parent: 28
@@ -43392,6 +44164,11 @@ entities:
       rot: 3.141592653589793 rad
       pos: -31.5,-12.5
       parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        6193:
+        - - ArtifactAnalyzerSender
+          - ArtifactAnalyzerReceiver
     - type: Physics
       fixedRotation: False
 - proto: ComputerAtmosMonitoring
@@ -44227,30 +45004,30 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 4302
-          - 4301
-          - 4307
+          - 4316
           - 4300
+          - 4303
           - 4304
+          - 4302
           - 4305
           - 4306
+          - 4307
+          - 4322
           - 4320
-          - 4321
-          - 4316
+          - 4317
           - 4309
-          - 4310
           - 4308
+          - 4310
           - 4311
           - 4312
-          - 4317
+          - 4318
           - 4313
           - 4315
-          - 4318
-          - 4314
-          - 4322
-          - 4323
           - 4319
-          - 4303
+          - 4314
+          - 4323
+          - 4321
+          - 4301
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -56655,7 +57432,7 @@ entities:
       parent: 1
 - proto: HandheldGPSBasic
   entities:
-  - uid: 37
+  - uid: 35
     components:
     - type: Transform
       parent: 28
@@ -56727,7 +57504,7 @@ entities:
     - type: InsideEntityStorage
 - proto: HandHeldMassScannerEE
   entities:
-  - uid: 38
+  - uid: 36
     components:
     - type: Transform
       parent: 28
@@ -56879,7 +57656,7 @@ entities:
       pos: -15.5,-14.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -64686.16
+      secondsUntilStateChange: -65047.914
       state: Opening
 - proto: HospitalCurtainsOpen
   entities:
@@ -57066,14 +57843,14 @@ entities:
     - type: InsideEntityStorage
 - proto: JetpackMiniFilled
   entities:
-  - uid: 32
+  - uid: 29
     components:
     - type: Transform
       parent: 28
     - type: GasTank
-      toggleActionEntity: 33
+      toggleActionEntity: 30
     - type: Jetpack
-      toggleActionEntity: 34
+      toggleActionEntity: 31
     - type: Physics
       canCollide: False
     - type: ActionsContainer
@@ -57081,8 +57858,8 @@ entities:
       containers:
         actions: !type:Container
           ents:
-          - 34
-          - 33
+          - 31
+          - 30
     - type: InsideEntityStorage
   - uid: 4350
     components:
@@ -57259,6 +58036,9 @@ entities:
     - type: Transform
       pos: -31.5,-14.5
       parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 4428
 - proto: MachineArtifactCrusher
   entities:
   - uid: 6194
@@ -57284,6 +58064,13 @@ entities:
     - type: InsideEntityStorage
 - proto: MagazinePistolSubMachineGun
   entities:
+  - uid: 4210
+    components:
+    - type: Transform
+      parent: 4209
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
   - uid: 4211
     components:
     - type: Transform
@@ -57291,21 +58078,14 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 4214
+  - uid: 4212
     components:
     - type: Transform
       parent: 4209
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 4216
-    components:
-    - type: Transform
-      parent: 4209
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 4222
+  - uid: 4213
     components:
     - type: Transform
       parent: 4209
@@ -57398,14 +58178,14 @@ entities:
     - type: InsideEntityStorage
 - proto: MagazinePistolSubMachineGunTopMounted
   entities:
-  - uid: 36
+  - uid: 37
     components:
     - type: Transform
       parent: 28
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 39
+  - uid: 38
     components:
     - type: Transform
       parent: 28
@@ -57414,7 +58194,7 @@ entities:
     - type: InsideEntityStorage
 - proto: MagazineRifle
   entities:
-  - uid: 4212
+  - uid: 4214
     components:
     - type: Transform
       parent: 4209
@@ -57428,14 +58208,14 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 4217
+  - uid: 4216
     components:
     - type: Transform
       parent: 4209
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 4224
+  - uid: 4217
     components:
     - type: Transform
       parent: 4209
@@ -59153,6 +59933,13 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+  - uid: 4309
+    components:
+    - type: Transform
+      parent: 4299
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
   - uid: 4310
     components:
     - type: Transform
@@ -59161,13 +59948,6 @@ entities:
       canCollide: False
     - type: InsideEntityStorage
   - uid: 4311
-    components:
-    - type: Transform
-      parent: 4299
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 4312
     components:
     - type: Transform
       parent: 4299
@@ -60327,7 +61107,7 @@ entities:
       pos: 22.5,-21.5
       parent: 1
     - type: DeadDrop
-      nextDrop: 968.6472603
+      nextDrop: 3019.8807853
 - proto: PosterContrabandHackingGuide
   entities:
   - uid: 6622
@@ -64625,15 +65405,15 @@ entities:
           showEnts: False
           occludes: True
           ents:
+          - 36
           - 38
           - 39
           - 29
-          - 32
-          - 31
+          - 34
+          - 33
           - 35
           - 37
-          - 36
-          - 30
+          - 32
   - uid: 4269
     components:
     - type: Transform
@@ -66323,10 +67103,10 @@ entities:
       parent: 1
 - proto: VendingMachineClothing
   entities:
-  - uid: 7399
+  - uid: 7401
     components:
     - type: Transform
-      pos: 11.5,-28.5
+      pos: 0.5,-25.5
       parent: 1
 - proto: VendingMachineCoffee
   entities:
@@ -66336,10 +67116,13 @@ entities:
       rot: 3.141592653589793 rad
       pos: 16.5,-28.5
       parent: 1
-  - uid: 7401
+- proto: VendingMachineCola
+  entities:
+  - uid: 7399
     components:
     - type: Transform
-      pos: 0.5,-25.5
+      rot: 3.141592653589793 rad
+      pos: 11.5,-28.5
       parent: 1
 - proto: VendingMachineDinnerware
   entities:
@@ -71560,7 +72343,7 @@ entities:
     - type: InsideEntityStorage
 - proto: WeaponDisablerSMG
   entities:
-  - uid: 4210
+  - uid: 4218
     components:
     - type: Transform
       parent: 4209
@@ -71590,7 +72373,7 @@ entities:
     - type: InsideEntityStorage
 - proto: WeaponPistolBlastpopBlue
   entities:
-  - uid: 4317
+  - uid: 4312
     components:
     - type: Transform
       parent: 4299
@@ -71603,7 +72386,7 @@ entities:
     - type: InsideEntityStorage
 - proto: WeaponPistolBlastpopGold
   entities:
-  - uid: 4315
+  - uid: 4313
     components:
     - type: Transform
       parent: 4299
@@ -71616,7 +72399,7 @@ entities:
     - type: InsideEntityStorage
 - proto: WeaponPistolBlastpopGreen
   entities:
-  - uid: 4322
+  - uid: 4314
     components:
     - type: Transform
       parent: 4299
@@ -71629,7 +72412,7 @@ entities:
     - type: InsideEntityStorage
 - proto: WeaponPistolBlastpopRed
   entities:
-  - uid: 4318
+  - uid: 4315
     components:
     - type: Transform
       parent: 4299
@@ -71660,28 +72443,28 @@ entities:
     - type: InsideEntityStorage
 - proto: WeaponRifleDSMMuster
   entities:
-  - uid: 4302
+  - uid: 4316
     components:
     - type: Transform
       parent: 4299
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 4309
+  - uid: 4317
     components:
     - type: Transform
       parent: 4299
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 4313
+  - uid: 4318
     components:
     - type: Transform
       parent: 4299
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 4314
+  - uid: 4319
     components:
     - type: Transform
       parent: 4299
@@ -71706,14 +72489,14 @@ entities:
     - type: InsideEntityStorage
 - proto: WeaponRifleLecter
   entities:
-  - uid: 4213
+  - uid: 4222
     components:
     - type: Transform
       parent: 4209
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 4218
+  - uid: 4223
     components:
     - type: Transform
       parent: 4209
@@ -71730,7 +72513,7 @@ entities:
       canCollide: False
 - proto: WeaponSubMachineGunDSMArbiter
   entities:
-  - uid: 4223
+  - uid: 4224
     components:
     - type: Transform
       parent: 4209
@@ -71790,14 +72573,7 @@ entities:
     - type: InsideEntityStorage
 - proto: WeaponSubMachineGunSabre
   entities:
-  - uid: 4316
-    components:
-    - type: Transform
-      parent: 4299
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 4319
+  - uid: 4320
     components:
     - type: Transform
       parent: 4299
@@ -71805,6 +72581,13 @@ entities:
       canCollide: False
     - type: InsideEntityStorage
   - uid: 4321
+    components:
+    - type: Transform
+      parent: 4299
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 4322
     components:
     - type: Transform
       parent: 4299
@@ -71820,7 +72603,7 @@ entities:
     - type: InsideEntityStorage
 - proto: WeaponSubMachineGunWt550
   entities:
-  - uid: 29
+  - uid: 39
     components:
     - type: Transform
       parent: 28
