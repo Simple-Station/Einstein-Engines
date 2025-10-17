@@ -47,6 +47,7 @@
     - map: [ "ears" ]
     - map: [ "innerBelt" ] # Einstein Engines
     - map: [ "innerNeck" ] # Einstein Engines
+    - map: [ "enum.HumanoidVisualLayers.Tail" ] #goes UNDER your suit.
     - map: [ "outerClothing" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
@@ -57,7 +58,6 @@
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
-    - map: [ "enum.HumanoidVisualLayers.Tail" ]
     - map: [ "mask" ]
     - map: [ "head" ]
     - map: [ "pocket1" ]

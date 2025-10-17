@@ -730,7 +730,6 @@
     - Hardsuit
     - WhitelistChameleon
     - HidesHarpyWings
-    - ScurretWearable # this is going to look terrible because i think all the other hardsuits will inherit this. ESPECIALLY because i cant sprite. OR update the hardsuit apperances. so someone else please make a follow up PR
 
   - type: StaminaDamageResistance
     coefficient: 0.5 # 50%
