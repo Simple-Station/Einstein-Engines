@@ -1,0 +1,75 @@
+station-beacon-crescent-command = Command
+station-beacon-crescent-bridge = Bridge
+station-beacon-crescent-cockpit = Cockpit
+station-beacon-crescent-office = Office
+station-beacon-crescent-major = Major
+station-beacon-crescent-kommissar = Kommissar
+station-beacon-crescent-throne = Throne
+station-beacon-crescent-admiral = Admiral
+station-beacon-crescent-hoq = HoQ
+station-beacon-crescent-briefing = Briefing
+station-beacon-crescent-conference = Conference
+station-beacon-crescent-pdtconsole = PDT Toggle
+
+station-beacon-crescent-security = Security
+station-beacon-crescent-armory = Armory
+station-beacon-crescent-gunnery = Gunnery
+station-beacon-crescent-ammostorage = Ammo Storage
+station-beacon-crescent-gunport = Gunport
+station-beacon-crescent-artillery = Artillery
+station-beacon-crescent-brig = Brig
+station-beacon-crescent-checkpoint = Checkpoint
+
+station-beacon-crescent-medical = Medical
+station-beacon-crescent-medbay = Medbay
+station-beacon-crescent-chemistry = Chemistry
+station-beacon-crescent-cloning = Cloning
+station-beacon-crescent-morgue = Morgue
+station-beacon-crescent-surgery = Surgery
+
+station-beacon-crescent-supply = Supply
+station-beacon-crescent-cargo = Cargo
+station-beacon-crescent-manufacturing = Manufacturing
+station-beacon-crescent-depot = Depot
+station-beacon-crescent-factory = Factory
+station-beacon-crescent-logistics = Logistics
+station-beacon-crescent-assembly = Assembly
+station-beacon-crescent-salvage = Salvage
+station-beacon-crescent-commissary = Commissary
+station-beacon-crescent-dispensary = Dispensary
+station-beacon-crescent-deedconsole = Deed Console
+
+station-beacon-crescent-engineering = Engineering
+station-beacon-crescent-ame = AME
+station-beacon-crescent-solars = Solars
+station-beacon-crescent-powermonitoring = Power Monitor
+station-beacon-crescent-apc = APC
+station-beacon-crescent-smes = SMES
+station-beacon-crescent-substation = Substation
+station-beacon-crescent-atmospherics = Atmos
+station-beacon-crescent-gasminer = GasMiner
+station-beacon-crescent-backuppower = Backup Power
+station-beacon-crescent-gravgen = Gravgen
+station-beacon-crescent-anchor = Anchor
+station-beacon-crescent-shield = Shield
+station-beacon-crescent-mechbay = MechBay
+
+station-beacon-crescent-service = Service
+station-beacon-crescent-kitchen = Kitchen
+station-beacon-crescent-bar = Bar
+station-beacon-crescent-botany = Botany
+station-beacon-crescent-janitor = Janitor
+station-beacon-crescent-evastorage = EVA Storage
+station-beacon-crescent-shipyard = Shipyard
+station-beacon-crescent-dock = Dock
+station-beacon-crescent-docking = Docking
+station-beacon-crescent-church = Church
+station-beacon-crescent-library = Library
+station-beacon-crescent-dorms = Dorms
+
+station-beacon-crescent-cryosleep = Cryosleep
+station-beacon-crescent-disposals = Disposals
+station-beacon-crescent-escapepods = Escape Pod
+station-beacon-crescent-tools = Tools
+station-beacon-crescent-atm = ATM
+station-beacon-crescent-cams = Cams
