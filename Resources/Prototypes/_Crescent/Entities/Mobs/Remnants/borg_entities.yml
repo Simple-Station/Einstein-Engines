@@ -29,8 +29,8 @@
     interactFailureString: petting-failure-generic-cyborg
   - type: BorgTransponder
     sprite:
-      sprite: Mobs/Silicon/chassis.rsi
-      state: robot
+      sprite: _Crescent/Mobs/Remnants/remnant.rsi
+      state: remnant
   - type: IntrinsicRadioTransmitter
     channels:
     - Binary
