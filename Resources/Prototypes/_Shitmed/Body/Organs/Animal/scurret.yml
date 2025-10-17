@@ -13,6 +13,8 @@
         Quantity: 3
       - ReagentId: Blood
         Quantity: 10
+      - ReagentId: Water
+        Quantity: 10
 
 - type: entity
   id: TorsoScurret
@@ -29,6 +31,8 @@
         Quantity: 10
       - ReagentId: Blood
         Quantity: 20
+      - ReagentId: Water
+        Quantity: 10
 
 - type: entity
   id: HeadScurret
@@ -44,6 +48,8 @@
       - ReagentId: Fat
         Quantity: 5
       - ReagentId: Blood
+        Quantity: 10
+      - ReagentId: Water
         Quantity: 10
 
 - type: entity
