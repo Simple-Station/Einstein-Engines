@@ -603,6 +603,24 @@
   - type: ShipVoucher
     ship: Probe
 
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherFujin
+  name: CSEC 'Fujin' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a CorpSec Fujin-class light destroyer pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 60000
+  - type: ShipVoucher
+    ship: Fujin
+
+
 #ncsp
 
 - type: entity

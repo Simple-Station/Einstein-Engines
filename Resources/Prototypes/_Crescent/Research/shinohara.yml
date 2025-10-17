@@ -328,6 +328,18 @@
   - CyberneticsMantisBladeLeft
 
 - type: technology
+  id: ShinoharaLightDestroyer
+  name: research-technology-shinohara-light-destroyer
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Corporate
+  tier: 2
+  cost: 8000
+  recipeUnlocks:
+  - FujinLPC
+
+- type: technology
   id: ShinoharaAdvancedMechWeapons
   name: research-technology-shinohara-advancedmechweaponry
   icon:

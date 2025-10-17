@@ -1,0 +1,29 @@
+- type: vessel
+  id: Fujin
+  name: CSEC Fujin
+  description: The CSEC Fujin is a light destroyer containing impressive frontal arrarment.
+  price: 90000
+  category: Medium
+  group: None
+  path: /Maps/_Crescent/Shuttles/SHI/fujin.yml
+
+- type: gameMap
+  id: Fujin
+  mapName: 'CSEC Fujin'
+  mapPath: /Maps/_Crescent/Shuttles/SHI/fujin.yml
+  minPlayers: 0
+  stations:
+    Fujin:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: cruiser
+        - type: StationNameSetup
+          mapNameTemplate: 'CSEC Fujin {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-destroyer
