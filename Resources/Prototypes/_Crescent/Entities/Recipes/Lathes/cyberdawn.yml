@@ -176,6 +176,29 @@
     AdvancedElectronics: 1000
     Plastic: 250
     WeakLaserLocus: 500
+    Plasma: 250
+
+- type: latheRecipe
+  id: EnergySword
+  result: EnergySword
+  completetime: 1.5
+  materials:
+    AdvancedElectronics: 1000
+    Steel: 500
+    WeakLaserLocus: 500
+    HardlightGenerator: 500
+    Plasma: 500
+
+- type: latheRecipe
+  id: EnergySwordDouble
+  result: EnergySwordDouble
+  completetime: 1.5
+  materials:
+    AdvancedElectronics: 1000
+    HardlightGenerator: 500
+    Steel: 1000
+    WeakLaserLocus: 1000
+    Plasma: 1000
 
 - type: latheRecipe
   id: ClothingOuterHardsuitSyndieMedicCyberdawn

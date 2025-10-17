@@ -68,6 +68,10 @@ research-technology-cyberdawn-thermals = Thermal Vision Goggles
 research-technology-cyberdawn-advancedlaunchers = Advanced Launchers
 research-technology-cyberdawn-CDTAdvancedComponents = Advanced components
 research-technology-cyberdawn-CDTAdvancedFirearmcomponents = Advanced Firearm components
+research-technology-cyberdawn-CDTPhoronBlade = PhoronBlade
+research-technology-cyberdawn-CDTDualPhoronBlade = DualPhoronBlade
+
+
 
 # DSM
 research-technology-imperial-basicclothes = Basic Tailoring

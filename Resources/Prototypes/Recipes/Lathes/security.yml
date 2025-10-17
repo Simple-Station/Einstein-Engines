@@ -1356,17 +1356,6 @@
     Diamond: 100
 
 - type: latheRecipe
-  id: EnergySwordDouble
-  result: EnergySwordDouble
-  completetime: 20
-  materials:
-    Tungsten: 600
-    Gold: 600
-    Bluespace: 600
-    Plasma: 600
-    Diamond: 200
-
-- type: latheRecipe
   id: WeaponSubMachineGunFPA90
   result: WeaponSubMachineGunFPA90
   category: Weapons
