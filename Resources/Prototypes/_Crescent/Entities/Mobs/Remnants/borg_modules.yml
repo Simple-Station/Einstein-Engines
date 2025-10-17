@@ -11,9 +11,29 @@
     - type: ItemBorgModule
       items:
       - Omnitool
+      - JawsOfLife
       - WelderExperimental
       - NetworkConfigurator
       - JetpackBorgFilled
-      - Emag
+      - MassScannerEEBorg
+    - type: BorgModuleIcon
+      icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-operative-module }
+
+- type: entity
+  id: BorgModuleRemnantCombat
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  name: remnant cyborg module (combat)
+  description: changeme
+  components:
+    - type: Sprite
+      layers:
+      - state: syndicate
+      - state: icon-syndicate
+    - type: ItemBorgModule
+      items:
+      - EnergySword
+      - WeaponBorgEnergyCarbine
+      - JetpackBorgFilled
+      - MassScannerEEBorg
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-operative-module }

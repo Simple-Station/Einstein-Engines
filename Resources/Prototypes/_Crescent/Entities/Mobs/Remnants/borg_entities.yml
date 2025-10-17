@@ -1,41 +1,47 @@
 # this holds borgs n shit for remnant ships and fogshit
 - type: entity
+  name: Nanotrasen Remnant Chassis
   id: BorgChassisRemnant
   parent: BaseBorgChassisNT
   components:
   - type: Sprite
+    sprite: _Crescent/Mobs/Remnants/remnant.rsi
     layers:
-    - state: robot
+    - state: remnant
       map: ["enum.BorgVisualLayers.Body", "movement"]
-    - state: robot_e_r
+    - state: remnant_e
+      map: ["enum.BorgVisualLayers.Light"]
+    - state: remnant_e_r
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
       visible: false
-    - state: robot_l
+    - state: remnant_l
       shader: unshaded
       map: ["light","enum.BorgVisualLayers.LightStatus"]
       visible: false
   - type: BorgChassis
     # they wont get more modules anyway
-    maxModules: 10
-    hasMindState: robot_e
-    noMindState: robot_e_r
+    maxModules: 2
+    hasMindState: remnant_e
+    noMindState: remnant_e_r
   - type: InteractionPopup
     interactSuccessString: petting-success-generic-cyborg
     interactFailureString: petting-failure-generic-cyborg
-  - type: BorgSwitchableType
-    inherentRadioChannels:
-    - Common #longwave
-    - Traffic #shortwave
-    - Binary #for inter-borg comms
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+    - Common
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
   - type: ContainerFill
     containers:
       borg_brain:
         - PositronicBrain
       borg_module:
-        - BorgModuleOperative #todo - switch these
-        - BorgModuleL6C
-        - BorgModuleEsword
+        - BorgModuleRemnantUtility
+        - BorgModuleRemnantCombat
   - type: ItemSlots
     slots:
       cell_slot:
