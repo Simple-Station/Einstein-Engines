@@ -12,10 +12,13 @@
       items:
       - Omnitool
       - JawsOfLife
+      - Doorjack
+      - EmagUnlimited
       - WelderExperimental
       - NetworkConfigurator
       - JetpackBorgFilled
       - MassScannerEEBorg
+      - HandheldGPSBasic
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-operative-module }
 

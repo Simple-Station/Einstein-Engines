@@ -256,3 +256,26 @@
         posX: -1500
         posY: 0
         HideIFF: true
+
+- type: entity
+  id: Hyperwar | NT - NCWL - DSM
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: AdventureRule
+    gameMapsByID:
+      gameMapsByID:
+      PortBalreska:
+        gameMapID: PortBalreska
+        posX: 1500
+        posY: -9000
+        IFFColor: Orange
+        IFFFaction: NCWL
+      Countsman:
+        gameMapID: Countsman
+        posX: -4800
+        posY: 9000
+        IFFColor: Purple
+        IFFFaction: DSM
+
+        

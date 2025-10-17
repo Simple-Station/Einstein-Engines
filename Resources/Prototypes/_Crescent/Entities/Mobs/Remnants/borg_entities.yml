@@ -1,7 +1,8 @@
 # this holds borgs n shit for remnant ships and fogshit
 - type: entity
   id: BorgChassisRemnant
-  name: Remnant Chassis
+  name: Nanotrasen Anti-Psionic Control Unit
+  description: A leftover from centuries past. It's designed to eliminate sources of psionic instability.
   parent: BaseBorgChassisNT
   components:
   - type: Sprite
@@ -32,11 +33,13 @@
   - type: IntrinsicRadioTransmitter
     channels:
     - Binary
-    - Common
+    - Common # longwave
+    - Traffic # shortwave
   - type: ActiveRadio
     channels:
     - Binary
     - Common
+    - Traffic
   - type: Speech
     speechVerb: Robotic
   - type: ContainerFill
@@ -51,3 +54,19 @@
       cell_slot:
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellHyper
+  - type: MovementSpeedModifier
+    weightlessAcceleration: 5 # Move around more easily in space.
+    weightlessModifier: 1.1
+    weightlessFriction: 3 # makes you turn more sharply while weightless
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+      #todo: access
+  - type: NpcFactionMember
+    factions:
+      - SimpleHostile #for autoturrets
+  - type: Access #replace thsi with access for remnant doors when i bother .2 | 2025
+    tags:
+    - Captain #what's used on fungus's doors rn
+  
+    
