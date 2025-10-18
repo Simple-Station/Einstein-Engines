@@ -1334,17 +1334,6 @@
     Gold: 100
 
 - type: latheRecipe
-  id: EnergySword
-  result: EnergySword
-  completetime: 10
-  materials:
-    Tungsten: 300
-    Gold: 300
-    Bluespace: 300
-    Plasma: 300
-    Diamond: 100
-
-- type: latheRecipe
   id: EnergyCutlass
   result: EnergyCutlass
   completetime: 10
