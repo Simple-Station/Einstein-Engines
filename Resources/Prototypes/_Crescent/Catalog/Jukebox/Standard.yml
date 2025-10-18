@@ -310,3 +310,9 @@
   name: John Denver - Take Me Home, Country Roads
   path:
     path: "/Audio/_Crescent/Jukebox/countryroads.ogg"
+
+- type: jukebox
+  id: WhirlinginRagsSong
+  name: British Sea Power - Whirling-In-Rags
+  path:
+    path: "/Audio/_Crescent/Jukebox/WhirlingInRags.ogg"
