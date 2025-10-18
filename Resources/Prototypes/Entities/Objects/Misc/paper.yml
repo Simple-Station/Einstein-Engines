@@ -1,6 +1,70 @@
 - type: entity
-  name: paper
   parent: BaseItem
+  id: BasePaper
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - Document
+    - Paper
+  - type: Appearance
+  - type: Flammable
+    fireSpread: true
+    alwaysCombustible: true
+    damage:
+      types:
+        Heat: 1
+  - type: FireVisuals
+    sprite: Effects/fire.rsi
+    normalState: fire
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Ash:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Food
+    solution: food
+    delay: 7
+    forceFeedDelay: 7
+  - type: FlavorProfile
+    flavors:
+    - paper
+  - type: BadFood
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 1
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 1
+  - type: Item
+    size: Tiny
+  - type: EmitSoundOnPickup
+    sound: /Audio/SimpleStation14/Items/Handling/paper_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/SimpleStation14/Items/Handling/paper_drop.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/SimpleStation14/Items/Handling/paper_drop.ogg
+  # Corvax-Printer-Start
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      SheetPrinter: 100
+# Corvax-Printer-End
+
+- type: entity
+  name: paper
+  parent: BasePaper
   id: Paper
   description: 'A piece of white paper.'
   components:
@@ -23,85 +87,24 @@
     interfaces:
       enum.PaperUiKey.Key:
         type: PaperBoundUserInterface
-  - type: Item
-    size: Tiny
+  - type: FaxableObject
+  - type: PaperVisuals
+
+- type: entity
+  name: paper scrap
+  parent: BasePaper
+  id: PaperScrap
+  description: 'A crumpled up piece of white paper.'
+  components:
   - type: Tag
     tags:
     - Document
     - Trash
     - Paper
-  - type: Appearance
-  - type: FaxableObject
-  - type: PaperVisuals
-  - type: Flammable
-    fireSpread: true
-    canResistFire: false
-    alwaysCombustible: true
-    canExtinguish: false # Mwahaha! Let the world burn because of one piece of paper!
-    damage:
-      types:
-        Heat: 1
-  - type: FireVisuals
-    sprite: Effects/fire.rsi
-    normalState: fire
-  - type: Damageable
-    damageModifierSet: Wood
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 15
-      behaviors:
-      - !type:SpawnEntitiesBehavior
-        spawn:
-            Ash:
-              min: 1
-              max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-  - type: Food
-    solution: food
-    delay: 7
-    forceFeedDelay: 7
-  - type: FlavorProfile
-    flavors:
-    - paper
-  - type: BadFood
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 1
-        reagents:
-        - ReagentId: Fiber
-          Quantity: 1
-  - type: EmitSoundOnPickup
-    sound: /Audio/SimpleStation14/Items/Handling/paper_pickup.ogg
-  - type: EmitSoundOnDrop
-    sound: /Audio/SimpleStation14/Items/Handling/paper_drop.ogg
-  - type: EmitSoundOnLand
-    sound: /Audio/SimpleStation14/Items/Handling/paper_drop.ogg
-  # Corvax-Printer-Start
-  - type: Material
-  - type: PhysicalComposition
-    materialComposition:
-      SheetPrinter: 100
-# Corvax-Printer-End
-
-- type: entity
-  name: paper scrap
-  parent: Paper
-  id: PaperScrap
-  description: 'A crumpled up piece of white paper.'
-  components:
   - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
     layers:
     - state: scrap
-    - state: paper_words
-      map: ["enum.PaperVisualLayers.Writing"]
-      visible: false
-    - state: paper_stamp-generic
-      map: ["enum.PaperVisualLayers.Stamp"]
-      visible: false
 
 - type: entity
   name: office paper
@@ -172,16 +175,6 @@
     contentMargin: 32.0, 16.0, 32.0, 0.0
 
 - type: entity
-  name: note
-  description: A piece of white paper.
-  id: PaperWrittenPunpunNote
-  parent: PaperCaptainsThoughts
-  suffix: Punpun Note
-  components:
-  - type: Paper
-    content: I, Punpun, invoke my right to have all of my clones on the NT family vacation to the meat packaging plant one out of every 15 shifts.
-
-- type: entity
   name: cargo invoice
   parent: Paper
   id: PaperCargoInvoice
@@ -200,6 +193,11 @@
       visible: false
   - type: PaperLabelType
     paperType: Invoice
+  - type: Tag
+    tags:
+    - Document
+    - Trash
+    - Paper
   - type: PaperVisuals
     backgroundImagePath: "/Textures/Interface/Paper/paper_background_default.svg.96dpi.png"
     contentImagePath: "/Textures/Interface/Paper/paper_content_lined.svg.96dpi.png"
@@ -209,6 +207,21 @@
     contentMargin: 16.0, 16.0, 16.0, 16.0
     headerImagePath: "/Textures/Interface/Paper/paper_heading_cargo_invoice.svg.96dpi.png"
     headerMargin: 0.0, 12.0, 0.0, 0.0
+
+- type: entity
+  id: PaperNanoTaskItem
+  parent: Paper
+  name: NanoTask item
+  description: A printed NanoTask item. Can be inserted into your PDA to add it to your tasks.
+  components:
+  - type: Tag
+    tags:
+    - Document
+    - Trash
+    - Paper
+  - type: StaticPrice
+    price: 0
+  - type: NanoTaskPrinted
 
 - type: entity
   id: PaperCargoBountyManifest
@@ -229,6 +242,11 @@
       visible: false
   - type: PaperLabelType
     paperType: Bounty
+  - type: Tag
+    tags:
+    - Document
+    - Trash
+    - Paper
   - type: PaperVisuals
     backgroundImagePath: "/Textures/Interface/Paper/paper_background_default.svg.96dpi.png"
     contentImagePath: "/Textures/Interface/Paper/paper_content_lined.svg.96dpi.png"
@@ -257,15 +275,15 @@
     content: book-cnc-sheet
   - type: Sprite
     layers:
-      - state: paper
-        color: "#cccccc"
-      - state: paper_words
-        map: ["enum.PaperVisualLayers.Writing"]
-        color: "#cccccc" #aaaaaaaaaaaaaaaaaaaaaaa
-        visible: false
-      - state: paper_stamp-generic
-        map: ["enum.PaperVisualLayers.Stamp"]
-        visible: false
+    - state: paper
+      color: "#cccccc"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#cccccc" #aaaaaaaaaaaaaaaaaaaaaaa
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
   - type: PaperVisuals
     backgroundImagePath: "/Textures/Interface/Paper/paper_background_default.svg.96dpi.png"
     contentImagePath: "/Textures/Interface/Paper/paper_content_lined.svg.96dpi.png"
@@ -331,18 +349,18 @@
     layers:
     - state: folder-colormap
     - state: folder-base
-# RandomSpriteColor requires netsync which is currently incompatible with ItemMapper
-#  - type: RandomSpriteColor
-#    sprite: Objects/Misc/bureaucracy.rsi
-#    state: folder-colormap
-#    colors:
-#      red: "#cc2323"
-#      blue: "#355d99"
-#      yellow: "#b38e3c"
-#      white: "#e6e6e6"
-#      grey: "#999999"
-#      black: "#3f3f3f"
-#      green: "#43bc38"
+  # RandomSpriteColor requires netsync which is currently incompatible with ItemMapper
+  #  - type: RandomSpriteColor
+  #    sprite: Objects/Misc/bureaucracy.rsi
+  #    state: folder-colormap
+  #    colors:
+  #      red: "#cc2323"
+  #      blue: "#355d99"
+  #      yellow: "#b38e3c"
+  #      white: "#e6e6e6"
+  #      grey: "#999999"
+  #      black: "#3f3f3f"
+  #      green: "#43bc38"
   - type: Item
     sprite: Objects/Misc/bureaucracy.rsi
     size: Small
@@ -353,7 +371,7 @@
     - 0,0,4,3
     whitelist:
       tags:
-        - Document
+      - Document
   - type: ItemMapper
     mapLayers:
       folder-overlay-paper:
@@ -366,16 +384,16 @@
     - Folder
   - type: StorageFill
     contents:
-      - id: Paper
-        prob: 0.5
-      - id: PaperOffice
-        prob: 0.4
-      - id: Paper
-        prob: 0.3
-      - id: PaperOffice
-        prob: 0.2
-      - id: Paper
-        prob: 0.2
+    - id: Paper
+      prob: 0.5
+    - id: PaperOffice
+      prob: 0.4
+    - id: Paper
+      prob: 0.3
+    - id: PaperOffice
+      prob: 0.2
+    - id: Paper
+      prob: 0.2
 
 - type: entity
   id: BoxFolderRed
@@ -457,7 +475,7 @@
   id: BoxFolderCentCom
   name: CentComm folder
   parent: BoxFolderBase
-  suffix: DO NOT MAP
+  categories: [ DoNotMap ]
   description: CentComm's miserable little pile of secrets!
   components:
   - type: Sprite
@@ -493,7 +511,7 @@
         name: clipboard-slot-component-slot-name-pen
         whitelist:
           tags:
-            - Write
+          - Write
         insertOnInteract: false
   - type: Item
     sprite: Objects/Misc/clipboard.rsi
@@ -507,7 +525,7 @@
     - 0,0,5,3
     whitelist:
       tags:
-        - Document
+      - Document
   - type: ItemMapper
     mapLayers:
       clipboard_paper:
@@ -569,7 +587,7 @@
         name: clipboard-slot-component-slot-name-pen
         whitelist:
           tags:
-            - Write
+          - Write
         insertOnInteract: true
   - type: Item
     sprite: Objects/Misc/qm_clipboard.rsi
@@ -607,6 +625,10 @@
     damage:
       types:
         Blunt: 10
+  - type: Tag
+    tags:
+    - Folder
+    - HighRiskItem
   - type: StealTarget
     stealGroup: BoxFolderQmClipboard
 
@@ -615,7 +637,7 @@
   id: TraitorCodePaper
   name: syndicate codeword
   description: A leaked codeword to possibly get in touch with the Syndicate.
-  suffix: DO NOT MAP
+  categories: [ DoNotMap ]
   components:
   - type: TraitorCodePaper
 
@@ -669,7 +691,7 @@
         ejectSound: /Audio/Effects/packetrip.ogg
         whitelist:
           tags:
-            - Paper
+          - Paper
   - type: ActivatableUI
     key: enum.PaperUiKey.Key
     requiresComplex: false
@@ -706,3 +728,13 @@
       - !type:EmptyAllContainersBehaviour
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+
+- type: entity
+  name: note
+  description: A piece of white paper.
+  id: PaperWrittenPunpunNote
+  parent: PaperCaptainsThoughts
+  suffix: Punpun Note
+  components:
+  - type: Paper
+    content: I, Punpun, invoke my right to have all of my clones on the NT family vacation to the meat packaging plant one out of every 15 shifts.
