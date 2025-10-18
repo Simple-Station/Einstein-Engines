@@ -86,8 +86,8 @@
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/non_collection/laser1.ogg
   - type: Battery
-    maxCharge: 1800
-    startingCharge: 1800
+    maxCharge: 2000
+    startingCharge: 2000
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 20
@@ -99,8 +99,8 @@
   id: MakoLaser
   damage:
     types:
-      Heat: 7
-      Structural: 120
+      Heat: 8
+      Structural: 180
   muzzleFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_omni
