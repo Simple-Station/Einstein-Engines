@@ -257,25 +257,135 @@
         posY: 0
         HideIFF: true
 
+# - type: gamePreset
+#   id: HyperwarNTvsNCWLvsDSM
+#   name: Hyperwar | NT - NCWL - DSM
+#   showInVote: true
+#   description: A Nanotrasen Remnant squadron seeks to wipe out the sector's population. NCWL and DSM see an opportunity to weaken each other, or potentially end the foreverwar.
+#   rules:
+#   - HyperwarNTvsNCWLvsDSM
+
+# - type: entity
+#   id: HyperwarNTvsNCWLvsDSM
+#   parent: BaseGameRule
+#   categories: [ HideSpawnMenu ]
+#   components:
+#   - type: AdventureRule
+#     gameMapsByID:
+#       gameMapsByID:
+#       PortBalreska:
+#         gameMapID: PortBalreska
+#         posX: 1500
+#         posY: -4500
+#         IFFColor: Orange
+#         IFFFaction: NCWL
+#       Countsman:
+#         gameMapID: Countsman
+#         posX: -1500
+#         posY: 4500
+#         IFFColor: Purple
+#         IFFFaction: DSM
+      # Brilliant:
+      #   gameMapID: Brilliant
+      #   posX: 0
+      #   posY: 0
+      #   IFFColor: FireBrick
+      #   IFFFaction: Remnant
+      # Fulgur:
+      #   gameMapID: Fulgur
+      #   posX: 50
+      #   posY: 0
+      #   IFFColor: FireBrick
+      #   IFFFaction: Remnant
+      # Radiant:
+      #   gameMapID: Radiant
+      #   posX: -50
+      #   posY: 0
+      #   IFFColor: FireBrick
+      #   IFFFaction: Remnant
+      # AutoscoutA:
+      #   gameMapID: Autoscout
+      #   posX: -25
+      #   posY: -50
+      #   IFFColor: FireBrick
+      #   IFFFaction: Remnant
+      # AutoscoutB:
+      #   gameMapID: Autoscout
+      #   posX: 0
+      #   posY: -50
+      #   IFFColor: FireBrick
+      #   IFFFaction: Remnant
+      # AutoscoutC:
+      #   gameMapID: Autoscout
+      #   posX: 25
+      #   posY: -50
+      #   IFFColor: FireBrick
+      #   IFFFaction: Remnant
+        
+
+- type: gamePreset
+  id: HyperwarNTvsNCWLvsDSM
+  alias:
+  - hyperwarBots
+  name: Hyperwar | NT Remnants - NCWL - DSM
+  showInVote: true
+  description: A Nanotrasen Remnant squadron seeks to wipe out all of Taypan. NCWL and DSM see an opportunity to weaken each other, or potentially end the foreverwar.
+  rules:
+  - HyperwarBots
+  - HullrotEventScheduler
+
 - type: entity
-  id: Hyperwar | NT - NCWL - DSM
+  id: HyperwarBots
   parent: BaseGameRule
   categories: [ HideSpawnMenu ]
   components:
   - type: AdventureRule
     gameMapsByID:
-      gameMapsByID:
       PortBalreska:
         gameMapID: PortBalreska
-        posX: 1500
-        posY: -9000
+        posX: 2500
+        posY: -2500
         IFFColor: Orange
         IFFFaction: NCWL
       Countsman:
         gameMapID: Countsman
-        posX: -4800
-        posY: 9000
+        posX: 2500
+        posY: 2500
         IFFColor: Purple
         IFFFaction: DSM
-
-        
+      Brilliant:
+        gameMapID: Brilliant
+        posX: 0
+        posY: 0
+        IFFColor: FireBrick
+        IFFFaction: Remnant
+      Fulgur:
+        gameMapID: Fulgur
+        posX: 100
+        posY: 0
+        IFFColor: FireBrick
+        IFFFaction: Remnant
+      Radiant:
+        gameMapID: Radiant
+        posX: -100
+        posY: 0
+        IFFColor: FireBrick
+        IFFFaction: Remnant
+      AutoscoutA:
+        gameMapID: Autoscout
+        posX: -25
+        posY: -50
+        IFFColor: FireBrick
+        IFFFaction: Remnant
+      AutoscoutB:
+        gameMapID: Autoscout
+        posX: 0
+        posY: -50
+        IFFColor: FireBrick
+        IFFFaction: Remnant
+      AutoscoutC:
+        gameMapID: Autoscout
+        posX: 25
+        posY: -50
+        IFFColor: FireBrick
+        IFFFaction: Remnant
