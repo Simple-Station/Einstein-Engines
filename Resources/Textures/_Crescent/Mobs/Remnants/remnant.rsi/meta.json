@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "license": "yoinked from lifeweb",
+  "copyright": "yoinked from lifeweb",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    
+    {
+      "name": "remnant",
+      "directions": 4
+    },
+    {
+      "name": "remnant_e",
+      "directions": 4
+    },
+    {
+      "name": "remnant_e_r",
+      "directions": 4
+    },
+    {
+      "name": "remnant_l",
+      "directions": 4
+    }
+  ]
+}
