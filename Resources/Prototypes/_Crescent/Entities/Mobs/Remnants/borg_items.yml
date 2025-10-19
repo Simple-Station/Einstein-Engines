@@ -72,3 +72,39 @@
       autoRechargeRate: 2
     - type: AmmoCounter
 
+
+- type: entity
+  name: Anti-Psionic Fist
+  parent: BaseItem
+  id: RemnantFist
+  description: A robust fist meant to cave in skulls.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Mobs/Remnants/remnant_fist.rsi
+    state: icon
+  - type: MeleeWeapon
+    attackRate: 3 #3 seconds
+    wideAnimationRotation: -135
+    range: 2
+    damage:
+      types:
+        Blunt: 50
+        Structural: 200
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 1
+    heavyRateModifier: 1.25
+    clickPartDamageMultiplier: 1.5
+    maxTargets: 3
+    bluntStaminaDamageFactor: 1.5
+    angle: 90
+    soundHit:
+      collection: MetalThud
+  - type: MeleeThrowOnHit
+    speed: 10
+    lifetime: 0.25
+  - type: KnockdownOnHit
+    duration: 1
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,1,3
