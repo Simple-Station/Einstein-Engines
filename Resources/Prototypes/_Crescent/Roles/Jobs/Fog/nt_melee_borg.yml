@@ -1,0 +1,21 @@
+- type: job
+  id: NTBorgMelee
+  name: job-name-melee-borg
+  description: job-description-nt-melee-borg
+  playTimeTracker: JobBorg
+  canBeAntag: false
+  icon: JobIconBorg
+  supervisors: "The leftovers of Nanotrasen."
+  jobEntity: BorgChassisRemnantMelee
+  canHavePassport: false
+
+- type: job
+  id: NTBorgRanged
+  name: job-name-ranged-borg
+  description: job-description-nt-ranged-borg
+  playTimeTracker: JobBorg
+  canBeAntag: false
+  icon: JobIconBorg
+  supervisors: "The leftovers of Nanotrasen."
+  jobEntity: BorgChassisRemnantRanged
+  canHavePassport: false
