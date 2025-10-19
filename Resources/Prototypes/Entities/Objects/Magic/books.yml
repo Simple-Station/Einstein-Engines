@@ -79,7 +79,8 @@
 
 - type: entity
   id: ForceWallSpellbook
-  name: force wall spellbook
+  name: Protecting yourself and your mind
+  description: The book goes over a mental exercise to protect oneself from harm. the specifics fade from your mind quickly.
   parent: BaseSpellbook
   components:
     - type: Sprite
@@ -102,7 +103,8 @@
 
 - type: entity
   id: BlinkBook
-  name: blink spellbook
+  name: The escapist's fantasy
+  description: The book goes over a mental exercise of imagining yourself in a different place. the specifics fade from your mind quickly.
   parent: BaseSpellbook
   components:
     - type: Sprite
@@ -168,7 +170,8 @@
 
 - type: entity
   id: FireballSpellbook
-  name: fireball spellbook
+  name: A Pyromaniac's obsession
+  description: The book goes over a mental exercise to channel pyromancy into a singular fireball. the specifics fade from your mind quickly.
   parent: BaseSpellbook
   components:
     - type: Sprite
@@ -192,7 +195,8 @@
 
 - type: entity
   id: ScrollRunes
-  name: scroll of runes
+  name: collection of drawings
+  description: A collection of hastily scribbled notes of strange drawings that seem to do things if drawn. Despite it fading from your memory, you are absolutely sure they work.
   parent: BaseSpellbook
   components:
   - type: Item
