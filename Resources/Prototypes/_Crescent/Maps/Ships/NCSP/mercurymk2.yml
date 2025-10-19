@@ -1,0 +1,37 @@
+# Author Info
+# Discord: @Rubeebee
+
+- type: vessel
+  id: Mercurymk2
+  name: SAW Mercury MKII
+  description: |
+    Made from a captured ICM Mercury, this SAW combat retrofit turned this techminer into a veritable leadspewer, it's bridge transformed into a gunnery platform for the custom made SAW 20mm Cleanser autocannon. 
+    LOADOUT: 1x SAW 20mm Cleanser
+    MINIMUM CREW: 1x Pilot
+  price: 37000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/NCSP/mercurymk2.yml
+
+- type: gameMap
+  id: Mercurymk2
+  mapName: 'SAW Mercury MKII'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/mercurymk2.yml
+  minPlayers: 0
+  stations:
+    Mercurymk2:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'SAW Mercury MKII {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-gunship
+        - type: VesselDescription
+          description: Rain hell on those who dare oppose you.
