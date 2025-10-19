@@ -13,6 +13,8 @@
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"
+    - !type:CharacterOverallTimeRequirement
+      min: 10800
     - !type:CharacterSpeciesRequirement
       species:
         - Human

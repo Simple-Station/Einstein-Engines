@@ -13,10 +13,6 @@
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Voidborn
   special:
   - !type:AddComponentSpecial
     components:

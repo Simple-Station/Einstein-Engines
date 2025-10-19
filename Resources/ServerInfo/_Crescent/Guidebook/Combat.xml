@@ -1,0 +1,39 @@
+<Document>
+# Frontier Warfare
+
+Warfare on the Taypani frontier is typically done via the means of [color=#ebb72a]ship gunnery[/color] systems and there are very little laws of engagement in place.
+
+<Box>
+<GuideEntityEmbed Entity="WeaponTurretPDTNCWL"/>
+<GuideEntityEmbed Entity="BaseWeaponTurretSolaris"/>
+</Box>
+
+Turret systems are operated using a [color=#ebb72a]targeting console[/color], where groups of turrets or individual turrets can be selected to fire by clicking on the starmap provided. Ammo counters of the selected turrets are always displayed near the top of the UI panel, and selected turrets blink orange when selected on your IFF.
+
+#Fixedpoint Weaponry
+
+While [color=#ebb72a]turret[/color] weapons use [color=#ebb72a]hardpoints[/color], [color=#ebb72a]fixedpoint[/color] weaponry that are operated using remote signallers or your ship's shuttle console require such no infrastructure, and can be wrenched on or off your vessel at any time with only its power draw requirements to be mindful of. Sacrificing mobility and agility, such weapons are often able to use higher calibers of munitions or fire faster to compensate, and are more commonly found on smaller class of ships - although larger vessels sport capital-class armaments like the [color=#ebb72a]320mm accelerator carronade[/color].
+
+
+<Box>
+<GuideEntityEmbed Entity="ShuttleGunPlasmaRepeater"/>
+<GuideEntityEmbed Entity="ShuttleGunMissileRack"/>
+</Box>
+
+
+#Hardpoints
+
+Hardpoints are always built into the hull - and more cannot be built, moved in from other ships, or otherwise be tampered with. Hardpoints represent the mechanical interface used for interchangable weapons systems between the turrets themselves and your ship's electronics -- there are however, two exceptions to the rule, where factions that are advanced in a specific combat discipline can produce hardpoints up to medium-class for their respective weapon type, and the [color=#9c1a00]Abyssal Scrapsea[/color], where the Abyss might yield advanced universal hardpoints.
+
+<GuideEntityEmbed Entity="AAAHardpointLargeMissile"/>
+<GuideEntityEmbed Entity="AAAHardpointMediumBallistic"/>
+
+## Shields
+
+<Box>
+<GuideEntityEmbed Entity="ShieldEmitterMedium"/>
+</Box>
+
+Some ships may be outfitted with deflector emitters, capable of deflecting projectiles and blocking explosions. When damaged, deflector bubbles use the ship's power grid to repair themselves -- be wary of your shield, if it takes too much damage, it'll end up cannibalizing the entire powergrid in an attempt to turn itself back on, disabling every other module onboard!
+
+</Document>

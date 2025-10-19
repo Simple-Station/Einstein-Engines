@@ -358,3 +358,9 @@
   name: Bolt Thrower - World Eater
   path:
     path: "/Audio/_Crescent/Jukebox/worldeater.ogg"
+
+- type: jukebox
+  id: WhirlinginRagsSong
+  name: British Sea Power - Whirling-In-Rags
+  path:
+    path: "/Audio/_Crescent/Jukebox/WhirlingInRags.ogg"
