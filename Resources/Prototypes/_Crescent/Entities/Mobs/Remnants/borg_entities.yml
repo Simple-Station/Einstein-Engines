@@ -9,16 +9,15 @@
     sprite: _Crescent/Mobs/Remnants/remnant.rsi
     layers:
     - state: remnant
-      map: ["enum.BorgVisualLayers.Body", "movement"]
-    - state: remnant_e
-      map: ["enum.BorgVisualLayers.Light"]
+      map: ["movement"]
+    # - state: remnant_e
     - state: remnant_e_r
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
       visible: false
     - state: remnant_l
       shader: unshaded
-      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      map: ["light"]
       visible: false
   - type: BorgChassis
     # they wont get more modules anyway
