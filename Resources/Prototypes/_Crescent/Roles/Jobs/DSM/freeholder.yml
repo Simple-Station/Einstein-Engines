@@ -13,15 +13,13 @@
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Voidborn
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-freeholder
+      - type: HullrotFaction
+        faction: DSM
       - type: LanguageAdder
         addSpoken:
           - LowImperial

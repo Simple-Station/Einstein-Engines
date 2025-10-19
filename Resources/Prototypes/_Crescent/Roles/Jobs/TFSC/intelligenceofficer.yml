@@ -12,6 +12,8 @@
   canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
+    - !type:CharacterOverallTimeRequirement
+      min: 10800
     - !type:FactionRequirement
       factionID: "TFSC"
     - !type:SexRequirement
@@ -26,6 +28,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-patriarch
+      - type: HullrotFaction
+        faction: CD
       - type: LanguageAdder
         addSpoken:
           - Freespeak

@@ -1,0 +1,37 @@
+# Author Info
+# Discord: rubeebee
+
+- type: vessel
+  id: Bee
+  name: TS Bee
+  description: |
+    A variant of the Wasp, the Bee carries a 180mm Idna Launcher with two torpedoes pre-loaded, requiring frequent reloading for continuous use. It is wise to consider hit-and-run tactics with this fighter.
+    LOADOUT: 1x 180mm Idna Torpedo Launcher.
+    MINIMUM CREW: 1x Brave Pilot
+  price: 12000
+  category: Small
+  group: Scrap
+  path: /Maps/_Crescent/Shuttles/Civilian/bee.yml
+
+- type: gameMap
+  id: Bee
+  mapName: 'Bee'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/bee.yml
+  minPlayers: 0
+  stations:
+    Bee:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: fighter
+        - type: StationNameSetup
+          mapNameTemplate: 'Bee {1}'
+          nameGenerator:
+           !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter
+        - type: VesselDescription
+          description: The Bee gets it's name from it's loadout- sting once and die.

@@ -4,7 +4,6 @@ using Content.Client.Clickable;
 using Content.Client.UserInterface;
 using Content.Client.Viewport;
 using Content.Shared.Input;
-using Content.Shared.Damage;
 using Robust.Client.ComponentTrees;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -118,13 +117,6 @@ namespace Content.Client.Gameplay
         public IEnumerable<EntityUid> GetClickableEntities(EntityCoordinates coordinates)
         {
             return GetClickableEntities(coordinates.ToMap(_entityManager, _entitySystemManager.GetEntitySystem<SharedTransformSystem>()));
-        }
-
-        public EntityUid? GetDamageableClickedEntity(MapCoordinates coordinates) // Goobstation
-        {
-            var first = GetClickableEntities(coordinates, _eyeManager.CurrentEye)
-                .FirstOrDefault(e => _entityManager.HasComponent<DamageableComponent>(e));
-            return first.IsValid() ? first : null;
         }
 
         public IEnumerable<EntityUid> GetClickableEntities(MapCoordinates coordinates)

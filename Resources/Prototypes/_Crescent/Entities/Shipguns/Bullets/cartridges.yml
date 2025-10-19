@@ -192,7 +192,7 @@
 - type: entity
   id: MagazineFlak
   name: "88mm 'Prince' flakcannon low-yield"
-  parent: BaseMagazineLightRifle
+  parent: BaseItem
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
@@ -202,6 +202,7 @@
     proto: FlakCartridge
     capacity: 15
   - type: Item
+    size: Normal
   - type: Sprite
     sprite: _Crescent/Ammunition/flak.rsi
     state: base

@@ -1,0 +1,156 @@
+- type: entity
+  id: BulletMechLightRifle
+  name: bullet (30mm USTF)
+  parent: BulletMachineGunVulcan
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 75 #Dummy but holy shit these are massive
+        Structural: 60
+    ignoreWeaponGrid: false
+
+- type: entity
+  id: BulletMechAutocannon
+  name: bullet (90mm USTF)
+  parent: BulletMachineGunMortarTurret
+  categories: [ HideSpawnMenu ]
+  components:
+   - type: Projectile
+     ignoreWeaponGrid: false
+
+- type: entity
+  id: BulletMechHeavyRifle
+  name: bullet (43mm USTF) #The Proverbial .50
+  parent: BulletMachineGunVulcan
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 95 #Dummy but holy shit these are massive
+        Structural: 80
+    ignoreWeaponGrid: false
+
+- type: entity
+  id: ExosuitAutoshotgunPellet
+  name: pellet (4g)
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: buckshot
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 40
+        Structural: 80
+    harmorPenetration: 30
+    stoppingPower: 6
+
+- type: entity
+  id: ExosuitAutoshotgunPelletSpread
+  categories: [ HideSpawnMenu ]
+  parent: ExosuitAutoshotgunPellet
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgun
+    count: 3
+    spread: 15
+
+- type: entity
+  id: ExosuitAutopuntgunPellet
+  name: pellet (1g)
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: buckshot
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 45
+        Structural: 100
+    harmorPenetration: 40
+    stoppingPower: 7
+
+- type: entity
+  id: ExosuitAutopuntgunPelletSpread
+  categories: [ HideSpawnMenu ]
+  parent: ExosuitAutopuntgunPellet
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgun
+    count: 3
+    spread: 15
+
+- type: entity
+  id: ExosuitPlasmaBoltLight
+  name: plasma bolt
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: ProjectileIFF
+    visualType: Circle
+    color: Blue
+  - type: Projectile
+    damage:
+      types:
+        Heat: 40
+        Radiation: 5
+        Structural: 60
+    harmorPenetration: 60
+    stoppingPower: 6
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 300
+    intensitySlope: 100
+    totalIntensity: 300
+    maxTileBreak: 2
+  - type: PointLight
+    radius: 3.5
+    color: Orange
+    energy: 0.5
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/plasmahardpoint.rsi
+    layers:
+      - state: icon
+
+- type: entity
+  id: ExosuitPlasmaBoltHeavy
+  name: plasma sphere
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: ProjectileIFF
+    visualType: Circle
+    color: Cyan
+  - type: Projectile
+    damage:
+      types:
+        Heat: 70
+        Radiation: 30
+        Structural: 300
+    harmorPenetration: 80
+    stoppingPower: 8
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 1500
+    intensitySlope: 300
+    totalIntensity: 1500
+    maxTileBreak: 4
+  - type: PointLight
+    radius: 3.5
+    color: Red
+    energy: 0.5
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/plasmaheavy.rsi
+    layers:
+      - state: icon

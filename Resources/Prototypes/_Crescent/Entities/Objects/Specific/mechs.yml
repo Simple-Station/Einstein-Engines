@@ -24,7 +24,7 @@
     baseState: carrion
     openState: carrion-open
     brokenState: carrion-broken
-    mechToPilotDamageMultiplier: 0.7
+    mechToPilotDamageMultiplier: 0.5
     airtight: true
     pilotWhitelist:
       components:
@@ -38,8 +38,8 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.5
     baseSprintSpeed: 4.5
-    weightlessFriction: 0
-    weightlessAcceleration: 0.3
+    weightlessFriction: 0.4
+    weightlessAcceleration: 0.33
     weightlessModifier: 4.5 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
@@ -53,6 +53,9 @@
     tags:
     - DoorBumpOpener
     - FootstepSound
+  - type: NpcFactionMember
+    factions:
+      - DSM
 
 - type: entity
   id: MechDSMCarrionBattery
@@ -121,6 +124,9 @@
     tags:
     - DoorBumpOpener
     - FootstepSound
+  - type: NpcFactionMember
+    factions:
+      - NCWL
 
 - type: entity
   id: MechNCWLBogatyrBattery
@@ -157,7 +163,7 @@
     baseState: lancer
     openState: lancer-open
     brokenState: lancer-broken
-    mechToPilotDamageMultiplier: 0.4
+    mechToPilotDamageMultiplier: 0.25
     airtight: true
     pilotWhitelist:
       components:
@@ -169,11 +175,11 @@
       types:
         Blunt: 25
   - type: MovementSpeedModifier
-    baseWalkSpeed: 1.9
-    baseSprintSpeed: 3.5
-    weightlessFriction: 0
-    weightlessAcceleration: 0.2
-    weightlessModifier: 6.25 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 4
+    weightlessFriction: 0.4
+    weightlessAcceleration: 0.33
+    weightlessModifier: 6 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: ProjectileIFF
@@ -186,6 +192,9 @@
     tags:
     - DoorBumpOpener
     - FootstepSound
+  - type: NpcFactionMember
+    factions:
+      - NCWL
 
 - type: entity
   id: MechNCWLLancerBattery
@@ -221,7 +230,7 @@
     baseState: marauder
     openState: marauder-open
     brokenState: marauder-broken
-    mechToPilotDamageMultiplier: 0.35
+    mechToPilotDamageMultiplier: 0.33
     airtight: true
     pilotWhitelist:
       components:
@@ -235,8 +244,8 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 3.5
     baseSprintSpeed: 5.5
-    weightlessFriction: 0
-    weightlessAcceleration: 0.25
+    weightlessFriction: 0.4
+    weightlessAcceleration: 0.4
     weightlessModifier: 4 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
@@ -250,6 +259,9 @@
     tags:
     - DoorBumpOpener
     - FootstepSound
+  - type: NpcFactionMember
+    factions:
+      - TFSC
 
 - type: entity
   id: MechGSCMarauderBattery
@@ -319,6 +331,9 @@
     - DoorBumpOpener
     - FootstepSound
     - Durand
+  - type: NpcFactionMember
+    factions:
+      - SHI
 
 - type: entity
   id: MechSHIGilgameshBattery
@@ -357,7 +372,7 @@
     baseState: paladin
     openState: paladin-open
     brokenState: paladin-broken
-    mechToPilotDamageMultiplier: 0.25
+    mechToPilotDamageMultiplier: 0.2
     airtight: true
     pilotWhitelist:
       components:
@@ -387,6 +402,9 @@
     tags:
     - DoorBumpOpener
     - FootstepSound
+  - type: NpcFactionMember
+    factions:
+      - DSM
 
 - type: entity
   id: MechDSMPaladinBattery
@@ -411,6 +429,77 @@
   - type: Battery
     maxCharge: 7500
     startingCharge: 7500
+
+- type: entity
+  id: MechDSMSepulchre
+  parent: [ BaseMech, MediumMech ]
+  name: DSM MKIV 'Sepulchre' mechanized infantry reliquary
+  description: Commissioned by the noble houses for a legendary hero of the Imperiatoria Eques Exercitus who was mortally wounded in the First Authoritat Incursion. This heavily-armored stasis casket maintains the fragile spark of a reticient, honourbound warrior. Kept comatose and reverently maintained by the scribes, this once-man is a triumph of the Scribes pioneering arts. The Filigree and house etchings are lovingly cared for, but the frame itself has been allowed to take on light battle damage as a badge of honour.
+  components:
+  - type: Damageable
+    damageModifierSet: MediumArmorNT
+  - type: Sprite
+    scale: 1.1, 1.1
+    drawdepth: Mobs
+    noRot: true
+    sprite: _Crescent/Objects/Specific/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: paladin
+    - map: ["enum.PaperLabelVisuals.Layer"]
+      sprite: Structures/Storage/Crates/labels.rsi
+      state: paper
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sentinel.ogg
+  - type: Mech
+    maxIntegrity: 350
+    baseState: sepulchre
+    openState: sepulchre-open
+    brokenState: sepulchre-broken
+    mechToPilotDamageMultiplier: 0.2
+    airtight: true
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MeleeWeapon
+    hidden: true
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 40
+        Structural: 90
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.0
+    baseSprintSpeed: 2.5
+    weightlessFriction: 0
+    weightlessAcceleration: 0.33
+    weightlessModifier: 5.35 # 18ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
+  - type: CanMoveInAir
+  - type: MovementAlwaysTouching
+  - type: ProjectileIFF
+    visualType: Triangle
+    color: "#ce7de3"
+    scale: 2.5
+  - type: StaticPrice
+    price: 40000
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+  - type: NpcFactionMember
+    factions:
+      - DSM
+
+- type: entity
+  id: MechDSMSepulchreBattery
+  parent: MechDSMSepulchre
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCageUraniumCell
 
 - type: entity
   id: MechDSMWanderer
@@ -448,11 +537,11 @@
       types:
         Blunt: 25
   - type: MovementSpeedModifier
-    baseWalkSpeed: 1.9
-    baseSprintSpeed: 3.5
-    weightlessFriction: 0
-    weightlessAcceleration: 0.2
-    weightlessModifier: 6.25 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 4
+    weightlessFriction: 0.4
+    weightlessAcceleration: 0.33
+    weightlessModifier: 6 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: ProjectileIFF
@@ -465,6 +554,9 @@
     tags:
     - DoorBumpOpener
     - FootstepSound
+  - type: NpcFactionMember
+    factions:
+      - DSM
 
 - type: entity
   id: MechDSMWandererBattery

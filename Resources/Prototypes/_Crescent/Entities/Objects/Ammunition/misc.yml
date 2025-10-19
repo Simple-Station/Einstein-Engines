@@ -1,0 +1,64 @@
+- type: entity
+  id: JobApplication
+  name: SHI job application
+  description: A paper that strikes fear in anyone who is hit by it. Chemical reinforcement causes severe bleeding when used as a weapon.
+  parent: Paper
+  components:
+    - type: DamageOtherOnHit
+      ignoreResistances: true
+      staminaCost: 5
+      damage:
+        types:
+          Slash: 15
+    - type: EmbeddableProjectile
+      sound: /Audio/Weapons/star_hit.ogg
+    - type: EmbedPassiveDamage
+      ignoreResistances: true
+    - type: Paper
+      content: paper-text-job-application
+
+- type: entity
+  name : flamethrower fireball
+  id: BulletFlamethrower
+  parent: BaseBulletIncendiary
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 1
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Projectiles/flame_red.rsi
+    layers:
+    - state: fireball
+      shader: unshaded
+  - type: Ammo
+    muzzleFlash: null
+  - type: Projectile
+    impactEffect: BulletImpactEffectFlamer
+    damage:
+      types:
+        Heat: 6
+    soundHit:
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/flamethrower.ogg
+    forceSound: true
+  - type: IgniteOnCollide
+    fireStacks: 0.4
+  - type: IgnitionSource
+    temperature: 700
+
+- type: entity
+  id: BulletImpactEffectFlamer
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: TimedDespawn
+      lifetime: 0.2
+    - type: Sprite
+      drawdepth: Effects
+      layers:
+        - shader: unshaded
+          map: ["enum.EffectLayers.Unshaded"]
+          sprite: _Crescent/Objects/Weapons/Projectiles/flame_red.rsi
+          state: impact-fire
+    - type: EffectVisuals
+    - type: Tag
+      tags:
+        - HideContextMenu

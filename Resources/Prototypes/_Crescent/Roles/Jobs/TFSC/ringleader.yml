@@ -12,6 +12,8 @@
   canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
+    - !type:CharacterOverallTimeRequirement
+      min: 10800
     - !type:FactionRequirement
       factionID: "TFSC"
     - !type:CharacterTraitRequirement
@@ -25,6 +27,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-synadmin
+      - type: HullrotFaction
+        faction: GSC
       - type: LanguageAdder
         addSpoken:
           - Freespeak
@@ -86,4 +90,4 @@
     ears: ClothingHeadsetNCSP
     gloves: ClothingHandsGlovesFingerless
     pocket1: AccessElevatorGSC
-    pocket2: WeaponRevolverPythonAP
+    pocket2: WeaponPistolDeagleAP

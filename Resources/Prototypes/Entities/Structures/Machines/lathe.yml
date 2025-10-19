@@ -1219,6 +1219,14 @@
         - MagazineVulcan
         - MagazineFlak
         #Hullrot edit start
+        - DrumMagazineShotgunSlug
+        - DrumMagazineShotgunEmpty
+        - DrumMagazineShotgunBuck
+        - MagazineSmgSmartgun
+        - MagazineHeavyRifleBoxmag
+        - MagazinePistolHeavy
+        - MagazineBoxHeavyPistol
+        - SpeedLoader27mmAutocannonHE
         - MagazineBoxAntiMateriel
         - MagazineBoxHeavyRifle
         - MagazineBoxRifle
@@ -1230,6 +1238,7 @@
         - BoxLethalshot4g
         - BoxBeanbag4g
         - BoxLethalshot
+        - BoxShotgunSlug
         - BoxShotgunLumen
         - BoxShotgunFlare
         - MagazineBoxMagnum

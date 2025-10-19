@@ -33,7 +33,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitHunter
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, StreeCredRedeemableHigh]
   id: ClothingOuterHardsuitHunterElite
   name: sixth subjugation fireteam hardsuit
   description: A pristine battle-ready hardsuit printed fresh from a nanoforge. Still bears the House Romaine colors.

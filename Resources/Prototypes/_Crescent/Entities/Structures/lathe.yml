@@ -252,6 +252,14 @@
     idleState: fab-idle
     runningState: fab-active
     staticRecipes:
+      - DrumMagazineShotgunSlug
+      - DrumMagazineShotgunEmpty
+      - DrumMagazineShotgunBuck
+      - MagazineSmgSmartgun
+      - MagazineHeavyRifleBoxmag
+      - MagazinePistolHeavy
+      - MagazineBoxHeavyPistol
+      - SpeedLoader27mmAutocannonHE
       - MagazineBoxAntiMateriel
       - MagazineBoxHeavyRifle
       - MagazineBoxRifle
@@ -547,6 +555,7 @@
       - WeaponPistolComplianceImperial
       - CovetorLPC
       - IbisLPC
+      - TorturerLPC
       - SunesisLPC
       - ClothingBeltSheathDSMRapier
       - ClothingBeltSheathDSMSabre
@@ -556,6 +565,8 @@
       - LaelapsLPC
       - PaladinFlatpack
       - WandererFlatpack
+      - WeaponMechCombatImperialSMG
+      - WeaponMechCombatImperialAutolaser
       - WeaponMechCombatPlasmaRifle
       - WeaponMechCombatPlasmaCannon
       - WeaponRifleDSMLegionnaire
@@ -568,7 +579,7 @@
       - ClothingOuterHardsuitHunterElite
       - WeaponLauncherM320
       - TriumphantLPC
-      - PadparadschaLPC
+      - SuzerainLPC
       - ClothingHeadHelmetNCWLEVA
       - ClothingOuterNCWLEVA
       - ClothingHeadHatNCWLCapsoft
@@ -626,8 +637,6 @@
       - ClothingHeadHatShinoharaNonevaHelm
       - TelescopicBatonSHI
       - ShinoharaOptics
-      - WeaponFighterMachinegun
-      - WeaponFighterAutocannon
       - WeaponMechCombatAutoshotgun
       - WeaponMechCombatLightRifle
       - WeaponMechSword
@@ -682,6 +691,8 @@
       - SHIKatana
       - SHIShiverBlade
       - BallisticCycler1Craft
+      - ClothingOuterHardsuitSHIJuggernaut
+      - ClothingOuterHardsuitSHISpeedsuit
 
   - type: Machine
     board: MicroforgeCircuitboard

@@ -32,11 +32,11 @@
   - type: ShipyardListing
     shuttles:
     - Redemptor
-    - Torturer
     - Ibis
     - Impel
     - Gnosis
     - Praxis
+    - Imparator
 
 - type: entity
   id: NemesisMothershipComputer
@@ -46,7 +46,7 @@
   - type: ShipyardListing
     shuttles:
     - Praxis
-    - Torturer
+    - Imparator
 
 - type: entity
   id: UnionfallNemesisMothershipComputer
@@ -70,6 +70,7 @@
     - Meatwagon
     - Harpy
     - Matabele
+    - Fridge
 
 - type: entity
   id: SawsMothershipComputer
@@ -84,7 +85,6 @@
     - Scabrak
     - Geode
     - Thanapod
-    - Rattler
 
 - type: entity
   id: TatsumotoMothershipComputer
@@ -100,6 +100,7 @@
     - Flea
     - Bison
     - Nazaar
+    - colossus
 
 - type: entity
   id: RamziMothershipComputer
@@ -111,6 +112,7 @@
     - Velator
     - Taipan
     - Wreck
+    - Spriggan
 
 - type: entity
   id: ZhipovMothershipComputer
@@ -154,6 +156,7 @@
     - Adjudicator
     - Warden
     - Jury
+    - Executioner
 
 - type: entity
   id: RefugeMothershipComputer
@@ -240,3 +243,15 @@
   - type: ShipyardListing
     shuttles:
     - Wasp
+    - Bee
+    - Hornet
+
+- type: entity
+  id: CockroachMothershipComputer
+  parent: BaseMothershipComputer
+  name: cockroach internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Roachling
+    - Dungbeetle

@@ -1,11 +1,11 @@
 - type: vessel
   id: Provost
-  name: Provost
+  name: TS Provost
   description: |
     A brawler and missile gunship with heavy armaments for its size. Formerly mass-produced by Imperial Shipyards for the Minutemen, it can still be found in the ranks of system police forces.
     LOADOUT: 1x SHI 43mm Slugthrower, 4x Lancer Missile Launchers
     MINIMUM CREW: 1x Pilot, 1x Gunner/Loader
-  price: 41000
+  price: 38000
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/CMM/provost.yml

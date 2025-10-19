@@ -1,0 +1,12 @@
+- type: entity
+  parent: ClothingMaskGasSyndicate
+  id: ClothingMaskSHIHOSMask
+  name: hos ballistic mask
+  description: A kevlar durathread weave enhanced gas mask.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Mask/hosmask.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Mask/hosmask.rsi

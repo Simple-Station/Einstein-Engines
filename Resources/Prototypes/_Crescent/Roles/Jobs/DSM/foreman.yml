@@ -13,10 +13,8 @@
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Voidborn
+    - !type:CharacterOverallTimeRequirement
+      min: 10800
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -29,6 +27,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-foreman
+      - type: HullrotFaction
+        faction: DSM
       - type: LanguageAdder
         addSpoken:
           - LowImperial

@@ -11,6 +11,8 @@
   supervisors: You answer to the patriarch and the interests of the CyberDawn Technologies company.
   canBeAntag: false
   requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 10800
     - !type:FactionRequirement
       factionID: "TFSC"
     - !type:CharacterTraitRequirement
@@ -23,6 +25,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-operative
+      - type: HullrotFaction
+        faction: CD
       - type: LanguageAdder
         addSpoken:
           - Freespeak
@@ -48,4 +52,4 @@
     outerClothing: ClothingOuterArmorKendoBogu
     ears: ClothingHeadsetNCSPCyberdawn
     back: ClothingBackpackNCSPFilledInfanteer
-    belt: WeaponPistolHKUSP
+    pocket1: WeaponPistolAnsem

@@ -13,10 +13,8 @@
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Voidborn
+    - !type:CharacterOverallTimeRequirement
+      min: 10800
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -28,9 +26,11 @@
     components:
       - type: ChatRank
         rank: crescent-rank-smarts
+      - type: HullrotFaction
+        faction: DSM
       - type: CPRTraining
       - type: SurgerySpeedModifier
-        speedModifier: 2
+        speedModifier: 1.75
       - type: LanguageAdder
         addSpoken:
           - LowImperial

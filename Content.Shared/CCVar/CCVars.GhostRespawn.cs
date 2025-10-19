@@ -19,5 +19,5 @@ public sealed partial class CCVars
     // This is checked at latejoin-time to determine whether you can join as the same character.
     //
     public static readonly CVarDef<bool> GhostAllowSameCharacter =
-        CVarDef.Create("ghost.allow_same_character", false, CVar.SERVERONLY);
+        CVarDef.Create("ghost.allow_same_character", true, CVar.SERVERONLY);
 }

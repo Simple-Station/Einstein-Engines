@@ -78,6 +78,7 @@
       TradeDeedNormal: SpaceCash3500
       TradeDeedHigh: SpaceCash4500
       TradeDeedVeryHigh: SpaceCash6000
+      TradeDeedUnique: SpaceCash7500
       TradeDeedExotic: SpaceCash10000
   - type: Sprite
     sprite: _Crescent/Structures/deedsmachine.rsi
@@ -109,12 +110,12 @@
       TradeGoodCybernetics: TradeDeedLow
       TradeGoodGunparts: TradeDeedHigh
       TradeGoodRice: TradeDeedNormal
-      TradeGoodWine: TradeDeedHigh
+      TradeGoodWine: TradeDeedUnique
       TradeGoodAlloys: TradeDeedExotic
       TradeGoodMiltech: TradeDeedNormal
       TradeGoodFabrics: TradeDeedVeryHigh
       TradeGoodPlasma: TradeDeedVeryHigh
-      TradeGoodGoodScrap: TradeDeedExotic
+      TradeGoodGoodScrap: TradeDeedUnique
   - type: Sprite
     sprite: _Crescent/Structures/cargochute.rsi
     layers:
@@ -147,7 +148,7 @@
       TradeGoodFabrics: TradeDeedVeryHigh
       TradeGoodMiltech: TradeDeedNormal
       TradeGoodAlloys: TradeDeedExotic
-      TradeGoodWine: TradeDeedHigh
+      TradeGoodWine: TradeDeedUnique
   - type: Sprite
     sprite: _Crescent/Structures/cargochute.rsi
     layers:
@@ -324,7 +325,7 @@
       TradeGoodSugar: TradeDeedLow
       TradeGoodMiltech: TradeDeedNormal
       TradeGoodAlloys: TradeDeedExotic
-      TradeGoodGoodScrap: TradeDeedVeryHigh
+      TradeGoodGoodScrap: TradeDeedUnique
       TradeGoodPlasma: TradeDeedVeryHigh
       TradeGoodNanoTrasen: TradeDeedHigh
       TradeGoodOldCyber: TradeDeedHigh
@@ -361,7 +362,7 @@
       TradeGoodSugar: TradeDeedLow
       TradeGoodGoodScrap: TradeDeedHigh
       TradeGoodPlasma: TradeDeedExotic
-      TradeGoodWine: TradeDeedHigh
+      TradeGoodWine: TradeDeedUnique
       TradeGoodFabrics: TradeDeedVeryHigh
       TradeGoodNanoTrasen: TradeDeedHigh
       TradeGoodOldCyber: TradeDeedHigh
@@ -398,7 +399,7 @@
       TradeGoodAlloys: TradeDeedExotic
       TradeGoodGoodScrap: TradeDeedVeryHigh
       TradeGoodPlasma: TradeDeedExotic
-      TradeGoodWine: TradeDeedHigh
+      TradeGoodWine: TradeDeedUnique
       TradeGoodNanoTrasen: TradeDeedHigh
       TradeGoodOldCyber: TradeDeedHigh
       TradeGoodOldParts: TradeDeedHigh
@@ -434,7 +435,7 @@
       TradeGoodMiltech: TradeDeedExotic
       TradeGoodAlloys: TradeDeedVeryHigh
       TradeGoodPlasma: TradeDeedHigh
-      TradeGoodWine: TradeDeedHigh
+      TradeGoodWine: TradeDeedUnique
       TradeGoodNanoTrasen: TradeDeedHigh
       TradeGoodOldCyber: TradeDeedExotic
       TradeGoodOldParts: TradeDeedHigh
@@ -469,8 +470,7 @@
       TradeGoodDrugs: TradeDeedHigh
       TradeGoodFabrics: TradeDeedVeryHigh
       TradeGoodMiltech: TradeDeedNormal
-      TradeGoodAlloys: TradeDeedExotic
-      TradeGoodWine: TradeDeedNormal
+      TradeGoodWine: TradeDeedUnique
       TradeGoodNanoTrasen: TradeDeedHigh
       TradeGoodOldCyber: TradeDeedHigh
       TradeGoodOldParts: TradeDeedHigh
@@ -501,9 +501,9 @@
       TradeGoodAntibiotics: TradeDeedLow
       TradeGoodFlour: TradeDeedLow
       TradeGoodSugar: TradeDeedLow
-      TradeGoodGoodScrap: TradeDeedExotic
+      TradeGoodGoodScrap: TradeDeedUnique
       TradeGoodFabrics: TradeDeedVeryHigh
-      TradeGoodWine: TradeDeedHigh
+      TradeGoodWine: TradeDeedUnique
       TradeGoodPlasma: TradeDeedVeryHigh
       TradeGoodNanoTrasen: TradeDeedHigh
       TradeGoodOldCyber: TradeDeedHigh

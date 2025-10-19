@@ -1,0 +1,34 @@
+# Author Info
+# Discord: fungus2589
+
+- type: vessel
+  id: Brilliant
+  name: NT Brilliant
+  description: A remnant of the autonomous AI fleets developed by the NanoTrasen Corporation.
+  price: 450000
+  category: Large
+  group: None
+  path: /Maps/_Crescent/Shuttles/Fog/brilliant.yml
+
+- type: gameMap
+  id: Brilliant
+  mapName: 'NT Brilliant'
+  mapPath: /Maps/_Crescent/Shuttles/Fog/brilliant.yml
+  minPlayers: 0
+  stations:
+     Brilliant:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: cruiser
+        - type: StationNameSetup
+          mapNameTemplate: 'NT Brilliant {1}'
+          nameGenerator:
+           !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-destroyer
+        - type: VesselDescription
+          description: A shambling behemoth, created out of necessity to combat the spread of abyssal phenomena.

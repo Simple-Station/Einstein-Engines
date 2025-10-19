@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "license": null,
+  "copyright": null,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "meatfloor_0"
+    },
+    {
+      "name": "meatfloor_1"
+    },
+    {
+      "name": "meatfloor_2"
+    },
+    {
+      "name": "meatfloor_3"
+    },
+    {
+      "name": "meatfloor_4"
+    },
+    {
+      "name": "meatfloor_5"
+    },
+    {
+      "name": "meatfloor_6"
+    },
+    {
+      "name": "meatfloor_7"
+    },
+    {
+      "name": "meatfloor_8"
+    },
+    {
+      "name": "meat_directional",
+      "directions": 4
+    },
+    {
+      "name": "growth 1"
+    },
+    {
+      "name": "growth 2"
+    },
+    {
+      "name": "meat_underside"
+    },
+    {
+      "name": "meat_underside_directional",
+      "directions": 4
+    },
+    {
+      "name": "meatwall_0"
+    },
+    {
+      "name": "meatwall_1"
+    }
+  ]
+}

@@ -36,9 +36,9 @@
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherPadparadscha
-  name: DSM 'Padparadscha' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with an Imperial Padparadscha-class battlecruiser. Has to be redeemed at a shipyard console.
+  id: ShipVoucherSuzerain
+  name: DSM 'Suzerain' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Suzerain-class battlecruiser. Has to be redeemed at a shipyard console.
   components:
   - type: Item
     size: Small
@@ -47,9 +47,9 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 75000
+    price: 95000
   - type: ShipVoucher
-    ship: Padparadscha
+    ship: Suzerain
 
 - type: entity
   parent: BaseItem
@@ -68,22 +68,6 @@
   - type: ShipVoucher
     ship: Sunesis
 
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherTorturer
-  name: DSM 'Torturer' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with an Imperial Torturer-class stealth bomber. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 12000
-  - type: ShipVoucher
-    ship: Torturer
 
 - type: entity
   parent: BaseItem
@@ -238,6 +222,22 @@
   - type: ShipVoucher
     ship: Tyche
 
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherTorturer
+  name: DSM 'Torturer' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Torturer stealth bomber. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 13000
+  - type: ShipVoucher
+    ship: Torturer
 #ncwl
 
 #T0
@@ -461,6 +461,27 @@
 
 #T3 END
 
+#Donator
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherGrishingrad
+  name: NCWL 'Grishingrad' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Grishingrad-class assault frigate pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 75000
+  - type: ShipVoucher
+    ship: Grishingrad
+
+#Donator END
+
 #SHI
 
 - type: entity
@@ -513,6 +534,23 @@
     price: 22000
   - type: ShipVoucher
     ship: gazpachov
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherColossus
+  name: SHI 'Colossus' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a civilian Colossus-class cargo hauler pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 40000
+  - type: ShipVoucher
+    ship: colossus
 
 - type: entity
   parent: BaseItem
@@ -1374,3 +1412,139 @@
     price: 18000
   - type: ShipVoucher
     ship: Scabrak
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherLockjaw
+  name: SAW 'Lockjaw' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a custom Lockjaw-class blockade runner. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 80000
+  - type: ShipVoucher
+    ship: Lockjaw
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherAutoscout
+  name: Ancient NT 'Autoscout' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an autonomous Nanotrasen Autoscout.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 10000
+  - type: ShipVoucher
+    ship: Autoscout
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherRadiant
+  name: Ancient NT 'Radiant' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an autonomous Nanotrasen Capital-class vessel.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 1000000
+  - type: ShipVoucher
+    ship: Radiant
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherBrilliant
+  name: Ancient NT 'Brilliant' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an autonomous Nanotrasen Cruiser-class vessel.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 450000
+  - type: ShipVoucher
+    ship: Brilliant
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherFulgur
+  name: Ancient NT 'Fulgur' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an autonomous Nanotrasen Destroyer-class vessel.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 400000
+  - type: ShipVoucher
+    ship: Fulgur
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherAlpha
+  name: Ancient NT 'Alpha' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an autonomous Nanotrasen Fighter-class vessel.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 42000
+  - type: ShipVoucher
+    ship: Alpha
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherBeta
+  name: Ancient NT 'Beta' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an autonomous Nanotrasen Fighter-class vessel.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 36000
+  - type: ShipVoucher
+    ship: Beta
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherGamma
+  name: Ancient NT 'Gamma' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an autonomous Nanotrasen Fighter-class vessel.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 48000
+  - type: ShipVoucher
+    ship: Gamma

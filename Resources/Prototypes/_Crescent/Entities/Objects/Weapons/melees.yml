@@ -1,6 +1,6 @@
 - type: entity
   name: hunter's vibrokhopesh
-  parent: BaseItem
+  parent: [BaseItem, StreeCredRedeemableHigh]
   id: SRMKhopesh
   description: A ceremonial weapon belonging to the Hunters.
   components:
@@ -82,7 +82,7 @@
 
 - type: entity
   name: noble's rapier
-  parent: BaseItem
+  parent: [BaseItem, StreeCredRedeemableLow]
   id: DSMRapier
   description: A ceremonial dueling weapon belonging to the nobles of the mandate.
   components:
@@ -120,7 +120,7 @@
 
 - type: entity
   name: noble's sabre
-  parent: BaseItem
+  parent: [BaseItem, StreeCredRedeemableLow]
   id: DSMSabre
   description: A ceremonial weapon belonging to the nobles of the mandate.
   components:
@@ -159,7 +159,7 @@
 
 - type: entity
   name: homeguard lug baton
-  parent: BaseItem
+  parent: [BaseItem, StreeCredRedeemableLow]
   id: NCWLLugBaton
   description: Disdaining the fragile electrotaser or shock batons of more "advanced" polities, the League opts for a hard wearing steel core rod with two lug nuts fixed at the head. More mace than baton, few lumpenproles risk being struck twice.
   components:
@@ -207,7 +207,7 @@
 
 - type: entity
   name: shinohara corporate katana
-  parent: BaseItem
+  parent: [BaseItem, StreeCredRedeemableLow]
   id: SHIKatana
   description: The result of corporate think-tank focus groups, the Shinohara Industrial Handheld Cutting Device is legally considered a kitchen implement, not a weapon. It is marketed as the cost-effective choice for a thrifty consumer intending to keep a tight budget and still appeal to style - and when a corpsec agent finds themselves unable to afford more ammunition renewals, there is the option of falling on this standard issue kitchen implement rather than void their contract by willingly refusing to engage a noncompliant customer.
   components:
@@ -246,7 +246,7 @@
 
 - type: entity
   name: SHI-RIP9 cherenzikov shiver blade
-  parent: SHIKatana
+  parent: [SHIKatana, StreeCredRedeemable]
   id: SHIKatanaShiverBlade
   description: Combining cutting-edge contained plasma field technology with elegant neomilitarism, the RIP9 Cherenzikov is a favourite of SHI Liquidation agents and penthouse PMCs across known space. Don't just kill your enemy - make a statement. Shinohara Industrial™.
   components:
@@ -285,7 +285,7 @@
 
 - type: entity
   name: dueling khopesh
-  parent: BaseItem
+  parent: [BaseItem, StreeCredRedeemableLow]
   id: DSMDuelingKhopesh
   description: Typically relegated to a ceremonial weapon, the steel dueling khopesh saw widespread revival among Saintsworn aristocrats after the death of Romaine. The curved design allows a canny swordsman to work their way past an enemy's guard and deliver heavy chopping blows.
   components:
@@ -320,7 +320,7 @@
 
 - type: entity
   name: chengridz jaeger's vibrokukri
-  parent: BaseItem
+  parent: [BaseItem, StreeCredRedeemableHigh]
   id: NCWLKukri
   description: Taking the shape of a worker's tool, this vibro-alloy kukri is Chengridz's attempt at replicating the Sixth Subjugation Fireteam's signature weapon, following stolen Imperial blueprints.
   components:

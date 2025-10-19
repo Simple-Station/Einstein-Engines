@@ -366,11 +366,11 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
         uint recipientNumber)
     {
         // First verify we can send from this device
-        var channel = _prototype.Index(sender.Comp.RadioChannel);
-        var sendAttemptEvent = new RadioSendAttemptEvent(channel, sender);
-        RaiseLocalEvent(ref sendAttemptEvent);
-        if (sendAttemptEvent.Cancelled)
-            return (true, new List<Entity<NanoChatCardComponent>>());
+//        var channel = _prototype.Index(sender.Comp.RadioChannel);
+//        var sendAttemptEvent = new RadioSendAttemptEvent(channel, sender);
+//        RaiseLocalEvent(ref sendAttemptEvent);
+//        if (sendAttemptEvent.Cancelled)
+//            return (true, new List<Entity<NanoChatCardComponent>>());
 
         var foundRecipients = new List<Entity<NanoChatCardComponent>>();
 
@@ -398,27 +398,27 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
                 if (receiverCart.Card != recipient.Owner)
                     continue;
 
-                // Check if devices are on same station/map
-                var recipientStation = _station.GetOwningStation(receiverUid);
-                var senderStation = _station.GetOwningStation(sender);
-
-                // Both entities must be on a station
-                if (recipientStation == null || senderStation == null)
-                    continue;
-
-                // Must be on same map/station unless long range allowed
-                if (!channel.LongRange && recipientStation != senderStation)
-                    continue;
-
-                // Needs telecomms
-                if (!HasActiveServer(senderStation.Value) || !HasActiveServer(recipientStation.Value))
-                    continue;
+//                // Check if devices are on same station/map
+//                var recipientStation = _station.GetOwningStation(receiverUid);
+//                var senderStation = _station.GetOwningStation(sender);
+//
+//                // Both entities must be on a station
+//                if (recipientStation == null || senderStation == null)
+//                    continue;
+//
+//                // Must be on same map/station unless long range allowed
+//                if (!channel.LongRange && recipientStation != senderStation)
+//                    continue;
+//
+//                // Needs telecomms
+//                if (!HasActiveServer(senderStation.Value) || !HasActiveServer(recipientStation.Value))
+//                    continue;
 
                 // Check if recipient can receive
-                var receiveAttemptEv = new RadioReceiveAttemptEvent(channel, sender, receiverUid);
-                RaiseLocalEvent(ref receiveAttemptEv);
-                if (receiveAttemptEv.Cancelled)
-                    continue;
+//                var receiveAttemptEv = new RadioReceiveAttemptEvent(channel, sender, receiverUid);
+//                RaiseLocalEvent(ref receiveAttemptEv);
+//                if (receiveAttemptEv.Cancelled)
+//                    continue;
 
                 // Found valid cartridge that can receive
                 deliverableRecipients.Add(recipient);
@@ -429,23 +429,23 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
         return (deliverableRecipients.Count == 0, deliverableRecipients);
     }
 
-    /// <summary>
-    ///     Checks if there are any active telecomms servers on the given station
-    /// </summary>
-    private bool HasActiveServer(EntityUid station)
-    {
-        // I have no idea why this isn't public in the RadioSystem
-        var query =
-            EntityQueryEnumerator<TelecomServerComponent, EncryptionKeyHolderComponent, ApcPowerReceiverComponent>();
-
-        while (query.MoveNext(out var uid, out _, out _, out var power))
-        {
-            if (_station.GetOwningStation(uid) == station && power.Powered)
-                return true;
-        }
-
-        return false;
-    }
+//    /// <summary>
+//    ///     Checks if there are any active telecomms servers on the given station
+//    /// </summary>
+//    private bool HasActiveServer(EntityUid station)
+//    {
+//        // I have no idea why this isn't public in the RadioSystem
+//        var query =
+//            EntityQueryEnumerator<TelecomServerComponent, EncryptionKeyHolderComponent, ApcPowerReceiverComponent>();
+//
+//        while (query.MoveNext(out var uid, out _, out _, out var power))
+//        {
+//            if (_station.GetOwningStation(uid) == station && power.Powered)
+//                return true;
+//        }
+//
+//        return false;
+//    }
 
     /// <summary>
     ///     Delivers a message to the recipient and handles associated notifications.

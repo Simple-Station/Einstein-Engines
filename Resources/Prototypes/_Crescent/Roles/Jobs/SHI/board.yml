@@ -3,8 +3,68 @@
   name: job-name-board
   description: job-description-board
   playTimeTracker: JobBoardSHI
-  weight: 99
+  weight: 6
   startingGear: BoardGear
+  alwaysUseSpawner: true
+  requireAdminNotify: true
+  icon: "JobIconBoard"
+  supervisors: job-supervisors-shi
+  canBeAntag: false
+  requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:CharacterOverallTimeRequirement
+      min: 18000
+    - !type:FactionRequirement
+      factionID: "SHI"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Muted
+        - Blindness
+        - WheelchairBound
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-shi-board
+      - type: HullrotFaction
+        faction: SHI
+      - type: LanguageAdder
+        addSpoken:
+          - Kaishago
+          - Tradeband
+        addUnderstood:
+          - Kaishago
+          - Tradeband
+  access:
+  - Command
+  - Maintenance
+  - Shinohara
+  - ShinoharaOfficer
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: BoardGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitShinoharaSuit
+    shoes: ClothingShoesBootsLaceup
+    neck: ClothingNeckTieRed
+    outerClothing: ClothingOuterShinoharaSuitJacket
+    id: BoardPDA
+    pocket1: TradePassport
+    ears: ClothingHeadsetShinohara
+    back: ClothingBackpackSHISatchel
+
+- type: job
+  id: BoardHRSHI
+  name: job-name-boardhr
+  description: job-description-boardhr
+  playTimeTracker: JobBoardHRSHI
+  weight: 7
+  startingGear: BoardHRGear
   alwaysUseSpawner: true
   requireAdminNotify: true
   icon: "JobIconBoard"
@@ -45,12 +105,11 @@
   - Captain # Frontier
 
 - type: startingGear
-  id: BoardGear
+  id: BoardHRGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitShinoharaSuit
+    jumpsuit: ClothingUniformJumpsuitShinoharaHumanResources
     shoes: ClothingShoesBootsLaceup
     neck: ClothingNeckTieRed
-    outerClothing: ClothingOuterShinoharaSuitJacket
     id: BoardPDA
     pocket1: TradePassport
     ears: ClothingHeadsetShinohara

@@ -80,7 +80,6 @@
     speechSounds: Pai
   - type: ShipyardListing
     shuttles:
-    - gazpachov
     - Exhumer
     - Homesteader
     - Hammerhead
@@ -90,7 +89,9 @@
     - Paracelsus
     - Qian
     - Pear
+    - Birdie
     - Termite
+    - Manatee
 # Hardcoded consoles
 - type: entity
   id: ComputerShipyardSecurity
@@ -173,3 +174,5 @@
     - Exhumermk2
     - Pearmk2
     - Termitemk2
+    - Slug
+    - Caterpillar

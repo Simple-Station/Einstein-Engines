@@ -1,0 +1,37 @@
+# Author Info
+# Discord: rubeebee
+
+- type: vessel
+  id: Roachling
+  name: TS Roachling
+  description: |
+    The Roachling is made from a decommisioned mining drone for cheap, retrofitting it for organic use, with little thought for the person piloting it.
+    LOADOUT: 2x Exhumer Miner Guns
+    MINIMUM CREW: 1x Miner
+  price: 11000
+  category: Small
+  group: Scrap
+  path: /Maps/_Crescent/Shuttles/Civilian/roachling.yml
+
+- type: gameMap
+  id: Roachling
+  mapName: 'Roachling'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/roachling.yml
+  minPlayers: 0
+  stations:
+    Roachling:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: fighter
+        - type: StationNameSetup
+          mapNameTemplate: 'Roachling {1}'
+          nameGenerator:
+           !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter
+        - type: VesselDescription
+          description: Barely safe to be piloted by a person. Hope you packed spare air.

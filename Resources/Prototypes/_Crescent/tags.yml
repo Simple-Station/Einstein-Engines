@@ -26,6 +26,9 @@
   id: MagazineNCWLConscriptBox
 
 - type: Tag
+  id: CartridgeAutoPD
+
+- type: Tag
   id: CartridgeMachineGunConscript
 
 - type: Tag # Frontier Space Artillery
@@ -78,3 +81,7 @@
 
 - type: Tag # Hullrot
   id: MagazineRocket48mm # Hullrot
+
+- type: Tag # Hullrot
+  id: PlasmaSword # Hullrot
+

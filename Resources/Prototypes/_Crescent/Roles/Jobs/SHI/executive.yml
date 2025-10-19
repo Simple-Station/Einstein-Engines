@@ -3,7 +3,7 @@
   name: job-name-executive
   description: job-description-executive
   playTimeTracker: JobExecutiveSHI
-  weight: 100
+  weight: 8
   startingGear: ExecutiveGear
   alwaysUseSpawner: true
   requireAdminNotify: true
@@ -27,6 +27,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-shi-executive
+      - type: HullrotFaction
+        faction: SHI
       - type: LanguageAdder
         addSpoken:
           - Kaishago

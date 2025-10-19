@@ -1,0 +1,106 @@
+- type: entity
+  id: Bullet6mm
+  name: bullet (6mm)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 14
+
+- type: entity
+  id: CartridgePistol6mm
+  name: cartridge (6mm auto)
+  parent: BaseCartridgePistol
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet6mm
+  - type: Tag
+    tags:
+      - CartridgePistol6mm
+
+- type: entity
+  id: MagazinePistol6mm
+  name: 16-round pistol magazine (6mm)
+  parent: BaseMagazinePistol
+  components:
+  - type: Tag
+    tags:
+      - MagazinePistol6mm
+  - type: BallisticAmmoProvider
+    proto: CartridgePistol6mm
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgePistol6mm
+    capacity: 16
+  - type: Sprite
+    sprite: _Crescent/Ammunition/6mm.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: BaseMagazinePistol6mmSmg
+  name: "40-round SMG magazine (6mm Auto)"
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - MagazineSMG6mm
+  - type: Item
+    size: Small
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgePistol6mm
+    capacity: 40
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/6mm_smg.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazinePistol6mmSmgEmpty
+  name: "40-round SMG magazine (6mm Auto any)"
+  suffix: empty
+  parent: BaseMagazinePistol6mmSmg
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: MagazinePistol6mmSmg
+  name: "40-round SMG magazine (6mm Auto)"
+  parent: BaseMagazinePistol6mmSmg
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistol6mm
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]

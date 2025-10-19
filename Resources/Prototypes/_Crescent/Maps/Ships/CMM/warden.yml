@@ -3,12 +3,12 @@
 
 - type: vessel
   id: Warden
-  name: Warden
+  name: TS Warden
   description: |
     The Warden is a combat retrofit of an old traffic controller ship, now existing to detect cloaked ships and provide support fire with it's 120mm cannon from long range, as well as screening with it's PDTs.
     LOADOUT: 1x 120mm cannon, 3x 20x135mm PDTs
     MINIMUM CREW: 1x Pilot, 1x Gunner/Loader
-  price: 50000
+  price: 41000
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/CMM/warden.yml

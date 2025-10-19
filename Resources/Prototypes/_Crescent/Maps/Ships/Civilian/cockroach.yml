@@ -1,12 +1,15 @@
 # Author Info
-# Discord: @fleshangel
+# Discord: @Rubeebee
 
 - type: vessel
   id: Cockroach
-  name: Cockroach
-  description: A reclaimed mining barge.
-  price: 80000
-  category: Small
+  name: TS Cockroach
+  description: |
+    The Cockroach is an Industrial Carrier, capable of fielding ships for both mining and salvaging. The ships it fields mines for it, while it collects the ores via it's ore array magnets. Equipped for long-term mining, a promising vessel.
+    LOADOUT: 6x 20x135 Machinegun PDTs
+    MINIMUM CREW: 1x Captain, 2x Miner Crew
+  price: 85000
+  category: Large
   group: Scrap
   path: /Maps/_Crescent/Shuttles/Civilian/cockroach.yml
 
@@ -17,8 +20,12 @@
   minPlayers: 0
   stations:
     Cockroach:
-      stationProto: StandardCrescentCivilianVessel
+      stationProto: StandardCrescentExpeditionVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: bigindustrial
         - type: StationNameSetup
           mapNameTemplate: 'Cockroach {1}'
           nameGenerator:
@@ -26,3 +33,5 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-mining
+        - type: VesselDescription
+          description: Made from a derelict of a derelict. The cockroach just refuses to die.

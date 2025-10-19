@@ -17,16 +17,13 @@
       inverted: true
       species:
         - Voidborn
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Muted
-        - Blindness
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-worker
+      - type: HullrotFaction
+        faction: NCWL
       - type: LanguageAdder
         addSpoken:
           - Dockta

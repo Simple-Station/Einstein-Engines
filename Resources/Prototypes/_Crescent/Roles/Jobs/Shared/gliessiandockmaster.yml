@@ -16,6 +16,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ind-gliess-dockmaster
+      - type: HullrotFaction
+        faction: GS
       - type: LanguageAdder
         addSpoken:
           - Tradeband

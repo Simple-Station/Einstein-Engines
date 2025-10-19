@@ -3,7 +3,7 @@
   name: job-name-highsec
   description: job-description-highsec
   playTimeTracker: JobHighsecSHI
-  weight: 50
+  weight: 4
   startingGear: HighsecGear
   alwaysUseSpawner: true
   requireAdminNotify: false
@@ -28,6 +28,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-shi-highsec
+      - type: HullrotFaction
+        faction: SHI
       - type: LanguageAdder
         addSpoken:
           - Kaishago
@@ -48,6 +50,76 @@
   id: HighsecGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitShinoharaHighsec
+    outerClothing: ClothingOuterArmorShinoharaArmorHighsec
+    head: ClothingHeadHatShinoharaHelmet
+    shoes: ClothingShoesBootsCombat
+    gloves: ClothingHandsGlovesCombat
+    id: HighsecPDA
+    eyes: ClothingEyesGlassesSunglasses
+    ears: ClothingHeadsetShinohara
+    pocket1: WeaponPistolLiquidator
+    pocket2: TradePassport
+    back: ClothingBackpackSHISatchel
+    belt: ClothingBeltAssault
+  storage:
+    back:
+    - Flash
+    - Tourniquet
+    - Handcuffs
+    - CombatKnife
+
+- type: job
+  id: HosSHI
+  name: job-name-hos-shi
+  description: job-description-hos-shi
+  playTimeTracker: JobHosSHI
+  weight: 5
+  startingGear: HosGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconHighsec"
+  supervisors: job-supervisors-shi
+  canBeAntag: false
+  requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:CharacterOverallTimeRequirement
+      min: 35000
+    - !type:FactionRequirement
+      factionID: "SHI"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-shi-board
+      - type: LanguageAdder
+        addSpoken:
+          - Kaishago
+          - Tradeband
+        addUnderstood:
+          - Kaishago
+          - Tradeband
+  access:
+  - Command
+  - Maintenance
+  - Shinohara
+  - ShinoharaSecurity
+  - ShinoharaOfficer
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: HosGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitShinoharaHOS
     shoes: ClothingShoesBootsCombat
     gloves: ClothingHandsGlovesCombat
     id: HighsecPDA
@@ -56,3 +128,7 @@
     pocket1: Handcuffs
     pocket2: TradePassport
     back: ClothingBackpackSHISatchel
+    head: ClothingHeadHatShinoharaBeretHOS
+    mask: ClothingMaskSHIHOSMask
+    outerClothing: ClothingOuterArmorShinoharaHOSVest
+    belt: WeaponPistolLiquidator

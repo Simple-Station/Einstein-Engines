@@ -263,14 +263,6 @@ public sealed partial class GunComponent : Component
     public bool ClumsyProof = false;
 
     /// <summary>
-    /// Goobstation
-    /// Whether the system won't change gun target when we stop aiming at it while firing in burst mode.
-    /// </summary>
-    [DataField]
-    public bool LockOnTargetBurst;
-
-
-    /// <summary>
     /// Firing direction for an item not being held (e.g. shuttle cannons, thrown guns still firing).
     /// </summary>
     [DataField]

@@ -1,7 +1,7 @@
 # @ezo_rb (ezo) donor gun
 - type: entity
   name: SHI001P Zodum .327
-  parent: BaseWeaponPistol
+  parent: [BaseWeaponPistol, StreeCredRedeemableLow]
   id: WeaponPistolZodum
   description: A custom hand-cannon from the SHI development team that was never meant to be released. Chambered in heavy .327 Imperial.
   components:
@@ -63,7 +63,7 @@
 # @theassassin25 (Volgin) donor gun
 - type: entity
   name: NCWL-AR02 Porodschok 5.56x45mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemableLow]
   id: PorodschokDonator
   description: A high-end Communard rifle, used to be produced in a Chengridz-based foundry. Recalled from production after Imperial sabotage. Only a few of these actually remain.
   components:
@@ -136,7 +136,7 @@
 # @m18hellcat76mmgunmotorcarriage (Hellcat) donor gun
 - type: entity
   name: PTA XCR-6 Charge rifle 6x24mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemableLow]
   id: WeaponSpecialChargeRifle
   description: A experimental rifle developed by Pang Tai Arms. Extremly rare. This one has the serial number M-18. Chambered in 6×24mm.
   components:
@@ -203,41 +203,153 @@
         amount: 2
       - id: Magazine6x24mmShock
         amount: 1
+
 # @willybillygilly (WillyBillyGilly) donor gun
 - type: entity
-  name: PTA 23AX Karabin 4g
-  parent: [BaseWeaponShotgun, BaseGunWieldable]
-  id: WeaponShotgunKS23
-  description: An oversized shotgun. Packs devastating 4 Gauge punches. Developed as part of Pang Tai's elite mercenary package.
+  name: CDT C-8X Kingpin 27mmR
+  parent: BaseItem
+  id: WeaponSpecialKingpin
+  suffix: Spawn case instead unless youre feeling generous
+  description: A heavy, unwieldly and too big to put in a bag what more could you ask not to have. has a toggle lock just like the P05 Brenner, Reloaded using 27mmR stripper clips or loose rounds.
   components:
-  - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
-  - type: Clothing
-    sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
-  - type: GunRequiresWield
   - type: Item
-    shape:
-    - 0,0,4,1
+    sprite: _Crescent/Objects/Weapons/Guns/kingpin.rsi
+    size: Ginormous
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/kingpin.rsi
+    quickEquip: false
+    slots:
+    - Back
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/kingpin.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 0.85
+  - type: HeldSpeedModifier
   - type: Gun
+    minAngle: 1
+    maxAngle: 75
+    angleIncrease: 40
+    angleDecay: 30
     fireRate: 2
-    soundGunshot:
-      path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_1.ogg
     selectedMode: SemiAuto
     availableModes:
-      - SemiAuto
+    - SemiAuto
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/kingpin/gunshot.ogg
+    soundEmpty:
+      path: /Audio/_Crescent/Weapons/Guns/kingpin/empty.ogg
   - type: BallisticAmmoProvider
+    soundRack: /Audio/_Crescent/Weapons/Guns/kingpin/rack.ogg
+    capacity: 10
+    proto: null
     whitelist:
       tags:
-        - ShellShotgun4g
-    capacity: 4
-    autoCycle: false
-    proto: ShellShotgun4gBuckshot
-  - type: ItemSlots
+      - 27mmAutocannon
+  - type: AmmoCounter
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: true
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: GunRequiresWield
+  - type: StaticPrice
+    price: 5000
+  - type: Appearance
+  - type: Construction
+    graph: C8XAutocannonGraph
+    node: C8XAutocannon
+
+- type: construction
+  name: C-8X 27mmR autocannon
+  id: C8XAutocannonCraft
+  graph: C8XAutocannonGraph
+  startNode: start
+  targetNode: C8XAutocannon
+  category: construction-category-tools
+  description: "A handcrafted 27mm autocannon."
+  icon: { sprite: _Crescent/Objects/Weapons/Guns/kingpin.rsi, state: icon }
+  objectType: Item
+
+- type: constructionGraph
+  id: C8XAutocannonGraph
+  start: start
+  graph:
+    - node: start
+      edges:
+      - to: C8XAutocannon
+        steps:
+        - tag: C8XAutocannonPartBarrel
+          icon:
+            sprite: _Crescent/Objects/Misc/gun_parts/barrel.rsi
+            state: icon
+          name: C-8X barrel
+          doAfter: 2
+        - tag: C8XAutocannonPartMisc
+          icon:
+            sprite: _Crescent/Objects/Misc/gun_parts/misc.rsi
+            state: icon
+          name: C-8X miscellaneous parts
+          doAfter: 2
+        - tag: C8XAutocannonPartReceiver
+          icon:
+            sprite: _Crescent/Objects/Misc/gun_parts/reicever.rsi
+            state: icon
+          name: C-8X receiver
+          doAfter: 2
+        - tag: C8XAutocannonPartBlueprint
+          icon:
+            sprite: _Crescent/Objects/Misc/gun_parts/blueprint.rsi
+            state: icon
+          name: C-8X blueprint
+          doAfter: 2
+        - material: BasicMechatronics
+          amount: 10
+          doAfter: 2
+        - material: BasicElectronics
+          amount: 10
+          doAfter: 2
+        - material: Plasteel
+          amount: 20
+          doAfter: 2
+        - material: BallisticCycler
+          amount: 5
+          doAfter: 2
+        - material: Steel
+          amount: 30
+          doAfter: 2
+    - node: C8XAutocannon
+      entity: WeaponSpecialKingpin
+
+- type: entity
+  id: CaseKingpin
+  parent: WeaponCaseKingpin
+  name: Cyberdawn C-8X case
+  suffix: Donor - Kingpin
+  description: A large Cyberdawn case with a experimental 27mm autocannon designed by Cyberdawn
+  components:
+  - type: StorageFill
+    contents:
+      - id: C8XAutocannonPartBlueprint
+        amount: 1
+      - id: C8XAutocannonPartMisc
+        amount: 1
+      - id: C8XAutocannonPartReceiver
+        amount: 1
+      - id: C8XAutocannonPartBarrel
+        amount: 1
 
 # @a_person5660 (Reggie) donor gun
 - type: entity
   name: SHI HSRPG-38M13 Hammerhead smart-missile launcher 65mm
-  parent: [BaseWeaponLauncher, BaseGunWieldable]
+  parent: [BaseWeaponLauncher, BaseGunWieldable, StreeCredRedeemableLow]
   id: WeaponLauncherHammerhead
   description: A fancy heat-seeking rocket launcher. Stamped with the Shinohara Heavy Industries logo.
   components:
@@ -280,7 +392,7 @@
 # @Tomahawk101 (Tomahawk101) donor gun
 - type: entity
   name: DEW-17-Mod Cycler 95c
-  parent: BaseWeaponBatterySmall
+  parent: [BaseWeaponBatterySmall, StreeCredRedeemableLow]
   id: WeaponDonorCycler
   description: A heavily modified DEW-17 laser pistol, its battery connection point has ben replaced with a miniature RTG capable of recharging the weapon indefinitely.
   components:
@@ -330,7 +442,7 @@
 # @no_originality (Original) donor gun
 - type: entity
   name: HP Madrugad 12.7x99mm
-  parent: BaseWeaponRevolver
+  parent: [BaseWeaponRevolver, StreeCredRedeemableLow]
   id: WeaponDonorRevolverMadrugad
   description: An ornate percussion revolver, hand-crafted to have once served a Hunter Montagne in the Great Hunt, now pilfered from their cold hands so it may serve yours.
   components:
@@ -371,7 +483,7 @@
 
 - type: entity
   id: CaseMadrugada
-  parent: WeaponCaseMadrugada
+  parent: [WeaponCaseMadrugada, StreeCredRedeemableLow]
   name: hunter's pride Madrugad case
   suffix: Donor - Madrugad
   description: A fancy wooden case with the 6th Saint Romaine's Militia flag draped over it
@@ -389,7 +501,7 @@
 - type: entity
   name: IRM DA-11C Courroux du Kaiser 15.2x169mm Anti-materiel rifle
   description: A one of a kind heirloom wielded by the Lord Admiral of The Countsman. A relic of Empire and Faith, it serves as tool of authority and the Countsman's last defense. Chambered in 15.2x169mm.
-  parent: WeaponAntimaterielDSMLeveller
+  parent: [WeaponAntimaterielDSMLeveller, StreeCredRedeemableLow]
   id: WeaponAntimaterielCourroux
   components:
   - type: GunRequiresWield
@@ -470,7 +582,7 @@
 # @BoskiYourk (boskiyourk) donor gun
 - type: entity
   name: PVDNC KZ23 Custom Bruiser 4g
-  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  parent: [BaseWeaponShotgun, BaseGunWieldable, StreeCredRedeemableLow]
   id: WeaponShotgunBruiser
   description: An exotic four gauge shotgun with mysterious origins. Found in the fog, it has been refurbished into something lethal.
   components:
@@ -483,13 +595,15 @@
     shape:
     - 0,0,4,1
   - type: Gun
-    fireRate: 1
+    fireRate: 1.25
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_1.ogg
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
     shotgunSpreadMultiplier: 0.5
+  - type: UseDelay
+    delay: 1
   - type: BallisticAmmoProvider
     whitelist:
       tags:
@@ -516,5 +630,80 @@
       - id: WeaponShotgunBruiser
         amount: 1
       - id: BoxLethalshot4g
-        amount: 2 
+        amount: 2
 
+# @deusvult8672 (Hueys) donor sword
+
+- type: entity
+  id: PlasmaSword
+  parent: PlasHalberd
+  name: Ancient Plasma Sword
+  description: A plasma weapon of ancient, long-forgotten design. Only through the care and maintenance of its holders has it managed to last through these turbulent centuries. Its blade glows bright blue, the heat it radiates is immense, and you'd rather not end up on the other side of it.
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Melee/plasma_sword.rsi
+  - type: Tag
+    tags:
+    - PlasmaSword
+  - type: MeleeWeapon
+    wideAnimationRotation: 135
+    swingLeft: true
+    attackRate: 1.7
+    range: 1.75
+    damage:
+      types:
+        Slash: 25
+        Heat: 10
+        Structural: 10
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 14
+    heavyRateModifier: 1.167 # 1.75 attack rate with 1.5 base
+    clickPartDamageMultiplier: 1.25
+    lightRangeModifier: 1.15
+    maxTargets: 6
+    soundHit:
+      collection: MetalThud
+  - type: Item
+    size: Normal
+  - type: Tool
+    qualities:
+      - Prying
+  - type: ToolTileCompatible
+  - type: Prying
+  - type: UseDelay
+    delay: 1
+  - type: IgniteOnMeleeHit
+    fireStacks: 1
+
+- type: entity
+  parent: [ClothingBeltBase, ClothingSlotBase]
+  id: ClothingBeltSheathPlasmaSword
+  name: Plasma Sword Scabbard
+  description: An old scabbard of unknown make. It still bears scratches and dents, which attest to its long service. But even after all this time, the material holds, probably due in part to the fact that it’s meant to contain raging plasma. The gold trim is engraved with symbols you do not recognise.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Belt/plasma_sword_sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Belt/plasma_sword_sheath.rsi
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      item:
+        name: PlasmaSword
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - PlasmaSword
+  - type: ItemMapper
+    mapLayers:
+      sheath-plasmasword:
+        whitelist:
+          tags:
+          - PlasmaSword
+  - type: Appearance

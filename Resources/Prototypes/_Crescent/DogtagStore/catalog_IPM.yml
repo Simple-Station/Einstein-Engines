@@ -9,14 +9,20 @@
   name: Interdyne Equipment
   priority: 10
 
+- type: storeCategory
+  id: StoreCategoryIPMMedicalEquipment
+  name: Interdyne Medical Equipment
+  priority: 8
+
+# Cybernetics
 - type: listing
   id: StoreListingIPMCyberneticsBloodPump
-  name: IPM TT-92 Overclocked Blood Pump 
+  name: IPM TT-92 Overclocked Blood Pump
   description: A small, fist-sized device meant to be a total replacement tool for a humanoid heart. Consumes nutrients from the external dermis and speeds up platelet production for accelerated healing. Replaces the heart.
   icon: { sprite: /Textures/_Crescent/Objects/Misc/cybernetics.rsi, state: heartpump }
   productEntity: CyberneticsBloodPump
   cost:
-    SampleIPM: 46
+    SampleIPM: 15
   categories:
   - StoreCategoryIPMCybernetics
 
@@ -27,7 +33,7 @@
   icon: { sprite: /Textures/_Crescent/Objects/Misc/cybernetics.rsi, state: interdyneoptics }
   productEntity: InterdyneOptics
   cost:
-    SampleIPM: 46
+    SampleIPM: 15
   categories:
   - StoreCategoryIPMCybernetics
 
@@ -38,7 +44,7 @@
   icon: { sprite: /Textures/Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi, state: iconpry }
   productEntity: CrowbarLeftArm
   cost:
-    SampleIPM: 17.25
+    SampleIPM: 7.5
   categories:
   - StoreCategoryIPMCybernetics
 
@@ -49,7 +55,7 @@
   icon: { sprite: /Textures/Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi, state: iconpry }
   productEntity: CrowbarRightArm
   cost:
-    SampleIPM: 17.25
+    SampleIPM: 7.5
   categories:
   - StoreCategoryIPMCybernetics
 
@@ -60,7 +66,7 @@
   icon: { sprite: /Textures/_Crescent/Objects/Misc/cybernetics.rsi, state: cherenzikovaccelerator }
   productEntity: CyberneticsAdrenal
   cost:
-    SampleIPM: 57.5
+    SampleIPM: 20
   categories:
   - StoreCategoryIPMCybernetics
 
@@ -71,10 +77,11 @@
   icon: { sprite: /Textures/_Crescent/Objects/Misc/cybernetics.rsi, state: paineditor }
   productEntity: CyberneticsPainEditor
   cost:
-    SampleIPM: 57.5
+    SampleIPM: 20
   categories:
   - StoreCategoryIPMCybernetics
 
+# Equipment
 - type: listing
   id: StoreListingIPMEquipmentCrash
   name: Smuggled Crash Injection
@@ -82,7 +89,7 @@
   icon: { sprite: /Textures/_Crescent/Objects/Autoinjectors/crash.rsi, state: medipen }
   productEntity: CrashAutoinjector
   cost:
-    SampleIPM: 11.5
+    SampleIPM: 10
   categories:
   - StoreCategoryIPMEquipment
 
@@ -93,32 +100,156 @@
   icon: { sprite: /Textures/_Crescent/Clothing/Syndicate/OuterClothing/trauma_suit.rsi, state: icon }
   productEntity: ClothingOuterHardsuitTraumasec
   cost:
-    SampleIPM: 17.25
+    SampleIPM: 10
   categories:
   - StoreCategoryIPMEquipment
 
+# Medical equipment
 - type: listing
-  id: StoreListingIPMEquipmentOmnimedTool
+  id: StoreListingIPMMedicalEquipmentOmnimedTool
   name: IPM T-33 medical multitool
   description: A complex, refined medical multitool, designed by Interdyne Pharmaceuticals to speed up operation times, as well as conserve space.
   icon: { sprite: /Textures/_Shitmed/Objects/Specific/Medical/Surgery/omnimed.rsi, state: evil }
   productEntity: OmnimedToolSyndie
   cost:
-    SampleIPM: 34.5
+    SampleIPM: 10
   categories:
-  - StoreCategoryIPMEquipment
+  - StoreCategoryIPMMedicalEquipment
 
 - type: listing
-  id: StoreListingIPMEquipmentDefibrillatorSyndicate
+  id: StoreListingIPMMedicalEquipmentDefibrillatorSyndicate
   name: Interdyne defibrillator
   description: Doubles as a self-defense weapon against war-crime inclined vagrants.
   icon: { sprite: /Textures/Objects/Specific/Medical/defibsyndi.rsi, state: icon }
   productEntity: DefibrillatorSyndicate
   cost:
-    SampleIPM: 34.5
+    SampleIPM: 10
   categories:
-  - StoreCategoryIPMEquipment
+  - StoreCategoryIPMMedicalEquipment
 
+- type: listing
+  id: StoreListingIPMMedicalEquipmentSecHypo
+  name: IPM RMA-4 cartridge autoinjector
+  description: Used for rapid administration of medicine. Uses smart cartridges printable at medical techfabs to deliver chemical payloads.
+  icon: { sprite: _Goobstation/Objects/Specific/Medical/autoinjector.rsi, state: security-base }
+  productEntity: SecHypo
+  cost:
+    SampleIPM: 2
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+- type: listing
+  id: StoreListingIPMMedicalEquipmentHypoBrigmedic
+  name: IPM RMA-2 hypospray
+  description: A hypospray designed by Interdyne Phramaceuticals. An advanced design outfitted with a larger chemical reservoir and a shorter injection delay.
+  icon: { sprite: _NF/Objects/Specific/Medical/hypobrigmedic.rsi, state: hypo }
+  productEntity: HypoBrigmedic
+  cost:
+    SampleIPM: 2
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+- type: listing
+  id: StoreListingIPMMedicalEquipmentSyringeCase
+  name: Syringe case
+  description: A robust carrying case that helps keep travel supplies of medicine organized.
+  icon: { sprite: Objects/Misc/syringecase.rsi, state: closed }
+  productEntity: SyringeCase
+  cost:
+    SampleIPM: 1
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+- type: listing
+  id: StoreListingIPMMedicalEquipmentVestineVial
+  name: Vestine
+  description: 30 units of Vestine a precursor to more powerful drugs.
+  icon: { sprite: Objects/Specific/Chemistry/vial.rsi, state: vial-1 }
+  productEntity: VestineChemistryVial
+  cost:
+    SampleIPM: 5
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+# Cartidges autoinjector
+- type: listing
+  id: StoreListingIPMMedicalEquipmentCartridgeEpinephrine
+  name: Adrenaline autoinjector cartridge
+  description: Contains 7u of epinephrine and 3u of tranexamic acid, used in a cartridge autoinjector.
+  icon: { sprite: _Goobstation/Objects/Specific/Medical/cartridge.rsi, state: base }
+  productEntity: CartridgeEpinephrine
+  cost:
+    SampleIPM: 0.1
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+- type: listing
+  id: StoreListingIPMMedicalEquipmentCartridgeSaline
+  name: Airloss autoinjector cartridge
+  description: Contains 7u of saline and 3u of dexalin plus, used in a cartridge autoinjector.
+  icon: { sprite: _Goobstation/Objects/Specific/Medical/cartridge.rsi, state: base }
+  productEntity: CartridgeSaline
+  cost:
+    SampleIPM: 0.2
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+- type: listing
+  id: StoreListingIPMMedicalEquipmentCartridgeBicaridine
+  name: Brute autoinjector cartridge
+  description: Contains 4u of bicaridine, 3u of bozaide, 2u of salicylic acid and 1u of tranexamic acid, used in a cartridge autoinjector.
+  icon: { sprite: _Goobstation/Objects/Specific/Medical/cartridge.rsi, state: base }
+  productEntity: CartridgeBicaridine
+  cost:
+    SampleIPM: 0.1
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+- type: listing
+  id: StoreListingIPMMedicalEquipmentCartridgePuncturase
+  name: Piercing autoinjector cartridge
+  description: Contains 10u of puncturase, used in a cartridge autoinjector.
+  icon: { sprite: _Goobstation/Objects/Specific/Medical/cartridge.rsi, state: base }
+  productEntity: CartridgePuncturase
+  cost:
+    SampleIPM: 0.2
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+- type: listing
+  id: StoreListingIPMMedicalEquipmentCartridgeDermaline
+  name: Burn autoinjector cartridge
+  description: Contains 4u of kelotane, 3u of dermaline, 2u of oxandrolone and 1u of sigynate, used in a cartridge autoinjector.
+  icon: { sprite: _Goobstation/Objects/Specific/Medical/cartridge.rsi, state: base }
+  productEntity: CartridgeDermaline
+  cost:
+    SampleIPM: 0.1
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+- type: listing
+  id: StoreListingIPMMedicalEquipmentCartridgeAtropine
+  name: Emergency autoinjector cartridge
+  description: Contains 10u of atropine, used in a cartridge autoinjector.
+  icon: { sprite: _Goobstation/Objects/Specific/Medical/cartridge.rsi, state: base }
+  productEntity: CartridgeAtropine
+  cost:
+    SampleIPM: 0.2
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+- type: listing
+  id: StoreListingIPMMedicalEquipmentCartridgeTirizene
+  name: Sedative autoinjector cartridge
+  description: Contains 4u of tirizene, 3u of impedrezene and 3u of haloperidol, used in a cartridge autoinjector.
+  icon: { sprite: _Goobstation/Objects/Specific/Medical/cartridge.rsi, state: base }
+  productEntity: CartridgeTirizene
+  cost:
+    SampleIPM: 1
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+# Refund option
 - type: listing
   id: StoreListingIPMEquipmentProteinCan
   name: Exotic samples can

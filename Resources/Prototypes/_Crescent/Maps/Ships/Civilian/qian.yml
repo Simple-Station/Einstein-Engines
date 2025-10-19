@@ -1,10 +1,13 @@
 # Author Info
-# Discord: @fleshangel
+# Discord: @fleshangel (remapped by @Rubeebee)
 
 - type: vessel
   id: Qian
   name: PTA Qian
-  description: A medium-sized hauler equipped with many modern modules for long-term voyages. Equipped minimally with ballistic turrets.
+  description: |
+    The Qian is a large-scale cargo hauler, retrofitted to survive taypan, capable of carrying massive amounts of cargo to make any captain rich. It is equipped with a shield generator, as well as a bundle of ballistic PDTs in order to protect itself. 
+    LOADOUT: 10x SHI 20x135mm PDTs
+    MINIMUM CREW: 1x Pilot, 1x Cargo Worker
   price: 130000
   category: Medium
   group: Civilian
@@ -30,4 +33,6 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-expeditions
+        - type: VesselDescription
+          description: The Qian is taypan's best cargo hauler ship, making it a prime target for piracy. Watch your back.
 

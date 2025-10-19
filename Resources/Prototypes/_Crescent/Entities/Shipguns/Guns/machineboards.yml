@@ -169,12 +169,12 @@
 - type: entity
   parent: BaseMachineCircuitboard
   suffix: ShipGunMachineCircuitBoard
-  id: WeaponTurretPDTNCSPCircuitboard
+  id: WeaponTurretPDTAdvancedCircuitboard
   name: SHI MG-213 light dual machinegun 20x135mm Mk. II machine board
   description: A machine printed circuit board for a SHI MG-213 light dual machinegun 20x135mm Mk. II
   components:
     - type: MachineBoard
-      prototype: WeaponTurretPDTNCSP
+      prototype: WeaponTurretPDTAdvanced
       requirements:
         MatterBin: 1
 

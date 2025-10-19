@@ -13289,7 +13289,7 @@ entities:
     - type: Transform
       pos: 6.860694,26.414762
       parent: 1
-- proto: WeaponTurretPDTNCSP
+- proto: WeaponTurretPDTAdvanced
   entities:
   - uid: 1467
     components:

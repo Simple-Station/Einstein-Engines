@@ -1,0 +1,147 @@
+- type: entity
+  id: JetpackBorgFilled
+  parent: JetpackVoid
+  name: borg jetpack
+  suffix: Filled
+  components:
+  - type: GasTank
+    outputPressure: 42.6
+    air:
+      # 4x void jetpack, so about 50 minutes lol
+      volume: 20
+      temperature: 293.15
+      moles:
+        - 1.025689525 # oxygen
+        - 1.025689525 # nitrogen
+
+- type: entity
+  name: handheld mass scanner
+  parent: HandHeldMassScannerEE
+  id: MassScannerEEBorg
+  description: A cyborg-specific mass scanner.
+  suffix : EE Borg
+  components:
+  - type: PowerCellDraw
+    drawRate: 0.01 # basically infinite
+
+- type: entity
+  name: disabler carbine
+  id: WeaponBorgEnergyCarbine
+  parent: BaseItem
+  description: A disabler carbine for use by borgs. Comes with a self-recharging battery.
+  components:
+    - type: Sprite
+      sprite: DeltaV/Objects/Weapons/Guns/Battery/energygun.rsi
+      layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+    - type: Gun
+      minAngle: 4
+      maxAngle: 25
+      angleIncrease: 4
+      angleDecay: 16
+      fireRate: 6
+      selectedMode: FullAuto
+      damageModifier: 1.25
+      availableModes:
+        - FullAuto
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Gunshots/charged.ogg
+      soundEmpty:
+        path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+    # - type: Sprite
+    #   sprite: Objects/Weapons/Guns/LMGs/l6.rsi
+    #   layers:
+    #     - state: base
+    #       map: [ "enum.GunVisualLayers.Base" ]
+    #     - state: mag-3
+    #       map: [ "enum.GunVisualLayers.Mag" ]
+    - type: Item
+      size: Huge
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+    - type: ProjectileBatteryAmmoProvider
+      # proto: BulletEnergyGunLaser
+      proto: BulletDisabler #maybe it's funner.
+      fireCost: 1
+    - type: Battery
+      maxCharge: 40
+      startingCharge: 40
+    - type: BatterySelfRecharger
+      autoRecharge: true
+      autoRechargeRate: 1
+    - type: AmmoCounter
+
+
+- type: entity
+  name: NT Cyborg Fist
+  parent: BaseItem
+  id: RemnantFist
+  description: A robust fist meant to cave in skulls.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Mobs/Remnants/remnant_fist.rsi
+    state: icon
+  - type: MeleeWeapon
+    attackRate: 3.5 #2 seconds
+    wideAnimationRotation: 0
+    range: 2
+    damage:
+      types:
+        Blunt: 50
+        Structural: 200
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 1
+    heavyRateModifier: 1.25
+    clickPartDamageMultiplier: 1.5
+    maxTargets: 3
+    bluntStaminaDamageFactor: 1.5
+    angle: 90
+    soundHit:
+      collection: RemnantFistSounds
+    animation: WeaponArcThrust
+  - type: MeleeThrowOnHit
+    speed: 10
+    lifetime: 0.25
+  - type: KnockdownOnHit
+    duration: 1
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,1,3
+
+- type: entity
+  name: NT Cyborg Drill
+  parent: BaseItem
+  id: RemnantDrill
+  description: A robust sawblade meant to finish off downed opponents.
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/handdrill.rsi
+    state: handdrill
+  - type: MeleeWeapon
+    autoAttack: true
+    attackRate: 0.10 #very fast
+    wideAnimationRotation: 270
+    range: 2
+    damage:
+      types:
+        Piercing: 5
+        Structural: 50
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 1
+    heavyRateModifier: 1.25
+    clickPartDamageMultiplier: 1.5
+    maxTargets: 3
+    bluntStaminaDamageFactor: 1.5
+    angle: 90
+    soundHit:
+      path: /Audio/Items/drill_hit.ogg
+    animation: WeaponArcThrust
+  - type: KnockdownOnHit
+    duration: 0.5
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,1,3

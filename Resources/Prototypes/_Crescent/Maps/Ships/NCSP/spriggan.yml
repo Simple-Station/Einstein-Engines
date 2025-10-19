@@ -1,0 +1,37 @@
+# Author Info
+# Discord: rubeebee
+
+- type: vessel
+  id: Spriggan
+  name: NCSP Spriggan
+  description: |
+    The result of a SAW engineer's experiment with hotrodding, the Spriggan is a mobile smuggler/salvage ship, cheap and easily modified to be anything you want. 
+    LOADOUT: 2x Exhumer mining guns
+    MINIMUM CREW: 1x Pilot
+  price: 38000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/NCSP/spriggan.yml
+
+- type: gameMap
+  id: Spriggan
+  mapName: 'NCSP Spriggan'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/spriggan.yml
+  minPlayers: 0
+  stations:
+    Spriggan:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'NCSP Spriggan {1}'
+          nameGenerator:
+           !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-smuggling
+        - type: VesselDescription
+          description: The result of two pounds of mystery drugs, this is the result of a SAW engineer's hangover.

@@ -1,0 +1,36 @@
+# Author Info
+# Discord: rubeebee
+
+- type: vessel
+  id: Slug
+  name: TS Slug
+  description: |
+    Recycled from the remains of a destroyed cargo ship, the Slug now lives it's second life as a salvage ship. It's cargo hold now acting as a salvage bay. Remember to lock your console before leaving the ship unattended.
+    MINIMUM CREW: 1x Pilot
+  price: 16000
+  category: Small
+  group: Scrap
+  path: /Maps/_Crescent/Shuttles/Civilian/slug.yml
+
+- type: gameMap
+  id: Slug
+  mapName: 'Slug'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/slug.yml
+  minPlayers: 0
+  stations:
+    Slug:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: industrial
+        - type: StationNameSetup
+          mapNameTemplate: 'Slug {1}'
+          nameGenerator:
+           !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-salvage
+        - type: VesselDescription
+          description: Flying revived derelicts is non uncommon among less fortunate independents.

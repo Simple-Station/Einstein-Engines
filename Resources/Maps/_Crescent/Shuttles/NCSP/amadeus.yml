@@ -6240,7 +6240,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: WeaponTurretPDTNCSP
+- proto: WeaponTurretPDTAdvanced
   entities:
   - uid: 851
     components:

@@ -85,7 +85,7 @@
 #hardsuit
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, StreeCredRedeemableLow]
   id: ClothingOuterHardsuitMidshipman
   name: midshipman armored hardsuit
   description: A modular hardsuit belonging to the past century. Used en masse by the defunct Minutemen, this relic is still found in the hands of security forces, militias, and nostalgics.
@@ -100,14 +100,14 @@
   - type: ExplosionResistance
     damageCoefficient: 0.6
   - type: DegradeableArmor
-    armorMaxHealth: 900
+    armorMaxHealth: 1125
     armorType: Metallic
     armorRepair: PlasteelPlate
     initialModifiers:
       flatReductions:
         Blunt: 20
         Slash: 20
-        Piercing: 35
+        Piercing: 50
         Heat: 15
         Caustic: 15
   - type: ClothingSpeedModifier
@@ -119,10 +119,10 @@
     price: 1250
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, StreeCredRedeemableLow]
   id: ClothingOuterHardsuitCMMPatrol
   name: ballistic-reinforced patrol suit
-  description: A bulky hardsuit belonging to the past century. An iconic and rare piece worn by high-ranking Minutemen, prized by collectors and lawmen alike. 
+  description: A bulky hardsuit belonging to the past century. An iconic and rare piece worn by high-ranking Minutemen, prized by collectors and lawmen alike.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/CMM/OuterClothing/patrol.rsi
@@ -134,14 +134,14 @@
   - type: ExplosionResistance
     damageCoefficient: 0.6
   - type: DegradeableArmor
-    armorMaxHealth: 800
+    armorMaxHealth: 1000
     armorType: Metallic
     armorRepair: NTPolymer
     initialModifiers:
       flatReductions:
         Blunt: 35
         Slash: 25
-        Piercing: 55
+        Piercing: 60
         Heat: 10
         Caustic: 15
   - type: ClothingSpeedModifier

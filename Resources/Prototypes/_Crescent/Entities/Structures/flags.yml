@@ -136,3 +136,154 @@
     drawdepth: WallTops
     sprite: _Crescent/Structures/imperialflag.rsi
     state: flag
+
+- type: entity
+  parent: BaseSign
+  id: RotUnderside
+  name: rot underside
+  description: "A tendril of Rotwelt. They tend to grow on corpses where Fog is abundant."
+  components:
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: _Crescent/Floors/meat.rsi
+    state: meat_underside_directional
+
+- type: entity
+  parent: BaseSign
+  id: RotWeltDirectional
+  name: rot welt
+  suffix: Directional
+  description: "A tendril of Rotwelt. They tend to grow on corpses where Fog is abundant."
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: _Crescent/Floors/meat.rsi
+    state: meat_directional
+
+- type: entity
+  parent: BaseSign
+  id: RotWelt0
+  name: rot welt growths
+  suffix: Detail
+  description: "A tendril of Rotwelt. They tend to grow on corpses where Fog is abundant."
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: _Crescent/Floors/meat.rsi
+    state: meatfloor_0
+
+- type: entity
+  parent: BaseSign
+  id: RotWelt1
+  name: rot welt growths
+  suffix: Detail
+  description: "A tendril of Rotwelt. They tend to grow on corpses where Fog is abundant."
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: _Crescent/Floors/meat.rsi
+    state: meatfloor_1
+
+- type: entity
+  parent: BaseSign
+  id: RotWelt2
+  name: rot welt growths
+  suffix: Detail
+  description: "A tendril of Rotwelt. They tend to grow on corpses where Fog is abundant."
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: _Crescent/Floors/meat.rsi
+    state: meatfloor_2
+
+- type: entity
+  parent: BaseSign
+  id: RotWelt3
+  name: rot welt growths
+  suffix: Detail
+  description: "A tendril of Rotwelt. They tend to grow on corpses where Fog is abundant."
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: _Crescent/Floors/meat.rsi
+    state: meatfloor_3
+
+- type: entity
+  parent: BaseSign
+  id: RotWelt4
+  name: rot welt growths
+  suffix: Detail
+  description: "A tendril of Rotwelt. They tend to grow on corpses where Fog is abundant."
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: _Crescent/Floors/meat.rsi
+    state: meatfloor_4
+
+- type: entity
+  parent: BaseSign
+  id: RotWelt5
+  name: rot welt growths
+  suffix: Detail
+  description: "A tendril of Rotwelt. They tend to grow on corpses where Fog is abundant."
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: _Crescent/Floors/meat.rsi
+    state: meatfloor_5
+
+- type: entity
+  parent: BaseSign
+  id: RotWelt6
+  name: rot welt growths
+  suffix: Detail
+  description: "A tendril of Rotwelt. They tend to grow on corpses where Fog is abundant."
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: _Crescent/Floors/meat.rsi
+    state: meatfloor_6
+
+- type: entity
+  parent: BaseSign
+  id: RotWelt7
+  name: rot welt growths
+  suffix: Detail
+  description: "A tendril of Rotwelt. They tend to grow on corpses where Fog is abundant."
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: _Crescent/Floors/meat.rsi
+    state: meatfloor_7
+
+- type: entity
+  parent: BaseSign
+  id: RotWelt8
+  name: rot welt growths
+  suffix: Detail
+  description: "A tendril of Rotwelt. They tend to grow on corpses where Fog is abundant."
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: _Crescent/Floors/meat.rsi
+    state: meatfloor_8
