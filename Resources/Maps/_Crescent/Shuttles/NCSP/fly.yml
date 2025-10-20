@@ -396,6 +396,13 @@ entities:
         3:
         - - Group1
           - Toggle
+    - type: NamedModules
+      buttonNames:
+      - Toggle Slugthrower
+      - Module B
+      - Module C
+      - Module D
+      - Module E
 - proto: PoweredSmallLight
   entities:
   - uid: 34
@@ -587,3 +594,4 @@ entities:
       pos: 0.5,1.5
       parent: 1
 ...
+
