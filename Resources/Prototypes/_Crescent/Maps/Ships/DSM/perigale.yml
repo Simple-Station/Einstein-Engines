@@ -8,12 +8,12 @@
   price: 10000
   category: Small
   group: None
-  path: /Maps/_Crescent/Shuttles/DSM/Perigale.yml
+  path: /Maps/_Crescent/Shuttles/DSM/perigale.yml
 
 - type: gameMap
   id: Perigale
   mapName: 'DSM Perigale'
-  mapPath: /Maps/_Crescent/Shuttles/DSM/Perigale.yml
+  mapPath: /Maps/_Crescent/Shuttles/DSM/perigale.yml
   minPlayers: 0
   stations:
     Perigale:
