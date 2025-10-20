@@ -319,13 +319,13 @@ public abstract class SharedDeviceLinkSystem : EntitySystem
         if (sourceComponent.Ports == null || sinkComponent.Ports == null)
             return;
 
-        if (!InRange(sourceUid, sinkUid, sourceComponent.Range))
-        {
-            if (userId != null)
-                _popupSystem.PopupCursor(Loc.GetString("signal-linker-component-out-of-range"), userId.Value);
+        // if (!InRange(sourceUid, sinkUid, sourceComponent.Range)) //hullrot edit: infinite link distance
+        // {
+        //     if (userId != null)
+        //         _popupSystem.PopupCursor(Loc.GetString("signal-linker-component-out-of-range"), userId.Value);
 
-            return;
-        }
+        //     return;
+        // }
 
         RemoveSinkFromSource(sourceUid, sinkUid, sourceComponent);
         foreach (var (source, sink) in links)
@@ -515,13 +515,13 @@ public abstract class SharedDeviceLinkSystem : EntitySystem
         if (!Resolve(sourceUid, ref sourceComponent))
             return false;
 
-        if (checkRange && !InRange(sourceUid, sinkUid, sourceComponent.Range))
-        {
-            if (userId.HasValue)
-                _popupSystem.PopupCursor(Loc.GetString("signal-linker-component-out-of-range"), userId.Value);
+        // if (checkRange && !InRange(sourceUid, sinkUid, sourceComponent.Range)) //hullrot edit: infinite link distance
+        // {
+        //     if (userId.HasValue)
+        //         _popupSystem.PopupCursor(Loc.GetString("signal-linker-component-out-of-range"), userId.Value);
 
-            return false;
-        }
+        //     return false;
+        // }
 
         var linkAttemptEvent = new LinkAttemptEvent(userId, sourceUid, source, sinkUid, sink);
 

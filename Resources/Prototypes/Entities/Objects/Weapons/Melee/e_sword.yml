@@ -40,7 +40,7 @@
         types:
             Slash: 15
             Heat: 25
-            Structural: 20 # its a damn laser sword, let people star wars their way through walls
+            Structural: 50 # its a damn laser sword, let people star wars their way through walls
   - type: ItemToggleDamageOtherOnHit
     activatedStaminaCost: 6
   - type: ItemToggleThrowingAngle
@@ -65,7 +65,7 @@
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 10
     clickPartDamageMultiplier: 1.25
-    maxTargets: 3  
+    maxTargets: 3
   - type: DamageOtherOnHit
   - type: Item
     size: Small
@@ -313,7 +313,7 @@
         types:
             Slash: 25
             Heat: 35
-            Structural: 35
+            Structural: 75
   - type: ItemToggleActiveSound
     activeSound:
       path: /Audio/Weapons/ebladehum.ogg
@@ -346,11 +346,9 @@
     size: Small
     sprite: Objects/Weapons/Melee/e_sword_double-inhands.rsi
   - type: Reflect
-    reflectProb: .70
-    minReflectProb: .20
+    reflectProb: .35
+    minReflectProb: .50
     spread: 75
-    reflects:
-      - Energy #DeltaV: 70% Energy Reflection but no ballistics.
   - type: UseDelay
     delay: 1
   - type: ToggleableLightVisuals
