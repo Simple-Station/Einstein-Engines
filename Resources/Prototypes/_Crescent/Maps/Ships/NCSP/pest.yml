@@ -32,6 +32,6 @@
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
-        designation: vessel-designation-fighter
+          designation: vessel-designation-fighter
         - type: VesselDescription
           description: Newbloods often tunnel vision on their first target, resulting in being shot down by enemy PDs or crashing into their victim.
