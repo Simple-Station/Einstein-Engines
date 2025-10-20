@@ -410,6 +410,13 @@ entities:
         32:
         - - Group1
           - SpaceArtilleryFire
+    - type: NamedModules
+      buttonNames:
+      - Fire Rockets
+      - Module B
+      - Module C
+      - Module D
+      - Module E
 - proto: PoweredSmallLight
   entities:
   - uid: 34
@@ -582,3 +589,4 @@ entities:
       pos: 0.5,1.5
       parent: 1
 ...
+
