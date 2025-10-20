@@ -1,0 +1,37 @@
+# Author Info
+# Discord: @memetasticproductions
+#
+- type: vessel
+  id: Fly
+  name: GSC Fly
+  description: |
+    An ultralight strike fighter almost as old as the Gorlex brand itself, carrying a single, rugged anti-ship weapon.
+    LOADOUT: 1x SHI 43mm "Dasher" Ballistic Slugthrower
+    CREW: 1x Pilot
+  price: 12500
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/NCSP/fly.yml
+
+- type: gameMap
+  id: Fly
+  mapName: 'GSC Fly'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/fly.yml
+  minPlayers: 0
+  stations:
+    Fly:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: fighter
+        - type: StationNameSetup
+          mapNameTemplate: 'GSC Fly {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter
+        - type: VesselDescription
+          description: Many pilots move parts around to facilitate easier reloading. Most do not survive their attack runs.
