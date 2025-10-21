@@ -24,7 +24,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/ghost.rsi
     state: icon
   product: WeaponCaseGhost
-  cost: 8000
+  cost: 15000
   category: cargoproduct-category-name-military
   group: pangtai
 
@@ -34,7 +34,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/cobra.rsi
     state: icon
   product: WeaponCaseCobra
-  cost: 5000
+  cost: 1500
   category: cargoproduct-category-name-military
   group: pangtai
 
@@ -194,7 +194,7 @@
     sprite: _Crescent/Clothing/Corpo/OuterClothing/carapace.rsi
     state: icon
   product: CratePangtaiHighArmor
-  cost: 10000
+  cost: 5000
   category: cargoproduct-category-name-military
   group: pangtai
 
@@ -204,7 +204,7 @@
     sprite: _Crescent/Clothing/Corpo/OuterClothing/pangtaivest.rsi
     state: icon
   product: CratePangtaiLowArmor
-  cost: 2500
+  cost: 1000
   category: cargoproduct-category-name-military
   group: pangtai
 
@@ -214,7 +214,7 @@
     sprite: _Crescent/Clothing/Corpo/OuterClothing/zhanshi.rsi
     state: icon
   product: CratePangtaiHardsuitArmor
-  cost: 5000
+  cost: 12500
   category: cargoproduct-category-name-military
   group: pangtai
 

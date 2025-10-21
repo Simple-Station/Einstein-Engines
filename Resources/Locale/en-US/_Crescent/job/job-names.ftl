@@ -1,3 +1,8 @@
+# nanotrasen
+job-name-melee-borg = NT Nullifier Cyborg
+job-name-ranged-borg = NT Rectifier Cyborg
+job-name-utility-ipc = NT Engineer IPC
+
 # ncwl
 
 job-name-ncwl-faction-leader = Major

@@ -6,7 +6,7 @@
   weight: 20
   requirements:
   - !type:CharacterOverallTimeRequirement
-    min: 3600
+    min: 10800
   startingGear: DockhandGear
   icon: "JobIconDockhand"
   supervisors: job-supervisors-gliess

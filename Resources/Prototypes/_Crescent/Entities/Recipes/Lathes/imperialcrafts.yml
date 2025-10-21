@@ -544,3 +544,12 @@
     StarshipEngineComponents: 3000
     ShipComponents: 2750
     ShipHull: 6000
+
+- type: latheRecipe
+  id: TorturerLPC
+  result: ShipVoucherTorturer
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 2000
+    ShipComponents: 1250
+    ShipHull: 2000

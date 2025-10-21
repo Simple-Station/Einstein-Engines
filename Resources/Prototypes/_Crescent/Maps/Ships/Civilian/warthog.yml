@@ -1,0 +1,36 @@
+# Author Info
+# Discord: @fleshangel (edited by Rubeebee)
+
+- type: vessel
+  id: Warthog
+  name: Warthog
+  description: |
+    A scrap pod put together from welded rods and other bits of waste, cheapest option for when you must escape or get to a location, lacks EVA.
+    MINIMUM CREW: 1x Pilot
+  price: 6000
+  category: Small
+  group: Scrap
+  path: /Maps/_Crescent/Shuttles/Civilian/warthog.yml
+
+- type: gameMap
+  id: Warthog
+  mapName: 'Warthog'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/warthog.yml
+  minPlayers: 0
+  stations:
+    Warthog:
+      stationProto: StandardCrescentCivilianVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: fighter
+        - type: StationNameSetup
+          mapNameTemplate: 'Warthog {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-civilian
+        - type: VesselDescription
+          description: Behold a pale horse; and his name that sat on him was Death, and Hell followed with him

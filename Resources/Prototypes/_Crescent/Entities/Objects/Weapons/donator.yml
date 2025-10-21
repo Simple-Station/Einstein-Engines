@@ -595,13 +595,15 @@
     shape:
     - 0,0,4,1
   - type: Gun
-    fireRate: 1
+    fireRate: 1.25
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_1.ogg
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
     shotgunSpreadMultiplier: 0.5
+  - type: UseDelay
+    delay: 1
   - type: BallisticAmmoProvider
     whitelist:
       tags:
@@ -630,3 +632,78 @@
       - id: BoxLethalshot4g
         amount: 2
 
+# @deusvult8672 (Hueys) donor sword
+
+- type: entity
+  id: PlasmaSword
+  parent: PlasHalberd
+  name: Ancient Plasma Sword
+  description: A plasma weapon of ancient, long-forgotten design. Only through the care and maintenance of its holders has it managed to last through these turbulent centuries. Its blade glows bright blue, the heat it radiates is immense, and you'd rather not end up on the other side of it.
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Melee/plasma_sword.rsi
+  - type: Tag
+    tags:
+    - PlasmaSword
+  - type: MeleeWeapon
+    wideAnimationRotation: 135
+    swingLeft: true
+    attackRate: 1.7
+    range: 1.75
+    damage:
+      types:
+        Slash: 25
+        Heat: 10
+        Structural: 10
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 14
+    heavyRateModifier: 1.167 # 1.75 attack rate with 1.5 base
+    clickPartDamageMultiplier: 1.25
+    lightRangeModifier: 1.15
+    maxTargets: 6
+    soundHit:
+      collection: MetalThud
+  - type: Item
+    size: Normal
+  - type: Tool
+    qualities:
+      - Prying
+  - type: ToolTileCompatible
+  - type: Prying
+  - type: UseDelay
+    delay: 1
+  - type: IgniteOnMeleeHit
+    fireStacks: 1
+
+- type: entity
+  parent: [ClothingBeltBase, ClothingSlotBase]
+  id: ClothingBeltSheathPlasmaSword
+  name: Plasma Sword Scabbard
+  description: An old scabbard of unknown make. It still bears scratches and dents, which attest to its long service. But even after all this time, the material holds, probably due in part to the fact that it’s meant to contain raging plasma. The gold trim is engraved with symbols you do not recognise.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Belt/plasma_sword_sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Belt/plasma_sword_sheath.rsi
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      item:
+        name: PlasmaSword
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - PlasmaSword
+  - type: ItemMapper
+    mapLayers:
+      sheath-plasmasword:
+        whitelist:
+          tags:
+          - PlasmaSword
+  - type: Appearance

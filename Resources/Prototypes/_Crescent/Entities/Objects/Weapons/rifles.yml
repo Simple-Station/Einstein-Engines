@@ -377,6 +377,14 @@
     sprite: _Crescent/Objects/Weapons/Guns/goro.rsi
   - type: Gun
     fireRate: 3.75
+    selectedMode: Burst
+    availableModes:
+      - SemiAuto
+      - Burst
+      - FullAuto
+    shotsPerBurst: 3
+    burstFireRate: 12
+    burstCooldown: 1.5
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/rifle_1/rifle_gunshot_2.ogg
   - type: ChamberMagazineAmmoProvider
@@ -474,7 +482,7 @@
   name: IRM DA-8 Miller 5.56x45mm
   parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponRifleMiller
-  description: A mil-grade assault rifle produced by Olywir Armaments, primarily for the Imperial Garrison and Imperial Naval Forces. Comes chambered in light rounds. All flair.
+  description: A mil-grade assault rifle produced by Olywir Armaments, primarily for the Imperial Garrison and Imperial Naval Forces. Unlike other firearms made by Olywir the miller actually stayed under budget, even if by only a few thousand credits.
   components:
   - type: Item
     shape:
@@ -710,9 +718,13 @@
   - type: Gun
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/M16/rifle_gunshot_2.ogg
-    selectedMode: SemiAuto
+    selectedMode: Burst
     availableModes:
       - SemiAuto
+      - Burst
+    shotsPerBurst: 2
+    burstFireRate: 24
+    burstCooldown: 0.75
   - type: ItemSlots
     slots:
       gun_magazine:

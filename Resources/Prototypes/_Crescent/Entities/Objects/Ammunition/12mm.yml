@@ -1,6 +1,6 @@
 - type: entity
   id: MagazinePistolSmartgun
-  name: 25-round smartpistol magazine (12mm)
+  name: 10-round smart magazine (12mm)
   parent: BaseMagazinePistol
   components:
   - type: Tag
@@ -12,7 +12,53 @@
     whitelist:
       tags:
         - CartridgePistolSmart
-    capacity: 25
+    capacity: 10
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/12mm_pistol.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-1
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 11
+    zeroVisible: true
+  - type: Appearance
+
+- type: entity
+  id: MagazineSmgSmartgun
+  name: 20-round smart magazine (12mm)
+  parent: BaseMagazinePistol
+  components:
+  - type: Tag
+    tags:
+      - MagazineSmgSmartgun
+  - type: BallisticAmmoProvider
+    proto: CartridgePistol12mm
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgePistolSmart
+    capacity: 20
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/12mm_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-1
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 21
+    zeroVisible: true
+  - type: Appearance
 
 - type: entity
   id: Bullet12mm
@@ -23,7 +69,9 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 20
+        Piercing: 26 #only 2 more than 11mm to balance out the higher capacity magazines and common sense
+    harmorPenetration: 10 #Depleted uranium core and bigger caliber
+    stoppingPower: 10 
 
 - type: entity
   id: CartridgePistol12mm

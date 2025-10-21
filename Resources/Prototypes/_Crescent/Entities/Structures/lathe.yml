@@ -252,6 +252,10 @@
     idleState: fab-idle
     runningState: fab-active
     staticRecipes:
+      - DrumMagazineShotgunSlug
+      - DrumMagazineShotgunEmpty
+      - DrumMagazineShotgunBuck
+      - MagazineSmgSmartgun
       - MagazineHeavyRifleBoxmag
       - MagazinePistolHeavy
       - MagazineBoxHeavyPistol
@@ -510,6 +514,15 @@
       - DnaScramblerImplanter
       - EmpImplanter
       - EnergyDagger
+      - EnergySword
+      - EnergySwordDouble
+      - BallisticCycler1Craft
+      - TubeLoader1Craft
+      - LaserLocus1Craft
+      - HardlightGenerator1Craft
+      - DoormagCyberdawn
+      - AdvancedMechatronics1Craft
+      - AdvancedElectronics1Craft
       - ClothingOuterHardsuitSyndieMedicCyberdawn
       - ClothingOuterHardsuitCybersunStealthCyberdawn
       - MagazinePistolSpecialMindbreakerCyberdawn
@@ -551,6 +564,7 @@
       - WeaponPistolComplianceImperial
       - CovetorLPC
       - IbisLPC
+      - TorturerLPC
       - SunesisLPC
       - ClothingBeltSheathDSMRapier
       - ClothingBeltSheathDSMSabre
@@ -685,7 +699,6 @@
       - CyberneticsDermalArmor
       - SHIKatana
       - SHIShiverBlade
-      - BallisticCycler1Craft
       - ClothingOuterHardsuitSHIJuggernaut
       - ClothingOuterHardsuitSHISpeedsuit
 

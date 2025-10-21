@@ -66,6 +66,12 @@ research-technology-cyberdawn-egui = Egui Stealth Tacsuit
 research-technology-cyberdawn-psybreaker = Anti-Psionic Armaments
 research-technology-cyberdawn-thermals = Thermal Vision Goggles
 research-technology-cyberdawn-advancedlaunchers = Advanced Launchers
+research-technology-cyberdawn-CDTAdvancedComponents = Advanced components
+research-technology-cyberdawn-CDTAdvancedFirearmcomponents = Advanced Firearm components
+research-technology-cyberdawn-CDTPhoronBlade = PhoronBlade
+research-technology-cyberdawn-CDTDualPhoronBlade = DualPhoronBlade
+
+
 
 # DSM
 research-technology-imperial-basicclothes = Basic Tailoring
@@ -90,6 +96,7 @@ research-technology-imperial-srmimitation = Sixth Fireteam Imitation
 research-technology-imperial-bomblauncher = M320 Launcher
 research-technology-imperial-triumphant = Imperial Cruiser
 research-technology-imperial-suzerain = Imperial Siege Battlecruiser
+research-technology-imperial-torturer = Imperial Stealth Bomber
 
 # NCWL
 research-technology-communard-clothes = Communard Clothes
