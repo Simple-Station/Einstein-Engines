@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Content.Client.Projectiles;
+using Content.Shared._Crescent.ShipShields;
 using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 using Content.Shared.Projectiles;
 using Content.Shared.Weapons.Ranged.Events;
@@ -27,6 +28,8 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
     private EntityQuery<IgnorePredictionHideComponent> _ignorePredictionHideQuery;
     private EntityQuery<SpriteComponent> _spriteQuery;
 
+    private ISawmill _sawmill = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -44,6 +47,8 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
         SubscribeLocalEvent<PredictedProjectileServerComponent, ComponentStartup>(OnServerProjectileStartup);
 
         UpdatesBefore.Add(typeof(TransformSystem));
+
+        _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("rmc14.gunprediction.client");
     }
 
     private void OnBeforeSolve(ref PhysicsUpdateBeforeSolveEvent ev)
@@ -51,6 +56,7 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
         var query = EntityQueryEnumerator<PredictedProjectileClientComponent>();
         while (query.MoveNext(out var uid, out var predicted))
         {
+            //_sawmill.Debug("ON BEFORE SOLVE, MOVING UID: " + uid);
             predicted.Coordinates = Transform(uid).Coordinates;
         }
     }
@@ -62,6 +68,8 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
         {
             if (_timing.IsFirstTimePredicted)
                 continue;
+
+            //_sawmill.Debug("ON AFTER SOLVE, MOVING UID: " + uid);
 
             if (predicted.Coordinates is { } coordinates)
                 _transform.SetCoordinates(uid, coordinates);
@@ -75,32 +83,50 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
         if (_timing.IsFirstTimePredicted)
             return;
 
+        //_sawmill.Debug("ON SHOOT REQUEST");
+
         _gun.ShootRequested(ev.Gun, ev.Coordinates, ev.Target, null, args.SenderSession);
     }
 
     private void OnClientProjectileUpdateIsPredicted(Entity<PredictedProjectileClientComponent> ent, ref UpdateIsPredictedEvent args)
     {
+        _sawmill.Debug("ON CLIENT PROJECTILE UPDATE IS PREDICTED");
         args.IsPredicted = true;
     }
 
     private void OnClientProjectileStartCollide(Entity<PredictedProjectileClientComponent> ent, ref StartCollideEvent args)
     {
+        _sawmill.Debug("ONCLIENT PROJECTILE COLLIDE 0");
         if (ent.Comp.Hit)
             return;
+
+        _sawmill.Debug("ONCLIENT PROJECTILE COLLIDE 1");
 
         if (!TryComp(ent, out ProjectileComponent? projectile) ||
             !TryComp(ent, out PhysicsComponent? physics))
         {
             return;
         }
+        _sawmill.Debug("ONCLIENT PROJECTILE COLLIDE 2");
 
         var netEnt = GetNetEntity(args.OtherEntity);
+
+        //hullrot edit: critical bug that makes the projectiles delete themselves if ship shield is active on ur grid
+        if (TryComp<ShipShieldComponent>(args.OtherEntity, out var shield))
+        {
+            _sawmill.Debug("----ONCLIENTPROJECTILESTARTCOLLIDE---- DETECTED SHIELD COLLISION, IGNORING");
+            return;
+        }
         var pos = _transform.GetMapCoordinates(args.OtherEntity);
         var hit = new HashSet<(NetEntity, MapCoordinates)> { (netEnt, pos) };
         var ev = new PredictedProjectileHitEvent(ent.Owner.Id, hit);
         RaiseNetworkEvent(ev);
 
+        _sawmill.Debug("ONCLIENT PROJECTILE COLLIDE 3");
+
+        _sawmill.Debug("======COLLISION FIRING 2");
         _projectile.ProjectileCollide((ent, projectile, physics), args.OtherEntity);
+        _sawmill.Debug("ONCLIENT PROJECTILE COLLIDE 4");
     }
 
     private void OnServerProjectileStartup(Entity<PredictedProjectileServerComponent> ent, ref ComponentStartup args)
@@ -129,6 +155,7 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
         var projectiles = EntityQueryEnumerator<PredictedProjectileClientComponent, ProjectileComponent, PhysicsComponent>();
         while (projectiles.MoveNext(out var uid, out var predicted, out var projectile, out var physics))
         {
+            _sawmill.Debug("QUERYING PREDICTED PROJECTILE, UID: " + uid);
             if (predicted.Hit)
                 continue;
 
@@ -139,6 +166,11 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
             var hit = new HashSet<(NetEntity, MapCoordinates)>();
             foreach (var contact in contacts)
             {
+                if (TryComp<ShipShieldComponent>(contact, out var shield))
+                {
+                    _sawmill.Debug("----UPDATE---- DETECTED SHIELD COLLISION, IGNORING");
+                    return;
+                }
                 var netEnt = GetNetEntity(contact);
                 var pos = _transform.GetMapCoordinates(contact);
                 hit.Add((netEnt, pos));
@@ -147,17 +179,21 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
             var ev = new PredictedProjectileHitEvent(uid.Id, hit);
             RaiseNetworkEvent(ev);
 
+            _sawmill.Debug("======COLLISION FIRING 1");
+
             _projectile.ProjectileCollide((uid, projectile, physics), contacts.First());
         }
 
         var predictedQuery = EntityQueryEnumerator<PredictedProjectileHitComponent, SpriteComponent, TransformComponent>();
         while (predictedQuery.MoveNext(out var hit, out var sprite, out var xform))
         {
+            _sawmill.Debug("QUERYING PREDICTED 2 PROJECTILE, UID: " + hit);
             var origin = hit.Origin;
             var coordinates = xform.Coordinates;
             if (!origin.TryDistance(EntityManager, _transform, coordinates, out var distance) ||
                 distance >= hit.Distance)
             {
+                _sawmill.Debug("--------SPRITEVISIBLE FALSE---------");
                 sprite.Visible = false;
             }
         }
@@ -171,6 +207,7 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
         var projectiles = EntityQueryEnumerator<PredictedProjectileClientComponent, TransformComponent>();
         while (projectiles.MoveNext(out _, out var xform))
         {
+            _sawmill.Debug("QUERYING PREDICTED 3 PROJECTILE, UID:");
             xform.ActivelyLerping = false;
         }
     }
