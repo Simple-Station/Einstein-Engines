@@ -72,6 +72,23 @@
     radius: 3.5
     color: orange
     energy: 0.5
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
+        hard: false
+      fly-by: &flybyfixture
+        shape: !type:PhysShapeCircle
+          radius: 1.5
+        layer:
+        - Impassable
+        - MidImpassable
+        - HighImpassable
+        - LowImpassable
+        hard: False
+  
 
     
 
@@ -286,7 +303,7 @@
         - Impassable
         - BulletImpassable
         hard: true
-      fly-by: &flybyfixture
+      fly-by: *flybyfixture
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallic
