@@ -155,7 +155,7 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
         var projectiles = EntityQueryEnumerator<PredictedProjectileClientComponent, ProjectileComponent, PhysicsComponent>();
         while (projectiles.MoveNext(out var uid, out var predicted, out var projectile, out var physics))
         {
-            _sawmill.Debug("QUERYING PREDICTED PROJECTILE, UID: " + uid);
+            //_sawmill.Debug("QUERYING PREDICTED PROJECTILE, UID: " + uid);
             if (predicted.Hit)
                 continue;
 
