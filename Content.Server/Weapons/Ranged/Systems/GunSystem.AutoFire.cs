@@ -6,6 +6,9 @@ namespace Content.Server.Weapons.Ranged.Systems;
 
 public sealed partial class GunSystem
 {
+
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
