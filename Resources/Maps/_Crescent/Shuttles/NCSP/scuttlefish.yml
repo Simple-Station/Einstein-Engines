@@ -505,6 +505,13 @@ entities:
           - SpaceArtilleryFire
         - - Group2
           - SpaceArtilleryFire
+    - type: NamedModules
+      buttonNames:
+      - Fire Rocket Pods
+      - Fire Left Pod
+      - Fire Right Pod
+      - Module D
+      - Module E
 - proto: PoweredlightRed
   entities:
   - uid: 40
@@ -717,3 +724,4 @@ entities:
       pos: 1.5,0.5
       parent: 1
 ...
+
