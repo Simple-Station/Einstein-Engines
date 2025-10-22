@@ -502,6 +502,13 @@ entities:
         2:
         - - Group1
           - Toggle
+    - type: NamedModules
+      buttonNames:
+      - Fire Slugthrower
+      - Module B
+      - Module C
+      - Module D
+      - Module E
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -744,3 +751,4 @@ entities:
       pos: -0.5,1.5
       parent: 1
 ...
+
