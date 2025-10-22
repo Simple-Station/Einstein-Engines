@@ -905,6 +905,7 @@ public abstract partial class SharedGunSystem : EntitySystem
 
     public List<EntityUid>? ShootRequested(NetEntity netGun, NetCoordinates coordinates, NetEntity? target, List<int>? projectiles, ICommonSession session)
     {
+        var user = session.AttachedEntity;
         if (user == null ||
             !_combatMode.IsInCombatMode(user)
             )
