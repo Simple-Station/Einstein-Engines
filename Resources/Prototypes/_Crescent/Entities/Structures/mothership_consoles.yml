@@ -226,8 +226,8 @@
     shuttles:
     - Tick
     - Gnat
-    - Fly
-    - Pest
+    - Piranha
+    - Scuttlefish
 
 - type: entity
   id: NAPMothershipComputer
