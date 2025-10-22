@@ -92,6 +92,13 @@
     Cloth: 500
 
 - type: latheRecipe
+  id: ClothingNeckImperialGreatcoat
+  result: ClothingNeckImperialGreatcoat
+  completetime: 2
+  materials:
+    Durathread: 500
+
+- type: latheRecipe
   id: ClothingNeckCloakImperialGovernor
   result: ClothingNeckCloakImperialGovernor
   completetime: 2
