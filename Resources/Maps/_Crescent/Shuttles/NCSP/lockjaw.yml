@@ -82,7 +82,7 @@ entities:
     - type: SpreaderGrid
       updateAccumulator: 0.77515936
     - type: Shuttle
-      baseMaxLinearVelocity: 30
+      baseMaxLinearVelocity: 25
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
