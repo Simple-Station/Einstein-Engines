@@ -30,7 +30,7 @@
     contents:
       - id: SlugthrowerFlatpack
         amount: 1
-  
+
 - type: entity
   parent: CrateEngineering
   id: CrateShuttlegunPDT
@@ -40,4 +40,15 @@
   - type: StorageFill
     contents:
       - id: PDTFlatpack
+        amount: 1
+
+- type: entity
+  parent: CrateEngineering
+  id: CrateShuttlegunExhumerminer
+  name: SHI 250c "Exhumer" kinetic pulser flatpack
+  description: Contains a flatpack for the respective shuttlegun. HARDPOINT TYPE - FIXED
+  components:
+  - type: StorageFill
+    contents:
+      - id: ExhumerFlatpack
         amount: 1
