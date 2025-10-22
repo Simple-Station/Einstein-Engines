@@ -589,7 +589,6 @@
     projectileSpeed: 70
     selectedMode: Burst
     availableModes:
-    - SemiAuto
     - Burst
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ship_perforator.ogg
@@ -602,12 +601,14 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: PowerCageHardliner
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         whitelist:
           tags:
             - HardlinerCell
+  - type: SpaceArtillery
+    isPowerRequiredToFire: true
+    powerUseActive: 1500
   - type: MagazineAmmoProvider
   - type: Construction
     graph: Machine
@@ -615,6 +616,23 @@
     containers:
     - machine_parts
     - machine_board
+
+- type: entity
+  parent: HardlineBeamPulser
+  id: HardlineBeamPulserFilled
+  name: NT-9 3100c 'Hardliner' plasma lance turret
+  suffix: ShipGun, Filled
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: PowerCageHardliner
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        whitelist:
+          tags:
+            - HardlinerCell
 
 #120mm
 
