@@ -49,7 +49,8 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -45
-    attackRate: 0.85
+    attackRate: 1.25 #You are a fucking psycho with blades for arms
+    range: 1.25 #Longer reach than with fists, but not longer than an actual sword
     damage:
       types:
         Slash: 28
@@ -255,20 +256,20 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -90
-    attackRate: 0.85
+    attackRate: 1.25
     damage:
       types:
-        Slash: 38
-    heavyRateModifier: 1
+        Slash: 42 #Direct counter to vibro and has same damage as the double esword
+    heavyRateModifier: 1.25 #Lighter weapon, makes up lower reflect chance with high speed
   - type: Item
     size: Normal
     sprite: _Crescent/Objects/Weapons/Melee/shiverblade.rsi
   - type: DashAbility
   - type: LimitedCharges
-    maxCharges: 1
+    maxCharges: 3
     charges: 1
   - type: AutoRecharge
-    rechargeDuration: 180
+    rechargeDuration: 30
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Melee/shiverblade.rsi
     slots:
