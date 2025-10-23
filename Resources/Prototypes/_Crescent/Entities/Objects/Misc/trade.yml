@@ -544,6 +544,17 @@
 
 - type: entity
   parent: BaseItem
+  id: TradeDeedUnique
+  name: deed of delivery
+  description: A printed deed of delivery. Blocky letting informs that this deed is worth seven thousand five hundred Union credits to an official chartered station.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/deed.rsi
+    layers:
+    - state: icon
+
+- type: entity
+  parent: BaseItem
   id: TradeDeedExotic
   name: deed of delivery
   description: A printed deed of delivery. Blocky letting informs that this deed is worth ten thousand Union credits to an official chartered station.

@@ -85,6 +85,7 @@
     - Scabrak
     - Geode
     - Thanapod
+    - Mercurymk2
 
 - type: entity
   id: TatsumotoMothershipComputer
@@ -113,6 +114,7 @@
     - Taipan
     - Wreck
     - Spriggan
+    - Lungspot
 
 - type: entity
   id: ZhipovMothershipComputer
@@ -225,6 +227,8 @@
     shuttles:
     - Tick
     - Gnat
+    - Piranha
+    - Scuttlefish
 
 - type: entity
   id: NAPMothershipComputer

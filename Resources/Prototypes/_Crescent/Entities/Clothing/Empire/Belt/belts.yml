@@ -59,7 +59,7 @@
           - Rapier
   - type: ItemMapper
     mapLayers:
-      sheath-sabre:
+      sheath-rapier:
         whitelist:
           tags:
           - Rapier

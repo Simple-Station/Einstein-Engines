@@ -1,11 +1,58 @@
-#vulcan projectile
+# #vulcan projectile
 
+# - type: entity
+  # id: BulletMachineGunVulcan
+  # name: 20mm vulcan bullet
+  # parent: BaseBulletTrigger
+  # categories: [ HideSpawnMenu ]
+  # components:
+  # - type: ProjectileIFF
+    # visualType: Circle
+    # color: White
+  # - type: Projectile
+    # ignoreWeaponGrid: true
+    # damage:
+      # types:
+        # Structural: 65
+        # Piercing: 90
+  # - type: PointLight
+    # radius: 3.5
+    # color: orange
+    # energy: 0.5
+  # - type: TimedDespawn
+    # lifetime: 4
+  # - type: Fixtures
+    # fixtures:
+      # projectile:
+        # shape:
+          # !type:PhysShapeAabb
+          # bounds: "-0.15,-0.45,0.15,0.15"
+        # hard: false
+      # fly-by: &flybyfixture
+        # shape: !type:PhysShapeCircle
+          # radius: 1.5
+        # layer:
+        # - Impassable
+        # - MidImpassable
+        # - HighImpassable
+        # - LowImpassable
+        # hard: False
+  # - type: Sprite
+    # sprite: _NF/Objects/SpaceArtillery/pdtcasing.rsi
+    # layers:
+      # - state: base-projectile
+  # - type: ShipWeaponProjectile
+    # mask:
+    # - BulletImpassable
+    # - Impassable
+    
 - type: entity
   id: BulletMachineGunVulcan
   name: 20mm vulcan bullet
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
+  - type: ShipWeaponProjectile
   - type: ProjectileIFF
     visualType: Circle
     color: White
@@ -15,19 +62,28 @@
       types:
         Structural: 65
         Piercing: 90
+  - type: TimedDespawn
+    lifetime: 4
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/pdtcasing.rsi
+    layers:
+      - state: base-projectile
   - type: PointLight
     radius: 3.5
     color: orange
     energy: 0.5
-  - type: TimedDespawn
-    lifetime: 4
   - type: Fixtures
     fixtures:
       projectile:
         shape:
           !type:PhysShapeAabb
           bounds: "-0.15,-0.45,0.15,0.15"
-        hard: false
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
       fly-by: &flybyfixture
         shape: !type:PhysShapeCircle
           radius: 1.5
@@ -37,15 +93,9 @@
         - HighImpassable
         - LowImpassable
         hard: False
-  - type: Sprite
-    sprite: _NF/Objects/SpaceArtillery/pdtcasing.rsi
-    layers:
-      - state: base-projectile
-  - type: ShipWeaponProjectile
-  - type: ProjectilePhasePrevent #do not remove
-    mask:
-    - BulletImpassable
-    - Impassable
+  
+
+    
 
 #mortar projectile
 
@@ -1249,6 +1299,16 @@
     lifetime: 15
   - type: Fixtures
     fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
       fly-by: *flybyfixture
   - type: Sprite
     sprite: _NF/Objects/SpaceArtillery/pdtcasing.rsi

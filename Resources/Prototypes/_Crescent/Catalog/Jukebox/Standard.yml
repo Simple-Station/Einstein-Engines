@@ -310,3 +310,57 @@
   name: John Denver - Take Me Home, Country Roads
   path:
     path: "/Audio/_Crescent/Jukebox/countryroads.ogg"
+
+- type: jukebox
+  id: EveSong
+  name: John Hallur - Below the Asteroids
+  path:
+    path: "/Audio/_Crescent/Jukebox/belowtheasteroids.ogg"
+
+- type: jukebox
+  id: TruckerSong
+  name: Jerry Reed - Caffein, Nicotine, Benzedrine
+  path:
+    path: "/Audio/_Crescent/Jukebox/benzedrine.ogg"
+
+- type: jukebox
+  id: SBismarckSong
+  name: Sabaton - Bismarck
+  path:
+    path: "/Audio/_Crescent/Jukebox/bismarck.ogg"
+
+- type: jukebox
+  id: JunkieSong
+  name: Alice in Chains - Down in a Hole
+  path:
+    path: "/Audio/_Crescent/Jukebox/downinahole.ogg"
+
+- type: jukebox
+  id: CadillacSong
+  name: Dwight Yoakam - Guitars, Cadillacs
+  path:
+    path: "/Audio/_Crescent/Jukebox/guitarscadillacs.ogg"
+
+- type: jukebox
+  id: HippieSong
+  name: Fleetwood Mac - Rhiannon
+  path:
+    path: "/Audio/_Crescent/Jukebox/rhiannon.ogg"
+
+- type: jukebox
+  id: DSMLarpSong
+  name: Valkyrie Ha
+  path:
+    path: "/Audio/_Crescent/Jukebox/valkyrieha.ogg"
+
+- type: jukebox
+  id: SlaughterSong
+  name: Bolt Thrower - World Eater
+  path:
+    path: "/Audio/_Crescent/Jukebox/worldeater.ogg"
+
+- type: jukebox
+  id: WhirlinginRagsSong
+  name: British Sea Power - Whirling-In-Rags
+  path:
+    path: "/Audio/_Crescent/Jukebox/WhirlingInRags.ogg"

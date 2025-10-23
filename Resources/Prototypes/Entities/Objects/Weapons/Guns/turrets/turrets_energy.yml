@@ -173,3 +173,25 @@
   - type: DeviceNetwork
     receiveFrequencyId: TurretControlAI
     transmitFrequencyId: TurretAI
+
+- type: entity
+  parent: WeaponEnergyTurretStation
+  id: CSA-240APT
+  name: CSA - 240 Energy Antipersonnel Turret
+  description: A high-tech autonomous weapons.
+  components:
+  - type: AccessReader
+    access: [["SyndicateRamzi"], ["SyndicateCommand"]]
+  - type: TurretTargetSettings
+    exemptAccessLevels:
+    - SyndicateBasic
+    - SyndicateInterdyne
+    - SyndicateGorlex
+    - SyndicateRamzi
+    - SyndicateCommand
+    - SyndicateSaws
+  - type: Machine
+    board: WeaponEnergyTurretAIMachineCircuitboard
+  - type: DeviceNetwork
+    receiveFrequencyId: TurretControlAI
+    transmitFrequencyId: TurretAI
