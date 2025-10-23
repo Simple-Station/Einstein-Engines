@@ -55,7 +55,7 @@
       types:
         Slash: 28
         Structural: 20
-    heavyDamageBaseModifier: 1
+    heavyDamageBaseModifier: 1.25
     heavyStaminaCost: 10
     heavyRateModifier: 1.3
     clickPartDamageMultiplier: 2
