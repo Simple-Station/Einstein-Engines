@@ -67,3 +67,13 @@
     acces:
     - SyndicateBasic
     - SyndicateInterdyne
+
+- type: entity
+  parent: AccessElevatorBase
+  id: AccessElevatorGliess
+  name: Gliessian Access Elevator
+  description: Gives a target ID the acces codes for Gliessian facilities.
+  components:
+  - type: AccesElevator
+    acces:
+    - GliessSheriff
