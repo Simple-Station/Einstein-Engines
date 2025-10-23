@@ -284,3 +284,34 @@
   completetime: 4
   materials:
     Steel: 500
+
+- type: latheRecipe
+  id: 48mmHighYieldRocket
+  result: CartridgeRocketHighYield
+  completetime: 2
+  materials:
+    Steel: 500
+    Plasma: 1000
+
+- type: latheRecipe
+  id: 48mmLowYieldRocket
+  result: CartridgeRocketLowYield
+  completetime: 2
+  materials:
+    Steel: 500
+    Plasma: 200
+
+- type: latheRecipe
+  id: RocketMagazineEmpty
+  result: MagazineRocketEmpty
+  completetime: 3
+  materials:
+    Steel: 300
+
+- type: latheRecipe
+  id: 48mmEMPRocket
+  result: CartridgeRocketEMP
+  completetime: 2
+  materials:
+    Steel: 500
+    Gold: 500
