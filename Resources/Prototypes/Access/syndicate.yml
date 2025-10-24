@@ -5,3 +5,14 @@
 - type: accessLevel
   id: SyndicateAgent
   name: id-card-access-level-syndicate-agent
+
+
+- type: accessGroup
+  id: Syndicate
+  tags:
+  - SyndicateBasic
+  - SyndicateInterdyne
+  - SyndicateGorlex
+  - SyndicateRamzi
+  - SyndicateCommand
+  - SyndicateSaws

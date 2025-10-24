@@ -1,0 +1,37 @@
+# Author Info
+# Discord: rubeebee
+
+- type: vessel
+  id: Lungspot
+  name: CD Lungspot
+  description: |
+    The result of cyberdawn's need for a versatile, and effective escort frigate ship. The lungspot performs it's job consistently, making it a mainstay in cyberdawn's operations. 
+    LOADOUT: 2x 43mm Slugthrowers
+    MINIMUM CREW: 1x Pilot
+  price: 47000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/NCSP/lungspot.yml
+
+- type: gameMap
+  id: Lungspot
+  mapName: 'CD Lungspot'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/lungspot.yml
+  minPlayers: 0
+  stations:
+    Lungspot:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'CD Lungspot {1}'
+          nameGenerator:
+           !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-gunship
+        - type: VesselDescription
+          description: Often seen in escort and combat roles, this ship won't let you down.

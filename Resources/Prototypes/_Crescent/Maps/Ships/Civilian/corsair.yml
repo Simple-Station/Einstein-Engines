@@ -1,0 +1,37 @@
+# Author Info
+# Discord: @memetasticproductions
+
+- type: vessel
+  id: Corsair
+  name: PTA Corsair
+  description: |
+    A well-armed Pang Tai frigate designed for supporting its larger cousin, the Hammerhead, as part of a wider series of mercenary ships. Used as both a line vessel as well as a platform for special operations and CSAR missions. 
+    LOADOUT: 2x PTA 60mm Heavy Precision Autogun, 3x "Lancer" MRM 100mm Missile Launchers, 3x PTA 20mm "Operator" Vulcans, 2x SHI 20mm Light Dual Machineguns
+    MINIMUM CREW: 1x Pilot, 1x Gunner/Loader
+  price: 110000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/Civilian/corsair.yml
+
+- type: gameMap
+  id: Corsair
+  mapName: 'PTA Corsair'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/corsair.yml
+  minPlayers: 0
+  stations:
+    Corsair:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'PTA Corsair {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: Frigate
+        - type: VesselDescription
+          description: Well-fitted for short, high-intensity deployments, the Corsair struggles during prolonged combat.

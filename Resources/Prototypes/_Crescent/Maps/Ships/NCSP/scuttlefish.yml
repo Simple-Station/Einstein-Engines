@@ -1,18 +1,21 @@
 # Author Info
-# Discord: @fleshangel
+# Discord: @memetasticproductions
 #
 - type: vessel
   id: Scuttlefish
-  name: NCSP Scuttlefish
-  description: An ultralight Syndicate fighter.
-  price: 12000
+  name: GSC Scuttlefish
+  description: |
+    An ultralight bomber with a powerful four-rocket payload designed to wreak havoc against less maneuverable ships unlucky enough to be caught within its firing range.
+    LOADOUT: 2x NCWL-3 48mm "Kurosawa" Rocket Pod
+    CREW: 1x Pilot
+  price: 15000 
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/NCSP/scuttlefish.yml
 
 - type: gameMap
   id: Scuttlefish
-  mapName: 'NCSP Scuttlefish'
+  mapName: 'GSC Scuttlefish'
   mapPath: /Maps/_Crescent/Shuttles/NCSP/scuttlefish.yml
   minPlayers: 0
   stations:
@@ -30,3 +33,5 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-fighter
+        - type: VesselDescription
+          description: Newbloods often tunnel vision on their first target, resulting in being shot down by enemy PDs or crashing into their victim.
