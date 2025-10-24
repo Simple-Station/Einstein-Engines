@@ -906,20 +906,21 @@ public abstract partial class SharedGunSystem : EntitySystem
     public List<EntityUid>? ShootRequested(NetEntity netGun, NetCoordinates coordinates, NetEntity? target, List<int>? projectiles, ICommonSession session)
     {
         var user = session.AttachedEntity;
-
         if (user == null ||
-            !_combatMode.IsInCombatMode(user) ||
-            !TryGetGun(user.Value, out var ent, out var gun))
+            !_combatMode.IsInCombatMode(user)
+            )
         {
             return null;
         }
-
-        if (ent != GetEntity(netGun))
+        if (!TryComp<GunComponent>(GetEntity(netGun), out var gun))
             return null;
-
         gun.ShootCoordinates = GetCoordinates(coordinates);
         gun.Target = GetEntity(target);
-        return AttemptShoot(user.Value, ent, gun, projectiles, session);
+        if (TryComp<MechPilotComponent>(user, out var mechPilot))
+        {
+            user = mechPilot.Mech;
+        }
+        return AttemptShoot(user.Value, GetEntity(netGun), gun, projectiles, session);
     }
 
     protected abstract void Popup(string message, EntityUid? uid, EntityUid? user);
