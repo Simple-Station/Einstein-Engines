@@ -67,3 +67,22 @@
   cost: 15000
   category: cargoproduct-category-name-shuttle
   group: generic
+
+- type: cargoProduct
+  id: ShuttleGunHardlinerGeneric
+  icon:
+    sprite: _Crescent/Objects/ShuttleWeapons/bigfuckinglaser.rsi
+    state: space_artillery
+  product: CrateShuttlegunHardliner
+  cost: 50000
+  category: cargoproduct-category-name-shuttle
+  group: generic
+
+- type: cargoProduct
+  id: PowerCageRechargerGeneric
+  icon:
+    sprite: Structures/Power/cage_recharger.rsi
+  product: PowerCageRechargerFlatpack
+  cost: 10000
+  category: cargoproduct-category-name-shuttle
+  group: generic

@@ -1,8 +1,8 @@
 - type: entity
   id: PowerCageHardliner
   parent: BaseItem
-  name: plasma concentrated cell
-  description: A rechargeable power cell infused in plasma gas. Normally used in advanced energy weapons.
+  name: Power Cage - Hardliner 
+  description: A rechargeable power cage, configured for use as ammunition in "Hardliner" fixedpoint ship weaponry. 
   components:
   - type: Item
     size: Ginormous
