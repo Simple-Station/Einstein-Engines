@@ -129,7 +129,7 @@
   materials:
     Cloth: 1000
     Steel: 1000
-    HArdsuitElectronics: 500
+    HardsuitElectronics: 500
 
 - type: latheRecipe
   id: ClothingOuterHardsuitSHISpeedsuit
@@ -725,7 +725,7 @@
     AdvancedElectronics: 2000
     NanotrasenElectronics: 1000
     Plasma: 500
-    LaserLocusrLocus: 500
+    LaserLocus: 500
 
 #MARK: Cybernetics
 
