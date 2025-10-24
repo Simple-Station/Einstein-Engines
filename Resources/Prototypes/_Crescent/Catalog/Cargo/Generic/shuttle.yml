@@ -82,6 +82,7 @@
   id: PowerCageRechargerGeneric
   icon:
     sprite: Structures/Power/cage_recharger.rsi
+    state: empty
   product: PowerCageRechargerFlatpack
   cost: 10000
   category: cargoproduct-category-name-shuttle
