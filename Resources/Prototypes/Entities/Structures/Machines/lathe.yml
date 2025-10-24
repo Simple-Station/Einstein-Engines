@@ -949,6 +949,7 @@
       - MagazineLightRifleEmpty
       - MagazinePistol
       - MagazinePistolEmpty
+      - Ammo6mmbox
       - MagazinePistolSubMachineGun
       - MagazinePistolSubMachineGunEmpty
       - MagazinePistolSubMachineGunTopMounted
@@ -1260,6 +1261,7 @@
         - MagazinePistolSmartgun
         - MagazinePistol
         - MagazinePistol6mm
+        - Ammo6mmbox
         - MagazinePistolSubMachineGunTopMounted
         #Hullrot edit end
     - type: MaterialStorage

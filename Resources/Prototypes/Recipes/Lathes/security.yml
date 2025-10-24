@@ -192,6 +192,14 @@
     Steel: 5
 
 - type: latheRecipe
+  id: Ammo6mmbox
+  result: MagazineBox6mm
+  category: Ammo
+  completetime: 2
+  materials:
+    Steel: 500
+
+- type: latheRecipe
   id: CartridgeMagnumRubber
   result: CartridgeMagnumRubber
   category: Ammo
