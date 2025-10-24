@@ -183,7 +183,7 @@
     contents:
       - id: WeaponSubMachineGunPTAAsVal
         amount: 1
-      - id: MagazineCaselessRifle
+      - id: BaseMagazineCaselessRifleShort
         amount: 2
 
 - type: entity
@@ -196,7 +196,7 @@
     contents:
       - id: WeaponRifleVintorez
         amount: 1
-      - id: MagazineCaselessRifle
+      - id: BaseMagazineCaselessRifleShort
         amount: 2
 
 - type: entity
