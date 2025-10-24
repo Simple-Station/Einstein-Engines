@@ -2,7 +2,7 @@
   id: PowerCageHardliner
   parent: BaseItem
   name: plasma concentrated cell
-  description: A rechargeable power cell infused in plasma gas. normally used in advance energy weapons
+  description: A rechargeable power cell infused in plasma gas. Normally used in advanced energy weapons.
   components:
   - type: Item
     size: Ginormous
