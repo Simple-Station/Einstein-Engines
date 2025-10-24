@@ -120,7 +120,7 @@
     minAngle: -19
     maxAngle: -16
   - type: Gun
-    fireRate: 7
+    fireRate: 6 #Really good for something made so easily, and available roundstart.
     minAngle: 21
     maxAngle: 32
     availableModes:
@@ -181,13 +181,12 @@
     - type: Wieldable
       unwieldOnUse: false
     - type: GunWieldBonus
-      minAngle: -19
-      maxAngle: -16
+      minAngle: -10
+      maxAngle: -15
     - type: Gun
       minAngle: 21
-      maxAngle: 32
-      fireRate: 12
-      burstFireRate: 12
+      maxAngle: 45
+      fireRate: 8 #Still one of the best smgs, its extreme caliber makes it hard to control.
       selectedMode: FullAuto
       soundGunshot:
         path: /Audio/_Crescent/Weapons/Guns/smg_1/smg_gunshot_1.ogg

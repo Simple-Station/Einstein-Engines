@@ -55,6 +55,7 @@
   id: WeaponSubMachineGunGhost
   description: A internally supressed supressed SMG, chambered in 12mm Smart.
   components:
+  - type: GunRequiresWield
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/ghost.rsi
     layers:
@@ -82,7 +83,7 @@
         priority: 2
         whitelist:
           tags:
-            - MagazineSmgSmartgun
+            - MagazineSmgSmartgun #The mags require uranium to make.Also made it required to be wielded.
       gun_chamber:
         name: Chamber
         startingItem: CartridgePistol12mm
@@ -154,7 +155,7 @@
     maxAngle: -16
 
 - type: entity
-  name: PTA P-M50 Vektor 6mm
+  name: PTA P-M50 Vektor 6mm #The only gun that actually has obvious problems
   parent: [BaseWeaponSubMachineGun, StreeCredRedeemable]
   id: WeaponSubMachineGunPTAVektor
   description: A cheap, open-bolt copy of the Vector. Unlike the real vector this one doesnt have the signature Super V recoil mitigation system. Chambered in small 6mm rounds.
@@ -248,7 +249,7 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/mp49.rsi
   - type: Gun
-    fireRate: 7
+    fireRate: 8
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/smg_2/smg_gunshot_3.ogg
   - type: MagazineVisuals
@@ -275,7 +276,7 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/mp5.rsi
   - type: Gun
-    fireRate: 7
+    fireRate: 8
     selectedMode: FullAuto
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/smg_2/smg_gunshot_3.ogg
@@ -372,7 +373,7 @@
     shape:
     - 0,0,2,1
   - type: Gun
-    fireRate: 8
+    fireRate: 9
     selectedMode: FullAuto
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/supressed_1/supressed_gunshot_2.ogg
@@ -483,7 +484,7 @@
       path: /Audio/_Crescent/Weapons/Guns/smg_3/smg_gunshot_2.ogg
     availableModes:
     - SemiAuto
-    - Burst
+    - Burst #Pretty obvious sideffect of being a newly designed gun.
   - type: ItemSlots
     slots:
       gun_magazine:
