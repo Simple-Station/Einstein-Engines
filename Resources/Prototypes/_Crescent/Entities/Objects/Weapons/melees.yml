@@ -49,7 +49,8 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -45
-    attackRate: 1.25 #You are a fucking psycho with blades for arms
+    autoAttack: true
+    attackRate: 0.5 #You are a fucking psycho with blades for arms
     range: 1.25 #Longer reach than with fists, but not longer than an actual sword
     damage:
       types:
@@ -256,7 +257,7 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -90
-    attackRate: 1.25
+    attackRate: 0.75
     damage:
       types:
         Slash: 42 #Direct counter to vibro and has same damage as the double esword
@@ -265,6 +266,7 @@
     size: Normal
     sprite: _Crescent/Objects/Weapons/Melee/shiverblade.rsi
   - type: DashAbility
+    allowDashToUnseen: true
   - type: LimitedCharges
     maxCharges: 3
     charges: 1
