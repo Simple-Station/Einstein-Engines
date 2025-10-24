@@ -228,7 +228,7 @@ public sealed partial class AdminLogManager : SharedAdminLogManager, IAdminLogMa
 
         var task = _db.AddAdminLogs(copy);
 
-        _sawmill.Debug($"Saving {copy.Count} admin logs.");
+        //_sawmill.Debug($"Saving {copy.Count} admin logs."); //hullrot edit: this clogs up the console and helps debug & track
 
         if (_metricsEnabled)
         {

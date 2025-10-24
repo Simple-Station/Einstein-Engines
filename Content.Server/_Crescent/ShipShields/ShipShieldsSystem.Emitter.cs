@@ -42,7 +42,7 @@ public partial class ShipShieldsSystem
 
         if (TryComp<ExplosiveComponent>(args.Deflected, out var exp))
         {
-            component.Damage += exp.TotalIntensity;
+            component.Damage += exp.TotalIntensity / 15; //after mlg intensity explosion changes, 1 intensity = 1 dmg, instead of 1 intensity = 15 dmg;
         }
 
         if (TryComp<ProjectileComponent>(args.Deflected, out var proj))
