@@ -195,7 +195,7 @@
     totalIntensity: 3000
     intensitySlope: 750
     maxIntensity: 750
-    maxTileBreak: 1
+    maxTileBreak: 4
   - type: PointLight
     radius: 3.5
     color: red

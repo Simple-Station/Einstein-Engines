@@ -11,8 +11,8 @@
     sprite: _Crescent/Objects/Specific/hardlinebattery.rsi
     state: battery
   - type: Battery
-    maxCharge: 2100
-    startingCharge: 2100
+    maxCharge: 1200 #12 units
+    startingCharge: 1200
   - type: Riggable
   - type: PowerCell
   - type: Tag
