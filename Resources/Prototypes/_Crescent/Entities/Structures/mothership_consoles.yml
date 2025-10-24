@@ -114,6 +114,7 @@
     - Taipan
     - Wreck
     - Spriggan
+    - Lungspot
 
 - type: entity
   id: ZhipovMothershipComputer
@@ -226,6 +227,8 @@
     shuttles:
     - Tick
     - Gnat
+    - Piranha
+    - Scuttlefish
 
 - type: entity
   id: NAPMothershipComputer
