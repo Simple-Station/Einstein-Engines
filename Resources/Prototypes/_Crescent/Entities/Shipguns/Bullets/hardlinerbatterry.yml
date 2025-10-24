@@ -1,0 +1,23 @@
+- type: entity
+  id: PowerCageHardliner
+  parent: BaseItem
+  name: plasma concentrated cell
+  description: A rechargeable power cell infused in plasma gas. normally used in advance energy weapons
+  components:
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/hardlinebattery.rsi
+    state: battery
+  - type: Battery
+    maxCharge: 2100
+    startingCharge: 2100
+  - type: Riggable
+  - type: PowerCell
+  - type: Tag
+    tags:
+      - HardlinerCell
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletMachineGunPlasmaShuttleLarge
+    fireCost: 100

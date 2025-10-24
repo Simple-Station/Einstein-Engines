@@ -560,7 +560,7 @@
   id: HardlineBeamPulser
   name: NT-9 3100c 'Hardliner' plasma lance turret
   suffix: ShipGun
-  description: A ship-mounted, fixed-point artillery turret using military laser technology as a base - an outdated model from the now-defunct NanoTrasen, although tried and tested in many battles. Requires upkeep in the form of liquid coolant to stay operational.
+  description: A ship-mounted, fixed-point artillery turret using military laser technology as a base - an outdated model from the now-defunct NanoTrasen, although tried and tested in many battles. Requires upkeep in the form of plasma power cells to stay operational.
   components:
   - type: ApcPowerReceiver
     powerLoad: 1000
@@ -582,43 +582,57 @@
           node: machineFrame
   - type: ContainerContainer
     containers:
-      SpaceArtillery-CoolantSlot: !type:ContainerSlot {}
-  - type: BasicEntityAmmoProvider
-    proto: BulletMachineGunPlasmaShuttleLarge
+      gun_magazine: !type:ContainerSlot
   - type: Gun
     fireOnDropChance: 0
     fireRate: 0.7
     projectileSpeed: 70
-    selectedMode: FullAuto
+    selectedMode: Burst
     availableModes:
-    - SemiAuto
-    - FullAuto
+    - Burst
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ship_perforator.ogg
     soundEmpty:
-      path: /Audio/Items/hiss.ogg
+      path: /Audio/Items/beep.ogg
   - type: HardpointAnchorableOnly
     class: Energy
     size: Large
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        whitelist:
+          tags:
+            - HardlinerCell
   - type: SpaceArtillery
-    powerUseActive: 25000
-    isCoolantRequiredToFire: true
-    coolantConsumed: 5
-    SpaceArtillery-CoolantSlot:
-            name:  SpaceArtillery-CoolantSlot
-            insertSound: /Audio/Machines/scanning.ogg
-            ejectSound: /Audio/Machines/tray_eject.ogg
-            ejectOnBreak: true
-            swap: false
-            whitelist:
-                components:
-                - Stack
+    isPowerRequiredToFire: true
+    powerUseActive: 1500
+  - type: MagazineAmmoProvider
   - type: Construction
     graph: Machine
     node: machine
     containers:
     - machine_parts
     - machine_board
+
+- type: entity
+  parent: HardlineBeamPulser
+  id: HardlineBeamPulserFilled
+  name: NT-9 3100c 'Hardliner' plasma lance turret
+  suffix: ShipGun, Filled
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: PowerCageHardliner
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        whitelist:
+          tags:
+            - HardlinerCell
 
 #120mm
 
