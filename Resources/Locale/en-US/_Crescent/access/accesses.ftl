@@ -9,14 +9,14 @@ id-card-access-level-ncwljail = Homeguard Cells
 
 # syndicate
 
-id-card-access-level-syndicatebasic = Privateer
+id-card-access-level-syndicatebasic = Syndicate
 id-card-access-level-syndicatecommand = Syndicate Command
-id-card-access-level-syndicategorlex = Gorlex Security Consulting
-id-card-access-level-syndicateinterdyne = Interdyne Pharmaceutics
-id-card-access-level-syndicatesaws = Shipfitters and Astronautics Workers Union
-id-card-access-level-syndicateramzi = Halflight Media
-id-card-access-level-syndicateringleader = Privateer Ringleader
-id-card-access-level-syndicatearmory = Privateers' Armory
+id-card-access-level-syndicategorlex = GSC
+id-card-access-level-syndicateinterdyne = Interdyne
+id-card-access-level-syndicatesaws = SAW
+id-card-access-level-syndicateramzi = Cybersun
+id-card-access-level-syndicateringleader = Ringleader
+id-card-access-level-syndicatearmory = Syndicate Armory
 
 # empire
 

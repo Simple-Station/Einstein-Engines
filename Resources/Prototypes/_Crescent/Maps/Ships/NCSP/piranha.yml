@@ -1,10 +1,13 @@
 # Author Info
-# Discord: @fleshangel
+# Discord: @memetasticproductions
 #
 - type: vessel
   id: Piranha
-  name: NCSP Piranha
-  description: An ultralight Syndicate fighter.
+  name: GSC Piranha
+  description: |
+    An ultralight strike fighter almost as old as the Gorlex brand itself, carrying a single, rugged anti-ship weapon.
+    LOADOUT: 1x SHI 43mm "Dasher" Ballistic Slugthrower
+    CREW: 1x Pilot
   price: 15000
   category: Small
   group: None
@@ -12,7 +15,7 @@
 
 - type: gameMap
   id: Piranha
-  mapName: 'NCSP Piranha'
+  mapName: 'GSC Piranha'
   mapPath: /Maps/_Crescent/Shuttles/NCSP/piranha.yml
   minPlayers: 0
   stations:
@@ -30,3 +33,5 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-fighter
+        - type: VesselDescription
+          description: Many pilots move parts around to facilitate easier reloading. Most do not survive their attack runs.
