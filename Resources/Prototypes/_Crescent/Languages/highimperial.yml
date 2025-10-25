@@ -2,8 +2,8 @@
   id: HighImperial
   isVisibleLanguage: true
   speech:
-    color: "#bd73d0"
-    fontId: MedievalSharp
+    color: "#C7BFCF"
+    fontId: IMFellEnglish
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
