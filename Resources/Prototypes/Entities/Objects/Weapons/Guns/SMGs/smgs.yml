@@ -186,7 +186,7 @@
     - type: Gun
       minAngle: 21
       maxAngle: 32
-      fireRate: 12
+      fireRate: 7 #holy fuck this thing rips. Direct upgrade to liberator.
       burstFireRate: 12
       selectedMode: FullAuto
       soundGunshot:

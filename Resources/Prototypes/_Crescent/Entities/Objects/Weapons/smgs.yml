@@ -355,7 +355,7 @@
   name: SHI M221s Phantom 6mm
   parent: [BaseWeaponSubMachineGun, StreeCredRedeemableLow]
   id: WeaponSubMachineGunSabre
-  description: A cheap submachine gun that cuts a corners and features to deliver a reliable enough product, but hey, at least it comes with a free suppressor . Chambered in 6mm PSTF.
+  description: A cheap submachine gun that cuts corners and features to deliver a reliable enough product, but hey, at least it comes with a free suppressor . Chambered in 6mm PSTF.
   components:
   - type: StaticPrice
     price: 1250

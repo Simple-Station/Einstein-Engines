@@ -128,7 +128,7 @@
   completetime: 2
   materials:
     Cloth: 1000
-    Steel: 2000
+    Steel: 1000
     HardsuitElectronics: 500
 
 - type: latheRecipe
@@ -140,6 +140,7 @@
     Steel: 2500
     Tungsten: 500
     HardsuitElectronics: 1000
+    AdvancedElectronics: 1000 #NVGs
 
 - type: latheRecipe
   id: ClothingOuterHardsuitSHIJuggernaut
@@ -149,7 +150,8 @@
     Durathread: 1500
     Steel: 5000
     Tungsten: 2000
-    HardsuitElectronics: 1000
+    HardsuitElectronics: 1000 
+    AdvancedMechatronics: 1000 #Exoskeletal support for the additional armour platings
 
 # MARK: Weapons
 
@@ -227,7 +229,7 @@
   materials:
     Steel: 2500
     Plastic: 500
-    BasicElectronics: 500
+    AdvancedElectronics: 500
     BallisticCycler: 500
 
 - type: latheRecipe
@@ -261,10 +263,10 @@
   result: WeaponSubMachineGunSabre
   completetime: 2
   materials:
-    Steel: 1500
+    Steel: 1000
     Plastic: 500
-    Silver: 1000
-    BallisticCycler: 1000
+    Silver: 500
+    BasicMechatronics: 500
 
 - type: latheRecipe
   id: WeaponRevolverMateba
@@ -322,16 +324,16 @@
     Steel: 1500
     Plastic: 500
     Silver: 500
-    BallisticCycler: 500
+    BasicMechatronics: 1500
 
 - type: latheRecipe
   id: WeaponRifleGoro
   result: WeaponRifleGoro
   completetime: 2
   materials:
-    Steel: 2500
+    Steel: 1500
     Silver: 1000
-    BallisticCycler: 500
+    BasicMechatronics: 1000
 
 - type: latheRecipe
   id: WeaponLauncherHammerhead
@@ -531,7 +533,7 @@
   completetime: 2
   materials:
     BasicElectronics: 1500
-    AdvancedMechatronics: 3000
+    AdvancedMechatronics: 1500
     Gold: 1000
     Plasma: 500
     Steel: 750
@@ -542,10 +544,10 @@
   completetime: 2
   materials:
     BasicMechatronics: 1500
-    AdvancedElectronics: 3000
+    AdvancedElectronics: 1500
     Gold: 1000
-    Plasma: 2500
-    LaserLocus: 1000
+    Plasma: 1500
+    LaserLocus: 500
 
 - type: latheRecipe
   id: ExhumerFlatpack
@@ -553,9 +555,9 @@
   completetime: 2
   materials:
     BasicMechatronics: 1000
-    AdvancedElectronics: 1000
+    BasicElectronics: 1000
     Steel: 500
-    WeakLaserLocus: 1000
+    WeakLaserLocus: 500
 
 - type: latheRecipe
   id: IdnaTorpedo
@@ -591,8 +593,7 @@
   result: ShieldEmitterSmallFlatpack
   completetime: 2
   materials:
-    NanotrasenElectronics: 1000
-    BasicMechatronics: 1000
+    AdvancedMechatronics: 2000
     Silver: 1500
     Steel: 2500
     HardlightGenerator: 3000
@@ -604,18 +605,18 @@
   materials:
     BasicMechatronics: 1500
     Silver: 1000
-    Steel: 5000
-    BallisticCycler: 1000
+    Steel: 2000
+
 
 - type: latheRecipe
   id: FixedHardpointFlatpack
   result: FixedHardpointFlatpack
   completetime: 2
   materials:
-    BasicMechatronics: 7500
-    AdvancedElectronics: 7500
-    Gold: 2500
-    Silver: 1000
+    BasicMechatronics: 500
+    BasicElectronics: 500
+    Gold: 500
+    Silver: 500
     Steel: 1000
 
 #MARK:Components
@@ -625,7 +626,7 @@
   result: HardlightGenerator1
   completetime: 2
   materials:
-    AdvancedElectronics: 300
+    AdvancedElectronics: 500
     Gold: 300
     Silver: 300
     Glass: 500
@@ -636,8 +637,8 @@
   completetime: 2
   materials:
     BasicMechatronics: 1000
-    Gold: 1500
-    Steel: 1500
+    Gold: 500
+    Steel: 1000
 
 - type: latheRecipe
   id: AdvancedElectronics1
@@ -645,8 +646,8 @@
   completetime: 2
   materials:
     BasicMechatronics: 1000
-    Copper: 1500
-    Silver: 1500
+    Copper: 1000
+    Silver: 500
 
 - type: latheRecipe
   id: PlastitaniumFibreAlloySHI
@@ -663,7 +664,7 @@
   completetime: 2
   materials:
     BasicElectronics: 1500
-    Silver: 1500
+    Silver: 500
 
 - type: latheRecipe
   id: LaserLocus1
@@ -671,7 +672,7 @@
   completetime: 2
   materials:
     BasicElectronics: 1500
-    Silver: 1500
+    Silver: 500
 
 - type: latheRecipe
   id: TubeLoader1
@@ -679,7 +680,7 @@
   completetime: 2
   materials:
     AdvancedMechatronics: 500
-    Silver: 1000
+    Silver: 1500
     Steel: 1500
 
 - type: latheRecipe
@@ -687,7 +688,7 @@
   result: BallisticCycler1
   completetime: 2
   materials:
-    AdvancedMechatronics: 1000
+    AdvancedMechatronics: 500
     Steel: 1500
 
 #MARK: Melee
@@ -720,9 +721,11 @@
   result: SHIKatanaShiverBlade
   completetime: 2
   materials:
-    AdvancedElectronics: 1000
+    Steel: 500
+    AdvancedElectronics: 2000
+    NanotrasenElectronics: 1000
     Plasma: 500
-    WeakLaserLocus: 500
+    LaserLocus: 500
 
 #MARK: Cybernetics
 
@@ -731,10 +734,11 @@
   result: CyberneticsDermalArmor
   completetime: 2
   materials:
-    AdvancedElectronics: 2000
-    Biomass: 1000
+    AdvancedElectronics: 1000
+    AdvancedMechatronics: 500
+    Biomass: 10 #30 biomass per corpse so its 3 implants per corpse
     Silver: 2000
-    Tungsten: 2500
+    Tungsten: 1500
 
 - type: latheRecipe
   id: ShinoharaOptics
@@ -751,7 +755,7 @@
   completetime: 2
   materials:
     BasicElectronics: 1500
-    AdvancedMechatronics: 3000
+    AdvancedMechatronics: 1500
     Gold: 1000
     Plasma: 500
     Steel: 750
