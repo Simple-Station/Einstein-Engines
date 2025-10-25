@@ -2,7 +2,7 @@
   id: HighImperial
   isVisibleLanguage: true
   speech:
-    color: "#C7BFCF"
+    color: "#BCA0B6"
     fontId: IMFellEnglish
   obfuscation:
     !type:SyllableObfuscation
