@@ -183,7 +183,7 @@
     - RightLeg
     - RightFoot
   - type: Clothing
-    equipDelay: 0.4
+    equipDelay: 0
     unequipDelay: 0.6 # Slightly higher delay to protect against accidental unequips
     femaleMask: NoMask
   - type: SelfExtinguisher
