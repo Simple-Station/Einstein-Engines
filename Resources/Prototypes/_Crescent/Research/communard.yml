@@ -51,6 +51,7 @@
   - WeaponPistolComrade
   - WeaponSubMachineGunNCWLWatchdog
   - ClothingOuterHardsuitNCWLInfantry
+  - WeaponShotgunProletar
 
 - type: technology
   id: CommunardFighters
@@ -153,6 +154,7 @@
   - WeaponPistolT91
   - WeaponRevolverPython
   - ClothingOuterHardsuitNCWLPetya
+  - WeaponShotgunToz123
 
 - type: technology
   id: CommunardLancer
