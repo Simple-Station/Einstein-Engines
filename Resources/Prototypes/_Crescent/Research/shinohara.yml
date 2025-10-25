@@ -289,6 +289,8 @@
   - WeaponRevolverMateba
   - WeaponSubMachineGunSabre
   - WeaponLightMachineGunL6
+  - WeaponSniperHristov
+  - WeaponRifleBarghest
 
 - type: technology
   id: ShinoharaGrenadeLauncher
@@ -425,3 +427,17 @@
   recipeUnlocks:
   - ClothingOuterHardsuitSHIJuggernaut
   - ClothingOuterHardsuitSHISpeedsuit
+
+- type: technology
+  id: ShinoharaNTBallistics
+  name: research-technology-shinohara-oldntballistics
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/spas13.rsi
+    state: icon
+  discipline: Corporate
+  tier: 2
+  cost: 6000
+  recipeUnlocks:
+  - WeaponShotgunSpas
+  - WeaponRifleM90GrenadeLauncher
+  - WeaponSubMachineGunWt550
