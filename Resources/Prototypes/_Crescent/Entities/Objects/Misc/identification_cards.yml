@@ -384,7 +384,7 @@
   components:
   - type: Currency
     price:
-      PlunderGSC: 5
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
