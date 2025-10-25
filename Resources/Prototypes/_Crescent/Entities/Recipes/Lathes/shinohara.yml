@@ -400,8 +400,8 @@
     BallisticCycler: 500
 
 - type: latheRecipe
-  id: WeaponSubMachineGunWT550
-  result: WeaponSubMachineGunWT550
+  id: WeaponSubMachineGunWt550
+  result: WeaponSubMachineGunWt550
   completetime: 2
   materials:
     Steel: 1500
