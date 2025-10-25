@@ -5,7 +5,7 @@
   materials:
     Steel: 2500
     Silver: 500
-    BallisticCycler: 1500
+    BallisticCycler: 2000
 
 - type: latheRecipe
   id: WeaponShotgunReno
@@ -14,7 +14,7 @@
   materials:
     Steel: 1500
     Silver: 500
-    BallisticCycler: 750
+    BallisticCycler: 1000
 
 - type: latheRecipe
   id: ClothingOuterHardsuitImperialWorker
