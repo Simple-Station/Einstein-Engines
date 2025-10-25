@@ -51,7 +51,11 @@
   equipment:
     id: SurgeonPDA
     ears: ClothingHeadsetEmpireCiv
+    eyes: ClothingEyesHudMedical
     pocket1: ImperialPassportBareLegit
     head: ClothingHeadHatImperialSurgeon
+    back: ClothingBackpackDSM
+    gloves: ClothingHandsGlovesNitrile
+    belt: ClothingBeltMedicalFilled
     shoes: ClothingShoesBootsImperialLaceup
     jumpsuit: ClothingUniformJumpsuitImperialSurgeon
