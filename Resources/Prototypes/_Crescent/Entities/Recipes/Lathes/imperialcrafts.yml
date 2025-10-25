@@ -496,9 +496,9 @@
   result: ShipVoucherLaelaps
   completetime: 1
   materials:
-    StarshipEngineComponents: 6250
+    StarshipEngineComponents: 7000
     ShipComponents: 4750
-    ShipHull: 9000
+    ShipHull: 10000
 
 - type: latheRecipe
   id: SunesisLPC
