@@ -1,0 +1,14 @@
+{
+  "copyright" : "Developed by the HULLROT team. Do not edit, relicense, or redistribute.( UUUUUH UUUUUUH UUUUH - edited by HungryCuban)",
+  "license" : "",
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+    "states": [
+        {
+            "name": "battery"
+        }
+    ]
+}
