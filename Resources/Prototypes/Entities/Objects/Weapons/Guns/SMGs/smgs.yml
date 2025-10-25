@@ -185,13 +185,15 @@
       maxAngle: -15
     - type: Gun
       minAngle: 21
-      maxAngle: 39
-      fireRate: 8 #Still one of the best smgs, its extreme caliber makes it hard to control.
+      maxAngle: 32
+      fireRate: 7 #holy fuck this thing rips. Direct upgrade to liberator.
+      burstFireRate: 12
       selectedMode: FullAuto
       soundGunshot:
         path: /Audio/_Crescent/Weapons/Guns/smg_1/smg_gunshot_1.ogg
       availableModes:
         - FullAuto
+        - Burst
     - type: ItemSlots
       slots:
         gun_magazine:

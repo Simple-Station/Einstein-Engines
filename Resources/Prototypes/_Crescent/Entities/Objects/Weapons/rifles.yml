@@ -718,6 +718,7 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/hound.rsi
   - type: Gun
+    fireRate: 6
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/M16/rifle_gunshot_2.ogg
     selectedMode: Burst

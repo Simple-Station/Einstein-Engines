@@ -66,8 +66,8 @@
     sprite: Clothing/Head/Accessories/ribbon.rsi
   - type: Clothing
     sprite: Clothing/Head/Accessories/ribbon.rsi
-    equipDelay: 0.2
-    unequipDelay: 0.2
+    equipDelay: 0
+    unequipDelay: 0
 
 - type: entity
   parent: ClothingHeadBase
@@ -79,8 +79,8 @@
     sprite: Clothing/Head/Accessories/bow.rsi
   - type: Clothing
     sprite: Clothing/Head/Accessories/bow.rsi
-    equipDelay: 0.2
-    unequipDelay: 0.2
+    equipDelay: 0
+    unequipDelay: 0
 
 - type: entity
   parent: ClothingHeadBase
@@ -92,5 +92,5 @@
     sprite: Clothing/Head/Accessories/bow_small.rsi
   - type: Clothing
     sprite: Clothing/Head/Accessories/bow_small.rsi
-    equipDelay: 0.2
-    unequipDelay: 0.2
+    equipDelay: 0
+    unequipDelay: 0

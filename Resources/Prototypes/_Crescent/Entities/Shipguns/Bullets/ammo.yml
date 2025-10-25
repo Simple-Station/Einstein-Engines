@@ -375,7 +375,7 @@
 - type: entity
   id: BaseMagazineRocket
   name: 48mm rocket magazine
-  description: A 5-round magazine capable of holding 48mm rockets. Fits in Sumitomo launchers.
+  description: A 6-round magazine capable of holding 48mm rockets. Fits in Sumitomo launchers.
   parent: BaseItem
   abstract: true
   components:
@@ -387,7 +387,7 @@
     whitelist:
       tags:
         - Rocket48mm
-    capacity: 5
+    capacity: 6
     soundRack:
       path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
       params:
@@ -406,11 +406,11 @@
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
-    - state: mag-4
+    - state: mag-5
       map: ["enum.GunVisualLayers.Mag"]
   - type: MagazineVisuals
     magState: mag
-    steps: 5
+    steps: 6
     zeroVisible: false
   - type: Appearance
 
