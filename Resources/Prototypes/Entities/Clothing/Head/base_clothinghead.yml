@@ -240,7 +240,7 @@
     heldPrefix: off
   - type: Clothing
     equipDelay: 0
-    unequipDelay: 0 # Slightly higher delay to protect against accidental unequips
+    unequipDelay: 1 # Slightly higher delay to protect against accidental unequips
     equippedPrefix: off
     clothingVisuals:
       head:

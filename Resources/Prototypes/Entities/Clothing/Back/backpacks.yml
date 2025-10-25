@@ -14,7 +14,7 @@
     slots:
     - back
     equipDelay: 0
-    unequipDelay: 2 # belts and backpacks can be misclicked when trying to open them - this prevents that.
+    unequipDelay: 1 # belts and backpacks can be misclicked when trying to open them - this prevents that.
   - type: Storage
     grid:
     - 0,0,6,3
