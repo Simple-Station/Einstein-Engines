@@ -29,6 +29,7 @@
   completetime: 1
   materials:
     Steel: 1000
+    Uranium: 500
 
 - type: latheRecipe
   id: MagazineHeavyRifleBoxmag
@@ -206,6 +207,7 @@
   completetime: 2
   materials:
     Steel: 500
+    Uranium: 250
 
 - type: latheRecipe
   id: MagazinePistol6mmSmg

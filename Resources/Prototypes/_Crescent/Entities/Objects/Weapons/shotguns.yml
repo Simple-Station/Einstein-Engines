@@ -123,7 +123,7 @@
       path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_2.ogg
   - type: Wieldable
   - type: BallisticAmmoProvider
-    capacity: 10
+    capacity: 8 #Better make those 4 shots count.
 
 - type: entity
   name: PTA MOD-23 Karabin 4g
@@ -318,7 +318,7 @@
   - type: AmmoCounter
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
-    fireRate: 3.5
+    fireRate: 2.5 #Magfed, and cyberdawn facbricated. Cant be better than Pozhar.
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto

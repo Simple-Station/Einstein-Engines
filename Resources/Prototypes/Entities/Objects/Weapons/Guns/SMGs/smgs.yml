@@ -120,7 +120,7 @@
     minAngle: -19
     maxAngle: -16
   - type: Gun
-    fireRate: 7
+    fireRate: 6 #Really good for something made so easily, and available roundstart.
     minAngle: 21
     maxAngle: 32
     availableModes:
@@ -167,7 +167,7 @@
   name: PTA P-M85 Drozd .327
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunDrozd
-  description: A fast very firing bullpup submachine gun. Manufactured by Pang Tai Arms and outsourced to mercenary factors in the area.
+  description: A fast very firing bullpup submachine gun. Manufactured by Pang Tai Arms and outsourced to mercenary factors in the area. Suffers from immense recoil due to it's caliber.
   components:
     - type: Sprite
       sprite: _Crescent/Objects/Weapons/Guns/drozd.rsi
@@ -181,8 +181,8 @@
     - type: Wieldable
       unwieldOnUse: false
     - type: GunWieldBonus
-      minAngle: -19
-      maxAngle: -16
+      minAngle: -10
+      maxAngle: -15
     - type: Gun
       minAngle: 21
       maxAngle: 32
@@ -193,6 +193,7 @@
         path: /Audio/_Crescent/Weapons/Guns/smg_1/smg_gunshot_1.ogg
       availableModes:
         - FullAuto
+        - Burst
     - type: ItemSlots
       slots:
         gun_magazine:
