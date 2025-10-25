@@ -14,6 +14,8 @@
       path: /Audio/SimpleStation14/Items/Handling/toolbelt_pickup.ogg
       params:
         volume: -10
+    equipDelay: 0
+    unequipDelay: 1 # belts and backpacks can be misclicked when trying to open them - this prevents that.
   - type: PhysicalComposition
     materialComposition:
       Cloth: 50
