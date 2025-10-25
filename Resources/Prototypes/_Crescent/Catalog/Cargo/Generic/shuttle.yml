@@ -69,6 +69,16 @@
   group: generic
 
 - type: cargoProduct
+  id: CrateShuttlegunExhumerminer
+  icon:
+    sprite: _Crescent/Objects/ShuttleWeapons/mininglaser.rsi
+    state: states
+  product: CrateShuttlegunExhumerminer
+  cost: 5000
+  category: cargoproduct-category-name-shuttle
+  group: generic
+
+- type: cargoProduct
   id: ShuttleGunHardlinerGeneric
   icon:
     sprite: _Crescent/Objects/ShuttleWeapons/bigfuckinglaser.rsi
