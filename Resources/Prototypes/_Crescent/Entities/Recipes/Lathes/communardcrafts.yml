@@ -200,7 +200,7 @@
   materials:
     Steel: 1500
     Plasteel: 500
-    BallisticCycler: 1250
+    BallisticCycler: 1000
 
 - type: latheRecipe
   id: WeaponRifleNCWLBatanya
