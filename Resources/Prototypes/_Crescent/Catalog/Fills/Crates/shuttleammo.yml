@@ -166,8 +166,8 @@
 - type: entity
   id: CrateAutogunAmmo
   parent: N14CrateAluminium
-  name: needler autogun magazine crate
-  description: 8 magazines of ammunition for "Needler" autogun turrets.
+  name: 60mm "Needler" autogun magazine crate
+  description: 8 magazines of ammunition for 60mm "Needler" autogun turrets.
   components:
   - type: StorageFill
     contents:

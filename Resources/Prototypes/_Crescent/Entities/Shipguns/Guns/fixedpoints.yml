@@ -558,9 +558,9 @@
 - type: entity
   parent: BaseFixedShipgun
   id: HardlineBeamPulser
-  name: NT-9 3100c 'Hardliner' plasma lance turret
+  name: NT-9 3100c 'Hardliner' plasma lance
   suffix: ShipGun
-  description: A ship-mounted, fixed-point artillery turret using military laser technology as a base - an outdated model from the now-defunct NanoTrasen, although tried and tested in many battles. Requires upkeep in the form of plasma power cells to stay operational.
+  description: A ship-mounted, fixed-point energy artillery piece using military laser technology as a base - an outdated model from the now-defunct NanoTrasen, although tried and tested in many battles. Requires upkeep in the form of power cages.
   components:
   - type: ApcPowerReceiver
     powerLoad: 1000
@@ -594,6 +594,7 @@
       path: /Audio/Weapons/Guns/Gunshots/ship_perforator.ogg
     soundEmpty:
       path: /Audio/Items/beep.ogg
+    burstCooldown: 4
   - type: HardpointAnchorableOnly
     class: Energy
     size: Large
@@ -669,7 +670,7 @@
     soundInsert:
       path: /Audio/Weapons/Guns/UnionfallWeapons/amr_close_1.ogg
     fillWithDoAfter: true
-    fillDelay: 1
+    fillDelay: 0.2
     cycleable: true
     capacity: 2
     #proto: CartridgeShellArmorPiercing - on being rebuilt from destruction this gives it free ammo
@@ -678,7 +679,7 @@
       - CartridgeShell
   - type: Gun
     fireOnDropChance: 0
-    fireRate: 0.5
+    fireRate: 4
     projectileSpeed: 95
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ship_duster.ogg

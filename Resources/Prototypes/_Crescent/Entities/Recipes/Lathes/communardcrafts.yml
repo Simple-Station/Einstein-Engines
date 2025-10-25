@@ -185,6 +185,24 @@
     BallisticCycler: 500
 
 - type: latheRecipe
+  id: WeaponShotgunProletar
+  result: WeaponShotgunProletar
+  completetime: 2
+  materials:
+    Steel: 1500
+    Plasteel: 300
+    BallisticCycler: 500
+
+- type: latheRecipe
+  id: WeaponShotgunToz123
+  result: WeaponShotgunToz123
+  completetime: 2
+  materials:
+    Steel: 1500
+    Plasteel: 500
+    BallisticCycler: 1000
+
+- type: latheRecipe
   id: WeaponRifleNCWLBatanya
   result: WeaponRifleNCWLBatanya
   completetime: 2

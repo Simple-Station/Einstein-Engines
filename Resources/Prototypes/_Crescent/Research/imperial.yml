@@ -39,6 +39,7 @@
   - ClothingOuterCoatImperialGovernor
   - ClothingNeckCloakImperialGovernor
   - ClothingOuterHardsuitImperialWorker
+  - ClothingNeckImperialGreatcoat
 
 - type: technology
   id: BasicImperialArmor
@@ -236,6 +237,8 @@
   - WeaponRifleDSMLegionnaire
   - WeaponSubMachineGunC20rImperial
   - WeaponPistolNeoVolker
+  - WeaponLightMachineGunDSMDominion
+  - WeaponShotgunReno
 
 - type: technology
   id: ImperialPlasmaMechGuns

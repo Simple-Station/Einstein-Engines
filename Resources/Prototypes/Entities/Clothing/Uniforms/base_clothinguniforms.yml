@@ -9,6 +9,8 @@
     slots: [innerclothing]
     equipSound:
       path: /Audio/Items/jumpsuit_equip.ogg
+    equipDelay: 2.5 # uniforms should have an equip / unequip delay to prevent taking them off like a dumbass
+    unequipDelay: 2.5
   - type: EmitSoundOnPickup # Not sure why this wasn't set to the base; as all clothes should have clothing sounds.
     sound: /Audio/SimpleStation14/Items/Handling/cloth_pickup.ogg
   - type: EmitSoundOnDrop
@@ -183,7 +185,7 @@
     - RightLeg
     - RightFoot
   - type: Clothing
-    equipDelay: 0.4
+    equipDelay: 0
     unequipDelay: 0.6 # Slightly higher delay to protect against accidental unequips
     femaleMask: NoMask
   - type: SelfExtinguisher

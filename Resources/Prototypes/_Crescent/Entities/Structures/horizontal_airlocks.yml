@@ -33,6 +33,8 @@
   components:
   - type: Sprite
     sprite: _Crescent/Structures/Doors/commandhorizontal.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
 
 - type: entity
   parent: Airlock
