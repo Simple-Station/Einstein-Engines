@@ -546,6 +546,7 @@
       - ClothingMaskImperialGovernorMask
       - ClothingOuterCoatImperialGovernor
       - ClothingNeckCloakImperialGovernor
+      - ClothingNeckImperialGreatcoat
       - ClothingOuterHardsuitImperialWorker
       - ClothingHeadHelmetImperialTrooperHelmet
       - ClothingOuterArmorImperialTrooperArmor
@@ -701,6 +702,7 @@
       - SHIShiverBlade
       - ClothingOuterHardsuitSHIJuggernaut
       - ClothingOuterHardsuitSHISpeedsuit
+      - MetempsychoticMachineCircuitboard
 
   - type: Machine
     board: MicroforgeCircuitboard

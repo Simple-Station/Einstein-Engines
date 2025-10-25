@@ -39,6 +39,7 @@
   - ClothingOuterCoatImperialGovernor
   - ClothingNeckCloakImperialGovernor
   - ClothingOuterHardsuitImperialWorker
+  - ClothingNeckImperialGreatcoat
 
 - type: technology
   id: BasicImperialArmor
@@ -265,6 +266,7 @@
   - WeaponSubMachineGunBeetle
   - WeaponRifleHunter
   - ClothingOuterHardsuitHunterElite
+  - MetempsychoticMachineCircuitboard
 
 - type: technology
   id: ImperialBomb
