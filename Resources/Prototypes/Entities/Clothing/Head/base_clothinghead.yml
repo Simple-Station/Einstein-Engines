@@ -239,8 +239,8 @@
     size: Normal
     heldPrefix: off
   - type: Clothing
-    equipDelay: 0.4
-    unequipDelay: 0.6 # Slightly higher delay to protect against accidental unequips
+    equipDelay: 0
+    unequipDelay: 1 # Slightly higher delay to protect against accidental unequips
     equippedPrefix: off
     clothingVisuals:
       head:

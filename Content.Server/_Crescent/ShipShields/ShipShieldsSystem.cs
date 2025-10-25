@@ -117,7 +117,7 @@ public sealed partial class ShipShieldsSystem : EntitySystem
 
     private void OnCollide(EntityUid uid, ShipShieldComponent component, StartCollideEvent args)
     {
-        _sawmill.Debug("collision detected, collided entity: " + args.OtherEntity.ToString());
+        //_sawmill.Debug("collision detected, collided entity: " + args.OtherEntity.ToString());
         if (Transform(args.OtherEntity).Anchored)
             return;
 
@@ -166,7 +166,7 @@ public sealed partial class ShipShieldsSystem : EntitySystem
 
         if (component.Source != null)
         {
-            _sawmill.Debug("shield deflected projectile");
+            //_sawmill.Debug("shield deflected projectile");
             var ev = new ShieldDeflectedEvent(args.OtherEntity);
             RaiseLocalEvent(component.Source.Value, ref ev);
         }

@@ -12,7 +12,7 @@
 - type: entity
   parent: CrateEngineering
   id: CrateShuttlegunVulcan
-  name: NT 20mm Vulcan flatpack
+  name: NT 20mm "Vulcan" flatpack
   description: Contains a flatpack for a brutal fixedpoint gatling gun. HARDPOINT TYPE - FIXED
   components:
   - type: StorageFill
@@ -30,7 +30,7 @@
     contents:
       - id: SlugthrowerFlatpack
         amount: 1
-  
+
 - type: entity
   parent: CrateEngineering
   id: CrateShuttlegunPDT
@@ -40,4 +40,26 @@
   - type: StorageFill
     contents:
       - id: PDTFlatpack
+        amount: 1
+
+- type: entity
+  parent: CrateEngineering
+  id: CrateShuttlegunExhumerminer
+  name: SHI 250c "Exhumer" kinetic pulser flatpack
+  description: Contains a flatpack for the respective shuttlegun. HARDPOINT TYPE - FIXED
+  components:
+  - type: StorageFill
+    contents:
+      - id: ExhumerFlatpack
+        amount: 1
+
+- type: entity
+  parent: CrateEngineering
+  id: CrateShuttlegunHardliner
+  name: NT 3100c "Hardliner" plasma lance flatpack
+  description: Contains a flatpack for an expensive, long ranged plasma artillery. HARDPOINT TYPE - FIXED
+  components:
+  - type: StorageFill
+    contents:
+      - id: HardlinerFlatpack
         amount: 1

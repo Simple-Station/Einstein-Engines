@@ -50,6 +50,9 @@
   id: CartridgeShell # Frontier Space Artillery
 
 - type: Tag # Hullrot
+  id: HardlinerCell #Hullrot
+
+- type: Tag # Hullrot
   id: Kukri #Hullrot
 
 - type: Tag # Frontier

@@ -832,8 +832,8 @@ sealed class Explosion
                     ExplosionType.FireStacks);
 
                 // If the floor is not blocked by some dense object, damage the floor tiles.
-                if (canDamageFloor)
-                    _system.DamageFloorTile(tileRef, _currentIntensity * _tileBreakScale, _maxTileBreak, _canCreateVacuum, tileUpdateList, ExplosionType);
+                if (canDamageFloor) //hullrot edit: since our explosions deal 1 dmg / 1 intensity instead of 15, divide intensity by 15
+                    _system.DamageFloorTile(tileRef, _currentIntensity / 15 * _tileBreakScale, _maxTileBreak, _canCreateVacuum, tileUpdateList, ExplosionType);
             }
             else
             {

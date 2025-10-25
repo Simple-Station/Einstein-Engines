@@ -12,8 +12,8 @@
   - type: StaticPrice
     price: 10
   - type: Clothing
-    equipDelay: 0.5
-    unequipDelay: 0.5
+    equipDelay: 0
+    unequipDelay: 0
 
 - type: entity
   abstract: true
