@@ -211,13 +211,13 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: BaseMagazineCaselessRifleShort
+        startingItem: MagazineCaselessRifleShort
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - BaseMagazineCaselessRifleShort
+            - MagazineCaselessRifleShort
       gun_chamber:
         name: Chamber
         startingItem: CartridgeCaselessRifle
@@ -273,13 +273,13 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: BaseMagazineCaselessRifleShort
+        startingItem: MagazineCaselessRifleShort
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - BaseMagazineCaselessRifleShort #Short mags, less fire rate. Still more cracked than all other rifles.
+            - MagazineCaselessRifleShort #Short mags, less fire rate. Still more cracked than all other rifles.
       gun_chamber:
         name: Chamber
         startingItem: CartridgeCaselessRifle
@@ -301,6 +301,8 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
+  - type: StaticPrice
+    price: 5000
 
 - type: entity
   name: NCWL MK-3 Batanya 7.62x51mm
@@ -377,7 +379,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/goro.rsi
   - type: Gun
     fireRate: 4
-    selectedMode: Burst
+    selectedMode: FullAuto
     availableModes:
       - SemiAuto
       - Burst
@@ -476,7 +478,7 @@
     zeroVisible: true
   - type: Appearance
   - type: StaticPrice
-    price: 2500
+    price: 5000
 
 - type: entity
   name: IRM DA-8 Miller 5.56x45mm

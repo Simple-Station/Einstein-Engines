@@ -183,8 +183,8 @@
     contents:
       - id: WeaponSubMachineGunPTAAsVal
         amount: 1
-      - id: BaseMagazineCaselessRifleShort
-        amount: 2
+      - id: MagazineCaselessRifleShort
+        amount: 3
 
 - type: entity
   id: WeaponCaseVintorez
@@ -196,8 +196,8 @@
     contents:
       - id: WeaponRifleVintorez
         amount: 1
-      - id: BaseMagazineCaselessRifleShort
-        amount: 2
+      - id: MagazineCaselessRifleShort
+        amount: 3
 
 - type: entity
   id: CratePangtaiPozhar
