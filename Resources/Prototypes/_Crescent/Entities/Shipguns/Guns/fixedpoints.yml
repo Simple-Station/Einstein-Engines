@@ -670,7 +670,7 @@
     soundInsert:
       path: /Audio/Weapons/Guns/UnionfallWeapons/amr_close_1.ogg
     fillWithDoAfter: true
-    fillDelay: 1
+    fillDelay: 0.2
     cycleable: true
     capacity: 2
     #proto: CartridgeShellArmorPiercing - on being rebuilt from destruction this gives it free ammo
@@ -679,7 +679,7 @@
       - CartridgeShell
   - type: Gun
     fireOnDropChance: 0
-    fireRate: 0.5
+    fireRate: 4
     projectileSpeed: 95
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ship_duster.ogg
