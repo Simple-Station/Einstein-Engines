@@ -150,7 +150,7 @@
 - type: entity
   id: CMMMothershipComputer
   parent: BaseMothershipComputer
-  name: TSP internal shipyard
+  name: Gliessian internal shipyard
   components:
   - type: ShipyardListing
     shuttles:
@@ -158,7 +158,6 @@
     - Adjudicator
     - Warden
     - Jury
-    - Executioner
 
 - type: entity
   id: RefugeMothershipComputer
