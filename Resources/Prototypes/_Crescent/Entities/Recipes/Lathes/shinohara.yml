@@ -315,6 +315,26 @@
     BallisticCycler: 1500
 
 - type: latheRecipe
+  id: WeaponSniperHristov
+  result: WeaponSniperHristov
+  completetime: 2
+  materials:
+    Steel: 2500
+    Plastic: 2000
+    Silver: 1000
+    BallisticCycler: 1500
+
+- type: latheRecipe
+  id: WeaponRifleBarghest
+  result: WeaponRifleBarghest
+  completetime: 2
+  materials:
+    Steel: 2500
+    Plastic: 1500
+    Silver: 1000
+    BallisticCycler: 1000
+
+- type: latheRecipe
   id: WeaponSubMachineGunMP49
   result: WeaponSubMachineGunMP49
   completetime: 2
@@ -359,6 +379,35 @@
   materials:
     Steel: 2500
     Silver: 500
+
+- type: latheRecipe
+  id: WeaponShotgunSpas
+  result: WeaponShotgunSpas
+  completetime: 2
+  materials:
+    Steel: 2500
+    Plastic: 1000
+    Silver: 1000
+    BallisticCycler: 2000
+
+- type: latheRecipe
+  id: WeaponRifleM90GrenadeLauncher
+  result: WeaponRifleM90GrenadeLauncher
+  completetime: 2
+  materials:
+    Steel: 2500
+    Silver: 1000
+    BallisticCycler: 500
+
+- type: latheRecipe
+  id: WeaponSubMachineGunWT550
+  result: WeaponSubMachineGunWT550
+  completetime: 2
+  materials:
+    Steel: 1500
+    Plastic: 500
+    Silver: 500
+    BallisticCycler: 500
 
 # MARK: Mech Weapons
 
