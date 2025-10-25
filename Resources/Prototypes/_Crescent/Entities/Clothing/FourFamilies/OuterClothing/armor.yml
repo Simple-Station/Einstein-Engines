@@ -21,8 +21,8 @@
     armorRepair: SteelPlate
     initialModifiers:
       flatReductions:
-        Blunt: 30
-        Slash: 20
+        Blunt: 35
+        Slash: 35
         Piercing: 50
         Heat: 20
         Caustic: 5
