@@ -93,6 +93,9 @@ public sealed class DegradeableArmorSystem : EntitySystem
 
     private void OnRepair(Entity<DegradeableArmorComponent> owner, ref ArmorRepairDoAfterEvent args)
     {
+        if(args.Cancelled)
+            return;
+
         owner.Comp.armorHealth = owner.Comp.armorMaxHealth;
         if (TryComp<ToggleableClothingComponent>(owner.Owner, out var component))
         {

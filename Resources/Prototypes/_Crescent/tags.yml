@@ -11,6 +11,9 @@
   id: MagazineHeavySMG
 
 - type: Tag
+  id: MagazineCaselessRifleShort
+
+- type: Tag
   id: CartridgePistol6mm
 
 - type: Tag
@@ -48,6 +51,9 @@
 
 - type: Tag # Frontier Space Artillery
   id: CartridgeShell # Frontier Space Artillery
+
+- type: Tag # Hullrot
+  id: HardlinerCell #Hullrot
 
 - type: Tag # Hullrot
   id: Kukri #Hullrot

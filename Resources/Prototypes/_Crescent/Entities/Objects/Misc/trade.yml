@@ -4,6 +4,9 @@
   parent: BaseStructureDynamic
   abstract: true
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 1
   - type: Transform
     noRot: true
   - type: InteractionOutline
@@ -232,6 +235,9 @@
   name: sealed taypan wine shipment
   description: A sealed case of aged, fine Taypan wine. A sticker on the side identifies the station this was produced in. The same sticker warns you that the product is an imitation and not really made from berries.
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 2
   - type: Sprite
     sprite: _Crescent/Objects/TradeGoods/taypanwine.rsi
     layers:
@@ -377,6 +383,9 @@
   name: secured fabrics shipment
   description: A secured shipment of fine Surezai-produced fabrics.
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 2
   - type: Sprite
     sprite: _Crescent/Objects/TradeGoods/taypanwine.rsi
     layers:
@@ -536,6 +545,17 @@
   id: TradeDeedVeryHigh
   name: deed of delivery
   description: A printed deed of delivery. Blocky letting informs that this deed is worth six thousand Union credits to an official chartered station.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/deed.rsi
+    layers:
+    - state: icon
+
+- type: entity
+  parent: BaseItem
+  id: TradeDeedUnique
+  name: deed of delivery
+  description: A printed deed of delivery. Blocky letting informs that this deed is worth seven thousand five hundred Union credits to an official chartered station.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/TradeGoods/deed.rsi

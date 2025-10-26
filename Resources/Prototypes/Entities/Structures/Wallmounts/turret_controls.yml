@@ -212,3 +212,32 @@
   - type: ContainerFill
     containers:
       board: [ WeaponEnergyTurretAIControlPanelElectronics ]
+
+- type: entity
+  parent: WeaponEnergyTurretStationControlPanel
+  id: WeaponCSAEnergyTurretControlPanel
+  name: CSA - 240 turret control panel
+  description: A wall-mounted interface that allows a local artifical intelligence to adjust the operational parameters of linked sentry turrets.
+  components:
+  - type: AccessReader
+    access: [["SyndicateRamzi"], ["SyndicateCommand"]]
+  - type: TurretTargetSettings
+    exemptAccessLevels:
+    - SyndicateRamzi
+    - SyndicateCommand
+  - type: DeployableTurretController
+    accessGroups:
+      - Syndicate
+    accessLevels:
+    - SyndicateBasic
+    - SyndicateInterdyne
+    - SyndicateGorlex
+    - SyndicateRamzi
+    - SyndicateCommand
+    - SyndicateSaws
+  - type: DeviceNetwork
+    receiveFrequencyId: TurretAI
+    transmitFrequencyId: TurretControlAI
+  - type: ContainerFill
+    containers:
+      board: [ WeaponEnergyTurretAIControlPanelElectronics ]

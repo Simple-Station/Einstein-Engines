@@ -1,3 +1,8 @@
+# nanotrasen
+job-description-nt-melee-borg = Engage threats in close combat. Crush skulls with your fists. Coordinate with fellow NT assets.
+job-description-nt-ranged-borg = Engage threats in ranged combat. Pulverize corpses with a drill. Coordinate with fellow NT assets.
+job-description-nt-utility-ipc = Load ammunition and upkeep nanotrasen ships. Coordinate with fellow NT assets.
+
 # ncwl
 
 job-description-ncwl-faction-leader = Lead the League from the external end. Maintain relations or war plans with other factions. Don't die.

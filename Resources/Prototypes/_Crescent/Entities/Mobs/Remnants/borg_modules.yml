@@ -1,0 +1,61 @@
+- type: entity
+  id: BorgModuleRemnantUtility
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  name: remnant cyborg module (utility)
+  description: changeme
+  components:
+    - type: Sprite
+      layers:
+      - state: syndicate
+      - state: icon-syndicate
+    - type: ItemBorgModule
+      items:
+      - Omnitool
+      - JawsOfLife
+      - Doorjack
+      - EmagUnlimited
+      - WelderExperimental
+      - NetworkConfigurator
+      - JetpackBorgFilled
+      - MassScannerEEBorg
+      - HandheldGPSBasic
+    - type: BorgModuleIcon
+      icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-operative-module }
+
+- type: entity
+  id: BorgModuleRemnantMelee
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  name: remnant cyborg module (melee)
+  description: changeme
+  components:
+    - type: Sprite
+      layers:
+      - state: syndicate
+      - state: icon-syndicate
+    - type: ItemBorgModule
+      items:
+      - RemnantFist
+      # - WeaponBorgEnergyCarbine
+      - JetpackBorgFilled
+      - MassScannerEEBorg
+    - type: BorgModuleIcon
+      icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-operative-module }
+
+- type: entity
+  id: BorgModuleRemnantRanged
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  name: remnant cyborg module (melee)
+  description: changeme
+  components:
+    - type: Sprite
+      layers:
+      - state: syndicate
+      - state: icon-syndicate
+    - type: ItemBorgModule
+      items:
+      - WeaponBorgEnergyCarbine
+      - RemnantDrill
+      - JetpackBorgFilled
+      - MassScannerEEBorg
+    - type: BorgModuleIcon
+      icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-operative-module }

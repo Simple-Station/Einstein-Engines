@@ -13,10 +13,6 @@
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Voidborn
   special:
   - !type:AddComponentSpecial
     components:
@@ -43,5 +39,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitImperialFreeholder
     id: FreeholderPDA
+    belt: ClothingBeltUtilityFilled
     ears: ClothingHeadsetEmpireCiv
     shoes: ClothingShoesBootsImperialLongboots
+    back: ClothingBackpackDSM

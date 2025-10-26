@@ -179,8 +179,8 @@
     - SemiAuto
     - Burst
     - FullAuto
-    burstFireRate: 6
-    fireRate: 6
+    burstFireRate: 5
+    fireRate: 5
   - type: ChamberMagazineAmmoProvider
     autoEject: true
   - type: MagazineVisuals
@@ -211,13 +211,13 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineCaselessRifle
+        startingItem: MagazineCaselessRifleShort
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazineCaselessRifle
+            - MagazineCaselessRifleShort
       gun_chamber:
         name: Chamber
         startingItem: CartridgeCaselessRifle
@@ -273,13 +273,13 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineCaselessRifle
+        startingItem: MagazineCaselessRifleShort
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazineCaselessRifle
+            - MagazineCaselessRifleShort #Short mags, less fire rate. Still more cracked than all other rifles.
       gun_chamber:
         name: Chamber
         startingItem: CartridgeCaselessRifle
@@ -291,7 +291,7 @@
     availableModes:
     - SemiAuto
     - FullAuto
-    fireRate: 8
+    fireRate: 7
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/supressed_2/supressed_gunshot_2.ogg
       params:
@@ -301,6 +301,8 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
+  - type: StaticPrice
+    price: 5000
 
 - type: entity
   name: NCWL MK-3 Batanya 7.62x51mm
@@ -376,7 +378,15 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/goro.rsi
   - type: Gun
-    fireRate: 3.75
+    fireRate: 4
+    selectedMode: FullAuto
+    availableModes:
+      - SemiAuto
+      - Burst
+      - FullAuto
+    shotsPerBurst: 3
+    burstFireRate: 12
+    burstCooldown: 1.5
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/rifle_1/rifle_gunshot_2.ogg
   - type: ChamberMagazineAmmoProvider
@@ -417,7 +427,7 @@
   name: PTA D5 Takemura 7.62x51mm/5.56x45mm
   parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponRifleTakemura
-  description: A multicaliber fast shooting battle rifle from the Pang Tai Arms design labs. Cabable of shooting both 7.62x51mm and 5.56x45mm. Chambered in 7.62x51mm.
+  description: A multicaliber fast shooting battle rifle from the Pang Tai Arms design labs. Capable of shooting both 7.62x51mm and 5.56x45mm.
   components:
   - type: Item
     shape:
@@ -432,7 +442,7 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/takemura.rsi
   - type: Gun
-    fireRate: 8
+    fireRate: 7
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/rifle_1/rifle_gunshot_2.ogg
   - type: ChamberMagazineAmmoProvider
@@ -468,7 +478,7 @@
     zeroVisible: true
   - type: Appearance
   - type: StaticPrice
-    price: 2500
+    price: 5000
 
 - type: entity
   name: IRM DA-8 Miller 5.56x45mm
@@ -541,7 +551,7 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/fal.rsi
   - type: Gun
-    fireRate: 6
+    fireRate: 5
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/rifle_2/rifle_gunshot_2.ogg
   - type: ItemSlots
@@ -652,7 +662,7 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/halyad.rsi
   - type: Gun
-    fireRate: 3.5
+    fireRate: 2.5 #Same as the barghest. Except Full auto instead of burst. A lot easier to fire.
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/dmr_1/dmr_gunshot_2.ogg
     selectedMode: SemiAuto
@@ -708,11 +718,16 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/hound.rsi
   - type: Gun
+    fireRate: 6
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/M16/rifle_gunshot_2.ogg
-    selectedMode: SemiAuto
+    selectedMode: Burst
     availableModes:
       - SemiAuto
+      - Burst
+    shotsPerBurst: 2
+    burstFireRate: 24
+    burstCooldown: 0.75
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -872,7 +887,7 @@
     fireRate: 2.5
     shotsPerBurst: 2
     burstFireRate: 24
-    burstCooldown: 1.5
+    burstCooldown: 1.0
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/dmr_1/dmr_gunshot_2.ogg
     selectedMode: SemiAuto
@@ -928,7 +943,7 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/svds.rsi
   - type: Gun
-    fireRate: 3.5
+    fireRate: 3.0 #slightly faster - but less consistent with semi.
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/dmr_1/dmr_gunshot_2.ogg
     selectedMode: SemiAuto
