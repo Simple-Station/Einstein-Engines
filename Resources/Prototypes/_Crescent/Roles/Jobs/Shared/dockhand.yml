@@ -37,9 +37,7 @@
     jumpsuit: ClothingUniformJumpsuitCMMMachinist
     belt: ClothingBeltSalvageWebbingFilledNF
     back: ClothingBackpackFilled
-    gloves: ClothingHandsGlovesFingerlessInsulated
+    gloves: ClothingHandsGlovesColorYellow
     shoes: ClothingShoesBootsSalvage
-    eyes: ClothingEyesGlassesCheapSunglassesBig
+    eyes: ClothingEyesGlassesSunglassesBig
     pocket1: WeaponPistolHKUSP
-  satchel: ClothingBackpackSatchelFilled
-  duffelbag: ClothingBackpackDuffelFilled
