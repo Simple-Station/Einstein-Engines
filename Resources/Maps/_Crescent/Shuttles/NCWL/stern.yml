@@ -62,7 +62,7 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
-      baseMaxLinearVelocity: 10
+      baseMaxLinearVelocity: 15
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
