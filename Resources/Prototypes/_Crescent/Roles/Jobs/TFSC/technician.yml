@@ -25,7 +25,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-op
+        rank: crescent-rank-pfc
       - type: HullrotFaction
         faction: GSC
       - type: LanguageAdder
