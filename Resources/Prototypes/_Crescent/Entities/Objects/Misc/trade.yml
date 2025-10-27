@@ -484,7 +484,11 @@
     sprite: _Crescent/Objects/TradeGoods/stub.rsi
     layers:
     - state: icon
-
+  - type: Tag
+    tags:
+      - CartridgePistol6mm
+      - Cartridge
+      
 - type: entity
   parent: BaseItem
   id: OrganStub
