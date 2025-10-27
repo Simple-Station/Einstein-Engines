@@ -486,9 +486,8 @@
     - state: icon
   - type: Tag
     tags:
-      - CartridgePistol6mm
-      - Cartridge
-      
+      - Trash
+
 - type: entity
   parent: BaseItem
   id: OrganStub
