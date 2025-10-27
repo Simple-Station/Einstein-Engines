@@ -845,7 +845,7 @@
     coefficient: 1 # Replaced with HEAVY modify stun time and slow protection
   - type: Reflect
     spread: 270
-    reflectProb: 0.45
+    reflectProb: 0.10
     innate: true
     reflects:
       - Energy
