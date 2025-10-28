@@ -1415,9 +1415,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 150
-    intensitySlope: 75
-    totalIntensity: 150
+    maxIntensity: 250
+    intensitySlope: 250
+    totalIntensity: 500
     maxTileBreak: 3
   - type: PointLight
     radius: 5
@@ -1440,6 +1440,7 @@
     ignoreWeaponGrid: true
     damage:
       types:
+        Structural: 400
         Piercing: 150
   - type: TimedDespawn
     lifetime: 10
