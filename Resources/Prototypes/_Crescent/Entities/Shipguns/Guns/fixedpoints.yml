@@ -493,7 +493,7 @@
         ents: []
   - type: Gun
     fireOnDropChance: 0
-    fireRate: 3
+    fireRate: 2
     projectileSpeed: 80
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/50cal.ogg
