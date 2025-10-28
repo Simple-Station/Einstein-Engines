@@ -97,7 +97,7 @@
     - LaserLocus1
     - HardlightGenerator1
   - type: StaticPrice
-    price: 100
+    price: 2000
   - type: StealTarget
     stealGroup: TechnologyDisk
 
