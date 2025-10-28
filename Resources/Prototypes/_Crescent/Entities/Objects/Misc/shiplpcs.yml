@@ -1101,6 +1101,22 @@
   - type: ShipVoucher
     ship: Adjudicator
 
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherExecutioner
+  name: TS 'Executioner' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a Gliessian Executioner-class advanced gunship. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 100000
+  - type: ShipVoucher
+    ship: Executioner
 
 #SRM
 

@@ -1,0 +1,123 @@
+# this holds borgs n shit for remnant ships and fogshit
+- type: entity
+  id: BorgChassisRemnantMelee
+  name: NT Anti-Psionic Nullifier
+  description: A leftover from centuries past. It's designed to brutally eliminate sources of psionic instability.
+  parent: BaseBorgChassisNT
+  components:
+  - type: Sprite
+    sprite: _Crescent/Mobs/Remnants/remnant.rsi
+    layers:
+    - state: remnant
+      map: ["movement"]
+    # - state: remnant_e
+    - state: remnant_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: remnant_l
+      shader: unshaded
+      map: ["light"]
+      visible: false
+  - type: BorgChassis
+    # they wont get more modules anyway
+    maxModules: 2
+    hasMindState: remnant_e
+    noMindState: remnant_e_r
+  - type: BorgTransponder
+    sprite:
+      sprite: Mobs/Silicon/chassis.rsi
+      state: robot
+    name: cyborg
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+    - Common # longwave
+    - Traffic # shortwave
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+    - Traffic
+  - type: Speech
+    speechVerb: Robotic
+  - type: ContainerFill
+    containers:
+      borg_brain:
+        - PositronicBrain
+      borg_module:
+        - BorgModuleRemnantUtility
+        - BorgModuleRemnantMelee
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellHyper
+  - type: MovementSpeedModifier
+    weightlessAcceleration: 5 # Move around more easily in space.
+    weightlessModifier: 1.1
+    weightlessFriction: 3 # makes you turn more sharply while weightless
+    baseWalkSpeed : 2.5
+    baseSprintSpeed : 4.5
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+      #todo: access
+  - type: NpcFactionMember
+    factions:
+      - SimpleHostile #for autoturrets
+  - type: Access #replace thsi with access for remnant doors when i bother .2 | 2025
+    tags:
+    - Captain #what's used on fungus's doors rn
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      300: Critical
+      600: Dead
+  
+    
+- type: entity
+  id: BorgChassisRemnantRanged
+  name: NT Anti-Psionic Rectifier
+  description: A leftover from centuries past. It's designed to brutally eliminate sources of psionic instability.
+  parent: BorgChassisRemnantMelee
+  components:
+  - type: Sprite
+    sprite: _Crescent/Mobs/Remnants/remnant_ranged.rsi
+    layers:
+    - state: remnant
+      map: ["movement"]
+    # - state: remnant_e
+    - state: remnant_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: remnant_l
+      shader: unshaded
+      map: ["light"]
+      visible: false
+  - type: BorgChassis
+    # they wont get more modules anyway
+    maxModules: 2
+    hasMindState: remnant_e
+    noMindState: remnant_e_r
+  - type: BorgTransponder
+    sprite:
+      sprite: Mobs/Silicon/chassis.rsi
+      state: robot
+    name: cyborg
+  - type: ContainerFill
+    containers:
+      borg_brain:
+        - PositronicBrain
+      borg_module:
+        - BorgModuleRemnantUtility
+        - BorgModuleRemnantRanged
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 1.5
+    baseSprintSpeed : 3
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Critical
+      400: Dead

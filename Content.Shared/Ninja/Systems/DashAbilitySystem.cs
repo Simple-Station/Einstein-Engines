@@ -65,7 +65,9 @@ public sealed class DashAbilitySystem : EntitySystem
 
         var origin = _transform.GetMapCoordinates(user);
         var target = args.Target.ToMap(EntityManager, _transform);
-        if (!_examine.InRangeUnOccluded(origin, target, SharedInteractionSystem.MaxRaycastRange, null))
+        // Allow dashing to unseen tiles only if the component explicitly permits it.
+        if (!_examine.InRangeUnOccluded(origin, target, SharedInteractionSystem.MaxRaycastRange, null)
+            && !comp.AllowDashToUnseen)
         {
             // can only dash if the destination is visible on screen
             _popup.PopupClient(Loc.GetString("dash-ability-cant-see", ("item", uid)), user, user);

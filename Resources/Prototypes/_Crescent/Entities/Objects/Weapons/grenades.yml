@@ -610,8 +610,8 @@
   id: SHIHG17SmartHandgrenade
   components:
   - type: OnUseTimerTrigger
-    delay: 2.5
-    delayOptions: [2.5, 3.5, 5]
+    delay: 1.5
+    delayOptions: [1, 1.5, 2.5, 3.5, 5]
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Grenades/shi_smart.rsi
   - type: ExplodeOnTrigger

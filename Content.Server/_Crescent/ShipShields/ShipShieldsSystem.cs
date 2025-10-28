@@ -14,6 +14,7 @@ using Content.Server.Power.Components;
 using Robust.Shared.Physics;
 using Content.Shared._Crescent.SpaceArtillery;
 using Content.Shared.Projectiles;
+using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 
 
 namespace Content.Server._Crescent.ShipShields;
@@ -32,6 +33,8 @@ public sealed partial class ShipShieldsSystem : EntitySystem
     [Dependency] private readonly PhysicsSystem _physicsSystem = default!;
 
     [Dependency] private readonly PvsOverrideSystem _pvsSys = default!;
+
+    private ISawmill _sawmill = default!;
 
     public override void Update(float frameTime)
     {
@@ -109,10 +112,12 @@ public sealed partial class ShipShieldsSystem : EntitySystem
 
         InitializeCommands();
         InitializeEmitters();
+        _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("crescent.shipshields.server");
     }
 
     private void OnCollide(EntityUid uid, ShipShieldComponent component, StartCollideEvent args)
     {
+        //_sawmill.Debug("collision detected, collided entity: " + args.OtherEntity.ToString());
         if (Transform(args.OtherEntity).Anchored)
             return;
 
@@ -161,6 +166,7 @@ public sealed partial class ShipShieldsSystem : EntitySystem
 
         if (component.Source != null)
         {
+            //_sawmill.Debug("shield deflected projectile");
             var ev = new ShieldDeflectedEvent(args.OtherEntity);
             RaiseLocalEvent(component.Source.Value, ref ev);
         }

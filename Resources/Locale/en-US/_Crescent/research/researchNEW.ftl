@@ -66,6 +66,12 @@ research-technology-cyberdawn-egui = Egui Stealth Tacsuit
 research-technology-cyberdawn-psybreaker = Anti-Psionic Armaments
 research-technology-cyberdawn-thermals = Thermal Vision Goggles
 research-technology-cyberdawn-advancedlaunchers = Advanced Launchers
+research-technology-cyberdawn-CDTAdvancedComponents = Advanced components
+research-technology-cyberdawn-CDTAdvancedFirearmcomponents = Advanced Firearm components
+research-technology-cyberdawn-CDTPhoronBlade = PhoronBlade
+research-technology-cyberdawn-CDTDualPhoronBlade = DualPhoronBlade
+
+
 
 # DSM
 research-technology-imperial-basicclothes = Basic Tailoring
@@ -149,3 +155,4 @@ research-technology-shinohara-dermalarmor = KOURINDO-U Dermal Armor
 research-technology-shinohara-shiverblade = SHI-RIP9 Shiver Blade
 research-technology-shinohara-advance-armor = Svbt Experimental Armors
 research-technology-shinohara-light-destroyer = SHI Light Destroyers
+research-technology-shinohara-oldntballistics = Old NT Gun Schematics

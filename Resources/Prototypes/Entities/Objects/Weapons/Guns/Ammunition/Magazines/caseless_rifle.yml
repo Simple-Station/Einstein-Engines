@@ -38,6 +38,9 @@
   parent: BaseMagazineCaselessRifle
   abstract: true
   components:
+  - type: Tag
+    tags:
+      - MagazineCaselessRifleShort
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifle
     capacity: 20
