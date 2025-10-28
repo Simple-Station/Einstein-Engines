@@ -113,14 +113,14 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 100
-        Piercing: 100
+        Structural: 1000
+        Piercing: 500
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 350
-    intensitySlope: 100
-    totalIntensity: 1000
+    maxIntensity: 2500
+    intensitySlope: 150
+    totalIntensity: 2500
     maxTileBreak: 7
   - type: PointLight
     radius: 3.5
@@ -1149,7 +1149,7 @@
     damage:
       types:
         Piercing: 700
-        Structural: 2500
+        Structural: 500
   - type: TimedDespawn
     lifetime: 20
   - type: Sprite
@@ -1159,9 +1159,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 2500
-    intensitySlope: 1000
-    totalIntensity: 2500
+    maxIntensity: 1500
+    intensitySlope: 500
+    totalIntensity: 1500
     maxTileBreak: 5
   - type: PointLight
     radius: 3.5
@@ -1416,8 +1416,8 @@
   - type: Explosive
     explosionType: Default
     maxIntensity: 250
-    intensitySlope: 250
-    totalIntensity: 500
+    intensitySlope: 200
+    totalIntensity: 400
     maxTileBreak: 3
   - type: PointLight
     radius: 5
