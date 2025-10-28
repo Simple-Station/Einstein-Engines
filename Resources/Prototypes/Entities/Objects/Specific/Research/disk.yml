@@ -96,6 +96,9 @@
     - TubeLoader1
     - LaserLocus1
     - HardlightGenerator1
+   # AutoFabs for components
+    - VariableCommodityFabricatorFlatpack
+    - AdvancedVariableCommodityFablatheFlatpack
   - type: StaticPrice
     price: 2000
   - type: StealTarget
