@@ -89,7 +89,30 @@
   - type: Sprite
     sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
     state: base
-  
+
+#emp slugthrower ammo
+
+- type: entity
+  id: MagazineLightRifleBoxSlugEMP
+  name: ".50 cal EMP-tip slugthrower box"
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+      - SlugthrowerCartridgeBox
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeMachineGun
+    proto: CartridgeMachineGunEMP
+    capacity: 100
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
+    state: base
+
 #mortar ammo
 
 - type: entity

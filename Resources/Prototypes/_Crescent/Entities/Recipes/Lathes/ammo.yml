@@ -248,6 +248,14 @@
     Steel: 2000
 
 - type: latheRecipe
+  id: SluggieEMP
+  result: MagazineLightRifleBoxSlugEMP
+  completetime: 2
+  materials:
+    Steel: 2000
+    Uranium: 1000
+
+- type: latheRecipe
   id: Automortar90
   result: MagazineMortar
   completetime: 2
