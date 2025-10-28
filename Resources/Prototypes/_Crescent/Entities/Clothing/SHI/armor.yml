@@ -131,7 +131,7 @@
   parent: [ClothingOuterArmorBasic, StreeCredRedeemable]
   id: ClothingOuterHardsuitSHISpeedsuit
   name: SVBT-XB "RAIKU" liquidator suit
-  description: Experimental model of the SVBT-2 with most of the Armor stripped off replaced with thick layers of durathread. Equipped with a Exo-Skeleton the suit sliences the users footsteps while also increasing movement capabilities.
+  description: Experimental model of the SVBT-2 with most of the armor stripped off replaced with thick layers of durathread. Equipped with a Exo-Skeleton the suit sliences the users footsteps while also increasing movement capabilities.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/SHI/OuterClothing/speedsuit.rsi
