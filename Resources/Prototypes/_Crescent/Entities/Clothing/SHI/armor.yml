@@ -162,7 +162,6 @@
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepSilent
-  - type: Magboots
   - type: ToggleableClothing
     slot: head
     clothingPrototype: ClothingHeadHelmetHardsuitSHISpeedsuit
