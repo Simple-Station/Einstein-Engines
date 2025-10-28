@@ -2,7 +2,7 @@
 rank-ordering = {$rank} {$name}
 
 # default
-crescent-rank-private = PvT.
+crescent-rank-private = Pvt.
 
 # independents
 crescent-rank-ind-gliess-sheriff = Sheriff
@@ -72,7 +72,7 @@ crescent-rank-boss = Lieutenant
 crescent-rank-patriarch = Patriarch
 crescent-rank-operative = Operative
 crescent-rank-op = Cpl.
-crescent-rank-pfc = PvT.
+crescent-rank-pfc = Pvt.
 crescent-rank-foreman = Foreman
 crescent-rank-saw = Shipbreaker
 crescent-rank-coordinator = Director
@@ -106,7 +106,7 @@ crescent-rank-servile = Servile
 
 crescent-rank-kommandant = Kommandant
 crescent-rank-leutnant = Lt.
-crescent-rank-soldatATH = PvT.
+crescent-rank-soldatATH = Pvt.
 crescent-rank-sanitat = Cpl.
 crescent-rank-kanoneer = Sgt.
 crescent-rank-steward = Steward
