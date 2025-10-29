@@ -19,7 +19,7 @@
   minPlayers: 0
   stations:
     Caterpillar:
-      stationProto: StandardCrescentExpeditionVessel
+      stationProto: StandardCrescentCivilianVessel
       components:
         - type: VesselIcon
           iffIcon:
@@ -31,6 +31,6 @@
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
-          designation: vessel-designation-civilian
+          designation: vessel-designation-utility
         - type: VesselDescription
           description: Made from wrecks welded together onto a tugboat, the caterpillar is not workplace safe.
