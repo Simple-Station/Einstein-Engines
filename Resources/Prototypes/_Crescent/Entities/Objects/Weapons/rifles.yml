@@ -323,7 +323,7 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/batanya.rsi
   - type: Gun
-    fireRate: 4
+    fireRate: 5
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/rifle_1/rifle_gunshot_2.ogg
   - type: ChamberMagazineAmmoProvider
