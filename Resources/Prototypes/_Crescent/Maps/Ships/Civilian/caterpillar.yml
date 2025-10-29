@@ -19,7 +19,7 @@
   minPlayers: 0
   stations:
     Caterpillar:
-      stationProto: StandardCrescentCivilianVessel
+      stationProto: StandardCrescentVessel
       components:
         - type: VesselIcon
           iffIcon:
