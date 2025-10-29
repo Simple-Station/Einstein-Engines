@@ -168,14 +168,14 @@
   completetime: 1
   materials:
     Steel: 300
-    Plasma: 200
+    Plasma: 150
 - type: latheRecipe
   id: Cartridge40mmCan
   result: Cartridge40mmCan
   completetime: 1
   materials:
     Steel: 300
-    Glass: 150
+    Glass: 100
     Plastic: 50
 - type: latheRecipe
   id: Cartridge40mmHEDP
@@ -183,7 +183,7 @@
   completetime: 1
   materials:
     Steel: 300
-    Plasma: 150
+    Plasma: 100
     Uranium: 50
 - type: latheRecipe
   id: Cartridge40mmSmoke
@@ -197,7 +197,14 @@
   completetime: 1
   materials:
     Steel: 350
-    Plasma: 50
+    Plasma: 100
+- type: latheRecipe
+  id: Cartridge40mmEMP
+  result: Cartridge40mmEMP
+  completetime: 1
+  materials:
+    Steel: 350
+    Gold: 100
     
 # SMALL ARMS AMMUNITIONS
 - type: latheRecipe
