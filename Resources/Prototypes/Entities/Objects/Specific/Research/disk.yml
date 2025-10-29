@@ -99,6 +99,13 @@
    # AutoFabs for components
     - VariableCommodityFabricatorFlatpack
     - AdvancedVariableCommodityFablatheFlatpack
+   # Tier 3 Faction specific
+    - ClothingOuterHardsuitNCWLJuggernaut
+    - EnergySwordDouble
+    - ClothingOuterHardsuitCybersunStealthCyberdawn
+    - SRMKhopesh
+    - ClothingOuterHardsuitSHIJuggernaut
+    - ClothingOuterHardsuitSHISpeedsuit
   - type: StaticPrice
     price: 2000
   - type: StealTarget

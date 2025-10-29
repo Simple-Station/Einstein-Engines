@@ -40,6 +40,8 @@ public sealed class TechnologyDiskSystem : EntitySystem
         var tier = int.Parse(weightedRandom.Pick(_random));
 
         // Faction-specific disciplines that should be excluded from tech disk terminals at tier 3
+        // Commented out as per community feedback - factions can now get T3 tech from disks
+        /*
         var excludedDisciplinesT3 = new HashSet<string>
         {
             "Cyberdawn",
@@ -48,6 +50,7 @@ public sealed class TechnologyDiskSystem : EntitySystem
             "Corporate",
             "Interdyne"
         };
+        */
 
         //get a list of every distinct recipe in all the technologies.
         var techs = new HashSet<ProtoId<LatheRecipePrototype>>();
@@ -57,8 +60,9 @@ public sealed class TechnologyDiskSystem : EntitySystem
                 continue;
 
             // Skip faction-specific disciplines only for tier 3
-            if (tier == 3 && excludedDisciplinesT3.Contains(tech.Discipline))
-                continue;
+            // Disabled - allowing faction T3 tech in disks
+            // if (tier == 3 && excludedDisciplinesT3.Contains(tech.Discipline))
+            //     continue;
 
             techs.UnionWith(tech.RecipeUnlocks);
         }
