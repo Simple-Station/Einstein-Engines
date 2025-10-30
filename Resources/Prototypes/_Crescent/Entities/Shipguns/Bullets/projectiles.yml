@@ -1602,7 +1602,6 @@
     color: orange
     energy: 0.5
   - type: ShipWeaponProjectile
-  - type: IgnoresHullrotShields
 
 # 48mm - sumitomo and kurosawa
 
