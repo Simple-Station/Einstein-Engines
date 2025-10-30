@@ -80,7 +80,7 @@
     powerLoad: 60000
   - type: Appearance
   - type: ShipShieldEmitter
-    damageLimit: 25000
+    damageLimit: 30000
     damageOverloadTimePunishment: 120
     powerUpSound: !type:SoundPathSpecifier
         path: "/Audio/Effects/teleport_arrival.ogg"
@@ -97,14 +97,13 @@
   name: NT-630 'Bulwark' deflector emitter
   description: A complicated array of machinery - guzzles power and maintains a bubble deflector shield around the mother vessel. Overheats with too much use.
   components:
-  - type: ShipShieldEmitter # can stop a decent amount of damage, weaker than the Goliath
-    healPerSecond: 200 # base is 250
-    damageExp: 1.15 # base is 1.1
-    baseDraw: 40000 # base is 50000
-    maxDraw: 80000 # base is 150000
-    unpoweredBonus: 3 # base is 6
-    damageLimit: 10000
-    damageOverloadTimePunishment: 100
+  - type: ShipShieldEmitter 
+    damageLimit: 15000
+    healPerSecond: 100
+    damageExp: 1.0
+    powerDraw: 5000
+    unpoweredBonus: 2.5
+    damageOverloadTimePunishment: 60 # 60 * 2.5 * 100 = 15000. shield will be fully healed when it's done being punished
   - type: Fixtures
     fixtures:
       fix1:
@@ -131,22 +130,21 @@
           True: { visible: true }
           False: { visible: false }
   - type: ApcPowerReceiver
-    powerLoad: 40000
+    powerLoad: 20000
 
 - type: entity
   id: ShieldEmitterSmall
   parent: ShieldEmitter
   name: NT-280 'Errant' deflector emitter
-  description: A complicated array of machinery - guzzles power and maintains a bubble deflector shield around the mother vessel. Overheats with too much use.
+  description: A shield emitter reverse-engineered by SHI from ancient blueprints. Outputs a weak but fast-recharging bubble shield around a vessel.
   components:
   - type: ShipShieldEmitter
+    damageLimit: 7500
     healPerSecond: 50
-    damageExp: 1.4
-    baseDraw: 20000
-    maxDraw: 60000
+    damageExp: 1.0
+    powerDraw: 5000
     unpoweredBonus: 2.5
-    damageLimit: 5000
-    damageOverloadTimePunishment: 80
+    damageOverloadTimePunishment: 30 # 50 * 2.5 * 60 = 7500. will be fully healed when its done being punished
   - type: Fixtures
     fixtures:
       fix1:
@@ -173,4 +171,4 @@
           True: { visible: true }
           False: { visible: false }
   - type: ApcPowerReceiver
-    powerLoad: 20000
+    powerLoad: 5000

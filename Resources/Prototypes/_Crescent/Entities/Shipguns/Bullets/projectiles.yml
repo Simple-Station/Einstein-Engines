@@ -253,6 +253,7 @@
     maxIntensity: 1000
     intensitySlope: 400
     totalIntensity: 15000
+  - type: IgnoresHullrotShields
 
 - type: entity
   id: TorpedoBase
@@ -392,6 +393,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:ExplodeBehavior
+  - type: IgnoresHullrotShields
 
 #emp gargoyle projectile
 
@@ -468,6 +470,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:ExplodeBehavior
+  - type: IgnoresHullrotShields
 
 #lancer projectile
 
@@ -1257,7 +1260,7 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 800
+        Structural: 400
         Piercing: 100
   - type: TimedDespawn
     lifetime: 20
@@ -1271,7 +1274,7 @@
     maxIntensity: 400
     intensitySlope: 350
     totalIntensity: 1000
-    maxTileBreak: 4
+    maxTileBreak: 1
   - type: PointLight
     radius: 3.5
     color: orange
@@ -1646,6 +1649,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:ExplodeBehavior
+  - type: IgnoresHullrotShields #48mm ignores shields
 
 - type: entity
   id: BulletRocketHighYield
@@ -1692,6 +1696,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:ExplodeBehavior
+  - type: IgnoresHullrotShields
 
 - type: entity
   id: BulletRocketEMP
@@ -1714,3 +1719,4 @@
     color: blue
     energy: 0.5
   - type: ProjectileIFF
+  - type: IgnoresHullrotShields
