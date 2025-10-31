@@ -9,6 +9,7 @@ using Content.Client.Weapons.Ranged.Components;
 using Content.Shared._RMC14.Weapons.Ranged;
 using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 using Content.Shared.CombatMode;
+using Content.Shared.Mech.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Client.Animations;
@@ -45,6 +46,9 @@ public sealed partial class GunSystem : SharedGunSystem
     [Dependency] private readonly RMCLagCompensationSystem _rmcLagCompensation = default!;
 
     public static readonly EntProtoId HitscanProto = "HitscanEffect";
+
+    //logging - debug
+    private ISawmill _sawmill = default!;
 
     public bool SpreadOverlay
     {
@@ -90,6 +94,7 @@ public sealed partial class GunSystem : SharedGunSystem
 
         InitializeMagazineVisuals();
         InitializeSpentAmmo();
+        _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("gunsystem.client");
     }
 
     private void OnUpdateClientAmmo(EntityUid uid, AmmoCounterComponent ammoComp, ref UpdateClientAmmoEvent args)
@@ -106,6 +111,7 @@ public sealed partial class GunSystem : SharedGunSystem
 
     private void OnHitscan(HitscanEvent ev)
     {
+        _sawmill.Debug("-@- ONHITSCAN RAN");
         // ALL I WANT IS AN ANIMATED EFFECT
 
         // TODO EFFECTS
@@ -172,10 +178,18 @@ public sealed partial class GunSystem : SharedGunSystem
 
         var entity = entityNull.Value;
 
+        if (TryComp<MechPilotComponent>(entity, out var mechPilot)) // hullrot fix for mechs
+        {
+            entity = mechPilot.Mech;
+            _sawmill.Debug("--@ UPDATE - USER IS IN A MECH");
+        }
+
         if (!TryGetGun(entity, out var gunUid, out var gun))
         {
+            _sawmill.Debug("@-- FAILED TO GET GUN");
             return;
         }
+        _sawmill.Debug("--- SUCCESSFULLY GOT GUN");
 
         var useKey = gun.UseKey ? EngineKeyFunctions.Use : EngineKeyFunctions.UseSecondary;
 

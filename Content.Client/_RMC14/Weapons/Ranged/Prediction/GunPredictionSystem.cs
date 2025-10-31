@@ -1,5 +1,6 @@
 ﻿﻿using System.Linq;
 using Content.Client.Projectiles;
+using Content.Shared._Crescent.ShipShields;
 using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 using Content.Shared.Projectiles;
 using Content.Shared.Weapons.Ranged.Events;
@@ -93,6 +94,12 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
         }
 
         var netEnt = GetNetEntity(args.OtherEntity);
+
+        // //hullrot edit: critical bug that makes the projectiles delete themselves if ship shield is active on ur grid
+        // if (TryComp<ShipShieldComponent>(args.OtherEntity, out var shield))
+        // {
+        //     return;
+        // }
         var pos = _transform.GetMapCoordinates(args.OtherEntity);
         var hit = new HashSet<(NetEntity, MapCoordinates)> { (netEnt, pos) };
         var ev = new PredictedProjectileHitEvent(ent.Owner.Id, hit);

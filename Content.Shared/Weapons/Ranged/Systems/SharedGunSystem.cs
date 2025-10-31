@@ -19,7 +19,9 @@ using Content.Shared.Effects;
 using Content.Shared.Examine;
 using Content.Shared.Gravity;
 using Content.Shared.Hands;
+using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Mech.Components;
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
 using Content.Shared.Stunnable;
@@ -101,6 +103,9 @@ public abstract partial class SharedGunSystem : EntitySystem
     private const float DamagePitchVariation = 0.05f;
     public bool GunPrediction { get; private set; }
 
+    //logging - debug
+    private ISawmill _sawmill = default!;
+
     public override void Initialize()
     {
         SubscribeAllEvent<RequestStopShootEvent>(OnStopShootRequest);
@@ -126,6 +131,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         SubscribeLocalEvent<GunComponent, MapInitEvent>(OnMapInit);
 
         Subs.CVar(_config, RMCCVars.RMCGunPrediction, v => GunPrediction = v, true);
+        _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("sharedgunsystem.shared");
     }
 
     private void OnMapInit(Entity<GunComponent> gun, ref MapInitEvent args)
@@ -179,15 +185,24 @@ public abstract partial class SharedGunSystem : EntitySystem
 
     public bool TryGetGun(EntityUid entity, out EntityUid gunEntity, [NotNullWhen(true)] out GunComponent? gunComp)
     {
-        // if(_attachableHolder.TryGetInhandSupercedingGun(entity, out gunEntity, out gunComp))
-        //     return true;
-
         gunEntity = default;
         gunComp = null;
 
-        if (_hands.GetActiveItem(entity) is { } held &&
+        if (TryComp<MechComponent>(entity, out var mech) &&
+            mech.CurrentSelectedEquipment.HasValue &&
+            TryComp<GunComponent>(mech.CurrentSelectedEquipment.Value, out var mechGun))
+        {
+            _sawmill.Debug("----- got gun - user's in a mech");
+            gunEntity = mech.CurrentSelectedEquipment.Value;
+            gunComp = mechGun;
+            return true;
+        }
+
+        if (EntityManager.TryGetComponent(entity, out HandsComponent? hands) &&
+            hands.ActiveHandEntity is { } held &&
             TryComp(held, out GunComponent? gun))
         {
+            _sawmill.Debug("----- got gun - user is NOT in a mech");
             gunEntity = held;
             gunComp = gun;
             return true;
@@ -196,6 +211,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         // Last resort is check if the entity itself is a gun.
         if (TryComp(entity, out gun))
         {
+            _sawmill.Debug("----- got gun - user IS a gun");
             gunEntity = entity;
             gunComp = gun;
             return true;
