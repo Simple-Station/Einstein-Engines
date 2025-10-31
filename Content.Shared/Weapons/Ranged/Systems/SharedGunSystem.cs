@@ -192,7 +192,7 @@ public abstract partial class SharedGunSystem : EntitySystem
             mech.CurrentSelectedEquipment.HasValue &&
             TryComp<GunComponent>(mech.CurrentSelectedEquipment.Value, out var mechGun))
         {
-            _sawmill.Debug("----- got gun - user's in a mech");
+            _sawmill.Debug("----- got gun - user's in a mech"); //this never runs
             gunEntity = mech.CurrentSelectedEquipment.Value;
             gunComp = mechGun;
             return true;
