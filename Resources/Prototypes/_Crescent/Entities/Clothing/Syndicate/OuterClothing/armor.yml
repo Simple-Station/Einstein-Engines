@@ -218,7 +218,7 @@
     faction: TFSC
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: ClothingOuterHardsuitSyndicateBG
   id: ClothingOuterHardsuitSyndicateSellsword
   name: SELLSWORD mk.IIB modified hardsuit
   description: A modular Syndicate hardsuit modified for use by the Hedgeknights. Bulky nanokevlar lined with composite gold decor pads the light titanium skeleton, shielding flimsy electronics and the fleshy operator underneath.
@@ -227,33 +227,8 @@
     sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicatesellsword.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicatesellsword.rsi
-  - type: PressureProtection
-    highPressureMultiplier: 0.5
-    lowPressureMultiplier: 1000
-  - type: ExplosionResistance
-    damageCoefficient: 0.9
-  - type: DegradeableArmor
-    armorMaxHealth: 550
-    armorType: Ceramic
-    armorRepair: NTCeramic
-    initialModifiers:
-      flatReductions:
-        Blunt: 25
-        Slash: 15
-        Piercing: 90
-        Heat: 15
-        Caustic: 15
-  - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndicateSellsword
-  - type: StaticPrice
-    price: 1250
-  - type: Contraband
-    value: 15
-  - type: ClothingAddFaction
-    faction: TFSC
 
 #regular shit. if you put hardsuit below here i'm going to explode your cock
 
