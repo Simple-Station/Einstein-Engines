@@ -1,6 +1,5 @@
 using System.Linq;
 using System.Numerics;
-using Content.Client._RMC14.ItemPickup;
 using Content.Client._RMC14.Movement;
 using Content.Client._RMC14.Weapons.Ranged.Prediction;
 using Content.Client.Animations;
@@ -42,7 +41,6 @@ public sealed partial class GunSystem : SharedGunSystem
     [Dependency] private readonly SpriteSystem _sprite = default!;
 
     // RMC14
-    [Dependency] private readonly ItemPickupSystem _itemPickup = default!;
     [Dependency] private readonly GunPredictionSystem _gunPrediction = default!;
     [Dependency] private readonly RMCLagCompensationSystem _rmcLagCompensation = default!;
 
@@ -211,8 +209,8 @@ public sealed partial class GunSystem : SharedGunSystem
         if (_player.LocalSession is not { } session)
             return;
 
-        if (_itemPickup.RecentItemPickUp)
-            return;
+        // if (_itemPickup.RecentItemPickUp)
+        //     return;
 
         Log.Debug($"Sending shoot request tick {Timing.CurTick} / {Timing.CurTime}");
 
