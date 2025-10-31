@@ -174,15 +174,16 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
         }
     }
 
-    public override void FrameUpdate(float frameTime)
-    {
-        base.FrameUpdate(frameTime);
+    //hullrot edit: guns feel way better with this off
+    // public override void FrameUpdate(float frameTime)
+    // {
+    //     base.FrameUpdate(frameTime);
 
-        // TODO bullet prediction remove this when lerping doesnt make the client's entity slightly slower
-        var projectiles = EntityQueryEnumerator<PredictedProjectileClientComponent, TransformComponent>();
-        while (projectiles.MoveNext(out _, out var xform))
-        {
-            xform.ActivelyLerping = false;
-        }
-    }
+    //     // TODO bullet prediction remove this when lerping doesnt make the client's entity slightly slower
+    //     var projectiles = EntityQueryEnumerator<PredictedProjectileClientComponent, TransformComponent>();
+    //     while (projectiles.MoveNext(out _, out var xform))
+    //     {
+    //         xform.ActivelyLerping = false;
+    //     }
+    // }
 }
