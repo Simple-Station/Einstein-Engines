@@ -216,7 +216,6 @@
     radius: 6
     color: "#ffffed"
 
-
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatSyndicateInterdyne
