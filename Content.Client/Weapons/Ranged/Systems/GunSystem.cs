@@ -111,7 +111,7 @@ public sealed partial class GunSystem : SharedGunSystem
 
     private void OnHitscan(HitscanEvent ev)
     {
-        _sawmill.Debug("-@- ONHITSCAN RAN");
+        _sawmill.Debug("-@- ONHITSCAN RAN"); //this actually only runs after the server runs it, and is not predicted. great.
         // ALL I WANT IS AN ANIMATED EFFECT
 
         // TODO EFFECTS
@@ -178,18 +178,16 @@ public sealed partial class GunSystem : SharedGunSystem
 
         var entity = entityNull.Value;
 
-        if (TryComp<MechPilotComponent>(entity, out var mechPilot)) // hullrot fix for mechs
-        {
-            entity = mechPilot.Mech;
-            _sawmill.Debug("--@ UPDATE - USER IS IN A MECH");
-        }
-
         if (!TryGetGun(entity, out var gunUid, out var gun))
         {
-            _sawmill.Debug("@-- FAILED TO GET GUN");
             return;
         }
-        _sawmill.Debug("--- SUCCESSFULLY GOT GUN");
+
+        // if (TryComp<MechPilotComponent>(entity, out var mechPilot)) // hullrot fix for mechs shooting themselves
+        // {
+        //     entity = mechPilot.Mech;
+        //     _sawmill.Debug("--@ UPDATE - USER IS IN A MECH");
+        // }
 
         var useKey = gun.UseKey ? EngineKeyFunctions.Use : EngineKeyFunctions.UseSecondary;
 

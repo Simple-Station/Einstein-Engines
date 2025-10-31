@@ -188,6 +188,12 @@ public abstract partial class SharedGunSystem : EntitySystem
         gunEntity = default;
         gunComp = null;
 
+        if (TryComp<MechPilotComponent>(entity, out var mechPilot)) // hullrot fix for mechs
+        {
+            entity = mechPilot.Mech;
+            _sawmill.Debug("@@@@@ - USER IS IN A MECH");
+        }
+
         if (TryComp<MechComponent>(entity, out var mech) &&
             mech.CurrentSelectedEquipment.HasValue &&
             TryComp<GunComponent>(mech.CurrentSelectedEquipment.Value, out var mechGun))
@@ -814,6 +820,11 @@ public abstract partial class SharedGunSystem : EntitySystem
             // TODO: Someone can probably yeet this a billion miles so need to pre-validate input somewhere up the call stack.
             ThrowingSystem.TryThrow(uid, mapDirection, gun.ProjectileSpeedModified, user, recoil: false);
             return;
+        }
+        if (TryComp<MechPilotComponent>(user, out var mechPilot)) // hullrot fix for mechs
+        {
+            user = mechPilot.Mech;
+            _sawmill.Debug("--@ UPDATE - USER IS IN A MECH");
         }
         ShootProjectile(uid, mapDirection, gunVelocity, gunUid, user, gun.ProjectileSpeedModified);
     }
