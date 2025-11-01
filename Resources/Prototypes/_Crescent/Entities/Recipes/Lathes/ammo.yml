@@ -63,6 +63,13 @@
     Steel: 800
 
 - type: latheRecipe
+  id: MagazineLightRifleBox
+  result: MagazineLightRifleBox
+  completetime: 1
+  materials:
+    Steel: 800
+
+- type: latheRecipe
   id: MagazineAntiMateriel
   result: MagazineAntiMateriel
   completetime: 1
