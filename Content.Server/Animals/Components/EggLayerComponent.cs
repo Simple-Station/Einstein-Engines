@@ -19,19 +19,19 @@ public sealed partial class EggLayerComponent : Component
     ///     The amount of nutrient consumed on update.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float HungerUsage = 60f;
+    public float HungerUsage = 30f;
 
     /// <summary>
     ///     Minimum cooldown used for the automatic egg laying.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float EggLayCooldownMin = 60f;
+    public float EggLayCooldownMin = 15f;
 
     /// <summary>
     ///     Maximum cooldown used for the automatic egg laying.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float EggLayCooldownMax = 120f;
+    public float EggLayCooldownMax = 43f;
 
     /// <summary>
     ///     Set during component init.
