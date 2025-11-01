@@ -263,7 +263,7 @@
       - MagazineBoxAntiMateriel
       - MagazineBoxHeavyRifle
       - MagazineBoxRifle
-      - MagazineBoxLightRifle
+      - MagazineLightRifleBox
       - MagazineBoxCaselessRifle
       - MagazineBoxCaselessRifleBig
       - BoxShotgunFlash4g
@@ -924,3 +924,4 @@
   - type: Anchorable
     flags:
     - Anchorable
+

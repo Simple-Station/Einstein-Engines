@@ -1,0 +1,65 @@
+- type: loadout
+  id: LoadoutUniformNCWLTelnikSleeved
+  category: Uniform
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  items:
+  - ClothingUniformJumpsuitNCWLTelnikSleeved
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutUniformsCivilian
+  - !type:CharacterJobRequirement
+    jobs:
+    - CommandantNCWL
+    - KommissarNCWL
+    - FleetkapitanNCWL
+    - PartisanNCWL
+    - DoctorNCWL
+    - CoordinatorNCWL
+    - ArtificerNCWL
+    - WorkerNCWL
+
+- type: loadout
+  id: LoadoutUniformNCWLTelnikSleeveless
+  category: Uniform
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  items:
+  - ClothingUniformJumpsuitNCWLTelnikSleeveless
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutUniformsCivilian
+  - !type:CharacterJobRequirement
+    jobs:
+    - CommandantNCWL
+    - KommissarNCWL
+    - FleetkapitanNCWL
+    - PartisanNCWL
+    - DoctorNCWL
+    - CoordinatorNCWL
+    - ArtificerNCWL
+    - WorkerNCWL
+
+- type: loadout
+  id: LoadoutUniformJumpsuitNCWLSkirt
+  category: Uniform
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  items:
+  - ClothingUniformJumpsuitNCWLSkirt
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutUniformsCivilian
+  - !type:CharacterJobRequirement
+    jobs:
+    - CommandantNCWL
+    - KommissarNCWL
+    - FleetkapitanNCWL
+    - PartisanNCWL
+    - DoctorNCWL
+    - CoordinatorNCWL
+    - ArtificerNCWL
+    - WorkerNCWL
