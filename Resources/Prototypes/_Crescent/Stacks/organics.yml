@@ -1,0 +1,15 @@
+#industry refactor, organic materials
+
+- type: stack
+  id: SilkFilament
+  name: Mothroach Silk Filament
+  icon: { sprite: /Textures/_Crescent/Objects/Materials/materials.rsi, state: silkthread }
+  spawn: SilkFilament1
+  maxCount: 15
+
+- type: stack
+  id: HideMothroach
+  name: Mothroach Pelt
+  icon: { sprite: Nyanotrasen/Objects/Materials/mothroach.rsi, state: mothroachhide }
+  spawn: HideMothroach1
+  maxCount: 5

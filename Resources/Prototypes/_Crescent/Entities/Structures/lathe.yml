@@ -263,7 +263,7 @@
       - MagazineBoxAntiMateriel
       - MagazineBoxHeavyRifle
       - MagazineBoxRifle
-      - MagazineBoxLightRifle
+      - MagazineLightRifleBox
       - MagazineBoxCaselessRifle
       - MagazineBoxCaselessRifleBig
       - BoxShotgunFlash4g
@@ -339,6 +339,7 @@
       - ClothingOuterSuitEmergency
       - ClothingHeadHelmetEVALarge # Frontier
       - TradebandTranslator
+      -  SilkCrate
     dynamicRecipes:
       - CreoleTranslator
       - LowImperialTranslator
@@ -546,6 +547,7 @@
       - ClothingMaskImperialGovernorMask
       - ClothingOuterCoatImperialGovernor
       - ClothingNeckCloakImperialGovernor
+      - ClothingNeckImperialGreatcoat
       - ClothingOuterHardsuitImperialWorker
       - ClothingHeadHelmetImperialTrooperHelmet
       - ClothingOuterArmorImperialTrooperArmor
@@ -578,6 +580,8 @@
       - WeaponMechCombatImperialAutolaser
       - WeaponMechCombatPlasmaRifle
       - WeaponMechCombatPlasmaCannon
+      - WeaponLightMachineGunDSMDominion
+      - WeaponShotgunReno
       - WeaponRifleDSMLegionnaire
       - WeaponSubMachineGunC20rImperial
       - WeaponPistolNeoVolker
@@ -623,6 +627,8 @@
       - SunderLPC
       - WeaponSubMachineGunBloodhound
       - WeaponRifleNCWLBatanya
+      - WeaponShotgunToz123
+      - WeaponShotgunProletar
       - WeaponPistolT91
       - WeaponRevolverPython
       - ClothingOuterHardsuitNCWLPetya
@@ -663,6 +669,11 @@
       - WeaponShotgunSHIDoubleBarreled4g
       - WeaponPistolMk58SHI
       - WeaponSubMachineGunMP49
+      - WeaponSubMachineGunWt550
+      - WeaponRifleM90GrenadeLauncher
+      - WeaponShotgunSpas
+      - WeaponRifleBarghest
+      - WeaponSniperHristov
       - VariableCommodityFabricatorFlatpack
       - AutoloomFablatheFlatpack
       - FixedHardpointFlatpack
@@ -913,3 +924,4 @@
   - type: Anchorable
     flags:
     - Anchorable
+

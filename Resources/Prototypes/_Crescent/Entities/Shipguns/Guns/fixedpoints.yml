@@ -670,7 +670,7 @@
     soundInsert:
       path: /Audio/Weapons/Guns/UnionfallWeapons/amr_close_1.ogg
     fillWithDoAfter: true
-    fillDelay: 1
+    fillDelay: 0.2
     cycleable: true
     capacity: 2
     #proto: CartridgeShellArmorPiercing - on being rebuilt from destruction this gives it free ammo
@@ -679,7 +679,7 @@
       - CartridgeShell
   - type: Gun
     fireOnDropChance: 0
-    fireRate: 0.5
+    fireRate: 4
     projectileSpeed: 95
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ship_duster.ogg
@@ -745,8 +745,8 @@
         ents: []
       SpaceArtillery-CoolantSlot: !type:ContainerSlot {}
   - type: Battery
-    maxCharge: 1000000
-    startingCharge: 1000000
+    maxCharge: 100000
+    startingCharge: 100000
   - type: BallisticAmmoProvider
     cycleable: false
     capacity: 5
@@ -766,8 +766,8 @@
     class: Ballistic
     size: Large
   - type: SpaceArtillery
-    powerChargeRate: 50000
-    powerUseActive: 500000
+    powerChargeRate: 25000
+    powerUseActive: 50000
     isCoolantRequiredToFire: true
     coolantConsumed: 30
     maxCoolantStored: 120

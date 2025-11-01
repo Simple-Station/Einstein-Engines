@@ -1,3 +1,17 @@
+# GUIDE:
+# T1 - 7500 HP - 30 SEC COOLDOWN 
+# T2 - 15000 HP - 60 SEC COOLDOWN
+# T3 - 30000 HP - 120 SEC COOLDOWN
+# TODO: DSM-SPECIFIC T0 SHIELD WITH 3500 HP AND 20 SECOND COOLDOWN
+# TODO: SIDEGRADE T1 / T2 SHIELDS WITH LOWER HP BUT 10 SECOND COOLDOWN
+# VULCAN - WEAKNESS, 150 DMG / PROJECTILE, 12 PROJECTILES / SECOND, 1800 DPS - TAKES 10, 20, 40 SECONDS TO DOWN A SHIELD
+# SLUGTHROWER - DU PIERCES SHIELD, HE DEALS 150DMG / HIT
+# SWARMER/LANCER - 1000 DAMAGE / MISSILE
+# 48MM - IGNORES SHIELD
+# 120MM - DU DEALS 1000 DMG / HIT, HE DEALS 150 DAMAGE / HIT
+# 320MM - DEALS 5000 TO SHIELD
+
+
 - type: entity
   id: ShieldEmitter
   parent: BaseMachinePowered
@@ -80,7 +94,7 @@
     powerLoad: 60000
   - type: Appearance
   - type: ShipShieldEmitter
-    damageLimit: 25000
+    damageLimit: 30000
     damageOverloadTimePunishment: 120
     powerUpSound: !type:SoundPathSpecifier
         path: "/Audio/Effects/teleport_arrival.ogg"
@@ -97,14 +111,13 @@
   name: NT-630 'Bulwark' deflector emitter
   description: A complicated array of machinery - guzzles power and maintains a bubble deflector shield around the mother vessel. Overheats with too much use.
   components:
-  - type: ShipShieldEmitter # can stop a decent amount of damage, weaker than the Goliath
-    healPerSecond: 200 # base is 250
-    damageExp: 1.15 # base is 1.1
-    baseDraw: 40000 # base is 50000
-    maxDraw: 80000 # base is 150000
-    unpoweredBonus: 3 # base is 6
-    damageLimit: 10000
-    damageOverloadTimePunishment: 100
+  - type: ShipShieldEmitter 
+    damageLimit: 15000
+    healPerSecond: 100
+    damageExp: 1.0
+    powerDraw: 5000
+    unpoweredBonus: 2.5
+    damageOverloadTimePunishment: 60 # 60 * 2.5 * 100 = 15000. shield will be fully healed when it's done being punished
   - type: Fixtures
     fixtures:
       fix1:
@@ -131,22 +144,21 @@
           True: { visible: true }
           False: { visible: false }
   - type: ApcPowerReceiver
-    powerLoad: 40000
+    powerLoad: 20000
 
 - type: entity
   id: ShieldEmitterSmall
   parent: ShieldEmitter
   name: NT-280 'Errant' deflector emitter
-  description: A complicated array of machinery - guzzles power and maintains a bubble deflector shield around the mother vessel. Overheats with too much use.
+  description: A shield emitter reverse-engineered by SHI from ancient blueprints. Outputs a weak but fast-recharging bubble shield around a vessel.
   components:
   - type: ShipShieldEmitter
+    damageLimit: 7500
     healPerSecond: 50
-    damageExp: 1.4
-    baseDraw: 20000
-    maxDraw: 60000
+    damageExp: 1.0
+    powerDraw: 5000
     unpoweredBonus: 2.5
-    damageLimit: 5000
-    damageOverloadTimePunishment: 80
+    damageOverloadTimePunishment: 30 # 50 * 2.5 * 60 = 7500. will be fully healed when its done being punished
   - type: Fixtures
     fixtures:
       fix1:
@@ -173,4 +185,4 @@
           True: { visible: true }
           False: { visible: false }
   - type: ApcPowerReceiver
-    powerLoad: 20000
+    powerLoad: 5000
