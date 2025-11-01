@@ -24,14 +24,17 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
+      - type: NukeOperative
         rank: crescent-rank-doc
       - type: HullrotFaction
         faction: CD
       - type: LanguageAdder
         addSpoken:
           - Freespeak
+          - RobotTalk # one of the main facets of cybersun was AI so they probably understand it
         addUnderstood:
           - Freespeak
+          - RobotTalk
   access:
   - Command
   - Maintenance

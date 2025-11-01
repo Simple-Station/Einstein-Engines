@@ -24,6 +24,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
+      - type: NukeOperative
         rank: crescent-rank-operative
       - type: HullrotFaction
         faction: CD

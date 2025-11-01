@@ -27,6 +27,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
+      - type: NukeOperative
         rank: crescent-rank-patriarch
       - type: HullrotFaction
         faction: CD
@@ -34,16 +35,17 @@
         addSpoken:
           - Freespeak
           - Tradeband
+          - RobotTalk # one of the main facets of  cybersun was AI so they probably understand it
         addUnderstood:
           - Freespeak
           - Tradeband
+          - RobotTalk
   access:
   - Command
   - Maintenance
   - SyndicateBasic
   - SyndicateRamzi
   - SyndicateCommand
-  - Engineering
   - Service
   - External
   - Mercenary # Frontier

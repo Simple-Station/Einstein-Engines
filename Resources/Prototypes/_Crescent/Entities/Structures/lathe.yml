@@ -263,7 +263,7 @@
       - MagazineBoxAntiMateriel
       - MagazineBoxHeavyRifle
       - MagazineBoxRifle
-      - MagazineLightRifleBox
+      - MagazineBoxLightRifle
       - MagazineBoxCaselessRifle
       - MagazineBoxCaselessRifleBig
       - BoxShotgunFlash4g
@@ -490,7 +490,7 @@
       - RPED
       - WeaponParticleDecelerator
       - HoloprojectorField
-      - ClothingUniformJumpsuitSyndicateSuitCyberdawn
+      - ClothingUniformJumpsuitSyndicateSuitCyberdawn #CDT
       - ClothingUniformJumpsuitSyndicateLabCyberdawn
       - ClothingUniformJumpsuitSyndicateSoldierCyberdawn
       - ClothingOuterArmorCyberdawnPatriarch
@@ -505,6 +505,14 @@
       - MufflerFlatpack
       - RadioJammerCyberdawn
       - EmagCyberdawn
+      - C4Cyberdawn
+      - AgentIDCardCyberdawn
+      - ChameleonProjectorCyberdawn
+      - ClothingBackpackChameleonFillCyberdawn
+      - ClothingMaskGasVoiceChameleonCyberdawn
+      - SyndicateJawsOfLifeCyberdawn
+      - SyndicateBombCyberdawn
+      - StealthBoxCyberdawn
       - WeaponLightMachineGunNCSPRPD
       - WeaponRifleMayflower
       - WeaponRifleSVDMarksmanNCSP
@@ -513,6 +521,12 @@
       - WeaponLCartridgeRPGSmall
       - DnaScramblerImplanter
       - EmpImplanter
+      - FreedomImplanter
+      - DeathacidifierImplanter
+      - StorageImplanter
+      - MicroBombImplanter
+      - MacroBombImplanter
+      - ScramImplanter
       - EnergyDagger
       - EnergySword
       - EnergySwordDouble
@@ -524,10 +538,19 @@
       - AdvancedMechatronics1Craft
       - AdvancedElectronics1Craft
       - ClothingOuterHardsuitSyndieMedicCyberdawn
-      - ClothingOuterHardsuitCybersunStealthCyberdawn
+      - ClothingOuterHardsuitSyndieCyberdawn
+      - ClothingOuterHardsuitSyndieUnpaintedCyberdawn
+      - ClothingOuterHardsuitSyndieEliteCyberdawn
+      - ClothingOuterHardsuitSyndieEliteUnpaintedCyberdawn
+      - ClothingOuterHardsuitSyndieJuggernautCyberdawn
+      - ClothingOuterHardsuitSyndieCommanderCyberdawn
+      - CSADermalstealthimplant
       - MagazinePistolSpecialMindbreakerCyberdawn
       - WeaponPistolPsiBreakerCyberdawn
       - ClothingEyesThermalVisionGogglesCyberdawn
+      - ReinforcementFlatpackSyndicateCyborgMedical
+      - ReinforcementFlatpackSyndicateCyborgSaboteur
+      - ReinforcementFlatpackSyndicateCyborgAssault
       - ClothingMaskImperialCombatGasmask
       - ClothingOuterCoatImperialParade
       - ClothingUniformJumpsuitImperialDoctor
@@ -572,7 +595,6 @@
       - DSMRapier
       - DSMSabre
       - DSMDuelingKhopesh
-      - DSMBaton
       - LaelapsLPC
       - PaladinFlatpack
       - WandererFlatpack
@@ -593,8 +615,6 @@
       - WeaponLauncherM320
       - TriumphantLPC
       - SuzerainLPC
-      - NemesisLPC
-      - JanissaryLPC
       - ClothingHeadHelmetNCWLEVA
       - ClothingOuterNCWLEVA
       - ClothingHeadHatNCWLCapsoft
@@ -926,4 +946,3 @@
   - type: Anchorable
     flags:
     - Anchorable
-

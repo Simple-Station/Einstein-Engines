@@ -55,6 +55,48 @@
         requireDetailRange: false
 
 - type: entity
+  name: C 54 ROW
+  id: WeaponLightMachineGunC54ROW
+  parent: BaseItem
+  description: A C 54 SAW for use by cyborgs. Creates 5.56 rifle ammo on the fly from an internal ammo fabricator, which slowly self-charges.
+  components:
+  - type: Gun
+    minAngle: 5
+    maxAngle: 25
+    angleIncrease: 4
+    angleDecay: 16
+    fireRate: 8
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/conscript/gunshot.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/compakt.rsi
+    layers:
+    - state: base
+      map: [ "enum.GunVisualLayers.Base" ]
+    - state: mag-2
+      map: [ "enum.GunVisualLayers.Mag" ]
+  - type: Item
+    size: Huge
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: ProjectileBatteryAmmoProvider
+    proto: CartridgeLightRifle
+    fireCost: 100
+  - type: Battery
+    maxCharge: 10000
+    startingCharge: 10000
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 100
+  - type: AmmoCounter
+
+- type: entity
   name: NCWL MK-13 Conscript 12.7x99mm
   id: WeaponLightMachineGunConscript
   parent: [BaseItem, StreeCredRedeemable]

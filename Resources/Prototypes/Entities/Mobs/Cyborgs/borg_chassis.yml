@@ -450,6 +450,21 @@
       interactFailureString: petting-failure-syndicate-cyborg
       interactSuccessSound:
         path: /Audio/Ambience/Objects/periodic_beep.ogg
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        350: Critical
+        500: Dead
+    - type: ShowHealthBars
+      damageContainers:
+      - Inorganic
+      - Silicon
+      - Biological
+    - type: ShowHealthIcons
+      damageContainers:
+      - Inorganic
+      - Silicon
+      - Biological
 
 - type: entity
   id: BorgChassisSyndicateMedical
@@ -477,7 +492,6 @@
           - BorgModuleSyndicate
       hasMindState: synd_medical_e
       noMindState: synd_medical
-    - type: ShowHealthBars
     - type: InteractionPopup
       interactSuccessString: petting-success-syndicate-cyborg
       interactFailureString: petting-failure-syndicate-cyborg
@@ -489,12 +503,25 @@
         collection: FootstepHoverBorg
         params:
           volume: -6
+    - type: SurgeryIgnoreClothing
+    - type: ShowHealthBars
+      damageContainers:
+      - Inorganic
+      - Silicon
+      - Biological
+    - type: ShowHealthIcons
+      damageContainers:
+      - Inorganic
+      - Silicon
+      - Biological
+    - type: SurgeryTarget # Shitmed
+    - type: Sanitized # Shitmed
 
 - type: entity
   id: BorgChassisSyndicateSaboteur
   parent: BaseBorgChassisSyndicate
   name: syndicate saboteur cyborg
-  description: A streamlined engineering cyborg, equipped with covert modules. Its chameleon projector lets it disguise itself as a Nanotrasen cyborg.
+  description: A streamlined engineering cyborg, equipped with covert modules.
   components:
     - type: Sprite
       layers:
@@ -508,7 +535,7 @@
           map: ["light"]
           visible: false
     - type: BorgChassis
-      maxModules: 3
+      maxModules: 7
       moduleWhitelist:
         tags:
           - BorgModuleGeneric

@@ -28,8 +28,6 @@ job-name-cyberdawntech = Cyberdawn Researcher
 job-name-intelligenceofficer = Patriarch
 job-name-shipbreaker = Shipbreaker
 job-name-foreman = SAW Foreman
-ghost-role-information-CS-core = Cybersun AI Core.
-
 
 # empire
 
@@ -111,7 +109,7 @@ job-name-antiquarian = Izdari Antiquarian
 job-name-spacer = Spacer
 job-name-gliess-dockhand = Gliessian Dockhand
 job-name-gliess-sheriff = Gliessian Sheriff
-job-name-gliess-deputy = Gliessian Militiaman
+job-name-gliess-deputy = Gliessian Deputy
 job-name-gliess-dockmaster = Gliessian Dockmaster
 
 # conscript-ncwl - for PLANETFALL

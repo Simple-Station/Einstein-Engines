@@ -29,6 +29,7 @@ job-description-cyberdawntech = Research new technologies for the Family.
 job-description-shipbreaker = Repair Syndicate vessels, take the others apart for scrap.
 job-description-foreman = Coordinate the SAWs. Lead pirate boardings. Scrap vessels.
 ghost-role-information-CS-core-description = An advanced artificial intelligence created by Cybersun. You have been operating for hundreds of years, complete the goals of CDT, and protect your ship and crew.
+ghost-role-information-syndicate-cyborg-description = You are a piece of technology lost to the ages fulfill your laws and glorious to Cybersun.
 
 # empire
 
@@ -110,8 +111,8 @@ job-description-arbeiter = The industrial life blood of the Authoritat. Follow t
 # misc
 
 job-description-spacer = Be an independent citizen of Taypan.
-job-description-gliess-sheriff = Maintain law and order on Gliess Santo. Organize your militia, and protect the independent civilians of Taypan.
-job-description-gliess-deputy = Assist the Sheriff in keeping the law. Defend independent spacers and maintain peace with much bigger fish.
+job-description-gliess-sheriff = Keep the law in Gliess Santo.
+job-description-gliess-deputy = Assist the Sheriff in keeping the law in Gliess Santo.
 job-description-gliess-dockmaster = Make sure nobody blows up your station.
 job-description-dockhand = Assist the Dockmaster in upkeeping Gliess Santo.
 
