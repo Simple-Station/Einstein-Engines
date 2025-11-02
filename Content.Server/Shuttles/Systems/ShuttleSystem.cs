@@ -1,9 +1,12 @@
+using System.Linq;
+using Content.Server._Crescent.SelfDeleteTimer;
 using Content.Server.Administration.Logs;
 using Content.Server.Body.Systems;
 using Content.Server.Buckle.Systems;
 using Content.Server.Doors.Systems;
 using Content.Server.Parallax;
 using Content.Server.Shuttles.Components;
+using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Server.Stunnable;
 using Content.Shared.Buckle.Components;
@@ -67,6 +70,7 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly IAdminLogManager _logger = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
 
     private EntityQuery<BuckleComponent> _buckleQuery;
     private EntityQuery<MapGridComponent> _gridQuery;
@@ -154,6 +158,14 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
             return;
 
         _sawmill.Debug("GRID INITIALIZED! GRID ID:" + ev.EntityUid.ToString());
+
+        if (!(TryComp<BecomesStationComponent>(ev.EntityUid, out var _) || TryComp<IFFComponent>(ev.EntityUid, out var _)))
+        {
+            _sawmill.Debug("NEW DEBRIS GRID MADE!");
+            var selfdeletecomp = EnsureComp<SelfDeleteGridComponent>(ev.EntityUid); //default value will be 20 minutes
+            _sawmill.Debug("GRID ID " + ev.EntityUid.ToString() + " WILL DELETE ITSELF IN: " + selfdeletecomp.TimeToDelete.ToString());
+
+        }
 
         EntityManager.EnsureComponent<ShuttleComponent>(ev.EntityUid);
     }
