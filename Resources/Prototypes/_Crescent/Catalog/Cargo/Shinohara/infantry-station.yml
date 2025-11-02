@@ -44,7 +44,7 @@
     sprite: _Crescent/Clothing/SHI/OuterClothing/corpsec_ua.rsi
     state: icon
   product: CrateShinoharaHardsuit
-  cost: 12500
+  cost: 10000
   category: cargoproduct-category-name-military
   group: shinoharastation
 
@@ -55,5 +55,25 @@
     state: icon
   product: CrateShinoharaC4
   cost: 15000
+  category: cargoproduct-category-name-military
+  group: shinoharastation
+
+- type: cargoProduct
+  id: VitalsTrackingShinoharaStationSuppliesShi
+  icon:
+    sprite: Objects/Specific/Medical/implanter.rsi
+    state: implanter0
+  product: CrateVitalsTrackingShinohara
+  cost: 500
+  category: cargoproduct-category-name-medical
+  group: shinoharastation
+
+- type: cargoProduct
+  id: ShinoharaLivestockSecDog
+  icon:
+    sprite: DeltaV/Mobs/Pets/secdog.rsi
+    state: secdog
+  product: CrateNPCSecDog
+  cost: 3500
   category: cargoproduct-category-name-military
   group: shinoharastation

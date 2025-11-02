@@ -4,7 +4,10 @@
 - type: vessel
   id: Tick
   name: GSC Tick
-  description: An ultralight Syndicate fighter.
+  description: |
+    An ultralight Syndicate fighter, armed with two dual torpedo pods. Capable of dealing devastating damage for its small size.
+    LOADOUT: 2x SHI 180mm "Idna" Small Torpedo Pod
+    CREW: 1x Pilot
   price: 12500 #12000 appraisegrid
   category: Small
   group: None
@@ -29,3 +32,6 @@
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
+          designation: vessel-designation-fighter
+        - type: VesselDescription
+          description: A speedy, potent bomber for you to rip into unsuspecting victims.

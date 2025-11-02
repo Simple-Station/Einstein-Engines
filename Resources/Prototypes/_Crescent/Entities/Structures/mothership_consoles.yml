@@ -85,6 +85,7 @@
     - Scabrak
     - Geode
     - Thanapod
+    - Mercurymk2
 
 - type: entity
   id: TatsumotoMothershipComputer
@@ -113,6 +114,7 @@
     - Taipan
     - Wreck
     - Spriggan
+    - Lungspot
 
 - type: entity
   id: ZhipovMothershipComputer
@@ -148,7 +150,7 @@
 - type: entity
   id: CMMMothershipComputer
   parent: BaseMothershipComputer
-  name: TSP internal shipyard
+  name: Gliessian internal shipyard
   components:
   - type: ShipyardListing
     shuttles:
@@ -156,7 +158,6 @@
     - Adjudicator
     - Warden
     - Jury
-    - Executioner
 
 - type: entity
   id: RefugeMothershipComputer
@@ -225,6 +226,8 @@
     shuttles:
     - Tick
     - Gnat
+    - Piranha
+    - Scuttlefish
 
 - type: entity
   id: NAPMothershipComputer

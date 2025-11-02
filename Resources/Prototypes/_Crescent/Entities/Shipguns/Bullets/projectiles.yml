@@ -1,11 +1,58 @@
-#vulcan projectile
+# #vulcan projectile
 
+# - type: entity
+  # id: BulletMachineGunVulcan
+  # name: 20mm vulcan bullet
+  # parent: BaseBulletTrigger
+  # categories: [ HideSpawnMenu ]
+  # components:
+  # - type: ProjectileIFF
+    # visualType: Circle
+    # color: White
+  # - type: Projectile
+    # ignoreWeaponGrid: true
+    # damage:
+      # types:
+        # Structural: 65
+        # Piercing: 90
+  # - type: PointLight
+    # radius: 3.5
+    # color: orange
+    # energy: 0.5
+  # - type: TimedDespawn
+    # lifetime: 4
+  # - type: Fixtures
+    # fixtures:
+      # projectile:
+        # shape:
+          # !type:PhysShapeAabb
+          # bounds: "-0.15,-0.45,0.15,0.15"
+        # hard: false
+      # fly-by: &flybyfixture
+        # shape: !type:PhysShapeCircle
+          # radius: 1.5
+        # layer:
+        # - Impassable
+        # - MidImpassable
+        # - HighImpassable
+        # - LowImpassable
+        # hard: False
+  # - type: Sprite
+    # sprite: _NF/Objects/SpaceArtillery/pdtcasing.rsi
+    # layers:
+      # - state: base-projectile
+  # - type: ShipWeaponProjectile
+    # mask:
+    # - BulletImpassable
+    # - Impassable
+    
 - type: entity
   id: BulletMachineGunVulcan
   name: 20mm vulcan bullet
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
+  - type: ShipWeaponProjectile
   - type: ProjectileIFF
     visualType: Circle
     color: White
@@ -15,19 +62,28 @@
       types:
         Structural: 65
         Piercing: 90
+  - type: TimedDespawn
+    lifetime: 4
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/pdtcasing.rsi
+    layers:
+      - state: base-projectile
   - type: PointLight
     radius: 3.5
     color: orange
     energy: 0.5
-  - type: TimedDespawn
-    lifetime: 4
   - type: Fixtures
     fixtures:
       projectile:
         shape:
           !type:PhysShapeAabb
           bounds: "-0.15,-0.45,0.15,0.15"
-        hard: false
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
       fly-by: &flybyfixture
         shape: !type:PhysShapeCircle
           radius: 1.5
@@ -37,15 +93,9 @@
         - HighImpassable
         - LowImpassable
         hard: False
-  - type: Sprite
-    sprite: _NF/Objects/SpaceArtillery/pdtcasing.rsi
-    layers:
-      - state: base-projectile
-  - type: ShipWeaponProjectile
-  - type: ProjectilePhasePrevent #do not remove
-    mask:
-    - BulletImpassable
-    - Impassable
+  
+
+    
 
 #mortar projectile
 
@@ -203,6 +253,7 @@
     maxIntensity: 1000
     intensitySlope: 400
     totalIntensity: 15000
+  - type: IgnoresHullrotShields
 
 - type: entity
   id: TorpedoBase
@@ -342,6 +393,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:ExplodeBehavior
+  - type: IgnoresHullrotShields
 
 #emp gargoyle projectile
 
@@ -418,6 +470,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:ExplodeBehavior
+  - type: IgnoresHullrotShields
 
 #lancer projectile
 
@@ -521,7 +574,7 @@
     explosionType: Default
     totalIntensity: 25000
     intensitySlope: 300
-    maxIntensity: 100
+    maxIntensity: 750
     maxTileBreak: 27
   - type: PointLight
     radius: 3.5
@@ -994,7 +1047,7 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 700
+        Structural: 1000
   - type: TimedDespawn
     lifetime: 20
   - type: Sprite
@@ -1007,9 +1060,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 2000
-    intensitySlope: 200
-    totalIntensity: 250
+    maxIntensity: 250
+    intensitySlope: 250
+    totalIntensity: 1000
     maxTileBreak: 1
   - type: PointLight
     radius: 3.5
@@ -1098,8 +1151,8 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Piercing: 700
-        Structural: 2500
+        Piercing: 500
+        Structural: 500
   - type: TimedDespawn
     lifetime: 20
   - type: Sprite
@@ -1207,7 +1260,7 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 800
+        Structural: 400
         Piercing: 100
   - type: TimedDespawn
     lifetime: 20
@@ -1221,7 +1274,7 @@
     maxIntensity: 400
     intensitySlope: 350
     totalIntensity: 1000
-    maxTileBreak: 4
+    maxTileBreak: 1
   - type: PointLight
     radius: 3.5
     color: orange
@@ -1249,6 +1302,16 @@
     lifetime: 15
   - type: Fixtures
     fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
       fly-by: *flybyfixture
   - type: Sprite
     sprite: _NF/Objects/SpaceArtillery/pdtcasing.rsi
@@ -1287,9 +1350,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 12500
-    intensitySlope: 100
-    totalIntensity: 35000
+    maxIntensity: 1200
+    intensitySlope: 300
+    totalIntensity: 30000
     maxTileBreak: 250
   - type: PointLight
     radius: 3.5
@@ -1344,7 +1407,7 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 50
+        Structural: 150
   - type: TimedDespawn
     lifetime: 10
     #roughly 600m range
@@ -1358,7 +1421,7 @@
     maxIntensity: 150
     intensitySlope: 75
     totalIntensity: 150
-    maxTileBreak: 3
+    maxTileBreak: 1
   - type: PointLight
     radius: 5
     color: orange
@@ -1396,6 +1459,7 @@
   - type: ProjectileIFF
     visualType: Square
     color: White
+  - type: IgnoresHullrotShields
 
 #emp 43mm (slugthrower) projectile
 
@@ -1482,7 +1546,7 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 150
+        Structural: 1000
   - type: TimedDespawn
     lifetime: 240
     #roughly 22800m range
@@ -1493,7 +1557,7 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 3500
+    maxIntensity: 1100
     intensitySlope: 100
     totalIntensity: 3500
     maxTileBreak: 6
@@ -1529,9 +1593,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 900
+    maxIntensity: 1100
     intensitySlope: 750
-    totalIntensity: 900
+    totalIntensity: 2000
     maxTileBreak: 5
   - type: PointLight
     radius: 3.5
@@ -1586,6 +1650,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:ExplodeBehavior
+  - type: IgnoresHullrotShields #48mm ignores shields
 
 - type: entity
   id: BulletRocketHighYield
@@ -1632,6 +1697,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:ExplodeBehavior
+  - type: IgnoresHullrotShields
 
 - type: entity
   id: BulletRocketEMP
@@ -1654,3 +1720,4 @@
     color: blue
     energy: 0.5
   - type: ProjectileIFF
+  - type: IgnoresHullrotShields

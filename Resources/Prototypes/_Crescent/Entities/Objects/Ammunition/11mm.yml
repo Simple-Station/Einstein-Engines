@@ -8,7 +8,7 @@
     whitelist:
       tags:
         - BulletHeavyPistol
-    proto: BulletHeavyPistol
+    proto: CartridgeHeavyPistol
     capacity: 60
   - type: Item
     size: Small

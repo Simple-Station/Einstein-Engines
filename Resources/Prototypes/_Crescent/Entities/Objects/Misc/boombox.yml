@@ -11,12 +11,13 @@
       map: ["enum.JukeboxVisualLayers.Base"]
   - type: Item
     sprite: _Crescent/Objects/Misc/boombox.rsi
-    size: Ginormous
+    size: Large
   - type: Clothing
     sprite: _Crescent/Objects/Misc/boombox.rsi
     quickEquip: false
     slots:
     - Back
+    - SuitStorage
   - type: Jukebox
   - type: Appearance
   - type: ActivatableUI

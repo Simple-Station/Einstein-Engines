@@ -115,6 +115,10 @@
   path: /Fonts/MedievalSharp/MedievalSharp.ttf
 
 - type: font
+  id: IMFellEnglish #hullrot high imp
+  path: /Fonts/IMFellEnglish-Regular.ttf
+
+- type: font
   id: Silkscreen
   path: /Fonts/Silkscreen/Silkscreen.ttf
 

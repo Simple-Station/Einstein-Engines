@@ -144,7 +144,7 @@ namespace Content.Shared.Damage
         ///     null if the user had no applicable components that can take damage.
         /// </returns>
         public DamageSpecifier? TryChangeDamage(EntityUid? uid, DamageSpecifier damage, bool ignoreResistances = false,
-            bool interruptsDoAfters = true, DamageableComponent? damageable = null, EntityUid? origin = null,
+            bool interruptsDoAfters = true, DamageableComponent? damageable = null, EntityUid? origin = null, EntityUid? tool = null,
             // Shitmed Change
             bool? canSever = true, bool? canEvade = false, float? partMultiplier = 1.00f, TargetBodyPart? targetPart = null, bool doPartDamage = true,
             float armorPen = 0, float stopPower = 0)
@@ -196,7 +196,7 @@ namespace Content.Shared.Damage
                         if (_prototypeManager.TryIndex<DamageModifierSetPrototype>(enumerableModifierSet, out var enumerableModifier))
                             damage = DamageSpecifier.ApplyModifierSet(damage, enumerableModifier);
 
-                var ev = new DamageModifyEvent(damage, origin, targetPart)
+                var ev = new DamageModifyEvent(damage, origin, targetPart, tool)
                 {
                     HullrotArmorPen = armorPen,
                     stoppingPower = stopPower,
@@ -423,6 +423,7 @@ namespace Content.Shared.Damage
         public readonly DamageSpecifier OriginalDamage;
         public DamageSpecifier Damage;
         public EntityUid? Origin;
+        public EntityUid? Tool;
         public readonly TargetBodyPart? TargetPart; // Shitmed Change
         // HULLROT CHANGE - SPCR 2025
         public float HullrotArmorPen = 0;
@@ -430,12 +431,13 @@ namespace Content.Shared.Damage
         // hullrot change end
 
 
-        public DamageModifyEvent(DamageSpecifier damage, EntityUid? origin = null, TargetBodyPart? targetPart = null) // Shitmed Change
+        public DamageModifyEvent(DamageSpecifier damage, EntityUid? origin = null, TargetBodyPart? targetPart = null, EntityUid? tool = null) // Shitmed Change
         {
             OriginalDamage = damage;
             Damage = damage;
             Origin = origin;
             TargetPart = targetPart; // Shitmed Change
+            Tool = tool;
         }
     }
 
@@ -479,7 +481,7 @@ namespace Content.Shared.Damage
         /// </summary>
         public readonly bool CanSever;
 
-        public DamageChangedEvent(DamageableComponent damageable, DamageSpecifier? damageDelta, bool interruptsDoAfters, EntityUid? origin, bool canSever = true) // Shitmed Change
+        public DamageChangedEvent(DamageableComponent damageable, DamageSpecifier? damageDelta, bool interruptsDoAfters, EntityUid? origin, bool canSever = true, EntityUid? tool = null) // Shitmed Change
         {
             Damageable = damageable;
             DamageDelta = damageDelta;

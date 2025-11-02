@@ -15,7 +15,7 @@
     - !type:FactionRequirement
       factionID: "DSM"
     - !type:CharacterOverallTimeRequirement
-      min: 2500
+      min: 10800
     - !type:CharacterSpeciesRequirement
       species:
         - Human
@@ -52,4 +52,4 @@
     jumpsuit: ClothingUniformJumpsuitImperialNobleMale
     shoes: ClothingShoesBootsImperialLaceup
     id: CourtierPDA
-    ears: ClothingHeadsetEmpireCiv
+    ears: ClothingHeadsetEmpire

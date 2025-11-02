@@ -107,7 +107,7 @@
     - type: Gun
       fireOnDropChance: 0
       fireRate: 12
-      projectileSpeed: 120
+      projectileSpeed: 60
       selectedMode: FullAuto
       availableModes:
         - FullAuto
@@ -173,7 +173,7 @@
   parent: BaseTurretShipgun
   id: BaseWeaponTurretSwarmer
   suffix: ShipGun
-  name: swarmer missile launcher
+  name: TFSC 'Swarmer' self-replicating missile pod
   components:
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/swarmermissile.rsi
@@ -194,42 +194,34 @@
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          ents: []
+    # - type: ContainerContainer
+    #   containers:
+    #     ballistic-ammo: !type:Container
+    #       ents: []
     - type: Gun
       fireOnDropChance: 0
       projectileSpeed: 75
-      fireRate: 0.5
+      fireRate: 6 #balanced by long cooldown
       selectedMode: FullAuto
       availableModes:
         - FullAuto
       soundGunshot: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
-    - type: ItemSlots
-      slots:
-        gun_magazine:
-          name: Magazine
-          #startingItem: MagazineSwarmer - on being rebuilt from destruction this gives it free ammo
-          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
-          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
-          priority: 2
-          whitelist:
-            tags:
-              - SwarmRocketBox
-        gun_chamber:
-          name: Chamber
-          startingItem: SwarmerRocketCartridge
-          priority: 1
-          whitelist:
-            tags:
-              - SwarmRocket
+    - type: RechargeBasicEntityAmmo
+      rechargeCooldown: 10
+      rechargeSound:
+        path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+        params:
+          pitch: 1.2
+          variation: 0.08
+    - type: BasicEntityAmmoProvider
+      proto: SwarmerMissile
+      capacity: 6
+      count: 6
     - type: ApcPowerReceiver
       powerLoad: 3500
     - type: HardpointAnchorableOnly
       class: Missile
       size: Small
-    - type: MagazineAmmoProvider
     - type: ProjectileIFF
     - type: Construction
       graph: Machine
