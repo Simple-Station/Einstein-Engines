@@ -40,6 +40,8 @@ public sealed class HullrotSelfDeleteSystem : EntitySystem
 
     private void OnParentChanged(EntityUid uid, SelfDeleteInSpaceComponent component, EntParentChangedMessage args)
     {
+        if (uid == EntityUid.Invalid)
+            return;
         if (_station.GetOwningStation(uid) == null) //this returns null when we are in space
             Timer.Spawn(component.TimeToDelete, () => TryDeleteEntityInSpace(uid));
     }
@@ -55,6 +57,9 @@ public sealed class HullrotSelfDeleteSystem : EntitySystem
     // hopefully they fucked off somewhere else. MOST items will get cleaned up in 1 minute after being tossed into space.
     private void TryDeleteEntityInSpace(EntityUid uid)
     {
+        if (!TryComp<TransformComponent>(uid, out var _)) //was throwing errors because somehow entities with no transform component were getting this called
+            return;
+
         if (_station.GetOwningStation(uid) == null)
         {
             var enumerator = EntityManager.EntityQueryEnumerator<ActorComponent>(); //only players are actors. i think.
