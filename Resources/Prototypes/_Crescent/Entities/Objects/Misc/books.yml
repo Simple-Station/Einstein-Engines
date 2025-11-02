@@ -15,8 +15,6 @@
     openOnActivation: true
     guides:
     - UnionfallNCWL
-  - type: SelfDelete
-    timeToDelete: 60 #should be enough to read it and then not clutter
 
 - type: entity
   id: BookUnionfallDSMGuide
@@ -35,5 +33,3 @@
     openOnActivation: true
     guides:
     - UnionfallDSM
-  - type: SelfDelete
-    timeToDelete: 60 #should be enough to read it and then not clutter
