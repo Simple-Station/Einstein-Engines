@@ -144,6 +144,12 @@
     value: 15
   - type: ClothingAddFaction
     faction: TFSC
+  - type: Construction
+    graph: Sellsword
+    node: start
+  - type: Tag
+    tags:
+    - Bulwark
 
 - type: entity
   parent: ClothingOuterHardsuitBase
@@ -229,6 +235,9 @@
     sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicatesellsword.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndicateSellsword
+  - type: Construction
+    graph: Sellsword
+    node: armor
 
 #regular shit. if you put hardsuit below here i'm going to explode your cock
 
