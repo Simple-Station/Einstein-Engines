@@ -32,3 +32,6 @@
       mix: '#947507'
   - type: StaticPrice
     price: 40
+  - type: Tag
+    tags:
+    - SprayPainter
