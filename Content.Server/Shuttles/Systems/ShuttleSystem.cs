@@ -76,6 +76,10 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
     public const float TileMassMultiplier = 0.5f;
     public float accumulator = 0f;
 
+    //used for logging, don't touch this
+    private ISawmill _sawmill = default!;
+
+
     public override void Initialize()
     {
         base.Initialize();
@@ -97,6 +101,8 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
         SubscribeLocalEvent<FixturesComponent, GridFixtureChangeEvent>(OnGridFixtureChange);
 
         NfInitialize(); // Frontier Initialization for the ShuttleSystem
+
+        _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("shuttlesystem.server");
 
     }
 
@@ -146,6 +152,8 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
     {
         if (HasComp<MapComponent>(ev.EntityUid))
             return;
+
+        _sawmill.Debug("GRID INITIALIZED! GRID ID:" + ev.EntityUid.ToString());
 
         EntityManager.EnsureComponent<ShuttleComponent>(ev.EntityUid);
     }
