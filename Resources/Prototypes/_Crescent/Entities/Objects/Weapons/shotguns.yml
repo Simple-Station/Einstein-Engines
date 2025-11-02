@@ -292,10 +292,10 @@
       - ShellShotgun
 
 - type: entity
-  name: NCSP Saiga-12k Hammer 12g
   # Don't parent to BaseWeaponShotgun because it differs significantly
   parent: [BaseItem, BaseGunWieldable]
   id: WeaponShotgunNCSPSaiga12
+  name: NCSP Saiga-12k Hammer 12g
   description: A magazine-fed shotgun in use by terrorist forces. Uses 12 gauge shotgun shells.
   components:
   - type: Sprite
