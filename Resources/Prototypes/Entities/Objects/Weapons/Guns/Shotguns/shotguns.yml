@@ -67,9 +67,9 @@
     staminaCost: 9.5
 
 - type: entity
-  name: PTA MOD-2 Pozhar 12g  
   parent: [BaseWeaponShotgun, BaseGunWieldable]
   id: WeaponShotgunBulldog
+  name: PTA MOD-2 Pozhar 12g  
   description: A tube-fed, fully automatic, combat shotgun designed for close quarters combat. Loads shells one by one. Uses 12 gauge shotgun shells.
   components:
   - type: Sprite
@@ -88,7 +88,8 @@
   - type: AmmoCounter
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
-    fireRate: 4
+    damageModifier: 0.85
+    fireRate: 2.5
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -129,6 +130,12 @@
         Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 9.5
+  - type: ExtendDescription
+    descriptionList:
+      - description: This shotgun's damage is reduced due to its fire-rate. It deals 15% lower damage per shot.
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
 
 - type: entity
   name: PTA MOD-2 Pozhar 12g
