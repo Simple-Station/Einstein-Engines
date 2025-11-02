@@ -47,9 +47,43 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 95000
+    price: 195000
   - type: ShipVoucher
     ship: Suzerain
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherNemesis
+  name: DSM 'Nemesis' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Nemesis-class carrier. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 175000
+  - type: ShipVoucher
+    ship: Nemesis
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherJanissary
+  name: DSM 'Janissary' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Janissary-class subshuttle. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 35000
+  - type: ShipVoucher
+    ship: Janissary
 
 - type: entity
   parent: BaseItem
