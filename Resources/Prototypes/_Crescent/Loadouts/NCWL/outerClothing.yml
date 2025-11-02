@@ -17,6 +17,7 @@
         - CoordinatorNCWL
         - ArtificerNCWL
         - WorkerNCWL
+
 - type: loadout
   id: LoadoutOuterArmorNCWLCarapaceDoktor
   category: Outer
@@ -29,3 +30,19 @@
     - !type:CharacterJobRequirement
       jobs:
         - DoctorNCWL
+
+- type: loadout
+  id: LoadoutOuterArmorNCWLCarapaceVrachev
+  category: Outer
+  cost: 2
+  items:
+    - ClothingOuterArmorNCWLCarapaceVrachev
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - CommandantNCWL
+        - DoctorNCWL
+        - CoordinatorNCWL
+        - ArtificerNCWL

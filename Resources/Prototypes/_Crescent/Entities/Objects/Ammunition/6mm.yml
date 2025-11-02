@@ -19,7 +19,8 @@
   - type: Tag
     tags:
       - CartridgePistol6mm
-
+      - Cartridge
+      
 - type: entity
   id: MagazinePistol6mm
   name: 16-round pistol magazine (6mm)
