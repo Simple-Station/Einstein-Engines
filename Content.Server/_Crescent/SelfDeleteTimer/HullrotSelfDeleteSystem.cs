@@ -57,6 +57,9 @@ public sealed class HullrotSelfDeleteSystem : EntitySystem
     // hopefully they fucked off somewhere else. MOST items will get cleaned up in 1 minute after being tossed into space.
     private void TryDeleteEntityInSpace(EntityUid uid)
     {
+        if (_entityManager!.GetComponent<MetaDataComponent>(uid).EntityLifeStage != EntityLifeStage.Initialized)//breaks mapping mode if this isn't here
+            return;
+
         if (!TryComp<TransformComponent>(uid, out var _)) //was throwing errors because somehow entities with no transform component were getting this called
             return;
 

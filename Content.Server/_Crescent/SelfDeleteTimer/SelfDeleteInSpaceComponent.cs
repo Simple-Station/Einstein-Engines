@@ -7,6 +7,6 @@ public sealed partial class SelfDeleteInSpaceComponent : Component
     /// Time it takes for this ENTITY to delete itself, once it's parented to space.
     ///
     [DataField]
-    public TimeSpan TimeToDelete = TimeSpan.FromSeconds(10);
+    public TimeSpan TimeToDelete = TimeSpan.FromMinutes(1);
 
 }
