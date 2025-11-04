@@ -435,20 +435,6 @@
         - RawMaterial
 
 - type: entity
-  id: BadScrapMagnet
-  name: ICM baromagnetic scrap array
-  description: A large, ship-mounted magnetic device. When pointed in the direction of loose scrap, gathers the scavengable material with a miniature tractor beam and stores it in an internal compartment for later harvest.
-  parent: OreMagnet
-  components:
-  - type: Storage
-    whitelist:
-      tags:
-        - RawMaterial
-  - type: MagnetPickup
-    range: 10
-    requireWorn: false
-
-- type: entity
   parent: BaseBulletTrigger
   id: ProjectileEmp
   name: emp projectile
