@@ -37,3 +37,44 @@
     - UnionfallDSM
   - type: SelfDelete
     timeToDelete: 60 #should be enough to read it and then not clutter
+
+- type: entity
+  parent: BookBase
+  id: BookNCWLManual1
+  name: "Accelerated Conscript Training manual issue 1"
+  description: The first part of a manual issued to new Conscripts posted Taypan. The name of Kane is written in some margins.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/books.rsi
+    layers:
+    - state: paper
+    - state: cover_strong
+      color: "#f9bf13"
+    - state: decor_middle
+      color: "#b82827"
+    - state: icon_glow
+      color: "#f9bf13"
+    - state: overlay_dirt
+  - type: Paper
+    content: book-accelerated-conscript-training-manual1
+
+- type: entity
+  parent: BookBase
+  id: BookNCWLManual2
+  name: "Accelerated Conscript Training manual issue 2"
+  description: The second part of a manual issued to new Conscripts posted Taypan. The name of Kane is written in some margins.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/books.rsi
+    layers:
+    - state: paper
+    - state: cover_strong
+      color: "#f9bf13"
+    - state: decor_middle
+      color: "#b82827"
+    - state: icon_glow
+      color: "#f9bf13"
+    - state: overlay_blood
+  - type: Paper
+    content: book-accelerated-conscript-training-manual2
+
