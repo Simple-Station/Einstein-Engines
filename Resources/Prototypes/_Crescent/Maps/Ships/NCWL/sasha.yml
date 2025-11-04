@@ -1,0 +1,34 @@
+# Author Info
+# Discord: originally @fleshangel
+
+- type: vessel
+  id: Sasha
+  name: NCWL Sasha
+  description: An antiquated communard warship.
+  price: 125000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/NCWL/sasha.yml
+
+- type: gameMap
+  id: Sasha
+  mapName: 'NCWL Sasha'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/sasha.yml
+  minPlayers: 0
+  stations:
+    Sasha:
+      stationProto: StandardCrescentVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'NCWL Sasha {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: VesselDesignation
+        designation: vessel-designation-warship
+      - type: VesselDescription
+        description: A relic of another time.
+      - type: VesselIcon
+        iffIcon:
+          sprite: _Crescent/ShipIcons/ifficons.rsi
+          state: cruiser

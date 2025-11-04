@@ -495,6 +495,44 @@
 
 #T3 END
 
+#ANTIQUES
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherSasha
+  name: NCWL 'Sasha' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an antiquated communard Sasha-class warship pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 75000
+  - type: ShipVoucher
+    ship: Sasha
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherClementine
+  name: NCWL 'Clementine' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Clementine-class ancient Flagship pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 93750
+  - type: ShipVoucher
+    ship: Clementine
+
+#ANTIQUES END
+
 #Donator
 
 - type: entity
