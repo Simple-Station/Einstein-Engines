@@ -107,7 +107,7 @@
     - type: Gun
       fireOnDropChance: 0
       fireRate: 12
-      projectileSpeed: 60
+      projectileSpeed: 135
       selectedMode: FullAuto
       availableModes:
         - FullAuto
