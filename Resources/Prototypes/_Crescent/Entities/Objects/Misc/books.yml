@@ -89,7 +89,7 @@
     layers:
     - state: paper
     - state: cover_base
-      color: "#oD031B"
+      color: "#3d3d3d"
     - state: icon_kane
     - state: detail_bookmark
       color: "#aaaa24"
