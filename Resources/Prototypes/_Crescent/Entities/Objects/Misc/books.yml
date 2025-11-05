@@ -79,9 +79,9 @@
     content: book-accelerated-conscript-training-manual-2
 
 - type: entity
-  name: book of kane
   parent: BaseItem
   id: BookOfKane
+  name: book of kane
   description: A manifesto written by a self-proclaimed revolutionary leader, Kane.
   components:
   - type: Sprite
