@@ -1,4 +1,4 @@
-namespace Content.Server._Crescent.SelfDeleteTimer;
+namespace Content.Server._Crescent.HullrotSelfDeleteTimer;
 
 [RegisterComponent]
 public sealed partial class SelfDeleteComponent : Component

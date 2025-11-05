@@ -36,7 +36,7 @@
     price: 1000
   - type: Contraband
     value: 8
-  - type: ClothingAddFaction 
+  - type: ClothingAddFaction
     faction: TFSC
 
 
@@ -76,7 +76,7 @@
     price: 1000
   - type: Contraband
     value: 8
-  - type: ClothingAddFaction 
+  - type: ClothingAddFaction
     faction: TFSC
 
 - type: entity
@@ -104,7 +104,7 @@
         Piercing: 45
         Heat: 15
         Caustic: 15
-  - type: ClothingAddFaction 
+  - type: ClothingAddFaction
     faction: TFSC
 
 - type: entity
@@ -142,8 +142,14 @@
     price: 1250
   - type: Contraband
     value: 15
-  - type: ClothingAddFaction 
+  - type: ClothingAddFaction
     faction: TFSC
+  - type: Construction
+    graph: Sellsword
+    node: start
+  - type: Tag
+    tags:
+    - Bulwark
 
 - type: entity
   parent: ClothingOuterHardsuitBase
@@ -178,7 +184,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitTraumasec
   - type: Contraband
     value: 5
-  - type: ClothingAddFaction 
+  - type: ClothingAddFaction
     faction: TFSC
 
 - type: entity
@@ -214,8 +220,24 @@
     clothingPrototype: ClothingHeadHelmetHardsuitCoordinator
   - type: Contraband
     value: 5
-  - type: ClothingAddFaction 
+  - type: ClothingAddFaction
     faction: TFSC
+
+- type: entity
+  parent: ClothingOuterHardsuitSyndicateBG
+  id: ClothingOuterHardsuitSyndicateSellsword
+  name: SELLSWORD mk.IIB modified hardsuit
+  description: A modular Syndicate hardsuit modified for use by the Hedgeknights. Bulky nanokevlar lined with composite gold decor pads the light titanium skeleton, shielding flimsy electronics and the fleshy operator underneath.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicatesellsword.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicatesellsword.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitSyndicateSellsword
+  - type: Construction
+    graph: Sellsword
+    node: armor
 
 #regular shit. if you put hardsuit below here i'm going to explode your cock
 
@@ -248,7 +270,7 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 250
-  - type: ClothingAddFaction 
+  - type: ClothingAddFaction
     faction: TFSC
 
 - type: entity
@@ -280,7 +302,7 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 250
-  - type: ClothingAddFaction 
+  - type: ClothingAddFaction
     faction: TFSC
 
 - type: entity
@@ -301,7 +323,7 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 100
-  - type: ClothingAddFaction 
+  - type: ClothingAddFaction
     faction: TFSC
 
 - type: entity
@@ -329,7 +351,7 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 100
-  - type: ClothingAddFaction 
+  - type: ClothingAddFaction
     faction: TFSC
 
 - type: entity
@@ -361,7 +383,7 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 100
-  - type: ClothingAddFaction 
+  - type: ClothingAddFaction
     faction: TFSC
 
 - type: entity
@@ -393,7 +415,7 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 250
-  - type: ClothingAddFaction 
+  - type: ClothingAddFaction
     faction: TFSC
 
 - type: entity
@@ -425,7 +447,7 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 250
-  - type: ClothingAddFaction 
+  - type: ClothingAddFaction
     faction: TFSC
 
 - type: entity
@@ -457,7 +479,7 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 350
-  - type: ClothingAddFaction 
+  - type: ClothingAddFaction
     faction: TFSC
 
 - type: entity
@@ -489,7 +511,7 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 450
-  - type: ClothingAddFaction 
+  - type: ClothingAddFaction
     faction: TFSC
 
 - type: entity
@@ -521,5 +543,5 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 500
-  - type: ClothingAddFaction 
+  - type: ClothingAddFaction
     faction: TFSC

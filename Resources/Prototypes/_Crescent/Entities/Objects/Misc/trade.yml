@@ -484,7 +484,10 @@
     sprite: _Crescent/Objects/TradeGoods/stub.rsi
     layers:
     - state: icon
-
+  - type: Tag
+    tags:
+      - Trash
+      
 - type: entity
   parent: BaseItem
   id: OrganStub
