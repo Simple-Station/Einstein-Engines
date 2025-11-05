@@ -1,5 +1,4 @@
 using Content.Shared.Chat;
-using Content.Shared.DoAfter;
 using Content.Shared.Interaction.Events;
 using Content.Shared._Crescent.BookOfKane.Components;
 
@@ -11,7 +10,6 @@ public sealed class BookOfKaneSystem : EntitySystem
 {
     private const string KaneSpeechBaseKey = "kane-speech-";
 
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedChatSystem _chat = default!;
 
     private List<string> _speechLocalizationKeys = new();
