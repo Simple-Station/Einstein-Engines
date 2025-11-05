@@ -1,0 +1,32 @@
+# Author Info
+# Discord: fungus2589
+
+- type: vessel
+  id: Nemesis
+  name: DSM Nemesis
+  description: A heavy destroyer carrier, the starboard flakgun gunbattery & cargo area has been salvaged and converted into a docking-port.
+  price: 226750
+  category: Large
+  group: None
+  path: /Maps/_Crescent/Shuttles/DSM/nemesis.yml
+
+- type: gameMap
+  id: Nemesis
+  mapName: 'DSM Nemesis'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/nemesis.yml
+  minPlayers: 0
+  stations:
+    Nemesis:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: battleship
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Nemesis {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+        

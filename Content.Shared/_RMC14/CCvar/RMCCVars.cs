@@ -23,4 +23,10 @@ public sealed class RMCCVars : CVars
 
     public static readonly CVarDef<float> RMCGunPredictionAabbEnlargement =
         CVarDef.Create("rmc.gun_prediction_aabb_enlargement", 0.3f, CVar.SERVER | CVar.REPLICATED);
+
+    public static readonly CVarDef<int> RMCLagCompensationMilliseconds =
+        CVarDef.Create("rmc.lag_compensation_milliseconds", 750, CVar.REPLICATED | CVar.SERVER);
+
+    public static readonly CVarDef<float> RMCLagCompensationMarginTiles =
+        CVarDef.Create("rmc.lag_compensation_margin_tiles", 0.25f, CVar.REPLICATED | CVar.SERVER);
 }

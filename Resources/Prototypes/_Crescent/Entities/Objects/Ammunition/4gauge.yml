@@ -238,3 +238,75 @@
       layers:
         - state: boxwide
         - state: shelluranium
+
+# --------------------- MARKER FLARE --------------------------
+
+- type: entity
+  id: PelletShotgunMarkerFlare4g
+  name: pellet (4g marker flare)
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  components:
+  - type: ExpendableHeatTracked
+    toggleDelay: 40
+  - type: CanBeHeatTracked
+    heatSignature: 30
+  - type: Projectile
+  - type: PointLight
+    enabled: false
+    color: "#FF8080"
+    radius: 1.0
+    energy: 9.0
+    netsync: false
+  - type: IgnitionSource
+    temperature: 1000
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour # have the radius start small and get larger as it starts to burn
+        id: turn_on
+        maxDuration: 45.0
+        startValue: 2.5
+        endValue: 10.0
+      - !type:RandomizeBehaviour # weaker flicker as it fades out
+        id: fade_out
+        interpolate: Nearest
+        minDuration: 0.001
+        maxDuration: 0.001
+        startValue: 4.0
+        endValue: 8.0
+        property: Energy
+        isLooped: true
+      - !type:FadeBehaviour # fade out radius as it burns out
+        id: fade_out
+        maxDuration: 15.0
+        startValue: 10.0
+        endValue: 1.0
+  - type: TimedDespawn
+    lifetime: 45
+
+- type: entity
+  id: ShellShotgun4gMarkerFlare
+  name: shell (4g marker flare)
+  parent: BaseShellShotgun4g
+  components:
+  - type: Sprite
+    layers:
+      - state: lumen
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunFlashSpread4g
+  - type: SpentAmmoVisuals
+    state: "lumen"
+
+- type: entity
+  name: 4g marker flate box
+  parent: AmmoProviderShotgunShell4g
+  id: BoxShotgunMarkerFlare4g
+  description: A dispenser box full of marker flare shells, designed for 4 gauge shotguns.
+  components:
+    - type: BallisticAmmoProvider
+      proto: ShellShotgun4gMarkerFlare
+    - type: Sprite
+      layers:
+        - state: boxwide
+        - state: shelluranium

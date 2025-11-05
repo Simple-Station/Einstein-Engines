@@ -263,7 +263,7 @@
       - MagazineBoxAntiMateriel
       - MagazineBoxHeavyRifle
       - MagazineBoxRifle
-      - MagazineBoxLightRifle
+      - MagazineLightRifleBox
       - MagazineBoxCaselessRifle
       - MagazineBoxCaselessRifleBig
       - BoxShotgunFlash4g
@@ -572,6 +572,7 @@
       - DSMRapier
       - DSMSabre
       - DSMDuelingKhopesh
+      - DSMBaton
       - LaelapsLPC
       - PaladinFlatpack
       - WandererFlatpack
@@ -592,6 +593,8 @@
       - WeaponLauncherM320
       - TriumphantLPC
       - SuzerainLPC
+      - NemesisLPC
+      - JanissaryLPC
       - ClothingHeadHelmetNCWLEVA
       - ClothingOuterNCWLEVA
       - ClothingHeadHatNCWLCapsoft
@@ -923,3 +926,4 @@
   - type: Anchorable
     flags:
     - Anchorable
+
