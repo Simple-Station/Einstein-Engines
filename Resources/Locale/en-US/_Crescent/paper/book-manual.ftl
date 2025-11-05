@@ -1,5 +1,4 @@
-book-accelerated-conscript-training-manual1 =
-        ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+book-accelerated-conscript-training-manual-1 = ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
         █
         █ [head=1]GS-10095-W-1 [/head]
         █ [head=3]"Accelerated Conscript Training manual"[/head]
@@ -125,8 +124,7 @@ book-accelerated-conscript-training-manual1 =
         █ Addendum as per NCWL guidelines
         █ loaders are forbidden to play chess.[/bold]
 
-book-accelerated-conscript-training-manual2 =
-        ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+book-accelerated-conscript-training-manual-2 = ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
         █
         █ [head=1]GS-10095-W-2 [/head]
         █ [head=3]"Accelerated Conscript Training manual"[/head]

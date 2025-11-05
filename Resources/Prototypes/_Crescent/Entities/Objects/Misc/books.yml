@@ -56,7 +56,7 @@
       color: "#f9bf13"
     - state: overlay_dirt
   - type: Paper
-    content: book-accelerated-conscript-training-manual1
+    content: book-accelerated-conscript-training-manual-1
 
 - type: entity
   parent: BookBase
@@ -76,7 +76,7 @@
       color: "#f9bf13"
     - state: overlay_blood
   - type: Paper
-    content: book-accelerated-conscript-training-manual2
+    content: book-accelerated-conscript-training-manual-2
 
 - type: entity
   name: book of kane
