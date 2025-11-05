@@ -78,3 +78,72 @@
   - type: Paper
     content: book-accelerated-conscript-training-manual2
 
+- type: entity
+  name: book of kane
+  parent: BaseItem
+  id: BookOfKane
+  description: A manifesto written by a self-proclaimed revolutionary leader, Kane.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/books.rsi
+    layers:
+    - state: paper
+    - state: cover_base
+      color: "#oD031B"
+    - state: icon_kane
+    - state: detail_bookmark
+      color: "#aaaa24"
+  - type: RevolutionaryConverter
+  - type: UseDelay
+    delay: 2
+  - type: Appearance
+  - type: EmitSoundOnPickup
+    sound: /Audio/SimpleStation14/Items/Handling/book_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
+  - type: ExtendDescription
+    descriptionList:
+    - description: "bookofkane-extendeddescription-NCWL"
+      fontSize: 12
+      color: "#ff0000"
+      requireDetailRange: false
+      requirements:
+        - !type:FactionRequirement
+          factionID: "NCWL"
+    - description: "bookofkane-extendeddescription-DSM"
+      fontSize: 12
+      color: "#880000"
+      requireDetailRange: true
+      requirements:
+        - !type:FactionRequirement
+          factionID: "DSM"
+    - description: "bookofkane-extendeddescription-SHI"
+      fontSize: 12
+      color: "#880000"
+      requireDetailRange: false
+      requirements:
+        - !type:FactionRequirement
+          factionID: "SHI"
+    - description: "bookofkane-extendeddescription-TFSC"
+      fontSize: 12
+      color: "#ff0000"
+      requireDetailRange: true
+      requirements:
+        - !type:FactionRequirement
+          factionID: "TFSC"
+    - description: "bookofkane-extendeddescription-ATH"
+      fontSize: 12
+      color: "#880000"
+      requireDetailRange: true
+      requirements:
+        - !type:FactionRequirement
+          factionID: "ATH"
+    - description: "bookofkane-extendeddescription-SRM"
+      fontSize: 12
+      color: "#880000"
+      requireDetailRange: true
+      requirements:
+        - !type:FactionRequirement
+          factionID: "SRM"
