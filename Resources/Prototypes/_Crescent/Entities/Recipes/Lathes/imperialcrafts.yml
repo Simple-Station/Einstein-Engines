@@ -537,9 +537,28 @@
   result: ShipVoucherSuzerain
   completetime: 1
   materials:
-    StarshipEngineComponents: 12500
-    ShipComponents: 9000
+    StarshipEngineComponents: 9500
+    ShipComponents: 11250
     ShipHull: 16500
+
+- type: latheRecipe
+  id: NemesisLPC
+  result: ShipVoucherNemesis
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 8250
+    ShipComponents: 4750
+    ShipHull: 18500
+
+- type: latheRecipe
+  id: JanissaryLPC
+  result: ShipVoucherJanissary
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 2000
+    ShipComponents: 1250
+    ShipHull: 3250
+
 
 - type: latheRecipe
   id: TriumphantLPC

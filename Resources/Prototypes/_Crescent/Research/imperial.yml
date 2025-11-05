@@ -201,6 +201,19 @@
   - SunesisLPC
 
 - type: technology
+  id: ImperialNemesis
+  name: research-technology-imperial-nemesis
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Imperial
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - NemesisLPC
+  - JanissaryLPC
+
+- type: technology
   id: ImperialLaelaps
   name: research-technology-imperial-laelaps
   icon:

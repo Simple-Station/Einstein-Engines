@@ -263,7 +263,7 @@
       - MagazineBoxAntiMateriel
       - MagazineBoxHeavyRifle
       - MagazineBoxRifle
-      - MagazineBoxLightRifle
+      - MagazineLightRifleBox
       - MagazineBoxCaselessRifle
       - MagazineBoxCaselessRifleBig
       - BoxShotgunFlash4g
@@ -593,6 +593,8 @@
       - WeaponLauncherM320
       - TriumphantLPC
       - SuzerainLPC
+      - NemesisLPC
+      - JanissaryLPC
       - ClothingHeadHelmetNCWLEVA
       - ClothingOuterNCWLEVA
       - ClothingHeadHatNCWLCapsoft
@@ -924,3 +926,4 @@
   - type: Anchorable
     flags:
     - Anchorable
+
