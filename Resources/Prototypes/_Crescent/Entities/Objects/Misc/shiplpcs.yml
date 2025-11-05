@@ -238,6 +238,24 @@
     price: 13000
   - type: ShipVoucher
     ship: Torturer
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherMagnate
+  name: DSM 'Magnate' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Magnate fire support vessel. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 40000
+  - type: ShipVoucher
+    ship: Magnate
+
 #ncwl
 
 #T0

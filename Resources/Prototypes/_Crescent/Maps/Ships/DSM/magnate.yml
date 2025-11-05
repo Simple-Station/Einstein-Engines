@@ -1,0 +1,34 @@
+- type: vessel
+  id: Magnate
+  name: DSM Magnate FSV
+  description: |
+    An imperial rocket artillery ship, made as a response to highly successful communard use of gargoyle missile launchers, which are able to bypass shields entirely. 
+    LOADOUT: 1x Gargoyle LRM launcher, 1x SHI 20x135mm PDT MK.II
+    MINIMUM CREW: 1x Pilot, 1x Gunner, 1x Loader (optional)
+  price: 40000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/DSM/magnate.yml
+
+- type: gameMap
+  id: Magnate
+  mapName: 'DSM Magnate'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/magnate.yml
+  minPlayers: 0
+  stations:
+    Magnate:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Magnate FSV {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-corvette
+        - type: VesselDescription
+          description: A chunkier imperator, fitted with a gargoyle missile launcher rather than a 120mm artillery piece. Designed for fire support.
