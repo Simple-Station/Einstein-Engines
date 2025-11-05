@@ -167,7 +167,7 @@
     sprite: _Crescent/Objects/Misc/lpcchip.rsi
     state: icon
   discipline: Imperial
-  tier: 1
+  tier: 2
   cost: 5000
   recipeUnlocks:
   - MagnateLPC
