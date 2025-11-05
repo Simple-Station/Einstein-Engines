@@ -410,6 +410,14 @@
     Silver: 1000
 
 - type: latheRecipe
+  id: DSMBaton
+  result: DSMBaton
+  completetime: 2
+  materials:
+    Steel: 1500
+    Gold: 1000
+
+- type: latheRecipe
   id: ClothingBeltSheathDSMSabre
   result: ClothingBeltSheathDSMSabre
   completetime: 2
