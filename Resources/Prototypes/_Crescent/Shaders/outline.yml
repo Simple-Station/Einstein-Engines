@@ -1,0 +1,10 @@
+# God someone please make something better for this
+- type: shader
+  id: ShieldingOutline
+  kind: source
+  path: "/Textures/Shaders/outline.swsl"
+  params:
+    outline_color: "#00AAFFCF"
+    light_boost: 3
+    light_gamma: 1.25
+    light_whitepoint: 1.2

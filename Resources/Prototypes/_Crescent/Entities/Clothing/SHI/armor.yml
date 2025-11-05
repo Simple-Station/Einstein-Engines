@@ -126,6 +126,8 @@
     clothingPrototype: ClothingHeadHelmetHardsuitSHIJuggernaut
   - type: StaticPrice
     price: 5000
+  - type: ClothingAddFaction
+    faction: SHI
 
 - type: entity
   parent: [ClothingOuterArmorBasic, StreeCredRedeemable]
@@ -165,6 +167,8 @@
   - type: ToggleableClothing
     slot: head
     clothingPrototype: ClothingHeadHelmetHardsuitSHISpeedsuit
+  - type: ClothingAddFaction
+    faction: SHI
 
 #armor
 

@@ -581,55 +581,48 @@
 
 # @BoskiYourk (boskiyourk) donor gun
 - type: entity
-  name: PVDNC KZ23 Custom Bruiser 4g
   parent: [BaseWeaponShotgun, BaseGunWieldable, StreeCredRedeemableLow]
-  id: WeaponShotgunBruiser
-  description: An exotic four gauge shotgun with mysterious origins. Found in the fog, it has been refurbished into something lethal.
+  id: WeaponShotgunSnoozer
+  name: PVDNC ZZ-9 Snoozer 12g
+  description: An exotic silenced shotgun with mysterious origins. It has been modified with a suppressor.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Guns/bruiser.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/snoozer.rsi
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/Guns/bruiser.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/snoozer.rsi
   - type: GunRequiresWield
   - type: Item
     shape:
     - 0,0,4,1
   - type: Gun
-    fireRate: 1.25
+    fireRate: 2
     soundGunshot:
-      path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_1.ogg
+      path: /Audio/_Crescent/Weapons/Guns/supressed_shotgun/suppressed_shotgun_fire.ogg
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
-    shotgunSpreadMultiplier: 0.5
-  - type: UseDelay
-    delay: 1
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-        - ShellShotgun4g
-    capacity: 4
-    autoCycle: true
-    proto: ShellShotgun4gBuckshot
+      - ShellShotgun
+      - Flare
+    capacity: 5
+    proto: ShellShotgun
+    soundInsert:
+      collection: ShellReload
   - type: ItemSlots
-  - type: ExtendDescription
-    descriptionList:
-      - description: "gun-modifier-choke"
-        fontSize: 12
-        color: "#ff4f00"
-        requireDetailRange: false
 
 - type: entity
-  id: CrateShotgunBruiser
+  id: CrateShotgunSnoozer
   parent: WeaponCaseShotgun
-  name: KZ23 Custom Bruiser case
+  name: KZ23 Custom Snoozer case
   description: An exotic shotgun packaged in a stamped weapon case.
   components:
   - type: StorageFill
     contents:
-      - id: WeaponShotgunBruiser
+      - id: WeaponShotgunSnoozer
         amount: 1
-      - id: BoxLethalshot4g
+      - id: BoxLethalshot
         amount: 2
 
 # @deusvult8672 (Hueys) donor sword
