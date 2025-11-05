@@ -60730,7 +60730,7 @@ entities:
     - type: Transform
       pos: 30.65331,2.8322
       parent: 1
-- proto: AmeController
+- proto: AmeControllerStation
   entities:
   - uid: 167
     components:

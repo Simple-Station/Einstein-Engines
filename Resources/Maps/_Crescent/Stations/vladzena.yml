@@ -4528,7 +4528,7 @@ entities:
           ents:
           - 2170
     - type: InsideEntityStorage
-- proto: AmeController
+- proto: AmeControllerStation
   entities:
   - uid: 1200
     components:
