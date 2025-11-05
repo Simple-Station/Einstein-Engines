@@ -493,9 +493,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Fragmentation
-    maxIntensity: 30
-    intensitySlope: 100
-    totalIntensity: 300
+    maxIntensity: 15
+    intensitySlope: 5
+    totalIntensity: 150
     canCreateVacuum: false
   - type: EmitSoundOnPickup
     sound: /Audio/_Crescent/Weapons/Grenades/grab1.ogg
