@@ -2,9 +2,10 @@
   id: Magnate
   name: DSM Magnate FSV
   description: |
-    An imperial rocket artillery ship, made as a response to highly successful communard use of gargoyle missile launchers, which are able to bypass shields entirely. 
-    LOADOUT: 1x Gargoyle LRM launcher, 1x SHI 20x135mm PDT MK.II
+    An imperial fire support vessel, designed for fleet support with its gargoyle launcher for bypassing enemy shields.
+    LOADOUT: 1x Gargoyle LRM launcher, 2 43mm Slugthrowers, 2x SHI 20x135mm PDT MK.II
     MINIMUM CREW: 1x Pilot, 1x Gunner, 1x Loader (optional)
+    SHIELD: Errant-class
   price: 40000
   category: Small
   group: None
@@ -31,4 +32,4 @@
         - type: VesselDesignation
           designation: vessel-designation-corvette
         - type: VesselDescription
-          description: A chunkier imperator, fitted with a gargoyle missile launcher rather than a 120mm artillery piece. Designed for fire support.
+          description: DSM Fire support vessel.
