@@ -601,6 +601,6 @@
   result: ShipVoucherMagnate
   completetime: 1
   materials:
-    StarshipEngineComponents: 2000
-    ShipComponents: 1250
-    ShipHull: 3000
+    StarshipEngineComponents: 3250
+    ShipComponents: 2750
+    ShipHull: 5000
