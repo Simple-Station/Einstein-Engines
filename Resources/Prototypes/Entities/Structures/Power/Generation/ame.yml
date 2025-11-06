@@ -59,8 +59,9 @@
       insertSuccessPopup: ame-controller-component-fuel-slot-success-insert
   - type: Explosive
     explosionType: Default
-    intensitySlope: 5
-    maxIntensity: 60
+    totalIntensity: 150000 # Hullrot - explosive AMEs
+    intensitySlope: 150
+    maxIntensity: 1500
   - type: ActivatableUI
     key: enum.AmeControllerUiKey.Key
   - type: UserInterface
