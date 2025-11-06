@@ -546,7 +546,7 @@
     - id: FoodMeatRat
       amount: 2
       prob: 0.5
-    - id: HideMothroach # Gotta make the plushies
+    - id: HideMothroach1 # Gotta make the plushies
       amount: 1
   - type: Food
   - type: Hunger
@@ -608,7 +608,9 @@
         damageType: Blunt
         damage: 60
       behaviors:
-      - !type:GibBehavior { }
+      - !type:GibBehavior
+        gibContents: Skip # hullrot - Simplemobs and especially insects shouldn't be generating 300 organs
+        recursive: false
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
@@ -620,7 +622,7 @@
   - type: EggLayer
     eggSpawn:
     - id: SilkFilament1
-      amount: 1
+      amount: 3
     - id: FoodEggMothroachFertilized
       amount: 1
       prob: 0.3
