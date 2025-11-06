@@ -160,7 +160,7 @@
   weight: 75
   roles:
   - ExecutiveSHI
-  - BoardSHI
+  # - BoardSHI replaced wit hr and hos read pr
   - HighsecSHI
   - CorpsecSHI
   - EmployeeSHI

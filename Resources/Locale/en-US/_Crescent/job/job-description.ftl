@@ -64,7 +64,7 @@ job-description-corpsec = Secure assets of the Corporation. Detain unruly custom
 job-description-highsec = Secure the military interests of the Corporation. Respond to high-risk missions.
 job-description-employee = Serve in various departments of the Corporation.
 job-description-medtech = Research and develop new technologies, tend to the ailments of employees.
-job-description-boardhr = Ensure the compliance of corporate law is being respected.
+job-description-boardhr = Assist your Manager in coordinating Shinohara assets within the System.
 job-description-hos-shi = Organize the security force of the corporation.
 
 # cmm
