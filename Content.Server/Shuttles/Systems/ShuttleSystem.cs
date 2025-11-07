@@ -157,16 +157,20 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
         if (HasComp<MapComponent>(ev.EntityUid))
             return;
 
-        _sawmill.Debug("GRID INITIALIZED! GRID ID:" + ev.EntityUid.ToString());
+        //hullrot edit: handling adding lag compensation 
+        //_sawmill.Debug("GRID INITIALIZED! GRID ID:" + ev.EntityUid.ToString());
 
-        if (!(TryComp<BecomesStationComponent>(ev.EntityUid, out var _) || TryComp<IFFComponent>(ev.EntityUid, out var _)))
-        {
-            _sawmill.Debug("NEW DEBRIS GRID MADE!");
-            var selfdeletecomp = EnsureComp<SelfDeleteGridComponent>(ev.EntityUid); //default value will be 20 minutes
-            _sawmill.Debug("GRID ID " + ev.EntityUid.ToString() + " WILL DELETE ITSELF IN: " + selfdeletecomp.TimeToDelete.ToString());
+        // THAT DOESN'T WORK BECAUSE EITHER:
+        // 1. THIS ISN'T THE RIGHT GRID ID. FROM WHAT I SAW, THIS GRID ID IS +1 FROM THE GRIDS ADDED TO THE FUCKING STATIONS!!!
+        // 2. THIS RUNS BEFORE BECOMESSTATION AND IFFCOMPONENT AND NAMES GET ADDED, FUCKING EVERYTHING UP!
+        // WE ADD THIS TO EVERY GRID, THEN WHEN THE TIMER TICKS DOWN, IF IT 
+        //if (!TryComp<BecomesStationComponent>(ev.EntityUid, out var _) || !TryComp<IFFComponent>(ev.EntityUid, out var _) || !(Name(ev.EntityUid) != "grid"))
+        //_sawmill.Debug("NEW DEBRIS GRID MADE!");
 
-        }
+        EnsureComp<SelfDeleteGridComponent>(ev.EntityUid); //default value will be 20 minutes
 
+        //_sawmill.Debug("GRID ID " + ev.EntityUid.ToString() + " WILL DELETE ITSELF IN: " + selfdeletecomp.TimeToDelete.ToString());
+        //hullrot edit end
         EntityManager.EnsureComponent<ShuttleComponent>(ev.EntityUid);
     }
 
