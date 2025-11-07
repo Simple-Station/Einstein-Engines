@@ -8,6 +8,6 @@ public sealed partial class SelfDeleteGridComponent : Component
     /// used for auto-deleting grids on hullrot for lag cleanup
     /// </summary>
     [DataField]
-    public TimeSpan TimeToDelete = TimeSpan.FromMinutes(20); //default value MUST be 20 minutes because that's how long we need it to be EnsureComp'd
+    public TimeSpan TimeToDelete = TimeSpan.FromMinutes(10); //default value MUST be 10 minutes because that's how long we need it to be after it's EnsureComp'd (it takes this default value)
 
 }
