@@ -1,5 +1,6 @@
 using Content.Server.Station.Systems;
 using Robust.Server.GameObjects;
+using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
@@ -11,6 +12,7 @@ public sealed class HullrotSelfDeleteSystem : EntitySystem
     [Dependency] private readonly IEntityManager _IentityManager = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private readonly IMapManager _mappingManager = default!;
 
     private float _distanceToDeleteItems = 128;
     private TimeSpan _delayBetweenItemDeleteAttempts = TimeSpan.FromMinutes(1); //more aggressive to hopefully help with lag
@@ -35,6 +37,10 @@ public sealed class HullrotSelfDeleteSystem : EntitySystem
 
     private void OnInitGrid(EntityUid uid, SelfDeleteGridComponent component, ComponentInit args)
     {
+        // .2 note: i have **no idea** why this doesn't fucking work here
+        // if (Name(uid) != "grid") //we ONLY want this to spawn on debris grids that break off, not on anything else
+        //     return;              //as you might have guessed, these are always called "grid"
+        // RemComp<SelfDeleteGridComponent>(uid); // we have to add it to all grids on gridinit in shuttlesystem, so we delete it here if it's not meant to have it.
         Timer.Spawn(component.TimeToDelete, () => DeleteGrid(uid));
     }
 
@@ -57,10 +63,13 @@ public sealed class HullrotSelfDeleteSystem : EntitySystem
     // hopefully they fucked off somewhere else. MOST items will get cleaned up in 1 minute after being tossed into space.
     private void TryDeleteEntityInSpace(EntityUid uid)
     {
-        if (_entityManager!.GetComponent<MetaDataComponent>(uid).EntityLifeStage != EntityLifeStage.Initialized)//breaks mapping mode if this isn't here
+        if (!TryComp<MetaDataComponent>(uid, out var _)) //was throwing errors because somehow entities with no metadata component were getting this called
             return;
 
-        if (!TryComp<TransformComponent>(uid, out var _)) //was throwing errors because somehow entities with no transform component were getting this called
+        if (!TryComp<TransformComponent>(uid, out var transformComp)) //was throwing errors because somehow entities with no transform component were getting this called
+            return;
+
+        if (!_mappingManager.IsMapInitialized(transformComp.MapID)) //if the map is NOT initialized, then WE ARE IN MAPPING MODE!!! SO DON'T DO SHIT!!!!
             return;
 
         if (_station.GetOwningStation(uid) == null)
@@ -87,6 +96,22 @@ public sealed class HullrotSelfDeleteSystem : EntitySystem
     // if that check fails, fire another timer and try again.
     private void DeleteGrid(EntityUid uid)
     {
+        // I KNOW THIS WORKS
+        if (Name(uid) != "grid") //we ONLY want this to spawn on debris grids that break off, not on anything else
+        {
+            RemComp<SelfDeleteGridComponent>(uid);//as you might have guessed, these are always called "grid" 
+            return;
+        }
+
+        if (!TryComp<MetaDataComponent>(uid, out var _)) //was throwing errors because somehow entities with no metadata component were getting this called
+            return;
+
+        if (!TryComp<TransformComponent>(uid, out var transformComp)) //was throwing errors because somehow entities with no transform component were getting this called
+            return;
+
+        if (!_mappingManager.IsMapInitialized(transformComp.MapID)) //if the map is NOT initialized, then WE ARE IN MAPPING MODE!!! SO DON'T DO SHIT!!!!
+            return;
+
         var enumerator = EntityManager.EntityQueryEnumerator<ActorComponent>(); //only players are actors. i think.
 
         while (enumerator.MoveNext(out var actorUid, out var _))
