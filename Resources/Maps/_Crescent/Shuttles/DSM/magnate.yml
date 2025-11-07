@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 11/07/2025 05:42:21
-  entityCount: 443
+  time: 11/07/2025 05:52:54
+  entityCount: 454
 maps: []
 grids:
 - 1
@@ -1780,6 +1780,16 @@ entities:
     - type: Transform
       pos: -4.5,-1.5
       parent: 1
+  - uid: 162
+    components:
+    - type: Transform
+      pos: -3.5,0.5
+      parent: 1
+  - uid: 453
+    components:
+    - type: Transform
+      pos: -3.5,1.5
+      parent: 1
 - proto: CableMV
   entities:
   - uid: 133
@@ -1928,11 +1938,6 @@ entities:
     components:
     - type: Transform
       pos: -6.5,0.5
-      parent: 1
-  - uid: 162
-    components:
-    - type: Transform
-      pos: -5.5,0.5
       parent: 1
   - uid: 163
     components:
@@ -2144,6 +2149,11 @@ entities:
     - type: Transform
       pos: -5.5,6.5
       parent: 1
+  - uid: 454
+    components:
+    - type: Transform
+      pos: -5.5,0.5
+      parent: 1
 - proto: ChairPilotSeat
   entities:
   - uid: 198
@@ -2186,6 +2196,13 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 5.5,6.5
+      parent: 1
+- proto: ComputerPowerMonitoring
+  entities:
+  - uid: 452
+    components:
+    - type: Transform
+      pos: -3.5,1.5
       parent: 1
 - proto: ComputerShuttle
   entities:
@@ -2284,6 +2301,54 @@ entities:
       parent: 1
     - type: FaxMachine
       name: Magnate
+- proto: FirelockEdge
+  entities:
+  - uid: 444
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -0.5,3.5
+      parent: 1
+  - uid: 445
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 1.5,3.5
+      parent: 1
+  - uid: 446
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 3.5,-0.5
+      parent: 1
+  - uid: 447
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -2.5,-0.5
+      parent: 1
+  - uid: 448
+    components:
+    - type: Transform
+      pos: -3.5,6.5
+      parent: 1
+  - uid: 449
+    components:
+    - type: Transform
+      pos: 4.5,6.5
+      parent: 1
+  - uid: 450
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -2.5,1.5
+      parent: 1
+  - uid: 451
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 3.5,1.5
+      parent: 1
 - proto: FlashlightSeclite
   entities:
   - uid: 393
@@ -3072,7 +3137,7 @@ entities:
     - type: ApcPowerReceiver
       powerLoad: 1000
     - type: Battery
-      startingCharge: 12330.278
+      startingCharge: 9156.258
     - type: ApcPowerReceiverBattery
       enabled: True
   - uid: 283
@@ -3084,7 +3149,7 @@ entities:
     - type: ApcPowerReceiver
       powerLoad: 1000
     - type: Battery
-      startingCharge: 12327.94
+      startingCharge: 9153.92
     - type: ApcPowerReceiverBattery
       enabled: True
 - proto: SignalButtonDirectional
@@ -3217,6 +3282,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: -3.5,-2.5
       parent: 1
+    - type: Thruster
+      enabled: False
   - uid: 293
     components:
     - type: Transform
