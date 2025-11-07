@@ -39,5 +39,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitImperialFreeholder
     id: FreeholderPDA
+    belt: ClothingBeltUtilityFilled
     ears: ClothingHeadsetEmpireCiv
     shoes: ClothingShoesBootsImperialLongboots
+    back: ClothingBackpackDSM

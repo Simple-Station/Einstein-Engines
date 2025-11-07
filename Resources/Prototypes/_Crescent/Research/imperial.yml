@@ -39,6 +39,7 @@
   - ClothingOuterCoatImperialGovernor
   - ClothingNeckCloakImperialGovernor
   - ClothingOuterHardsuitImperialWorker
+  - ClothingNeckImperialGreatcoat
 
 - type: technology
   id: BasicImperialArmor
@@ -174,6 +175,7 @@
   - DSMRapier
   - DSMSabre
   - DSMDuelingKhopesh
+  - DSMBaton
 
 - type: technology
   id: ImperialSunesis
@@ -186,6 +188,19 @@
   cost: 8000
   recipeUnlocks:
   - SunesisLPC
+
+- type: technology
+  id: ImperialNemesis
+  name: research-technology-imperial-nemesis
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Imperial
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - NemesisLPC
+  - JanissaryLPC
 
 - type: technology
   id: ImperialLaelaps
@@ -236,6 +251,8 @@
   - WeaponRifleDSMLegionnaire
   - WeaponSubMachineGunC20rImperial
   - WeaponPistolNeoVolker
+  - WeaponLightMachineGunDSMDominion
+  - WeaponShotgunReno
 
 - type: technology
   id: ImperialPlasmaMechGuns
@@ -265,6 +282,7 @@
   - WeaponSubMachineGunBeetle
   - WeaponRifleHunter
   - ClothingOuterHardsuitHunterElite
+  - MetempsychoticMachineCircuitboard
 
 - type: technology
   id: ImperialBomb

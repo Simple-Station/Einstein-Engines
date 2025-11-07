@@ -263,7 +263,7 @@
       - MagazineBoxAntiMateriel
       - MagazineBoxHeavyRifle
       - MagazineBoxRifle
-      - MagazineBoxLightRifle
+      - MagazineLightRifleBox
       - MagazineBoxCaselessRifle
       - MagazineBoxCaselessRifleBig
       - BoxShotgunFlash4g
@@ -546,6 +546,7 @@
       - ClothingMaskImperialGovernorMask
       - ClothingOuterCoatImperialGovernor
       - ClothingNeckCloakImperialGovernor
+      - ClothingNeckImperialGreatcoat
       - ClothingOuterHardsuitImperialWorker
       - ClothingHeadHelmetImperialTrooperHelmet
       - ClothingOuterArmorImperialTrooperArmor
@@ -571,6 +572,7 @@
       - DSMRapier
       - DSMSabre
       - DSMDuelingKhopesh
+      - DSMBaton
       - LaelapsLPC
       - PaladinFlatpack
       - WandererFlatpack
@@ -578,6 +580,8 @@
       - WeaponMechCombatImperialAutolaser
       - WeaponMechCombatPlasmaRifle
       - WeaponMechCombatPlasmaCannon
+      - WeaponLightMachineGunDSMDominion
+      - WeaponShotgunReno
       - WeaponRifleDSMLegionnaire
       - WeaponSubMachineGunC20rImperial
       - WeaponPistolNeoVolker
@@ -589,6 +593,8 @@
       - WeaponLauncherM320
       - TriumphantLPC
       - SuzerainLPC
+      - NemesisLPC
+      - JanissaryLPC
       - ClothingHeadHelmetNCWLEVA
       - ClothingOuterNCWLEVA
       - ClothingHeadHatNCWLCapsoft
@@ -623,6 +629,8 @@
       - SunderLPC
       - WeaponSubMachineGunBloodhound
       - WeaponRifleNCWLBatanya
+      - WeaponShotgunToz123
+      - WeaponShotgunProletar
       - WeaponPistolT91
       - WeaponRevolverPython
       - ClothingOuterHardsuitNCWLPetya
@@ -663,6 +671,11 @@
       - WeaponShotgunSHIDoubleBarreled4g
       - WeaponPistolMk58SHI
       - WeaponSubMachineGunMP49
+      - WeaponSubMachineGunWt550
+      - WeaponRifleM90GrenadeLauncher
+      - WeaponShotgunSpas
+      - WeaponRifleBarghest
+      - WeaponSniperHristov
       - VariableCommodityFabricatorFlatpack
       - AutoloomFablatheFlatpack
       - FixedHardpointFlatpack
@@ -701,6 +714,7 @@
       - SHIShiverBlade
       - ClothingOuterHardsuitSHIJuggernaut
       - ClothingOuterHardsuitSHISpeedsuit
+      - MetempsychoticMachineCircuitboard
 
   - type: Machine
     board: MicroforgeCircuitboard
@@ -912,3 +926,4 @@
   - type: Anchorable
     flags:
     - Anchorable
+

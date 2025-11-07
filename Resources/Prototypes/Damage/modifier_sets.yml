@@ -395,9 +395,9 @@
   coefficients:
     Shock: 1.25 # Conductive skin.
   flatReductions:
-    Blunt: 1.5
-    Slash: 1.5
-    Piercing: 1.5
+    Blunt: 10
+    Slash: 10
+    Piercing: 10 #Wow its actually fucking useful now
 
 # protects against radiation
 - type: damageModifierSet

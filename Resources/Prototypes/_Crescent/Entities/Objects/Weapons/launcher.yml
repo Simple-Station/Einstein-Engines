@@ -218,7 +218,7 @@
       path: /Audio/_Crescent/Weapons/Guns/non_collection/gl_fire.ogg
 
 - type: entity
-  name: PTA M-5 Carl Gustaf 84mm
+  name: PTA M-5 Carl Gustaf 84mm #This one is alright, not many people use rocket launchers.
   parent: [BaseWeaponLauncher, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponLauncherGustav
   description: A ruggid, breach-loaded recoiless rifle. Suitable for a variety of large targets.
@@ -341,7 +341,7 @@
   - type: Appearance
 
 - type: entity
-  name: PTA 10AX Chinalake 40mm
+  name: PTA 10AX Chinalake 40mm #Lower mag capacity and fire rate than SHI MGL. Its more portable.
   parent: [BaseWeaponLauncher, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponLauncherChinaLake
   description: A pump action grenade launcher manufactured by Pang Tai Arms.

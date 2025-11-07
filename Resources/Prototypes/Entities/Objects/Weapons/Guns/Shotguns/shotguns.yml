@@ -67,23 +67,18 @@
     staminaCost: 9.5
 
 - type: entity
-  name: PTA MOD-2 Pozhar 12g
-  # Don't parent to BaseWeaponShotgun because it differs significantly
-  parent: [BaseItem, BaseGunWieldable]
+  parent: [BaseWeaponShotgun, BaseGunWieldable]
   id: WeaponShotgunBulldog
-  description: It's a magazine-fed shotgun designed for close quarters combat. Uses 12 gauge shotgun shells.
+  name: PTA MOD-2 Pozhar 12g  
+  description: A tube-fed, fully automatic, combat shotgun designed for close quarters combat. Loads shells one by one. Uses 12 gauge shotgun shells.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/pozhar.rsi
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-0
-      map: ["enum.GunVisualLayers.Mag"]
   - type: Item
     size: Large
     shape:
     - 0,0,4,2
+    sprite: _Crescent/Objects/Weapons/Guns/pozhar.rsi
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/pozhar.rsi
     quickEquip: false
@@ -93,37 +88,26 @@
   - type: AmmoCounter
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
-    fireRate: 3
-    selectedMode: FullAuto
+    damageModifier: 0.85
+    fireRate: 2.5
+    selectedMode: SemiAuto
     availableModes:
-    - FullAuto
+    - SemiAuto
+    - FullAuto #Made it not mag fed. Requires a lot more time to reload now.
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/shotgun_1/shotgun_gunshot_3.ogg
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
     fireOnDropChance: 0.3
     shotgunSpreadMultiplier: 1.5
+  - type: BallisticAmmoProvider
+    capacity: 8
+    autoCycle: true
   - type: Wieldable
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: MagazineShotgun
-        priority: 2
-        whitelist:
-          tags:
-          - MagazineShotgun
-        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
-  - type: MagazineAmmoProvider
-  - type: MagazineVisuals
-    magState: mag
-    steps: 1
-    zeroVisible: true
   - type: Appearance
   - type: StaticPrice
     price: 500
@@ -146,6 +130,12 @@
         Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 9.5
+  - type: ExtendDescription
+    descriptionList:
+      - description: This shotgun's damage is reduced due to its fire-rate. It deals 15% lower damage per shot.
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
 
 - type: entity
   name: PTA MOD-2 Pozhar 12g
