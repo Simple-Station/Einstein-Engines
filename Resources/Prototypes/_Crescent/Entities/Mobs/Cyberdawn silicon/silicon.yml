@@ -64,12 +64,14 @@
   - type: Tag
     tags:
     - CanPilot
+    - NoConsoleSound
   - type: ShowSyndicateIcons
 
 - type: entity
   id: PlayerStationAiCS
   parent: PlayerStationAiEmpty
   suffix: Ghost Role
+  name: CDT AI
   components:
   - type: ContainerComp
     proto: AiHeldHull
@@ -119,4 +121,8 @@
 - type: dataset
   id: CybersunNameset
   values:
-  - CS
+  - CS Cat
+  - CS Xihe
+  - CS Ritian
+  - CS Yu Yi
+  - CS Zhulong

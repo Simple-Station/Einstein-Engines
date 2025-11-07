@@ -28,6 +28,8 @@ job-name-cyberdawntech = Cyberdawn Researcher
 job-name-intelligenceofficer = Patriarch
 job-name-shipbreaker = Shipbreaker
 job-name-foreman = SAW Foreman
+ghost-role-information-CS-core = Cybersun AI Core.
+
 
 # empire
 
