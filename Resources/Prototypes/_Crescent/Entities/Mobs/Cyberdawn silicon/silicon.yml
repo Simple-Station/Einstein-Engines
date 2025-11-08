@@ -102,6 +102,9 @@
     rules: ghost-role-information-silicon-rules
     raffle:
       settings: default
+  - type: Access
+    groups:
+    - Syndicate
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
