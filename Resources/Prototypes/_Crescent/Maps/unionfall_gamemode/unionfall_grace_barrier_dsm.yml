@@ -9,8 +9,8 @@
       gridComponents:
         - type: BlockShipWeaponProjectileGrid
         - type: PreventPilot
-        - type: SelfDeleteGrid
-          timeToDelete: 1200 # 20 minutes
+        # - type: SelfDeleteGrid //haha this broke because of using this for antilag .2 | 2025
+        #   timeToDelete: 1200 # 20 minutes
         - type: VesselIcon
           iffIcon:
             sprite: _Crescent/ShipIcons/ifficons.rsi
