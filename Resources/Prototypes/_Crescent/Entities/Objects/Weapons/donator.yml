@@ -650,12 +650,12 @@
   - type: MeleeWeapon
     wideAnimationRotation: -135
     swingLeft: false
-    attackRate: 1
+    attackRate: 1.2
     range: 1.75
     damage:
       types:
-        Slash: 60
-        Heat: 35
+        Slash: 20
+        Heat: 15
         Structural: 25
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 14
