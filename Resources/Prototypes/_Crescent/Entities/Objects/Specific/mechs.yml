@@ -451,7 +451,7 @@
       state: paper
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/Mecha/sentinel.ogg
+      path: /Audio/Mecha/sepulchre1.ogg
   - type: Mech
     maxIntegrity: 350
     baseState: sepulchre
