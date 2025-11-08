@@ -654,8 +654,8 @@
     range: 1.75
     damage:
       types:
-        Slash: 20
-        Heat: 15
+        Slash: 30
+        Heat: 25
         Structural: 25
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 14
