@@ -57,7 +57,8 @@
     id: NCWLHomeguardSoldatPDA
     outerClothing: ClothingOuterArmorNCWLHeavyCarapace
     belt: ClothingBeltNCWLPouches
-    pocket1: WeaponPistolHKUSP
+    pocket1: BookNCWLManual1
+    pocket2: BookNCWLManual2
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesCombat
     head: ClothingHeadHelmetNCWLBasic
@@ -65,8 +66,9 @@
     ears: ClothingHeadsetNCWL
   storage:
     back:
-    - Flash
-    - Tourniquet
-    - Zipties
-    - MagazinePistol
-    - CombatKnife
+      - Flash
+      - Tourniquet
+      - Zipties
+      - MagazinePistol
+      - WeaponPistolHKUSP
+      - CombatKnife
