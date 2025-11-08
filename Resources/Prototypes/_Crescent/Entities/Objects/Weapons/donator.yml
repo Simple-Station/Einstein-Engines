@@ -1,6 +1,6 @@
 # @ezo_rb (ezo) donor gun, @HungryCuban auctioned
 - type: entity
-  name: SHI001P Zodum .327
+  name: SHI001P Zodum 12.7x99mm
   parent: [BaseWeaponPistol, StreeCredRedeemableLow]
   id: WeaponPistolZodum
   description: A custom hand-cannon from the SHI development team that was never meant to be released. Chambered in heavy 12.7x99mm.
