@@ -19,10 +19,10 @@ public sealed class HullrotSelfDeleteSystem : EntitySystem
     [Dependency] private readonly GameTicker _gameTicker = default!;
 
     private TimeSpan _roundstartDelayBeforeSystemActivates = TimeSpan.FromSeconds(30); //needed because some shit like salvage is initially parented to space...for some reason
-    private float _distanceToDeleteItems = 20;
-    private TimeSpan _delayBetweenItemDeleteAttempts = TimeSpan.FromSeconds(10); //more aggressive to hopefully help with lag
-    private float _distanceToDeleteGrids = 20;
-    private TimeSpan _delayBetweenGridDeleteAttempts = TimeSpan.FromSeconds(10);
+    private float _distanceToDeleteItems = 64;
+    private TimeSpan _delayBetweenItemDeleteAttempts = TimeSpan.FromMinutes(2); //more aggressive to hopefully help with lag
+    private float _distanceToDeleteGrids = 256;
+    private TimeSpan _delayBetweenGridDeleteAttempts = TimeSpan.FromMinutes(10);
 
     private ISawmill _sawmill = default!; //logging
 
@@ -36,7 +36,7 @@ public sealed class HullrotSelfDeleteSystem : EntitySystem
 
         _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("hullrot.cleanup");
 
-        _sawmill.Debug("it's showtime");
+        //_sawmill.Debug("it's showtime");
         SubscribeLocalEvent<SelfDeleteGridComponent, ComponentInit>(OnInitGrid); //used for cleaning up debris grids
         SubscribeLocalEvent<SelfDeleteInSpaceComponent, EntParentChangedMessage>(OnParentChanged); //used for cleaning up items in space
 
@@ -67,7 +67,7 @@ public sealed class HullrotSelfDeleteSystem : EntitySystem
             return;         // this lets them spawn in and not get autodeleted instantly
         if (args.Transform.GridUid == null) //this returns null when we are in space
         {
-            _sawmill.Debug("item went into space: " + Name(uid) + " - deleting in " + _delayBetweenItemDeleteAttempts.ToString());
+            //_sawmill.Debug("item went into space: " + Name(uid) + " - deleting in " + _delayBetweenItemDeleteAttempts.ToString());
             var dEv = new HullrotAttemptCleanupItem();
             _eventScheduler.DelayEvent(uid, ref dEv, _delayBetweenItemDeleteAttempts);
         }
@@ -93,14 +93,14 @@ public sealed class HullrotSelfDeleteSystem : EntitySystem
         if (!_mappingManager.IsMapInitialized(transformComp.MapID)) //if the map is NOT initialized, then WE ARE IN MAPPING MODE!!! SO DON'T DO SHIT!!!!
             return;
 
-        _sawmill.Debug("1. seeing if ent " + Name(uid) + "is in space...");
+        //_sawmill.Debug("1. seeing if ent " + Name(uid) + "is in space...");
         if (transformComp.GridUid == null) //are we STILL in space?
         {
-            _sawmill.Debug("2. trying to delete entity + " + Name(uid) + "...");
+            //_sawmill.Debug("2. trying to delete entity + " + Name(uid) + "...");
             var enumerator = EntityManager.EntityQueryEnumerator<ActorComponent>(); //should only detect players, but this fails for some reason.
             while (enumerator.MoveNext(out var actorUid, out var _))
             {
-                _sawmill.Debug("3. checking distance between entity (" + Name(uid) + "), [" + _transform.GetWorldPosition(uid).ToString() + "], and actor " + Name(actorUid) + ", [" + _transform.GetWorldPosition(actorUid).ToString() + "], length = " + (_transform.GetWorldPosition(uid) - _transform.GetWorldPosition(actorUid)).Length().ToString());
+                //_sawmill.Debug("3. checking distance between entity (" + Name(uid) + "), [" + _transform.GetWorldPosition(uid).ToString() + "], and actor " + Name(actorUid) + ", [" + _transform.GetWorldPosition(actorUid).ToString() + "], length = " + (_transform.GetWorldPosition(uid) - _transform.GetWorldPosition(actorUid)).Length().ToString());
                 if ((_transform.GetWorldPosition(uid) - _transform.GetWorldPosition(actorUid)).Length() < _distanceToDeleteItems)
                 {
                     var dEv = new HullrotAttemptCleanupItem();
