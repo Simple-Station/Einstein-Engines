@@ -2,54 +2,42 @@ book-accelerated-conscript-training-manual-1 = GS-10095-W-1
         Accelerated Conscript Training manual
         part 1/2
 
-        This is a classified document issued by the New Crescent Worker’s League (NCWL) if found elsewhere report it immediately for investigation.
+        This is a classified document issued by the New Crescent Worker’s League, if found elsewhere, report it immediately for investigation.
 
         Chapter 0: Introduction
 
-        Welcome to the Taypan comrade!
-        Every single line of this manual is valuable and essential knowledge to you.
-        Engrave it into your soul for when the moment comes you will be happy you read it.
-        If you cannot read, seek out the nearest NCWL Command member to perform a public reading!
+        Partisan, worker, no matter who you are, you are going to need to receive rudimentary theory to proceed with your duty.
+        This manual contains basic procedure for equipment and ship-related activities.
 
         Chapter 1: Basic survival
 
-        Before even thinking of leaving the safety of Port Balreska make sure you obtain everything from the following list.
-        Communard statistics suggest missing any item drastically lowers your life expectancy.
+        Before departing, procure the following items, Porodschoki statisticians suggest that missing any item drastically lowers your life expectancy.
 
-        This is the bare minimum!
-        1. Basic toolset (Crowbar, Screwdriver, Wirecutter, Wrench).
+        1. Crowbar, screwdriver, wrench, multitool, welder, wirecutter.
         2. Hardsuit.
         3. GPS.
-        4. Portable Mass Scanner.
-        5. Oxygen supply (Minimum: 2x Dual capacity tanks).
-        6. Jetpack (Blue = O2 / Grey = CO2).
-        7. NCWL Deathrattle Implant.
-        8. Self-defense weapon with adequate ammunition.
-        9. Advanced or Combat Medkit.
+        4. Mass scanner.
+        5. Dual emergency oxygen tank.
+        6. Jetpack.
+        7. Deathrattle Implant.
+        8. Primary weapon with spare mags.
+        9. Medkit or its contents.
 
         If you are missing any of the items contact your nearest officer or comrade for help.
 
         Chapter 1.1: Communication
 
-        The following channels are available to you.
-
         1. ’:o’ for faction communication.
         2. ’:d’ for close range general communication (500m).
         3. ’;’ for long range general communication (2.5km).
 
-        NCWL’s official language is Crescent Creole if you hear a communard member speaking anything else report them to command.
-
         Chapter 2: Standard Operating Procedures
 
-        The NCWL runs like clockwork.
-        Be a part of it!
+        1. A mining fleet with escorts will set out to Taypan-1, while several salvage groups will congregate around Nova Balreska or the Tribal Scrapyard.
+        2. Research and production operations will commence aboard Port Balreska.
+        3. The League will undergo a rearmament procedure and a fleet will be fielded.
 
-        1. A mining fleet with escorts will go out to get resources.
-        2. Research will commence abroad Balreska
-        3. A grand fleet, built by the hands of workers, will destroy enemies of the League.
-
-        If you are unsure as of to your role or have any question find your nearest officer. The League always needs a pair of hands.
-        If you suspect your comrade of avoiding work report them to your superiors.
+        If you don't know what to do, ask on faction radio. There is always work to do.
 
         Chapter 2.1: Basic Ship Operation
 
@@ -58,101 +46,95 @@ book-accelerated-conscript-training-manual-1 = GS-10095-W-1
 
         Ship Setup Checklist
         1. Redeem your LPC at a shipyard console.
-        2. Swipe your ID at the shuttle console
-        3. Give your comrades access  (ID tab).
-        4. Load plenty of spare ammunition and ensure all weapons are ready to fire.
+        2. Swipe your ID at the shuttle console aboard your ship.
+        3. Give your comrades access (ID tab).
+        4. Load all ship weapons with relevant ammunition and keep a stockpile.
         5. Confirm all crew are ready and undock.
-        6. Signal using secure communications that you are ready. Be sure to include your ship model and number.
+        6. Inform the rest of the League that you are ready, include your ship identifier and class.
 
         Chapter 2.2 Pilot Doctrine
 
         You can move with W/A/S/D, turn with Q/E, use your brakes with Space if your ship has fixed guns they will be on labeled buttons on the right of your flight interface.
-        If you have a radar console make sure to zoom out as far as possible on that as well and keep both open.
-        Use the map interface to look for approaching ships outside of radar range to avoid ambushes.
-        Set your damping according to your situation.
-        For long range travel use free (no damping)
-        For docking use fixed (max damping)
-        For most other situations dampen is fine (normal damping)
-        As a pilot there are other basic expectations for you such as.
+        Your shuttle console has a range of 256m, your radar console has a range of 1024m, keep both open.
+        Use the MAP interface to locate points of interest or scout for vessels out of IFF range.
 
-        1. Dont rush the enemy head on unless you have a death wish
-        2. Keep optimal distance depending on your weapons
-        3. Dodge enemy fire! Every hit you take costs you.
-        4. Follow orders and dont split formation.
+        You have three engine modes:
+        1. Dampen applies a slight amount of drag to your ship, generalist option.
+        2. Free removes most drag from your ship, used for specific combat scenarios and long drives.
+        3. Anchor applies significant drag to your ship, used for rapid braking and docking.
 
-        Breaking any of these will be followed by punishment on the off chance you survive.
-        Remember the union’s power is from the combination of all the workers.
-        If you die it could lead to your whole fleet’s death.
+        1. Keep optimal distance depending on your weapons max range.
+        2. Don't expose yourself to unnecessary enemy fire. Always attempt to fire on the enemy.
+        3. Pay attention to radio and maintain formation.
+        4. Maintain a strong interval between allied vessels, 150-200 meters ensures the maneuverability and safety of the fleet.
+
+        Pilots incapable of executing these instructions will meet their death swiftly if not by the hands of the enemy, but by the hands of their comrades.
 
         Chapter 2.3 Gunnery Doctrine
 
-        Your job is to lay fire with the intention to protect the communard.
-        Remember keeping the guns firing keeps the morale high so start firing the moment you are in range!
-        Leading your shots is a skill you will learn over time but keep firing no matter what.
-        Your guns have plenty of range! You dont need to actually see what you are shooting at.
-        Their radar is signature on the edge of your screen is enough.
-        If you have a radar console make sure to zoom out as far as possible on that as well and keep both open.
-        Any bullet that goes unfired is a bullet that could have been shot into Imperial scum!
-        Here is a basic guide for engaging targets.
-
-        1. See targets on the edge of your radar.
-        2. Check distance to target.
-        3. When in range start firing and dont stop firing.
-        4. Do not advance from your effective range unless you’ve been told to.
-        4. Achieve glorious victory
+        1. Check for targets at the edge of your radar and shuttle console.
+        2. Your guns typically exceed the range of your shuttle and radar console, fire from maximal range.
+        3. Always lead your shots, aim for the weak points of the enemy, such as engines, guns, thrusters and cockpits.
+        4. Prioritize targets that break formation or otherwise expose themselves.
 
         Range table:
-        Operator/Vulcan/MRM 500m
-        Flak/Slugthrower 750m
-        Kurosawa/Sumimoto/Magwell 1km
-        Gargoyle 1.5km (guided keep distance)
-        MG-213 2km (though inneffective at range)
-        Needler 2.5km
-        90/120/230/320 Beyond radar (Fire at any range)
-
-
+        NT "Vulcan" and PTA "Operator": 540m
+        SHI 43mm "Hullpiercer" slugspitter and 43mm Dasher: 800m
+        'Lancer' MRM missile system: 680-960m
+        NT-6 48mm "Sumitomo" missile rack: 1,000m
+        SHI 180mm "Magwell" torpedo launcher: 1,200-2,000m
+        350c "Compakt" hybrid energy gatling: 2,375m (Infrared) and 1,330m (Plasma)
+        NCWL-3 48mm "Kurosawa" rocket pod: 1,350m
+        88mm 'Prince' flak-screen turret: 1,350m
+        'Gargoyle' LRM cruise missile launcher: 1,500-2,000m
+        SHI 400c plasma bolt repeater: 1,980m
+        SHI MG-213: 2,175m
+        60mm PTA 'Needler': 2600m
+        230mm 'Hephaeustus' assault artillery platform: 3,900m
+        500i "Bizmuth" ion gatling: 5,700m
+        90mm heavy mortar-pounder: 15,600m
+        SHI Type 99 120mm artillery: 22,800m
+        320mm high-frequency accelerator cannon: 39,000m
+        
         Chapter 2.4 Loading Doctrine
 
-        As a loader keeping your guns loaded is a promise to the people!
-        Every moment a gun runs dry is a moment that you could have prevented.
-        Prepare ammunition close to the matching weapon system. Left click to load/swap mags.
-        Reload some guns early such as needlers as the mags can be combined.
-        Keep yourself safe! A dead loader is an useless loader!
-
-        Addendum as per NCWL guidelines
-        loaders are forbidden to play chess.
+        A loader's duties are multifaceted, you repair the ship, fend off boarders, replace any missing or dead crew, but most importantly: load the ship's guns.
+        Stockpile ammunition close to the relevant shipgun, left click to load/swap mags, coordinate with your gunner and pilot to ensure that all guns are always loaded.
+        The crew should always outlive their ship, don't die loading.
 
 book-accelerated-conscript-training-manual-2 = GS-10095-W-2
         Accelerated Conscript Training manual
         part 2/2
 
-        Attention! Only proceed after reading part 1!
+        This manual contains basic procedure for emergency and industry-related activities.
+        Make sure to familiarize yourself with part one before moving on.
 
         Chapter 2.5 Mining basics
 
-        Mining isn't just a job its the communard’s way of life.
-        You go to an asteroid belt (Taypan 1 usually) and use your exhumer and ore magnet to collect ore.
-        You just need to get close to the asteroid and blast it to pieces.
-        Be sure to return in one piece comrade!
-        Without workers the revolution is useless!
+        1. Mining is done on an Exhumer or Gazpachov-class vessel in the Taypan-1 or Taypan-2 asteroid belts.
+        2. Before going out analyze the situation in the belts with the MAP tab, go out with escorts if the belts aren't safe.
+        3. Mine EXCLUSIVELY chromite (purple) and asteroid (light brown) rock formations, asteroids of other types have significantly worse yields.
+        4. If you are an escort of a mining party, particularly a Lodka-class, assist the miners in crushing rock with your machineguns if you have spare ammunition.
+        5. Return upon meeting a quota of 2 ore boxes per mining ship, or earlier if the situation is too dangerous to continue mining.
 
-        Chapter 3 Emergency Procedures
+        Chapter 2.6 Salvaging basics
 
-        This section is the difference between life and death in this sector. Every emergency is different but dealing with it effectively and quickly is of highest importance!
-        The communard values you alive.
+        1. Salvaging is done on a Lodka or Kite-class vessel nearby Nova Balreska or in the Tribal Scrapyard.
+        2. Before going out analyze the situation in the fields with the MAP tab.
+        3. Pick up any pieces of scrap, technology disks, raw materials and everything that poses industrial value, everything else can be discarded.
+        4. Use quick-equip (shift+e for beltslot and shift+b for bagslot) hotkeys to rapidly pick up and drop down loot.
+        5. Always pay attention to your surroundings, you are a sitting duck while you're salvaging.
+        6. Return upon meeting a quota of 5-6 full scrap crates per salvage ship, or earlier if the situation is too dangerous to continue salvaging.
 
         Chapter 3.1 Emergency Ship Repairs
 
-        This chapter is about saving a ship that has become inoperable by any means.
-
-        Ensure these minimal parts are functional.
-
+        Ensure these minimal parts are functional:
         1. Shuttle Console
         2. Gyroscope
-        3. Thruster (at least 1)
+        3. Thrusters
         4. Power (See Emergency Power Repairs)
 
-        Sometimes parts can simply be repaired with a screwdriver other times you will need to move thing or tear up wiring to make it work.
+        Sometimes parts can simply be repaired with a screwdriver other times you will need to move things or tear up wiring to make it work.
         If repair is deemed impossible skip to Emergency Bailing.
 
         Chapter 3.2 Emergency Power Repairs
@@ -163,43 +145,39 @@ book-accelerated-conscript-training-manual-2 = GS-10095-W-2
         1. Confirm a generator is supplying HV.
         2. Confirm a substation is distributing MV.
         3. Confirm an APC is outputting LV.
-        4. Fix any broken wires or any damaged equipment as needed.
+        4. Fix any broken wires or any damaged equipment as needed, ensure relevant machines have a functional LV cable within 2 tiles of them.
 
         Generators can be switched to operate on MV if your substation is destroyed.
 
         Chapter 3.3 Emergency Bailing
 
-        Remember sometimes staying on your ship and calling for help might be smart choice even if its a husk.
-        If you need to EVA follow this guide.
-        Grab your jetpack,mass scanner and GPS.
-        If you are with a fleet report to the closest NCWL vessel that you are coming and jetpack over.
-        If you are alone in space use your faction comms to call for help.
-        Be sure to update your position often and ask for progress.
+        If you cannot repair your ship or deem it too dangerous, consider hiding in space close by to the wreck or in the husk of the ship itself.
+        If you need to immediately depart from your ship mid-combat or post-combat, do the following:
+        1. Grab your jetpack and mass scanner, use your GPS for coordinate reference.
+        2. If you are with a fleet report, to the closest NCWL vessel that you are coming and jetpack over.
+        3. If you are alone in space, use your faction comms to call for help, or jetpack to a safe location manually.
+        4. Be sure to update your position often and ask for progress.
 
-        There are many factors that can make a rescue impossible all coming from failing to follow NCWL protocol such as
-
+        Factors such as the following may prevent any and all search and rescue attempts by your comrades:
         1. Forgetting a GPS being unable to call out coordinates.
-        2. Forgetting a jetpack being unable to manouever.
+        2. Forgetting a jetpack or otherwise being unable to conduct maneuvers in space.
         3. Failing to stop your momentum. (A flying comrade is hard to catch)
-        4. Not having sufficient air supplies.
+        4. Dying in the process of recovery to incurred wounds or oxygen loss.
 
-        If within reach attempting to move to any of these places is an option to.
-        Notable coordinates:
-        0:0 Gliess Santo (Neutral spacer outpost)
-        2000:-8000 Nova Balreska
+        You can almost always jetpack to a friendly or neutral port with your jetpack, granted you have the relevant coordinates.
+
+        1500, -9000 - Nova Balreska, the primary NCWL outpost in Taypan.
+
+        The following outposts may pose danger:
+        0, 0 - Gliess Santo, an independent outpost.
+        4000, 2800 - Hayes Medical Waystation, a Coalition-aligned outpost operated by IPM.
+        5250, 6600 - Dochenskaya Engineering Outpost, a Coalition-aligned outpost operated by SAW.
 
         Chapter 3.3 Boarder Defense
 
-        Your radar console will be warning you in regards to closeby mass scanners.
-        Noticing boarders is very important as they can single handedly disable ships.
-        Always carry a firearm by your side.
-        If you are boarded by a mech then be extra careful.
-        If possible fight with your crew to overwhelm the boarders but avoid friendly fire.
-        Use your access to hide behind doors and use corridors to concentrate fire!
+        Your radar console will inform you of active mass scanners close to your ship, these often indicate boarder presence.
+        Boarders are common after ship combat, as many will opt to try to take over the opposing vessels by force.
 
-        Closing notes
-
-        Comrade you are part of something bigger than just yourself.
-        Remember to work for the good of the collective rather than yourself.
-        Distribute this guide to your fellow crew and remember it by heart!
-        Dont die in vain!
+        Keep your airlocks closed, especially weak points welded or bolted, always be ready to be greeted by a hostile force and always be prepared to fire back.
+        Mechs pose significant threat in infantry combat, shoot down any mech signatures (little triangles) while its possible.
+        If boarded by a mech, do not attempt to fight it in single combat without anti-mech weaponry unless the situation calls for it.
