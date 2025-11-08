@@ -10454,7 +10454,7 @@ entities:
       parent: 121
     - type: Physics
       canCollide: False
-- proto: AmeController
+- proto: AmeControllerStation
   entities:
   - uid: 136
     components:

@@ -29,8 +29,8 @@
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterArmorCMMDeputyCarapace
-  name: deputy marshal's overcoat
-  description: A decorated officer's coat, belonging to the Deputy Marshal of the Minutemen.
+  name: militiaman's overcoat
+  description: A simple, blue, double breasted overcoat with a red belt and cuffs. The inside is lined with light armor plating, which will stop a bullet, but not the cold.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/CMM/OuterClothing/deputymarshal.rsi

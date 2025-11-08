@@ -339,7 +339,6 @@
       - ClothingOuterSuitEmergency
       - ClothingHeadHelmetEVALarge # Frontier
       - TradebandTranslator
-      -  SilkCrate
     dynamicRecipes:
       - CreoleTranslator
       - LowImperialTranslator
@@ -573,6 +572,7 @@
       - DSMRapier
       - DSMSabre
       - DSMDuelingKhopesh
+      - DSMBaton
       - LaelapsLPC
       - PaladinFlatpack
       - WandererFlatpack
@@ -593,6 +593,8 @@
       - WeaponLauncherM320
       - TriumphantLPC
       - SuzerainLPC
+      - NemesisLPC
+      - JanissaryLPC
       - ClothingHeadHelmetNCWLEVA
       - ClothingOuterNCWLEVA
       - ClothingHeadHatNCWLCapsoft
