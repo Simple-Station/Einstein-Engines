@@ -1,0 +1,23 @@
+- type: entity
+  id: PowerCageHardliner
+  parent: BaseItem
+  name: Power Cage - Hardliner 
+  description: A rechargeable power cage, configured for use as ammunition in "Hardliner" fixedpoint ship weaponry. 
+  components:
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/hardlinebattery.rsi
+    state: battery
+  - type: Battery
+    maxCharge: 1200 #12 units
+    startingCharge: 1200
+  - type: Riggable
+  - type: PowerCell
+  - type: Tag
+    tags:
+      - HardlinerCell
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletMachineGunPlasmaShuttleLarge
+    fireCost: 100

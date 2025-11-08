@@ -6,7 +6,8 @@
   materials:
     ExoticProteins: 250
     DeactivatedPhoron: 500
-    Garbage: 1750
+    Steel: 100
+    Glass: 100
 
 - type: latheRecipe
   id: Exile
@@ -18,7 +19,8 @@
     PlasmaIsotope: 500
     DeactivatedPhoron: 500
     ExoticProteins: 1000
-    RefinedGarbage: 1500
+    Steel: 100
+    Glass: 100
 
 - type: latheRecipe
   id: Kaiser
@@ -30,6 +32,8 @@
     ExoticProteins: 1500
     DeactivatedPhoron: 1500
     PlasmaIsotope: 2000
+    Steel: 100
+    Glass: 100
 
 - type: latheRecipe
   id: Mechanite
@@ -41,6 +45,8 @@
     PlasmaIsotope: 1000
     DeactivatedPhoron: 1500
     Mechanites: 2000
+    Steel: 100
+    Glass: 100
 
 - type: latheRecipe
   id: Bloodeye
@@ -51,7 +57,8 @@
     Galine: 500
     DeactivatedPhoron: 1000 
     ExoticProteins: 1500
-    RefinedGarbage: 2000
+    Steel: 100
+    Glass: 100
 
 - type: latheRecipe
   id: PartyDrugs
@@ -62,4 +69,5 @@
     Galine: 500
     PlasmaIsotope: 1000
     DeactivatedPhoron: 1500
-    RefinedGarbage: 1500
+    Steel: 100
+    Glass: 100

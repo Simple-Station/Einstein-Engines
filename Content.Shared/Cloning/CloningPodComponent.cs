@@ -153,7 +153,7 @@ public sealed partial class CloningPodComponent : Component
     ///     A failed roll poduces a random NonHumanoid.
     /// </summary>
     [DataField]
-    public float HumanoidBaseChance = 1;
+    public float HumanoidBaseChance = 1f;
 
     /// <summary>
     ///     The proto that the Metem Machine picks a random Humanoid from

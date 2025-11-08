@@ -4,6 +4,9 @@
   parent: BaseStructureDynamic
   abstract: true
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 1
   - type: Transform
     noRot: true
   - type: InteractionOutline
@@ -232,6 +235,9 @@
   name: sealed taypan wine shipment
   description: A sealed case of aged, fine Taypan wine. A sticker on the side identifies the station this was produced in. The same sticker warns you that the product is an imitation and not really made from berries.
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 2
   - type: Sprite
     sprite: _Crescent/Objects/TradeGoods/taypanwine.rsi
     layers:
@@ -377,6 +383,9 @@
   name: secured fabrics shipment
   description: A secured shipment of fine Surezai-produced fabrics.
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 2
   - type: Sprite
     sprite: _Crescent/Objects/TradeGoods/taypanwine.rsi
     layers:
@@ -475,7 +484,10 @@
     sprite: _Crescent/Objects/TradeGoods/stub.rsi
     layers:
     - state: icon
-
+  - type: Tag
+    tags:
+      - Trash
+      
 - type: entity
   parent: BaseItem
   id: OrganStub

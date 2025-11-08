@@ -21,10 +21,10 @@
     armorRepair: SteelPlate
     initialModifiers:
       flatReductions:
-        Blunt: 20
-        Slash: 25
+        Blunt: 35
+        Slash: 35
         Piercing: 50
-        Heat: 25
+        Heat: 20
         Caustic: 5
   - type: ClothingSpeedModifier
     walkModifier: 0.90

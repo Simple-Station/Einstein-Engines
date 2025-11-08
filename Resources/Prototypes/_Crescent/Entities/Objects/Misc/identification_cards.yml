@@ -1,13 +1,13 @@
 #ncwl-2#
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: NCWLIDCardWorker
   name: NCWL ID card
   components:
   - type: Currency
     price:
-      DogtagNCWL: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -16,13 +16,13 @@
     job: WorkerNCWL
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemable]
+  parent: IDCardStandard
   id: NCWLIDCardFactionLeader
   name: NCWL ID card
   components:
   - type: Currency
     price:
-      DogtagNCWL: 1
+      PlunderGSC: 15
   - type: Sprite
     layers:
     - state: default
@@ -31,13 +31,13 @@
     job: CommandantNCWL
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: NCWLIDCardHomeguardLeader
   name: NCWL ID card
   components:
   - type: Currency
     price:
-      DogtagNCWL: 1
+      PlunderGSC: 15
   - type: Sprite
     layers:
     - state: default
@@ -46,13 +46,13 @@
     job: KommissarNCWL
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: NCWLIDCardHomeguardSquadCaptain
   name: NCWL ID card
   components:
   - type: Currency
     price:
-      DogtagNCWL: 1
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -61,13 +61,13 @@
     job: FleetkapitanNCWL
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: NCWLIDCardHomeguardSoldat
   name: NCWL ID card
   components:
   - type: Currency
     price:
-      DogtagNCWL: 1
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -76,13 +76,13 @@
     job: PartisanNCWL
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: NCWLIDCardMedicalWorker
   name: NCWL ID card
   components:
   - type: Currency
     price:
-      DogtagNCWL: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -91,13 +91,13 @@
     job: DoctorNCWL
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: NCWLIDCardLogisticLeader
   name: NCWL ID card
   components:
   - type: Currency
     price:
-      DogtagNCWL: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -107,13 +107,13 @@
 
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: NCWLIDCardEngineeringLeader
   name: NCWL ID card
   components:
   - type: Currency
     price:
-      DogtagNCWL: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -258,13 +258,13 @@
 #empire
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: DSMIDCardFreeholder
   name: imperial ID card
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -273,13 +273,13 @@
     job: FreeholderDSM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: DSMIDCardTemplar
   name: imperial ID card
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -288,13 +288,13 @@
     job: TemplarDSM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: DSMIDCardAdvocatus
   name: imperial ID card
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -303,13 +303,13 @@
     job: AdvocatusDSM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: DSMIDCardArchmaester
   name: imperial ID card
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -318,13 +318,13 @@
     job: ArchmaesterDSM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: DSMIDCardSurgeon
   name: imperial ID card
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -333,13 +333,13 @@
     job: SurgeonDSM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: DSMIDCardWealth
   name: imperial ID card
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -348,13 +348,13 @@
     job: WealthDSM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: DSMIDCardForeman
   name: imperial ID card
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -363,13 +363,13 @@
     job: ForemanDSM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: DSMIDCardScribe
   name: imperial ID card
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -378,13 +378,13 @@
     job: ScribeDSM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: DSMIDCardLevyman
   name: imperial ID card
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -393,13 +393,13 @@
     job: LevymanDSM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: DSMIDCardKnight
   name: imperial ID card
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -408,13 +408,13 @@
     job: KnightDSM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: DSMIDCardRitter
   name: imperial ID card
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -423,13 +423,13 @@
     job: RitterDSM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: DSMIDCardLabor
   name: imperial ID card
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -438,13 +438,13 @@
     job: LaborDSM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: DSMIDCardCourtier
   name: imperial ID card
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -453,13 +453,13 @@
     job: CourtierDSM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: DSMIDCardAdjutant
   name: imperial ID card
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 15
   - type: Sprite
     layers:
     - state: default
@@ -468,13 +468,13 @@
     job: AdjutantDSM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemable]
+  parent: IDCardStandard
   id: DSMIDCardGovernor
   name: imperial ID card
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 15
   - type: Sprite
     layers:
     - state: default
@@ -485,7 +485,7 @@
 #srm
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: SRMIDCardTender
   name: hunter ID card
   components:
@@ -497,7 +497,7 @@
     job: TenderSRM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: SRMIDCardAcolyte
   name: hunter ID card
   components:
@@ -509,7 +509,7 @@
     job: AcolyteSRM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: SRMIDCardHunter
   name: hunter ID card
   components:
@@ -521,7 +521,7 @@
     job: HunterSRM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: SRMIDCardOverseer
   name: overseer ID card
   components:
@@ -533,7 +533,7 @@
     job: OverseerSRM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemable]
+  parent: IDCardStandard
   id: SRMIDCardMontagne
   name: hunter montagne's ID card
   components:
@@ -548,10 +548,13 @@
 
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemable]
+  parent: IDCardStandard
   id: SHIIDCardExecutive
   name: corporate ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 15
   - type: Sprite
     layers:
     - state: default
@@ -560,10 +563,13 @@
     job: ExecutiveSHI
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: SHIIDCardBoard
   name: corporate ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -572,10 +578,13 @@
     job: BoardSHI
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: SHIIDCardCorpSec
   name: corporate ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -584,10 +593,13 @@
     job: CorpsecSHI
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: SHIIDCardHighSec
   name: corporate ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -596,10 +608,13 @@
     job: HighsecSHI
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: SHIIDCardEmployee
   name: corporate ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -608,10 +623,13 @@
     job: EmployeeSHI
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: SHIIDCardMedtech
   name: corporate ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -622,10 +640,13 @@
 #cmm
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: CMMIDCardOrdnanceman
   name: minuteman ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -634,10 +655,13 @@
     job: OrdnancemanCMM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: CMMIDCardMachinist
   name: minuteman ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -646,10 +670,13 @@
     job: MachinistCMM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: CMMIDCardPhysician
   name: minuteman ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -658,10 +685,13 @@
     job: PhysicianCMM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: CMMIDCardMinuteman
   name: minuteman ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -670,10 +700,13 @@
     job: MinutemanCMM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: CMMIDCardWatchmaster
   name: minuteman ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -682,10 +715,13 @@
     job: WatchmasterCMM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: CMMIDCardDeputyMarshal
   name: minuteman ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -694,10 +730,13 @@
     job: DeputyMarshalCMM
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemable]
+  parent: IDCardStandard
   id: CMMIDCardMarshal
   name: minuteman ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 15
   - type: Sprite
     layers:
     - state: default
@@ -708,7 +747,7 @@
 #misc
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: IDCardAntiquarian
   name: nomadic ID card
   components:
@@ -720,7 +759,7 @@
     job: Antiquarian
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: MercenaryIDCard
   name: mercenary ID card
   components:
@@ -735,7 +774,7 @@
     sprite: _NF/Objects/Misc/id_cards.rsi
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: PilotIDCard
   name: pilot ID card
   components:
@@ -751,7 +790,7 @@
 
 - type: entity
   name: "magnate ID card"
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: DeparmentPassMagnate
   components:
   - type: Access
@@ -765,7 +804,7 @@
 #families
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemable]
+  parent: IDCardStandard
   id: TAPIDCardProphet
   name: nomadic ID card
   components:
@@ -777,7 +816,7 @@
     job: ProphetTAP
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: TAPIDCardAcolyte
   name: nomadic ID card
   components:
@@ -789,7 +828,7 @@
     job: AcolyteTAP
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: TAPIDCardTinkerer
   name: nomadic ID card
   components:
@@ -801,7 +840,7 @@
     job: TinkererTAP
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: TAPIDCardTechminer
   name: nomadic ID card
   components:
@@ -813,7 +852,7 @@
     job: TechminerTAP
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: TAPIDCardHangarTech
   name: nomadic ID card
   components:
@@ -825,7 +864,7 @@
     job: HangarTechTAP
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: TAPIDCardBeltrunner
   name: nomadic ID card
   components:
@@ -837,7 +876,7 @@
     job: BeltrunnerTAP
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: TAPIDCardDraugr
   name: nomadic ID card
   components:
@@ -849,7 +888,7 @@
     job: DraugrTAP
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: TAPIDCardServile
   name: nomadic ID card
   components:
@@ -863,7 +902,7 @@
 #ath
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemable]
+  parent: IDCardStandard
   id: ATHIDCardKommandant
   name: 43rd battlegroup ID card
   components:
@@ -875,7 +914,7 @@
     job: KommandantATH
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: ATHIDCardLeutnant
   name: 43rd battlegroup ID card
   components:
@@ -887,7 +926,7 @@
     job: LeutnantATH
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: ATHIDCardSoldat
   name: 43rd battlegroup ID card
   components:
@@ -899,7 +938,7 @@
     job: SoldatATH
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: ATHIDCardKanoneer
   name: 43rd battlegroup ID card
   components:
@@ -911,7 +950,7 @@
     job: KanoneerATH
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: ATHIDCardSanitat
   name: 43rd battlegroup ID card
   components:
@@ -923,7 +962,7 @@
     job: SanitatATH
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: ATHIDCardSteward
   name: 43rd battlegroup ID card
   components:
@@ -935,7 +974,7 @@
     job: StewardATH
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: ATHIDCardOberartz
   name: 43rd battlegroup ID card
   components:
@@ -947,7 +986,7 @@
     job: OberartzATH
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: ATHIDCardLogistat
   name: 43rd battlegroup ID card
   components:
@@ -959,7 +998,7 @@
     job: LogistatATH
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: ATHIDCardHandels
   name: 43rd battlegroup ID card
   components:
@@ -971,7 +1010,7 @@
     job: HandelsATH
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: ATHIDCardForscher
   name: 43rd battlegroup ID card
   components:
@@ -983,7 +1022,7 @@
     job: ForscherATH
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: ATHIDCardChirurgeon
   name: 43rd battlegroup ID card
   components:
@@ -995,7 +1034,7 @@
     job: ChirurgeonATH
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: ATHIDCardVorarbeiter
   name: 43rd battlegroup ID card
   components:
@@ -1007,7 +1046,7 @@
     job: VorarbeiterATH
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: ATHIDCardArbeiter
   name: 43rd battlegroup ID card
   components:
@@ -1021,7 +1060,7 @@
 #anti psionic response team
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: APRTIDCardKanoneer
   name: 43rd battlegroup ID card
   components:
@@ -1033,7 +1072,7 @@
     job: APRTKanoneerATH
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: APRTIDCardSanitat
   name: 43rd battlegroup ID card
   components:
@@ -1045,7 +1084,7 @@
     job: APRTSanitatATH
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: APRTIDCardSoldat
   name: 43rd battlegroup ID card
   components:
@@ -1060,10 +1099,13 @@
 #misc
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: GliessIDCardSheriff
   name: spacer ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 15
   - type: Sprite
     layers:
     - state: default
@@ -1072,10 +1114,13 @@
     job: GliessianSheriff
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: GliessIDCardDeputy
   name: spacer ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -1085,10 +1130,13 @@
 
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: GliessIDCardDockmaster
   name: spacer ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 15
   - type: Sprite
     layers:
     - state: default
@@ -1097,10 +1145,13 @@
     job: GliessianDockmaster
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: DockhandIDCard
   name: spacer ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -1109,10 +1160,13 @@
     job: GliessianDockhand
 
 - type: entity
-  parent: [IDCardStandard, StreeCredRedeemableLow]
+  parent: IDCardStandard
   id: SpacerIDCard
   name: spacer ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default

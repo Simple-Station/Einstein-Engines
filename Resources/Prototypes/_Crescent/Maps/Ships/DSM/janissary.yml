@@ -1,0 +1,32 @@
+# Author Info
+# Discord: fungus2589
+
+- type: vessel
+  id: Janissary
+  name: DSM Janissary
+  description: A strike-craft of the Nemesis, service is penance.
+  price: 36500
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/DSM/janissary.yml
+
+- type: gameMap
+  id: Janissary
+  mapName: 'DSM Janissary'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/janissary.yml
+  minPlayers: 0
+  stations:
+    Janissary:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: fighter
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Janissary {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+        
