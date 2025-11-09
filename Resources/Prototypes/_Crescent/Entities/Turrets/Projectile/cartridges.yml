@@ -1,0 +1,65 @@
+- type: entity
+  id: Cartridge35mm
+  name: cartridge (35mm FMJ USM)
+  parent: BaseCartridge
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - Cartridge35mm
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: Bullet35mmBase
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Cartridge/screamer.rsi
+    layers:
+    - state: ap
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 1
+
+- type: entity
+  id: Cartridge35mmGyrostable
+  name: cartridge (35mm gyrostable USM)
+  parent: BaseCartridge
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - Cartridge35mmGyrostable
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: Bullet35mmGyrostable
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Cartridge/screamer.rsi
+    layers:
+    - state: apds
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 1
+
+- type: entity
+  id: Cartridge35mmPlasma
+  name: cartridge (35mm plasma-core USM)
+  parent: BaseCartridge
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - Cartridge35mmPlasma
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: Bullet35mmPlasma
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Cartridge/screamer.rsi
+    layers:
+    - state: heat
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 1
