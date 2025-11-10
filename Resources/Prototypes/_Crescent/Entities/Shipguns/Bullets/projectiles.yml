@@ -45,7 +45,7 @@
     # mask:
     # - BulletImpassable
     # - Impassable
-    
+
 - type: entity
   id: BulletMachineGunVulcan
   name: 20mm vulcan bullet
@@ -93,9 +93,9 @@
         - HighImpassable
         - LowImpassable
         hard: False
-  
 
-    
+
+
 
 #mortar projectile
 
@@ -868,9 +868,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 4
-    intensitySlope: 3
-    totalIntensity: 4
+    maxIntensity: 60
+    intensitySlope: 45
+    totalIntensity: 60
     maxTileBreak: 1
   - type: Projectile
     ignoreWeaponGrid: true

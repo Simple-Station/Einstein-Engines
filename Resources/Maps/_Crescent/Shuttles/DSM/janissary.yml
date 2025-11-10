@@ -4,7 +4,7 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 11/02/2025 05:30:41
+  time: 11/08/2025 15:20:25
   entityCount: 154
 maps: []
 grids:
@@ -27,7 +27,7 @@ entities:
     - type: MetaData
       name: grid
     - type: Transform
-      pos: 26.623749,-4.188636
+      pos: -3.676155,3.7058313
       parent: invalid
     - type: MapGrid
       chunks:
@@ -127,6 +127,9 @@ entities:
             111: 0,-8
             114: 2,-8
             119: 4,-8
+            133: 0,-8
+            136: 2,-8
+            141: 4,-8
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -142,6 +145,9 @@ entities:
             116: 2,-8
             121: 4,-8
             124: 6,-8
+            138: 2,-8
+            143: 4,-8
+            146: 6,-8
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -150,6 +156,7 @@ entities:
             61: 1,0
             73: 1,0
             105: 1,0
+            127: 1,0
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -158,6 +165,7 @@ entities:
             37: 5,0
             70: 5,0
             108: 5,0
+            130: 5,0
         - node:
             id: LatticeEdgeE
           decals:
@@ -176,6 +184,10 @@ entities:
             109: 0,-8
             112: 2,-8
             117: 4,-8
+            126: 1,0
+            131: 0,-8
+            134: 2,-8
+            139: 4,-8
         - node:
             id: LatticeEdgeN
           decals:
@@ -195,6 +207,10 @@ entities:
             113: 2,-8
             118: 4,-8
             122: 6,-8
+            132: 0,-8
+            135: 2,-8
+            140: 4,-8
+            144: 6,-8
         - node:
             id: LatticeEdgeS
           decals:
@@ -206,6 +222,8 @@ entities:
             71: 1,0
             103: 1,0
             106: 5,0
+            125: 1,0
+            128: 5,0
         - node:
             id: LatticeEdgeW
           decals:
@@ -224,6 +242,10 @@ entities:
             115: 2,-8
             120: 4,-8
             123: 6,-8
+            129: 5,0
+            137: 2,-8
+            142: 4,-8
+            145: 6,-8
         - node:
             angle: 3.141592653589793 rad
             color: '#D381C996'
@@ -382,6 +404,7 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
+    - type: SelfDeleteGrid
 - proto: AAAHardpointFixed
   entities:
   - uid: 2
@@ -860,8 +883,8 @@ entities:
       - Toggle 43 mm
       - Fire 48 mm
       - Toggle 48 mm blastdoor
-      - -----
-      - -----
+      - '-----'
+      - '-----'
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -1018,6 +1041,9 @@ entities:
       rot: 3.141592653589793 rad
       pos: 5.5,-5.5
       parent: 1
+    - type: Thruster
+      baseThrust: 1000
+      thrust: 1000
 - proto: MachineFrameDestroyed
   entities:
   - uid: 95
