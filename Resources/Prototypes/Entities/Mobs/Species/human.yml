@@ -41,7 +41,7 @@
     damage:
       types:
         Blunt: 5
-        Holy: 1 # Romaine favours
+        Holy: 5 # Romaine favours
 
 - type: entity
   parent: BaseSpeciesDummy
