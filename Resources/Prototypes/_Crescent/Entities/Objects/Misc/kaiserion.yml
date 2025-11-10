@@ -5,8 +5,16 @@
   id: RomaineBible
   components:
   - type: Sprite
-    sprite: Objects/Specific/Chapel/bible.rsi
-    state: icon
+    sprite: Objects/Misc/books.rsi
+    layers:
+    - state: paper
+    - state: cover_old
+      color: "#332d27"
+    - state: decor_wingette
+      color: "#453f3a"
+    - state: icon_christ
+    - state: detail_bookmark
+      color: "#c20000"
   - type: Paper
     content: book-canticles-romaine
   - type: Prayable
