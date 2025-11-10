@@ -235,3 +235,19 @@
   unit: materials-unit-sheet
   icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: plastitaniumfibrealloy }
   price: 0.40
+
+- type: material
+  id: SilkFilament
+  stackEntity: SilkFilament
+  name: Mothroach Silk
+  unit: materials-unit-web
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: silkthread }
+  price: 0.40
+
+- type: material
+  id: HideMothroach
+  stackEntity: HideMothroach
+  name: Mothroach Pelt
+  unit: materials-unit-sheet
+  icon: { sprite: Nyanotrasen/Objects/Materials/mothroach.rsi, state: mothroachhide }
+  price: 0.40

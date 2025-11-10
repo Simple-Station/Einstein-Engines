@@ -1,0 +1,77 @@
+- type: entity
+  parent: OreBase
+  id: SilkFilament
+  name: mothroach silk thread
+  description: Fine Silk strands carefully harvested from mothroaches
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: SilkFilament
+  - type: Tag
+    tags:
+    - CraftMaterials
+  - type: Sprite
+    sprite: _Crescent/Objects/Materials/materials.rsi
+    layers:
+    - state: silkthread
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      SilkFilament: 500
+
+- type: entity
+  id: SilkFilament1
+  parent: SilkFilament
+  suffix: Single
+  components:
+    - type: Stack
+      stackType: SilkFilament
+      count: 1
+
+- type: entity
+  id: SilkFilament5
+  parent: SilkFilament
+  suffix: Fifteen
+  components:
+    - type: Stack
+      stackType: SilkFilament
+      count: 15
+
+- type: entity
+  parent: OreBase
+  id: HideMothroach
+  name: Mothroach Pelt
+  description: Prepared mothroach pelt. Cleaned of dust and softer than heaven
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: HideMothroach
+  - type: Tag
+    tags:
+    - CraftMaterials
+  - type: Sprite
+    sprite: Nyanotrasen/Objects/Materials/mothroach.rsi
+    layers:
+    - state: mothroachhide
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      HideMothroach: 500
+
+- type: entity
+  id: HideMothroach1
+  parent: HideMothroach
+  suffix: Single
+  components:
+    - type: Stack
+      stackType: HideMothroach
+      count: 1
+
+- type: entity
+  id: HideMothroach5
+  parent: HideMothroach
+  suffix: Five
+  components:
+    - type: Stack
+      stackType: HideMothroach
+      count: 5

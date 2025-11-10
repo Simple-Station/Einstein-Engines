@@ -435,6 +435,30 @@
 
 - type: entity
   parent: BaseTradeItem
+  id: TradeGoodSilks
+  name: Fine Silk Textiles Pallet
+  description: An open pallet of artisan taypani silks and hides.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/silks.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 1000
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.29,0.25,0.32"
+        density: 40
+        mask:
+        - CrateMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+
+- type: entity
+  parent: BaseTradeItem
   id: TradeGoodFlour
   name: bag of export flour
   description: A bag of export-grade flour.

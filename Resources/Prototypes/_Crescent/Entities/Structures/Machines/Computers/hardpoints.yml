@@ -49,8 +49,6 @@
           layer:
           - MachineLayer
   - type: CollideOnAnchor
-  - type: SelfDeleteInSpace # Hullrot. This component cleans up items that are parented to space after a while.
-    timeToDelete: 1800 #priority item, so we extend the timer
   placement:
     mode: SnapgridCenter
   
