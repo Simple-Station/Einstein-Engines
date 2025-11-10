@@ -32,6 +32,9 @@
     - TauCetiBasic #needed for vending machines
     # - Solarian # uncomment me if we need universal langs again
   - type: FootPrints
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: AristocraticGenome
   - type: MeleeWeapon
     soundHit:
       collection: Punch
