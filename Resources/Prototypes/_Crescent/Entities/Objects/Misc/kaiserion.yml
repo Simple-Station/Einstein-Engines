@@ -22,7 +22,7 @@
     damage:
       types:
         Blunt: 5
-        Holy: 20
+        Holy: 10 # 20 > 10 only because im giving it to every levyman lol
     heavyRateModifier: 1.25
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 4
