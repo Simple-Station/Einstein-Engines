@@ -55,6 +55,7 @@
   - type: StaticPrice
     price: 10
   - type: Climbable
+  - type: SelfDeleteInSpace #hullrot edit - to save performance when ships blow up
 
 - type: entity
   id: ReinforcedGirder

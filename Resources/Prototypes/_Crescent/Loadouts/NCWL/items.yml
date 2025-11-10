@@ -1,0 +1,17 @@
+- type: loadout
+  id: LoadoutItemsKane
+  category: Items
+  cost: 1
+  items:
+  - BookOfKane
+  requirements:
+  - !type:CharacterJobRequirement
+    jobs:
+    - CommandantNCWL
+    - KommissarNCWL
+    - FleetkapitanNCWL
+    - PartisanNCWL
+    - DoctorNCWL
+    - CoordinatorNCWL
+    - ArtificerNCWL
+    - WorkerNCWL

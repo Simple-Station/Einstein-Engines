@@ -63,6 +63,13 @@
     Steel: 800
 
 - type: latheRecipe
+  id: MagazineLightRifleBox
+  result: MagazineLightRifleBox
+  completetime: 1
+  materials:
+    Steel: 800
+
+- type: latheRecipe
   id: MagazineAntiMateriel
   result: MagazineAntiMateriel
   completetime: 1
@@ -131,7 +138,51 @@
   completetime: 2
   materials:
     Steel: 400
-
+# 40MM NADES
+- type: latheRecipe
+  id: Cartridge40mmFrag
+  result: Cartridge40mmFrag
+  completetime: 1
+  materials:
+    Steel: 300
+    Plasma: 150
+- type: latheRecipe
+  id: Cartridge40mmCan
+  result: Cartridge40mmCan
+  completetime: 1
+  materials:
+    Steel: 300
+    Glass: 100
+    Plastic: 50
+- type: latheRecipe
+  id: Cartridge40mmHEDP
+  result: Cartridge40mmHEDP
+  completetime: 1
+  materials:
+    Steel: 300
+    Plasma: 100
+    Uranium: 50
+- type: latheRecipe
+  id: Cartridge40mmSmoke
+  result: Cartridge40mmSmoke
+  completetime: 1
+  materials:
+    Steel: 400
+- type: latheRecipe
+  id: Cartridge40mmThermobaric
+  result: Cartridge40mmThermobaric
+  completetime: 1
+  materials:
+    Steel: 350
+    Plasma: 100
+- type: latheRecipe
+  id: Cartridge40mmEMP
+  result: Cartridge40mmEMP
+  completetime: 1
+  materials:
+    Steel: 350
+    Gold: 100
+    
 # SMALL ARMS AMMUNITIONS
 - type: latheRecipe
   id: MagazinePistolHeavy
@@ -218,6 +269,14 @@
     Steel: 2000
 
 - type: latheRecipe
+  id: SluggieEMP
+  result: MagazineLightRifleBoxSlugEMP
+  completetime: 2
+  materials:
+    Steel: 2000
+    Uranium: 1000
+
+- type: latheRecipe
   id: Automortar90
   result: MagazineMortar
   completetime: 2
@@ -286,4 +345,4 @@
   completetime: 2
   materials:
     Steel: 500
-    Gold: 500
+    Uranium: 500

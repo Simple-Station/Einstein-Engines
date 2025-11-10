@@ -289,7 +289,7 @@
   components:
   - type: InstantAction
     icon: { sprite: Objects/Consumable/Food/egg.rsi, state: icon }
-    useDelay: 60
+    useDelay: 15
     event: !type:EggLayInstantActionEvent
 
 - type: entity

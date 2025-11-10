@@ -10,6 +10,7 @@
       organs:
         brain: OrganHumanBrain
         eyes: OrganHumanEyes
+        head_implant: OrganCrescentDummy # Seriously. Why.
     torso:
       part: TorsoHuman
       connections:
@@ -24,6 +25,7 @@
         stomach: OrganDwarfStomach
         liver: OrganDwarfLiver
         kidneys: OrganHumanKidneys
+        dermis: OrganCrescentDummy # Why do you need to do this to add an empty organ slot.
     right arm:
       part: RightArmHuman
       connections:

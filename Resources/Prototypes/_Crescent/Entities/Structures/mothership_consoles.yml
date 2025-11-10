@@ -45,7 +45,8 @@
   components:
   - type: ShipyardListing
     shuttles:
-    - Praxis
+    - Janissary
+    - Redemptor
     - Imparator
 
 - type: entity

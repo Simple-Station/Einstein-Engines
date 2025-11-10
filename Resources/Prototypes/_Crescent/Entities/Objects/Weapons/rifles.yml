@@ -101,9 +101,9 @@
       - CartridgeRifle
 
 - type: entity
-  name: SHI M28 Nimrod 7.62x51mm
   parent: [BaseWeaponSniper, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponRifleSHINimrod
+  name: SHI M28 Nimrod 7.62x51mm
   description: An absurdly cheap-to-make hunting rifle sold at a major mark-up to desperate spacers and militiamen. Chambered in 7.62x51mm.
   components:
   - type: Item
@@ -117,7 +117,6 @@
   - type: Gun
     fireRate: 3
     projectileSpeed: 45
-    damageModifier: 1.25
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -127,17 +126,11 @@
     soundInsert:
       collection: LeverReload
     capacity: 6
-    autoCycle: true
+    autoCycle: false
     proto: CartridgeRifle
     whitelist:
       tags:
       - CartridgeRifle
-  - type: ExtendDescription
-    descriptionList:
-      - description: This rifle comes with a booster device. It deals 25% higher damage per shot.
-        fontSize: 12
-        color: "#ff4f00"
-        requireDetailRange: false
 
 - type: entity
   name: IRM DA-11 legionnaire 7.62x51mm
@@ -323,7 +316,9 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/batanya.rsi
   - type: Gun
-    fireRate: 4
+    fireRate: 5
+    minAngle: 16
+    maxAngle: 28
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/rifle_1/rifle_gunshot_2.ogg
   - type: ChamberMagazineAmmoProvider

@@ -95,3 +95,9 @@
     mask: ClothingMaskNCWLGasmask
     ears: ClothingHeadsetNCWL
     eyes: ClothingEyesHudSecurity
+  storage:
+    back:
+      - Flash
+      - Tourniquet
+      - Zipties
+      - CombatKnife

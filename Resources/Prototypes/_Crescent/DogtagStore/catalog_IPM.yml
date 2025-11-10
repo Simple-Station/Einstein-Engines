@@ -2,6 +2,11 @@
 - type: storeCategory
   id: StoreCategoryIPMCybernetics
   name: Interdyne Cybernetics
+  priority: 14
+
+- type: storeCategory
+  id: StoreCategoryIPMWeapons
+  name: Interdyne Militech
   priority: 12
 
 - type: storeCategory
@@ -11,7 +16,7 @@
 
 - type: storeCategory
   id: StoreCategoryIPMMedicalEquipment
-  name: Interdyne Medical Equipment
+  name: Interdyne Meditech
   priority: 8
 
 # Cybernetics
@@ -22,7 +27,7 @@
   icon: { sprite: /Textures/_Crescent/Objects/Misc/cybernetics.rsi, state: heartpump }
   productEntity: CyberneticsBloodPump
   cost:
-    SampleIPM: 15
+    SampleIPM: 10
   categories:
   - StoreCategoryIPMCybernetics
 
@@ -33,7 +38,7 @@
   icon: { sprite: /Textures/_Crescent/Objects/Misc/cybernetics.rsi, state: interdyneoptics }
   productEntity: InterdyneOptics
   cost:
-    SampleIPM: 15
+    SampleIPM: 7.5
   categories:
   - StoreCategoryIPMCybernetics
 
@@ -44,7 +49,7 @@
   icon: { sprite: /Textures/Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi, state: iconpry }
   productEntity: CrowbarLeftArm
   cost:
-    SampleIPM: 7.5
+    SampleIPM: 5
   categories:
   - StoreCategoryIPMCybernetics
 
@@ -55,7 +60,7 @@
   icon: { sprite: /Textures/Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi, state: iconpry }
   productEntity: CrowbarRightArm
   cost:
-    SampleIPM: 7.5
+    SampleIPM: 5
   categories:
   - StoreCategoryIPMCybernetics
 
@@ -66,7 +71,7 @@
   icon: { sprite: /Textures/_Crescent/Objects/Misc/cybernetics.rsi, state: cherenzikovaccelerator }
   productEntity: CyberneticsAdrenal
   cost:
-    SampleIPM: 20
+    SampleIPM: 15
   categories:
   - StoreCategoryIPMCybernetics
 
@@ -83,24 +88,46 @@
 
 # Equipment
 - type: listing
-  id: StoreListingIPMEquipmentCrash
-  name: Smuggled Crash Injection
-  description: A smuggled injection of crash. For the occassional vagrant junkie that finds his way to Interdyne.
-  icon: { sprite: /Textures/_Crescent/Objects/Autoinjectors/crash.rsi, state: medipen }
-  productEntity: CrashAutoinjector
-  cost:
-    SampleIPM: 10
-  categories:
-  - StoreCategoryIPMEquipment
-
-- type: listing
   id: StoreListingIPMEquipmentHardsuit
   name: Interdyne traumasec hardsuit
   description: A modular hardsuit produced by Shinohara Heavy Industries, made for Interdyne TraumaSec officers.
   icon: { sprite: /Textures/_Crescent/Clothing/Syndicate/OuterClothing/trauma_suit.rsi, state: icon }
   productEntity: ClothingOuterHardsuitTraumasec
   cost:
+    SampleIPM: 15
+  categories:
+  - StoreCategoryIPMEquipment
+
+- type: listing
+  id: StoreListingIPMEquipmentMagboots
+  name: Advanced magboots
+  description: Advanced magboots produced by Shinohara Heavy Industries, "found" in a shipping container many cycles ago.
+  icon: { sprite: /Textures/Clothing/Shoes/Boots/magboots-advanced.rsi, state: icon }
+  productEntity: ClothingShoesBootsMagAdv
+  cost:
     SampleIPM: 10
+  categories:
+  - StoreCategoryIPMEquipment
+
+- type: listing
+  id: StoreListingIPMEquipmentWebbing
+  name: TraumaSec webbing
+  description: Tactical webbing produced by Cyberdawn Technologies, made for Interdyne TraumaSec officers.
+  icon: { sprite: /Textures/_Crescent/Clothing/Syndicate/Belt/int_webbing.rsi, state: icon }
+  productEntity: ClothingBeltSyndicateWebbingInterdyne
+  cost:
+    SampleIPM: 2.5
+  categories:
+  - StoreCategoryIPMEquipment
+
+- type: listing
+  id: StoreListingIPMEquipmentEShield
+  name: Energy shield
+  description: A personal energy shield produced by Cyberdawn Technologies, made for Interdyne TraumaSec officers.
+  icon: { sprite: /Textures/Objects/Weapons/Melee/e_shield.rsi, state: eshield-on }
+  productEntity: EnergyShield
+  cost:
+    SampleIPM: 30
   categories:
   - StoreCategoryIPMEquipment
 
@@ -123,7 +150,18 @@
   icon: { sprite: /Textures/Objects/Specific/Medical/defibsyndi.rsi, state: icon }
   productEntity: DefibrillatorSyndicate
   cost:
-    SampleIPM: 10
+    SampleIPM: 5
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+- type: listing
+  id: StoreListingIPMMedicalEquipmentCombatMedicalKit
+  name: Combat medical first aid kit
+  description: A filled combat medical kit, contains medical sutures, regenerative mesh and an assortment of medical reagents.
+  icon: { sprite: /Textures/Objects/Specific/Medical/firstaidkits.rsi, state: blackkit }
+  productEntity: MedkitCombatFilled
+  cost:
+    SampleIPM: 5
   categories:
   - StoreCategoryIPMMedicalEquipment
 
@@ -170,6 +208,95 @@
     SampleIPM: 5
   categories:
   - StoreCategoryIPMMedicalEquipment
+
+# Military Equipment
+- type: listing
+  id: StoreListingIPMMilitaryEquipmentAtreides
+  name: NCSP SR-2MP Atreides 9x19mm
+  description: A 9x19mm Atreides SMG, produced by the Taypani Free Stations Coalition.
+  icon: { sprite: _Crescent/Objects/Weapons/Guns/atreides.rsi, state: icon }
+  productEntity: WeaponSubMachineGunAtreides
+  cost:
+    SampleIPM: 5
+  categories:
+  - StoreCategoryIPMWeapons
+
+- type: listing
+  id: StoreListingIPMMilitaryEquipmentKalash
+  name: NCSP AKMS Kalash 7.62x51mm
+  description: A 7.62x51mm Kalash rifle, produced by the Taypani Free Stations Coalition.
+  icon: { sprite: _Crescent/Objects/Weapons/Guns/akms.rsi, state: icon }
+  productEntity: WeaponRifleAk
+  cost:
+    SampleIPM: 10
+  categories:
+  - StoreCategoryIPMWeapons
+
+- type: listing
+  id: StoreListingIPMMilitaryEquipmentSaiga
+  name: NCSP Saiga-12k Hammer 12g
+  description: A 12g Saiga-12k shotgun, produced by the Taypani Free Stations Coalition.
+  icon: { sprite: _Crescent/Objects/Weapons/Guns/saiga12.rsi, state: icon }
+  productEntity: WeaponShotgunNCSPSaiga12
+  cost:
+    SampleIPM: 15
+  categories:
+  - StoreCategoryIPMWeapons
+
+- type: listing
+  id: StoreListingIPMMilitaryEquipmentSVD
+  name: NCSP SVD 12.7x99mm
+  description: A 12.7x99mm SVD, produced by the Taypani Free Stations Coalition.
+  icon: { sprite: _Crescent/Objects/Weapons/Guns/svds.rsi, state: icon }
+  productEntity: WeaponRifleSVDMarksman
+  cost:
+    SampleIPM: 15
+  categories:
+  - StoreCategoryIPMWeapons
+
+- type: listing
+  id: StoreListingIPMMilitaryEquipmentRGD5
+  name: NCSP RGD-5 Grenade
+  description: An RGD-5 grenade, produced by the Taypani Free Stations Coalition.
+  icon: { sprite: _Crescent/Objects/Weapons/Grenades/ncsp_rgd5.rsi, state: icon }
+  productEntity: NCSPRGD5Handgrenade
+  cost:
+    SampleIPM: 2.5
+  categories:
+  - StoreCategoryIPMWeapons
+
+- type: listing
+  id: StoreListingIPMMilitaryEquipmentRGD2B
+  name: NCSP RGD-2B Smoke grenade
+  description: An RGD-2B smoke grenade, produced by the Taypani Free Stations Coalition.
+  icon: { sprite: _Crescent/Objects/Weapons/Grenades/ncsp_smoke.rsi, state: icon }
+  productEntity: TFSCRGD2BSmokeHandgrenade
+  cost:
+    SampleIPM: 1.5
+  categories:
+  - StoreCategoryIPMWeapons
+
+- type: listing
+  id: StoreListingIPMMilitaryEquipmentHG07
+  name: SHI HG-07 Flashbang
+  description: A HG-07 flashbang, produced by the Shinohara Heavy Industries, "found" in a shipping container many cycles ago.
+  icon: { sprite: _Crescent/Objects/Weapons/Grenades/shi_flash.rsi, state: icon }
+  productEntity: SHIHG7FlashbangHandgrenade
+  cost:
+    SampleIPM: 1.5
+  categories:
+  - StoreCategoryIPMWeapons
+
+- type: listing
+  id: StoreListingIPMMilitaryEquipmentHG23
+  name: SHI HG-23 Electromagnetic grenade
+  description: A HG-23 EMP grenade, produced by the Shinohara Heavy Industries, "found" in a shipping container many cycles ago.
+  icon: { sprite: _Crescent/Objects/Weapons/Grenades/shi_emp.rsi, state: icon }
+  productEntity: SHIHG32EMPHandgrenade
+  cost:
+    SampleIPM: 2.5
+  categories:
+  - StoreCategoryIPMWeapons
 
 # Cartidges autoinjector
 - type: listing

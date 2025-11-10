@@ -4045,7 +4045,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: AmeController
+- proto: AmeControllerStation
   entities:
   - uid: 3570
     components:

@@ -1,0 +1,77 @@
+# Add as a parent to give a clothing toggleable energy shield.
+- type: entity
+  abstract: true
+  id: EnergyShieldClothing
+  components:
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/Weapons/ebladeon.ogg
+    soundDeactivate:
+      path: /Audio/Weapons/ebladeoff.ogg
+    soundFailToActivate:
+      path: /Audio/Machines/button.ogg
+      params:
+        variation: 0.250
+    onUse: false
+    onAltUse: true
+    onActivate: false
+  - type: PointLight
+    enabled: false
+    radius: 1.4
+    energy: 2
+    color: "#3ACCFF"
+  - type: LightBehaviour
+    behaviours:
+    - !type:FadeBehaviour
+      id: radiating
+      interpolate: Linear
+      maxDuration: 2.0
+      startValue: 3.0
+      endValue: 2.0
+      isLooped: true
+      reverseWhenFinished: true
+    - !type:PulseBehaviour
+      id: blinking
+      interpolate: Nearest
+      maxDuration: 1.0
+      minValue: 0.1
+      maxValue: 2.0
+      isLooped: true
+  - type: ItemTogglePointLight
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/Weapons/ebladehum.ogg
+  - type: UseDelay
+    delay: 0.5
+  - type: Blocking
+    # Shield resistances. Active does nothing w/ action disabled.
+    passiveBlockModifier:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.25
+        Piercing: 0.3
+        Heat: 0.5
+    activeBlockModifier:
+      coefficients:
+        Blunt: 1.2
+        Slash: 0.3
+        Piercing: 0.2
+        Heat: 0.1
+      flatReductions:
+        Heat: 5
+        Piercing: 15
+    passiveBlockFraction: 0.8
+    activeBlockFraction: 1.0
+    isClothing: true
+    blockAction: false
+  - type: Damageable
+    damageContainer: Shield
+    # Shield HP
+  - type: Battery
+    maxCharge: 40
+    startingCharge: 40
+    # Shield recharge rate
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 5
+  - type: RechargeableBlocking
