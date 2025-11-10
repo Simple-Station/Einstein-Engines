@@ -61,11 +61,12 @@
     outerClothing: ClothingOuterArmorImperialTrooperArmor
     gloves: ClothingHandsGlovesImperialLonggloves
     pocket1: WeaponPistolComplianceImperial
+    pocket2: RomaineBible
     belt: ClothingBeltAssault
   storage:
     back:
-    - Flash
-    - Tourniquet
-    - Zipties
-    - MagazinePistol
-    - CombatKnife
+     - Flash
+     - Tourniquet
+     - Zipties
+     - MagazinePistol
+     - CombatKnife
