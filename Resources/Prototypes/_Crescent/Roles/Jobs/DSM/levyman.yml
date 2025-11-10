@@ -65,16 +65,8 @@
     belt: ClothingBeltAssault
   storage:
     back:
-<<<<<<< HEAD
-     - Flash
-     - Tourniquet
-     - Zipties
-     - MagazinePistol
-     - CombatKnife
-=======
       - Flash
       - Tourniquet
       - Zipties
       - MagazinePistol
       - CombatKnife
->>>>>>> ef1cc2ec38bc6b325b0d7ee9d335e3c69ef03333

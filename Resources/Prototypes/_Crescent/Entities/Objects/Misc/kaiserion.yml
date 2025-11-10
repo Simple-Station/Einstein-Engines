@@ -8,7 +8,7 @@
     sprite: Objects/Specific/Chapel/bible.rsi
     state: icon
   - type: Paper
-    content: book-text-ian-antarctica
+    content: book-canticles-romaine
   - type: Prayable
   - type: MeleeWeapon
     damage:
