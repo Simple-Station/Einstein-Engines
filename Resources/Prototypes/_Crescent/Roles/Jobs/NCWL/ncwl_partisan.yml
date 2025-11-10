@@ -14,7 +14,7 @@
     - !type:FactionRequirement
       factionID: "NCWL"
     - !type:CharacterOverallTimeRequirement
-      min: 10800
+      min: 0
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
