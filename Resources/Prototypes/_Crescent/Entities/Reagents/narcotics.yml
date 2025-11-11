@@ -214,10 +214,11 @@
     Medicine:
       metabolismRate: 1
       effects:
-      - !type:ChemCritThresholdBuffer
-        durationSec: 60
-        bufferHp: 100
-        showPopup: true
+      - !type:ChemApplyCritModifier
+        threshold: 5
+        additive: true
+        value: 100
+        removeOnEnd: true
         conditions:
         - !type:ReagentThreshold
-            min: 5    
+          min: 0.01
