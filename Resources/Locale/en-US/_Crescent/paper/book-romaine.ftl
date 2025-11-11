@@ -2,7 +2,7 @@ book-canticles-romaine =
         The Canticles of Saint Romaine, warsworn saint of War and Sacrifice.
 
 
-        Chapter 1. Saint Serraine, the Bloomsworn Saint of Peace and Grace.
+        Chapter 1. Saint Serraine, the Heartsworn Saint of Peace and Grace.
 
         Wifr of Romaine, a most graceful noble, the bringer of peace to the edges of the Mandate. Her words, smooth as silk and sweet as honey, have forced many a pirate to kneel and surrender, yet every time she found it in her heart to forgive them and gift the privateers a second chance.
         Yet even such divine innocence could not survive the cruelty of the void. 
