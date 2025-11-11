@@ -1,7 +1,10 @@
-using Content.Shared.Chemistry.Reagent;
-using Content.Shared.EntityEffects;
+using Robust.Shared.GameObjects;
+using Robust.Shared.Serialization.Manager.Attributes;
+using Content.Server.Chemistry.EntityEffects;
+using Content.Shared.Traits.Assorted.Components;
+using Content.Shared.Traits.Assorted.Systems;
 
-namespace Content.Server._Crescent.Chemistry.Effects;
+namespace Content.Server.EntityEffects.Effects;
 
 [RegisterComponent]
 public sealed partial class ChemApplyCritModifier : EntityEffect
