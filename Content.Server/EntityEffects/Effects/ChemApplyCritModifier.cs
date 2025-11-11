@@ -1,12 +1,13 @@
 using Robust.Shared.GameObjects;
 using Robust.Shared.Serialization.Manager.Attributes;
-using Content.Server.Chemistry.EntityEffects;
+using Robust.Shared.Serialization;
+using Content.Shared.EntityEffects.EntityEffect;
 using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.Traits.Assorted.Systems;
 
 namespace Content.Server.EntityEffects.Effects;
 
-[RegisterComponent]
+[ImplicitDataDefinitionFor(typeof(EntityEffect))]
 public sealed partial class ChemApplyCritModifier : EntityEffect
 {
     [DataField("threshold")] public float Threshold = 5f;

@@ -52,13 +52,13 @@ public sealed partial class TraitStatModifierSystem : EntitySystem
             return;
 
         var baseCrit = component.OriginalCritThreshold != 0
-            ? comp.OriginalCritThreshold
-            : _threshold.GetThresholdForState(uid, Mobs.MobState.Critical, thresholds);
+            ? component.OriginalCritThreshold
+            : _threshold.GetThresholdForState(uid, Mobs.MobState.Critical, threshold);
 
         if (baseCrit == 0)
             return;
 
-        _threshold.SetMobStateThreshold(uid, baseCrit + comp.CritThresholdModifier, Mobs.MobState.Critical);
+        _threshold.SetMobStateThreshold(uid, baseCrit + component.CritThresholdModifier, Mobs.MobState.Critical);
     }
 
     public sealed class CritModifierChangedEvent : EntityEventArgs { }

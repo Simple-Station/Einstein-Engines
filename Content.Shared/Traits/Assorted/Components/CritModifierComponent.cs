@@ -12,6 +12,6 @@ public sealed partial class CritModifierComponent : Component
     ///     The amount that an entity's critical threshold will be incremented by.
     /// </summary>
     [DataField]
-    public int CritThresholdModifier { get; private set; } = 0;
+    public float CritThresholdModifier { get; set; } = 0f;
     [ViewVariables] public float OriginalCritThreshold;
 }
