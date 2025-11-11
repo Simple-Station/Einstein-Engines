@@ -1,5 +1,27 @@
 book-canticles-romaine = 
-        The Canticles of Saint Romaine, patron Saint of war and sacrifice.
+        The Canticles of Saint Romaine, warsworn saint of War and Sacrifice.
 
 
-        Saint Romaine was a noble Imperial who led the sixth subjugation battallion into sector Crescent, carving out the space as solely Imperial.
+        Chapter 1. Saint Serraine, the Bloomsworn Saint of Peace and Grace.
+
+        Wifr of Romaine, a most graceful noble, the bringer of peace to the edges of the Mandate. Her words, smooth as silk and sweet as honey, have forced many a pirate to kneel and surrender, yet every time she found it in her heart to forgive them and gift the privateers a second chance.
+        Yet even such divine innocence could not survive the cruelty of the void. 
+        
+
+        Chapter 2. The mission in Taypan
+
+        Romaine and Serraine, a prominent noble couple, venture forth into Sector Crescent. Their goal: to make peace with Taypani Atyrian Pact and to find the Atyrians a space within the Mandate, much like the Unathi monarchs. 
+        Many moderates within the Kaiser’s court support this notion, in large part due to TAP’s extensive knowledge of Psychics.The talks progress well till Serraine suddenly falls ill and must depart, putting the talks on hold. 
+        Imperial doctors are perplexed by the affliction and hypothesize that it must be some Atyrian disease which Serraine caught during her diplomatic mission. 
+
+        Romaine rushes back towards Terra, hoping that the extensive medical facilities there can cure his beloved wife. Serraine never makes it to her home planet, passing away during the journey. 
+        The entire Mandate enters a period of mourning as her remains are buried on the surface of Terra, accompanied by a fitting ceremony that is broadcast throughout Imperial space.
+        Romaine, a steadfast commander of the armed forces, is seen weeping throughout the whole ceremony. The Kaiser canonizes Serraine as a Saint for her peace efforts. Romaine enters into seclusion upon his orbital habitat. 
+
+        
+        Chapter 3. Saint Romaine's crusade.
+
+        Romaine finally ends his years-long seclusion, gathering his forces and launching a crusade against all Atyrians. In his blind rage, he starts slaughtering the yet unconquered tribes within the Bubble. 
+        The Kaiser cannot bring himself to stop his lifelong friend Romaine, so the slaughter continues. After enough blood is shed, Romaine finally sets his eyes on Taypan and the same Atyrians that corrupted his beloved Serraine. He gathers his forces and marches forward. 
+        He is never heard from again.
+        The Kaiser is filled with both sorrow and relief, but in the end, he canonizes Romaine as the Saint of War. Millions of soldiers invoke his name in wars to come.
