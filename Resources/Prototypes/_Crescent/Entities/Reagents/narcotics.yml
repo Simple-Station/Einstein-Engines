@@ -219,7 +219,5 @@
         bufferHp: 100
         showPopup: true
         conditions:
-            !type:ReagentThreshold
-                min: 5
-                
-        
+        - !type:ReagentThreshold
+            min: 5    
