@@ -7,6 +7,7 @@ using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Damage.Components;
 using Content.Shared.Mood;
 using Robust.Shared.Random;
+using Robust.Shared.GameObjects;
 
 namespace Content.Shared.Traits.Assorted.Systems;
 
@@ -36,10 +37,13 @@ public sealed partial class TraitStatModifierSystem : EntitySystem
         if (!TryComp<MobThresholdsComponent>(uid, out var threshold))
             return;
 
-        component.OriginalCritThreshold = critThreshold;
+
         var critThreshold = _threshold.GetThresholdForState(uid, Mobs.MobState.Critical, threshold);
-        if (critThreshold != 0)
-            _threshold.SetMobStateThreshold(uid, critThreshold + component.CritThresholdModifier, Mobs.MobState.Critical);
+        if (critThreshold == 0)
+            return;
+
+        component.OriginalCritThreshold = critThreshold;
+        _threshold.SetMobStateThreshold(uid, critThreshold + component.CritThresholdModifier, Mobs.MobState.Critical);
     }
 
     private void OnCritChanged(EntityUid uid, CritModifierComponent component, ref CritModifierChangedEvent args)
@@ -47,9 +51,14 @@ public sealed partial class TraitStatModifierSystem : EntitySystem
         if (!TryComp<MobThresholdsComponent>(uid, out var threshold))
             return;
 
-        var crit = _threshold.GetThresholdForState(uid, Mobs.MobState.Critical, threshold);
-        if crit( != 0)
-            _threshold.SetMobStateThreshold(uid, crit + component.CritThresholdModifier, Mobs.MobState.Critical);
+        var baseCrit = component.OriginalCritThreshold != 0
+            ? comp.OriginalCritThreshold
+            : _threshold.GetThresholdForState(uid, Mobs.MobState.Critical, thresholds);
+
+        if (baseCrit == 0)
+            return;
+
+        _threshold.SetMobStateThreshold(uid, baseCrit + comp.CritThresholdModifier, Mobs.MobState.Critical);
     }
 
     public sealed class CritModifierChangedEvent : EntityEventArgs { }
