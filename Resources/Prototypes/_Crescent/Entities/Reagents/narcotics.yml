@@ -201,3 +201,25 @@
         - !type:ReagentThreshold
             min: 35
         amount: 50000
+        
+- type: reagent
+  id: jv201
+  name: reagent-name-jv201
+  group: Narcotics
+  desc: reagent-desc-jv201
+  physicalDesc: reagent-physical-desc-opaque
+  flavor: tingly
+  color: "#FF7F7F"
+  metabolisms:
+    Medicine:
+      metabolismRate: 1
+      effects:
+      - !type:ChemCritThresholdBuffer
+        durationSec: 60
+        bufferHp: 100
+        showPopup: true
+        conditions:
+            !type:ReagentThreshold
+                min: 5
+                
+        
