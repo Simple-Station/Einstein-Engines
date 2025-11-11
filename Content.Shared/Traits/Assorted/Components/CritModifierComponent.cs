@@ -13,4 +13,5 @@ public sealed partial class CritModifierComponent : Component
     /// </summary>
     [DataField]
     public int CritThresholdModifier { get; private set; } = 0;
+    [ViewVariables] public float OriginalCritThreshold;
 }

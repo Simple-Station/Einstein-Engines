@@ -203,13 +203,13 @@
         amount: 50000
         
 - type: reagent
-  id: jv201
+  id: Jv201
   name: reagent-name-jv201
   group: Narcotics
   desc: reagent-desc-jv201
   physicalDesc: reagent-physical-desc-opaque
-  flavor: tingly
-  color: "#FF7F7F"
+  flavor: medicine
+  color: "#090a12"
   metabolisms:
     Medicine:
       metabolismRate: 1

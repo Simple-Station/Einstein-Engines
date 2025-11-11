@@ -19,6 +19,8 @@ public sealed partial class TraitStatModifierSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<CritModifierComponent, ComponentStartup>(OnCritStartup);
+        SubscribeLocalEvent<CritModifierComponent, CritModifierChangedEvent>(OnCritChanged);
+        SubscribeLocalEvent<CritModifierComponent, ComponentShutdown>(OnCritShutdown);
         SubscribeLocalEvent<DeadModifierComponent, ComponentStartup>(OnDeadStartup);
         SubscribeLocalEvent<StaminaCritModifierComponent, ComponentStartup>(OnStaminaCritStartup);
         SubscribeLocalEvent<AdrenalineComponent, GetMeleeDamageEvent>(OnAdrenalineGetMeleeDamage);
@@ -34,9 +36,32 @@ public sealed partial class TraitStatModifierSystem : EntitySystem
         if (!TryComp<MobThresholdsComponent>(uid, out var threshold))
             return;
 
+        component.OriginalCritThreshold = critThreshold;
         var critThreshold = _threshold.GetThresholdForState(uid, Mobs.MobState.Critical, threshold);
         if (critThreshold != 0)
             _threshold.SetMobStateThreshold(uid, critThreshold + component.CritThresholdModifier, Mobs.MobState.Critical);
+    }
+
+    private void OnCritChanged(EntityUid uid, CritModifierComponent component, ref CritModifierChangedEvent args)
+    {
+        if (!TryComp<MobThresholdsComponent>(uid, out var threshold))
+            return;
+
+        var crit = _threshold.GetThresholdForState(uid, Mobs.MobState.Critical, threshold);
+        if crit( != 0)
+            _threshold.SetMobStateThreshold(uid, crit + component.CritThresholdModifier, Mobs.MobState.Critical);
+    }
+
+    public sealed class CritModifierChangedEvent : EntityEventArgs { }
+
+    private void OnCritShutdown(EntityUid uid, CritModifierComponent component, ComponentShutdown args)
+    {
+        if (!TryComp<MobThresholdsComponent>(uid, out var threshold))
+            return;
+
+        var baseCrit = component.OriginalCritThreshold;
+        if (baseCrit != 0)
+            _threshold.SetMobStateThreshold(uid, baseCrit, Mobs.MobState.Critical);
     }
 
     private void OnDeadStartup(EntityUid uid, DeadModifierComponent component, ComponentStartup args)
