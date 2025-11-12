@@ -217,5 +217,7 @@
           Quantity: 5
   - type: Tag
     tags: []
+  - type: StaticPrice
+    price: 1000
   - type: Contraband
     value: 5
