@@ -8,10 +8,10 @@ book-canticles-romaine =
         Yet even such divine innocence could not survive the cruelty of the void. 
         
 
-        Chapter 2. The mission in Taypan
+        Chapter 2. The mission in Taypan.
 
         Romaine and Serraine, a prominent noble couple, venture forth into Sector Crescent. Their goal: to make peace with Taypani Atyrian Pact and to find the Atyrians a space within the Mandate, much like the Unathi monarchs. 
-        Many moderates within the Kaiser’s court support this notion, in large part due to TAP’s extensive knowledge of Psychics.The talks progress well till Serraine suddenly falls ill and must depart, putting the talks on hold. 
+        Many moderates within the Kaiser’s court support this notion, in large part due to TAP’s extensive knowledge of Psychics. The talks progress well till Serraine suddenly falls deathly ill and must depart, putting the talks on hold. 
         Imperial doctors are perplexed by the affliction and hypothesize that it must be some Atyrian disease which Serraine caught during her diplomatic mission. 
 
         Romaine rushes back towards Terra, hoping that the extensive medical facilities there can cure his beloved wife. Serraine never makes it to her home planet, passing away during the journey. 
@@ -27,7 +27,7 @@ book-canticles-romaine =
         The Kaiser is filled with both sorrow and relief, but in the end, he canonizes Romaine as the Saint of War. Millions of soldiers invoke his name in wars to come.
 
 
-        Chapter 4. The place of lesser species
+        Chapter 4. The place of lesser species.
 
         The Atyrians are a scourge upon the galaxy, deviant and malign in their nature; their only place within our society is as slaves. 
         They have tricked us once before, and they shall try to do it again; thus, the Atyrian can only exist under an Imperial's boot, for any freedom given shall be abused in due time.
