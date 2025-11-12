@@ -25,3 +25,18 @@ book-canticles-romaine =
         The Kaiser cannot bring himself to stop his lifelong friend Romaine, so the slaughter continues. After enough blood is shed, Romaine finally sets his eyes on Taypan and the same Atyrians that corrupted his beloved Serraine. He gathers his forces and marches forward. 
         He is never heard from again.
         The Kaiser is filled with both sorrow and relief, but in the end, he canonizes Romaine as the Saint of War. Millions of soldiers invoke his name in wars to come.
+
+
+        Chapter 4. The place of lesser species
+
+        The Atyrians are a scourge upon the galaxy, deviant and malign in their nature; their only place within our society is as slaves. 
+        They have tricked us once before, and they shall try to do it again; thus, the Atyrian can only exist under an Imperial's boot, for any freedom given shall be abused in due time.
+
+        The Unathi were but savages, divided into clans endlessly slaughtering each other, and that was to be their fate. But the arrival of the Mandate saved them from their descent into destruction and civilized them. 
+        For that, they shall be eternally grateful and in debt to us. They make for surprisingly good servants who have shown great dedication to the subjugation of the Atyrian scourge. 
+        But their tribal aspects persist to this day; thus, they shall continue to be our servants, nothing more, nothing less.
+        
+        The felinids are the remnant of the corporate greed and degeneracy that led the corporations to their own demise. Their ancestors saw it fit to adopt feline features for vain appeal.
+        Thus, the felinid must always be shamed and reminded of its dirty heritage, lest others decide to follow the same path. 
+        
+        The Oni were made to be a weapon, a dull weapon for crushing equally dull foes. Their intelligence and purpose are lacking, but they were made a tool for us to use, and that shall be their fate.
