@@ -15,13 +15,18 @@ public sealed partial class ChemApplyCritModifier : EntityEffect
 {
     [DataField("value")] public float Value = 0f;
 
-    protected override string? ReagentEffectGuidebookText(IPrototypeManager proto, IEntitySystemManager entSys)
-        => "Adjusts critical threshold while the reagent condition is met.";
+    protected override string? ReagentEffectGuidebookText(IPrototypeManager _, IEntitySystemManager __)
+    {
+        if (Value == 0f)
+            return null;
 
+        return Loc.GetString("reagent-effect-guidebook-crit-modifier",
+            ("deltasign", Value >= 0f ? 1 : -1),
+            ("amount", Math.Abs((int) Value)));
+    }
 
     public override void Effect(EntityEffectBaseArgs args)
     {
-        Logger.WarningS("critmod", $"ChemApplyCritModifier ran: Value={Value}");
         if (args is not EntityEffectReagentArgs)
             return;
 
