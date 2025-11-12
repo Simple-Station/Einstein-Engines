@@ -15,7 +15,7 @@ public sealed partial class ShipShieldEmitterComponent : Component
     public float Damage = 0f;
 
     [DataField]
-    public float DamageExp = 1.1f;
+    public float DamageExp = 1.0f;
 
     [DataField]
     public float HealPerSecond = 250f;
@@ -23,11 +23,11 @@ public sealed partial class ShipShieldEmitterComponent : Component
     [DataField]
     public float UnpoweredBonus = 6f;
 
-    [DataField]
-    public float MaxDraw = 150000f;
+    // [DataField] //commented because we only have base draw now
+    // public float MaxDraw = 150000f;
 
     [DataField]
-    public float BaseDraw = 50000f;
+    public float PowerDraw = 50000f;
 
     [DataField]
     public bool Recharging = false;

@@ -1,0 +1,19 @@
+- type: cargoProduct
+  id: ShuttleGunSlugthrowerShinohara
+  icon:
+    sprite: _Crescent/Objects/ShuttleWeapons/50cal.rsi
+    state: space_artillery
+  product: CrateShuttlegunSlugthrower
+  cost: 5000
+  category: cargoproduct-category-name-shuttle
+  group: shinoharastation
+
+- type: cargoProduct
+  id: ShuttleGunPlasmaRepeaterShinohara
+  icon:
+    sprite: _Crescent/Objects/ShuttleWeapons/lasersmall.rsi
+    state: lse-400c
+  product: CrateShuttlegunPlasmaRepeater
+  cost: 7500
+  category: cargoproduct-category-name-shuttle
+  group: shinoharastation

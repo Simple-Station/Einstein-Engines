@@ -30,3 +30,4 @@ vessel-designation-lightcorvette = light corvette
 vessel-designation-lightfrigate = patrol frigate
 vessel-designation-strikefrigate = strike frigate
 vessel-designation-outpost = Mobile Outpost
+vessel-designation-heavybattlecruiser = heavy battlecruiser

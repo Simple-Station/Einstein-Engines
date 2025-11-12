@@ -114,7 +114,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 80
+        Piercing: 100
 
 - type: entity
   name: 4g slug box
@@ -124,50 +124,6 @@
   components:
     - type: BallisticAmmoProvider
       proto: ShellShotgun4gSlug
-    - type: Sprite
-      layers:
-        - state: boxwide
-        - state: shellslug
-
-# --------------------- SABOT --------------------------
-
-- type: entity
-  id: ShellShotgun4gSabot
-  name: shell (4g sabot)
-  parent: BaseShellShotgun4g
-  components:
-  - type: Sprite
-    layers:
-      - state: ap-slug
-        map: [ "enum.AmmoVisualLayers.Base" ]
-  - type: CartridgeAmmo
-    proto: PelletShotgunSabot4g
-  - type: SpentAmmoVisuals
-    state: "ap-slug"
-
-- type: entity
-  id: PelletShotgunSabot4g
-  name: pellet (4g sabot)
-  categories: [ HideSpawnMenu ]
-  parent: BaseBullet
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    state: slug
-  - type: Projectile
-    damage:
-      types:
-        Piercing: 60
-    harmorPenetration: 40
-
-- type: entity
-  name: 4g sabot box
-  parent: AmmoProviderShotgunShell4g
-  id: BoxShotgunSabot4g
-  description: A box full of sabot slug shells, designed for 4 gauge shotguns.
-  components:
-    - type: BallisticAmmoProvider
-      proto: ShellShotgun4gSabot
     - type: Sprite
       layers:
         - state: boxwide
@@ -199,7 +155,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 27 # 27 x 10 = 270
+        Piercing: 24 # 24 x 10 = 240
 
 - type: entity
   id: PelletShotgunSpread4g
@@ -223,167 +179,6 @@
       layers:
         - state: boxwide
         - state: shelllethal
-
-# --------------------- MAGNUM BUCK --------------------------
-
-- type: entity
-  id: ShellShotgun4gMagnum
-  name: shell (4g magnum buckshot)
-  parent: BaseShellShotgun4g
-  components:
-    - type: Sprite
-      layers:
-        - state: base
-          map: [ "enum.AmmoVisualLayers.Base" ]
-    - type: CartridgeAmmo
-      proto: PelletShotgunMagnumSpread4g
-
-- type: entity
-  id: PelletShotgunMagnum4g
-  name: pellet (4g magnum buckshot)
-  categories: [ HideSpawnMenu ]
-  parent: BaseBullet
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    state: buckshot
-  - type: Projectile
-    damage:
-      types:
-        Piercing: 40 # 40 x 8 = 320
-
-- type: entity
-  id: PelletShotgunMagnumSpread4g
-  categories: [ HideSpawnMenu ]
-  parent: PelletShotgunMagnum4g
-  components:
-  - type: ProjectileSpread
-    proto: PelletShotgunMagnum4g
-    count: 8
-    spread: 17.5
-
-- type: entity
-  name: 4g magnum buckshot box
-  parent: AmmoProviderShotgunShell4g
-  id: BoxShotgunMagnum4g
-  description: A dispenser box full of magnum buckshot shells, designed for 4 gauge shotguns.
-  components:
-    - type: BallisticAmmoProvider
-      proto: ShellShotgun4gMagnum
-    - type: Sprite
-      layers:
-        - state: boxwide
-        - state: shelluranium
-
-# --------------------- INCENDIARY --------------------------
-
-- type: entity
-  id: ShellShotgun4gIncendiary
-  name: shell (4g dragon's breath)
-  parent: BaseShellShotgun4g
-  components:
-  - type: Sprite
-    layers:
-      - state: incendiary
-        map: [ "enum.AmmoVisualLayers.Base" ]
-  - type: CartridgeAmmo
-    proto: PelletShotgunIncendiarySpread4g
-  - type: SpentAmmoVisuals
-    state: "incendiary"
-
-- type: entity
-  id: PelletShotgunIncendiary4g
-  name: pellet (4g dragon's breath)
-  categories: [ HideSpawnMenu ]
-  parent: BaseBulletIncendiary
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    state: buckshot-flare
-  - type: Projectile
-    damage:
-      types:
-        Blunt: 20 # 20 x 8 = 160
-        Heat: 5  # 5 x 8 = 40
-  - type: IgnitionSource
-    ignited: true
-
-- type: entity
-  id: PelletShotgunIncendiarySpread4g
-  categories: [ HideSpawnMenu ]
-  parent: PelletShotgunIncendiary4g
-  components:
-  - type: ProjectileSpread
-    proto: PelletShotgunIncendiary4g
-    count: 8
-    spread: 12.5
-
-- type: entity
-  name: 4g dragon's breath box
-  parent: AmmoProviderShotgunShell4g
-  id: BoxShotgunIncendiary4g
-  description: A dispenser box full of dragon's breath shells, designed for 4 gauge shotguns.
-  components:
-    - type: BallisticAmmoProvider
-      proto: ShellShotgun4gIncendiary
-    - type: Sprite
-      layers:
-        - state: boxwide
-        - state: shellincendiary
-
-# --------------------- URANIUM --------------------------
-
-- type: entity
-  id: ShellShotgun4gUranium
-  name: shell (4g flechette)
-  parent: BaseShellShotgun4g
-  components:
-    - type: Sprite
-      layers:
-        - state: blank
-          map: [ "enum.AmmoVisualLayers.Base" ]
-    - type: CartridgeAmmo
-      proto: PelletShotgunUraniumSpread4g
-    - type: SpentAmmoVisuals
-      state: "blank"
-
-- type: entity
-  id: PelletShotgunUranium4g
-  name: pellet (4g flechette)
-  categories: [ HideSpawnMenu ]
-  parent: BaseBulletUranium
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    state: depleted-uranium
-  - type: Projectile
-    damage:
-      types:
-        Piercing: 27 # 27 x 10 = 270
-    harmorPenetration: 13
-
-- type: entity
-  id: PelletShotgunUraniumSpread4g
-  categories: [ HideSpawnMenu ]
-  parent: PelletShotgunUranium4g
-  components:
-  - type: ProjectileSpread
-    proto: PelletShotgunUranium4g
-    count: 10
-    spread: 12.5
-
-- type: entity
-  name: 4g flechette box
-  parent: AmmoProviderShotgunShell4g
-  id: BoxShotgunUranium4g
-  description: A dispenser box full of flechette shells, designed for 4 gauge shotguns.
-  components:
-    - type: BallisticAmmoProvider
-      proto: ShellShotgun4gUranium
-    - type: Sprite
-      layers:
-        - state: boxwide
-        - state: shelluranium
 
 # --------------------- FLASH --------------------------
 
@@ -439,6 +234,78 @@
   components:
     - type: BallisticAmmoProvider
       proto: ShellShotgun4gFlash
+    - type: Sprite
+      layers:
+        - state: boxwide
+        - state: shelluranium
+
+# --------------------- MARKER FLARE --------------------------
+
+- type: entity
+  id: PelletShotgunMarkerFlare4g
+  name: pellet (4g marker flare)
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  components:
+  - type: ExpendableHeatTracked
+    toggleDelay: 40
+  - type: CanBeHeatTracked
+    heatSignature: 30
+  - type: Projectile
+  - type: PointLight
+    enabled: false
+    color: "#FF8080"
+    radius: 1.0
+    energy: 9.0
+    netsync: false
+  - type: IgnitionSource
+    temperature: 1000
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour # have the radius start small and get larger as it starts to burn
+        id: turn_on
+        maxDuration: 45.0
+        startValue: 2.5
+        endValue: 10.0
+      - !type:RandomizeBehaviour # weaker flicker as it fades out
+        id: fade_out
+        interpolate: Nearest
+        minDuration: 0.001
+        maxDuration: 0.001
+        startValue: 4.0
+        endValue: 8.0
+        property: Energy
+        isLooped: true
+      - !type:FadeBehaviour # fade out radius as it burns out
+        id: fade_out
+        maxDuration: 15.0
+        startValue: 10.0
+        endValue: 1.0
+  - type: TimedDespawn
+    lifetime: 45
+
+- type: entity
+  id: ShellShotgun4gMarkerFlare
+  name: shell (4g marker flare)
+  parent: BaseShellShotgun4g
+  components:
+  - type: Sprite
+    layers:
+      - state: lumen
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunFlashSpread4g
+  - type: SpentAmmoVisuals
+    state: "lumen"
+
+- type: entity
+  name: 4g marker flate box
+  parent: AmmoProviderShotgunShell4g
+  id: BoxShotgunMarkerFlare4g
+  description: A dispenser box full of marker flare shells, designed for 4 gauge shotguns.
+  components:
+    - type: BallisticAmmoProvider
+      proto: ShellShotgun4gMarkerFlare
     - type: Sprite
       layers:
         - state: boxwide

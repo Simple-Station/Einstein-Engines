@@ -357,7 +357,7 @@ public sealed partial class CloningSystem
             || !_thresholds.TryGetThresholdForState(mob, Shared.Mobs.MobState.Critical, out var threshold))
             return;
         DamageSpecifier damage = new();
-        damage.DamageDict.Add("Cellular", (int) threshold + 1 + geneticDamage);
+        damage.DamageDict.Add("Cellular", 0 + geneticDamage);
         _damageable.TryChangeDamage(mob, damage, true);
     }
 }

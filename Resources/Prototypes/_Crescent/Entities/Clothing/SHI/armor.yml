@@ -88,8 +88,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, StreeCredRedeemable]
   id: ClothingOuterHardsuitSHIJuggernaut
-  name: Svbt-XA "KAMADO" juggernaut hardsuit
-  description: Experimental model of the svbt-2 heavily reinforced with multi layer Kevlar ceramic plates meant for use by shinobi liquidators.
+  name: SVBT-XA "KAMADO" juggernaut hardsuit
+  description: Experimental model of the SVBT-2 heavily reinforced with multi layer Kevlar ceramic plates meant for use by shinobi liquidators.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/SHI/OuterClothing/juggsuit.rsi
@@ -126,12 +126,14 @@
     clothingPrototype: ClothingHeadHelmetHardsuitSHIJuggernaut
   - type: StaticPrice
     price: 5000
+  - type: ClothingAddFaction
+    faction: SHI
 
 - type: entity
   parent: [ClothingOuterArmorBasic, StreeCredRedeemable]
   id: ClothingOuterHardsuitSHISpeedsuit
-  name: Svbt-XB "RAIKU" liquidator suit
-  description: Experimental model of the svbt 2 with most of the Armor replaced with durathread, the suit comes equipped with a soft sole silencing footsteps.
+  name: SVBT-XB "RAIKU" liquidator suit
+  description: Experimental model of the SVBT-2 with most of the armor stripped off replaced with thick layers of durathread. Equipped with a Exo-Skeleton the suit sliences the users footsteps while also increasing movement capabilities.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/SHI/OuterClothing/speedsuit.rsi
@@ -162,10 +164,11 @@
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepSilent
-  - type: Magboots
   - type: ToggleableClothing
     slot: head
     clothingPrototype: ClothingHeadHelmetHardsuitSHISpeedsuit
+  - type: ClothingAddFaction
+    faction: SHI
 
 #armor
 

@@ -10,6 +10,7 @@
       organs:
         brain: OrganPlasmamanBrain
         eyes: OrganPlasmamanEyes
+        head_implant: OrganCrescentDummy # Seriously. Why.
     torso:
       part: TorsoPlasmaman
       connections:
@@ -24,6 +25,7 @@
         stomach: OrganPlasmamanStomach
         liver: OrganPlasmamanLiver
         kidneys: OrganPlasmamanKidneys
+        dermis: OrganCrescentDummy # Why do you need to do this to add an empty organ slot.
     right arm:
       part: RightArmPlasmaman
       connections:
