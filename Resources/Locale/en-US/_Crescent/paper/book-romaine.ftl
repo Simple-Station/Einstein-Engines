@@ -1,30 +1,30 @@
 book-canticles-romaine = 
-        The Canticles of Saint Romaine, warsworn saint of War and Sacrifice.
+        The Canticles of Saint Romaine, Warsworn Saint of War and Sacrifice.
 
 
         Chapter 1. Saint Serraine, the Heartsworn Saint of Peace and Grace.
 
-        Wifr of Romaine, a most graceful noble, the bringer of peace to the edges of the Mandate. Her words, smooth as silk and sweet as honey, have forced many a pirate to kneel and surrender, yet every time she found it in her heart to forgive them and gift the privateers a second chance.
+        Wife of Romaine, she was a most graceful noble, the bringer of peace to the edges of the Mandate. Her words, smooth as silk and sweet as honey, forced many a pirate to kneel and surrender, yet every time she found it in her heart to forgive them and gift the privateers a second chance.
         Yet even such divine innocence could not survive the cruelty of the void. 
         
 
         Chapter 2. The mission in Taypan.
 
-        Romaine and Serraine, a prominent noble couple, venture forth into Sector Crescent. Their goal: to make peace with Taypani Atyrian Pact and to find the Atyrians a space within the Mandate, much like the Unathi monarchs. 
-        Many moderates within the Kaiser’s court support this notion, in large part due to TAP’s extensive knowledge of Psychics. The talks progress well till Serraine suddenly falls deathly ill and must depart, putting the talks on hold. 
-        Imperial doctors are perplexed by the affliction and hypothesize that it must be some Atyrian disease which Serraine caught during her diplomatic mission. 
+        Romaine and Serraine, a prominent noble couple, ventured forth into Sector Crescent. Their goal: to make peace with the Taypani Atyrian Pact and to find the Atyrians a place within the Mandate, much like the Unathi monarchs. 
+        Many moderates within the Kaiser’s court supported this notion, in large part due to TAP’s extensive knowledge of Psychics. The talks progressed well till Serraine suddenly fell deathly ill and had to depart, putting the talks on hold. 
+        Imperial doctors were perplexed by the affliction and hypothesized that it was some wretched Atyrian disease which Serraine had caught during the diplomatic mission, possibly released on purpose to strike a blow to the Mandate. 
 
-        Romaine rushes back towards Terra, hoping that the extensive medical facilities there can cure his beloved wife. Serraine never makes it to her home planet, passing away during the journey. 
-        The entire Mandate enters a period of mourning as her remains are buried on the surface of Terra, accompanied by a fitting ceremony that is broadcast throughout Imperial space.
-        Romaine, a steadfast commander of the armed forces, is seen weeping throughout the whole ceremony. The Kaiser canonizes Serraine as a Saint for her peace efforts. Romaine enters into seclusion upon his orbital habitat. 
+        Romaine rushed back towards Terra, hoping that the extensive medical facilities there could cure his beloved wife. Serraine never even made it to her home planet, passing away during the journey. 
+        The entire Mandate justly entered a period of mourning as her remains were buried on the surface of Terra, accompanied by a fitting ceremony that was broadcast throughout Imperial space.
+        Romaine, a steadfast commander of the armed forces, was seen weeping throughout the whole ceremony. The Kaiser canonized Serraine as a Saint for her peace efforts while Romaine entered into seclusion in his orbital habitat. 
 
         
         Chapter 3. Saint Romaine's crusade.
 
-        Romaine finally ends his years-long seclusion, gathering his forces and launching a crusade against all Atyrians. In his blind rage, he starts slaughtering the yet unconquered tribes within the Bubble. 
-        The Kaiser cannot bring himself to stop his lifelong friend Romaine, so the slaughter continues. After enough blood is shed, Romaine finally sets his eyes on Taypan and the same Atyrians that corrupted his beloved Serraine. He gathers his forces and marches forward. 
-        He is never heard from again.
-        The Kaiser is filled with both sorrow and relief, but in the end, he canonizes Romaine as the Saint of War. Millions of soldiers invoke his name in wars to come.
+        Once Romaine finally ended his years-long seclusion, he gathered his forces and launched a crusade against all Atyrians. In his blind rage, he began slaughtering the yet unconquered tribes. 
+        The Kaiser could not bring himself to stop his lifelong friend Romaine, so the slaughter continued unimpeded. After satiating his bloodlust, Romaine finally set his eyes on Taypan and the same Atyrians that corrupted his beloved Serraine. He gathered his forces and marched forward. 
+        He was never heard from again, presumed lost to the void.
+        The Kaiser was filled with both sorrow and relief, but in the end, he canonized Romaine as the Saint of War. Millions of soldiers have and will continue to invoke his name in wars to come.
 
 
         Chapter 4. The place of lesser species.
