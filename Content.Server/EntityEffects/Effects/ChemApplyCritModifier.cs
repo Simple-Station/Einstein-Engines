@@ -1,59 +1,43 @@
+using Robust.Shared.Prototypes;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Serialization.Manager.Attributes;
 using Robust.Shared.Serialization;
-using Content.Shared.EntityEffects.EntityEffect;
+using Content.Shared.EntityEffects;
 using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.Traits.Assorted.Systems;
 
+using Robust.Shared.Log;
+using Content.Shared.Popups;
+
 namespace Content.Server.EntityEffects.Effects;
 
-[ImplicitDataDefinitionFor(typeof(EntityEffect))]
 public sealed partial class ChemApplyCritModifier : EntityEffect
 {
-    [DataField("threshold")] public float Threshold = 5f;
-    [DataField("additive")] public bool Additive = false;
-    [DataField("value")] public float Value = 25;
-    [DataField("removeOnEnd")] public bool RemoveOnEnd = false;
+    [DataField("value")] public float Value = 0f;
+
+    protected override string? ReagentEffectGuidebookText(IPrototypeManager proto, IEntitySystemManager entSys)
+        => "Adjusts critical threshold while the reagent condition is met.";
+
 
     public override void Effect(EntityEffectBaseArgs args)
     {
-        if (args is not EntityEffectReagentArgs rArgs)
+        Logger.WarningS("critmod", $"ChemApplyCritModifier ran: Value={Value}");
+        if (args is not EntityEffectReagentArgs)
             return;
 
         var entMan = args.EntityManager;
         var uid = args.TargetEntity;
 
-        var amount = rArgs.Quantity;
+        var comp = entMan.EnsureComponent<CritModifierComponent>(uid);
 
-        var hasComp = entMan.TryGetComponent(uid, out CritModifierComponent? comp);
-        if (amount >= Threshold)
-        {
-            comp ??= entMan.EnsureComponent<CritModifierComponent>(uid);
+        var desired = Value;
+        var delta = desired - comp.ChemActive;
+        if (delta == 0f)
+            return;
 
-            if (comp.OriginalCritThreshold <= 0f && comp.CritThresholdModifier == 0f)
-            {
-                comp.OriginalCritThreshold = comp.OriginalCritThreshold;
-            }
+        comp.ChemActive = desired;
+        entMan.Dirty(uid, comp);
 
-            comp.CritThresholdModifier = Additive ? comp.CritThresholdModifier + Value : Value;
-            entMan.Dirty(uid, comp);
-            entMan.RaiseLocalEvent(uid, new CritModifierChangedEvent());
-        }
-        else
-        {
-            if (!hasComp)
-                return;
-
-            if (RemoveOnEnd)
-            {
-                entMan.RemoveComponent<CritModifierComponent>(uid);
-            }
-            else
-            {
-                comp!.CritThresholdModifier = 0f;
-                entMan.Dirty(uid, comp);
-            }
-            entMan.RaiseLocalEvent(uid, new CritModifierChangedEvent());
-        }
+        entMan.EventBus.RaiseLocalEvent(uid, new CritModifierChangedEvent());
     }
 }

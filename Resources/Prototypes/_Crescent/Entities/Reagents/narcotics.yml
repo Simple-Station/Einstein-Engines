@@ -214,11 +214,15 @@
     Medicine:
       metabolismRate: 1
       effects:
+      # While ≥ 5u: It sets chem contribution
       - !type:ChemApplyCritModifier
-        threshold: 5
-        additive: true
-        value: 100
-        removeOnEnd: true
+        value: 50
         conditions:
         - !type:ReagentThreshold
-          min: 0.01
+          min: 5
+      # While < 5u: It sets chem contribution to 0 
+      - !type:ChemApplyCritModifier
+        value: 0
+        conditions:
+        - !type:ReagentThreshold
+          max: 4.99
