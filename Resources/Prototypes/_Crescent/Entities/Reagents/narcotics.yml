@@ -210,13 +210,14 @@
   physicalDesc: reagent-physical-desc-gellike
   flavor: medicine
   color: "#090a12"
+  worksOnTheDead: true
   metabolisms:
     Medicine:
       metabolismRate: 0.5
       effects:
       # While ≥ 5u: It sets chem contribution
       - !type:ChemApplyCritModifier
-        value: 50
+        value: 99
         conditions:
         - !type:ReagentThreshold
           min: 1
