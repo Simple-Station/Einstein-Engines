@@ -976,6 +976,11 @@ public abstract partial class SharedGunSystem : EntitySystem
 
         var projectile = EnsureComp<ProjectileComponent>(uid);
         projectile.Weapon = gunUid;
+        //hullrot addition: damagemodifier working again
+        if (TryComp<GunComponent>(gunUid, out var gunComponent))
+            projectile.Damage = projectile.Damage * gunComponent.DamageModifier;
+
+
         var shooter = user ?? gunUid;
         if (shooter != null)
             Projectiles.SetShooter(uid, projectile, shooter.Value);
