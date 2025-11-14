@@ -133,3 +133,15 @@
   id: IPMDogtagStore
   name: Interdyne blackmarket autopeddler
   description: A stolen Shinohara-patented autopeddler machine. Uses an integrated, lobotomized zircon-class artifical intelligence subcore to sell you things. Provided you have the Samples.
+
+- type: entity
+  parent: [ BaseStructureUnanchorable, BaseStore, StorePresetHullrotDogtagSRMR ]
+  id: SRMDogtagStoreR
+  name: Statue of Saint Romaine
+  description: A statue of Saint Romaine, hallowed be his name. Perhaps the bowl full of blood will take your scraps of piety in exchange for items you may need to fulfill his will.
+
+- type: entity
+  parent: [ BaseStructureUnanchorable, BaseStore, StorePresetHullrotDogtagSRMS ]
+  id: SRMDogtagStoreS
+  name: Shrine of Saint Serraine
+  description: A statue of Saint Serraine, may she rest in His grace. The incense at her feet seems welcoming, some say that if you pray to her she will bless you with items to avenge her.

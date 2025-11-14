@@ -1,0 +1,32 @@
+- type: storeCategory
+  id: StoreCategorySRMWeapons
+  name: Weapons
+  priority: 4
+
+- type: storeCategory
+  id: StoreCategorySRMAmmo
+  name: Ammo
+  priority: 6
+
+- type: storeCategory
+  id: StoreCategorySRMSuits
+  name: Suits
+  priority: 10
+
+- type: storeCategory
+  id: StoreCategorySRMExplosives
+  name: Explosives
+  priority: 12
+
+#MECHS
+
+- type: listing
+  id: StoreListingGSCMechBlade
+  name: SHI LvR-200 exosuit-mounted plasteel blade.
+  description: A repurposed fighter wing commissioned from SAW in accordance with Shinohara schematics.
+  icon: { sprite: /Textures/Objects/Devices/flatpack.rsi, state: kit }
+  productEntity: WeaponMechSword
+  cost:
+    PlunderGSC: 10
+  categories:
+  - StoreCategoryGSCMech

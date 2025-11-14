@@ -75,3 +75,35 @@
     - SampleIPM
     balance:
       SampleIPM: 0
+
+- type: entity
+  id: StorePresetHullrotDogtagSRMR
+  abstract: true
+  components:
+  - type: Store
+    name: srm-console-r
+    categories:
+    - StoreCategorySRMWeapons
+    - StoreCategorySRMAmmo
+    - StoreCategorySRMSuits
+    - StoreCategorySRMExplosives
+    currencyWhitelist:
+    - PietySRM
+    balance:
+      PietySRM: 0
+
+- type: entity
+  id: StorePresetHullrotDogtagSRMS
+  abstract: true
+  components:
+  - type: Store
+    name: srm-console-s
+    categories:
+    - StoreCategorySRMLPC
+    - StoreCategorySRMTools
+    - StoreCategorySRMSupport
+    - StoreCategorySRMMaterials
+    currencyWhitelist:
+    - PietySRM
+    balance:
+      PietySRM: 0

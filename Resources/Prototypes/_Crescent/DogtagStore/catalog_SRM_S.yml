@@ -1,0 +1,116 @@
+- type: storeCategory
+  id: StoreCategorySRMLPC
+  name: LPCs
+  priority: 4
+
+- type: storeCategory
+  id: StoreCategorySRMTools
+  name: Tools
+  priority: 6
+
+- type: storeCategory
+  id: StoreCategorySRMSupport
+  name: Medical & Support
+  priority: 10
+
+- type: storeCategory
+  id: StoreCategorySRMMaterials
+  name: Materials
+  priority: 12
+
+#LPCs
+
+- type: listing
+  id: StoreListingSRMSpider
+  name: SRM Spider LPC
+  description:
+  icon: { sprite: /Textures/_Crescent/Objects/Misc/lpcchip.rsi, state: icon }
+  productEntity:
+  cost:
+    PietySRM: 40
+  categories:
+  - StoreCategorySRMLPC
+
+- type: listing
+  id: StoreListingSRMSaintsfall
+  name: SRM Saintsfall LPC
+  description:
+  icon: { sprite: /Textures/_Crescent/Objects/Misc/lpcchip.rsi, state: icon }
+  productEntity:
+  cost:
+    PietySRM: 10
+  categories:
+  - StoreCategorySRMLPC
+
+#LPCs End
+
+#Tools
+
+- type: listing
+  id: StoreListingSRMJaws
+  name: Jaws of Life
+  description: A pair of jaws of life, plucked off some unlucky bastard during a raid on a CD vessel.
+  icon: { sprite: /Objects/Tools/jaws_of_life.rsi, state: syn_jaws_pry }
+  productEntity: SyndicateJawsOfLife
+  cost:
+    PietySRM: 5
+  categories:
+  - StoreCategorySRMTools
+
+- type: listing
+  id: StoreListingSRMMagboots
+  name: Combat Magboots
+  description: Standard issue combat magboots, can comfortably carry a knife in them.
+  icon: { sprite: /Textures/_NF/Clothing/Shoes/Boots/magboots-combat.rsi, state: icon }
+  productEntity: ClothingShoesBootsMagCombat
+  cost:
+    PietySRM: 2
+  categories:
+  - StoreCategorySRMTools
+
+- type: listing
+  id: StoreListingSRMHeavyMagboots
+  name: Heavy Combat Magboots
+  description: Heavy duty combat magboots, make you a bit slower but they can carry a sidearm.
+  icon: { sprite: /Textures/Clothing/Shoes/Boots/magboots-combat.rsi, state: icon }
+  productEntity: ClothingShoesBootsMagSec
+  cost:
+    PietySRM: 3
+  categories:
+  - StoreCategorySRMTools
+
+- type: listing
+  id: StoreListingSRMJetpack
+  name: Black Jetpack
+  description: A jetpack alleged to be as black as Romaine's moth cloak, the montagnes will just tell you that it was easier to find black jetpacks.
+  icon: { sprite: /Objects/Tanks/Jetpacks/black.rsi, state: icon }
+  productEntity: JetpackBlackFilled
+  cost:
+    PietySRM: 3
+  categories:
+  - StoreCategorySRMTools
+
+- type: listing
+  id: StoreListingSRMToolbox
+  name: Stolen Toolbox
+  description: A toolbox stolen from some poor guy just leaving Freeport. Not like he'll be needing it anymore anyways.
+  icon: { sprite: /Objects/Tools/Toolboxes/toolbox_syn.rsi, state: icon }
+  productEntity: ToolboxSyndicate
+  cost:
+    PietySRM: 5
+  categories:
+  - StoreCategorySRMTools
+
+- type: listing
+  id: StoreListingSRMPinpointer
+  name: Tracking Pinpointer
+  description: A pinpointer used to track down anything, even small and unnoticeable things.
+  icon: { sprite: /Resources/Textures/Objects/Devices/pinpointer.rsi, state: pinpointer_thief }
+  productEntity: PinpointerUniversal
+  cost:
+    PietySRM: 2
+  categories:
+  - StoreCategorySRMTools
+
+#Tools End
+
