@@ -9,7 +9,7 @@
       group: LoadoutBelt
     - !type:CharacterJobRequirement
       jobs:
-        # - BoardSHI
+        - BoardSHI
         - ExecutiveSHI
         - HighsecSHI
         - HosSHI
