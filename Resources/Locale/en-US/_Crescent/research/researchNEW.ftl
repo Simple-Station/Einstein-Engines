@@ -157,3 +157,4 @@ research-technology-shinohara-shiverblade = SHI-RIP9 Shiver Blade
 research-technology-shinohara-advance-armor = Svbt Experimental Armors
 research-technology-shinohara-light-destroyer = SHI Light Destroyers
 research-technology-shinohara-oldntballistics = Old NT Gun Schematics
+research-technology-shinohara-ntartillery = NT Artillery Patent
