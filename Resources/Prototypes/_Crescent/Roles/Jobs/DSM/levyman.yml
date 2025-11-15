@@ -13,15 +13,16 @@
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"
+    - !type:CharacterOverallTimeRequirement
+      min: 10800
     - !type:CharacterSpeciesRequirement
       species:
         - Human
         - Oni
+        - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
         - Pacifist
@@ -31,6 +32,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-manatarms
+      - type: HullrotFaction
+        faction: DSM
       - type: LanguageAdder
         addSpoken:
           - LowImperial
@@ -52,8 +55,17 @@
     id: LevymanPDA
     ears: ClothingHeadsetEmpireCiv
     shoes: ClothingShoesBootsImperialJackboots
-    back: ClothingBackpackDSMFilledSoldier
+    back: ClothingBackpackDSM
     head: ClothingHeadHelmetImperialTrooperHelmet
     jumpsuit: ClothingUniformJumpsuitImperialCombat
     outerClothing: ClothingOuterArmorImperialTrooperArmor
     gloves: ClothingHandsGlovesImperialLonggloves
+    pocket1: WeaponPistolComplianceImperial
+    belt: ClothingBeltAssault
+  storage:
+    back:
+      - Flash
+      - Tourniquet
+      - Zipties
+      - MagazinePistol
+      - CombatKnife

@@ -30,6 +30,7 @@
       containers:
         ballistic-ammo: !type:Container
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 145
       fireRate: 5
       selectedMode: FullAuto
@@ -61,15 +62,16 @@
 
 - type: entity
   parent: WeaponTurretPDT
-  id: WeaponTurretPDTNCSP
+  id: WeaponTurretPDTAdvanced
   suffix: ShipGun, Tier 2
   name: SHI MG-213 light dual machinegun 20x135mm Mk. II
   components:
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 145
       fireRate: 5.5
     - type: Machine
-      board: WeaponTurretPDTNCSPCircuitboard
+      board: WeaponTurretPDTAdvancedCircuitboard
 
 # VULCAN TURRET
 
@@ -103,8 +105,9 @@
         ballistic-ammo: !type:Container
           ents: []
     - type: Gun
+      fireOnDropChance: 0
       fireRate: 12
-      projectileSpeed: 120
+      projectileSpeed: 135
       selectedMode: FullAuto
       availableModes:
         - FullAuto
@@ -170,7 +173,7 @@
   parent: BaseTurretShipgun
   id: BaseWeaponTurretSwarmer
   suffix: ShipGun
-  name: swarmer missile launcher
+  name: TFSC 'Swarmer' self-replicating missile pod
   components:
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/swarmermissile.rsi
@@ -191,41 +194,34 @@
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          ents: []
+    # - type: ContainerContainer
+    #   containers:
+    #     ballistic-ammo: !type:Container
+    #       ents: []
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 75
-      fireRate: 0.5
+      fireRate: 6 #balanced by long cooldown
       selectedMode: FullAuto
       availableModes:
         - FullAuto
       soundGunshot: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
-    - type: ItemSlots
-      slots:
-        gun_magazine:
-          name: Magazine
-          #startingItem: MagazineSwarmer - on being rebuilt from destruction this gives it free ammo
-          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
-          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
-          priority: 2
-          whitelist:
-            tags:
-              - SwarmRocketBox
-        gun_chamber:
-          name: Chamber
-          startingItem: SwarmerRocketCartridge
-          priority: 1
-          whitelist:
-            tags:
-              - SwarmRocket
+    - type: RechargeBasicEntityAmmo
+      rechargeCooldown: 10
+      rechargeSound:
+        path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+        params:
+          pitch: 1.2
+          variation: 0.08
+    - type: BasicEntityAmmoProvider
+      proto: SwarmerMissile
+      capacity: 6
+      count: 6
     - type: ApcPowerReceiver
       powerLoad: 3500
     - type: HardpointAnchorableOnly
       class: Missile
       size: Small
-    - type: MagazineAmmoProvider
     - type: ProjectileIFF
     - type: Construction
       graph: Machine
@@ -286,6 +282,7 @@
               sound:
                 collection: MetalGlassBreak
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 130
       fireRate: 2
       selectedMode: FullAuto
@@ -347,8 +344,9 @@
         ballistic-ammo: !type:Container
           ents: []
     - type: Gun
-      projectileSpeed: 130
-      fireRate: 0.2
+      fireOnDropChance: 0
+      projectileSpeed: 110
+      fireRate: 0.6
       selectedMode: FullAuto
       availableModes:
         - FullAuto
@@ -427,7 +425,7 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 500
+            damage: 1000
           # TODO: Construction graph
           behaviors:
             - !type:ChangeConstructionNodeBehavior
@@ -439,8 +437,9 @@
       containers:
         ballistic-ammo: !type:Container
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 95
-      fireRate: 4
+      fireRate: 8
       selectedMode: FullAuto
       availableModes:
         - FullAuto
@@ -499,6 +498,7 @@
       containers:
         ballistic-ammo: !type:Container
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 14
       fireRate: 0.09
       selectedMode: FullAuto
@@ -565,6 +565,7 @@
         ballistic-ammo: !type:Container
           ents: []
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 130
       fireRate: 0.6
       selectedMode: FullAuto
@@ -658,6 +659,7 @@
       containers:
         ballistic-ammo: !type:Container
     - type: Gun
+      fireOnDropChance: 0
       fireRate: 7
       projectileSpeed: 145
       selectedMode: FullAuto
@@ -712,6 +714,7 @@
         ballistic-ammo: !type:Container
           ents: []
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 30
       fireRate: 0.4
       selectedMode: FullAuto
@@ -783,6 +786,7 @@
         ballistic-ammo: !type:Container
           ents: []
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 85
       fireRate: 0.9
       selectedMode: FullAuto
@@ -854,6 +858,7 @@
         ballistic-ammo: !type:Container
           ents: []
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 130
       fireRate: 0.2
       selectedMode: FullAuto
@@ -925,6 +930,7 @@
         ballistic-ammo: !type:Container
           ents: []
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 90
       fireRate: 0.8
       selectedMode: FullAuto
@@ -1018,6 +1024,7 @@
         ballistic-ammo: !type:Container
           ents: []
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 30
       fireRate: 0.2
       selectedMode: FullAuto
@@ -1088,6 +1095,7 @@
       containers:
         ballistic-ammo: !type:Container
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 75
       fireRate: 1.7
       selectedMode: FullAuto
@@ -1149,6 +1157,7 @@
       containers:
         ballistic-ammo: !type:Container
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 95
       fireRate: 12
       selectedMode: FullAuto
@@ -1228,6 +1237,7 @@
       containers:
         ballistic-ammo: !type:Container
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 95
       fireRate: 3.5
       selectedMode: FullAuto
@@ -1307,6 +1317,7 @@
       containers:
         ballistic-ammo: !type:Container
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 60
       fireRate: 3.4
       selectedMode: FullAuto
@@ -1392,6 +1403,7 @@
       containers:
         ballistic-ammo: !type:Container
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 30
       fireRate: 0.5
       selectedMode: FullAuto
@@ -1470,7 +1482,8 @@
         ballistic-ammo: !type:Container
           ents: []
     - type: Gun
-      fireRate: 3
+      fireOnDropChance: 0
+      fireRate: 2
       projectileSpeed: 80
       soundGunshot:
         path: /Audio/Weapons/Guns/Gunshots/50cal.ogg
@@ -1550,6 +1563,7 @@
                 collection: MetalGlassBreak
     - type: ProjectileIFF
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 95
       fireRate: 0.6
       selectedMode: FullAuto
@@ -1564,7 +1578,7 @@
           pitch: 1.2
           variation: 0.08
     - type: BasicEntityAmmoProvider
-      proto: FlakProjectileHE
+      proto: 88mmFlakSpreadHE
       capacity: 6
       count: 10
     - type: ApcPowerReceiver
@@ -1609,6 +1623,7 @@
                 collection: MetalGlassBreak
     - type: ProjectileIFF
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 95
       fireRate: 5
       selectedMode: FullAuto
@@ -1670,6 +1685,7 @@
       containers:
         ballistic-ammo: !type:Container
     - type: Gun
+      fireOnDropChance: 0
       projectileSpeed: 95
       fireRate: 3
       selectedMode: FullAuto

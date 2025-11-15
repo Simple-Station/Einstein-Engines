@@ -3,7 +3,7 @@
   name: job-name-ncwl-fleetkapitan
   description: job-description-ncwl-fleetkapitan
   playTimeTracker: JobHomeguardSquadCaptainNCWL
-  weight: 98
+  weight: 6
   startingGear: CaptainNCWLGear
   alwaysUseSpawner: true
   requireAdminNotify: false
@@ -23,8 +23,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
         - Pacifist
@@ -34,6 +32,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-home-squad-lead
+      - type: HullrotFaction
+        faction: NCWL
       - type: LanguageAdder
         addSpoken:
           - Dockta
@@ -95,3 +95,9 @@
     mask: ClothingMaskNCWLGasmask
     ears: ClothingHeadsetNCWL
     eyes: ClothingEyesHudSecurity
+  storage:
+    back:
+      - Flash
+      - Tourniquet
+      - Zipties
+      - CombatKnife

@@ -16,7 +16,6 @@
     - !type:CharacterTraitRequirement
         inverted: true
         traits:
-          - Foreigner
           - Blindness
           - WheelchairBound
   special:
@@ -26,7 +25,7 @@
         rank: crescent-rank-physician
       - type: CPRTraining
       - type: SurgerySpeedModifier
-        speedModifier: 2
+        speedModifier: 1.75
   access:
   - Command
   - Maintenance

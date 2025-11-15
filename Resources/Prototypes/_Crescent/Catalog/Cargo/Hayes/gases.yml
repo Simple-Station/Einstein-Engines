@@ -1,29 +1,29 @@
-- type: cargoProduct
-  id: AtmosphericsAirHayes
-  icon:
-    sprite: Structures/Storage/canister.rsi
-    state: grey
-  product: AirCanister
-  cost: 800
-  category: cargoproduct-category-name-atmospherics
-  group: hayes
+# - type: cargoProduct
+#   id: AtmosphericsAirHayes
+#   icon:
+#     sprite: Structures/Storage/canister.rsi
+#     state: grey
+#   product: AirCanister
+#   cost: 800
+#   category: cargoproduct-category-name-atmospherics
+#   group: hayes
 
-- type: cargoProduct
-  id: AtmosphericsOxygenHayes
-  icon:
-    sprite: Structures/Storage/canister.rsi
-    state: blue
-  product: OxygenCanister
-  cost: 1100
-  category: cargoproduct-category-name-atmospherics
-  group: hayes
+# - type: cargoProduct
+#   id: AtmosphericsOxygenHayes
+#   icon:
+#     sprite: Structures/Storage/canister.rsi
+#     state: blue
+#   product: OxygenCanister
+#   cost: 1100
+#   category: cargoproduct-category-name-atmospherics
+#   group: hayes
 
-- type: cargoProduct
-  id: AtmosphericsLiquidHayes
-  icon:
-    sprite: Structures/Storage/canister.rsi
-    state: blue
-  product: LiquidOxygenCanister
-  cost: 2000
-  category: cargoproduct-category-name-atmospherics
-  group: hayes
+# - type: cargoProduct
+#   id: AtmosphericsLiquidHayes
+#   icon:
+#     sprite: Structures/Storage/canister.rsi
+#     state: blue
+#   product: LiquidOxygenCanister
+#   cost: 2000
+#   category: cargoproduct-category-name-atmospherics
+#   group: hayes

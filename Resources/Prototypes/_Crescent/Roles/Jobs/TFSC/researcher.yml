@@ -12,13 +12,12 @@
   canBeAntag: false
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 2000
+      min: 10800
     - !type:FactionRequirement
       factionID: "TFSC"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
         - Blindness
         - WheelchairBound
   special:
@@ -26,6 +25,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-doc
+      - type: HullrotFaction
+        faction: CD
       - type: LanguageAdder
         addSpoken:
           - Freespeak
@@ -36,6 +37,7 @@
   - Maintenance
   - SyndicateBasic
   - SyndicateRamzi
+  - Engineering
   - Service
   - External
   - Mercenary # Frontier

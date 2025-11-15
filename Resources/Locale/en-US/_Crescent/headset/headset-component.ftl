@@ -9,4 +9,5 @@ chat-radio-syndieipm = Interdyne Pharmaceuticals
 chat-radio-syndiecyberdawn = Cyberdawn Technologies
 chat-radio-pact = The Atyrian Pact
 chat-radio-authoritat = 43rd Battlegroup
-chat-radio-clarizian = Clarizian Expeditionary 
+chat-radio-clarizian = Clarizian Expeditionary
+chat-radio-american = New American Protectorate

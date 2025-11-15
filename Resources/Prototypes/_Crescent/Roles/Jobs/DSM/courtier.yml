@@ -15,7 +15,7 @@
     - !type:FactionRequirement
       factionID: "DSM"
     - !type:CharacterOverallTimeRequirement
-      min: 2500
+      min: 10800
     - !type:CharacterSpeciesRequirement
       species:
         - Human
@@ -24,6 +24,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-courtier
+      - type: HullrotFaction
+        faction: DSM
       - type: LanguageAdder
         addSpoken:
           - HighImperial
@@ -50,4 +52,4 @@
     jumpsuit: ClothingUniformJumpsuitImperialNobleMale
     shoes: ClothingShoesBootsImperialLaceup
     id: CourtierPDA
-    ears: ClothingHeadsetEmpireCiv
+    ears: ClothingHeadsetEmpire

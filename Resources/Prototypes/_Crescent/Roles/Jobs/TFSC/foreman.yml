@@ -18,8 +18,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
         - WheelchairBound
@@ -28,6 +26,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-foreman
+      - type: HullrotFaction
+        faction: SAW
       - type: LanguageAdder
         addSpoken:
           - Freespeak
@@ -57,6 +57,6 @@
     outerClothing: ClothingOuterArmorSyndicateForeman
     belt: ClothingBeltUtilityEngineering
     back: ClothingBackpackNCSPFilledInfanteer
-    pocket1: WeaponPistolHKUSP
+    pocket1: WeaponPistolViperWood
     gloves: ClothingHandsGlovesFingerless
     pocket2: AccessElevatorSAW

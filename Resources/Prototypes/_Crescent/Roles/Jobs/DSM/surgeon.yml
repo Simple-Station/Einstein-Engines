@@ -13,14 +13,11 @@
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Voidborn
+    - !type:CharacterOverallTimeRequirement
+      min: 10800
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - ForeignerLight
         - Blindness
         - Pacifist
         - WheelchairBound
@@ -29,9 +26,11 @@
     components:
       - type: ChatRank
         rank: crescent-rank-smarts
+      - type: HullrotFaction
+        faction: DSM
       - type: CPRTraining
       - type: SurgerySpeedModifier
-        speedModifier: 2
+        speedModifier: 1.75
       - type: LanguageAdder
         addSpoken:
           - LowImperial
@@ -52,7 +51,11 @@
   equipment:
     id: SurgeonPDA
     ears: ClothingHeadsetEmpireCiv
+    eyes: ClothingEyesHudMedical
     pocket1: ImperialPassportBareLegit
     head: ClothingHeadHatImperialSurgeon
+    back: ClothingBackpackDSM
+    gloves: ClothingHandsGlovesNitrile
+    belt: ClothingBeltMedicalFilled
     shoes: ClothingShoesBootsImperialLaceup
     jumpsuit: ClothingUniformJumpsuitImperialSurgeon

@@ -60730,7 +60730,7 @@ entities:
     - type: Transform
       pos: 30.65331,2.8322
       parent: 1
-- proto: AmeController
+- proto: AmeControllerStation
   entities:
   - uid: 167
     components:
@@ -94936,7 +94936,7 @@ entities:
     - type: Transform
       pos: -10.5,-7.5
       parent: 1
-- proto: SpawnPointNCWLIndustryTaskmaster
+- proto: SpawnPointNCWLArtificer
   entities:
   - uid: 5857
     components:
@@ -95014,7 +95014,7 @@ entities:
     - type: Transform
       pos: 1.5,-3.5
       parent: 1
-- proto: SpawnPointNCWLWorkerOverboss
+- proto: SpawnPointNCWLCoordinator
   entities:
   - uid: 5871
     components:

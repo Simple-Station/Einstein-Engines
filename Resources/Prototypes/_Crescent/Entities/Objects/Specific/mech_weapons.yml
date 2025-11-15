@@ -227,6 +227,77 @@
     tags:
     - ScoutMechEquipment
 
+
+- type: entity
+  id: WeaponMechSepulchreGatling
+  name: IRM 'Dirge' 11mm Burst Chaingun
+  description: A gilded weapon commissioned by the noble houses to honor a fallen ritter champion. When this nitrogen-cooled chaingun speaks, you listen.
+  suffix: Mech Weapon, Gun, Combat, Chaingun
+  parent: [ BaseMechWeaponRange, MediumMechEquipment ]
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: chaingun
+  - type: Gun
+    fireRate: 15
+    minAngle: 6
+    maxAngle: 20
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/dirge.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletHeavyPistol
+    fireCost: 2
+  - type: Appearance
+  - type: AmmoCounter
+  - type: Tag
+    tags:
+    - MediumMechEquipment
+
+- type: entity
+  id: WeaponMechSepulchreFist
+  parent: [ BaseMechWeaponMelee, MediumMechEquipment ]
+  name: IRM 'Ancient's Rebuke' exo-fist
+  suffix: Mech Weapon, Melee, Combat
+  description: A fully dexterous appendage backed by impressive nanomusculature and overpressure hydraulics, its appearance is feared both by close quarters combatants and the scribes tasked with maintaining it.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: fist
+  - type: MeleeWeapon
+    attackRate: 3.5 #2 seconds
+    wideAnimationRotation: 0
+    range: 3
+    damage:
+      types:
+        Blunt: 25
+        Structural: 600
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 1
+    heavyRateModifier: 1.25
+    clickPartDamageMultiplier: 1.5
+    maxTargets: 3
+    bluntStaminaDamageFactor: 1.5
+    angle: 90
+    soundHit:
+      collection: RemnantFistSounds
+    animation: WeaponArcThrust
+  - type: MeleeThrowOnHit
+    speed: 10
+    lifetime: 0.25
+  - type: KnockdownOnHit
+    duration: 1
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,1,3
+  - type: Tag
+    tags:
+    - MediumMechEquipment
+
+
 - type: entity
   id: WeaponMechCombatGatling
   name: PTA 'Loyal' 30mm gatling exosuit chaingun
@@ -394,20 +465,93 @@
     sprite: _Crescent/Objects/Specific/mechaweapons.rsi
     state: plasmarifle
   - type: Gun
-    fireRate: 0.8
-    selectedMode: FullAuto
+    shotsPerBurst: 2
+    burstFireRate: 4
+    burstCooldown: 0.75
+    fireRate: 0.75
+    selectedMode: Burst
     availableModes:
-      - FullAuto
+      - Burst
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ship_svalinn.ogg
   - type: ProjectileBatteryAmmoProvider
     proto: ExosuitPlasmaBoltLight
-    fireCost: 30
+    fireCost: 10
   - type: Appearance
   - type: AmmoCounter
   - type: Tag
     tags:
     - ScoutMechEquipment
+
+- type: entity
+  id: WeaponMechCombatImperialSMG
+  name: IRM 'Errant' exosuit 11mm submachine-gun
+  description: An Exo-mounted SMG using infantry caliber munitions, the Errant sets itself apart from higher caliber mech weapons by being designed for express anti-personnel duties. While it struggles with heavier armour, its high firerate scythes down infantry for an economical power cost.
+  suffix: Mech Weapon, Gun, Combat, Submachine-gun
+  parent: [ BaseMechWeaponRange, ScoutMechEquipment ]
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: imperialsmg
+  - type: Gun
+    fireRate: 10
+    minAngle: 6
+    maxAngle: 16
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/smg_3/smg_gunshot_2.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletHeavyPistol
+    fireCost: 2
+  - type: Appearance
+  - type: AmmoCounter
+  - type: Tag
+    tags:
+    - ScoutMechEquipment
+
+- type: entity
+  id: WeaponMechCombatImperialAutolaser
+  name: IRM 'Lumen' 60c exosuit autolaser
+  description: An Exo-portable laser gun providing rapid high-power response to spaceborne mechs and ulralight fighters. The Lumen's inbuilt vents dissipate most of the generated heat, but cannot offset the heavy battery cost of sustained fire and will struggle to penetrate ship hull.
+  suffix: Mech Weapon, Gun, Combat, Autolaser
+  parent: [ BaseMechWeaponRange, ScoutMechEquipment ]
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: plasmalaser
+  - type: Gun
+    fireRate: 9
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/lasergatling.ogg
+  - type: HitscanBatteryAmmoProvider
+    proto: LumenLaser
+    fireCost: 3
+  - type: Appearance
+  - type: AmmoCounter
+  - type: Tag
+    tags:
+    - ScoutMechEquipment
+
+- type: hitscan
+  id: LumenLaser
+  damage:
+    types:
+      Heat: 7
+      Structural: 10
+  muzzleFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: muzzle_laser
+  travelFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: beam
+  impactFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_laser
 
 - type: entity
   id: WeaponMechCombatPlasmaCannon
@@ -431,7 +575,7 @@
     startingCharge: 250
   - type: ProjectileBatteryAmmoProvider
     proto: ExosuitPlasmaBoltHeavy
-    fireCost: 250
+    fireCost: 50
   - type: Appearance
   - type: AmmoCounter
   - type: Tag

@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatCMMDeputyMarshal
-  name: deputy marshal's campaign hat
-  description: An officer's hat in CMM colors.
+  name: militiaman's slouch hat
+  description: A simple slouch hat in the colors of the now-defunct Colonial Minutemen. Its tarnished golden seal symbolizes hope.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/CMM/Head/deputymarshal.rsi
@@ -13,7 +13,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatCMMMarshal
   name: marshal's campaign hat
-  description: An officer's hat in CMM colors.
+  description: An officer's hat in the colors of the now-defunct Colonial Minutemen. Its golden seal still exudes authority.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/CMM/Head/marshal.rsi
@@ -24,7 +24,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatMinuteman
   name: minuteman's cap
-  description: A Minuteman cap, dyed in faded blue.
+  description: A cap of the former Minutemen, dyed in faded blue. Its bronze badge still imposes order.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/CMM/Head/minuteman.rsi
@@ -35,7 +35,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatWatchmaster
   name: watchmaster's cap
-  description: A Watchmaster's cap, dyed in faded blue and trimmed in red.
+  description: A Watchmaster's cap, dyed in faded blue and trimmed in red. Its bronze badge still imposes order.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/CMM/Head/minutemansarge.rsi

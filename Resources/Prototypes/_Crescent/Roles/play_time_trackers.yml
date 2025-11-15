@@ -164,6 +164,12 @@
 - type: playTimeTracker
   id: JobMedtechSHI
 
+- type: playTimeTracker
+  id: JobBoardHRSHI
+
+- type: playTimeTracker
+  id: JobHosSHI
+
 #cmm
 
 - type: playTimeTracker
@@ -273,6 +279,9 @@
 
 - type: playTimeTracker
   id: JobSpacer
+
+- type: playTimeTracker
+  id: JobDockhand
 
 - type: playTimeTracker
   id: JobGliessSheriff

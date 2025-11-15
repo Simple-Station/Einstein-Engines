@@ -41,12 +41,6 @@
   id: Aristocrat
   nameKey: lifepath_name_aristocrat
   descriptionKey: lifepath_description_aristocrat
-  functions:
-    - !type:TraitModifyLanguages
-      languagesSpoken:
-        - HighImperial
-      languagesUnderstood:
-        - HighImperial
 
 - type: lifepath
   id: WarVet
@@ -77,12 +71,6 @@
   id: Doctor
   nameKey: lifepath_name_doctor
   descriptionKey: lifepath_description_doctor
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: CPRTraining
-        - type: SurgerySpeedModifier
-          speedModifier: 2
 
 - type: lifepath
   id: Voyager

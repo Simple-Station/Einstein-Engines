@@ -1,5 +1,5 @@
 - type: entity
-  parent: [Clothing, ContentsExplosionResistanceBase]
+  parent: [Clothing, ContentsExplosionResistanceBase,  BaseSubfloorAnchorStorage]
   id: ClothingBackpack
   name: backpack
   description: You wear this on your back and put items into it.
@@ -13,6 +13,8 @@
     quickEquip: false
     slots:
     - back
+    equipDelay: 0
+    unequipDelay: 1 # belts and backpacks can be misclicked when trying to open them - this prevents that.
   - type: Storage
     grid:
     - 0,0,6,3

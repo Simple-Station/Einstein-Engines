@@ -249,7 +249,13 @@ namespace Content.Shared.Containers.ItemSlots
 
             // Logging
             if (inserted != null && inserted.Value && user != null)
+            {
+                // that event from before sucks ass.
+                var ev = new ItemSlotInsertEvent(uid, item, user, slot);
+                RaiseLocalEvent(uid, ref ev);
+                RaiseLocalEvent(item, ref ev);
                 _adminLogger.Add(LogType.Action, LogImpact.Low, $"{ToPrettyString(user.Value)} inserted {ToPrettyString(item)} into {slot.ContainerSlot?.ID + " slot of "}{ToPrettyString(uid)}");
+            }
 
             _audioSystem.PlayPredicted(slot.InsertSound, uid, excludeUserAudio ? user : null);
         }
@@ -282,6 +288,9 @@ namespace Content.Shared.Containers.ItemSlots
             }
 
             if (slot.HasItem && (!swap || (swap && !CanEject(uid, user, slot))))
+                return false;
+
+            if (slot.SelfEjectOnly && user != uid)
                 return false;
 
             var ev = new ItemSlotInsertAttemptEvent(uid, usedUid, user, slot);
@@ -460,7 +469,7 @@ namespace Content.Shared.Containers.ItemSlots
                 return false;
             }
 
-            if (slot.ContainerSlot?.ContainedEntity is not {} item)
+            if (slot.ContainerSlot?.ContainedEntity is not {} item || slot.SelfEjectOnly && user != uid)
                 return false;
 
             var ev = new ItemSlotEjectAttemptEvent(uid, item, user, slot);
@@ -485,7 +494,12 @@ namespace Content.Shared.Containers.ItemSlots
 
             // Logging
             if (ejected != null && ejected.Value && user != null)
+            {
+                var ev = new ItemSlotEjectEvent(uid, item, user, slot);
+                RaiseLocalEvent(uid, ref ev);
+                RaiseLocalEvent(item, ref ev);
                 _adminLogger.Add(LogType.Action, LogImpact.Low, $"{ToPrettyString(user.Value)} ejected {ToPrettyString(item)} from {slot.ContainerSlot?.ID + " slot of "}{ToPrettyString(uid)}");
+            }
 
             _audioSystem.PlayPredicted(slot.EjectSound, uid, excludeUserAudio ? user : null);
         }

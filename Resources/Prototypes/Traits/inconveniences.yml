@@ -45,43 +45,43 @@
           threeRandomProb: 0
           cutRandomProb: 0
 
-- type: trait
-  id: ForeignerLight
-  category: TraitsSpeechLanguages
-  points: 2
-  requirements:
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Foreigner
-        - Muted
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Mime
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: ForeignerTrait
-          cantUnderstand: false
-          baseTranslator: TranslatorForeigner
+# - type: trait
+#   id: ForeignerLight
+#   category: TraitsSpeechLanguages
+#   points: 2
+#   requirements:
+#     - !type:CharacterTraitRequirement
+#       inverted: true
+#       traits:
+#         - Foreigner
+#         - Muted
+#     - !type:CharacterJobRequirement
+#       inverted: true
+#       jobs:
+#         - Mime
+#   functions:
+#     - !type:TraitAddComponent
+#       components:
+#         - type: ForeignerTrait
+#           cantUnderstand: false
+#           baseTranslator: TranslatorForeigner
 
-- type: trait
-  id: Foreigner
-  category: TraitsSpeechLanguages
-  points: 4
-  requirements: # TODO: Add a requirement to know at least 1 non-gc language
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - ForeignerLight
-        - Muted
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Mime
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: ForeignerTrait
-          baseTranslator: TranslatorForeigner
+# - type: trait
+#   id: Foreigner
+#   category: TraitsSpeechLanguages
+#   points: 4
+#   requirements: # TODO: Add a requirement to know at least 1 non-gc language
+#     - !type:CharacterTraitRequirement
+#       inverted: true
+#       traits:
+#         - ForeignerLight
+#         - Muted
+#     - !type:CharacterJobRequirement
+#       inverted: true
+#       jobs:
+#         - Mime
+#   functions:
+#     - !type:TraitAddComponent
+#       components:
+#         - type: ForeignerTrait
+#           baseTranslator: TranslatorForeigner

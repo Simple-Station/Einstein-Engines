@@ -3,9 +3,13 @@
   name: job-name-spacer
   description: job-description-spacer
   playTimeTracker: JobSpacer
-  startingGear: ContractorGear
+  weight: 10
+  startingGear: SpacerGear
   icon: "JobIconPassenger"
   supervisors: job-supervisors-hire
+  requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 10800
   accessGroups:
   - GeneralAccess
   special:
@@ -13,27 +17,16 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ind-spacer
+      - type: HullrotFaction
+        faction: IND
       - type: LanguageAdder
         addSpoken:
           - Tradeband
         addUnderstood:
           - Tradeband
 
-- type: entity
-  parent: IDCardStandard
-  id: SpacerIDCard
-  name: Spacer ID card
-  components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: idpassenger
-  - type: PresetIdCard
-    job: Spacer
-
-
 - type: startingGear
-  id: ContractorGear
+  id: SpacerGear
   equipment:
     ears: ClothingHeadsetGrey
     id: SpacerPDA

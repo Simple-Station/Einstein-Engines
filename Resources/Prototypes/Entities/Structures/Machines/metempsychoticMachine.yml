@@ -2,11 +2,11 @@
   parent: CloningPod
   id: MetempsychoticMachine
   name: metempsychotic machine
-  description: Speeds along the transmigration of a soul to its next vessel.
+  description: Originally designed by the TAP families to transfer the consciousness of potent psychics into atryian bodies, it was soon commandeered by the Saint Romaine Militia to punish "xeno sympathizers" by turning them into xenos.
   components:
     - type: CloningPod
       doMetempsychosis: true
-      biomassCostMultiplier: 0.5
+      biomassCostMultiplier: 0.2
     - type: Machine
       board: MetempsychoticMachineCircuitboard
     - type: Sprite

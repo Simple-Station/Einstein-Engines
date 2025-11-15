@@ -1,6 +1,162 @@
 - type: entity
-  name: PTA P-M50 Vektor 6mm
+  name: NCWL DS3 Militant 9x39mm
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
+  id: WeaponSubMachineGunMilitant
+  description: A 9x39 submachinegun designed for the NCWL internal police, comes with a huge supressor that makes it a pain in the ass to holster.
+  components:
+  - type: Item
+    shape:
+    - 0,0,5,1
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/militant.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/militant.rsi
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineCaselessRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineCaselessRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeCaselessRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeCaselessRifle
+  - type: Gun
+    availableModes:
+    - SemiAuto
+    - FullAuto
+    fireRate: 7
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/supressed_2/supressed_gunshot_2.ogg
+      params:
+        volume: -10
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+
+- type: entity
+  name: PTA T3 Ghost 12mm
+  parent: [BaseWeaponSubMachineGun, BaseGunWieldable, StreeCredRedeemable]
+  id: WeaponSubMachineGunGhost
+  description: A internally supressed supressed SMG, chambered in 12mm Smart.
+  components:
+  - type: GunRequiresWield
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/ghost.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    fireRate: 6
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/supressed_2/supressed_gunshot_2.ogg
+      params:
+        volume: -10
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineSmgSmartgun
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineSmgSmartgun #The mags require uranium to make.Also made it required to be wielded.
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol12mm
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistolSmart
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 400
+
+
+- type: entity
+  name: CDT C-20R Corsair 11mm
   parent: BaseWeaponSubMachineGun
+  id: WeaponSubMachineGunCorsair
+  description: A compact 11 mm submachine gun made by Cyberdawn. Commonly called the C-20R, though Cyberdawn recently tried to force the nickname Corsair on it.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/corsair.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    minAngle: 21
+    maxAngle: 32
+    fireRate: 8
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/smg_3/smg_gunshot_1.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolSubMachineGunHeavy
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineHeavySMG
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeHeavyPistol
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeHeavyPistol
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 400
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: GunWieldBonus
+    minAngle: -19
+    maxAngle: -16
+
+- type: entity
+  name: PTA P-M50 Vektor 6mm #The only gun that actually has obvious problems
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable]
   id: WeaponSubMachineGunPTAVektor
   description: A cheap, open-bolt copy of the Vector. Unlike the real vector this one doesnt have the signature Super V recoil mitigation system. Chambered in small 6mm rounds.
   components:
@@ -50,7 +206,7 @@
 
 - type: entity
   name: NCWL DS1 Watchdog 9x19mm
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable]
   id: WeaponSubMachineGunNCWLWatchdog
   description: A light submachinegun of communard design. Union Foundries makes these for the common grunt, and the cheap materials probably reflect that.
   components:
@@ -77,7 +233,7 @@
 
 - type: entity
   name: SHI MP49 Warden 9x19mm
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable]
   id: WeaponSubMachineGunMP49
   description: Shinohara's attempt at copying the vintage NanoTrasen MP5 and outsourcing it to the open market. Seen as an inferior model at first, most mercs and solos have taken a liking to this cheaper alternative.
   components:
@@ -93,7 +249,7 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/mp49.rsi
   - type: Gun
-    fireRate: 7
+    fireRate: 8
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/smg_2/smg_gunshot_3.ogg
   - type: MagazineVisuals
@@ -104,7 +260,7 @@
 
 - type: entity
   name: NT MP5 9x19mm
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable]
   id: WeaponSubMachineGunMP5
   description: A light Terran submachinegun originating from the now-defunct NanoTrasen Industries. Seen as a superior alternative to most light SMGs on the market and often used by elite militias everywhere.
   components:
@@ -120,7 +276,7 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/mp5.rsi
   - type: Gun
-    fireRate: 7
+    fireRate: 8
     selectedMode: FullAuto
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/smg_2/smg_gunshot_3.ogg
@@ -152,7 +308,7 @@
 
 - type: entity
   name: NCWL DS2 Liberator .327
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable]
   id: WeaponSubMachineGunBloodhound
   description: Manufactured for internal use by the Homeguard, the second entry of the Union Foundries focuses primarily on stopping power while sacrificing speed and agility.
   components:
@@ -198,9 +354,9 @@
 
 - type: entity
   name: SHI M221s Phantom 6mm
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemableLow]
   id: WeaponSubMachineGunSabre
-  description: A cheap submachine gun that cuts a corners and features to deliver a reliable enough product, but hey, at least it comes with a free suppressor . Chambered in 6mm PSTF.
+  description: A cheap submachine gun that cuts corners and features to deliver a reliable enough product, but hey, at least it comes with a free suppressor . Chambered in 6mm PSTF.
   components:
   - type: StaticPrice
     price: 1250
@@ -217,7 +373,7 @@
     shape:
     - 0,0,2,1
   - type: Gun
-    fireRate: 8
+    fireRate: 9
     selectedMode: FullAuto
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/supressed_1/supressed_gunshot_2.ogg
@@ -251,7 +407,7 @@
 
 - type: entity
   name: HP Mak-11 Beetle 9x19mm
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable]
   id: WeaponSubMachineGunBeetle
   description: A crude weapon manufactured by the Hunter's Pride merchant's guild. Intended as nothing more than cheap armament to stuff into the hands of expendable fodder.
   components:
@@ -306,7 +462,7 @@
 
 - type: entity
   name: PTA P-M100 Cheshyre 11mm
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable]
   id: WeaponSubMachineGunCheshyre
   description: A heavy operator's SMG developed by Pang Tai Arms. Sold to independent contractors and security forces everywhere.
   components:
@@ -322,13 +478,13 @@
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/smg_3/smg_gunshot_2.ogg
   - type: Gun
-    fireRate: 7
+    fireRate: 8
     selectedMode: Burst
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/smg_3/smg_gunshot_2.ogg
     availableModes:
     - SemiAuto
-    - Burst
+    - Burst #Pretty obvious sideffect of being a newly designed gun.
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -355,7 +511,7 @@
 
 - type: entity
   name: HGS KleMG-40 Blume 9x19mm
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable]
   id: WeaponSubMachineGunMP40
   description: The Kleines Maschinengewehr 40. An antique light SMG of a past conflict. Chambered in 9x19mm.
   components:
@@ -402,8 +558,8 @@
   - type: Appearance
 
 - type: entity
-  name: HGS KleMG-Neo Kevyt .327
-  parent: BaseWeaponSubMachineGun
+  name: HGS KleMG-Neo Kevyt 9x19mm
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable]
   id: WeaponSubMachineGunKebyt
   description: The Neo Kleines Maschinengewehr. Derived fom an older design and revitalized for swift subjugation. Chambered in 9x19mm.
   components:

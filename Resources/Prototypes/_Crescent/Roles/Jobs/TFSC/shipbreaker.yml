@@ -11,12 +11,13 @@
   supervisors: You answer to the Shipfitters Aerodynamic & Worker's union interests and its foreman's.
   canBeAntag: false
   requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 10800
     - !type:FactionRequirement
       factionID: "TFSC"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
         - Blindness
         - WheelchairBound
   special:
@@ -24,6 +25,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-saw
+      - type: HullrotFaction
+        faction: SAW
       - type: LanguageAdder
         addSpoken:
           - Freespeak
@@ -48,6 +51,6 @@
     id: ShipbreakerPDA
     ears: ClothingHeadsetNCSPSaws
     belt: ClothingBeltUtilityEngineering
-    pocket1: WeaponPistolHKUSP
+    pocket1: WeaponPistolViperWood
     gloves: ClothingHandsGlovesFingerless
     back: ClothingBackpackNCSPSatchelFilledInfanteer

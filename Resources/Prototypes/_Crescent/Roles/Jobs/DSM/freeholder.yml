@@ -13,15 +13,13 @@
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Voidborn
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-foreman
+        rank: crescent-rank-freeholder
+      - type: HullrotFaction
+        faction: DSM
       - type: LanguageAdder
         addSpoken:
           - LowImperial
@@ -41,5 +39,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitImperialFreeholder
     id: FreeholderPDA
+    belt: ClothingBeltUtilityFilled
     ears: ClothingHeadsetEmpireCiv
     shoes: ClothingShoesBootsImperialLongboots
+    back: ClothingBackpackDSM

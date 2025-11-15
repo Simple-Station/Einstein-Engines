@@ -19,16 +19,21 @@
     Archon:
       stationProto: FlagshipCrescentVessel
       components:
-        - type: StationNameSetup
-          mapNameTemplate: 'Archon {1}'
-          nameGenerator:
-            !type:NanotrasenNameGenerator
-            prefixCreator: '14'
-        - type: VesselDesignation
-          designation: vessel-designation-lightfrigate
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            APRTKanoneerATH: [ 1, 1 ]
-            APRTSanitatATH: [ 1, 1 ]
-            APRTSoldatATH: [ 2, 2 ]
+      - type: StationNameSetup
+        mapNameTemplate: 'Archon {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: VesselIcon
+        iffIcon:
+          sprite: _Crescent/ShipIcons/ifficons.rsi
+          state: frigate
+      - type: VesselDesignation
+        designation: vessel-designation-lightfrigate
+      - type: StationJobs
+        overflowJobs: []
+        availableJobs:
+          SoldatATH: [ 2, 2 ]
+          SanitatATH: [ 1, 1 ]
+          KanoneerATH: [ 1, 1 ]
+

@@ -7,8 +7,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Pacifist
         - Muted
   weight: 20

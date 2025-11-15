@@ -108,9 +108,9 @@
     - type: Sprite
       sprite: _Crescent/Objects/Misc/cybernetics.rsi
       layers:
-        - state: higgsanchor
+        - state: lobotomychip
     - type: Organ #ERIS this badly needs its own organ component so we dont HAVE to have it replace an organ, can you look at it. also give this the no psionics trait
-      slotId: cybernetic_anchor # done
+      slotId: head_implant # done
       onAdd:
         - type: BluespaceShunt # PLACEHOLDER, adding real stuff soon
 
@@ -126,7 +126,7 @@
       layers:
         - state: cerebraltrainer
     - type: Organ #ERIS this badly needs its own organ component so we dont HAVE to have it replace an organ, can you look at it. give it the same organ component as the Anchor so players cant use them both at once. also give this the psionics trait + power overwhelming
-      slotId: cybernetic_anchor # done
+      slotId: head_implant # done
       onAdd:
         - type: BluespaceShunt # PLACEHOLDER, adding real stuff soon
 
@@ -235,8 +235,15 @@
       layers:
         - state: cherenzikovaccelerator
     - type: Liver
-    - type: Organ #eris give this a movespeed component too pretty please
+    - type: Organ
       slotId: liver
+      onAdd:
+        - type: TraitSpeedModifier # 25% movespeed increase
+          sprintModifier: 1.25
+          walkModifier: 1.25
+        - type: Stamina
+          critThreshold: 125 # 25% more stamina
+          decay: 4.5 # 50% more regeneration per tick
     - type: Metabolizer
       maxReagents: 10
       metabolizerTypes: [Human]
@@ -255,8 +262,18 @@
       layers:
         - state: paineditor
     - type: Liver
-    - type: Organ #give this an onAdd modifier that raises the Alive to Critical threshhold later
+    - type: Organ
       slotId: liver
+      onAdd:
+        - type: MobThresholds
+          thresholds:
+            0: Alive
+            150: Critical
+            200: Dead
+        - type: SlowOnDamage # without this the player gets no slowdown thresholds since they're removed for some reason
+          speedModifierThresholds: # doubled thresholds
+            120: 0.9  # 0.7 is base speed.
+            160: 0.8  # 0.5 is base speed.
     - type: Metabolizer
       maxReagents: 10
       metabolizerTypes: [Human]
@@ -291,3 +308,29 @@
   - type: Sprite
     sprite: Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi
     state: "iconpry"
+    
+- type: entity
+  parent: HullrotCyberneticBase
+  id: SkillshardSlot
+  name: NT-02 cerebral interface implant
+  description: A basic cerebral operating system developed by NanoTrasen mounted by the parietal lobe that allows neural interfacing with electronic devices. Extensions allow a companion cyberdeck module slot just under the operator's ear where a compatible deck can be inserted for a direct neural connection. These were historically used to mark those born on NanoTrasen-operated outposts as a digital passport, but that use has been phased out over time with the destruction of the company.
+  components:
+    - type: CerebralImplant
+    - type: Sprite
+      sprite: _Crescent/Objects/Misc/cybernetics.rsi
+      layers:
+        - state: higgsanchor
+    - type: Organ
+      slotId: head_implant
+      onImplantFunctions:
+      - !type:TraitAddSlot
+        slots:
+          skillchip_slot:
+            name: skilldeck-slot-name
+            selfEjectOnly: true
+            whitelist:
+              components:
+              - Skilldeck
+      - !type:TraitAddComponent
+        components:
+          - type: SkillchipImplantHolder

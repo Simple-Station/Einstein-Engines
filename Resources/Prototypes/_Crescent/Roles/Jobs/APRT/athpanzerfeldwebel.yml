@@ -23,6 +23,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-kanoneer
+      - type: HullrotFaction
+        faction: ATH
       - type: BibleUser
   access:
   - EmergencyShuttleRepealAll
@@ -66,16 +68,15 @@
   id: APRTKanoneerGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitAuthorityKanoneer
-    shoes: ClothingShoesBootsMagCombat
+    shoes: ClothingShoesBootsMagCombatFilled
     head: ClothingHeadHatAuthorityKanoneer
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitAuthorityPanzer
-    suitstorage: JetpackBlueFilled
+    suitstorage: JetpackBlackFilled
     id: APRTKanoneerPDA
     ears: ClothingHeadsetAuthority
     pocket1: HandHeldMassScannerEE
-    pocket2: ExtendedEmergencyOxygenTankFilled
+    pocket2: HandheldGPSBasic
     belt: ClothingBeltAuthorityWebbingFilled
   inhand:
-  - WeaponRifleTakemura
-  - WeaponLauncherDisposableRocket
+  - WeaponLightMachineGunKoneruusu

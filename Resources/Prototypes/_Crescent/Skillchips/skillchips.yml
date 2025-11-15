@@ -1,0 +1,35 @@
+- type: entity
+  parent: BaseItem
+  id: SkillchipHackDoor
+  name: makeshift door sequencer quickhack datashard
+  description: Contains a fragment of code that abuses a bug in standard airlocks to force them open. Seems cobbled together from a variety of scrap electronics.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Misc/skillchips.rsi
+      layers:
+        - state: makeshiftchip
+    - type: Skillchip
+
+- type: entity
+  parent: BaseItem
+  id: SkillchipAdmeme
+  name: skillchip that does things
+  description: Admemery at work, people.
+  components:
+    - type: Sprite
+      sprite: Objects/Devices/encryption_keys.rsi
+      layers:
+        - state: crypt_gray
+    - type: Skillchip
+      onImplantFunctions:
+      - !type:TraitPushDescription
+        descriptionExtensions:
+        - description: examine-dermal-armor-message
+          fontSize: 12
+          requireDetailRange: true
+      onRemoveFunctions:
+      - !type:TraitPopDescription
+        descriptionExtensions:
+        - description: examine-dermal-armor-message
+          fontSize: 12
+          requireDetailRange: true

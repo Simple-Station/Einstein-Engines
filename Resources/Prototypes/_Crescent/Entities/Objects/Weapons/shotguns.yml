@@ -1,6 +1,103 @@
 - type: entity
-  name: PTA MOD-1 Twinshot 12g
+  name: NCWL Toz-123 Maul 4g
+  parent: [BaseWeaponShotgun, BaseGunWieldable, StreeCredRedeemable]
+  id: WeaponShotgunToz123
+  description: A licensed copy of the Mod-23 shotgun by Pang Tai Arms, shortened for ease of use in cramped spaces.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/maul.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/maul.rsi
+  - type: GunRequiresWield
+  - type: Item
+    shape:
+    - 0,0,3,1
+  - type: Gun
+    shotgunSpreadMultiplier: 1.25
+    fireRate: 2
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_1.ogg
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - ShellShotgun4g
+    capacity: 3
+    autoCycle: false
+    proto: ShellShotgun4gBuckshot
+  - type: ItemSlots
+
+- type: entity
+  name: NCWL Toz-97 Proletar 12g
   parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: WeaponShotgunProletar
+  description: A 12-gauge pump-action shotgun with the magazine tube mounted above the barrel and a reversed pumping action.
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,4,1
+    sprite: _Crescent/Objects/Weapons/Guns/proletar.rsi
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/proletar.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/proletar.rsi
+  - type: GunRequiresWield
+  - type: BallisticAmmoProvider
+    capacity: 6
+    autoCycle: false
+  - type: Tag
+    tags:
+    - WeaponShotgunKammerer
+  - type: Wieldable
+
+- type: entity
+  name: CDT C-12R Tuber 12g
+  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: WeaponShotgunTuber
+  description: Top of the line pump shotgun with 2 ammo tubes allowing for a massive 12 shell capacity and can even be slam fired, although this system makes the shotgun very bulky. Made by Cyberdawn for Cyberdawn.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/tuber.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-1
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/tuber.rsi
+  - type: Gun
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,4,2
+    sprite: _Crescent/Objects/Weapons/Guns/tuber.rsi
+  - type: BallisticAmmoProvider
+    capacity: 12
+    autoCycle: false
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: Wieldable
+  - type: GunRequiresWield
+  - type: MeleeWeapon
+    attackRate: 1.4
+    damage:
+      types:
+        Blunt: 9
+  - type: DamageOtherOnHit
+    staminaCost: 8.0
+  - type: Appearance
+
+- type: entity
+  name: PTA MOD-1 Twinshot 12g
+  parent: [BaseWeaponShotgun, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponShotgunPTATwinshot
   description: A semi-automatic shotgun with a high-capacity magazine, capable of firing two shells at once. Chambered in 12g shells.
   components:
@@ -26,11 +123,41 @@
       path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_2.ogg
   - type: Wieldable
   - type: BallisticAmmoProvider
-    capacity: 10
+    capacity: 8 #Better make those 4 shots count.
 
 - type: entity
-  name: SHI M135 double-barreled shotgun 4g
-  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  name: PTA MOD-23 Karabin 4g
+  parent: [BaseWeaponShotgun, BaseGunWieldable, StreeCredRedeemable]
+  id: WeaponShotgunKS23
+  description: An oversized shotgun. Packs devastating 4 Gauge punches. Developed as part of Pang Tai's elite mercenary package.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
+  - type: GunRequiresWield
+  - type: Item
+    shape:
+    - 0,0,4,1
+  - type: Gun
+    fireRate: 2
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_1.ogg
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - ShellShotgun4g
+    capacity: 4
+    autoCycle: false
+    proto: ShellShotgun4gBuckshot
+  - type: ItemSlots
+
+- type: entity
+  name: SHI M135 Double-Barrel 4g
+  parent: [BaseWeaponShotgun, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponShotgunSHIDoubleBarreled4g
   description: A cheap, oversized shotgun. Manufactured by Shinora for their BudgetArms line. Chambered in 4g shells.
   components:
@@ -62,8 +189,25 @@
     staminaCost: 7.5
 
 - type: entity
+  name: IRM DA-13 Reno 12g
+  parent: [BaseWeaponShotgun, BaseGunWieldable, StreeCredRedeemable]
+  id: WeaponShotgunReno
+  description: An Imperial semi-automatic shotgun designed by Ownyr. Unlike other Ownyr designs, this weapon is not prohibitively expensive to produce.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/reno.rsi
+  - type: Item
+    shape:
+    - 0,0,3,1
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/reno.rsi
+  - type: BallisticAmmoProvider
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
   name: NT SPAS-13 12g
-  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  parent: [BaseWeaponShotgun, BaseGunWieldable, StreeCredRedeemableHigh]
   id: WeaponShotgunSpas
   description: A premium combat shotgun with a folding stock. Originates from the now-defunct NanoTrasen.
   components:
@@ -79,10 +223,10 @@
     price: 2500
 
 - type: entity
-  name: IRM Matusa 12g
-  parent: BaseWeaponSniper
+  name: IRM DA-2 Matusa 12g
+  parent: [BaseWeaponSniper, StreeCredRedeemable]
   id: WeaponShotgunDSMMatusa
-  description: The Matusa has only recently fallen out of favour with the Imperial Subjugation Corps as the civil war has pivoted arsenals towards armour-piercing firepower for whom the shotgun falls short. However, Matusas can be found in shock-assault divisions and peacekeeping forces across the sectors which once comprised the Imperial Mandate as the revolving street-sweeper requires no advanced machining and is effective at clearing fortified positions and unruly crowds alike.
+  description: A mass-produced Imperial revolver shotgun with simple internals, intended for easy maintenance by levy forces.
   components:
   - type: Item
     size: Ginormous
@@ -111,12 +255,11 @@
       tags:
       - ShellShotgun
 
-
 - type: entity
-  name: NCWL Pioneer Double-Barrel 12g
-  parent: BaseWeaponSniperNoWield
+  name: NCWL Toz-12 Pioneer Double-Barrel 12g
+  parent: [BaseWeaponSniperNoWield, StreeCredRedeemable]
   id: WeaponShotgunDoubleBarreledNCWL
-  description: A short, rugged scattergun based on ancient Terran designs. Cheap to print, easy to maintain, and reliable enough for frontier defense and penal use. Favored by proletariat civilians, shipboard crews, and disciplinary squads for its close quarters effectiveness and ease of storage compared to more advanced pump-action or automatic models. An inscription on the side reads "Property of—" though the rest has been scorched off with a laser engraver, replaced by a crude ID serial. The wooden buttstock still has a splinter jutting out—like everything else about this gun, it’s functional, not comfortable.
+  description: A short, rugged double-barrel shotgun built in-house by NCWL Homeguard workshops. Partisans prize its compact size and reliability for clearing tight ship corridors; Kommissars often carry one as a backup.
   components:
   - type: Item
     size: Normal
@@ -149,10 +292,10 @@
       - ShellShotgun
 
 - type: entity
-  name: NCSP Saiga-12k 12g
   # Don't parent to BaseWeaponShotgun because it differs significantly
   parent: [BaseItem, BaseGunWieldable]
   id: WeaponShotgunNCSPSaiga12
+  name: NCSP Saiga-12k Hammer 12g
   description: A magazine-fed shotgun in use by terrorist forces. Uses 12 gauge shotgun shells.
   components:
   - type: Sprite
@@ -175,7 +318,8 @@
   - type: AmmoCounter
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
-    fireRate: 3.5
+    damageModifier: 0.85
+    fireRate: 1.5 #Magfed, and cyberdawn facbricated. Cant be better than Pozhar.
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -185,7 +329,6 @@
       path: /Audio/Weapons/Guns/Empty/empty.ogg
     fireOnDropChance: 0.3
     shotgunSpreadMultiplier: 1.5
-    shotgunProjectileCountModifier: 1.33
   - type: Wieldable
   - type: ItemSlots
     slots:
@@ -236,11 +379,17 @@
         Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 9.5
+  - type: ExtendDescription
+    descriptionList:
+      - description: This shotgun's damage is reduced due to its fire-rate. It deals 15% lower damage per shot.
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
 
 - type: entity
   name: HGS VAP-16S Haulikko 12g
   # Don't parent to BaseWeaponShotgun because it differs significantly
-  parent: [BaseItem, BaseGunWieldable]
+  parent: [BaseItem, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponShotgunHaulikko
   description: The Vihainen Aseperhe 16S. An automatic shotgun designed to excell in close-quarters subjugation. Uses 12 gauge shotgun shells.
   components:
@@ -275,7 +424,6 @@
       path: /Audio/Weapons/Guns/Empty/empty.ogg
     fireOnDropChance: 0.3
     shotgunSpreadMultiplier: 1.5
-    shotgunProjectileCountModifier: 1.33
   - type: Wieldable
   - type: ItemSlots
     slots:
@@ -326,3 +474,27 @@
         Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 9.5
+
+- type: entity
+  name: K&K K870 Bush 12g
+  parent: [BaseWeaponShotgun, BaseGunWieldable, StreeCredRedeemable]
+  id: WeaponShotgunBush
+  description: A pump-action shotgun produced by Kane & Knox. Equipped with a shortened grip and reduced internal tube for ease of mobility. Fires 12g shells.
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,0
+    sprite: _Crescent/Objects/Weapons/Guns/r870.rsi
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/r870.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/r870.rsi
+  - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
+  - type: BallisticAmmoProvider
+    capacity: 4
+    autoCycle: false
+  - type: Wieldable
+  - type: Gun
+    shotgunSpreadMultiplier: 1.2
+    damageModifier: 1.3

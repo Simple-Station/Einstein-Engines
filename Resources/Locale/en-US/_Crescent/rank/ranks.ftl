@@ -2,13 +2,14 @@
 rank-ordering = {$rank} {$name}
 
 # default
-crescent-rank-private = PvT.
+crescent-rank-private = Pvt.
 
 # independents
 crescent-rank-ind-gliess-sheriff = Sheriff
 crescent-rank-ind-gliess-deputy = Deputy
 crescent-rank-ind-gliess-dockmaster = Dockmaster
 crescent-rank-ind-spacer = Spacer
+crescent-rank-ind-dockhand = Dockhand
 
 # shi
 crescent-rank-shi-executive = Manager
@@ -53,7 +54,7 @@ crescent-rank-ncwl-grunt = Soldat
 crescent-rank-ncwl-new = Cadet
 crescent-rank-ncwl-doctor = Doktor
 
-#ncwl
+# ncwl
 crescent-rank-ncwl-faction-leader = Major
 crescent-rank-ncwl-home-leader = Kommissar
 crescent-rank-ncwl-home-squad-lead = Kapitan
@@ -73,7 +74,7 @@ crescent-rank-boss = Lieutenant
 crescent-rank-patriarch = Patriarch
 crescent-rank-operative = Operative
 crescent-rank-op = Cpl.
-crescent-rank-pfc = PvT.
+crescent-rank-pfc = Pvt.
 crescent-rank-foreman = Foreman
 crescent-rank-saw = Shipbreaker
 crescent-rank-coordinator = Director
@@ -107,7 +108,7 @@ crescent-rank-servile = Servile
 
 crescent-rank-kommandant = Kommandant
 crescent-rank-leutnant = Lt.
-crescent-rank-soldatATH = PvT.
+crescent-rank-soldatATH = Pvt.
 crescent-rank-sanitat = Cpl.
 crescent-rank-kanoneer = Sgt.
 crescent-rank-steward = Steward

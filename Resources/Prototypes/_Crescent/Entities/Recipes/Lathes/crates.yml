@@ -68,3 +68,11 @@
   completetime: 2
   materials:
     RefinedScrapTitanium: 15000
+
+- type: latheRecipe
+  id: SilkCrate
+  result: TradeGoodSilks
+  completetime: 2
+  materials:
+    SilkFilament: 7500
+    HideMothroach: 1000

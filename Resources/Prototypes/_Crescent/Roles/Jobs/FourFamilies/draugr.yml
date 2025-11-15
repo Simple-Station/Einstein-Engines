@@ -11,6 +11,8 @@
   supervisors: job-supervisors-tap
   canBeAntag: false
   requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 10800
     - !type:FactionRequirement
       factionID: "TAP"
     - !type:CharacterSpeciesRequirement
@@ -20,8 +22,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
         - Pacifist
@@ -30,13 +30,14 @@
     components:
       - type: ChatRank
         rank: crescent-rank-draugr
+      - type: HullrotFaction
+        faction: TAP
+      - type: Telepathic
       - type: LanguageAdder
         addSpoken:
-        - OldTaypani
-        - Draconic
+          - OldTaypani
         addUnderstood:
-        - OldTaypani
-        - Draconic
+          - OldTaypani
   access:
   - EmergencyShuttleRepealAll
   - Captain

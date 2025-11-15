@@ -25,7 +25,7 @@
     state: icon
   discipline: Corporate
   tier: 1
-  cost: 5000
+  cost: 2500
   recipeUnlocks:
   - WeaponLauncherDisposableRocket
 
@@ -37,7 +37,7 @@
     state: base_machine
   discipline: Corporate
   tier: 1
-  cost: 5000
+  cost: 1000
   recipeUnlocks:
   - ShipyardManufactorumFlatpack
 
@@ -49,7 +49,7 @@
     state: base_machine
   discipline: Corporate
   tier: 1
-  cost: 5000
+  cost: 2500
   recipeUnlocks:
   - ScrapRefinerFlatpack
 
@@ -78,7 +78,7 @@
     state: shinoharaoptics
   discipline: Corporate
   tier: 1
-  cost: 5000
+  cost: 2500
   recipeUnlocks:
   - ShinoharaOptics
 
@@ -90,24 +90,11 @@
     state: rifle
   discipline: Corporate
   tier: 1
-  cost: 7500
+  cost: 5000
   recipeUnlocks:
   - WeaponMechCombatAutoshotgun
   - WeaponMechCombatLightRifle
   - WeaponMechSword
-
-- type: technology
-  id: ShinoharaBasicFighterGuns
-  name: research-technology-shinohara-basicfighterguns
-  icon:
-    sprite: _Crescent/Objects/Specific/fighterweapons.rsi
-    state: auto_cannon
-  discipline: Corporate
-  tier: 1
-  cost: 7500
-  recipeUnlocks:
-  - WeaponFighterMachinegun
-  - WeaponFighterAutocannon
 
 - type: technology
   id: ShinoharaHighsec
@@ -117,7 +104,7 @@
     state: icon
   discipline: Corporate
   tier: 1
-  cost: 9000
+  cost: 5000
   recipeUnlocks:
   - ClothingUniformJumpsuitShinoharaHighsec
   - ClothingOuterArmorShinoharaArmorHighsec
@@ -132,7 +119,7 @@
     state: icon
   discipline: Corporate
   tier: 1
-  cost: 2500
+  cost: 500
   recipeUnlocks:
   - WeaponPistolBlastpopRed
   - WeaponPistolBlastpopPurple
@@ -149,7 +136,7 @@
     state: icon
   discipline: Corporate
   tier: 1
-  cost: 6500
+  cost: 2500
   recipeUnlocks:
   - WeaponRifleHoundMarksman
   - WeaponShotgunSHIDoubleBarreled4g
@@ -164,7 +151,7 @@
     state: makina
   discipline: Corporate
   tier: 1
-  cost: 7500
+  cost: 5000
   recipeUnlocks:
   - VariableCommodityFabricatorFlatpack
 
@@ -176,7 +163,7 @@
     state: autoloom
   discipline: Corporate
   tier: 1
-  cost: 5000
+  cost: 1000
   recipeUnlocks:
   - AutoloomFablatheFlatpack
 
@@ -188,7 +175,7 @@
     state: large
   discipline: Corporate
   tier: 1
-  cost: 8000
+  cost: 2500
   recipeUnlocks:
   - FixedHardpointFlatpack
 
@@ -200,7 +187,7 @@
     state: space_artillery
   discipline: Corporate
   tier: 1
-  cost: 10000
+  cost: 2500
   recipeUnlocks:
   - SlugthrowerFlatpack
 
@@ -212,7 +199,7 @@
     state: states
   discipline: Corporate
   tier: 1
-  cost: 6500
+  cost: 1000
   recipeUnlocks:
   - ExhumerFlatpack
 
@@ -224,7 +211,7 @@
     state: lse-400c
   discipline: Corporate
   tier: 1
-  cost: 5000
+  cost: 2500
   recipeUnlocks:
   - PlasmaRepeaterFlatpack
 
@@ -267,7 +254,7 @@
     state: base
   discipline: Corporate
   tier: 2
-  cost: 12500
+  cost: 5000
   recipeUnlocks:
   - MagwellFlatpack
   - IdnaFlatpack
@@ -281,7 +268,7 @@
     state: advancedfab
   discipline: Corporate
   tier: 2
-  cost: 12500
+  cost: 7500
   recipeUnlocks:
   - AdvancedVariableCommodityFablatheFlatpack
   technologyPrerequisites:
@@ -302,6 +289,8 @@
   - WeaponRevolverMateba
   - WeaponSubMachineGunSabre
   - WeaponLightMachineGunL6
+  - WeaponSniperHristov
+  - WeaponRifleBarghest
 
 - type: technology
   id: ShinoharaGrenadeLauncher
@@ -323,7 +312,7 @@
     state: jug
   discipline: Corporate
   tier: 2
-  cost: 8000
+  cost: 2500
   recipeUnlocks:
   - BoriaticComposterFlatpack
 
@@ -335,10 +324,22 @@
     state: mantisblade
   discipline: Corporate
   tier: 2
-  cost: 8000
+  cost: 5000
   recipeUnlocks:
   - CyberneticsMantisBladeRight
   - CyberneticsMantisBladeLeft
+
+- type: technology
+  id: ShinoharaLightDestroyer
+  name: research-technology-shinohara-light-destroyer
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Corporate
+  tier: 3
+  cost: 8000
+  recipeUnlocks:
+  - FujinLPC
 
 - type: technology
   id: ShinoharaAdvancedMechWeapons
@@ -362,7 +363,7 @@
     state: icon
   discipline: Corporate
   tier: 3
-  cost: 12500
+  cost: 10000
   recipeUnlocks:
   - WeaponLauncherHammerhead
 
@@ -374,7 +375,7 @@
     state: icon
   discipline: Corporate
   tier: 3
-  cost: 15000
+  cost: 5000
   recipeUnlocks:
   - ShieldEmitterSmallFlatpack
 
@@ -386,7 +387,7 @@
     state: gilgamesh-open
   discipline: Corporate
   tier: 3
-  cost: 17500
+  cost: 12500
   recipeUnlocks:
   - GilgameshFlatpack
 
@@ -398,7 +399,7 @@
     state: dermalarmor
   discipline: Corporate
   tier: 3
-  cost: 9000
+  cost: 7500
   recipeUnlocks:
   - CyberneticsDermalArmor
 
@@ -410,7 +411,7 @@
     state: ballisticfab
   discipline: Corporate
   tier: 3
-  cost: 9000
+  cost: 5000
   recipeUnlocks:
   - BallisticFablatheFlatpack
 
@@ -425,3 +426,30 @@
   cost: 8000
   recipeUnlocks:
   - SHIShiverBlade
+
+- type: technology
+  id: ShinoharaAdvanceArmor
+  name: research-technology-shinohara-advance-armor
+  icon:
+    sprite: _Crescent/Clothing/SHI/OuterClothing/juggsuit.rsi
+    state: icon
+  discipline: Corporate
+  tier: 3
+  cost: 12500
+  recipeUnlocks:
+  - ClothingOuterHardsuitSHIJuggernaut
+  - ClothingOuterHardsuitSHISpeedsuit
+
+- type: technology
+  id: ShinoharaNTBallistics
+  name: research-technology-shinohara-oldntballistics
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/spas13.rsi
+    state: icon
+  discipline: Corporate
+  tier: 2
+  cost: 6000
+  recipeUnlocks:
+  - WeaponShotgunSpas
+  - WeaponRifleM90GrenadeLauncher
+  - WeaponSubMachineGunWt550

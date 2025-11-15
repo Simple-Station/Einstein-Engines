@@ -2,6 +2,11 @@
 - type: storeCategory
   id: StoreCategoryIPMCybernetics
   name: Interdyne Cybernetics
+  priority: 14
+
+- type: storeCategory
+  id: StoreCategoryIPMWeapons
+  name: Interdyne Militech
   priority: 12
 
 - type: storeCategory
@@ -9,14 +14,20 @@
   name: Interdyne Equipment
   priority: 10
 
+- type: storeCategory
+  id: StoreCategoryIPMMedicalEquipment
+  name: Interdyne Meditech
+  priority: 8
+
+# Cybernetics
 - type: listing
   id: StoreListingIPMCyberneticsBloodPump
-  name: IPM TT-92 Overclocked Blood Pump 
+  name: IPM TT-92 Overclocked Blood Pump
   description: A small, fist-sized device meant to be a total replacement tool for a humanoid heart. Consumes nutrients from the external dermis and speeds up platelet production for accelerated healing. Replaces the heart.
   icon: { sprite: /Textures/_Crescent/Objects/Misc/cybernetics.rsi, state: heartpump }
   productEntity: CyberneticsBloodPump
   cost:
-    SampleIPM: 46
+    SampleIPM: 10
   categories:
   - StoreCategoryIPMCybernetics
 
@@ -27,7 +38,7 @@
   icon: { sprite: /Textures/_Crescent/Objects/Misc/cybernetics.rsi, state: interdyneoptics }
   productEntity: InterdyneOptics
   cost:
-    SampleIPM: 46
+    SampleIPM: 7.5
   categories:
   - StoreCategoryIPMCybernetics
 
@@ -38,7 +49,7 @@
   icon: { sprite: /Textures/Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi, state: iconpry }
   productEntity: CrowbarLeftArm
   cost:
-    SampleIPM: 17.25
+    SampleIPM: 5
   categories:
   - StoreCategoryIPMCybernetics
 
@@ -49,7 +60,7 @@
   icon: { sprite: /Textures/Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi, state: iconpry }
   productEntity: CrowbarRightArm
   cost:
-    SampleIPM: 17.25
+    SampleIPM: 5
   categories:
   - StoreCategoryIPMCybernetics
 
@@ -60,7 +71,7 @@
   icon: { sprite: /Textures/_Crescent/Objects/Misc/cybernetics.rsi, state: cherenzikovaccelerator }
   productEntity: CyberneticsAdrenal
   cost:
-    SampleIPM: 57.5
+    SampleIPM: 15
   categories:
   - StoreCategoryIPMCybernetics
 
@@ -71,21 +82,11 @@
   icon: { sprite: /Textures/_Crescent/Objects/Misc/cybernetics.rsi, state: paineditor }
   productEntity: CyberneticsPainEditor
   cost:
-    SampleIPM: 57.5
+    SampleIPM: 20
   categories:
   - StoreCategoryIPMCybernetics
 
-- type: listing
-  id: StoreListingIPMEquipmentCrash
-  name: Smuggled Crash Injection
-  description: A smuggled injection of crash. For the occassional vagrant junkie that finds his way to Interdyne.
-  icon: { sprite: /Textures/_Crescent/Objects/Autoinjectors/crash.rsi, state: medipen }
-  productEntity: CrashAutoinjector
-  cost:
-    SampleIPM: 11.5
-  categories:
-  - StoreCategoryIPMEquipment
-
+# Equipment
 - type: listing
   id: StoreListingIPMEquipmentHardsuit
   name: Interdyne traumasec hardsuit
@@ -93,32 +94,289 @@
   icon: { sprite: /Textures/_Crescent/Clothing/Syndicate/OuterClothing/trauma_suit.rsi, state: icon }
   productEntity: ClothingOuterHardsuitTraumasec
   cost:
-    SampleIPM: 17.25
+    SampleIPM: 15
   categories:
   - StoreCategoryIPMEquipment
 
 - type: listing
-  id: StoreListingIPMEquipmentOmnimedTool
+  id: StoreListingIPMEquipmentMagboots
+  name: Advanced magboots
+  description: Advanced magboots produced by Shinohara Heavy Industries, "found" in a shipping container many cycles ago.
+  icon: { sprite: /Textures/Clothing/Shoes/Boots/magboots-advanced.rsi, state: icon }
+  productEntity: ClothingShoesBootsMagAdv
+  cost:
+    SampleIPM: 10
+  categories:
+  - StoreCategoryIPMEquipment
+
+- type: listing
+  id: StoreListingIPMEquipmentWebbing
+  name: TraumaSec webbing
+  description: Tactical webbing produced by Cyberdawn Technologies, made for Interdyne TraumaSec officers.
+  icon: { sprite: /Textures/_Crescent/Clothing/Syndicate/Belt/int_webbing.rsi, state: icon }
+  productEntity: ClothingBeltSyndicateWebbingInterdyne
+  cost:
+    SampleIPM: 2.5
+  categories:
+  - StoreCategoryIPMEquipment
+
+- type: listing
+  id: StoreListingIPMEquipmentEShield
+  name: Energy shield
+  description: A personal energy shield produced by Cyberdawn Technologies, made for Interdyne TraumaSec officers.
+  icon: { sprite: /Textures/Objects/Weapons/Melee/e_shield.rsi, state: eshield-on }
+  productEntity: EnergyShield
+  cost:
+    SampleIPM: 30
+  categories:
+  - StoreCategoryIPMEquipment
+
+# Medical equipment
+- type: listing
+  id: StoreListingIPMMedicalEquipmentOmnimedTool
   name: IPM T-33 medical multitool
   description: A complex, refined medical multitool, designed by Interdyne Pharmaceuticals to speed up operation times, as well as conserve space.
   icon: { sprite: /Textures/_Shitmed/Objects/Specific/Medical/Surgery/omnimed.rsi, state: evil }
   productEntity: OmnimedToolSyndie
   cost:
-    SampleIPM: 34.5
+    SampleIPM: 10
   categories:
-  - StoreCategoryIPMEquipment
+  - StoreCategoryIPMMedicalEquipment
 
 - type: listing
-  id: StoreListingIPMEquipmentDefibrillatorSyndicate
+  id: StoreListingIPMMedicalEquipmentDefibrillatorSyndicate
   name: Interdyne defibrillator
   description: Doubles as a self-defense weapon against war-crime inclined vagrants.
   icon: { sprite: /Textures/Objects/Specific/Medical/defibsyndi.rsi, state: icon }
   productEntity: DefibrillatorSyndicate
   cost:
-    SampleIPM: 34.5
+    SampleIPM: 5
   categories:
-  - StoreCategoryIPMEquipment
+  - StoreCategoryIPMMedicalEquipment
 
+- type: listing
+  id: StoreListingIPMMedicalEquipmentCombatMedicalKit
+  name: Combat medical first aid kit
+  description: A filled combat medical kit, contains medical sutures, regenerative mesh and an assortment of medical reagents.
+  icon: { sprite: /Textures/Objects/Specific/Medical/firstaidkits.rsi, state: blackkit }
+  productEntity: MedkitCombatFilled
+  cost:
+    SampleIPM: 5
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+- type: listing
+  id: StoreListingIPMMedicalEquipmentSecHypo
+  name: IPM RMA-4 cartridge autoinjector
+  description: Used for rapid administration of medicine. Uses smart cartridges printable at medical techfabs to deliver chemical payloads.
+  icon: { sprite: _Goobstation/Objects/Specific/Medical/autoinjector.rsi, state: security-base }
+  productEntity: SecHypo
+  cost:
+    SampleIPM: 2
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+- type: listing
+  id: StoreListingIPMMedicalEquipmentHypoBrigmedic
+  name: IPM RMA-2 hypospray
+  description: A hypospray designed by Interdyne Phramaceuticals. An advanced design outfitted with a larger chemical reservoir and a shorter injection delay.
+  icon: { sprite: _NF/Objects/Specific/Medical/hypobrigmedic.rsi, state: hypo }
+  productEntity: HypoBrigmedic
+  cost:
+    SampleIPM: 2
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+- type: listing
+  id: StoreListingIPMMedicalEquipmentSyringeCase
+  name: Syringe case
+  description: A robust carrying case that helps keep travel supplies of medicine organized.
+  icon: { sprite: Objects/Misc/syringecase.rsi, state: closed }
+  productEntity: SyringeCase
+  cost:
+    SampleIPM: 1
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+- type: listing
+  id: StoreListingIPMMedicalEquipmentVestineVial
+  name: Vestine
+  description: 30 units of Vestine a precursor to more powerful drugs.
+  icon: { sprite: Objects/Specific/Chemistry/vial.rsi, state: vial-1 }
+  productEntity: VestineChemistryVial
+  cost:
+    SampleIPM: 5
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+# Military Equipment
+- type: listing
+  id: StoreListingIPMMilitaryEquipmentAtreides
+  name: NCSP SR-2MP Atreides 9x19mm
+  description: A 9x19mm Atreides SMG, produced by the Taypani Free Stations Coalition.
+  icon: { sprite: _Crescent/Objects/Weapons/Guns/atreides.rsi, state: icon }
+  productEntity: WeaponSubMachineGunAtreides
+  cost:
+    SampleIPM: 5
+  categories:
+  - StoreCategoryIPMWeapons
+
+- type: listing
+  id: StoreListingIPMMilitaryEquipmentKalash
+  name: NCSP AKMS Kalash 7.62x51mm
+  description: A 7.62x51mm Kalash rifle, produced by the Taypani Free Stations Coalition.
+  icon: { sprite: _Crescent/Objects/Weapons/Guns/akms.rsi, state: icon }
+  productEntity: WeaponRifleAk
+  cost:
+    SampleIPM: 10
+  categories:
+  - StoreCategoryIPMWeapons
+
+- type: listing
+  id: StoreListingIPMMilitaryEquipmentSaiga
+  name: NCSP Saiga-12k Hammer 12g
+  description: A 12g Saiga-12k shotgun, produced by the Taypani Free Stations Coalition.
+  icon: { sprite: _Crescent/Objects/Weapons/Guns/saiga12.rsi, state: icon }
+  productEntity: WeaponShotgunNCSPSaiga12
+  cost:
+    SampleIPM: 15
+  categories:
+  - StoreCategoryIPMWeapons
+
+- type: listing
+  id: StoreListingIPMMilitaryEquipmentSVD
+  name: NCSP SVD 12.7x99mm
+  description: A 12.7x99mm SVD, produced by the Taypani Free Stations Coalition.
+  icon: { sprite: _Crescent/Objects/Weapons/Guns/svds.rsi, state: icon }
+  productEntity: WeaponRifleSVDMarksman
+  cost:
+    SampleIPM: 15
+  categories:
+  - StoreCategoryIPMWeapons
+
+- type: listing
+  id: StoreListingIPMMilitaryEquipmentRGD5
+  name: NCSP RGD-5 Grenade
+  description: An RGD-5 grenade, produced by the Taypani Free Stations Coalition.
+  icon: { sprite: _Crescent/Objects/Weapons/Grenades/ncsp_rgd5.rsi, state: icon }
+  productEntity: NCSPRGD5Handgrenade
+  cost:
+    SampleIPM: 2.5
+  categories:
+  - StoreCategoryIPMWeapons
+
+- type: listing
+  id: StoreListingIPMMilitaryEquipmentRGD2B
+  name: NCSP RGD-2B Smoke grenade
+  description: An RGD-2B smoke grenade, produced by the Taypani Free Stations Coalition.
+  icon: { sprite: _Crescent/Objects/Weapons/Grenades/ncsp_smoke.rsi, state: icon }
+  productEntity: TFSCRGD2BSmokeHandgrenade
+  cost:
+    SampleIPM: 1.5
+  categories:
+  - StoreCategoryIPMWeapons
+
+- type: listing
+  id: StoreListingIPMMilitaryEquipmentHG07
+  name: SHI HG-07 Flashbang
+  description: A HG-07 flashbang, produced by the Shinohara Heavy Industries, "found" in a shipping container many cycles ago.
+  icon: { sprite: _Crescent/Objects/Weapons/Grenades/shi_flash.rsi, state: icon }
+  productEntity: SHIHG7FlashbangHandgrenade
+  cost:
+    SampleIPM: 1.5
+  categories:
+  - StoreCategoryIPMWeapons
+
+- type: listing
+  id: StoreListingIPMMilitaryEquipmentHG23
+  name: SHI HG-23 Electromagnetic grenade
+  description: A HG-23 EMP grenade, produced by the Shinohara Heavy Industries, "found" in a shipping container many cycles ago.
+  icon: { sprite: _Crescent/Objects/Weapons/Grenades/shi_emp.rsi, state: icon }
+  productEntity: SHIHG32EMPHandgrenade
+  cost:
+    SampleIPM: 2.5
+  categories:
+  - StoreCategoryIPMWeapons
+
+# Cartidges autoinjector
+- type: listing
+  id: StoreListingIPMMedicalEquipmentCartridgeEpinephrine
+  name: Adrenaline autoinjector cartridge
+  description: Contains 7u of epinephrine and 3u of tranexamic acid, used in a cartridge autoinjector.
+  icon: { sprite: _Goobstation/Objects/Specific/Medical/cartridge.rsi, state: base }
+  productEntity: CartridgeEpinephrine
+  cost:
+    SampleIPM: 0.1
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+- type: listing
+  id: StoreListingIPMMedicalEquipmentCartridgeSaline
+  name: Airloss autoinjector cartridge
+  description: Contains 7u of saline and 3u of dexalin plus, used in a cartridge autoinjector.
+  icon: { sprite: _Goobstation/Objects/Specific/Medical/cartridge.rsi, state: base }
+  productEntity: CartridgeSaline
+  cost:
+    SampleIPM: 0.2
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+- type: listing
+  id: StoreListingIPMMedicalEquipmentCartridgeBicaridine
+  name: Brute autoinjector cartridge
+  description: Contains 4u of bicaridine, 3u of bozaide, 2u of salicylic acid and 1u of tranexamic acid, used in a cartridge autoinjector.
+  icon: { sprite: _Goobstation/Objects/Specific/Medical/cartridge.rsi, state: base }
+  productEntity: CartridgeBicaridine
+  cost:
+    SampleIPM: 0.1
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+- type: listing
+  id: StoreListingIPMMedicalEquipmentCartridgePuncturase
+  name: Piercing autoinjector cartridge
+  description: Contains 10u of puncturase, used in a cartridge autoinjector.
+  icon: { sprite: _Goobstation/Objects/Specific/Medical/cartridge.rsi, state: base }
+  productEntity: CartridgePuncturase
+  cost:
+    SampleIPM: 0.2
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+- type: listing
+  id: StoreListingIPMMedicalEquipmentCartridgeDermaline
+  name: Burn autoinjector cartridge
+  description: Contains 4u of kelotane, 3u of dermaline, 2u of oxandrolone and 1u of sigynate, used in a cartridge autoinjector.
+  icon: { sprite: _Goobstation/Objects/Specific/Medical/cartridge.rsi, state: base }
+  productEntity: CartridgeDermaline
+  cost:
+    SampleIPM: 0.1
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+- type: listing
+  id: StoreListingIPMMedicalEquipmentCartridgeAtropine
+  name: Emergency autoinjector cartridge
+  description: Contains 10u of atropine, used in a cartridge autoinjector.
+  icon: { sprite: _Goobstation/Objects/Specific/Medical/cartridge.rsi, state: base }
+  productEntity: CartridgeAtropine
+  cost:
+    SampleIPM: 0.2
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+- type: listing
+  id: StoreListingIPMMedicalEquipmentCartridgeTirizene
+  name: Sedative autoinjector cartridge
+  description: Contains 4u of tirizene, 3u of impedrezene and 3u of haloperidol, used in a cartridge autoinjector.
+  icon: { sprite: _Goobstation/Objects/Specific/Medical/cartridge.rsi, state: base }
+  productEntity: CartridgeTirizene
+  cost:
+    SampleIPM: 1
+  categories:
+  - StoreCategoryIPMMedicalEquipment
+
+# Refund option
 - type: listing
   id: StoreListingIPMEquipmentProteinCan
   name: Exotic samples can

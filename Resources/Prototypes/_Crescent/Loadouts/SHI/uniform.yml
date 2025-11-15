@@ -1,0 +1,14 @@
+- type: loadout
+  id: LoadoutClothingUniformSkirtShinoharaHumanResources
+  category: Uniform
+  cost: 0
+  items:
+    - ClothingUniformSkirtShinoharaHumanResources
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterJobRequirement
+      jobs:
+        - BoardSHI
+        - ExecutiveSHI
+        - BoardHRSHI

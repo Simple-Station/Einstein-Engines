@@ -1,0 +1,36 @@
+# Author Info
+# Discord: @Rubeebee
+
+- type: vessel
+  id: Caterpillar
+  name: TS Caterpillar
+  description: |
+    The Caterpillar is a sizable cargo ship that is agile and nimble, but it's cargo bay is entirely exposed to space. Escorts are recommended, since this makes the ship vulnerable to pirate attacks. 
+    MINIMUM CREW: 1x Pilot
+  price: 20000
+  category: Medium
+  group: Scrap
+  path: /Maps/_Crescent/Shuttles/Civilian/caterpillar.yml
+
+- type: gameMap
+  id: Caterpillar
+  mapName: 'Caterpillar'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/caterpillar.yml
+  minPlayers: 0
+  stations:
+    Caterpillar:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: industrial
+        - type: StationNameSetup
+          mapNameTemplate: 'Caterpillar {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-utility
+        - type: VesselDescription
+          description: Made from wrecks welded together onto a tugboat, the caterpillar is not workplace safe.

@@ -62,11 +62,15 @@ public sealed partial class ShuttleSystem
 
         if (!args.Show)
         {
+            if (component.HeatCapacity - component.CurrentHeat < component.HeatGeneration)
+                return;
             AddIFFFlag(xform.GridUid.Value, IFFFlags.Hide);
+            component.active = true;
         }
         else
         {
             RemoveIFFFlag(xform.GridUid.Value, IFFFlags.Hide);
+            component.active = false;
         }
     }
 
@@ -81,7 +85,10 @@ public sealed partial class ShuttleSystem
             {
                 AllowedFlags = component.AllowedFlags,
                 Flags = IFFFlags.None,
+                HeatCapacity = component.HeatCapacity,
+                CurrentHeat = component.CurrentHeat,
             });
+            component.active = false;
         }
         else
         {
@@ -89,25 +96,30 @@ public sealed partial class ShuttleSystem
             {
                 AllowedFlags = component.AllowedFlags,
                 Flags = iff.Flags,
+                HeatCapacity = component.HeatCapacity,
+                CurrentHeat = component.CurrentHeat,
             });
         }
     }
 
-    protected override void UpdateIFFInterfaces(EntityUid gridUid, IFFComponent component)
+    public void UpdateIFFInterface(EntityUid console, IFFConsoleComponent comp)
     {
-        base.UpdateIFFInterfaces(gridUid, component);
+        if (!TryComp<TransformComponent>(console, out var xform) || !TryComp<IFFComponent>(xform.GridUid, out var iff))
+            return;
 
-        var query = AllEntityQuery<IFFConsoleComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out var comp, out var xform))
-        {
-            if (xform.GridUid != gridUid)
-                continue;
 
-            _uiSystem.SetUiState(uid, IFFConsoleUiKey.Key, new IFFConsoleBoundUserInterfaceState()
+        _uiSystem.SetUiState(
+            console,
+            IFFConsoleUiKey.Key,
+            new IFFConsoleBoundUserInterfaceState()
             {
                 AllowedFlags = comp.AllowedFlags,
-                Flags = component.Flags,
+                Flags = iff.Flags,
+                HeatCapacity = comp.HeatCapacity,
+                CurrentHeat = comp.CurrentHeat,
             });
-        }
+
     }
+
+
 }

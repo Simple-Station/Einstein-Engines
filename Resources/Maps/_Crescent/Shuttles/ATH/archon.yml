@@ -68,65 +68,67 @@ entities:
           decals:
             131: -2,10
             132: -2,9
+            133: 2,10
+            134: 2,9
         - node:
             color: '#B33831FF'
             id: BotGreyscale
           decals:
-            177: -7,-7
-            178: -6,-11
-            179: 6,-11
-            180: 7,-7
-            181: 8,-4
-            182: -8,-4
-            183: -5,15
-            184: -3,15
-            185: 3,15
-            186: 5,15
+            180: -7,-7
+            181: -6,-11
+            182: 6,-11
+            183: 7,-7
+            184: 8,-4
+            185: -8,-4
+            186: -5,15
+            187: -3,15
+            188: 3,15
+            189: 5,15
         - node:
             color: '#FFFFFFFF'
             id: BrickTileDarkLineE
           decals:
-            151: 4,-5
-            152: 4,-4
-            153: 4,-3
+            154: 4,-5
+            155: 4,-4
+            156: 4,-3
         - node:
             color: '#FFFFFFFF'
             id: BrickTileDarkLineW
           decals:
-            154: 3,-3
-            155: 3,-4
-            156: 3,-5
+            157: 3,-3
+            158: 3,-4
+            159: 3,-5
         - node:
             color: '#B33831FF'
             id: BrickTileSteelCornerNe
           decals:
-            157: 4,0
-            169: -3,0
+            160: 4,0
+            172: -3,0
         - node:
             color: '#B33831FF'
             id: BrickTileSteelCornerNw
           decals:
-            158: 3,0
-            161: -4,-5
-            167: -5,-1
-            168: -4,0
+            161: 3,0
+            164: -4,-5
+            170: -5,-1
+            171: -4,0
         - node:
             color: '#B33831FF'
             id: BrickTileSteelCornerSe
           decals:
-            159: 4,-1
-            163: -3,-3
+            162: 4,-1
+            166: -3,-3
         - node:
             color: '#B33831FF'
             id: BrickTileSteelCornerSw
           decals:
-            160: 3,-1
-            166: -5,-3
+            163: 3,-1
+            169: -5,-3
         - node:
             color: '#B33831FF'
             id: BrickTileSteelInnerNw
           decals:
-            165: -4,-1
+            168: -4,-1
         - node:
             color: '#B33831FF'
             id: BrickTileSteelLineE
@@ -146,18 +148,18 @@ entities:
             45: -8,-10
             46: -8,-11
             47: -8,-12
-            170: -3,-1
-            171: -3,-2
+            173: -3,-1
+            174: -3,-2
         - node:
             color: '#B33831FF'
             id: BrickTileSteelLineN
           decals:
-            162: -3,-5
+            165: -3,-5
         - node:
             color: '#B33831FF'
             id: BrickTileSteelLineS
           decals:
-            164: -4,-3
+            167: -4,-3
         - node:
             color: '#B33831FF'
             id: BrickTileSteelLineW
@@ -176,27 +178,27 @@ entities:
             54: 8,-10
             55: 8,-11
             56: 8,-12
-            172: -5,-2
+            175: -5,-2
         - node:
             color: '#FFFFFFFF'
             id: ConcreteTrimCornerNe
           decals:
-            139: 1,6
+            142: 1,6
         - node:
             color: '#FFFFFFFF'
             id: ConcreteTrimCornerNw
           decals:
-            138: -2,6
+            141: -2,6
         - node:
             color: '#FFFFFFFF'
             id: ConcreteTrimCornerSe
           decals:
-            140: 1,5
+            143: 1,5
         - node:
             color: '#FFFFFFFF'
             id: ConcreteTrimCornerSw
           decals:
-            141: -2,5
+            144: -2,5
         - node:
             color: '#B33831FF'
             id: ConcreteTrimLineE
@@ -209,18 +211,18 @@ entities:
             89: -1,1
             90: -1,2
             91: -1,3
-            134: 3,4
-            135: 3,5
+            137: 3,4
+            138: 3,5
         - node:
             color: '#FFFFFFFF'
             id: ConcreteTrimLineN
           decals:
-            142: -1,6
+            145: -1,6
         - node:
             color: '#FFFFFFFF'
             id: ConcreteTrimLineS
           decals:
-            143: -1,5
+            146: -1,5
         - node:
             color: '#B33831FF'
             id: ConcreteTrimLineW
@@ -233,20 +235,14 @@ entities:
             97: 1,-2
             98: 1,-3
             99: 1,-4
-            136: 3,5
-            137: 3,4
+            139: 3,5
+            140: 3,4
         - node:
             color: '#B33831FF'
             id: Delivery
           decals:
-            133: 2,7
-        - node:
-            angle: 6.283185307179586 rad
-            color: '#DE3A3A96'
-            id: Delivery
-          decals:
-            623: -2,7
-            624: 2,9
+            135: -2,7
+            136: 2,7
         - node:
             color: '#FFFFFFFF'
             id: DirtHeavy
@@ -256,692 +252,6 @@ entities:
             119: -1,5
             120: -3,5
             121: 1,5
-        - node:
-            zIndex: 1
-            id: LatticeCornerNE
-          decals:
-            200: 4,10
-            249: -5,1
-            258: -4,10
-            264: 4,-13
-            271: 4,-12
-            277: 5,-13
-            284: 5,-12
-            292: 5,-11
-            300: 5,-9
-            308: 5,-8
-            316: 6,-9
-            324: 6,-8
-            345: -6,-9
-            353: -6,-8
-            359: -5,-13
-            366: -5,-12
-            374: -5,-11
-            382: -5,-9
-            390: -5,-8
-            396: -4,-13
-            403: -4,-12
-            415: 4,10
-            464: -5,1
-            473: -4,10
-            479: 4,-13
-            486: 4,-12
-            492: 5,-13
-            499: 5,-12
-            507: 5,-11
-            515: 5,-9
-            523: 5,-8
-            531: 6,-9
-            539: 6,-8
-            560: -6,-9
-            568: -6,-8
-            574: -5,-13
-            581: -5,-12
-            589: -5,-11
-            597: -5,-9
-            605: -5,-8
-            611: -4,-13
-            618: -4,-12
-            635: 4,10
-            684: -5,1
-            693: -4,10
-            699: 4,-13
-            706: 4,-12
-            712: 5,-13
-            719: 5,-12
-            727: 5,-11
-            735: 5,-9
-            743: 5,-8
-            751: 6,-9
-            759: 6,-8
-            780: -6,-9
-            788: -6,-8
-            794: -5,-13
-            801: -5,-12
-            809: -5,-11
-            817: -5,-9
-            825: -5,-8
-            831: -4,-13
-            838: -4,-12
-        - node:
-            zIndex: 1
-            id: LatticeCornerNW
-          decals:
-            202: 4,10
-            207: 5,2
-            212: 5,3
-            217: 5,4
-            222: 5,5
-            227: 5,6
-            238: 7,0
-            260: -4,10
-            266: 4,-13
-            274: 4,-12
-            279: 5,-13
-            287: 5,-12
-            295: 5,-11
-            303: 5,-9
-            311: 5,-8
-            319: 6,-9
-            327: 6,-8
-            332: 7,-2
-            337: 7,-1
-            348: -6,-9
-            356: -6,-8
-            361: -5,-13
-            369: -5,-12
-            377: -5,-11
-            385: -5,-9
-            393: -5,-8
-            398: -4,-13
-            406: -4,-12
-            417: 4,10
-            422: 5,2
-            427: 5,3
-            432: 5,4
-            437: 5,5
-            442: 5,6
-            453: 7,0
-            475: -4,10
-            481: 4,-13
-            489: 4,-12
-            494: 5,-13
-            502: 5,-12
-            510: 5,-11
-            518: 5,-9
-            526: 5,-8
-            534: 6,-9
-            542: 6,-8
-            547: 7,-2
-            552: 7,-1
-            563: -6,-9
-            571: -6,-8
-            576: -5,-13
-            584: -5,-12
-            592: -5,-11
-            600: -5,-9
-            608: -5,-8
-            613: -4,-13
-            621: -4,-12
-            637: 4,10
-            642: 5,2
-            647: 5,3
-            652: 5,4
-            657: 5,5
-            662: 5,6
-            673: 7,0
-            695: -4,10
-            701: 4,-13
-            709: 4,-12
-            714: 5,-13
-            722: 5,-12
-            730: 5,-11
-            738: 5,-9
-            746: 5,-8
-            754: 6,-9
-            762: 6,-8
-            767: 7,-2
-            772: 7,-1
-            783: -6,-9
-            791: -6,-8
-            796: -5,-13
-            804: -5,-12
-            812: -5,-11
-            820: -5,-9
-            828: -5,-8
-            833: -4,-13
-            841: -4,-12
-        - node:
-            zIndex: 1
-            id: LatticeCornerSE
-          decals:
-            195: 4,6
-            231: 6,0
-            244: -6,0
-            247: -5,1
-            252: -5,2
-            255: -4,6
-            269: 4,-12
-            282: 5,-12
-            290: 5,-11
-            298: 5,-9
-            306: 5,-8
-            314: 6,-9
-            322: 6,-8
-            340: -7,-3
-            343: -6,-9
-            351: -6,-8
-            364: -5,-12
-            372: -5,-11
-            380: -5,-9
-            388: -5,-8
-            401: -4,-12
-            410: 4,6
-            446: 6,0
-            459: -6,0
-            462: -5,1
-            467: -5,2
-            470: -4,6
-            484: 4,-12
-            497: 5,-12
-            505: 5,-11
-            513: 5,-9
-            521: 5,-8
-            529: 6,-9
-            537: 6,-8
-            555: -7,-3
-            558: -6,-9
-            566: -6,-8
-            579: -5,-12
-            587: -5,-11
-            595: -5,-9
-            603: -5,-8
-            616: -4,-12
-            630: 4,6
-            666: 6,0
-            679: -6,0
-            682: -5,1
-            687: -5,2
-            690: -4,6
-            704: 4,-12
-            717: 5,-12
-            725: 5,-11
-            733: 5,-9
-            741: 5,-8
-            749: 6,-9
-            757: 6,-8
-            775: -7,-3
-            778: -6,-9
-            786: -6,-8
-            799: -5,-12
-            807: -5,-11
-            815: -5,-9
-            823: -5,-8
-            836: -4,-12
-        - node:
-            zIndex: 1
-            id: LatticeCornerSW
-          decals:
-            197: 4,6
-            206: 5,2
-            211: 5,3
-            216: 5,4
-            221: 5,5
-            226: 5,6
-            233: 6,0
-            237: 7,0
-            273: 4,-12
-            286: 5,-12
-            294: 5,-11
-            302: 5,-9
-            310: 5,-8
-            318: 6,-9
-            326: 6,-8
-            331: 7,-2
-            336: 7,-1
-            347: -6,-9
-            355: -6,-8
-            368: -5,-12
-            376: -5,-11
-            384: -5,-9
-            392: -5,-8
-            405: -4,-12
-            412: 4,6
-            421: 5,2
-            426: 5,3
-            431: 5,4
-            436: 5,5
-            441: 5,6
-            448: 6,0
-            452: 7,0
-            488: 4,-12
-            501: 5,-12
-            509: 5,-11
-            517: 5,-9
-            525: 5,-8
-            533: 6,-9
-            541: 6,-8
-            546: 7,-2
-            551: 7,-1
-            562: -6,-9
-            570: -6,-8
-            583: -5,-12
-            591: -5,-11
-            599: -5,-9
-            607: -5,-8
-            620: -4,-12
-            632: 4,6
-            641: 5,2
-            646: 5,3
-            651: 5,4
-            656: 5,5
-            661: 5,6
-            668: 6,0
-            672: 7,0
-            708: 4,-12
-            721: 5,-12
-            729: 5,-11
-            737: 5,-9
-            745: 5,-8
-            753: 6,-9
-            761: 6,-8
-            766: 7,-2
-            771: 7,-1
-            782: -6,-9
-            790: -6,-8
-            803: -5,-12
-            811: -5,-11
-            819: -5,-9
-            827: -5,-8
-            840: -4,-12
-        - node:
-            id: LatticeEdgeE
-          decals:
-            194: 4,6
-            198: 4,10
-            230: 6,0
-            243: -6,0
-            246: -5,1
-            251: -5,2
-            254: -4,6
-            256: -4,10
-            262: 4,-13
-            268: 4,-12
-            275: 5,-13
-            281: 5,-12
-            289: 5,-11
-            297: 5,-9
-            305: 5,-8
-            313: 6,-9
-            321: 6,-8
-            339: -7,-3
-            342: -6,-9
-            350: -6,-8
-            357: -5,-13
-            363: -5,-12
-            371: -5,-11
-            379: -5,-9
-            387: -5,-8
-            394: -4,-13
-            400: -4,-12
-            409: 4,6
-            413: 4,10
-            445: 6,0
-            458: -6,0
-            461: -5,1
-            466: -5,2
-            469: -4,6
-            471: -4,10
-            477: 4,-13
-            483: 4,-12
-            490: 5,-13
-            496: 5,-12
-            504: 5,-11
-            512: 5,-9
-            520: 5,-8
-            528: 6,-9
-            536: 6,-8
-            554: -7,-3
-            557: -6,-9
-            565: -6,-8
-            572: -5,-13
-            578: -5,-12
-            586: -5,-11
-            594: -5,-9
-            602: -5,-8
-            609: -4,-13
-            615: -4,-12
-            629: 4,6
-            633: 4,10
-            665: 6,0
-            678: -6,0
-            681: -5,1
-            686: -5,2
-            689: -4,6
-            691: -4,10
-            697: 4,-13
-            703: 4,-12
-            710: 5,-13
-            716: 5,-12
-            724: 5,-11
-            732: 5,-9
-            740: 5,-8
-            748: 6,-9
-            756: 6,-8
-            774: -7,-3
-            777: -6,-9
-            785: -6,-8
-            792: -5,-13
-            798: -5,-12
-            806: -5,-11
-            814: -5,-9
-            822: -5,-8
-            829: -4,-13
-            835: -4,-12
-        - node:
-            id: LatticeEdgeN
-          decals:
-            199: 4,10
-            204: 5,2
-            209: 5,3
-            214: 5,4
-            219: 5,5
-            224: 5,6
-            235: 7,0
-            240: 7,1
-            248: -5,1
-            257: -4,10
-            261: 3,-14
-            263: 4,-13
-            270: 4,-12
-            276: 5,-13
-            283: 5,-12
-            291: 5,-11
-            299: 5,-9
-            307: 5,-8
-            315: 6,-9
-            323: 6,-8
-            329: 7,-2
-            334: 7,-1
-            344: -6,-9
-            352: -6,-8
-            358: -5,-13
-            365: -5,-12
-            373: -5,-11
-            381: -5,-9
-            389: -5,-8
-            395: -4,-13
-            402: -4,-12
-            407: -3,-14
-            414: 4,10
-            419: 5,2
-            424: 5,3
-            429: 5,4
-            434: 5,5
-            439: 5,6
-            450: 7,0
-            455: 7,1
-            463: -5,1
-            472: -4,10
-            476: 3,-14
-            478: 4,-13
-            485: 4,-12
-            491: 5,-13
-            498: 5,-12
-            506: 5,-11
-            514: 5,-9
-            522: 5,-8
-            530: 6,-9
-            538: 6,-8
-            544: 7,-2
-            549: 7,-1
-            559: -6,-9
-            567: -6,-8
-            573: -5,-13
-            580: -5,-12
-            588: -5,-11
-            596: -5,-9
-            604: -5,-8
-            610: -4,-13
-            617: -4,-12
-            622: -3,-14
-            634: 4,10
-            639: 5,2
-            644: 5,3
-            649: 5,4
-            654: 5,5
-            659: 5,6
-            670: 7,0
-            675: 7,1
-            683: -5,1
-            692: -4,10
-            696: 3,-14
-            698: 4,-13
-            705: 4,-12
-            711: 5,-13
-            718: 5,-12
-            726: 5,-11
-            734: 5,-9
-            742: 5,-8
-            750: 6,-9
-            758: 6,-8
-            764: 7,-2
-            769: 7,-1
-            779: -6,-9
-            787: -6,-8
-            793: -5,-13
-            800: -5,-12
-            808: -5,-11
-            816: -5,-9
-            824: -5,-8
-            830: -4,-13
-            837: -4,-12
-            842: -3,-14
-        - node:
-            id: LatticeEdgeS
-          decals:
-            193: 4,6
-            203: 5,2
-            208: 5,3
-            213: 5,4
-            218: 5,5
-            223: 5,6
-            228: 5,7
-            229: 6,0
-            234: 7,0
-            239: 7,1
-            241: 7,2
-            242: -6,0
-            245: -5,1
-            250: -5,2
-            253: -4,6
-            267: 4,-12
-            280: 5,-12
-            288: 5,-11
-            296: 5,-9
-            304: 5,-8
-            312: 6,-9
-            320: 6,-8
-            328: 7,-2
-            333: 7,-1
-            338: -7,-3
-            341: -6,-9
-            349: -6,-8
-            362: -5,-12
-            370: -5,-11
-            378: -5,-9
-            386: -5,-8
-            399: -4,-12
-            408: 4,6
-            418: 5,2
-            423: 5,3
-            428: 5,4
-            433: 5,5
-            438: 5,6
-            443: 5,7
-            444: 6,0
-            449: 7,0
-            454: 7,1
-            456: 7,2
-            457: -6,0
-            460: -5,1
-            465: -5,2
-            468: -4,6
-            482: 4,-12
-            495: 5,-12
-            503: 5,-11
-            511: 5,-9
-            519: 5,-8
-            527: 6,-9
-            535: 6,-8
-            543: 7,-2
-            548: 7,-1
-            553: -7,-3
-            556: -6,-9
-            564: -6,-8
-            577: -5,-12
-            585: -5,-11
-            593: -5,-9
-            601: -5,-8
-            614: -4,-12
-            628: 4,6
-            638: 5,2
-            643: 5,3
-            648: 5,4
-            653: 5,5
-            658: 5,6
-            663: 5,7
-            664: 6,0
-            669: 7,0
-            674: 7,1
-            676: 7,2
-            677: -6,0
-            680: -5,1
-            685: -5,2
-            688: -4,6
-            702: 4,-12
-            715: 5,-12
-            723: 5,-11
-            731: 5,-9
-            739: 5,-8
-            747: 6,-9
-            755: 6,-8
-            763: 7,-2
-            768: 7,-1
-            773: -7,-3
-            776: -6,-9
-            784: -6,-8
-            797: -5,-12
-            805: -5,-11
-            813: -5,-9
-            821: -5,-8
-            834: -4,-12
-        - node:
-            id: LatticeEdgeW
-          decals:
-            196: 4,6
-            201: 4,10
-            205: 5,2
-            210: 5,3
-            215: 5,4
-            220: 5,5
-            225: 5,6
-            232: 6,0
-            236: 7,0
-            259: -4,10
-            265: 4,-13
-            272: 4,-12
-            278: 5,-13
-            285: 5,-12
-            293: 5,-11
-            301: 5,-9
-            309: 5,-8
-            317: 6,-9
-            325: 6,-8
-            330: 7,-2
-            335: 7,-1
-            346: -6,-9
-            354: -6,-8
-            360: -5,-13
-            367: -5,-12
-            375: -5,-11
-            383: -5,-9
-            391: -5,-8
-            397: -4,-13
-            404: -4,-12
-            411: 4,6
-            416: 4,10
-            420: 5,2
-            425: 5,3
-            430: 5,4
-            435: 5,5
-            440: 5,6
-            447: 6,0
-            451: 7,0
-            474: -4,10
-            480: 4,-13
-            487: 4,-12
-            493: 5,-13
-            500: 5,-12
-            508: 5,-11
-            516: 5,-9
-            524: 5,-8
-            532: 6,-9
-            540: 6,-8
-            545: 7,-2
-            550: 7,-1
-            561: -6,-9
-            569: -6,-8
-            575: -5,-13
-            582: -5,-12
-            590: -5,-11
-            598: -5,-9
-            606: -5,-8
-            612: -4,-13
-            619: -4,-12
-            631: 4,6
-            636: 4,10
-            640: 5,2
-            645: 5,3
-            650: 5,4
-            655: 5,5
-            660: 5,6
-            667: 6,0
-            671: 7,0
-            694: -4,10
-            700: 4,-13
-            707: 4,-12
-            713: 5,-13
-            720: 5,-12
-            728: 5,-11
-            736: 5,-9
-            744: 5,-8
-            752: 6,-9
-            760: 6,-8
-            765: 7,-2
-            770: 7,-1
-            781: -6,-9
-            789: -6,-8
-            795: -5,-13
-            802: -5,-12
-            810: -5,-11
-            818: -5,-9
-            826: -5,-8
-            832: -4,-13
-            839: -4,-12
-        - node:
-            angle: 1.5707963267948966 rad
-            color: '#DE3A3A96'
-            id: LoadingArea
-          decals:
-            625: 1,9
-        - node:
-            angle: 6.283185307179586 rad
-            color: '#DE3A3A96'
-            id: StandClearGreyscale
-          decals:
-            626: 2,10
-            627: 2,8
         - node:
             color: '#FFFFFFFF'
             id: TechE
@@ -1000,15 +310,15 @@ entities:
             103: -2,2
             115: -4,-8
             116: 4,-8
-            144: 2,-4
-            145: -2,-4
+            147: 2,-4
+            148: -2,-4
         - node:
             color: '#A70000FF'
             id: WarnLineGreyscaleE
           decals:
-            190: -7,12
-            191: -7,11
-            192: -7,10
+            193: -7,12
+            194: -7,11
+            195: -7,10
         - node:
             color: '#B33831FF'
             id: WarnLineGreyscaleE
@@ -1031,9 +341,9 @@ entities:
             color: '#A70000FF'
             id: WarnLineGreyscaleW
           decals:
-            187: 7,12
-            188: 7,11
-            189: 7,10
+            190: 7,12
+            191: 7,11
+            192: 7,10
         - node:
             color: '#B33831FF'
             id: WarnLineGreyscaleW
@@ -1068,7 +378,7 @@ entities:
             83: 0,11
             108: 0,-5
             109: 0,4
-            149: 4,-2
+            152: 4,-2
         - node:
             color: '#B33831FF'
             id: WarnLineS
@@ -1080,9 +390,9 @@ entities:
             112: 4,4
             113: -4,-8
             114: 4,-8
-            146: -2,-4
-            147: 2,-4
-            150: 5,-1
+            149: -2,-4
+            150: 2,-4
+            153: 5,-1
         - node:
             color: '#B33831FF'
             id: WarnLineW
@@ -1099,15 +409,15 @@ entities:
             82: 0,11
             107: 0,-5
             110: 0,4
-            148: 4,-2
+            151: 4,-2
         - node:
             color: '#FFFFFFFF'
             id: WoodTrimThinLineW
           decals:
-            173: 5,-6
-            174: 5,-5
-            175: 5,-4
-            176: 5,-3
+            176: 5,-6
+            177: 5,-5
+            178: 5,-4
+            179: 5,-3
     - type: GridAtmosphere
       version: 2
       data:
@@ -1494,13 +804,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: AltarTechnology
-  entities:
-  - uid: 705
-    components:
-    - type: Transform
-      pos: 2.5,9.5
-      parent: 1
 - proto: AlwaysPoweredlightRed
   entities:
   - uid: 637
@@ -1633,6 +936,10 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -7.5,-3.5
       parent: 1
+    - type: PointCannon
+      linkedConsoleIds:
+      - 358
+      linkedConsoleId: 358
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -1643,16 +950,16 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-    - type: PointCannon
-      linkedConsoleIds:
-      - 358
-      linkedConsoleId: 358
   - uid: 140
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 8.5,-3.5
       parent: 1
+    - type: PointCannon
+      linkedConsoleIds:
+      - 358
+      linkedConsoleId: 358
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -1663,16 +970,16 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-    - type: PointCannon
-      linkedConsoleIds:
-      - 358
-      linkedConsoleId: 358
   - uid: 332
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -4.5,15.5
       parent: 1
+    - type: PointCannon
+      linkedConsoleIds:
+      - 358
+      linkedConsoleId: 358
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -1683,16 +990,16 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-    - type: PointCannon
-      linkedConsoleIds:
-      - 358
-      linkedConsoleId: 358
   - uid: 337
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 5.5,15.5
       parent: 1
+    - type: PointCannon
+      linkedConsoleIds:
+      - 358
+      linkedConsoleId: 358
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -1703,10 +1010,6 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-    - type: PointCannon
-      linkedConsoleIds:
-      - 358
-      linkedConsoleId: 358
 - proto: Bed
   entities:
   - uid: 286
@@ -1745,6 +1048,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 3.5,-4.5
       parent: 1
+    - type: Physics
+      bodyType: Static
 - proto: BenchSofaCorpRight
   entities:
   - uid: 21
@@ -1753,6 +1058,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 4.5,-4.5
       parent: 1
+    - type: Physics
+      bodyType: Static
 - proto: BlastDoor
   entities:
   - uid: 174
@@ -1815,11 +1122,8 @@ entities:
   - uid: 73
     components:
     - type: Transform
-      anchored: True
       pos: 0.5,-9.5
       parent: 1
-    - type: Physics
-      bodyType: Static
 - proto: ButtonFrameCautionSecurity
   entities:
   - uid: 261
@@ -3386,20 +2690,6 @@ entities:
     - type: Transform
       pos: -5.5,-3.5
       parent: 1
-    - type: ContainerContainer
-      containers:
-        board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        disk_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        id_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
     - type: DeviceLinkSource
       linkedPorts:
         167:
@@ -3421,6 +2711,20 @@ entities:
       - N/A
       - N/A
       - N/A
+    - type: ContainerContainer
+      containers:
+        board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        disk_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        id_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
 - proto: ComputerTabletopAdvancedRadar
   entities:
   - uid: 359
@@ -3454,15 +2758,28 @@ entities:
     - type: TargetingConsole
       cannonGroups:
         all:
-        - 139
-        - 140
+        - 318
+        - 311
+        - 321
         - 332
         - 337
+        - 140
+        - 139
+        - 310
+        - 324
+        - 317
+        20mm PTA "Operator" gatling turret:
+        - 318
+        - 311
+        - 321
+        - 310
+        - 324
+        - 317
         90mm "Solaris" antimatter blaster:
-        - 139
-        - 140
         - 332
         - 337
+        - 140
+        - 139
 - proto: ConveyorBelt
   entities:
   - uid: 170
@@ -4095,6 +3412,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 3.5,-9.5
       parent: 1
+    - type: Thruster
+      originalPowerLoad: 1500
 - proto: HandheldGPSBasic
   entities:
   - uid: 253
@@ -4256,13 +3575,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 2.5,-0.5
-      parent: 1
-- proto: PinpointerPsion
-  entities:
-  - uid: 706
-    components:
-    - type: Transform
-      pos: 2.4698956,9.556329
       parent: 1
 - proto: PlasticFlapsAirtightClear
   entities:
@@ -4729,13 +4041,6 @@ entities:
     - type: Transform
       pos: 0.5,8.5
       parent: 1
-- proto: SpawnPointLatejoin
-  entities:
-  - uid: 254
-    components:
-    - type: Transform
-      pos: -3.5,-2.5
-      parent: 1
 - proto: SpawnPointSoldatATH
   entities:
   - uid: 669
@@ -4795,6 +4100,7 @@ entities:
           occludes: True
           ents:
           - 253
+          - 254
           - 255
           - 256
           - 257
@@ -4882,80 +4188,108 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -3.5,-11.5
       parent: 1
+    - type: Thruster
+      originalPowerLoad: 1500
   - uid: 124
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -3.5,-12.5
       parent: 1
+    - type: Thruster
+      originalPowerLoad: 1500
   - uid: 215
     components:
     - type: Transform
       pos: -5.5,-8.5
       parent: 1
+    - type: Thruster
+      originalPowerLoad: 1500
   - uid: 216
     components:
     - type: Transform
       pos: -4.5,-8.5
       parent: 1
+    - type: Thruster
+      originalPowerLoad: 1500
   - uid: 217
     components:
     - type: Transform
       pos: 5.5,-8.5
       parent: 1
+    - type: Thruster
+      originalPowerLoad: 1500
   - uid: 218
     components:
     - type: Transform
       pos: 6.5,-8.5
       parent: 1
+    - type: Thruster
+      originalPowerLoad: 1500
   - uid: 219
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 2.5,-12.5
       parent: 1
+    - type: Thruster
+      originalPowerLoad: 1500
   - uid: 220
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 1.5,-12.5
       parent: 1
+    - type: Thruster
+      originalPowerLoad: 1500
   - uid: 221
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -0.5,-12.5
       parent: 1
+    - type: Thruster
+      originalPowerLoad: 1500
   - uid: 222
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -1.5,-12.5
       parent: 1
+    - type: Thruster
+      originalPowerLoad: 1500
   - uid: 223
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 4.5,-12.5
       parent: 1
+    - type: Thruster
+      originalPowerLoad: 1500
   - uid: 224
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 4.5,-11.5
       parent: 1
+    - type: Thruster
+      originalPowerLoad: 1500
   - uid: 670
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -4.5,9.5
       parent: 1
+    - type: Thruster
+      originalPowerLoad: 1500
   - uid: 671
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 5.5,9.5
       parent: 1
+    - type: Thruster
+      originalPowerLoad: 1500
 - proto: ToiletDirtyWater
   entities:
   - uid: 239
@@ -5685,6 +5019,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: -2.5,15.5
       parent: 1
+    - type: Battery
+      startingCharge: 199500
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -5703,8 +5039,6 @@ entities:
           showEnts: False
           occludes: True
           ents: []
-    - type: Battery
-      startingCharge: 199500
     - type: BatterySelfRecharger
       autoRechargeRate: -500
       autoRecharge: True
@@ -5714,6 +5048,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 3.5,15.5
       parent: 1
+    - type: Battery
+      startingCharge: 199500
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -5732,8 +5068,6 @@ entities:
           showEnts: False
           occludes: True
           ents: []
-    - type: Battery
-      startingCharge: 199500
     - type: BatterySelfRecharger
       autoRechargeRate: -500
       autoRecharge: True
@@ -5744,6 +5078,15 @@ entities:
     - type: Transform
       pos: -1.5,6.5
       parent: 1
+- proto: WeaponGrapplingGun
+  entities:
+  - uid: 254
+    components:
+    - type: Transform
+      parent: 252
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: WeaponRevolverInspector
   entities:
   - uid: 648
@@ -5768,6 +5111,10 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -5.5,-10.5
       parent: 1
+    - type: PointCannon
+      linkedConsoleIds:
+      - 358
+      linkedConsoleId: 358
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -5782,14 +5129,16 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-    - type: PointCannon
-      linkedConsoleId: 358
   - uid: 311
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -6.5,10.5
       parent: 1
+    - type: PointCannon
+      linkedConsoleIds:
+      - 358
+      linkedConsoleId: 358
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -5804,14 +5153,16 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-    - type: PointCannon
-      linkedConsoleId: 358
   - uid: 317
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -6.5,-6.5
       parent: 1
+    - type: PointCannon
+      linkedConsoleIds:
+      - 358
+      linkedConsoleId: 358
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -5826,14 +5177,16 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-    - type: PointCannon
-      linkedConsoleId: 358
   - uid: 318
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 7.5,10.5
       parent: 1
+    - type: PointCannon
+      linkedConsoleIds:
+      - 358
+      linkedConsoleId: 358
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -5848,14 +5201,16 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-    - type: PointCannon
-      linkedConsoleId: 358
   - uid: 321
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 6.5,-10.5
       parent: 1
+    - type: PointCannon
+      linkedConsoleIds:
+      - 358
+      linkedConsoleId: 358
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -5870,14 +5225,16 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-    - type: PointCannon
-      linkedConsoleId: 358
   - uid: 324
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 7.5,-6.5
       parent: 1
+    - type: PointCannon
+      linkedConsoleIds:
+      - 358
+      linkedConsoleId: 358
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -5892,8 +5249,6 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-    - type: PointCannon
-      linkedConsoleId: 358
 - proto: WindoorSecure
   entities:
   - uid: 334

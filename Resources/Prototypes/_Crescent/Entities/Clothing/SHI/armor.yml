@@ -33,9 +33,11 @@
     sprintModifier: 0.9
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitHEV
+  - type: ClothingAddFaction
+    faction: SHI
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, StreeCredRedeemable]
   id: ClothingOuterHardsuitHighsec
   name: shinohara SVBT-2 combat hardsuit
   description: A modular combat hardsuit developed by Shinohara Heavy Industries. Sold to elite mercs and corporate deathsquads everywhere.
@@ -57,19 +59,21 @@
       flatReductions:
         Blunt: 25
         Slash: 35
-        Piercing: 80
+        Piercing: 70
         Heat: 15
         Caustic: 15
   - type: ClothingSpeedModifier
-    walkModifier: 0.7
-    sprintModifier: 0.7
+    walkModifier: 0.8
+    sprintModifier: 0.85
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCorpsec
+  - type: ClothingAddFaction
+    faction: SHI
 
 - type: entity
   parent: ClothingOuterHardsuitHighsec
   id: ClothingOuterHardsuitHighsecUA
-  name: shinohara united arsenal SVBT-2 combat hardsuit
+  name: SHI UA SVBT-2 combat hardsuit
   description: A modular combat hardsuit developed by Shinohara Heavy Industries. Sold to elite mercs and corporate deathsquads everywhere. Customized by the subsidiary group United Arsenal.
   components:
   - type: Sprite
@@ -78,8 +82,123 @@
     sprite: _Crescent/Clothing/SHI/OuterClothing/corpsec_ua.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCorpsecUA
+  - type: ClothingAddFaction
+    faction: SHI
+
+- type: entity
+  parent: [ClothingOuterHardsuitBase, StreeCredRedeemable]
+  id: ClothingOuterHardsuitSHIJuggernaut
+  name: SVBT-XA "KAMADO" juggernaut hardsuit
+  description: Experimental model of the SVBT-2 heavily reinforced with multi layer Kevlar ceramic plates meant for use by shinobi liquidators.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/OuterClothing/juggsuit.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/OuterClothing/juggsuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: DegradeableArmor
+    armorMaxHealth: 2000
+    armorType: Ceramic
+    armorRepair: NTCeramic
+    initialModifiers:
+      flatReductions:
+        Blunt: 35
+        Slash: 25
+        Piercing: 90
+        Heat: 35
+        Caustic: 25
+  - type: ClothingSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.6
+  - type: HeldSpeedModifier
+  - type: Reflect
+    spread: 270
+    reflectProb: 0.10
+    innate: true
+    reflects:
+      - Energy
+      - NonEnergy
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitSHIJuggernaut
+  - type: StaticPrice
+    price: 5000
+  - type: ClothingAddFaction
+    faction: SHI
+
+- type: entity
+  parent: [ClothingOuterArmorBasic, StreeCredRedeemable]
+  id: ClothingOuterHardsuitSHISpeedsuit
+  name: SVBT-XB "RAIKU" liquidator suit
+  description: Experimental model of the SVBT-2 with most of the armor stripped off replaced with thick layers of durathread. Equipped with a Exo-Skeleton the suit sliences the users footsteps while also increasing movement capabilities.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/OuterClothing/speedsuit.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/OuterClothing/speedsuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    coefficient: 0.01
+  - type: FireProtection
+    reduction: 0.75
+  - type: ExplosionResistance
+    damageCoefficient: 1
+  - type: DegradeableArmor
+    armorMaxHealth: 500
+    armorType: Ceramic
+    armorRepair: NTCeramic
+    initialModifiers:
+      flatReductions:
+        Blunt: 20
+        Slash: 20
+        Piercing: 50
+        Heat: 15
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    sprintModifier: 1.3
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepSilent
+  - type: ToggleableClothing
+    slot: head
+    clothingPrototype: ClothingHeadHelmetHardsuitSHISpeedsuit
+  - type: ClothingAddFaction
+    faction: SHI
 
 #armor
+
+- type: entity
+  parent: ClothingOuterArmorBasic
+  id: ClothingOuterArmorShinoharaHOSVest
+  name: SHI BULWARK-1 combat vest
+  description: A kevlar-intervowen durathread vest padded with ballistic gel.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/OuterClothing/hosvest.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/OuterClothing/hosvest.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: PlasteelEncasedKevlar
+    initialModifiers:
+      flatReductions:
+        Blunt: 10
+        Slash: 10
+        Piercing: 30
+        Heat: 20
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
 
 - type: entity
   parent: ClothingOuterArmorBasic
@@ -108,6 +227,8 @@
   - type: ExplosionResistance
     damageCoefficient: 0.90
   - type: GroupExamine
+  - type: ClothingAddFaction
+    faction: SHI
 
 - type: entity
   parent: ClothingOuterArmorBasic
@@ -131,11 +252,13 @@
         Heat: 35
         Caustic: 35
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 1.0
+    sprintModifier: 1.0
   - type: ExplosionResistance
     damageCoefficient: 0.80
   - type: GroupExamine
+  - type: ClothingAddFaction
+    faction: SHI
 
 - type: entity
   parent: ClothingOuterArmorShinoharaArmorHighsec
@@ -147,6 +270,8 @@
     sprite: _Crescent/Clothing/SHI/OuterClothing/highsec_ua.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/SHI/OuterClothing/highsec_ua.rsi
+  - type: ClothingAddFaction
+    faction: SHI
 
 #clothes
 
@@ -163,6 +288,8 @@
   - type: ExplosionResistance
     damageCoefficient: 0.90
   - type: GroupExamine
+  - type: ClothingAddFaction
+    faction: SHI
 
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
@@ -177,6 +304,8 @@
   - type: ExplosionResistance
     damageCoefficient: 0.90
   - type: GroupExamine
+  - type: ClothingAddFaction
+    faction: SHI
 
 - type: entity
   parent: ClothingOuterBaseLarge
@@ -188,6 +317,8 @@
     sprite: _Crescent/Clothing/SHI/OuterClothing/suitjacket.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/SHI/OuterClothing/suitjacket.rsi
+  - type: ClothingAddFaction
+    faction: SHI
 
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
@@ -199,6 +330,8 @@
     sprite: _Crescent/Clothing/SHI/OuterClothing/execsuitjacket.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/SHI/OuterClothing/execsuitjacket.rsi
+  - type: ClothingAddFaction
+    faction: SHI
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -210,3 +343,5 @@
     sprite: _Crescent/Clothing/SHI/OuterClothing/rndcoat.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/SHI/OuterClothing/rndcoat.rsi
+  - type: ClothingAddFaction
+    faction: SHI

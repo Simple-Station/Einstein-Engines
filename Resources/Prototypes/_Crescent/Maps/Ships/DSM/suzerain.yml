@@ -1,0 +1,32 @@
+# Author Info
+# Discord: fungus2589
+
+- type: vessel
+  id: Suzerain
+  name: DSM Suzerain
+  description: A robust siege battlecruiser developed as a response to the Stern-class. Fares very well at long range.
+  price: 226750
+  category: Large
+  group: None
+  path: /Maps/_Crescent/Shuttles/DSM/suzerain.yml
+
+- type: gameMap
+  id: Suzerain
+  mapName: 'DSM Suzerain'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/suzerain.yml
+  minPlayers: 0
+  stations:
+    Suzerain:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: battleship
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Suzerain {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+        

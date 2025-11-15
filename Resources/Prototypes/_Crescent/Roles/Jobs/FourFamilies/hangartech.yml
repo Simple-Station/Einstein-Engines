@@ -27,13 +27,14 @@
     components:
       - type: ChatRank
         rank: crescent-rank-hangartech
+      - type: HullrotFaction
+        faction: TAP
+      - type: Telepathic
       - type: LanguageAdder
         addSpoken:
-        - OldTaypani
-        - Tradeband
+          - OldTaypani
         addUnderstood:
-        - OldTaypani
-        - Tradeband
+          - OldTaypani
   access:
   - EmergencyShuttleRepealAll
   - Captain

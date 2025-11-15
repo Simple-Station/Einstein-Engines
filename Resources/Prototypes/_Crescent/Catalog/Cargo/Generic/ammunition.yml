@@ -4,7 +4,7 @@
     sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
     state: baton
   product: CrateSumitomoAmmo
-  cost: 15000
+  cost: 10000
   category: cargoproduct-category-name-shuttleammo
   group: genericAmmo
 
@@ -14,7 +14,7 @@
     sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
     state: emp
   product: CrateSumitomoAmmoEMP
-  cost: 20000
+  cost: 15000
   category: cargoproduct-category-name-shuttleammo
   group: genericAmmo
 
@@ -34,7 +34,7 @@
     sprite: _Crescent/Ammunition/vulcan.rsi
     state: base
   product: CrateVulcanAmmo
-  cost: 10000
+  cost: 6000
   category: cargoproduct-category-name-shuttleammo
   group: genericAmmo
 
@@ -44,7 +44,7 @@
     sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
     state: base
   product: CrateSlugthrowerAmmo
-  cost: 10000
+  cost: 6000
   category: cargoproduct-category-name-shuttleammo
   group: genericAmmo
 
@@ -54,7 +54,7 @@
     sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
     state: base
   product: CrateSlugthrowerAmmoExplosive
-  cost: 20000
+  cost: 18000
   category: cargoproduct-category-name-shuttleammo
   group: genericAmmo
 
@@ -75,7 +75,7 @@
     sprite: _Crescent/Objects/ShuttleWeapons/torp.rsi
     state: base
   product: CrateGargoyleAmmo
-  cost: 25000
+  cost: 20000
   category: cargoproduct-category-name-shuttleammo
   group: genericAmmo
 
@@ -86,7 +86,7 @@
     sprite: _Crescent/Objects/ShuttleWeapons/lance.rsi
     state: base
   product: CrateLancerAmmo
-  cost: 15000
+  cost: 10000
   category: cargoproduct-category-name-shuttleammo
   group: genericAmmo
 
@@ -97,7 +97,7 @@
     sprite: _Crescent/Objects/ShuttleWeapons/battleshell.rsi
     state: base
   product: CrateAssaultMortarAmmo
-  cost: 20000
+  cost: 15000
   category: cargoproduct-category-name-shuttleammo
   group: genericAmmo
 
@@ -108,7 +108,7 @@
     sprite: _Crescent/Objects/ShuttleWeapons/torpedop.rsi
     state: base
   product: CrateIdnaAmmo
-  cost: 15000
+  cost: 10000
   category: cargoproduct-category-name-shuttleammo
   group: genericAmmo
 
@@ -118,7 +118,7 @@
     sprite: _NF/Objects/SpaceArtillery/630_armorpiercing_shell_casing.rsi
     state: base
   product: CrateArtilleryAmmo
-  cost: 20000
+  cost: 10000
   category: cargoproduct-category-name-shuttleammo
   group: genericAmmo
 
@@ -138,7 +138,17 @@
     sprite: _Crescent/Ammunition/mortar.rsi
     state: base
   product: CrateMortarAmmo
-  cost: 20000
+  cost: 15000
+  category: cargoproduct-category-name-shuttleammo
+  group: genericAmmo
+
+- type: cargoProduct
+  id: ShuttleNeedlerAmmoGeneric
+  icon:
+    sprite: _Crescent/Ammunition/needler.rsi
+    state: base
+  product: CrateAutogunAmmo
+  cost: 15000
   category: cargoproduct-category-name-shuttleammo
   group: genericAmmo
 
@@ -158,7 +168,7 @@
     sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
     state: infraredlens
   product: CrateCompaktAmmoInfrared
-  cost: 50000
+  cost: 25000
   category: cargoproduct-category-name-shuttleammo
   group: genericAmmo
 
@@ -168,7 +178,7 @@
     sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
     state: plasmalens
   product: CrateCompaktAmmoPlasma
-  cost: 75000
+  cost: 50000
   category: cargoproduct-category-name-shuttleammo
   group: genericAmmo
 
@@ -178,7 +188,7 @@
     sprite: _Crescent/Objects/ShuttleWeapons/amcanister.rsi
     state: base
   product: CrateSolarisAmmo
-  cost: 50000
+  cost: 25000
   category: cargoproduct-category-name-shuttleammo
   group: genericAmmo
 
@@ -188,7 +198,7 @@
     sprite: _Crescent/Objects/ShuttleWeapons/amcanisterguided.rsi
     state: base
   product: CrateSolarisAmmoGuided
-  cost: 75000
+  cost: 50000
   category: cargoproduct-category-name-shuttleammo
   group: genericAmmo
 
@@ -198,6 +208,37 @@
     sprite: _Crescent/Objects/ShuttleWeapons/amcanisterplas.rsi
     state: base
   product: CrateSolarisAmmoPlasma
-  cost: 75000
+  cost: 50000
   category: cargoproduct-category-name-shuttleammo
   group: genericAmmo
+
+- type: cargoProduct
+  id: ShuttlePrinceAmmoGeneric
+  icon:
+    sprite: _Crescent/Ammunition/flak.rsi
+    state: base
+  product: CratePrinceAmmo
+  cost: 25000
+  category: cargoproduct-category-name-shuttleammo
+  group: genericAmmo
+
+- type: cargoProduct
+  id: ShuttleJeongAmmoGeneric
+  icon:
+    sprite: _Crescent/Ammunition/flak.rsi
+    state: base
+  product: CrateJeongAmmo
+  cost: 15000
+  category: cargoproduct-category-name-shuttleammo
+  group: genericAmmo
+
+- type: cargoProduct
+  id: ShuttleHardlinerAmmoGeneric
+  icon:
+    sprite: _Crescent/Objects/Specific/hardlinebattery.rsi
+    state: battery
+  product: PowerCageHardliner
+  cost: 10000
+  category: cargoproduct-category-name-shuttleammo
+  group: genericAmmo
+

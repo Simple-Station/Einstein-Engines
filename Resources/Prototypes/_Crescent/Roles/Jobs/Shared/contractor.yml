@@ -13,3 +13,15 @@
   supervisors: job-supervisors-hire
   accessGroups:
   - GeneralAccess
+
+
+- type: startingGear
+  id: ContractorGear
+  equipment:
+    ears: ClothingHeadsetGrey
+    id: SpacerPDA
+    jumpsuit: ClothingUniformSpacer
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesColorBlack
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled

@@ -23,10 +23,12 @@
     components:
       - type: ChatRank
         rank: crescent-rank-sanitat
+      - type: HullrotFaction
+        faction: ATH
       - type: BibleUser
       - type: CPRTraining
       - type: SurgerySpeedModifier
-        speedModifier: 2
+        speedModifier: 1.75
 
   access:
   - EmergencyShuttleRepealAll
@@ -71,15 +73,15 @@
   id: APRTSanitatGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitAuthoritySanitat
-    shoes: ClothingShoesBootsMagCombat
+    shoes: ClothingShoesBootsMagCombatFilled
     head: ClothingHeadHatAuthoritySanitat
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitAuthorityPanzer
-    suitstorage: JetpackBlueFilled
+    suitstorage: JetpackBlackFilled
     id: APRTIDCardSanitat
     ears: ClothingHeadsetAuthority
     pocket1: HandHeldMassScannerEE
-    pocket2: ExtendedEmergencyOxygenTankFilled
+    pocket2: HandheldGPSBasic
     belt: ClothingBeltAuthorityDroppouchesFilled
   inhand:
-  - WeaponRifleTakemura
+  - WeaponSubMachineGunKebyt

@@ -184,8 +184,8 @@
 - type: entity
   parent: EncryptionKey
   id: EncryptionKeyMinutemen
-  name: minutemen encryption key
-  description: An encryption key used by the Colonial Minutemen.
+  name: gliessian encryption key
+  description: An encryption key used by Gliess Santo staff.
   components:
   - type: EncryptionKey
     channels:
@@ -245,4 +245,21 @@
   - type: Sprite
     layers:
     - state: crypt_blue
+    - state: common_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyAmerican
+  name: american protectorate encryption key
+  description: An encryption key used by the New American Protectorate.
+  components:
+  - type: EncryptionKey
+    channels:
+    - NAP
+    - Common
+    - Traffic
+    defaultChannel: Common
+  - type: Sprite
+    layers:
+    - state: crypt_silver
     - state: common_label

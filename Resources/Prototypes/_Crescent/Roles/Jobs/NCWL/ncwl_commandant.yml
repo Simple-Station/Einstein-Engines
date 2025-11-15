@@ -3,7 +3,7 @@
   name: job-name-ncwl-faction-leader
   description: job-description-ncwl-faction-leader
   playTimeTracker: JobFactionLeaderNCWL
-  weight: 100
+  weight: 8
   startingGear: CommandantNCWLGear
   alwaysUseSpawner: true
   requireAdminNotify: false
@@ -12,10 +12,10 @@
   canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
-    - !type:CharacterOverallTimeRequirement
-      min: 35000
     - !type:FactionRequirement
       factionID: "NCWL"
+    - !type:CharacterOverallTimeRequirement
+      min: 35000
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -24,8 +24,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
         - Pacifist
@@ -35,6 +33,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-faction-leader
+      - type: HullrotFaction
+        faction: NCWL
       - type: LanguageAdder
         addSpoken:
           - Dockta

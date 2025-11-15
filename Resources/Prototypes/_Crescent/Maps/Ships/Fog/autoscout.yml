@@ -1,0 +1,29 @@
+# Author Info
+# Discord: .2
+- type: vessel
+  id: Autoscout
+  name: NT Autoscout
+  description: An NT-era autonomous scout ship. Now it's yours.
+  price: 45000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/Fog/autoscout.yml
+
+- type: gameMap
+  id: Autoscout
+  mapName: 'NTAutoscout' 
+  mapPath: /Maps/_Crescent/Shuttles/Fog/autoscout.yml
+  minPlayers: 0
+  stations:
+    Autoscout:
+      stationProto: StandardCrescentVessel 
+      components: 
+        - type: StationNameSetup
+          mapNameTemplate: 'NT Autoscout' 
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-interceptor
+        - type: VesselDescription
+          description: An ancient hull. You don't feel safe here.

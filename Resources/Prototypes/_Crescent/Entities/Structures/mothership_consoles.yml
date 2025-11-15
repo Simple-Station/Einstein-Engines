@@ -32,11 +32,11 @@
   - type: ShipyardListing
     shuttles:
     - Redemptor
-    - Torturer
     - Ibis
     - Impel
     - Gnosis
     - Praxis
+    - Imparator
 
 - type: entity
   id: NemesisMothershipComputer
@@ -45,8 +45,9 @@
   components:
   - type: ShipyardListing
     shuttles:
-    - Praxis
-    - Torturer
+    - Janissary
+    - Redemptor
+    - Imparator
 
 - type: entity
   id: UnionfallNemesisMothershipComputer
@@ -70,6 +71,7 @@
     - Meatwagon
     - Harpy
     - Matabele
+    - Fridge
 
 - type: entity
   id: SawsMothershipComputer
@@ -84,7 +86,7 @@
     - Scabrak
     - Geode
     - Thanapod
-    - Rattler
+    - Mercurymk2
 
 - type: entity
   id: TatsumotoMothershipComputer
@@ -100,6 +102,7 @@
     - Flea
     - Bison
     - Nazaar
+    - colossus
 
 - type: entity
   id: RamziMothershipComputer
@@ -109,9 +112,10 @@
   - type: ShipyardListing
     shuttles:
     - Velator
-    - Wisp
     - Taipan
     - Wreck
+    - Spriggan
+    - Lungspot
 
 - type: entity
   id: ZhipovMothershipComputer
@@ -147,12 +151,14 @@
 - type: entity
   id: CMMMothershipComputer
   parent: BaseMothershipComputer
-  name: TSP internal shipyard
+  name: Gliessian internal shipyard
   components:
   - type: ShipyardListing
     shuttles:
     - Provost
     - Adjudicator
+    - Warden
+    - Jury
 
 - type: entity
   id: RefugeMothershipComputer
@@ -221,3 +227,35 @@
     shuttles:
     - Tick
     - Gnat
+    - Piranha
+    - Scuttlefish
+
+- type: entity
+  id: NAPMothershipComputer
+  parent: BaseMothershipComputer
+  name: NAP military shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Mojave
+
+- type: entity
+  id: TrashcanMothershipComputer
+  parent: BaseMothershipComputer
+  name: trashcan internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Wasp
+    - Bee
+    - Hornet
+
+- type: entity
+  id: CockroachMothershipComputer
+  parent: BaseMothershipComputer
+  name: cockroach internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Roachling
+    - Dungbeetle

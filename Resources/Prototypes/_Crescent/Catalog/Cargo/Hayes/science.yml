@@ -1,9 +1,9 @@
-- type: cargoProduct
-  id: ArtifactContainerHayes
-  icon:
-    sprite: Structures/Storage/Crates/artifact.rsi
-    state: artifact_container_icon
-  product: CrateArtifactContainer
-  cost: 500
-  category: cargoproduct-category-name-science
-  group: hayes
+# - type: cargoProduct
+#   id: ArtifactContainerHayes
+#   icon:
+#     sprite: Structures/Storage/Crates/artifact.rsi
+#     state: artifact_container_icon
+#   product: CrateArtifactContainer
+#   cost: 500
+#   category: cargoproduct-category-name-science
+#   group: hayes

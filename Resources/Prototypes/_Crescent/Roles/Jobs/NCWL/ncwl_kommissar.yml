@@ -3,7 +3,7 @@
   name: job-name-ncwl-kommissar
   description: job-description-ncwl-kommissar
   playTimeTracker: JobHomeguardLeaderNCWL
-  weight: 99
+  weight: 7
   startingGear: OverseerNCWLGear
   alwaysUseSpawner: true
   requireAdminNotify: false
@@ -23,8 +23,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
         - Pacifist
@@ -34,6 +32,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-home-leader
+      - type: HullrotFaction
+        faction: NCWL
       - type: LanguageAdder
         addSpoken:
           - Dockta

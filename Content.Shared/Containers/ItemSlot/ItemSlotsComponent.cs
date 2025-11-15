@@ -21,7 +21,7 @@ namespace Content.Shared.Containers.ItemSlots
         ///     The dictionary that stores all of the item slots whose interactions will be managed by the <see
         ///     cref="ItemSlotsSystem"/>.
         /// </summary>
-        [DataField(readOnly:true)]
+        [DataField(readOnly: true)]
         public Dictionary<string, ItemSlot> Slots = new();
 
         // There are two ways to use item slots:
@@ -65,6 +65,7 @@ namespace Content.Shared.Containers.ItemSlots
     [DataDefinition]
     [Access(typeof(ItemSlotsSystem))]
     [Serializable, NetSerializable]
+
     public sealed partial class ItemSlot
     {
         public ItemSlot() { }
@@ -80,6 +81,9 @@ namespace Content.Shared.Containers.ItemSlots
 
         [DataField]
         public EntityWhitelist? Blacklist;
+
+        [DataField]
+        public bool SelfEjectOnly = false;
 
         [DataField]
         public SoundSpecifier InsertSound = new SoundPathSpecifier("/Audio/Weapons/Guns/MagIn/revolver_magin.ogg");
@@ -291,4 +295,19 @@ namespace Content.Shared.Containers.ItemSlots
     /// </summary>
     [ByRefEvent]
     public record struct ItemSlotEjectAttemptEvent(EntityUid SlotEntity, EntityUid Item, EntityUid? User, ItemSlot Slot, bool Cancelled = false);
+
+    // If you have a problem with me adding the following events take it up with my fucking supervisor.
+    // My job is to code, not deal with the consequences of my actions.
+
+    /// <summary>
+    /// Event raised on the slot entity and the item being inserted to inform that an item was inserted into an item slot.
+    /// </summary>
+    [ByRefEvent]
+    public record struct ItemSlotInsertEvent(EntityUid SlotEntity, EntityUid Item, EntityUid? User, ItemSlot Slot);
+
+    /// <summary>
+    /// Event raised on the slot entity and the item being inserted to inform that an item was ejected from an item slot.
+    /// </summary>
+    [ByRefEvent]
+    public record struct ItemSlotEjectEvent(EntityUid SlotEntity, EntityUid Item, EntityUid? User, ItemSlot Slot);
 }

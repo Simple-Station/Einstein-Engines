@@ -13,6 +13,8 @@
   requirements:
     - !type:FactionRequirement
       factionID: "NCWL"
+    - !type:CharacterOverallTimeRequirement
+      min: 10800
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -31,6 +33,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-home-soldat
+      - type: HullrotFaction
+        faction: NCWL
       - type: LanguageAdder
         addSpoken:
           - Dockta
@@ -55,9 +59,18 @@
     id: NCWLHomeguardSoldatPDA
     outerClothing: ClothingOuterArmorNCWLHeavyCarapace
     belt: ClothingBeltNCWLPouches
-    pocket1: WeaponPistolHKUSP
+    pocket1: BookNCWLManual1
+    pocket2: BookNCWLManual2
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesCombat
     head: ClothingHeadHelmetNCWLBasic
     mask: ClothingMaskNCWLGasmask
     ears: ClothingHeadsetNCWL
+  storage:
+    back:
+      - Flash
+      - Tourniquet
+      - Zipties
+      - MagazinePistol
+      - WeaponPistolHKUSP
+      - CombatKnife

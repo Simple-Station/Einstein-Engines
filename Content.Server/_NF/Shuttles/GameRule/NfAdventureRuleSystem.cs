@@ -79,31 +79,19 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
                 continue;
 
             var profit = (long) bank.Balance - player.Item2;
-            ev.AddLine($"- {meta.EntityName} {profitText} {profit} Credits");
             allScore.Add(new Tuple<string, int>(meta.EntityName, (int) profit));
         }
 
         if (!(allScore.Count >= 1))
             return;
 
-        var relayText = Loc.GetString("adventure-list-high");
-        relayText += '\n';
-        var highScore = allScore.OrderByDescending(h => h.Item2).ToList();
+        // Sort by profit (highest first) and display all players
+        var sortedScores = allScore.OrderByDescending(h => h.Item2).ToList();
 
-        for (var i = 0; i < 10 && i < highScore.Count; i++)
+        foreach (var score in sortedScores)
         {
-            relayText += $"{highScore.First().Item1} {profitText} {highScore.First().Item2.ToString()} Credits";
-            relayText += '\n';
-            highScore.Remove(highScore.First());
-        }
-        relayText += Loc.GetString("adventure-list-low");
-        relayText += '\n';
-        highScore.Reverse();
-        for (var i = 0; i < 10 && i < highScore.Count; i++)
-        {
-            relayText += $"{highScore.First().Item1} {lossText} {highScore.First().Item2.ToString()} Credits";
-            relayText += '\n';
-            highScore.Remove(highScore.First());
+            var displayText = score.Item2 < 0 ? lossText : profitText;
+            ev.AddLine($"- {score.Item1} {displayText} {score.Item2} Credits");
         }
     }
 

@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseItem
+  parent: [BaseItem, StreeCredRedeemableLow]
   id: ShuttleOwnershipChip
   name: SOC encryption chip
   description: A 'Shuttle Ownership Chip' magnetically burned with the ownership deed of a sovereign vessel.

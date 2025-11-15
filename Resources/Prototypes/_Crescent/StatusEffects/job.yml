@@ -364,6 +364,13 @@
 
 - type: jobIcon
   parent: JobIcon
+  id: JobIconDockhand
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: dockhand
+
+- type: jobIcon
+  parent: JobIcon
   id: JobIconKommandant
   icon:
     sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi

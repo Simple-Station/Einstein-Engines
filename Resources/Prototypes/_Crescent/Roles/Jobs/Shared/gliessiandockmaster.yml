@@ -3,6 +3,7 @@
   name: job-name-gliess-dockmaster
   description: job-description-gliess-dockmaster
   playTimeTracker: JobGliessDockmaster
+  weight: 50
   startingGear: GliessDockmasterGear
   icon: "JobIconCaptain"
   supervisors: job-supervisors-lols
@@ -15,6 +16,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ind-gliess-dockmaster
+      - type: HullrotFaction
+        faction: GS
       - type: LanguageAdder
         addSpoken:
           - Tradeband
@@ -29,7 +32,7 @@
 - type: startingGear
   id: GliessDockmasterGear
   equipment:
-    ears: ClothingHeadsetGrey
+    ears: ClothingHeadsetCMM
     shoes: ClothingShoesBootsLaceup
     jumpsuit: ClothingUniformJumpsuitCapFormal
     head: ClothingHeadHatCapcap

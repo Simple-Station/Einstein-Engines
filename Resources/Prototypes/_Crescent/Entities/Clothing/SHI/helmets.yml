@@ -69,6 +69,59 @@
   - type: Clothing
     sprite: _Crescent/Clothing/SHI/Head/corpsec_ua.rsi
 
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitSHIJuggernaut
+  categories: [ HideSpawnMenu ]
+  name: SVBT-XA "KAMADO" hardsuit helmet
+  description: Spaceworthy protection for your fragile skull. A SHI design.
+  components:
+  - type: BreathMask
+  - type: FlashImmunity
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Head/juggsuit.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Head/juggsuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+        Caustic: 0.9
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitSHISpeedsuit
+  categories: [ HideSpawnMenu ]
+  name: SVBT-XB "RAIKU" helmet
+  description: Spaceworthy protection for your fragile skull.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Head/speedsuit.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Head/speedsuit.rsi
+  - type: NightVision
+    isEquipment: true
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+        Caustic: 0.9
+
 #hats
 
 - type: entity
@@ -145,3 +198,14 @@
     sprite: _Crescent/Clothing/SHI/Head/highsec_ua.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/SHI/Head/highsec_ua.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatShinoharaBeretHOS
+  name: hos beret
+  description: A formal beret with the CSEC logo, used mainly by the corpo HoS.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Head/beret_hos.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Head/beret_hos.rsi

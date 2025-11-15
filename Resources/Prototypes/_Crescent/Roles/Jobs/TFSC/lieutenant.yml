@@ -18,8 +18,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
         - Pacifist
@@ -28,6 +26,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-boss
+      - type: HullrotFaction
+        faction: GSC
       - type: LanguageAdder
         addSpoken:
           - Freespeak
@@ -84,4 +84,4 @@
     outerClothing: ClothingOuterArmorSyndicateLieutenant
     id: LieutenantPDA
     ears: ClothingHeadsetNCSP
-    belt: WeaponPistolHKUSP
+    belt: WeaponPistolViperWood

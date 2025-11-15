@@ -2,6 +2,8 @@
   id: YouToolInventory
   startingInventory:
     CableApcStack: 8
+    CableMVStack: 8
+    CableHVStack: 8
     Crowbar: 8
     WelderIndustrial: 8
     Wirecutter: 8

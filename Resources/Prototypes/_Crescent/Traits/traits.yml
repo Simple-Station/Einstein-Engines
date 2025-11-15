@@ -6,6 +6,12 @@
     - !type:FactionRequirement
       inverted: true
       factionID: "DSM"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Dockta
+        - Freespeak
+        - Kaishago
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -32,6 +38,12 @@
     - !type:FactionRequirement
       inverted: true
       factionID: "NCWL"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowImperial
+        - Freespeak
+        - Kaishago
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -47,6 +59,12 @@
     - !type:FactionRequirement
       inverted: true
       factionID: "TFSC"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowImperial
+        - Dockta
+        - Kaishago
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -62,6 +80,12 @@
     - !type:FactionRequirement
       inverted: true
       factionID: "SHI"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowImperial
+        - Dockta
+        - Freespeak
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -72,7 +96,7 @@
 - type: trait
   id: Clarizian
   category: TraitsSpeechLanguages
-  points: -4
+  points: -2
   requirements:
     - !type:CharacterNationalityRequirement
       inverted: true
@@ -88,7 +112,7 @@
 - type: trait
   id: SolBasic
   category: TraitsSpeechLanguages
-  points: -4
+  points: -2
   requirements:
     - !type:CharacterNationalityRequirement
       inverted: true
@@ -101,17 +125,33 @@
       languagesUnderstood:
         - SolBasic
 
+# - type: trait
+#   id: OldTaypani
+#   category: TraitsSpeechLanguages
+#   points: -6
+#   requirements:
+#     - !type:FactionRequirement
+#       inverted: true
+#       factionID: "TAP"
+#   functions:
+#     - !type:TraitModifyLanguages
+#       languagesSpoken:
+#         - OldTaypani
+#       languagesUnderstood:
+#         - OldTaypani
+
 - type: trait
-  id: OldTaypani
+  id: American
   category: TraitsSpeechLanguages
-  points: -6
+  points: -2
   requirements:
-    - !type:FactionRequirement
+    - !type:CharacterNationalityRequirement
       inverted: true
-      factionID: "TAP"
+      nationalities:
+        - Bieselite # NAP
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
-        - OldTaypani
+        - American
       languagesUnderstood:
-        - OldTaypani
+        - American

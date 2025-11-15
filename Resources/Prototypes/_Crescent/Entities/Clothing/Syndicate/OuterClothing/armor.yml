@@ -36,6 +36,9 @@
     price: 1000
   - type: Contraband
     value: 8
+  - type: ClothingAddFaction
+    faction: TFSC
+
 
 - type: entity
   parent: ClothingOuterHardsuitBase
@@ -73,6 +76,8 @@
     price: 1000
   - type: Contraband
     value: 8
+  - type: ClothingAddFaction
+    faction: TFSC
 
 - type: entity
   parent: ClothingOuterHardsuitRamzi
@@ -99,6 +104,8 @@
         Piercing: 45
         Heat: 15
         Caustic: 15
+  - type: ClothingAddFaction
+    faction: TFSC
 
 - type: entity
   parent: ClothingOuterHardsuitBase
@@ -135,6 +142,14 @@
     price: 1250
   - type: Contraband
     value: 15
+  - type: ClothingAddFaction
+    faction: TFSC
+  - type: Construction
+    graph: Sellsword
+    node: start
+  - type: Tag
+    tags:
+    - Bulwark
 
 - type: entity
   parent: ClothingOuterHardsuitBase
@@ -163,12 +178,14 @@
         Heat: 15
         Caustic: 15
   - type: ClothingSpeedModifier
-    walkModifier: 1
-    sprintModifier: 1
+    walkModifier: 0.9
+    sprintModifier: 0.9
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitTraumasec
   - type: Contraband
     value: 5
+  - type: ClothingAddFaction
+    faction: TFSC
 
 - type: entity
   parent: ClothingOuterHardsuitBase
@@ -203,6 +220,24 @@
     clothingPrototype: ClothingHeadHelmetHardsuitCoordinator
   - type: Contraband
     value: 5
+  - type: ClothingAddFaction
+    faction: TFSC
+
+- type: entity
+  parent: ClothingOuterHardsuitSyndicateBG
+  id: ClothingOuterHardsuitSyndicateSellsword
+  name: SELLSWORD mk.IIB modified hardsuit
+  description: A modular Syndicate hardsuit modified for use by the Hedgeknights. Bulky nanokevlar lined with composite gold decor pads the light titanium skeleton, shielding flimsy electronics and the fleshy operator underneath.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicatesellsword.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicatesellsword.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitSyndicateSellsword
+  - type: Construction
+    graph: Sellsword
+    node: armor
 
 #regular shit. if you put hardsuit below here i'm going to explode your cock
 
@@ -235,6 +270,8 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 250
+  - type: ClothingAddFaction
+    faction: TFSC
 
 - type: entity
   parent: ClothingOuterBaseLarge
@@ -265,6 +302,8 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 250
+  - type: ClothingAddFaction
+    faction: TFSC
 
 - type: entity
   parent: ClothingOuterBaseLarge
@@ -284,6 +323,8 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 100
+  - type: ClothingAddFaction
+    faction: TFSC
 
 - type: entity
   parent: ClothingOuterBaseLarge
@@ -310,6 +351,8 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 100
+  - type: ClothingAddFaction
+    faction: TFSC
 
 - type: entity
   parent: ClothingOuterArmorBasic
@@ -340,6 +383,8 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 100
+  - type: ClothingAddFaction
+    faction: TFSC
 
 - type: entity
   parent: ClothingOuterArmorBasic
@@ -370,6 +415,8 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 250
+  - type: ClothingAddFaction
+    faction: TFSC
 
 - type: entity
   parent: ClothingOuterArmorBasic
@@ -400,6 +447,8 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 250
+  - type: ClothingAddFaction
+    faction: TFSC
 
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
@@ -430,6 +479,8 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 350
+  - type: ClothingAddFaction
+    faction: TFSC
 
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
@@ -460,6 +511,8 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 450
+  - type: ClothingAddFaction
+    faction: TFSC
 
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
@@ -490,3 +543,5 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 500
+  - type: ClothingAddFaction
+    faction: TFSC

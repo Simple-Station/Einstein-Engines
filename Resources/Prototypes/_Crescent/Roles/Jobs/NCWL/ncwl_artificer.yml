@@ -33,6 +33,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-engi-worker
+      - type: HullrotFaction
+        faction: NCWL
       - type: LanguageAdder
         addSpoken:
           - Dockta
@@ -85,10 +87,13 @@
     shoes: ClothingShoesBootsSalvage
     jumpsuit: ClothingUniformJumpsuitNCWLArtificer
     id: NCWLEngineeringWorkerPDA
-    belt: ClothingBeltUtilityEngineering
     pocket1: WeaponPistolHKUSP
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesColorYellow
-    head: ClothingHeadHatNCWLCapsoft
+    head: ClothingHeadHatBeretEngineering
     eyes: ClothingEyesGlassesMeson
     ears: ClothingHeadsetNCWL
+    outerClothing: ClothingOuterArmorNCWLEngi
+    belt: ClothingBeltUtilityFilled
+    back: ClothingBackpackNCWL
+

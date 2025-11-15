@@ -1980,3 +1980,15 @@
     collection: FootstepFloor
   itemDrop: FloorTileItemSteel
   heatCapacity: 10000
+
+#hullrot flesh
+
+- type: tile
+  id: FloorFleshUnderside
+  name: tiles-asteroid-sand
+  sprite: /Textures/_Crescent/Floors/meat.rsi/meat_underside.png
+  baseTurf: Space
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000

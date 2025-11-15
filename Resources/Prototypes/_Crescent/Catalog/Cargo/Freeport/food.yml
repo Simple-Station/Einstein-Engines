@@ -1,19 +1,19 @@
-- type: cargoProduct
-  id: FoodBarSupplyFreeport
-  icon:
-    sprite: Objects/Consumable/Drinks/beerglass.rsi
-    state: icon
-  product: CrateFoodBarSupply
-  cost: 750
-  category: cargoproduct-category-name-food
-  group: freeport
+# - type: cargoProduct
+#   id: FoodBarSupplyFreeport
+#   icon:
+#     sprite: Objects/Consumable/Drinks/beerglass.rsi
+#     state: icon
+#   product: CrateFoodBarSupply
+#   cost: 750
+#   category: cargoproduct-category-name-food
+#   group: freeport
 
-- type: cargoProduct
-  id: FoodBarSupplyShip
-  icon:
-    sprite: Objects/Consumable/Drinks/beerglass.rsi
-    state: icon
-  product: CrateFoodBarSupply
-  cost: 2750
-  category: cargoproduct-category-name-food
-  group: ship
+# - type: cargoProduct
+#   id: FoodBarSupplyShip
+#   icon:
+#     sprite: Objects/Consumable/Drinks/beerglass.rsi
+#     state: icon
+#   product: CrateFoodBarSupply
+#   cost: 2750
+#   category: cargoproduct-category-name-food
+#   group: ship

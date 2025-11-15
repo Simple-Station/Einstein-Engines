@@ -13,7 +13,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - ForeignerLight
         - Blindness
         - Pacifist
         - WheelchairBound

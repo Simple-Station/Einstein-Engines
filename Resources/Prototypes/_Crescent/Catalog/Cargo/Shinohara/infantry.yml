@@ -14,7 +14,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/lecter.rsi
     state: icon
   product: CrateShinoharaLecter
-  cost: 12000
+  cost: 15000
   category: cargoproduct-category-name-military
   group: shinohara
 
@@ -74,7 +74,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/l6saw.rsi
     state: icon
   product: CrateShinoharaSAW
-  cost: 25000
+  cost: 40000
   category: cargoproduct-category-name-military
   group: shinohara
 
@@ -91,10 +91,10 @@
 - type: cargoProduct
   id: ShinoharaHardsuit
   icon:
-    sprite: _Crescent/Clothing/SHI/OuterClothing/corpsec.rsi
+    sprite: _Crescent/Clothing/SHI/OuterClothing/corpsec_ua.rsi
     state: icon
   product: CrateShinoharaHardsuit
-  cost: 12500
+  cost: 12500 #Mass-produced.
   category: cargoproduct-category-name-military
   group: shinohara
 
@@ -134,7 +134,7 @@
     sprite: _Crescent/Objects/Weapons/Grenades/shi_flash.rsi
     state: base
   product: CrateShinoharaNonLethalGrenade
-  cost: 6000
+  cost: 2000
   category: cargoproduct-category-name-military
   group: shinohara
 
@@ -144,7 +144,7 @@
     sprite: _Crescent/Objects/Weapons/Grenades/shi_mini.rsi
     state: base
   product: CrateShinoharaMiniGrenade
-  cost: 8000
+  cost: 4000
   category: cargoproduct-category-name-military
   group: shinohara
 

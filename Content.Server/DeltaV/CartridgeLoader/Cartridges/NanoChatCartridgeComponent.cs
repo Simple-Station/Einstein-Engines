@@ -18,9 +18,9 @@ public sealed partial class NanoChatCartridgeComponent : Component
     [DataField]
     public EntityUid? Card;
 
-    /// <summary>
-    ///     The <see cref="RadioChannelPrototype" /> required to send or receive messages.
-    /// </summary>
-    [DataField]
-    public ProtoId<RadioChannelPrototype> RadioChannel = "Common";
+//    /// <summary>
+//    ///     The <see cref="RadioChannelPrototype" /> required to send or receive messages.
+//    /// </summary>
+//    [DataField]
+//    public ProtoId<RadioChannelPrototype> RadioChannel = "Common";
 }

@@ -1,0 +1,37 @@
+# Author Info
+# Discord: rubeebee
+
+- type: vessel
+  id: Jury
+  name: TS Jury
+  description: |
+    An outdated interceptor refitted and modified to survive current day Taypan, made to support its allies by disabling ships with it's ion gattling cannons.
+    LOADOUT: 2x Ion Gatling guns, 2x 20x135mm PDT
+    MINIMUM CREW: 1x Pilot
+  price: 34000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/CMM/jury.yml
+
+- type: gameMap
+  id: Jury
+  mapName: 'Jury'
+  mapPath: /Maps/_Crescent/Shuttles/CMM/jury.yml
+  minPlayers: 0
+  stations:
+    Jury:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'Jury {1}'
+          nameGenerator:
+           !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-gunship
+        - type: VesselDescription
+          description: The Jury class hull can often be seen patrolling the space around Giles Santo.

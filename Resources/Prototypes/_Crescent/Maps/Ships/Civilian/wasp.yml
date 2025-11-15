@@ -1,0 +1,37 @@
+# Author Info
+# Discord: rubeebee
+
+- type: vessel
+  id: Wasp
+  name: TS Wasp
+  description: |
+    A fighter derived from the Warthog hull, barely functional, barely safe for use. Not used by the sane. Strangely holds atmosphere.
+    LOADOUT: 1x 20mm Vulcan cannon
+    MINIMUM CREW: 1x Unfortunate soul.
+  price: 10000
+  category: Small
+  group: Scrap
+  path: /Maps/_Crescent/Shuttles/Civilian/wasp.yml
+
+- type: gameMap
+  id: Wasp
+  mapName: 'Wasp'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/wasp.yml
+  minPlayers: 0
+  stations:
+    Wasp:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: fighter
+        - type: StationNameSetup
+          mapNameTemplate: 'Wasp {1}'
+          nameGenerator:
+           !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter
+        - type: VesselDescription
+          description: The Wasp is the most minimalist fighter in the market. Prepare your will.

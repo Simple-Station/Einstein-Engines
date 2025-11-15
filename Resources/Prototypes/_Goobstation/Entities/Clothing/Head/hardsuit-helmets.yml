@@ -67,6 +67,9 @@
   - type: ClothingGrantComponent
     component:
     - type: Stealth
+    - type: StealthOnMove
+      passiveVisibilityRate: -0.75
+      movementVisibilityRate: 0.375
   - type: FlashImmunity
   - type: FlashSoundSuppression
 

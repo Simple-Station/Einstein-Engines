@@ -239,6 +239,34 @@
 
 - type: entity
   parent: BaseFlatpack
+  id: HardlinerFlatpack
+  name: NT 3100c Hardliner plasma lance Flatpack
+  description: A flatpack used for constructing a rare, expensive energy artillery piece.
+  components:
+  - type: Flatpack
+    entity: HardlineBeamPulser
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  parent: BaseFlatpack
+  id: PowerCageRechargerFlatpack
+  name: Power cage recharger Flatpack
+  description: A flatpack, containing a device used for recharging power cages.
+  components:
+  - type: Flatpack
+    entity: PowerCageRecharger
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  parent: BaseFlatpack
   id: ArtilleryFlatpack
   name: Type-99 artillery flatpack
   description: A flatpack used for constructing artillery cannons with a universal commercial IFF.
@@ -575,6 +603,20 @@
 
 - type: entity
   parent: BaseFlatpack
+  id: SepulchreFlatpack
+  name: DSM-MKIV 'Sepulchre' exo-cryptum construction kit
+  description:  Parts used to awaken a rather belligerent interred warrior.
+  components:
+  - type: Flatpack
+    entity: MechDSMSepulchreBattery
+  - type: Sprite
+    layers:
+    - state: kit
+  - type: StaticPrice
+    price: 40000
+
+- type: entity
+  parent: BaseFlatpack
   id: WandererFlatpack
   name: IEE mV-400 'Wanderer' exosuit construction kit
   description:  Parts used to build an imperial scout exosuit. Activate with a multitool to deploy.
@@ -769,3 +811,17 @@
     - state: ame-part
   - type: StaticPrice
     price: 9000
+
+- type: entity
+  parent: BaseFlatpack
+  id: ComputerTabletopAdvancedRadarFlatpack
+  name: Advanced Radar Flatpack
+  description: Parts used to build a tabletop advanced radar. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: ComputerTabletopAdvancedRadar
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 15000

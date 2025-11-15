@@ -14,6 +14,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Network;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Physics;
 
 namespace Content.Shared.Construction;
 
@@ -73,10 +74,7 @@ public abstract class SharedFlatpackSystem : EntitySystem
         // This should eventually allow for shit like building microwaves on tables and such.
         foreach (var intersect in intersecting)
         {
-            if (!TryComp<PhysicsComponent>(intersect, out var intersectBody))
-                continue;
-
-            if (!intersectBody.Hard || !intersectBody.CanCollide)
+            if (!TryComp<FixturesComponent>(intersect, out var intersectBody))
                 continue;
 
             // this popup is on the server because the mispredicts on the intersection is crazy

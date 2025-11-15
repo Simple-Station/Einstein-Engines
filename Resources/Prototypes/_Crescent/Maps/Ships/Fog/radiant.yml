@@ -1,0 +1,34 @@
+# Author Info
+# Discord: fungus2589
+
+- type: vessel
+  id: Radiant
+  name: NT Radiant
+  description: A remnant of the autonomous AI fleets developed by the NanoTrasen Corporation.
+  price: 1000000 
+  category: Large
+  group: None
+  path: /Maps/_Crescent/Shuttles/Fog/radiant.yml
+
+- type: gameMap
+  id: Radiant
+  mapName: 'NT Radiant'
+  mapPath: /Maps/_Crescent/Shuttles/Fog/radiant.yml
+  minPlayers: 0
+  stations:
+     Radiant:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: dreadnought
+        - type: StationNameSetup
+          mapNameTemplate: 'NT Radiant {1}'
+          nameGenerator:
+           !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-flagship
+        - type: VesselDescription
+          description: A shambling behemoth, created out of necessity to combat the spread of abyssal phenomena.

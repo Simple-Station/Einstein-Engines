@@ -3,16 +3,19 @@
 #
 - type: vessel
   id: Adjudicator
-  name: CMM Adjudicator
-  description: A light barely combat worthy vessel.
-  price: 21000
+  name: TS Adjudicator
+  description: |
+    A very light interceptor used in armed policing actions. No longer in mass production after the disbandment of the CMM, this hull is more expensive to field than the average fighter.
+    LOADOUT: 1x NT 20mm Vulcan, 1x SHI 48mm Missile Launcher
+    MINIMUM CREW: 1x Pilot
+  price: 22000
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/CMM/adjudicator.yml
 
 - type: gameMap
   id: Adjudicator
-  mapName: 'CMM Adjudicator'
+  mapName: 'Adjudicator'
   mapPath: /Maps/_Crescent/Shuttles/CMM/adjudicator.yml
   minPlayers: 0
   stations:
@@ -20,7 +23,7 @@
       stationProto: StandardCrescentExpeditionVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'CMM Adjudicator {1}'
+          mapNameTemplate: 'Adjudicator {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'

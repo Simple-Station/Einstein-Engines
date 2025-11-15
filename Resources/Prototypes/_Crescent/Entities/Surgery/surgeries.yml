@@ -76,7 +76,7 @@
     - type: CerebralImplant
     inverse: true
     reattaching: true
-    slotId: cybernetic_anchor
+    slotId: head_implant
 
 - type: entity
   parent: SurgeryBase
@@ -96,4 +96,4 @@
   - type: SurgeryOrganCondition
     organ:
     - type: CerebralImplant
-    slotId: cybernetic_anchor
+    slotId: head_implant

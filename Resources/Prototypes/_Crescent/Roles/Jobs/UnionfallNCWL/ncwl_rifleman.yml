@@ -15,7 +15,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
         - Muted
         - WheelchairBound
   requireAdminNotify: false

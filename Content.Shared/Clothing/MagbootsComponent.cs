@@ -38,13 +38,13 @@ public sealed partial class MagbootsComponent : Component
     ///     Walk speed modifier to use while the magnets are active.
     /// </summary>
     [DataField]
-    public float ActiveWalkModifier = 0.85f;
+    public float ActiveWalkModifier = 1f;
 
     /// <summary>
     ///     Sprint speed modifier to use while the magnets are active.
     /// </summary>
     [DataField]
-    public float ActiveSprintModifier = 0.80f;
+    public float ActiveSprintModifier = 1f;
 
     /// <summary>
     ///     Walk speed modifier to use while the magnets are off.

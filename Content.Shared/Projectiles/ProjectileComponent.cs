@@ -86,7 +86,7 @@ public sealed partial class ProjectileComponent : Component
     /// <summary>
     ///     Whether this projectile has already damaged an entity.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public bool DamagedEntity;
 
     // Goobstation start
@@ -105,14 +105,14 @@ public sealed partial class ProjectileComponent : Component
 
     // Hullrot start
     // how many points of armor can this ammunition ignore SPCR 2025
-    [DataField("harmorPenetration")]
+    [DataField("harmorPenetration"), AutoNetworkedField]
     public float HullrotArmorPenetration = 0;
 
     // stamina damage that ignores any armor/buff/etc SPCR 2025
-    [DataField]
+    [DataField, AutoNetworkedField]
     public float stoppingPower = 0;
 
-    [DataField("gibsOnHit")]
+    [DataField("gibsOnHit"), AutoNetworkedField]
     public bool gibsOnHit = false;
 
     // Hullrot end

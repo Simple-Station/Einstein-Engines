@@ -4,7 +4,9 @@
 - type: vessel
   id: Mercury
   name: ICM Mercury
-  description: A basic techmining shuttle equipped with high-tech research equipment.
+  description: |
+    A basic techmining shuttle, ICM's version of the Termite. Equipped with a Microforge, Research Server and Computer.
+    MINIMUM CREW: 1x Pilot
   price: 25000
   category: Small
   group: Civilian

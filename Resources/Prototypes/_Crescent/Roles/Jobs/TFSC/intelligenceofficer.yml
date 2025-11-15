@@ -12,6 +12,8 @@
   canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
+    - !type:CharacterOverallTimeRequirement
+      min: 10800
     - !type:FactionRequirement
       factionID: "TFSC"
     - !type:SexRequirement
@@ -19,8 +21,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
   special:
@@ -28,6 +28,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-patriarch
+      - type: HullrotFaction
+        faction: CD
       - type: LanguageAdder
         addSpoken:
           - Freespeak
@@ -41,6 +43,7 @@
   - SyndicateBasic
   - SyndicateRamzi
   - SyndicateCommand
+  - Engineering
   - Service
   - External
   - Mercenary # Frontier

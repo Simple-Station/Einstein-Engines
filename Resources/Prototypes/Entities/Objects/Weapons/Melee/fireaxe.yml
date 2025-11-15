@@ -16,7 +16,7 @@
   - type: MeleeWeapon
     wideAnimationRotation: 135
     swingLeft: true
-    attackRate: 1.75
+    attackRate: 1.5
     range: 1.75
     damage:
       types:
@@ -25,6 +25,7 @@
         Structural: 10
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 14
+    heavyRateModifier: 1.167 # 1.75 attack rate with 1.5 base
     clickPartDamageMultiplier: 1.25
     maxTargets: 3
     angle: 100

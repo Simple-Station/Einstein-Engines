@@ -6,54 +6,54 @@
   product: CrateSurezaiInfantry
   cost: 10000
   category: cargoproduct-category-name-military
-  group: surezai
+  group: suzerai
 
-- type: cargoProduct
-  id: CrateSurezaiInfantryArmor
-  icon:
-    sprite: _Crescent/Clothing/Empire/OuterClothing/mandatesoldier.rsi
-    state: icon
-  product: CrateSurezaiInfantryArmor
-  cost: 20000
-  category: cargoproduct-category-name-military
-  group: surezai
+# - type: cargoProduct
+#   id: CrateSurezaiInfantryArmor
+#   icon:
+#     sprite: _Crescent/Clothing/Empire/OuterClothing/mandatesoldier.rsi
+#     state: icon
+#   product: CrateSurezaiInfantryArmor
+#   cost: 20000
+#   category: cargoproduct-category-name-military
+#   group: suzerai
 
-- type: cargoProduct
-  id: SecurityNonLethalSurezai
-  icon:
-    sprite: Objects/Weapons/Guns/Battery/disabler.rsi
-    state: base
-  product: CrateSecurityNonlethal
-  cost: 5000
-  category: cargoproduct-category-name-military
-  group: surezai
+# - type: cargoProduct
+#   id: SecurityNonLethalSurezai
+#   icon:
+#     sprite: Objects/Weapons/Guns/Battery/disabler.rsi
+#     state: base
+#   product: CrateSecurityNonlethal
+#   cost: 5000
+#   category: cargoproduct-category-name-military
+#   group: suzerai
 
-- type: cargoProduct
-  id: SecurityRestraintsSurezai
-  icon:
-    sprite: Objects/Misc/handcuffs.rsi
-    state: handcuff
-  product: CrateRestraints
-  cost: 1000
-  category: cargoproduct-category-name-military
-  group: surezai
+# - type: cargoProduct
+#   id: SecurityRestraintsSurezai
+#   icon:
+#     sprite: Objects/Misc/handcuffs.rsi
+#     state: handcuff
+#   product: CrateRestraints
+#   cost: 1000
+#   category: cargoproduct-category-name-military
+#   group: suzerai
 
-- type: cargoProduct
-  id: ArmorPlateSteelSuzerai
-  icon:
-    sprite: _Crescent/Clothing/armorSprites.rsi
-    state: steel
-  product: CrateSecurityArmorSteelPlates
-  cost: 5400
-  category: cargoproduct-category-name-military
-  group: surezai
+# - type: cargoProduct
+#   id: ArmorPlateSteelSuzerai
+#   icon:
+#     sprite: _Crescent/Clothing/armorSprites.rsi
+#     state: steel
+#   product: CrateSecurityArmorSteelPlates
+#   cost: 5400
+#   category: cargoproduct-category-name-military
+#   group: suzerai
 
-- type: cargoProduct
-  id: ArmorPlatePlasteelSuzerai
-  icon:
-    sprite: _Crescent/Clothing/armorSprites.rsi
-    state: plasteel
-  product: CrateSecurityArmorPlasteelPlates
-  cost: 9000
-  category: cargoproduct-category-name-military
-  group: surezai
+# - type: cargoProduct
+#   id: ArmorPlatePlasteelSuzerai
+#   icon:
+#     sprite: _Crescent/Clothing/armorSprites.rsi
+#     state: plasteel
+#   product: CrateSecurityArmorPlasteelPlates
+#   cost: 9000
+#   category: cargoproduct-category-name-military
+#   group: suzerai

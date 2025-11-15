@@ -23,8 +23,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
         - Pacifist
@@ -34,6 +32,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-templar
+      - type: HullrotFaction
+        faction: DSM
       - type: BibleUser
       - type: LanguageAdder
         addSpoken:

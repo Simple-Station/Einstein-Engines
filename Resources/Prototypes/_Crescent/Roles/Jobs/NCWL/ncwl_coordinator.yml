@@ -1,0 +1,99 @@
+- type: job
+  id: WorkerOverbossNCWL
+  name: job-name-ncwl-worker-overboss
+  description: job-description-ncwl-worker-overboss
+  playTimeTracker: JobLogisticLeaderNCWL
+  weight: 92
+  startingGear: DockmasterNCWLGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconNCWLLogisticLeader"
+  supervisors: job-supervisors-ncwl-leaders
+  canBeAntag: false
+  requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 20000
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ncwl-logi-leader
+      - type: HullrotFaction
+        faction: NCWL
+      - type: LanguageAdder
+        addSpoken:
+          - Dockta
+          - Tradeband
+        addUnderstood:
+          - Dockta
+          - Tradeband
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Command
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - NCWLGeneral
+  - NCWLJail
+  - NCWLArmory
+  - NCWLCommand
+
+- type: startingGear
+  id: DockmasterNCWLGear
+  equipment:
+    shoes: ClothingShoesBootsSalvage
+    jumpsuit: ClothingUniformJumpsuitNCWLTelnikSleeved
+    id: NCWLLogisticLeaderPDA
+    outerClothing: ClothingOuterArmorNCWLLogi
+    belt: ClothingBeltSalvageWebbing
+    pocket1: WeaponPistolHKUSP
+    back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesFingerless
+    head: ClothingHeadHatBeretQM
+    eyes: ClothingEyesHudSecurity
+    ears: ClothingHeadsetNCWL

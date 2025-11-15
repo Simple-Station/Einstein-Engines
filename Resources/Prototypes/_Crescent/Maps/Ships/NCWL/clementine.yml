@@ -1,7 +1,10 @@
+# Author Info
+# Discord: originally @fleshangel
+
 - type: vessel
   id: Clementine
   name: NCWL Clementine
-  description: The Flagship of the Union fleet.
+  description: The antiquated Flagship of the Union fleet in Taypan.
   price: 600000
   category: Large
   group: None
@@ -9,36 +12,23 @@
 
 - type: gameMap
   id: Clementine
-  mapName: 'NCWL Clementine'
+  mapName: 'NCWL Dear Clementine'
   mapPath: /Maps/_Crescent/Shuttles/NCWL/clementine.yml
   minPlayers: 0
   stations:
     Clementine:
-      stationProto: FlagshipCrescentVessel
+      stationProto: StandardCrescentVessel
       components:
         - type: VesselIcon
           iffIcon:
             sprite: _Crescent/ShipIcons/ifficons.rsi
             state: dreadnought
         - type: StationNameSetup
-          mapNameTemplate: 'NCWL Clementine {1}'
+          mapNameTemplate: 'NCWL Dear Clementine {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-flagship
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            CommandantNCWL: [ 1, 1 ]
-            KommissarNCWL: [ 1, 1 ]
-            FleetkapitanNCWL: [ 5, 5 ]
-            PartisanNCWL: [ 15, 15 ]
-            DirectorNCWL: [ 1, 1 ]
-            DoctorNCWL: [ 5, 5 ]
-            WorkerOverbossNCWL: [ 1, 1 ]
-            DockhandNCWL: [5, 5 ]
-            IndustryTaskmasterNCWL: [ 1, 1 ]
-            ArtificerNCWL: [ 5, 5 ]
-            WorkerNCWL: [ 15, 15 ]
-
+        - type: VesselDescription
+          description: This behemoth once carried the last hope of the League. What once held hope and determination, now only hosts the old cry of revolution.

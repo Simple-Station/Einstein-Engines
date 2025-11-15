@@ -11,8 +11,12 @@
   supervisors: job-supervisors-tap
   canBeAntag: false
   requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 10800
     - !type:FactionRequirement
       factionID: "TAP"
+    - !type:CharacterOverallTimeRequirement
+      min: 36000
     - !type:CharacterSpeciesRequirement
       species:
         - Human
@@ -26,13 +30,18 @@
     components:
       - type: ChatRank
         rank: crescent-rank-antiquarian
+      - type: HullrotFaction
+        faction: TAP
+      - type: Telepathic
       - type: LanguageAdder
         addSpoken:
-        - OldTaypani
-        - Freespeak
+          - Tradeband
+          - OldTaypani
+          - Freespeak
         addUnderstood:
-        - OldTaypani
-        - Freespeak
+          - Tradeband
+          - OldTaypani
+          - Freespeak
   access:
   - Families
   - Izdari

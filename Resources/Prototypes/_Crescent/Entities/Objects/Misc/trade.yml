@@ -4,6 +4,9 @@
   parent: BaseStructureDynamic
   abstract: true
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 1
   - type: Transform
     noRot: true
   - type: InteractionOutline
@@ -45,9 +48,6 @@
   name: alcohol crate
   description: A sealed crate of distilled potato vodka - Chengridz brand. A sticker on the side identifies the export console this was bought from.
   components:
-  - type: Currency
-    price:
-      PlunderGSC: 1
   - type: Fixtures
     fixtures:
       fix1:
@@ -73,9 +73,6 @@
   name: sealed ammunition crate
   description: A hermetically sealed crate of pre-war munitions. A sticker on the side identifies the export console this was bought from.
   components:
-  - type: Currency
-    price:
-      PlunderGSC: 1
   - type: Sprite
     sprite: _Crescent/Objects/TradeGoods/ammo.rsi
     layers:
@@ -108,9 +105,6 @@
   name: sealed antibiotics case
   description: A hermetically sealed case of high-grade antibiotics. A sticker on the side identifies the export console this was bought from.
   components:
-  - type: Currency
-    price:
-      PlunderGSC: 1
   - type: Sprite
     sprite: _Crescent/Objects/TradeGoods/antibiotics.rsi
     layers:
@@ -195,9 +189,6 @@
     - state: icon
   - type: StaticPrice
     price: 500
-  - type: Currency
-    price:
-      PlunderGSC: 1
   - type: Destructible
     thresholds:
       - trigger:
@@ -244,15 +235,15 @@
   name: sealed taypan wine shipment
   description: A sealed case of aged, fine Taypan wine. A sticker on the side identifies the station this was produced in. The same sticker warns you that the product is an imitation and not really made from berries.
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 2
   - type: Sprite
     sprite: _Crescent/Objects/TradeGoods/taypanwine.rsi
     layers:
     - state: icon
   - type: StaticPrice
     price: 750
-  - type: Currency
-    price:
-      PlunderGSC: 2
   - type: Fixtures
     fixtures:
       fix1:
@@ -311,9 +302,6 @@
   name: miltech cybernetics shipment
   description: A secured crate of military-grade cybernetic parts. Useless on their own and likely has to be reconstructed at a specialized facility. A sticker on the side reveals that this shipment is created by Shinohara Heavy Industries.
   components:
-  - type: Currency
-    price:
-      PlunderGSC: 1
   - type: Sprite
     sprite: _Crescent/Objects/TradeGoods/militarycybernetics.rsi
     layers:
@@ -327,9 +315,6 @@
   name: NanoTrasen corporate goods crate
   description: An antique cargo crate full of NanoTrasen consumer products that never got delivered. Not really worth much at face value anymore. But some collectors might pay a good sum for it.
   components:
-  - type: Currency
-    price:
-      PlunderGSC: 1
   - type: Sprite
     sprite: _Crescent/Objects/TradeGoods/militarycybernetics.rsi
     layers:
@@ -343,9 +328,6 @@
   name: antique cybernetic goods crate
   description: An antique cargo crate full of NanoTrasen cybernetics and replacement parts that never got delivered. Most of this crap is broken. But sealed crates resell for decent prices to scavs hoping to get lucky.
   components:
-  - type: Currency
-    price:
-      PlunderGSC: 1
   - type: Sprite
     sprite: _Crescent/Objects/TradeGoods/militarycybernetics.rsi
     layers:
@@ -359,9 +341,6 @@
   name: antique parts goods crate
   description: An antique cargo crate full of NanoTrasen mechanical products and replacement parts that never got delivered. Most of this crap is broken. But sealed crates resell for decent prices to scavs hoping to get lucky.
   components:
-  - type: Currency
-    price:
-      PlunderGSC: 1
   - type: Sprite
     sprite: _Crescent/Objects/TradeGoods/militarycybernetics.rsi
     layers:
@@ -456,6 +435,30 @@
 
 - type: entity
   parent: BaseTradeItem
+  id: TradeGoodSilks
+  name: Fine Silk Textiles Pallet
+  description: An open pallet of artisan taypani silks and hides.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/silks.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 1000
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.29,0.25,0.32"
+        density: 40
+        mask:
+        - CrateMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+
+- type: entity
+  parent: BaseTradeItem
   id: TradeGoodFlour
   name: bag of export flour
   description: A bag of export-grade flour.
@@ -505,7 +508,10 @@
     sprite: _Crescent/Objects/TradeGoods/stub.rsi
     layers:
     - state: icon
-
+  - type: Tag
+    tags:
+      - Trash
+      
 - type: entity
   parent: BaseItem
   id: OrganStub
@@ -566,6 +572,17 @@
   id: TradeDeedVeryHigh
   name: deed of delivery
   description: A printed deed of delivery. Blocky letting informs that this deed is worth six thousand Union credits to an official chartered station.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/deed.rsi
+    layers:
+    - state: icon
+
+- type: entity
+  parent: BaseItem
+  id: TradeDeedUnique
+  name: deed of delivery
+  description: A printed deed of delivery. Blocky letting informs that this deed is worth seven thousand five hundred Union credits to an official chartered station.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/TradeGoods/deed.rsi

@@ -3,7 +3,7 @@
 - type: entity
   id: MagazineVulcan
   name: "20mm vulcan ammunition box"
-  parent: BaseMagazineLightRifle
+  parent: BaseItem
   components:
   - type: Tag
     tags:
@@ -16,6 +16,7 @@
     proto: CartridgeVulcanStandard
     capacity: 500
   - type: Item
+    size: Normal
   - type: Sprite
     sprite: _Crescent/Ammunition/vulcan.rsi
     state: base
@@ -25,7 +26,7 @@
 - type: entity
   id: MagazineLightRifleBoxSlug
   name: ".50 cal uranium-tip slugthrower box"
-  parent: BaseMagazineLightRifle
+  parent: BaseItem
   components:
   - type: Tag
     tags:
@@ -38,16 +39,17 @@
     proto: CartridgeMachineGunArmorPiercing
     capacity: 100
   - type: Item
+    size: Normal
   - type: Sprite
     sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
     state: base
-    
+
 #low yield slugthrower ammo
 
 - type: entity
   id: MagazineLightRifleBoxSlugHE
   name: ".50 cal low-yield explosive slugthrower box"
-  parent: BaseMagazineLightRifle
+  parent: BaseItem
   components:
   - type: Tag
     tags:
@@ -60,6 +62,7 @@
     proto: CartridgeMachineGunHighExplosive
     capacity: 100
   - type: Item
+    size: Normal
   - type: Sprite
     sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
     state: base
@@ -69,7 +72,7 @@
 - type: entity
   id: MagazineLightRifleBoxSlugInert
   name: ".50 cal inert slugthrower box"
-  parent: BaseMagazineLightRifle
+  parent: BaseItem
   components:
   - type: Tag
     tags:
@@ -82,16 +85,40 @@
     proto: BulletMachineGunPractice
     capacity: 100
   - type: Item
+    size: Normal
   - type: Sprite
     sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
     state: base
-  
+
+#emp slugthrower ammo
+
+- type: entity
+  id: MagazineLightRifleBoxSlugEMP
+  name: ".50 cal EMP-tip slugthrower box"
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+      - SlugthrowerCartridgeBox
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeMachineGun
+    proto: CartridgeMachineGunEMP
+    capacity: 100
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
+    state: base
+
 #mortar ammo
 
 - type: entity
   id: MagazineMortar
   name: "90mm automortar shellbox"
-  parent: BaseMagazineLightRifle
+  parent: BaseItem
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
@@ -101,13 +128,14 @@
     proto: CartridgeMortarStandardTurret
     capacity: 10
   - type: Item
+    size: Normal
   - type: Sprite
     sprite: _Crescent/Ammunition/mortar.rsi
     state: base
   - type: Tag
     tags:
       - MortarBox
-      
+
 #base compakt ammo
 
 - type: entity
@@ -135,7 +163,7 @@
     sprite: Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_mag.rsi
     state: base
   - type: Appearance
-  
+
 #xray compakt ammo
 
 - type: entity
@@ -157,7 +185,7 @@
   - type: Sprite
     sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
     state: xraylens
-    
+
 #infrared compakt ammo
 
 - type: entity
@@ -175,12 +203,12 @@
       tags:
       - CompaktLens
     proto: InfraredLensCartridge
-    capacity: 250
+    capacity: 500
   - type: Item
   - type: Sprite
     sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
     state: infraredlens
-    
+
 #microwave compakt ammo
 
 - type: entity
@@ -203,7 +231,7 @@
   - type: Sprite
     sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
     state: microwavelens
-    
+
 #plasma compakt ammo
 
 - type: entity
@@ -226,7 +254,7 @@
   - type: Sprite
     sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
     state: plasmalens
-    
+
 #standard solaris ammo
 
 - type: entity
@@ -249,7 +277,7 @@
   - type: Sprite
     sprite: _Crescent/Objects/ShuttleWeapons/amcanister.rsi
     state: base
-    
+
 #plasma solaris ammo
 
 - type: entity
@@ -272,7 +300,7 @@
   - type: Sprite
     sprite: _Crescent/Objects/ShuttleWeapons/amcanisterplas.rsi
     state: base
-    
+
 #guided solaris ammo
 
 - type: entity
@@ -295,7 +323,7 @@
   - type: Sprite
     sprite: _Crescent/Objects/ShuttleWeapons/amcanisterguided.rsi
     state: base
-    
+
 #jeong/osiris ammo
 
 - type: entity
@@ -318,13 +346,13 @@
   - type: Sprite
     sprite: _Crescent/Objects/ShuttleWeapons/swarmclip.rsi
     state: base
-    
+
 #needler ammo
 
 - type: entity
   id: MagazineNeedler
   name: "60mm 'Needler' heavygun magazine"
-  parent: BaseMagazineLightRifle
+  parent: BaseItem
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
@@ -334,19 +362,20 @@
     proto: Needler
     capacity: 20
   - type: Item
+    size: Normal
   - type: Sprite
     sprite: _Crescent/Ammunition/needler.rsi
     state: base
   - type: Tag
     tags:
       - NeedlerMag
-      
+
 #swarmer ammo
 
 - type: entity
   id: MagazineSwarmer
   name: "40mm 'Swarmer' minirocket bundle"
-  parent: BaseMagazineLightRifle
+  parent: BaseItem
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
@@ -356,6 +385,7 @@
     proto: SwarmerRocketCartridge
     capacity: 10
   - type: Item
+    size: Normal
   - type: Sprite
     sprite: _Crescent/Ammunition/coil.rsi
     state: base
@@ -368,7 +398,7 @@
 - type: entity
   id: BaseMagazineRocket
   name: 48mm rocket magazine
-  description: A 5-round magazine capable of holding 48mm rockets. Fits in Sumitomo launchers.
+  description: A 6-round magazine capable of holding 48mm rockets. Fits in Sumitomo launchers.
   parent: BaseItem
   abstract: true
   components:
@@ -380,7 +410,7 @@
     whitelist:
       tags:
         - Rocket48mm
-    capacity: 5
+    capacity: 6
     soundRack:
       path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
       params:
@@ -399,11 +429,11 @@
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
-    - state: mag-4
+    - state: mag-5
       map: ["enum.GunVisualLayers.Mag"]
   - type: MagazineVisuals
     magState: mag
-    steps: 5
+    steps: 6
     zeroVisible: false
   - type: Appearance
 

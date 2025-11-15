@@ -4,6 +4,17 @@
   name: fixed shipgun
   abstract: true
   components:
+  - type: Fixtures #DOUBLE CHECK IF THE ANCHORED HITBOX IS TOO SMALL!
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
   - type: Transform
     noRot: false
   - type: Rotatable
@@ -43,6 +54,17 @@
   name: turret shipgun
   abstract: true
   components:
+  - type: Fixtures #DOUBLE CHECK IF THE ANCHORED HITBOX IS TOO SMALL!
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
   - type: Transform
     noRot: false
   - type: Rotatable

@@ -41,3 +41,48 @@
         - CourtierDSM
         - TemplarDSM
         - WealthDSM
+
+- type: loadout
+  id: LoadoutBeltSheathDSMDuelingKhopesh
+  category: Belt
+  cost: 0
+  items:
+    - ClothingBeltSheathDSMDuelingKhopeshFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdjutantDSM
+        - AdvocatusDSM
+        - ArchmaesterDSM
+        - GovernorDSM
+        - KnightDSM
+        - RitterDSM
+        - LaborDSM
+        - CourtierDSM
+        - TemplarDSM
+        - WealthDSM
+        - LevymanDSM
+
+- type: loadout
+  id: LoadoutBeltSheathDSMBaton
+  category: Belt
+  cost: 0
+  items:
+    - DSMBaton
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdjutantDSM
+        - AdvocatusDSM
+        - ArchmaesterDSM
+        - GovernorDSM
+        - KnightDSM
+        - RitterDSM
+        - LaborDSM
+        - CourtierDSM
+        - TemplarDSM
+        - WealthDSM

@@ -1,0 +1,37 @@
+# Author Info
+# Discord: rubeebee
+
+- type: vessel
+  id: Hornet
+  name: TS Hornet
+  description: |
+    A variant of the Wasp, the Hornet is mounted with an 60mm Autocannon, able to provide a scary amount of firepower in a small package. Weak on their own, terrifying when in a group with their carrier.
+    LOADOUT: 1x 60mm Needler
+    MINIMUM CREW: 1x Pilot
+  price: 12000
+  category: Small
+  group: Scrap
+  path: /Maps/_Crescent/Shuttles/Civilian/hornet.yml
+
+- type: gameMap
+  id: Hornet
+  mapName: 'Hornet'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/hornet.yml
+  minPlayers: 0
+  stations:
+    Hornet:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: fighter
+        - type: StationNameSetup
+          mapNameTemplate: 'Hornet {1}'
+          nameGenerator:
+           !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter
+        - type: VesselDescription
+          description: The pilots of Hornets often deploy wolf pack tactics alongside their allies to secure victory

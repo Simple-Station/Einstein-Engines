@@ -23,6 +23,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-soldatATH
+      - type: HullrotFaction
+        faction: ATH
       - type: BibleUser
 
   access:
@@ -67,15 +69,15 @@
   id: APRTSoldatGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitAuthoritySoldat
-    shoes: ClothingShoesBootsMagCombat
+    shoes: ClothingShoesBootsMagCombatFilled
     head: ClothingHeadHatAuthoritySoldat
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitAuthorityPanzer
-    suitstorage: JetpackBlueFilled
+    suitstorage: JetpackBlackFilled
     id: APRTIDCardSoldat
     ears: ClothingHeadsetAuthority
     pocket1: HandHeldMassScannerEE
-    pocket2: ExtendedEmergencyOxygenTankFilled
-    belt: ClothingBeltAuthorityPouchesFilled
+    pocket2: HandheldGPSBasic
+    belt: ClothingBeltAuthorityBattleBeltFilled
   inhand:
-  - WeaponRifleTakemura
+  - WeaponRifleRuusu

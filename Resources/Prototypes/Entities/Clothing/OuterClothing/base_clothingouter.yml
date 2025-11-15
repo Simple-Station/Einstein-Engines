@@ -200,11 +200,13 @@
         friction: 0.2
   - type: Reflect
     spread: 270
-    reflectProb: 0.03
+    reflectProb: 0.00
     innate: true
     reflects:
       - Energy
       - NonEnergy
+  - type: ClothingAddFaction #HULLROT EDIT
+    faction: IND
 
 - type: entity
   abstract: true
@@ -234,11 +236,11 @@
     soundHit:
       collection: MetalThud
   - type: Clothing
-    equipDelay: 4 # For stuff like standard Tacsuits and Heavy Hardsuits.
-    unequipDelay: 4
+    equipDelay: 2.5 # Hardsuits are heavy and take a while to put on/off.
+    unequipDelay: 2.5
   - type: Reflect
     spread: 270
-    reflectProb: 0.04
+    reflectProb: 0.00
     innate: true
     reflects:
       - Energy
@@ -272,8 +274,8 @@
     soundHit:
       collection: MetalThud
   - type: Clothing
-    equipDelay: 5 # For stuff like "Heavy" Tacsuits.
-    unequipDelay: 5
+    equipDelay: 2.5 # Hardsuits are heavy and take a while to put on/off.
+    unequipDelay: 2.5
   - type: Reflect
     spread: 270
     reflectProb: 0.05
@@ -313,8 +315,8 @@
     - HidesHarpyWings #DeltaV: Used by harpies to help render their hardsuit sprites
     - PlasmamanSafe
   - type: Clothing
-    equipDelay: 1.25 # Softsuits are easier to put on and off
-    unequipDelay: 1
+    equipDelay: 2.5 # Hardsuits are heavy and take a while to put on/off.
+    unequipDelay: 2.5
   - type: ClothingRequiredStepTriggerImmune
     slots: WITHOUT_POCKET
   - type: Fixtures

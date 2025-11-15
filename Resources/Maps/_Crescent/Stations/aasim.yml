@@ -3628,7 +3628,7 @@ entities:
     - type: Transform
       pos: 7.5,-26.5
       parent: 1
-- proto: AmeController
+- proto: AmeControllerStation
   entities:
   - uid: 1851
     components:
@@ -30333,7 +30333,7 @@ entities:
     - type: PointCannon
       obstructedRanges:
       - 0.6806784082777885 rad: 3.3510321638291125 rad
-- proto: WeaponTurretPDTNCSP
+- proto: WeaponTurretPDTAdvanced
   entities:
   - uid: 4074
     components:

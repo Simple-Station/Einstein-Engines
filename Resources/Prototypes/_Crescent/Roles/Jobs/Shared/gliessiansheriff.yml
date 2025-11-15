@@ -3,6 +3,7 @@
   name: job-name-gliess-sheriff
   description: job-description-gliess-sheriff
   playTimeTracker: JobGliessSheriff
+  weight: 40
   startingGear: GliessSheriffGear
   icon: "JobIconMarshal"
   supervisors: job-supervisors-gliess
@@ -15,6 +16,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ind-gliess-sheriff
+      - type: HullrotFaction
+        faction: GS
       - type: LanguageAdder
         addSpoken:
           - Tradeband

@@ -101,46 +101,61 @@
   - type: Appearance
 
 - type: entity
-  name: IRM C-20r 9x19mm
+  name: IRM DA-20 Talon 11mm
   parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
   id: WeaponSubMachineGunC20r
-  description: A compact submachinegun produced by Olywir Armaments for the Imperial Navy. Sees little use in the hands of actual troopers due to the cost of manufacturing.
+  description: A slick submachinegun produced by Olywir Armaments for the Imperial Navy. Sees little use in the hands of actual troopers due to the cost of manufacturing.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Guns/c20r.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/talon.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/Guns/c20r.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/talon.rsi
   - type: Wieldable
   - type: GunWieldBonus
     minAngle: -19
     maxAngle: -16
   - type: Gun
+    fireRate: 6 #Really good for something made so easily, and available roundstart.
     minAngle: 21
     maxAngle: 32
-    fireRate: 10
-    shotsPerBurst: 5
     availableModes:
     - SemiAuto
-    - Burst
     - FullAuto
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/smg_2/smg_gunshot_3.ogg
-    fireOnDropChance: 0.3
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolSubMachineGunHeavy
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineHeavySMG
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeHeavyPistol
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeHeavyPistol
   - type: ChamberMagazineAmmoProvider
     autoEject: true
   - type: MagazineVisuals
     magState: mag
-    steps: 6
+    steps: 1
     zeroVisible: true
   - type: Appearance
 
 - type: entity
-  name: antique IRM C-20r 9x19mm
+  name: antique IRM DA-20R 11mm
   parent: WeaponSubMachineGunC20r
   id: WeaponSubMachineGunC20rHoS
   description: This heavily worn submachine gun is engraved with the words, "Remember Nova Balreska".
@@ -152,7 +167,7 @@
   name: PTA P-M85 Drozd .327
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunDrozd
-  description: A fast very firing bullpup submachine gun. Manufactured by Pang Tai Arms and outsourced to mercenary factors in the area.
+  description: A fast very firing bullpup submachine gun. Manufactured by Pang Tai Arms and outsourced to mercenary factors in the area. Suffers from immense recoil due to it's caliber.
   components:
     - type: Sprite
       sprite: _Crescent/Objects/Weapons/Guns/drozd.rsi
@@ -166,18 +181,19 @@
     - type: Wieldable
       unwieldOnUse: false
     - type: GunWieldBonus
-      minAngle: -19
-      maxAngle: -16
+      minAngle: -10
+      maxAngle: -15
     - type: Gun
       minAngle: 21
       maxAngle: 32
-      fireRate: 12
+      fireRate: 7 #holy fuck this thing rips. Direct upgrade to liberator.
       burstFireRate: 12
       selectedMode: FullAuto
       soundGunshot:
         path: /Audio/_Crescent/Weapons/Guns/smg_1/smg_gunshot_1.ogg
       availableModes:
         - FullAuto
+        - Burst
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -255,7 +271,7 @@
   name: NCWL Partisan 9x19mm
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunNCWLPartisan
-  description: A deregulated design with no safeguards. Originally issued to Interdiction pilots for post-crash survival, it’s now the weapon of choice for partisans and infiltrators who hijack enemy autoforges and flood their supply lines with guns built from their own scrap. To be handed this as your primary weapon means one of two things you either pissed off your kommissar… or your logistics ran out of real rifles.
+  description: A rugged, deregulated SMG favoured by partisans and infiltrators simple, ruthless, and cheap to produce from scavenged parts.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/surplus_ncwl_smg.rsi
@@ -310,7 +326,7 @@
   name: IRM Arbiter 9x19mm
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunDSMArbiter
-  description: A devolved DSM design that has substituted or removed any features which would require the machining capacity of a County's household guard or Marcher lord's retinue, the Arbiter provides cost effective automatic fire to the poorest and most desperate Imperial militants. When it inevitably fails it will be melted down and made anew until nothing but slag remains, much like its bearer.
+  description: A stripped-down Imperial SMG made for mass production. Features and components requiring skilled machining have been removed to allow manufacture by lesser domains.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_smg.rsi

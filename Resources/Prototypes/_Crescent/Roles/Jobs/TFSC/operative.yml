@@ -11,12 +11,13 @@
   supervisors: You answer to the patriarch and the interests of the CyberDawn Technologies company.
   canBeAntag: false
   requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 10800
     - !type:FactionRequirement
       factionID: "TFSC"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
         - Blindness
         - WheelchairBound
   special:
@@ -24,6 +25,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-operative
+      - type: HullrotFaction
+        faction: CD
       - type: LanguageAdder
         addSpoken:
           - Freespeak
@@ -34,6 +37,7 @@
   - Maintenance
   - SyndicateBasic
   - SyndicateRamzi
+  - Engineering
   - Service
   - External
   - Mercenary # Frontier
@@ -49,4 +53,4 @@
     outerClothing: ClothingOuterArmorKendoBogu
     ears: ClothingHeadsetNCSPCyberdawn
     back: ClothingBackpackNCSPFilledInfanteer
-    belt: WeaponPistolHKUSP
+    pocket1: WeaponPistolAnsem

@@ -38,13 +38,20 @@
   stations:
     GliessSanto:
       stationProto: StandardCrescentStation
-      components:
+      gridComponents:
         - type: BlockShipWeaponProjectileGrid
         - type: PreventPilot
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: outpost
+      components:
         - type: StationNameSetup
           mapNameTemplate: 'Gliess Santo'
         - type: VesselDesignation
           designation: vessel-designation-headquarters
+        - type: VesselDescription
+          description: An independent trade station that has seen better days. 
         - type: VesselMusic
           ambientMusicPrototype: GliessMusic
         - type: Grammar
@@ -56,4 +63,7 @@
             GliessianDockmaster: [ 1, 1 ]
             GliessianSheriff: [ 1, 1 ]
             GliessianDeputy: [ 4, 4 ]
-            Spacer: [ 44, 44 ]
+            GliessianDockhand: [ 4, 4 ]
+            Spacer: [ 15, 15 ]
+
+

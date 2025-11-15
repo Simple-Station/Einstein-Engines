@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitNAPCombat
+  name: american ranger fatigues
+  description: the New American Ranger Corps' patented variant of olive drab provides little camouflage or obscuration in space, but harkens back to a time and a homeland that the wearer will one day stand upon once again. There is a long-standing rumour that a black pattern was rejected for infringing upon Imperial decree.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NAP/Uniform/namuniform.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NAP/Uniform/namuniform.rsi

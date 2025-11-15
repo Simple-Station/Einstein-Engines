@@ -22,11 +22,6 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Epistemics
       min: 10800 # 3 hours
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Foreigner
-        - ForeignerLight
   startingGear: AdminAssistantGear
   icon: "JobIconAdminAssitant"
   supervisors: job-supervisors-command

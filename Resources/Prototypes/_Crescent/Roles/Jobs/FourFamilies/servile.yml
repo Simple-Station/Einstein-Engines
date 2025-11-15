@@ -27,13 +27,16 @@
     components:
       - type: ChatRank
         rank: crescent-rank-servile
+      - type: HullrotFaction
+        faction: TAP
+      - type: Telepathic
       - type: LanguageAdder
         addSpoken:
-        - OldTaypani
-        - Draconic
+          - Tradeband
+          - OldTaypani
         addUnderstood:
-        - OldTaypani
-        - Draconic
+          - Tradeband
+          - OldTaypani
   access:
   - EmergencyShuttleRepealAll
   - Captain

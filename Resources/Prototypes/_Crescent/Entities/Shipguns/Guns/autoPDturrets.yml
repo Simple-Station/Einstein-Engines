@@ -1,0 +1,176 @@
+#POINT DEFENSE
+
+- type: entity
+  parent: BaseStructure
+  id: BaseWeaponTurretAutoPD
+  name: AUTOPD BASE
+  abstract: true
+  components:
+    - type: PointCannon
+    - type: Clickable
+    - type: InteractionOutline
+    - type: Actions
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.45,-0.45,0.45,0.45"
+          density: 60
+          mask:
+            - MachineMask
+          layer:
+            - MachineLayer
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+    - type: MobState
+    - type: Sprite
+      sprite: /Textures/_Crescent/Objects/ShuttleWeapons/autoPD.rsi
+      drawdepth: Mobs
+      layers:
+        - state: syndie_lethal
+    - type: WorldLoader
+      radius: 256
+    - type: CombatMode
+      toggleMouseRotator: false
+    - type: Damageable
+      damageContainer: Inorganic
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 800
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+        - trigger:
+            !type:DamageTrigger
+            damage: 500
+          # TODO: Construction graph
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                SheetSteel1:
+                  min: 3
+                  max: 5
+    - type: TurretIFF
+    - type: Gun
+      projectileSpeed: 20
+      fireRate: 10
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
+    # TODO: Power ammo provider?
+    - type: BasicEntityAmmoProvider
+      proto: CartridgeAutoPDBasic
+      capacity: 300
+      count: 300
+    - type: RechargeBasicEntityAmmo
+      rechargeCooldown: 2
+      rechargeSound:
+        path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+        params:
+          pitch: 1.2
+          variation: 0.08
+    - type: SignalControl
+      isOnByDefault: true
+    - type: DeviceNetwork
+      deviceNetId: Wireless
+      receiveFrequencyId: BasicDevice
+    - type: WirelessNetworkConnection
+      range: 2500
+    - type: DeviceLinkSink
+      ports:
+        - Toggle
+        - On
+        - Off
+    - type: ApcPowerReceiver
+      powerLoad: 1000
+    - type: ExtensionCableReceiver
+    - type: LightningTarget
+      priority: 1
+    - type: MouseRotator
+      angleTolerance: 5
+      rotationSpeed: 180
+      simple4DirMode: false
+    - type: NoRotateOnInteract
+    - type: NoRotateOnMove
+    - type: Input
+      context: "human"
+    - type: Anchorable
+      delay: 10
+    - type: HardpointAnchorableOnly
+      class: Ballistic
+      size: Small
+    - type: HTN
+      rootTask:
+        task: HullrotAutoPD
+      blackboard:
+        RotateSpeed: !type:Single
+          3.141
+        SoundTargetInLOS: !type:SoundPathSpecifier
+          path: /Audio/Effects/double_beep.ogg
+        VisionRadius: !type:Single
+          64 # its 32 actually for some fucking reason
+        RangedRange: !type:Single
+          64
+        AggroVisionRadius: !type:Single
+          64 #
+
+
+- type: entity
+  parent: BaseWeaponTurretAutoPD
+  name: NCWL 7.62x51mm 'Sickle' anti-boarder turret
+  id: WeaponTurretAutoPDNCWL
+  suffix: NCWL PDT
+  components:
+    - type: NpcFactionMember
+      factions:
+        - NCWL
+
+- type: entity
+  parent: BaseWeaponTurretAutoPD
+  name: SHI 7.62x51mm 'Shirudo' anti-boarder turret
+  id: WeaponTurretAutoPDSHI
+  suffix: SHI PDT
+  components:
+    - type: NpcFactionMember
+      factions:
+        - SHI
+
+- type: entity
+  parent: BaseWeaponTurretAutoPD
+  name: DSM 7.62x51mm 'Madame' anti-boarder turret
+  id: WeaponTurretAutoPDDSM
+  suffix: DSM PDT
+  components:
+    - type: NpcFactionMember
+      factions:
+        - DSM
+
+- type: entity
+  parent: BaseWeaponTurretAutoPD
+  name: TFSC 7.62x51mm 'Vagrant' anti-boarder turret
+  id: WeaponTurretAutoPDTFSC
+  suffix: TFSC PDT
+  components:
+    - type: NpcFactionMember
+      factions:
+        - TFSC
+
+- type: entity
+  parent: BaseWeaponTurretAutoPD
+  name: ICM 7.62x51mm 'Liberator' anti-boarder turret
+  id: WeaponTurretAutoPDIND
+  suffix: IND PDT
+  components:
+    - type: NpcFactionMember
+      factions:
+        - IND

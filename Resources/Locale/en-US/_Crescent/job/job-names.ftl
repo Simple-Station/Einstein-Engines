@@ -1,3 +1,8 @@
+# nanotrasen
+job-name-melee-borg = NT Nullifier Cyborg
+job-name-ranged-borg = NT Rectifier Cyborg
+job-name-utility-ipc = NT Engineer IPC
+
 # ncwl
 
 job-name-ncwl-faction-leader = Major
@@ -62,6 +67,8 @@ job-name-corpsec = CorpSec Agent
 job-name-highsec = Corporate Liquidation Agent
 job-name-employee = Salaryman
 job-name-medtech = MedTech Researcher
+job-name-boardhr = Human Resources
+job-name-hos-shi = Head of CorpSec
 
 # tsp
 
@@ -103,8 +110,9 @@ job-name-arbeiter = Arbeiter
 
 job-name-antiquarian = Izdari Antiquarian
 job-name-spacer = Spacer
+job-name-gliess-dockhand = Gliessian Dockhand
 job-name-gliess-sheriff = Gliessian Sheriff
-job-name-gliess-deputy = Gliessian Deputy
+job-name-gliess-deputy = Gliessian Militiaman
 job-name-gliess-dockmaster = Gliessian Dockmaster
 
 # conscript-ncwl - for PLANETFALL

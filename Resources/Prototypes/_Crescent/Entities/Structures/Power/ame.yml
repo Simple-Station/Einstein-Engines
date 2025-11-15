@@ -1,1 +1,14 @@
-
+- type: entity
+  id: AmeControllerStation
+  parent: AmeController
+  name: AME controller
+  description: It's a controller for the antimatter engine.
+  suffix: Station
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 15000
+    intensitySlope: 150
+    maxIntensity: 1500

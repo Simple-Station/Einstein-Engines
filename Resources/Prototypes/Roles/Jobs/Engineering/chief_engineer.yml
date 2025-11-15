@@ -7,8 +7,8 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
+        - Muted
+        - Blindness
   weight: 10
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"

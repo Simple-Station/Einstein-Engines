@@ -1,6 +1,6 @@
 - type: entity
   name: PTA XCG-4 Lancer 15mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponSpecialRailgun
   description: A small-scale railgun developed by Pang Tai Arms. Not commonly seen due to the high price per unit. Chambered in 15mm.
   components:
@@ -54,7 +54,7 @@
 
 - type: entity
   name: PTA LAS-98 Mako laser cutter 200c
-  parent: BaseWeaponBattery
+  parent: [BaseWeaponBattery, StreeCredRedeemable]
   id: WeaponSpecialMako
   description: A Pang Tai Arms knockoff of the NanoTrasen laser emitter. Originaly built for cutting ships apart during salvage ops, but reporpoused due to its capability of causing extreme burns to biological targets. Has a self charing battery.
   components:
@@ -86,8 +86,8 @@
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/non_collection/laser1.ogg
   - type: Battery
-    maxCharge: 1800
-    startingCharge: 1800
+    maxCharge: 2000
+    startingCharge: 2000
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 20
@@ -99,8 +99,8 @@
   id: MakoLaser
   damage:
     types:
-      Heat: 7
-      Structural: 120
+      Heat: 8
+      Structural: 180
   muzzleFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_omni
@@ -113,7 +113,7 @@
 
 - type: entity
   name: SCHK-2 plasma hardlight sword
-  parent: EnergySword
+  parent: [EnergySword, StreeCredRedeemable]
   id: EnergySwordFamilies
   description: A stylish answer to the antiquated NanoTrasen energy sword.
   components:
@@ -161,10 +161,17 @@
         map: [ "blade" ]
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.15
+    range: 1.25
+    attackRate: 0.9
     damage:
       types:
         Blunt: 4.5
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.15
+    clickPartDamageMultiplier: 1.5
+    lightRangeModifier: 1.2
+    maxTargets: 4
   - type: Item
     size: Small
     sprite: _Crescent/Objects/Weapons/Melee/plas_sword-inhands.rsi
@@ -196,7 +203,7 @@
 
 - type: entity
   name: SCHK-1 plasma-bladed halberd
-  parent: BaseItem
+  parent: [BaseItem, StreeCredRedeemable]
   id: PlasHalberd
   description: A weighty polearm made with a crystalline plasma-bladed edge. A vibro-module at the spine accelerates the toxic-edged material to burning levels of friction, melting through targets.
   components:
@@ -207,12 +214,19 @@
   - type: MeleeWeapon
     wideAnimationRotation: 135
     swingLeft: true
-    attackRate: 0.75
+    attackRate: 1.5
+    range: 1.75
     damage:
       types:
         Slash: 25
         Heat: 10
         Structural: 10
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 14
+    heavyRateModifier: 1.167 # 1.75 attack rate with 1.5 base
+    clickPartDamageMultiplier: 1.25
+    lightRangeModifier: 1.15
+    maxTargets: 6
     soundHit:
       collection: MetalThud
   - type: Wieldable
@@ -236,7 +250,7 @@
 
 - type: entity
   name: SCHK-3 charge warhammer
-  parent: BaseItem
+  parent: [BaseItem, StreeCredRedeemable]
   id: Plashammer
   description: A robust warclub made by the Families.
   components:
@@ -245,11 +259,19 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -155 #onehanded stance allows for wider swing
+    range: 1.25
+    attackRate: 1
     damage:
       types:
         Blunt: 35
         Heat: 10
         Structural: 25
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.15
+    clickPartDamageMultiplier: 1.5
+    lightRangeModifier: 1.2
+    maxTargets: 3
     soundHit:
       collection: MetalThud
   - type: Item
@@ -258,7 +280,7 @@
 
 - type: entity
   name: SHI-30J Paperwork
-  parent: BaseItem
+  parent: [BaseItem, StreeCredRedeemable]
   id: WeaponPistolPaperwork
   description: A sick joke by Shinohara higherups. Fires pre-printed job applications with reinforced edges that stick into those hit, causing both emotional and physical damage. Outlawed in most of Taypan.
   components:
@@ -302,7 +324,7 @@
 
 - type: entity
   name: boundlight staff
-  parent: BaseItem
+  parent: [BaseItem, StreeCredRedeemable]
   id: ImperialPsionBoundlightStaff
   description: Cinched by silver-gold, the dark artificial crystal at the head is both focus and instrument for the psionic, allowing one to channel their powers through it and shift reality with suitable control and training. The titanium shaft is suitably durable for the rigours of combat and, in the extreme, for rudimentary self defence.
   components:

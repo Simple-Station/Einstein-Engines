@@ -1,9 +1,16 @@
 - type: entity
   id: BaseMagazineMagnum
-  name: pistol magazine (.327 Imperial magnum)
+  name: 7-round pistol magazine (.327 Imperial magnum)
   parent: BaseMagazinePistol
   abstract: true
   components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/.327_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
   - type: Tag
     tags:
       - MagazineMagnum
@@ -13,10 +20,15 @@
       tags:
         - CartridgeMagnum
     capacity: 7
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: false
+  - type: Appearance
 
 - type: entity
   id: BaseMagazineMagnumSubMachineGun
-  name: "SMG magazine (.327 Imperial magnum)"
+  name: "25-round SMG magazine (.327 Imperial magnum)"
   parent: BaseItem
   abstract: true
   components:
@@ -49,118 +61,72 @@
 
 - type: entity
   id: MagazineMagnumEmpty
-  name: pistol magazine (.327 Imperial magnum any)
+  name: 7-round pistol magazine (.327 Imperial magnum any)
   suffix: empty
   parent: BaseMagazineMagnum
   components:
   - type: BallisticAmmoProvider
     proto: null
-  - type: Sprite
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
 
 - type: entity
   id: MagazineMagnum
-  name: pistol magazine (.327 Imperial magnum)
+  name: 7-round pistol magazine (.327 Imperial magnum)
   parent: BaseMagazineMagnum
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnum
-  - type: Sprite
-    layers:
-    - state: red
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazineMagnumPractice
-  name: pistol magazine (.327 Imperial magnum practice)
+  name: 7-round pistol magazine (.327 Imperial magnum practice)
   parent: BaseMagazineMagnum
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnumPractice
-  - type: Sprite
-    layers:
-    - state: practice
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazineMagnumRubber
-  name: pistol magazine (.327 Imperial magnum rubber)
+  name: 7-round pistol magazine (.327 Imperial magnum rubber)
   parent: BaseMagazineMagnum
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnumRubber
-  - type: Sprite
-    layers:
-    - state: rubber
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazineMagnumIncendiary
-  name: pistol magazine (.327 Imperial magnum incendiary)
+  name: 7-round pistol magazine (.327 Imperial magnum incendiary)
   parent: BaseMagazineMagnum
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnumIncendiary
-  - type: Sprite
-    layers:
-    - state: red
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazineMagnumUranium
-  name: pistol magazine (.327 Imperial magnum uranium)
+  name: 7-round pistol magazine (.327 Imperial magnum uranium)
   parent: BaseMagazineMagnum
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnumUranium
-  - type: Sprite
-    layers:
-    - state: uranium
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazineMagnumAP
-  name: pistol magazine (.327 Imperial magnum black-tip)
+  name: 7-round pistol magazine (.327 Imperial magnum black-tip)
   parent: BaseMagazineMagnum
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnumAP
-  - type: Sprite
-    layers:
-    - state: piercing
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazineMagnumShrapnel
-  name: pistol magazine (.327 Imperial magnum shrapnel)
+  name: 7-round pistol magazine (.327 Imperial magnum shrapnel)
   parent: BaseMagazineMagnum
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnumShrapnel
-  - type: Sprite
-    layers:
-    - state: red
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazineMagnumSubMachineGunEmpty
-  name: "SMG magazine (.327 Imperial magnum any)"
+  name: "25-round SMG magazine (.327 Imperial magnum any)"
   suffix: empty
   parent: BaseMagazineMagnumSubMachineGun
   components:
@@ -173,7 +139,7 @@
 
 - type: entity
   id: MagazineMagnumSubMachineGun
-  name: "SMG magazine (.327 Imperial magnum)"
+  name: "25-round SMG magazine (.327 Imperial magnum)"
   parent: BaseMagazineMagnumSubMachineGun
   components:
   - type: BallisticAmmoProvider
@@ -187,7 +153,7 @@
 
 - type: entity
   id: MagazineMagnumSubMachineGunPractice
-  name: "SMG magazine (.327 Imperial magnum practice)"
+  name: "25-round SMG magazine (.327 Imperial magnum practice)"
   parent: BaseMagazineMagnumSubMachineGun
   components:
   - type: BallisticAmmoProvider
@@ -201,7 +167,7 @@
 
 - type: entity
   id: MagazineMagnumSubMachineGunRubber
-  name: "SMG magazine (.327 Imperial magnum rubber)"
+  name: "25-round SMG magazine (.327 Imperial magnum rubber)"
   parent: BaseMagazineMagnumSubMachineGun
   components:
   - type: BallisticAmmoProvider
@@ -215,7 +181,7 @@
 
 - type: entity
   id: MagazineMagnumSubMachineGunUranium
-  name: "SMG magazine (.327 Imperial magnum uranium)"
+  name: "25-round SMG magazine (.327 Imperial magnum uranium)"
   parent: BaseMagazineMagnumSubMachineGun
   components:
   - type: BallisticAmmoProvider
@@ -229,7 +195,7 @@
 
 - type: entity
   id: MagazineMagnumSubMachineGunPiercing
-  name: "SMG magazine (.327 Imperial magnum black-tip)"
+  name: "25-round SMG magazine (.327 Imperial magnum black-tip)"
   parent: BaseMagazineMagnumSubMachineGun
   components:
   - type: BallisticAmmoProvider

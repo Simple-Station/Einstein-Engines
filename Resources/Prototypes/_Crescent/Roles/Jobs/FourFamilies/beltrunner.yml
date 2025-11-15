@@ -11,6 +11,8 @@
   supervisors: job-supervisors-tap
   canBeAntag: false
   requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 10800
     - !type:FactionRequirement
       factionID: "TAP"
     - !type:CharacterSpeciesRequirement
@@ -27,13 +29,18 @@
     components:
       - type: ChatRank
         rank: crescent-rank-beltrunner
+      - type: HullrotFaction
+        faction: TAP
+      - type: Telepathic
       - type: LanguageAdder
         addSpoken:
-        - OldTaypani
-        - Freespeak
+          - Tradeband
+          - OldTaypani
+          - Freespeak
         addUnderstood:
-        - OldTaypani
-        - Freespeak
+          - Tradeband
+          - OldTaypani
+          - Freespeak
   access:
   - EmergencyShuttleRepealAll
   - Captain

@@ -108,7 +108,6 @@ public sealed partial class NPCCombatSystem
 
             var ammoEv = new GetAmmoCountEvent();
             RaiseLocalEvent(gunUid, ref ammoEv);
-
             if (ammoEv.Count == 0)
             {
                 // Recharging then?
@@ -122,10 +121,11 @@ public sealed partial class NPCCombatSystem
                 continue;
             }
 
-            comp.LOSAccumulator -= frameTime;
-
             var worldPos = _transform.GetWorldPosition(xform);
             var targetPos = _transform.GetWorldPosition(targetXform);
+
+
+            comp.LOSAccumulator -= frameTime;
 
             // We'll work out the projected spot of the target and shoot there instead of where they are.
             var distance = (targetPos - worldPos).Length();
@@ -151,7 +151,6 @@ public sealed partial class NPCCombatSystem
                 {
                     steering.ForceMove = true;
                 }
-
                 continue;
             }
 

@@ -4,7 +4,10 @@
 - type: vessel
   id: Pear
   name: ICM Pear
-  description: And old pre-collapse cargo hauler, the pear is perfect for small scale trading, it's hull retrofitted to survive taypan.
+  description: |
+    An old pre-collapse cargo hauler, the pear is perfect for small scale trading, it's hull retrofitted to survive taypan.
+    LOADOUT: 2x Fixed Universal Hardpoints
+    MINIMUM CREW: 1x Pilot
   price: 18000
   category: Small
   group: Civilian

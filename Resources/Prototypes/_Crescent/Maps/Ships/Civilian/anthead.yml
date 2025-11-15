@@ -1,11 +1,14 @@
 # Author Info
-# Discord: @fleshangel
+# Discord: @Rubeebee
 
 - type: vessel
   id: Anthead
-  name: Anthead
-  description: The Anthead is what remains out of the cockpit of a much larger corvette, refitted to support itself as an independent "ship". Don't expect to get very far.
-  price: 16000
+  name: TS Anthead
+  description: |
+    Recycled from the remains of a larger ship's cockpit. The Anthead now serves it's second lease on life as an escort ship. It's lacking on-board gravity. But it'll do for any first-time merc. Comes with basic salvage tools.
+    LOADOUT: 2x 20x135mm MKII machineguns
+    MINIMUM CREW: 1x Pilot
+  price: 17000
   category: Small
   group: Scrap
   path: /Maps/_Crescent/Shuttles/Civilian/anthead.yml
@@ -17,13 +20,18 @@
   minPlayers: 0
   stations:
     Anthead:
-      stationProto: StandardCrescentCivilianVessel
+      stationProto: StandardCrescentExpeditionVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
         - type: StationNameSetup
           mapNameTemplate: 'Anthead {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
-          designation: vessel-designation-civilian
-
+          designation: vessel-designation-gunship
+        - type: VesselDescription
+          description: Lacking gravity, people often joke about Antheads being oversized fighter ships.

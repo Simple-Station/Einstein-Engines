@@ -17,17 +17,13 @@
       inverted: true
       species:
         - Voidborn
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Foreigner
-        - Muted
-        - Blindness
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-worker
+      - type: HullrotFaction
+        faction: NCWL
       - type: LanguageAdder
         addSpoken:
           - Dockta
@@ -50,3 +46,5 @@
     id: NCWLWorkerPDA
     back: ClothingBackpackNCWL
     ears: ClothingHeadsetNCWL
+    pocket1: BookNCWLManual1
+    pocket2: BookNCWLManual2

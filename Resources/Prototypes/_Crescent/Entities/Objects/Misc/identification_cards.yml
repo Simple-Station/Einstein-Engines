@@ -7,7 +7,7 @@
   components:
   - type: Currency
     price:
-      DogtagNCWL: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -22,7 +22,7 @@
   components:
   - type: Currency
     price:
-      DogtagNCWL: 1
+      PlunderGSC: 15
   - type: Sprite
     layers:
     - state: default
@@ -37,7 +37,7 @@
   components:
   - type: Currency
     price:
-      DogtagNCWL: 1
+      PlunderGSC: 15
   - type: Sprite
     layers:
     - state: default
@@ -52,7 +52,7 @@
   components:
   - type: Currency
     price:
-      DogtagNCWL: 1
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -67,7 +67,7 @@
   components:
   - type: Currency
     price:
-      DogtagNCWL: 1
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -82,7 +82,7 @@
   components:
   - type: Currency
     price:
-      DogtagNCWL: 1
+      DogtagNCWL: 5
   - type: Sprite
     layers:
     - state: default
@@ -97,7 +97,7 @@
   components:
   - type: Currency
     price:
-      DogtagNCWL: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -112,7 +112,7 @@
   components:
   - type: Currency
     price:
-      DogtagNCWL: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -127,7 +127,7 @@
   components:
   - type: Currency
     price:
-      DogtagNCWL: 1
+      DogtagNCWL: 5
   - type: Sprite
     layers:
     - state: default
@@ -142,7 +142,7 @@
   components:
   - type: Currency
     price:
-      DogtagNCWL: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -157,7 +157,7 @@
   components:
   - type: Currency
     price:
-      DogtagNCWL: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -308,7 +308,7 @@
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -323,7 +323,7 @@
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -338,7 +338,7 @@
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -353,7 +353,7 @@
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -368,7 +368,7 @@
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -383,7 +383,7 @@
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -398,7 +398,7 @@
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -413,7 +413,7 @@
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -428,7 +428,7 @@
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -443,7 +443,7 @@
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -458,7 +458,7 @@
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -473,7 +473,7 @@
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -488,7 +488,7 @@
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -503,7 +503,7 @@
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 15
   - type: Sprite
     layers:
     - state: default
@@ -518,7 +518,7 @@
   components:
   - type: Currency
     price:
-      DogtagDSM: 1
+      PlunderGSC: 15
   - type: Sprite
     layers:
     - state: default
@@ -596,6 +596,9 @@
   id: SHIIDCardExecutive
   name: corporate ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 15
   - type: Sprite
     layers:
     - state: default
@@ -608,6 +611,9 @@
   id: SHIIDCardBoard
   name: corporate ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -620,6 +626,9 @@
   id: SHIIDCardCorpSec
   name: corporate ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -632,6 +641,9 @@
   id: SHIIDCardHighSec
   name: corporate ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -644,6 +656,9 @@
   id: SHIIDCardEmployee
   name: corporate ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -656,6 +671,9 @@
   id: SHIIDCardMedtech
   name: corporate ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -670,6 +688,9 @@
   id: CMMIDCardOrdnanceman
   name: minuteman ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -682,6 +703,9 @@
   id: CMMIDCardMachinist
   name: minuteman ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -694,6 +718,9 @@
   id: CMMIDCardPhysician
   name: minuteman ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -706,6 +733,9 @@
   id: CMMIDCardMinuteman
   name: minuteman ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -718,6 +748,9 @@
   id: CMMIDCardWatchmaster
   name: minuteman ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 5
   - type: Sprite
     layers:
     - state: default
@@ -730,6 +763,9 @@
   id: CMMIDCardDeputyMarshal
   name: minuteman ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -742,6 +778,9 @@
   id: CMMIDCardMarshal
   name: minuteman ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 15
   - type: Sprite
     layers:
     - state: default
@@ -1108,6 +1147,9 @@
   id: GliessIDCardSheriff
   name: spacer ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 15
   - type: Sprite
     layers:
     - state: default
@@ -1120,6 +1162,9 @@
   id: GliessIDCardDeputy
   name: spacer ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 10
   - type: Sprite
     layers:
     - state: default
@@ -1133,9 +1178,43 @@
   id: GliessIDCardDockmaster
   name: spacer ID card
   components:
+  - type: Currency
+    price:
+      PlunderGSC: 15
   - type: Sprite
     layers:
     - state: default
     - state: idquartermaster
   - type: PresetIdCard
     job: GliessianDockmaster
+
+- type: entity
+  parent: IDCardStandard
+  id: DockhandIDCard
+  name: spacer ID card
+  components:
+  - type: Currency
+    price:
+      PlunderGSC: 5
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idpassenger
+  - type: PresetIdCard
+    job: GliessianDockhand
+
+- type: entity
+  parent: IDCardStandard
+  id: SpacerIDCard
+  name: spacer ID card
+  components:
+  - type: Currency
+    price:
+      PlunderGSC: 5
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idpassenger
+  - type: PresetIdCard
+    job: Spacer
+
