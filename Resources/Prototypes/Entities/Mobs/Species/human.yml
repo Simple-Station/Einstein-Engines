@@ -32,6 +32,19 @@
     - TauCetiBasic #needed for vending machines
     # - Solarian # uncomment me if we need universal langs again
   - type: FootPrints
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: AristocraticGenome
+  - type: MeleeWeapon
+    soundHit:
+      collection: Punch
+    angle: 30
+    animation: WeaponArcFist
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 5
+        Holy: 2.5 # Romaine favours
 
 - type: entity
   parent: BaseSpeciesDummy
