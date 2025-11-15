@@ -528,9 +528,9 @@
   result: ShipVoucherFujin
   completetime: 1
   materials:
-    StarshipEngineComponents: 2000
-    ShipComponents: 2000
-    ShipHull: 6000
+    StarshipEngineComponents: 5000
+    ShipComponents: 6000
+    ShipHull: 7000
 
 - type: latheRecipe
   id: VariableCommodityFabricatorFlatpack
