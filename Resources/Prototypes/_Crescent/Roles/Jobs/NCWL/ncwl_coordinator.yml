@@ -22,8 +22,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
         - Muted
         - Blindness
         - Pacifist
@@ -91,7 +89,7 @@
     id: NCWLLogisticLeaderPDA
     outerClothing: ClothingOuterArmorNCWLLogi
     belt: ClothingBeltSalvageWebbingFilledNF
-    pocket1: WeaponPistolHKUSP
+    pocket1: WeaponPistolComrade
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesFingerless
     head: ClothingHeadHatBeretQM

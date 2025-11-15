@@ -7,11 +7,14 @@
   requirements:
   - !type:CharacterJobRequirement
     jobs:
-    - CommandantNCWL
-    - KommissarNCWL
-    - FleetkapitanNCWL
-    - PartisanNCWL
-    - DoctorNCWL
-    - CoordinatorNCWL
-    - ArtificerNCWL
-    - WorkerNCWL
+      - CommandantNCWL
+      - KommissarNCWL
+      - FleetkapitanNCWL
+      - PartisanNCWL
+      - DirectorNCWL
+      - DoctorNCWL
+      - WorkerOverbossNCWL
+      - DockhandNCWL
+      - IndustryTaskmasterNCWL
+      - ArtificerNCWL
+      - WorkerNCWL

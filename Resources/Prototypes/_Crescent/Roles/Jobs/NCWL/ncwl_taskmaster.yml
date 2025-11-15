@@ -1,43 +1,45 @@
 - type: job
-  id: ArtificerNCWL
-  name: job-name-ncwl-industry-artificer
-  description: job-description-ncwl-industry-artificer
-  playTimeTracker: JobEngineeringWorkerNCWL
-  weight: 93
-  startingGear: ArtificerNCWLGear
+  id: IndustryTaskmasterNCWL
+  name: job-name-ncwl-industry-taskmaster
+  description: job-description-ncwl-industry-taskmaster
+  playTimeTracker: JobEngineeringLeaderNCWL
+  weight: 94
+  startingGear: IndustryTaskmasterNCWLGear
   alwaysUseSpawner: true
   requireAdminNotify: false
-  icon: "JobIconNCWLEngineeringWorker"
-  supervisors: job-supervisors-ncwl-unionized
+  icon: "JobIconNCWLEngineeringLeader"
+  supervisors: job-supervisors-ncwl-leaders
   canBeAntag: false
   requirements:
-    - !type:CharacterOverallTimeRequirement
-      min: 1000
-    - !type:FactionRequirement
-      factionID: "NCWL"
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Voidborn
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Muted
-        - Blindness
-        - Pacifist
-        - WheelchairBound
+  - !type:CharacterOverallTimeRequirement
+    min: 20000
+  - !type:FactionRequirement
+    factionID: "NCWL"
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - Voidborn
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Muted
+    - Blindness
+    - Pacifist
+    - WheelchairBound
   special:
   - !type:AddComponentSpecial
     components:
-      - type: ChatRank
-        rank: crescent-rank-ncwl-engi-worker
-      - type: HullrotFaction
-        faction: NCWL
-      - type: LanguageAdder
-        addSpoken:
-          - Dockta
-        addUnderstood:
-          - Dockta
+    - type: ChatRank
+      rank: crescent-rank-ncwl-engi-leader
+    - type: HullrotFaction
+      faction: NCWL
+    - type: LanguageAdder
+      addSpoken:
+      - Dockta
+      - Tradeband
+      addUnderstood:
+      - Dockta
+      - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -80,15 +82,16 @@
   - NCWLCommand
 
 - type: startingGear
-  id: ArtificerNCWLGear
+  id: IndustryTaskmasterNCWLGear
   equipment:
     shoes: ClothingShoesBootsSalvage
     jumpsuit: ClothingUniformJumpsuitNCWLArtificer
-    id: NCWLEngineeringWorkerPDA
+    id: NCWLEngineeringLeaderPDA
+    pocket1: WeaponPistolComrade
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesColorYellow
     head: ClothingHeadHatBeretEngineering
     eyes: ClothingEyesGlassesMeson
     ears: ClothingHeadsetNCWL
+    outerClothing: ClothingOuterArmorNCWLEngi
     belt: ClothingBeltSalvageWebbingFilledNF
-

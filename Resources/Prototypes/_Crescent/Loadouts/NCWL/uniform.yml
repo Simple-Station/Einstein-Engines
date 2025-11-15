@@ -11,14 +11,17 @@
     group: LoadoutUniformsCivilian
   - !type:CharacterJobRequirement
     jobs:
-    - CommandantNCWL
-    - KommissarNCWL
-    - FleetkapitanNCWL
-    - PartisanNCWL
-    - DoctorNCWL
-    - CoordinatorNCWL
-    - ArtificerNCWL
-    - WorkerNCWL
+      - CommandantNCWL
+      - KommissarNCWL
+      - FleetkapitanNCWL
+      - PartisanNCWL
+      - DirectorNCWL
+      - DoctorNCWL
+      - WorkerOverbossNCWL
+      - DockhandNCWL
+      - IndustryTaskmasterNCWL
+      - ArtificerNCWL
+      - WorkerNCWL
 
 - type: loadout
   id: LoadoutUniformNCWLTelnikSleeveless
@@ -33,14 +36,17 @@
     group: LoadoutUniformsCivilian
   - !type:CharacterJobRequirement
     jobs:
-    - CommandantNCWL
-    - KommissarNCWL
-    - FleetkapitanNCWL
-    - PartisanNCWL
-    - DoctorNCWL
-    - CoordinatorNCWL
-    - ArtificerNCWL
-    - WorkerNCWL
+      - CommandantNCWL
+      - KommissarNCWL
+      - FleetkapitanNCWL
+      - PartisanNCWL
+      - DirectorNCWL
+      - DoctorNCWL
+      - WorkerOverbossNCWL
+      - DockhandNCWL
+      - IndustryTaskmasterNCWL
+      - ArtificerNCWL
+      - WorkerNCWL
 
 - type: loadout
   id: LoadoutUniformJumpsuitNCWLSkirt
@@ -55,11 +61,14 @@
     group: LoadoutUniformsCivilian
   - !type:CharacterJobRequirement
     jobs:
-    - CommandantNCWL
-    - KommissarNCWL
-    - FleetkapitanNCWL
-    - PartisanNCWL
-    - DoctorNCWL
-    - CoordinatorNCWL
-    - ArtificerNCWL
-    - WorkerNCWL
+      - CommandantNCWL
+      - KommissarNCWL
+      - FleetkapitanNCWL
+      - PartisanNCWL
+      - DirectorNCWL
+      - DoctorNCWL
+      - WorkerOverbossNCWL
+      - DockhandNCWL
+      - IndustryTaskmasterNCWL
+      - ArtificerNCWL
+      - WorkerNCWL

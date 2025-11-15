@@ -133,7 +133,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: LogisticWorkerNCWL
+    job: DockhandNCWL
 
 - type: entity
   parent: IDCardStandard

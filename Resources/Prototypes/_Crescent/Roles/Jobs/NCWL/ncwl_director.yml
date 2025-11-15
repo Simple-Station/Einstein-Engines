@@ -15,8 +15,6 @@
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
-      - Foreigner
-      - ForeignerLight
       - Muted
       - Blindness
       - Pacifist
@@ -37,8 +35,10 @@
       - type: LanguageAdder
         addSpoken:
           - Dockta
+          - Tradeband
         addUnderstood:
           - Dockta
+          - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -88,7 +88,7 @@
     id: NCWLMedicalLeaderPDA
     outerClothing: ClothingOuterArmorNCWLCarapaceVrachev
     belt: ClothingBeltMedicalFilled
-    pocket1: WeaponPistolHKUSP
+    pocket1: WeaponPistolComrade
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesNitrile
     head: ClothingHeadHatNCWLBeretMedi
