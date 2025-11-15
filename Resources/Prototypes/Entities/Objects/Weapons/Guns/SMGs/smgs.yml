@@ -102,7 +102,7 @@
 
 - type: entity
   name: IRM DA-20 Talon 11mm
-  parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
+  parent: [BaseWeaponSubMachineGun, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponSubMachineGunC20r
   description: A slick submachinegun produced by Olywir Armaments for the Imperial Navy. Sees little use in the hands of actual troopers due to the cost of manufacturing.
   components:
@@ -165,7 +165,7 @@
 
 - type: entity
   name: PTA P-M85 Drozd .327
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable ]
   id: WeaponSubMachineGunDrozd
   description: A fast very firing bullpup submachine gun. Manufactured by Pang Tai Arms and outsourced to mercenary factors in the area. Suffers from immense recoil due to it's caliber.
   components:
@@ -269,7 +269,7 @@
 
 - type: entity
   name: NCWL Partisan 9x19mm
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable ]
   id: WeaponSubMachineGunNCWLPartisan
   description: A rugged, deregulated SMG favoured by partisans and infiltrators simple, ruthless, and cheap to produce from scavenged parts.
   components:
@@ -324,7 +324,7 @@
 
 - type: entity
   name: IRM Arbiter 9x19mm
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable ]
   id: WeaponSubMachineGunDSMArbiter
   description: A stripped-down Imperial SMG made for mass production. Features and components requiring skilled machining have been removed to allow manufacture by lesser domains.
   components:
@@ -379,7 +379,7 @@
 
 - type: entity
   name: NT WT50 Sabre 11mm
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable ]
   id: WeaponSubMachineGunWt550
   description: A light Terran-originating submachine gun with a top-mounted magazine. Chamberd in 11mm PSTF.
   components:

@@ -53,5 +53,13 @@
     id: RipperdocPDA
     ears: ClothingHeadsetNCSPInterdyne
     mask: ClothingMaskSyndicateFacemask
-    pocket1: MedkitCombatFilled
-    back: ClothingBackpackNCSPSatchelFilledInfanteer
+    pocket1: WeaponPistolHKUSP
+    pocket2: MedkitCombatFilled
+    back: ClothingBackpackNCSP
+  storage:
+    back:
+      - Flash
+      - Tourniquet
+      - Zipties
+      - MagazinePistol
+      - CombatKnife
