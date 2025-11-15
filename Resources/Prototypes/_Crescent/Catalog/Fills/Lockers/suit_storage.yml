@@ -83,6 +83,23 @@
     access: [["EmpireGovernor"]]
 
 - type: entity
+  id: CrescentSuitStorageDSMCoronetHardsuit
+  parent: SuitStorageBase
+  suffix: Imperial Mk.IB 'CORONET' Hardsuit
+  components:
+  - type: StorageFill
+    contents:
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: HandheldGPSBasic
+        - id: JetpackBlackFilled
+        - id: ClothingMaskImperialCombatGasmask
+        - id: ClothingOuterHardsuitImperialCoronet
+        - id: ClothingHandsGlovesImperialLonggloves
+        - id: ClothingShoesBootsMagDSMFilled
+  - type: AccessReader
+    access: [["EmpireSoldier"]]
+
+- type: entity
   id: CrescentSuitStorageDSMTemplarHardsuit
   parent: SuitStorageBase
   suffix: Imperial Mk.IV 'ORATEUR' Combat Hardsuit

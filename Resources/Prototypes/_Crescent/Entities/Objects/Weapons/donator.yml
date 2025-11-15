@@ -1,9 +1,9 @@
-# @ezo_rb (ezo) donor gun
+# @ezo_rb (ezo) donor gun, @HungryCuban auctioned
 - type: entity
-  name: SHI001P Zodum .327
+  name: SHI001P Zodum 12.7x99mm
   parent: [BaseWeaponPistol, StreeCredRedeemableLow]
   id: WeaponPistolZodum
-  description: A custom hand-cannon from the SHI development team that was never meant to be released. Chambered in heavy .327 Imperial.
+  description: A custom hand-cannon from the SHI development team that was never meant to be released. Chambered in heavy 12.7x99mm.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/zodum.rsi
@@ -29,20 +29,20 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineMagnum
+        startingItem: MagazineSmallHeavyRifle
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazineMagnum
+            - MagazineSmallHeavyRifle
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeMagnum
+        startingItem: CartridgeHeavyRifle
         priority: 1
         whitelist:
           tags:
-            - CartridgeMagnum
+            - CartridgeHeavyRifle
   - type: StaticPrice
     price: 5000
 
@@ -57,7 +57,7 @@
     contents:
       - id: WeaponPistolZodum
         amount: 1
-      - id: MagazineMagnum
+      - id: MagazineSmallHeavyRifle
         amount: 3
 
 # @theassassin25 (Volgin) donor gun

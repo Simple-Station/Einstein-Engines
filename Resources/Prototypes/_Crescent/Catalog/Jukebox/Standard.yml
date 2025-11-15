@@ -342,6 +342,12 @@
     path: "/Audio/_Crescent/Jukebox/guitarscadillacs.ogg"
 
 - type: jukebox
+  id: CorpoSong
+  name: Orange Sector - Farben
+  path:
+    path: "/Audio/_Crescent/Jukebox/farben.ogg"
+
+- type: jukebox
   id: HippieSong
   name: Fleetwood Mac - Rhiannon
   path:

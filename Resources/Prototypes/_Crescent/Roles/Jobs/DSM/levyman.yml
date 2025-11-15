@@ -14,7 +14,7 @@
     - !type:FactionRequirement
       factionID: "DSM"
     - !type:CharacterOverallTimeRequirement
-      min: 10800
+      min: 0
     - !type:CharacterSpeciesRequirement
       species:
         - Human
@@ -61,6 +61,7 @@
     outerClothing: ClothingOuterArmorImperialTrooperArmor
     gloves: ClothingHandsGlovesImperialLonggloves
     pocket1: WeaponPistolComplianceImperial
+    pocket2: RomaineBible
     belt: ClothingBeltAssault
   storage:
     back:

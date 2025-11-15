@@ -222,6 +222,17 @@
         Caustic: 0.9
 
 - type: entity
+  parent: ClothingHeadHelmetHardsuitImperialSoldier
+  id: ClothingHeadHelmetHardsuitImperialCoronet
+  categories: [ HideSpawnMenu ]
+  name: imperial coronet hardsuit helmet
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Head/mandatecoronet.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Head/mandatecoronet.rsi
+
+- type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatClarizeBeret
   name: royal officer's beret

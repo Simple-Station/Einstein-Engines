@@ -48,7 +48,7 @@ job-description-surgeon = Tend to the bodily ails of your comrades.
 job-description-advocatus = Scrutinise the loyalty of your liege, the Kaiser's subjects. Question violators of His will. Ensure compliance to the Mandate.
 job-description-advocatustemplar = Protect the Advocatus and carry out their will. Ensure compliance to the Mandate.
 
-# srm#
+# srm
 
 job-description-tender = Tend to the wounds of your comrades. Tend to the vessels of the Saint. Carry out menial chores.
 job-description-apprenticehunter = Learn the Hunt from your assigned Master Hunter.
@@ -64,7 +64,7 @@ job-description-corpsec = Secure assets of the Corporation. Detain unruly custom
 job-description-highsec = Secure the military interests of the Corporation. Respond to high-risk missions.
 job-description-employee = Serve in various departments of the Corporation.
 job-description-medtech = Research and develop new technologies, tend to the ailments of employees.
-job-description-boardhr = Ensure the compliance of corporate law is being respected.
+job-description-boardhr = Ensure Corporate Standards are being met alongside with handling public relations.
 job-description-hos-shi = Organize the security force of the corporation.
 
 # cmm

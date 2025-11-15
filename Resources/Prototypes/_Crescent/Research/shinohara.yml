@@ -336,7 +336,7 @@
     sprite: _Crescent/Objects/Misc/lpcchip.rsi
     state: icon
   discipline: Corporate
-  tier: 3
+  tier: 2
   cost: 8000
   recipeUnlocks:
   - FujinLPC
@@ -453,3 +453,17 @@
   - WeaponShotgunSpas
   - WeaponRifleM90GrenadeLauncher
   - WeaponSubMachineGunWt550
+
+- type: technology
+  id: ShinoharaNTEnergyArtillery
+  name: research-technology-shinohara-ntartillery
+  icon:
+    sprite: _Crescent/Objects/ShuttleWeapons/bigfuckinglaser.rsi
+    state: space_artillery
+  discipline: Corporate
+  tier: 3
+  cost: 12500
+  recipeUnlocks:
+  - HardlinerFlatpack
+  - PowerCageHardliner
+

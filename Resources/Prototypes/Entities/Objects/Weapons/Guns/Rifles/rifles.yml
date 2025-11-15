@@ -91,6 +91,7 @@
       path: /Audio/_Crescent/Weapons/Guns/AK_74/rifle_gunshot_1.ogg
     fireOnDropChance: 0.5
   - type: ChamberMagazineAmmoProvider
+    boltClosed: null # means the bolt doesnt lock back like M16 pattern rifles, also means you need to cycle the gun after an empty mag
     soundRack:
       path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
   - type: ItemSlots
@@ -123,7 +124,7 @@
 
 - type: entity
   name: NT M-90gl Hercules 7.62x51mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponRifleM90GrenadeLauncher
   description: An simple battle carbine battle model, with an attached underbarrel grenade launcher. Uses 7.62x51mm ammo.
   components:
@@ -169,7 +170,7 @@
 
 - type: entity
   name: SHI M931c Lecter 7.62x51mm
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponRifleLecter
   description: A fancy SHI-brand rifle sold to corporations and security forces everywhere.
   components:
