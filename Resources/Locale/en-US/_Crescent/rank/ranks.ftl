@@ -15,7 +15,6 @@ crescent-rank-ind-dockhand = Dockhand
 crescent-rank-shi-executive = Manager
 crescent-rank-shi-board = Exec.
 crescent-rank-shi-corpsec = CorpSec.
-crescent-rank-shi-highsec = Employee
 crescent-rank-shi-employee = Employee
 crescent-rank-shi-medtech = Medtech
 

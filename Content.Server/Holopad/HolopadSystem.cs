@@ -17,6 +17,7 @@ using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Chat;
@@ -88,7 +89,7 @@ public sealed class HolopadSystem : SharedHolopadSystem
         SubscribeLocalEvent<HolopadUserComponent, JumpToCoreEvent>(OnJumpToCore);
         SubscribeLocalEvent<HolopadComponent, GetVerbsEvent<AlternativeVerb>>(AddToggleProjectorVerb);
         SubscribeLocalEvent<HolopadComponent, EntRemovedFromContainerMessage>(OnAiRemove);
-
+        SubscribeLocalEvent<MapGridComponent, EntityRenamedEvent>(OnGridRenamed);
         SubscribeLocalEvent<HolopadComponent, MapInitEvent>(OnHolopadMapInit); // Frontier
     }
 
@@ -823,17 +824,22 @@ public sealed class HolopadSystem : SharedHolopadSystem
     #region Extensions
     private void OnHolopadMapInit(Entity<HolopadComponent> entity, ref MapInitEvent args)
     {
-        bool renameFromShipname = false;
-        EntityUid? gridUid = null;
-        if (_entManager.TryGetComponent<TransformComponent>(entity.Owner, out var transform))
-        {
-            gridUid = transform.GridUid;
-            renameFromShipname = _entManager.HasComponent<ShipRenameHolopadComponent>(gridUid);
-        }
-       
-        if (entity.Comp.UseStationName || renameFromShipname)
-            _renameHolopads.SyncHolopad(entity, forceit: renameFromShipname);
+        _renameHolopads.SyncHolopad(entity);
     }
-    # endregion
+
+    private void OnGridRenamed(EntityUid gridUid, MapGridComponent _, ref EntityRenamedEvent args)
+    {
+        var q = EntityQueryEnumerator<HolopadComponent, TransformComponent>();
+        while (q.MoveNext(out var padUid, out var pad, out var xform))
+        {
+            if (!(pad.GetHolopadNameFromShip || pad.UseStationName))
+                continue;
+            if (xform.GridUid != gridUid)
+                continue;
+
+            _renameHolopads.SyncHolopad((padUid, pad));
+        }
+    }
+    #endregion
     // Le... HullRotte Update!
 }

@@ -54,12 +54,13 @@
     ears: ClothingHeadsetNCSP
     belt: ClothingBeltSyndicateWebbing
     pocket1: WeaponPistolViperWood
+    pocket2: ClothingMaskGasSyndicate
     gloves: ClothingHandsGlovesFingerless
     back: ClothingBackpackNCSP
   storage:
     back:
-    - Flash
-    - Tourniquet
-    - Zipties
-    - MagazinePistol
-    - CombatKnife
+      - Flash
+      - Tourniquet
+      - Zipties
+      - MagazinePistol
+      - CombatKnife

@@ -12,7 +12,7 @@
   canBeAntag: false
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 10800
+      min: 0
     - !type:FactionRequirement
       factionID: "TFSC"
     - !type:CharacterTraitRequirement
@@ -53,5 +53,13 @@
     id: RipperdocPDA
     ears: ClothingHeadsetNCSPInterdyne
     mask: ClothingMaskSyndicateFacemask
-    pocket1: MedkitCombatFilled
-    back: ClothingBackpackNCSPSatchelFilledInfanteer
+    pocket1: WeaponPistolHKUSP
+    pocket2: MedkitCombatFilled
+    back: ClothingBackpackNCSP
+  storage:
+    back:
+      - Flash
+      - Tourniquet
+      - Zipties
+      - MagazinePistol
+      - CombatKnife

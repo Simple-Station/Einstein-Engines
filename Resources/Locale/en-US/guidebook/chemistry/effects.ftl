@@ -444,3 +444,8 @@ reagent-effect-guidebook-chem-restorereroll-psionic =
         *[other] restore
     } one's ability to gain benefit from mind opening reagents
 
+reagent-effect-guidebook-crit-modifier =
+    { $deltasign ->
+        [-1] Lowers
+       *[1] Raises
+    } critical threshold by {$amount} points

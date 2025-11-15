@@ -28,7 +28,7 @@
           availableJobs:
             ExecutiveSHI: [ 1, 1 ]
             BoardHRSHI: [ 1, 1 ]
-            BoardSHI: [ 2, 2 ]
+            BoardSHI: [ 1, 1 ] 
             HosSHI: [ 1, 1 ]
             HighsecSHI: [ 2, 2 ]
             CorpsecSHI: [ 5, 5 ]
