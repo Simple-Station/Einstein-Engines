@@ -355,6 +355,15 @@
      BasicElectronics: 100
 
 - type: latheRecipe
+  id: BiogeneratorMachineCircuitboard
+  result: BiogeneratorMachineCircuitboard
+  category: Circuitry
+  completetime: 4
+  materials:
+    Steel: 100
+    Glass: 500
+
+- type: latheRecipe
   id: AutolatheMachineCircuitboard
   result: AutolatheMachineCircuitboard
   category: Circuitry

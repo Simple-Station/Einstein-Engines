@@ -339,6 +339,7 @@
       - ClothingOuterSuitEmergency
       - ClothingHeadHelmetEVALarge # Frontier
       - TradebandTranslator
+      -  SilkCrate
     dynamicRecipes:
       - CreoleTranslator
       - LowImperialTranslator
@@ -714,6 +715,7 @@
       - SHIShiverBlade
       - ClothingOuterHardsuitSHIJuggernaut
       - ClothingOuterHardsuitSHISpeedsuit
+      - FujinLPC
       - MetempsychoticMachineCircuitboard
 
   - type: Machine
