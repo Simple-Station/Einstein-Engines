@@ -3,7 +3,7 @@
   name: job-name-ncwl-fleetkapitan
   description: job-description-ncwl-fleetkapitan
   playTimeTracker: JobHomeguardSquadCaptainNCWL
-  weight: 6
+  weight: 98
   startingGear: CaptainNCWLGear
   alwaysUseSpawner: true
   requireAdminNotify: false

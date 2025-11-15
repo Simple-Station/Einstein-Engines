@@ -3,7 +3,7 @@
   name: job-name-ncwl-kommissar
   description: job-description-ncwl-kommissar
   playTimeTracker: JobHomeguardLeaderNCWL
-  weight: 7
+  weight: 99
   startingGear: OverseerNCWLGear
   alwaysUseSpawner: true
   requireAdminNotify: false

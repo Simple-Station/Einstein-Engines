@@ -8,14 +8,14 @@ job-description-nt-utility-ipc = Load ammunition and upkeep nanotrasen ships. Co
 job-description-ncwl-faction-leader = Lead the League from the external end. Maintain relations or war plans with other factions. Don't die.
 job-description-ncwl-kommissar = Lead the League from the internal end. Make sure the Homeguard and Union does their job. Execute traitors.
 job-description-ncwl-fleetkapitan = Command the mass of Partisans. Listen to the Kommissar. Maintain battlefield cohesion.
-job-description-ncwl-partisan = Defend the League. Listen to your Fleetkapitan. Do what you're told.
-job-description-ncwl-industry-taskmaster = Ensure materials are being refined into trade goods and ammo. Organize trade routes. Work with the Overseer.
-job-description-ncwl-industry-artificer = Listen to the Supervisor. Gather resources for the League. Do repairs and shipmods.
+job-description-ncwl-partisan = Defend the League. Listen to your Unionkapitan. Do what you're told.
+job-description-ncwl-industry-taskmaster = Ensure materials are being refined into trade goods and ammo. Organize trade routes.
+job-description-ncwl-industry-artificer = Listen to the Starshina. Gather resources for the League. Do repairs and shipmods.
 job-description-ncwl-medical-director = Keep the League alive and healthy. Coordinate research. Order cybernetics and new drugs.
-job-description-ncwl-medical-doctor = Keep the Workers and the Homeguard alive. Run with the Homeguard on missions. Make drugs, save those lost in space.
+job-description-ncwl-medical-doctor = Keep the Workers and the Homeguard alive. Assist the Homeguard on missions. Make drugs, save those lost in space.
 job-description-ncwl-worker-overboss = Organize salvage and mining. Make sure workers are working. Keep resources flowing to the League Industrial Complex.
 job-description-ncwl-worker-dockhand = Listen to the Dockmaster. Do trade runs. Order supplies. Man the salvage and mining crews. Get caught in conveyor belts.
-job-description-ncwl-newbie = Join a Union of the League. Serve the League. Listen to anyone senior to you.
+job-description-ncwl-newbie = Listen to the Dockmaster. Do trade runs. Order supplies. Man the salvage and mining crews. Serve the League.
 
 # syndicate
 
