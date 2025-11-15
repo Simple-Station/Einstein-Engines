@@ -1705,3 +1705,20 @@
     price: 48000
   - type: ShipVoucher
     ship: Gamma
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherTAPBeelzebub
+  name: TAP 'Beelzebub' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a light escort fighter.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 0 #Don't want this to be free money - it's just for drugrunning
+  - type: ShipVoucher
+    ship: Beelzebub
