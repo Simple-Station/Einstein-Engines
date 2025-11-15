@@ -186,7 +186,6 @@
   id: Scale # Skin tougher, bones weaker, strong stomachs, cold-blooded (kindof)
   coefficients:
     Cold: 1.3
-    Holy: 1
 
 - type: damageModifierSet
   id: Diona
@@ -201,7 +200,6 @@
   coefficients:
     Cold: 0.7
     Heat: 1.3
-    Holy: 1
 
 - type: damageModifierSet
   id: Vox
