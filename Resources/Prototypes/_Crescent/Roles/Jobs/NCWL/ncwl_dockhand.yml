@@ -18,28 +18,30 @@
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
-    - Voidborn
+      - Voidborn
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
-    - Foreigner
-    - ForeignerLight
-    - Muted
-    - Blindness
-    - Pacifist
-    - WheelchairBound
+      - Foreigner
+      - ForeignerLight
+      - Muted
+      - Blindness
+      - Pacifist
+      - WheelchairBound
   special:
   - !type:AddComponentSpecial
     components:
-    - type: ChatRank
-      rank: crescent-rank-ncwl-worker
-    - type: LanguageAdder
-      addSpoken:
-      - Dockta
-      - Tradeband
-      addUnderstood:
-      - Dockta
-      - Tradeband
+      - type: ChatRank
+        rank: crescent-rank-ncwl-worker
+      - type: HullrotFaction
+        faction: NCWL
+      - type: LanguageAdder
+        addSpoken:
+          - Dockta
+          - Tradeband
+        addUnderstood:
+          - Dockta
+          - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -85,7 +87,7 @@
     shoes: ClothingShoesBootsSalvage
     jumpsuit: ClothingUniformJumpsuitNCWLTelnikSleeved
     id: NCWLLogisticWorkerPDA
-    belt: ClothingBeltSalvageWebbing
+    belt: ClothingBeltSalvageWebbingFilledNF
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesFingerless
     head: ClothingHeadHatNCWLTanker

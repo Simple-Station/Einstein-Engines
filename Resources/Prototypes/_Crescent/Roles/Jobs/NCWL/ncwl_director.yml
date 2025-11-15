@@ -15,20 +15,30 @@
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
-    - Foreigner
-    - ForeignerLight
-    - Muted
-    - Blindness
-    - Pacifist
-    - WheelchairBound
+      - Foreigner
+      - ForeignerLight
+      - Muted
+      - Blindness
+      - Pacifist
+      - WheelchairBound
   requireAdminNotify: false
   supervisors: job-supervisors-ncwl-leaders
   canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
-    - type: ChatRank
-      rank: crescent-rank-ncwl-medi-leader
+      - type: ChatRank
+        rank: crescent-rank-ncwl-medi-leader
+      - type: HullrotFaction
+        faction: NCWL
+      - type: CPRTraining
+      - type: SurgerySpeedModifier
+        speedModifier: 1.75
+      - type: LanguageAdder
+        addSpoken:
+          - Dockta
+        addUnderstood:
+          - Dockta
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -73,7 +83,7 @@
 - type: startingGear
   id: DirectorNCWLGear
   equipment:
-    shoes: ClothingShoesBootsJack
+    shoes: ClothingShoesBootsCombat
     jumpsuit: ClothingUniformJumpsuitNCWLMedic
     id: NCWLMedicalLeaderPDA
     outerClothing: ClothingOuterArmorNCWLCarapaceVrachev
