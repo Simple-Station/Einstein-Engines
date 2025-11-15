@@ -189,7 +189,6 @@
   - type: Rotatable
     rotateWhileAnchored: false
     rotateWhilePulling: true
-#cargo
 
 - type: entity
   parent: VendingMachine
@@ -294,6 +293,7 @@
   - type: MarketModifier
     mod: 1
 
+#cargo
 - type: entity
   parent: [BaseStructureUnanchorable, VendingMachine]
   id: NCSPCargoDispenser
