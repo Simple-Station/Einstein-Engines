@@ -567,6 +567,23 @@
     ShipComponents: 1250
     ShipHull: 3250
 
+- type: latheRecipe
+  id: VorunaLPC
+  result: ShipVoucherVoruna
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 2000
+    ShipComponents: 1250
+    ShipHull: 3250
+
+- type: latheRecipe
+  id: PerigaleLPC
+  result: ShipVoucherPerigale
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 2000
+    ShipComponents: 1250
+    ShipHull: 3250
 
 - type: latheRecipe
   id: TriumphantLPC

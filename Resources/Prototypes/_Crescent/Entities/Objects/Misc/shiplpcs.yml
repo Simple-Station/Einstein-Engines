@@ -87,6 +87,40 @@
 
 - type: entity
   parent: BaseItem
+  id: ShipVoucherVoruna
+  name: DSM 'Voruna' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Voruna-class subshuttle. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 15000
+  - type: ShipVoucher
+    ship: Voruna
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherPerigale
+  name: DSM 'Perigale' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Perigale-class subshuttle. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 10000
+  - type: ShipVoucher
+    ship: Perigale
+
+- type: entity
+  parent: BaseItem
   id: ShipVoucherSunesis
   name: DSM 'Sunesis' pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with an Imperial Sunesis-class expeditional shuttle. Has to be redeemed at a shipyard console.

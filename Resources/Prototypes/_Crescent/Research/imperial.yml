@@ -213,6 +213,8 @@
   recipeUnlocks:
   - NemesisLPC
   - JanissaryLPC
+  - VorunaLPC
+  - PerigaleLPC
 
 - type: technology
   id: ImperialLaelaps
