@@ -98,6 +98,7 @@ research-technology-imperial-triumphant = Imperial Cruiser
 research-technology-imperial-suzerain = Imperial Siege Battlecruiser
 research-technology-imperial-nemesis = Imperial Artillery Carrier
 research-technology-imperial-torturer = Imperial Stealth Bomber
+research-technology-imperial-magnate = Imperial Fire Support Vessel
 
 # NCWL
 research-technology-communard-clothes = Communard Clothes
