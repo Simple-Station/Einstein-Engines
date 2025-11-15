@@ -217,6 +217,7 @@
   - type: ShipyardListing
     shuttles:
     - Lucifer
+    - Beelzebub
 
 - type: entity
   id: OuroborosMothershipComputer
