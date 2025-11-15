@@ -116,7 +116,153 @@
   - type: MarketModifier
     mod: 1.5
 
-#cargo
+- type: entity
+  parent: VendingMachine
+  id: ImperialCigVendor
+  name: Imperial Smokables Dispensary
+  description: An Imperial sponsored method of suicide. Quality assured.
+  components:
+  - type: VendingMachine
+    pack: ImperialCigVendorPack
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: Advertise
+    pack: CigaretteMachineAds
+  - type: SpeakOnUIClosed
+    pack: CigaretteMachineGoodbyes
+  - type: Speech
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Machines/VendingMachines/cigs.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
+
+- type: entity
+  parent: VendingMachine
+  id: NCWLCigVendor
+  name: Union Tobacco Vendor
+  description: A vending machine filled to the brim with tobacco products. Shipped straight from Chengridz.
+  components:
+  - type: VendingMachine
+    pack: NCWLCigVendorPack
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: Advertise
+    pack: CigaretteMachineAds
+  - type: SpeakOnUIClosed
+    pack: CigaretteMachineGoodbyes
+  - type: Speech
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Machines/VendingMachines/cigs.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
+
+- type: entity
+  parent: VendingMachine
+  id: SpacerCigVendor
+  name: Smoke Shop Vending Machine
+  description: A janky looking vending machine with nearly every tobacco product you could dream of stocked.
+  components:
+  - type: VendingMachine
+    pack: SpacerCigVendorPack
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: Advertise
+    pack: CigaretteMachineAds
+  - type: SpeakOnUIClosed
+    pack: CigaretteMachineGoodbyes
+  - type: Speech
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Machines/VendingMachines/cigs.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
+
+- type: entity
+  parent: VendingMachine
+  id: SyndicateCigVendor
+  name: Interdyne Corporation Cigarette Machine
+  description: A generic looking smokes machine selling "Ethically sourced tobacco" produced by Interdyne and other members of the Freestations Coalition.
+  components:
+  - type: VendingMachine
+    pack: SyndieCigVendorPack
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: Advertise
+    pack: CigaretteMachineAds
+  - type: SpeakOnUIClosed
+    pack: CigaretteMachineGoodbyes
+  - type: Speech
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Machines/VendingMachines/cigs.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: [BaseStructureUnanchorable, VendingMachine]
@@ -147,6 +293,7 @@
   - type: MarketModifier
     mod: 1
 
+#cargo
 - type: entity
   parent: [BaseStructureUnanchorable, VendingMachine]
   id: NCSPCargoDispenser

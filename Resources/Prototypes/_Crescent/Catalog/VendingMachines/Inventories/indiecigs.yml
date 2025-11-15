@@ -1,0 +1,20 @@
+- type: vendingMachineInventory
+  id: SpacerCigVendorPack
+  startingInventory:
+    CigPackEmpire: 2
+    CigPackNCWL: 2
+    CigPackSHI: 2
+    CigPackSHI_Menthol: 2
+    CigPackFilterless: 2
+    CigPackInterdynes: 2
+    CigPackInterdyne_Real: 2
+    CigPackInterdyne_Herbal: 2
+    CigPackFreeports: 2
+    CigPackRecreatios_Crack: 2
+    CigPackRecreatios_Meth: 2
+    CigPackRecreatios_Weed: 2
+    CigPackRecreatios_Psy: 2
+    CigarFreeports: 1
+    CigarNCWLCase: 1
+    CigarRoyalCase: 1
+    FlippoLighter: 4
