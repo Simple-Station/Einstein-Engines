@@ -25,7 +25,7 @@
     manual3Slot:
       priority: -7
       whitelist:
-      components:
+        components:
           - Paper
     manual2Slot:
       priority: -6
