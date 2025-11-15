@@ -496,6 +496,7 @@
     Steel: 3000
     AdvancedMechatronics: 2000
     BasicMechatronics: 6000
+    AdvancedElectronics: 1000
 
 - type: latheRecipe
   id: ShipyardManufactorumFlatpack
