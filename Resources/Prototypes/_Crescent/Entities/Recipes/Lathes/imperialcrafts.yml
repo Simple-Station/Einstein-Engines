@@ -618,8 +618,8 @@
   completetime: 1
   materials:
     StarshipEngineComponents: 2000
-    ShipComponents: 1250
-    ShipHull: 2000
+    ShipComponents: 3000
+    ShipHull: 3000
 
 - type: latheRecipe
   id: MagnateLPC
