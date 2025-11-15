@@ -114,3 +114,48 @@
 
 #Tools End
 
+#Support
+
+- type: listing
+  id: StoreListingSRMCombatMedkit
+  name: Combat Medkit
+  description: A sturdy combat medkit, often used by the tenders to patch up idiotic hunters.
+  icon: { sprite: /Resources/Textures/Objects/Specific/Medical/firstaidkits.rsi, state: blackkit.png }
+  productEntity: MedkitCombatFilled
+  cost:
+    PietySRM: 1
+  categories:
+  - StoreCategorySRMSupport
+
+- type: listing
+  id: StoreListingSRMSurgeryBag
+  name: Abnormal Surgery Equipment
+  description: A duffel bag full of abnormal surgery equipment, nobody's quite sure who designed it but it's not like the tenders care.
+  icon: { sprite: /Resources/Textures/_Shitmed/Clothing/Back/Duffels/abductor.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelAbductorFilled
+  cost:
+    PietySRM: 4
+  categories:
+  - StoreCategorySRMSupport
+
+- type: listing
+  id: StoreListingSRMCompactDefibrillator
+  name: Compact Defibrillator
+  description: A compact defibrillator that can be strapped to one's belt for ease of use in emergency situations.
+  icon: { sprite: Objects/Specific/Medical/defibsmall.rsi, state: icon }
+  productEntity: DefibrillatorCompact
+  cost:
+    PietySRM: 3
+  categories:
+  - StoreCategorySRMSupport
+
+- type: listing
+  id: StoreListingSRMBlood
+  name: Bloodloss Treatment Kit
+  description: A kit containing blood bags for emergency transfusions.
+  icon: { sprite: /Resources/Textures/Objects/Specific/Medical/firstaidkits.rsi, state: bloodkit }
+  productEntity: MedkitBloodFilled
+  cost:
+    PietySRM: 1
+  categories:
+  - StoreCategorySRMSupport
