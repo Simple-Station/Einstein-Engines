@@ -1,6 +1,6 @@
 # ncwl
 
-job-name-ncwl-faction-leader = Kommandante
+job-name-ncwl-faction-leader = Major
 job-name-ncwl-kommissar = Kommissar
 job-name-ncwl-fleetkapitan = Fleetkapitan
 job-name-ncwl-partisan = Partisan
@@ -10,7 +10,7 @@ job-name-ncwl-medical-director = Alyans Director
 job-name-ncwl-medical-doctor = Alyans Sanitar
 job-name-ncwl-worker-overboss = Freight Coordinator
 job-name-ncwl-worker-dockhand = Freight Crew
-job-name-ncwl-newbie = League Worker
+job-name-ncwl-newbie = Union Worker
 
 # syndicate
 
