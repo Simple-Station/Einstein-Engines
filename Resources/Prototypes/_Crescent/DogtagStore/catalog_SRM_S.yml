@@ -159,3 +159,49 @@
     PietySRM: 1
   categories:
   - StoreCategorySRMSupport
+
+- type: listing
+  id: StoreListingSRMNvg
+  name: Night Vision Goggles
+  description: Night vision goggles, typically used by hunters when the lights are out.
+  icon: { sprite: /Resources/Textures/Clothing/Eyes/Goggles/nightvision.rsi, state: icon }
+  productEntity: ClothingEyesNightVisionGoggles
+  cost:
+    PietySRM: 10
+  categories:
+  - StoreCategorySRMSupport
+
+- type: listing
+  id: StoreListingSRMNVgMedical
+  name: Medical Night Vision Goggles
+  description: Night vision goggles with built-in medical HUDs, useful for tenders working in low-light conditions.
+  icon: { sprite: /Resources/Textures/Clothing/Eyes/Goggles/medical_nightvision.rsi, state: icon }
+  productEntity: ClothingEyesNightVisionMedicalGoggles
+  cost:
+    PietySRM: 12
+  categories:
+  - StoreCategorySRMSupport
+
+- type: listing
+  id: StoreListingSRMNvgAdvanced
+  name: Advanced Night Vision Goggles
+  description: Advanced night vision goggles, enhanced with the ability to read the ID of an individual from afar.
+  icon: { sprite: /Resources/Textures/Clothing/Eyes/Goggles/security_nightvision.rsi, state: icon }
+  productEntity: ClothingEyesNightVisionSecurityGoggles
+  cost:
+    PietySRM: 15
+  categories:
+  - StoreCategorySRMSupport
+
+- type: listing
+  id: StoreListingSRMThermoMonocle
+  name: Thermal Monocle
+  description: A monocle that allows the wearer to see heat signatures, useful in its own right.
+  icon: { sprite: /Resources/Textures/Clothing/Eyes/Goggles/monocle_thermal.rsi, state: icon }
+  productEntity: ClothingEyesThermalVisionMonocle
+  cost:
+    PietySRM: 12
+  categories:
+  - StoreCategorySRMSupport
+
+#Support End
