@@ -100,3 +100,4 @@ reagent-physical-desc-viscous = viscous
 reagent-physical-desc-volatile = volatile
 reagent-physical-desc-wormy = wormy
 reagent-physical-desc-diametric = diametric
+reagent-physical-desc-gellike = gel-like
