@@ -58,6 +58,14 @@
     shoes: ClothingShoesBootsCombat
     head: ClothingHeadHatSyndicateInterdyneBeret
     id: CoordinatorPDA
-    back: ClothingBackpackNCSPFilledInfanteer
     ears: ClothingHeadsetNCSPInterdyne
     pocket1: AccessElevatorIPM
+    pocket2: WeaponPistolHKUSP
+    back: ClothingBackpackNCSP
+  storage:
+    back:
+      - Flash
+      - Tourniquet
+      - Zipties
+      - MagazinePistol
+      - CombatKnife

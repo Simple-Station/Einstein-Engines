@@ -12,7 +12,7 @@
   canBeAntag: false
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 10800
+      min: 0
     - !type:FactionRequirement
       factionID: "SHI"
     - !type:CharacterTraitRequirement
