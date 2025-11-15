@@ -155,4 +155,5 @@ research-technology-shinohara-ballisticfab = TF-22 Armaments Foundry
 research-technology-shinohara-dermalarmor = KOURINDO-U Dermal Armor
 research-technology-shinohara-shiverblade = SHI-RIP9 Shiver Blade
 research-technology-shinohara-advance-armor = Svbt Experimental Armors
+research-technology-shinohara-light-destroyer = SHI Light Destroyers
 research-technology-shinohara-oldntballistics = Old NT Gun Schematics
