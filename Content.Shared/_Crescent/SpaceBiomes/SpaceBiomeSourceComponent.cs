@@ -2,10 +2,10 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 
 namespace Content.Shared._Crescent.SpaceBiomes;
 
-[RegisterComponent]
+[RegisterComponent, AutoGenerateComponentState]
 public sealed partial class SpaceBiomeSourceComponent : Component
 {
-    [DataField(required: true, customTypeSerializer: typeof(PrototypeIdSerializer<SpaceBiomePrototype>))]
+    [DataField(required: true, customTypeSerializer: typeof(PrototypeIdSerializer<SpaceBiomePrototype>)), AutoNetworkedField]
     public string Biome = "";
 
     /// <summary>

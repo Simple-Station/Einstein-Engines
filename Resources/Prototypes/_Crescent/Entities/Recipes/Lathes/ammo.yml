@@ -346,3 +346,11 @@
   materials:
     Steel: 500
     Uranium: 500
+
+- type: latheRecipe
+  id: 65mmHammerheadRocket
+  result: CartridgeHammerheadRocket
+  completetime: 3
+  materials:
+    Steel: 500
+    Plasma: 1500

@@ -161,6 +161,18 @@
   - TorturerLPC
 
 - type: technology
+  id: ImperialMagnate
+  name: research-technology-imperial-magnate
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Imperial
+  tier: 2
+  cost: 6000
+  recipeUnlocks:
+  - MagnateLPC
+
+- type: technology
   id: ImperialNobleWeapons
   name: research-technology-imperial-nobleweapons
   icon:
@@ -201,6 +213,8 @@
   recipeUnlocks:
   - NemesisLPC
   - JanissaryLPC
+  - VorunaLPC
+  - PerigaleLPC
 
 - type: technology
   id: ImperialLaelaps

@@ -224,6 +224,7 @@
     - N14MaterialCircuitry
     - VehicleWheelchairFolded # Goobstation
     - SilkCrate # Hullrot - Silk Tradegoods Pallet
+    - LatheHandHeldMassScanner
   - type: EmagLatheRecipes
     emagStaticRecipes:
     - BoxLethalshot
@@ -1285,7 +1286,7 @@
           - Gauze
           - Metal
 
-      
+
 - type: entity
   id: MedicalTechFab
   parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
@@ -1634,7 +1635,7 @@
   - type: Machine
     board: BiogeneratorMachineCircuitboard
   - type: MaterialStorage
-    insertOnInteract: true 
+    insertOnInteract: true
     canEjectStoredMaterials: false
     ignoreColor: true
     whitelist:
@@ -1686,7 +1687,7 @@
     - BioGenBoozeVendRestock
     - BioGenCondimentsRestock
     - BioGenChefVendRestock
-    
+
 - type: entity
   parent: [BaseLathe, BaseMaterialSiloUtilizer]
   id: OreProcessor

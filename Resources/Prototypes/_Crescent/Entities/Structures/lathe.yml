@@ -567,6 +567,7 @@
       - CovetorLPC
       - IbisLPC
       - TorturerLPC
+      - MagnateLPC
       - SunesisLPC
       - ClothingBeltSheathDSMRapier
       - ClothingBeltSheathDSMSabre
@@ -596,6 +597,8 @@
       - SuzerainLPC
       - NemesisLPC
       - JanissaryLPC
+      - VorunaLPC
+      - PerigaleLPC
       - ClothingHeadHelmetNCWLEVA
       - ClothingOuterNCWLEVA
       - ClothingHeadHatNCWLCapsoft
@@ -717,6 +720,8 @@
       - ClothingOuterHardsuitSHISpeedsuit
       - FujinLPC
       - MetempsychoticMachineCircuitboard
+      - HardlinerFlatpack
+      - PowerCageHardliner
 
   - type: Machine
     board: MicroforgeCircuitboard

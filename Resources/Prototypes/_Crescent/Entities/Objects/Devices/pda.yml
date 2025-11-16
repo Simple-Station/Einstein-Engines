@@ -57,6 +57,10 @@
   - type: Pda
     id: NCWLIDCardHomeguardSoldat
     state: pda-militiaman
+    manual1Slot:
+      startingItem: BookNCWLManual1
+    manual2Slot:
+      startingItem: BookNCWLManual2
   - type: PdaBorderColor
     borderColor: "#3d251e"
     accentHColor: "#d4d4d4"

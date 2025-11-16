@@ -49,8 +49,15 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitSyndicateInterdyne
     gloves: ClothingHandsGlovesFingerless
-    mask: ClothingMaskSyndicateFacemask
+    mask: ClothingMaskBreathMedicalSecurity
     shoes: ClothingShoesBootsCombat
     id: TraumasecPDA
-    back: ClothingBackpackNCSPFilledInfanteer
+    pocket1: WeaponPistolHKUSP
     ears: ClothingHeadsetNCSPInterdyne
+  storage:
+    back:
+      - Flash
+      - Tourniquet
+      - Zipties
+      - MagazinePistol
+      - CombatKnife

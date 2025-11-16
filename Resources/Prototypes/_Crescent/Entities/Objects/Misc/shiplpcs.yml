@@ -87,6 +87,40 @@
 
 - type: entity
   parent: BaseItem
+  id: ShipVoucherVoruna
+  name: DSM 'Voruna' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Voruna-class subshuttle. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 15000
+  - type: ShipVoucher
+    ship: Voruna
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherPerigale
+  name: DSM 'Perigale' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Perigale-class subshuttle. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 10000
+  - type: ShipVoucher
+    ship: Perigale
+
+- type: entity
+  parent: BaseItem
   id: ShipVoucherSunesis
   name: DSM 'Sunesis' pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with an Imperial Sunesis-class expeditional shuttle. Has to be redeemed at a shipyard console.
@@ -235,7 +269,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 80000
+    price: 125000
   - type: ShipVoucher
     ship: Duchess
 
@@ -272,6 +306,24 @@
     price: 13000
   - type: ShipVoucher
     ship: Torturer
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherMagnate
+  name: DSM 'Magnate' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Magnate fire support vessel. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 40000
+  - type: ShipVoucher
+    ship: Magnate
+
 #ncwl
 
 #T0
@@ -548,7 +600,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 75000
+    price: 125000
   - type: ShipVoucher
     ship: Grishingrad
 
@@ -1653,3 +1705,20 @@
     price: 48000
   - type: ShipVoucher
     ship: Gamma
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherTAPBeelzebub
+  name: TAP 'Beelzebub' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a light escort fighter.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 0 #Don't want this to be free money - it's just for drugrunning
+  - type: ShipVoucher
+    ship: Beelzebub
