@@ -32,7 +32,7 @@
     - TauCetiBasic #needed for vending machines
     # - Solarian # uncomment me if we need universal langs again
   - type: FootPrints
-
+  
 - type: entity
   parent: BaseSpeciesDummy
   id: MobHumanDummy

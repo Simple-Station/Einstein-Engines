@@ -12,7 +12,7 @@
   canBeAntag: false
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 10800
+      min: 0
     - !type:FactionRequirement
       factionID: "TFSC"
     - !type:CharacterTraitRequirement
@@ -53,3 +53,4 @@
     back: ClothingBackpackNCSPSatchelFilledInfanteer
     ears: ClothingHeadsetNCSP
     pocket1: WeaponPistolViperWood
+    pocket2: ClothingMaskGasSyndicate

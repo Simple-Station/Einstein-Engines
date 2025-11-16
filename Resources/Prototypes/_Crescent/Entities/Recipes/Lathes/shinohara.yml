@@ -489,6 +489,16 @@
 # MARK: Flatpacks
 
 - type: latheRecipe
+  id: HardlinerFlatpack
+  result: HardlinerFlatpack
+  completetime: 2
+  materials:
+    Steel: 3000
+    AdvancedMechatronics: 2000
+    BasicMechatronics: 6000
+    AdvancedElectronics: 1000
+
+- type: latheRecipe
   id: ShipyardManufactorumFlatpack
   result: ShipyardManufactorumFlatpack
   completetime: 2
@@ -519,9 +529,9 @@
   result: ShipVoucherFujin
   completetime: 1
   materials:
-    StarshipEngineComponents: 12500
-    ShipComponents: 12500
-    ShipHull: 15000
+    StarshipEngineComponents: 5000
+    ShipComponents: 6000
+    ShipHull: 7000
 
 - type: latheRecipe
   id: VariableCommodityFabricatorFlatpack
@@ -748,6 +758,16 @@
   materials:
     AdvancedMechatronics: 500
     Steel: 1500
+
+- type: latheRecipe
+  id: PowerCageHardliner
+  result: PowerCageHardliner
+  completetime: 2
+  materials:
+    Uranium: 15000
+    Plasma: 20000
+    Plasteel: 15000
+    HardlightGenerator: 3000
 
 #MARK: Melee
 

@@ -98,6 +98,7 @@ research-technology-imperial-triumphant = Imperial Cruiser
 research-technology-imperial-suzerain = Imperial Siege Battlecruiser
 research-technology-imperial-nemesis = Imperial Artillery Carrier
 research-technology-imperial-torturer = Imperial Stealth Bomber
+research-technology-imperial-magnate = Imperial Fire Support Vessel
 
 # NCWL
 research-technology-communard-clothes = Communard Clothes
@@ -157,3 +158,4 @@ research-technology-shinohara-shiverblade = SHI-RIP9 Shiver Blade
 research-technology-shinohara-advance-armor = Svbt Experimental Armors
 research-technology-shinohara-light-destroyer = SHI Light Destroyers
 research-technology-shinohara-oldntballistics = Old NT Gun Schematics
+research-technology-shinohara-ntartillery = NT Artillery Patent
