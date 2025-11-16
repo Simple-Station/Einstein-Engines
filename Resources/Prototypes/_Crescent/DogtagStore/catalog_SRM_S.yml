@@ -204,4 +204,37 @@
   categories:
   - StoreCategorySRMSupport
 
+- type: listing
+  id: StoreListingSRMMassScanner
+  name: Mass Scanner
+  description:
+  icon: { sprite: , state: icon }
+  productEntity:
+  cost:
+    PietySRM: 1
+  categories:
+  - StoreCategorySRMSupport
+
+- type: listing
+  id: StoreListingSRMMedScanner
+  name: Medical Scanner
+  description:
+  icon: { sprite: , state: icon }
+  productEntity:
+  cost:
+    PietySRM:
+  categories:
+  - StoreCategorySRMSupport
+
+- type: listing
+  id: StoreListingSRMMRE
+  name: Meal Ready to Eat
+  description: Your classic MRE, designed not for taste but for hunters on the go.
+  icon: { sprite: /Resources/Textures/Objects/Consumable/Food/bay_food.rsi, state: meatmre.png }
+  productEntity: BoxMRE
+  cost:
+    PietySRM: 1
+  categories:
+  - StoreCategorySRMSupport
+
 #Support End

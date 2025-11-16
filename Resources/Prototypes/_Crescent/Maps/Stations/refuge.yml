@@ -1,7 +1,7 @@
 - type: gameMap
   id: HuntersRefuge
   mapName: "Hunter's Refuge"
-  mapPath: /Maps/_Crescent/Stations/huntersrefuge.yml
+  mapPath: /Resources/Maps/_Crescent/Stations/refuge.yml
   minPlayers: 0
   stations:
     HuntersRefuge:
