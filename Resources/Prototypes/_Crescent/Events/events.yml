@@ -27,7 +27,7 @@
    - type: StationEvent
      startAnnouncement: true
      endAnnouncement: true
-     earliestStart: 25
+     earliestStart: 90
      minimumPlayers: 25
      weight: 3
      startDelay: 10
@@ -49,7 +49,7 @@
    - type: StationEvent
      startAnnouncement: true
      endAnnouncement: true
-     earliestStart: 25
+     earliestStart: 90
      minimumPlayers: 25
      weight: 5
      startDelay: 10
