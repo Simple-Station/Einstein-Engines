@@ -7,23 +7,19 @@
     Good for new players, and represents the core Hullrot experience.
   buttonColor: DarkSlateBlue
   description: |
-    Controlling much of human space outside the Crescent, the Divine Sol Mandate, or simply
-    'the Empire' to laymen, are a product of early space-era corporate classism and
-    post-exploration boom-feudalism, ruled by the mysticized, allegedly all-powerful 'Kaiser' from
-    the Prime system within the Imperial Core constellation, formerly known to archivists as Sol and
-    Pisces, respectively. After the uprising of the NCWL, the Empire had found themselves diminished,
-    but a succesful counter-attack managed to secure the starfortress Kal Suzerai
-    and allowed for a return of Imperial forces to the area, altough control on the fringes of Taypan
-    is still disputed, and raids or terror acts are common.
+    A neo-feudalistic remnant of an Empire that once stretched across the stars, much akin to the ancient Holy Roman Empire.
+    Now what remains is mostly isolated to the sector, sent out by the divine Kaiser to secure this starzone from an
+    incompetent Noble who allowed it to get infested by the Socialist scourge now known as the New Crescent Workers League.
+    For decades, these two giants have clashed over the control of the Sector, each facing their own share of victory and defeat.
+    The carrier known as the Countsman ventures into Taypan to secure a foothold and to kick out the Unionist forces once again.
 
-    Effectively the prime superpower of all of humanity, the Empire allows for a good amount of
-    economic freedom for its subjects and promotes loyalty in a manner not too dissimilar to
-    the megacorporations of old Earth, with aspiring members climbing up the noble ladder of
-    different houses, such as House Olywir of the Domain system. Freeholders thinking that they
-    can speak up against the current regime quickly find themselves screened against and
-    detained, however, with tight information control preventing widespread dissent and
-    often rewriting history itself to suit the needs of the Empire. Other races are permitted within Imperial
-    ranks, but often subject to increased scrutiny and formal or informal discrimination
+    The Divine Sol Mandate prays to the Saints and, most importantly, the Kaiser for their victory. Most higher roles are taken by
+    members of noble houses with varied standing within the Mandate, while House Kircheis sits at the top. The House of Questions
+    keeps the servants of the Mandate ever vigilant, as they are quick to act on any sign of disloyalty or treason.
+    Freeholders or even nobles, who think that they can speak up against the current regime, quickly find themselves under
+    the watchful eye of the HoQ, pressured into silence, or never heard from again. Other races are permitted within Imperial ranks,
+    but are often subject to increased scrutiny and formal or informal discrimination. The Atyrians take the brunt of this hate,
+    as even the Unathi are seen ridiculing them.
   color: "#9FED58"
   weight: 8
   enabled: true
@@ -40,13 +36,18 @@
     Good for new players, and represents the core Hullrot experience.
   buttonColor: "#a46106"
   description: |
-    Stitched together from the still-warm corpses of many labor unions that were in disorganized rebellion
-    against Imperial forces in the Feudal Era before the collapse of Bluespace lanes leading in and out of the
-    Sector, the NCWL are the undisputed victors of the Crescent Revolution, holding four out of six systems
-    within the Sector and ruling from their seat of power in the Core. Holding socialist ideals at heart, the
-    NCWL aims to build a government by laborers, and for the people. Recently having launched a liberation campaign
-    against the Taypan system in the Outer Rim, the League are finally throwing their hats in the pile to make
-    their bid for the untamed frontier.
+    A militant syndicalist government born out of revolt against House Olywir. They have now grown into a major power within the
+    isolated sector, capable of rivaling the Divine Sol Mandate. They operate out of their frontline station, Port Belreska,
+    waging a decades-long war against the Imperial dogs that seek to subjugate them once more. They are made up of several
+    workers' unions, but those fighting at the front are members of the Homeguard, led by the iron-willed Volgin Grishingrad.
+
+    The New Crescent Workers League seeks equality and freedom for all workers of the Crescent, no matter their species.
+    Their strong beliefs were forged from the harsh quotas imposed by House Olywir and the oppression imposed on the unions.
+    At one point, the League managed to bring liberation to the entire Sector, finally deposing House Olywir,
+    but that victory was short-lived, as much of their gains were reversed by the arrival of House Kircheis.
+    After many years of war, cracks are finally showing, but the few dissenters that exist dare not show their face,
+    lest they be taken in by the Ministry of Internal Vigilance and Discipline.
+
   color: "#9FED58"
   weight: 7
   enabled: true
@@ -63,11 +64,20 @@
     Expect heavy profit quotas, pirate raids and little support.
   buttonColor: DarkSlateGray
   description: |
-    Currently the holder of many patents and technologies from the now-defunct NanoTrasen Industries, SHI is the
-    unmatched and unrivaled corporate powerhouse in the Sector. Fingers in every pie, they manage logistics
-    between systems, development of new technologies, mining operations, and even dabble in the manufacturing of
-    space-capable vessels. Sharing the system with the Syndicate, they have made their headquarters in Taypan,
-    enjoying access to ore-rich asteroid veins.
+    The last corporate giant standing. A reminder and a relic of the old world. Shinohara Heavy Industries is the last
+    'real corporation' in the present day. Cut off from the main bubble, where they rule a huge swathe of space under the
+    guise of the New American Protectorate, their corporate dogma remains. Coming from an era once run by corporations,
+    a world of unparalleled greed, innovation, progress, and efficiency - to most, Shinohara's ways are more 'alien' than actual
+    alien species. Being the largest player in the field of archaeotechnology, it is the holder of many rediscovered and
+    reverse-engineered technologies from the now-defunct NanoTrasen Industries, putting SHI as the unmatched and unrivaled
+    corporate powerhouse in the Sector.
+
+    Their fingers are in every pie. they manage logistics between systems, tech scavenging, resource mining operations,
+    and even dabble in the manufacturing of space-capable vessels. While they mainly operate out of the
+    Prometheus Shipyards, Tatsumoto is used to represent their interests and sell their wares to all sides.
+    Situated within a contested system between the League and the Mandate, including the Taypani Freestations Coalition's
+    preying presence, Shinohara has been forced into a spiral of 'Strategic Trade Relations,'
+    'Kinetic Preservation of Corporate Interests,' and 'Competitive Partnership Management.'
   color: "#9FED58"
   weight: 6
   enabled: true
@@ -86,12 +96,17 @@
     Your allies may betray you for a higher paycheck.
   buttonColor: DarkRed
   description: |
-    A conglomerate of pirate gangs, shipbreakers, and unsavory PMC groups, the Syndicate was formed shortly
-    after the initial arrival of the Empire into the Sector, disembodied station gangs and pirate reavers at
-    first, and slowly growing to be a regional superpower under the leadership of Imperial nobility and deserter
-    Ser William 'Pincer' Moore. They've made Taypan their headquarters, thriving within the lawless frontier, away
-    from the overreaching grasp of the NCWL and reasonably far enough from the Empire's remnants still roaming
-    the Sector.
+    A loose conglomerate of independent groups made up of pirates, privateers, shipbreakers,
+    and predatory medical professionals with little to no qualms about taking your organs for themselves.
+    The most prominent groups are Gorlex Security Consulting, Interdyne Pharmaceuticals, Cyberdawn Technologies,
+    and Shipfitters Astronautics Workers Union. Each of them offers certain expertise and profits from it;
+    sometimes, they are compared to a scavenger ecosystem for how they operate.
+
+    They were born from the old New Crescent Syndicate of Privateers, a faction formed by Mandate and League defectors
+    who wished to live away from the grip of the major factions. They were mostly pirates and privateers whom the major
+    players in the sector did not look kindly upon and hunted them down with prejudice. Those privateers who saw the coming end
+    formed the Taypani Freestations Coalition, focusing more on providing their varied array of services rather than simply
+    pillaging. But with the destruction of Freeport, these groups have drifted apart even more, often fighting each other.
   color: "#9FED58"
   weight: 5
   enabled: true
@@ -151,29 +166,27 @@
     Restricted to Special Midround Spawns
   buttonColor: Black
   description: |
-    The victors of an undisputed internal war that broke out in Sol over the Kaiser's turbulent and
-    violent reign, the Authority was born out of a need for reform. Lead by the Jovian ideals of
-    psionic purity, the Central Sol Authority has minimal interest in feudal reign like their precursors,
-    instead focusing on violent conquests made with the purpose of eradicating species and communities
-    that they've found to be linked to the Boundary, Taypan, and other psionic phenomena. It is believed
-    by Authority officials that the source of the Boundary itself comes from the combined, manifested
-    thought of all psionically-enabled people in the Imperial Supercluster, and with every spell cast,
-    every psionicist born, it only becomes larger and more aggressive.
+    An oligarchic authoritarian regime, the successor state to the old Mandate, that could now be best described as fascist.
+    They are held responsible for the death of the old Kaiser and have been fighting a civil war for decades.
+    Often known as simply the Authoritat, they were born out of the greed of the former Imperial court. Led by the Jovian
+    ideals of psionic purity, the Authoritat has minimal interest in feudal reign like their precursors, instead focusing on
+    controlling the populace and on violent conquests made to eradicate species and communities that they've found to be linked
+    to the Boundary, Taypan, and other psionic phenomena. It is believed by Authoritat officials that the source of the
+    Boundary itself comes from the combined, manifested thought of all psionically-enabled people in the Imperial Supercluster,
+    and with every spell cast, every psionicist born, it only becomes larger and more aggressive, threatening to consume the galaxy.
 
-    Effectively the prime superpower of all of humanity, the Authority allows for a good amount of
-    economic freedom for its non-psionicists and promotes loyalty in a manner not too dissimilar to
-    the megacorporations of old Earth, with aspiring members climbing up the military ladder of
-    different militias, such as the 43rd Battlegroup of the Sol system. Forschers thinking that they
-    can speak up against the current regime quickly find themselves screened against and detained,
-    however, with tight information control preventing widespread dissent and often rewriting history
-    itself to suit the needs of the Authority.
+    Effectively, the prime superpower of all of humanity, the Authoritat allows for a good amount of economic freedom for its
+    non-psionic populace and promotes loyalty in a manner not too dissimilar to the Prussian traditions of old Earth,
+    with aspiring members climbing up the military ladder of different units, such as the 43rd Battlegroup of the Sol system.
+    Dissenters who think they can speak up against the current regime quickly find themselves screened and detained.
+    Tight information control prevents widespread dissent, and officials often rewrite history itself to suit the needs of the
+    Authoritat.
   color: "#ffffed"
   weight: 2
   enabled: true
   icon:
     sprite: /Textures/_Crescent/faction_icons.rsi
     state: csa
-   
 
 - type: faction
   name: "Colonial Minutemen"

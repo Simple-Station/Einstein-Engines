@@ -26,7 +26,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-shi-board
+        rank: crescent-rank-shi-corpsec
       - type: HullrotFaction
         faction: SHI
       - type: LanguageAdder

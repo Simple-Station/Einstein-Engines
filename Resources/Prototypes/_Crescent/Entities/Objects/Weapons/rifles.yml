@@ -136,7 +136,7 @@
   name: IRM DA-11 legionnaire 7.62x51mm
   id: WeaponRifleDSMLegionnaire
   parent: [BaseWeaponRifle, StreeCredRedeemable]
-  description: An overengineered rifle, sharing multiple features with the C-20R SMG, such as a odd magazine angle and automatic magazine ejection. Chambered in 7.62x51mm USM rounds.
+  description: An overengineered rifle, sharing multiple features with the DA-20 Talon SMG, such as a odd magazine angle and automatic magazine ejection. Chambered in 7.62x51mm USM rounds.
   components:
   - type: Item
     shape:
@@ -322,6 +322,7 @@
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/rifle_1/rifle_gunshot_2.ogg
   - type: ChamberMagazineAmmoProvider
+    boltClosed: null # means the bolt doesnt lock back like M16 pattern rifles, also means you need to cycle the gun after an empty mag
     soundRack:
       path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
   - type: ItemSlots
@@ -549,6 +550,8 @@
     fireRate: 5
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/rifle_2/rifle_gunshot_2.ogg
+  - type: ChamberMagazineAmmoProvider
+    boltClosed: null # means the bolt doesnt lock back like M16 pattern rifles, also means you need to cycle the gun after an empty mag
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -606,6 +609,8 @@
     fireRate: 5
     soundGunshot:
       collection: AK_74_Gunshots
+  - type: ChamberMagazineAmmoProvider
+    boltClosed: null # means the bolt doesnt lock back like M16 pattern rifles, also means you need to cycle the gun after an empty mag
   - type: ItemSlots
     slots:
       gun_magazine:

@@ -79,16 +79,6 @@
   group: generic
 
 - type: cargoProduct
-  id: ShuttleGunHardlinerGeneric
-  icon:
-    sprite: _Crescent/Objects/ShuttleWeapons/bigfuckinglaser.rsi
-    state: space_artillery
-  product: CrateShuttlegunHardliner
-  cost: 80000
-  category: cargoproduct-category-name-shuttle
-  group: generic
-
-- type: cargoProduct
   id: PowerCageRechargerGeneric
   icon:
     sprite: Structures/Power/cage_recharger.rsi

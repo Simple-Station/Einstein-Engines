@@ -11,7 +11,7 @@ public sealed partial class DiskConsoleComponent : Component
     /// How much it costs to print a disk
     /// </summary>
     [DataField("pricePerDisk"), ViewVariables(VVAccess.ReadWrite)]
-    public int PricePerDisk = 1000;
+    public int PricePerDisk = 5000;
 
     /// <summary>
     /// The prototype of what's being printed

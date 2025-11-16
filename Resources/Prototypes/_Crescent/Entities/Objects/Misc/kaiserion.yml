@@ -1,5 +1,32 @@
 - type: entity
-  parent: Bible
+  parent: BookBase
   name: canticles of st. Romaine
   description: Stained by Alien blood and marked by time, its worn cover reminds all who gaze upon it of Man's Aristocratic genome.
   id: RomaineBible
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/books.rsi
+    layers:
+    - state: paper
+    - state: cover_old
+      color: "#332d27"
+    - state: decor_wingette
+      color: "#453f3a"
+    - state: icon_christ
+    - state: detail_bookmark
+      color: "#c20000"
+  - type: Paper
+    content: book-canticles-romaine
+  - type: Prayable
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 5
+        Holy: 10 # 20 > 10 only because im giving it to every levyman lol
+    heavyRateModifier: 1.25
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 4
+    maxTargets: 4
+  - type: Tag
+    tags:
+    - Book

@@ -59,12 +59,12 @@ job-name-overseer = Overseer of the Hunt
 # shi
 
 job-name-executive = Sector Manager
-job-name-board = Board Executive
+job-name-board = Assistant Manager
 job-name-corpsec = CorpSec Agent
 job-name-highsec = Corporate Liquidation Agent
 job-name-employee = Salaryman
 job-name-medtech = MedTech Researcher
-job-name-boardhr = Human Resources
+job-name-boardhr = Human Resources Officer
 job-name-hos-shi = Head of CorpSec
 
 # tsp
