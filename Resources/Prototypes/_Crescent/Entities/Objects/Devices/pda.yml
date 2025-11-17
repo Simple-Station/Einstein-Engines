@@ -34,6 +34,38 @@
 
 - type: entity
   parent: [BasePDA, StreeCredRedeemableLow]
+  id: NCWLMVDLeaderPDA
+  name: cadet kommissar's PDA
+  description: Brown for communard.
+  components:
+  - type: Pda
+    id: NCWLIDCardMVDLeader
+    state: pda-militiaman
+  - type: PdaBorderColor
+    borderColor: "#3d251e"
+    accentHColor: "#d4d4d4"
+    accentVColor: "#d4d4d4"
+  - type: Icon
+    state: pda-militiaman
+
+- type: entity
+  parent: [BasePDA, StreeCredRedeemableLow]
+  id: NCWLMVDGruntPDA
+  name: enforcer's PDA
+  description: Brown for communard.
+  components:
+  - type: Pda
+    id: NCWLIDCardMVDGrunt
+    state: pda-militiaman
+  - type: PdaBorderColor
+    borderColor: "#3d251e"
+    accentHColor: "#d4d4d4"
+    accentVColor: "#d4d4d4"
+  - type: Icon
+    state: pda-militiaman
+
+- type: entity
+  parent: [BasePDA, StreeCredRedeemableLow]
   id: NCWLHomeguardSquadCaptainPDA
   name: fleetkapitan's PDA
   description: Brown for communard.

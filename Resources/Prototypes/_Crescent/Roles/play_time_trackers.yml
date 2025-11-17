@@ -7,6 +7,12 @@
   id: JobHomeguardLeaderNCWL
 
 - type: playTimeTracker
+  id: JobMVDOfficerNCWL
+
+- type: playTimeTracker
+  id: JobMVDGruntNCWL
+
+- type: playTimeTracker
   id: JobHomeguardSquadCaptainNCWL
 
 - type: playTimeTracker

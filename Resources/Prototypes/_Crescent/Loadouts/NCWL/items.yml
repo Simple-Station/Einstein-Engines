@@ -9,6 +9,8 @@
     jobs:
       - CommandantNCWL
       - KommissarNCWL
+      - MVDOfficerNCWL
+      - MVDGruntNCWL
       - FleetkapitanNCWL
       - PartisanNCWL
       - DirectorNCWL

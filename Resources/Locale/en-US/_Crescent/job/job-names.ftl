@@ -7,14 +7,16 @@ job-name-utility-ipc = NT Engineer IPC
 
 job-name-ncwl-faction-leader = General Major
 job-name-ncwl-kommissar = Kommissar
+job-name-ncwl-mvd-officer = Cadet Kommissar
+job-name-ncwl-mvd-grunt = Enforcer
 job-name-ncwl-fleetkapitan = Unionkapitan
 job-name-ncwl-partisan = Partisan
-job-name-ncwl-industry-taskmaster = Starshina Sindikata
-job-name-ncwl-industry-artificer = Artificer Sindikata
-job-name-ncwl-medical-director = Glav-Vrach
-job-name-ncwl-medical-doctor = Vrach
-job-name-ncwl-worker-overboss = Dockworker Nachalnik
-job-name-ncwl-worker-dockhand = Dockworker
+job-name-ncwl-industry-taskmaster = Sindikat Overseer
+job-name-ncwl-industry-artificer = Sindikat Artificer
+job-name-ncwl-medical-director = Alyans Director
+job-name-ncwl-medical-doctor = Alyans Sanitar
+job-name-ncwl-worker-overboss = Dock Coordinator
+job-name-ncwl-worker-dockhand = Dock Crew
 job-name-ncwl-newbie = Union Worker
 
 # syndicate

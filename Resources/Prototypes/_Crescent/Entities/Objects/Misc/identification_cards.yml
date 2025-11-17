@@ -47,6 +47,36 @@
 
 - type: entity
   parent: IDCardStandard
+  id: NCWLIDCardMVDLeader
+  name: NCWL ID card
+  components:
+  - type: Currency
+    price:
+      PlunderGSC: 10
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcentcom
+  - type: PresetIdCard
+    job: MVDOfficerNCWL
+
+- type: entity
+  parent: IDCardStandard
+  id: NCWLIDCardMVDGrunt
+  name: NCWL ID card
+  components:
+  - type: Currency
+    price:
+      PlunderGSC: 5
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcentcom
+  - type: PresetIdCard
+    job: MVDGruntNCWL
+
+- type: entity
+  parent: IDCardStandard
   id: NCWLIDCardHomeguardSquadCaptain
   name: NCWL ID card
   components:

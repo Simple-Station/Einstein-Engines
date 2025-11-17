@@ -30,6 +30,8 @@
           availableJobs:
             CommandantNCWL: [ 1, 1 ]
             KommissarNCWL: [ 1, 1 ]
+            MVDOfficerNCWL: [ 1, 1 ]
+            MVDGruntNCWL: [ 2, 2 ]
             FleetkapitanNCWL: [ 5, 5 ]
             PartisanNCWL: [ 15, 15 ]
             DirectorNCWL: [ 1, 1 ]
@@ -37,4 +39,5 @@
             IndustryTaskmasterNCWL: [ 1, 1 ]
             ArtificerNCWL: [ 5, 5 ]
             WorkerOverbossNCWL: [ 1, 1 ]
+            DockhandNCWL: [ 5, 5 ]
             WorkerNCWL: [ 20, 20 ]

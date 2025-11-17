@@ -98,3 +98,16 @@
     sprite: _Crescent/Clothing/NCWL/Uniform/ncwlskirt.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/NCWL/Uniform/ncwlskirt.rsi
+
+## mvd
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitMVD
+  name: MVD Fatigues
+  description: Fatigues issued to MVD Central Committee Personnel.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/Uniform/mvdgoon.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/Uniform/mvdgoon.rsi

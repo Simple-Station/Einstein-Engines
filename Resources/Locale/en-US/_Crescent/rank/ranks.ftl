@@ -54,8 +54,10 @@ crescent-rank-ncwl-new = Cadet
 crescent-rank-ncwl-doctor = Doktor
 
 # ncwl
-crescent-rank-ncwl-faction-leader = Major
+crescent-rank-ncwl-faction-leader = General Major
 crescent-rank-ncwl-home-leader = Kommissar
+crescent-rank-ncwl-mvd-officer = Colonel
+crescent-rank-ncwl-mvd-grunt = Sergeant Major
 crescent-rank-ncwl-home-squad-lead = Kapitan
 crescent-rank-ncwl-home-soldat = Partisan
 crescent-rank-ncwl-engi-leader = Overseer

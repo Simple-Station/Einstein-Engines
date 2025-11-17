@@ -7,6 +7,8 @@ job-description-nt-utility-ipc = Load ammunition and upkeep nanotrasen ships. Co
 
 job-description-ncwl-faction-leader = Lead the League from the external end. Maintain relations or war plans with other factions. Don't die.
 job-description-ncwl-kommissar = Lead the League from the internal end. Make sure the Homeguard and Union does their job. Execute traitors.
+job-description-ncwl-mvd-officer = Be the visible hand of the Central Committee. Lead your small team and follow the Kommissar's orders.
+job-description-ncwl-mvd-grunt = Be the visible hand of the Central Committee. Follow your officer and obey his orders.
 job-description-ncwl-fleetkapitan = Command the mass of Partisans. Listen to the Kommissar. Maintain battlefield cohesion.
 job-description-ncwl-partisan = Defend the League. Listen to your Unionkapitan. Do what you're told.
 job-description-ncwl-industry-taskmaster = Ensure materials are being refined into trade goods and ammo. Organize trade routes.

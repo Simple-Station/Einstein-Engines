@@ -12,6 +12,8 @@
       jobs:
         - CommandantNCWL
         - KommissarNCWL
+        - MVDOfficerNCWL
+        - MVDGruntNCWL
         - FleetkapitanNCWL
         - PartisanNCWL
         - DirectorNCWL
@@ -36,6 +38,8 @@
       jobs:
         - CommandantNCWL
         - KommissarNCWL
+        - MVDOfficerNCWL
+        - MVDGruntNCWL
         - FleetkapitanNCWL
         - PartisanNCWL
         - DirectorNCWL
@@ -60,6 +64,8 @@
       jobs:
         - CommandantNCWL
         - KommissarNCWL
+        - MVDOfficerNCWL
+        - MVDGruntNCWL
         - FleetkapitanNCWL
         - PartisanNCWL
         - DirectorNCWL
