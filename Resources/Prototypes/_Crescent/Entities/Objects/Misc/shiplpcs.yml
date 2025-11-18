@@ -167,7 +167,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 80000
+    price: 136300
   - type: ShipVoucher
     ship: Laelaps
 
@@ -303,7 +303,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 13000
+    price: 46200
   - type: ShipVoucher
     ship: Torturer
 
