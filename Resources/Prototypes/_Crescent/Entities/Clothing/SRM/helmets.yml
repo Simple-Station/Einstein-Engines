@@ -25,6 +25,11 @@
     sprite: _Crescent/Clothing/SRM/Head/hardsuit.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/SRM/Head/hardsuit.rsi
+  - type: ClothingGrantPsionicPower
+    power: assayPower
+  - type: Psionic
+    removable: false
+    roller: false
   - type: PointLight
     radius: 4
     color: "#6d805b"
@@ -52,6 +57,11 @@
     sprite: _Crescent/Clothing/SRM/Head/hardsuitelite.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/SRM/Head/hardsuitelite.rsi
+  - type: ClothingGrantPsionicPower
+    power: assayPower
+  - type: Psionic
+    removable: false
+    roller: false
   - type: PointLight
     radius: 4
     color: "#6d805b"
