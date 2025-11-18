@@ -46,3 +46,12 @@
     path: /Audio/_EE/Voice/Xelthia/ask.ogg
   exclaimSound:
     path: /Audio/_EE/Voice/Xelthia/exclaim.ogg
+
+- type: speechSounds
+  id: Wawa
+  saySound:
+    path: _EE/Audio/Animals/wawa_statement.ogg
+  askSound:
+    path: _EE/Audio/Animals/wawa_question.ogg
+  exclaimSound:
+    path: _EE/Audio/Animals/wawa_exclaim.ogg
