@@ -178,10 +178,19 @@
             - CartridgeMagnum
   - type: StaticPrice
     price: 1250
+  - type: Tag
+    tags:
+    - DualWield
+  - type: Multishot
+    spreadMultiplier: 1
+  - type: RequiresDualWield
+    whitelist:
+      tags:
+      - DualWield
 
 - type: entity
   parent: WeaponPistolDeagle
-  id: WeaponPistolDeagleAP
+  id: WeaponPistolDeagleUranium
   components:
   - type: ItemSlots
     slots:
