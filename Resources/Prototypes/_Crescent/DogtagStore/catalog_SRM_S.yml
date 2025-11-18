@@ -207,9 +207,9 @@
 - type: listing
   id: StoreListingSRMMassScanner
   name: Mass Scanner
-  description:
-  icon: { sprite: , state: icon }
-  productEntity:
+  description: A handheld device handy for spaceborne operations.
+  icon: { sprite: /Resources/Textures/Objects/Tools/handheld_mass_scanner.rsi, state: icon }
+  productEntity: HandHeldMassScannerEE
   cost:
     PietySRM: 1
   categories:
@@ -218,11 +218,11 @@
 - type: listing
   id: StoreListingSRMMedScanner
   name: Medical Scanner
-  description:
-  icon: { sprite: , state: icon }
-  productEntity:
+  description: A scanner used for medical purposes, useful for tenders in the field.
+  icon: { sprite: /Resources/Textures/Objects/Specific/Medical/healthanalyzer.rsi, state: icon }
+  productEntity: HandheldHealthAnalyzer
   cost:
-    PietySRM:
+    PietySRM: 1
   categories:
   - StoreCategorySRMSupport
 
