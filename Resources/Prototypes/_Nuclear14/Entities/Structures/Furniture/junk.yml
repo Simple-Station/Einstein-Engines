@@ -238,3 +238,59 @@
     state: junk_clock
     drawdepth: Overdoors
   - type: WallMount
+
+# Tires
+- type: entity
+  parent: N14JunkMetalBase #for the moment
+  id: N14JunkTire1
+  name: stack of tires
+  description: A stack of old, unusable tires.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Decoration/tires.rsi
+    state: junktire1
+    snapCardinals: false
+
+- type: entity
+  parent: N14JunkMetalBase #for the moment
+  id: N14JunkTire2
+  name: a pile of tires
+  description: A pile of old, unusable tires spread on the ground.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Decoration/tires.rsi
+    state: junktire2
+    snapCardinals: false
+
+- type: entity
+  parent: N14JunkMetalBase #for the moment
+  id: N14JunkTire3
+  name: a pile of tires
+  description: A pile of old, unusable tires spread on the ground.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Decoration/tires.rsi
+    state: junktire3
+    snapCardinals: false
+
+- type: entity
+  parent: N14JunkMetalBase #for the moment
+  id: N14JunkTire4
+  name: a pile of tires
+  description: A pile of old, unusable tires spread on the ground.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Decoration/tires.rsi
+    state: junktire4
+    snapCardinals: false
+
+- type: entity
+  parent: N14JunkMetalBase #for the moment
+  id: N14JunkTire5
+  name: a pile of tires
+  description: A pile of old, unusable tires spread on the ground.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Decoration/tires.rsi
+    state: junktire5
+    snapCardinals: false
