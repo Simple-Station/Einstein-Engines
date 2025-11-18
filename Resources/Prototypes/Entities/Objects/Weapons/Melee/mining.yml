@@ -45,6 +45,8 @@
     sprite: Objects/Weapons/Melee/pickaxe.rsi
     storedRotation: -45
   - type: UseDelay
+  - type: StaticPrice
+    price: 100
 
 - type: entity
   name: mining drill
@@ -66,7 +68,7 @@
     wideAnimationRotation: -90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
-    attackRate: 0.5
+    attackRate: 0.3
     range: 1.5
     heavyStaminaCost: 1
     damage:
@@ -81,6 +83,8 @@
         Piercing: 6
   - type: ThrowingAngle
     angle: 270
+  - type: StaticPrice
+    price: 300
 
 - type: entity
   name: diamond tipped mining drill
@@ -107,6 +111,8 @@
       types:
         Structural: 40
         Piercing: 8
+  - type: StaticPrice
+    price: 1000
 
 - type: entity
   abstract: true
@@ -187,6 +193,8 @@
       types:
         Blunt: 5
         Slash: 5
+  - type: StaticPrice
+    price: 500
 
 - type: entity
   parent: BaseWeaponCrusher
@@ -221,6 +229,8 @@
     tags:
     - Knife
     - Pickaxe #hullrot change, it makes sense you can mine with this, right?
+  - type: StaticPrice
+    price: 150
 
 # Like a crusher... but better
 - type: entity
@@ -255,3 +265,5 @@
   - type: Tag
     tags:
       - Pickaxe
+  - type: StaticPrice
+    price: 500
