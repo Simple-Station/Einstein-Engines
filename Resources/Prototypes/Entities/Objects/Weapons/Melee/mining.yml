@@ -155,7 +155,7 @@
     damage:
       types:
         Blunt: 25 # hullrot change, Slightly better than the machete now
-        Slash: 20 # hullrot change
+        Slash: 10 # hullrot change
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 10
     heavyRateModifier: 1.25
@@ -181,8 +181,8 @@
   - type: DamageBoostOnMarker
     boost:
       types: # adds the damage, i think
-        Blunt: 10
-        Slash: 10
+        Blunt: 20
+        Slash: 20
     backstabBoost: # adds backstab damage, like +10
       types:
         Blunt: 5
@@ -239,7 +239,7 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Slash: 50 # hullrot change, no blunt damage, just slash, but +5 damage compared to crushers' 45 damage
+        Slash: 35 # hullrot change, no blunt damage, just slash, but +5 damage compared to crushers' 45 damage
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 10
     heavyRateModifier: 1.25
