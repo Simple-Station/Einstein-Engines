@@ -248,7 +248,15 @@ internal sealed partial class ChatManager : IChatManager
         }
 
         Color? colorOverride = null;
-        var wrappedMessage = Loc.GetString("chat-manager-send-ooc-wrap-message", ("playerName",player.Name), ("message", FormattedMessage.EscapeText(message)));
+        var authServer = player.AuthType == LoginType.LoggedIn
+                ? AuthServer.FromStringList(_configurationManager.GetCVar(CCVars.AuthServers))
+                    .FirstOrDefault(x => x.AuthUrl.ToString() == player.Channel.UserData.AuthServer)?.Id ?? "Unknown"
+                : "Unknown";
+            var wrappedMessage = Loc.GetString(
+                "chat-manager-send-ooc-wrap-message",
+                ("playerName", $"{player.Name}"),
+                ("authServer", authServer),
+                ("message", FormattedMessage.EscapeText(message)));
         if (_adminManager.HasAdminFlag(player, AdminFlags.Admin))
         {
             var prefs = _preferencesManager.GetPreferences(player.UserId);
@@ -256,7 +264,12 @@ internal sealed partial class ChatManager : IChatManager
         }
         if (  _netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) && player.Channel.UserData.PatronTier is { } patron && PatronOocColors.TryGetValue(patron, out var patronColor))
         {
-            wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", patronColor),("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
+            wrappedMessage = Loc.GetString(
+                    "chat-manager-send-ooc-patron-wrap-message",
+                    ("patronColor", patronColor),
+                    ("playerName", player.Name),
+                    ("authServer", authServer),
+                    ("message", FormattedMessage.EscapeText(message)));
         }
 
         //TODO: player.Name color, this will need to change the structure of the MsgChatMessage
