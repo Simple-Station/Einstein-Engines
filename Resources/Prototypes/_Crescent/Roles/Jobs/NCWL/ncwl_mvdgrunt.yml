@@ -7,11 +7,10 @@
   startingGear: MVDGruntNCWLGear
   alwaysUseSpawner: true
   requireAdminNotify: false
-  icon: "JobIconUnionfallNCWLCrew"
+  icon: "JobIconUnionfallNCWLRifleman"
   supervisors: job-supervisors-ncwl-mvd
   canBeAntag: false
   requirements:
-  - !type:CharacterWhitelistRequirement
   - !type:CharacterOverallTimeRequirement
     min: 30000
   - !type:FactionRequirement
