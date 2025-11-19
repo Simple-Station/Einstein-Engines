@@ -1,14 +1,14 @@
 - type: job
   id: ArtificerNCWL
-  name: job-name-ncwl-artificer
-  description: job-description-ncwl-artificer
-  playTimeTracker: JobLogisticLeaderNCWL
-  weight: 2
-  startingGear: DockmasterNCWLGear
+  name: job-name-ncwl-industry-artificer
+  description: job-description-ncwl-industry-artificer
+  playTimeTracker: JobEngineeringWorkerNCWL
+  weight: 93
+  startingGear: ArtificerNCWLGear
   alwaysUseSpawner: true
   requireAdminNotify: false
-  icon: "JobIconNCWLArtificer"
-  supervisors: job-supervisors-ncwl-leaders
+  icon: "JobIconNCWLEngineeringWorker"
+  supervisors: job-supervisors-ncwl-unionized
   canBeAntag: false
   requirements:
     - !type:CharacterOverallTimeRequirement
@@ -30,7 +30,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-ncwl-logi-leader
+        rank: crescent-rank-ncwl-engi-worker
       - type: HullrotFaction
         faction: NCWL
       - type: LanguageAdder
@@ -80,15 +80,15 @@
   - NCWLCommand
 
 - type: startingGear
-  id: DockmasterNCWLGear
+  id: ArtificerNCWLGear
   equipment:
     shoes: ClothingShoesBootsSalvage
     jumpsuit: ClothingUniformJumpsuitNCWLArtificer
-    id: NCWLLogisticLeaderPDA
-    belt: ClothingBeltUtilityEngineering
-    pocket1: WeaponPistolComrade
+    id: NCWLEngineeringWorkerPDA
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesColorYellow
-    head: ClothingHeadHatNCWLCapsoft
+    head: ClothingHeadHatBeretEngineering
     eyes: ClothingEyesGlassesMeson
     ears: ClothingHeadsetNCWL
+    belt: ClothingBeltSalvageWebbingFilledNF
+
