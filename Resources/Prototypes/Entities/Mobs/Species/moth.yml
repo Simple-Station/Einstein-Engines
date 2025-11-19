@@ -132,16 +132,7 @@
         visible: false
   - type: FootPrints
   - type: CanMoveInAir
-  - type: PassiveRegeneration
-    healPerTick:
-      types:
-        Heat: -0.3
-        Shock: -0.1
-        Piercing: -0.3
-        Blunt: -0.3
-        Slash: -0.3
-    thirstDrain: 0.1
-    hungerDrain: 0.1
+
 
 - type: entity
   parent: BaseSpeciesDummy
