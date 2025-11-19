@@ -239,6 +239,19 @@
     graph: Sellsword
     node: armor
 
+- type: entity
+  parent: ClothingOuterHardsuitSyndicateBG
+  id: ClothingOuterHardsuitSyndicateFreiritter
+  name: FREIRITTER mk.IIC custom hardsuit
+  description: A custom-commissioned Syndicate hardsuit, patterned after Imperial ritter neurosuits and up-armored with Syndicate ceramic plate, lined with composite gold decor padding the light titanium skeleton. Protects flimsy electronics and the fleshy (likely felinid) operator underneath.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicatefreiritter.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicatefreiritter.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitSyndicateFreiritter
+
 #regular shit. if you put hardsuit below here i'm going to explode your cock
 
 - type: entity

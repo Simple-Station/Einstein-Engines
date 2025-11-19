@@ -217,6 +217,21 @@
     color: "#ffffed"
 
 - type: entity
+  parent: ClothingHeadHelmetHardsuitSyndicateBattlegroup
+  id: ClothingHeadHelmetHardsuitSyndicateFreiritter
+  categories: [ HideSpawnMenu ]
+  name: sellsword's combat hardsuit helmet
+  description: Spaceworthy protection for your fragile (probably felinid) skull. A modified Syndicate design.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Head/syndicatefreiritter.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Head/syndicatefreiritter.rsi
+  - type: PointLight
+    radius: 6
+    color: "#90ee90"
+
+- type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatSyndicateInterdyne
   name: ripperdoc's bandana
