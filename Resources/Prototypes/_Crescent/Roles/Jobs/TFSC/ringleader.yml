@@ -89,6 +89,7 @@
     id: RingleaderPDA
     ears: ClothingHeadsetNCSP
     gloves: ClothingHandsGlovesFingerless
-    belt: WeaponPistolDeagleAP
-    pocket1: AccessElevatorGSC
-    pocket2: ClothingMaskGasSyndicate
+    belt: AccessElevatorGSC
+    pocket1: WeaponPistolDeagleUranium
+    pocket2: WeaponPistolDeagleUranium
+    mask: ClothingMaskGasSyndicate
