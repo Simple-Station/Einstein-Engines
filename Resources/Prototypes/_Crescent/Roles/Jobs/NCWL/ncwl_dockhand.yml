@@ -1,0 +1,92 @@
+- type: job
+  id: DockhandNCWL
+  name: job-name-ncwl-worker-dockhand
+  description: job-description-ncwl-worker-dockhand
+  playTimeTracker: JobLogisticWorkerNCWL
+  weight: 91
+  startingGear: DockhandNCWLGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconNCWLLogisticWorker"
+  supervisors: job-supervisors-ncwl-unionized
+  canBeAntag: false
+  requirements:
+  - !type:CharacterOverallTimeRequirement
+    min: 1000
+  - !type:FactionRequirement
+    factionID: "NCWL"
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+      - Voidborn
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+      - Muted
+      - Blindness
+      - Pacifist
+      - WheelchairBound
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ncwl-worker
+      - type: HullrotFaction
+        faction: NCWL
+      - type: LanguageAdder
+        addSpoken:
+          - Dockta
+          - Tradeband
+        addUnderstood:
+          - Dockta
+          - Tradeband
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Command
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - NCWLGeneral
+  - NCWLJail
+
+- type: startingGear
+  id: DockhandNCWLGear
+  equipment:
+    shoes: ClothingShoesBootsSalvage
+    jumpsuit: ClothingUniformJumpsuitNCWLTelnikSleeved
+    id: NCWLLogisticWorkerPDA
+    belt: ClothingBeltSalvageWebbingFilledNF
+    back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesFingerless
+    head: ClothingHeadHatNCWLTanker
+    ears: ClothingHeadsetNCWL

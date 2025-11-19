@@ -3,7 +3,7 @@
   name: job-name-ncwl-partisan
   description: job-description-ncwl-partisan
   playTimeTracker: JobHomeguardSoldatNCWL
-  weight: 5
+  weight: 97
   startingGear: SoldatNCWLGear
   alwaysUseSpawner: true
   requireAdminNotify: false

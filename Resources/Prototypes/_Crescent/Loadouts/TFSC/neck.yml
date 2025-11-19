@@ -11,7 +11,24 @@
     - !type:CharacterJobRequirement
       jobs:
         - RingleaderNCSP
-        
+ 
+- type: loadout
+  id: LoadoutNeckTFSCCloakHedgeknightCapelet
+  category: Neck
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingNeckCloakHedgeknightCapelet
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - TechnicianNCSP
+        - InfanteerNCSP
+        - LieutenantNCSP
+        - RingleaderNCSP
+
 - type: loadout
   id: LoadoutNeckTFSCShemagh
   category: Neck

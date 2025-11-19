@@ -161,6 +161,18 @@
   - TorturerLPC
 
 - type: technology
+  id: ImperialLaelaps
+  name: research-technology-imperial-laelaps
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Imperial
+  tier: 1
+  cost: 8000
+  recipeUnlocks:
+  - LaelapsLPC
+
+- type: technology
   id: ImperialMagnate
   name: research-technology-imperial-magnate
   icon:
@@ -215,18 +227,6 @@
   - JanissaryLPC
   - VorunaLPC
   - PerigaleLPC
-
-- type: technology
-  id: ImperialLaelaps
-  name: research-technology-imperial-laelaps
-  icon:
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    state: icon
-  discipline: Imperial
-  tier: 2
-  cost: 9000
-  recipeUnlocks:
-  - LaelapsLPC
 
 - type: technology
   id: ImperialPaladinMech

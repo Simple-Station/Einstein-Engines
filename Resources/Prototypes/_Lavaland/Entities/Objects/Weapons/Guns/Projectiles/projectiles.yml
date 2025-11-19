@@ -9,7 +9,7 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 20
+        Blunt: 30 #hullrot change
   - type: TimedDespawn
     lifetime: 0.100 # Lavaland Change
 
@@ -24,7 +24,7 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 10
+        Blunt: 25 #hullrot change
 
 - type: entity
   id: PelletKinetic
@@ -35,7 +35,7 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 15
+        Blunt: 20 #hullrot change
 
 - type: entity
   id: PelletKineticSpread

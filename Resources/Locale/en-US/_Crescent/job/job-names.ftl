@@ -5,13 +5,18 @@ job-name-utility-ipc = NT Engineer IPC
 
 # ncwl
 
-job-name-ncwl-faction-leader = Major
+job-name-ncwl-faction-leader = General Major
 job-name-ncwl-kommissar = Kommissar
-job-name-ncwl-fleetkapitan = Fleetkapitan
+job-name-ncwl-mvd-officer = Cadet Kommissar
+job-name-ncwl-mvd-grunt = Kommissar Aide
+job-name-ncwl-fleetkapitan = Unionkapitan
 job-name-ncwl-partisan = Partisan
-job-name-ncwl-artificer = Artificer
-job-name-ncwl-medical-doctor = Sanitar
-job-name-ncwl-coordinator = Union Coordinator
+job-name-ncwl-industry-taskmaster = Sindikat Overseer
+job-name-ncwl-industry-artificer = Sindikat Artificer
+job-name-ncwl-medical-director = Alyans Director
+job-name-ncwl-medical-doctor = Alyans Sanitar
+job-name-ncwl-worker-overboss = Logistics Coordinator
+job-name-ncwl-worker-dockhand = Logistics Crew
 job-name-ncwl-newbie = Union Worker
 
 # syndicate
