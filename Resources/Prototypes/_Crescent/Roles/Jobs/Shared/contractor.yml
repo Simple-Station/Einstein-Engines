@@ -4,6 +4,10 @@
   description: job-description-contractor
   playTimeTracker: JobContractor
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:CharacterOverallTimeRequirement
       min: 4000
     - !type:WealthRequirement

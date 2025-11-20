@@ -11,6 +11,10 @@
   supervisors: You answer to the Ringleader and Gorlex Security Lieutenants
   canBeAntag: false
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:CharacterOverallTimeRequirement
       min: 20000
     - !type:FactionRequirement

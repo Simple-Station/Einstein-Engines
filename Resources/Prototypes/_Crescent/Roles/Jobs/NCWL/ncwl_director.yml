@@ -8,6 +8,10 @@
   alwaysUseSpawner: true
   icon: "JobIconNCWLMedicalLeader"
   requirements:
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+      - Voidborn
   - !type:CharacterOverallTimeRequirement
     min: 20000
   - !type:FactionRequirement
