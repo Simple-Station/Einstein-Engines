@@ -10,7 +10,6 @@
     sprite: _Crescent/Clothing/NCWL/Mask/combatbalaclava.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/NCWL/Mask/combatbalaclava.rsi
-  - type: Armor
 
 - type: entity
   parent: ClothingMaskGasSyndicate
