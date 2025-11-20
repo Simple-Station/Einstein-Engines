@@ -335,6 +335,15 @@
     BallisticCycler: 1000
 
 - type: latheRecipe
+  id: WeaponSniperDSMLegax
+  result: WeaponSniperDSMLegax
+  completetime: 2
+  materials:
+    Steel: 2000
+    Silver: 500
+    BasicMechatronics: 1000
+
+- type: latheRecipe
   id: WeaponRevolverArgenti
   result: WeaponRevolverArgenti
   completetime: 2
