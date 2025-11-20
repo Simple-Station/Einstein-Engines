@@ -49,7 +49,9 @@
     - TauCetiBasic
     - Nekomimetic
   - type: PotentiaModifier
-    potentiaMultiplier: 0.5
+    potentiaMultiplier: 0
+  - type: Mindbroken
+  - type: PsionicInsulation
 
 - type: entity
   save: false
