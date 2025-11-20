@@ -212,6 +212,15 @@
     BallisticCycler: 1000
 
 - type: latheRecipe
+  id: WeaponSniperNCWLNovomosin
+  result: WeaponSniperNCWLNovomosin
+  completetime: 2
+  materials:
+    Steel: 2000
+    Plasteel: 500
+    BasicMechatronics: 1000
+
+- type: latheRecipe
   id: WeaponSubMachineGunBloodhound
   result: WeaponSubMachineGunBloodhound
   completetime: 2
