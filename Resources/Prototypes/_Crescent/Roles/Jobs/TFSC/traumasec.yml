@@ -11,6 +11,10 @@
   supervisors: You answer to the interests of the Interdyne Pharmaceuticals company's coordinator and your peers.
   canBeAntag: false
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:CharacterOverallTimeRequirement
       min: 10800
     - !type:FactionRequirement

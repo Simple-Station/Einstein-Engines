@@ -220,7 +220,7 @@
       baseWalkSpeed: 2.7
       baseSprintSpeed: 4.5
     - type: Flashable
-      eyeDamageChance: 0.3
+      eyeDamageChance: 1
       eyeDamage: 1
       durationMultiplier: 1.5
     - type: Speech
