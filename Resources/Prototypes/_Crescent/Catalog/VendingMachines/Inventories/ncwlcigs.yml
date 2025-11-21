@@ -1,0 +1,9 @@
+- type: vendingMachineInventory
+  id: NCWLCigVendorPack
+  startingInventory:
+    CigPackNCWL: 4
+    CigPackSHI: 2
+    CigPackSHI_Menthol: 2
+    CigPackFilterless: 2
+    CigarNCWLCase: 1
+    FlippoLighter: 4

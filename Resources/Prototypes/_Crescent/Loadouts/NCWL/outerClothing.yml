@@ -13,8 +13,11 @@
         - KommissarNCWL
         - FleetkapitanNCWL
         - PartisanNCWL
+        - DirectorNCWL
         - DoctorNCWL
-        - CoordinatorNCWL
+        - WorkerOverbossNCWL
+        - DockhandNCWL
+        - IndustryTaskmasterNCWL
         - ArtificerNCWL
         - WorkerNCWL
 
@@ -44,5 +47,21 @@
       jobs:
         - CommandantNCWL
         - DoctorNCWL
-        - CoordinatorNCWL
+        - WorkerOverbossNCWL
         - ArtificerNCWL
+
+- type: loadout
+  id: LoadoutOuterArmorMVDCoat
+  category: Outer
+  cost: 1
+  items:
+    - ClothingOuterArmorMVDCoat
+  requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - CommandantNCWL
+        - KommissarNCWL
+        - MVDGruntNCWL

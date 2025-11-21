@@ -47,9 +47,77 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 95000
+    price: 195000
   - type: ShipVoucher
     ship: Suzerain
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherNemesis
+  name: DSM 'Nemesis' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Nemesis-class carrier. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 175000
+  - type: ShipVoucher
+    ship: Nemesis
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherJanissary
+  name: DSM 'Janissary' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Janissary-class subshuttle. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 35000
+  - type: ShipVoucher
+    ship: Janissary
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherVoruna
+  name: DSM 'Voruna' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Voruna-class subshuttle. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 15000
+  - type: ShipVoucher
+    ship: Voruna
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherPerigale
+  name: DSM 'Perigale' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Perigale-class subshuttle. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 10000
+  - type: ShipVoucher
+    ship: Perigale
 
 - type: entity
   parent: BaseItem
@@ -99,7 +167,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 80000
+    price: 136300
   - type: ShipVoucher
     ship: Laelaps
 
@@ -201,7 +269,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 80000
+    price: 125000
   - type: ShipVoucher
     ship: Duchess
 
@@ -235,9 +303,27 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 13000
+    price: 46200
   - type: ShipVoucher
     ship: Torturer
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherMagnate
+  name: DSM 'Magnate' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Magnate fire support vessel. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 40000
+  - type: ShipVoucher
+    ship: Magnate
+
 #ncwl
 
 #T0
@@ -461,6 +547,44 @@
 
 #T3 END
 
+#ANTIQUES
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherSasha
+  name: NCWL 'Sasha' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an antiquated communard Sasha-class warship pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 75000
+  - type: ShipVoucher
+    ship: Sasha
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherClementine
+  name: NCWL 'Clementine' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Clementine-class ancient Flagship pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 93750
+  - type: ShipVoucher
+    ship: Clementine
+
+#ANTIQUES END
+
 #Donator
 
 - type: entity
@@ -476,7 +600,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 75000
+    price: 125000
   - type: ShipVoucher
     ship: Grishingrad
 
@@ -602,6 +726,23 @@
     price: 24000
   - type: ShipVoucher
     ship: Probe
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherFujin
+  name: CSEC 'Fujin' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a CorpSec Fujin-class light destroyer pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 60000
+  - type: ShipVoucher
+    ship: Fujin
 
 #ncsp
 
@@ -1564,3 +1705,20 @@
     price: 48000
   - type: ShipVoucher
     ship: Gamma
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherTAPBeelzebub
+  name: TAP 'Beelzebub' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a light escort fighter.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 0 #Don't want this to be free money - it's just for drugrunning
+  - type: ShipVoucher
+    ship: Beelzebub

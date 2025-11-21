@@ -3,7 +3,7 @@
   name: job-name-ncwl-partisan
   description: job-description-ncwl-partisan
   playTimeTracker: JobHomeguardSoldatNCWL
-  weight: 5
+  weight: 97
   startingGear: SoldatNCWLGear
   alwaysUseSpawner: true
   requireAdminNotify: false
@@ -14,7 +14,7 @@
     - !type:FactionRequirement
       factionID: "NCWL"
     - !type:CharacterOverallTimeRequirement
-      min: 10800
+      min: 1000
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -57,7 +57,8 @@
     id: NCWLHomeguardSoldatPDA
     outerClothing: ClothingOuterArmorNCWLHeavyCarapace
     belt: ClothingBeltNCWLPouches
-    pocket1: WeaponPistolHKUSP
+    pocket1: WeaponPistolComrade
+    pocket2: MagazinePistol
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesCombat
     head: ClothingHeadHelmetNCWLBasic
@@ -65,8 +66,7 @@
     ears: ClothingHeadsetNCWL
   storage:
     back:
-    - Flash
-    - Tourniquet
-    - Zipties
-    - MagazinePistol
-    - CombatKnife
+      - Flash
+      - Tourniquet
+      - Zipties
+      - CombatKnife

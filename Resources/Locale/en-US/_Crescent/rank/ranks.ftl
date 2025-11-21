@@ -15,7 +15,6 @@ crescent-rank-ind-dockhand = Dockhand
 crescent-rank-shi-executive = Manager
 crescent-rank-shi-board = Exec.
 crescent-rank-shi-corpsec = CorpSec.
-crescent-rank-shi-highsec = Employee
 crescent-rank-shi-employee = Employee
 crescent-rank-shi-medtech = Medtech
 
@@ -55,13 +54,17 @@ crescent-rank-ncwl-new = Cadet
 crescent-rank-ncwl-doctor = Doktor
 
 # ncwl
-crescent-rank-ncwl-faction-leader = Major
+crescent-rank-ncwl-faction-leader = General Major
 crescent-rank-ncwl-home-leader = Kommissar
+crescent-rank-ncwl-mvd-officer = Colonel
+crescent-rank-ncwl-mvd-grunt = Komrade
 crescent-rank-ncwl-home-squad-lead = Kapitan
 crescent-rank-ncwl-home-soldat = Partisan
-crescent-rank-ncwl-logi-leader = Artificer
-crescent-rank-ncwl-engi-leader = Coordinator
+crescent-rank-ncwl-engi-leader = Overseer
+crescent-rank-ncwl-engi-worker = Artificer
+crescent-rank-ncwl-medi-leader = Director
 crescent-rank-ncwl-medi-worker = Sanitar
+crescent-rank-ncwl-logi-leader = Coordinator
 crescent-rank-ncwl-worker = Comrade
 
 

@@ -102,7 +102,7 @@
 
 - type: entity
   name: CDT C-20R Corsair 11mm
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable ]
   id: WeaponSubMachineGunCorsair
   description: A compact 11 mm submachine gun made by Cyberdawn. Commonly called the C-20R, though Cyberdawn recently tried to force the nickname Corsair on it.
   components:

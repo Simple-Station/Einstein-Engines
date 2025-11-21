@@ -292,10 +292,10 @@
       - ShellShotgun
 
 - type: entity
-  name: NCSP Saiga-12k Hammer 12g
   # Don't parent to BaseWeaponShotgun because it differs significantly
   parent: [BaseItem, BaseGunWieldable]
   id: WeaponShotgunNCSPSaiga12
+  name: NCSP Saiga-12k Hammer 12g
   description: A magazine-fed shotgun in use by terrorist forces. Uses 12 gauge shotgun shells.
   components:
   - type: Sprite
@@ -318,7 +318,8 @@
   - type: AmmoCounter
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
-    fireRate: 2.5 #Magfed, and cyberdawn facbricated. Cant be better than Pozhar.
+    damageModifier: 0.85
+    fireRate: 1.5 #Magfed, and cyberdawn facbricated. Cant be better than Pozhar.
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -352,6 +353,7 @@
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
   - type: ChamberMagazineAmmoProvider
+    boltClosed: null # means the bolt doesnt lock back like M16 pattern rifles, also means you need to cycle the gun after an empty mag
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -378,6 +380,12 @@
         Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 9.5
+  - type: ExtendDescription
+    descriptionList:
+      - description: This shotgun's damage is reduced due to its fire-rate. It deals 15% lower damage per shot.
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
 
 - type: entity
   name: HGS VAP-16S Haulikko 12g

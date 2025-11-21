@@ -147,8 +147,8 @@
         variation: 0.125
     activatedDamage:
         types:
-            Slash: 25
-            Heat: 20
+            Slash: 30
+            Heat: 25
             Structural: 20
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Melee/plas_sword.rsi
@@ -214,7 +214,7 @@
   - type: MeleeWeapon
     wideAnimationRotation: 135
     swingLeft: true
-    attackRate: 1.5
+    attackRate: 0.75
     range: 1.75
     damage:
       types:
@@ -223,10 +223,10 @@
         Structural: 10
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 14
-    heavyRateModifier: 1.167 # 1.75 attack rate with 1.5 base
-    clickPartDamageMultiplier: 1.25
+    heavyRateModifier: 1.2 # slower heavy swing of 0.9
+    clickPartDamageMultiplier: 1.15
     lightRangeModifier: 1.15
-    maxTargets: 6
+    maxTargets: 3
     soundHit:
       collection: MetalThud
   - type: Wieldable
@@ -260,7 +260,7 @@
   - type: MeleeWeapon
     wideAnimationRotation: -155 #onehanded stance allows for wider swing
     range: 1.25
-    attackRate: 1
+    attackRate: 0.75
     damage:
       types:
         Blunt: 35

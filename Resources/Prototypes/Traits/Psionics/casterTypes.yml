@@ -22,6 +22,7 @@
           inverted: true
           species:
             - IPC
+            - Oni
 
 - type: trait
   id: PsionicInsulation
@@ -47,6 +48,7 @@
           inverted: true
           species:
             - IPC
+            - Oni
 
 - type: trait
   id: PsychoHistorian
@@ -79,6 +81,7 @@
           inverted: true
           species:
             - IPC
+            - Oni
 
 - type: trait
   id: Biomancer
@@ -106,6 +109,7 @@
           inverted: true
           species:
             - IPC
+            - Oni
 
 - type: trait
   id: Pyromancer
@@ -133,3 +137,4 @@
           inverted: true
           species:
             - IPC
+            - Oni

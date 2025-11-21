@@ -31,6 +31,9 @@ namespace Content.Shared.PDA
             ItemSlotsSystem.AddItemSlot(uid, PdaComponent.PdaPaiSlotId, pda.PaiSlot);
             ItemSlotsSystem.AddItemSlot(uid, PdaComponent.PdaPassportSlotId, pda.PassportSlot);
             ItemSlotsSystem.AddItemSlot(uid, PdaComponent.PdaShipDeedSlotId, pda.ShipDeedSlot);
+            ItemSlotsSystem.AddItemSlot(uid, PdaComponent.PdaManual1SlotId, pda.Manual1Slot);
+            ItemSlotsSystem.AddItemSlot(uid, PdaComponent.PdaManual2SlotId, pda.Manual2Slot);
+            ItemSlotsSystem.AddItemSlot(uid, PdaComponent.PdaManual3SlotId, pda.Manual3Slot);
             UpdatePdaAppearance(uid, pda);
         }
 
@@ -41,6 +44,9 @@ namespace Content.Shared.PDA
             ItemSlotsSystem.RemoveItemSlot(uid, pda.PaiSlot);
             ItemSlotsSystem.RemoveItemSlot(uid, pda.PassportSlot);
             ItemSlotsSystem.RemoveItemSlot(uid, pda.ShipDeedSlot);
+            ItemSlotsSystem.RemoveItemSlot(uid, pda.Manual1Slot);
+            ItemSlotsSystem.RemoveItemSlot(uid, pda.Manual2Slot);
+            ItemSlotsSystem.RemoveItemSlot(uid, pda.Manual3Slot);
         }
 
         protected virtual void OnItemInserted(EntityUid uid, PdaComponent pda, EntInsertedIntoContainerMessage args)

@@ -224,6 +224,7 @@
     - N14MaterialCircuitry
     - VehicleWheelchairFolded # Goobstation
     - SilkCrate # Hullrot - Silk Tradegoods Pallet
+    - LatheHandHeldMassScanner
   - type: EmagLatheRecipes
     emagStaticRecipes:
     - BoxLethalshot
@@ -516,6 +517,7 @@
     - AutolatheMachineCircuitboard
     - BookPressMachineCircuitboard
     - CircuitImprinterMachineCircuitboard
+    - BiogeneratorMachineCircuitboard
     - OreProcessorMachineCircuitboard
     - MaterialReclaimerMachineCircuitboard
     - ElectrolysisUnitMachineCircuitboard
@@ -1184,7 +1186,107 @@
       - ClothMade
       - Gauze
       - Metal
-      
+
+- type: entity
+  id: AmmoTechFab
+  parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
+  name: ammo techfab
+  description: Prints the bare minimum of bullets that any budget military or armory could need. Nothing fancy.
+  components:
+    - type: Sprite
+      sprite: Structures/Machines/techfab.rsi
+      layers:
+        - state: icon
+          map: ["enum.LatheVisualLayers.IsRunning"]
+        - state: ammo
+        - state: unlit
+          shader: unshaded
+          map: ["enum.PowerDeviceVisualLayers.Powered"]
+        - state: inserting
+          map: ["enum.MaterialStorageVisualLayers.Inserting"]
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: Machine
+      board: AmmoTechFabCircuitboard
+    - type: Lathe
+      idleState: icon
+      runningState: icon
+      staticRecipes:
+        - SluggieHE
+        - SluggieAP
+        - SluggieEMP
+        - IdnaTorpedoRecipe
+        - Automortar90
+        - MagazineGrenadeEmpty
+        - Needler60
+        - MagazineVulcan
+        - MagazineFlak
+        - 48mmEMPRocket
+        - 48mmHighYieldRocket
+        - 48mmLowYieldRocket
+        - RocketMagazineEmpty
+        - Cartridge40mmFrag
+        - Cartridge40mmCan
+        - Cartridge40mmHEDP
+        - Cartridge40mmEMP
+        - Cartridge40mmSmoke
+        - Cartridge40mmThermobaric
+        #Hullrot edit start
+        - DrumMagazineShotgunSlug
+        - DrumMagazineShotgunEmpty
+        - DrumMagazineShotgunBuck
+        - MagazineSmgSmartgun
+        - MagazineHeavyRifleBoxmag
+        - MagazinePistolHeavy
+        - MagazineBoxHeavyPistol
+        - SpeedLoader27mmAutocannonHE
+        - MagazineBoxAntiMateriel
+        - MagazineBoxHeavyRifle
+        - MagazineBoxRifle
+        - MagazineBoxLightRifle
+        - MagazineBoxCaselessRifle
+        - MagazineBoxCaselessRifleBig
+        - BoxShotgunFlash4g
+        - BoxShotgunSlug4g
+        - BoxLethalshot4g
+        - BoxBeanbag4g
+        - BoxLethalshot
+        - BoxShotgunSlug
+        - BoxShotgunLumen
+        - BoxShotgunFlare
+        - MagazineBoxMagnum
+        - MagazineBoxPistol
+        - MagazineAntiMateriel
+        - MagazineHeavyRifle
+        - MagazineRifleDrum
+        - MagazineRifle
+        - MagazineLightRifle
+        - MagazineShotgunSlug
+        - MagazineShotgun
+        - SpeedLoader127x99
+        - SpeedLoaderMagnum
+        - MagazineMagnumSub
+        - MagazineMagnum
+        - MagazinePistolSubMachineGunHeavy
+        - MagazinePistolSubMachineGun
+        - MagazinePistol6mmSmg
+        - MagazinePistolSmartgun
+        - MagazinePistol
+        - MagazinePistol6mm
+        - MagazinePistolSubMachineGunTopMounted
+        #Hullrot edit end
+    - type: MaterialStorage
+      whitelist:
+        tags:
+          - Sheet
+          - RawMaterial
+          - Ingot
+          - Wooden
+          - ClothMade
+          - Gauze
+          - Metal
+
+
 - type: entity
   id: MedicalTechFab
   parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
@@ -1512,6 +1614,81 @@
       - Metal
 
 - type: entity
+  id: Biogenerator
+  parent: BaseLathe
+  name: biogenerator
+  description: Converts plants into biomass, which can be used to construct useful items.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/biofabricator.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: BiogeneratorMachineCircuitboard
+  - type: MaterialStorage
+    insertOnInteract: true
+    canEjectStoredMaterials: false
+    ignoreColor: true
+    whitelist:
+      tags:
+      - RawMaterial
+  - type: ProduceMaterialExtractor
+  - type: ItemSlots
+    slots:
+      beaker_slot:
+        name: lathe-component-output-slot-beaker-name
+        whitelist:
+          components:
+          - FitsInDispenser
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      beaker_slot: !type:ContainerSlot
+  - type: Lathe
+    reagentOutputSlotId: beaker_slot
+    idleState: icon
+    runningState: building
+    staticRecipes:
+    - BioGenMilk
+    - BioGenMilkSoy #Gem
+    - BioGenEthanol
+    - BioGenCream
+    - BioGenBlackpepper
+    - BioGenEnzyme
+    - BioGenFlour
+    - BioGenSugar
+    - BioGenMonkeyCube
+    - BioGenKoboldCube
+    - CowCube
+    - GoatCube
+    - MothroachCube
+    - MouseCube
+    - BioGenMaterialCloth1
+    - BioGenMaterialCardboard1
+    - BioGenPaper
+    - BioGenPaperRolling1
+    - BioGenCandle
+    - BioGenPlantBGone
+    - BioGenWeedKiller
+    - BioGenPestKiller
+    - BioGenLeft4Zed
+    - BioGenEZNutrient
+    - BioGenRobustHarvest
+    - BioGenBoozeVendRestock
+    - BioGenCondimentsRestock
+    - BioGenChefVendRestock
+
+- type: entity
   parent: [BaseLathe, BaseMaterialSiloUtilizer]
   id: OreProcessor
   name: ore processor
@@ -1753,102 +1930,3 @@
     whitelist:
       tags:
         - PrizeTicket
-#AMMO
-- type: entity
-  id: AmmoTechFab
-  parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
-  name: ammo techfab
-  description: Prints the bare minimum of bullets that any budget military or armory could need. Nothing fancy.
-  components:
-    - type: Sprite
-      sprite: Structures/Machines/techfab.rsi
-      layers:
-        - state: icon
-          map: ["enum.LatheVisualLayers.IsRunning"]
-        - state: ammo
-        - state: unlit
-          shader: unshaded
-          map: ["enum.PowerDeviceVisualLayers.Powered"]
-        - state: inserting
-          map: ["enum.MaterialStorageVisualLayers.Inserting"]
-        - state: panel
-          map: ["enum.WiresVisualLayers.MaintenancePanel"]
-    - type: Machine
-      board: AmmoTechFabCircuitboard
-    - type: Lathe
-      idleState: icon
-      runningState: icon
-      staticRecipes:
-        - SluggieHE
-        - SluggieAP
-        - IdnaTorpedoRecipe
-        - Automortar90
-        - MagazineGrenadeEmpty
-        - Needler60
-        - MagazineVulcan
-        - MagazineFlak
-        - 48mmEMPRocket
-        - 48mmHighYieldRocket
-        - 48mmLowYieldRocket
-        - RocketMagazineEmpty
-        - Cartridge40mmFrag
-        - Cartridge40mmCan
-        - Cartridge40mmHEDP
-        - Cartridge40mmEMP
-        - Cartridge40mmSmoke
-        - Cartridge40mmThermobaric
-        #Hullrot edit start
-        - DrumMagazineShotgunSlug
-        - DrumMagazineShotgunEmpty
-        - DrumMagazineShotgunBuck
-        - MagazineSmgSmartgun
-        - MagazineHeavyRifleBoxmag
-        - MagazinePistolHeavy
-        - MagazineBoxHeavyPistol
-        - SpeedLoader27mmAutocannonHE
-        - MagazineBoxAntiMateriel
-        - MagazineBoxHeavyRifle
-        - MagazineBoxRifle
-        - MagazineBoxLightRifle
-        - MagazineBoxCaselessRifle
-        - MagazineBoxCaselessRifleBig
-        - BoxShotgunFlash4g
-        - BoxShotgunSlug4g
-        - BoxLethalshot4g
-        - BoxBeanbag4g
-        - BoxLethalshot
-        - BoxShotgunSlug
-        - BoxShotgunLumen
-        - BoxShotgunFlare
-        - MagazineBoxMagnum
-        - MagazineBoxPistol
-        - MagazineAntiMateriel
-        - MagazineHeavyRifle
-        - MagazineRifleDrum
-        - MagazineRifle
-        - MagazineLightRifle
-        - MagazineShotgunSlug
-        - MagazineShotgun
-        - SpeedLoader127x99
-        - SpeedLoaderMagnum
-        - MagazineMagnumSub
-        - MagazineMagnum
-        - MagazinePistolSubMachineGunHeavy
-        - MagazinePistolSubMachineGun
-        - MagazinePistol6mmSmg
-        - MagazinePistolSmartgun
-        - MagazinePistol
-        - MagazinePistol6mm
-        - MagazinePistolSubMachineGunTopMounted
-        #Hullrot edit end
-    - type: MaterialStorage
-      whitelist:
-        tags:
-          - Sheet
-          - RawMaterial
-          - Ingot
-          - Wooden
-          - ClothMade
-          - Gauze
-          - Metal
-

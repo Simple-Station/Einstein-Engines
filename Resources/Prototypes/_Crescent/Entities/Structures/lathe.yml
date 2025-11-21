@@ -567,12 +567,14 @@
       - CovetorLPC
       - IbisLPC
       - TorturerLPC
+      - MagnateLPC
       - SunesisLPC
       - ClothingBeltSheathDSMRapier
       - ClothingBeltSheathDSMSabre
       - DSMRapier
       - DSMSabre
       - DSMDuelingKhopesh
+      - DSMBaton
       - LaelapsLPC
       - PaladinFlatpack
       - WandererFlatpack
@@ -582,6 +584,7 @@
       - WeaponMechCombatPlasmaCannon
       - WeaponLightMachineGunDSMDominion
       - WeaponShotgunReno
+      - WeaponSniperDSMLegax
       - WeaponRifleDSMLegionnaire
       - WeaponSubMachineGunC20rImperial
       - WeaponPistolNeoVolker
@@ -593,6 +596,10 @@
       - WeaponLauncherM320
       - TriumphantLPC
       - SuzerainLPC
+      - NemesisLPC
+      - JanissaryLPC
+      - VorunaLPC
+      - PerigaleLPC
       - ClothingHeadHelmetNCWLEVA
       - ClothingOuterNCWLEVA
       - ClothingHeadHatNCWLCapsoft
@@ -628,6 +635,7 @@
       - WeaponSubMachineGunBloodhound
       - WeaponRifleNCWLBatanya
       - WeaponShotgunToz123
+      - WeaponSniperNCWLNovomosin
       - WeaponShotgunProletar
       - WeaponPistolT91
       - WeaponRevolverPython
@@ -712,7 +720,10 @@
       - SHIShiverBlade
       - ClothingOuterHardsuitSHIJuggernaut
       - ClothingOuterHardsuitSHISpeedsuit
+      - FujinLPC
       - MetempsychoticMachineCircuitboard
+      - HardlinerFlatpack
+      - PowerCageHardliner
 
   - type: Machine
     board: MicroforgeCircuitboard

@@ -131,7 +131,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         SubscribeLocalEvent<GunComponent, MapInitEvent>(OnMapInit);
 
         Subs.CVar(_config, RMCCVars.RMCGunPrediction, v => GunPrediction = v, true);
-        _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("sharedgunsystem.shared");
+        //_sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("sharedgunsystem.shared");
     }
 
     private void OnMapInit(Entity<GunComponent> gun, ref MapInitEvent args)
@@ -191,14 +191,14 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (TryComp<MechPilotComponent>(entity, out var mechPilot)) // hullrot fix for mechs
         {
             entity = mechPilot.Mech;
-            _sawmill.Debug("@@@@@ - USER IS IN A MECH");
+            //_sawmill.Debug("@@@@@ - USER IS IN A MECH");
         }
 
         if (TryComp<MechComponent>(entity, out var mech) &&
             mech.CurrentSelectedEquipment.HasValue &&
             TryComp<GunComponent>(mech.CurrentSelectedEquipment.Value, out var mechGun))
         {
-            _sawmill.Debug("----- got gun - user's in a mech"); //this never runs
+            //_sawmill.Debug("----- got gun - user's in a mech"); //this never runs
             gunEntity = mech.CurrentSelectedEquipment.Value;
             gunComp = mechGun;
             return true;
@@ -208,7 +208,7 @@ public abstract partial class SharedGunSystem : EntitySystem
             hands.ActiveHandEntity is { } held &&
             TryComp(held, out GunComponent? gun))
         {
-            _sawmill.Debug("----- got gun - user is NOT in a mech");
+            //_sawmill.Debug("----- got gun - user is NOT in a mech");
             gunEntity = held;
             gunComp = gun;
             return true;
@@ -217,7 +217,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         // Last resort is check if the entity itself is a gun.
         if (TryComp(entity, out gun))
         {
-            _sawmill.Debug("----- got gun - user IS a gun");
+            //_sawmill.Debug("----- got gun - user IS a gun");
             gunEntity = entity;
             gunComp = gun;
             return true;
@@ -824,7 +824,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (TryComp<MechPilotComponent>(user, out var mechPilot)) // hullrot fix for mechs
         {
             user = mechPilot.Mech;
-            _sawmill.Debug("--@ UPDATE - USER IS IN A MECH");
+            //_sawmill.Debug("--@ UPDATE - USER IS IN A MECH");
         }
         ShootProjectile(uid, mapDirection, gunVelocity, gunUid, user, gun.ProjectileSpeedModified);
     }
@@ -976,6 +976,11 @@ public abstract partial class SharedGunSystem : EntitySystem
 
         var projectile = EnsureComp<ProjectileComponent>(uid);
         projectile.Weapon = gunUid;
+        //hullrot addition: damagemodifier working again
+        if (TryComp<GunComponent>(gunUid, out var gunComponent))
+            projectile.Damage = projectile.Damage * gunComponent.DamageModifier;
+
+
         var shooter = user ?? gunUid;
         if (shooter != null)
             Projectiles.SetShooter(uid, projectile, shooter.Value);

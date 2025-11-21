@@ -107,7 +107,7 @@
     - type: Gun
       fireOnDropChance: 0
       fireRate: 12
-      projectileSpeed: 60
+      projectileSpeed: 135
       selectedMode: FullAuto
       availableModes:
         - FullAuto
@@ -345,8 +345,8 @@
           ents: []
     - type: Gun
       fireOnDropChance: 0
-      projectileSpeed: 130
-      fireRate: 0.2
+      projectileSpeed: 110
+      fireRate: 0.6
       selectedMode: FullAuto
       availableModes:
         - FullAuto
@@ -1483,7 +1483,7 @@
           ents: []
     - type: Gun
       fireOnDropChance: 0
-      fireRate: 3
+      fireRate: 2
       projectileSpeed: 80
       soundGunshot:
         path: /Audio/Weapons/Guns/Gunshots/50cal.ogg

@@ -20,3 +20,27 @@
     state: icon
   - type: Clothing
     sprite: _Crescent/Clothing/NCWL/Feet/magboots_ncwl.rsi
+
+## mvd
+
+- type: entity
+  parent: ClothingShoesMilitaryBase
+  id: ClothingShoesBootsMVD
+  name: mvd combat boots
+  description: Combat Boots issued to MVD Central Committee Personnel.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/Feet/mvdboots.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/Feet/mvdboots.rsi
+
+- type: entity
+  parent: ClothingShoesMilitaryBase
+  id: ClothingShoesBootsMVDParade
+  name: mvd formal boots
+  description: Formal boots issued to MVD Central Committee Personnel.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/Feet/mvdshoes.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/Feet/mvdshoes.rsi

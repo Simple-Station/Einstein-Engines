@@ -160,6 +160,21 @@
   - type: DisarmMalus
 
 - type: entity
+  parent: [NCWLLugBaton, StreeCredRedeemableLow]
+  id: DSMBaton
+  name: noble's baton
+  description: An Imperial weapon used to make sure the lowerclasses stay in-line.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Melee/noble_baton.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Melee/noble_baton.rsi
+    quickEquip: false
+    slots:
+    - Belt
+
+- type: entity
   name: homeguard lug baton
   parent: [BaseItem, StreeCredRedeemableLow]
   id: NCWLLugBaton

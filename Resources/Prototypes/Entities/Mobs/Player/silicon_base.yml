@@ -253,7 +253,7 @@
     - type: Ensnareable
       sprite: Objects/Misc/ensnare.rsi
     - type: Speech
-      speechSounds: Pai
+      speechSounds: SyndieBorg
     - type: Vocal
       wilhelm: "/Audio/Voice/IPC/wilhelm.ogg"
       sounds:

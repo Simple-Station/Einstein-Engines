@@ -81,7 +81,7 @@ public sealed class SpaceBiomeSystem : EntitySystem
                 }
             }
 
-            if (newSource == tracker.Source)
+            if (newSource == tracker.Source && tracker.Biome == newSource?.Biome)
                 continue;
 
             tracker.Source = newSource;

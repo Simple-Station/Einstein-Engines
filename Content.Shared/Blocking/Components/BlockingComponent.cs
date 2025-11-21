@@ -76,6 +76,20 @@ public sealed partial class BlockingComponent : Component
     /// </summary>
     [DataField("activeBlockFraction"), ViewVariables(VVAccess.ReadWrite)]
     public float ActiveBlockFraction = 1.0f;
+
+    // Crescent changes start
+    /// <summary>
+    /// Decides if the action is added or not (mostly for clothing w/ shielding).
+    /// </summary>
+    [DataField]
+    public bool BlockAction = true;
+
+    /// <summary>
+    /// If the shield is handheld or clothing.
+    /// </summary>
+    [DataField]
+    public bool IsClothing = false;
+    // Crescent changes end
 }
 
 /// <summary>

@@ -1,9 +1,9 @@
-# @ezo_rb (ezo) donor gun
+# @ezo_rb (ezo) donor gun, @HungryCuban auctioned
 - type: entity
-  name: SHI001P Zodum .327
+  name: SHI001P Zodum 12.7x99mm
   parent: [BaseWeaponPistol, StreeCredRedeemableLow]
   id: WeaponPistolZodum
-  description: A custom hand-cannon from the SHI development team that was never meant to be released. Chambered in heavy .327 Imperial.
+  description: A custom hand-cannon from the SHI development team that was never meant to be released. Chambered in heavy 12.7x99mm.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/zodum.rsi
@@ -29,20 +29,20 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineMagnum
+        startingItem: MagazineSmallHeavyRifle
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazineMagnum
+            - MagazineSmallHeavyRifle
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeMagnum
+        startingItem: CartridgeHeavyRifle
         priority: 1
         whitelist:
           tags:
-            - CartridgeMagnum
+            - CartridgeHeavyRifle
   - type: StaticPrice
     price: 5000
 
@@ -57,7 +57,7 @@
     contents:
       - id: WeaponPistolZodum
         amount: 1
-      - id: MagazineMagnum
+      - id: MagazineSmallHeavyRifle
         amount: 3
 
 # @theassassin25 (Volgin) donor gun
@@ -581,81 +581,75 @@
 
 # @BoskiYourk (boskiyourk) donor gun
 - type: entity
-  name: PVDNC KZ23 Custom Bruiser 4g
   parent: [BaseWeaponShotgun, BaseGunWieldable, StreeCredRedeemableLow]
-  id: WeaponShotgunBruiser
-  description: An exotic four gauge shotgun with mysterious origins. Found in the fog, it has been refurbished into something lethal.
+  id: WeaponShotgunSnoozer
+  name: PVDNC ZZ-9 Snoozer 12g
+  description: An exotic silenced shotgun with mysterious origins. It has been modified with a suppressor.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Guns/bruiser.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/snoozer.rsi
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/Guns/bruiser.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/snoozer.rsi
   - type: GunRequiresWield
   - type: Item
     shape:
     - 0,0,4,1
   - type: Gun
-    fireRate: 1.25
+    fireRate: 2
     soundGunshot:
-      path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_1.ogg
+      path: /Audio/_Crescent/Weapons/Guns/supressed_shotgun/suppressed_shotgun_fire.ogg
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
-    shotgunSpreadMultiplier: 0.5
-  - type: UseDelay
-    delay: 1
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-        - ShellShotgun4g
-    capacity: 4
-    autoCycle: true
-    proto: ShellShotgun4gBuckshot
+      - ShellShotgun
+      - Flare
+    capacity: 5
+    proto: ShellShotgun
+    soundInsert:
+      collection: ShellReload
   - type: ItemSlots
-  - type: ExtendDescription
-    descriptionList:
-      - description: "gun-modifier-choke"
-        fontSize: 12
-        color: "#ff4f00"
-        requireDetailRange: false
 
 - type: entity
-  id: CrateShotgunBruiser
+  id: CrateShotgunSnoozer
   parent: WeaponCaseShotgun
-  name: KZ23 Custom Bruiser case
+  name: KZ23 Custom Snoozer case
   description: An exotic shotgun packaged in a stamped weapon case.
   components:
   - type: StorageFill
     contents:
-      - id: WeaponShotgunBruiser
+      - id: WeaponShotgunSnoozer
         amount: 1
-      - id: BoxLethalshot4g
+      - id: BoxLethalshot
         amount: 2
 
 # @deusvult8672 (Hueys) donor sword
 
 - type: entity
   id: PlasmaSword
-  parent: PlasHalberd
+  parent: [BaseItem, StreeCredRedeemableLow]
   name: Ancient Plasma Sword
   description: A plasma weapon of ancient, long-forgotten design. Only through the care and maintenance of its holders has it managed to last through these turbulent centuries. Its blade glows bright blue, the heat it radiates is immense, and you'd rather not end up on the other side of it.
   components:
   - type: Sharp
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Melee/plasma_sword.rsi
+    state: icon
   - type: Tag
     tags:
     - PlasmaSword
   - type: MeleeWeapon
-    wideAnimationRotation: 135
-    swingLeft: true
-    attackRate: 1.7
+    wideAnimationRotation: -135
+    swingLeft: false
+    attackRate: 1.2
     range: 1.75
     damage:
       types:
-        Slash: 25
-        Heat: 10
-        Structural: 10
+        Slash: 30
+        Heat: 25
+        Structural: 25
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 14
     heavyRateModifier: 1.167 # 1.75 attack rate with 1.5 base
@@ -663,9 +657,9 @@
     lightRangeModifier: 1.15
     maxTargets: 6
     soundHit:
-      collection: MetalThud
+       path: /Audio/Weapons/eblade1.ogg
   - type: Item
-    size: Normal
+    sprite: _Crescent/Objects/Weapons/Melee/plasma_sword.rsi
   - type: Tool
     qualities:
       - Prying
@@ -675,6 +669,12 @@
     delay: 1
   - type: IgniteOnMeleeHit
     fireStacks: 1
+  - type: PointLight
+    enabled: true
+    radius: 2
+    energy: 2
+    color: "#3f79c1"
+    netsync: false
 
 - type: entity
   parent: [ClothingBeltBase, ClothingSlotBase]
@@ -707,3 +707,13 @@
           tags:
           - PlasmaSword
   - type: Appearance
+
+- type: entity
+  parent: ClothingBeltSheathPlasmaSword
+  id: ClothingBeltSheathPlasmaSwordFilled
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - PlasmaSword
