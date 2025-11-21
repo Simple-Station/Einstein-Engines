@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "license": "",
+  "copyright": "Kitbashed by indigotyrian from Hullrot assets. All rights reserved by the Sector Crescent team. Do not modify, publish, use, relicense, or edit.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "icon-flash"
+    },
+    {
+      "name": "off-equipped-HELMET",
+      "directions": 4
+    },
+    {
+      "name": "on-equipped-HELMET",
+      "directions": 4
+    }
+  ]
+}

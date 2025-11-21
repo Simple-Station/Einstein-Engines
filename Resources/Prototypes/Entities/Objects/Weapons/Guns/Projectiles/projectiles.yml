@@ -472,7 +472,7 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 40 # Lavaland Change - TOTAL PKA VICTORY
+        Blunt: 40 # Hullrot change, same as the default PKA damage
         Structural: 30 # Lavaland/Eris change: Yes easy break ins
   # Short lifespan
   - type: TimedDespawn

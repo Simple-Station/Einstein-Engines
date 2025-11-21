@@ -1,0 +1,32 @@
+- type: vessel
+  id: Voruna
+  name: DSM Voruna
+  description: |
+    An imperial ultralight fighter armed with a single heavy plasma blaster.
+    LOADOUT: 1x 800c "Rimward" Hybrid Plasma Blaster
+    MINIMUM CREW: 1x Pilot
+  price: 15000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/DSM/voruna.yml
+
+- type: gameMap
+  id: Voruna
+  mapName: 'DSM Voruna'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/voruna.yml
+  minPlayers: 0
+  stations:
+    Voruna:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: fighter
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Voruna {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter

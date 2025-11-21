@@ -10,13 +10,6 @@
     sprite: _Crescent/Clothing/NCWL/Mask/combatbalaclava.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/NCWL/Mask/combatbalaclava.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.95
-        Slash: 0.95
-        Piercing: 0.95
-        Heat: 0.95
 
 - type: entity
   parent: ClothingMaskGasSyndicate
@@ -25,7 +18,7 @@
   description: A kevlar durathread weave enhanced gas mask, a new piece of kit within the Homeguard.
   components:
   - type: Item
-    size: Tiny
+    size: Small
   - type: Sprite
     sprite: _Crescent/Clothing/NCWL/Mask/homeguardgasmask.rsi
   - type: Clothing

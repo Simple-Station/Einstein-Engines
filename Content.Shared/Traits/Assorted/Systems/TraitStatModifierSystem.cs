@@ -7,8 +7,12 @@ using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Damage.Components;
 using Content.Shared.Mood;
 using Robust.Shared.Random;
+using Robust.Shared.GameObjects;
+using Content.Shared.FixedPoint;
 
 namespace Content.Shared.Traits.Assorted.Systems;
+
+public sealed class CritModifierChangedEvent : EntityEventArgs { }
 
 public sealed partial class TraitStatModifierSystem : EntitySystem
 {
@@ -19,6 +23,8 @@ public sealed partial class TraitStatModifierSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<CritModifierComponent, ComponentStartup>(OnCritStartup);
+        SubscribeLocalEvent<CritModifierComponent, CritModifierChangedEvent>(OnCritChanged);
+        SubscribeLocalEvent<CritModifierComponent, ComponentShutdown>(OnCritShutdown);
         SubscribeLocalEvent<DeadModifierComponent, ComponentStartup>(OnDeadStartup);
         SubscribeLocalEvent<StaminaCritModifierComponent, ComponentStartup>(OnStaminaCritStartup);
         SubscribeLocalEvent<AdrenalineComponent, GetMeleeDamageEvent>(OnAdrenalineGetMeleeDamage);
@@ -29,14 +35,58 @@ public sealed partial class TraitStatModifierSystem : EntitySystem
         SubscribeLocalEvent<MercurialComponent, OnSetMoodEvent>(OnMercurialMood);
     }
 
+    private static FixedPoint2 F2(float v) => FixedPoint2.New(v);
+    private static float F2f(FixedPoint2 v) => (float) v;
+
+    private void ReapplyCrit(EntityUid uid, CritModifierComponent component, MobThresholdsComponent threshold)
+    {
+        FixedPoint2 baseF2;
+
+        if (component.OriginalCritThreshold != 0f)
+        {
+            baseF2 = F2(component.OriginalCritThreshold);
+        }
+        else
+        {
+            baseF2 = _threshold.GetThresholdForState(uid, Mobs.MobState.Critical, threshold);
+            if (baseF2 == FixedPoint2.Zero)
+                return;
+        }
+        var modsF2 = F2(component.CritThresholdModifier + component.ChemActive);
+
+        var newTotalF2 = baseF2 + modsF2;
+        _threshold.SetMobStateThreshold(uid, newTotalF2, Mobs.MobState.Critical);
+    }
+
     private void OnCritStartup(EntityUid uid, CritModifierComponent component, ComponentStartup args)
     {
         if (!TryComp<MobThresholdsComponent>(uid, out var threshold))
             return;
 
-        var critThreshold = _threshold.GetThresholdForState(uid, Mobs.MobState.Critical, threshold);
-        if (critThreshold != 0)
-            _threshold.SetMobStateThreshold(uid, critThreshold + component.CritThresholdModifier, Mobs.MobState.Critical);
+        var currentF2 = _threshold.GetThresholdForState(uid, Mobs.MobState.Critical, threshold);
+        if (currentF2 != FixedPoint2.Zero)
+            component.OriginalCritThreshold = F2f(currentF2);
+
+        ReapplyCrit(uid, component, threshold);
+    }
+
+    private void OnCritChanged(EntityUid uid, CritModifierComponent component, CritModifierChangedEvent args)
+    {
+        if (!TryComp<MobThresholdsComponent>(uid, out var threshold))
+            return;
+
+        ReapplyCrit(uid, component, threshold);
+    }
+
+    private void OnCritShutdown(EntityUid uid, CritModifierComponent component, ComponentShutdown args)
+    {
+        if (!TryComp<MobThresholdsComponent>(uid, out var threshold))
+            return;
+
+        if (component.OriginalCritThreshold != 0f)
+        {
+            _threshold.SetMobStateThreshold(uid, F2(component.OriginalCritThreshold), Mobs.MobState.Critical);
+        }
     }
 
     private void OnDeadStartup(EntityUid uid, DeadModifierComponent component, ComponentStartup args)

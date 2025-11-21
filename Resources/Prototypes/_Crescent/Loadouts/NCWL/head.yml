@@ -15,8 +15,11 @@
         - KommissarNCWL
         - FleetkapitanNCWL
         - PartisanNCWL
+        - DirectorNCWL
         - DoctorNCWL
-        - CoordinatorNCWL
+        - WorkerOverbossNCWL
+        - DockhandNCWL
+        - IndustryTaskmasterNCWL
         - ArtificerNCWL
         - WorkerNCWL
 
@@ -36,8 +39,11 @@
         - KommissarNCWL
         - FleetkapitanNCWL
         - PartisanNCWL
+        - DirectorNCWL
         - DoctorNCWL
-        - CoordinatorNCWL
+        - WorkerOverbossNCWL
+        - DockhandNCWL
+        - IndustryTaskmasterNCWL
         - ArtificerNCWL
         - WorkerNCWL
 
@@ -57,8 +63,11 @@
         - KommissarNCWL
         - FleetkapitanNCWL
         - PartisanNCWL
+        - DirectorNCWL
         - DoctorNCWL
-        - CoordinatorNCWL
+        - WorkerOverbossNCWL
+        - DockhandNCWL
+        - IndustryTaskmasterNCWL
         - ArtificerNCWL
         - WorkerNCWL
 
@@ -78,8 +87,11 @@
         - KommissarNCWL
         - FleetkapitanNCWL
         - PartisanNCWL
+        - DirectorNCWL
         - DoctorNCWL
-        - CoordinatorNCWL
+        - WorkerOverbossNCWL
+        - DockhandNCWL
+        - IndustryTaskmasterNCWL
         - ArtificerNCWL
         - WorkerNCWL
 
@@ -99,7 +111,27 @@
         - KommissarNCWL
         - FleetkapitanNCWL
         - PartisanNCWL
+        - DirectorNCWL
         - DoctorNCWL
-        - CoordinatorNCWL
+        - WorkerOverbossNCWL
+        - DockhandNCWL
+        - IndustryTaskmasterNCWL
         - ArtificerNCWL
         - WorkerNCWL
+
+- type: loadout
+  id: LoadoutHeadHatMVDHat
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatMVDHat
+  requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - CommandantNCWL
+        - KommissarNCWL
+        - MVDGruntNCWL

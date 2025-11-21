@@ -3,7 +3,7 @@
   name: job-name-ncwl-faction-leader
   description: job-description-ncwl-faction-leader
   playTimeTracker: JobFactionLeaderNCWL
-  weight: 8
+  weight: 102
   startingGear: CommandantNCWLGear
   alwaysUseSpawner: true
   requireAdminNotify: false

@@ -335,6 +335,15 @@
     BallisticCycler: 1000
 
 - type: latheRecipe
+  id: WeaponSniperDSMLegax
+  result: WeaponSniperDSMLegax
+  completetime: 2
+  materials:
+    Steel: 2000
+    Silver: 500
+    BasicMechatronics: 1000
+
+- type: latheRecipe
   id: WeaponRevolverArgenti
   result: WeaponRevolverArgenti
   completetime: 2
@@ -567,6 +576,23 @@
     ShipComponents: 1250
     ShipHull: 3250
 
+- type: latheRecipe
+  id: VorunaLPC
+  result: ShipVoucherVoruna
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 2000
+    ShipComponents: 1250
+    ShipHull: 3250
+
+- type: latheRecipe
+  id: PerigaleLPC
+  result: ShipVoucherPerigale
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 2000
+    ShipComponents: 1250
+    ShipHull: 3250
 
 - type: latheRecipe
   id: TriumphantLPC
@@ -601,5 +627,14 @@
   completetime: 1
   materials:
     StarshipEngineComponents: 2000
-    ShipComponents: 1250
-    ShipHull: 2000
+    ShipComponents: 3000
+    ShipHull: 3000
+
+- type: latheRecipe
+  id: MagnateLPC
+  result: ShipVoucherMagnate
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 3250
+    ShipComponents: 2750
+    ShipHull: 5000

@@ -47,6 +47,36 @@
 
 - type: entity
   parent: IDCardStandard
+  id: NCWLIDCardMVDLeader
+  name: NCWL ID card
+  components:
+  - type: Currency
+    price:
+      PlunderGSC: 10
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcentcom
+  - type: PresetIdCard
+    job: MVDOfficerNCWL
+
+- type: entity
+  parent: IDCardStandard
+  id: NCWLIDCardMVDGrunt
+  name: NCWL ID card
+  components:
+  - type: Currency
+    price:
+      PlunderGSC: 5
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcentcom
+  - type: PresetIdCard
+    job: MVDGruntNCWL
+
+- type: entity
+  parent: IDCardStandard
   id: NCWLIDCardHomeguardSquadCaptain
   name: NCWL ID card
   components:
@@ -77,6 +107,21 @@
 
 - type: entity
   parent: IDCardStandard
+  id: NCWLIDCardMedicalLeader
+  name: NCWL ID card
+  components:
+  - type: Currency
+    price:
+      DogtagNCWL: 5
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcentcom
+  - type: PresetIdCard
+    job: DirectorNCWL
+
+- type: entity
+  parent: IDCardStandard
   id: NCWLIDCardMedicalWorker
   name: NCWL ID card
   components:
@@ -103,8 +148,22 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: ArtificerNCWL
+    job: WorkerOverbossNCWL
 
+- type: entity
+  parent: IDCardStandard
+  id: NCWLIDCardLogisticWorker
+  name: NCWL ID card
+  components:
+  - type: Currency
+    price:
+      DogtagNCWL: 5
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcentcom
+  - type: PresetIdCard
+    job: DockhandNCWL
 
 - type: entity
   parent: IDCardStandard
@@ -119,7 +178,22 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: CoordinatorNCWL
+    job: IndustryTaskmasterNCWL
+
+- type: entity
+  parent: IDCardStandard
+  id: NCWLIDCardEngineeringWorker
+  name: NCWL ID card
+  components:
+  - type: Currency
+    price:
+      PlunderGSC: 5
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcentcom
+  - type: PresetIdCard
+    job: ArtificerNCWL
 
 #syndicate#
 

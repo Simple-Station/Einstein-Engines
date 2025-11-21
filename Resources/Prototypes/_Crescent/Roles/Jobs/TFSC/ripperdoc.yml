@@ -11,8 +11,12 @@
   supervisors: You answer to the interests of the Interdyne Pharmaceuticals company's coordinator and your peers.
   canBeAntag: false
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:CharacterOverallTimeRequirement
-      min: 10800
+      min: 0
     - !type:FactionRequirement
       factionID: "TFSC"
     - !type:CharacterTraitRequirement
@@ -53,5 +57,13 @@
     id: RipperdocPDA
     ears: ClothingHeadsetNCSPInterdyne
     mask: ClothingMaskSyndicateFacemask
-    pocket1: MedkitCombatFilled
-    back: ClothingBackpackNCSPSatchelFilledInfanteer
+    pocket1: WeaponPistolHKUSP
+    pocket2: MedkitCombatFilled
+    back: ClothingBackpackNCSP
+  storage:
+    back:
+      - Flash
+      - Tourniquet
+      - Zipties
+      - MagazinePistol
+      - CombatKnife

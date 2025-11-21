@@ -5,13 +5,18 @@ job-name-utility-ipc = NT Engineer IPC
 
 # ncwl
 
-job-name-ncwl-faction-leader = Major
+job-name-ncwl-faction-leader = General Major
 job-name-ncwl-kommissar = Kommissar
-job-name-ncwl-fleetkapitan = Fleetkapitan
+job-name-ncwl-mvd-officer = Cadet Kommissar
+job-name-ncwl-mvd-grunt = Kommissar Aide
+job-name-ncwl-fleetkapitan = Unionkapitan
 job-name-ncwl-partisan = Partisan
-job-name-ncwl-artificer = Artificer
-job-name-ncwl-medical-doctor = Sanitar
-job-name-ncwl-coordinator = Union Coordinator
+job-name-ncwl-industry-taskmaster = Sindikat Overseer
+job-name-ncwl-industry-artificer = Sindikat Artificer
+job-name-ncwl-medical-director = Varchei Director
+job-name-ncwl-medical-doctor = Alyans Sanitar
+job-name-ncwl-worker-overboss = Logistics Coordinator
+job-name-ncwl-worker-dockhand = Logistics Crew
 job-name-ncwl-newbie = Union Worker
 
 # syndicate
@@ -59,12 +64,12 @@ job-name-overseer = Overseer of the Hunt
 # shi
 
 job-name-executive = Sector Manager
-job-name-board = Board Executive
+job-name-board = Assistant Manager
 job-name-corpsec = CorpSec Agent
 job-name-highsec = Corporate Liquidation Agent
 job-name-employee = Salaryman
 job-name-medtech = MedTech Researcher
-job-name-boardhr = Human Resources
+job-name-boardhr = Human Resources Officer
 job-name-hos-shi = Head of CorpSec
 
 # tsp

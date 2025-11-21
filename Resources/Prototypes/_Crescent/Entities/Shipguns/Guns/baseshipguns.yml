@@ -47,8 +47,6 @@
   - type: ExtensionCableReceiver
   - type: ExaminableBattery
   - type: TurretIFF
-  - type: SelfDeleteInSpace # Hullrot. This component cleans up items that are parented to space after a while.
-    timeToDelete: 1800 #priority item, so we extend the timer
 
 - type: entity
   id: BaseTurretShipgun
@@ -87,5 +85,3 @@
   - type: NoRotateOnMove
   - type: PointCannon
   - type: TurretIFF
-  - type: SelfDeleteInSpace # Hullrot. This component cleans up items that are parented to space after a while.
-    timeToDelete: 1800 #priority item, so we extend the timer

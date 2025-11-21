@@ -66,3 +66,22 @@
         - CourtierDSM
         - TemplarDSM
         - WealthDSM
+
+- type: loadout
+  id: ClothingNeckImperialGreatcoat
+  category: Neck
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingNeckImperialGreatcoat
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdjutantDSM
+        - AdvocatusDSM
+        - ArchmaesterDSM
+        - GovernorDSM
+        - KnightDSM
+        - RingleaderNCSP

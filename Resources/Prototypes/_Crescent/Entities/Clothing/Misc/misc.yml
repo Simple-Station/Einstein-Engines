@@ -28,7 +28,7 @@
       id: Bodycam
     - type: Eye
     - type: WirelessNetworkConnection
-      range: 7000 # Modify this to change the range, make sure to change the range of the respective router to be the same
+      range: 100000 # Modify this to change the range, make sure to change the range of the respective router to be the same
     - type: SurveillanceCameraMicrophone
       blacklist:
         components:

@@ -101,9 +101,9 @@
       - CartridgeRifle
 
 - type: entity
-  name: SHI M28 Nimrod 7.62x51mm
   parent: [BaseWeaponSniper, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponRifleSHINimrod
+  name: SHI M28 Nimrod 7.62x51mm
   description: An absurdly cheap-to-make hunting rifle sold at a major mark-up to desperate spacers and militiamen. Chambered in 7.62x51mm.
   components:
   - type: Item
@@ -117,7 +117,6 @@
   - type: Gun
     fireRate: 3
     projectileSpeed: 45
-    damageModifier: 1.25
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -127,23 +126,17 @@
     soundInsert:
       collection: LeverReload
     capacity: 6
-    autoCycle: true
+    autoCycle: false
     proto: CartridgeRifle
     whitelist:
       tags:
       - CartridgeRifle
-  - type: ExtendDescription
-    descriptionList:
-      - description: This rifle comes with a booster device. It deals 25% higher damage per shot.
-        fontSize: 12
-        color: "#ff4f00"
-        requireDetailRange: false
 
 - type: entity
   name: IRM DA-11 legionnaire 7.62x51mm
   id: WeaponRifleDSMLegionnaire
   parent: [BaseWeaponRifle, StreeCredRedeemable]
-  description: An overengineered rifle, sharing multiple features with the C-20R SMG, such as a odd magazine angle and automatic magazine ejection. Chambered in 7.62x51mm USM rounds.
+  description: An overengineered rifle, sharing multiple features with the DA-20 Talon SMG, such as a odd magazine angle and automatic magazine ejection. Chambered in 7.62x51mm USM rounds.
   components:
   - type: Item
     shape:
@@ -329,6 +322,7 @@
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/rifle_1/rifle_gunshot_2.ogg
   - type: ChamberMagazineAmmoProvider
+    boltClosed: null # means the bolt doesnt lock back like M16 pattern rifles, also means you need to cycle the gun after an empty mag
     soundRack:
       path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
   - type: ItemSlots
@@ -556,6 +550,8 @@
     fireRate: 5
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/rifle_2/rifle_gunshot_2.ogg
+  - type: ChamberMagazineAmmoProvider
+    boltClosed: null # means the bolt doesnt lock back like M16 pattern rifles, also means you need to cycle the gun after an empty mag
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -613,6 +609,8 @@
     fireRate: 5
     soundGunshot:
       collection: AK_74_Gunshots
+  - type: ChamberMagazineAmmoProvider
+    boltClosed: null # means the bolt doesnt lock back like M16 pattern rifles, also means you need to cycle the gun after an empty mag
   - type: ItemSlots
     slots:
       gun_magazine:
