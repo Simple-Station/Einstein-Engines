@@ -481,12 +481,11 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
-  - type: FlashImmunity # Goobstation
   - type: FlashSoundSuppression # Goobstation
 
 #Blood-red Medic Hardsuit
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: [ClothingHeadHardsuitWithLightBase , ShowMedicalIcons ] # Crescent edit
   id: ClothingHeadHelmetHardsuitSyndieMedic
   name: blood-red medic hardsuit helmet
   description: An advanced red hardsuit helmet specifically designed for field medic operations.
@@ -517,7 +516,6 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
-  - type: FlashImmunity # Goobstation
   - type: FlashSoundSuppression # Goobstation
 
 #Syndicate Elite Hardsuit
