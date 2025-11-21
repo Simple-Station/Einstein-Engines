@@ -302,6 +302,9 @@
       TradeGoodDrugs: SpaceCash10000
       FoodAmbrosiaVulgaris: SpaceCash1000
       TradeGoodSilks: SpaceCash5000
+      TradeGoodNanoTrasen: SpaceCash10000
+      TradeGoodOldCyber: SpaceCash10000
+      TradeGoodOldParts: SpaceCash10000
   - type: Sprite
     sprite: _Crescent/Structures/onionchute.rsi
     layers:
