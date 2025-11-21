@@ -170,7 +170,7 @@
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/smg_3/smg_gunshot_1.ogg
     soundEmpty:
-      path: /Audio/Weapons/Guns/Empty/smg_empty.ogg
+      path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/corsair.rsi
     layers:
