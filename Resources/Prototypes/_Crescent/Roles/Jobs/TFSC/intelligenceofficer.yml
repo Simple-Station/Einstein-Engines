@@ -38,10 +38,12 @@
       - type: LanguageAdder
         addSpoken:
           - Freespeak
+          - SolCommon
           - Tradeband
           - RobotTalk # one of the main facets of  cybersun was AI so they probably understand it
         addUnderstood:
           - Freespeak
+          - SolCommon
           - Tradeband
           - RobotTalk
   access:

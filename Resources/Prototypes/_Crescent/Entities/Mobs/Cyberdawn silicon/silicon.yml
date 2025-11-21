@@ -104,12 +104,13 @@
       settings: default
   - type: LanguageKnowledge
     speaks:
-    - TauCetiBasic
+    - SolCommon
     - RobotTalk
     - Freespeak
     - Tradeband
     understands:
     - TauCetiBasic
+    - SolCommon
     - RobotTalk
     - Freespeak
     - Tradeband

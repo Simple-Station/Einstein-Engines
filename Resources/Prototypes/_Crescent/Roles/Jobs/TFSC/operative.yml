@@ -35,8 +35,10 @@
       - type: LanguageAdder
         addSpoken:
           - Freespeak
+          - SolCommon
         addUnderstood:
           - Freespeak
+          - SolCommon
   access:
   - Command
   - Maintenance

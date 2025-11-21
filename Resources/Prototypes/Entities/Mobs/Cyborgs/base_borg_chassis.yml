@@ -333,11 +333,12 @@
     - SyndicateSaws
   - type: LanguageKnowledge
     speaks:
-    - TauCetiBasic
+    - SolCommon
     - Freespeak
     - RobotTalk
     understands:
     - TauCetiBasic
+    - SolCommon
     - Freespeak
     - RobotTalk
     - Tradeband
