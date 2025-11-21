@@ -103,11 +103,11 @@
   name: NCSP mk. IV "Zhongyao" tacsuit
   description: An advanced tacsuit manufactured by Cyberdawn Technologies and provided to IPM at a discount.
   icon: { sprite: /Textures/_Impstation/Clothing/OuterClothing/Hardsuits/syndicate_agent.rsi, state: icon }
-  productEntity: ClothingOuterHardsuitTraumasec
+  productEntity: ClothingOuterHardsuitSyndieMedic
   cost:
     SampleIPM: 25
   categories:
-  - ClothingOuterHardsuitSyndieMedic
+  - StoreCategoryIPMEquipment
 
 - type: listing
   id: StoreListingIPMEquipmentMagboots
