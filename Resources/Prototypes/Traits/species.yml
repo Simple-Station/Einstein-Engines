@@ -20,7 +20,7 @@
       traits:
         - Spearmaster
         - WeaponsGeneralist
-        - Mystic
+     
 
 
 - type: trait
@@ -45,7 +45,7 @@
       traits:
         - Swashbuckler
         - WeaponsGeneralist
-        - Mystic
+      
 
 - type: trait
   id: WeaponsGeneralist
@@ -69,38 +69,37 @@
       traits:
         - Swashbuckler
         - Spearmaster
-        - Mystic
 
-- type: trait
-  id: Mystic
-  category: Mental
-  points: 0
-  functions:
-    - !type:TraitReplaceComponent
-      components:
-      - type: OniDamageModifier
-        modifiers:
-          coefficients:
-            Blunt: 1.1
-            Slash: 1.1
-            Piercing: 1.1
-      - type: PotentiaModifier
-        potentiaMultiplier: 1.15
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Oni
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Swashbuckler
-        - Spearmaster
-        - WeaponsGeneralist
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterTraitRequirement
-          traits:
-            - LatentPsychic
+       
+#- type: trait
+#  category: Mental
+#  points: 0
+#  functions:
+#    - !type:TraitReplaceComponent
+#      components:
+#      - type: OniDamageModifier
+#        modifiers:
+#          coefficients:
+#            Blunt: 1.1
+#            Slash: 1.1
+#            Piercing: 1.1
+#      - type: PotentiaModifier
+#        potentiaMultiplier: 1.15
+#  requirements:
+#    - !type:CharacterSpeciesRequirement
+#      species:
+#        - Oni
+#    - !type:CharacterTraitRequirement
+#      inverted: true
+#      traits:
+#        - Swashbuckler
+#        - Spearmaster
+#        - WeaponsGeneralist
+#    - !type:CharacterLogicOrRequirement
+#      requirements:
+#        - !type:CharacterTraitRequirement
+#          traits:
+#           - LatentPsychic
 
 - type: trait
   id: VoidbornBlackeye
