@@ -11,6 +11,10 @@
   supervisors: You answer to the Ringleader and Gorlex Security Lieutenants
   canBeAntag: false
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:CharacterOverallTimeRequirement
       min: 20000
     - !type:FactionRequirement
@@ -53,6 +57,7 @@
     id: InfanteerPDA
     ears: ClothingHeadsetNCSP
     belt: ClothingBeltSyndicateWebbing
+    outerClothing: ClothingOuterArmorSyndicateArmorvest
     pocket1: WeaponPistolViperWood
     pocket2: ClothingMaskGasSyndicate
     gloves: ClothingHandsGlovesFingerless

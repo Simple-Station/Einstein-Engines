@@ -8,6 +8,10 @@
   icon: "JobIconMarshal"
   supervisors: job-supervisors-gliess
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
       min: 25000
