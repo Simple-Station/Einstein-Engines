@@ -768,12 +768,13 @@
             collection: MetalSlam
         - !type:DoActsBehavior
           acts: ["Destruction"]
-      - trigger: #this trigger is a Nyano addition
-          !type:DamageTrigger
-          damage: 400
-        behaviors:
         - !type:ChangeConstructionNodeBehavior
           node: girder
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            SteelScrap1:
+              min: 2
+              max: 4
         - !type:DoActsBehavior
           acts: ["Destruction"]
   - type: Construction
