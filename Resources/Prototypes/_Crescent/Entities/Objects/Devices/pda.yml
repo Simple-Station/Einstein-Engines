@@ -115,6 +115,10 @@
     accentVColor: "#d4d4d4"
   - type: Icon
     state: pda-militiaman
+  - type: HealthAnalyzer
+    scanDelay: 1
+    scanningEndSound:
+      path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
   parent: [BasePDA, StreeCredRedeemableLow]
