@@ -635,18 +635,18 @@
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.5
-  - type: DegradeableArmor # this hardsuit will probably never be used anyways
-    armorMaxHealth: 750
+  - type: DegradeableArmor
+    armorMaxHealth: 700
     armorType: Metallic
     armorRepair: SteelPlate
     initialModifiers:
       flatReductions:
-        Blunt: 25
+        Blunt: 30
         Slash: 25
-        Piercing: 50
-        Heat: 25
-        Caustic: 25
-        Radiation: 25
+        Piercing: 65
+        Heat: 15
+        Caustic: 15
+        Radiation: 35
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9

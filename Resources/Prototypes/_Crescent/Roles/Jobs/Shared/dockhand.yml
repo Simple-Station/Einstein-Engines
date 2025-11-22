@@ -5,6 +5,10 @@
   playTimeTracker: JobDockhand
   weight: 20
   requirements:
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+      - Voidborn
   - !type:CharacterOverallTimeRequirement
     min: 10800
   startingGear: DockhandGear
