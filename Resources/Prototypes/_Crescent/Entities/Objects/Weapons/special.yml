@@ -414,7 +414,7 @@
   name: IRM 150c 'Seethe' Plasma rifle
   parent: [BaseWeaponBattery, BaseGunWieldable]
   id: WeaponDSMPlasmaRifle
-  description: A brutal weapon that boils the skin and internal organs of whomever it hits; the 'scope' on top is really an eye shield so the operator's eyes aren't fried by firing the thing.
+  description: A brutal weapon that boils the skin and internal organs of whomever it hits; the scope on top pulls double duty as an eye shield so the operator's eyes aren't fried by firing the thing.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/seethe.rsi
