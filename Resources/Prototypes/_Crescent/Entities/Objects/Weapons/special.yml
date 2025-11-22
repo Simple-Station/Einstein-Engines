@@ -411,7 +411,7 @@
 #   price: 3000
 
 - type: entity
-  name: IRM 150c 'Seethe' plasma rifle
+  name: IRM 150c 'Seethe' Plasma rifle
   parent: [BaseWeaponBattery, BaseGunWieldable]
   id: WeaponDSMPlasmaRifle
   description: A brutal weapon that boils the skin and internal organs of whomever it his.
