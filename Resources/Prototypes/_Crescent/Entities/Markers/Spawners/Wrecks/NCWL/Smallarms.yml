@@ -1,0 +1,28 @@
+#allows mappers to automate spawning terrible DSM conscript weapons with an ocassional gem
+- type: entity
+  name: NCWL Smallarms Wreck Randomizer
+  id: NCWLGunsWreckRandomizer
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: _Crescent/Objects/Weapons/Guns/python.rsi
+          state: base
+    - type: RandomSpawner
+      prototypes: #guns nobody uses unless desperate award, generally 11mm and lower
+       - WeaponRifleNCWLRezerv
+       - WeaponPistolT91
+       - WeaponRevolverPythonAP
+       - WeaponRevolverPythonSecurity
+       - WeaponSubMachineGunNCWLWatchdog
+       - RGD55M13Handgrenade
+      chance: 0.20
+      rarePrototypes: #powerful or decent things that will keep salvagers mining for dopamine
+      - WeaponLightMachineGunNCWLSurplus
+      - WeaponShotgunProletar
+      - WeaponRifleNCWLBatanya
+      - WeaponRifleFAL
+      - WeaponSubMachineGunNCWLPartisan
+      - WeaponSniperNCWLNovomosin #this thing actually gapes
+      rareChance: 0.05
