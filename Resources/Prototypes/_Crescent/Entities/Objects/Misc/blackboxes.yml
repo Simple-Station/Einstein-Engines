@@ -19,7 +19,6 @@
   - type: ItemToggle
     activated: true
   - type: ItemToggleActiveSound
-    activated: true
     activeSound:
       path: /Audio/_Crescent/Items/blackboxwail.ogg
 
@@ -44,7 +43,6 @@
   - type: ItemToggle
     activated: true
   - type: ItemToggleActiveSound
-    activated: true
     activeSound:
       path: /Audio/_Crescent/Items/blackboxwail.ogg
 
@@ -69,7 +67,6 @@
   - type: ItemToggle
     activated: true
   - type: ItemToggleActiveSound
-    activated: true
     activeSound:
       path: /Audio/_Crescent/Items/blackboxwail.ogg
 
@@ -94,7 +91,6 @@
   - type: ItemToggle
     activated: true
   - type: ItemToggleActiveSound
-    activated: true
     activeSound:
       path: /Audio/_Crescent/Items/blackboxwail.ogg
 
@@ -119,6 +115,5 @@
   - type: ItemToggle
     activated: true
   - type: ItemToggleActiveSound
-    activated: true
     activeSound:
       path: /Audio/_Crescent/Items/blackboxwail.ogg
