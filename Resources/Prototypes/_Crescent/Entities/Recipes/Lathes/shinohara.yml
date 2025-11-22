@@ -486,6 +486,15 @@
     Plasma: 2000
     AdvancedMechatronics: 1000
 
+- type: latheRecipe
+  id: WeaponMechGustaf
+  result: WeaponMechCombatCarlGustaf
+  completetime: 2
+  materials:
+    Steel: 3000
+    Plasma: 1000
+    AdvancedMechatronics: 1000
+
 # MARK: Flatpacks
 
 - type: latheRecipe
