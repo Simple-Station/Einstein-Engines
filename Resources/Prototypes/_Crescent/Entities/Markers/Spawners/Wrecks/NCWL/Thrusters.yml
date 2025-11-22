@@ -1,0 +1,19 @@
+#allows mappers to automate random holes and damage in a wreck
+- type: entity
+  name: NCWL Thrust Wreck Randomizer
+  id: NCWLThrustWreckRandomizer
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: _Crescent/Structures/thrusterncwl.rsi
+          state: base
+    - type: RandomSpawner
+      prototypes:
+       - ThrusterNCWLWarship
+       - MachineFrameDestroyed
+      chance: 0.65
+      #rarePrototypes:
+
+      #rareChance: 0.05

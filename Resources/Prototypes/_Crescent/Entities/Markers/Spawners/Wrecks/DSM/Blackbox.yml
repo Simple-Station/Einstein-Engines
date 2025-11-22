@@ -1,0 +1,15 @@
+#allows mappers to automate black box treasure spawn
+- type: entity
+  name: DSM flight recorder spawner
+  id: DSMBlackBoxRandomizer
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: _Crescent/Objects/Misc/blackbox.rsi
+          state: dsmbox
+    - type: RandomSpawner
+      prototypes:
+       - BlackboxDSM
+      chance: 0.50

@@ -1,0 +1,19 @@
+#allows mappers to automate random holes and damage in a wreck
+- type: entity
+  name: NCWL Wall Wreck Randomizer
+  id: NCWLWallWreckRandomizer
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: Structures/Walls/plastitanium.rsi
+          state: full
+    - type: RandomSpawner
+      prototypes:
+       - WallPlastitaniumNCWL
+       - ReinforcedGirder
+      chance: 0.65
+      #rarePrototypes:
+
+      #rareChance: 0.05
