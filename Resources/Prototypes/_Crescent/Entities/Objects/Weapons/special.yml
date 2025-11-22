@@ -460,7 +460,6 @@
         Caustic: 5
         Structural: 20
     harmorPenetration: 15
-    stoppingPower: 3
   - type: PointLight
     radius: 3.5
     color: Purple
