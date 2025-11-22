@@ -643,11 +643,11 @@
   - type: MeleeWeapon
     wideAnimationRotation: -135
     swingLeft: false
-    attackRate: 1.2
+    attackRate: 1
     range: 1.75
     damage:
       types:
-        Slash: 30
+        Slash: 35
         Heat: 25
         Structural: 25
     heavyDamageBaseModifier: 1
