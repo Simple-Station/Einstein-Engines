@@ -445,7 +445,7 @@
     startingCharge: 2100
   - type: ProjectileBatteryAmmoProvider
     proto: InfantryPlasmaBoltMedium
-    fireCost: 30 # 70 shots, can't reload in the field
+    fireCost: 35 # 60 shots, can't reload in the field
 
 - type: entity
   id: InfantryPlasmaBoltMedium
@@ -456,7 +456,7 @@
   - type: Projectile
     damage:
       types:
-        Heat: 25
+        Heat: 20
         Caustic: 5
         Structural: 20
     harmorPenetration: 15
