@@ -1,4 +1,5 @@
 chat-radio-ncwl = NCWL
+chat-radio-ncwlcom = NCWL High Command
 chat-radio-empire = Imperial Command
 chat-radio-hunter = Sixth Subjugation Fireteam
 chat-radio-shi = Shinohara

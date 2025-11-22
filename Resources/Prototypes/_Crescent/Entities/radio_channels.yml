@@ -1,9 +1,17 @@
 - type: radioChannel
+  id: NCWLcom
+  name: chat-radio-ncwlcom
+  keycode: "q"
+  frequency: 1984
+  color: "#ffaa00"
+  
+- type: radioChannel
   id: NCWL
   name: chat-radio-ncwl
   keycode: "o"
   frequency: 1985
   color: "#ffd580"
+
 
 - type: radioChannel
   id: Imperial
