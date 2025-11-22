@@ -439,7 +439,7 @@
     availableModes:
     - FullAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/ship_svalinn.ogg
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/laser1.ogg
   - type: Battery
     maxCharge: 2100
     startingCharge: 2100
