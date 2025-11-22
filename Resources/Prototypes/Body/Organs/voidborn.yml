@@ -35,6 +35,10 @@
     sprite: Mobs/Species/Voidborn/organs.rsi
     layers:
     - state: core
+  - type: Metabolizer
+    metabolizerTypes: [ Vox ]
+  - type: Lung
+    alert: LowNitrogen
 
 
 - type: entity

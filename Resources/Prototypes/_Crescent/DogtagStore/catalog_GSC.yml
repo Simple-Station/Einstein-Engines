@@ -242,10 +242,10 @@
 
 - type: listing
   id: StoreListingGSCZhongyao
-  name: NCSP mk. IV "Zhongyao" tacsuit
+  name: NCSP mk. III "Shanlin" tacsuit
   description: An advanced tacsuit manufactured by Cyberdawn Technologies and provided to GSC at a discount.
-  icon: { sprite: /Textures/_Impstation/Clothing/OuterClothing/Hardsuits/syndicate_agent.rsi, state: icon }
-  productEntity: ClothingOuterHardsuitSyndieMedic
+  icon: { sprite: /Textures/_Impstation/Clothing/OuterClothing/Hardsuits/syndicate.rsi, state: icon }
+  productEntity: ClothingOuterHardsuitSyndie
   cost:
     PlunderGSC: 20
   categories:
