@@ -93,6 +93,7 @@
   cost: 5000
   recipeUnlocks:
   - WeaponRifleMiller
+  - WeaponSniperDSMLegax
   - WeaponRevolverArgenti
   - WeaponPistolComplianceImperial
 
@@ -267,7 +268,7 @@
   - WeaponPistolNeoVolker
   - WeaponLightMachineGunDSMDominion
   - WeaponShotgunReno
-  - WeaponSniperDSMLegax
+
 
 - type: technology
   id: ImperialPlasmaMechGuns
@@ -281,6 +282,18 @@
   recipeUnlocks:
   - WeaponMechCombatPlasmaRifle
   - WeaponMechCombatPlasmaCannon
+
+- type: technology
+  id: ImperialPlasmaGuns
+  name: research-technology-imperial-plasmaguns
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/seethe.rsi
+    state: icon
+  discipline: Imperial
+  tier: 2
+  cost: 9000
+  recipeUnlocks:
+  - WeaponPlasmaRifleSeethe
 
 - type: technology
   id: ImperialSRM
