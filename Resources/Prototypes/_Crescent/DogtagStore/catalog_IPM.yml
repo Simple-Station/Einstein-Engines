@@ -99,6 +99,17 @@
   - StoreCategoryIPMEquipment
 
 - type: listing
+  id: StoreListingIPMEquipmentHardsuitZhongyao
+  name: NCSP mk. IV "Zhongyao" tacsuit
+  description: An advanced tacsuit manufactured by Cyberdawn Technologies and provided to IPM at a discount.
+  icon: { sprite: /Textures/_Impstation/Clothing/OuterClothing/Hardsuits/syndicate_agent.rsi, state: icon }
+  productEntity: ClothingOuterHardsuitSyndieMedic
+  cost:
+    SampleIPM: 25
+  categories:
+  - StoreCategoryIPMEquipment
+
+- type: listing
   id: StoreListingIPMEquipmentMagboots
   name: Advanced magboots
   description: Advanced magboots produced by Shinohara Heavy Industries, "found" in a shipping container many cycles ago.

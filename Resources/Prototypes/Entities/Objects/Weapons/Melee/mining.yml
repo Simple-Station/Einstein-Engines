@@ -182,8 +182,6 @@
       - Prying
   - type: Prying
   # Lavaland Change Start
-  - type: MeleeRequiresWield
-    fumbleOnAttempt: true
   - type: DamageBoostOnMarker
     boost:
       types: # adds the damage, i think
