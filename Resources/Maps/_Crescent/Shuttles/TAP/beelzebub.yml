@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 11/15/2025 14:45:16
-  entityCount: 165
+  time: 11/22/2025 02:32:23
+  entityCount: 166
 maps: []
 grids:
 - 1
@@ -142,6 +142,10 @@ entities:
             199: -3,-1
             202: -2,-5
             205: -1,-6
+            222: 1,2
+            245: -3,-1
+            248: -2,-5
+            251: -1,-6
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -162,6 +166,10 @@ entities:
             208: 1,-6
             211: 2,-5
             217: 3,-1
+            239: -1,2
+            254: 1,-6
+            257: 2,-5
+            263: 3,-1
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -182,6 +190,10 @@ entities:
             185: -3,2
             188: -2,3
             196: -3,-3
+            220: 1,2
+            231: -3,2
+            234: -2,3
+            242: -3,-3
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -202,6 +214,10 @@ entities:
             182: 3,2
             192: -1,2
             214: 3,-3
+            225: 2,3
+            228: 3,2
+            238: -1,2
+            260: 3,-3
         - node:
             id: LatticeEdgeE
           decals:
@@ -233,6 +249,13 @@ entities:
             197: -3,-1
             200: -2,-5
             203: -1,-6
+            219: 1,2
+            230: -3,2
+            233: -2,3
+            241: -3,-3
+            243: -3,-1
+            246: -2,-5
+            249: -1,-6
         - node:
             id: LatticeEdgeN
           decals:
@@ -268,6 +291,14 @@ entities:
             206: 1,-6
             209: 2,-5
             215: 3,-1
+            221: 1,2
+            236: -1,2
+            244: -3,-1
+            247: -2,-5
+            250: -1,-6
+            252: 1,-6
+            255: 2,-5
+            261: 3,-1
         - node:
             id: LatticeEdgeS
           decals:
@@ -303,6 +334,14 @@ entities:
             189: -1,2
             194: -3,-3
             212: 3,-3
+            218: 1,2
+            223: 2,3
+            226: 3,2
+            229: -3,2
+            232: -2,3
+            235: -1,2
+            240: -3,-3
+            258: 3,-3
         - node:
             id: LatticeEdgeW
           decals:
@@ -334,6 +373,13 @@ entities:
             210: 2,-5
             213: 3,-3
             216: 3,-1
+            224: 2,3
+            227: 3,2
+            237: -1,2
+            253: 1,-6
+            256: 2,-5
+            259: 3,-3
+            262: 3,-1
         - node:
             color: '#EFB34196'
             id: WarnLineE
@@ -1157,7 +1203,7 @@ entities:
     - type: ApcPowerReceiver
       powerLoad: 1000
     - type: Battery
-      startingCharge: 3290.489
+      startingCharge: 3093.226
     - type: ApcPowerReceiverBattery
       enabled: True
   - uid: 120
@@ -1169,7 +1215,7 @@ entities:
     - type: ApcPowerReceiver
       powerLoad: 1000
     - type: Battery
-      startingCharge: 3293.3237
+      startingCharge: 3096.0608
     - type: ApcPowerReceiverBattery
       enabled: True
 - proto: StairStageDark
@@ -1427,6 +1473,13 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 1.5,-5.5
+      parent: 1
+- proto: WarpPointShip
+  entities:
+  - uid: 166
+    components:
+    - type: Transform
+      pos: 0.5,-1.5
       parent: 1
 - proto: WindowReinforcedDirectional
   entities:
