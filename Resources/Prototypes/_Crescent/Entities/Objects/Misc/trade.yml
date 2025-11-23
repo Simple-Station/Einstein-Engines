@@ -511,7 +511,7 @@
   - type: Tag
     tags:
       - Trash
-      
+
 - type: entity
   parent: BaseItem
   id: OrganStub
@@ -610,6 +610,48 @@
     sprite: _Crescent/Objects/TradeGoods/deed.rsi
     layers:
     - state: icon
+
+- type: entity
+  parent: BaseItem
+  id: PietyRedeemableLow
+  name: Piety Scrap
+  description: A scrap of scripture, carried by the pious and given as an offering to objects of importance.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/deed.rsi
+    layers:
+    - state: icon
+  - type: Currency
+    price:
+      PietySRM: 1
+
+- type: entity
+  parent: BaseItem
+  id: PietyRedeemable
+  name: Piety Scrap
+  description: A scrap of scripture, carried by the pious and given as an offering to objects of importance.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/deed.rsi
+    layers:
+    - state: icon
+  - type: Currency
+    price:
+      PietySRM: 5
+
+- type: entity
+  parent: BaseItem
+  id: PietyRedeemableHigh
+  name: Piety Scrap
+  description: A scrap of scripture, carried by the pious and given as an offering to objects of importance.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/deed.rsi
+    layers:
+    - state: icon
+  - type: Currency
+    price:
+      PietySRM: 10
 
 - type: entity
   parent: BaseItem
