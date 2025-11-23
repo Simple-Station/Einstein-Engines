@@ -403,21 +403,21 @@
   parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorSyndicateArmorvest
   name: frontliner's ballistic vest
-  description: A bulky kevlar-padded ballistic vest, touched with the colors of the TFSC.
+  description: A bulky ceramic-faced ballistic vest, touched with the colors of the TFSC.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndiearmor.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndiearmor.rsi
   - type: DegradeableArmor
-    armorMaxHealth: 750
-    armorType: Metallic
-    armorRepair: SteelPlate
+    armorMaxHealth: 650
+    armorType: Ceramic
+    armorRepair: NTCeramic
     initialModifiers:
       flatReductions:
-        Blunt: 10
-        Slash: 10
-        Piercing: 45
+        Blunt: 15
+        Slash: 15
+        Piercing: 75
         Heat: 10
         Caustic: 10
   - type: ClothingSpeedModifier
@@ -435,7 +435,7 @@
   parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorSyndicateArmorvestInterdyne
   name: traumasec ballistic vest
-  description: A bulky kevlar-padded ballistic vest, touched with the colors of interdyne.
+  description: A bulky steel-plate ballistic vest, touched with the colors of interdyne.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/Syndicate/OuterClothing/ipm_vest.rsi

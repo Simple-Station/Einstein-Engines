@@ -11,35 +11,35 @@
   supervisors: job-supervisors-ncwl-leaders
   canBeAntag: false
   requirements:
-  - !type:CharacterOverallTimeRequirement
-    min: 20000
-  - !type:FactionRequirement
-    factionID: "NCWL"
-  - !type:CharacterSpeciesRequirement
-    inverted: true
-    species:
-    - Voidborn
-  - !type:CharacterTraitRequirement
-    inverted: true
-    traits:
-    - Muted
-    - Blindness
-    - Pacifist
-    - WheelchairBound
+    - !type:CharacterOverallTimeRequirement
+      min: 20000
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+      - Voidborn
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
   special:
   - !type:AddComponentSpecial
     components:
-    - type: ChatRank
-      rank: crescent-rank-ncwl-engi-leader
-    - type: HullrotFaction
-      faction: NCWL
-    - type: LanguageAdder
-      addSpoken:
-      - Dockta
-      - Tradeband
-      addUnderstood:
-      - Dockta
-      - Tradeband
+      - type: ChatRank
+        rank: crescent-rank-ncwl-engi-leader
+      - type: HullrotFaction
+        faction: NCWL
+      - type: LanguageAdder
+        addSpoken:
+          - Dockta
+          - Tradeband
+        addUnderstood:
+          - Dockta
+          - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain
