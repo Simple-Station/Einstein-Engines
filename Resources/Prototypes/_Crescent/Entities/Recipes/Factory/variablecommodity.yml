@@ -76,7 +76,7 @@
   id: FabricateHardsuitElectronics
   name: fabricate hardsuit electronics
   inputs:
-    BasicElectronis: 2
+    BasicElectronics: 2
     Gold: 5
   outputs:
     HardsuitElectronics1: 1
