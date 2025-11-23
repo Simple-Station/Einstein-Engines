@@ -64,18 +64,18 @@
         posY: 9000
         IFFColor: Purple
         IFFFaction: DSM
-      TribalHideout:
-        gameMapID: TribalHideout
-        posX: -4800
-        posY: -3600
-        randomOffsetX: 2000
-        randomOffsetY: 2000
       HuntersRefuge:
         gameMapID: HuntersRefuge
         posX: 9000
         posY: -3000
         randomOffsetX: 3000
         randomOffsetY: 3000
+      TribalHideout:
+        gameMapID: TribalHideout
+        posX: -4800
+        posY: -3600
+        randomOffsetX: 2000
+        randomOffsetY: 2000
       #      Aasim: #reenable whenever TAP is gameplay ready
       #        gameMapID: Aasim
       #        posX: 4500

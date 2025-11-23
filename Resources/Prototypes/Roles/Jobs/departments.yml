@@ -155,7 +155,7 @@
   - HunterSRM
   - MontagneSRM
   - OverseerSRM
-  editorHidden: true # i just like to see them for the numbers , SPCR 2025
+  editorHidden: false # i just like to see them for the numbers , SPCR 2025
 
 - type: department
   id: SHI
