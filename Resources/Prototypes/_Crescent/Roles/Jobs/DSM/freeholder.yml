@@ -17,6 +17,8 @@
       inverted: true
       species:
         - Voidborn
+        - Moth
+        - Arachnid
   special:
   - !type:AddComponentSpecial
     components:
