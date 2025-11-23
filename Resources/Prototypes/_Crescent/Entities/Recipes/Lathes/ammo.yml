@@ -322,7 +322,7 @@
   completetime: 2
   materials:
     Steel: 500
-    Plasma: 1000
+    Plasma: 200
 
 - type: latheRecipe
   id: 48mmLowYieldRocket
@@ -330,7 +330,7 @@
   completetime: 2
   materials:
     Steel: 500
-    Plasma: 200
+    Plasma: 100
 
 - type: latheRecipe
   id: RocketMagazineEmpty
