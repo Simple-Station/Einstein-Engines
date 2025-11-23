@@ -98,3 +98,303 @@
     - type: MapGrid
     - type: BlobFloorPlanBuilder
       floorPlacements: 24
+
+- type: gameMap
+  id: GargutWreckFull
+  name: Gargut Wreck Full
+  categories: [ HideSpawnMenu ]
+  mapName: 'Gargut Wreck Full'
+  mapPath: /Maps/_Crescent/Derelicts/GargWreck1.yml
+  minPlayers: 0
+  stations:
+    GargutWreckFull:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'Derelict NCWL Gargut {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-wreck
+        - type: VesselDescription
+          description: A derelict Gargut-class heavy cruiser, left abandoned and forlorn.
+
+- type: gameMap
+  id: TriumWreck1
+  name: Trium Wreck 1
+  categories: [ HideSpawnMenu ]
+  mapName: 'Trium Wreck 1'
+  mapPath: /Maps/_Crescent/Derelicts/TriumWreck1.yml
+  minPlayers: 0
+  stations:
+    TriumWreck1:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'Derelict DSM Triumphant {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-wreck
+        - type: VesselDescription
+          description: A derelict Triumphant heavy cruiser, left abandoned and forlorn.
+
+- type: gameMap
+  id: TriumWreck2
+  name: Trium Wreck 2
+  categories: [ HideSpawnMenu ]
+  mapName: 'Trium Wreck 2'
+  mapPath: /Maps/_Crescent/Derelicts/TriumWreck2.yml
+  minPlayers: 0
+  stations:
+    TriumWreck2:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'Derelict DSM Triumphant {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-wreck
+        - type: VesselDescription
+          description: A derelict Triumphant heavy cruiser, left abandoned and forlorn.
+
+- type: gameMap
+  id: ClemWreck1
+  name: Clem Wreck Fore
+  categories: [ HideSpawnMenu ]
+  mapName: 'Clem Wreck Fore'
+  mapPath: /Maps/_Crescent/Derelicts/ClemWreck1.yml
+  minPlayers: 0
+  stations:
+    ClemWreck1:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'Derelict NCWL Clementine {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-wreck
+        - type: VesselDescription
+          description: A shard of a devastated clementine flagship, left abandoned and forlorn.
+
+- type: gameMap
+  id: ClemWreck2
+  name: Clem Wreck Mid
+  categories: [ HideSpawnMenu ]
+  mapName: 'Clem Wreck Mid'
+  mapPath: /Maps/_Crescent/Derelicts/ClemWreck2.yml
+  minPlayers: 0
+  stations:
+    ClemWreck2:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'Derelict NCWL Clementine {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-wreck
+        - type: VesselDescription
+          description: A shard of a devastated clementine flagship, left abandoned and forlorn.
+
+- type: gameMap
+  id: ClemWreck3
+  name: Clem Wreck Aft
+  categories: [ HideSpawnMenu ]
+  mapName: 'Clem Wreck Aft'
+  mapPath: /Maps/_Crescent/Derelicts/ClemWreck3.yml
+  minPlayers: 0
+  stations:
+    ClemWreck3:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'Derelict NCWL Clementine {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-wreck
+        - type: VesselDescription
+          description: A shard of a devastated clementine flagship, left abandoned and forlorn.
+
+- type: gameMap
+  id: IvarWreck1
+  name: Ivarod Wreck 1
+  categories: [ HideSpawnMenu ]
+  mapName: 'Ivarod Wreck 1'
+  mapPath: /Maps/_Crescent/Derelicts/IvarWreck1.yml
+  minPlayers: 0
+  stations:
+    IvarodWreck1:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'Derelict NCWL Ivarod {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-wreck
+        - type: VesselDescription
+          description: A derelict Ivarod-class cruiser, left abandoned and forlorn.
+
+- type: gameMap
+  id: SuzWreck1
+  name: Suz Wreck 1
+  categories: [ HideSpawnMenu ]
+  mapName: 'Suz Wreck 1'
+  mapPath: /Maps/_Crescent/Derelicts/SuzWreck1.yml
+  minPlayers: 0
+  stations:
+    SuzWreck1:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'Derelict DSM Suzerain {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-wreck
+        - type: VesselDescription
+          description: A derelict Suzerain heavy cruiser, left abandoned and forlorn.
+
+- type: gameMap
+  id: SuzWreck2
+  name: Suz Wreck 2
+  categories: [ HideSpawnMenu ]
+  mapName: 'Suz Wreck 2'
+  mapPath: /Maps/_Crescent/Derelicts/SuzWreck2.yml
+  minPlayers: 0
+  stations:
+    SuzWreck2:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'Derelict DSM Suzerain {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-wreck
+        - type: VesselDescription
+          description: A derelict Suzerain heavy cruiser, left abandoned and forlorn.
+
+- type: gameMap
+  id: SuzWreck3
+  name: Suz Wreck 3
+  categories: [ HideSpawnMenu ]
+  mapName: 'Suz Wreck 3'
+  mapPath: /Maps/_Crescent/Derelicts/SuzWreck3.yml
+  minPlayers: 0
+  stations:
+    SuzWreck3:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'Derelict DSM Suzerain {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-wreck
+        - type: VesselDescription
+          description: A derelict Suzerain heavy cruiser, left abandoned and forlorn.
+
+- type: gameMap
+  id: NemWreck1
+  name: Nem Wreck 1
+  categories: [ HideSpawnMenu ]
+  mapName: 'Nem Wreck 1'
+  mapPath: /Maps/_Crescent/Derelicts/NemWreck1.yml
+  minPlayers: 0
+  stations:
+    NemWreck1:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'Derelict DSM Nemesis {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-wreck
+        - type: VesselDescription
+          description: A derelict Nemesis Artillery cruiser, left abandoned and forlorn.
+
+- type: gameMap
+  id: NemWreck2
+  name: Nem Wreck 2
+  categories: [ HideSpawnMenu ]
+  mapName: 'Nem Wreck 2'
+  mapPath: /Maps/_Crescent/Derelicts/NemWreck2.yml
+  minPlayers: 0
+  stations:
+    NemWreck2:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'Derelict DSM Nemesis {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-wreck
+        - type: VesselDescription
+          description: A derelict Nemesis Artillery cruiser, left abandoned and forlorn.
