@@ -9,6 +9,12 @@
     "states": [
         {
             "name": "arbalest"
+        },
+        {
+            "name": "arbalest-tfsc"
+        },
+        {
+            "name": "arbalest-ncwl"
         }
     ]
 }

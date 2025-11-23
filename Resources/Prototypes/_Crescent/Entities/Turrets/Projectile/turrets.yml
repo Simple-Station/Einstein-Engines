@@ -103,6 +103,8 @@
     - type: ApcPowerReceiver
       powerLoad: 500
 
+# vulcan 35mm
+
 - type: entity
   parent: BaseTurretShipgun
   id: WeaponTurretMediumMachinegun
@@ -156,7 +158,7 @@
       class: Ballistic
       size: Medium
 
-#artillery
+#artillery 50mm
 
 - type: entity
   parent: BaseTurretShipgun
@@ -265,6 +267,8 @@
       class: Ballistic
       size: Small
 
+# 120mm
+
 - type: entity
   parent: BaseTurretShipgun
   id: WeaponTurretMediumArtillery
@@ -317,6 +321,8 @@
     - type: HardpointAnchorableOnly
       class: Ballistic
       size: Medium
+
+# 90mm
 
 - type: entity
   parent: BaseTurretShipgun
@@ -393,6 +399,8 @@
       layers:
         - state: ncwl-repeater
 
+# 300mm
+
 - type: entity
   parent: BaseTurretShipgun
   id: WeaponTurretLargeArtillery
@@ -468,3 +476,66 @@
       soundGunshot: /Audio/Weapons/Guns/Gunshots/ship_duster.ogg
     - type: ApcPowerReceiver
       powerLoad: 750
+
+#FLAK
+
+- type: entity
+  parent: BaseTurretShipgun
+  id: FlakCannonTurret
+  suffix: ShipGun
+  name: 88mm 'Corpus' flak-screen point defense system
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Turrets/Projectile/corpus.rsi
+      drawdepth: Mobs
+      layers:
+        - state: corpus
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 2000
+          # TODO: Construction graph
+          behaviors:
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
+    - type: ProjectileIFF
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
+    - type: Gun
+      fireOnDropChance: 0
+      projectileSpeed: 90
+      fireRate: 0.65
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/needler.ogg
+    - type: MagazineAmmoProvider
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          #startingItem: MagazineFlak - on being rebuilt from destruction this gives it free ammo
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - FlakBox
+        gun_chamber:
+          name: Chamber
+          startingItem: FlakCartridge
+          priority: 1
+          whitelist:
+            tags:
+              - FlakShell
+    - type: ApcPowerReceiver
+      powerLoad: 6500
+    - type: HardpointAnchorableOnly
+      class: Ballistic
+      size: Large
