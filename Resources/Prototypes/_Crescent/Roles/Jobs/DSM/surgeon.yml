@@ -17,6 +17,8 @@
       inverted: true
       species:
         - Voidborn
+        - Moth
+        - Arachnid
     - !type:CharacterOverallTimeRequirement
       min: 10800
     - !type:CharacterTraitRequirement
