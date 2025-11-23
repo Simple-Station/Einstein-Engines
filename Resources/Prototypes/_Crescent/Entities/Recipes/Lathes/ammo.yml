@@ -345,7 +345,7 @@
   completetime: 2
   materials:
     Steel: 500
-    Uranium: 500
+    Uranium: 200
 
 - type: latheRecipe
   id: 65mmHammerheadRocket
