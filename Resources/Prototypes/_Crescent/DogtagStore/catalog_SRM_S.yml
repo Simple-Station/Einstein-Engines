@@ -120,7 +120,7 @@
   id: StoreListingSRMCombatMedkit
   name: Combat Medkit
   description: A sturdy combat medkit, often used by the tenders to patch up idiotic hunters.
-  icon: { sprite: Objects/Specific/Medical/firstaidkits.rsi, state: blackkit.png }
+  icon: { sprite: Objects/Specific/Medical/firstaidkits.rsi, state: blackkit }
   productEntity: MedkitCombatFilled
   cost:
     PietySRM: 1
@@ -230,7 +230,7 @@
   id: StoreListingSRMMRE
   name: Meal Ready to Eat
   description: Your classic MRE, designed not for taste but for hunters on the go.
-  icon: { sprite: Objects/Consumable/Food/bay_food.rsi, state: meatmre.png }
+  icon: { sprite: Objects/Consumable/Food/bay_food.rsi, state: meatmre }
   productEntity: BoxMRE
   cost:
     PietySRM: 0
@@ -245,7 +245,7 @@
   id: StoreListingSRMPlasteel
   name: Plasteel Shipment
   description: A shipment of plasteel, useful for various construction purposes.
-  icon: { sprite: _Nuclear14/Structures/Storage/Crates/woodencrates.rsi, state: army_crate.png }
+  icon: { sprite: _Nuclear14/Structures/Storage/Crates/woodencrates.rsi, state: army_crate }
   productEntity: CrateMaterialPlasteel
   cost:
     PietySRM: 1
@@ -256,7 +256,7 @@
   id: StoreListingSRMPlastic
   name: Plastic Shipment
   description: A shipment of plastic for whatever turtle-killing you may desire.
-  icon: { sprite: _Nuclear14/Structures/Storage/Crates/woodencrates.rsi, state: army_crate.png }
+  icon: { sprite: _Nuclear14/Structures/Storage/Crates/woodencrates.rsi, state: army_crate }
   productEntity: CrateMaterialPlastic
   cost:
     PietySRM: 1
@@ -267,7 +267,7 @@
   id: StoreListingSRMSteel
   name: Steel Shipment
   description: A shipment of steel, useful for various repair jobs.
-  icon: { sprite: _Nuclear14/Structures/Storage/Crates/woodencrates.rsi, state: army_crate.png }
+  icon: { sprite: _Nuclear14/Structures/Storage/Crates/woodencrates.rsi, state: army_crate }
   productEntity: CrateMaterialSteel
   cost:
     PietySRM: 1
@@ -278,7 +278,7 @@
   id: StoreListingSRMGlass
   name: Glass Shipment
   description: Careful not to run into it, it's fragile.
-  icon: { sprite: _Nuclear14/Structures/Storage/Crates/woodencrates.rsi, state: army_crate.png }
+  icon: { sprite: _Nuclear14/Structures/Storage/Crates/woodencrates.rsi, state: army_crate }
   productEntity: CrateMaterialGlass
   cost:
     PietySRM: 1

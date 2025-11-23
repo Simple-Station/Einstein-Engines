@@ -24,7 +24,7 @@
   id: StoreListingSRMVibrokhopesh
   name: Vibrokhopesh
   description: A vibrokhopesh, the signature weapon of the Militia.
-  icon: { sprite: _Crescent/Clothing/SRM/Belt/sheath.rsi, state: sheath-sabre.png }
+  icon: { sprite: _Crescent/Clothing/SRM/Belt/sheath.rsi, state: sheath-sabre }
   productEntity: ClothingBeltSheathKhopeshFilled
   cost:
     PietySRM: 40
@@ -35,7 +35,7 @@
   id: StoreListingSRMRifleHunter
   name: The Hunter
   description: The Hunter rifle, a reliable but poorly designed firearm for use by Militia forces.
-  icon: { sprite: _Crescent/Objects/Weapons/Guns/hunter.rsi, state: icon.png }
+  icon: { sprite: _Crescent/Objects/Weapons/Guns/hunter.rsi, state: icon }
   productEntity: WeaponRifleHunter
   cost:
     PietySRM: 3
@@ -46,7 +46,7 @@
   id: StoreListingSRMBeetleSMG
   name: The Beetle
   description: The Beetle submachine gun, a compact if not poorly designed firearm for use by Militia forces.
-  icon: { sprite: _Crescent/Objects/Weapons/Guns/beetle.rsi, state: icon.png }
+  icon: { sprite: _Crescent/Objects/Weapons/Guns/beetle.rsi, state: icon }
   productEntity: WeaponSubMachineGunBeetle
   cost:
     PietySRM: 2
@@ -61,7 +61,7 @@
   id: StoreListingSRMStandardRifleMag
   name: 7.62x51mm Standard Magazine
   description: A standard magazine for the Hunter rifle and compatible 7.62x51mm firearms.
-  icon: { sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/7.62mm_mag.rsi, state: icon.png }
+  icon: { sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/7.62mm_mag.rsi, state: icon }
   productEntity: MagazineRifle
   cost:
     PietySRM: 0
@@ -72,7 +72,7 @@
   id: StoreListingSRMUraniumRifleMag
   name: 7.62x51mm Black-tipped Magazine
   description: A black-tipped magazine for the Hunter rifle and compatible 7.62x51mm firearms, armor piercing.
-  icon: { sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/7.62mm_mag.rsi, state: icon.png }
+  icon: { sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/7.62mm_mag.rsi, state: icon }
   productEntity: MagazineRifleUranium
   cost:
     PietySRM: 1
@@ -83,7 +83,7 @@
   id: StoreListingSRMStandardSMGMagBox
   name: 9x19mm Standard Magazine Box
   description: A box of standard magazines for the Beetle submachine gun and compatible 9x19mm firearms.
-  icon: { sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/9x19mm_mag.rsi, state: icon.png }
+  icon: { sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/9x19mm_mag.rsi, state: icon }
   productEntity: BoxMagazinePistolSubMachineGun
   cost:
     PietySRM: 1
@@ -94,7 +94,7 @@
   id: StoreListingSRMUraniumSMGMag
   name: 9x19mm Black-tipped Magazine
   description: A black-tipped magazine for the Beetle submachine gun and compatible 9x19mm firearms, armor piercing.
-  icon: { sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/9x19mm_mag.rsi, state: icon.png }
+  icon: { sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/9x19mm_mag.rsi, state: icon }
   productEntity: MagazinePistolSubMachineGunUranium
   cost:
     PietySRM: 1
@@ -109,7 +109,7 @@
   id: StoreListingSRMHardsuitElite
   name: Elite Hunter's Hardsuit
   description: A hardsuit seen typically in the hands of elite hunters, made of proper armor and in House Romaine's colors.
-  icon: { sprite: _Crescent/Clothing/SRM/OuterClothing/hardsuitelite.rsi, state: icon.png }
+  icon: { sprite: _Crescent/Clothing/SRM/OuterClothing/hardsuitelite.rsi, state: icon }
   productEntity: ClothingOuterHardsuitHunterElite
   cost:
     PietySRM: 20
@@ -120,7 +120,7 @@
   id: StoreListingSRMHardsuitHunter
   name: Hunter's Hardsuit
   description: A hardsuit made of stitched together materials to insulate and protect the hunter wearing it.
-  icon: { sprite: _Crescent/Clothing/SRM/OuterClothing/hardsuit.rsi, state: icon.png }
+  icon: { sprite: _Crescent/Clothing/SRM/OuterClothing/hardsuit.rsi, state: icon }
   productEntity: ClothingOuterHardsuitHunter
   cost:
     PietySRM: 10
@@ -135,7 +135,7 @@
   id: StoreListingSRMIncendiaryHandgrenade
   name: M14 Incendiary Handgrenade
   description: An M14 Incendiary handgrenade.
-  icon: { sprite: _Crescent/Objects/Weapons/Grenades/incendiary.rsi, state: icon.png }
+  icon: { sprite: _Crescent/Objects/Weapons/Grenades/incendiary.rsi, state: icon }
   productEntity: M14IncendiaryHandgrenade
   cost:
     PietySRM: 1
@@ -146,7 +146,7 @@
   id: StoreListingSRMSmokeHandgrenade
   name: M18 Smoke Handgrenade
   description: An M18 Smoke handgrenade.
-  icon: { sprite: _Crescent/Objects/Weapons/Grenades/smoke.rsi, state: icon.png }
+  icon: { sprite: _Crescent/Objects/Weapons/Grenades/smoke.rsi, state: icon }
   productEntity: M18SmokeHandgrenade
   cost:
     PietySRM: 1
@@ -157,7 +157,7 @@
   id: StoreListingSRMF1Handgrenade
   name: F1 Handgrenade
   description: An F1 fragmentation handgrenade.
-  icon: { sprite: _Crescent/Objects/Weapons/Grenades/f1.rsi, state: icon.png }
+  icon: { sprite: _Crescent/Objects/Weapons/Grenades/f1.rsi, state: icon }
   productEntity: F1Handgrenade
   cost:
     PietySRM: 1
@@ -168,7 +168,7 @@
   id: StoreListingSRMG8PoisonHandgrenade
   name: G-8 Poison Handgrenade
   description: A G-8 Poison handgrenade.
-  icon: { sprite: _Crescent/Objects/Weapons/Grenades/dsm_smoke.rsi, state: icon.png }
+  icon: { sprite: _Crescent/Objects/Weapons/Grenades/dsm_smoke.rsi, state: icon }
   productEntity: DSMG8PoisonHandgrenade
   cost:
     PietySRM: 1
@@ -179,7 +179,7 @@
   id: StoreListingSRMG4TwistcapHandgrenade
   name: G-4 Twistcap Handgrenade
   description: A G-4 Twistcap handgrenade.
-  icon: { sprite: _Crescent/Objects/Weapons/Grenades/dsm_twist.rsi, state: icon.png }
+  icon: { sprite: _Crescent/Objects/Weapons/Grenades/dsm_twist.rsi, state: icon }
   productEntity: DSMG4TwistcapHandgrenade
   cost:
     PietySRM: 1
@@ -190,7 +190,7 @@
   id: StoreListingSRMG3StickHandgrenade
   name: G-3 Stick Handgrenade
   description: A G-3 Stick handgrenade.
-  icon: { sprite: _Crescent/Objects/Weapons/Grenades/dsm_stick.rsi, state: icon.png }
+  icon: { sprite: _Crescent/Objects/Weapons/Grenades/dsm_stick.rsi, state: icon }
   productEntity: DSMG3StickHandgrenade
   cost:
     PietySRM: 1
@@ -201,7 +201,7 @@
   id: StoreListingSRMBreachingCharge
   name: Box of Breaching Charges
   description: A box of breaching charges to effectively gain access to a vessel.
-  icon: { sprite: Objects/Weapons/Bombs/breaching.rsi, state: icon.png }
+  icon: { sprite: Objects/Weapons/Bombs/breaching.rsi, state: icon }
   productEntity: BoxBreachingCharges
   cost:
     PietySRM: 1
