@@ -153,29 +153,11 @@
   - type: NoiseDrivenDebrisSelector
     noiseChannel: WreckGraveyard
     debrisTable:
-    - id: GargutWreckFull
+    - id: ScrapDebrisSmall
       prob: 1
-    - id: TriumWreck1
+    - id: ScrapDebrisMedium
       prob: 1
-    - id: TriumWreck2
-      prob: 1
-    - id: SuzWreck1
-      prob: 1
-    - id: SuzWreck2
-      prob: 1
-    - id: SuzWreck3
-      prob: 1
-    - id: NemWreck1
-      prob: 1
-    - id: NemWreck2
-      prob: 1
-    - id: IvarWreck1
-      prob: 1
-    - id: ClemWreck1
-      prob: 1
-    - id: ClemWreck2
-      prob: 1
-    - id: ClemWreck3
+    - id: ScrapDebrisLarge
       prob: 1
   - type: NoiseRangeCarver
     ranges:
