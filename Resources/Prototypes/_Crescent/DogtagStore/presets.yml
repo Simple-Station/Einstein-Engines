@@ -81,7 +81,7 @@
   abstract: true
   components:
   - type: Store
-    name: srm-console-r
+    name: Saint Romaine
     categories:
     - StoreCategorySRMWeapons
     - StoreCategorySRMAmmo
@@ -97,7 +97,7 @@
   abstract: true
   components:
   - type: Store
-    name: srm-console-s
+    name: Saint Serraine
     categories:
     - StoreCategorySRMLPC
     - StoreCategorySRMTools
