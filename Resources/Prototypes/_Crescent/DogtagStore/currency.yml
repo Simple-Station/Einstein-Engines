@@ -26,7 +26,7 @@
 - type: currency
   id: PietySRM
   Display Name: Piety
-  canWithdraw: false
+  canWithdraw: true
 
 # Gorlex Street cred
 
