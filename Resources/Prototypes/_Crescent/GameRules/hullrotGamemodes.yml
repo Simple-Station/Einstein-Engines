@@ -64,8 +64,8 @@
         posY: 9000
         IFFColor: Purple
         IFFFaction: DSM
-      HuntersRefuge:
-        gameMapID: HuntersRefuge
+      Refuge:
+        gameMapID: Refuge
         posX: -9000
         posY: -3000
         randomOffsetX: 3000
