@@ -194,7 +194,7 @@
 - type: gameMap
   id: ClemWreck2
   mapName: 'Clem Wreck Mid'
-  mapPath: /Maps/_Crescent/Derelicts/Clemwreck2.yml
+  mapPath: /Maps/_Crescent/Derelicts/ClemWreck2.yml
   minPlayers: 0
   stations:
     ClemWreck2:
@@ -240,7 +240,7 @@
 - type: gameMap
   id: IvarWreck1
   mapName: 'Ivarod Wreck 1'
-  mapPath: /Maps/_Crescent/Derelicts/Ivarwreck1.yml
+  mapPath: /Maps/_Crescent/Derelicts/IvarWreck1.yml
   minPlayers: 0
   stations:
     IvarWreck1:
@@ -263,7 +263,7 @@
 - type: gameMap
   id: SuzWreck1
   mapName: 'Suz Wreck 1'
-  mapPath: /Maps/_Crescent/Derelicts/Suzwreck1.yml
+  mapPath: /Maps/_Crescent/Derelicts/SuzWreck1.yml
   minPlayers: 0
   stations:
     SuzWreck1:
@@ -286,7 +286,7 @@
 - type: gameMap
   id: SuzWreck2
   mapName: 'Suz Wreck 2'
-  mapPath: /Maps/_Crescent/Derelicts/Suzwreck2.yml
+  mapPath: /Maps/_Crescent/Derelicts/SuzWreck2.yml
   minPlayers: 0
   stations:
     SuzWreck2:
@@ -309,7 +309,7 @@
 - type: gameMap
   id: SuzWreck3
   mapName: 'Suz Wreck 3'
-  mapPath: /Maps/_Crescent/Derelicts/Suzwreck3.yml
+  mapPath: /Maps/_Crescent/Derelicts/SuzWreck3.yml
   minPlayers: 0
   stations:
     SuzWreck3:
