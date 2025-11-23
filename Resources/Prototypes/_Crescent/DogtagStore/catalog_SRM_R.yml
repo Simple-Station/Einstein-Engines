@@ -132,7 +132,7 @@
 #Explosives
 
 - type: listing
-  id: StoreListingSRM
+  id: StoreListingSRMIncendiaryHandgrenade
   name: M14 Incendiary Handgrenade
   description: An M14 Incendiary handgrenade.
   icon: { sprite: _Crescent/Objects/Weapons/Grenades/incendiary.rsi, state: icon.png }
@@ -143,7 +143,7 @@
   - StoreCategorySRMExplosives
 
 - type: listing
-  id: StoreListingSRM
+  id: StoreListingSRMSmokeHandgrenade
   name: M18 Smoke Handgrenade
   description: An M18 Smoke handgrenade.
   icon: { sprite: _Crescent/Objects/Weapons/Grenades/smoke.rsi, state: icon.png }
@@ -154,7 +154,7 @@
   - StoreCategorySRMExplosives
 
 - type: listing
-  id: StoreListingSRM
+  id: StoreListingSRMF1Handgrenade
   name: F1 Handgrenade
   description: An F1 fragmentation handgrenade.
   icon: { sprite: _Crescent/Objects/Weapons/Grenades/f1.rsi, state: icon.png }
@@ -165,7 +165,7 @@
   - StoreCategorySRMExplosives
 
 - type: listing
-  id: StoreListingSRM
+  id: StoreListingSRMG8PoisonHandgrenade
   name: G-8 Poison Handgrenade
   description: A G-8 Poison handgrenade.
   icon: { sprite: _Crescent/Objects/Weapons/Grenades/dsm_smoke.rsi, state: icon.png }
@@ -176,7 +176,7 @@
   - StoreCategorySRMExplosives
 
 - type: listing
-  id: StoreListingSRM
+  id: StoreListingSRMG4TwistcapHandgrenade
   name: G-4 Twistcap Handgrenade
   description: A G-4 Twistcap handgrenade.
   icon: { sprite: _Crescent/Objects/Weapons/Grenades/dsm_twist.rsi, state: icon.png }
@@ -187,11 +187,22 @@
   - StoreCategorySRMExplosives
 
 - type: listing
-  id: StoreListingSRM
+  id: StoreListingSRMG3StickHandgrenade
   name: G-3 Stick Handgrenade
   description: A G-3 Stick handgrenade.
   icon: { sprite: _Crescent/Objects/Weapons/Grenades/dsm_stick.rsi, state: icon.png }
   productEntity: DSMG3StickHandgrenade
+  cost:
+    PietySRM: 1
+  categories:
+  - StoreCategorySRMExplosives
+
+- type: listing
+  id: StoreListingSRMBreachingCharge
+  name: Box of Breaching Charges
+  description: A box of breaching charges to effectively gain access to a vessel.
+  icon: { sprite: Objects/Weapons/Bombs/breaching.rsi, state: icon.png }
+  productEntity: BoxBreachingCharges
   cost:
     PietySRM: 1
   categories:
