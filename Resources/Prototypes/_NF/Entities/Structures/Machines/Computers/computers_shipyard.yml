@@ -83,7 +83,6 @@
     - Exhumer
     - Homesteader
     - Hammerhead
-    - Corsair
     - Comet
     - Kite
     - Mercury
@@ -93,6 +92,7 @@
     - Birdie
     - Termite
     - Manatee
+    - Cockroach
 # Hardcoded consoles
 - type: entity
   id: ComputerShipyardSecurity

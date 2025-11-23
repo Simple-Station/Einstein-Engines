@@ -11,6 +11,10 @@
   supervisors: You're the defacto leader of the Taypani Free Stations Coalition, whether by charm or by firepower. You answer to money and personal interests.
   canBeAntag: false
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
       min: 10800

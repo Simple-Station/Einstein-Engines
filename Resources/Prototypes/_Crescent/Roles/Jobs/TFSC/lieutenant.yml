@@ -11,6 +11,10 @@
   supervisors: You answer to the Ringleader.
   canBeAntag: false
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:CharacterOverallTimeRequirement
       min: 30000
     - !type:FactionRequirement
