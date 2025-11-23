@@ -24,7 +24,7 @@
   id: StoreListingSRMVibrokhopesh
   name: Vibrokhopesh
   description: A vibrokhopesh, the signature weapon of the Militia.
-  icon: { sprite: /Resources/Textures/_Crescent/Clothing/SRM/Belt/sheath.rsi, state: sheath-sabre.png }
+  icon: { sprite: _Crescent/Clothing/SRM/Belt/sheath.rsi, state: sheath-sabre.png }
   productEntity: ClothingBeltSheathKhopeshFilled
   cost:
     PietySRM: 40
@@ -35,7 +35,7 @@
   id: StoreListingSRMRifleHunter
   name: The Hunter
   description: The Hunter rifle, a reliable but poorly designed firearm for use by Militia forces.
-  icon: { sprite: /Resources/Textures/_Crescent/Objects/Weapons/Guns/hunter.rsi, state: icon.png }
+  icon: { sprite: _Crescent/Objects/Weapons/Guns/hunter.rsi, state: icon.png }
   productEntity: WeaponRifleHunter
   cost:
     PietySRM: 3
@@ -46,7 +46,7 @@
   id: StoreListingSRMBeetleSMG
   name: The Beetle
   description: The Beetle submachine gun, a compact if not poorly designed firearm for use by Militia forces.
-  icon: { sprite: /Resources/Textures/_Crescent/Objects/Weapons/Guns/beetle.rsi, state: icon.png }
+  icon: { sprite: _Crescent/Objects/Weapons/Guns/beetle.rsi, state: icon.png }
   productEntity: WeaponSubMachineGunBeetle
   cost:
     PietySRM: 2
@@ -59,89 +59,45 @@
 
 - type: listing
   id: StoreListingSRM
-  name:
-  description:
-  icon: { sprite: /Resources/Textures/_Crescent/Objects/Weapons/Ammunition/Magazine/5.56mm_mag.rsi, state: icon.png }
+  name: 7.62x51mm Standard Magazine
+  description: A standard magazine for the Hunter rifle and compatible 7.62x51mm firearms.
+  icon: { sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/7.62mm_mag.rsi, state: icon.png }
   productEntity: MagazineRifle
   cost:
-    PietySRM:
+    PietySRM: 0
   categories:
   - StoreCategorySRMAmmo
 
 - type: listing
   id: StoreListingSRM
-  name:
-  description:
-  icon: { sprite: /Resources/Textures/_Crescent/Objects/Weapons/Ammunition/Magazine/5.56mm_mag.rsi, state: icon.png }
+  name: 7.62x51mm Black-tipped Magazine
+  description: A black-tipped magazine for the Hunter rifle and compatible 7.62x51mm firearms, armor piercing.
+  icon: { sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/7.62mm_mag.rsi, state: icon.png }
   productEntity: MagazineRifleUranium
   cost:
-    PietySRM:
+    PietySRM: 1
   categories:
   - StoreCategorySRMAmmo
 
 - type: listing
   id: StoreListingSRM
-  name:
-  description:
-  icon: { sprite: , state: icon.png }
-  productEntity:
+  name: 11mm Standard Magazine
+  description: A box of standard magazines for the Beetle submachine gun and compatible 11mm firearms.
+  icon: { sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/9x19mm_mag.rsi, state: icon.png }
+  productEntity: BoxMagazinePistolSubMachineGun
   cost:
-    PietySRM:
+    PietySRM: 1
   categories:
   - StoreCategorySRMAmmo
 
 - type: listing
   id: StoreListingSRM
-  name:
-  description:
-  icon: { sprite: , state: icon.png }
-  productEntity:
+  name: 11mm Black-tipped Magazine
+  description: A black-tipped magazine for the Beetle submachine gun and compatible 11mm firearms, armor piercing.
+  icon: { sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/9x19mm_mag.rsi, state: icon.png }
+  productEntity: MagazinePistolSubMachineGunUranium
   cost:
-    PietySRM:
-  categories:
-  - StoreCategorySRMAmmo
-
-- type: listing
-  id: StoreListingSRM
-  name:
-  description:
-  icon: { sprite: , state: icon.png }
-  productEntity:
-  cost:
-    PietySRM:
-  categories:
-  - StoreCategorySRMAmmo
-
-- type: listing
-  id: StoreListingSRM
-  name:
-  description:
-  icon: { sprite: , state: icon.png }
-  productEntity:
-  cost:
-    PietySRM:
-  categories:
-  - StoreCategorySRMAmmo
-
-- type: listing
-  id: StoreListingSRM
-  name:
-  description:
-  icon: { sprite: , state: icon.png }
-  productEntity:
-  cost:
-    PietySRM:
-  categories:
-  - StoreCategorySRMAmmo
-
-- type: listing
-  id: StoreListingSRM
-  name:
-  description:
-  icon: { sprite: , state: icon.png }
-  productEntity:
-  cost:
-    PietySRM:
+    PietySRM: 1
   categories:
   - StoreCategorySRMAmmo
 
