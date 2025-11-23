@@ -54,29 +54,3 @@
     price:
       PlunderGSC: 10
 
-
-# SRM Piety Scripture Scraps
-
-- type: entity
-  id: PietyRedeemableLow
-  abstract: true
-  components:
-  - type: Currency
-    price:
-      PietySRM: 1
-
-- type: entity
-  id: PietyRedeemable
-  abstract: true
-  components:
-  - type: Currency
-    price:
-      PietySRM: 5
-
-- type: entity
-  id: PietyRedeemableHigh
-  abstract: true
-  components:
-  - type: Currency
-    price:
-      PietySRM: 10
