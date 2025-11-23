@@ -23,11 +23,6 @@
   displayName: Exotic Samples
   canWithdraw: false
 
-- type: currency
-  id: PietySRM
-  Display Name: Piety
-  canWithdraw: true
-
 # Gorlex Street cred
 
 - type: entity
@@ -53,4 +48,3 @@
   - type: Currency
     price:
       PlunderGSC: 10
-
