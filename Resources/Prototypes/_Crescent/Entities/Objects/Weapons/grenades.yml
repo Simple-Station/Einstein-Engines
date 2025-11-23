@@ -82,7 +82,7 @@
   - type: OnUseTimerTrigger
     delay: 0.5
   - type: SoundOnTrigger
-    sound: 
+    sound:
       path: /Audio/_Crescent/Weapons/Grenades/troll_nade/trigger.ogg
       params:
         variation: 0.25
@@ -228,7 +228,7 @@
     explosionType: Fragmentation
     maxIntensity: 27
     intensitySlope: 9
-    totalIntensity: 270   
+    totalIntensity: 270
     canCreateVacuum: false
   - type: TimerTriggerVisuals
     primingSound:
