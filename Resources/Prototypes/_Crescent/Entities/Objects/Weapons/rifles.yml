@@ -759,7 +759,7 @@
     price: 1000
 
 - type: entity
-  name: HP M17-SA Hunter 5.56x45mm
+  name: HP M17-SA Hunter 7.62x51mm
   parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponRifleHunter
   description: A marksman's rifle of foreign make, repurposed as a mainline battle carbine amongst the predators of this Sector.
@@ -777,25 +777,30 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/hunter.rsi
   - type: Gun
+    fireRate: 5.5
+    shotsPerBurst: 3
+    burstFireRate: 20
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/M16/rifle_gunshot_2.ogg
-    selectedMode: SemiAuto
+    selectedMode: FullAuto
     availableModes:
       - SemiAuto
+      - Burst
+      - FullAuto
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineLightRifle
+        startingItem: MagazineRifle
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazineLightRifle
+            - MagazineRifle
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeLightRifle
+        startingItem: CartridgeRifle
         priority: 1
         whitelist:
           tags:

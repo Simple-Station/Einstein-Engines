@@ -18,15 +18,271 @@
   name: Explosives
   priority: 12
 
-#MECHS
+#Weapons
 
 - type: listing
-  id: StoreListingGSCMechBlade
-  name: SHI LvR-200 exosuit-mounted plasteel blade.
-  description: A repurposed fighter wing commissioned from SAW in accordance with Shinohara schematics.
-  icon: { sprite: /Textures/Objects/Devices/flatpack.rsi, state: kit }
-  productEntity: WeaponMechSword
+  id: StoreListingSRMVibrokhopesh
+  name: Vibrokhopesh
+  description: A vibrokhopesh, the signature weapon of the Militia.
+  icon: { sprite: /Resources/Textures/_Crescent/Clothing/SRM/Belt/sheath.rsi, state: sheath-sabre.png }
+  productEntity: ClothingBeltSheathKhopeshFilled
   cost:
-    PlunderGSC: 10
+    PietySRM: 40
   categories:
-  - StoreCategoryGSCMech
+  - StoreCategorySRMWeapons
+
+- type: listing
+  id: StoreListingSRMRifleHunter
+  name: The Hunter
+  description: The Hunter rifle, a reliable but poorly designed firearm for use by Militia forces.
+  icon: { sprite: /Resources/Textures/_Crescent/Objects/Weapons/Guns/hunter.rsi, state: icon.png }
+  productEntity: WeaponRifleHunter
+  cost:
+    PietySRM: 3
+  categories:
+  - StoreCategorySRMWeapons
+
+- type: listing
+  id: StoreListingSRMBeetleSMG
+  name: The Beetle
+  description: The Beetle submachine gun, a compact if not poorly designed firearm for use by Militia forces.
+  icon: { sprite: /Resources/Textures/_Crescent/Objects/Weapons/Guns/beetle.rsi, state: icon.png }
+  productEntity: WeaponSubMachineGunBeetle
+  cost:
+    PietySRM: 2
+  categories:
+  - StoreCategorySRMWeapons
+
+#Weapons End
+
+#Ammo
+
+- type: listing
+  id: StoreListingSRM
+  name:
+  description:
+  icon: { sprite: /Resources/Textures/_Crescent/Objects/Weapons/Ammunition/Magazine/5.56mm_mag.rsi, state: icon.png }
+  productEntity: MagazineRifle
+  cost:
+    PietySRM:
+  categories:
+  - StoreCategorySRMAmmo
+
+- type: listing
+  id: StoreListingSRM
+  name:
+  description:
+  icon: { sprite: /Resources/Textures/_Crescent/Objects/Weapons/Ammunition/Magazine/5.56mm_mag.rsi, state: icon.png }
+  productEntity: MagazineRifleUranium
+  cost:
+    PietySRM:
+  categories:
+  - StoreCategorySRMAmmo
+
+- type: listing
+  id: StoreListingSRM
+  name:
+  description:
+  icon: { sprite: , state: icon.png }
+  productEntity:
+  cost:
+    PietySRM:
+  categories:
+  - StoreCategorySRMAmmo
+
+- type: listing
+  id: StoreListingSRM
+  name:
+  description:
+  icon: { sprite: , state: icon.png }
+  productEntity:
+  cost:
+    PietySRM:
+  categories:
+  - StoreCategorySRMAmmo
+
+- type: listing
+  id: StoreListingSRM
+  name:
+  description:
+  icon: { sprite: , state: icon.png }
+  productEntity:
+  cost:
+    PietySRM:
+  categories:
+  - StoreCategorySRMAmmo
+
+- type: listing
+  id: StoreListingSRM
+  name:
+  description:
+  icon: { sprite: , state: icon.png }
+  productEntity:
+  cost:
+    PietySRM:
+  categories:
+  - StoreCategorySRMAmmo
+
+- type: listing
+  id: StoreListingSRM
+  name:
+  description:
+  icon: { sprite: , state: icon.png }
+  productEntity:
+  cost:
+    PietySRM:
+  categories:
+  - StoreCategorySRMAmmo
+
+- type: listing
+  id: StoreListingSRM
+  name:
+  description:
+  icon: { sprite: , state: icon.png }
+  productEntity:
+  cost:
+    PietySRM:
+  categories:
+  - StoreCategorySRMAmmo
+
+#Ammo End
+
+#Suits
+
+- type: listing
+  id: StoreListingSRMHardsuitElite
+  name: Elite Hunter's Hardsuit
+  description: A hardsuit seen typically in the hands of elite hunters, made of proper armor and in House Romaine's colors.
+  icon: { sprite: _Crescent/Clothing/SRM/OuterClothing/hardsuitelite.rsi, state: icon.png }
+  productEntity: ClothingOuterHardsuitHunterElite
+  cost:
+    PietySRM: 20
+  categories:
+  - StoreCategorySRMSuits
+
+- type: listing
+  id: StoreListingSRMHardsuitHunter
+  name: Hunter's Hardsuit
+  description: A hardsuit made of stitched together materials to insulate and protect the hunter wearing it.
+  icon: { sprite: _Crescent/Clothing/SRM/OuterClothing/hardsuit.rsi, state: icon.png }
+  productEntity: ClothingOuterHardsuitHunter
+  cost:
+    PietySRM: 10
+  categories:
+  - StoreCategorySRMSuits
+
+#Suits End
+
+#Explosives
+
+- type: listing
+  id: StoreListingSRM
+  name:
+  description:
+  icon: { sprite: , state: icon.png }
+  productEntity:
+  cost:
+    PietySRM:
+  categories:
+  - StoreCategorySRMExplosives
+
+- type: listing
+  id: StoreListingSRM
+  name:
+  description:
+  icon: { sprite: , state: icon.png }
+  productEntity:
+  cost:
+    PietySRM:
+  categories:
+  - StoreCategorySRMExplosives
+
+- type: listing
+  id: StoreListingSRM
+  name:
+  description:
+  icon: { sprite: , state: icon.png }
+  productEntity:
+  cost:
+    PietySRM:
+  categories:
+  - StoreCategorySRMExplosives
+
+- type: listing
+  id: StoreListingSRM
+  name:
+  description:
+  icon: { sprite: , state: icon.png }
+  productEntity:
+  cost:
+    PietySRM:
+  categories:
+  - StoreCategorySRMExplosives
+
+- type: listing
+  id: StoreListingSRM
+  name:
+  description:
+  icon: { sprite: , state: icon.png }
+  productEntity:
+  cost:
+    PietySRM:
+  categories:
+  - StoreCategorySRMExplosives
+
+- type: listing
+  id: StoreListingSRM
+  name:
+  description:
+  icon: { sprite: , state: icon.png }
+  productEntity:
+  cost:
+    PietySRM:
+  categories:
+  - StoreCategorySRMExplosives
+
+- type: listing
+  id: StoreListingSRM
+  name:
+  description:
+  icon: { sprite: , state: icon.png }
+  productEntity:
+  cost:
+    PietySRM:
+  categories:
+  - StoreCategorySRMExplosives
+
+- type: listing
+  id: StoreListingSRM
+  name:
+  description:
+  icon: { sprite: , state: icon.png }
+  productEntity:
+  cost:
+    PietySRM:
+  categories:
+  - StoreCategorySRMExplosives
+
+- type: listing
+  id: StoreListingSRM
+  name:
+  description:
+  icon: { sprite: , state: icon.png }
+  productEntity:
+  cost:
+    PietySRM:
+  categories:
+  - StoreCategorySRMExplosives
+
+- type: listing
+  id: StoreListingSRM
+  name:
+  description:
+  icon: { sprite: , state: icon.png }
+  productEntity:
+  cost:
+    PietySRM:
+  categories:
+  - StoreCategorySRMExplosives
+
+#Explosives End

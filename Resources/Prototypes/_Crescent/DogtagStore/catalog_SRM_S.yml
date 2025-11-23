@@ -222,7 +222,7 @@
   icon: { sprite: /Resources/Textures/Objects/Specific/Medical/healthanalyzer.rsi, state: icon }
   productEntity: HandheldHealthAnalyzer
   cost:
-    PietySRM: 1
+    PietySRM: 0
   categories:
   - StoreCategorySRMSupport
 
@@ -233,8 +233,56 @@
   icon: { sprite: /Resources/Textures/Objects/Consumable/Food/bay_food.rsi, state: meatmre.png }
   productEntity: BoxMRE
   cost:
-    PietySRM: 1
+    PietySRM: 0
   categories:
   - StoreCategorySRMSupport
 
 #Support End
+
+#Materials
+
+- type: listing
+  id: StoreListingSRMPlasteel
+  name: Plasteel Shipment
+  description: A shipment of plasteel, useful for various construction purposes.
+  icon: { sprite: /Resources/Textures/_Nuclear14/Structures/Storage/Crates/woodencrates.rsi, state: army_crate.png }
+  productEntity: CrateMaterialPlasteel
+  cost:
+    PietySRM: 1
+  categories:
+  - StoreCategorySRMMaterials
+
+- type: listing
+  id: StoreListingSRMPlastic
+  name: Plastic Shipment
+  description: A shipment of plastic for whatever turtle-killing you may desire.
+  icon: { sprite: /Resources/Textures/_Nuclear14/Structures/Storage/Crates/woodencrates.rsi, state: army_crate.png }
+  productEntity: CrateMaterialPlastic
+  cost:
+    PietySRM: 1
+  categories:
+  - StoreCategorySRMMaterials
+
+- type: listing
+  id: StoreListingSRMSteel
+  name: Steel Shipment
+  description: A shipment of steel, useful for various repair jobs.
+  icon: { sprite: /Resources/Textures/_Nuclear14/Structures/Storage/Crates/woodencrates.rsi, state: army_crate.png }
+  productEntity: CrateMaterialSteel
+  cost:
+    PietySRM: 1
+  categories:
+  - StoreCategorySRMMaterials
+
+- type: listing
+  id: StoreListingSRMGlass
+  name: Glass Shipment
+  description: Careful not to run into it, it's fragile.
+  icon: { sprite: /Resources/Textures/_Nuclear14/Structures/Storage/Crates/woodencrates.rsi, state: army_crate.png }
+  productEntity: CrateMaterialGlass
+  cost:
+    PietySRM: 1
+  categories:
+  - StoreCategorySRMMaterials
+
+#Materials End
