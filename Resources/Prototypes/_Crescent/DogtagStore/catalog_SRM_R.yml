@@ -58,7 +58,7 @@
 #Ammo
 
 - type: listing
-  id: StoreListingSRM
+  id: StoreListingSRMStandardRifleMag
   name: 7.62x51mm Standard Magazine
   description: A standard magazine for the Hunter rifle and compatible 7.62x51mm firearms.
   icon: { sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/7.62mm_mag.rsi, state: icon.png }
@@ -69,7 +69,7 @@
   - StoreCategorySRMAmmo
 
 - type: listing
-  id: StoreListingSRM
+  id: StoreListingSRMUraniumRifleMag
   name: 7.62x51mm Black-tipped Magazine
   description: A black-tipped magazine for the Hunter rifle and compatible 7.62x51mm firearms, armor piercing.
   icon: { sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/7.62mm_mag.rsi, state: icon.png }
@@ -80,9 +80,9 @@
   - StoreCategorySRMAmmo
 
 - type: listing
-  id: StoreListingSRM
-  name: 11mm Standard Magazine
-  description: A box of standard magazines for the Beetle submachine gun and compatible 11mm firearms.
+  id: StoreListingSRMStandardSMGMagBox
+  name: 9x19mm Standard Magazine Box
+  description: A box of standard magazines for the Beetle submachine gun and compatible 9x19mm firearms.
   icon: { sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/9x19mm_mag.rsi, state: icon.png }
   productEntity: BoxMagazinePistolSubMachineGun
   cost:
@@ -91,9 +91,9 @@
   - StoreCategorySRMAmmo
 
 - type: listing
-  id: StoreListingSRM
-  name: 11mm Black-tipped Magazine
-  description: A black-tipped magazine for the Beetle submachine gun and compatible 11mm firearms, armor piercing.
+  id: StoreListingSRMUraniumSMGMag
+  name: 9x19mm Black-tipped Magazine
+  description: A black-tipped magazine for the Beetle submachine gun and compatible 9x19mm firearms, armor piercing.
   icon: { sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/9x19mm_mag.rsi, state: icon.png }
   productEntity: MagazinePistolSubMachineGunUranium
   cost:
