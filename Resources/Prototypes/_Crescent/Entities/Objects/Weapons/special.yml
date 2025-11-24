@@ -456,8 +456,7 @@
   - type: Projectile
     damage:
       types:
-        Heat: 20
-        Caustic: 5
+        Heat: 25
         Structural: 20
     harmorPenetration: 15
   - type: PointLight
