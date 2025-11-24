@@ -378,3 +378,12 @@
     Gold: 2000
     BallisticCycler: 1500
     Plasma: 3000
+    
+- type: latheRecipe
+  id: GrenadeNCSPRGD5
+  result: NCSPRGD5Handgrenade
+  completetime: 2
+  materials:
+    Plasma: 500
+    Steel: 100
+    
