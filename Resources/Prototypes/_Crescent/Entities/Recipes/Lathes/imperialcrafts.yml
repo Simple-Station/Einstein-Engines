@@ -650,3 +650,12 @@
     StarshipEngineComponents: 3250
     ShipComponents: 2750
     ShipHull: 5000
+
+- type: latheRecipe
+  id: GrenadeDSMG4Twistcap
+  result: DSMG4TwistcapHandgrenade
+  completetime: 2
+  materials:
+    Plasma: 500
+    Steel: 100
+
