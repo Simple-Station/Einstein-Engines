@@ -47,6 +47,8 @@
         - IndustryTaskmasterNCWL
         - ArtificerNCWL
         - WorkerNCWL
+
+
 - type: loadout
   id: LoadoutBeltNCWLDoubleHolster
   category: Belt
