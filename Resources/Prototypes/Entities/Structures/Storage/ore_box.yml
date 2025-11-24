@@ -61,6 +61,8 @@
       tags:
       - ArtifactFragment # Lavaland Change
       - Ore
+      - RawMaterial
+      - CraftMaterials
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:

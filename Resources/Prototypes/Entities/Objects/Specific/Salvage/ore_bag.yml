@@ -25,4 +25,6 @@
       tags:
         - ArtifactFragment
         - Ore
+        - RawMaterial
+        - CraftMaterials
   - type: Dumpable
