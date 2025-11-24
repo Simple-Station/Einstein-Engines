@@ -26424,4 +26424,17 @@ entities:
     - type: Transform
       pos: 10.393833,21.252924
       parent: 1
+- proto: SecBreachingHammer
+  entities:
+  - uid: 3557
+    components:
+    - type: Transform
+      pos: 10.357863,21.0584
+      parent: 1
+  - uid: 3558
+    components:
+    - type: Transform
+      pos: 10.639113,21.042765
+      parent: 1
+
 ...
