@@ -973,6 +973,7 @@
       - Sheet
       - Metal
       - RawMaterial
+      - Produce
   - type: Lathe
     idleState: fab-idle
     runningState: fab-active

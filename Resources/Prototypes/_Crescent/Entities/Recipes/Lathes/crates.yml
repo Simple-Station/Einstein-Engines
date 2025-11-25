@@ -90,7 +90,7 @@
   result: TradeGoodAlcohol
   completetime: 2
   materials:
-    RiceBushel: 1000
+    Ricestack: 1000
 
 - type: latheRecipe
   id: AntibioticCrate

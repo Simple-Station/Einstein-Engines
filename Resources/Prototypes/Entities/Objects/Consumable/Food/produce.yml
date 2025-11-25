@@ -1437,11 +1437,7 @@
   - type: FoodSequenceElement
     entries:
       Taco: Aloe
-      Burger:
-  - type: Material
-  - type: PhysicalComposition
-    materialComposition:
-      Aloe: 500
+      Burger: Aloe
 
 - type: entity
   name: poppy
@@ -1663,10 +1659,6 @@
     entries:
       Taco: Galaxythistle
       Burger: GalaxythistleBurger
-  - type: Material
-  - type: PhysicalComposition
-    materialComposition:
-      Galaxythistle: 500
 
 
 - type: entity
@@ -1850,12 +1842,9 @@
   description: Can be ground into rice, perfect for pudding or sake.
   id: RiceBushel
   parent: ProduceBase
-  suffix: Full
   components:
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/rice.rsi
-    layers:
-    - state: rice
   - type: SolutionContainerManager
     solutions:
       food:
@@ -1864,15 +1853,10 @@
           Quantity: 10
   - type: Produce
     seedId: rice
-  - type: Tag
-    tags:
-    - RawMaterial
-  - type: Stack
-    stackType: Ricestack
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      RiceBushel: 500
+      Ricestack: 500
 
 - type: entity
   name: soybeans
