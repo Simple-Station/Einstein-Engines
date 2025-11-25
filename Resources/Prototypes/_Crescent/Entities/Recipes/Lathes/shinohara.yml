@@ -846,3 +846,13 @@
     Gold: 1000
     Plasma: 500
     Steel: 750
+
+- type: latheRecipe
+  id: GrenadeSHIHG17Smart
+  result: SHIHG17SmartHandgrenade
+  completetime: 2
+  materials:
+    Plasma: 500
+    Steel: 100
+
+    

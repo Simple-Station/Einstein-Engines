@@ -23,3 +23,5 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-assault-frigate
+        - type: VesselMusic
+          ambientMusicPrototype: GrishingradMusic
