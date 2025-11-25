@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseComputer
+  parent: BaseComputerAiAccess
   id: ComputerTargeting
   name: targeting computer
   description: A dazzling console providing total control over the ship's projectile armaments.
