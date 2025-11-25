@@ -1,3 +1,4 @@
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -18,6 +19,9 @@ public sealed partial class GunSwordComponent : Component
 
     [AutoNetworkedField]
     public bool IsActive = true;
+
+    [DataField, AutoNetworkedField]
+    public SoundSpecifier? SoundEject = new SoundPathSpecifier("/Audio/Weapons/Guns/MagOut/revolver_magout.ogg");
 }
 
 /// <summary>
