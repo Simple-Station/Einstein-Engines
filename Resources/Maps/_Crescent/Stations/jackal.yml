@@ -22487,7 +22487,7 @@ entities:
     - type: Transform
       pos: 2.5,-21.5
       parent: 1
-- proto: VendingMachineCigs
+- proto: SyndicateCigVendor
   entities:
   - uid: 2830
     components:
