@@ -439,7 +439,7 @@
     availableModes:
     - FullAuto
     soundGunshot:
-      path: /Audio/_Crescent/Weapons/Guns/non_collection/laser1.ogg
+     collection: Infantry_Plasma_Rifle_Gunshots
       params:
         variation: 0.125
   - type: Battery
