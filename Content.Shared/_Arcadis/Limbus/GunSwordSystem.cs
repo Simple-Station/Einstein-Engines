@@ -31,7 +31,7 @@ public abstract class GunSwordSystem : EntitySystem
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<GunSwordComponent, GetVerbsEvent<Verb>>(OnGetVerbs);
+        SubscribeLocalEvent<GunSwordComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
     }
 
     private void OnGetVerbs(EntityUid uid, GunSwordComponent component, GetVerbsEvent<AlternativeVerb> args)
@@ -46,7 +46,7 @@ public abstract class GunSwordSystem : EntitySystem
         {
             Text = Loc.GetString("gun-revolver-empty"),
             Disabled = GetShell(ballisticComponent) == null,
-            Act = () => EmptyChamber(uid, ballisticComponent, args.User),
+            Act = () => EmptyChamber(uid, ballisticComponent, component, args.User),
             Priority = 1
         });
     }
@@ -64,7 +64,7 @@ public abstract class GunSwordSystem : EntitySystem
         return null;
     }
 
-    public void EmptyChamber(EntityUid entity, BallisticAmmoProviderComponent ballisticAmmo, GunSwordComponent gunSword, EntityUid user = null)
+    public void EmptyChamber(EntityUid entity, BallisticAmmoProviderComponent ballisticAmmo, GunSwordComponent gunSword, EntityUid user)
     {
         var mapCoordinates = _transform.GetMapCoordinates(entity);
         var anyEmpty = false;
