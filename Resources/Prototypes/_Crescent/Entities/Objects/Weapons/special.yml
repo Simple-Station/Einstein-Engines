@@ -439,7 +439,7 @@
     availableModes:
     - FullAuto
     soundGunshot:
-     collection: Infantry_Plasma_Rifle_Gunshots
+      collection: Infantry_Plasma_Rifle_Gunshots
       params:
         variation: 0.125
   - type: Battery
