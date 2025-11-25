@@ -22489,7 +22489,7 @@ entities:
       parent: 1
 - proto: SyndicateCigVendor
   entities:
-  - uid: 3559
+  - uid: 2830
     components:
     - type: Transform
       pos: 3.5,-21.5
