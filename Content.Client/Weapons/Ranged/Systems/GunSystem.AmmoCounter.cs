@@ -58,7 +58,7 @@ public sealed partial class GunSystem
         RaiseLocalEvent(uid, ev, false);
     }
 
-    protected override void UpdateAmmoCount(EntityUid uid, bool prediction = true)
+    public override void UpdateAmmoCount(EntityUid uid, bool prediction = true)
     {
         // Don't use resolves because the method is shared and there's no compref and I'm trying to
         // share as much code as possible
