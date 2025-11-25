@@ -585,7 +585,7 @@
 - type: entity
   id: WeaponMechCombatCarlGustaf
   name: SHI ME-5 'Carlos' HEAT mounted recoilless rifle
-  description: A lisenced copy of a PTA recoilless rifle mounted over the shoulder of a mech, modified with an autoloader over the back and an electronic firing system. The overhang of the launcher tube itself is common cause for out-of-combat injuries.
+  description: A recoilless rifle mounted over the shoulder of a mech, modified with an autoloader over the back and an electronic firing system. The overhang of the launcher tube itself is common cause for out-of-combat injuries.
   suffix: Mech Weapon, Gun, Combat, HEAT
   parent: [ BaseMechWeaponRange, ScoutMechEquipment ]
   components:
