@@ -440,6 +440,8 @@
     - FullAuto
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/non_collection/laser1.ogg
+      params:
+        variation: 0.125
   - type: Battery
     maxCharge: 2100
     startingCharge: 2100
