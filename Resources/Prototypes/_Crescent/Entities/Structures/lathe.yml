@@ -973,7 +973,8 @@
       - Sheet
       - Metal
       - RawMaterial
-      - Produce
+      - CraftMaterials
+      - Ingot
   - type: Lathe
     idleState: fab-idle
     runningState: fab-active

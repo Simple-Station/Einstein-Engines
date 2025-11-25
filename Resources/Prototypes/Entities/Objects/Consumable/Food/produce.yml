@@ -1853,6 +1853,9 @@
           Quantity: 10
   - type: Produce
     seedId: rice
+  - type: Tag
+    tags:
+    - RawMaterial
   - type: Material
   - type: PhysicalComposition
     materialComposition:
