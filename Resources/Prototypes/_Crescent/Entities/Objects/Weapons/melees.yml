@@ -384,7 +384,7 @@
 
 - type: entity
   name: zweihander
-  parent: BaseItem
+  parent: [ BaseItem , StreeCredRedeemable ]
   id: ZweihanderDSM
   description: An ancient Terran weapon, its use in the Mandate persists more out of tradition than practicality; too long for the tight corridors of a ship. But it’s no simple blade, forged with precise machinery out of the strongest alloys; it’s sharp enough to cut through even the thickest hardsuit. In the hands of a skilled swordsman, it’s a deadly weapon.
   components:
@@ -405,7 +405,7 @@
     heavyDamageBaseModifier: 0.8
     heavyStaminaCost: 20
     heavyRateModifier: 1.167 # 1.75 attack rate with 1.5 base
-    clickPartDamageMultiplier: 1.5
+    clickPartDamageMultiplier: 1.2 # Any higher and it oblitorates limbs
     maxTargets: 3
     angle: 100
     soundHit:
