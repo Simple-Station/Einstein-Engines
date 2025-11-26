@@ -251,6 +251,9 @@
     sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicatefreiritter.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndicateFreiritter
+  - type: Construction
+    graph: Freiritter
+    node: armor
 
 #regular shit. if you put hardsuit below here i'm going to explode your cock
 

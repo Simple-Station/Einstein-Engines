@@ -585,7 +585,7 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Electric
-    maxIntensity: 40
+    maxIntensity: 15
     intensitySlope: 15
     totalIntensity: 450
   - type: EmpOnTrigger
