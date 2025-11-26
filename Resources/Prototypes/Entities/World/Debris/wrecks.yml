@@ -401,7 +401,7 @@
 - type: gameMap
   id: IvarWreck1
   mapName: 'Ivarod Wreck 1'
-  mapPath: /Maps/_Crescent/Derelicts/IvarWreck1.yml
+  mapPath: /Maps/_Crescent/Derelicts/Ivarwreck1.yml
   minPlayers: 0
   stations:
     IvarWreck1:
