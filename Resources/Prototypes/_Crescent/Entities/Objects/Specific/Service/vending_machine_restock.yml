@@ -1,55 +1,4 @@
 - type: entity
-  parent: BaseItem
-  id: BaseVendingMachineRestock
-  abstract: true
-  name: vending machine restock box
-  description: A box for restocking vending machines with corporate goodies.
-  components:
-  - type: VendingMachineRestock
-  - type: Sprite
-    sprite: _Crescent/Objects/Specific/Service/vending_machine_restock.rsi
-    layers:
-    - state: base
-    - state: green_bit
-      shader: unshaded
-  - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 5
-    soundHit:
-      path: /Audio/Weapons/genhit2.ogg
-    soundSwing:
-      path: /Audio/Weapons/punchmiss.ogg
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 11
-    staminaCost: 15
-  - type: Item
-    size: Normal
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Metallic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 40
-      behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
-        damage: 20
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-      - !type:DumpRestockInventory
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-
-- type: entity
   parent: BaseVendingMachineRestock
   id: VendingMachineRestockOnion
   name: ONION restock box
@@ -59,6 +8,7 @@
     canRestock:
     - OnionInventory
   - type: Sprite
+    sprite: _Crescent/Objects/Specific/Service/vending_machine_restock.rsi
     layers:
     - state: base
     - state: green_bit
