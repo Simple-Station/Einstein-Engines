@@ -419,6 +419,15 @@
     Silver: 1000
 
 - type: latheRecipe
+  id: DSMZweihander
+  result: ZweihanderDSM
+  completetime: 2
+  materials:
+    Steel: 2500
+    Silver: 1000
+    Gold: 500
+
+- type: latheRecipe
   id: DSMBaton
   result: DSMBaton
   completetime: 2
