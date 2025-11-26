@@ -31,10 +31,10 @@ public abstract class GunSwordSystem : EntitySystem
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<GunSwordComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
+        SubscribeLocalEvent<GunSwordComponent, GetVerbsEvent<Verb>>(OnGetVerbs);
     }
 
-    private void OnGetVerbs(EntityUid uid, GunSwordComponent component, GetVerbsEvent<AlternativeVerb> args)
+    private void OnGetVerbs(EntityUid uid, GunSwordComponent component, GetVerbsEvent<Verb> args)
     {
         if (!args.CanAccess || !args.CanInteract || args.Hands == null)
             return;
@@ -42,12 +42,11 @@ public abstract class GunSwordSystem : EntitySystem
         if (!TryComp<BallisticAmmoProviderComponent>(uid, out var ballisticComponent))
             return;
 
-        args.Verbs.Add(new AlternativeVerb()
+        args.Verbs.Add(new()
         {
-            Text = Loc.GetString("gun-revolver-empty"),
+            Text = Loc.GetString("Remove shells"),
             Disabled = GetShell(ballisticComponent) == null,
             Act = () => EmptyChamber(uid, ballisticComponent, component, args.User),
-            Priority = 1
         });
     }
 
