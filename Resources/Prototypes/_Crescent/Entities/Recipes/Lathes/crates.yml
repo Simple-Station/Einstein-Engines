@@ -82,7 +82,7 @@
   result: TradeGoodSilks
   completetime: 2
   materials:
-    SilkFilament: 4500
+    SilkFilament: 4000
     HideMothroach: 500
 
 - type: latheRecipe
@@ -90,15 +90,14 @@
   result: TradeGoodAlcohol
   completetime: 2
   materials:
-    Ricestack: 1000
+    Biomass: 10
 
 - type: latheRecipe
   id: AntibioticCrate
   result: TradeGoodAntibiotics
   completetime: 2
   materials:
-    Galaxythistle: 1000
-    Aloe: 1000
+    Biomass: 10
 
 - type: latheRecipe
   id: CyberneticCrate
