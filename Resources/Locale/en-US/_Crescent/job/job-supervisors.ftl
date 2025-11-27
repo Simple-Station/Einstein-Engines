@@ -1,8 +1,10 @@
 job-supervisors-highcomm = NCWL High Command
-job-supervisors-ncwl-kommissar = To the current Major General of the Worker's League, under your scrutiny.
-job-supervisors-ncwl-leaders = To the Kommissar first, and the Major General.
-job-supervisors-ncwl-partisan = To your Fleetkapitan first, then the Kommissar, then the Major General.
-job-supervisors-ncwl-worker = To the Coordinator and Overseer first, then the Kommissar and anyone else second.
+job-supervisors-ncwl-kommissar = To the current General Major of the Worker's League, under your scrutiny.
+job-supervisors-ncwl-leaders = To the Kommissar first, and the General Major.
+job-supervisors-ncwl-partisan = To your Fleetkapitan first, then the Kommissar, then the General Major.
+job-supervisors-ncwl-unionized = To your Union Representative, the Kommissar and General Major.
+job-supervisors-ncwl-worker = To the Unions, then the Kommissar and General Major.
+job-supervisors-ncwl-mvd = To the Chengridz Central Committee and by extension the Kommissar.
 job-supervisors-ncsp = NCSP High Command
 job-supervisors-imperial = House Kircheis
 job-supervisors-shi = Shinohara Corporate Command
@@ -19,3 +21,4 @@ job-supervisors-unionfall-dsm = The Knight-Bannaret, then the Grand Steward of t
 job-supervisors-unionfall-dsm-high = your house's quest to restore its honor
 job-supervisors-unionfall-ncwl = The Kommissar, then the Captain of the Dear Clementine
 job-supervisors-unionfall-ncwl-high = the revolution's embers
+

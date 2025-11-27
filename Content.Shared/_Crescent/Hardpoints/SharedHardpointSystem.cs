@@ -119,9 +119,15 @@ public class SharedHardpointSystem : EntitySystem
         DirtyEntity(anchor);
         //Dirty(arg.CannonUid, component);
     }
+
+    /// <summary>
+    /// this is used for when shipguns are destroyed, but this ALSO runs when the grid is deleted. 
+    /// </summary>
+    /// <param name="uid"></param>
+    /// <param name="component"></param>
+    /// <param name="args"></param>
     public void OnShipgunRemove(EntityUid uid, HardpointAnchorableOnlyComponent component, ComponentRemove args)
     {
-        //_sawmill.Debug("SHIPGUNDESTROY RAN RAN");
         if (component.anchoredTo is null)
         {
             return;

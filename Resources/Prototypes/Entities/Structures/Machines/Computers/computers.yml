@@ -108,7 +108,7 @@
     rotateWhileAnchored: true
 
 - type: entity
-  parent: BaseComputer
+  parent: BaseComputerAiAccess
   id: BaseComputerShuttle
   name: shuttle console
   description: Used to pilot a shuttle.
@@ -333,7 +333,7 @@
       ftlToPlanets: true
 
 - type: entity
-  parent: BaseComputerAiAccess
+  parent: [BaseComputerAiAccess, BaseStructureDisableToolUse]
   id: ComputerIFF
   name: IFF computer
   description: Allows you to control the IFF characteristics of this vessel.
@@ -361,7 +361,7 @@
         enum.WiresUiKey.Key:
           type: WiresBoundUserInterface
   - type: Computer
-    board: ComputerIFFCircuitboard
+    board: ComputerTelevisionCircuitboard
 
 - type: entity
   parent: ComputerIFF
@@ -383,7 +383,7 @@
         enum.WiresUiKey.Key:
           type: WiresBoundUserInterface
   - type: Computer
-    board: ComputerIFFSyndicateCircuitboard
+    board: ComputerTelevisionCircuitboard
 
 - type: entity
   parent: BaseComputerAiAccess

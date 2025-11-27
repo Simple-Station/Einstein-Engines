@@ -2,7 +2,7 @@
   id: Duchess
   name: DSM Duchess
   description: The Dutchess. A Laelaps convert into a broadside-heavy elite cruiser with spaces converted to fit Throne for house Valkenrath-Zehring and materials to supply the members of court, at this time 4 people.
-  price: 80000
+  price: 125000
   category: Medium
   group: None
   path: /Maps/_Crescent/Shuttles/DSM/duchess.yml
@@ -23,3 +23,5 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-assault-frigate
+        - type: VesselMusic
+          ambientMusicPrototype: DuchessMusic

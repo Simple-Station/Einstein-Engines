@@ -11,6 +11,10 @@
   supervisors: job-supervisors-shi
   canBeAntag: false
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
       min: 18000
@@ -40,6 +44,7 @@
   - Command
   - Maintenance
   - Shinohara
+  - ShinoharaSecurity
   - ShinoharaOfficer
   - Service
   - External
@@ -71,6 +76,10 @@
   supervisors: job-supervisors-shi
   canBeAntag: false
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
       min: 14400
@@ -98,6 +107,7 @@
   - Command
   - Maintenance
   - Shinohara
+  - ShinoharaSecurity
   - ShinoharaOfficer
   - Service
   - External

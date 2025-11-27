@@ -33,7 +33,7 @@
   - type: StorageFill
     contents:
       - id: MagazineRocketEmpty
-        amount: 5
+        amount: 2
       - id: CartridgeRocketHighYield
         amount: 12
 

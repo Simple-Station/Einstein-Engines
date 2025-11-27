@@ -10,6 +10,7 @@
       organs:
         brain: OrganHumanBrain
         eyes: OrganHumanEyes
+        head_implant: OrganCrescentDummy # Seriously. Why.
     torso:
       part: TorsoGingerbread
       connections:

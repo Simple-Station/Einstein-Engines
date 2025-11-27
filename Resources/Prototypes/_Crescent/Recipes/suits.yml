@@ -1,0 +1,27 @@
+- type: construction
+  name: Modified Bulwark (Sellsword)
+  id: sellswordcrafting
+  graph: Sellsword
+  startNode: start
+  targetNode: armor
+  category: construction-category-clothing
+  description: Modify a BULWARK mkII to a SELLSWORD mkIIb
+  icon:
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicatesellsword.rsi
+    state: icon
+  objectType: Item
+  hide: false
+
+- type: construction
+  name: Modified Bulwark (Freiritter)
+  id: freirittercrafting
+  graph: Freiritter
+  startNode: start
+  targetNode: armor
+  category: construction-category-clothing
+  description: Modify a BULWARK mkII to a Freiritter mkIIc
+  icon:
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicatefreiritter.rsi
+    state: icon
+  objectType: Item
+  hide: false

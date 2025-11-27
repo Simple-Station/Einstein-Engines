@@ -408,6 +408,9 @@
   - type: Sprite
     sprite: _Crescent/Objects/Materials/ore.rsi
     state: icon-refinedscrap
+  - type: Currency
+    price:
+      ScrapSAW: 0.2
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -436,6 +439,9 @@
   - type: Sprite
     sprite: _Crescent/Objects/Materials/ore.rsi
     state: icon-titta
+  - type: Currency
+    price:
+      ScrapSAW: 0.4
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -471,6 +477,9 @@
   - type: Sprite
     sprite: _Crescent/Objects/Materials/ore.rsi
     state: garbage
+  - type: Currency
+    price:
+      ScrapSAW: 0.2
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -525,6 +534,9 @@
   - type: Sprite
     sprite: _Crescent/Objects/Materials/ore.rsi
     state: refinedgarbage
+  - type: Currency
+    price:
+      ScrapSAW: 0.2
   - type: Material
   - type: PhysicalComposition
     materialComposition:

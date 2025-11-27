@@ -5,6 +5,10 @@
   playTimeTracker: JobDockhand
   weight: 20
   requirements:
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+      - Voidborn
   - !type:CharacterOverallTimeRequirement
     min: 10800
   startingGear: DockhandGear
@@ -37,9 +41,7 @@
     jumpsuit: ClothingUniformJumpsuitCMMMachinist
     belt: ClothingBeltSalvageWebbingFilledNF
     back: ClothingBackpackFilled
-    gloves: ClothingHandsGlovesFingerlessInsulated
+    gloves: ClothingHandsGlovesColorYellow
     shoes: ClothingShoesBootsSalvage
-    eyes: ClothingEyesGlassesCheapSunglassesBig
+    eyes: ClothingEyesGlassesSunglassesBig
     pocket1: WeaponPistolHKUSP
-  satchel: ClothingBackpackSatchelFilled
-  duffelbag: ClothingBackpackDuffelFilled

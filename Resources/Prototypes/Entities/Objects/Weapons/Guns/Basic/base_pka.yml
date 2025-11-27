@@ -13,7 +13,6 @@
   # Lavaland Change start
   - type: WeaponAttachment
     lightActionPrototype: ActionTogglePKALight
-  - type: PressureDamageChange
   - type: Multishot
   - type: UpgradeableGun
     whitelist:

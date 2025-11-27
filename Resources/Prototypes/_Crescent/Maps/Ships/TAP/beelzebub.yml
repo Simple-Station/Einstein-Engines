@@ -1,0 +1,29 @@
+- type: vessel
+  id: Beelzebub
+  name: TAP Beelzebub
+  description: A light fighter intended to escort hauling operations.
+  price: 30000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/TAP/beelzebub.yml
+
+- type: gameMap
+  id: Beelzebub
+  mapName: 'TAP Beelzebub'
+  mapPath: /Maps/_Crescent/Shuttles/TAP/beelzebub.yml
+  minPlayers: 0
+  stations:
+    Beelzebub:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: fighter
+        - type: StationNameSetup
+          mapNameTemplate: 'TAP Beelzebub {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter

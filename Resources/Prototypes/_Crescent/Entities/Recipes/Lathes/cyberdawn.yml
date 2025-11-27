@@ -338,3 +338,52 @@
     BasicMechatronics: 1000
     Copper: 1500
     Silver: 1500
+
+- type: latheRecipe
+  id: ReinforcementFlatpackSyndicateCyborgMedical
+  result: ReinforcementFlatpackSyndicateCyborgMedical
+  completetime: 1.5
+  materials:
+    AdvancedElectronics: 3000
+    AdvancedMechatronics: 2000
+    Silver: 2000
+    Steel: 1500
+    Gold: 500
+    BallisticCycler: 500
+    Plasma: 1500
+
+- type: latheRecipe
+  id: ReinforcementFlatpackSyndicateCyborgSaboteur
+  result: ReinforcementFlatpackSyndicateCyborgSaboteur
+  completetime: 1.5
+  materials:
+    AdvancedElectronics: 2000
+    AdvancedMechatronics: 4000
+    Silver: 2000
+    Steel: 1500
+    Gold: 1000
+    Plasma: 3000
+    BallisticCycler: 500
+
+
+- type: latheRecipe
+  id: ReinforcementFlatpackSyndicateCyborgAssault
+  result: ReinforcementFlatpackSyndicateCyborgAssault
+  completetime: 1.5
+  materials:
+    AdvancedElectronics: 4000
+    AdvancedMechatronics: 4000
+    Silver: 2000
+    Steel: 3000
+    Gold: 2000
+    BallisticCycler: 1500
+    Plasma: 3000
+    
+- type: latheRecipe
+  id: GrenadeNCSPRGD5
+  result: NCSPRGD5Handgrenade
+  completetime: 2
+  materials:
+    Plasma: 500
+    Steel: 100
+    

@@ -35,6 +35,7 @@
     damage:
       types:
         Blunt: 5
+        Piercing: 20 # hullrot change, +20 piercing damage when wielded. fun.
         Structural: 20
   - type: Item
     size: Normal
@@ -44,6 +45,8 @@
     sprite: Objects/Weapons/Melee/pickaxe.rsi
     storedRotation: -45
   - type: UseDelay
+  - type: StaticPrice
+    price: 100
 
 - type: entity
   name: mining drill
@@ -65,13 +68,13 @@
     wideAnimationRotation: -90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
-    attackRate: 0.5
+    attackRate: 0.3
     range: 1.5
     heavyStaminaCost: 1
     damage:
       types:
         Structural: 15
-        Piercing: 4
+        Piercing: 10 #hullrot change, slightly buffs the drill.
   - type: DamageOtherOnHit
     staminaCost: 9
     damage:
@@ -80,6 +83,8 @@
         Piercing: 6
   - type: ThrowingAngle
     angle: 270
+  - type: StaticPrice
+    price: 300
 
 - type: entity
   name: diamond tipped mining drill
@@ -99,13 +104,15 @@
     heavyStaminaCost: 0.5 # More efficient so less stamina needed to use
     damage:
       types:
-        Piercing: 8
+        Piercing: 20 #hullrot change, a better drill for piercing people to death
         Structural: 30
   - type: DamageOtherOnHit
     damage:
       types:
         Structural: 40
         Piercing: 8
+  - type: StaticPrice
+    price: 1000
 
 - type: entity
   abstract: true
@@ -120,7 +127,6 @@
     color: "#ffeead"
     enabled: false
     radius: 4
-  - type: PressureDamageChange # Lavaland Change: Pressure damage change for kinetic weapons
 
 - type: entity
   parent: BaseWeaponCrusher
@@ -154,8 +160,8 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Blunt: 10 # Lavaland Change: no damage when unwielded
-        Slash: 15
+        Blunt: 25 # hullrot change, Slightly better than the machete now
+        Slash: 10 # hullrot change
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 10
     heavyRateModifier: 1.25
@@ -176,17 +182,17 @@
       - Prying
   - type: Prying
   # Lavaland Change Start
-  - type: MeleeRequiresWield
-    fumbleOnAttempt: true
   - type: DamageBoostOnMarker
     boost:
-      types: # Totals to 45 damage when hitting marked targets
-        Blunt: 10
-        Slash: 10
-    backstabBoost: # And 10 extra for a backstab. Adding up to 55
+      types: # adds the damage, i think
+        Blunt: 20
+        Slash: 20
+    backstabBoost: # adds backstab damage, like +10
       types:
         Blunt: 5
         Slash: 5
+  - type: StaticPrice
+    price: 500
 
 - type: entity
   parent: BaseWeaponCrusher
@@ -204,7 +210,7 @@
     range: 1.25
     damage:
       types:
-        Slash: 24
+        Slash: 25
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 8
     heavyRateModifier: 1
@@ -220,6 +226,9 @@
   - type: Tag
     tags:
     - Knife
+    - Pickaxe #hullrot change, it makes sense you can mine with this, right?
+  - type: StaticPrice
+    price: 150
 
 # Like a crusher... but better
 - type: entity
@@ -232,11 +241,21 @@
     sprite: Objects/Weapons/Melee/crusher_glaive.rsi
   - type: UseDelay
     delay: 1.9
-  - type: LeechOnMarker
-    leech:
-      groups:
-        Brute: -30
   - type: MeleeWeapon
+    attackRate: 1.15 # Lavaland/Eris Change
+    range: 1.75 #hullrot change, same reach as Kinetic Spear
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Slash: 35 # hullrot change, no blunt damage, just slash, but +5 damage compared to crushers' 45 damage
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.25
+    clickPartDamageMultiplier: 1.25
+    maxTargets: 3
+    angle: 120
+    soundHit:
+      collection: MetalThud
   - type: EmbeddableProjectile
   - type: EmbedPassiveDamage
   - type: ThrowingAngle
@@ -244,3 +263,5 @@
   - type: Tag
     tags:
       - Pickaxe
+  - type: StaticPrice
+    price: 500

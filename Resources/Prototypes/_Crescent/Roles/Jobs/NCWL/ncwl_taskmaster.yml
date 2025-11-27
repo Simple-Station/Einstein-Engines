@@ -1,0 +1,97 @@
+- type: job
+  id: IndustryTaskmasterNCWL
+  name: job-name-ncwl-industry-taskmaster
+  description: job-description-ncwl-industry-taskmaster
+  playTimeTracker: JobEngineeringLeaderNCWL
+  weight: 94
+  startingGear: IndustryTaskmasterNCWLGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconNCWLEngineeringLeader"
+  supervisors: job-supervisors-ncwl-leaders
+  canBeAntag: false
+  requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 20000
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+      - Voidborn
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ncwl-engi-leader
+      - type: HullrotFaction
+        faction: NCWL
+      - type: LanguageAdder
+        addSpoken:
+          - Dockta
+          - Tradeband
+        addUnderstood:
+          - Dockta
+          - Tradeband
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Command
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - NCWLGeneral
+  - NCWLJail
+  - NCWLArmory
+  - NCWLCommand
+
+- type: startingGear
+  id: IndustryTaskmasterNCWLGear
+  equipment:
+    shoes: ClothingShoesBootsSalvage
+    jumpsuit: ClothingUniformJumpsuitNCWLArtificer
+    id: NCWLEngineeringLeaderPDA
+    pocket1: WeaponPistolComrade
+    back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesColorYellow
+    head: ClothingHeadHatBeretEngineering
+    eyes: ClothingEyesGlassesMeson
+    ears: ClothingHeadsetNCWL
+    outerClothing: ClothingOuterArmorNCWLEngi
+    belt: ClothingBeltSalvageWebbingFilledNF

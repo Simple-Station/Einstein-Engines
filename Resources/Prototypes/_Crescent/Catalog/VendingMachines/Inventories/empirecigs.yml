@@ -1,0 +1,9 @@
+- type: vendingMachineInventory
+  id: ImperialCigVendorPack
+  startingInventory:
+    CigPackEmpire: 4
+    CigPackSHI: 2
+    CigPackSHI_Menthol: 2
+    CigPackFilterless: 2
+    CigarRoyalCase: 1
+    FlippoLighter: 4

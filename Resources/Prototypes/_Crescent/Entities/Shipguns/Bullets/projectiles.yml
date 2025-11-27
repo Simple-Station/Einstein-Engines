@@ -45,7 +45,7 @@
     # mask:
     # - BulletImpassable
     # - Impassable
-    
+
 - type: entity
   id: BulletMachineGunVulcan
   name: 20mm vulcan bullet
@@ -93,9 +93,9 @@
         - HighImpassable
         - LowImpassable
         hard: False
-  
 
-    
+
+
 
 #mortar projectile
 
@@ -113,14 +113,14 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 100
-        Piercing: 100
+        Structural: 1000
+        Piercing: 500
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 350
-    intensitySlope: 100
-    totalIntensity: 1000
+    maxIntensity: 2500
+    intensitySlope: 150
+    totalIntensity: 2500
     maxTileBreak: 7
   - type: PointLight
     radius: 3.5
@@ -253,6 +253,7 @@
     maxIntensity: 1000
     intensitySlope: 400
     totalIntensity: 15000
+  - type: IgnoresHullrotShields
 
 - type: entity
   id: TorpedoBase
@@ -392,6 +393,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:ExplodeBehavior
+  - type: IgnoresHullrotShields
 
 #emp gargoyle projectile
 
@@ -468,6 +470,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:ExplodeBehavior
+  - type: IgnoresHullrotShields
 
 #lancer projectile
 
@@ -571,7 +574,7 @@
     explosionType: Default
     totalIntensity: 25000
     intensitySlope: 300
-    maxIntensity: 100
+    maxIntensity: 750
     maxTileBreak: 27
   - type: PointLight
     radius: 3.5
@@ -728,9 +731,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 1250
+    maxIntensity: 600
     intensitySlope: 350
-    totalIntensity: 250
+    totalIntensity: 1250
     maxTileBreak: 0
   - type: PointLight
     radius: 3.5
@@ -865,9 +868,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 4
-    intensitySlope: 3
-    totalIntensity: 4
+    maxIntensity: 60
+    intensitySlope: 45
+    totalIntensity: 60
     maxTileBreak: 1
   - type: Projectile
     ignoreWeaponGrid: true
@@ -1044,7 +1047,7 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 700
+        Structural: 1000
   - type: TimedDespawn
     lifetime: 20
   - type: Sprite
@@ -1057,9 +1060,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 2000
-    intensitySlope: 200
-    totalIntensity: 250
+    maxIntensity: 250
+    intensitySlope: 250
+    totalIntensity: 1000
     maxTileBreak: 1
   - type: PointLight
     radius: 3.5
@@ -1148,8 +1151,8 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Piercing: 700
-        Structural: 2500
+        Piercing: 500
+        Structural: 500
   - type: TimedDespawn
     lifetime: 20
   - type: Sprite
@@ -1159,9 +1162,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 2500
-    intensitySlope: 1000
-    totalIntensity: 2500
+    maxIntensity: 1500
+    intensitySlope: 500
+    totalIntensity: 1500
     maxTileBreak: 5
   - type: PointLight
     radius: 3.5
@@ -1257,7 +1260,7 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 800
+        Structural: 400
         Piercing: 100
   - type: TimedDespawn
     lifetime: 20
@@ -1271,7 +1274,7 @@
     maxIntensity: 400
     intensitySlope: 350
     totalIntensity: 1000
-    maxTileBreak: 4
+    maxTileBreak: 1
   - type: PointLight
     radius: 3.5
     color: orange
@@ -1347,9 +1350,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 12500
-    intensitySlope: 100
-    totalIntensity: 35000
+    maxIntensity: 1200
+    intensitySlope: 300
+    totalIntensity: 30000
     maxTileBreak: 250
   - type: PointLight
     radius: 3.5
@@ -1404,7 +1407,7 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 50
+        Structural: 150
   - type: TimedDespawn
     lifetime: 10
     #roughly 600m range
@@ -1415,9 +1418,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 150
-    intensitySlope: 75
-    totalIntensity: 150
+    maxIntensity: 250
+    intensitySlope: 200
+    totalIntensity: 400
     maxTileBreak: 3
   - type: PointLight
     radius: 5
@@ -1440,6 +1443,7 @@
     ignoreWeaponGrid: true
     damage:
       types:
+        Structural: 400
         Piercing: 150
   - type: TimedDespawn
     lifetime: 10
@@ -1456,6 +1460,7 @@
   - type: ProjectileIFF
     visualType: Square
     color: White
+  - type: IgnoresHullrotShields
 
 #emp 43mm (slugthrower) projectile
 
@@ -1542,7 +1547,7 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 150
+        Structural: 1000
   - type: TimedDespawn
     lifetime: 240
     #roughly 22800m range
@@ -1553,7 +1558,7 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 3500
+    maxIntensity: 1100
     intensitySlope: 100
     totalIntensity: 3500
     maxTileBreak: 6
@@ -1589,9 +1594,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 900
+    maxIntensity: 1100
     intensitySlope: 750
-    totalIntensity: 900
+    totalIntensity: 2000
     maxTileBreak: 5
   - type: PointLight
     radius: 3.5
@@ -1646,6 +1651,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:ExplodeBehavior
+  - type: IgnoresHullrotShields #48mm ignores shields
 
 - type: entity
   id: BulletRocketHighYield
@@ -1692,6 +1698,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:ExplodeBehavior
+  - type: IgnoresHullrotShields
 
 - type: entity
   id: BulletRocketEMP
@@ -1714,3 +1721,4 @@
     color: blue
     energy: 0.5
   - type: ProjectileIFF
+  - type: IgnoresHullrotShields

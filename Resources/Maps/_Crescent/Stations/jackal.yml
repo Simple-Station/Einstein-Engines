@@ -5959,7 +5959,7 @@ entities:
     - type: Transform
       pos: 14.479843,-0.662189
       parent: 1
-- proto: Bonfire
+- proto: DrumBarrel
   entities:
   - uid: 198
     components:
@@ -19253,7 +19253,7 @@ entities:
     - type: Transform
       pos: 2.5,34.5
       parent: 1
-- proto: PointNFireCannonExample
+- proto: WeaponTurretPDTAdvanced
   entities:
   - uid: 2395
     components:
@@ -21957,7 +21957,7 @@ entities:
     - type: Transform
       pos: 0.5,33.5
       parent: 1
-- proto: TableReinforcedGlass
+- proto: N14TableMetalGrate
   entities:
   - uid: 2743
     components:
@@ -22487,7 +22487,7 @@ entities:
     - type: Transform
       pos: 2.5,-21.5
       parent: 1
-- proto: VendingMachineCigs
+- proto: SyndicateCigVendor
   entities:
   - uid: 2830
     components:
@@ -26424,4 +26424,17 @@ entities:
     - type: Transform
       pos: 10.393833,21.252924
       parent: 1
+- proto: SecBreachingHammer
+  entities:
+  - uid: 3557
+    components:
+    - type: Transform
+      pos: 10.357863,21.0584
+      parent: 1
+  - uid: 3558
+    components:
+    - type: Transform
+      pos: 10.639113,21.042765
+      parent: 1
+
 ...

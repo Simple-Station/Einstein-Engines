@@ -493,7 +493,7 @@
         ents: []
   - type: Gun
     fireOnDropChance: 0
-    fireRate: 3
+    fireRate: 2
     projectileSpeed: 80
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/50cal.ogg
@@ -745,8 +745,8 @@
         ents: []
       SpaceArtillery-CoolantSlot: !type:ContainerSlot {}
   - type: Battery
-    maxCharge: 1000000
-    startingCharge: 1000000
+    maxCharge: 100000
+    startingCharge: 100000
   - type: BallisticAmmoProvider
     cycleable: false
     capacity: 5
@@ -766,8 +766,8 @@
     class: Ballistic
     size: Large
   - type: SpaceArtillery
-    powerChargeRate: 50000
-    powerUseActive: 500000
+    powerChargeRate: 25000
+    powerUseActive: 50000
     isCoolantRequiredToFire: true
     coolantConsumed: 30
     maxCoolantStored: 120

@@ -11,6 +11,10 @@
   supervisors: job-supervisors-shi
   canBeAntag: false
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
       min: 35000
@@ -27,7 +31,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-shi-highsec
+        rank: crescent-rank-shi-corpsec
       - type: HullrotFaction
         faction: SHI
       - type: LanguageAdder
@@ -81,6 +85,10 @@
   supervisors: job-supervisors-shi
   canBeAntag: false
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
       min: 35000

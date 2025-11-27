@@ -150,7 +150,7 @@
     Durathread: 1500
     Steel: 5000
     Tungsten: 2000
-    HardsuitElectronics: 1000 
+    HardsuitElectronics: 1000
     AdvancedMechatronics: 1000 #Exoskeletal support for the additional armour platings
 
 # MARK: Weapons
@@ -489,6 +489,16 @@
 # MARK: Flatpacks
 
 - type: latheRecipe
+  id: HardlinerFlatpack
+  result: HardlinerFlatpack
+  completetime: 2
+  materials:
+    Steel: 3000
+    AdvancedMechatronics: 2000
+    BasicMechatronics: 6000
+    AdvancedElectronics: 1000
+
+- type: latheRecipe
   id: ShipyardManufactorumFlatpack
   result: ShipyardManufactorumFlatpack
   completetime: 2
@@ -513,6 +523,15 @@
     StarshipEngineComponents: 1500
     ShipComponents: 5000
     ShipHull: 1500
+
+- type: latheRecipe
+  id: FujinLPC
+  result: ShipVoucherFujin
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 5000
+    ShipComponents: 6000
+    ShipHull: 7000
 
 - type: latheRecipe
   id: VariableCommodityFabricatorFlatpack
@@ -740,6 +759,16 @@
     AdvancedMechatronics: 500
     Steel: 1500
 
+- type: latheRecipe
+  id: PowerCageHardliner
+  result: PowerCageHardliner
+  completetime: 2
+  materials:
+    Uranium: 15000
+    Plasma: 20000
+    Plasteel: 15000
+    HardlightGenerator: 3000
+
 #MARK: Melee
 
 - type: latheRecipe
@@ -808,3 +837,13 @@
     Gold: 1000
     Plasma: 500
     Steel: 750
+
+- type: latheRecipe
+  id: GrenadeSHIHG17Smart
+  result: SHIHG17SmartHandgrenade
+  completetime: 2
+  materials:
+    Plasma: 500
+    Steel: 100
+
+    

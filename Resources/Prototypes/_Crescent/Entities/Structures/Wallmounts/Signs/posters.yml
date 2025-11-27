@@ -17,3 +17,13 @@
   - type: Sprite
     sprite: _Crescent/Structures/Wallmounts/posters.rsi
     state: dsmposter2
+
+- type: entity
+  parent: PosterBase
+  id: PosterDSMValkenrathZehring
+  name: house Valkenrath-Zehring's coat of arms
+  description: A piece of cloth depicting house Valkenrath-Zehring's coat of arms.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/Wallmounts/posters.rsi
+    state: valkenrath-zehring

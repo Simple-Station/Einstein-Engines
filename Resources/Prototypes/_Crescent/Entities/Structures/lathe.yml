@@ -13,9 +13,9 @@
       shader: unshaded
       map: ["enum.PowerDeviceVisualLayers.Powered"]
   - type: MaterialStorage
-    dropOnDeconstruct: false #should drop ores instead of ingots/sheets
+    dropOnDeconstruct: true #should drop ores instead of ingots/sheets
     ignoreColor: true
-    canEjectStoredMaterials: false
+    canEjectStoredMaterials: true
     whitelist:
       tags:
       - RawMaterial
@@ -252,6 +252,15 @@
     idleState: fab-idle
     runningState: fab-active
     staticRecipes:
+      - CombatKnife
+      - ExplosivePayload
+      - FlashPayload
+      - ChemicalPayload
+      - VoiceTrigger
+      - SignalTrigger
+      - TimerTrigger
+      - EMPGrenadeElectronics
+      - GrenadeDSMG4Twistcap
       - DrumMagazineShotgunSlug
       - DrumMagazineShotgunEmpty
       - DrumMagazineShotgunBuck
@@ -339,6 +348,7 @@
       - ClothingOuterSuitEmergency
       - ClothingHeadHelmetEVALarge # Frontier
       - TradebandTranslator
+      -  SilkCrate
     dynamicRecipes:
       - CreoleTranslator
       - LowImperialTranslator
@@ -490,7 +500,7 @@
       - RPED
       - WeaponParticleDecelerator
       - HoloprojectorField
-      - ClothingUniformJumpsuitSyndicateSuitCyberdawn
+      - ClothingUniformJumpsuitSyndicateSuitCyberdawn #CDT
       - ClothingUniformJumpsuitSyndicateLabCyberdawn
       - ClothingUniformJumpsuitSyndicateSoldierCyberdawn
       - ClothingOuterArmorCyberdawnPatriarch
@@ -528,6 +538,9 @@
       - MagazinePistolSpecialMindbreakerCyberdawn
       - WeaponPistolPsiBreakerCyberdawn
       - ClothingEyesThermalVisionGogglesCyberdawn
+      - ReinforcementFlatpackSyndicateCyborgMedical
+      - ReinforcementFlatpackSyndicateCyborgSaboteur
+      - ReinforcementFlatpackSyndicateCyborgAssault
       - ClothingMaskImperialCombatGasmask
       - ClothingOuterCoatImperialParade
       - ClothingUniformJumpsuitImperialDoctor
@@ -566,12 +579,14 @@
       - CovetorLPC
       - IbisLPC
       - TorturerLPC
+      - MagnateLPC
       - SunesisLPC
       - ClothingBeltSheathDSMRapier
       - ClothingBeltSheathDSMSabre
       - DSMRapier
       - DSMSabre
       - DSMDuelingKhopesh
+      - DSMBaton
       - LaelapsLPC
       - PaladinFlatpack
       - WandererFlatpack
@@ -581,6 +596,7 @@
       - WeaponMechCombatPlasmaCannon
       - WeaponLightMachineGunDSMDominion
       - WeaponShotgunReno
+      - WeaponSniperDSMLegax
       - WeaponRifleDSMLegionnaire
       - WeaponSubMachineGunC20rImperial
       - WeaponPistolNeoVolker
@@ -592,6 +608,10 @@
       - WeaponLauncherM320
       - TriumphantLPC
       - SuzerainLPC
+      - NemesisLPC
+      - JanissaryLPC
+      - VorunaLPC
+      - PerigaleLPC
       - ClothingHeadHelmetNCWLEVA
       - ClothingOuterNCWLEVA
       - ClothingHeadHatNCWLCapsoft
@@ -627,6 +647,7 @@
       - WeaponSubMachineGunBloodhound
       - WeaponRifleNCWLBatanya
       - WeaponShotgunToz123
+      - WeaponSniperNCWLNovomosin
       - WeaponShotgunProletar
       - WeaponPistolT91
       - WeaponRevolverPython
@@ -711,7 +732,10 @@
       - SHIShiverBlade
       - ClothingOuterHardsuitSHIJuggernaut
       - ClothingOuterHardsuitSHISpeedsuit
+      - FujinLPC
       - MetempsychoticMachineCircuitboard
+      - HardlinerFlatpack
+      - PowerCageHardliner
 
   - type: Machine
     board: MicroforgeCircuitboard
