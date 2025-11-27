@@ -80,7 +80,7 @@
 
 - type: entity
   parent: AccessElevatorBase
-  id: AccessElevatorGliess
+  id: AccessElevatorSHI
   name: SHI Access Elevator
   description: Gives a target ID the acces codes for Shinohara Corporate facilities.
   components:
