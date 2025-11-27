@@ -453,7 +453,7 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        350: Critical
+        300: Critical
         500: Dead
     - type: ShowHealthBars
       damageContainers:
@@ -465,6 +465,9 @@
       - Inorganic
       - Silicon
       - Biological
+    - type: MovementSpeedModifier
+      baseWalkSpeed : 2
+      baseSprintSpeed : 4
 
 - type: entity
   id: BorgChassisSyndicateMedical
@@ -484,7 +487,7 @@
           map: ["light"]
           visible: false
     - type: BorgChassis
-      maxModules: 3
+      maxModules: 4
       moduleWhitelist:
         tags:
           - BorgModuleGeneric
