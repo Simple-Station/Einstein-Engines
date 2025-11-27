@@ -4,13 +4,16 @@
   id: JadeHeartsV
   description: A sword belonging to someone from outside of the sector. Has 6 slots for shotgun shells that amplify the power of the blade immensely.
   components:
+  - type: Reflect
+    reflectProb: 0
+    minReflectProb: 0
   - type: GunSword
   - type: BallisticAmmoProvider
     mayTransfer: false
     cycleable: false
     whitelist:
-      tags:
-        - ShellShotgun
+      components:
+        - GunSwordAmmo
     capacity: 6
     soundRack:
       path: /Audio/Weapons/Guns/Empty/empty.ogg

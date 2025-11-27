@@ -9,10 +9,14 @@ using Robust.Shared.Random;
 using Robust.Shared.Network;
 using Content.Shared.Throwing;
 using Content.Shared.Audio;
+using Robust.Shared.Utility;
+using Content.Shared.Weapons.Reflect;
+using Content.Shared.Weapons.Melee.Events;
+using System.Numerics;
 
 namespace Content.Shared._Arcadis.Limbus;
 
-public abstract class GunSwordSystem : EntitySystem
+public sealed class GunSwordSystem : EntitySystem
 {
     /* TODO: You have a lot of work to do here.
         - Make the empty gun verb work
@@ -20,21 +24,90 @@ public abstract class GunSwordSystem : EntitySystem
         - Add some extra visuals, maybe?
         - Send demo to Cross
     */
-
+    [Dependency] protected readonly SharedContainerSystem _container = default!;
     [Dependency] protected readonly ThrowingSystem _throw = default!;
     [Dependency] protected readonly IRobustRandom _random = default!;
-    [Dependency] protected readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly INetManager _netMan = default!;
     [Dependency] protected readonly SharedGunSystem _gun = default!;
     [Dependency] protected readonly SharedAudioSystem _audio = default!;
     [Dependency] protected readonly SharedTransformSystem _transform = default!;
-
     public override void Initialize()
     {
-        SubscribeLocalEvent<GunSwordComponent, GetVerbsEvent<Verb>>(OnGetVerbs);
+        SubscribeLocalEvent<GunSwordComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
+        SubscribeLocalEvent<GunSwordComponent, MeleeHitEvent>(OnMeleeHit);
+        base.Initialize();
     }
 
-    private void OnGetVerbs(EntityUid uid, GunSwordComponent component, GetVerbsEvent<Verb> args)
+    public void OnMeleeHit(EntityUid uid, GunSwordComponent component, MeleeHitEvent args)
+    {
+        if (!TryComp<BallisticAmmoProviderComponent>(uid, out var ballistic))
+            return;
+
+        int shellsUsed = 0;
+        float knockbackForce = 0f;
+
+        while (shellsUsed < component.ShellsPerHit && GetShell(ballistic) != null)
+        {
+            var shellEntity = GetShell(ballistic);
+            if (shellEntity == null)
+                break;
+
+            if (!TryComp<CartridgeAmmoComponent>(shellEntity, out var ammo) || ammo.Spent)
+                continue;
+
+            if (!TryComp<GunSwordAmmoComponent>(shellEntity, out var shellComp))
+                continue;
+
+            args.BonusDamage += shellComp.DamageAmplifier * args.BaseDamage;
+            knockbackForce += shellComp.KnockbackForce;
+
+            _gun.SetCartridgeSpent(shellEntity.Value, ammo, true);
+
+            shellsUsed++;
+        }
+
+        if (knockbackForce > 0f)
+        {
+            foreach (var hit in args.HitEntities)
+            {
+                var attackerPos = _transform.GetWorldPosition(uid);
+                var targetPos = _transform.GetWorldPosition(hit);
+                var delta = targetPos - attackerPos;
+                var normalizedDelta = Vector2.Normalize(delta);
+                var flingVector = normalizedDelta * knockbackForce;
+                _throw.TryThrow(hit, flingVector, 5f);
+            }
+        }
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+        var query = EntityQueryEnumerator<GunSwordComponent, BallisticAmmoProviderComponent>();
+
+        while (query.MoveNext(out var uid, out var comp, out var ballistic))
+        {
+            var reflectChance = 0f;
+
+            foreach (var shellEntity in ballistic.Entities)
+            {
+                if (!TryComp<GunSwordAmmoComponent>(shellEntity, out var shellComp))
+                    continue;
+
+                if (!TryComp<CartridgeAmmoComponent>(shellEntity, out var ammo) || ammo.Spent)
+                    continue;
+
+                reflectChance += shellComp.ReflectChanceIncrease;
+            }
+
+            if (!TryComp<ReflectComponent>(uid, out var reflect))
+                continue;
+
+            reflect.ReflectProb = reflectChance;
+        }
+
+    }
+    private void OnGetVerbs(EntityUid uid, GunSwordComponent component, GetVerbsEvent<AlternativeVerb> args)
     {
         if (!args.CanAccess || !args.CanInteract || args.Hands == null)
             return;
@@ -44,17 +117,17 @@ public abstract class GunSwordSystem : EntitySystem
 
         args.Verbs.Add(new()
         {
-            Text = Loc.GetString("Remove shells"),
-            Disabled = GetShell(ballisticComponent) == null,
+            Text = Loc.GetString("Cycle"),
+            Disabled = GetShell(ballisticComponent, false) == null,
             Act = () => EmptyChamber(uid, ballisticComponent, component, args.User),
         });
     }
 
-    private EntityUid? GetShell(BallisticAmmoProviderComponent component)
+    private EntityUid? GetShell(BallisticAmmoProviderComponent component, bool? checkSpent = true)
     {
         for (var i = 0; i < component.Entities.Count; i++)
         {
-            if (TryComp<CartridgeAmmoComponent>(component.Entities[i], out var ammo) && !ammo.Spent)
+            if (TryComp<CartridgeAmmoComponent>(component.Entities[i], out var ammo) && (!ammo.Spent || checkSpent == false))
             {
                 return component.Entities[i];
             }
@@ -62,15 +135,13 @@ public abstract class GunSwordSystem : EntitySystem
 
         return null;
     }
-
     public void EmptyChamber(EntityUid entity, BallisticAmmoProviderComponent ballisticAmmo, GunSwordComponent gunSword, EntityUid user)
     {
-        var mapCoordinates = _transform.GetMapCoordinates(entity);
         var anyEmpty = false;
 
-        for (var i = 0; i < ballisticAmmo.Capacity; i++)
+        foreach (var shell in ballisticAmmo.Entities.ShallowClone())
         {
-            var shell = ballisticAmmo.Entities[i];
+            _container.Remove(shell, ballisticAmmo.Container);
 
             if (_netMan.IsServer)
                 _gun.EjectCartridge(shell);
@@ -78,7 +149,6 @@ public abstract class GunSwordSystem : EntitySystem
             ballisticAmmo.Entities.Remove(shell);
 
             anyEmpty = true;
-
         }
 
         if (anyEmpty)
@@ -86,44 +156,6 @@ public abstract class GunSwordSystem : EntitySystem
             _audio.PlayPredicted(gunSword.SoundEject, entity, user);
             _gun.UpdateAmmoCount(entity, prediction: false);
             Dirty(entity, ballisticAmmo);
-        }
-    }
-
-    protected void EjectCartridge(
-        EntityUid entity,
-        Angle? angle = null,
-        bool playSound = true,
-        GunComponent? gunComp = null)
-    {
-        var throwingForce = 0.01f;
-        var throwingSpeed = 5f;
-        var ejectAngleOffset = 3.7f;
-        if (gunComp is not null)
-        {
-            throwingForce = gunComp.EjectionForce;
-            throwingSpeed = gunComp.EjectionSpeed;
-            ejectAngleOffset = gunComp.EjectAngleOffset;
-        }
-
-        // TODO: Sound limit version.
-        var offsetPos = _random.NextVector2(0.4f); // im too lazy to unhardcode this.
-        var xform = Transform(entity);
-
-        var coordinates = xform.Coordinates;
-        coordinates = coordinates.Offset(offsetPos);
-
-        _transform.SetLocalRotation(entity, _random.NextAngle(), xform);
-        _transform.SetCoordinates(entity, xform, coordinates);
-        if (angle is null)
-            angle = _random.NextAngle();
-
-        Angle ejectAngle = angle.Value;
-        ejectAngle += ejectAngleOffset; // 212 degrees; casings should eject slightly to the right and behind of a gun
-        _throw.TryThrow(entity, ejectAngle.ToVec().Normalized() * throwingForce, throwingSpeed);
-
-        if (playSound && TryComp(entity, out CartridgeAmmoComponent? cartridge))
-        {
-            _audio.PlayPvs(cartridge.EjectSound, entity, AudioParams.Default.WithVariation(SharedContentAudioSystem.DefaultVariation).WithVolume(-1f));
         }
     }
 }
