@@ -70,7 +70,7 @@
   components:
   - type: GunSwordAmmo
     damageAmplifier: 5
-    knockbackForce: 20
+    knockbackForce: 5
     reflectChanceIncrease: 15
   - type: Sprite
     layers:

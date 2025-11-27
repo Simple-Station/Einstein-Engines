@@ -34,7 +34,7 @@ public sealed partial class GunSwordAmmoComponent : Component
     public float DamageAmplifier = 3f; // if i catch anyone increasing this, 2 week repoban. this is a threat
 
     [DataField, AutoNetworkedField]
-    public float KnockbackForce = 10f;
+    public float KnockbackForce = 2f;
 
     [DataField, AutoNetworkedField]
     public float ReflectChanceIncrease = 5;

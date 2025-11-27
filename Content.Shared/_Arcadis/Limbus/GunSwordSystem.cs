@@ -75,7 +75,7 @@ public sealed class GunSwordSystem : EntitySystem
                 var delta = targetPos - attackerPos;
                 var normalizedDelta = Vector2.Normalize(delta);
                 var flingVector = normalizedDelta * knockbackForce;
-                _throw.TryThrow(hit, flingVector, 5f);
+                _throw.TryThrow(hit, flingVector, 25f);
             }
         }
     }
