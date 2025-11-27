@@ -76,10 +76,10 @@
   components:
   - type: ExplodeOnTrigger
   - type: Explosive
-    explosionType: Minibomb
-    totalIntensity: 400
-    intensitySlope: 30
-    maxIntensity: 125
+    explosionType: HardBomb
+    totalIntensity: 2000.0
+    intensitySlope: 3
+    maxIntensity: 400
     canCreateVacuum: true
   - type: OnUseTimerTrigger
     delay: 4.5

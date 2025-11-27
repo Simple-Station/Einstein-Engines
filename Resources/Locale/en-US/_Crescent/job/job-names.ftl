@@ -33,6 +33,9 @@ job-name-cyberdawntech = Cyberdawn Researcher
 job-name-intelligenceofficer = Patriarch
 job-name-shipbreaker = Shipbreaker
 job-name-foreman = SAW Foreman
+ghost-role-information-syndicate-cyborg-assault-name = CS 5401 Xigou assault cyborg
+ghost-role-information-syndicate-cyborg-Medical-name = CS 4201 Yao Wang Combat Medical cyborg
+ghost-role-information-syndicate-cyborg-saboteur-name = CS 3201 Sun Wukong Combat saboteur cyborg
 
 # empire
 

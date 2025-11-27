@@ -216,8 +216,8 @@
   parent: ClothingHeadHelmetHardsuitSyndicateBattlegroup
   id: ClothingHeadHelmetHardsuitSyndicateFreiritter
   categories: [ HideSpawnMenu ]
-  name: sellsword's combat hardsuit helmet
-  description: Spaceworthy protection for your fragile (probably felinid) skull. A modified Syndicate design.
+  name: freiritter's combat hardsuit helmet
+  description: Spaceworthy protection for your fragile (probably felinid) skull. A custom Syndicate design.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/Syndicate/Head/syndicatefreiritter.rsi
