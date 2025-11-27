@@ -26,7 +26,7 @@
   - type: HealthAnalyzer
     ScanningBeginSound:
       path: "/Audio/_Crescent/Items/Medical/scanstart.ogg"
-    scanningEndSound:
+    ScanningEndSound:
       path: "/Audio/_Crescent/Items/Medical/scanend.ogg"
   - type: Tag
     tags:
