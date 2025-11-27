@@ -55,7 +55,7 @@
     damage:
       types:
         Slash: 45
-        Structural: 25
+        Structural: 20
     heavyDamageBaseModifier: 1.25
     heavyStaminaCost: 5
     heavyRateModifier: 1
