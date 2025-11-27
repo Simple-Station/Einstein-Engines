@@ -272,7 +272,7 @@
       - MagazineBoxAntiMateriel
       - MagazineBoxHeavyRifle
       - MagazineBoxRifle
-      - MagazineLightRifleBox
+      - MagazineBoxLightRifle
       - MagazineBoxCaselessRifle
       - MagazineBoxCaselessRifleBig
       - BoxShotgunFlash4g
@@ -500,7 +500,7 @@
       - RPED
       - WeaponParticleDecelerator
       - HoloprojectorField
-      - ClothingUniformJumpsuitSyndicateSuitCyberdawn
+      - ClothingUniformJumpsuitSyndicateSuitCyberdawn #CDT
       - ClothingUniformJumpsuitSyndicateLabCyberdawn
       - ClothingUniformJumpsuitSyndicateSoldierCyberdawn
       - ClothingOuterArmorCyberdawnPatriarch
@@ -538,6 +538,9 @@
       - MagazinePistolSpecialMindbreakerCyberdawn
       - WeaponPistolPsiBreakerCyberdawn
       - ClothingEyesThermalVisionGogglesCyberdawn
+      - ReinforcementFlatpackSyndicateCyborgMedical
+      - ReinforcementFlatpackSyndicateCyborgSaboteur
+      - ReinforcementFlatpackSyndicateCyborgAssault
       - ClothingMaskImperialCombatGasmask
       - ClothingOuterCoatImperialParade
       - ClothingUniformJumpsuitImperialDoctor
@@ -945,4 +948,3 @@
   - type: Anchorable
     flags:
     - Anchorable
-

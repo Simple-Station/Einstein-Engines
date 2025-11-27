@@ -155,6 +155,46 @@
     maxAngle: -16
 
 - type: entity
+  name: C-20R ROW
+  id: WeaponSMGC20ROW
+  parent: BaseItem
+  description: A C20 SMG for use by cyborgs. Creates 11 mm Pistol ammo on the fly from an internal ammo fabricator, which slowly self-charges.
+  components:
+  - type: Gun
+    minAngle: 15
+    maxAngle: 25
+    fireRate: 8
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/smg_3/smg_gunshot_1.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/corsair.rsi
+    layers:
+    - state: base
+      map: [ "enum.GunVisualLayers.Base" ]
+    - state: mag-2
+      map: [ "enum.GunVisualLayers.Mag" ]
+  - type: Item
+    size: Huge
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: ProjectileBatteryAmmoProvider
+    proto: CartridgeHeavyPistol
+    fireCost: 100
+  - type: Battery
+    maxCharge: 2500
+    startingCharge: 2500
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 25
+  - type: AmmoCounter
+
+- type: entity
   name: PTA P-M50 Vektor 6mm #The only gun that actually has obvious problems
   parent: [BaseWeaponSubMachineGun, StreeCredRedeemable]
   id: WeaponSubMachineGunPTAVektor
