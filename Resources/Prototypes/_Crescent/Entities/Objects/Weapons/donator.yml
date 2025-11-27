@@ -266,6 +266,10 @@
   - type: Construction
     graph: C8XAutocannonGraph
     node: C8XAutocannon
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/gun_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/gun_drop.ogg
 
 - type: construction
   name: C-8X 27mmR autocannon

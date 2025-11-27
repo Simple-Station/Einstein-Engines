@@ -24,8 +24,10 @@
   - type: ItemToggle
     onUse: false
   - type: HealthAnalyzer
+    ScanningBeginSound:
+      path: "/Audio/_Crescent/Items/Medical/scanstart.ogg"
     scanningEndSound:
-      path: "/Audio/Items/Medical/healthscanner.ogg"
+      path: "/Audio/_Crescent/Items/Medical/scanend.ogg"
   - type: Tag
     tags:
       - DiscreteHealthAnalyzer
