@@ -1,0 +1,82 @@
+- type: entity
+  name: Jade Hearts V
+  parent: [BaseItem]
+  id: JadeHeartsV
+  description: A sword belonging to someone from outside of the sector. Has 6 slots for shotgun shells that amplify the power of the blade immensely.
+  components:
+  - type: Reflect
+    reflectProb: 0
+    minReflectProb: 0
+  - type: GunSword
+  - type: BallisticAmmoProvider
+    mayTransfer: false
+    cycleable: false
+    whitelist:
+      components:
+        - GunSwordAmmo
+    capacity: 6
+    soundRack:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: AmmoCounter
+  - type: Sharp
+  - type: Sprite
+    sprite: _Arcadis/Limbus/jade_heart.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 45
+    range: 1.4
+    attackRate: 0.35
+    damage:
+      types:
+        Slash: 12
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+    heavyDamageBaseModifier: 1.20
+    heavyStaminaCost: 15
+    heavyRateModifier: 1.25
+    clickPartDamageMultiplier: 1.50
+    lightRangeModifier: 1.15
+    maxTargets: 2
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,1,3
+    sprite: _Arcadis/Limbus/jade_heart.rsi
+  - type: DisarmMalus
+  - type: MultiHandedItem
+
+- type: entity
+  id: ShellShotgunTigermark
+  name: shell (12g tigermark)
+  parent: BaseShellShotgun
+  components:
+  - type: GunSwordAmmo
+  - type: Sprite
+    layers:
+      - state: incendiary
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunIncendiarySpread
+  - type: SpentAmmoVisuals
+    state: "incendiary"
+
+- type: entity
+  id: ShellShotgunSavageTigermark
+  name: shell (12g savage tigermark)
+  parent: BaseShellShotgun
+  components:
+  - type: GunSwordAmmo
+    damageAmplifier: 5
+    knockbackForce: 5
+    reflectChanceIncrease: 15
+  - type: Sprite
+    layers:
+      - state: incendiary
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunIncendiarySpread
+  - type: SpentAmmoVisuals
+    state: "incendiary"
