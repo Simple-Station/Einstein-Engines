@@ -29,7 +29,7 @@
     state: pda-militiaman
 
 - type: entity
-  parent: [NCWLBasePDA, StreeCredRedeemableLow]
+  parent: [NCWLBasePDA, StreeCredRedeemable]
   id: NCWLFactionLeaderPDA
   name: commandant's PDA
   components:
@@ -43,6 +43,23 @@
   components:
   - type: Pda
     id: NCWLIDCardHomeguardLeader
+
+- type: entity
+  parent: [NCWLBasePDA, StreeCredRedeemableLow]
+  id: NCWLMVDLeaderPDA
+  name: cadet kommissar's PDA
+  components:
+  - type: Pda
+    id: NCWLIDCardMVDLeader
+    state: pda-militiaman
+
+- type: entity
+  parent: [NCWLBasePDA, StreeCredRedeemableLow]
+  id: NCWLMVDGruntPDA
+  name: enforcer's PDA
+  components:
+  - type: Pda
+    id: NCWLIDCardMVDGrunt
 
 - type: entity
   parent: [NCWLBasePDA, StreeCredRedeemableLow]
@@ -62,8 +79,20 @@
 
 - type: entity
   parent: [NCWLBasePDA, StreeCredRedeemableLow]
+  id: NCWLMedicalLeaderPDA
+  name: director's PDA
+  components:
+  - type: Pda
+    id: NCWLIDCardMedicalLeader
+  - type: HealthAnalyzer
+    scanDelay: 1
+    scanningEndSound:
+      path: "/Audio/Items/Medical/healthscanner.ogg"
+
+- type: entity
+  parent: [NCWLBasePDA, StreeCredRedeemableLow]
   id: NCWLMedicalWorkerPDA
-  name: doctor's PDA
+  name: sanitar's PDA
   components:
   - type: Pda
     id: NCWLIDCardMedicalWorker
@@ -82,11 +111,27 @@
 
 - type: entity
   parent: [NCWLBasePDA, StreeCredRedeemableLow]
+  id: NCWLLogisticWorkerPDA
+  name: dockhand's PDA
+  components:
+  - type: Pda
+    id: NCWLIDCardLogisticWorker
+
+- type: entity
+  parent: [NCWLBasePDA, StreeCredRedeemableLow]
   id: NCWLEngineeringLeaderPDA
-  name: supervisor's PDA
+  name: overseer's PDA
   components:
   - type: Pda
     id: NCWLIDCardEngineeringLeader
+
+- type: entity
+  parent: [NCWLBasePDA, StreeCredRedeemableLow]
+  id: NCWLEngineeringWorkerPDA
+  name: artificer's PDA
+  components:
+  - type: Pda
+    id: NCWLIDCardEngineeringWorker
 
 - type: entity
   parent: [NCWLBasePDA, StreeCredRedeemableLow]
