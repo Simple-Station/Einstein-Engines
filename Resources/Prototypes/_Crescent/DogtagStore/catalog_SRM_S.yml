@@ -19,7 +19,7 @@
   priority: 10
 
 - type: storeCategory
-  id: StoreCategorySRMPiety
+  id: StoreCategorySRMPietySerraine
   name: Piety Scraps
   priority: 12
 
@@ -303,7 +303,7 @@
   cost:
     PietySRM: 1
   categories:
-  - StoreCategorySRMPiety
+  - StoreCategorySRMPietySerraine
 
 - type: listing
   id: StoreListingSRMPR
@@ -314,7 +314,7 @@
   cost:
     PietySRM: 5
   categories:
-  - StoreCategorySRMPiety
+  - StoreCategorySRMPietySerraine
 
 - type: listing
   id: StoreListingSRMPRH
@@ -325,6 +325,6 @@
   cost:
     PietySRM: 10
   categories:
-  - StoreCategorySRMPiety
+  - StoreCategorySRMPietySerraine
 
 # Piety Redeemable End
