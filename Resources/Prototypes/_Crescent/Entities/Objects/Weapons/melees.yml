@@ -401,7 +401,7 @@
     range: 2
     damage:
       types:
-        Slash: 15 # es heist das ZWEI hander aus einem Grund, hanz # LARP
+        Slash: 15 # es heist das ZWEI hander, hanz # LARP
     heavyDamageBaseModifier: 0.8
     heavyStaminaCost: 20
     heavyRateModifier: 1.167 # 1.75 attack rate with 1.5 base
