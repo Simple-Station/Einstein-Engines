@@ -1128,7 +1128,7 @@ entities:
       pos: -0.5,2.5
       parent: 2
     - type: IFFConsole
-      heatDissipation: 2
+      heatDissipation: 8
       heatGeneration: 2
       heatCapacity: 1000
 - proto: ComputerTabletopPowerMonitoring

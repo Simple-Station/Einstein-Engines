@@ -933,7 +933,7 @@ entities:
       pos: 4.5,-5.5
       parent: 1
     - type: IFFConsole
-      heatDissipation: 2
+      heatDissipation: 8
       heatGeneration: 2
       heatCapacity: 1000
 - proto: ComputerTabletopShuttle
