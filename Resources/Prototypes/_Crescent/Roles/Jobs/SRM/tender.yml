@@ -43,6 +43,7 @@
       - type: InnatePsionicPowers
         powersToAdd:
           - TelepathyPower
+          - assayPower
 
 - type: startingGear
   id: TenderGear
