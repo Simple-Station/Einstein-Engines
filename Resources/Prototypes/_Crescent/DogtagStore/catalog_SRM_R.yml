@@ -220,7 +220,7 @@
 #Piety Redeemable
 
 - type: listing
-  id: StoreListingSRMPRL
+  id: StoreListingSRMPRLowRomaine
   name: Piety Scrap
   description: A scrap of piety, used by hunters to redeem various goods and services. This one appears to be rather worn and damaged.
   icon: { sprite: _Crescent/Objects/TradeGoods/deed.rsi, state: icon }
@@ -231,7 +231,7 @@
   - StoreCategorySRMPietyRomaine
 
 - type: listing
-  id: StoreListingSRMPR
+  id: StoreListingSRMPRRomaine
   name: Piety Scrap
   description: A scrap of piety, used by hunters to redeem various goods and services. This one appears to be in decent shape.
   icon: { sprite: _Crescent/Objects/TradeGoods/deed.rsi, state: icon }
@@ -242,7 +242,7 @@
   - StoreCategorySRMPietyRomaine
 
 - type: listing
-  id: StoreListingSRMPRH
+  id: StoreListingSRMPRHighRomaine
   name: Piety Scrap
   description: A scrap of piety, used by hunters to redeem various goods and services. This one appears to be almost untouched.
   icon: { sprite: _Crescent/Objects/TradeGoods/deed.rsi, state: icon }
