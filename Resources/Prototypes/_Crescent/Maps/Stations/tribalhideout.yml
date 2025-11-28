@@ -19,6 +19,7 @@
         - type: StationJobs
           overflowJobs: []
           availableJobs:
-            DraugrTAP: [ 2, 2 ]
+            DraugrTAP: [ 1, 1 ]
+            ServileTAP: [ 2, 2 ]
             BeltrunnerTAP: [ 1, 1 ]
             Antiquarian: [ 1, 1 ]
