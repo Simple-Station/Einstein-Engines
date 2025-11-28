@@ -81,7 +81,7 @@
   abstract: true
   components:
   - type: Store
-    name: Saint Romaine
+    name: saint-romaine
     categories:
     - StoreCategorySRMWeapons
     - StoreCategorySRMAmmo
@@ -97,7 +97,7 @@
   abstract: true
   components:
   - type: Store
-    name: Saint Serraine
+    name: saint-serraine
     categories:
     - StoreCategorySRMLPC
     - StoreCategorySRMTools

@@ -102,8 +102,102 @@
   - type: Appearance
 
 - type: entity
+  id: BaseStoreUnpowered
+  parent: BaseMachine
+  name: standing store
+  description: Just add capitalism!
+  abstract: true
+  components:
+  - type: AmbientSound
+    volume: -9
+    range: 3
+    enabled: false
+    sound:
+      path: /Audio/Ambience/Objects/vending_machine_hum.ogg
+  - type: Sprite
+    sprite: _Crescent/Structures/syndicatearmory.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    snapCardinals: false
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.45,0.25,0.45"
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+        density: 1000
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+  - type: Repairable
+    doAfterDelay: 8
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: Anchorable
+  - type: TypingIndicator
+    proto: robot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Vending
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+  - type: DoAfter
+  - type: EtherealLight
+  - type: PointLight
+    enabled: false
+    castShadows: false
+    radius: 2
+    energy: 1.5
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Actions
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-mechanical
+    weight: 0.025 # fuck you in particular (it now needs 40 vending machines to be as likely as 1 interesting animal)
+  - type: StaticPrice
+    price: 100
+  - type: Appearance
+
+- type: entity
   id: BaseStoreSerraine
-  parent: BaseStore
+  parent: BaseStoreUnpowered
   name: Statue of Serraine
   description: A gorgeous statue depicting Saint Serraine in her beauty and grace.
   abstract: true
@@ -202,7 +296,7 @@
 
 - type: entity
   id: BaseStoreRomaine
-  parent: BaseStore
+  parent: BaseStoreUnpowered
   name: Statue of Romaine
   description: A statue depicting the legendary Saint Romaine, revered for his courage.
   abstract: true
