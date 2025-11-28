@@ -115,7 +115,7 @@
   name: SCHK-2 plasma hardlight sword
   parent: [EnergySword, StreeCredRedeemable]
   id: EnergySwordFamilies
-  description: A stylish answer to the antiquated NanoTrasen energy sword.
+  description: A stylish answer to the antiquated NanoTrasen energy sword. Plasma blade makes it nearly weightless.
   components:
   - type: WeaponCaseInsertable # Frontier
   - type: EnergySword
@@ -162,16 +162,16 @@
   - type: MeleeWeapon
     wideAnimationRotation: -135
     range: 1.25
-    attackRate: 0.9
+    attackRate: 0.65
     damage:
       types:
         Blunt: 4.5
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 10
-    heavyRateModifier: 1.15
+    heavyRateModifier: 1 # Light sword. Meant for close in fighting with rifles
     clickPartDamageMultiplier: 1.5
     lightRangeModifier: 1.2
-    maxTargets: 4
+    maxTargets: 2
   - type: Item
     size: Small
     sprite: _Crescent/Objects/Weapons/Melee/plas_sword-inhands.rsi
@@ -252,7 +252,7 @@
   name: SCHK-3 charge warhammer
   parent: [BaseItem, StreeCredRedeemable]
   id: Plashammer
-  description: A robust warclub made by the Families.
+  description: A robust warclub made by the Families. Plasma core ignites all that it touches.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Melee/plashammer.rsi
@@ -263,8 +263,8 @@
     attackRate: 0.75
     damage:
       types:
-        Blunt: 35
-        Heat: 10
+        Blunt: 30
+        Heat: 20
         Structural: 25
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 10
@@ -277,6 +277,8 @@
   - type: Item
     size: Normal
   - type: DisarmMalus #harder to shake firm grip
+  - type: IgniteOnMeleeHit
+    fireStacks: 3
 
 - type: entity
   name: SHI-30J Paperwork
