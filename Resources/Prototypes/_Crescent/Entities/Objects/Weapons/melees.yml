@@ -11,10 +11,10 @@
   - type: MeleeWeapon
     wideAnimationRotation: 45
     range: 1.4
-    attackRate: 1
+    attackRate: 1.25
     damage:
       types:
-        Slash: 38
+        Slash: 40
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     heavyDamageBaseModifier: 1
