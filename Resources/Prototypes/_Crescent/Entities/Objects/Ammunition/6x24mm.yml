@@ -18,6 +18,12 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
+  - type: EmitSoundOnLand
+    sound:
+      collection: LightBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: LightBulletBounce
 #---------- Basic bullet ----------
 - type: entity
   id: Cartridge6x24mmCharge
@@ -199,6 +205,10 @@
     steps: 17
     zeroVisible: false
   - type: Appearance
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/mag_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/mag_drop.ogg
 
 #---------- 6x24mm Railgun (Charge) ----------  
 - type: entity

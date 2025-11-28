@@ -36,6 +36,10 @@
   - type: DamageOtherOnHit
     staminaCost: 14
   - type: Execution
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/gun_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/gun_drop.ogg
 
 - type: entity
   name: multiple rocket launcher

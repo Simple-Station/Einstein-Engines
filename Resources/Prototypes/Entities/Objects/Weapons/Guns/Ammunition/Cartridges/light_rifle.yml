@@ -19,6 +19,12 @@
   - type: SpentAmmoVisuals
   - type: StaticPrice
     price: 1
+  - type: EmitSoundOnLand
+    sound:
+      collection: MediumBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: MediumBulletBounce
 
 - type: entity
   id: CartridgeLightRifle

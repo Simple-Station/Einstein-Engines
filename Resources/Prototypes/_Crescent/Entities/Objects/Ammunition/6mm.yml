@@ -20,7 +20,13 @@
     tags:
       - CartridgePistol6mm
       - Cartridge
-      
+  - type: EmitSoundOnLand
+    sound:
+      collection: LightBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: LightBulletBounce
+
 - type: entity
   id: MagazinePistol6mm
   name: 16-round pistol magazine (6mm)
@@ -43,6 +49,10 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/mag_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/mag_drop.ogg
 
 - type: entity
   id: BaseMagazinePistol6mmSmg
@@ -76,6 +86,10 @@
     steps: 2
     zeroVisible: false
   - type: Appearance
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/mag_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/mag_drop.ogg
 
 - type: entity
   id: MagazinePistol6mmSmgEmpty

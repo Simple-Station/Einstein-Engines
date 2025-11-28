@@ -19,7 +19,7 @@
   - type: Gun
     fireRate: 1
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/charged.ogg
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/railgun.ogg
     fireOnDropChance: 0.5
   - type: ChamberMagazineAmmoProvider
     soundRack:

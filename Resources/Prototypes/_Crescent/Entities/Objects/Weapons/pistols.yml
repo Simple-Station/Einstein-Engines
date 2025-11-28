@@ -87,6 +87,10 @@
         color: "#ff4f00"
         requireDetailRange: false
   - type: AmmoCounter
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/gun_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/gun_drop.ogg
 
 - type: entity
   name: NCWL T-18 Comrade 9x19mm
@@ -400,6 +404,10 @@
     proto: CartridgePistol6mm
     capacity: 20
     cycleable: false
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/gun_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/gun_drop.ogg
 
 #single use pistols actual
 
