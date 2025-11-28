@@ -6,7 +6,11 @@
   minY: -5
   maxY: 5
   noiseRanges: {}
-  chunkComponents: []
+  chunkComponents:
+  - type: DebrisFeaturePlacerController
+    densityNoiseChannel: DensityGraveyard
+    densityClip: false
+    randomCancelChance: 1.0
 
 - type: spaceBiome
   id: GraveyardWrecks
