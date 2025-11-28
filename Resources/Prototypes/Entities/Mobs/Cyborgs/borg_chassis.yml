@@ -453,8 +453,8 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        300: Critical
-        500: Dead
+        200: Critical
+        400: Dead
     - type: ShowHealthBars
       damageContainers:
       - Inorganic

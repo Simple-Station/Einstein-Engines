@@ -354,7 +354,7 @@
     - Gorlex
     - Common
     - Cyberdawn
-    - Saw
+    - Saws
     - Traffic
     - Interdyne
   - type: ActiveRadio
@@ -363,7 +363,7 @@
     - Gorlex
     - Common
     - Cyberdawn
-    - Saw
+    - Saws
     - Traffic
     - Interdyne
   - type: ShowSyndicateIcons
@@ -375,8 +375,8 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      200: Critical
-      450: Dead
+      100: Critical
+      200: Dead
   - type: Vocal
     sounds:
       Unsexed: UnisexSiliconSyndicate
