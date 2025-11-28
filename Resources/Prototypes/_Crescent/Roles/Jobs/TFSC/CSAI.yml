@@ -1,0 +1,6 @@
+﻿- type: ghostRole
+  id: CSAICore
+  name: ghost-role-information-CS-core
+  description: ghost-role-information-CS-core-description
+  rules: ghost-role-information-silicon-rules
+  entityPrototype: StationAiBrainCS
