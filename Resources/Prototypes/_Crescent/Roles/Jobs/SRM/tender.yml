@@ -29,11 +29,20 @@
     components:
       - type: HullrotFaction
         faction: SRM
-      - type: Telepathic
       - type: BibleUser
       - type: CPRTraining
       - type: SurgerySpeedModifier
         speedModifier: 1.75
+      - type: LanguageAdder
+        addSpoken:
+          - LowImperial
+          - Tradeband
+        addUnderstood:
+          - LowImperial
+          - Tradeband
+      - type: InnatePsionicPowers
+        powersToAdd:
+          - TelepathyPower
 
 - type: startingGear
   id: TenderGear

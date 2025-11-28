@@ -204,7 +204,7 @@
   parent: BaseDispenser
   id: HuntersBounty
   name: hunter's bounty
-  description: A near-derelict machine that accepts ID cards for cold, hard credits.
+  description: A near-derelict machine that accepts ID cards for cold, hard credits. Some say he accepts heads for scraps of piety.
   components:
   - type: Anchorable
     flags:

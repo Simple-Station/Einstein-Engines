@@ -32,7 +32,16 @@
     components:
       - type: HullrotFaction
         faction: SRM
-      - type: Telepathic
+      - type: LanguageAdder
+        addSpoken:
+          - LowImperial
+          - Tradeband
+        addUnderstood:
+          - LowImperial
+          - Tradeband
+      - type: InnatePsionicPowers
+        powersToAdd:
+          - TelepathyPower
 
 - type: startingGear
   id: HunterGear

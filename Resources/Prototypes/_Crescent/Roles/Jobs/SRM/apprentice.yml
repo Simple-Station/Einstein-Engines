@@ -27,9 +27,19 @@
   special:
   - !type:AddComponentSpecial
     components:
-    - type: HullrotFaction
-      faction: SRM
-    - type: BibleUser
+      - type: HullrotFaction
+        faction: SRM
+      - type: BibleUser
+      - type: LanguageAdder
+        addSpoken:
+          - LowImperial
+          - Tradeband
+        addUnderstood:
+          - LowImperial
+          - Tradeband
+      - type: InnatePsionicPowers
+        powersToAdd:
+          - TelepathyPower
 
 - type: startingGear
   id: AcolyteGear
