@@ -35,10 +35,10 @@
       - type: LanguageAdder
         addSpoken:
           - LowImperial
-          - Tradeband
+          - OldeImperial
         addUnderstood:
           - LowImperial
-          - Tradeband
+          - OldeImperial
       - type: InnatePsionicPowers
         powersToAdd:
           - TelepathyPower

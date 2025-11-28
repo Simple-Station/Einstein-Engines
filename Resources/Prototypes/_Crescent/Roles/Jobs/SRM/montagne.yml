@@ -35,10 +35,12 @@
         faction: SRM
       - type: LanguageAdder
         addSpoken:
+          - OldeImperial
           - HighImperial
           - LowImperial
           - Tradeband
         addUnderstood:
+          - OldeImperial
           - HighImperial
           - LowImperial
           - Tradeband
