@@ -1,7 +1,7 @@
 #allows mappers to automate random hardpoint loot
 - type: entity
-  name: DSM Hardpoint Wreck Randomizer
-  id: DSMHardpointWreckRandomizer
+  name: Ind. Hardpoint Wreck Randomizer
+  id: IndHardpointWreckRandomizer
   parent: MarkerBase
   components:
     - type: Sprite
@@ -14,14 +14,17 @@
        - MachineFrameDestroyed
        - ShuttleGunMissileRack
        - ShuttleGunPlasmaRepeater
-       - BaseWeaponTurretKomodo
-       - WeaponTurretLaser
        - ShuttleGunTorpedo
+       - PointNFireCannonExample
+       - BaseWeaponTurretLancer
+       - SlugthrowerCannon
+       - ShuttleGunKurosawa
+       - NTVulcanTurret
+       - WeaponTurretVulcan
       chance: 0.15
       rarePrototypes:
-       - BaseWeaponTurretJeong
-       - HardlineBeamPulser
        - WeaponTurretNeedler
-       - BaseWeaponTurretHeavyPlasma
-       - BaseWeaponTurretMagwell
+       - BaseWeaponTurretBattlemortar
+       - Type99Artillery
+       - WeaponTurretMortar
       rareChance: 0.05
