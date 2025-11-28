@@ -45,7 +45,7 @@
       - type: InnatePsionicPowers
         powersToAdd:
           - TelepathyPower
-          - assayPower
+          - AssayPower
 
 - type: startingGear
   id: MontagneGear
