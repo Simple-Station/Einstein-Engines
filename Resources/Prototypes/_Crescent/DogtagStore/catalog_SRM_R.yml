@@ -223,7 +223,7 @@
   id: StoreListingSRMPRL
   name: Piety Scrap
   description: A scrap of piety, used by hunters to redeem various goods and services. This one appears to be rather worn and damaged.
-  icon: { sprite: , state: icon }
+  icon: { sprite: _Crescent/Objects/TradeGoods/deed.rsi, state: icon }
   productEntity: PietyRedeemableLow
   cost:
     PietySRM: 1
@@ -234,7 +234,7 @@
   id: StoreListingSRMPR
   name: Piety Scrap
   description: A scrap of piety, used by hunters to redeem various goods and services. This one appears to be in decent shape.
-  icon: { sprite: , state: icon }
+  icon: { sprite: _Crescent/Objects/TradeGoods/deed.rsi, state: icon }
   productEntity: PietyRedeemable
   cost:
     PietySRM: 5
@@ -245,7 +245,7 @@
   id: StoreListingSRMPRH
   name: Piety Scrap
   description: A scrap of piety, used by hunters to redeem various goods and services. This one appears to be almost untouched.
-  icon: { sprite: , state: icon }
+  icon: { sprite: _Crescent/Objects/TradeGoods/deed.rsi, state: icon }
   productEntity: PietyRedeemableHigh
   cost:
     PietySRM: 10
