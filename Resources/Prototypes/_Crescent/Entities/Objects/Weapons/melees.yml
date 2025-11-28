@@ -11,10 +11,10 @@
   - type: MeleeWeapon
     wideAnimationRotation: 45
     range: 1.4
-    attackRate: 1.25
+    attackRate: 0.75
     damage:
       types:
-        Slash: 40
+        Slash: 42
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     heavyDamageBaseModifier: 1
@@ -34,8 +34,6 @@
   - type: Tag
     tags:
     - Khopesh
-  - type: DisarmMalus
-  - type: MultiHandedItem
 
 - type: entity
   parent: ArmBladeChangeling
