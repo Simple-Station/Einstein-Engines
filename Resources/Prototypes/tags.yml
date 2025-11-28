@@ -973,6 +973,15 @@
   id: MailCapsule
 
 - type: Tag
+  id: Manual1
+
+- type: Tag
+  id: Manual2
+
+- type: Tag
+  id: Manual3
+
+- type: Tag
   id: MimeBelt
 
 - type: Tag

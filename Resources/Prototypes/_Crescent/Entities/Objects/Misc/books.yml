@@ -42,6 +42,9 @@
   name: "Accelerated Conscript Training manual issue 1"
   description: The first part of a manual issued to new Conscripts posted Taypan. The name of Kane is written in some margins.
   components:
+  - type: Tag
+    tags:
+      - Manual1
   - type: Sprite
     sprite: Objects/Misc/books.rsi
     layers:
@@ -62,6 +65,9 @@
   name: "Accelerated Conscript Training manual issue 2"
   description: The second part of a manual issued to new Conscripts posted Taypan. The name of Kane is written in some margins.
   components:
+  - type: Tag
+    tags:
+      - Manual2
   - type: Sprite
     sprite: Objects/Misc/books.rsi
     layers:
