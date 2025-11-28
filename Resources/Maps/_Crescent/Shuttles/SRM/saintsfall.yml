@@ -935,7 +935,7 @@ entities:
     - type: IFFConsole
       heatDissipation: 8
       heatGeneration: 2
-      heatCapacity: 1000
+      heatCapacity: 600
 - proto: ComputerTabletopShuttle
   entities:
   - uid: 84
