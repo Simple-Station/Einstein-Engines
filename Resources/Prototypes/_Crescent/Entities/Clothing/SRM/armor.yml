@@ -26,6 +26,8 @@
         Piercing: 35
         Heat: 15
         Caustic: 15
+  - type: ClothingGrantPsionicPower
+    power: assayPower
   - type: ClothingSpeedModifier
     walkModifier: 0.85
     sprintModifier: 0.9
@@ -58,6 +60,8 @@
         Piercing: 70
         Heat: 15
         Caustic: 15
+  - type: ClothingGrantPsionicPower
+    power: assayPower
   - type: ClothingSpeedModifier
     walkModifier: 0.80
     sprintModifier: 0.85
