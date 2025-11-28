@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 11/22/2025 02:33:29
-  entityCount: 178
+  time: 11/28/2025 00:50:04
+  entityCount: 179
 maps: []
 grids:
 - 1
@@ -397,6 +397,11 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 4.5,2.5
+      parent: 1
+  - uid: 179
+    components:
+    - type: Transform
+      pos: -0.5,-1.5
       parent: 1
 - proto: BlastDoorOpen
   entities:
@@ -924,7 +929,7 @@ entities:
     - type: ApcPowerReceiver
       powerLoad: 1000
     - type: Battery
-      startingCharge: 19885.45
+      startingCharge: 19711.133
     - type: ApcPowerReceiverBattery
       enabled: True
     - type: ContainerContainer
@@ -1197,14 +1202,14 @@ entities:
       parent: 1
 - proto: WarpPointShip
   entities:
-  - uid: 178
+  - uid: 177
     components:
     - type: Transform
       pos: 4.5,-1.5
       parent: 1
 - proto: WindoorSecure
   entities:
-  - uid: 177
+  - uid: 178
     components:
     - type: Transform
       rot: 3.141592653589793 rad
