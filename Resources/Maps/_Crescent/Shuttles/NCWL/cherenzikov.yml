@@ -57,6 +57,8 @@ entities:
     - type: SelfDeleteGrid
     - type: Shuttle
       baseMaxLinearVelocity: 25
+    - type: BecomesStation
+      id: Cherenzikov
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
