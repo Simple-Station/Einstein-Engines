@@ -26,7 +26,7 @@
           availableJobs:
             OverseerSRM: [ 1, 1 ]
             MontagneSRM: [ 1, 1 ]
-            HunterSRM: [ 2, 2 ]
+            HunterSRM: [ 3, 3 ]
             TenderSRM: [ 1, 1 ]
             AcolyteSRM: [ 2, 2 ]
 

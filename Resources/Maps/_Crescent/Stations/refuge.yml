@@ -17727,6 +17727,26 @@ entities:
     - type: Transform
       pos: 6.5,-21.5
       parent: 1
+- proto: SRMKhopesh
+  entities:
+  - uid: 24
+    components:
+    - type: Transform
+      parent: 23
+    - type: Physics
+      canCollide: False
+  - uid: 122
+    components:
+    - type: Transform
+      parent: 121
+    - type: Physics
+      canCollide: False
+  - uid: 128
+    components:
+    - type: Transform
+      parent: 127
+    - type: Physics
+      canCollide: False
 - proto: StairDark
   entities:
   - uid: 1998
