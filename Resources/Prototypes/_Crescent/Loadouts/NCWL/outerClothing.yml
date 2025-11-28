@@ -12,6 +12,8 @@
         - CommandantNCWL
         - KommissarNCWL
         - FleetkapitanNCWL
+        - MVDOfficerNCWL
+        - MVDGruntNCWL
         - PartisanNCWL
         - DirectorNCWL
         - DoctorNCWL
@@ -46,6 +48,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - CommandantNCWL
+        - MVDOfficerNCWL
+        - MVDGruntNCWL
         - DoctorNCWL
         - WorkerOverbossNCWL
         - ArtificerNCWL
@@ -58,6 +62,8 @@
     - ClothingOuterArmorMVDCoat
   requirements:
     - !type:CharacterWhitelistRequirement
+    - !type:CharacterOverallTimeRequirement
+      min: 30000
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
     - !type:CharacterJobRequirement
