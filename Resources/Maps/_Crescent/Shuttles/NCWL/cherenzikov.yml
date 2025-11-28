@@ -54,7 +54,6 @@ entities:
       fixtures: {}
     - type: OccluderTree
     - type: SpreaderGrid
-    - type: SelfDeleteGrid
     - type: Shuttle
       baseMaxLinearVelocity: 25
     - type: BecomesStation
