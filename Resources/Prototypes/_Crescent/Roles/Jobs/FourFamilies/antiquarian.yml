@@ -11,12 +11,11 @@
   supervisors: job-supervisors-tap
   canBeAntag: false
   requirements:
-    - !type:CharacterOverallTimeRequirement
-      min: 10800
+    - !type:CharacterDepartmentTimeRequirement
+      department: TAP
+      min: 36000
     - !type:FactionRequirement
       factionID: "TAP"
-    - !type:CharacterOverallTimeRequirement
-      min: 36000
     - !type:CharacterSpeciesRequirement
       species:
         - Human
