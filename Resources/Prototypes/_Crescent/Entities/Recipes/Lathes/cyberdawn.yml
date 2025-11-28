@@ -288,6 +288,14 @@
     Tungsten: 1500
 
 - type: latheRecipe
+  id: GrenadeNCSPRGD5
+  result: NCSPRGD5Handgrenade
+  completetime: 2
+  materials:
+    Plasma: 500
+    Steel: 100
+
+- type: latheRecipe
   id:  BallisticCycler1Craft
   result: BallisticCycler1
   completetime: 1.5
@@ -351,6 +359,8 @@
     Gold: 500
     BallisticCycler: 500
     Plasma: 1500
+    HardlightGenerator: 500
+    LaserLocus: 500
 
 - type: latheRecipe
   id: ReinforcementFlatpackSyndicateCyborgSaboteur
@@ -364,6 +374,8 @@
     Gold: 1000
     Plasma: 3000
     BallisticCycler: 500
+    HardlightGenerator: 500
+    LaserLocus: 500
 
 
 - type: latheRecipe
@@ -371,19 +383,16 @@
   result: ReinforcementFlatpackSyndicateCyborgAssault
   completetime: 1.5
   materials:
-    AdvancedElectronics: 4000
-    AdvancedMechatronics: 4000
+    AdvancedElectronics: 5000
+    AdvancedMechatronics: 5000
     Silver: 2000
     Steel: 3000
     Gold: 2000
-    BallisticCycler: 1500
+    BallisticCycler: 2000
     Plasma: 3000
-    
-- type: latheRecipe
-  id: GrenadeNCSPRGD5
-  result: NCSPRGD5Handgrenade
-  completetime: 2
-  materials:
-    Plasma: 500
-    Steel: 100
-    
+    HardlightGenerator: 500
+    LaserLocus: 500
+    Tungsten: 1000
+
+
+
