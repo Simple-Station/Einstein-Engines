@@ -77,3 +77,13 @@
   - type: AccesElevator
     acces:
     - GliessSheriff
+
+- type: entity
+  parent: AccessElevatorBase
+  id: AccessElevatorSHI
+  name: SHI Access Elevator
+  description: Gives a target ID the acces codes for Shinohara Corporate facilities.
+  components:
+  - type: AccesElevator
+    acces:
+    - Shinohara
