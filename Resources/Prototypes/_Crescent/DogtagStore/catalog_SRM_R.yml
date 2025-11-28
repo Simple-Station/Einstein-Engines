@@ -11,11 +11,16 @@
 - type: storeCategory
   id: StoreCategorySRMSuits
   name: Suits
-  priority: 10
+  priority: 8
 
 - type: storeCategory
   id: StoreCategorySRMExplosives
   name: Explosives
+  priority: 10
+
+- type: storeCategory
+  id: StoreCategorySRMPiety
+  name: Piety Scraps
   priority: 12
 
 #Weapons
@@ -209,3 +214,42 @@
   - StoreCategorySRMExplosives
 
 #Explosives End
+
+# Piety Redeemable
+
+#Piety Redeemable
+
+- type: listing
+  id: StoreListingSRMPRL
+  name: Piety Scrap
+  description: A scrap of piety, used by hunters to redeem various goods and services. This one appears to be rather worn and damaged.
+  icon: { sprite: , state: icon }
+  productEntity: PietyRedeemableLow
+  cost:
+    PietySRM: 1
+  categories:
+  - StoreCategorySRMPiety
+
+- type: listing
+  id: StoreListingSRMPR
+  name: Piety Scrap
+  description: A scrap of piety, used by hunters to redeem various goods and services. This one appears to be in decent shape.
+  icon: { sprite: , state: icon }
+  productEntity: PietyRedeemable
+  cost:
+    PietySRM: 5
+  categories:
+  - StoreCategorySRMPiety
+
+- type: listing
+  id: StoreListingSRMPRH
+  name: Piety Scrap
+  description: A scrap of piety, used by hunters to redeem various goods and services. This one appears to be almost untouched.
+  icon: { sprite: , state: icon }
+  productEntity: PietyRedeemableHigh
+  cost:
+    PietySRM: 10
+  categories:
+  - StoreCategorySRMPiety
+
+#Piety Redeemable End
