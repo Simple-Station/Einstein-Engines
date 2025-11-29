@@ -4,7 +4,7 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 09/27/2025 12:21:34
+  time: 11/29/2025 07:08:05
   entityCount: 60
 maps: []
 grids:
@@ -82,6 +82,7 @@ entities:
             102: 0,5
             113: 0,5
             124: 0,5
+            135: 0,5
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -99,6 +100,7 @@ entities:
             105: 0,5
             116: 0,5
             127: 0,5
+            138: 0,5
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -113,6 +115,7 @@ entities:
             100: 0,5
             111: 0,5
             122: 0,5
+            133: 0,5
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -127,6 +130,7 @@ entities:
             104: 0,5
             115: 0,5
             126: 0,5
+            137: 0,5
         - node:
             id: LatticeEdgeE
           decals:
@@ -150,6 +154,8 @@ entities:
             119: -1,5
             121: 0,5
             130: -1,5
+            132: 0,5
+            141: -1,5
         - node:
             id: LatticeEdgeN
           decals:
@@ -176,6 +182,7 @@ entities:
             101: 0,5
             112: 0,5
             123: 0,5
+            134: 0,5
         - node:
             id: LatticeEdgeS
           decals:
@@ -201,6 +208,8 @@ entities:
             117: 0,6
             120: 0,5
             128: 0,6
+            131: 0,5
+            139: 0,6
         - node:
             id: LatticeEdgeW
           decals:
@@ -224,6 +233,8 @@ entities:
             118: 1,5
             125: 0,5
             129: 1,5
+            136: 0,5
+            140: 1,5
     - type: RadiationGridResistance
     - type: GridAtmosphere
       version: 2
@@ -292,6 +303,7 @@ entities:
     - type: GasTileOverlay
     - type: BecomesStation
       id: Hornet
+    - type: SelfDeleteGrid
 - proto: AAAHardpointFixed
   entities:
   - uid: 2
@@ -598,70 +610,70 @@ entities:
       parent: 1
 - proto: SubstationBasic
   entities:
-  - uid: 47
+  - uid: 46
     components:
     - type: Transform
       pos: 1.5,1.5
       parent: 1
 - proto: Thruster
   entities:
-  - uid: 48
+  - uid: 47
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -0.5,2.5
       parent: 1
-  - uid: 49
+  - uid: 48
     components:
     - type: Transform
       pos: 1.5,3.5
       parent: 1
-  - uid: 50
+  - uid: 49
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 1.5,2.5
       parent: 1
-  - uid: 51
+  - uid: 50
     components:
     - type: Transform
       pos: -0.5,3.5
       parent: 1
-  - uid: 52
+  - uid: 51
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 1.5,0.5
       parent: 1
-  - uid: 53
+  - uid: 52
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -0.5,0.5
       parent: 1
-  - uid: 54
+  - uid: 53
     components:
     - type: Transform
       pos: 1.5,3.5
       parent: 1
 - proto: WallSolid
   entities:
-  - uid: 55
+  - uid: 54
     components:
     - type: Transform
       pos: 0.5,2.5
       parent: 1
 - proto: WarpPointShip
   entities:
-  - uid: 56
+  - uid: 55
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 0.5,2.5
       parent: 1
-- proto: WeaponTurretNeedlerFilled
+- proto: WeaponTurretNeedler
   entities:
-  - uid: 46
+  - uid: 56
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -673,14 +685,6 @@ entities:
           showEnts: False
           occludes: True
           ents: []
-        gun_magazine: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        gun_chamber: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
         machine_board: !type:Container
           showEnts: False
           occludes: True
@@ -689,6 +693,14 @@ entities:
           showEnts: False
           occludes: True
           ents: []
+        gun_magazine: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        gun_chamber: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
 - proto: WindowReinforcedDirectional
   entities:
   - uid: 57

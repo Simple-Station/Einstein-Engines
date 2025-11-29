@@ -4,7 +4,7 @@
   parent: BaseItem
   id: NanotrasenFabdiskWeapons
   name: nanotrasen fabdisk
-  description: A disk for the R&D server containing research technology. A label reads, 'NT #012 - LONG ARMS'.
+  description: A disk for the R&D server containing research technology. A label reads, 'NT 012 - LONG ARMS'.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Misc/techdisks.rsi
@@ -22,7 +22,7 @@
   parent: BaseItem
   id: NanotrasenFabdiskWeaponsSmall
   name: nanotrasen fabdisk
-  description: A disk for the R&D server containing research technology. A label reads, 'NT #013 - SMALL ARMS'.
+  description: A disk for the R&D server containing research technology. A label reads, 'NT 013 - SMALL ARMS'.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Misc/techdisks.rsi
