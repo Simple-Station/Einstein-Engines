@@ -352,8 +352,8 @@
   result: ReinforcementFlatpackSyndicateCyborgMedical
   completetime: 1.5
   materials:
-    AdvancedElectronics: 3000
-    AdvancedMechatronics: 2000
+    AdvancedElectronics: 1500
+    AdvancedMechatronics: 1000
     Silver: 2000
     Steel: 1500
     Gold: 500
@@ -367,8 +367,8 @@
   result: ReinforcementFlatpackSyndicateCyborgSaboteur
   completetime: 1.5
   materials:
-    AdvancedElectronics: 2000
-    AdvancedMechatronics: 4000
+    AdvancedElectronics: 1000
+    AdvancedMechatronics: 1500
     Silver: 2000
     Steel: 1500
     Gold: 1000
@@ -383,8 +383,8 @@
   result: ReinforcementFlatpackSyndicateCyborgAssault
   completetime: 1.5
   materials:
-    AdvancedElectronics: 5000
-    AdvancedMechatronics: 5000
+    AdvancedElectronics: 3500
+    AdvancedMechatronics: 3500
     Silver: 2000
     Steel: 3000
     Gold: 2000
