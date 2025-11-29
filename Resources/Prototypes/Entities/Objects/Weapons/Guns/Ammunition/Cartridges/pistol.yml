@@ -19,6 +19,12 @@
   - type: SpentAmmoVisuals
   - type: StaticPrice
     price: 1
+  - type: EmitSoundOnLand
+    sound:
+      collection: LightBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: LightBulletBounce
 
 - type: entity
   id: CartridgePistol

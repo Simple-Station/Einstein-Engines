@@ -18,7 +18,6 @@
        - ShuttleGunKurosawa
        - NTVulcanTurret
        - WeaponTurretVulcan
-       - BaseWeaponTurretHeavyPlasma
       chance: 0.15
       rarePrototypes:
        - BaseWeaponTurretBattlemortar
@@ -26,4 +25,5 @@
        - BaseWeaponTurretGargoyle
        - Type99Artillery
        - WeaponTurretMortar
+       - BaseWeaponTurretHeavyPlasma
       rareChance: 0.05

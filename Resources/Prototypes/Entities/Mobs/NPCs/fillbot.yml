@@ -30,6 +30,7 @@
   - type: HTN
     rootTask:
       task: FillbotCompound
+    planCooldown: 0.1
   - type: DeviceLinkSource
     ports:
       - FillItems

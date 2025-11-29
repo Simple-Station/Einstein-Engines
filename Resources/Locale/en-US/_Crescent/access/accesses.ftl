@@ -40,8 +40,8 @@ id-card-access-level-srmoverseer = Sixth Subjugation Fireteam Commodore
 
 id-card-access-level-shi = Shinohara Heavy Industries
 id-card-access-level-shiofficer = Shinohara Corporate Officer
-id-card-access-level-shisecurity = Shinohara Security Department
-id-card-access-level-shiexecutive = Shinohara Command Department
+id-card-access-level-shisec = Shinohara Security Department
+id-card-access-level-shiexec = Shinohara Command Department
 
 # cmm
 
@@ -63,3 +63,13 @@ id-card-access-level-authoritat-cargo = 43rd Battlegroup Supply
 id-card-access-level-antiquarian = Antiquarian
 id-card-access-level-gliess-admin = Gliessian Dockmaster
 id-card-access-level-gliess-sheriff = Gliessian Sheriff
+
+# tap
+
+id-card-access-level-arabet = Arabet
+id-card-access-level-thukker = Thukker
+id-card-access-level-Alseik = Al-Seik
+id-card-access-level-Servile = Servile
+id-card-access-level-Families = General Four Families access
+id-card-access-level-Izdari = Izdari
+

@@ -1263,6 +1263,13 @@ entities:
         2:
         - - Group1
           - Toggle
+    - type: NamedModules
+      buttonNames:
+      - Toggle Repeaters
+      - Module B
+      - Module C
+      - Module D
+      - Module E
 - proto: FaxMachineShip
   entities:
   - uid: 96

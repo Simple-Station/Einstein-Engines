@@ -20,6 +20,12 @@
   - type: SpentAmmoVisuals
   - type: StaticPrice
     price: 10
+  - type: EmitSoundOnLand
+    sound:
+      collection: MediumBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: MediumBulletBounce
 
 - type: entity
   id: CartridgeCaselessRifle

@@ -80,6 +80,10 @@
       collection: MetalThud
   - type: DamageOtherOnHit
     staminaCost: 5
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/gun_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/gun_drop.ogg
 
 - type: entity
   name: PTA BA-9 Viper 9x19mm

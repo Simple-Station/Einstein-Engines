@@ -423,13 +423,13 @@
   - type: Dispenser
     defaultItem: TradeDeedStub
     inventory:
-      TradeGoodAmmo: TradeDeedNormal
-      TradeGoodGunparts: TradeDeedNormal
-      TradeGoodScrap: TradeDeedLow
-      TradeGoodRice: TradeDeedNormal
-      TradeGoodFlour: TradeDeedHigh
-      TradeGoodSugar: TradeDeedHigh
-      TradeGoodFabrics: TradeDeedVeryHigh
+      TradeGoodAmmo: TradeDeedVeryHigh
+      TradeGoodGunparts: TradeDeedVeryHigh
+      TradeGoodScrap: TradeDeedVeryHigh
+      TradeGoodRice: TradeDeedVeryHigh
+      TradeGoodFlour: TradeDeedVeryHigh
+      TradeGoodSugar: TradeDeedVeryHigh
+      TradeGoodFabrics: TradeDeedExotic
       TradeGoodMiltech: TradeDeedVeryHigh
       TradeGoodAlloys: TradeDeedExotic
       TradeGoodGoodScrap: TradeDeedUnique

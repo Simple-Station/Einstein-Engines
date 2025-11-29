@@ -13,6 +13,8 @@
       jobs:
         - CommandantNCWL
         - KommissarNCWL
+        - MVDOfficerNCWL
+        - MVDGruntNCWL
         - FleetkapitanNCWL
         - PartisanNCWL
         - DirectorNCWL
@@ -37,6 +39,8 @@
       jobs:
         - CommandantNCWL
         - KommissarNCWL
+        - MVDOfficerNCWL
+        - MVDGruntNCWL
         - FleetkapitanNCWL
         - PartisanNCWL
         - DirectorNCWL
@@ -61,6 +65,8 @@
       jobs:
         - CommandantNCWL
         - KommissarNCWL
+        - MVDOfficerNCWL
+        - MVDGruntNCWL
         - FleetkapitanNCWL
         - PartisanNCWL
         - DirectorNCWL
@@ -85,6 +91,8 @@
       jobs:
         - CommandantNCWL
         - KommissarNCWL
+        - MVDOfficerNCWL
+        - MVDGruntNCWL
         - FleetkapitanNCWL
         - PartisanNCWL
         - DirectorNCWL
@@ -109,6 +117,8 @@
       jobs:
         - CommandantNCWL
         - KommissarNCWL
+        - MVDOfficerNCWL
+        - MVDGruntNCWL
         - FleetkapitanNCWL
         - PartisanNCWL
         - DirectorNCWL
@@ -128,10 +138,13 @@
     - ClothingHeadHatMVDHat
   requirements:
     - !type:CharacterWhitelistRequirement
+    - !type:CharacterOverallTimeRequirement
+      min: 30000
     - !type:CharacterItemGroupRequirement
       group: LoadoutHead
     - !type:CharacterJobRequirement
       jobs:
         - CommandantNCWL
         - KommissarNCWL
+        - MVDOfficerNCWL
         - MVDGruntNCWL
