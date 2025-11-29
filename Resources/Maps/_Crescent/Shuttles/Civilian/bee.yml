@@ -4,7 +4,7 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 09/27/2025 12:18:24
+  time: 11/29/2025 07:07:23
   entityCount: 58
 maps: []
 grids:
@@ -151,6 +151,7 @@ entities:
             88: 0,5
             91: 0,5
             94: 0,5
+            97: 0,5
         - node:
             id: LatticeEdgeS
           decals:
@@ -174,6 +175,8 @@ entities:
             92: 0,6
             93: 0,5
             95: 0,6
+            96: 0,5
+            98: 0,6
         - node:
             id: LatticeEdgeW
           decals:
@@ -262,6 +265,7 @@ entities:
     - type: ShuttleDeed
       shuttleName: Shuttle BET-725
       shuttleUid: 1
+    - type: SelfDeleteGrid
 - proto: AAAHardpointFixed
   entities:
   - uid: 2
@@ -522,7 +526,7 @@ entities:
     - type: Transform
       pos: 0.5,1.5
       parent: 1
-- proto: ShuttleGunTorpedoFilled
+- proto: ShuttleGunTorpedo
   entities:
   - uid: 38
     components:
@@ -531,7 +535,7 @@ entities:
       pos: 0.5,4.5
       parent: 1
     - type: Battery
-      startingCharge: 19649.043
+      startingCharge: 19937.412
     - type: ApcPowerReceiverBattery
       enabled: True
 - proto: SubstationBasic
