@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 11/22/2025 02:32:55
-  entityCount: 961
+  time: 11/28/2025 03:20:30
+  entityCount: 963
 maps: []
 grids:
 - 1
@@ -416,6 +416,21 @@ entities:
             753: -12,3
             771: -4,8
             779: -3,10
+            801: 3,10
+            813: 4,6
+            837: 2,-13
+            843: 7,-11
+            851: 8,-9
+            854: 9,-10
+            880: -12,-7
+            886: -12,-1
+            893: -11,-8
+            896: -9,-10
+            903: -9,-9
+            917: -5,-13
+            925: -12,3
+            943: -4,8
+            951: -3,10
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -465,6 +480,21 @@ entities:
             748: -2,-13
             764: -4,6
             781: -3,10
+            803: 3,10
+            820: 4,8
+            834: 12,3
+            840: 5,-13
+            856: 9,-10
+            861: 9,-9
+            868: 11,-8
+            871: 12,-7
+            877: 12,-1
+            898: -9,-10
+            908: -8,-9
+            911: -7,-11
+            920: -2,-13
+            936: -4,6
+            953: -3,10
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -505,6 +535,18 @@ entities:
             769: -4,8
             774: -4,10
             786: -3,12
+            811: 4,6
+            826: 8,7
+            846: 7,-10
+            849: 8,-9
+            883: -12,-3
+            891: -11,-8
+            901: -9,-9
+            923: -12,3
+            928: -10,7
+            941: -4,8
+            946: -4,10
+            958: -3,12
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -545,6 +587,18 @@ entities:
             742: -7,-10
             759: -8,7
             763: -4,6
+            808: 3,12
+            819: 4,8
+            823: 4,10
+            829: 10,7
+            833: 12,3
+            860: 9,-9
+            867: 11,-8
+            874: 12,-3
+            907: -8,-9
+            914: -7,-10
+            931: -8,7
+            935: -4,6
         - node:
             id: LatticeEdgeE
           decals:
@@ -632,6 +686,34 @@ entities:
             785: -3,12
             787: -2,10
             789: -1,12
+            791: 0,12
+            793: 1,12
+            795: 2,10
+            797: 3,8
+            799: 3,10
+            810: 4,6
+            825: 8,7
+            835: 2,-13
+            841: 7,-11
+            845: 7,-10
+            848: 8,-9
+            852: 9,-10
+            878: -12,-7
+            882: -12,-3
+            884: -12,-1
+            890: -11,-8
+            894: -9,-10
+            900: -9,-9
+            915: -5,-13
+            922: -12,3
+            927: -10,7
+            940: -4,8
+            945: -4,10
+            947: -3,8
+            949: -3,10
+            957: -3,12
+            959: -2,10
+            961: -1,12
         - node:
             id: LatticeEdgeN
           decals:
@@ -731,6 +813,38 @@ entities:
             770: -4,8
             778: -3,10
             783: -3,11
+            800: 3,10
+            805: 3,11
+            812: 4,6
+            815: 4,7
+            817: 4,8
+            831: 12,3
+            836: 2,-13
+            838: 5,-13
+            842: 7,-11
+            850: 8,-9
+            853: 9,-10
+            858: 9,-9
+            863: 11,-9
+            865: 11,-8
+            869: 12,-7
+            875: 12,-1
+            879: -12,-7
+            885: -12,-1
+            888: -11,-9
+            892: -11,-8
+            895: -9,-10
+            902: -9,-9
+            905: -8,-9
+            909: -7,-11
+            916: -5,-13
+            918: -2,-13
+            924: -12,3
+            933: -4,6
+            938: -4,7
+            942: -4,8
+            950: -3,10
+            955: -3,11
         - node:
             id: LatticeEdgeS
           decals:
@@ -824,6 +938,36 @@ entities:
             772: -4,10
             782: -3,11
             784: -3,12
+            804: 3,11
+            806: 3,12
+            809: 4,6
+            814: 4,7
+            816: 4,8
+            821: 4,10
+            824: 8,7
+            827: 10,7
+            830: 12,3
+            844: 7,-10
+            847: 8,-9
+            857: 9,-9
+            862: 11,-9
+            864: 11,-8
+            872: 12,-3
+            881: -12,-3
+            887: -11,-9
+            889: -11,-8
+            899: -9,-9
+            904: -8,-9
+            912: -7,-10
+            921: -12,3
+            926: -10,7
+            929: -8,7
+            932: -4,6
+            937: -4,7
+            939: -4,8
+            944: -4,10
+            954: -3,11
+            956: -3,12
         - node:
             id: LatticeEdgeW
           decals:
@@ -911,6 +1055,34 @@ entities:
             780: -3,10
             788: -2,10
             790: -1,12
+            792: 0,12
+            794: 1,12
+            796: 2,10
+            798: 3,8
+            802: 3,10
+            807: 3,12
+            818: 4,8
+            822: 4,10
+            828: 10,7
+            832: 12,3
+            839: 5,-13
+            855: 9,-10
+            859: 9,-9
+            866: 11,-8
+            870: 12,-7
+            873: 12,-3
+            876: 12,-1
+            897: -9,-10
+            906: -8,-9
+            910: -7,-11
+            913: -7,-10
+            919: -2,-13
+            930: -8,7
+            934: -4,6
+            948: -3,8
+            952: -3,10
+            960: -2,10
+            962: -1,12
         - node:
             color: '#F9FFFEFF'
             id: TechE
@@ -2237,6 +2409,9 @@ entities:
     - type: Transform
       pos: 9.5,-7.5
       parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 702
   - uid: 139
     components:
     - type: Transform
@@ -3395,6 +3570,11 @@ entities:
     - type: Transform
       pos: 9.5,5.5
       parent: 1
+  - uid: 963
+    components:
+    - type: Transform
+      pos: 6.5,5.5
+      parent: 1
 - proto: CableHV
   entities:
   - uid: 367
@@ -4066,14 +4246,14 @@ entities:
         - 132
         - 133
         - 134
-        SHI 180mm "Magwell" torpedo launcher:
-        - 129
-        - 130
         SHI 43mm "Hullpiercer" slugspitter:
         - 131
         - 132
         - 133
         - 134
+        SHI 180mm "Magwell" torpedo launcher:
+        - 129
+        - 130
 - proto: CrateRCDAmmo
   entities:
   - uid: 481
@@ -5370,6 +5550,14 @@ entities:
     - type: Transform
       pos: -0.5,-1.5
       parent: 1
+- proto: PowerCageHardliner
+  entities:
+  - uid: 962
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -0.46875,6.40625
+      parent: 1
 - proto: PowerCageRecharger
   entities:
   - uid: 646
@@ -5770,6 +5958,11 @@ entities:
       rot: 3.141592653589793 rad
       pos: 8.5,-7.5
       parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        138:
+        - - Pressed
+          - Toggle
   - uid: 703
     components:
     - type: Transform
@@ -7231,14 +7424,14 @@ entities:
       parent: 1
 - proto: WarpPointShip
   entities:
-  - uid: 961
+  - uid: 956
     components:
     - type: Transform
       pos: 0.5,-0.5
       parent: 1
 - proto: WaterCooler
   entities:
-  - uid: 956
+  - uid: 957
     components:
     - type: Transform
       pos: 0.5,2.5
@@ -7254,7 +7447,7 @@ entities:
     - type: InsideEntityStorage
 - proto: WeaponTurretLaser
   entities:
-  - uid: 957
+  - uid: 958
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -7276,7 +7469,7 @@ entities:
           ents: []
     - type: PointCannon
       linkedConsoleId: 480
-  - uid: 958
+  - uid: 959
     components:
     - type: Transform
       pos: -10.5,-9.5
@@ -7297,7 +7490,7 @@ entities:
           ents: []
     - type: PointCannon
       linkedConsoleId: 480
-  - uid: 959
+  - uid: 960
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -7319,7 +7512,7 @@ entities:
           ents: []
     - type: PointCannon
       linkedConsoleId: 480
-  - uid: 960
+  - uid: 961
     components:
     - type: Transform
       pos: 11.5,-9.5

@@ -16,6 +16,24 @@
                 <Button Name="ShowVesselOffButton" Text="{Loc 'iff-console-off'}" StyleClasses="OpenLeft" />
             </BoxContainer>
             <Label Name="ShowHeat"></Label>
+
+            <Label Name="ColorSelectionLabel" Text="COLOR PICKING"
+                HorizontalExpand="True" HorizontalAlignment="Center" Margin="0 6 0 2" StyleClasses="StatusFieldTitle" />
+            <Control />
+            <GridContainer Columns="2">
+                <Button Name="ColorPreset1Button" Text="Ship White" Modulate="#FFFFFF" HorizontalExpand="True" />
+                <Button Name="ColorPreset2Button" Text="Asteroid Brown" Modulate="#BF8C5C" HorizontalExpand="True" />
+                <Button Name="ColorPreset3Button" Text="Scrap blue" Modulate="#88B0D1FF" HorizontalExpand="True" />
+                <Button Name="ColorPreset4Button" Text="Meteor Purple" Modulate="#8178CCFF" HorizontalExpand="True" />
+            </GridContainer>
+            <Control />
+            <BoxContainer Orientation="Horizontal">
+                <LineEdit Name="CustomColorLineEdit"
+                          HorizontalExpand="True"
+                          PlaceHolder="FFFFFF" />
+                <Button Name="ApplyColorButton" Text="Apply Color" />
+            </BoxContainer>
+            <Control />
         </GridContainer>
     </BoxContainer>
 </controls:FancyWindow>

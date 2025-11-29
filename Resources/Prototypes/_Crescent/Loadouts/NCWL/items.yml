@@ -20,3 +20,18 @@
       - IndustryTaskmasterNCWL
       - ArtificerNCWL
       - WorkerNCWL
+
+- type: loadout
+  id: LoadoutItemsWhistle
+  category: Items
+  cost: 1
+  items:
+  - SyndicateWhistle
+  requirements:
+  - !type:CharacterJobRequirement
+    jobs:
+      - CommandantNCWL
+      - KommissarNCWL
+      - MVDOfficerNCWL
+      - MVDGruntNCWL
+      - FleetkapitanNCWL

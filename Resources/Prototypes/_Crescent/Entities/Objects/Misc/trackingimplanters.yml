@@ -7,6 +7,16 @@
   components:
     - type: Rattle
       radioChannel: "Common"
+    - type: TriggerOnMobstateChange
+      mobState:
+      - Dead
+    - type: EmitSoundOnTrigger
+      sound:
+        path: /Audio/_Crescent/Items/Medical/death.ogg
+        params:
+          variation: 0.15
+          volume: -8
+          range: 1
 
 # Hullrot vital tracking implants
 # IPM
@@ -18,6 +28,16 @@
   components:
     - type: Rattle
       radioChannel: "Interdyne"
+    - type: TriggerOnMobstateChange
+      mobState:
+      - Dead
+    - type: EmitSoundOnTrigger
+      sound:
+        path: /Audio/_Crescent/Items/Medical/death.ogg
+        params:
+          variation: 0.15
+          volume: -8
+          range: 1
 
 - type: entity
   parent: BaseImplantOnlyImplanter
@@ -36,6 +56,16 @@
   components:
     - type: Rattle
       radioChannel: "Nfsd"
+    - type: TriggerOnMobstateChange
+      mobState:
+      - Dead
+    - type: EmitSoundOnTrigger
+      sound:
+        path: /Audio/_Crescent/Items/Medical/death.ogg
+        params:
+          variation: 0.15
+          volume: -8
+          range: 1
 
 - type: entity
   parent: BaseImplantOnlyImplanter
@@ -54,6 +84,16 @@
   components:
     - type: Rattle
       radioChannel: "SHI"
+    - type: TriggerOnMobstateChange
+      mobState:
+      - Dead
+    - type: EmitSoundOnTrigger
+      sound:
+        path: /Audio/_Crescent/Items/Medical/death.ogg
+        params:
+          variation: 0.15
+          volume: -8
+          range: 1
 
 - type: entity
   parent: BaseImplantOnlyImplanter
@@ -72,6 +112,16 @@
   components:
   - type: Rattle
     radioChannel: "Imperial"
+  - type: TriggerOnMobstateChange
+    mobState:
+    - Dead
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/_Crescent/Items/Medical/death.ogg
+      params:
+        variation: 0.15
+        volume: -8
+        range: 1
 
 - type: entity
   parent: BaseImplantOnlyImplanter
@@ -89,6 +139,16 @@
   components:
   - type: Rattle
     radioChannel: "EmpireCiv"
+  - type: TriggerOnMobstateChange
+    mobState:
+    - Dead
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/_Crescent/Items/Medical/death.ogg
+      params:
+        variation: 0.15
+        volume: -8
+        range: 1
 
 - type: entity
   parent: BaseImplantOnlyImplanter
@@ -107,6 +167,16 @@
   components:
   - type: Rattle
     radioChannel: "NCWL"
+  - type: TriggerOnMobstateChange
+    mobState:
+    - Dead
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/_Crescent/Items/Medical/death.ogg
+      params:
+        variation: 0.15
+        volume: -8
+        range: 1
 
 - type: entity
   parent: BaseImplantOnlyImplanter
@@ -125,6 +195,16 @@
   components:
   - type: Rattle
     radioChannel: "Clarizian"
+  - type: TriggerOnMobstateChange
+    mobState:
+    - Dead
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/_Crescent/Items/Medical/death.ogg
+      params:
+        variation: 0.15
+        volume: -8
+        range: 1
 
 - type: entity
   parent: BaseImplantOnlyImplanter
@@ -143,6 +223,16 @@
   components:
   - type: Rattle
     radioChannel: "Authority"
+  - type: TriggerOnMobstateChange
+    mobState:
+    - Dead
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/_Crescent/Items/Medical/death.ogg
+      params:
+        variation: 0.15
+        volume: -8
+        range: 1
 
 - type: entity
   parent: BaseImplantOnlyImplanter
@@ -161,7 +251,16 @@
 #  components:
 #  - type: Rattle
 #    radioChannel: "NAP"
-
+#  - type: TriggerOnMobstateChange
+#    mobState:
+#    - Dead
+#  - type: EmitSoundOnTrigger
+#    sound:
+#      path: /Audio/_Crescent/Items/Medical/death.ogg
+#      params:
+#        variation: 0.15
+#        volume: -8
+#        range: 1
 #- type: entity
 #  parent: BaseImplantOnlyImplanter
 #  id: VitalsTrackingImplanterNAP

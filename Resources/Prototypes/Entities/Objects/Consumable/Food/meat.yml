@@ -399,9 +399,20 @@
           Quantity: 3
         - ReagentId: Fat
           Quantity: 3
+        - ReagentId: Nutriment
+          Quantity: 10
   - type: SliceableFood
     count: 3
     slice: FoodMeatCutlet
+  - type: Food
+  - type: Extractable
+  - type: Produce
+  - type: FlavorProfile
+    flavors:
+      - chicken # everything kinda tastes like chicken
+  - type: Tag
+    tags:
+      - Meat
 
 - type: entity
   name: raw lizard meat

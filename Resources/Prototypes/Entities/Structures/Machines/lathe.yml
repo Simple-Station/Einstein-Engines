@@ -1636,7 +1636,7 @@
     board: BiogeneratorMachineCircuitboard
   - type: MaterialStorage
     insertOnInteract: true
-    canEjectStoredMaterials: false
+    canEjectStoredMaterials: true
     ignoreColor: true
     whitelist:
       tags:

@@ -25,6 +25,18 @@
       - state: passenger
 
 - type: entity
+  id: SpawnPointNCWLMVDGrunt
+  parent: SpawnPointJobBase
+  name: NCWLMVDGrunt
+  components:
+  - type: SpawnPoint
+    job_id: MVDGruntNCWL
+  - type: Sprite
+    layers:
+    - state: green
+    - state: passenger
+
+- type: entity
   id: SpawnPointNCWLFleetkapitan
   parent: SpawnPointJobBase
   name: NCWLFleetkapitan

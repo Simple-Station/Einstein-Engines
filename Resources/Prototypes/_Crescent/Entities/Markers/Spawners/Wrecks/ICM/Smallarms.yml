@@ -1,0 +1,29 @@
+#allows mappers to automate spawning terrible DSM conscript weapons with an ocassional gem
+- type: entity
+  name: Ind. Smallarms Wreck Randomizer
+  id: IndGunsWreckRandomizer
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: _Crescent/Objects/Weapons/Guns/tribune.rsi
+          state: base
+    - type: RandomSpawner
+      prototypes: #guns nobody uses unless desperate award, generally 11mm and lower
+       - WeaponSubMachineGunPTAVektor
+       - WeaponPistolCobra
+       - WeaponPistolViperNonLethal
+       - WeaponPistolRongyu
+       - WeaponPistolViper
+       - WeaponSubMachineGunCheshyre
+      chance: 0.20
+      rarePrototypes: #powerful or decent things that will keep salvagers mining for dopamine
+       - WeaponRifleHalyadMarksman
+       - WeaponSubMachineGunGhost
+       - WeaponRifleVintorez
+       - WeaponRifleTakemura
+       - WeaponSubMachineGunPTAAsVal
+       - WeaponSubMachineGunDrozd
+       - WeaponShotgunPTATwinshot
+      rareChance: 0.05

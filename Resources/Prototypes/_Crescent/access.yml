@@ -28,6 +28,17 @@
   id: NCWLFunds
   name: NCWL Funding Account
 
+- type: accessGroup
+  id: ncwlAA
+  tags:
+  - NCWLGeneral
+  - NCWLCommand
+  - NCWLKommissar
+  - NCWLAdministrator
+  - NCWLArmory
+  - NCWLJail
+  - NCWLFunds
+
 
 #syndicate#
 
@@ -62,6 +73,18 @@
 - type: accessLevel
   id: SyndicateFunds
   name: PMC Funding Account
+
+- type: accessGroup
+  id: ncspAA
+  tags:
+  - SyndicateBasic
+  - SyndicateCommand
+  - SyndicateGorlex
+  - SyndicateInterdyne
+  - SyndicateSaws
+  - SyndicateRamzi
+  - SyndicateRingleader
+  - SyndicateFunds
 
 # empire #
 
@@ -105,6 +128,20 @@
   id: DSMFunds
   name: Imperial Funding Account
 
+- type: accessGroup
+  id: dsmAA
+  tags:
+  - Empire
+  - Archmaester
+  - EmpireSoldier
+  - EmpireNoble
+  - EmpireAdjutant
+  - EmpireGovernor
+  - LogisticsWealth
+  - ScribesGuild
+  - Advocatus
+  - DSMFunds
+
 #srm
 
 - type: accessLevel
@@ -118,6 +155,13 @@
 - type: accessLevel
   id: HunterOverseer
   name: id-card-access-level-srmoverseer
+
+- type: accessGroup
+  id: srmAA
+  tags:
+  - Hunter
+  - HunterSenior
+  - HunterOverseer
 
 #shi
 
@@ -136,6 +180,14 @@
 - type: accessLevel
   id: ShinoharaExecutive
   name: id-card-access-level-shiexec
+
+- type: accessGroup
+  id: ShiAA
+  tags:
+  - Shinohara
+  - ShinoharaExecutive
+  - ShinoharaOfficer
+  - ShinoharaSecurity
 
 #cmm
 
@@ -159,6 +211,15 @@
   id: CMMFunds
   name: CMM Funding Account
 
+- type: accessGroup
+  id: cmmAA
+  tags:
+  - Minuteman
+  - MinutemanRankingOfficer
+  - MinutemanPrison
+  - MinutemanMarshal
+  - CMMFunds
+
 #misc
 
 - type: accessLevel
@@ -172,6 +233,13 @@
 - type: accessLevel
   id: GliessSheriff
   name: id-card-access-level-gliess-sheriff
+
+- type: accessGroup
+  id: miscAA
+  tags:
+  - Antiquarian
+  - GliessDockmaster
+  - GliessSheriff
 
 #ath
 
@@ -194,6 +262,15 @@
 - type: accessLevel
   id: AuthoritySupply
   name: id-card-access-level-authoritat-cargo
+
+- type: accessGroup
+  id: athAA
+  tags:
+  - Kommandant
+  - AuthorityRanking
+  - Authority
+  - Authoritymed
+  - AuthoritySupply
 
 #4families
 
@@ -220,3 +297,13 @@
 - type: accessLevel
   id: Izdari
   name: id-card-access-level-Izdari
+
+- type: accessGroup
+  id: 4familiesAA
+  tags:
+  - Arabet
+  - Thukker
+  - Alseik
+  - AlseikServile
+  - Families
+  - Izdari
