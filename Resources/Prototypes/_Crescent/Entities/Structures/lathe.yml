@@ -738,6 +738,32 @@
       - MetempsychoticMachineCircuitboard
       - HardlinerFlatpack
       - PowerCageHardliner
+      #fabdisk recipies
+      - WeaponRifleM90GrenadeLauncherNT
+      - WeaponSubMachineGunMP5NT
+      - WeaponShotgunSpasNT
+      - WeaponRevolverSnubnoseNT
+      - WeaponPistolHKUSPNT
+      - WeaponPistolBlastpopGrayCraft
+      - WeaponPistolBlastpopGoldCraft
+      - WeaponPistolBlastpopBlueCraft
+      - WeaponPistolBlastpopRedCraft
+      - ClothingOuterHardsuitHEVCraft
+      - WeaponPistolHimehabuCraft
+      - WeaponPistolSmartpistolCraft
+      - MagazinePistolSmartgunCraft
+      - WeaponSubMachineGunSabreCraft
+      - WeaponLauncherHammerheadCraft
+      - TermiteLPC
+      - ParacelsusLPC
+      - ExhumerLPC
+      - ClothingHeadHatPangtaiKorundHelmet
+      - ClothingOuterArmorPangTaiKorund
+      - ClothingHeadHatPangtaiCorvidHelmet
+      - ClothingOuterArmorPangTaiVest
+      - WeaponSpecialMako
+      - WeaponSubMachineGunCheshyre
+      - WeaponPistolRongyu
 
   - type: Machine
     board: MicroforgeCircuitboard
