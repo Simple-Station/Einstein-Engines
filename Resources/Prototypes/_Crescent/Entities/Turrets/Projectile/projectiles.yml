@@ -294,7 +294,7 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 100
+        Structural: 150
         Piercing: 100
   - type: ExplodeOnTrigger
   - type: Explosive
@@ -415,4 +415,44 @@
   - type: ShipWeaponProjectile
   - type: ProjectileIFF
     visualType: Diamond
+    color: White
+
+- type: entity
+  id: CorpusProjectile
+  name: 88mm low-yield flak pellet
+  description: Shit.
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 600
+        Blunt: 40
+  - type: Tag
+    tags:
+      - FlakShell
+  - type: TimedDespawn
+    lifetime: 15
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/flak.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 1250
+    intensitySlope: 5
+    maxIntensity: 20
+    maxTileBreak: 0
+  - type: ProximityFuse
+    maxRange: 20
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ProjectileIFF
+    visualType: Circle
     color: White

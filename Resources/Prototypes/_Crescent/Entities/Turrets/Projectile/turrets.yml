@@ -130,9 +130,6 @@
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
     - type: Gun
       fireOnDropChance: 0
       projectileSpeed: 95
@@ -141,17 +138,28 @@
       availableModes:
         - FullAuto
       soundGunshot: /Audio/Weapons/Guns/Gunshots/vulcan.ogg
-    - type: BasicEntityAmmoProvider
-      proto: Bullet35mmBase
-      capacity: 75
-      count: 60
-    - type: RechargeBasicEntityAmmo
-      rechargeCooldown: 5
-      rechargeSound:
-        path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
-        params:
-          pitch: 1.2
-          variation: 0.08
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          #startingItem: Magazine35mm
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - Magazine35mm
+        gun_chamber:
+          name: Chamber
+          startingItem: CartridgeVulcanStandard
+          priority: 1
+          whitelist:
+            tags:
+              - Cartridge35mm
     - type: ApcPowerReceiver
       powerLoad: 1000
     - type: HardpointAnchorableOnly
@@ -433,21 +441,21 @@
       fireOnDropChance: 0
       projectileSpeed: 75
       fireRate: 0.4
-      selectedMode: FullAuto
+      selectedMode: SemiAuto
       availableModes:
-        - FullAuto
+        - SemiAuto
       soundGunshot: /Audio/Weapons/Guns/Gunshots/ship_duster.ogg
-    - type: BasicEntityAmmoProvider
-      proto: Bullet300mmBase
+    - type: BallisticAmmoProvider
+      soundInsert:
+        path: /Audio/Weapons/Guns/UnionfallWeapons/amr_close_1.ogg
+      fillWithDoAfter: true
+      fillDelay: 1
+      cycleable: true
       capacity: 2
-      count: 2
-    - type: RechargeBasicEntityAmmo
-      rechargeCooldown: 10
-      rechargeSound:
-        path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
-        params:
-          pitch: 1.2
-          variation: 0.08
+      #proto: Cartridge300mm
+      whitelist:
+        tags:
+        - Cartridge300mm
     - type: ApcPowerReceiver
       powerLoad: 1000
     - type: HardpointAnchorableOnly
@@ -481,9 +489,10 @@
 
 - type: entity
   parent: BaseTurretShipgun
-  id: FlakCannonTurret
+  id: FlakCannonTurretCorpus
   suffix: ShipGun
   name: 88mm 'Corpus' flak-screen point defense system
+  description: A robust point defense turret firing 88mm plasteel-core pellets with a proximity fuze. Great for area denial.
   components:
     - type: Sprite
       sprite: _Crescent/Objects/Turrets/Projectile/corpus.rsi
@@ -526,7 +535,7 @@
           priority: 2
           whitelist:
             tags:
-              - FlakBox
+              - CorpusBox
         gun_chamber:
           name: Chamber
           startingItem: FlakCartridge
