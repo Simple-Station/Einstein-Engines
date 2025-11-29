@@ -38,12 +38,10 @@
           - Saintspact
           - HighImperial
           - LowImperial
-          - Tradeband
         addUnderstood:
           - Saintspact
           - HighImperial
           - LowImperial
-          - Tradeband
       - type: InnatePsionicPowers
         powersToAdd:
           - TelepathyPower

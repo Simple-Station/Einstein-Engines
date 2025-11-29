@@ -778,14 +778,11 @@
     sprite: _Crescent/Objects/Weapons/Guns/hunter.rsi
   - type: Gun
     fireRate: 5.5
-    shotsPerBurst: 3
-    burstFireRate: 20
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/M16/rifle_gunshot_2.ogg
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
-      - Burst
   - type: ItemSlots
     slots:
       gun_magazine:
