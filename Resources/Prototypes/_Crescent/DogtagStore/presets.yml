@@ -87,6 +87,7 @@
     - StoreCategorySRMAmmo
     - StoreCategorySRMSuits
     - StoreCategorySRMExplosives
+    - StoreCategorySRMPietyRomaine
     currencyWhitelist:
     - PietySRM
     balance:
@@ -103,6 +104,7 @@
     - StoreCategorySRMTools
     - StoreCategorySRMSupport
     - StoreCategorySRMMaterials
+    - StoreCategorySRMPietySerraine
     currencyWhitelist:
     - PietySRM
     balance:

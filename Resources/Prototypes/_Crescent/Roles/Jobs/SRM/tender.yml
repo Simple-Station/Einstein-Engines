@@ -36,10 +36,10 @@
       - type: LanguageAdder
         addSpoken:
           - LowImperial
-          - OldeImperial
+          - Saintspact
         addUnderstood:
           - LowImperial
-          - OldeImperial
+          - Saintspact
       - type: InnatePsionicPowers
         powersToAdd:
           - TelepathyPower
