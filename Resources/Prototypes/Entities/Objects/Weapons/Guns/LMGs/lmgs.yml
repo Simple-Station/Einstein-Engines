@@ -83,6 +83,10 @@
         Blunt: 3
   - type: DamageOtherOnHit
     staminaCost: 12
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/gun_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/gun_drop.ogg
 
 - type: entity
   name: SHI L6SAW Stratos 5.56x45mm

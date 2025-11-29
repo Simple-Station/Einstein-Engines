@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 11/08/2025 15:37:26
-  entityCount: 2048
+  time: 11/28/2025 06:06:30
+  entityCount: 2050
 maps: []
 grids:
 - 1
@@ -787,6 +787,24 @@ entities:
             3326: -10,-28
             3332: -9,-32
             3364: -8,-33
+            3370: 0,11
+            3378: 0,12
+            3393: 2,11
+            3401: 2,12
+            3412: 2,15
+            3419: 4,11
+            3427: 4,12
+            3469: -10,-4
+            3474: -10,-3
+            3488: -3,13
+            3499: -13,-26
+            3505: -13,-20
+            3508: -12,-27
+            3513: -12,-26
+            3519: -11,-28
+            3524: -10,-28
+            3530: -9,-32
+            3562: -8,-33
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -1037,6 +1055,24 @@ entities:
             3344: 11,-26
             3350: 11,-20
             3361: 6,-33
+            3373: 0,11
+            3381: 0,12
+            3396: 2,11
+            3404: 2,12
+            3414: 2,15
+            3422: 4,11
+            3430: 4,12
+            3440: 2,-6
+            3445: 8,-4
+            3450: 8,-3
+            3516: -12,-26
+            3527: -10,-28
+            3533: 7,-32
+            3536: 9,-28
+            3539: 10,-27
+            3542: 11,-26
+            3548: 11,-20
+            3559: 6,-33
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -1338,6 +1374,28 @@ entities:
             3313: -12,-26
             3324: -10,-28
             3354: 2,16
+            3368: 0,11
+            3376: 0,12
+            3384: 0,13
+            3391: 2,11
+            3399: 2,12
+            3407: 2,13
+            3417: 4,11
+            3425: 4,12
+            3433: 4,13
+            3453: 9,-16
+            3461: -13,-16
+            3464: -11,-11
+            3467: -10,-4
+            3472: -10,-3
+            3477: -7,10
+            3480: -6,12
+            3486: -3,13
+            3492: -2,11
+            3502: -13,-22
+            3511: -12,-26
+            3522: -10,-28
+            3552: 2,16
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -1589,6 +1647,24 @@ entities:
             3328: -10,-28
             3347: 11,-22
             3356: 2,16
+            3372: 0,11
+            3380: 0,12
+            3386: 0,13
+            3395: 2,11
+            3403: 2,12
+            3409: 2,13
+            3421: 4,11
+            3429: 4,12
+            3435: 4,13
+            3444: 8,-4
+            3449: 8,-3
+            3455: 9,-16
+            3458: 11,-16
+            3494: -2,11
+            3515: -12,-26
+            3526: -10,-28
+            3545: 11,-22
+            3554: 2,16
         - node:
             id: LatticeEdgeE
           decals:
@@ -2058,6 +2134,39 @@ entities:
             3330: -9,-32
             3353: 2,16
             3362: -8,-33
+            3367: 0,11
+            3375: 0,12
+            3383: 0,13
+            3387: 0,15
+            3390: 2,11
+            3398: 2,12
+            3406: 2,13
+            3410: 2,15
+            3416: 4,11
+            3424: 4,12
+            3432: 4,13
+            3436: 4,15
+            3452: 9,-16
+            3460: -13,-16
+            3463: -11,-11
+            3466: -10,-4
+            3471: -10,-3
+            3476: -7,10
+            3479: -6,12
+            3482: -4,12
+            3485: -3,13
+            3491: -2,11
+            3495: -2,13
+            3497: -13,-26
+            3501: -13,-22
+            3503: -13,-20
+            3506: -12,-27
+            3510: -12,-26
+            3517: -11,-28
+            3521: -10,-28
+            3528: -9,-32
+            3551: 2,16
+            3560: -8,-33
         - node:
             id: LatticeEdgeN
           decals:
@@ -2421,6 +2530,33 @@ entities:
             3348: 11,-20
             3359: 6,-33
             3363: -8,-33
+            3369: 0,11
+            3377: 0,12
+            3392: 2,11
+            3400: 2,12
+            3411: 2,15
+            3418: 4,11
+            3426: 4,12
+            3438: 2,-6
+            3442: 8,-4
+            3447: 8,-3
+            3468: -10,-4
+            3473: -10,-3
+            3487: -3,13
+            3498: -13,-26
+            3504: -13,-20
+            3507: -12,-27
+            3512: -12,-26
+            3518: -11,-28
+            3523: -10,-28
+            3529: -9,-32
+            3531: 7,-32
+            3534: 9,-28
+            3537: 10,-27
+            3540: 11,-26
+            3546: 11,-20
+            3557: 6,-33
+            3561: -8,-33
         - node:
             id: LatticeEdgeS
           decals:
@@ -2847,6 +2983,38 @@ entities:
             3357: 3,17
             3358: 5,16
             3365: -1,16
+            3366: 0,11
+            3374: 0,12
+            3382: 0,13
+            3389: 2,11
+            3397: 2,12
+            3405: 2,13
+            3415: 4,11
+            3423: 4,12
+            3431: 4,13
+            3441: 8,-4
+            3446: 8,-3
+            3451: 9,-16
+            3456: 11,-16
+            3459: -13,-16
+            3462: -11,-11
+            3465: -10,-4
+            3470: -10,-3
+            3475: -7,10
+            3478: -6,12
+            3481: -5,13
+            3484: -3,13
+            3489: -3,14
+            3490: -2,11
+            3500: -13,-22
+            3509: -12,-26
+            3520: -10,-28
+            3543: 11,-22
+            3549: 1,17
+            3550: 2,16
+            3555: 3,17
+            3556: 5,16
+            3563: -1,16
         - node:
             id: LatticeEdgeW
           decals:
@@ -3276,6 +3444,36 @@ entities:
             3349: 11,-20
             3355: 2,16
             3360: 6,-33
+            3371: 0,11
+            3379: 0,12
+            3385: 0,13
+            3388: 0,15
+            3394: 2,11
+            3402: 2,12
+            3408: 2,13
+            3413: 2,15
+            3420: 4,11
+            3428: 4,12
+            3434: 4,13
+            3437: 4,15
+            3439: 2,-6
+            3443: 8,-4
+            3448: 8,-3
+            3454: 9,-16
+            3457: 11,-16
+            3483: -4,12
+            3493: -2,11
+            3496: -2,13
+            3514: -12,-26
+            3525: -10,-28
+            3532: 7,-32
+            3535: 9,-28
+            3538: 10,-27
+            3541: 11,-26
+            3544: 11,-22
+            3547: 11,-20
+            3553: 2,16
+            3558: 6,-33
         - node:
             angle: 1.5707963267948966 rad
             color: '#D381C996'
@@ -5810,6 +6008,9 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 8.5,-17.5
       parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 2050
   - uid: 282
     components:
     - type: Transform
@@ -5927,6 +6128,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 1548
+      - 1024
   - uid: 295
     components:
     - type: Transform
@@ -5936,6 +6138,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 1548
+      - 1024
   - uid: 296
     components:
     - type: Transform
@@ -5945,6 +6148,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 1548
+      - 1024
   - uid: 297
     components:
     - type: Transform
@@ -5954,6 +6158,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 1547
+      - 1024
   - uid: 298
     components:
     - type: Transform
@@ -5963,6 +6168,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 1547
+      - 1024
   - uid: 299
     components:
     - type: Transform
@@ -5972,6 +6178,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 1547
+      - 1024
   - uid: 300
     components:
     - type: Transform
@@ -5981,6 +6188,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 21
+      - 1024
     - type: ActiveDeviceLinkSink
       invokeCounter: 2
   - uid: 301
@@ -5992,6 +6200,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 18
+      - 1024
     - type: ActiveDeviceLinkSink
       invokeCounter: 3
   - uid: 302
@@ -6003,6 +6212,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 21
+      - 1024
     - type: ActiveDeviceLinkSink
       invokeCounter: 3
   - uid: 303
@@ -6014,6 +6224,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 21
+      - 1024
     - type: ActiveDeviceLinkSink
       invokeCounter: 2
   - uid: 304
@@ -6025,6 +6236,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 21
+      - 1024
     - type: ActiveDeviceLinkSink
       invokeCounter: 2
   - uid: 305
@@ -6036,6 +6248,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 18
+      - 1024
     - type: ActiveDeviceLinkSink
       invokeCounter: 3
   - uid: 306
@@ -6047,6 +6260,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 18
+      - 1024
     - type: ActiveDeviceLinkSink
       invokeCounter: 3
   - uid: 307
@@ -6058,6 +6272,7 @@ entities:
       links:
       - 18
       - 27
+      - 1024
     - type: ActiveDeviceLinkSink
       invokeCounter: 3
   - uid: 308
@@ -6069,6 +6284,7 @@ entities:
       links:
       - 18
       - 27
+      - 1024
     - type: ActiveDeviceLinkSink
       invokeCounter: 3
   - uid: 309
@@ -6080,6 +6296,7 @@ entities:
       links:
       - 18
       - 27
+      - 1024
     - type: ActiveDeviceLinkSink
       invokeCounter: 3
 - proto: BookshelfFilled
@@ -6199,6 +6416,11 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -5.5,-10.5
+      parent: 1
+  - uid: 2049
+    components:
+    - type: Transform
+      pos: 7.5,-16.5
       parent: 1
 - proto: ButtonFrameCautionSecurity
   entities:
@@ -9793,11 +10015,59 @@ entities:
         4:
         - - Group2
           - SpaceArtilleryFire
+        305:
+        - - Group3
+          - Toggle
+        306:
+        - - Group3
+          - Toggle
+        301:
+        - - Group3
+          - Toggle
+        304:
+        - - Group3
+          - Toggle
+        300:
+        - - Group3
+          - Toggle
+        303:
+        - - Group3
+          - Toggle
+        302:
+        - - Group3
+          - Toggle
+        307:
+        - - Group3
+          - Toggle
+        309:
+        - - Group3
+          - Toggle
+        308:
+        - - Group3
+          - Toggle
+        297:
+        - - Group3
+          - Toggle
+        299:
+        - - Group3
+          - Toggle
+        298:
+        - - Group3
+          - Toggle
+        296:
+        - - Group3
+          - Toggle
+        294:
+        - - Group3
+          - Toggle
+        295:
+        - - Group3
+          - Toggle
     - type: NamedModules
       buttonNames:
       - Toggle 120 mm blastdoors
       - Fire 120 mm array
-      - '-----'
+      - 'Observation lockdown'
       - '-----'
       - '-----'
 - proto: ComputerTabletopSurveillanceCameraMonitor
@@ -13964,18 +14234,19 @@ entities:
     - type: Physics
       canCollide: False
     - type: Storage
+      savedLocations: {}
+      grid: []
+      storageInsertSound: !type:SoundCollectionSpecifier
+        collection: storageRustle
+      storageOpenSound: !type:SoundCollectionSpecifier
+        collection: storageRustle
       storedItems:
-        917:
-          position: 0,0
-          _rotation: South
+        917: {}
         916:
           position: 0,1
-          _rotation: South
     - type: ContainerContainer
       containers:
         storagebase: !type:Container
-          showEnts: False
-          occludes: True
           ents:
           - 917
           - 916
@@ -14215,6 +14486,16 @@ entities:
         4:
         - - Pressed
           - SpaceArtilleryFire
+  - uid: 2050
+    components:
+    - type: Transform
+      pos: 7.5,-16.5
+      parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        281:
+        - - Pressed
+          - Toggle
 - proto: SignDangerMed
   entities:
   - uid: 1554
@@ -14303,7 +14584,7 @@ entities:
     - type: Transform
       pos: -1.5,8.5
       parent: 1
-- proto: SMESBasicEmpty
+- proto: SMESBasic
   entities:
   - uid: 1567
     components:
@@ -14800,8 +15081,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -7.5,6.5
       parent: 1
-    - type: Thruster
-      enabled: False
   - uid: 1650
     components:
     - type: Transform

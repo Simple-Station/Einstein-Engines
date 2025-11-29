@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 10/22/2025 13:23:32
-  entityCount: 57
+  time: 11/28/2025 01:52:23
+  entityCount: 59
 maps: []
 grids:
 - 1
@@ -96,24 +96,30 @@ entities:
             id: LatticeCornerSE
           decals:
             38: -2,1
+            44: -2,1
         - node:
             zIndex: 1
             id: LatticeCornerSW
           decals:
             35: 2,1
+            41: 2,1
         - node:
             id: LatticeEdgeE
           decals:
             37: -2,1
+            43: -2,1
         - node:
             id: LatticeEdgeS
           decals:
             33: 2,1
             36: -2,1
+            39: 2,1
+            42: -2,1
         - node:
             id: LatticeEdgeW
           decals:
             34: 2,1
+            40: 2,1
         - node:
             color: '#FFFFFFFF'
             id: TechE
@@ -156,13 +162,14 @@ entities:
       data:
         tiles:
           0,0:
-            0: 787
-            1: 64
+            0: 531
+            1: 256
+            2: 64
           0,-1:
             0: 21248
           -1,0:
             0: 2056
-            1: 64
+            2: 64
           -1,-1:
             0: 18432
         uniqueMixes:
@@ -171,6 +178,21 @@ entities:
           moles:
           - 21.824879
           - 82.10312
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 0
+          - 0
           - 0
           - 0
           - 0
@@ -208,6 +230,7 @@ entities:
       shuttleUid: 1
     - type: BecomesStation
       id: Tick
+    - type: SelfDeleteGrid
 - proto: AAAHardpointFixed
   entities:
   - uid: 2
@@ -257,6 +280,18 @@ entities:
     components:
     - type: Transform
       pos: 0.5,-1.5
+      parent: 1
+  - uid: 58
+    components:
+    - type: Transform
+      pos: 0.5,2.5
+      parent: 1
+- proto: AtmosFixBlockerMarker
+  entities:
+  - uid: 59
+    components:
+    - type: Transform
+      pos: 0.5,2.5
       parent: 1
 - proto: BoriaticGeneratorHerculesShuttle
   entities:
@@ -458,20 +493,20 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -0.5,0.5
       parent: 1
-  - uid: 56
+  - uid: 36
     components:
     - type: Transform
       pos: 0.5,1.5
       parent: 1
 - proto: RailingCorner
   entities:
-  - uid: 36
+  - uid: 37
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 1.5,2.5
       parent: 1
-  - uid: 37
+  - uid: 38
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -479,66 +514,66 @@ entities:
       parent: 1
 - proto: ShuttleGunTorpedo
   entities:
-  - uid: 38
+  - uid: 39
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -0.5,2.5
       parent: 1
     - type: Battery
-      startingCharge: 19650.371
+      startingCharge: 19542.793
     - type: ApcPowerReceiverBattery
       enabled: True
-  - uid: 39
+  - uid: 40
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 1.5,2.5
       parent: 1
     - type: Battery
-      startingCharge: 19650.371
+      startingCharge: 19542.793
     - type: ApcPowerReceiverBattery
       enabled: True
 - proto: SmallGyroscope
   entities:
-  - uid: 40
+  - uid: 41
     components:
     - type: Transform
       pos: 1.5,0.5
       parent: 1
 - proto: SubstationWallBasic
   entities:
-  - uid: 41
+  - uid: 42
     components:
     - type: Transform
       pos: -0.5,-0.5
       parent: 1
 - proto: ThrusterNCSPFighter
   entities:
-  - uid: 42
-    components:
-    - type: Transform
-      pos: 0.5,2.5
-      parent: 1
   - uid: 43
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 1.5,-1.5
+      pos: 0.5,2.5
       parent: 1
   - uid: 44
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: -0.5,-1.5
+      pos: 1.5,-1.5
       parent: 1
   - uid: 45
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -0.5,-1.5
+      parent: 1
+  - uid: 46
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -1.5,-0.5
       parent: 1
-  - uid: 46
+  - uid: 47
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -546,53 +581,53 @@ entities:
       parent: 1
 - proto: WallReinforcedNCSP
   entities:
-  - uid: 47
+  - uid: 48
     components:
     - type: Transform
       pos: 1.5,1.5
       parent: 1
-  - uid: 48
+  - uid: 49
     components:
     - type: Transform
       pos: 2.5,0.5
       parent: 1
-  - uid: 49
+  - uid: 50
     components:
     - type: Transform
       pos: -0.5,1.5
       parent: 1
-  - uid: 50
+  - uid: 51
     components:
     - type: Transform
       pos: 1.5,-0.5
       parent: 1
-  - uid: 51
+  - uid: 52
     components:
     - type: Transform
       pos: -0.5,-0.5
       parent: 1
-  - uid: 52
+  - uid: 53
     components:
     - type: Transform
       pos: -1.5,0.5
       parent: 1
 - proto: WallSolidDiagonalNortheastCurved
   entities:
-  - uid: 53
+  - uid: 54
     components:
     - type: Transform
       pos: -1.5,1.5
       parent: 1
 - proto: WallSolidDiagonalNorthwestCurved
   entities:
-  - uid: 54
+  - uid: 55
     components:
     - type: Transform
       pos: 2.5,1.5
       parent: 1
 - proto: WarpPointShip
   entities:
-  - uid: 55
+  - uid: 56
     components:
     - type: Transform
       pos: 0.5,0.5

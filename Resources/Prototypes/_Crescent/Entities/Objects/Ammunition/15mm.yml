@@ -25,6 +25,12 @@
   - type: SpentAmmoVisuals
   - type: StaticPrice
     price: 10
+  - type: EmitSoundOnLand
+    sound:
+      collection: HeavyBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: HeavyBulletBounce
 #---------- Basic bullet ----------
 - type: entity
   id: CartridgeRailgun15mmAP
@@ -107,6 +113,10 @@
     steps: 5
     zeroVisible: false
   - type: Appearance
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/mag_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/mag_drop.ogg
 
 #---------- 15mm Railgun (APFSDS) ----------  
 - type: entity

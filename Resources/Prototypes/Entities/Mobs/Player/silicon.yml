@@ -781,6 +781,7 @@
       - BorgModuleOperative
       - BorgModuleAdvancedSurgery
       - BorgModuleSyndicateWeapon
+      - BorgModuleAdvancedTreatment
   - type: ItemSlots
     slots:
       cell_slot:

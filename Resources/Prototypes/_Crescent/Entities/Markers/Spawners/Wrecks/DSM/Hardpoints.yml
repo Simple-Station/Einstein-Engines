@@ -17,7 +17,6 @@
        - BaseWeaponTurretKomodo
        - WeaponTurretLaser
        - ShuttleGunTorpedo
-       - BaseWeaponTurretHeavyPlasma
       chance: 0.15
       rarePrototypes:
        - BaseWeaponTurretJeong
