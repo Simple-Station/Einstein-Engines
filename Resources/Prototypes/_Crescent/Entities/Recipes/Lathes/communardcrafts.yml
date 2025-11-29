@@ -266,6 +266,15 @@
     ShipHull: 2500
 
 - type: latheRecipe
+  id: CherenzikovLPC
+  result: ShipVoucherCherenzikov
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 2500
+    ShipComponents: 2000
+    ShipHull: 3000
+
+- type: latheRecipe
   id: LodkaLPC
   result: ShipVoucherLodka
   completetime: 1
