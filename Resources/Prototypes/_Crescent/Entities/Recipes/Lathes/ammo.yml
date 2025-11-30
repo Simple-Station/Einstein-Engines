@@ -105,6 +105,21 @@
   completetime: 1
   materials:
     Steel: 900
+    
+- type: latheRecipe
+  id: MagazineBoxImperialRifleBig
+  result: MagazineLightRifleBox
+  completetime: 1
+  materials:
+    Steel: 9000
+
+- type: latheRecipe
+  id: MagazineHeavyRifleSmall
+  result: MagazineSmallHeavyRifle
+  completetime: 1
+  materials:
+    Steel: 200
+    Uranium: 50
 
 # 4 GAUGE SHELLS
 

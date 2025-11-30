@@ -252,6 +252,8 @@
     idleState: fab-idle
     runningState: fab-active
     staticRecipes:
+      - MagazineBoxImperialRifleBig
+      - MagazineHeavyRifleSmall
       - CombatKnife
       - ExplosivePayload
       - FlashPayload
