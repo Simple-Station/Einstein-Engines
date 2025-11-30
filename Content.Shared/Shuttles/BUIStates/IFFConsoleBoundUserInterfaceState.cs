@@ -10,6 +10,10 @@ public sealed class IFFConsoleBoundUserInterfaceState : BoundUserInterfaceState
     public IFFFlags Flags;
     public float HeatCapacity;
     public float CurrentHeat;
+
+    // The color adding
+    public Color Color;
+    public bool AllowColorChange;
 }
 
 [Serializable, NetSerializable]

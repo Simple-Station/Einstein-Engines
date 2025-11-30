@@ -281,9 +281,9 @@
         Piercing: -15 # Was 10, Buffed due to limb damage changes
     bloodlossModifier: -10
     healingBeginSound:
-      path: "/Audio/Items/Medical/brutepack_begin.ogg"
+      path: "/Audio/_Crescent/Items/Medical/bandage_start.ogg"
     healingEndSound:
-      path: "/Audio/Items/Medical/brutepack_end.ogg"
+      path: "/Audio/_Crescent/Items/Medical/bandage_end.ogg"
   - type: Stack
     stackType: Gauze
     count: 15 #Was 10, Buffed due to limb damage changes

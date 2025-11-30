@@ -4,7 +4,7 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 09/24/2025 23:50:27
+  time: 11/28/2025 03:16:48
   entityCount: 228
 maps: []
 grids:
@@ -126,6 +126,17 @@ entities:
             457: -3,-7
             460: -2,-9
             472: 5,-5
+            521: -6,0
+            538: -6,-5
+            543: -6,-4
+            548: -6,-3
+            553: -6,-2
+            558: -6,-1
+            561: -5,-5
+            566: -4,-6
+            569: -3,-7
+            572: -2,-9
+            584: 5,-5
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -174,6 +185,17 @@ entities:
             487: 6,-3
             492: 6,-2
             497: 6,-1
+            513: 6,0
+            563: -5,-5
+            575: 2,-9
+            578: 3,-7
+            581: 4,-6
+            586: 5,-5
+            589: 6,-5
+            594: 6,-4
+            599: 6,-3
+            604: 6,-2
+            609: 6,-1
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -218,6 +240,16 @@ entities:
             434: -6,-3
             439: -6,-2
             444: -6,-1
+            506: 5,1
+            519: -6,0
+            524: -6,1
+            527: -5,1
+            532: -4,2
+            535: -2,3
+            541: -6,-4
+            546: -6,-3
+            551: -6,-2
+            556: -6,-1
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -262,6 +294,16 @@ entities:
             486: 6,-3
             491: 6,-2
             496: 6,-1
+            500: 2,3
+            503: 4,2
+            508: 5,1
+            512: 6,0
+            516: 6,1
+            529: -5,1
+            593: 6,-4
+            598: 6,-3
+            603: 6,-2
+            608: 6,-1
         - node:
             id: LatticeEdgeE
           decals:
@@ -329,6 +371,22 @@ entities:
             455: -3,-7
             458: -2,-9
             470: 5,-5
+            505: 5,1
+            518: -6,0
+            523: -6,1
+            526: -5,1
+            531: -4,2
+            534: -2,3
+            536: -6,-5
+            540: -6,-4
+            545: -6,-3
+            550: -6,-2
+            555: -6,-1
+            559: -5,-5
+            564: -4,-6
+            567: -3,-7
+            570: -2,-9
+            582: 5,-5
         - node:
             id: LatticeEdgeN
           decals:
@@ -412,6 +470,26 @@ entities:
             484: 6,-3
             489: 6,-2
             494: 6,-1
+            510: 6,0
+            520: -6,0
+            537: -6,-5
+            542: -6,-4
+            547: -6,-3
+            552: -6,-2
+            557: -6,-1
+            560: -5,-5
+            565: -4,-6
+            568: -3,-7
+            571: -2,-9
+            573: 2,-9
+            576: 3,-7
+            579: 4,-6
+            583: 5,-5
+            587: 6,-5
+            591: 6,-4
+            596: 6,-3
+            601: 6,-2
+            606: 6,-1
         - node:
             id: LatticeEdgeS
           decals:
@@ -487,6 +565,24 @@ entities:
             483: 6,-3
             488: 6,-2
             493: 6,-1
+            498: 2,3
+            501: 4,2
+            504: 5,1
+            509: 6,0
+            514: 6,1
+            517: -6,0
+            522: -6,1
+            525: -5,1
+            530: -4,2
+            533: -2,3
+            539: -6,-4
+            544: -6,-3
+            549: -6,-2
+            554: -6,-1
+            590: 6,-4
+            595: 6,-3
+            600: 6,-2
+            605: 6,-1
         - node:
             id: LatticeEdgeW
           decals:
@@ -554,6 +650,22 @@ entities:
             485: 6,-3
             490: 6,-2
             495: 6,-1
+            499: 2,3
+            502: 4,2
+            507: 5,1
+            511: 6,0
+            515: 6,1
+            528: -5,1
+            562: -5,-5
+            574: 2,-9
+            577: 3,-7
+            580: 4,-6
+            585: 5,-5
+            588: 6,-5
+            592: 6,-4
+            597: 6,-3
+            602: 6,-2
+            607: 6,-1
         - node:
             color: '#FFFFFFFF'
             id: TechN
@@ -754,6 +866,7 @@ entities:
     - type: RadiationGridResistance
     - type: BecomesStation
       id: Probe
+    - type: SelfDeleteGrid
 - proto: AirlockCommand
   entities:
   - uid: 2
@@ -1245,39 +1358,39 @@ entities:
     - type: Transform
       pos: -1.5,-0.5
       parent: 1
-  - uid: 100
+  - uid: 95
     components:
     - type: Transform
       pos: -0.5,0.5
       parent: 1
-  - uid: 136
+  - uid: 96
     components:
     - type: Transform
       pos: 1.5,0.5
       parent: 1
 - proto: CableMV
   entities:
-  - uid: 95
+  - uid: 97
     components:
     - type: Transform
       pos: -1.5,-0.5
       parent: 1
-  - uid: 96
+  - uid: 98
     components:
     - type: Transform
       pos: -0.5,-0.5
       parent: 1
-  - uid: 97
+  - uid: 99
     components:
     - type: Transform
       pos: 0.5,-0.5
       parent: 1
-  - uid: 98
+  - uid: 100
     components:
     - type: Transform
       pos: 1.5,-0.5
       parent: 1
-  - uid: 99
+  - uid: 101
     components:
     - type: Transform
       pos: 2.5,-0.5
@@ -1499,22 +1612,22 @@ entities:
       color: '#FF1212FF'
 - proto: GeneratorWallmountAPU
   entities:
-  - uid: 101
+  - uid: 133
     components:
     - type: Transform
       pos: 1.5,0.5
       parent: 1
-  - uid: 133
+  - uid: 134
     components:
     - type: Transform
       pos: 3.5,1.5
       parent: 1
-  - uid: 134
+  - uid: 135
     components:
     - type: Transform
       pos: -2.5,1.5
       parent: 1
-  - uid: 135
+  - uid: 136
     components:
     - type: Transform
       pos: -0.5,0.5
@@ -1689,8 +1802,6 @@ entities:
     - type: Transform
       pos: 3.5,2.5
       parent: 1
-    - type: Thruster
-      enabled: False
   - uid: 164
     components:
     - type: Transform
@@ -1732,8 +1843,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 5.5,0.5
       parent: 1
-    - type: Thruster
-      enabled: False
     - type: ApcPowerReceiver
       powerLoad: 1
   - uid: 171

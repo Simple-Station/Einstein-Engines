@@ -1,0 +1,28 @@
+#allows mappers to automate random hardpoint loot
+- type: entity
+  name: TFSC Hardpoint Wreck Randomizer
+  id: TFSCHardpointWreckRandomizer
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: _Crescent/Objects/ShuttleWeapons/gatling.rsi
+          state: space_artillery
+    - type: RandomSpawner
+      prototypes:
+       - MachineFrameDestroyed
+       - ShuttleGunMissileRack
+       - WeaponTurretLaser
+       - ShuttleGunTorpedo
+       - MachineFrameDestroyed
+       - PointNFireCannonExample
+       - BaseWeaponTurretLancer
+       - SlugthrowerCannon
+       - ShuttleGunKurosawa
+       - NTVulcanTurret
+       - WeaponTurretVulcan
+      chance: 0.15
+      rarePrototypes:
+       - SAWCleanser
+      rareChance: 0.05

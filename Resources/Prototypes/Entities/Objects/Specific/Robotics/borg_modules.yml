@@ -645,7 +645,7 @@
       - SyndicateJawsOfLife
       - Emag
       - Doorjack
-      - WelderExperimental
+      - WelderIndustrial
       - MassScannerEEBorg
       droppableItems:
       - id: JetpackBlackFilled
@@ -657,6 +657,10 @@
           components:
           - BallisticAmmoProvider
           - CartridgeAmmo
+      - id: AgentIDCard
+        whitelist:
+          components:
+          - Access
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-operative-module }
 - type: entity

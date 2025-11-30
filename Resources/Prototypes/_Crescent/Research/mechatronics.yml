@@ -24,7 +24,7 @@
   recipeUnlocks:
   - MiningDrill
   - BorgModuleMining
-  - MechEquipmentDrill 
+  - MechEquipmentDrill
   - ClothingMaskWeldingGas
 
 - type: technology
@@ -38,7 +38,7 @@
   cost: 7500
   recipeUnlocks:
   - PowerCellHigh
-  - PowerCellMicrortg
+  #- PowerCellMicrortg
   - TurboItemRechargerCircuitboard
   - SMESAdvancedMachineCircuitboard
 

@@ -9,6 +9,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Materials;
 using Content.Shared.Silicons.Bots;
 using Content.Shared.Tag;
+using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 
@@ -65,6 +66,7 @@ public sealed partial class PickNearbyFillableItemOperator : HTNOperator
 
         _entManager.TryGetComponent(fillbot.LinkedSinkEntity, out MaterialStorageComponent? linkedStorage);
         _entManager.TryGetComponent(fillbot.LinkedSinkEntity, out DisposalUnitComponent? disposalUnit);
+        _entManager.TryGetComponent(fillbot.LinkedSinkEntity, out BallisticAmmoProviderComponent? ballisticAmmo);
 
         foreach (var target in _lookup.GetEntitiesInRange(owner, range))
         {
@@ -87,6 +89,21 @@ public sealed partial class PickNearbyFillableItemOperator : HTNOperator
                     || !_tagSystem.HasTag(target, TrashProto)
                     || _entManager.HasComponent<BodyPartComponent>(target))) // Robot is unable to insert bodyparts into Disposals for some reason
                 continue;
+
+            // ballistic ammo - check capacity, whitelist, and exclude spent shells
+            if (ballisticAmmo != null)
+            {
+                var currentShots = ballisticAmmo.Entities.Count + ballisticAmmo.UnspawnedCount;
+                if (currentShots >= ballisticAmmo.Capacity)
+                    continue;
+
+                if (_whitelistSystem.IsWhitelistFailOrNull(ballisticAmmo.Whitelist, target))
+                    continue;
+
+                // Don't pick up spent cartridges
+                if (_entManager.TryGetComponent<CartridgeAmmoComponent>(target, out var cartridge) && cartridge.Spent)
+                    continue;
+            }
 
             const float pathRange = SharedInteractionSystem.InteractionRange - 1;
             var path = await _pathfinding.GetPath(owner, target, pathRange, cancelToken);

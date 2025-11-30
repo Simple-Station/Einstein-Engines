@@ -386,6 +386,10 @@
         fontSize: 12
         color: "#ff4f00"
         requireDetailRange: false
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/gun_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/gun_drop.ogg
 
 - type: entity
   name: HGS VAP-16S Haulikko 12g
@@ -475,6 +479,10 @@
         Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 9.5
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/gun_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/gun_drop.ogg
 
 - type: entity
   name: K&K K870 Bush 12g

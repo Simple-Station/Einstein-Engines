@@ -55,6 +55,10 @@
   - type: SurgeryTool
     endSound:
       path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/gun_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/gun_drop.ogg
 
 - type: entity
   id: BaseWeaponPowerCell

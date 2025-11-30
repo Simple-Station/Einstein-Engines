@@ -37,6 +37,11 @@
       collection: MetalThud
   - type: DamageOtherOnHit
     staminaCost: 16
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/gun_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/gun_drop.ogg
+
 
 - type: entity
   name: minigun
