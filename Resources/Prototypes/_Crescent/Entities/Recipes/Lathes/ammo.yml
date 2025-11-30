@@ -2,6 +2,7 @@
 # RIFLE AMMUNITIONS
 
 - type: latheRecipe
+  name: 45-round magazine (.350 PCM Empty)
   id: MagazinePulse350
   result: MagazinePulse350
   completetime: 1
@@ -18,6 +19,7 @@
     Plasma: 150
 
 - type: latheRecipe
+  name: 5-round magazine (.470 PCM Empty)
   id: MagazinePulse470
   result: MagazinePulse470
   completetime: 1
