@@ -250,16 +250,18 @@ public sealed class DebrisFeaturePlacerSystem : BaseWorldSystem
                 
                 // Load as grid instead of map - wreck files contain grids, not maps
                 var mapId = Comp<MapComponent>(chunk.Map).MapId;
-                var loadedGrid = _mapLoader.TryLoadGrid(mapId, mapPath, out var gridUid);
+                
+                // Calculate the offset from map origin (0,0) to the desired coordinates
+                // This ensures the grid spawns directly at the target location instead of at 0,0
+                var offset = coords.Position;
+                
+                var loadedGrid = _mapLoader.TryLoadGrid(mapId, mapPath, out var gridUid, offset: offset);
                 
                 if (loadedGrid && gridUid != null)
                 {
-                    _sawmill.Debug($"[DebrisPlacer] Grid '{mapPath}' loaded successfully. Grid: {gridUid}");
+                    _sawmill.Debug($"[DebrisPlacer] Grid '{mapPath}' loaded successfully at {coords}. Grid: {gridUid}");
                     
                     var grid = gridUid.Value;
-                    
-                    // Move the grid to the desired coordinates
-                    _xformSys.SetCoordinates(grid, coords);
                     component.OwnedDebris.Add(point, grid);
 
                     // Track ownership for cleanup and chunk management
