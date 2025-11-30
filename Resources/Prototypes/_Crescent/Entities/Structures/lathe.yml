@@ -256,6 +256,8 @@
       - MagazinePulse470
       - MagazinePulse350Fmj
       - MagazinePulse350
+      - MagazineBoxImperialRifleBig
+      - MagazineHeavyRifleSmall
       - CombatKnife
       - ExplosivePayload
       - FlashPayload
@@ -546,6 +548,10 @@
       - ReinforcementFlatpackSyndicateCyborgMedical
       - ReinforcementFlatpackSyndicateCyborgSaboteur
       - ReinforcementFlatpackSyndicateCyborgAssault
+      - VelatorLPC
+      - TaipanLPC
+      - WispLPC
+      - WreckLPC
       - ClothingMaskImperialCombatGasmask
       - ClothingOuterCoatImperialParade
       - ClothingUniformJumpsuitImperialDoctor
@@ -735,6 +741,7 @@
       - GilgameshFlatpack
       - BallisticFablatheFlatpack
       - CyberneticsDermalArmor
+      - ClothingBeltSheathSHIKatana
       - SHIKatana
       - SHIShiverBlade
       - ClothingOuterHardsuitSHIJuggernaut

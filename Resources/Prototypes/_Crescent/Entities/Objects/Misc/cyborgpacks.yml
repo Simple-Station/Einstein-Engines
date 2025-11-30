@@ -40,7 +40,7 @@
     raffle:
       settings: default
   - type: GhostRoleMobSpawner
-    prototype: BorgChassisSyndicateMedical
+    prototype: PlayerBorgSyndicateMedicalBattery
 
 - type: entity
   parent: ReinforcementRadioSyndicate
