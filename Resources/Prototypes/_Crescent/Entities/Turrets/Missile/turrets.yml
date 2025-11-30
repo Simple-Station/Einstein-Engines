@@ -1,0 +1,52 @@
+#shortbow
+
+- type: entity
+  parent: BaseTurretShipgun
+  id: BaseWeaponTurretShortbow
+  suffix: ShipGun
+  name: 48mm 'Shortbow' SRM rocket system
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Turrets/Missile/shortbow.rsi
+      drawdepth: Mobs
+      layers:
+        - state: shortbow
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 500
+          # TODO: Construction graph
+          behaviors:
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
+    - type: ProjectileIFF
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
+    - type: Gun
+      fireOnDropChance: 0
+      projectileSpeed: 40
+      fireRate: 3
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+    - type: BallisticAmmoProvider
+      cycleable: false
+      capacity: 8
+      fillWithDoAfter: true
+      fillDelay: 1
+      #proto: LanceRocketCartridge - on being rebuilt from destruction this gives it free ammo
+      whitelist:
+        tags:
+        - LanceRocket
+    - type: ApcPowerReceiver
+      powerLoad: 2000
+    - type: HardpointAnchorableOnly
+      class: Missile
+      size: Small

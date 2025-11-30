@@ -279,6 +279,77 @@
     layers:
       - state: base-projectile
 
+#gistum
+
+- type: entity
+  id: Bullet90mmPlasma
+  name: 90mm heavy cannon plasma-core shell
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileIFF
+    visualType: Square
+    color: White
+  - type: ShipWeaponProjectile
+  - type: ProjectilePhasePrevent
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 100
+        Piercing: 100
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 175
+    intensitySlope: 75
+    totalIntensity: 500
+    maxTileBreak: 5
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: TimedDespawn
+    lifetime: 10.5
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/mortarcasing.rsi
+    layers:
+      - state: base-projectile
+
+- type: entity
+  id: Bullet90mmGyrostable
+  name: 90mm heavy gyrostable cannon shell
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileIFF
+    visualType: Square
+    color: White
+  - type: ShipWeaponProjectile
+  - type: ProjectilePhasePrevent
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 200
+        Piercing: 100
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 100
+    intensitySlope: 25
+    totalIntensity: 125
+    maxTileBreak: 2
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: TimedDespawn
+    lifetime: 35
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/mortarcasing.rsi
+    layers:
+      - state: base-projectile
 
 - type: entity
   id: Bullet90mmBase
@@ -301,7 +372,7 @@
     explosionType: Default
     maxIntensity: 150
     intensitySlope: 50
-    totalIntensity: 500
+    totalIntensity: 250
     maxTileBreak: 3
   - type: PointLight
     radius: 3.5
@@ -314,7 +385,8 @@
     layers:
       - state: base-projectile
 
-#artillery
+
+#50mm
 
 
 - type: entity
@@ -331,7 +403,41 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 100
+        Structural: 135
+        Piercing: 50
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 8
+    intensitySlope: 15
+    totalIntensity: 15
+    maxTileBreak: 2
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: TimedDespawn
+    lifetime: 20
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/pdtcasing.rsi
+    layers:
+      - state: base-projectile
+
+- type: entity
+  id: Bullet50mmGyrostable
+  name: 50mm gyrostable projectile
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileIFF
+    visualType: Square
+    color: White
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 115
         Piercing: 50
   - type: ExplodeOnTrigger
   - type: Explosive
@@ -345,11 +451,113 @@
     color: orange
     energy: 0.5
   - type: TimedDespawn
-    lifetime: 20
+    lifetime: 35
   - type: Sprite
     sprite: _NF/Objects/SpaceArtillery/pdtcasing.rsi
     layers:
       - state: base-projectile
+
+- type: entity
+  id: Bullet50mmPlasma
+  name: 50mm plasma-core projectile
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileIFF
+    visualType: Square
+    color: White
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 100
+        Piercing: 50
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 15
+    intensitySlope: 35
+    totalIntensity: 35
+    maxTileBreak: 3
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: TimedDespawn
+    lifetime: 10
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/pdtcasing.rsi
+    layers:
+      - state: base-projectile
+
+#120mm
+
+- type: entity
+  id: Bullet120mmPlasma
+  name: 120mm plasma-core shell
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileIFF
+    visualType: Diamond
+    color: White
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 300
+  - type: TimedDespawn
+    lifetime: 25
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/630_armorpiercing_shell_casing.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 800
+    intensitySlope: 650
+    totalIntensity: 800
+    maxTileBreak: 5
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ShipWeaponProjectile
+
+- type: entity
+  id: Bullet120mmGyrostable
+  name: 120mm gyrostable shell
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileIFF
+    visualType: Diamond
+    color: White
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 350
+  - type: TimedDespawn
+    lifetime: 90
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/630_armorpiercing_shell_casing.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 400
+    intensitySlope: 250
+    totalIntensity: 500
+    maxTileBreak: 2
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ShipWeaponProjectile
 
 - type: entity
   id: Bullet120mmBase

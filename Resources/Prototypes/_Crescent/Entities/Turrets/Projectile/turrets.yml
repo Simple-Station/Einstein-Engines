@@ -30,7 +30,7 @@
         ballistic-ammo: !type:Container
     - type: Gun
       fireOnDropChance: 0
-      projectileSpeed: 100
+      projectileSpeed: 70
       fireRate: 3
       selectedMode: FullAuto
       availableModes:
@@ -83,7 +83,7 @@
         ballistic-ammo: !type:Container
     - type: Gun
       fireOnDropChance: 0
-      projectileSpeed: 100
+      projectileSpeed: 75
       fireRate: 4.2
       selectedMode: FullAuto
       availableModes:
@@ -132,7 +132,7 @@
                 collection: MetalGlassBreak
     - type: Gun
       fireOnDropChance: 0
-      projectileSpeed: 95
+      projectileSpeed: 80
       fireRate: 6
       selectedMode: FullAuto
       availableModes:
@@ -193,28 +193,36 @@
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
     - type: Gun
       fireOnDropChance: 0
-      projectileSpeed: 90
+      projectileSpeed: 60
       fireRate: 1.5
       selectedMode: FullAuto
       availableModes:
         - FullAuto
       soundGunshot: /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
-    - type: BasicEntityAmmoProvider
-      proto: Bullet50mmBase
-      capacity: 20
-      count: 60
-    - type: RechargeBasicEntityAmmo
-      rechargeCooldown: 5
-      rechargeSound:
-        path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
-        params:
-          pitch: 1.2
-          variation: 0.08
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          #startingItem: Magazine50mm
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - Magazine50mm
+        gun_chamber:
+          name: Chamber
+          startingItem: Cartridge50mm
+          priority: 1
+          whitelist:
+            tags:
+              - Cartridge50mm
     - type: ApcPowerReceiver
       powerLoad: 1000
     - type: HardpointAnchorableOnly
@@ -247,28 +255,36 @@
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
     - type: Gun
       fireOnDropChance: 0
-      projectileSpeed: 95
+      projectileSpeed: 65
       fireRate: 2.2
       selectedMode: FullAuto
       availableModes:
         - FullAuto
       soundGunshot: /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
-    - type: BasicEntityAmmoProvider
-      proto: Bullet50mmBase
-      capacity: 20
-      count: 60
-    - type: RechargeBasicEntityAmmo
-      rechargeCooldown: 5
-      rechargeSound:
-        path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
-        params:
-          pitch: 1.2
-          variation: 0.08
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          #startingItem: Magazine50mm
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - Magazine50mm
+        gun_chamber:
+          name: Chamber
+          startingItem: Cartridge50mm
+          priority: 1
+          whitelist:
+            tags:
+              - Cartridge50mm
     - type: ApcPowerReceiver
       powerLoad: 800
     - type: HardpointAnchorableOnly
@@ -307,25 +323,25 @@
         ballistic-ammo: !type:Container
     - type: Gun
       fireOnDropChance: 0
-      projectileSpeed: 80
+      projectileSpeed: 70
       fireRate: 0.5
       selectedMode: FullAuto
       availableModes:
         - FullAuto
       soundGunshot: /Audio/Weapons/Guns/Gunshots/ship_duster.ogg
-    - type: BasicEntityAmmoProvider
-      proto: Bullet120mmBase
-      capacity: 6
-      count: 60
-    - type: RechargeBasicEntityAmmo
-      rechargeCooldown: 5
-      rechargeSound:
-        path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
-        params:
-          pitch: 1.2
-          variation: 0.08
+    - type: BallisticAmmoProvider
+      soundInsert:
+        path: /Audio/Weapons/Guns/UnionfallWeapons/amr_close_1.ogg
+      fillWithDoAfter: true
+      fillDelay: 3
+      cycleable: true
+      capacity: 4
+      proto: Cartridge120mm
+      whitelist:
+        tags:
+        - Cartridge120mm
     - type: ApcPowerReceiver
-      powerLoad: 1000
+      powerLoad: 3500
     - type: HardpointAnchorableOnly
       class: Ballistic
       size: Medium
@@ -350,37 +366,45 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 1500
+            damage: 3000
           behaviors:
             - !type:ChangeConstructionNodeBehavior
               node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
     - type: Gun
       fireOnDropChance: 0
-      projectileSpeed: 80
+      projectileSpeed: 70
       fireRate: 1.5
       selectedMode: FullAuto
       availableModes:
         - FullAuto
       soundGunshot: /Audio/Weapons/Guns/Gunshots/ship_duster.ogg
-    - type: BasicEntityAmmoProvider
-      proto: Bullet90mmBase
-      capacity: 30
-      count: 60
-    - type: RechargeBasicEntityAmmo
-      rechargeCooldown: 5
-      rechargeSound:
-        path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
-        params:
-          pitch: 1.2
-          variation: 0.08
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          #startingItem: MagazineGistum
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - GistumClip
+        gun_chamber:
+          name: Chamber
+          startingItem: Cartridge90mm
+          priority: 1
+          whitelist:
+            tags:
+              - Cartridge90mm
     - type: ApcPowerReceiver
-      powerLoad: 1000
+      powerLoad: 2500
     - type: HardpointAnchorableOnly
       class: Ballistic
       size: Large
@@ -396,7 +420,7 @@
       powerLoad: 800
     - type: Gun
       fireOnDropChance: 0
-      projectileSpeed: 85
+      projectileSpeed: 75
       fireRate: 2.1
       selectedMode: FullAuto
       availableModes:
@@ -427,7 +451,7 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 2500
+            damage: 3500
           behaviors:
             - !type:ChangeConstructionNodeBehavior
               node: machineFrame
@@ -439,7 +463,7 @@
         ballistic-ammo: !type:Container
     - type: Gun
       fireOnDropChance: 0
-      projectileSpeed: 75
+      projectileSpeed: 70
       fireRate: 0.4
       selectedMode: SemiAuto
       availableModes:
@@ -449,15 +473,15 @@
       soundInsert:
         path: /Audio/Weapons/Guns/UnionfallWeapons/amr_close_1.ogg
       fillWithDoAfter: true
-      fillDelay: 1
+      fillDelay: 5
       cycleable: true
       capacity: 2
-      #proto: Cartridge300mm
+      proto: Cartridge300mm
       whitelist:
         tags:
         - Cartridge300mm
     - type: ApcPowerReceiver
-      powerLoad: 1000
+      powerLoad: 10000
     - type: HardpointAnchorableOnly
       class: Ballistic
       size: Large
@@ -476,14 +500,14 @@
         - state: ncwl-howitzer
     - type: Gun
       fireOnDropChance: 0
-      projectileSpeed: 85
+      projectileSpeed: 75
       fireRate: 1.1
       selectedMode: FullAuto
       availableModes:
         - FullAuto
       soundGunshot: /Audio/Weapons/Guns/Gunshots/ship_duster.ogg
     - type: ApcPowerReceiver
-      powerLoad: 750
+      powerLoad: 8500
 
 #FLAK
 
@@ -518,7 +542,7 @@
           ents: []
     - type: Gun
       fireOnDropChance: 0
-      projectileSpeed: 90
+      projectileSpeed: 60
       fireRate: 0.65
       selectedMode: FullAuto
       availableModes:
