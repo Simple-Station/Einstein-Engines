@@ -170,6 +170,8 @@
     Biomass: 10
     Gold: 400
 
+#Weapons
+
 - type: latheRecipe
   id: EnergyDagger
   result: EnergyDaggerBox
@@ -295,6 +297,8 @@
     Plasma: 500
     Steel: 100
 
+#Components
+
 - type: latheRecipe
   id:  BallisticCycler1Craft
   result: BallisticCycler1
@@ -347,19 +351,21 @@
     Copper: 1500
     Silver: 1500
 
+#Borgs
+
 - type: latheRecipe
   id: ReinforcementFlatpackSyndicateCyborgMedical
   result: ReinforcementFlatpackSyndicateCyborgMedical
   completetime: 1.5
   materials:
-    AdvancedElectronics: 1500
+    AdvancedElectronics: 1000
     AdvancedMechatronics: 1000
     Silver: 2000
     Steel: 1500
     Gold: 500
     BallisticCycler: 500
     Plasma: 1500
-    HardlightGenerator: 500
+    HardlightGenerator: 1000
     LaserLocus: 500
 
 - type: latheRecipe
@@ -394,5 +400,40 @@
     LaserLocus: 500
     Tungsten: 1000
 
+#ship LPCS
 
+- type: latheRecipe
+  id: VelatorLPC
+  result: ShipVoucherVelator
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 4000
+    ShipComponents: 5000
+    ShipHull: 5000
 
+- type: latheRecipe
+  id: TaipanLPC
+  result: ShipVoucherTaipan
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 4000
+    ShipComponents: 5000
+    ShipHull: 5000
+
+- type: latheRecipe
+  id: WispLPC
+  result: ShipVoucherWisp
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 4000
+    ShipComponents: 5000
+    ShipHull: 3000
+
+- type: latheRecipe #No one will ever build this
+  id: WreckLPC
+  result: ShipVoucherWreck
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 4000
+    ShipComponents: 4000
+    ShipHull: 4000
