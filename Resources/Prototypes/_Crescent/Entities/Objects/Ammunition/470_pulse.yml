@@ -1,0 +1,96 @@
+- type: entity
+  id: CartridgePulse470Fmj
+  name: cartridge (.470 PCM)
+  parent: BaseCartridge
+  components:
+  - type: CartridgeAmmo
+    proto: BulletPulse470Fmj
+  - type: Tag
+    tags:
+      - CartridgePulse470
+      - Cartridge
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/470_pulse.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: EmitSoundOnLand
+    sound:
+      collection: HeavyBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: HeavyBulletBounce
+
+- type: entity
+  id: BulletPulse470Fmj
+  name: bullet (.470 PCM)
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 100
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Thermobaric
+    maxIntensity: 2
+    intensitySlope: 2
+    totalIntensity: 5
+  - type: Sprite
+    noRot: false
+    sprite: _Crescent/Objects/Weapons/Projectiles/ballistic.rsi
+    layers:
+    - state: pulse
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    color: "#4ba5ff"
+    radius: 1.0
+    energy: 3.0
+
+- type: entity
+  id: MagazinePulse470
+  name: 5-round magazine (.470 PCM)
+  suffix: Empty
+  parent: BaseMagazinePistol
+  components:
+  - type: Tag
+    tags:
+      - MagazinePulse470
+  - type: Item
+    size: Normal
+  - type: BallisticAmmoProvider
+    proto: null
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgePulse470
+    capacity: 3
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+    zeroVisible: false
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/470_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/big_mag_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/big_mag_drop.ogg
+
+- type: entity
+  id: MagazinePulse470Fmj
+  suffix: FMJ
+  parent: MagazinePulse470
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePulse470Fmj
