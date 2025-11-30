@@ -1,0 +1,67 @@
+
+- type: entity
+  id: ShortbowRocketProjectile
+  name: 48mm high-explosive fragmentation rocket
+  description: Shit.
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 125
+        Blunt: 40
+  - type: TimedDespawn
+    lifetime: 8
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Projectiles/shortbow.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 500
+    intensitySlope: 100
+    totalIntensity: 600
+    maxTileBreak: 2
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ProjectileIFF
+    visualType: SquareReticle
+    color: Red
+  - type: HeatSeeking
+    rotationSpeed: 15 # slow rotation so it isnt aimbot, still fairly accurate though
+    acceleration: 120
+    topSpeed: 100
+    fieldOfView: 30
+    defaultSeekingRange: 400
+    guidanceAlgorithm: PredictiveGuidance
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
+        density: 100
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ExplodeBehavior
