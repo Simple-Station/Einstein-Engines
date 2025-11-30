@@ -2,6 +2,38 @@
 # RIFLE AMMUNITIONS
 
 - type: latheRecipe
+  id: MagazinePulse350
+  result: MagazinePulse350
+  completetime: 1
+  materials:
+    Steel: 100
+
+- type: latheRecipe
+  id: MagazinePulse350Fmj
+  result: MagazinePulse350Fmj
+  completetime: 1
+  materials:
+    Steel: 500
+    Uranium: 200
+    Plasma: 150
+
+- type: latheRecipe
+  id: MagazinePulse470
+  result: MagazinePulse470
+  completetime: 1
+  materials:
+    Steel: 100
+
+- type: latheRecipe
+  id: MagazinePulse470Fmj
+  result: MagazinePulse470Fmj
+  completetime: 1
+  materials:
+    Steel: 1000
+    Uranium: 400
+    Plasma: 300
+
+- type: latheRecipe
   id: DrumMagazineShotgunEmpty
   result: DrumMagazineShotgunEmpty
   completetime: 1
