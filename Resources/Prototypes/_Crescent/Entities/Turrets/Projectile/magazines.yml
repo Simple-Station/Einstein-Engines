@@ -4,7 +4,6 @@
   name: 35mm FMJ USM feeder drum
   description: A munitions drum designed for 35mm rotary cannons.
   parent: BaseItem
-  abstract: true
   components:
   - type: Tag
     tags:
@@ -47,7 +46,6 @@
   name: 35mm gyrostable USM feeder drum
   description: A munitions drum designed for 35mm rotary cannons. This one contains special gyrostable projectiles.
   parent: BaseItem
-  abstract: true
   components:
   - type: Tag
     tags:
@@ -90,7 +88,6 @@
   name: 35mm plasma-core USM feeder drum
   description: A munitions drum designed for 35mm rotary cannons. This one contains special photon-plasma core projectiles.
   parent: BaseItem
-  abstract: true
   components:
   - type: Tag
     tags:
@@ -135,7 +132,6 @@
   name: 50mm FMJ USM feeder drum
   description: A munitions drum designed for 50mm repeater cannons.
   parent: BaseItem
-  abstract: true
   components:
   - type: Tag
     tags:
@@ -178,7 +174,6 @@
   name: 50mm gyrostable USM feeder drum
   description: A munitions drum designed for 50mm repeater cannons. This one contains special gyrostable projectiles.
   parent: BaseItem
-  abstract: true
   components:
   - type: Tag
     tags:
@@ -221,7 +216,6 @@
   name: 50mm plasma-core USM feeder drum
   description: A munitions drum designed for 50mm cannons. This one contains special photon-plasma core projectiles.
   parent: BaseItem
-  abstract: true
   components:
   - type: Tag
     tags:
@@ -267,7 +261,6 @@
   name: 20mm FMJ USM feeder drum
   description: A munitions drum designed for 20mm repeater cannons.
   parent: BaseItem
-  abstract: true
   components:
   - type: Tag
     tags:
@@ -310,7 +303,6 @@
   name: 20mm gyrostable USM feeder drum
   description: A munitions drum designed for 20mm repeater cannons. This one contains special gyrostable projectiles.
   parent: BaseItem
-  abstract: true
   components:
   - type: Tag
     tags:
@@ -353,7 +345,6 @@
   name: 20mm plasma-core USM feeder drum
   description: A munitions drum designed for 20mm repeater cannons. This one contains special photon-plasma core projectiles.
   parent: BaseItem
-  abstract: true
   components:
   - type: Tag
     tags:
