@@ -58,6 +58,12 @@
   - type: SpentAmmoVisuals
   - type: StaticPrice
     price: 20
+  - type: EmitSoundOnLand
+    sound:
+      collection: HeavyBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: HeavyBulletBounce
 
 - type: entity
   id: Projectile27mmHE
@@ -108,6 +114,12 @@
         fontSize: 12
         color: "#ffb700"
         requireDetailRange: false
+  - type: EmitSoundOnLand
+    sound:
+      collection: HeavyBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: HeavyBulletBounce
 
 - type: entity
   id: Projectile40mmCan
@@ -164,6 +176,12 @@
         fontSize: 12
         color: "#ffffff"
         requireDetailRange: false
+  - type: EmitSoundOnLand
+    sound:
+      collection: HeavyBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: HeavyBulletBounce
 
 - type: entity
   id: Projectile40mmSmoke
@@ -215,6 +233,12 @@
         fontSize: 12
         color: "#ff4f00"
         requireDetailRange: false
+  - type: EmitSoundOnLand
+    sound:
+      collection: HeavyBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: HeavyBulletBounce
 
 - type: entity
   id: Projectile40mmThermobaric
@@ -267,6 +291,12 @@
         fontSize: 12
         color: "#ffb700"
         requireDetailRange: false
+  - type: EmitSoundOnLand
+    sound:
+      collection: HeavyBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: HeavyBulletBounce
 
 - type: entity
   id: Projectile40mmFrag
@@ -281,9 +311,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Fragmentation
-    maxIntensity: 100
-    intensitySlope: 4
-    totalIntensity: 100
+    maxIntensity: 130
+    intensitySlope: 3
+    totalIntensity: 130
     canCreateVacuum: false
   - type: PointLight
     radius: 3.5
@@ -319,6 +349,12 @@
         fontSize: 12
         color: "#1aff00"
         requireDetailRange: false
+  - type: EmitSoundOnLand
+    sound:
+      collection: HeavyBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: HeavyBulletBounce
 
 - type: entity
   id: Projectile40mmHEDP
@@ -337,15 +373,74 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Fragmentation
-    maxIntensity: 100
-    intensitySlope: 3
-    totalIntensity: 75
+    maxIntensity: 80
+    intensitySlope: 4
+    totalIntensity: 80
     maxTileBreak: 1
   - type: PointLight
     radius: 3.5
     color: orange
     energy: 0.5
 
+- type: entity
+  id: Cartridge40mmEMP
+  name: 40mm M433 EMP grenade
+  parent: BaseItem
+  description: A 40mm grenade launcher round, commonly called a 40 mike mike. This one has a EMP warhead.
+  components:
+  - type: Tag
+    tags:
+      - Shell40mm
+  - type: Item
+    size: Small
+  - type: CartridgeAmmo
+    proto: Projectile40mmEMP
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/40mm_grenade.rsi
+    layers:
+      - state: emp
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: SpentAmmoVisuals
+    state: "emp"
+  - type: Appearance
+  - type: StaticPrice
+    price: 20
+  - type: ExtendDescription
+    descriptionList:
+      - description: Intended target - Electronics
+        fontSize: 12
+        color: "#1aff00"
+        requireDetailRange: false
+  - type: EmitSoundOnLand
+    sound:
+      collection: HeavyBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: HeavyBulletBounce
+
+- type: entity
+  id: Projectile40mmEMP
+  name: rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: EmpOnTrigger
+    range: 3
+    energyConsumption: 2700000
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Electric
+    maxIntensity: 100
+    intensitySlope: 1
+    totalIntensity: 25
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
 # Misc Rockets
 
 - type: entity

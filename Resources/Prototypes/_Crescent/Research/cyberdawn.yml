@@ -31,7 +31,6 @@
   - WeaponRifleAkCyberdawn
   - WeaponRifleKrinkovCyberdawn
   - WeaponPistolViperWoodCyberdawn
-  - BallisticCycler1Craft
 
 - type: technology
   id: CyberdawnPowersink
@@ -69,6 +68,21 @@
   recipeUnlocks:
   - RadioJammerCyberdawn
 
+- type: technology
+  id: CyberdawnLPCT1
+  name: research-technology-cyberdawn-CDTShipT1LPC
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Cyberdawn
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - VelatorLPC
+  - TaipanLPC
+  - WispLPC
+  - WreckLPC
+
 #tier 2
 
 - type: technology
@@ -91,9 +105,10 @@
     state: icon
   discipline: Cyberdawn
   tier: 2
-  cost: 6000
+  cost: 7500
   recipeUnlocks:
   - EmagCyberdawn
+  - DoormagCyberdawn
 
 - type: technology
   id: CyberdawnEmpImplanter
@@ -123,6 +138,35 @@
   - WeaponRifleSVDMarksmanNCSP
 
 - type: technology
+  id: CDTAdvancedFirearmcomponents
+  name: research-technology-cyberdawn-CDTAdvancedFirearmcomponents
+  icon:
+    sprite: _Crescent/Objects/Materials/materials.rsi
+    state: tubeloaderrobotics
+  discipline: Cyberdawn
+  tier: 2
+  cost: 9000
+  recipeUnlocks:
+  - BallisticCycler1Craft
+  - TubeLoader1Craft
+  - LaserLocus1Craft
+  - HardlightGenerator1Craft
+
+
+- type: technology
+  id: CDTAdvancedComponents
+  name: research-technology-cyberdawn-CDTAdvancedComponents
+  icon:
+    sprite: _Crescent/Objects/Materials/materials.rsi
+    state: advancedmechanic
+  discipline: Cyberdawn
+  tier: 2
+  cost: 9000
+  recipeUnlocks:
+  - AdvancedMechatronics1Craft
+  - AdvancedElectronics1Craft
+
+- type: technology
   id: CyberdawnEnergyDagger
   name: research-technology-cyberdawn-energydagger
   icon:
@@ -135,6 +179,18 @@
   - EnergyDagger
 
 - type: technology
+  id: ESword
+  name: research-technology-cyberdawn-CDTPhoronBlade
+  icon:
+    sprite: Objects/Weapons/Melee/e_sword.rsi
+    state: icon
+  discipline: Cyberdawn
+  tier: 2
+  cost: 7500
+  recipeUnlocks:
+  - EnergySword
+
+- type: technology
   id: CyberdawnZhongyao
   name: research-technology-cyberdawn-zhongyao
   icon:
@@ -145,6 +201,30 @@
   cost: 5000
   recipeUnlocks:
   - ClothingOuterHardsuitSyndieMedicCyberdawn
+
+- type: technology
+  id: CDTSaboteurcyborgs
+  name: research-technology-cyberdawn-CDTSaboteurcyborgs
+  icon:
+    sprite: Mobs/Silicon/chassis.rsi
+    state: synd_engi
+  discipline: Cyberdawn
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - ReinforcementFlatpackSyndicateCyborgSaboteur
+
+- type: technology
+  id: CDTMedicalcyborgs
+  name: research-technology-cyberdawn-CDTMedicalcyborgs
+  icon:
+    sprite: Mobs/Silicon/chassis.rsi
+    state: synd_medical
+  discipline: Cyberdawn
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - ReinforcementFlatpackSyndicateCyborgMedical
 
 # tier 3
 
@@ -186,6 +266,18 @@
   - ClothingEyesThermalVisionGogglesCyberdawn
 
 - type: technology
+  id: CDTCombatcyborgs
+  name: research-technology-cyberdawn-CDTCombatcyborgs
+  icon:
+    sprite: Mobs/Silicon/chassis.rsi
+    state: synd_sec
+  discipline: Cyberdawn
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - ReinforcementFlatpackSyndicateCyborgAssault
+
+- type: technology
   id: CyberdawnAdvancedLaunchers
   name: research-technology-cyberdawn-advancedlaunchers
   icon:
@@ -197,3 +289,15 @@
   recipeUnlocks:
   - WeaponLCartridgeRPGSmall
   - WeaponLauncherRPGNSCP
+
+- type: technology
+  id: ESwordDouble
+  name: research-technology-cyberdawn-CDTDualPhoronBlade
+  icon:
+    sprite: Objects/Weapons/Melee/e_sword_double.rsi
+    state: icon
+  discipline: Cyberdawn
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - EnergySwordDouble

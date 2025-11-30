@@ -175,9 +175,11 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                 return;
             }
 
-            if (labelName != null && !gridAABB.Intersects(viewAABB) && ShowIFF)
+            //.2 NOTE: this code handles the ship dots and icons at the edge of your nav screen
+            // this is likely where the ship icons not showing up is handled
+            if (labelName != null && labelName !="grid" && !gridAABB.Intersects(viewAABB) && ShowIFF) //.2 | 2025 - edit to make exploded/generated grids not spam ur radar screen
             {
-                const float ShipSelectionDotRadius = 5f;
+                const float ShipSelectionDotRadius = 1f;
                 float xSpaceRequired = ShipSelectionDotRadius;
                 float ySpaceRequired = ShipSelectionDotRadius;
                 Texture? icon = null;
@@ -570,7 +572,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
             gridCentre.Y = -gridCentre.Y;
             var distance = gridCentre.Length();
-            if (ShowIFF && labelName != null)
+            if (ShowIFF && labelName != null && labelName != "grid") //.2 edit: grids dont show up as labels anymore finally
             {
                 var labelText = Loc.GetString(
                     "shuttle-console-iff-label",

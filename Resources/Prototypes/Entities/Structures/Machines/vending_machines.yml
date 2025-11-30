@@ -1105,7 +1105,7 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-    ejectState: eject-unshaded 
+    ejectState: eject-unshaded
     initialStockQuality: 1
     denyState: deny-unshaded
   - type: Sprite
@@ -2268,7 +2268,7 @@
 - type: entity
   parent: VendingMachine
   id: VendingMachineTankDispenserEVA
-  suffix: EVA [O2, N2]
+  suffix: EVA [O2]
   name: gas tank dispenser
   description: A vendor for dispensing gas tanks.
   components:

@@ -8,6 +8,10 @@
   icon: "JobIconCaptain"
   supervisors: job-supervisors-lols
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
       min: 25000

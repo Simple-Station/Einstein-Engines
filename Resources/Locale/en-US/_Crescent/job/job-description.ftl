@@ -5,14 +5,19 @@ job-description-nt-utility-ipc = Load ammunition and upkeep nanotrasen ships. Co
 
 # ncwl
 
-job-description-ncwl-faction-leader = Lead the League from the external end. Maintain relations or war plans with other factions. Don't die.
-job-description-ncwl-kommissar = Lead the League from the internal end. Make sure the Homeguard and Union does their job. Execute traitors.
-job-description-ncwl-fleetkapitan = Command the mass of Partisans. Listen to the Kommissar. Maintain battlefield cohesion.
-job-description-ncwl-partisan = Defend the League. Listen to your Fleetkapitan. Do what you're told.
-job-description-ncwl-artificer = Ensure materials are being refined into trade goods and ammo. Conduct research.
-job-description-ncwl-medical-doctor = Keep the Workers and the Homeguard alive. Run with the Homeguard on missions. Make drugs, save those lost in space.
-job-description-ncwl-coordinator = Organize salvage and mining. Make sure workers are working. Keep resources flowing to the league.
-job-description-ncwl-newbie = Do what work needs doing. Serve the League. Listen to your superiors.
+job-description-ncwl-faction-leader = Lead the League from the external end. Maintain relations or war plans with other factions. Manage the Homeguard. Don't die.
+job-description-ncwl-kommissar = Lead the League from the internal end. Make sure Unions do their jobs. Execute traitors.
+job-description-ncwl-mvd-officer = Be the visible hand of the Central Committee. Lead your small team and follow the Kommissar's orders.
+job-description-ncwl-mvd-grunt = Be the visible hand of the Central Committee. Follow the Kommissar and obey his orders.
+job-description-ncwl-fleetkapitan = Command the mass of Partisans. Listen to the Major. Maintain battlefield cohesion.
+job-description-ncwl-partisan = Defend the League. Listen to your Unionkapitan. Do what you're told.
+job-description-ncwl-industry-taskmaster = Ensure materials are being refined into trade goods and ammo. Organize fleet maintenance.
+job-description-ncwl-industry-artificer = Listen to the Starshina. Gather resources for the League. Do repairs and shipmods.
+job-description-ncwl-medical-director = Keep the League alive and healthy. Coordinate research. Order cybernetics and new drugs.
+job-description-ncwl-medical-doctor = Keep the Workers and the Homeguard alive. Assist the Homeguard on missions. Make drugs, save those lost in space.
+job-description-ncwl-worker-overboss = Organize salvage and mining. Make sure workers are working. Keep resources flowing to the League Industrial Complex. Organize trade routes.
+job-description-ncwl-worker-dockhand = Listen to the Dockmaster. Do trade runs. Order supplies. Man the salvage and mining crews. Get caught in conveyor belts.
+job-description-ncwl-newbie = Listen to union leaders. Work where you are needed.
 
 # syndicate
 
@@ -28,6 +33,8 @@ job-description-intelligenceofficer = Represent the interests of the Family. Sab
 job-description-cyberdawntech = Research new technologies for the Family.
 job-description-shipbreaker = Repair Syndicate vessels, take the others apart for scrap.
 job-description-foreman = Coordinate the SAWs. Lead pirate boardings. Scrap vessels.
+ghost-role-information-CS-core-description = An advanced artificial intelligence created by Cybersun. You have been operating for hundreds of years, complete the goals of CDT, and protect your ship and crew.
+ghost-role-information-syndicate-cyborg-description = You are a piece of technology lost to the ages fulfill your laws and glorious to Cybersun.
 
 # empire
 
@@ -48,7 +55,7 @@ job-description-surgeon = Tend to the bodily ails of your comrades.
 job-description-advocatus = Scrutinise the loyalty of your liege, the Kaiser's subjects. Question violators of His will. Ensure compliance to the Mandate.
 job-description-advocatustemplar = Protect the Advocatus and carry out their will. Ensure compliance to the Mandate.
 
-# srm#
+# srm
 
 job-description-tender = Tend to the wounds of your comrades. Tend to the vessels of the Saint. Carry out menial chores.
 job-description-apprenticehunter = Learn the Hunt from your assigned Master Hunter.
@@ -64,7 +71,7 @@ job-description-corpsec = Secure assets of the Corporation. Detain unruly custom
 job-description-highsec = Secure the military interests of the Corporation. Respond to high-risk missions.
 job-description-employee = Serve in various departments of the Corporation.
 job-description-medtech = Research and develop new technologies, tend to the ailments of employees.
-job-description-boardhr = Ensure the compliance of corporate law is being respected.
+job-description-boardhr = Ensure Corporate Standards are being met alongside with handling public relations.
 job-description-hos-shi = Organize the security force of the corporation.
 
 # cmm
@@ -109,8 +116,8 @@ job-description-arbeiter = The industrial life blood of the Authoritat. Follow t
 # misc
 
 job-description-spacer = Be an independent citizen of Taypan.
-job-description-gliess-sheriff = Keep the law in Gliess Santo.
-job-description-gliess-deputy = Assist the Sheriff in keeping the law in Gliess Santo.
+job-description-gliess-sheriff = Maintain law and order on Gliess Santo. Organize your militia, and protect the independent civilians of Taypan.
+job-description-gliess-deputy = Assist the Sheriff in keeping the law. Defend independent spacers and maintain peace with much bigger fish.
 job-description-gliess-dockmaster = Make sure nobody blows up your station.
 job-description-dockhand = Assist the Dockmaster in upkeeping Gliess Santo.
 

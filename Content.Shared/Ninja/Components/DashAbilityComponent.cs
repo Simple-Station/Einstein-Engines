@@ -21,6 +21,10 @@ public sealed partial class DashAbilityComponent : Component
 
     [DataField, AutoNetworkedField]
     public EntityUid? DashActionEntity;
+
+    // If true, this item can dash to tiles even if they're not visible/unoccluded to the user.
+    [DataField("allowDashToUnseen")]
+    public bool AllowDashToUnseen = false;
 }
 
 public sealed partial class DashEvent : WorldTargetActionEvent;

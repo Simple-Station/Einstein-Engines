@@ -3,14 +3,17 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
-    lifetime: 0.4
+    lifetime: 0.16
   - type: Sprite
     drawdepth: Effects
+    offset: 0.15, 0
     layers:
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
-      sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
-      state: muzzle_bullet
+      sprite: _Crescent/Objects/Effects/Muzzleflash/medium.rsi
+      state: flash
+    - sprite: _Crescent/Objects/Effects/Muzzleflash/medium.rsi
+      state: smoke
   - type: EffectVisuals
   - type: Tag
     tags:
@@ -53,13 +56,12 @@
   abstract: true
   components:
   - type: Reflective
-  - type: FlyBySound
   - type: Clickable
   - type: Sprite
     noRot: false
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    sprite: _Crescent/Objects/Weapons/Projectiles/ballistic.rsi
     layers:
-    - state: bullet
+    - state: medium
       shader: unshaded
   - type: Physics
     bodyType: Dynamic
@@ -75,15 +77,6 @@
         mask:
         - Impassable
         - BulletImpassable
-      fly-by: &flybyfixture
-        shape: !type:PhysShapeCircle
-          radius: 1.5
-        layer:
-        - Impassable
-        - MidImpassable
-        - HighImpassable
-        - LowImpassable
-        hard: False
   - type: Projectile
     impactEffect: BulletImpactEffect
     damage:
@@ -93,6 +86,12 @@
       path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg
   - type: TimedDespawn
     lifetime: 10
+  - type: LagCompensation
+  - type: PointLight
+    enabled: true
+    color: "#ffe3c4"
+    radius: 1.25
+    energy: 5.0
 
 - type: entity
   id: BaseBulletTrigger # Trigger-on-collide bullets
@@ -115,7 +114,6 @@
         mask:
         - Impassable
         - BulletImpassable
-      fly-by: *flybyfixture
 
 - type: entity
   id: BaseBulletPractice
@@ -164,11 +162,6 @@
     damage:
       types:
         Blunt: 14
-  - type: PointLight
-    enabled: true
-    color: "#ff4300"
-    radius: 2.0
-    energy: 7.0
   - type: IgniteOnCollide
     fireStacks: 0.25
 
@@ -233,7 +226,6 @@
         mask:
           - Impassable
           - BulletImpassable
-      fly-by: *flybyfixture
   - type: Ammo
   - type: Projectile
     damage:
@@ -274,7 +266,6 @@
         hard: false
         mask:
         - Opaque # WWDP allow shooting through windows
-      fly-by: *flybyfixture
   - type: Ammo
   - type: StaminaDamageOnCollide
     damage: 30
@@ -317,7 +308,6 @@
         mask:
         - Impassable
         - BulletImpassable
-      fly-by: *flybyfixture
   - type: Ammo
   - type: StaminaDamageOnCollide
     damage: 20
@@ -356,7 +346,6 @@
         hard: false
         mask:
         - Opaque # WWDP allow shooting through windows
-      fly-by: *flybyfixture
   - type: Ammo
   - type: StaminaDamageOnCollide
     damage: 1
@@ -392,7 +381,6 @@
         hard: false
         mask:
         - Opaque
-      fly-by: *flybyfixture
   - type: Reflective # Goobstation - Make emitter bolts reflect as energy
     reflective:
     - Energy
@@ -437,7 +425,6 @@
         hard: false
         mask:
         - Opaque
-      fly-by: *flybyfixture
   - type: StaminaDamageOnCollide
     damage: 40
   - type: Projectile
@@ -488,7 +475,7 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 40 # Lavaland Change - TOTAL PKA VICTORY
+        Blunt: 40 # Hullrot change, same as the default PKA damage
         Structural: 30 # Lavaland/Eris change: Yes easy break ins
   # Short lifespan
   - type: TimedDespawn
@@ -590,7 +577,6 @@
         hard: false
         mask:
         - Opaque
-      fly-by: *flybyfixture
   - type: Projectile
     damage:
       types:
@@ -807,7 +793,6 @@
         - Impassable
         - BulletImpassable
         hard: true
-      fly-by: *flybyfixture
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallic
@@ -853,7 +838,6 @@
         - Impassable
         - BulletImpassable
         hard: true
-      fly-by: *flybyfixture
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallic
@@ -900,7 +884,6 @@
         - Impassable
         - BulletImpassable
         hard: true
-      fly-by: *flybyfixture
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallic
@@ -1191,7 +1174,6 @@
         hard: false
         mask:
         - Opaque # WWDP allow shooting through windows
-      fly-by: *flybyfixture
   - type: Ammo
   - type: StaminaDamageOnCollide
     damage: 20
@@ -1233,7 +1215,6 @@
         hard: false
         mask:
         - Opaque
-      fly-by: *flybyfixture
   - type: Ammo
 
 - type: entity
@@ -1352,7 +1333,6 @@
         hard: false
         mask:
         - Opaque
-      fly-by: *flybyfixture
   - type: Projectile
     impactEffect: BulletImpactEffectRedDisabler
     damage:
@@ -1390,7 +1370,6 @@
         hard: false
         mask:
         - Opaque # WWDP allow shooting through windows
-      fly-by: *flybyfixture
   - type: Ammo
   - type: Projectile
     impactEffect: BulletImpactEffectOrangeDisabler

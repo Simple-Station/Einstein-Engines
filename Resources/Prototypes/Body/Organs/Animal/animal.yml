@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: BaseAnimalOrganUnGibbable
   parent: BaseItem
   abstract: true
@@ -9,11 +9,15 @@
     sprite: Mobs/Species/Human/organs.rsi
   - type: StaticPrice
     price: 50
+  - type: Extractable
+  - type: Produce
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 5
+        maxVol: 15
         reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
   - type: FlavorProfile
@@ -57,8 +61,10 @@
         maxVol: 100.0
         canReact: false
       food:
-        maxVol: 5
+        maxVol: 15
         reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
 
@@ -77,8 +83,10 @@
       stomach:
         maxVol: 40
       food:
-        maxVol: 5
+        maxVol: 15
         reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
   - type: Stomach

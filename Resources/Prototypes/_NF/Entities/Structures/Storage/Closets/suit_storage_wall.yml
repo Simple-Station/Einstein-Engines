@@ -20,12 +20,5 @@
     stateDoorClosed: generic_door
     stateLocked: locked
     stateUnlocked: unlocked
-  - type: EntityStorage
-    closeSound:
-      path: /Audio/Machines/windoor_open.ogg
-    openSound:
-      path: /Audio/Machines/windoor_open.ogg
-    denySound:
-      path: /Audio/Machines/airlock_deny.ogg
   - type: Fixtures
     fixtures: {}

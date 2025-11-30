@@ -239,6 +239,12 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/spear.rsi
   - type: GunRequiresWield
+  - type: HeldSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: UseDelay
+    delay: 0.75 #No Quickscoping
+  - type: UseDelayBlockShoot
   - type: Item
     shape:
     - 0,0,5,2

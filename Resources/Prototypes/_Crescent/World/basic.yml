@@ -1,4 +1,18 @@
 ﻿- type: spaceBiome
+  id: GliessSantoExclusionZone
+  priority: 10000
+  minX: -5
+  maxX: 5
+  minY: -5
+  maxY: 5
+  noiseRanges: {}
+  chunkComponents:
+  - type: DebrisFeaturePlacerController
+    densityNoiseChannel: DensityGraveyard
+    densityClip: false
+    randomCancelChance: 1.0
+
+- type: spaceBiome
   id: GraveyardWrecks
   priority: 9000
   minX: 28
@@ -17,6 +31,60 @@
     - id: ScrapDebrisMedium
       prob: 1
     - id: ScrapDebrisLarge
+      prob: 1
+    - id: GargutWreckFull
+      prob: 1
+    - id: TriumWreck1
+      prob: 1
+    - id: TriumWreck2
+      prob: 1
+    - id: SuzWreck1
+      prob: 1
+    - id: SuzWreck2
+      prob: 1
+    - id: SuzWreck3
+      prob: 1
+    - id: NemWreck1
+      prob: 1
+    - id: NemWreck2
+      prob: 1
+    - id: IvarWreck1
+      prob: 1
+    - id: ClemWreck1
+      prob: 1
+    - id: ClemWreck2
+      prob: 1
+    - id: ClemWreck3
+      prob: 1
+    - id: ExhumerGag
+      prob: 1
+    - id: GazWreck1
+      prob: 1
+    - id: GazWreck2
+      prob: 1
+    - id: HamWreck1
+      prob: 1
+    - id: HindWreck1
+      prob: 1
+    - id: LodkWreck
+      prob: 1
+    - id: PraxWreck1
+      prob: 1
+    - id: QianWreck1
+      prob: 1
+    - id: SternWreck1
+      prob: 1
+    - id: WereGood
+      prob: 1
+    - id: MoloWreck1
+      prob: 1
+    - id: MusiWreck1
+      prob: 1
+    - id: RadAtee
+      prob: 0.1
+    - id: CorvWreck1
+      prob: 1
+    - id: CocWreck1
       prob: 1
   - type: NoiseRangeCarver
     ranges:
@@ -43,6 +111,60 @@
       prob: 1
     - id: ScrapDebrisLarge
       prob: 1
+    - id: GargutWreckFull
+      prob: 1
+    - id: TriumWreck1
+      prob: 1
+    - id: TriumWreck2
+      prob: 1
+    - id: SuzWreck1
+      prob: 1
+    - id: SuzWreck2
+      prob: 1
+    - id: SuzWreck3
+      prob: 1
+    - id: NemWreck1
+      prob: 1
+    - id: NemWreck2
+      prob: 1
+    - id: IvarWreck1
+      prob: 1
+    - id: ClemWreck1
+      prob: 1
+    - id: ClemWreck2
+      prob: 1
+    - id: ClemWreck3
+      prob: 1
+    - id: ExhumerGag
+      prob: 1
+    - id: GazWreck1
+      prob: 1
+    - id: GazWreck2
+      prob: 1
+    - id: HamWreck1
+      prob: 1
+    - id: HindWreck1
+      prob: 1
+    - id: LodkWreck
+      prob: 1
+    - id: PraxWreck1
+      prob: 1
+    - id: QianWreck1
+      prob: 1
+    - id: SternWreck1
+      prob: 1
+    - id: WereGood
+      prob: 1
+    - id: MoloWreck1
+      prob: 1
+    - id: MusiWreck1
+      prob: 1
+    - id: RadAtee
+      prob: 0.1
+    - id: CorvWreck1
+      prob: 1
+    - id: CocWreck1
+      prob: 1
   - type: NoiseRangeCarver
     ranges:
     - 0.4, 0.6
@@ -62,11 +184,59 @@
   - type: NoiseDrivenDebrisSelector
     noiseChannel: WreckGraveyard
     debrisTable:
-    - id: ScrapDebrisSmall
+    - id: GargutWreckFull
       prob: 1
-    - id: ScrapDebrisMedium
+    - id: TriumWreck1
       prob: 1
-    - id: ScrapDebrisLarge
+    - id: TriumWreck2
+      prob: 1
+    - id: SuzWreck1
+      prob: 1
+    - id: SuzWreck2
+      prob: 1
+    - id: SuzWreck3
+      prob: 1
+    - id: NemWreck1
+      prob: 1
+    - id: NemWreck2
+      prob: 1
+    - id: IvarWreck1
+      prob: 1
+    - id: ClemWreck1
+      prob: 1
+    - id: ClemWreck2
+      prob: 1
+    - id: ClemWreck3
+      prob: 1
+    - id: ExhumerGag
+      prob: 1
+    - id: GazWreck1
+      prob: 1
+    - id: GazWreck2
+      prob: 1
+    - id: HamWreck1
+      prob: 1
+    - id: HindWreck1
+      prob: 1
+    - id: LodkWreck
+      prob: 1
+    - id: PraxWreck1
+      prob: 1
+    - id: QianWreck1
+      prob: 1
+    - id: SternWreck1
+      prob: 1
+    - id: WereGood
+      prob: 1
+    - id: MoloWreck1
+      prob: 1
+    - id: MusiWreck1
+      prob: 1
+    - id: RadAtee
+      prob: 0.1
+    - id: CorvWreck1
+      prob: 1
+    - id: CocWreck1
       prob: 1
   - type: NoiseRangeCarver
     ranges:
@@ -87,11 +257,61 @@
   - type: NoiseDrivenDebrisSelector
     noiseChannel: WreckGraveyard
     debrisTable:
-    - id: ScrapDebrisSmall
-      prob: 1
-    - id: ScrapDebrisMedium
-      prob: 1
     - id: ScrapDebrisLarge
+      prob: 1
+    - id: GargutWreckFull
+      prob: 1
+    - id: TriumWreck1
+      prob: 1
+    - id: TriumWreck2
+      prob: 1
+    - id: SuzWreck1
+      prob: 1
+    - id: SuzWreck2
+      prob: 1
+    - id: SuzWreck3
+      prob: 1
+    - id: NemWreck1
+      prob: 1
+    - id: NemWreck2
+      prob: 1
+    - id: IvarWreck1
+      prob: 1
+    - id: ClemWreck1
+      prob: 1
+    - id: ClemWreck2
+      prob: 1
+    - id: ClemWreck3
+      prob: 1
+    - id: ExhumerGag
+      prob: 1
+    - id: GazWreck1
+      prob: 1
+    - id: GazWreck2
+      prob: 1
+    - id: HamWreck1
+      prob: 1
+    - id: HindWreck1
+      prob: 1
+    - id: LodkWreck
+      prob: 1
+    - id: PraxWreck1
+      prob: 1
+    - id: QianWreck1
+      prob: 1
+    - id: SternWreck1
+      prob: 1
+    - id: WereGood
+      prob: 1
+    - id: MoloWreck1
+      prob: 1
+    - id: MusiWreck1
+      prob: 1
+    - id: RadAtee
+      prob: 0.1
+    - id: CorvWreck1
+      prob: 1
+    - id: CocWreck1
       prob: 1
   - type: NoiseRangeCarver
     ranges:
@@ -145,6 +365,8 @@
       prob: 0.03
     - id: AsteroidSalvageNFIceHuge
       prob: 0.03
+    - id: ExhumerGag
+      prob: 0.01
 
 - type: spaceBiome
   id: AsteroidsStandardTaypanTwo
@@ -193,7 +415,8 @@
       prob: 0.03
     - id: AsteroidSalvageNFIceHuge
       prob: 0.03
-
+    - id: ExhumerGag
+      prob: 0.01
 - type: spaceBiome
   id: Craster
   priority: 9000
@@ -221,6 +444,8 @@
       prob: 0.05
     - id: AsteroidSalvageNFChromiteHuge
       prob: 0.03
+    - id: ExhumerGag
+      prob: 0.01
 
 - type: spaceBiome
   id: Marchbelt
@@ -247,6 +472,8 @@
       prob: 0.03
     - id: AsteroidSalvageNFIceHuge
       prob: 0.03
+    - id: ExhumerGag
+      prob: 0.01
 
 - type: spaceBiome
   id: Deepbelt
@@ -295,3 +522,5 @@
       prob: 0.03
     - id: AsteroidSalvageNFIceHuge
       prob: 0.03
+    - id: ExhumerGag
+      prob: 0.01

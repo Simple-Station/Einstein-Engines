@@ -198,9 +198,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Fragmentation
-    maxIntensity: 100
-    intensitySlope: 3
-    totalIntensity: 170
+    maxIntensity: 30
+    intensitySlope: 8
+    totalIntensity: 450
     canCreateVacuum: false
   - type: TimerTriggerVisuals
     primingSound:
@@ -226,9 +226,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Fragmentation
-    maxIntensity: 100
-    intensitySlope: 6
-    totalIntensity: 125
+    maxIntensity: 27
+    intensitySlope: 9
+    totalIntensity: 270   
     canCreateVacuum: false
   - type: TimerTriggerVisuals
     primingSound:
@@ -281,9 +281,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Fragmentation
-    maxIntensity: 100
-    intensitySlope: 4
-    totalIntensity: 200
+    maxIntensity: 27
+    intensitySlope: 5
+    totalIntensity: 350
     canCreateVacuum: false
   - type: TimerTriggerVisuals
     primingSound:
@@ -383,9 +383,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Fragmentation
-    maxIntensity: 100
-    intensitySlope: 6
-    totalIntensity: 300
+    maxIntensity: 25
+    intensitySlope: 7
+    totalIntensity: 400
     canCreateVacuum: false
   - type: TimerTriggerVisuals
     primingSound:
@@ -411,9 +411,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Fragmentation
-    maxIntensity: 100
+    maxIntensity: 30
     intensitySlope: 4
-    totalIntensity: 200
+    totalIntensity: 250
     canCreateVacuum: false
   - type: DamageOnHit
     damage:
@@ -493,9 +493,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Fragmentation
-    maxIntensity: 100
-    intensitySlope: 4
-    totalIntensity: 100
+    maxIntensity: 15
+    intensitySlope: 5
+    totalIntensity: 150
     canCreateVacuum: false
   - type: EmitSoundOnPickup
     sound: /Audio/_Crescent/Weapons/Grenades/grab1.ogg
@@ -555,9 +555,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Fragmentation
-    maxIntensity: 100
-    intensitySlope: 4
-    totalIntensity: 100
+    maxIntensity: 25
+    intensitySlope: 100
+    totalIntensity: 250
     canCreateVacuum: false
   - type: TimerTriggerVisuals
     primingSound:
@@ -585,9 +585,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Electric
-    maxIntensity: 100
-    intensitySlope: 1
-    totalIntensity: 30
+    maxIntensity: 15
+    intensitySlope: 15
+    totalIntensity: 450
   - type: EmpOnTrigger
     range: 2
     energyConsumption: 2700000
@@ -610,16 +610,16 @@
   id: SHIHG17SmartHandgrenade
   components:
   - type: OnUseTimerTrigger
-    delay: 2.5
-    delayOptions: [2.5, 3.5, 5]
+    delay: 1.5
+    delayOptions: [1, 1.5, 2.5, 3.5, 5]
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Grenades/shi_smart.rsi
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Fragmentation
-    maxIntensity: 100
-    intensitySlope: 4
-    totalIntensity: 200
+    maxIntensity: 25
+    intensitySlope: 18
+    totalIntensity: 350
     canCreateVacuum: false
   - type: TimerTriggerVisuals
     primingSound:

@@ -11,8 +11,12 @@
   supervisors: job-supervisors-shi
   canBeAntag: false
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:CharacterOverallTimeRequirement
-      min: 10800
+      min: 0
     - !type:FactionRequirement
       factionID: "SHI"
     - !type:CharacterTraitRequirement

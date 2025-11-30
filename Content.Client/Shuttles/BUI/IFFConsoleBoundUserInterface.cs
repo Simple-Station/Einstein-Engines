@@ -24,6 +24,7 @@ public sealed class IFFConsoleBoundUserInterface : BoundUserInterface
         _window = this.CreateWindow<IFFConsoleWindow>();
         _window.ShowIFF += SendIFFMessage;
         _window.ShowVessel += SendVesselMessage;
+        _window.ColorSelected += SendColorMessage;
         _window.OpenCenteredLeft();
     }
 
@@ -51,6 +52,11 @@ public sealed class IFFConsoleBoundUserInterface : BoundUserInterface
         {
             Show = obj,
         });
+    }
+
+    private void SendColorMessage(Color color)
+    {
+        SendMessage(new IFFSetColorMessage(color));
     }
 
     protected override void Dispose(bool disposing)

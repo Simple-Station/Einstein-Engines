@@ -31,6 +31,10 @@
     steps: 3
     zeroVisible: false
   - type: Appearance
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/mag_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/mag_drop.ogg
 
 - type: entity
   id: BaseMagazineCaselessRifleShort
@@ -38,6 +42,9 @@
   parent: BaseMagazineCaselessRifle
   abstract: true
   components:
+  - type: Tag
+    tags:
+      - MagazineCaselessRifleShort
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifle
     capacity: 20

@@ -352,3 +352,73 @@
   - type: GuideHelp
     guides:
     - Science
+
+- type: entity
+  id: ResearchAndDevelopmentServerGliessian
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  name: Gliess Santo research server
+  description: Contains the collective knowledge of the station's scientists. Destroying it would send them back to the stone age. You don't want that do you?
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/server.rsi
+    layers:
+      - state: server
+      - state: variant-research
+      - state: server_o
+        map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: ResearchServer
+  - type: TechnologyDatabase
+    supportedDisciplines:
+    - Mechatronics
+    - Electronics
+    - Astronautics
+    - Biochemical
+  - type: ApcPowerReceiver
+    powerLoad: 200
+  - type: ExtensionCableReceiver
+  - type: WiresPanel
+  - type: WiresVisuals
+  - type: Machine
+    board: ResearchAndDevelopmentServerMachineCircuitboard
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 2
+  - type: Appearance
+  - type: SpamEmitSoundRequirePower
+  - type: SpamEmitSound
+    minInterval: 20
+    maxInterval: 60
+    sound:
+      collection: ServerSFX
+      params:
+        volume: -3
+        maxDistance: 5
+        variation: 0.15
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: -9
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/server_fans.ogg
+  - type: GuideHelp
+    guides:
+    - Science

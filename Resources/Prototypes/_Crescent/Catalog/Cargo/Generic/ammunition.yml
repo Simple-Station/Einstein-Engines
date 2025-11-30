@@ -145,7 +145,7 @@
 - type: cargoProduct
   id: ShuttleNeedlerAmmoGeneric
   icon:
-    sprite: _Crescent/Ammunition/mortar.rsi
+    sprite: _Crescent/Ammunition/needler.rsi
     state: base
   product: CrateAutogunAmmo
   cost: 15000

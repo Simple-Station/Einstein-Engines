@@ -8,3 +8,14 @@
     sprite: _Crescent/Clothing/Syndicate/Neck/ringleadercloak.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/Syndicate/Neck/ringleadercloak.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakHedgeknightCapelet
+  name: hedgeknight's capelet
+  description: Patterned after Imperial designs and worn over a hardsuit.
+  components:
+   - type: Sprite
+     sprite: _Crescent/Clothing/Syndicate/Neck/hedgeknightcapelet.rsi
+   - type: Clothing
+     sprite: _Crescent/Clothing/Syndicate/Neck/hedgeknightcapelet.rsi

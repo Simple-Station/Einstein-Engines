@@ -1,0 +1,129 @@
+- type: entity
+  parent: BaseItem
+  id: BlackboxCiv
+  name: Civilian flight recorder
+  description: A reinforced black box device containing the final moments of a ship and her crew. Spacers consider it bad luck to handle with anything other than reverence.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/blackbox.rsi
+    layers:
+      - state: civbox
+  - type: StaticPrice
+    price: 10000
+  - type: ExtendDescription
+    descriptionList:
+      - description: Most Jurisdictions subsidize the return of flight recorders for both the bereaved and intelligence agencies. Turn in for a substantial bounty.
+        fontSize: 15
+        color: "#ff4f00"
+        requireDetailRange: false
+  - type: ItemToggle
+    activated: true
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/_Crescent/Items/blackboxwail.ogg
+      params:
+        loop: true
+
+- type: entity
+  parent: BaseItem
+  id: BlackboxDSM
+  name: DSM flight recorder
+  description: A reinforced black box device containing the final moments of a ship and her crew. Spacers consider it bad luck to handle with anything other than reverence.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/blackbox.rsi
+    layers:
+      - state: dsmbox
+  - type: StaticPrice
+    price: 18000
+  - type: ExtendDescription
+    descriptionList:
+      - description: Most Jurisdictions subsidize the return of flight recorders for both the bereaved and intelligence agencies. Turn in for a substantial bounty.
+        fontSize: 15
+        color: "#ff4f00"
+        requireDetailRange: false
+  - type: ItemToggle
+    activated: true
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/_Crescent/Items/blackboxwail.ogg
+      params:
+        loop: true
+
+- type: entity
+  parent: BaseItem
+  id: BlackboxNCWL
+  name: Worker's league flight recorder
+  description: A reinforced black box device containing the final moments of a ship and her crew. Spacers consider it bad luck to handle with anything other than reverence.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/blackbox.rsi
+    layers:
+      - state: ncwlbox
+  - type: StaticPrice
+    price: 18000
+  - type: ExtendDescription
+    descriptionList:
+      - description: Most Jurisdictions subsidize the return of flight recorders for both the bereaved and intelligence agencies. Turn in for a substantial bounty.
+        fontSize: 15
+        color: "#ff4f00"
+        requireDetailRange: false
+  - type: ItemToggle
+    activated: true
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/_Crescent/Items/blackboxwail.ogg
+      params:
+        loop: true
+
+- type: entity
+  parent: BaseItem
+  id: BlackboxSHI
+  name: Shinohara industries flight recorder
+  description: A reinforced black box device containing the final moments of a ship and her crew. Spacers consider it bad luck to handle with anything other than reverence.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/blackbox.rsi
+    layers:
+      - state: shibox
+  - type: StaticPrice
+    price: 18000
+  - type: ExtendDescription
+    descriptionList:
+      - description: Most Jurisdictions subsidize the return of flight recorders for both the bereaved and intelligence agencies. Turn in for a substantial bounty.
+        fontSize: 15
+        color: "#ff4f00"
+        requireDetailRange: false
+  - type: ItemToggle
+    activated: true
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/_Crescent/Items/blackboxwail.ogg
+      params:
+        loop: true
+
+- type: entity
+  parent: BaseItem
+  id: BlackboxNT
+  name: Nanotrasen flight recorder
+  description: Potentially containing leads on NT facilities, hadal breaches, and other wrecks, genuine NT flight recorders from droneships and derelicts are the dream of any salvager.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/blackbox.rsi
+    layers:
+      - state: ntbox
+  - type: StaticPrice
+    price: 50000
+  - type: ExtendDescription
+    descriptionList:
+      - description: This item is worth a fortune to intelligence agencies, scavengers, and research labs alike. Sell at any notable port.
+        fontSize: 15
+        color: "#ff4f00"
+        requireDetailRange: false
+  - type: ItemToggle
+    activated: true
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/_Crescent/Items/blackboxwail.ogg
+      params:
+        loop: true

@@ -2,7 +2,7 @@
   id: FabricateClothRollCotton
   name: roll cloth from cotton
   inputs:
-    Cotton: 30
+    Cotton: 1
   outputs:
     MaterialCloth10: 1
 
@@ -10,7 +10,7 @@
   id: FabricateClothRollSilk
   name: roll cloth from silk
   inputs:
-    Silk: 30
+    Silk: 1
   outputs:
     MaterialCloth10: 1
 
@@ -18,7 +18,7 @@
   id: FabricateDurathread
   name: weave durathread from cloth
   inputs:
-    Cloth: 30
-    Plastic: 10
+    Cloth: 5
+    Plastic: 1
   outputs:
-    MaterialDurathread10: 1
+    MaterialDurathread10: 5

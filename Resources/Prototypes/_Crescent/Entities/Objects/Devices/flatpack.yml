@@ -239,6 +239,34 @@
 
 - type: entity
   parent: BaseFlatpack
+  id: HardlinerFlatpack
+  name: NT 3100c Hardliner plasma lance Flatpack
+  description: A flatpack used for constructing a rare, expensive energy artillery piece.
+  components:
+  - type: Flatpack
+    entity: HardlineBeamPulser
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  parent: BaseFlatpack
+  id: PowerCageRechargerFlatpack
+  name: Power cage recharger Flatpack
+  description: A flatpack, containing a device used for recharging power cages.
+  components:
+  - type: Flatpack
+    entity: PowerCageRecharger
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  parent: BaseFlatpack
   id: ArtilleryFlatpack
   name: Type-99 artillery flatpack
   description: A flatpack used for constructing artillery cannons with a universal commercial IFF.
@@ -264,6 +292,20 @@
     - state: ame-part
   - type: StaticPrice
     price: 10000
+
+- type: entity
+  parent: BaseFlatpack
+  id: HullpiercerFlatpack
+  name: hullpiercer turret flatpack
+  description: A flatpack used for constructing swarmer turret with a universal commercial IFF.
+  components:
+  - type: Flatpack
+    entity: BaseWeaponTurretSlugspitter
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1000
 
 - type: entity
   parent: BaseFlatpack
@@ -421,6 +463,20 @@
 
 - type: entity
   parent: BaseFlatpack
+  id: LargeMissileHardpointFlatpack
+  name: large ballistic hardpoint flatpack
+  description:  Parts used to build a large missile hardpoint.
+  components:
+  - type: Flatpack
+    entity: AAAHardpointLargeMissile
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  parent: BaseFlatpack
   id: SmallBallisticHardpointFlatpack
   name: small ballistic hardpoint flatpack
   description:  Parts used to build a small ballistic hardpoint.
@@ -435,12 +491,40 @@
 
 - type: entity
   parent: BaseFlatpack
+  id: SmallMissileHardpointFlatpack
+  name: small missile hardpoint flatpack
+  description:  Parts used to build a small missile hardpoint.
+  components:
+  - type: Flatpack
+    entity: AAAHardpointSmallMissile
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  parent: BaseFlatpack
   id: MediumBallisticHardpointFlatpack
   name: medium ballistic hardpoint flatpack
   description:  Parts used to build a medium ballistic hardpoint.
   components:
   - type: Flatpack
     entity: AAAHardpointMediumBallistic
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  parent: BaseFlatpack
+  id: MediumMissileHardpointFlatpack
+  name: medium missile hardpoint flatpack
+  description:  Parts used to build a medium Missile hardpoint.
+  components:
+  - type: Flatpack
+    entity: AAAardpointMediumMissile
   - type: Sprite
     layers:
     - state: ame-part

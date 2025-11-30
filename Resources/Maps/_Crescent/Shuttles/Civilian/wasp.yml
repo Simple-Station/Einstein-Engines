@@ -4,7 +4,7 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 09/22/2025 12:18:13
+  time: 11/29/2025 07:10:10
   entityCount: 57
 maps: []
 grids:
@@ -227,6 +227,7 @@ entities:
     - type: GasTileOverlay
     - type: BecomesStation
       id: Wasp
+    - type: SelfDeleteGrid
 - proto: AAAHardpointFixed
   entities:
   - uid: 2
@@ -429,7 +430,7 @@ entities:
       - Module E
 - proto: Gyroscope
   entities:
-  - uid: 31
+  - uid: 29
     components:
     - type: Transform
       pos: 0.5,3.5
@@ -437,9 +438,9 @@ entities:
     - type: Thruster
       baseThrust: 50
       thrust: 50
-- proto: NTVulcanTurretFilled
+- proto: NTVulcanTurret
   entities:
-  - uid: 29
+  - uid: 30
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -453,14 +454,6 @@ entities:
           showEnts: False
           occludes: True
           ents: []
-        gun_magazine: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        gun_chamber: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
         machine_board: !type:Container
           showEnts: False
           occludes: True
@@ -469,15 +462,23 @@ entities:
           showEnts: False
           occludes: True
           ents: []
+        gun_magazine: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        gun_chamber: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
     - type: ChamberMagazineAmmoProvider
       boltClosed: True
     - type: Battery
-      startingCharge: 17373.135
+      startingCharge: 19800.117
     - type: ApcPowerReceiverBattery
       enabled: True
 - proto: PoweredSmallLightMaintenanceRed
   entities:
-  - uid: 30
+  - uid: 31
     components:
     - type: Transform
       pos: 0.5,1.5

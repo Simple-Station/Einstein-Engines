@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: OrganMothStomach
   name: moth stomach
   parent: [OrganAnimalStomach, OrganHumanStomach]
@@ -18,8 +18,10 @@
       stomach:
         maxVol: 50
       food:
-        maxVol: 5
+        maxVol: 15
         reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
   - type: Metabolizer
@@ -29,3 +31,5 @@
     groups:
       - id: Food
       - id: Drink
+  - type: Extractable
+  - type: Produce

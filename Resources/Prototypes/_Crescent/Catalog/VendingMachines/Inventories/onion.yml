@@ -3,6 +3,7 @@
   startingInventory:
     PillSpaceDrugs: 5
     CrashAutoinjector: 15
+    JVAutoInjector: 15
     NocturineChemistryBottle: 6
     MuteToxinChemistryBottle: 6
     VestineChemistryVial: 6
@@ -15,6 +16,7 @@
     ImperialPassportBareFake: 10
     TradePassport: 5
     AgentIDCard: 10
+    ClothingMaskGasVoiceChameleon: 3
     Emag: 2
     WeaponPistolCobra: 3
     WeaponPistolViper: 3
@@ -39,3 +41,4 @@
     TimerTrigger: 5
     VoiceTrigger: 5
     SignalTrigger: 5
+    VendingMachineRestockOnion: 2

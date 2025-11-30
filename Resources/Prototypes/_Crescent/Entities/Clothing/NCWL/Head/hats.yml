@@ -74,3 +74,14 @@
     sprite: _Crescent/Clothing/NCWL/Head/vrachevberet.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/NCWL/Head/vrachevberet.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatMVDHat
+  name: mvd officer's peaked cap
+  description: A red peaked cap with a shine that would make a proletariat weep.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/Head/mvdpeakedcap.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/Head/mvdpeakedcap.rsi

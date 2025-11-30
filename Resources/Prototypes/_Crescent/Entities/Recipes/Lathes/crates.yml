@@ -68,3 +68,49 @@
   completetime: 2
   materials:
     RefinedScrapTitanium: 15000
+
+- type: latheRecipe
+  id: SilkCrate
+  result: TradeGoodSilks
+  completetime: 2
+  materials:
+    SilkFilament: 7500
+    HideMothroach: 1000
+
+- type: latheRecipe
+  id: GoodSilkCrate
+  result: TradeGoodSilks
+  completetime: 2
+  materials:
+    SilkFilament: 4000
+    HideMothroach: 500
+
+- type: latheRecipe
+  id: AlcoholCrate
+  result: TradeGoodAlcohol
+  completetime: 2
+  materials:
+    Biomass: 10
+
+- type: latheRecipe
+  id: AntibioticCrate
+  result: TradeGoodAntibiotics
+  completetime: 2
+  materials:
+    Biomass: 10
+
+- type: latheRecipe
+  id: CyberneticCrate
+  result: TradeGoodCybernetics
+  completetime: 2
+  materials:
+    Steel: 1000
+    Silver: 500
+    Gold: 500
+
+- type: latheRecipe
+  id: BadscrapCrate
+  result: TradeGoodScrap
+  completetime: 2
+  materials:
+    ScrapLowGrade: 5000

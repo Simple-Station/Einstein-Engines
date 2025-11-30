@@ -89,6 +89,10 @@
     fuelReagent: BoriaticFuel
   - type: StaticPrice
     price: 100
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/gun_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/gun_drop.ogg
 
 - type: entity
   name: HP FLM-21Min Sterilizer
@@ -187,3 +191,7 @@
     fuelReagent: BoriaticFuel
   - type: StaticPrice
     price: 100
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/gun_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/gun_drop.ogg

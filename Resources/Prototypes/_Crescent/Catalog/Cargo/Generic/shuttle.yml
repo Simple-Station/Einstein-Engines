@@ -67,3 +67,23 @@
   cost: 15000
   category: cargoproduct-category-name-shuttle
   group: generic
+
+- type: cargoProduct
+  id: CrateShuttlegunExhumerminer
+  icon:
+    sprite: _Crescent/Objects/ShuttleWeapons/mininglaser.rsi
+    state: states
+  product: CrateShuttlegunExhumerminer
+  cost: 5000
+  category: cargoproduct-category-name-shuttle
+  group: generic
+
+- type: cargoProduct
+  id: PowerCageRechargerGeneric
+  icon:
+    sprite: Structures/Power/cage_recharger.rsi
+    state: empty
+  product: PowerCageRechargerFlatpack
+  cost: 10000
+  category: cargoproduct-category-name-shuttle
+  group: generic

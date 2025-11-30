@@ -53,7 +53,6 @@
     - WeaponShotgunKammerer
   - type: Wieldable
 
-
 - type: entity
   name: CDT C-12R Tuber 12g
   parent: [BaseWeaponShotgun, BaseGunWieldable]
@@ -124,7 +123,7 @@
       path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_2.ogg
   - type: Wieldable
   - type: BallisticAmmoProvider
-    capacity: 10
+    capacity: 8 #Better make those 4 shots count.
 
 - type: entity
   name: PTA MOD-23 Karabin 4g
@@ -157,7 +156,7 @@
   - type: ItemSlots
 
 - type: entity
-  name: SHI M135 double-barreled shotgun 4g
+  name: SHI M135 Double-Barrel 4g
   parent: [BaseWeaponShotgun, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponShotgunSHIDoubleBarreled4g
   description: A cheap, oversized shotgun. Manufactured by Shinora for their BudgetArms line. Chambered in 4g shells.
@@ -190,6 +189,23 @@
     staminaCost: 7.5
 
 - type: entity
+  name: IRM DA-13 Reno 12g
+  parent: [BaseWeaponShotgun, BaseGunWieldable, StreeCredRedeemable]
+  id: WeaponShotgunReno
+  description: An Imperial semi-automatic shotgun designed by Ownyr. Unlike other Ownyr designs, this weapon is not prohibitively expensive to produce.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/reno.rsi
+  - type: Item
+    shape:
+    - 0,0,3,1
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/reno.rsi
+  - type: BallisticAmmoProvider
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
   name: NT SPAS-13 12g
   parent: [BaseWeaponShotgun, BaseGunWieldable, StreeCredRedeemableHigh]
   id: WeaponShotgunSpas
@@ -207,10 +223,10 @@
     price: 2500
 
 - type: entity
-  name: IRM Matusa 12g
+  name: IRM DA-2 Matusa 12g
   parent: [BaseWeaponSniper, StreeCredRedeemable]
   id: WeaponShotgunDSMMatusa
-  description: A mass-produced Imperial shotgun with simple internals, intended for easy maintenance by levy forces.
+  description: A mass-produced Imperial revolver shotgun with simple internals, intended for easy maintenance by levy forces.
   components:
   - type: Item
     size: Ginormous
@@ -240,7 +256,7 @@
       - ShellShotgun
 
 - type: entity
-  name: NCWL Pioneer Double-Barrel 12g
+  name: NCWL Toz-12 Pioneer Double-Barrel 12g
   parent: [BaseWeaponSniperNoWield, StreeCredRedeemable]
   id: WeaponShotgunDoubleBarreledNCWL
   description: A short, rugged double-barrel shotgun built in-house by NCWL Homeguard workshops. Partisans prize its compact size and reliability for clearing tight ship corridors; Kommissars often carry one as a backup.
@@ -276,10 +292,10 @@
       - ShellShotgun
 
 - type: entity
-  name: NCSP Saiga-12k 12g
   # Don't parent to BaseWeaponShotgun because it differs significantly
   parent: [BaseItem, BaseGunWieldable]
   id: WeaponShotgunNCSPSaiga12
+  name: NCSP Saiga-12k Hammer 12g
   description: A magazine-fed shotgun in use by terrorist forces. Uses 12 gauge shotgun shells.
   components:
   - type: Sprite
@@ -302,7 +318,8 @@
   - type: AmmoCounter
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
-    fireRate: 3.5
+    damageModifier: 0.85
+    fireRate: 1.5 #Magfed, and cyberdawn facbricated. Cant be better than Pozhar.
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -336,6 +353,7 @@
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
   - type: ChamberMagazineAmmoProvider
+    boltClosed: null # means the bolt doesnt lock back like M16 pattern rifles, also means you need to cycle the gun after an empty mag
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -362,6 +380,16 @@
         Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 9.5
+  - type: ExtendDescription
+    descriptionList:
+      - description: This shotgun's damage is reduced due to its fire-rate. It deals 15% lower damage per shot.
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/gun_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/gun_drop.ogg
 
 - type: entity
   name: HGS VAP-16S Haulikko 12g
@@ -451,6 +479,10 @@
         Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 9.5
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/gun_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/gun_drop.ogg
 
 - type: entity
   name: K&K K870 Bush 12g

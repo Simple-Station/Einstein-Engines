@@ -185,6 +185,24 @@
     BallisticCycler: 500
 
 - type: latheRecipe
+  id: WeaponShotgunProletar
+  result: WeaponShotgunProletar
+  completetime: 2
+  materials:
+    Steel: 1500
+    Plasteel: 300
+    BallisticCycler: 500
+
+- type: latheRecipe
+  id: WeaponShotgunToz123
+  result: WeaponShotgunToz123
+  completetime: 2
+  materials:
+    Steel: 1500
+    Plasteel: 500
+    BallisticCycler: 1000
+
+- type: latheRecipe
   id: WeaponRifleNCWLBatanya
   result: WeaponRifleNCWLBatanya
   completetime: 2
@@ -192,6 +210,15 @@
     Steel: 1500
     Plasteel: 500
     BallisticCycler: 1000
+
+- type: latheRecipe
+  id: WeaponSniperNCWLNovomosin
+  result: WeaponSniperNCWLNovomosin
+  completetime: 2
+  materials:
+    Steel: 2000
+    Plasteel: 500
+    BasicMechatronics: 1000
 
 - type: latheRecipe
   id: WeaponSubMachineGunBloodhound
@@ -237,6 +264,15 @@
     StarshipEngineComponents: 1500
     ShipComponents: 1500
     ShipHull: 2500
+
+- type: latheRecipe
+  id: CherenzikovLPC
+  result: ShipVoucherCherenzikov
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 2500
+    ShipComponents: 2000
+    ShipHull: 3000
 
 - type: latheRecipe
   id: LodkaLPC
@@ -368,3 +404,12 @@
   completetime: 2
   materials:
     Cloth: 750
+#- type: latheRecipe
+#  id: NCWLRGD55M13
+#  result: RGD55M13Hendgrenade
+#  completetime: 2
+# materials:
+#   Plasma: 500
+#    Steel: 100
+    
+

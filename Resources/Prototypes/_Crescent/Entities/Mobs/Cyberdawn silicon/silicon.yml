@@ -1,0 +1,128 @@
+- type: entity
+  id: AiHeldHull
+  description: Components added / removed from an entity that gets inserted into an AI core.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+    - Syndicate
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Syndicate
+  - type: IgnoreUIRange
+  - type: StationAiHeld
+  - type: StationAiOverlay
+  - type: ShowElectrocutionHUD
+  - type: ActionGrant
+    actions:
+    - ActionJumpToCore
+    - ActionShowJobIcons
+    - ActionSurvCameraLights
+    - ActionAIViewLaws
+  - type: UserInterface
+    interfaces:
+      enum.RadarConsoleUiKey.Key:
+        type: RadarConsoleBoundUserInterface
+      enum.CrewMonitoringUIKey.Key:
+        type: CrewMonitoringBoundUserInterface
+      enum.GeneralStationRecordConsoleKey.Key:
+        type: GeneralStationRecordConsoleBoundUserInterface
+      enum.SiliconLawsUiKey.Key:
+        type: SiliconLawBoundUserInterface
+      enum.CommunicationsConsoleUiKey.Key:
+        type: CommunicationsConsoleBoundUserInterface
+  - type: IntrinsicUI
+    uis:
+      enum.RadarConsoleUiKey.Key:
+        toggleAction: ActionAGhostShowRadar
+      enum.CrewMonitoringUIKey.Key:
+        toggleAction: ActionAGhostShowCrewMonitoring
+      enum.GeneralStationRecordConsoleKey.Key:
+        toggleAction: ActionAGhostShowStationRecords
+      enum.CommunicationsConsoleUiKey.Key:
+        toggleAction: ActionAGhostShowCommunications
+  - type: CrewMonitoringConsole
+  - type: GeneralStationRecordConsole
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: CrewMonitor
+    transmitFrequencyId: ShuttleTimer
+  - type: RadarConsole
+    followEntity: false
+  - type: CommunicationsConsole
+    canShuttle: false
+    title: comms-console-announcement-title-station-ai
+    color: "#5ed7aa"
+  - type: HolographicAvatar
+    layerData:
+    - sprite: Mobs/Silicon/station_ai.rsi
+      state: default
+  - type: ShowJobIcons
+  - type: Tag
+    tags:
+    - CanPilot
+    - NoConsoleSound
+  - type: ShowSyndicateIcons
+
+- type: entity
+  id: PlayerStationAiCS
+  parent: PlayerStationAiEmpty
+  suffix: Ghost Role
+  name: CDT AI
+  components:
+  - type: ContainerComp
+    proto: AiHeldHull
+    container: station_ai_mind_slot
+  - type: ContainerFill
+    containers:
+      station_ai_mind_slot:
+      - StationAiBrainCS
+  - type: Sprite
+    sprite: Mobs/Silicon/station_ai.rsi
+    layers:
+    - state: base
+    - state: ai
+      shader: unshaded
+  - type: Anchorable
+
+- type: entity
+  id: StationAiBrainCS
+  parent: StationAiBrain
+  categories: [ HideSpawnMenu, DoNotMap ]
+  components:
+  - type: Sprite
+  - type: SiliconLawProvider
+    laws: SyndicateStatic
+  - type: GhostRole
+    name: ghost-role-information-CS-core
+    description: ghost-role-information-CS-core-description
+    rules: ghost-role-information-silicon-rules
+    raffle:
+      settings: default
+  - type: LanguageKnowledge
+    speaks:
+    - SolCommon
+    - RobotTalk
+    - Freespeak
+    - Tradeband
+    understands:
+    - TauCetiBasic
+    - SolCommon
+    - RobotTalk
+    - Freespeak
+    - Tradeband
+  - type: GhostTakeoverAvailable
+  - type: RandomMetadata
+    nameSegments: [CybersunNameset]
+
+- type: dataset
+  id: CybersunNameset
+  values:
+  - CS Cat
+  - CS Xihe
+  - CS Ritian
+  - CS Yu Yi
+  - CS Zhulong

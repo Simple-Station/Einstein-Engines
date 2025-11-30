@@ -15,6 +15,9 @@ public sealed partial class ShuttleSystem
         SubscribeLocalEvent<IFFConsoleComponent, IFFShowIFFMessage>(OnIFFShow);
         SubscribeLocalEvent<IFFConsoleComponent, IFFShowVesselMessage>(OnIFFShowVessel);
         SubscribeLocalEvent<IFFConsoleComponent, MapInitEvent>(OnInit);
+
+        // The color adding
+        SubscribeLocalEvent<IFFConsoleComponent, IFFSetColorMessage>(OnIFFSetColor);
     }
 
     private void OnIFFTryAnchor(Entity<IFFConsoleComponent> obj, ref AnchorAttemptEvent args)
@@ -51,6 +54,8 @@ public sealed partial class ShuttleSystem
             RemoveIFFFlag(xform.GridUid.Value, IFFFlags.HideLabel);
         }
     }
+
+
 
     private void OnIFFShowVessel(EntityUid uid, IFFConsoleComponent component, IFFShowVesselMessage args)
     {
@@ -102,11 +107,22 @@ public sealed partial class ShuttleSystem
         }
     }
 
+    private void OnIFFSetColor(EntityUid uid, IFFConsoleComponent component, IFFSetColorMessage args)
+    {
+        if (!component.AllowColorChange)
+            return;
+
+        if (!TryComp<TransformComponent>(uid, out var xform) || xform.GridUid is not { } gridUid)
+            return;
+
+        SetIFFColor(gridUid, args.Color);
+        UpdateIFFInterface(uid, component);
+    }
+
     public void UpdateIFFInterface(EntityUid console, IFFConsoleComponent comp)
     {
         if (!TryComp<TransformComponent>(console, out var xform) || !TryComp<IFFComponent>(xform.GridUid, out var iff))
             return;
-
 
         _uiSystem.SetUiState(
             console,
@@ -117,6 +133,8 @@ public sealed partial class ShuttleSystem
                 Flags = iff.Flags,
                 HeatCapacity = comp.HeatCapacity,
                 CurrentHeat = comp.CurrentHeat,
+                Color = iff.Color,
+                AllowColorChange = comp.AllowColorChange,
             });
 
     }

@@ -107,8 +107,8 @@
     - type: StaticPrice
       price: 150
     - type: DoorBolt
-    - type: AccessReader
-      access: [ [ "Engineering" ] ]
+#    - type: AccessReader
+#      access: [ [ "Engineering" ] ]
     - type: NavMapDoor
 
 - type: entity

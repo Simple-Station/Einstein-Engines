@@ -1,0 +1,36 @@
+- type: vessel
+  id: Magnate
+  name: DSM Magnate FSV
+  description: |
+    An imperial fire support vessel, designed for fleet support with its gargoyle launcher for bypassing enemy shields.
+    LOADOUT: 1x Gargoyle LRM launcher, 2x 400c plasmacasters, 2x 180c torch PDT
+    MINIMUM CREW: 1x Pilot, 1x Gunner, 1x Loader (optional)
+    SHIELD: Errant-class
+    SPEED: 25m/s
+  price: 40000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/DSM/magnate.yml
+
+- type: gameMap
+  id: Magnate
+  mapName: 'DSM Magnate'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/magnate.yml
+  minPlayers: 0
+  stations:
+    Magnate:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Magnate FSV {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-corvette
+        - type: VesselDescription
+          description: DSM Fire support vessel.

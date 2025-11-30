@@ -399,6 +399,11 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Storage
+    whitelist:
+      tags:
+        - ArtifactFragment
+        - Ore
   - type: Sprite
     noRot: true
     sprite: /Textures/Structures/Storage/orebox.rsi
@@ -478,8 +483,8 @@
     - 0.4, 0.6
   clippedValue: 1.658 # magic number for chunk size.
   inputMultiplier: 10 # Makes density hopefully low noise in the local area while still being interesting at scale.
-  outputMultiplier: 50.0 # We scale density up significantly for more human-friendly numbers.
-  minimum: 45.0
+  outputMultiplier: 75.0 # Increased from 50.0 to 75.0 for more debris
+  minimum: 60.0 # Increased from 45.0 to 60.0 for higher base density
 
 - type: noiseChannel
   id: WreckGraveyard

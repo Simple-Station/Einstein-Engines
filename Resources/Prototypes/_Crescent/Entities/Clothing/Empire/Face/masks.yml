@@ -25,7 +25,7 @@
     protectionTime: 5
 
 - type: entity
-  parent: ClothingMaskBase
+  parent: ClothingMaskGasSyndicate
   id: ClothingMaskImperialCombatGasmask
   name: imperial rebreather
   description: A close-fitting combat rebreather designed for Imperial troops.
@@ -34,5 +34,3 @@
     sprite: _Crescent/Clothing/Empire/Face/mandatesoldiermask.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/Empire/Face/mandatesoldiermask.rsi
-  - type: EyeProtection
-  - type: BreathMask

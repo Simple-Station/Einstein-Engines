@@ -616,7 +616,7 @@
 #syndicate modules
 - type: entity
   id: BorgModuleSyndicateWeapon
-  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  parent: [ BaseBorgModuleSyndicate, BaseProviderBorgModule ]
   name: weapon cyborg module
   components:
   - type: Sprite
@@ -625,8 +625,8 @@
     - state: icon-syndicate
   - type: ItemBorgModule
     items:
-    - WeaponAdvancedLaser
-    - Machete
+    - WeaponSMGC20ROW
+    - EnergySword
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-weapon-module }
 
@@ -642,12 +642,27 @@
       - state: icon-syndicate
     - type: ItemBorgModule
       items:
-      - Crowbar
+      - SyndicateJawsOfLife
       - Emag
-      - PinpointerSyndicateNuclear
+      - Doorjack
+      - WelderIndustrial
+      - MassScannerEEBorg
+      droppableItems:
+      - id: JetpackBlackFilled
+        whitelist:
+          components:
+          - HullJetpack
+      - id: MagazineVulcan
+        whitelist:
+          components:
+          - BallisticAmmoProvider
+          - CartridgeAmmo
+      - id: AgentIDCard
+        whitelist:
+          components:
+          - Access
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-operative-module }
-
 - type: entity
   id: BorgModuleEsword
   parent: [ BaseBorgModuleSyndicate, BaseProviderBorgModule ]
@@ -661,15 +676,15 @@
     - type: ItemBorgModule
       items:
       - EnergySwordDouble
-      - PinpointerSyndicateNuclear
+      - MassScannerEEBorg
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-esword-module }
 
 - type: entity
   id: BorgModuleL6C
   parent: [ BaseBorgModuleSyndicateAssault, BaseProviderBorgModule ]
-  name: L6C ROW cyborg module
-  description: A module that comes with a L6C.
+  name: C54 ROW cyborg module
+  description: A module that comes with a C54.
   components:
     - type: Sprite
       layers:
@@ -677,8 +692,8 @@
       - state: icon-syndicate
     - type: ItemBorgModule
       items:
-        - WeaponLightMachineGunL6C
-        - PinpointerSyndicateNuclear
+        - MassScannerEEBorg
+        - WeaponLightMachineGunC54ROW
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-l6c-module }
 
@@ -742,11 +757,8 @@
     - state: icon-advanced-surgery
   - type: ItemBorgModule
     items:
-    - EnergyScalpel
-    - EnergyCautery
-    - AdvancedRetractor
-    - BoneGel
-    # Frontier: droppable borg items
+    - OmnimedToolSyndie
+    - DefibrillatorOneHandedUnpowered
     droppableItems:
     - id: OrganHumanHeart
       whitelist:
@@ -755,6 +767,6 @@
         - Organ
         tags:
         - Organ
-    # End Frontier: droppable borg items
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: adv-surgery-module }
+

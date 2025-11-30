@@ -11,6 +11,10 @@
   supervisors: You answer to the Ringleader and Gorlex Security Lieutenants
   canBeAntag: false
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:CharacterOverallTimeRequirement
       min: 20000
     - !type:FactionRequirement
@@ -26,7 +30,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-pfc
+        rank: crescent-rank-op
       - type: HullrotFaction
         faction: GSC
       - type: LanguageAdder
@@ -53,13 +57,15 @@
     id: InfanteerPDA
     ears: ClothingHeadsetNCSP
     belt: ClothingBeltSyndicateWebbing
+    outerClothing: ClothingOuterArmorSyndicateArmorvest
     pocket1: WeaponPistolViperWood
+    pocket2: ClothingMaskGasSyndicate
     gloves: ClothingHandsGlovesFingerless
     back: ClothingBackpackNCSP
   storage:
     back:
-    - Flash
-    - Tourniquet
-    - Zipties
-    - MagazinePistol
-    - CombatKnife
+      - Flash
+      - Tourniquet
+      - Zipties
+      - MagazinePistol
+      - CombatKnife

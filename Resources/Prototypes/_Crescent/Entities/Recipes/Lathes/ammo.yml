@@ -2,6 +2,38 @@
 # RIFLE AMMUNITIONS
 
 - type: latheRecipe
+  id: MagazinePulse350
+  result: MagazinePulse350
+  completetime: 1
+  materials:
+    Steel: 100
+
+- type: latheRecipe
+  id: MagazinePulse350Fmj
+  result: MagazinePulse350Fmj
+  completetime: 1
+  materials:
+    Steel: 500
+    Uranium: 200
+    Plasma: 150
+
+- type: latheRecipe
+  id: MagazinePulse470
+  result: MagazinePulse470
+  completetime: 1
+  materials:
+    Steel: 100
+
+- type: latheRecipe
+  id: MagazinePulse470Fmj
+  result: MagazinePulse470Fmj
+  completetime: 1
+  materials:
+    Steel: 1000
+    Uranium: 400
+    Plasma: 300
+
+- type: latheRecipe
   id: DrumMagazineShotgunEmpty
   result: DrumMagazineShotgunEmpty
   completetime: 1
@@ -29,6 +61,7 @@
   completetime: 1
   materials:
     Steel: 1000
+    Uranium: 500
 
 - type: latheRecipe
   id: MagazineHeavyRifleBoxmag
@@ -57,6 +90,13 @@
 - type: latheRecipe
   id: MagazineBoxLightRifleBig
   result: MagazineBoxLightRifleBig
+  completetime: 1
+  materials:
+    Steel: 800
+
+- type: latheRecipe
+  id: MagazineLightRifleBox
+  result: MagazineLightRifleBox
   completetime: 1
   materials:
     Steel: 800
@@ -97,15 +137,23 @@
   completetime: 1
   materials:
     Steel: 900
-
-# 4 GAUGE SHELLS
+    
 - type: latheRecipe
-  id: BoxShotgunIncendiary4g
-  result: BoxShotgunIncendiary4g
+  id: MagazineBoxImperialRifleBig
+  result: MagazineLightRifleBox
   completetime: 1
   materials:
-    Steel: 600
-    Plastic: 400
+    Steel: 9000
+
+- type: latheRecipe
+  id: MagazineHeavyRifleSmall
+  result: MagazineSmallHeavyRifle
+  completetime: 1
+  materials:
+    Steel: 200
+    Uranium: 50
+
+# 4 GAUGE SHELLS
 
 - type: latheRecipe
   id: BoxShotgunFlash4g
@@ -117,28 +165,12 @@
     Silver: 200
 
 - type: latheRecipe
-  id: BoxShotgunUranium4g
-  result: BoxShotgunUranium4g
-  completetime: 2
-  materials:
-    Steel: 400
-    Uranium: 600
-
-- type: latheRecipe
   id: BoxShotgunSlug4g
   result: BoxShotgunSlug4g
   completetime: 2
   materials:
     Steel: 600
     Uranium: 300
-
-- type: latheRecipe
-  id: BoxShotgunSabot4g
-  result: BoxShotgunSabot4g
-  completetime: 2
-  materials:
-    Steel: 400
-    Uranium: 400
 
 - type: latheRecipe
   id: BoxLethalshot4g
@@ -148,19 +180,56 @@
     Steel: 900
 
 - type: latheRecipe
-  id: BoxShotgunMagnum4g
-  result: BoxShotgunMagnum4g
-  completetime: 2
-  materials:
-    Steel: 1200
-
-- type: latheRecipe
   id: BoxBeanbag4g
   result: BoxBeanbag4g
   completetime: 2
   materials:
     Steel: 400
-
+# 40MM NADES
+- type: latheRecipe
+  id: Cartridge40mmFrag
+  result: Cartridge40mmFrag
+  completetime: 1
+  materials:
+    Steel: 300
+    Plasma: 150
+- type: latheRecipe
+  id: Cartridge40mmCan
+  result: Cartridge40mmCan
+  completetime: 1
+  materials:
+    Steel: 300
+    Glass: 100
+    Plastic: 50
+- type: latheRecipe
+  id: Cartridge40mmHEDP
+  result: Cartridge40mmHEDP
+  completetime: 1
+  materials:
+    Steel: 300
+    Plasma: 100
+    Uranium: 50
+- type: latheRecipe
+  id: Cartridge40mmSmoke
+  result: Cartridge40mmSmoke
+  completetime: 1
+  materials:
+    Steel: 400
+- type: latheRecipe
+  id: Cartridge40mmThermobaric
+  result: Cartridge40mmThermobaric
+  completetime: 1
+  materials:
+    Steel: 350
+    Plasma: 100
+- type: latheRecipe
+  id: Cartridge40mmEMP
+  result: Cartridge40mmEMP
+  completetime: 1
+  materials:
+    Steel: 350
+    Gold: 100
+    
 # SMALL ARMS AMMUNITIONS
 - type: latheRecipe
   id: MagazinePistolHeavy
@@ -206,6 +275,7 @@
   completetime: 2
   materials:
     Steel: 500
+    Uranium: 250
 
 - type: latheRecipe
   id: MagazinePistol6mmSmg
@@ -246,6 +316,14 @@
     Steel: 2000
 
 - type: latheRecipe
+  id: SluggieEMP
+  result: MagazineLightRifleBoxSlugEMP
+  completetime: 2
+  materials:
+    Steel: 2000
+    Uranium: 1000
+
+- type: latheRecipe
   id: Automortar90
   result: MagazineMortar
   completetime: 2
@@ -284,3 +362,42 @@
   completetime: 4
   materials:
     Steel: 500
+
+- type: latheRecipe
+  id: 48mmHighYieldRocket
+  result: CartridgeRocketHighYield
+  completetime: 2
+  materials:
+    Steel: 500
+    Plasma: 200
+
+- type: latheRecipe
+  id: 48mmLowYieldRocket
+  result: CartridgeRocketLowYield
+  completetime: 2
+  materials:
+    Steel: 500
+    Plasma: 100
+
+- type: latheRecipe
+  id: RocketMagazineEmpty
+  result: MagazineRocketEmpty
+  completetime: 3
+  materials:
+    Steel: 300
+
+- type: latheRecipe
+  id: 48mmEMPRocket
+  result: CartridgeRocketEMP
+  completetime: 2
+  materials:
+    Steel: 500
+    Uranium: 200
+
+- type: latheRecipe
+  id: 65mmHammerheadRocket
+  result: CartridgeHammerheadRocket
+  completetime: 3
+  materials:
+    Steel: 500
+    Plasma: 1500

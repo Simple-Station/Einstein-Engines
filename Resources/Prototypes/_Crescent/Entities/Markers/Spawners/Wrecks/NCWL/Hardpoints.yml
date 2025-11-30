@@ -1,0 +1,29 @@
+#allows mappers to automate random hardpoint loot
+- type: entity
+  name: NCWL Hardpoint Wreck Randomizer
+  id: NCWLHardpointWreckRandomizer
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: _Crescent/Objects/ShuttleWeapons/lasersmall.rsi
+          state: lse-400c
+    - type: RandomSpawner
+      prototypes:
+       - MachineFrameDestroyed
+       - PointNFireCannonExample
+       - BaseWeaponTurretLancer
+       - SlugthrowerCannon
+       - ShuttleGunKurosawa
+       - NTVulcanTurret
+       - WeaponTurretVulcan
+      chance: 0.15
+      rarePrototypes:
+       - BaseWeaponTurretBattlemortar
+       - FlakCannonTurret
+       - BaseWeaponTurretGargoyle
+       - Type99Artillery
+       - WeaponTurretMortar
+       - BaseWeaponTurretHeavyPlasma
+      rareChance: 0.05

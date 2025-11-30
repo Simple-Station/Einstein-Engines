@@ -119,9 +119,15 @@ public class SharedHardpointSystem : EntitySystem
         DirtyEntity(anchor);
         //Dirty(arg.CannonUid, component);
     }
+
+    /// <summary>
+    /// this is used for when shipguns are destroyed, but this ALSO runs when the grid is deleted. 
+    /// </summary>
+    /// <param name="uid"></param>
+    /// <param name="component"></param>
+    /// <param name="args"></param>
     public void OnShipgunRemove(EntityUid uid, HardpointAnchorableOnlyComponent component, ComponentRemove args)
     {
-        _sawmill.Debug("SHIPGUNDESTROY RAN RAN");
         if (component.anchoredTo is null)
         {
             return;
@@ -153,7 +159,7 @@ public class SharedHardpointSystem : EntitySystem
     /// <returns></returns>
     public bool TryAnchorToHardpoint(EntityUid uid, HardpointAnchorableOnlyComponent component)
     {
-        _sawmill.Debug("TRY ANCHOR TO HARDPOINT RAN");
+        //_sawmill.Debug("TRY ANCHOR TO HARDPOINT RAN");
         var gridUid = Transform(uid).GridUid;
         if (gridUid is null)
             return false;
@@ -183,7 +189,7 @@ public class SharedHardpointSystem : EntitySystem
 
     public void AnchorEntityToHardpoint(EntityUid target, EntityUid anchor, HardpointAnchorableOnlyComponent targetComp, HardpointComponent hardpoint, EntityUid grid)
     {
-        _sawmill.Debug("ANCHOR ENTITY TO HARDPOINT RAN");
+        //_sawmill.Debug("ANCHOR ENTITY TO HARDPOINT RAN");
         hardpoint.anchoring = target;
         targetComp.anchoredTo = anchor;
         _transformSystem.SetLocalRotation(target, Transform(anchor).LocalRotation);

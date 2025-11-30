@@ -25,6 +25,18 @@
       - state: passenger
 
 - type: entity
+  id: SpawnPointNCWLMVDGrunt
+  parent: SpawnPointJobBase
+  name: NCWLMVDGrunt
+  components:
+  - type: SpawnPoint
+    job_id: MVDGruntNCWL
+  - type: Sprite
+    layers:
+    - state: green
+    - state: passenger
+
+- type: entity
   id: SpawnPointNCWLFleetkapitan
   parent: SpawnPointJobBase
   name: NCWLFleetkapitan
@@ -61,6 +73,30 @@
       - state: passenger
 
 - type: entity
+  id: SpawnPointNCWLIndustryArtificer
+  parent: SpawnPointJobBase
+  name: NCWLArtificer
+  components:
+  - type: SpawnPoint
+    job_id: ArtificerNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointNCWLDirector
+  parent: SpawnPointJobBase
+  name: NCWLDirector
+  components:
+  - type: SpawnPoint
+    job_id: DirectorNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
   id: SpawnPointNCWLDoctor
   parent: SpawnPointJobBase
   name: NCWLDoctor
@@ -79,6 +115,18 @@
   components:
   - type: SpawnPoint
     job_id: CoordinatorNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointNCWLDockhand
+  parent: SpawnPointJobBase
+  name: NCWLWorkerDockhand
+  components:
+  - type: SpawnPoint
+    job_id: DockhandNCWL
   - type: Sprite
     layers:
       - state: green

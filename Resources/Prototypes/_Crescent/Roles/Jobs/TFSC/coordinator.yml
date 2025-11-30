@@ -11,6 +11,10 @@
   supervisors: You answer to the interests of the Interdyne Pharmaceuticals company. Organize your employees. Secure stakeholders and profit.
   canBeAntag: false
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
       min: 20000
@@ -58,6 +62,14 @@
     shoes: ClothingShoesBootsCombat
     head: ClothingHeadHatSyndicateInterdyneBeret
     id: CoordinatorPDA
-    back: ClothingBackpackNCSPFilledInfanteer
     ears: ClothingHeadsetNCSPInterdyne
     pocket1: AccessElevatorIPM
+    pocket2: WeaponPistolHKUSP
+    back: ClothingBackpackNCSP
+  storage:
+    back:
+      - Flash
+      - Tourniquet
+      - Zipties
+      - MagazinePistol
+      - CombatKnife
