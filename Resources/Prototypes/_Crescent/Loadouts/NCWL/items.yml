@@ -1,0 +1,37 @@
+- type: loadout
+  id: LoadoutItemsKane
+  category: Items
+  cost: 1
+  items:
+  - BookOfKane
+  requirements:
+  - !type:CharacterJobRequirement
+    jobs:
+      - CommandantNCWL
+      - KommissarNCWL
+      - MVDOfficerNCWL
+      - MVDGruntNCWL
+      - FleetkapitanNCWL
+      - PartisanNCWL
+      - DirectorNCWL
+      - DoctorNCWL
+      - WorkerOverbossNCWL
+      - DockhandNCWL
+      - IndustryTaskmasterNCWL
+      - ArtificerNCWL
+      - WorkerNCWL
+
+- type: loadout
+  id: LoadoutItemsWhistle
+  category: Items
+  cost: 1
+  items:
+  - SyndicateWhistle
+  requirements:
+  - !type:CharacterJobRequirement
+    jobs:
+      - CommandantNCWL
+      - KommissarNCWL
+      - MVDOfficerNCWL
+      - MVDGruntNCWL
+      - FleetkapitanNCWL

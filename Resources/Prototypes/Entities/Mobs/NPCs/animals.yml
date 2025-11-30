@@ -467,28 +467,19 @@
   name: mothroach
   parent: MobCockroach
   id: MobMothroach
-  description: This is the adorable by-product of multiple attempts at genetically mixing mothpeople with cockroaches.
+  description: A distant cousin to Atyrians of the sector, the mothroach is virulent blight upon derelicts and pirate dens. The cunning peoples of the sector cultivate them for their fine silks and pelt.
   components:
-  - type: GhostRole
-    makeSentient: true
-    allowSpeech: true
-    allowMovement: true
-    name: ghost-role-information-mothroach-name
-    description: ghost-role-information-mothroach-description
-    rules: ghost-role-information-freeagent-rules
-    mindRoles:
-    - MindRoleGhostRoleFreeAgent
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 0.2
-        density: 0.007
+          radius: 0.35
+        density: 8
         mask:
-        - SmallMobMask
+        - MobMask
         layer:
-        - SmallMobLayer
+        - MobLayer
   - type: GhostTakeoverAvailable
   - type: Speech
     speechVerb: Moth
@@ -554,9 +545,19 @@
     spawned:
     - id: FoodMeatRat
       amount: 2
-    - id: HideMothroach # Gotta make the plushies
-      amount: 1
       prob: 0.5
+    - id: HideMothroach1 # Gotta make the plushies
+      amount: 1
+  - type: Food
+  - type: Hunger
+    currentHunger: 25   # spawn with Okay hunger state
+    thresholds:
+      Overfed: 40
+      Okay: 25
+      Peckish: 15
+      Starving: 10
+      Dead: 0
+    #ensures mothroaches must be fed before they begin laying eggs, therefore preventing nuclear mothsplosion (Opportunities for admin grief submob ahead)
   - type: Extractable
     grindableSolutionName: food
   - type: LanguageKnowledge
@@ -577,9 +578,21 @@
   - type: Tag
     tags:
     - Trash
+    - Mothroach
     - CannotSuicide
     - DoorBumpOpener # DeltaV - After all, why not? Why shouldn't they be able to open doors?
     - VimPilot
+  - type: Reproductive
+    breedChance: 0.05
+    birthPopup: reproductive-laid-egg-popup
+    makeOffspringInfant: false
+    partnerWhitelist:
+      tags:
+      - Mothroach
+    offspring:
+    - id: FoodEggMothroachFertilized
+      maxAmount: 3
+  - type: ReproductivePartner
   - type: CanEscapeInventory
   - type: NpcFactionMember
     factions:
@@ -595,7 +608,9 @@
         damageType: Blunt
         damage: 60
       behaviors:
-      - !type:GibBehavior { }
+      - !type:GibBehavior
+        gibContents: Skip # hullrot - Simplemobs and especially insects shouldn't be generating 300 organs
+        recursive: false
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
@@ -604,6 +619,13 @@
     interfaces:
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
+  - type: EggLayer
+    eggSpawn:
+    - id: SilkFilament1
+      amount: 3
+    - id: FoodEggMothroachFertilized
+      amount: 1
+      prob: 0.3
 
 - type: entity
   parent: MobMothroach
@@ -619,6 +641,22 @@
         1.0
       FollowRange: !type:Single
         2.0
+
+- type: entity
+  id: FoodEggMothroachFertilized
+  parent: EggSpider
+  name: Mothroach egg
+  description: Ew.
+  components:
+  - type: Timer
+  - type: TimedSpawner
+    prototypes:
+    - MobMothroach
+    intervalSeconds: 20
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 1
+  - type: TimedDespawn #delete the egg after the mothroach spawns
+    lifetime: 21
 
 - type: entity
   name: squackroach

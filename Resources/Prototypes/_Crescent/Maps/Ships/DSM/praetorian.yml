@@ -1,0 +1,34 @@
+- type: vessel
+  id: Praetorian
+  name: DSM Praetorian
+  description: |
+    A Destroyer ship class ship, fielded by the imperials to be a strong fighting ship, capable of dishing damages from long to medium range. 
+    LOADOUT: 1x 120mm Cannon, 2x 20x135mm Machineguns, 2x 43mm Slugthrowers, 2x 90mm Mortars
+    MINIMUM CREW: 1x Pilot, 1x Loader/Gunner
+  price: 75000
+  category: Medium
+  group: None
+  path: /Maps/_Crescent/Shuttles/DSM/praetorian.yml
+
+- type: gameMap
+  id: Praetorian
+  mapName: 'DSM Praetorian'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/praetorian.yml
+  minPlayers: 0
+  stations:
+    Praetorian:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: frigate
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Praetorian {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-destroyer
+        - type: VesselDescription
+          description: Fielded by imperials to establish dominance in the battlefield.

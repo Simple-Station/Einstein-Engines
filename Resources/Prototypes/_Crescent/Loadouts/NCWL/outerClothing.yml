@@ -12,11 +12,17 @@
         - CommandantNCWL
         - KommissarNCWL
         - FleetkapitanNCWL
+        - MVDOfficerNCWL
+        - MVDGruntNCWL
         - PartisanNCWL
+        - DirectorNCWL
         - DoctorNCWL
-        - CoordinatorNCWL
+        - WorkerOverbossNCWL
+        - DockhandNCWL
+        - IndustryTaskmasterNCWL
         - ArtificerNCWL
         - WorkerNCWL
+
 - type: loadout
   id: LoadoutOuterArmorNCWLCarapaceDoktor
   category: Outer
@@ -29,3 +35,39 @@
     - !type:CharacterJobRequirement
       jobs:
         - DoctorNCWL
+
+- type: loadout
+  id: LoadoutOuterArmorNCWLCarapaceVrachev
+  category: Outer
+  cost: 2
+  items:
+    - ClothingOuterArmorNCWLCarapaceVrachev
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - CommandantNCWL
+        - MVDOfficerNCWL
+        - MVDGruntNCWL
+        - DoctorNCWL
+        - WorkerOverbossNCWL
+        - ArtificerNCWL
+
+- type: loadout
+  id: LoadoutOuterArmorMVDCoat
+  category: Outer
+  cost: 1
+  items:
+    - ClothingOuterArmorMVDCoat
+  requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:CharacterOverallTimeRequirement
+      min: 30000
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - CommandantNCWL
+        - KommissarNCWL
+        - MVDGruntNCWL

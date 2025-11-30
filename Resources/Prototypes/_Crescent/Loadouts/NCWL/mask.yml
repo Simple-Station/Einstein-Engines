@@ -12,10 +12,15 @@
       jobs:
         - CommandantNCWL
         - KommissarNCWL
+        - MVDOfficerNCWL
+        - MVDGruntNCWL
         - FleetkapitanNCWL
         - PartisanNCWL
+        - DirectorNCWL
         - DoctorNCWL
-        - CoordinatorNCWL
+        - WorkerOverbossNCWL
+        - DockhandNCWL
+        - IndustryTaskmasterNCWL
         - ArtificerNCWL
         - WorkerNCWL
 
@@ -33,5 +38,7 @@
     jobs:
       - CommandantNCWL
       - KommissarNCWL
+      - MVDOfficerNCWL
+      - MVDGruntNCWL
       - FleetkapitanNCWL
       - PartisanNCWL

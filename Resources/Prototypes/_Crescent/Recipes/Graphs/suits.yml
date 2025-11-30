@@ -1,0 +1,45 @@
+- type: constructionGraph
+  id: Sellsword
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: armor
+      steps:
+            - tag: Bulwark
+              name: Bulwark MKII
+              icon:
+                sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicatesbg.rsi
+                state: icon
+              doAfter: 1
+            - tag: SprayPainter
+              name: Spray Painter
+              icon:
+                sprite: Objects/Tools/spray_painter.rsi
+                state: spray_painter
+              doAfter: 1
+  - node: armor
+    entity: ClothingOuterHardsuitSyndicateSellsword
+
+- type: constructionGraph
+  id: Freiritter
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: armor
+      steps:
+            - tag: Bulwark
+              name: Bulwark MKII
+              icon:
+                sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicatesbg.rsi
+                state: icon
+              doAfter: 1
+            - tag: InsulatedJacket
+              name: Insulated Jacket
+              icon:
+                sprite: _EE/Clothing/GloveJackets/insulated_jacket.rsi
+                state: icon
+              doAfter: 1
+  - node: armor
+    entity: ClothingOuterHardsuitSyndicateFreiritter

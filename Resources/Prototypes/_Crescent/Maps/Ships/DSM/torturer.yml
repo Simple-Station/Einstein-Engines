@@ -2,10 +2,10 @@
   id: Torturer
   name: DSM Torturer
   description: |
-    A stealth bomber, made for imperial use. Comes with little crew accomodations, and a fragile hull, but in exchange- it sports an IFF cloak for sneaky engagements, capable of ending battles before they start. 
-    LOADOUT: 2x 180mm Magwell Torpedo Launchers, 1x SHI 20x135mm MKII PDT
-    MINIMUM CREW: 1x Pilot
-  price: 33000
+    A stealth bomber, made for imperial use. Comes with little crew accomodations, and a fragile hull, but in exchange- it sports an IFF cloak for stealth engagements, capable of ending battles before they start. 
+    LOADOUT: 1x 180mm 'Magwell' Torpedo Launcher, 1x 'Lancer' MRM Launcher, 4x 180c 'Torch' Pressure Gatlings
+    MINIMUM CREW: 1x Pilot, 1x Loader
+  price: 58000
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/DSM/torturer.yml

@@ -357,7 +357,7 @@ public sealed partial class CloningSystem : EntitySystem
             changeProfile = false;
             return oldSpecies.Prototype;
         }
-        var chance = (component.HumanoidBaseChance - karma * component.KarmaOffset) * _contests.MindContest(oldBody, true);
+        var chance = component.HumanoidBaseChance - karma * component.KarmaOffset;
 
 
         var ev = new ReincarnatingEvent(oldBody, chance);
@@ -370,13 +370,6 @@ public sealed partial class CloningSystem : EntitySystem
         switch (ev.ForcedType)
         {
             case ForcedMetempsychosisType.None:
-                if (!ev.NeverTrulyClone
-                    && chance > 1
-                    && _random.Prob(chance - 1))
-                {
-                    changeProfile = false;
-                    return oldSpecies.Prototype;
-                }
 
                 chance = Math.Clamp(chance, 0, 1);
                 if (_random.Prob(chance))

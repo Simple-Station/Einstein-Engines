@@ -55,6 +55,7 @@
   id: WeaponSubMachineGunGhost
   description: A internally supressed supressed SMG, chambered in 12mm Smart.
   components:
+  - type: GunRequiresWield
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/ghost.rsi
     layers:
@@ -82,7 +83,7 @@
         priority: 2
         whitelist:
           tags:
-            - MagazineSmgSmartgun
+            - MagazineSmgSmartgun #The mags require uranium to make.Also made it required to be wielded.
       gun_chamber:
         name: Chamber
         startingItem: CartridgePistol12mm
@@ -101,7 +102,7 @@
 
 - type: entity
   name: CDT C-20R Corsair 11mm
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, StreeCredRedeemable ]
   id: WeaponSubMachineGunCorsair
   description: A compact 11 mm submachine gun made by Cyberdawn. Commonly called the C-20R, though Cyberdawn recently tried to force the nickname Corsair on it.
   components:
@@ -154,7 +155,47 @@
     maxAngle: -16
 
 - type: entity
-  name: PTA P-M50 Vektor 6mm
+  name: C-20R ROW
+  id: WeaponSMGC20ROW
+  parent: BaseItem
+  description: A C20 SMG for use by cyborgs. Creates 11 mm Pistol ammo on the fly from an internal ammo fabricator, which slowly self-charges.
+  components:
+  - type: Gun
+    minAngle: 15
+    maxAngle: 25
+    fireRate: 8
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/smg_3/smg_gunshot_1.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/corsair.rsi
+    layers:
+    - state: base
+      map: [ "enum.GunVisualLayers.Base" ]
+    - state: mag-2
+      map: [ "enum.GunVisualLayers.Mag" ]
+  - type: Item
+    size: Huge
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: ProjectileBatteryAmmoProvider
+    proto: CartridgeHeavyPistol
+    fireCost: 100
+  - type: Battery
+    maxCharge: 2500
+    startingCharge: 2500
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 25
+  - type: AmmoCounter
+
+- type: entity
+  name: PTA P-M50 Vektor 6mm #The only gun that actually has obvious problems
   parent: [BaseWeaponSubMachineGun, StreeCredRedeemable]
   id: WeaponSubMachineGunPTAVektor
   description: A cheap, open-bolt copy of the Vector. Unlike the real vector this one doesnt have the signature Super V recoil mitigation system. Chambered in small 6mm rounds.
@@ -248,7 +289,7 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/mp49.rsi
   - type: Gun
-    fireRate: 7
+    fireRate: 8
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/smg_2/smg_gunshot_3.ogg
   - type: MagazineVisuals
@@ -275,7 +316,7 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/mp5.rsi
   - type: Gun
-    fireRate: 7
+    fireRate: 8
     selectedMode: FullAuto
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/smg_2/smg_gunshot_3.ogg
@@ -355,7 +396,7 @@
   name: SHI M221s Phantom 6mm
   parent: [BaseWeaponSubMachineGun, StreeCredRedeemableLow]
   id: WeaponSubMachineGunSabre
-  description: A cheap submachine gun that cuts a corners and features to deliver a reliable enough product, but hey, at least it comes with a free suppressor . Chambered in 6mm PSTF.
+  description: A cheap submachine gun that cuts corners and features to deliver a reliable enough product, but hey, at least it comes with a free suppressor . Chambered in 6mm PSTF.
   components:
   - type: StaticPrice
     price: 1250
@@ -372,7 +413,7 @@
     shape:
     - 0,0,2,1
   - type: Gun
-    fireRate: 8
+    fireRate: 9
     selectedMode: FullAuto
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/supressed_1/supressed_gunshot_2.ogg
@@ -477,13 +518,13 @@
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/smg_3/smg_gunshot_2.ogg
   - type: Gun
-    fireRate: 7
+    fireRate: 8
     selectedMode: Burst
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/smg_3/smg_gunshot_2.ogg
     availableModes:
     - SemiAuto
-    - Burst
+    - Burst #Pretty obvious sideffect of being a newly designed gun.
   - type: ItemSlots
     slots:
       gun_magazine:

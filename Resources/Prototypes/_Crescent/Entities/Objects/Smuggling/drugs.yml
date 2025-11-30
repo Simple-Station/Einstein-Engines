@@ -185,3 +185,39 @@
           Quantity: 10
   - type: Tag
     tags: []
+
+- type: entity
+  name: JV-201 autoinjector
+  parent: ChemicalMedipen
+  id: JVAutoInjector
+  description: A versatile lubricant gel. It will increase the efficiency of living tissue, even if against organic will. Sourced from Carthage Industries.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Autoinjectors/jv201.rsi
+    layers:
+    - state: medipen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: medipen_empty
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 30
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 30
+        reagents:
+        - ReagentId: JV201
+          Quantity: 25
+        - ReagentId: TranexamicAcid
+          Quantity: 5
+  - type: Tag
+    tags: []
+  - type: StaticPrice
+    price: 1000
+  - type: Contraband
+    value: 5

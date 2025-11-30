@@ -15,8 +15,6 @@
     openOnActivation: true
     guides:
     - UnionfallNCWL
-  - type: SelfDelete
-    timeToDelete: 60 #should be enough to read it and then not clutter
 
 - type: entity
   id: BookUnionfallDSMGuide
@@ -37,3 +35,119 @@
     - UnionfallDSM
   - type: SelfDelete
     timeToDelete: 60 #should be enough to read it and then not clutter
+
+- type: entity
+  parent: BookBase
+  id: BookNCWLManual1
+  name: "Accelerated Conscript Training manual issue 1"
+  description: The first part of a manual issued to new Conscripts posted Taypan. The name of Kane is written in some margins.
+  components:
+  - type: Tag
+    tags:
+      - Manual1
+  - type: Sprite
+    sprite: Objects/Misc/books.rsi
+    layers:
+    - state: paper
+    - state: cover_strong
+      color: "#f9bf13"
+    - state: decor_middle
+      color: "#b82827"
+    - state: icon_glow
+      color: "#f9bf13"
+    - state: overlay_dirt
+  - type: Paper
+    content: book-accelerated-conscript-training-manual-1
+
+- type: entity
+  parent: BookBase
+  id: BookNCWLManual2
+  name: "Accelerated Conscript Training manual issue 2"
+  description: The second part of a manual issued to new Conscripts posted Taypan. The name of Kane is written in some margins.
+  components:
+  - type: Tag
+    tags:
+      - Manual2
+  - type: Sprite
+    sprite: Objects/Misc/books.rsi
+    layers:
+    - state: paper
+    - state: cover_strong
+      color: "#f9bf13"
+    - state: decor_middle
+      color: "#b82827"
+    - state: icon_glow
+      color: "#f9bf13"
+    - state: overlay_blood
+  - type: Paper
+    content: book-accelerated-conscript-training-manual-2
+
+- type: entity
+  parent: BaseItem
+  id: BookOfKane
+  name: book of kane
+  description: A manifesto written by a self-proclaimed revolutionary leader, Kane.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/books.rsi
+    layers:
+    - state: paper
+    - state: cover_base
+      color: "#3d3d3d"
+    - state: icon_kane
+    - state: detail_bookmark
+      color: "#aaaa24"
+  - type: BookOfKane
+  - type: UseDelay
+    delay: 2
+  - type: Appearance
+  - type: EmitSoundOnPickup
+    sound: /Audio/SimpleStation14/Items/Handling/book_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
+  - type: ExtendDescription
+    descriptionList:
+    - description: "bookofkane-extendeddescription-NCWL"
+      fontSize: 12
+      color: "#ff0000"
+      requireDetailRange: false
+      requirements:
+        - !type:FactionRequirement
+          factionID: "NCWL"
+    - description: "bookofkane-extendeddescription-DSM"
+      fontSize: 12
+      color: "#880000"
+      requireDetailRange: true
+      requirements:
+        - !type:FactionRequirement
+          factionID: "DSM"
+    - description: "bookofkane-extendeddescription-SHI"
+      fontSize: 12
+      color: "#880000"
+      requireDetailRange: false
+      requirements:
+        - !type:FactionRequirement
+          factionID: "SHI"
+    - description: "bookofkane-extendeddescription-TFSC"
+      fontSize: 12
+      color: "#ff0000"
+      requireDetailRange: true
+      requirements:
+        - !type:FactionRequirement
+          factionID: "TFSC"
+    - description: "bookofkane-extendeddescription-ATH"
+      fontSize: 12
+      color: "#880000"
+      requireDetailRange: true
+      requirements:
+        - !type:FactionRequirement
+          factionID: "ATH"
+    - description: "bookofkane-extendeddescription-SRM"
+      fontSize: 12
+      color: "#880000"
+      requireDetailRange: true
+      requirements:
+        - !type:FactionRequirement
+          factionID: "SRM"

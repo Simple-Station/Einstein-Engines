@@ -124,6 +124,7 @@
       - id: BoxSurvival
       - id: Flash
       - id: MagazineMagnumUranium
+        amount: 2
       - id: Tourniquet
       - id: Zipties
 

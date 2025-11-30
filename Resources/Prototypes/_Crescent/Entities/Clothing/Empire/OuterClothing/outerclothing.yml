@@ -278,6 +278,19 @@
   - type: ClothingAddFaction
     faction: DSM
 
+- type: entity
+  parent: ClothingOuterHardsuitImperialSoldier
+  id: ClothingOuterHardsuitImperialCoronet
+  name: imperial 'CORONET' mk IB combat hardsuit
+  description: A modification of the standard Jannissary Mk 1 armor suit; it has several decorative additions to it to indicate prestige. This particular armor suit is wielded by House Valkenrath-Zehring.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/OuterClothing/mandatecoronet.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/OuterClothing/mandatecoronet.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitImperialCoronet
+
 # armor
 
 - type: entity

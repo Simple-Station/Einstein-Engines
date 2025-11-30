@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: LivestockMothroachGleiss
+  icon:
+    sprite: Mobs/Animals/mothroach.rsi
+    state: mothroach
+  product: CrateNPCMothroach
+  cost: 5000
+  category: cargoproduct-category-name-livestock
+  group: gliess

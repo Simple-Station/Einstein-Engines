@@ -5,6 +5,12 @@
   placement:
     mode: SnapgridCenter
   components:
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: -4
+    range: 4
+    sound:
+      path: /Audio/_Crescent/Ambience/Ame/active.ogg
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite
@@ -59,8 +65,9 @@
       insertSuccessPopup: ame-controller-component-fuel-slot-success-insert
   - type: Explosive
     explosionType: Default
-    intensitySlope: 5
-    maxIntensity: 60
+    totalIntensity: 500000 # Hullrot - explosive AMEs
+    intensitySlope: 150
+    maxIntensity: 1500
   - type: ActivatableUI
     key: enum.AmeControllerUiKey.Key
   - type: UserInterface

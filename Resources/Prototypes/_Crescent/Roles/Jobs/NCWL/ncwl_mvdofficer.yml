@@ -1,0 +1,95 @@
+- type: job
+  id: MVDOfficerNCWL
+  name: job-name-ncwl-mvd-officer
+  description: job-description-ncwl-mvd-officer
+  playTimeTracker: JobMVDOfficerNCWL
+  weight: 100
+  startingGear: MVDOfficerNCWLGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconUnionfallNCWLCaptain"
+  supervisors: job-supervisors-ncwl-mvd
+  canBeAntag: false
+  requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:CharacterOverallTimeRequirement
+      min: 30000
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ncwl-mvd-officer
+      - type: HullrotFaction
+        faction: NCWL
+      - type: LanguageAdder
+        addSpoken:
+          - Dockta
+          - Tradeband
+        addUnderstood:
+          - Dockta
+          - Tradeband
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Command
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - NCWLGeneral
+  - NCWLJail
+  - NCWLArmory
+  - NCWLCommand
+
+- type: startingGear
+  id: MVDOfficerNCWLGear
+  equipment:
+    shoes: ClothingShoesBootsMVDParade
+    jumpsuit: ClothingUniformJumpsuitMVD
+    id: NCWLMVDLeaderPDA
+    outerClothing: ClothingOuterArmorMVDCoat
+    pocket1: WeaponPistolT91
+    back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesMVD
+    head: ClothingHeadHatMVDHat
+    ears: ClothingHeadsetNCWL

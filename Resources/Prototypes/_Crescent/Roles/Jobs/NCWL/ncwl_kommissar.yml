@@ -3,7 +3,7 @@
   name: job-name-ncwl-kommissar
   description: job-description-ncwl-kommissar
   playTimeTracker: JobHomeguardLeaderNCWL
-  weight: 7
+  weight: 101
   startingGear: OverseerNCWLGear
   alwaysUseSpawner: true
   requireAdminNotify: false
@@ -91,7 +91,7 @@
     id: NCWLHomeguardLeaderPDA
     outerClothing: ClothingOuterArmorNCWLCarapace
     belt: ClothingBeltNCWLPouches
-    pocket1: WeaponShotgunDoubleBarreledNCWL
+    suitstorage: WeaponShotgunDoubleBarreledNCWL
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesCombat
     head: ClothingHeadHatNCWLKommissarHat

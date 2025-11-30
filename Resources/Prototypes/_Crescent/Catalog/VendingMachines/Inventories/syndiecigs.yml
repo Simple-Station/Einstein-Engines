@@ -1,0 +1,12 @@
+- type: vendingMachineInventory
+  id: SyndieCigVendorPack
+  startingInventory:
+    CigPackFreeports: 3
+    CigPackInterdynes: 3
+    CigPackInterdyne_Drug: 2
+    CigPackInterdyne_Herbal: 2
+    CigPackInterdyne_Psy: 2
+    CigPackInterdyne_Real: 2
+    CigPackFilterless: 2
+    CigarFreeports: 1
+    FlippoLighter: 4

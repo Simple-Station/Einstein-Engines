@@ -22,6 +22,21 @@
     sprite: Objects/Devices/pda.rsi
     state: pda
   - type: Pda
+    manual3Slot:
+      priority: -7
+      whitelist:
+        components:
+          - Paper
+    manual2Slot:
+      priority: -6
+      whitelist:
+        components:
+          - Paper
+    manual1Slot:
+      priority: -5
+      whitelist:
+        components:
+          - Paper
     shipDeedSlot:
       priority: -4
       whitelist:
@@ -59,6 +74,9 @@
       PDA-pai: !type:ContainerSlot {}
       PDA-passport: !type:ContainerSlot {}
       PDA-shipdeed: !type:ContainerSlot {}
+      PDA-manual1: !type:ContainerSlot {}
+      PDA-manual2: !type:ContainerSlot {}
+      PDA-manual3: !type:ContainerSlot {}
       Cartridge-Slot: !type:ContainerSlot {}
       program-container: !type:Container
   - type: ItemSlots

@@ -133,6 +133,10 @@
     price: 75 # These are limited supply items.
   - type: TrashOnSolutionEmpty
     solution: pen
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Items/Medical/injector_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Items/Medical/injector_drop.ogg
 
 - type: entity
   name: emergency medipen

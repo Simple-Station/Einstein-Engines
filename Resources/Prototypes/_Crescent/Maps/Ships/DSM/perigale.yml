@@ -1,0 +1,32 @@
+- type: vessel
+  id: Perigale
+  name: DSM Perigale
+  description: |
+    An imperial ultralight fighter armed with two pressure gatlings.
+    LOADOUT: 2x SHI 180c "Torch" Pressure Gatlings
+    MINIMUM CREW: 1x Pilot
+  price: 10000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/DSM/perigale.yml
+
+- type: gameMap
+  id: Perigale
+  mapName: 'DSM Perigale'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/perigale.yml
+  minPlayers: 0
+  stations:
+    Perigale:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: fighter
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Perigale {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter

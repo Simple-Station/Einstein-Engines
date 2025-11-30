@@ -12,10 +12,15 @@
       jobs:
         - CommandantNCWL
         - KommissarNCWL
+        - MVDOfficerNCWL
+        - MVDGruntNCWL
         - FleetkapitanNCWL
         - PartisanNCWL
+        - DirectorNCWL
         - DoctorNCWL
-        - CoordinatorNCWL
+        - WorkerOverbossNCWL
+        - DockhandNCWL
+        - IndustryTaskmasterNCWL
         - ArtificerNCWL
         - WorkerNCWL
 
@@ -33,10 +38,15 @@
       jobs:
         - CommandantNCWL
         - KommissarNCWL
+        - MVDOfficerNCWL
+        - MVDGruntNCWL
         - FleetkapitanNCWL
         - PartisanNCWL
+        - DirectorNCWL
         - DoctorNCWL
-        - CoordinatorNCWL
+        - WorkerOverbossNCWL
+        - DockhandNCWL
+        - IndustryTaskmasterNCWL
         - ArtificerNCWL
         - WorkerNCWL
 
@@ -54,10 +64,15 @@
       jobs:
         - CommandantNCWL
         - KommissarNCWL
+        - MVDOfficerNCWL
+        - MVDGruntNCWL
         - FleetkapitanNCWL
         - PartisanNCWL
+        - DirectorNCWL
         - DoctorNCWL
-        - CoordinatorNCWL
+        - WorkerOverbossNCWL
+        - DockhandNCWL
+        - IndustryTaskmasterNCWL
         - ArtificerNCWL
         - WorkerNCWL
 
@@ -379,6 +394,7 @@
         - WatchmasterCMM
         - GliessianDeputy
         - GliessianSheriff
+        - GliessianDockhand
 
 - type: loadout
   id: LoadoutBackpackCMMSatchel
@@ -401,6 +417,7 @@
         - WatchmasterCMM
         - GliessianSheriff
         - GliessianDeputy
+        - GliessianDockhand
 
 - type: loadout
   id: LoadoutBackpackCMMDuffel
@@ -423,3 +440,4 @@
         - WatchmasterCMM
         - GliessianSheriff
         - GliessianDeputy
+        - GliessianDockhand

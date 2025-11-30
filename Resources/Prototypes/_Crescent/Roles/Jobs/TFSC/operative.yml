@@ -11,8 +11,12 @@
   supervisors: You answer to the patriarch and the interests of the CyberDawn Technologies company.
   canBeAntag: false
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:CharacterOverallTimeRequirement
-      min: 10800
+      min: 0
     - !type:FactionRequirement
       factionID: "TFSC"
     - !type:CharacterTraitRequirement
@@ -24,19 +28,23 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
+      - type: NukeOperative
         rank: crescent-rank-operative
       - type: HullrotFaction
         faction: CD
       - type: LanguageAdder
         addSpoken:
           - Freespeak
+          - SolCommon
         addUnderstood:
           - Freespeak
+          - SolCommon
   access:
   - Command
   - Maintenance
   - SyndicateBasic
   - SyndicateRamzi
+  - Engineering
   - Service
   - External
   - Mercenary # Frontier

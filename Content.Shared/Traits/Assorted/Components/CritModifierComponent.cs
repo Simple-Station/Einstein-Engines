@@ -1,4 +1,5 @@
 using Robust.Shared.GameStates;
+//using Content.Shared.FixedPoint;
 
 namespace Content.Shared.Traits.Assorted.Components;
 
@@ -8,9 +9,7 @@ namespace Content.Shared.Traits.Assorted.Components;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class CritModifierComponent : Component
 {
-    /// <summary>
-    ///     The amount that an entity's critical threshold will be incremented by.
-    /// </summary>
-    [DataField]
-    public int CritThresholdModifier { get; private set; } = 0;
+    [DataField] public float CritThresholdModifier { get; set; } = 0f;
+    [ViewVariables] public float OriginalCritThreshold { get; set; } = 0f;
+    [ViewVariables] public float ChemActive { get; set; } = 0f;
 }

@@ -118,6 +118,7 @@
       - ClothMade
       - Gauze
       - Metal
+      - CraftMaterials
   - type: Lathe
     idleState: icon
     runningState: building
@@ -222,6 +223,9 @@
     - MofficTranslator
     - N14MaterialCircuitry
     - VehicleWheelchairFolded # Goobstation
+    - SilkCrate # Hullrot - Silk Tradegoods Pallet
+    - LatheHandHeldMassScanner
+    - ClothingBeltSalvageWebbing
   - type: EmagLatheRecipes
     emagStaticRecipes:
     - BoxLethalshot
@@ -514,6 +518,7 @@
     - AutolatheMachineCircuitboard
     - BookPressMachineCircuitboard
     - CircuitImprinterMachineCircuitboard
+    - BiogeneratorMachineCircuitboard
     - OreProcessorMachineCircuitboard
     - MaterialReclaimerMachineCircuitboard
     - ElectrolysisUnitMachineCircuitboard
@@ -735,8 +740,8 @@
     - MechThruster # Goobstation
     - PowerCageMedium # Goobstation - Powercell to exosuit fab
     - PowerCageSmall # Goobstation - Powercell to exosuit fab
-    dynamicRecipes:
     - ProximitySensor
+    dynamicRecipes:
     - BorgModuleLightReplacer
     - BorgModuleAdvancedCleaning
     - BorgModuleMining
@@ -840,6 +845,7 @@
       - ClothMade
       - Gauze
       - Metal
+      - CraftMaterials
   - type: GuideHelp
     guides:
     - Robotics
@@ -1209,16 +1215,30 @@
       staticRecipes:
         - SluggieHE
         - SluggieAP
+        - SluggieEMP
         - IdnaTorpedoRecipe
         - Automortar90
-        - GrenadeBlast
-        - GrenadeBatonCraft
-        - GrenadeEMP
         - MagazineGrenadeEmpty
         - Needler60
         - MagazineVulcan
         - MagazineFlak
+        - 48mmEMPRocket
+        - 48mmHighYieldRocket
+        - 48mmLowYieldRocket
+        - RocketMagazineEmpty
+        - Cartridge40mmFrag
+        - Cartridge40mmCan
+        - Cartridge40mmHEDP
+        - Cartridge40mmEMP
+        - Cartridge40mmSmoke
+        - Cartridge40mmThermobaric
+        - MagazineBoxImperialRifleBig
+        - MagazineHeavyRifleSmall
         #Hullrot edit start
+        - MagazinePulse470Fmj
+        - MagazinePulse470
+        - MagazinePulse350Fmj
+        - MagazinePulse350
         - DrumMagazineShotgunSlug
         - DrumMagazineShotgunEmpty
         - DrumMagazineShotgunBuck
@@ -1272,6 +1292,7 @@
           - ClothMade
           - Gauze
           - Metal
+
 
 - type: entity
   id: MedicalTechFab
@@ -1598,6 +1619,81 @@
       - ClothMade
       - Gauze
       - Metal
+
+- type: entity
+  id: Biogenerator
+  parent: BaseLathe
+  name: biogenerator
+  description: Converts plants into biomass, which can be used to construct useful items.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/biofabricator.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: BiogeneratorMachineCircuitboard
+  - type: MaterialStorage
+    insertOnInteract: true
+    canEjectStoredMaterials: true
+    ignoreColor: true
+    whitelist:
+      tags:
+      - RawMaterial
+  - type: ProduceMaterialExtractor
+  - type: ItemSlots
+    slots:
+      beaker_slot:
+        name: lathe-component-output-slot-beaker-name
+        whitelist:
+          components:
+          - FitsInDispenser
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      beaker_slot: !type:ContainerSlot
+  - type: Lathe
+    reagentOutputSlotId: beaker_slot
+    idleState: icon
+    runningState: building
+    staticRecipes:
+    - BioGenMilk
+    - BioGenMilkSoy #Gem
+    - BioGenEthanol
+    - BioGenCream
+    - BioGenBlackpepper
+    - BioGenEnzyme
+    - BioGenFlour
+    - BioGenSugar
+    - BioGenMonkeyCube
+    - BioGenKoboldCube
+    - CowCube
+    - GoatCube
+    - MothroachCube
+    - MouseCube
+    - BioGenMaterialCloth1
+    - BioGenMaterialCardboard1
+    - BioGenPaper
+    - BioGenPaperRolling1
+    - BioGenCandle
+    - BioGenPlantBGone
+    - BioGenWeedKiller
+    - BioGenPestKiller
+    - BioGenLeft4Zed
+    - BioGenEZNutrient
+    - BioGenRobustHarvest
+    - BioGenBoozeVendRestock
+    - BioGenCondimentsRestock
+    - BioGenChefVendRestock
 
 - type: entity
   parent: [BaseLathe, BaseMaterialSiloUtilizer]

@@ -21,4 +21,10 @@ public sealed partial class TechnologyDiskComponent : Component
     /// </summary>
     [DataField]
     public ProtoId<WeightedRandomPrototype> TierWeightPrototype = "TechDiskTierWeights";
+
+    /// <summary>
+    /// A list of recipe IDs that should not be obtainable from this tech disk.
+    /// </summary>
+    [DataField]
+    public HashSet<ProtoId<LatheRecipePrototype>>? ExcludedRecipes;
 }

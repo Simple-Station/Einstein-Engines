@@ -89,10 +89,14 @@
   roles:
   - CommandantNCWL
   - KommissarNCWL
+  - MVDGruntNCWL
   - FleetkapitanNCWL
   - PartisanNCWL
+  - DirectorNCWL
   - DoctorNCWL
-  - CoordinatorNCWL
+  - WorkerOverbossNCWL
+  - DockhandNCWL
+  - IndustryTaskmasterNCWL
   - ArtificerNCWL
   - WorkerNCWL
   editorHidden: false
@@ -198,7 +202,7 @@
   - Antiquarian
   - BeltrunnerTAP
   - DraugrTAP
-  # - ServileTAP
+  - ServileTAP
   editorHidden: false
 
 - type: department

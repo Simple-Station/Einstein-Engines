@@ -9,14 +9,14 @@ id-card-access-level-ncwljail = Homeguard Cells
 
 # syndicate
 
-id-card-access-level-syndicatebasic = Privateer
+id-card-access-level-syndicatebasic = Syndicate
 id-card-access-level-syndicatecommand = Syndicate Command
-id-card-access-level-syndicategorlex = Gorlex Security Consulting
-id-card-access-level-syndicateinterdyne = Interdyne Pharmaceutics
-id-card-access-level-syndicatesaws = Shipfitters and Astronautics Workers Union
-id-card-access-level-syndicateramzi = Halflight Media
-id-card-access-level-syndicateringleader = Privateer Ringleader
-id-card-access-level-syndicatearmory = Privateers' Armory
+id-card-access-level-syndicategorlex = GSC
+id-card-access-level-syndicateinterdyne = Interdyne
+id-card-access-level-syndicatesaws = SAW
+id-card-access-level-syndicateramzi = Cybersun
+id-card-access-level-syndicateringleader = Ringleader
+id-card-access-level-syndicatearmory = Syndicate Armory
 
 # empire
 
@@ -40,8 +40,8 @@ id-card-access-level-srmoverseer = Sixth Subjugation Fireteam Commodore
 
 id-card-access-level-shi = Shinohara Heavy Industries
 id-card-access-level-shiofficer = Shinohara Corporate Officer
-id-card-access-level-shisecurity = Shinohara Security Department
-id-card-access-level-shiexecutive = Shinohara Command Department
+id-card-access-level-shisec = Shinohara Security Department
+id-card-access-level-shiexec = Shinohara Command Department
 
 # cmm
 
@@ -63,3 +63,13 @@ id-card-access-level-authoritat-cargo = 43rd Battlegroup Supply
 id-card-access-level-antiquarian = Antiquarian
 id-card-access-level-gliess-admin = Gliessian Dockmaster
 id-card-access-level-gliess-sheriff = Gliessian Sheriff
+
+# tap
+
+id-card-access-level-arabet = Arabet
+id-card-access-level-thukker = Thukker
+id-card-access-level-Alseik = Al-Seik
+id-card-access-level-Servile = Servile
+id-card-access-level-Families = General Four Families access
+id-card-access-level-Izdari = Izdari
+

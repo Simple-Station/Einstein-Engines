@@ -4,7 +4,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/vintorez.rsi
     state: icon
   product: WeaponCaseVintorez
-  cost: 13000
+  cost: 12500
   category: cargoproduct-category-name-military
   group: pangtai
 
@@ -14,7 +14,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/asval.rsi
     state: icon
   product: WeaponCasePhantom
-  cost: 10000
+  cost: 20000
   category: cargoproduct-category-name-military
   group: pangtai
 
@@ -44,7 +44,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/takemura.rsi
     state: icon
   product: CratePangtaiTakemura
-  cost: 10000
+  cost: 25000 #One of the few actually tested rifles. No downsides aside from pricing.
   category: cargoproduct-category-name-military
   group: pangtai
 
@@ -54,7 +54,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/pozhar.rsi
     state: icon
   product: CratePangtaiPozhar
-  cost: 15000
+  cost: 20000
   category: cargoproduct-category-name-military
   group: pangtai
 
@@ -84,7 +84,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
     state: icon
   product: CratePangtaiKarabin
-  cost: 20000
+  cost: 15000
   category: cargoproduct-category-name-military
   group: pangtai
 
@@ -94,7 +94,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/railgun.rsi
     state: icon
   product: CratePangtaiLancer
-  cost: 60000
+  cost: 50000 
   category: cargoproduct-category-name-military
   group: pangtai
 
@@ -124,7 +124,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/spear.rsi
     state: icon
   product: CratePangtaiSpear
-  cost: 40000
+  cost: 45000
   category: cargoproduct-category-name-military
   group: pangtai
 
@@ -214,7 +214,7 @@
     sprite: _Crescent/Clothing/Corpo/OuterClothing/zhanshi.rsi
     state: icon
   product: CratePangtaiHardsuitArmor
-  cost: 12500
+  cost: 15000 #PTA doesn't have the most efficiency in terms of material useage.
   category: cargoproduct-category-name-military
   group: pangtai
 
@@ -244,7 +244,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/chinalake.rsi
     state: base
   product: CratePangtaiChinalake
-  cost: 17500
+  cost: 20000
   category: cargoproduct-category-name-military
   group: pangtai
 

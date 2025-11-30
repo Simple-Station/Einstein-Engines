@@ -1,4 +1,69 @@
 - type: entity
+  name: SHI-WTI SR-3 Overwatch .470
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
+  id: WeaponSpecialPulseAMR
+  description: A high quality pulse sniper rifle developed by Wu-Tan Industries, a Shinohara subsidiary. Loved by for its massive stopping power, Hated for its price. Chambered in .470 PCM.
+  components:
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/sr3.rsi
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/sr3.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    shape:
+    - 0,0,5,2
+  - type: Gun
+    fireRate: 1
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/pulse/sr3_shot.ogg
+    soundEmpty:
+      path: /Audio/_Crescent/Weapons/Guns/pulse/empty.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/_Crescent/Weapons/Guns/pulse/sr3_rack.ogg
+    soundBoltOpened:
+      path: /Audio/_Crescent/Weapons/Guns/pulse/bolt_out.ogg
+    soundBoltClosed:
+      path: /Audio/_Crescent/Weapons/Guns/pulse/sr3_bolt_in.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePulse470Fmj
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePulse470
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePulse470Fmj
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePulse470
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: UseDelay
+    delay: 1
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+
+
+- type: entity
   name: PTA XCG-4 Lancer 15mm
   parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponSpecialRailgun
@@ -19,7 +84,7 @@
   - type: Gun
     fireRate: 1
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/charged.ogg
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/railgun.ogg
     fireOnDropChance: 0.5
   - type: ChamberMagazineAmmoProvider
     soundRack:
@@ -115,7 +180,7 @@
   name: SCHK-2 plasma hardlight sword
   parent: [EnergySword, StreeCredRedeemable]
   id: EnergySwordFamilies
-  description: A stylish answer to the antiquated NanoTrasen energy sword.
+  description: A stylish answer to the antiquated NanoTrasen energy sword. Plasma blade makes it nearly weightless.
   components:
   - type: WeaponCaseInsertable # Frontier
   - type: EnergySword
@@ -147,8 +212,8 @@
         variation: 0.125
     activatedDamage:
         types:
-            Slash: 25
-            Heat: 20
+            Slash: 30
+            Heat: 25
             Structural: 20
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Melee/plas_sword.rsi
@@ -162,16 +227,16 @@
   - type: MeleeWeapon
     wideAnimationRotation: -135
     range: 1.25
-    attackRate: 0.9
+    attackRate: 0.65
     damage:
       types:
         Blunt: 4.5
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 10
-    heavyRateModifier: 1.15
+    heavyRateModifier: 1 # Light sword. Meant for close in fighting with rifles
     clickPartDamageMultiplier: 1.5
     lightRangeModifier: 1.2
-    maxTargets: 4
+    maxTargets: 2
   - type: Item
     size: Small
     sprite: _Crescent/Objects/Weapons/Melee/plas_sword-inhands.rsi
@@ -214,7 +279,7 @@
   - type: MeleeWeapon
     wideAnimationRotation: 135
     swingLeft: true
-    attackRate: 1.5
+    attackRate: 0.75
     range: 1.75
     damage:
       types:
@@ -223,10 +288,10 @@
         Structural: 10
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 14
-    heavyRateModifier: 1.167 # 1.75 attack rate with 1.5 base
-    clickPartDamageMultiplier: 1.25
+    heavyRateModifier: 1.2 # slower heavy swing of 0.9
+    clickPartDamageMultiplier: 1.15
     lightRangeModifier: 1.15
-    maxTargets: 6
+    maxTargets: 3
     soundHit:
       collection: MetalThud
   - type: Wieldable
@@ -252,7 +317,7 @@
   name: SCHK-3 charge warhammer
   parent: [BaseItem, StreeCredRedeemable]
   id: Plashammer
-  description: A robust warclub made by the Families.
+  description: A robust warclub made by the Families. Plasma core ignites all that it touches.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Melee/plashammer.rsi
@@ -260,11 +325,11 @@
   - type: MeleeWeapon
     wideAnimationRotation: -155 #onehanded stance allows for wider swing
     range: 1.25
-    attackRate: 1
+    attackRate: 0.75
     damage:
       types:
-        Blunt: 35
-        Heat: 10
+        Blunt: 30
+        Heat: 20
         Structural: 25
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 10
@@ -277,6 +342,8 @@
   - type: Item
     size: Normal
   - type: DisarmMalus #harder to shake firm grip
+  - type: IgniteOnMeleeHit
+    fireStacks: 3
 
 - type: entity
   name: SHI-30J Paperwork

@@ -3,8 +3,9 @@
   weights:
     MobMonkey: 1
     MobGorilla: 1
-    MobKangaroo: 0.5
-    MobXenoQueen: 0.01
-    MobCrab: 0.01
-    MobPenguin: 1
-    MobSpaceShrimp: 1
+    MobBearSpace: 0.1
+    MobSpiderSpace: 0.2
+    MobMothroach: 0.2
+    MobAbomination: 0.3
+    MobSpaceShrimp: 0.1
+    MobAdultSlimes: 0.01

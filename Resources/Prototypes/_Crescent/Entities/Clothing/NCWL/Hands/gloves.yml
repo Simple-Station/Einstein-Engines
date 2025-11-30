@@ -15,3 +15,14 @@
     fiberMaterial: fibers-durathread
     fiberColor: fibers-black
   - type: FingerprintMask
+
+- type: entity
+  parent: ClothingHandsGlovesNCWLAdmiralParade
+  id: ClothingHandsGlovesMVD
+  name: mvd gloves
+  description: A pair of well-worn reinforced gloves. You can see crusted, dried blood on the knuckle reinforcements.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/Hands/mvdgloves.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/Hands/mvdgloves.rsi
