@@ -90,6 +90,7 @@ namespace Content.Client.Ghost
             }
             else if (!light?.Enabled ?? false) // skip this option if we have no PointLightComponent
             {
+            //WE DO NOT HAVE A POINTLIGHT COMPONENT, SKIPPED - WABASH
             //     // enable personal light
             //     Popup.PopupEntity(Loc.GetString("ghost-gui-toggle-lighting-manager-popup-personal-light"), args.Performer);
             //     _pointLightSystem.SetEnabled(uid, true, light);
