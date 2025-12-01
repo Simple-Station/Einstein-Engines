@@ -215,8 +215,6 @@
     autoEject: true
     soundAutoEject:
       path: /Audio/Weapons/Guns/EmptyAlarm/M1_empty_alarm.ogg
-      volume: 0.8
-      vriation: 0.1
   - type: Appearance
   - type: StaticPrice
     price: 2000
