@@ -9,7 +9,6 @@
       types:
         Piercing: 100 # crits anybody in T1 armor and leaves anybody wearing T2 armor 1 sneze away from crit
         Structural: 400
-    harmorPenetration: 40
   - type: StaminaDamageOnCollide
     damage: 40
 
@@ -24,7 +23,6 @@
       types:
         Piercing: 100 # crits anybody in T1 armor and leaves anybody wearing T2 armor 1 sneze away from crit
         Structural: 1250
-    harmorPenetration: 80
   - type: StaminaDamageOnCollide
     damage: 40
 
