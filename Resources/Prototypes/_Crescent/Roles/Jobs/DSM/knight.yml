@@ -62,4 +62,13 @@
     head: ClothingHeadHelmetImperialKnightCommanderHelmet
     outerClothing: ClothingOuterArmorImperialArmorPrestige
     gloves: ClothingHandsGlovesImperialLonggloves
-    pocket1: ImperialPassportBareLegit
+    pocket1: WeaponPistolNeoVolker
+    pocket2: RomaineBible
+    belt: ClothingBeltAssault
+  storage:
+    belt:
+      - Flash
+      - Tourniquet
+      - Zipties
+      - MagazineMagnum
+      - CombatKnife

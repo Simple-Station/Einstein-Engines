@@ -148,6 +148,8 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/legionnaire.rsi
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -172,7 +174,7 @@
     - SemiAuto
     - Burst
     - FullAuto
-    burstFireRate: 5
+    burstFireRate: 6.5
     fireRate: 5
   - type: ChamberMagazineAmmoProvider
     autoEject: true
