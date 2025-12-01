@@ -55,7 +55,7 @@
   id: WealthGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitImperialNobleMale
-    back: ClothingBackpackSatchelLeatherFilledDSM
+    back: ClothingBackpackSatchelLeather
     shoes: ClothingShoesBootsImperialLongboots
     mask: ClothingMaskImperialCombatGasmask
     head: ClothingHeadHatImperialHeadwrap
@@ -63,5 +63,4 @@
     gloves: ClothingHandsGlovesImperialGovernorGloves
     id: WealthPDA
     ears: ClothingHeadsetEmpire
-    pocket1: ImperialPassportBareLegit
     pocket2: SpaceCash10000

@@ -58,7 +58,7 @@
     ears: ClothingHeadsetEmpire
     jumpsuit: ClothingUniformJumpsuitImperialCombat
     shoes: ClothingShoesBootsImperialJackboots
-    back: ClothingBackpackDSMFilledSoldier
+    back: ClothingBackpackDSM
     head: ClothingHeadHelmetImperialKnightCommanderHelmet
     outerClothing: ClothingOuterArmorImperialArmorPrestige
     gloves: ClothingHandsGlovesImperialLonggloves
@@ -69,6 +69,6 @@
     belt:
       - Flash
       - Tourniquet
-      - Zipties
       - MagazineMagnum
       - CombatKnife
+      - Zipties

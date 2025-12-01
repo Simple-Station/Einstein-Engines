@@ -61,7 +61,7 @@
     pocket2: MedkitCombatFilled
     back: ClothingBackpackNCSP
   storage:
-    back:
+    belt:
       - Flash
       - Tourniquet
       - Zipties

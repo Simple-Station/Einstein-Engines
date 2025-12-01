@@ -66,11 +66,11 @@
     back: ClothingBackpackSHISatchel
     belt: ClothingBeltAssault
   storage:
-    back:
-    - Flash
-    - Tourniquet
-    - Handcuffs
-    - CombatKnife
+    belt:
+      - Flash
+      - Tourniquet
+      - CombatKnife
+      - Zipties
 
 - type: job
   id: HosSHI
@@ -133,10 +133,16 @@
     id: HighsecPDA
     eyes: ClothingEyesGlassesSunglasses
     ears: ClothingHeadsetShinohara
-    pocket1: Handcuffs
+    pocket1: WeaponPistolLiquidator
     pocket2: TradePassport
     back: ClothingBackpackSHISatchel
     head: ClothingHeadHatShinoharaBeretHOS
     mask: ClothingMaskSHIHOSMask
     outerClothing: ClothingOuterArmorShinoharaHOSVest
-    belt: WeaponPistolLiquidator
+    belt: ClothingBeltAssault
+  storage:
+    belt:
+      - Flash
+      - Tourniquet
+      - CombatKnife
+      - Zipties

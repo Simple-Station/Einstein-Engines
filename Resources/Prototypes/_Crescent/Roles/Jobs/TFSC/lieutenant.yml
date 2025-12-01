@@ -83,10 +83,10 @@
   id: LieutenantGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitSyndicateOfficer
-    back: ClothingBackpackSatchelLeatherFilledNCWL
+    back: ClothingBackpackSatchelLeather
     shoes: ClothingShoesBootsCombat
     outerClothing: ClothingOuterArmorSyndicateLieutenant
     id: LieutenantPDA
     ears: ClothingHeadsetNCSP
-    belt: WeaponPistolViperWood
+    pocket1: WeaponPistolViperWood
     pocket2: ClothingMaskGasSyndicate
