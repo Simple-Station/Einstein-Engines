@@ -69,8 +69,6 @@
     belt:
       - Flash
       - Tourniquet
-      - CombatKnife
-      - Zipties
 
 - type: job
   id: HosSHI
@@ -144,5 +142,3 @@
     belt:
       - Flash
       - Tourniquet
-      - CombatKnife
-      - Zipties

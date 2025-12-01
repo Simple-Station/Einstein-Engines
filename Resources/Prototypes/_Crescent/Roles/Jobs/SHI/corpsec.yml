@@ -64,7 +64,5 @@
     belt: ClothingBeltSecurityFilled
   storage:
     belt:
-    - Flash
     - Tourniquet
     - MagazinePistol
-    - CombatKnife
