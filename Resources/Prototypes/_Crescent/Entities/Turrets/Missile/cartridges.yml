@@ -1,0 +1,22 @@
+- type: entity
+  id: Cartridge48mmRocket
+  name: 48mm assault rocket
+  description: Luckily not armed. You think.
+  parent: BaseCartridge
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - CartridgeShortbow
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: ShortbowRocketProjectile
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Cartridge/shortbow.rsi
+    layers:
+    - state: shortbow
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 150
