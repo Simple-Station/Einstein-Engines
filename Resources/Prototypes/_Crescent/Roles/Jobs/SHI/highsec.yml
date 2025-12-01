@@ -64,7 +64,7 @@
     pocket1: WeaponPistolLiquidator
     pocket2: TradePassport
     back: ClothingBackpackSHISatchel
-    belt: ClothingBeltSecurity
+    belt: ClothingBeltSecurityFilled
   storage:
     belt:
       - Flash
@@ -139,7 +139,7 @@
     head: ClothingHeadHatShinoharaBeretHOS
     mask: ClothingMaskSHIHOSMask
     outerClothing: ClothingOuterArmorShinoharaHOSVest
-    belt: ClothingBeltSecurity
+    belt: ClothingBeltSecurityFilled
   storage:
     belt:
       - Flash
