@@ -3,8 +3,8 @@
 #---------- 15mm Railgun ----------
 - type: entity
   id: BaseCartridgeRailgun15mm
-  name: railgun slug (15mm PTMD)
-  description: A 15mm fin-stabilized discarding-sabot slug
+  name: railgun slug (15x110mm PTMD)
+  description: A 15x110mm fin-stabilized discarding-sabot slug.
   parent: BaseCartridge
   components:
   - type: Tag

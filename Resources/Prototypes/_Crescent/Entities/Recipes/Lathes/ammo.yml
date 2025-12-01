@@ -2,6 +2,14 @@
 # RIFLE AMMUNITIONS
 
 - type: latheRecipe
+  id: BaseCartridgeRailgun15mm
+  result: BaseCartridgeRailgun15mm
+  completetime: 1
+  materials:
+    Steel: 400
+    Uranium: 200
+
+- type: latheRecipe
   id: MagazineClip18gBuck
   result: MagazineClip18gBuck
   completetime: 1

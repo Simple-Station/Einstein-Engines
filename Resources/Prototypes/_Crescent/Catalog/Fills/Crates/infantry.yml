@@ -248,6 +248,8 @@
     contents:
       - id: WeaponSpecialRailgun
         amount: 1
+      - id: BaseCartridgeRailgun15mm
+        amount: 3
 
 - type: entity
   id: CratePangtaiMako
