@@ -546,8 +546,8 @@
   result: ShipVoucherLaelaps
   completetime: 1
   materials:
-    StarshipEngineComponents: 6250
-    ShipComponents: 4750
+    StarshipEngineComponents: 6000
+    ShipComponents: 5000
     ShipHull: 9000
 
 - type: latheRecipe
@@ -555,71 +555,71 @@
   result: ShipVoucherSunesis
   completetime: 1
   materials:
-    StarshipEngineComponents: 6250
-    ShipComponents: 4750
-    ShipHull: 9000
+    StarshipEngineComponents: 4000
+    ShipComponents: 5000
+    ShipHull: 7500
 
 - type: latheRecipe
   id: SuzerainLPC
   result: ShipVoucherSuzerain
   completetime: 1
   materials:
-    StarshipEngineComponents: 9500
-    ShipComponents: 11250
-    ShipHull: 16500
+    StarshipEngineComponents: 7000
+    ShipComponents: 6000
+    ShipHull: 11000
 
 - type: latheRecipe
   id: NemesisLPC
   result: ShipVoucherNemesis
   completetime: 1
   materials:
-    StarshipEngineComponents: 8250
-    ShipComponents: 4750
-    ShipHull: 18500
+    StarshipEngineComponents: 7000
+    ShipComponents: 8000
+    ShipHull: 11000
 
 - type: latheRecipe
   id: JanissaryLPC
   result: ShipVoucherJanissary
   completetime: 1
   materials:
-    StarshipEngineComponents: 2000
-    ShipComponents: 1250
-    ShipHull: 3250
+    StarshipEngineComponents: 1000
+    ShipComponents: 1000
+    ShipHull: 1500
 
 - type: latheRecipe
   id: VorunaLPC
   result: ShipVoucherVoruna
   completetime: 1
   materials:
-    StarshipEngineComponents: 2000
-    ShipComponents: 1250
-    ShipHull: 3250
+    StarshipEngineComponents: 1000
+    ShipComponents: 1000
+    ShipHull: 1500
 
 - type: latheRecipe
   id: PerigaleLPC
   result: ShipVoucherPerigale
   completetime: 1
   materials:
-    StarshipEngineComponents: 2000
-    ShipComponents: 1250
-    ShipHull: 3250
+    StarshipEngineComponents: 1000
+    ShipComponents: 1000
+    ShipHull: 1500
 
 - type: latheRecipe
   id: TriumphantLPC
   result: ShipVoucherTriumphant
   completetime: 1
   materials:
-    StarshipEngineComponents: 8250
-    ShipComponents: 6750
-    ShipHull: 10500
+    StarshipEngineComponents: 7000
+    ShipComponents: 6000
+    ShipHull: 10000
 
 - type: latheRecipe
   id: IbisLPC
   result: ShipVoucherIbis
   completetime: 1
   materials:
-    StarshipEngineComponents: 3250
-    ShipComponents: 1750
+    StarshipEngineComponents: 1500
+    ShipComponents: 1500
     ShipHull: 4000
 
 - type: latheRecipe
@@ -637,17 +637,17 @@
   completetime: 1
   materials:
     StarshipEngineComponents: 2000
-    ShipComponents: 3000
-    ShipHull: 3000
+    ShipComponents: 4500
+    ShipHull: 4000
 
 - type: latheRecipe
   id: MagnateLPC
   result: ShipVoucherMagnate
   completetime: 1
   materials:
-    StarshipEngineComponents: 3250
-    ShipComponents: 2750
-    ShipHull: 5000
+    StarshipEngineComponents: 3000
+    ShipComponents: 4500
+    ShipHull: 4000
 
 - type: latheRecipe
   id: GrenadeDSMG4Twistcap
