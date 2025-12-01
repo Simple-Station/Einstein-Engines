@@ -105,7 +105,7 @@ public sealed partial class ShipShieldsSystem : EntitySystem
                 emitter.OverloadAccumulator = emitter.DamageOverloadTimePunishment;
 
             // if our shield is gone, AND the OverloadAccumulator is done counting down (with some padding), then...
-            if (emitter.Shield is null && emitter.OverloadAccumulator < 1.5) //put the shield back up!
+            if (emitter.Shield is null && emitter.OverloadAccumulator < 1.5 && power.Powered) //put the shield back up!
             {
                 emitter.Recharging = false; //stop boosting hp recharge now that it's up
                 var shield = ShieldEntity(parent.Value, source: uid);
@@ -126,8 +126,27 @@ public sealed partial class ShipShieldsSystem : EntitySystem
                 _audio.PlayGlobal(emitter.PowerDownSound, filter, true, emitter.PowerUpSound.Params);
             }
 
+            if (!power.Powered && emitter.Shield is not null) // if shield is depowered then unshield the ship
+            {
+                emitter.Recharging = true; //boost hp recharge when it's down
+                UnshieldEntity(parent.Value);
+                emitter.Shield = null;
+                emitter.Shielded = null;
+                _audio.PlayGlobal(emitter.PowerDownSound, filter, true, emitter.PowerUpSound.Params);
+            }
+
             // SHIELDS POWERING UP / DOWN BECAUSE OF POWER DRAW IS HANDLED SOMEWHERE ELSE
 
+        }
+
+        // better ways to do it but this will catch every edge case (probably)
+        var cleanupQuery = EntityQueryEnumerator<ShipShieldedComponent>();
+        while (cleanupQuery.MoveNext(out var uid, out var shieldedComp)) // five. hundred. entity queries.
+        {
+            if (!shieldedComp.Source.HasValue)
+            {
+                Del(uid);
+            }
         }
     }
     public override void Initialize()

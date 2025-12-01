@@ -7,13 +7,13 @@ job-name-utility-ipc = NT Engineer IPC
 
 job-name-ncwl-faction-leader = General Major
 job-name-ncwl-kommissar = Kommissar
-job-name-ncwl-mvd-officer = Cadet Kommissar
+job-name-ncwl-mvd-officer = Kommissar Cadet
 job-name-ncwl-mvd-grunt = Kommissar Aide
 job-name-ncwl-fleetkapitan = Unionkapitan
 job-name-ncwl-partisan = Partisan
 job-name-ncwl-industry-taskmaster = Sindikat Overseer
 job-name-ncwl-industry-artificer = Sindikat Artificer
-job-name-ncwl-medical-director = Vrachei Director
+job-name-ncwl-medical-director = Alyans Director
 job-name-ncwl-medical-doctor = Alyans Sanitar
 job-name-ncwl-worker-overboss = Logistics Coordinator
 job-name-ncwl-worker-dockhand = Logistics Crew
@@ -33,6 +33,9 @@ job-name-cyberdawntech = Cyberdawn Researcher
 job-name-intelligenceofficer = Patriarch
 job-name-shipbreaker = Shipbreaker
 job-name-foreman = SAW Foreman
+ghost-role-information-syndicate-cyborg-assault-name = CS 5401 Xigou assault cyborg
+ghost-role-information-syndicate-cyborg-Medical-name = CS 4201 Yao Wang Combat Medical cyborg
+ghost-role-information-syndicate-cyborg-saboteur-name = CS 3201 Sun Wukong Combat saboteur cyborg
 
 # empire
 

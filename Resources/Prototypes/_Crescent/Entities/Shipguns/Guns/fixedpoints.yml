@@ -654,6 +654,9 @@
     - state: artillery
   - type: Machine
     board: Type99ArtilleryCircuitboard
+  - type: DeviceLinkSink
+    ports:
+      - FillbotAnyItem
   - type: Destructible
     thresholds:
     - trigger:

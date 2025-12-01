@@ -164,7 +164,7 @@
     color: orange
     energy: 0.5
   - type: TimedDespawn
-    lifetime: 22
+    lifetime: 11
   - type: Sprite
     sprite: _NF/Objects/SpaceArtillery/plasmahardpoint.rsi
     layers:

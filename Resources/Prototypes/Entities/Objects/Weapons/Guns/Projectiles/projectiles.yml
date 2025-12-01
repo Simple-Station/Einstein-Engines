@@ -3,14 +3,17 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
-    lifetime: 0.4
+    lifetime: 0.16
   - type: Sprite
     drawdepth: Effects
+    offset: 0.15, 0
     layers:
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
-      sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
-      state: muzzle_bullet
+      sprite: _Crescent/Objects/Effects/Muzzleflash/medium.rsi
+      state: flash
+    - sprite: _Crescent/Objects/Effects/Muzzleflash/medium.rsi
+      state: smoke
   - type: EffectVisuals
   - type: Tag
     tags:
@@ -56,9 +59,9 @@
   - type: Clickable
   - type: Sprite
     noRot: false
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    sprite: _Crescent/Objects/Weapons/Projectiles/ballistic.rsi
     layers:
-    - state: bullet
+    - state: medium
       shader: unshaded
   - type: Physics
     bodyType: Dynamic
@@ -84,6 +87,11 @@
   - type: TimedDespawn
     lifetime: 10
   - type: LagCompensation
+  - type: PointLight
+    enabled: true
+    color: "#ffe3c4"
+    radius: 1.25
+    energy: 5.0
 
 - type: entity
   id: BaseBulletTrigger # Trigger-on-collide bullets
@@ -154,11 +162,6 @@
     damage:
       types:
         Blunt: 14
-  - type: PointLight
-    enabled: true
-    color: "#ff4300"
-    radius: 2.0
-    energy: 7.0
   - type: IgniteOnCollide
     fireStacks: 0.25
 

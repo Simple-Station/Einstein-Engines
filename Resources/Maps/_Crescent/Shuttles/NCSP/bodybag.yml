@@ -760,6 +760,13 @@ entities:
           - Toggle
     - type: ApcPowerReceiver
       needsPower: False
+    - type: NamedModules
+      buttonNames:
+      - Toggle Shutters
+      - Module B
+      - Module C
+      - Module D
+      - Module E
 - proto: CrateGenericSteel
   entities:
   - uid: 68

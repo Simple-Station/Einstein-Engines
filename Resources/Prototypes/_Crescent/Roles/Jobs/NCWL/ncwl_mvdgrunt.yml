@@ -12,13 +12,12 @@
   canBeAntag: false
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 30000
+      min: 20000
     - !type:FactionRequirement
       factionID: "NCWL"
     - !type:CharacterSpeciesRequirement
-      inverted: true
       species:
-        - Voidborn
+        - Human
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -90,3 +89,4 @@
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesMVD
     ears: ClothingHeadsetNCWL
+    suitstorage: WeaponSubMachineGunMilitant

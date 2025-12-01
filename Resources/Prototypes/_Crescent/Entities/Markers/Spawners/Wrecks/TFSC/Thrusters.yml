@@ -1,0 +1,19 @@
+#allows mappers to automate random holes and damage in a wreck
+- type: entity
+  name: TFSC Thrust Wreck Randomizer
+  id: TFSCThrustWreckRandomizer
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: _Crescent/Structures/thrustersyn.rsi
+          state: base
+    - type: RandomSpawner
+      prototypes:
+       - ThrusterNCSPWarship
+       - MachineFrameDestroyed
+      chance: 0.65
+      #rarePrototypes:
+
+      #rareChance: 0.05

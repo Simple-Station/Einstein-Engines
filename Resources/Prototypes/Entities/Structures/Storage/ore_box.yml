@@ -1,7 +1,7 @@
 ﻿- type: entity
   id: OreBox
-  name: ore box
-  description: A large storage container for holding unprocessed ores.
+  name: resource box
+  description: A large storage container for holding unprocessed resources and components.
   parent: BaseStructureDynamic
   components:
   - type: StaticPrice
@@ -61,6 +61,8 @@
       tags:
       - ArtifactFragment # Lavaland Change
       - Ore
+      - RawMaterial
+      - CraftMaterials
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:

@@ -68,6 +68,21 @@
   recipeUnlocks:
   - RadioJammerCyberdawn
 
+- type: technology
+  id: CyberdawnLPCT1
+  name: research-technology-cyberdawn-CDTShipT1LPC
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Cyberdawn
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - VelatorLPC
+  - TaipanLPC
+  - WispLPC
+  - WreckLPC
+
 #tier 2
 
 - type: technology
@@ -90,7 +105,7 @@
     state: icon
   discipline: Cyberdawn
   tier: 2
-  cost: 6000
+  cost: 7500
   recipeUnlocks:
   - EmagCyberdawn
   - DoormagCyberdawn
@@ -187,6 +202,30 @@
   recipeUnlocks:
   - ClothingOuterHardsuitSyndieMedicCyberdawn
 
+- type: technology
+  id: CDTSaboteurcyborgs
+  name: research-technology-cyberdawn-CDTSaboteurcyborgs
+  icon:
+    sprite: Mobs/Silicon/chassis.rsi
+    state: synd_engi
+  discipline: Cyberdawn
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - ReinforcementFlatpackSyndicateCyborgSaboteur
+
+- type: technology
+  id: CDTMedicalcyborgs
+  name: research-technology-cyberdawn-CDTMedicalcyborgs
+  icon:
+    sprite: Mobs/Silicon/chassis.rsi
+    state: synd_medical
+  discipline: Cyberdawn
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - ReinforcementFlatpackSyndicateCyborgMedical
+
 # tier 3
 
 - type: technology
@@ -225,6 +264,18 @@
   cost: 8000
   recipeUnlocks:
   - ClothingEyesThermalVisionGogglesCyberdawn
+
+- type: technology
+  id: CDTCombatcyborgs
+  name: research-technology-cyberdawn-CDTCombatcyborgs
+  icon:
+    sprite: Mobs/Silicon/chassis.rsi
+    state: synd_sec
+  discipline: Cyberdawn
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - ReinforcementFlatpackSyndicateCyborgAssault
 
 - type: technology
   id: CyberdawnAdvancedLaunchers

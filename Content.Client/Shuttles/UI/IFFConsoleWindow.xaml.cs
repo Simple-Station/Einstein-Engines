@@ -14,6 +14,7 @@ public sealed partial class IFFConsoleWindow : FancyWindow,
 {
     private readonly ButtonGroup _showIFFButtonGroup = new();
     private readonly ButtonGroup _showVesselButtonGroup = new();
+    public event Action<Color>? ColorSelected;
     public event Action<bool>? ShowIFF;
     public event Action<bool>? ShowVessel;
 
@@ -29,6 +30,24 @@ public sealed partial class IFFConsoleWindow : FancyWindow,
         ShowVesselOnButton.Group = _showVesselButtonGroup;
         ShowVesselOnButton.OnPressed += args => ShowVesselPressed(true);
         ShowVesselOffButton.OnPressed += args => ShowVesselPressed(false);
+
+        if (ColorPreset1Button != null)
+            ColorPreset1Button.OnPressed += _ => TrySelectColor("#FFFFFF");
+        if (ColorPreset2Button != null)
+            ColorPreset2Button.OnPressed += _ => TrySelectColor("#BF8C5C");
+        if (ColorPreset3Button != null)
+            ColorPreset3Button.OnPressed += _ => TrySelectColor("#88B0D1FF");
+        if (ColorPreset4Button != null)
+            ColorPreset4Button.OnPressed += _ => TrySelectColor("#8178CCFF");
+
+        if (ApplyColorButton != null && CustomColorLineEdit != null)
+        {
+            ApplyColorButton.OnPressed += _ =>
+            {
+                var text = CustomColorLineEdit.Text.Trim();
+                TrySelectColor(text);
+            };
+        }
     }
 
     private void ShowIFFPressed(bool pressed)
@@ -39,6 +58,19 @@ public sealed partial class IFFConsoleWindow : FancyWindow,
     private void ShowVesselPressed(bool pressed)
     {
         ShowVessel?.Invoke(pressed);
+    }
+
+    private void TrySelectColor(string hex)
+    {
+        if (string.IsNullOrEmpty(hex))
+            return;
+
+        try
+        {
+            var color = Color.FromHex(hex);
+            ColorSelected?.Invoke(color);
+        }
+        catch { }
     }
 
     public void UpdateState(IFFConsoleBoundUserInterfaceState state)
@@ -82,6 +114,22 @@ public sealed partial class IFFConsoleWindow : FancyWindow,
         {
             ShowVesselOffButton.Disabled = true;
             ShowVesselOnButton.Disabled = true;
+        }
+
+        if (ColorSelectionLabel != null)
+        {
+            var allow = state.AllowColorChange;
+
+            ColorSelectionLabel.Visible = allow;
+            if (ColorPreset1Button != null) ColorPreset1Button.Visible = allow;
+            if (ColorPreset2Button != null) ColorPreset2Button.Visible = allow;
+            if (ColorPreset3Button != null) ColorPreset3Button.Visible = allow;
+            if (ColorPreset4Button != null) ColorPreset4Button.Visible = allow;
+            if (CustomColorLineEdit != null) CustomColorLineEdit.Visible = allow;
+            if (ApplyColorButton != null) ApplyColorButton.Visible = allow;
+
+            if (allow && CustomColorLineEdit != null)
+                CustomColorLineEdit.Text = state.Color.ToHex();
         }
     }
 }

@@ -266,6 +266,10 @@
   - type: Construction
     graph: C8XAutocannonGraph
     node: C8XAutocannon
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/gun_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/gun_drop.ogg
 
 - type: construction
   name: C-8X 27mmR autocannon
@@ -345,6 +349,81 @@
         amount: 1
       - id: C8XAutocannonPartBarrel
         amount: 1
+
+- type: entity
+  name: SHI-WTI AR-2 Pulser .350
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
+  id: WeaponSpecialPulseRifle
+  description: A high quality pulse rifle developed by Wu-Tan Industries, a Shinohara subsidiary. Packs a pounch but lacks penetration, makes a loud clank sound when bolting that some find satisfying. Chambered in .350 PCM.
+  components:
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/ar2.rsi
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/ar2.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    shape:
+    - 0,0,5,1
+  - type: Gun
+    fireRate: 5
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/pulse/ar2_shot.ogg
+    soundEmpty:
+      path: /Audio/_Crescent/Weapons/Guns/pulse/empty.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/_Crescent/Weapons/Guns/pulse/rack.ogg
+    soundBoltOpened:
+      path: /Audio/_Crescent/Weapons/Guns/pulse/bolt_out.ogg
+    soundBoltClosed:
+      path: /Audio/_Crescent/Weapons/Guns/pulse/bolt_in.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePulse350Fmj
+        insertSound: /Audio/_Crescent/Weapons/Guns/pulse/mag_in.ogg
+        ejectSound: /Audio/_Crescent/Weapons/Guns/pulse/mag_out.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePulse350
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePulse350Fmj
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePulse350
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: UseDelay
+    delay: 1
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+    zeroVisible: true
+  - type: Appearance
+
+- type: entity
+  id: CaseAR2PulseRifle
+  parent: WeaponCasePulseRifle
+  name: Wu-Tan Industries AR-2 case
+  suffix: Donor - Kingpin
+  description: A Wu-Tan Industries weapon case containing a AR-2 Pulse rifle
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSpecialPulseRifle
+        amount: 1
+      - id: MagazinePulse350Fmj
+        amount: 2
 
 # @a_person5660 (Reggie) donor gun
 - type: entity

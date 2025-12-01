@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 11/08/2025 15:20:25
-  entityCount: 154
+  time: 11/28/2025 16:56:38
+  entityCount: 158
 maps: []
 grids:
 - 1
@@ -130,6 +130,9 @@ entities:
             133: 0,-8
             136: 2,-8
             141: 4,-8
+            155: 0,-8
+            158: 2,-8
+            163: 4,-8
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -148,6 +151,9 @@ entities:
             138: 2,-8
             143: 4,-8
             146: 6,-8
+            160: 2,-8
+            165: 4,-8
+            168: 6,-8
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -157,6 +163,7 @@ entities:
             73: 1,0
             105: 1,0
             127: 1,0
+            149: 1,0
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -166,6 +173,7 @@ entities:
             70: 5,0
             108: 5,0
             130: 5,0
+            152: 5,0
         - node:
             id: LatticeEdgeE
           decals:
@@ -188,6 +196,10 @@ entities:
             131: 0,-8
             134: 2,-8
             139: 4,-8
+            148: 1,0
+            153: 0,-8
+            156: 2,-8
+            161: 4,-8
         - node:
             id: LatticeEdgeN
           decals:
@@ -211,6 +223,10 @@ entities:
             135: 2,-8
             140: 4,-8
             144: 6,-8
+            154: 0,-8
+            157: 2,-8
+            162: 4,-8
+            166: 6,-8
         - node:
             id: LatticeEdgeS
           decals:
@@ -224,6 +240,8 @@ entities:
             106: 5,0
             125: 1,0
             128: 5,0
+            147: 1,0
+            150: 5,0
         - node:
             id: LatticeEdgeW
           decals:
@@ -246,6 +264,10 @@ entities:
             137: 2,-8
             142: 4,-8
             145: 6,-8
+            151: 5,0
+            159: 2,-8
+            164: 4,-8
+            167: 6,-8
         - node:
             angle: 3.141592653589793 rad
             color: '#D381C996'
@@ -788,6 +810,26 @@ entities:
     components:
     - type: Transform
       pos: 4.5,-6.5
+      parent: 1
+  - uid: 155
+    components:
+    - type: Transform
+      pos: 3.5,-5.5
+      parent: 1
+  - uid: 156
+    components:
+    - type: Transform
+      pos: 3.5,-4.5
+      parent: 1
+  - uid: 157
+    components:
+    - type: Transform
+      pos: 3.5,-3.5
+      parent: 1
+  - uid: 158
+    components:
+    - type: Transform
+      pos: 3.5,-2.5
       parent: 1
 - proto: Catwalk
   entities:
