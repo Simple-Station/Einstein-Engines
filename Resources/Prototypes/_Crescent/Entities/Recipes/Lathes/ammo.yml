@@ -6,8 +6,7 @@
   result: BaseCartridgeRailgun15mm
   completetime: 1
   materials:
-    Steel: 400
-    Uranium: 200
+    Steel: 600
 
 - type: latheRecipe
   id: MagazineClip18gBuck
