@@ -252,6 +252,7 @@
     idleState: fab-idle
     runningState: fab-active
     staticRecipes:
+      - MagazineClip18gBuck
       - MagazinePulse470Fmj
       - MagazinePulse470
       - MagazinePulse350Fmj

@@ -2,6 +2,13 @@
 # RIFLE AMMUNITIONS
 
 - type: latheRecipe
+  id: MagazineClip18gBuck
+  result: MagazineClip18gBuck
+  completetime: 1
+  materials:
+    Steel: 300
+
+- type: latheRecipe
   id: MagazinePulse350
   result: MagazinePulse350
   completetime: 1
