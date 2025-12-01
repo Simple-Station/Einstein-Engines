@@ -167,7 +167,6 @@
   description: Spaceworthy protection for your fragile skull. A communard design.
   components:
   - type: BreathMask
-  - type: FlashImmunity
   - type: Sprite
     sprite: _Crescent/Clothing/NCWL/Head/ncwljuggernauthelm.rsi
   - type: Clothing
