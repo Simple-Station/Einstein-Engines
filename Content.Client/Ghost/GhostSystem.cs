@@ -90,12 +90,12 @@ namespace Content.Client.Ghost
             }
             else if (!light?.Enabled ?? false) // skip this option if we have no PointLightComponent
             {
-                // enable personal light
-                Popup.PopupEntity(Loc.GetString("ghost-gui-toggle-lighting-manager-popup-personal-light"), args.Performer);
-                _pointLightSystem.SetEnabled(uid, true, light);
-            }
-            else
-            {
+            //     // enable personal light
+            //     Popup.PopupEntity(Loc.GetString("ghost-gui-toggle-lighting-manager-popup-personal-light"), args.Performer);
+            //     _pointLightSystem.SetEnabled(uid, true, light);
+            // }
+            // else
+            // {
                 // fullbright mode
                 Popup.PopupEntity(Loc.GetString("ghost-gui-toggle-lighting-manager-popup-fullbright"), args.Performer);
                 _contentEye.RequestEye(component.DrawFov, false);
