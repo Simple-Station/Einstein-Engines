@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "",
+    "copyright": "Made by HULLROT for the project. Do not relicense, redistribute, or remix without permission.",
+    "states": [
+        {
+            "name": "apds"
+        },
+        {
+            "name": "heat"
+        },
+        {
+            "name": "ap"
+        },
+        {
+            "name": "spent"
+        }
+    ]
+}

@@ -31,6 +31,17 @@
   - StoreCategorySAWGuns
 
 - type: listing
+  id: StoreListingSAWNeedler
+  name: 60mm PTA 'Needler' flatpack
+  description: An artillery for medium ballistic hardpoint.
+  icon: { sprite: _Crescent/Objects/Autoturrets/needler.rsi, state: syndie_lethal }
+  productEntity: NeedlerFlatpack
+  cost:
+    ScrapSAW: 25
+  categories:
+  - StoreCategorySAWGuns
+
+- type: listing
   id: StoreListingSAWMortar
   name: 90mm heavy mortar-pounder flatpack
   description: An artillery for medium ballistic hardpoint.
@@ -42,6 +53,17 @@
   - StoreCategorySAWGuns
 
 - type: listing
+  id: StoreListingSAWHullpiercer
+  name: 43mm hullpiercer turret flatpack
+  description: A turret for medium small ballistic hardpoint.
+  icon: { sprite: _Crescent/Objects/Autoturrets/slugspitter.rsi, state: slugspitter }
+  productEntity: HullpiercerFlatpack
+  cost:
+    ScrapSAW: 18
+  categories:
+  - StoreCategorySAWGuns
+
+- type: listing
   id: StoreListingSAWOperator
   name: 20mm vulcan turret flatpack
   description: A turret for small ballistic hardpoint.
@@ -49,6 +71,39 @@
   productEntity: OperatorFlatpack
   cost:
     ScrapSAW: 15
+  categories:
+  - StoreCategorySAWGuns
+
+- type: listing
+  id: StoreListingSAWGargoyle
+  name: Gargoyle missile launcher flatpack
+  description: A missile launcher for large hardpoints.
+  icon: { sprite: _Crescent/Objects/Autoturrets/gargoylemissile.rsi, state: syndie_lethal }
+  productEntity: BaseWeaponTurretGargoyleFlatpack
+  cost:
+    ScrapSAW: 55
+  categories:
+  - StoreCategorySAWGuns
+
+- type: listing
+  id: StoreListingSAWIdna
+  name: Idna missile launcher flatpack
+  description: A missile launcher for medium hardpoints.
+  icon: { sprite: _Crescent/Objects/Autoturrets/magwell.rsi, state: base }
+  productEntity: MagwellFlatpack
+  cost:
+    ScrapSAW: 22
+  categories:
+  - StoreCategorySAWGuns
+
+- type: listing
+  id: StoreListingSAWSwarmer
+  name: Swarmer missile launcher flatpack
+  description: A missile launcher for small hardpoints.
+  icon: { sprite: _Crescent/Objects/Autoturrets/swarmermissile.rsi, state: swarmer }
+  productEntity: SwarmerFlatpack
+  cost:
+    ScrapSAW: 20
   categories:
   - StoreCategorySAWGuns
 
@@ -92,7 +147,7 @@
   icon: { sprite: /Textures/_Crescent/Clothing/Syndicate/Head/syndicateramzi.rsi, state: icon }
   productEntity: ClothingOuterHardsuitRamzi
   cost:
-    ScrapSAW: 10 #SAWs start only with 3 suits + they are kinda bad
+    ScrapSAW: 10 #SAWs start only with 5 suits + they are kinda bad
   categories:
   - StoreCategorySAW
 
@@ -130,6 +185,28 @@
   - StoreCategorySAW
 
 - type: listing
+  id: StoreListingSAWShieldMedium
+  name: NT-630 Bullwark
+  description: A medium energy shield.
+  icon: { sprite: _Crescent/Structures/shieldemittermedium.rsi, state: icon }
+  productEntity: ShieldEmitterMediumFlatpack
+  cost:
+    ScrapSAW: 140
+  categories:
+  - StoreCategorySAWshipmods
+
+- type: listing
+  id: StoreListingSAWShieldSmall
+  name: NT-280 Errant
+  description: A small energy shield.
+  icon: { sprite: _Crescent/Structures/shieldemittersmall.rsi, state: icon}
+  productEntity: ShieldEmitterSmallFlatpack
+  cost:
+    ScrapSAW: 70
+  categories:
+  - StoreCategorySAWshipmods
+
+- type: listing
   id: StoreListingSAWScrapMagnet
   name: Scrap Magnet
   description: A great tool, allows a hands free salvage collection.
@@ -137,6 +214,17 @@
   productEntity: ScrapMagnetFlatpack
   cost:
     ScrapSAW: 10
+  categories:
+  - StoreCategorySAWshipmods
+
+- type: listing
+  id: StoreListingSAWHardpointMissileLarge
+  name: Salvaged large missile hardpoint
+  description: A large missile hardpoint fit for turrets.
+  icon: { sprite: _Crescent/Structures/hardpoints.rsi, state: Large }
+  productEntity: LargeMissileHardpointFlatpack
+  cost:
+    ScrapSAW: 44
   categories:
   - StoreCategorySAWshipmods
 
@@ -152,6 +240,17 @@
   - StoreCategorySAWshipmods
 
 - type: listing
+  id: StoreListingSAWHardpointMissileMedium
+  name: Salvaged medium missile hardpoint
+  description: A medium missile hardpoint fit for turrets.
+  icon: { sprite: _Crescent/Structures/hardpoints.rsi, state: Medium }
+  productEntity: MediumMissileHardpointFlatpack
+  cost:
+    ScrapSAW: 21
+  categories:
+  - StoreCategorySAWshipmods
+
+- type: listing
   id: StoreListingSAWHardpointBallisticMedium
   name: Salvaged medium ballistic hardpoint
   description: A medium ballistic hardpoint fit for turrets.
@@ -159,6 +258,17 @@
   productEntity: MediumBallisticHardpointFlatpack
   cost:
     ScrapSAW: 21
+  categories:
+  - StoreCategorySAWshipmods
+
+- type: listing
+  id: StoreListingSAWHardpointMissileSmall
+  name: Salvaged small missile hardpoint
+  description: A small missile hardpoint fit for lower-caliber ship weapons.
+  icon: { sprite: _Crescent/Structures/hardpoints.rsi, state: Small }
+  productEntity: SmallMissileHardpointFlatpack
+  cost:
+    ScrapSAW: 12
   categories:
   - StoreCategorySAWshipmods
 

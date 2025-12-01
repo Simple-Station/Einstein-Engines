@@ -1,4 +1,69 @@
 - type: entity
+  name: SHI-WTI SR-3 Overwatch .470
+  parent: [BaseWeaponRifle, StreeCredRedeemable]
+  id: WeaponSpecialPulseAMR
+  description: A high quality pulse sniper rifle developed by Wu-Tan Industries, a Shinohara subsidiary. Loved by for its massive stopping power, Hated for its price. Chambered in .470 PCM.
+  components:
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/sr3.rsi
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/sr3.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    shape:
+    - 0,0,5,2
+  - type: Gun
+    fireRate: 1
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/pulse/sr3_shot.ogg
+    soundEmpty:
+      path: /Audio/_Crescent/Weapons/Guns/pulse/empty.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/_Crescent/Weapons/Guns/pulse/sr3_rack.ogg
+    soundBoltOpened:
+      path: /Audio/_Crescent/Weapons/Guns/pulse/bolt_out.ogg
+    soundBoltClosed:
+      path: /Audio/_Crescent/Weapons/Guns/pulse/sr3_bolt_in.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePulse470Fmj
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePulse470
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePulse470Fmj
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePulse470
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: UseDelay
+    delay: 1
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+
+
+- type: entity
   name: PTA XCG-4 Lancer 15mm
   parent: [BaseWeaponRifle, StreeCredRedeemable]
   id: WeaponSpecialRailgun

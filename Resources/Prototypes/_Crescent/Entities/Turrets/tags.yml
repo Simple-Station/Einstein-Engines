@@ -1,0 +1,72 @@
+#shortbow tags
+
+- type: Tag
+  id: CartridgeShortbow
+  
+#35mm tag
+ 
+- type: Tag
+  id: Cartridge35mm
+
+- type: Tag
+  id: Magazine35mm
+
+- type: Tag
+  id: Cartridge35mmPlasma
+
+- type: Tag
+  id: Cartridge35mmGyrostable
+  
+#whistler tag
+
+- type: Tag
+  id: Cartridge50mm
+
+- type: Tag
+  id: Cartridge50mmPlasma
+
+- type: Tag
+  id: Cartridge50mmGyrostable
+  
+- type: Tag
+  id: Magazine50mm
+
+#screamer tag
+
+- type: Tag
+  id: Cartridge20mm
+
+- type: Tag
+  id: Cartridge20mmPlasma
+
+- type: Tag
+  id: Cartridge20mmGyrostable
+
+- type: Tag
+  id: Magazine20mm
+
+#corpus flak
+
+- type: Tag
+  id: CorpusBox
+
+- type: Tag
+  id: CorpusShell
+  
+#90mm tag
+
+- type: Tag
+  id: Cartridge90mm
+
+- type: Tag
+  id: GistumClip
+
+#120mm
+
+- type: Tag
+  id: Cartridge120mm
+
+#300mm
+
+- type: Tag
+  id: Cartridge300mm

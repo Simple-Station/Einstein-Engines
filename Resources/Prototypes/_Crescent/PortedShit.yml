@@ -399,6 +399,11 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Storage
+    whitelist:
+      tags:
+        - ArtifactFragment
+        - Ore
   - type: Sprite
     noRot: true
     sprite: /Textures/Structures/Storage/orebox.rsi
