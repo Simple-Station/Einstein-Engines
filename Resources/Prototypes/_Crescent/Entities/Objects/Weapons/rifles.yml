@@ -170,10 +170,11 @@
             - CartridgeRifle
   - type: Gun
     shotsPerBurst: 3
+    selectedMode: FullAuto
     availableModes:
     - SemiAuto
-    - Burst
     - FullAuto
+    - Burst
     burstFireRate: 6.5
     fireRate: 5
   - type: ChamberMagazineAmmoProvider
