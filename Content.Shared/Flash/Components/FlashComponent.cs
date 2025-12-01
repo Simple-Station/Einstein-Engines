@@ -17,7 +17,7 @@ namespace Content.Shared.Flash.Components
         /// If null, melee flashes will not stun at all
         /// </summary>
         [DataField]
-        public TimeSpan? MeleeStunDuration = null;
+        public TimeSpan? MeleeStunDuration = null; // Hullrot - Flash nerf
 
         [DataField("range")]
         [ViewVariables(VVAccess.ReadWrite)]
