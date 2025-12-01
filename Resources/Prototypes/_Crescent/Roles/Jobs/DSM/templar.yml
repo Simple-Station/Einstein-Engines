@@ -65,13 +65,13 @@
     back: ClothingBackpackDSM
     shoes: ClothingShoesBootsJack
     gloves: ClothingHandsGlovesImperialLonggloves
-    Pocket1: WeaponPistolNeoVolker
+    pocket1: WeaponPistolNeoVolker
     pocket2: RomaineBible
     belt: ClothingBeltAssault
   storage:
     belt:
       - Flash
       - Tourniquet
-      - MagazinePistol
+      - MagazineMagnum
       - CombatKnife
       - Zipties
