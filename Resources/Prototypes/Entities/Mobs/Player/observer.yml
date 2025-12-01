@@ -11,7 +11,7 @@
   - type: FTLSmashImmune
   - type: CargoSellBlacklist
   - type: MovementSpeedModifier
-    baseSprintSpeed: 12
+    baseSprintSpeed: 64
     baseWalkSpeed: 8
   - type: MovementIgnoreGravity
   - type: Physics
