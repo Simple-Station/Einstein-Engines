@@ -6,7 +6,6 @@
   description: A combat hardsuit helmet with internal pressurization systems and an inbuilt tracker system for ballistics.
   components:
   - type: BreathMask
-  - type: FlashImmunity
   - type: Sprite
     sprite: _Crescent/Clothing/ATH/Head/panzer.rsi
   - type: Clothing
