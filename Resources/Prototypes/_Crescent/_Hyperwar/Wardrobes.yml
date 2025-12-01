@@ -249,13 +249,16 @@
     ClothingBeltSheathDSMRapierFilled: 60
     SecBreachingHammer: 60
     Katana: 60
+    WeaponSpecialPulseAMR: 60
+    WeaponSpecialPulseRifle: 60
     RiotBulletShield: 100
     RiotLaserShield: 100
     TelescopicShield: 100
     RiotShield: 100
     GrenadeFrag: 250
-    MagazineRailgun15mmAP: 250
-    MagazineRailgun15mmDU: 250
+    CartridgePulse350Fmj: 250
+    CartridgePulse470Fmj: 250
+    BaseCartridgeRailgun15mm: 250
     MagazineHeavyRifle: 250
     MagazineCaselessRifle: 250
     MagazineRifle: 250

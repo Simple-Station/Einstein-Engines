@@ -103,6 +103,7 @@
     slots:
     - Belt
     - suitStorage
+  - type: GunRequiresWield
   - type: Appearance
   - type: Gun
     fireRate: 2
