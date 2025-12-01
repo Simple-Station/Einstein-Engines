@@ -11,7 +11,7 @@
         Structural: 400
     harmorPenetration: 40
   - type: StaminaDamageOnCollide
-    damage: 75
+    damage: 40
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -26,7 +26,7 @@
         Structural: 1250
     harmorPenetration: 80
   - type: StaminaDamageOnCollide
-    damage: 75
+    damage: 40
 
 - type: entity
   categories: [ HideSpawnMenu ]
