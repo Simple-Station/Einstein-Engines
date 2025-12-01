@@ -58,6 +58,7 @@
     id: TraumasecPDA
     pocket1: WeaponPistolHKUSP
     ears: ClothingHeadsetNCSPInterdyne
+    belt: ClothingBeltSyndicateWebbingInterdyne
   storage:
     belt:
       - Flash
