@@ -147,7 +147,7 @@
     proto: 88mmCorpusSpread
     deleteOnSpawn: true
   - type: Sprite
-    sprite: _Crescent\Objects\Turrets\Ammunition\Cartridge\corpus.rsi
+    sprite: _Crescent/Objects/Turrets/Ammunition/Cartridge/corpus.rsi
     layers:
     - state: shell
       map: ["enum.AmmoVisualLayers.Base"]
