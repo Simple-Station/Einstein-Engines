@@ -370,3 +370,16 @@
   name: British Sea Power - Whirling-In-Rags
   path:
     path: "/Audio/_Crescent/Jukebox/WhirlingInRags.ogg"
+
+
+- type: jukebox
+  id: PiosenkaOPrzekonaniach
+  name: Adam Mateusz Brozynski - Piosenka o Przekonaniach
+  path:
+    path: "/Audio/_Crescent/Jukebox/przekonania.ogg"
+    
+- type: jukebox
+  id: ElCarterdelosSaposl
+  name: Ratony Queso - El Carterdelos Saposl
+  path:
+    path: "/Audio/_Crescent/Jukebox/ratonyqueso.ogg"
