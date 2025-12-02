@@ -399,7 +399,7 @@
   - type: Item
     size: Normal
   - type: Sprite
-    sprite: _Crescent\Objects\Turrets\Ammunition\Magazine\corpus.rsi
+    sprite: _Crescent/Objects/Turrets/Ammunition/Magazine/corpus.rsi
     state: base
   - type: Tag
     tags:
@@ -423,7 +423,7 @@
   - type: Item
     size: Normal
   - type: Sprite
-    sprite: _Crescent\Objects\Turrets\Ammunition\Magazine\gistum.rsi
+    sprite: _Crescent/Objects/Turrets/Ammunition/Magazine/gistum.rsi
     state: base
   - type: Tag
     tags:
@@ -445,7 +445,7 @@
   - type: Item
     size: Normal
   - type: Sprite
-    sprite: _Crescent\Objects\Turrets\Ammunition\Magazine\gistum.rsi
+    sprite: _Crescent/Objects/Turrets/Ammunition/Magazine/gistum.rsi
     state: base-gyrostable
   - type: Tag
     tags:
@@ -467,7 +467,7 @@
   - type: Item
     size: Normal
   - type: Sprite
-    sprite: _Crescent\Objects\Turrets\Ammunition\Magazine\gistum.rsi
+    sprite: _Crescent/Objects/Turrets/Ammunition/Magazine/gistum.rsi
     state: base-plasma
   - type: Tag
     tags:
