@@ -44,7 +44,7 @@
     - state: animated
       shader: unshaded
   - type: ContentEye
-    maxZoom: 8,8
+    maxZoom: 8,8 #ghosts can see ship fights - wabash
   - type: Eye
     drawFov: false
     visMask:
@@ -87,7 +87,7 @@
   - type: RadarConsole
     followEntity: true
     keepWorldAligned: true
-    maxrange: 256
+    maxRange: 2048 # increases radar range for ghosts
 
 - type: entity
   id: ActionGhostBoo
