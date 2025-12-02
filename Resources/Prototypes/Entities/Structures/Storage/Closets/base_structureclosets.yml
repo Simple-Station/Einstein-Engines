@@ -155,9 +155,13 @@
     isCollidableWhenOpen: true
     enteringOffset: 0, -0.75
     closeSound:
-      path: /Audio/Items/deconstruct.ogg
+      path: /Audio/Effects/closet_close.ogg
+      params:
+        volume: -4
     openSound:
-      path: /Audio/Items/deconstruct.ogg
+      path: /Audio/Effects/closet_open.ogg
+      params:
+        volume: -4
   - type: ContainerContainer
     containers:
       entity_storage: !type:Container

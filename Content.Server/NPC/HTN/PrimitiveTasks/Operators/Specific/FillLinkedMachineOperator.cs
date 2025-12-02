@@ -6,6 +6,9 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Materials;
 using Content.Shared.Silicons.Bots;
+using Content.Shared.Weapons.Ranged.Components;
+using Content.Shared.Whitelist;
+using Robust.Shared.Containers;
 
 
 namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
@@ -16,6 +19,8 @@ public sealed partial class FillLinkedMachineOperator : HTNOperator
     private SharedMaterialStorageSystem _sharedMaterialStorage = default!;
     private SharedDisposalUnitSystem _sharedDisposalUnitSystem = default!;
     private SharedHandsSystem _sharedHandsSystem = default!;
+    private SharedContainerSystem _containerSystem = default!;
+    private EntityWhitelistSystem _whitelistSystem = default!;
 
     /// <summary>
     /// Target entity to inject.
@@ -29,6 +34,8 @@ public sealed partial class FillLinkedMachineOperator : HTNOperator
         _sharedMaterialStorage = sysManager.GetEntitySystem<SharedMaterialStorageSystem>();
         _sharedDisposalUnitSystem = sysManager.GetEntitySystem<SharedDisposalUnitSystem>();
         _sharedHandsSystem = sysManager.GetEntitySystem<SharedHandsSystem>();
+        _containerSystem = sysManager.GetEntitySystem<SharedContainerSystem>();
+        _whitelistSystem = sysManager.GetEntitySystem<EntityWhitelistSystem>();
     }
 
     public override void TaskShutdown(NPCBlackboard blackboard, HTNOperatorStatus status)
@@ -52,6 +59,7 @@ public sealed partial class FillLinkedMachineOperator : HTNOperator
 
         _entManager.TryGetComponent(fillbot.LinkedSinkEntity, out MaterialStorageComponent? linkedStorage);
         _entManager.TryGetComponent(fillbot.LinkedSinkEntity, out DisposalUnitComponent? disposalUnit);
+        _entManager.TryGetComponent(fillbot.LinkedSinkEntity, out BallisticAmmoProviderComponent? ballisticAmmo);
 
         var heldItem = _sharedHandsSystem.GetActiveItem(owner);
 
@@ -68,6 +76,29 @@ public sealed partial class FillLinkedMachineOperator : HTNOperator
         else if (disposalUnit is not null)
         {
             _sharedDisposalUnitSystem.DoInsertDisposalUnit(fillbot.LinkedSinkEntity!.Value, heldItem.Value, owner);
+            return HTNOperatorStatus.Finished;
+        }
+
+        else if (ballisticAmmo is not null)
+        {
+            // Check if we can insert based on capacity and whitelist
+            var currentShots = ballisticAmmo.Entities.Count + ballisticAmmo.UnspawnedCount;
+            if (currentShots >= ballisticAmmo.Capacity)
+            {
+                _sharedHandsSystem.TryDrop(owner);
+                return HTNOperatorStatus.Failed;
+            }
+
+            if (_whitelistSystem.IsWhitelistFailOrNull(ballisticAmmo.Whitelist, heldItem.Value))
+            {
+                _sharedHandsSystem.TryDrop(owner);
+                return HTNOperatorStatus.Failed;
+            }
+
+            // Insert the ammunition
+            ballisticAmmo.Entities.Add(heldItem.Value);
+            _containerSystem.Insert(heldItem.Value, ballisticAmmo.Container);
+            ballisticAmmo.Cycled = true;
             return HTNOperatorStatus.Finished;
         }
 

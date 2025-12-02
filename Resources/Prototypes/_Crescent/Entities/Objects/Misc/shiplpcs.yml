@@ -379,6 +379,23 @@
   - type: ShipVoucher
     ship: Lodka
 
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherCherenzikov
+  name: NCWL 'Cherenzikov' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Cherenzikov-class light gunship pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 34500
+  - type: ShipVoucher
+    ship: Cherenzikov
+
 #T0 END
 
 
@@ -1106,8 +1123,8 @@
 - type: entity
   parent: BaseItem
   id: ShipVoucherVelator
-  name: RC 'Velator' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a Ramzi's Clique Velator-class stealth corvette pattern. Has to be redeemed at a shipyard console.
+  name: NCSP 'Velator' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a NCSP Velator-class stealth corvette pattern. Has to be redeemed at a shipyard console.
   components:
   - type: Item
     size: Small
@@ -1116,9 +1133,77 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 22000
+    price: 60000
   - type: ShipVoucher
     ship: Velator
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherTaipan
+  name: TFSC 'Taipan' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a TFSC Taipan-class stealth corvette pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 60000
+  - type: ShipVoucher
+    ship: Taipan
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherWisp
+  name: CS 'Wisp' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a Wisp-class blockade runner. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 35000
+  - type: ShipVoucher
+    ship: Wisp
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherSpriggan
+  name: NCSP 'Spriggan' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a NCSP Spriggan class mining ship. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 38000
+  - type: ShipVoucher
+    ship: Spriggan
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherWreck
+  name: RC 'Wreck' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a RC Wreck class Tactical asteroid. Has to be redeemed at a shipyard console. #Truly the Pinnacle of stealth technology
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 27000
+  - type: ShipVoucher
+    ship: Wreck
 
 #cmm
 

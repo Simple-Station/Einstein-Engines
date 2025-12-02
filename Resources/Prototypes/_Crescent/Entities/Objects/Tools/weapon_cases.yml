@@ -1,4 +1,46 @@
 - type: entity
+  name: pulse rifle case
+  abstract: true
+  id: WeaponCasePulseRifle
+  parent: ToolboxBase
+  description: A reinforced casing for storing weapons and accessories.
+  suffix: Donor - Pulse rifle
+  components:
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Sprite
+    sprite: _Crescent/Objects/Tools/ar2case.rsi
+    layers:
+    - map: [ base ]
+      state: icon
+    - state: unshaded
+      shader: unshaded
+  - type: Item
+    sprite: _Crescent/Objects/Tools/ar2case.rsi
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,7,1
+    whitelist:
+      components:
+      - Gun
+      - BallisticAmmoProvider
+      - Projectile
+      - CartridgeAmmo
+      - PowerCell
+      - MeleeWeapon
+      - Blocking
+      - WeaponCaseInsertable
+      tags:
+      - Cartridge
+
+- type: entity
   name: grenade case
   parent: ToolboxBase
   id: GrenadeCase

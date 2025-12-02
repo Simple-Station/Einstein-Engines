@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 10/24/2025 07:44:04
-  entityCount: 1491
+  time: 11/28/2025 00:49:13
+  entityCount: 1501
 maps: []
 grids:
 - 1
@@ -224,6 +224,37 @@ entities:
             1006: 6,-17
             1011: 7,-17
             1016: 8,-17
+            1051: -12,7
+            1057: -11,6
+            1060: -10,0
+            1094: -9,-16
+            1099: -9,-15
+            1104: -9,-14
+            1109: -9,-12
+            1114: -9,-11
+            1119: -9,-10
+            1124: -9,-9
+            1129: -9,-5
+            1134: -9,-4
+            1139: -9,-3
+            1144: -9,-2
+            1149: -8,-4
+            1157: -7,-4
+            1205: -9,-17
+            1208: -8,-17
+            1213: -7,-17
+            1218: -6,-17
+            1223: -5,-17
+            1228: -3,-17
+            1233: -2,-17
+            1238: -1,-17
+            1244: 1,-17
+            1249: 2,-17
+            1254: 3,-17
+            1259: 5,-17
+            1264: 6,-17
+            1269: 7,-17
+            1274: 8,-17
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -282,6 +313,33 @@ entities:
             1013: 7,-17
             1018: 8,-17
             1021: 9,-17
+            1032: 9,11
+            1152: -8,-4
+            1160: -7,-4
+            1165: 9,-16
+            1170: 9,-15
+            1175: 10,-7
+            1180: 10,-6
+            1185: 11,-11
+            1190: 11,-10
+            1195: 11,-9
+            1199: 12,-5
+            1202: 13,-4
+            1210: -8,-17
+            1215: -7,-17
+            1220: -6,-17
+            1225: -5,-17
+            1230: -3,-17
+            1235: -2,-17
+            1240: -1,-17
+            1246: 1,-17
+            1251: 2,-17
+            1256: 3,-17
+            1261: 5,-17
+            1266: 6,-17
+            1271: 7,-17
+            1276: 8,-17
+            1279: 9,-17
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -332,6 +390,29 @@ entities:
             884: -9,-2
             889: -8,-4
             897: -7,-4
+            1038: 11,10
+            1043: 12,10
+            1054: -12,11
+            1063: -10,13
+            1066: -9,13
+            1071: -8,13
+            1076: -7,13
+            1081: -6,13
+            1086: -4,14
+            1089: -2,15
+            1092: -9,-16
+            1097: -9,-15
+            1102: -9,-14
+            1107: -9,-12
+            1112: -9,-11
+            1117: -9,-10
+            1122: -9,-9
+            1127: -9,-5
+            1132: -9,-4
+            1137: -9,-3
+            1142: -9,-2
+            1147: -8,-4
+            1155: -7,-4
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -376,6 +457,26 @@ entities:
             926: 11,-11
             931: 11,-10
             936: 11,-9
+            1024: 6,15
+            1027: 7,13
+            1031: 9,11
+            1035: 9,12
+            1040: 11,10
+            1045: 12,10
+            1048: 13,10
+            1068: -9,13
+            1073: -8,13
+            1078: -7,13
+            1083: -6,13
+            1151: -8,-4
+            1159: -7,-4
+            1164: 9,-16
+            1169: 9,-15
+            1174: 10,-7
+            1179: 10,-6
+            1184: 11,-11
+            1189: 11,-10
+            1194: 11,-9
         - node:
             id: LatticeEdgeE
           decals:
@@ -461,6 +562,47 @@ entities:
             1004: 6,-17
             1009: 7,-17
             1014: 8,-17
+            1037: 11,10
+            1042: 12,10
+            1049: -12,7
+            1053: -12,11
+            1055: -11,6
+            1058: -10,0
+            1062: -10,13
+            1065: -9,13
+            1070: -8,13
+            1075: -7,13
+            1080: -6,13
+            1085: -4,14
+            1088: -2,15
+            1091: -9,-16
+            1096: -9,-15
+            1101: -9,-14
+            1106: -9,-12
+            1111: -9,-11
+            1116: -9,-10
+            1121: -9,-9
+            1126: -9,-5
+            1131: -9,-4
+            1136: -9,-3
+            1141: -9,-2
+            1146: -8,-4
+            1154: -7,-4
+            1203: -9,-17
+            1206: -8,-17
+            1211: -7,-17
+            1216: -6,-17
+            1221: -5,-17
+            1226: -3,-17
+            1231: -2,-17
+            1236: -1,-17
+            1242: 1,-17
+            1247: 2,-17
+            1252: 3,-17
+            1257: 5,-17
+            1262: 6,-17
+            1267: 7,-17
+            1272: 8,-17
         - node:
             id: LatticeEdgeN
           decals:
@@ -550,6 +692,49 @@ entities:
             1010: 7,-17
             1015: 8,-17
             1019: 9,-17
+            1029: 9,11
+            1050: -12,7
+            1056: -11,6
+            1059: -10,0
+            1093: -9,-16
+            1098: -9,-15
+            1103: -9,-14
+            1108: -9,-12
+            1113: -9,-11
+            1118: -9,-10
+            1123: -9,-9
+            1128: -9,-5
+            1133: -9,-4
+            1138: -9,-3
+            1143: -9,-2
+            1148: -8,-4
+            1156: -7,-4
+            1162: 9,-16
+            1167: 9,-15
+            1172: 10,-7
+            1177: 10,-6
+            1182: 11,-11
+            1187: 11,-10
+            1192: 11,-9
+            1197: 12,-5
+            1200: 13,-4
+            1204: -9,-17
+            1207: -8,-17
+            1212: -7,-17
+            1217: -6,-17
+            1222: -5,-17
+            1227: -3,-17
+            1232: -2,-17
+            1237: -1,-17
+            1241: 0,-18
+            1243: 1,-17
+            1248: 2,-17
+            1253: 3,-17
+            1258: 5,-17
+            1263: 6,-17
+            1268: 7,-17
+            1273: 8,-17
+            1277: 9,-17
         - node:
             id: LatticeEdgeS
           decals:
@@ -623,6 +808,41 @@ entities:
             923: 11,-11
             928: 11,-10
             933: 11,-9
+            1022: 6,15
+            1025: 7,13
+            1028: 9,11
+            1033: 9,12
+            1036: 11,10
+            1041: 12,10
+            1046: 13,10
+            1052: -12,11
+            1061: -10,13
+            1064: -9,13
+            1069: -8,13
+            1074: -7,13
+            1079: -6,13
+            1084: -4,14
+            1087: -2,15
+            1090: -9,-16
+            1095: -9,-15
+            1100: -9,-14
+            1105: -9,-12
+            1110: -9,-11
+            1115: -9,-10
+            1120: -9,-9
+            1125: -9,-5
+            1130: -9,-4
+            1135: -9,-3
+            1140: -9,-2
+            1145: -8,-4
+            1153: -7,-4
+            1161: 9,-16
+            1166: 9,-15
+            1171: 10,-7
+            1176: 10,-6
+            1181: 11,-11
+            1186: 11,-10
+            1191: 11,-9
         - node:
             id: LatticeEdgeW
           decals:
@@ -702,6 +922,44 @@ entities:
             1012: 7,-17
             1017: 8,-17
             1020: 9,-17
+            1023: 6,15
+            1026: 7,13
+            1030: 9,11
+            1034: 9,12
+            1039: 11,10
+            1044: 12,10
+            1047: 13,10
+            1067: -9,13
+            1072: -8,13
+            1077: -7,13
+            1082: -6,13
+            1150: -8,-4
+            1158: -7,-4
+            1163: 9,-16
+            1168: 9,-15
+            1173: 10,-7
+            1178: 10,-6
+            1183: 11,-11
+            1188: 11,-10
+            1193: 11,-9
+            1196: 12,-8
+            1198: 12,-5
+            1201: 13,-4
+            1209: -8,-17
+            1214: -7,-17
+            1219: -6,-17
+            1224: -5,-17
+            1229: -3,-17
+            1234: -2,-17
+            1239: -1,-17
+            1245: 1,-17
+            1250: 2,-17
+            1255: 3,-17
+            1260: 5,-17
+            1265: 6,-17
+            1270: 7,-17
+            1275: 8,-17
+            1278: 9,-17
         - node:
             color: '#EFB34196'
             id: WarnBox
@@ -1500,6 +1758,7 @@ entities:
     - type: RadiationGridResistance
     - type: BecomesStation
       id: Hulk
+    - type: SelfDeleteGrid
 - proto: AAAHardpointLargeUniversal
   entities:
   - uid: 2
@@ -2107,7 +2366,7 @@ entities:
   - uid: 157
     components:
     - type: Transform
-      pos: 4.8004746,6.4846478
+      pos: 4.5842137,8.701715
       parent: 1
 - proto: BurnAutoInjector
   entities:
@@ -3717,6 +3976,21 @@ entities:
     components:
     - type: Transform
       pos: 10.5,7.5
+      parent: 1
+  - uid: 1492
+    components:
+    - type: Transform
+      pos: -6.5,-1.5
+      parent: 1
+  - uid: 1493
+    components:
+    - type: Transform
+      pos: -7.5,-1.5
+      parent: 1
+  - uid: 1494
+    components:
+    - type: Transform
+      pos: -7.5,-2.5
       parent: 1
 - proto: CableHV
   entities:
@@ -5534,6 +5808,18 @@ entities:
       parent: 99
     - type: Physics
       canCollide: False
+- proto: EZNutrientChemistryBottle
+  entities:
+  - uid: 1498
+    components:
+    - type: Transform
+      pos: 4.2092137,8.65484
+      parent: 1
+  - uid: 1499
+    components:
+    - type: Transform
+      pos: 4.2092137,8.65484
+      parent: 1
 - proto: FaxMachineShip
   entities:
   - uid: 708
@@ -6665,6 +6951,20 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 0.5,2.5
       parent: 1
+- proto: HydroponicsToolMiniHoe
+  entities:
+  - uid: 1496
+    components:
+    - type: Transform
+      pos: 4.6935887,8.40484
+      parent: 1
+- proto: HydroponicsToolSpade
+  entities:
+  - uid: 1497
+    components:
+    - type: Transform
+      pos: 4.6779637,8.482965
+      parent: 1
 - proto: hydroponicsTray
   entities:
   - uid: 881
@@ -6686,13 +6986,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 5.5,3.5
-      parent: 1
-- proto: KitchenKnife
-  entities:
-  - uid: 884
-    components:
-    - type: Transform
-      pos: 5.42027,5.294589
       parent: 1
 - proto: KitchenMicrowave
   entities:
@@ -6717,6 +7010,13 @@ entities:
     components:
     - type: Transform
       pos: 5.5,4.5
+      parent: 1
+- proto: KnifePlastic
+  entities:
+  - uid: 884
+    components:
+    - type: Transform
+      pos: 5.2248387,5.389215
       parent: 1
 - proto: Lamp
   entities:
@@ -7142,6 +7442,13 @@ entities:
     components:
     - type: Transform
       pos: 1.8087847,15.602217
+      parent: 1
+- proto: PestSpray
+  entities:
+  - uid: 1501
+    components:
+    - type: Transform
+      pos: 4.2092137,8.24859
       parent: 1
 - proto: PhoneInstrumentSyndicate
   entities:
@@ -7604,6 +7911,11 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -6.5,-8.5
+      parent: 1
+  - uid: 1500
+    components:
+    - type: Transform
+      pos: 4.5,8.5
       parent: 1
 - proto: RadAutoInjector
   entities:
@@ -10538,6 +10850,30 @@ entities:
     - type: Transform
       pos: -4.5,-12.5
       parent: 1
+- proto: Windoor
+  entities:
+  - uid: 1458
+    components:
+    - type: Transform
+      pos: 2.5,7.5
+      parent: 1
+  - uid: 1460
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,5.5
+      parent: 1
+  - uid: 1461
+    components:
+    - type: Transform
+      pos: 0.5,7.5
+      parent: 1
+  - uid: 1495
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 3.5,4.5
+      parent: 1
 - proto: WindoorSecure
   entities:
   - uid: 1448
@@ -10594,27 +10930,11 @@ entities:
     - type: Transform
       pos: -6.5,10.5
       parent: 1
-  - uid: 1458
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 0.5,5.5
-      parent: 1
   - uid: 1459
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 8.5,10.5
-      parent: 1
-  - uid: 1460
-    components:
-    - type: Transform
-      pos: 2.5,7.5
-      parent: 1
-  - uid: 1461
-    components:
-    - type: Transform
-      pos: 0.5,7.5
       parent: 1
 - proto: WindowReinforcedDirectional
   entities:

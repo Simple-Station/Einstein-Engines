@@ -1,309 +1,145 @@
 #ncwl
 
 - type: entity
-  parent: [BasePDA, StreeCredRedeemable]
+  abstract: true
+  parent: [BasePDA]
+  id: NCWLBasePDA
+  name: NCWL pda
+  description: Brown for communard.
+  components:
+  - type: Pda
+    state: pda-militiaman
+    manual1Slot:
+      startingItem: BookNCWLManual1
+      priority: -5
+      whitelist:
+        tags:
+          - Manual1
+    manual2Slot:
+      startingItem: BookNCWLManual2
+      priority: -6
+      whitelist:
+        tags:
+          - Manual2
+  - type: PdaBorderColor
+    borderColor: "#3d251e"
+    accentHColor: "#d4d4d4"
+    accentVColor: "#d4d4d4"
+  - type: Icon
+    state: pda-militiaman
+
+- type: entity
+  parent: [NCWLBasePDA, StreeCredRedeemable]
   id: NCWLFactionLeaderPDA
   name: commandant's PDA
-  description: Brown for communard.
   components:
   - type: Pda
     id: NCWLIDCardFactionLeader
-    state: pda-militiaman
-    manual1Slot:
-      startingItem: BookNCWLManual1
-      priority: -5
-      whitelist:
-        components:
-          - Paper
-    manual2Slot:
-      startingItem: BookNCWLManual2
-      priority: -6
-      whitelist:
-        components:
-          - Paper
-  - type: PdaBorderColor
-    borderColor: "#3d251e"
-    accentHColor: "#d4d4d4"
-    accentVColor: "#d4d4d4"
-  - type: Icon
-    state: pda-militiaman
 
 - type: entity
-  parent: [BasePDA, StreeCredRedeemable]
+  parent: [NCWLBasePDA, StreeCredRedeemable]
   id: NCWLHomeguardLeaderPDA
   name: overseer's PDA
-  description: Brown for communard.
   components:
   - type: Pda
     id: NCWLIDCardHomeguardLeader
-    state: pda-militiaman
-    manual1Slot:
-      startingItem: BookNCWLManual1
-      priority: -5
-      whitelist:
-        components:
-          - Paper
-    manual2Slot:
-      startingItem: BookNCWLManual2
-      priority: -6
-      whitelist:
-        components:
-          - Paper
-  - type: PdaBorderColor
-    borderColor: "#3d251e"
-    accentHColor: "#d4d4d4"
-    accentVColor: "#d4d4d4"
-  - type: Icon
-    state: pda-militiaman
 
 - type: entity
-  parent: [BasePDA, StreeCredRedeemableLow]
+  parent: [NCWLBasePDA, StreeCredRedeemableLow]
   id: NCWLMVDLeaderPDA
   name: cadet kommissar's PDA
-  description: Brown for communard.
   components:
   - type: Pda
     id: NCWLIDCardMVDLeader
     state: pda-militiaman
-  - type: PdaBorderColor
-    borderColor: "#3d251e"
-    accentHColor: "#d4d4d4"
-    accentVColor: "#d4d4d4"
-  - type: Icon
-    state: pda-militiaman
 
 - type: entity
-  parent: [BasePDA, StreeCredRedeemableLow]
+  parent: [NCWLBasePDA, StreeCredRedeemableLow]
   id: NCWLMVDGruntPDA
   name: enforcer's PDA
-  description: Brown for communard.
   components:
   - type: Pda
     id: NCWLIDCardMVDGrunt
-    state: pda-militiaman
-  - type: PdaBorderColor
-    borderColor: "#3d251e"
-    accentHColor: "#d4d4d4"
-    accentVColor: "#d4d4d4"
-  - type: Icon
-    state: pda-militiaman
 
 - type: entity
-  parent: [BasePDA, StreeCredRedeemableLow]
+  parent: [NCWLBasePDA, StreeCredRedeemableLow]
   id: NCWLHomeguardSquadCaptainPDA
   name: fleetkapitan's PDA
-  description: Brown for communard.
   components:
   - type: Pda
     id: NCWLIDCardHomeguardSquadCaptain
-    state: pda-militiaman
-    manual1Slot:
-      startingItem: BookNCWLManual1
-      priority: -5
-      whitelist:
-        components:
-          - Paper
-    manual2Slot:
-      startingItem: BookNCWLManual2
-      priority: -6
-      whitelist:
-        components:
-          - Paper
-  - type: PdaBorderColor
-    borderColor: "#3d251e"
-    accentHColor: "#d4d4d4"
-    accentVColor: "#d4d4d4"
-  - type: Icon
-    state: pda-militiaman
 
 - type: entity
-  parent: [BasePDA, StreeCredRedeemableLow]
+  parent: [NCWLBasePDA, StreeCredRedeemableLow]
   id: NCWLHomeguardSoldatPDA
   name: soldat's PDA
-  description: Brown for communard.
   components:
   - type: Pda
     id: NCWLIDCardHomeguardSoldat
-    state: pda-militiaman
-    manual1Slot:
-      startingItem: BookNCWLManual1
-    manual2Slot:
-      startingItem: BookNCWLManual2
-  - type: PdaBorderColor
-    borderColor: "#3d251e"
-    accentHColor: "#d4d4d4"
-    accentVColor: "#d4d4d4"
-  - type: Icon
-    state: pda-militiaman
 
 - type: entity
-  parent: [BasePDA, StreeCredRedeemableLow]
+  parent: [NCWLBasePDA, StreeCredRedeemableLow]
   id: NCWLMedicalLeaderPDA
   name: director's PDA
-  description: Brown for communard.
   components:
   - type: Pda
     id: NCWLIDCardMedicalLeader
-    state: pda-militiaman
-  - type: PdaBorderColor
-    borderColor: "#3d251e"
-    accentHColor: "#d4d4d4"
-    accentVColor: "#d4d4d4"
-  - type: Icon
-    state: pda-militiaman
   - type: HealthAnalyzer
     scanDelay: 1
     scanningEndSound:
       path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
-  parent: [BasePDA, StreeCredRedeemableLow]
+  parent: [NCWLBasePDA, StreeCredRedeemableLow]
   id: NCWLMedicalWorkerPDA
   name: sanitar's PDA
-  description: Brown for communard.
   components:
   - type: Pda
     id: NCWLIDCardMedicalWorker
-    state: pda-militiaman
-    manual1Slot:
-      startingItem: BookNCWLManual1
-      priority: -5
-      whitelist:
-        components:
-          - Paper
-    manual2Slot:
-      startingItem: BookNCWLManual2
-      priority: -6
-      whitelist:
-        components:
-          - Paper
-  - type: PdaBorderColor
-    borderColor: "#3d251e"
-    accentHColor: "#d4d4d4"
-    accentVColor: "#d4d4d4"
-  - type: Icon
-    state: pda-militiaman
   - type: HealthAnalyzer
     scanDelay: 1
     scanningEndSound:
       path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
-  parent: [BasePDA, StreeCredRedeemableLow]
+  parent: [NCWLBasePDA, StreeCredRedeemableLow]
   id: NCWLLogisticLeaderPDA
   name: dockmaster's PDA
-  description: Brown for communard.
   components:
   - type: Pda
     id: NCWLIDCardLogisticLeader
-    state: pda-militiaman
-    manual1Slot:
-      startingItem: BookNCWLManual1
-      priority: -5
-      whitelist:
-        components:
-          - Paper
-    manual2Slot:
-      startingItem: BookNCWLManual2
-      priority: -6
-      whitelist:
-        components:
-          - Paper
-  - type: PdaBorderColor
-    borderColor: "#3d251e"
-    accentHColor: "#d4d4d4"
-    accentVColor: "#d4d4d4"
-  - type: Icon
-    state: pda-militiaman
 
 - type: entity
-  parent: [BasePDA, StreeCredRedeemableLow]
+  parent: [NCWLBasePDA, StreeCredRedeemableLow]
   id: NCWLLogisticWorkerPDA
   name: dockhand's PDA
-  description: Brown for communard.
   components:
   - type: Pda
     id: NCWLIDCardLogisticWorker
-    state: pda-militiaman
-  - type: PdaBorderColor
-    borderColor: "#3d251e"
-    accentHColor: "#d4d4d4"
-    accentVColor: "#d4d4d4"
-  - type: Icon
-    state: pda-militiaman
 
 - type: entity
-  parent: [BasePDA, StreeCredRedeemableLow]
+  parent: [NCWLBasePDA, StreeCredRedeemableLow]
   id: NCWLEngineeringLeaderPDA
   name: overseer's PDA
-  description: Brown for communard.
   components:
   - type: Pda
     id: NCWLIDCardEngineeringLeader
-    state: pda-militiaman
-    manual1Slot:
-      startingItem: BookNCWLManual1
-      priority: -5
-      whitelist:
-        components:
-          - Paper
-    manual2Slot:
-      startingItem: BookNCWLManual2
-      priority: -6
-      whitelist:
-        components:
-          - Paper
-  - type: PdaBorderColor
-    borderColor: "#3d251e"
-    accentHColor: "#d4d4d4"
-    accentVColor: "#d4d4d4"
-  - type: Icon
-    state: pda-militiaman
 
 - type: entity
-  parent: [BasePDA, StreeCredRedeemableLow]
+  parent: [NCWLBasePDA, StreeCredRedeemableLow]
   id: NCWLEngineeringWorkerPDA
   name: artificer's PDA
-  description: Brown for communard.
   components:
   - type: Pda
     id: NCWLIDCardEngineeringWorker
-    state: pda-militiaman
-  - type: PdaBorderColor
-    borderColor: "#3d251e"
-    accentHColor: "#d4d4d4"
-    accentVColor: "#d4d4d4"
-  - type: Icon
-    state: pda-militiaman
 
 - type: entity
-  parent: [BasePDA, StreeCredRedeemableLow]
+  parent: [NCWLBasePDA, StreeCredRedeemableLow]
   id: NCWLWorkerPDA
   name: comrade's PDA
-  description: Brown for communard.
   components:
   - type: Pda
     id: NCWLIDCardWorker
-    state: pda-militiaman
-    manual1Slot:
-      startingItem: BookNCWLManual1
-      priority: -5
-      whitelist:
-        components:
-          - Paper
-    manual2Slot:
-      startingItem: BookNCWLManual2
-      priority: -6
-      whitelist:
-        components:
-          - Paper
-  - type: PdaBorderColor
-    borderColor: "#3d251e"
-    accentHColor: "#d4d4d4"
-    accentVColor: "#d4d4d4"
-  - type: Icon
-    state: pda-militiaman
-
 
 #syndicate#
 

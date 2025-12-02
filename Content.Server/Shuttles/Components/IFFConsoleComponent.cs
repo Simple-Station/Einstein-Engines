@@ -12,6 +12,9 @@ public sealed partial class IFFConsoleComponent : Component
     [ViewVariables(VVAccess.ReadWrite), DataField("allowedFlags")]
     public IFFFlags AllowedFlags = IFFFlags.HideLabel;
 
+    [ViewVariables(VVAccess.ReadWrite), DataField("allowColorChange")]
+    public bool AllowColorChange = false;
+
     [ViewVariables(VVAccess.ReadWrite)]
     public EntityUid? originalGrid = null;
 

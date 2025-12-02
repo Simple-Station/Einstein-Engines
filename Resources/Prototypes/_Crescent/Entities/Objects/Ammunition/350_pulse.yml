@@ -1,0 +1,87 @@
+- type: entity
+  id: CartridgePulse350Fmj
+  name: cartridge (.350 PCM)
+  parent: BaseCartridge
+  components:
+  - type: CartridgeAmmo
+    proto: BulletPulse350Fmj
+  - type: Tag
+    tags:
+      - CartridgePulse350
+      - Cartridge
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/350_pulse.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: EmitSoundOnLand
+    sound:
+      collection: MediumBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: MediumBulletBounce
+
+- type: entity
+  id: BulletPulse350Fmj
+  name: bullet (.350 PCM)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 40
+  - type: Sprite
+    noRot: false
+    sprite: _Crescent/Objects/Weapons/Projectiles/ballistic.rsi
+    layers:
+    - state: pulse
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    color: "#4ba5ff"
+    radius: 1.25
+    energy: 5.0
+
+- type: entity
+  id: MagazinePulse350
+  name: 45-round magazine (.350 PCM Empty)
+  suffix: Empty
+  parent: BaseMagazinePistol
+  components:
+  - type: Tag
+    tags:
+      - MagazinePulse350
+  - type: BallisticAmmoProvider
+    proto: null
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgePulse350
+    capacity: 45
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+    zeroVisible: false
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/350_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/mag_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/mag_drop.ogg
+
+- type: entity
+  id: MagazinePulse350Fmj
+  name: 45-round magazine (.350 PCM)
+  suffix: FMJ
+  parent: MagazinePulse350
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePulse350Fmj

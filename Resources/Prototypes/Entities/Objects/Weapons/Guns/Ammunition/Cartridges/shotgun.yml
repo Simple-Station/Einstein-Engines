@@ -20,14 +20,10 @@
   - type: SpentAmmoVisuals
   - type: EmitSoundOnLand
     sound:
-      collection: ShellLand
-      params:
-        volume: -5
+      collection: ShellBulletBounce
   - type: EmitSoundOnCollide
     sound:
-      collection: ShellLand
-      params:
-        volume: -5
+      collection: ShellBulletBounce
 
 - type: entity
   id: ShellShotgunBeanbag

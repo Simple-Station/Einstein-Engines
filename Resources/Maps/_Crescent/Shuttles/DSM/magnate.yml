@@ -4,7 +4,7 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 11/16/2025 06:24:41
+  time: 11/28/2025 05:47:26
   entityCount: 455
 maps: []
 grids:
@@ -218,6 +218,8 @@ entities:
             595: -5,-3
             639: -8,2
             661: -5,-3
+            701: -8,2
+            723: -5,-3
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -244,6 +246,8 @@ entities:
             567: 5,-3
             618: 8,2
             631: 5,-3
+            680: 8,2
+            693: 5,-3
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -311,6 +315,11 @@ entities:
             637: -8,2
             646: -8,5
             651: -5,10
+            670: 4,10
+            696: -9,1
+            699: -8,2
+            708: -8,5
+            713: -5,10
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -378,6 +387,11 @@ entities:
             625: 8,5
             628: 9,1
             654: -4,10
+            673: 5,10
+            679: 8,2
+            687: 8,5
+            690: 9,1
+            716: -4,10
         - node:
             id: LatticeEdgeE
           decals:
@@ -485,6 +499,19 @@ entities:
             655: -2,9
             657: -1,9
             659: -5,-3
+            662: 0,9
+            664: 1,9
+            666: 2,9
+            669: 4,10
+            674: 7,5
+            695: -9,1
+            698: -8,2
+            707: -8,5
+            709: -7,5
+            712: -5,10
+            717: -2,9
+            719: -1,9
+            721: -5,-3
         - node:
             id: LatticeEdgeN
           decals:
@@ -560,6 +587,14 @@ entities:
             641: -8,3
             643: -8,4
             660: -5,-3
+            677: 8,2
+            682: 8,3
+            684: 8,4
+            691: 5,-3
+            700: -8,2
+            703: -8,3
+            705: -8,4
+            722: -5,-3
         - node:
             id: LatticeEdgeS
           decals:
@@ -705,6 +740,20 @@ entities:
             644: -8,5
             649: -5,10
             652: -4,10
+            668: 4,10
+            671: 5,10
+            676: 8,2
+            681: 8,3
+            683: 8,4
+            685: 8,5
+            688: 9,1
+            694: -9,1
+            697: -8,2
+            702: -8,3
+            704: -8,4
+            706: -8,5
+            711: -5,10
+            714: -4,10
         - node:
             id: LatticeEdgeW
           decals:
@@ -812,6 +861,19 @@ entities:
             653: -4,10
             656: -2,9
             658: -1,9
+            663: 0,9
+            665: 1,9
+            667: 2,9
+            672: 5,10
+            675: 7,5
+            678: 8,2
+            686: 8,5
+            689: 9,1
+            692: 5,-3
+            710: -7,5
+            715: -4,10
+            718: -2,9
+            720: -1,9
         - node:
             color: '#FFFFFFFF'
             id: TechE
@@ -1076,13 +1138,15 @@ entities:
       - 216
     - type: Physics
       canCollide: False
-- proto: AAAHardpointLargeMissile
-  entities:
   - uid: 4
     components:
     - type: Transform
+      rot: 3.141592653589793 rad
       pos: 0.5,4.5
       parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 216
     - type: Physics
       canCollide: False
 - proto: AAAHardpointSmallEnergy
@@ -1422,10 +1486,6 @@ entities:
           showEnts: False
           occludes: True
           ents: []
-    - type: PointCannon
-      linkedConsoleIds:
-      - 219
-      linkedConsoleId: 219
 - proto: BlastDoor
   entities:
   - uid: 63
@@ -2281,6 +2341,9 @@ entities:
         2:
         - - Group1
           - Toggle
+        4:
+        - - Group2
+          - SpaceArtilleryFire
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -2295,6 +2358,13 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+    - type: NamedModules
+      buttonNames:
+      - Toggle Plasma Repeaters
+      - Fire Gargoyle
+      - Module C
+      - Module D
+      - Module E
 - proto: ComputerTabletopAdvancedRadar
   entities:
   - uid: 217
@@ -2315,12 +2385,6 @@ entities:
     - type: Transform
       pos: -0.5,1.5
       parent: 1
-    - type: TargetingConsole
-      cannonGroups:
-        all:
-        - 62
-        heavy 'Gargoyle' LRM cruise missile launcher:
-        - 62
 - proto: CrescentSuitStorageDSMVoidsuit
   entities:
   - uid: 220
@@ -3194,7 +3258,7 @@ entities:
     - type: ApcPowerReceiver
       powerLoad: 1000
     - type: Battery
-      startingCharge: 8952.026
+      startingCharge: 8421.659
     - type: ApcPowerReceiverBattery
       enabled: True
   - uid: 341
@@ -3206,7 +3270,7 @@ entities:
     - type: ApcPowerReceiver
       powerLoad: 1000
     - type: Battery
-      startingCharge: 8949.688
+      startingCharge: 8419.321
     - type: ApcPowerReceiverBattery
       enabled: True
 - proto: SignalButtonDirectional
@@ -3835,7 +3899,7 @@ entities:
       parent: 1
 - proto: WarpPoint
   entities:
-  - uid: 455
+  - uid: 450
     components:
     - type: Transform
       pos: 0.5,0.5
@@ -3844,7 +3908,7 @@ entities:
       location: DSM Magnate FSV
 - proto: WeaponCapacitorRecharger
   entities:
-  - uid: 450
+  - uid: 451
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -3852,7 +3916,7 @@ entities:
       parent: 1
 - proto: WeaponTurretLaser
   entities:
-  - uid: 451
+  - uid: 452
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -3874,7 +3938,7 @@ entities:
           showEnts: False
           occludes: True
           ents: []
-  - uid: 452
+  - uid: 453
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -3898,13 +3962,13 @@ entities:
           ents: []
 - proto: WindoorSecurePlasma
   entities:
-  - uid: 453
+  - uid: 454
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -5.5,0.5
       parent: 1
-  - uid: 454
+  - uid: 455
     components:
     - type: Transform
       rot: -1.5707963267948966 rad

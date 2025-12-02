@@ -1682,8 +1682,6 @@ entities:
       - Toggle dock hatch
       - Module D
       - Module E
-    - type: Anchorable
-      flags: Anchorable
 - proto: DoubleEmergencyOxygenTankFilled
   entities:
   - uid: 174

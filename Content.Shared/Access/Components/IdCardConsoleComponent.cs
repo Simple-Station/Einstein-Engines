@@ -44,52 +44,54 @@ public sealed partial class IdCardConsoleComponent : Component
     [DataField, AutoNetworkedField]
     public List<ProtoId<AccessLevelPrototype>> AccessLevels = new()
     {
-        "Armory",
-        "Atmospherics",
-        "Bar",
-        //"Brig", Delta V: Removed Brig Access
-        "Boxer",  // DeltaV - Add Boxer access
-        "Detective",
-        "Captain",
-        "Cargo",
-        "Chapel",
-        "Chemistry",
-        "ChiefEngineer",
-        "ChiefMedicalOfficer",
-        "Clown", // DeltaV - Add Clown access
-        "Corpsman", // DeltaV - Add Corpsman access
-        "Command",
-        "Cryogenics",
-        "Engineering",
-        "External",
-        "HeadOfPersonnel",
-        "HeadOfSecurity",
-        "Hydroponics",
-        "Janitor",
-        "Kitchen",
-        "Lawyer",
-        "Library",  // DeltaV - Add Library access
-        "Maintenance",
-        "Medical",
-        "Mime", // DeltaV - Add Mime access
-        "Musician", // DeltaV - Add Musician access
-        "Paramedic", // DeltaV - Add Paramedic access
-        "Psychologist", // DeltaV - Add Psychologist access
-        "Quartermaster",
-        "Reporter", // DeltaV - Add Reporter access
-        "Research",
-        "Salvage",
-        "Security",
-        "Service",
-        "Theatre",
-        "Orders", // DeltaV - Orders, see Resources/Prototypes/DeltaV/Access/cargo.yml
-        "Mail", // Nyanotrasen - Mail, see Resources/Prototypes/Nyanotrasen/Access/cargo.yml
-        "Mantis", // DeltaV - Psionic Mantis, see Resources/Prototypes/DeltaV/Access/epistemics.yml
-        "Zookeeper",  // DeltaV - Add Zookeeper access
-        "ChiefJustice",  // DeltaV - Add Chief Justice access
-        "Justice",  // DeltaV - Add Justice access
-        "Prosecutor", // Delta V - Add Prosecutor access
-        "Clerk", // Delta V - Add Clerk access
+              "Shinohara",
+        "ShinoharaOfficer",
+        "ShinoharaExecutive",
+        "ShinoharaSecurity",
+        "NCWLGeneral",
+        "NCWLCommand",
+        "NCWLKommissar",
+        "NCWLAdministrator",
+        "NCWLArmory",
+        "NCWLJail",
+        "NCWLFunds",
+        "SyndicateBasic",
+        "SyndicateCommand",
+        "SyndicateGorlex",
+        "SyndicateInterdyne",
+        "SyndicateSaws",
+        "SyndicateRamzi",
+        "SyndicateRingleader",
+        "SyndicateFunds",
+        "Empire",
+        "Archmaester",
+        "EmpireSoldier",
+        "EmpireNoble",
+        "EmpireAdjutant",
+        "EmpireGovernor",
+        "LogisticsWealth",
+        "ScribesGuild",
+        "Advocatus",
+        "DSMFunds",
+        "Minuteman",
+        "MinutemanRankingOfficer",
+        "MinutemanPrison",
+        "MinutemanMarshal",
+        "CMMFunds",
+        "Antiquarian",
+        "GliessDockmaster",
+        "GliessSheriff",
+        "Kommandant",
+        "AuthorityRanking",
+        "Authority",
+        "Authoritymed",
+        "AuthoritySupply",
+        "Arabet",
+        "Thukker",
+        "Alseik",
+        "AlseikServile",
+        "Families",
+        "Izdari",
     };
 
     [Serializable, NetSerializable]

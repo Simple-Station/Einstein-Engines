@@ -19,6 +19,12 @@
   - type: SpentAmmoVisuals
   - type: StaticPrice
     price: 1
+  - type: EmitSoundOnLand
+    sound:
+      collection: HeavyBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: HeavyBulletBounce
 
 - type: entity
   id: CartridgeMinigun
