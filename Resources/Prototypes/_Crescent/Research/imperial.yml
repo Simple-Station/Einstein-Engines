@@ -93,9 +93,10 @@
   cost: 5000
   recipeUnlocks:
   - WeaponRifleMiller
+  - WeaponSubMachineGunC20rImperial
   - WeaponSniperDSMLegax
-  - WeaponRevolverArgenti
   - WeaponPistolComplianceImperial
+  - WeaponRevolverArgenti
 
 - type: technology
   id: ImperialCarrion
@@ -265,7 +266,6 @@
   cost: 9000
   recipeUnlocks:
   - WeaponRifleDSMLegionnaire
-  - WeaponSubMachineGunC20rImperial
   - WeaponPistolNeoVolker
   - WeaponLightMachineGunDSMDominion
   - WeaponShotgunReno
