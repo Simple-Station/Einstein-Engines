@@ -1,13 +1,15 @@
-using System.Collections.Generic;
 using System.Linq;
-using Robust.Shared.GameObjects;
 using Newtonsoft.Json;
-using Robust.Shared.Serialization.Manager.Attributes;
 using JetBrains.Annotations;
 using Content.Shared.Traits.Assorted.Components;
 using Robust.Shared.Serialization.Manager;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Traits;
+using Robust.Shared.Prototypes;
+using Content.Shared.Body.Part;
+using Content.Server.Body.Systems;
+using Content.Shared.Body.Components;
+using Content.Shared.Body.Organ;
 
 namespace Content.Shared.Traits
 {
@@ -83,5 +85,60 @@ public sealed partial class TraitRemoveSlot : TraitFunction
 
             slotSystem.RemoveItemSlot(uid, itemSlot);
         }
+    }
+}
+
+/// <summary>
+///      Replaces an organ with a cybernetic. This is only for organs, don't use this for limbs(old or new).
+/// </summary>
+[UsedImplicitly]
+public sealed partial class TraitCyberneticOrganReplacement : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public BodyPartType BodyPart { get; private set; } = BodyPartType.Torso;
+
+    [DataField, AlwaysPushInheritance]
+    public BodyPartSymmetry PartSymmetry { get; private set; } = BodyPartSymmetry.None;
+
+    [DataField, AlwaysPushInheritance]
+    public EntProtoId? ProtoId { get; private set; }
+
+    [DataField, AlwaysPushInheritance]
+    public string SlotId { get; private set; } = "heart";
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var bodySystem = entityManager.System<BodySystem>();
+        var transformSystem = entityManager.System<SharedTransformSystem>();
+
+        if (!entityManager.TryGetComponent(uid, out BodyComponent? body)
+            || !entityManager.TryGetComponent(uid, out TransformComponent? xform)
+            || ProtoId is null)
+            return;
+
+        var root = bodySystem.GetRootPartOrNull(uid, body);
+        if (root is null)
+            return;
+
+        var newOrgan = entityManager.SpawnAtPosition(ProtoId, xform.Coordinates);
+        if (!entityManager.TryGetComponent(newOrgan, out OrganComponent? newOrganComp))
+            return;
+
+        var part = bodySystem.GetBodyChildrenOfType(uid, BodyPart, body, PartSymmetry);
+
+        var organs = bodySystem.GetPartOrgans(part.FirstOrDefault().Id, part.FirstOrDefault().Component);
+        foreach (var organ in organs)
+        {
+            if (organ.Component.SlotId == newOrganComp.SlotId)
+            {
+                transformSystem.AttachToGridOrMap(organ.Id);
+                entityManager.QueueDeleteEntity(organ.Id);
+                break;
+            }
+        }
+        bodySystem.InsertOrgan(part.FirstOrDefault().Id, newOrgan, slotId: SlotId, part.FirstOrDefault().Component, newOrganComp);
     }
 }
