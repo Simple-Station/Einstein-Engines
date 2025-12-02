@@ -44,7 +44,7 @@
     - state: animated
       shader: unshaded
   - type: ContentEye
-    maxZoom: 2,2
+    maxZoom: 8,8
   - type: Eye
     drawFov: false
     visMask:
@@ -87,6 +87,7 @@
   - type: RadarConsole
     followEntity: true
     keepWorldAligned: true
+    maxrange: 256
 
 - type: entity
   id: ActionGhostBoo
