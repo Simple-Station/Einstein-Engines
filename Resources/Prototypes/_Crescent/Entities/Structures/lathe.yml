@@ -1514,6 +1514,8 @@
       - Sheet
       - Metal
       - RawMaterial
+      - CraftMaterials
+      - Ingot
   - type: Lathe
     idleState: fab-idle
     runningState: fab-active
@@ -1548,6 +1550,9 @@
       tags:
       - Sheet
       - Metal
+      - RawMaterial
+      - CraftMaterials
+      - Ingot
   - type: Lathe
     idleState: fab-idle
     runningState: fab-active
@@ -1583,6 +1588,8 @@
       - Sheet
       - Metal
       - RawMaterial
+      - CraftMaterials
+      - Ingot
   - type: Lathe
     idleState: fab-idle
     runningState: fab-active
