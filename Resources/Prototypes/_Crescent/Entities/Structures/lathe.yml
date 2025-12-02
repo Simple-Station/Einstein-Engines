@@ -1641,3 +1641,39 @@
   - type: Anchorable
     flags:
     - Anchorable
+
+#ncwl
+
+- type: entity
+  parent: BaseLathe
+  id: UnionTradeGoodPrinter
+  name: Nova Balereska commodity fablathe
+  description: A union fablathe preloaded with many commodity patterns. A communard merchant's best friend.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/cratefab.rsi
+    layers:
+    - state: fab-idle
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: buttons_on
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: MaterialStorage
+    dropOnDeconstruct: false #should drop ores instead of ingots/sheets
+    ignoreColor: true
+    canEjectStoredMaterials: true
+    whitelist:
+      tags:
+      - Sheet
+      - Metal
+      - RawMaterial
+      - CraftMaterials
+      - Ingot
+  - type: Lathe
+    idleState: fab-idle
+    runningState: fab-active
+    staticRecipes:
+    - AlcoholCrate
+  - type: Anchorable
+    flags:
+    - Anchorable
