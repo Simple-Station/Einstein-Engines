@@ -8,8 +8,6 @@
   icon: "JobIconPassenger"
   supervisors: job-supervisors-hire
   requirements:
-    - !type:CharacterOverallTimeRequirement
-      min: 10800
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
