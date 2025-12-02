@@ -42,3 +42,9 @@ trait-description-OldTaypani = Formed out of desperation and constant migration 
 
 trait-name-American = American
 trait-description-American = An amalgamation of various ancient languages originating from Old Terra, spoken by those of the New American Protectorate.
+
+trait-name-IPMBionicPryarm = IPM Bionic Pryarm
+trait-description-IPMBionicPryarm = PLACEHOLDER
+
+trait-name-SHIBionicEye = SHI Bionic Eye
+trait-description-SHIBionicEye = PLACEHOLDER
