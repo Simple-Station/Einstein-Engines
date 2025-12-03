@@ -45,7 +45,7 @@
   completetime: 2
   materials:
     Cloth: 1000
-    Glass: 500
+    Plastic: 500
 
 - type: latheRecipe
   id: ScrapCrate
