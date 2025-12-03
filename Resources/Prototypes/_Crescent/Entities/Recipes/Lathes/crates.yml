@@ -36,7 +36,8 @@
   result: TradeGoodWine
   completetime: 2
   materials:
-    Biomass: 120
+    Biomass: 50
+    Glass: 1000
 
 - type: latheRecipe
   id: FabricsCrate
@@ -44,7 +45,7 @@
   completetime: 2
   materials:
     Cloth: 1000
-    Plastic: 500
+    Glass: 500
 
 - type: latheRecipe
   id: ScrapCrate
@@ -81,7 +82,8 @@
   result: TradeGoodAlcohol
   completetime: 2
   materials:
-    Biomass: 10
+    Biomass: 5
+    Glass: 500
 
 - type: latheRecipe
   id: AntibioticCrate
@@ -147,6 +149,7 @@
   completetime: 2
   materials:
     Biomass: 10
+    Glass: 500
 
 - type: latheRecipe
   id: UnionBallisticsCrate
