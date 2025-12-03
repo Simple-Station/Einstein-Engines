@@ -115,7 +115,7 @@
 
 - type: latheRecipe
   id: Ammocrate
-  result: TradeGoodam
+  result: TradeGoodAmmo
   completetime: 2
   materials:
     Steel: 1000
