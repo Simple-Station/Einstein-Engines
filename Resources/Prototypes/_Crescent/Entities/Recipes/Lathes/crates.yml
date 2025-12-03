@@ -11,26 +11,24 @@
   result: TradeGoodMiltech
   completetime: 2
   materials:
-    Steel: 5000
-    Plasma: 1000
-    Silver: 1000
+    Steel: 1000
+    Plasma: 300
+    Silver: 200
 
 - type: latheRecipe
   id: AlloysCrate
   result: TradeGoodAlloys
   completetime: 2
   materials:
-    Steel: 5000
-    Plasma: 3000
+    Steel: 1000
+    Plasma: 500
 
 - type: latheRecipe
   id: GunpartsCrate
   result: TradeGoodGunparts
   completetime: 2
   materials:
-    Steel: 2000
-    Plasma: 500
-    Plasteel: 500
+    Steel: 1000
 
 - type: latheRecipe
   id: PlasmaCrate
@@ -38,7 +36,7 @@
   completetime: 2
   materials:
     Steel: 500
-    Plasma: 2500
+    Plasma: 1000
 
 - type: latheRecipe
   id: WineCrate
@@ -52,8 +50,8 @@
   result: TradeGoodFabrics
   completetime: 2
   materials:
-    Cloth: 1250
-    Plastic: 1000
+    Cloth: 1000
+    Plastic: 500
 
 - type: latheRecipe
   id: ScrapCrate
@@ -67,7 +65,7 @@
   result: TradeGoodAlloys
   completetime: 2
   materials:
-    RefinedScrapTitanium: 15000
+    RefinedScrapTitanium: 5000
 
 - type: latheRecipe
   id: SilkCrate
@@ -104,9 +102,9 @@
   result: TradeGoodCybernetics
   completetime: 2
   materials:
-    Steel: 1000
-    Silver: 500
-    Gold: 500
+    Steel: 500
+    Silver: 300
+    Gold: 200
 
 - type: latheRecipe
   id: BadscrapCrate

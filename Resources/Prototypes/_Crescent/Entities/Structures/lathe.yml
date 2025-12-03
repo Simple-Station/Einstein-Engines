@@ -1635,8 +1635,6 @@
     staticRecipes:
     - GoodSilkCrate
     - AlcoholCrate
-    - AntibioticCrate
-    - CyberneticCrate
     - BadscrapCrate
   - type: Anchorable
     flags:
