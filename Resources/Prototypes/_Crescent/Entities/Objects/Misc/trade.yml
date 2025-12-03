@@ -46,7 +46,7 @@
   parent: BaseTradeItem
   id: TradeGoodAlcohol
   name: alcohol crate
-  description: A sealed crate of beer, made from hydroponic organic matter.
+  description: A sealed crate of beer, made from synthetic organic matter.
   components:
   - type: Fixtures
     fixtures:
@@ -569,7 +569,7 @@
 - type: entity
   parent: BaseTradeItem
   id: TradeGoodUnionVodka
-  name: Crate of certified Union Vodka
+  name: Crate of Union Vodka
   description: A sealed crate of distilled potato vodka - Chengridz brand. A sticker on the side identifies the export console this was bought from.
   components:
   - type: Sprite
