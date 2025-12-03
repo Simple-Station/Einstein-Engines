@@ -614,6 +614,30 @@
         layer:
         - MachineLayer
 
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodUnionBallistic
+  name: Sealed Union-Ballistics Crate
+  description: A crate full of Union-made parts for Ballisic Weaponry
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/partydrugs.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 1500
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.29,0.25,0.32"
+        density: 40
+        mask:
+        - CrateMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+
 #deeds
 
 - type: entity

@@ -24,13 +24,6 @@
     Plasma: 500
 
 - type: latheRecipe
-  id: GunpartsCrate
-  result: TradeGoodGunparts
-  completetime: 2
-  materials:
-    Steel: 1000
-
-- type: latheRecipe
   id: PlasmaCrate
   result: TradeGoodPlasma
   completetime: 2
@@ -112,3 +105,55 @@
   completetime: 2
   materials:
     ScrapLowGrade: 5000
+
+- type: latheRecipe
+  id: GunpartsCrate
+  result: TradeGoodGunparts
+  completetime: 2
+  materials:
+    Steel: 1000
+
+- type: latheRecipe
+  id: Ammocrate
+  result: TradeGoodam
+  completetime: 2
+  materials:
+    Steel: 1000
+
+- type: latheRecipe
+  id: Scopcrate
+  result: TradeGoodScop
+  completetime: 2
+  materials:
+    Biomass: 10
+
+- type: latheRecipe
+  id: UnionWeaponCrate
+  result: TradeGoodUnionWeapon
+  completetime: 2
+  materials:
+    Steel: 1000
+
+- type: latheRecipe
+  id: UnionArmorCrate
+  result: TradeGoodUnionArmor
+  completetime: 2
+  materials:
+    Steel: 1000
+
+- type: latheRecipe
+  id: UnionVodka
+  result: TradeGoodUnionVodka
+  completetime: 2
+  materials:
+    Biomass: 10
+
+- type: latheRecipe
+  id: UnionBallisticsCrate
+  result: TradeGoodUnionBallistic
+  completetime: 2
+  materials:
+    Steel: 1000
+    Uranium: 500
+
+
