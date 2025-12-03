@@ -372,6 +372,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         }
     }
 
+    // Hullrot - Auto Anchor
     private void CheckAutoAnchor(float frameTime)
     {
         var query = EntityQueryEnumerator<ShuttleConsoleComponent>();
@@ -761,7 +762,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         var toRemove = new ValueList<(EntityUid, PilotComponent)>();
         var query = EntityQueryEnumerator<PilotComponent>();
         RefreshBulletStateForConsoles();
-        CheckAutoAnchor(frameTime);
+        CheckAutoAnchor(frameTime); // Hullrot - Auto Anchor
 
         while (query.MoveNext(out var uid, out var comp))
         {
@@ -788,7 +789,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
 
     private void OnConsoleShutdown(EntityUid uid, ShuttleConsoleComponent component, ref ComponentShutdown args)
     {
-        TryAutoAnchorFromConsole(uid, component);
+        TryAutoAnchorFromConsole(uid, component); // Hullrot - Auto Anchor
         ClearPilots(component);
     }
 
