@@ -1494,8 +1494,8 @@
 - type: entity
   parent: BaseLathe
   id: ImperialTradeGoodPrinter
-  name: kal suzerai commodity fablathe
-  description: An automated fablathe preloaded with many commodity patterns. A merchant's best friend.
+  name: Imperial commodity fablathe
+  description: An automated fablathe preloaded with many commodity patterns. An imperial merchant's best friend.
   components:
   - type: Sprite
     sprite: _Crescent/Structures/cratefab.rsi
@@ -1522,6 +1522,9 @@
     staticRecipes:
     - FabricsCrate
     - WineCrate
+    - AntibioticCrate
+    - CyberneticCrate
+    - BadscrapCrate
   - type: Anchorable
     flags:
     - Anchorable
@@ -1531,8 +1534,8 @@
 - type: entity
   parent: BaseLathe
   id: CorporateTradeGoodPrinter
-  name: shinohara commodity fablathe
-  description: An automated fablathe preloaded with many commodity patterns. A merchant's best friend.
+  name: Shinohara commodity fablathe
+  description: An automated fablathe preloaded with many commodity patterns. A corporate merchant's best friend.
   components:
   - type: Sprite
     sprite: _Crescent/Structures/cratefab.rsi
@@ -1559,6 +1562,9 @@
     staticRecipes:
     - MiltechCrate
     - AlloysCrate
+    - CyberneticCrate
+    - Scopcrate
+    - GunpartsCrate
   - type: Anchorable
     flags:
     - Anchorable
@@ -1568,8 +1574,8 @@
 - type: entity
   parent: BaseLathe
   id: SawsTradeGoodPrinter
-  name: shipfitters commodity fablathe
-  description: An automated fablathe preloaded with many commodity patterns. A merchant's best friend.
+  name: Shipfitters commodity fablathe
+  description: An hacked fablathe preloaded with many commodity patterns. A salvager merchant's best friend.
   components:
   - type: Sprite
     sprite: _Crescent/Structures/cratefab.rsi
@@ -1598,6 +1604,8 @@
     - ScrapCrate
     - GunpartsCrate
     - TitaniumScrapAlloyCrate
+    - BadscrapCrate
+    - Ammocrate
   - type: Anchorable
     flags:
     - Anchorable
@@ -1636,6 +1644,7 @@
     - GoodSilkCrate
     - AlcoholCrate
     - BadscrapCrate
+    - Ammocrate
   - type: Anchorable
     flags:
     - Anchorable
@@ -1671,7 +1680,11 @@
     idleState: fab-idle
     runningState: fab-active
     staticRecipes:
-    - AlcoholCrate
+    - UnionWeaponCrate
+    - UnionArmorCrate
+    - UnionBallisticsCrate
+    - UnionVodka
+    - TitaniumScrapAlloyCrate
   - type: Anchorable
     flags:
     - Anchorable
@@ -1708,7 +1721,7 @@
     runningState: fab-active
     staticRecipes:
     - AntibioticCrate
-    - CyberneticCrate
+    - AlcoholCrate
   - type: Anchorable
     flags:
     - Anchorable
