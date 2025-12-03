@@ -1,0 +1,17 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by the NSV13 team. Repurposed for HULLROT.",
+    "states": [
+        {
+            "name": "ap"
+        },
+        {
+            "name": "spent"
+        }
+    ]
+}

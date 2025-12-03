@@ -225,6 +225,7 @@
     - VehicleWheelchairFolded # Goobstation
     - SilkCrate # Hullrot - Silk Tradegoods Pallet
     - LatheHandHeldMassScanner
+    - ClothingBeltSalvageWebbing
   - type: EmagLatheRecipes
     emagStaticRecipes:
     - BoxLethalshot
@@ -1231,7 +1232,13 @@
         - Cartridge40mmEMP
         - Cartridge40mmSmoke
         - Cartridge40mmThermobaric
+        - MagazineBoxImperialRifleBig
+        - MagazineHeavyRifleSmall
         #Hullrot edit start
+        - MagazinePulse470Fmj
+        - MagazinePulse470
+        - MagazinePulse350Fmj
+        - MagazinePulse350
         - DrumMagazineShotgunSlug
         - DrumMagazineShotgunEmpty
         - DrumMagazineShotgunBuck

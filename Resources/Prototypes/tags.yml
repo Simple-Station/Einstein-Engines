@@ -1,4 +1,16 @@
 - type: Tag
+  id: CartridgePulse350
+
+- type: Tag
+  id: MagazinePulse350
+
+- type: Tag
+  id: CartridgePulse470
+
+- type: Tag
+  id: MagazinePulse470
+
+- type: Tag
   id: MagazineSmgSmartgun
 
 - type: Tag

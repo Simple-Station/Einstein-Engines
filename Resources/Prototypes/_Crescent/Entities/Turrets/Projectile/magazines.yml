@@ -1,0 +1,474 @@
+#vulcan
+- type: entity
+  id: Magazine35mm
+  name: 35mm FMJ USM feeder drum
+  description: A munitions drum designed for 35mm rotary cannons.
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+    - Magazine35mm
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge35mm
+    proto: Cartridge35mm
+    capacity: 100
+    soundRack:
+      path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+      params:
+        variation: 0.05
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/rifle_load.ogg
+      params:
+        variation: 0.05
+  - type: Item
+    size: Large
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Magazine/whistler.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: Magazine35mmGyrostable
+  name: 35mm gyrostable USM feeder drum
+  description: A munitions drum designed for 35mm rotary cannons. This one contains special gyrostable projectiles.
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+    - Magazine35mm
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge35mmGyrostable
+    proto: Bullet35mmGyrostable
+    capacity: 100
+    soundRack:
+      path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+      params:
+        variation: 0.05
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/rifle_load.ogg
+      params:
+        variation: 0.05
+  - type: Item
+    size: Large
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Magazine/whistler.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: Magazine35mmPlasma
+  name: 35mm plasma-core USM feeder drum
+  description: A munitions drum designed for 35mm rotary cannons. This one contains special photon-plasma core projectiles.
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+    - Magazine35mm
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge35mmPlasma
+    proto: Bullet35mmPlasma
+    capacity: 100
+    soundRack:
+      path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+      params:
+        variation: 0.05
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/rifle_load.ogg
+      params:
+        variation: 0.05
+  - type: Item
+    size: Large
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Magazine/whistler.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: false
+  - type: Appearance
+
+#whistler
+
+- type: entity
+  id: Magazine50mm
+  name: 50mm FMJ USM feeder drum
+  description: A munitions drum designed for 50mm repeater cannons.
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+    - Magazine50mm
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge50mm
+    proto: Cartridge50mm
+    capacity: 50
+    soundRack:
+      path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+      params:
+        variation: 0.05
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/rifle_load.ogg
+      params:
+        variation: 0.05
+  - type: Item
+    size: Large
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Magazine/screamer.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: Magazine50mmGyrostable
+  name: 50mm gyrostable USM feeder drum
+  description: A munitions drum designed for 50mm repeater cannons. This one contains special gyrostable projectiles.
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+    - Magazine50mm
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge50mmGyrostable
+    proto: Bullet50mmGyrostable
+    capacity: 50
+    soundRack:
+      path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+      params:
+        variation: 0.05
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/rifle_load.ogg
+      params:
+        variation: 0.05
+  - type: Item
+    size: Large
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Magazine/whistler.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: Magazine50mmPlasma
+  name: 50mm plasma-core USM feeder drum
+  description: A munitions drum designed for 50mm cannons. This one contains special photon-plasma core projectiles.
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+    - Magazine50mm
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge50mmPlasma
+    proto: Bullet50mmPlasma
+    capacity: 30
+    soundRack:
+      path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+      params:
+        variation: 0.05
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/rifle_load.ogg
+      params:
+        variation: 0.05
+  - type: Item
+    size: Large
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Magazine/whistler.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: false
+  - type: Appearance
+
+
+#screamer
+
+- type: entity
+  id: Magazine20mm
+  name: 20mm FMJ USM feeder drum
+  description: A munitions drum designed for 20mm repeater cannons.
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+    - Magazine20mm
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge20mm
+    proto: Cartridge20mm
+    capacity: 100
+    soundRack:
+      path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+      params:
+        variation: 0.05
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/rifle_load.ogg
+      params:
+        variation: 0.05
+  - type: Item
+    size: Large
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Magazine/screamer.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: Magazine20mmGyrostable
+  name: 20mm gyrostable USM feeder drum
+  description: A munitions drum designed for 20mm repeater cannons. This one contains special gyrostable projectiles.
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+    - Magazine20mm
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge20mmGyrostable
+    proto: Bullet20mmGyrostable
+    capacity: 100
+    soundRack:
+      path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+      params:
+        variation: 0.05
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/rifle_load.ogg
+      params:
+        variation: 0.05
+  - type: Item
+    size: Large
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Magazine/whistler.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: Magazine20mmPlasma
+  name: 20mm plasma-core USM feeder drum
+  description: A munitions drum designed for 20mm repeater cannons. This one contains special photon-plasma core projectiles.
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+    - Magazine20mm
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge20mmPlasma
+    proto: Bullet20mmPlasma
+    capacity: 100
+    soundRack:
+      path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+      params:
+        variation: 0.05
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/rifle_load.ogg
+      params:
+        variation: 0.05
+  - type: Item
+    size: Large
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Magazine/whistler.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: false
+  - type: Appearance
+
+#corpus
+
+- type: entity
+  id: MagazineCorpus
+  name: "88mm munitions feeder box"
+  parent: BaseItem
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CorpusShell
+    proto: CorpusCartridge
+    capacity: 15
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Magazine/corpus.rsi
+    state: base
+  - type: Tag
+    tags:
+      - CorpusBox
+
+#gistum
+
+- type: entity
+  id: MagazineGistum
+  name: 90mm FMJ ballistic shell clip
+  parent: BaseItem
+  components:
+  - type: MultiHandedItem
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge90mm
+    proto: Cartridge90mm
+    capacity: 15
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Magazine/gistum.rsi
+    state: base
+  - type: Tag
+    tags:
+      - GistumClip
+
+- type: entity
+  id: MagazineGistumGyrostable
+  name: 90mm gyrostable ballistic shell clip
+  parent: BaseItem
+  components:
+  - type: MultiHandedItem
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge90mm
+    proto: Cartridge90mmGyrostable
+    capacity: 15
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Magazine/gistum.rsi
+    state: base-gyrostable
+  - type: Tag
+    tags:
+      - GistumClip
+
+- type: entity
+  id: MagazineGistumPlasma
+  name: 90mm plasma-core ballistic shell clip
+  parent: BaseItem
+  components:
+  - type: MultiHandedItem
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge90mm
+    proto: Cartridge90mmPlasma
+    capacity: 15
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Magazine/gistum.rsi
+    state: base-plasma
+  - type: Tag
+    tags:
+      - GistumClip

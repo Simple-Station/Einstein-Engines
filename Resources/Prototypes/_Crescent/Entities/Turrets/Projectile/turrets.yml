@@ -1,0 +1,574 @@
+#machineguns
+
+- type: entity
+  parent: BaseTurretShipgun
+  id: WeaponTurretSmallMachinegun
+  suffix: Machinegun, Small Ballistics
+  name: 20mm 'Screamer' light carbine repeater cannon
+  description: A light repeating carbine system for use in primary weapons systems in fighters or civilian shuttles - or as support and point defense weapons in larger warships. The repeating autocannon is so widespread and common that it's origin can't be traced to one single corporation - although organizations are known to modify the design for their own purposes. 
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Turrets/Projectile/machinegun.rsi
+      drawdepth: Mobs
+      layers:
+        - state: machinegun
+    - type: Damageable
+      damageContainer: Inorganic
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 500
+          behaviors:
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+    - type: Gun
+      fireOnDropChance: 0
+      projectileSpeed: 70
+      fireRate: 3
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
+    - type: BasicEntityAmmoProvider
+      proto: Bullet20mmBase
+      capacity: 60
+      count: 60
+    - type: RechargeBasicEntityAmmo
+      rechargeCooldown: 5
+      rechargeSound:
+        path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+        params:
+          pitch: 1.2
+          variation: 0.08
+    - type: ApcPowerReceiver
+      powerLoad: 1000
+    - type: HardpointAnchorableOnly
+      class: Ballistic
+      size: Small
+
+- type: entity
+  parent: BaseTurretShipgun
+  id: WeaponTurretSmallMachinegunNCWL
+  suffix: Machinegun, Small Ballistics
+  name: homeguard-issue 20mm light carbine repeater cannon
+  description: A light repeating carbine system for use in primary weapons systems in fighters or civilian shuttles - or as support and point defense weapons in larger warships. The repeating autocannon is so widespread and common that it's origin can't be traced to one single corporation - although organizations are known to modify the design for their own purposes. This one is a Homeguard Fleet-issue weapon, upgraded with better materials and performing a lot better compared to generic models.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Turrets/Projectile/machinegun.rsi
+      drawdepth: Mobs
+      layers:
+        - state: ncwl-machinegun
+    - type: Damageable
+      damageContainer: Inorganic
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 850
+          behaviors:
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+    - type: Gun
+      fireOnDropChance: 0
+      projectileSpeed: 75
+      fireRate: 4.2
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
+    - type: BasicEntityAmmoProvider
+      proto: Bullet20mmBase
+      capacity: 80
+      count: 80
+    - type: RechargeBasicEntityAmmo
+      rechargeCooldown: 3
+      rechargeSound:
+        path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+        params:
+          pitch: 1.2
+          variation: 0.08
+    - type: ApcPowerReceiver
+      powerLoad: 500
+
+# vulcan 35mm
+
+- type: entity
+  parent: BaseTurretShipgun
+  id: WeaponTurretMediumMachinegun
+  suffix: Machinegun, Medium Ballistics
+  name: 35mm 'Scout' rotary cannon
+  description: A heavier variant of the carbine repeater, the Scout offers a higher rate of fire at a shorter range, specializing into the role of a frontline brawler. Adept at smashing through lightly armored frigates or intercepting missiles mid-flight.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Turrets/Projectile/minigun.rsi
+      drawdepth: Mobs
+      layers:
+        - state: minigun
+    - type: Damageable
+      damageContainer: Inorganic
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 500
+          behaviors:
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
+    - type: Gun
+      fireOnDropChance: 0
+      projectileSpeed: 80
+      fireRate: 6
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/vulcan.ogg
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          #startingItem: Magazine35mm
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - Magazine35mm
+        gun_chamber:
+          name: Chamber
+          startingItem: CartridgeVulcanStandard
+          priority: 1
+          whitelist:
+            tags:
+              - Cartridge35mm
+    - type: ApcPowerReceiver
+      powerLoad: 1000
+    - type: HardpointAnchorableOnly
+      class: Ballistic
+      size: Medium
+
+#artillery 50mm
+
+- type: entity
+  parent: BaseTurretShipgun
+  id: WeaponTurretSmallArtillery
+  suffix: Artillery, Small Ballistics
+  name: 50mm 'Whistler' light autocannon
+  description: An ubiquitous weapons system commonly fitted to support corvettes or as secondary weapons systems to larger warships. The light autocannon excels at long-range skirmishes, but struggles in dogfights due to it's relatively slow turning and firing rate.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Turrets/Projectile/autocannon.rsi
+      drawdepth: Mobs
+      layers:
+        - state: autocannon
+    - type: Damageable
+      damageContainer: Inorganic
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 500
+          behaviors:
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
+    - type: Gun
+      fireOnDropChance: 0
+      projectileSpeed: 60
+      fireRate: 1.5
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          #startingItem: Magazine50mm
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - Magazine50mm
+        gun_chamber:
+          name: Chamber
+          startingItem: Cartridge50mm
+          priority: 1
+          whitelist:
+            tags:
+              - Cartridge50mm
+    - type: ApcPowerReceiver
+      powerLoad: 1000
+    - type: HardpointAnchorableOnly
+      class: Ballistic
+      size: Small
+
+
+- type: entity
+  parent: BaseTurretShipgun
+  id: WeaponTurretSmallArtilleryNCWL
+  suffix: Artillery, Small Ballistics, NCWL
+  name: homeguard-issue 50mm light autocannon
+  description: An ubiquitous weapons system commonly fitted to support corvettes or as secondary weapons systems to larger warships. The light autocannon excels at long-range skirmishes, but struggles in dogfights due to it's relatively slow turning and firing rate. This one is a Homeguard Fleet-issue weapon, upgraded with better materials and performing a lot better compared to generic models.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Turrets/Projectile/autocannon.rsi
+      drawdepth: Mobs
+      layers:
+        - state: ncwl-autocannon
+    - type: Damageable
+      damageContainer: Inorganic
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 750
+          behaviors:
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
+    - type: Gun
+      fireOnDropChance: 0
+      projectileSpeed: 65
+      fireRate: 2.2
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          #startingItem: Magazine50mm
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - Magazine50mm
+        gun_chamber:
+          name: Chamber
+          startingItem: Cartridge50mm
+          priority: 1
+          whitelist:
+            tags:
+              - Cartridge50mm
+    - type: ApcPowerReceiver
+      powerLoad: 800
+    - type: HardpointAnchorableOnly
+      class: Ballistic
+      size: Small
+
+# 120mm
+
+- type: entity
+  parent: BaseTurretShipgun
+  id: WeaponTurretMediumArtillery
+  suffix: Artillery, Medium Ballistics
+  name: 120mm 'Pithatis' mono-barreled artillery cannon
+  description: A slow-turning artillery cannon with a low rate of fire intended for extended sieges of stationary or slow-moving targets like battlecruisers and stations. Excellent at long-range skirmishes, but the low rate of fire leaves much to be desired when facing off against nimble prey.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Turrets/Projectile/medium_auto.rsi
+      drawdepth: Mobs
+      layers:
+        - state: medium_auto
+    - type: Damageable
+      damageContainer: Inorganic
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 1500
+          behaviors:
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+    - type: Gun
+      fireOnDropChance: 0
+      projectileSpeed: 70
+      fireRate: 0.5
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/ship_duster.ogg
+    - type: BallisticAmmoProvider
+      soundInsert:
+        path: /Audio/Weapons/Guns/UnionfallWeapons/amr_close_1.ogg
+      fillWithDoAfter: true
+      fillDelay: 3
+      cycleable: true
+      capacity: 4
+      proto: Cartridge120mm
+      whitelist:
+        tags:
+        - Cartridge120mm
+    - type: ApcPowerReceiver
+      powerLoad: 3500
+    - type: HardpointAnchorableOnly
+      class: Ballistic
+      size: Medium
+
+# 90mm
+
+- type: entity
+  parent: BaseTurretShipgun
+  id: WeaponTurretLargeMachinegun
+  suffix: Machinegun, Large Ballistics
+  name: 90mm 'Gistum' tri-barreled repeater cannon
+  description: A dreadnought-rated repeater battery filling the role of a continuous assault weapon on larger platforms. The Gistum repeater cannon is the largest 'machinegun' the free Taypani market has to offer, allowing battleships, dreadnoughts and supercapitals to punch down on cruiser-sized vessels for doctrine mobility.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Turrets/Projectile/repeater.rsi
+      drawdepth: Mobs
+      layers:
+        - state: repeater
+    - type: Damageable
+      damageContainer: Inorganic
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 3000
+          behaviors:
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
+    - type: Gun
+      fireOnDropChance: 0
+      projectileSpeed: 70
+      fireRate: 1.5
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/ship_duster.ogg
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          #startingItem: MagazineGistum
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - GistumClip
+        gun_chamber:
+          name: Chamber
+          startingItem: Cartridge90mm
+          priority: 1
+          whitelist:
+            tags:
+              - Cartridge90mm
+    - type: ApcPowerReceiver
+      powerLoad: 2500
+    - type: HardpointAnchorableOnly
+      class: Ballistic
+      size: Large
+
+- type: entity
+  parent: WeaponTurretLargeMachinegun
+  id: WeaponTurretLargeMachinegunNCWL
+  suffix: Machinegun, Large Ballistics, NCWL
+  name: homeguard-issue 90mm tri-barreled repeater cannon
+  description: A dreadnought-rated repeater battery filling the role of a continuous assault weapon on larger platforms. The Gistum repeater cannon is the largest 'machinegun' the free Taypani market has to offer, allowing battleships, dreadnoughts and supercapitals to punch down on cruiser-sized vessels for doctrine mobility. This one is a Homeguard Fleet-issue weapon, upgraded with better materials and performing a lot better compared to generic models.
+  components:
+    - type: ApcPowerReceiver
+      powerLoad: 800
+    - type: Gun
+      fireOnDropChance: 0
+      projectileSpeed: 75
+      fireRate: 2.1
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+    - type: Sprite
+      sprite: _Crescent/Objects/Turrets/Projectile/repeater.rsi
+      drawdepth: Mobs
+      layers:
+        - state: ncwl-repeater
+
+# 300mm
+
+- type: entity
+  parent: BaseTurretShipgun
+  id: WeaponTurretLargeArtillery
+  suffix: Artillery, Large Ballistics
+  name: 300mm 'Pithis' dual-barreled subnuclear battery
+  description: A dreadnought-rated long-range battery for extended sieges of other capital or supercapital-sized vessels and outposts. Most commonly fitted on battleships or battlecruisers that are specialized into carrying these long-range systems to deliver death at a distance. It's subpar turning rate, rate of fire and projectile speed makes it painful to nail down a mobile target, however.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Turrets/Projectile/howitzer.rsi
+      drawdepth: Mobs
+      layers:
+        - state: howitzer
+    - type: Damageable
+      damageContainer: Inorganic
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 3500
+          behaviors:
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+    - type: Gun
+      fireOnDropChance: 0
+      projectileSpeed: 70
+      fireRate: 0.4
+      selectedMode: SemiAuto
+      availableModes:
+        - SemiAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/ship_duster.ogg
+    - type: BallisticAmmoProvider
+      soundInsert:
+        path: /Audio/Weapons/Guns/UnionfallWeapons/amr_close_1.ogg
+      fillWithDoAfter: true
+      fillDelay: 5
+      cycleable: true
+      capacity: 2
+      proto: Cartridge300mm
+      whitelist:
+        tags:
+        - Cartridge300mm
+    - type: ApcPowerReceiver
+      powerLoad: 10000
+    - type: HardpointAnchorableOnly
+      class: Ballistic
+      size: Large
+
+- type: entity
+  parent: WeaponTurretLargeArtillery
+  id: WeaponTurretLargeArtilleryNCWL
+  suffix: Artillery, Large Ballistics, Homeguard
+  name: homeguard-issue 300mm dual-barreled subnuclear battery
+  description: A dreadnought-rated long-range battery for extended sieges of other capital or supercapital-sized vessels and outposts. Most commonly fitted on battleships or battlecruisers that are specialized into carrying these long-range systems to deliver death at a distance. It's subpar turning rate, rate of fire and projectile speed makes it painful to nail down a mobile target, however. This one is a Homeguard Fleet-issue weapon, upgraded with better materials and performing a lot better compared to generic models.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Turrets/Projectile/howitzer.rsi
+      drawdepth: Mobs
+      layers:
+        - state: ncwl-howitzer
+    - type: Gun
+      fireOnDropChance: 0
+      projectileSpeed: 75
+      fireRate: 1.1
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/ship_duster.ogg
+    - type: ApcPowerReceiver
+      powerLoad: 8500
+
+#FLAK
+
+- type: entity
+  parent: BaseTurretShipgun
+  id: FlakCannonTurretCorpus
+  suffix: ShipGun
+  name: 88mm 'Corpus' flak-screen point defense system
+  description: A robust point defense turret firing 88mm plasteel-core pellets with a proximity fuze. Great for area denial.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Turrets/Projectile/corpus.rsi
+      drawdepth: Mobs
+      layers:
+        - state: corpus
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 2000
+          # TODO: Construction graph
+          behaviors:
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
+    - type: ProjectileIFF
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
+    - type: Gun
+      fireOnDropChance: 0
+      projectileSpeed: 60
+      fireRate: 0.65
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/needler.ogg
+    - type: MagazineAmmoProvider
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          #startingItem: MagazineFlak - on being rebuilt from destruction this gives it free ammo
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - CorpusBox
+        gun_chamber:
+          name: Chamber
+          startingItem: FlakCartridge
+          priority: 1
+          whitelist:
+            tags:
+              - FlakShell
+    - type: ApcPowerReceiver
+      powerLoad: 6500
+    - type: HardpointAnchorableOnly
+      class: Ballistic
+      size: Large

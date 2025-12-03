@@ -295,6 +295,20 @@
 
 - type: entity
   parent: BaseFlatpack
+  id: HullpiercerFlatpack
+  name: hullpiercer turret flatpack
+  description: A flatpack used for constructing swarmer turret with a universal commercial IFF.
+  components:
+  - type: Flatpack
+    entity: BaseWeaponTurretSlugspitter
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  parent: BaseFlatpack
   id: OperatorFlatpack
   name: operator turret flatpack
   description: A flatpack used for constructing operator turret with a universal commercial IFF.
@@ -449,6 +463,20 @@
 
 - type: entity
   parent: BaseFlatpack
+  id: LargeMissileHardpointFlatpack
+  name: large ballistic hardpoint flatpack
+  description:  Parts used to build a large missile hardpoint.
+  components:
+  - type: Flatpack
+    entity: AAAHardpointLargeMissile
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  parent: BaseFlatpack
   id: SmallBallisticHardpointFlatpack
   name: small ballistic hardpoint flatpack
   description:  Parts used to build a small ballistic hardpoint.
@@ -463,12 +491,40 @@
 
 - type: entity
   parent: BaseFlatpack
+  id: SmallMissileHardpointFlatpack
+  name: small missile hardpoint flatpack
+  description:  Parts used to build a small missile hardpoint.
+  components:
+  - type: Flatpack
+    entity: AAAHardpointSmallMissile
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  parent: BaseFlatpack
   id: MediumBallisticHardpointFlatpack
   name: medium ballistic hardpoint flatpack
   description:  Parts used to build a medium ballistic hardpoint.
   components:
   - type: Flatpack
     entity: AAAHardpointMediumBallistic
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  parent: BaseFlatpack
+  id: MediumMissileHardpointFlatpack
+  name: medium missile hardpoint flatpack
+  description:  Parts used to build a medium Missile hardpoint.
+  components:
+  - type: Flatpack
+    entity: AAAardpointMediumMissile
   - type: Sprite
     layers:
     - state: ame-part

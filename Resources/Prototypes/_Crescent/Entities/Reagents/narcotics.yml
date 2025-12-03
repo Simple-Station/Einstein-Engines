@@ -241,3 +241,5 @@
       - !type:GenericStatusEffect
         key: Stutter
         component: ScrambledAccent
+        type: add
+        time: 2

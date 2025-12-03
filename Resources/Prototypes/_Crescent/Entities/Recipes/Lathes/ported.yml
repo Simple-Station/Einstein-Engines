@@ -353,25 +353,25 @@
   id: TermiteLPC
   result: ShipVoucherTermite
   completetime: 1
-  materials:
-    StarshipEngineComponents: 2000
+  materials: #its a termite, it deserves to be this cheap
+    StarshipEngineComponents: 500
     ShipComponents: 500
-    ShipHull: 1500
+    ShipHull: 500
 
 - type: latheRecipe
   id: ParacelsusLPC
   result: ShipVoucherParacelsus
   completetime: 1
   materials:
-    StarshipEngineComponents: 4000
-    ShipComponents: 2500
-    ShipHull: 5000
+    StarshipEngineComponents: 1000
+    ShipComponents: 1000
+    ShipHull: 2500
 
 - type: latheRecipe
   id: ExhumerLPC
   result: ShipVoucherExhumer
   completetime: 1
   materials:
-    StarshipEngineComponents: 4000
-    ShipComponents: 1000
-    ShipHull: 3500
+    StarshipEngineComponents: 1000
+    ShipComponents: 2000
+    ShipHull: 1500

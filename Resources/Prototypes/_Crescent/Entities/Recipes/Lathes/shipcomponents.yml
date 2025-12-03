@@ -5,8 +5,8 @@
   completetime: 0.25
   materials:
     Steel: 600
-    Plasma: 450
-    Silver: 150
+    Plasma: 400
+    Silver: 200
 
 - type: latheRecipe
   id: ShipElectronics
@@ -14,15 +14,15 @@
   completetime: 0.25
   materials:
     Steel: 500
-    Gold: 800
-    Silver: 350
-    Copper: 150
+    Gold: 200
+    Silver: 400
+    Copper: 200
 
 - type: latheRecipe
   id: ShipEngine
   result: StarshipEngineComponents1
   completetime: 0.25
   materials:
-    Steel: 375
-    Gold: 150
-    Plasma: 900
+    Tungsten: 100
+    Gold: 200
+    Uranium: 100

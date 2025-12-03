@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 11/21/2025 18:34:21
-  entityCount: 579
+  time: 11/30/2025 00:13:08
+  entityCount: 580
 maps: []
 grids:
 - 1
@@ -193,6 +193,8 @@ entities:
             578: 11,0
             605: 0,0
             611: 11,0
+            638: 0,0
+            644: 11,0
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -273,6 +275,11 @@ entities:
             621: 12,13
             626: 12,14
             629: 14,0
+            641: 3,0
+            649: 12,12
+            654: 12,13
+            659: 12,14
+            662: 14,0
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -299,6 +306,8 @@ entities:
             602: 5,24
             632: 3,20
             635: 5,24
+            665: 3,20
+            668: 5,24
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -349,6 +358,9 @@ entities:
             615: 12,12
             620: 12,13
             625: 12,14
+            648: 12,12
+            653: 12,13
+            658: 12,14
         - node:
             id: LatticeEdgeE
           decals:
@@ -404,6 +416,10 @@ entities:
             609: 11,0
             631: 3,20
             634: 5,24
+            636: 0,0
+            642: 11,0
+            664: 3,20
+            667: 5,24
         - node:
             id: LatticeEdgeN
           decals:
@@ -517,6 +533,13 @@ entities:
             618: 12,13
             623: 12,14
             627: 14,0
+            637: 0,0
+            639: 3,0
+            643: 11,0
+            646: 12,12
+            651: 12,13
+            656: 12,14
+            660: 14,0
         - node:
             id: LatticeEdgeS
           decals:
@@ -588,6 +611,11 @@ entities:
             622: 12,14
             630: 3,20
             633: 5,24
+            645: 12,12
+            650: 12,13
+            655: 12,14
+            663: 3,20
+            666: 5,24
         - node:
             id: LatticeEdgeW
           decals:
@@ -667,6 +695,11 @@ entities:
             619: 12,13
             624: 12,14
             628: 14,0
+            640: 3,0
+            647: 12,12
+            652: 12,13
+            657: 12,14
+            661: 14,0
         - node:
             angle: 6.283185307179586 rad
             color: '#FFFFFFFF'
@@ -1071,6 +1104,7 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
+    - type: SelfDeleteGrid
 - proto: AAAHardpointMediumBallistic
   entities:
   - uid: 2
@@ -1174,44 +1208,44 @@ entities:
     - type: Transform
       pos: 8.5,9.5
       parent: 1
-  - uid: 23
+  - uid: 16
     components:
     - type: Transform
       pos: 2.5,7.5
       parent: 1
 - proto: AirlockCommandLockedNCWLHorizontal
   entities:
-  - uid: 16
+  - uid: 17
     components:
     - type: Transform
       pos: 9.5,5.5
       parent: 1
-  - uid: 17
+  - uid: 18
     components:
     - type: Transform
       pos: 7.5,5.5
       parent: 1
-  - uid: 18
+  - uid: 19
     components:
     - type: Transform
       pos: 6.5,19.5
       parent: 1
-  - uid: 19
+  - uid: 20
     components:
     - type: Transform
       pos: 8.5,18.5
       parent: 1
-  - uid: 20
+  - uid: 21
     components:
     - type: Transform
       pos: 3.5,5.5
       parent: 1
-  - uid: 21
+  - uid: 22
     components:
     - type: Transform
       pos: 6.5,12.5
       parent: 1
-  - uid: 22
+  - uid: 23
     components:
     - type: Transform
       pos: 6.5,16.5
@@ -4440,6 +4474,13 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 14.5,0.5
+      parent: 1
+- proto: WarpPointShip
+  entities:
+  - uid: 580
+    components:
+    - type: Transform
+      pos: 5.5,7.5
       parent: 1
 - proto: WeaponTurretNeedler
   entities:
