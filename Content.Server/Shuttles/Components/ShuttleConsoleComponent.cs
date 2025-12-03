@@ -57,6 +57,15 @@ namespace Content.Server.Shuttles.Components
         [DataField("targetIdSlot")]
         public ItemSlot targetIdSlot = new();
 
+        [DataField]
+        public float AutoAnchorDelay = 30f;
+
+        [ViewVariables]
+        public float UnpowerAccumulated;
+
+        [ViewVariables]
+        public EntityUid? LastKnownGrid;
+
         [DataField, ViewVariables(VVAccess.ReadWrite)]
         public ShuttleConsoleAccesState accesState = ShuttleConsoleAccesState.NotDynamic;
 
