@@ -46,7 +46,7 @@
   parent: BaseTradeItem
   id: TradeGoodAlcohol
   name: alcohol crate
-  description: A sealed crate of distilled potato vodka - Chengridz brand. A sticker on the side identifies the export console this was bought from.
+  description: A sealed crate of beer, made from hydroponic organic matter.
   components:
   - type: Fixtures
     fixtures:
@@ -482,6 +482,17 @@
     - state: icon
   - type: StaticPrice
     price: 300
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.29,0.25,0.32"
+        density: 40
+        mask:
+        - CrateMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
 
 - type: entity
   parent: BaseTradeItem
@@ -495,6 +506,89 @@
     - state: icon
   - type: StaticPrice
     price: 300
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.29,0.25,0.32"
+        density: 40
+        mask:
+        - CrateMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodUnionWeapon
+  name: Crate of Union-made Weapon Parts
+  description: A crate filled with mass-produced weapon parts, manufactured by the union.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/militarycybernetics.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 300
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.29,0.25,0.32"
+        density: 40
+        mask:
+        - CrateMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodUnionArmor
+  name: Crate of Union-made Armor Parts
+  description: A crate filled with mass-produced Armor parts, manufactured by the union.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/militarysurplus.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 300
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.29,0.25,0.32"
+        density: 40
+        mask:
+        - CrateMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodUnionVodka
+  name: Crate of certified Union Vodka
+  description: A sealed crate of distilled potato vodka - Chengridz brand. A sticker on the side identifies the export console this was bought from.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/alcohol.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 1500
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.29,0.25,0.32"
+        density: 40
+        mask:
+        - CrateMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
 
 #deeds
 
@@ -511,7 +605,7 @@
   - type: Tag
     tags:
       - Trash
-      
+
 - type: entity
   parent: BaseItem
   id: OrganStub
