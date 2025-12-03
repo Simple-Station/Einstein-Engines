@@ -1681,7 +1681,6 @@
     runningState: fab-active
     staticRecipes:
     - UnionWeaponCrate
-    - UnionArmorCrate
     - UnionBallisticsCrate
     - UnionVodka
     - ScrapCrate
