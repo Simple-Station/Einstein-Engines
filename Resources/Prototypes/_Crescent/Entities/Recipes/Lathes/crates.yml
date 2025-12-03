@@ -12,7 +12,7 @@
   completetime: 2
   materials:
     Steel: 1000
-    Plasma: 300
+    Copper: 300
     Silver: 200
 
 - type: latheRecipe
@@ -96,7 +96,7 @@
   completetime: 2
   materials:
     Steel: 500
-    Silver: 300
+    Glass: 300
     Gold: 200
 
 - type: latheRecipe
