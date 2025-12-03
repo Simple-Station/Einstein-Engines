@@ -590,6 +590,30 @@
         layer:
         - MachineLayer
 
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodScop
+  name: Sealed Scop Crate
+  description: A crate full of Single Cell Organic Proteins- Scop for short. Usually comes in the form of synthetic meats.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/organs.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 1500
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.29,0.25,0.32"
+        density: 40
+        mask:
+        - CrateMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+
 #deeds
 
 - type: entity
