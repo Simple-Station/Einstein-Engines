@@ -375,6 +375,7 @@
   materials:
     Steel: 1500
     Plastic: 900
+    BasicMechatronics: 1000
 
 - type: latheRecipe
   id: SRMKhopesh
