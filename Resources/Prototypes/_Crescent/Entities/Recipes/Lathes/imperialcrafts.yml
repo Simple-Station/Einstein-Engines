@@ -375,7 +375,6 @@
   materials:
     Steel: 1500
     Plastic: 900
-    TubeLoader: 1500
 
 - type: latheRecipe
   id: SRMKhopesh
