@@ -32,7 +32,7 @@
   icon: { sprite: _Crescent/Objects/Misc/lpcchip.rsi, state: icon }
   productEntity:
   cost:
-    PietySRM: 40
+    PietySRM: 20
   categories:
   - StoreCategorySRMLPC
 
@@ -43,7 +43,7 @@
   icon: { sprite: _Crescent/Objects/Misc/lpcchip.rsi, state: icon }
   productEntity:
   cost:
-    PietySRM: 10
+    PietySRM: 5
   categories:
   - StoreCategorySRMLPC
 
@@ -58,16 +58,16 @@
   icon: { sprite: Objects/Tools/jaws_of_life.rsi, state: syn_jaws_pry }
   productEntity: SyndicateJawsOfLife
   cost:
-    PietySRM: 5
+    PietySRM: 4
   categories:
   - StoreCategorySRMTools
 
 - type: listing
-  id: StoreListingSRMMagboots
-  name: Combat Magboots
-  description: Standard issue combat magboots, can comfortably carry a knife in them.
+  id: StoreListingSRMEVA
+  name: EVA Equipment
+  description: Standard issue combat magboots and some jetpacks, good enough for boarding actions... if you're lucky.
   icon: { sprite: _NF/Clothing/Shoes/Boots/magboots-combat.rsi, state: icon }
-  productEntity: ClothingShoesBootsMagCombat
+  productEntity: CrateSRMEVA
   cost:
     PietySRM: 2
   categories:
@@ -78,20 +78,9 @@
   name: Heavy Combat Magboots
   description: Heavy duty combat magboots, make you a bit slower but they can carry a sidearm.
   icon: { sprite: Clothing/Shoes/Boots/magboots-combat.rsi, state: icon }
-  productEntity: ClothingShoesBootsMagSec
+  productEntity: CrateSRMMagboots
   cost:
-    PietySRM: 3
-  categories:
-  - StoreCategorySRMTools
-
-- type: listing
-  id: StoreListingSRMJetpack
-  name: Black Jetpack
-  description: A jetpack alleged to be as black as Romaine's moth cloak, the montagnes will just tell you that it was easier to find black jetpacks.
-  icon: { sprite: Objects/Tanks/Jetpacks/black.rsi, state: icon }
-  productEntity: JetpackBlackFilled
-  cost:
-    PietySRM: 3
+    PietySRM: 2
   categories:
   - StoreCategorySRMTools
 
@@ -100,9 +89,9 @@
   name: Stolen Toolbox
   description: A toolbox stolen from some poor guy just leaving Freeport. Not like he'll be needing it anymore anyways.
   icon: { sprite: Objects/Tools/Toolboxes/toolbox_syn.rsi, state: icon }
-  productEntity: ToolboxSyndicate
+  productEntity: CrateSRMToolbox
   cost:
-    PietySRM: 5
+    PietySRM: 3
   categories:
   - StoreCategorySRMTools
 
@@ -111,7 +100,7 @@
   name: Tracking Pinpointer
   description: A pinpointer used to track down anything, even small and unnoticeable things.
   icon: { sprite: Objects/Devices/pinpointer.rsi, state: pinpointer_thief }
-  productEntity: PinpointerUniversal
+  productEntity: CrateSRMPinpointer
   cost:
     PietySRM: 2
   categories:
@@ -122,24 +111,24 @@
 #Support
 
 - type: listing
-  id: StoreListingSRMCombatMedkit
-  name: Combat Medkit
-  description: A sturdy combat medkit, often used by the tenders to patch up idiotic hunters.
+  id: StoreListingSRMMedkitShipment
+  name: Medkit Shipment
+  description: A pair of sturdy medkits, often used by the tenders to patch up idiotic hunters.
   icon: { sprite: Objects/Specific/Medical/firstaidkits.rsi, state: blackkit }
-  productEntity: MedkitCombatFilled
+  productEntity: CrateSRMMedkit
   cost:
     PietySRM: 1
   categories:
   - StoreCategorySRMSupport
 
 - type: listing
-  id: StoreListingSRMSurgeryBag
-  name: Abnormal Surgery Equipment
-  description: A duffel bag full of abnormal surgery equipment, nobody's quite sure who designed it but it's not like the tenders care.
+  id: StoreListingSRMMedicalSupplies
+  name: Medical Supplies Shipment
+  description: A shipment full of all the medical supplies one might need to create an effective field triage.
   icon: { sprite: _Shitmed/Clothing/Back/Duffels/abductor.rsi, state: icon }
-  productEntity: ClothingBackpackDuffelAbductorFilled
+  productEntity: CrateSRMMedicalSupplies
   cost:
-    PietySRM: 4
+    PietySRM: 5
   categories:
   - StoreCategorySRMSupport
 
@@ -148,20 +137,9 @@
   name: Compact Defibrillator
   description: A compact defibrillator that can be strapped to one's belt for ease of use in emergency situations.
   icon: { sprite: Objects/Specific/Medical/defibsmall.rsi, state: icon }
-  productEntity: DefibrillatorCompact
+  productEntity: CrateSRMDefibrillator
   cost:
-    PietySRM: 3
-  categories:
-  - StoreCategorySRMSupport
-
-- type: listing
-  id: StoreListingSRMBlood
-  name: Bloodloss Treatment Kit
-  description: A kit containing blood bags for emergency transfusions.
-  icon: { sprite: Objects/Specific/Medical/firstaidkits.rsi, state: bloodkit }
-  productEntity: MedkitBloodFilled
-  cost:
-    PietySRM: 1
+    PietySRM: 2
   categories:
   - StoreCategorySRMSupport
 
@@ -172,7 +150,7 @@
   icon: { sprite: Clothing/Eyes/Goggles/nightvision.rsi, state: icon }
   productEntity: ClothingEyesNightVisionGoggles
   cost:
-    PietySRM: 10
+    PietySRM: 8
   categories:
   - StoreCategorySRMSupport
 
@@ -183,7 +161,7 @@
   icon: { sprite: Clothing/Eyes/Goggles/medical_nightvision.rsi, state: icon }
   productEntity: ClothingEyesNightVisionMedicalGoggles
   cost:
-    PietySRM: 12
+    PietySRM: 10
   categories:
   - StoreCategorySRMSupport
 
@@ -194,7 +172,7 @@
   icon: { sprite: Clothing/Eyes/Goggles/security_nightvision.rsi, state: icon }
   productEntity: ClothingEyesNightVisionSecurityGoggles
   cost:
-    PietySRM: 15
+    PietySRM: 10
   categories:
   - StoreCategorySRMSupport
 
@@ -205,7 +183,7 @@
   icon: { sprite: Clothing/Eyes/Goggles/monocle_thermal.rsi, state: icon }
   productEntity: ClothingEyesThermalVisionMonocle
   cost:
-    PietySRM: 12
+    PietySRM: 10
   categories:
   - StoreCategorySRMSupport
 
@@ -214,7 +192,7 @@
   name: Mass Scanner
   description: A handheld device handy for spaceborne operations.
   icon: { sprite: Objects/Tools/handheld_mass_scanner.rsi, state: icon }
-  productEntity: HandHeldMassScannerEE
+  productEntity: CrateSRMMassScanner
   cost:
     PietySRM: 1
   categories:

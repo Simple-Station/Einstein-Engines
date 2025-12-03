@@ -32,7 +32,18 @@
   icon: { sprite: _Crescent/Clothing/SRM/Belt/sheath.rsi, state: sheath-sabre }
   productEntity: ClothingBeltSheathKhopeshFilled
   cost:
-    PietySRM: 40
+    PietySRM: 15
+  categories:
+  - StoreCategorySRMWeapons
+
+- type: listing
+  id: StoreListingSRMDuelingKhopesh
+  name: Dueling Khopesh
+  description: A shipment of dueling khopeshes, lifted from a Mandate trading convoy.
+  icon: { sprite: _Crescent/Clothing/SRM/Belt/sheath.rsi, state: sheath-sabre }
+  productEntity: CrateSRMDuelingKhopesh
+  cost:
+    PietySRM: 2
   categories:
   - StoreCategorySRMWeapons
 
@@ -41,9 +52,9 @@
   name: The Hunter
   description: The Hunter rifle, a reliable but poorly designed firearm for use by Militia forces.
   icon: { sprite: _Crescent/Objects/Weapons/Guns/hunter.rsi, state: icon }
-  productEntity: WeaponRifleHunter
+  productEntity: CrateSRMHunterDMR
   cost:
-    PietySRM: 3
+    PietySRM: 4
   categories:
   - StoreCategorySRMWeapons
 
@@ -52,9 +63,20 @@
   name: The Beetle
   description: The Beetle submachine gun, a compact if not poorly designed firearm for use by Militia forces.
   icon: { sprite: _Crescent/Objects/Weapons/Guns/beetle.rsi, state: icon }
-  productEntity: WeaponSubMachineGunBeetle
+  productEntity: CrateSRMBeetleSMG
   cost:
     PietySRM: 2
+  categories:
+  - StoreCategorySRMWeapons
+
+- type: listing
+  id: StoreListingSRMLauncher
+  name: Stolen SHI LAM-17 84mm Shipment
+  description: The disposable SHI LAM-17 84mm rocket launcher, damaged in transit.. effectiveness varies.
+  icon: { sprite: _Crescent/Objects/Weapons/Guns/disposablerpg.rsi, state: icon }
+  productEntity: CrateSRMLauncher
+  cost:
+    PietySRM: 4
   categories:
   - StoreCategorySRMWeapons
 
@@ -67,9 +89,9 @@
   name: 7.62x51mm Standard Magazine
   description: A standard magazine for the Hunter rifle and compatible 7.62x51mm firearms.
   icon: { sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/7.62mm_mag.rsi, state: icon }
-  productEntity: MagazineRifle
+  productEntity: CrateSRMRifleMag
   cost:
-    PietySRM: 0
+    PietySRM: 1
   categories:
   - StoreCategorySRMAmmo
 
@@ -78,9 +100,9 @@
   name: 7.62x51mm Black-tipped Magazine
   description: A black-tipped magazine for the Hunter rifle and compatible 7.62x51mm firearms, armor piercing.
   icon: { sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/7.62mm_mag.rsi, state: icon }
-  productEntity: MagazineRifleUranium
+  productEntity: CrateSRMRifleMagUranium
   cost:
-    PietySRM: 1
+    PietySRM: 2
   categories:
   - StoreCategorySRMAmmo
 
@@ -100,9 +122,42 @@
   name: 9x19mm Black-tipped Magazine
   description: A black-tipped magazine for the Beetle submachine gun and compatible 9x19mm firearms, armor piercing.
   icon: { sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/9x19mm_mag.rsi, state: icon }
-  productEntity: MagazinePistolSubMachineGunUranium
+  productEntity: CrateSRMSMGMagUranium
+  cost:
+    PietySRM: 2
+  categories:
+  - StoreCategorySRMAmmo
+
+- type: listing
+  id: StoreListingSRMSlugthrower
+  name: Slugthrower Ammunition Shipment
+  description: A shipment of slugthrower ammunition for use in slugthrower turrets.
+  icon: { sprite: _Crescent/Ammunition/conscript_ammo_box.rsi, state: base }
+  productEntity: CrateSlugthrowerAmmo
   cost:
     PietySRM: 1
+  categories:
+  - StoreCategorySRMAmmo
+
+- type: listing
+  id: StoreListingSRMSumimotoLow
+  name: Sumimoto Low-Yield Ammunition Shipment
+  description: A shipment of sumimoto low-yield rockets.
+  icon: { sprite: Objects/Weapons/Guns/Ammunition/Magazine/Grenade/grenade_cartridge.rsi, state: icon }
+  productEntity: CrateSRMAmmunitionMissileLowYield
+  cost:
+    PietySRM: 2
+  categories:
+  - StoreCategorySRMAmmo
+
+- type: listing
+  id: StoreListingSRMSumimotoHigh
+  name: Sumimoto High-Yield Ammunition Shipment
+  description: A shipment of sumimoto high-yield rockets.
+  icon: { sprite: Objects/Weapons/Guns/Ammunition/Magazine/Grenade/grenade_cartridge.rsi, state: icon }
+  productEntity: CrateSRMAmmunitionMissileHighYield
+  cost:
+    PietySRM: 2
   categories:
   - StoreCategorySRMAmmo
 
@@ -117,7 +172,7 @@
   icon: { sprite: _Crescent/Clothing/SRM/OuterClothing/hardsuitelite.rsi, state: icon }
   productEntity: ClothingOuterHardsuitHunterElite
   cost:
-    PietySRM: 20
+    PietySRM: 15
   categories:
   - StoreCategorySRMSuits
 
@@ -128,7 +183,7 @@
   icon: { sprite: _Crescent/Clothing/SRM/OuterClothing/hardsuit.rsi, state: icon }
   productEntity: ClothingOuterHardsuitHunter
   cost:
-    PietySRM: 10
+    PietySRM: 5
   categories:
   - StoreCategorySRMSuits
 
@@ -141,7 +196,7 @@
   name: M14 Incendiary Handgrenade
   description: An M14 Incendiary handgrenade.
   icon: { sprite: _Crescent/Objects/Weapons/Grenades/incendiary.rsi, state: icon }
-  productEntity: M14IncendiaryHandgrenade
+  productEntity: CrateSRMIncendiaryGrenade
   cost:
     PietySRM: 1
   categories:
@@ -152,7 +207,7 @@
   name: M18 Smoke Handgrenade
   description: An M18 Smoke handgrenade.
   icon: { sprite: _Crescent/Objects/Weapons/Grenades/smoke.rsi, state: icon }
-  productEntity: M18SmokeHandgrenade
+  productEntity: CrateSRMSmokeGrenade
   cost:
     PietySRM: 1
   categories:
@@ -163,7 +218,7 @@
   name: F1 Handgrenade
   description: An F1 fragmentation handgrenade.
   icon: { sprite: _Crescent/Objects/Weapons/Grenades/f1.rsi, state: icon }
-  productEntity: F1Handgrenade
+  productEntity: CrateSRMFragGrenade
   cost:
     PietySRM: 1
   categories:
@@ -174,7 +229,7 @@
   name: G-8 Poison Handgrenade
   description: A G-8 Poison handgrenade.
   icon: { sprite: _Crescent/Objects/Weapons/Grenades/dsm_smoke.rsi, state: icon }
-  productEntity: DSMG8PoisonHandgrenade
+  productEntity: CrateSRMPoisonGrenade
   cost:
     PietySRM: 1
   categories:
@@ -185,7 +240,7 @@
   name: G-4 Twistcap Handgrenade
   description: A G-4 Twistcap handgrenade.
   icon: { sprite: _Crescent/Objects/Weapons/Grenades/dsm_twist.rsi, state: icon }
-  productEntity: DSMG4TwistcapHandgrenade
+  productEntity: CrateSRMTwistcapGrenade
   cost:
     PietySRM: 1
   categories:
@@ -196,26 +251,24 @@
   name: G-3 Stick Handgrenade
   description: A G-3 Stick handgrenade.
   icon: { sprite: _Crescent/Objects/Weapons/Grenades/dsm_stick.rsi, state: icon }
-  productEntity: DSMG3StickHandgrenade
+  productEntity: CrateSRMStickGrenade
   cost:
     PietySRM: 1
   categories:
   - StoreCategorySRMExplosives
 
 - type: listing
-  id: StoreListingSRMBreachingCharge
-  name: Box of Breaching Charges
-  description: A box of breaching charges to effectively gain access to a vessel.
+  id: StoreListingSRMExplosiveCharge
+  name: Box of Explsosive Charges
+  description: A box of explosive charges to effectively gain access to a vessel.
   icon: { sprite: Objects/Weapons/Bombs/breaching.rsi, state: icon }
-  productEntity: BoxBreachingCharges
+  productEntity: CrateSRMExplosivesBreaching
   cost:
-    PietySRM: 1
+    PietySRM: 2
   categories:
   - StoreCategorySRMExplosives
 
 #Explosives End
-
-# Piety Redeemable
 
 #Piety Redeemable
 

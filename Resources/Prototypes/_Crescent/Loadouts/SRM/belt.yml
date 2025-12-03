@@ -24,6 +24,8 @@
       group: LoadoutBelt
     - !type:CharacterJobRequirement
       jobs:
+        - OverseerSRM
+        - MontagneSRM
         - HunterSRM
         - AcolyteSRM
         - TenderSRM

@@ -1,0 +1,281 @@
+- type: entity
+  id: CrateSRMDuelingKhopesh
+  parent: CrateGenericSteel
+  name: Dueling Khopesh Shipment
+  description: A crate with six dueling khopeshes, legally classed as cutlery in most parts of the sector.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingBeltSheathDSMDuelingKhopeshFilled
+        amount: 6
+
+- type: entity
+  id: CrateSRMBeetleSMG
+  parent: CrateGenericSteel
+  name: Beetle SMG Shipment
+  description: A shipment containing two Beetle SMGs and four spare magazines, stamped with the emblem of the Hunter's Pride Merchant's Guild.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSubMachineGunBeetle
+        amount: 2
+      - id: MagazinePistolSubMachineGun
+        amount: 4
+
+- type: entity
+  id: CrateSRMMedkit
+  parent: CrateGenericSteel
+  name: Medkit Shipment
+  description: A shipment of first-aid kits, specifically combat and blood medkits. I wonder what hospital they came from.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MedkitCombatFilled
+        amount: 2
+      - id: MedkitBloodFilled
+        amount: 2
+
+- type: entity
+  id: CrateSRMToolbox
+  parent: CrateGenericSteel
+  name: Toolbox Shipment
+  description: A shipment of toolboxes that just happened to be liberated from its previous owners.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ToolboxSyndicate
+        amount: 2
+
+- type: entity
+  id: CrateSRMHunterDMR
+  parent: CrateGenericSteel
+  name: Hunter DMR Shipment
+  description: A shipment containing a Hunter DMR rifle and two magazines, stamped with the emblem of the Hunter's Pride Merchant's Guild.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponRifleHunter
+        amount: 1
+      - id: MagazineRifle
+        amount: 2
+
+- type: entity
+  id: CrateSRMLauncher
+  parent: CrateGenericSteel
+  name: Stolen SHI LAM-17 84mm Shipment
+  description: A stolen shipment of the SHI LAM-17 84mm disposable rocket, it's got a few scratches but the launchers seem fine otherwise.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponLauncherDisposableRocket
+        amount: 2
+
+- type: entity
+  id: CrateSRMExplosivesBreaching
+  parent: CrateGenericSteel
+  name: Breaching Explosives Shipment
+  description: A shipment of breaching explosives, the crate itself already has scorch marks, yikes.
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxBreachingCharges
+        amount: 1
+      - id: C4
+        amount: 4
+
+- type: entity
+  id: CrateSRMAmmunitionMissileLowYield
+  parent: CrateGenericSteel
+  name: Low-Yield Sumimoto Ammunition Shipment
+  description: A stolen shipment of low-yield Sumimoto rockets, most safeguards having been disabled in the heist.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineRocketLowYield
+        amount: 3
+
+- type: entity
+  id: CrateSRMAmmunitionMissileHighYield
+  parent: CrateGenericSteel
+  name: High-Yield Sumimoto Ammunition Shipment
+  description: A stolen shipment of high-yield Sumimoto rockets, most safeguards having been disabled in the heist.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineRocketHighYield
+        amount: 3
+
+- type: entity
+  id: CrateSRMMedicalSupplies
+  parent: CrateGenericSteel
+  name: Medical Supplies Shipment
+  description: Enough supplies to set up your own portable triage!
+  components:
+  - type: StorageFill
+    contents:
+      - id: MedkitCombatFilled
+        amount: 2
+      - id: MedkitBloodFilled
+        amount: 2
+      - id: DefibrillatorCompact
+        amount: 1
+      - id: ClothingBackpackDuffelAbductorFilled
+        amount: 1
+      - id: HandheldHealthAnalyzer
+        amount: 2
+
+- type: entity
+  id: CrateSRMIncendiaryGrenade
+  parent: CrateGenericSteel
+  name: Incendiary Grenade Shipment
+  description: A shipment full of M14 incendiary handgrenades, smells faintly of sulfur.
+  components:
+  - type: StorageFill
+    contents:
+      - id: M14IncendiaryHandgrenade
+        amount: 3
+
+- type: entity
+  id: CrateSRMSmokeGrenade
+  parent: CrateGenericSteel
+  name: Smoke Grenade Shipment
+  description: A shipment of the M18 smoke handgrenade, smells faintly of garlic.
+  components:
+  - type: StorageFill
+    contents:
+      - id: M18SmokeHandgrenade
+        amount: 3
+
+- type: entity
+  id: CrateSRMFragGrenade
+  parent: CrateGenericSteel
+  name: Fragmentation Grenade Shipment
+  description: A shipment of the F1 fragmentation handgrenade, smells faintly of gunpowder.
+  components:
+  - type: StorageFill
+    contents:
+      - id: F1Handgrenade
+        amount: 3
+
+- type: entity
+  id: CrateSRMPoisonGrenade
+  parent: CrateGenericSteel
+  name: Poison Grenade Shipment
+  description: A shipment of the DSM G-8 poison handgrenade, smells faintly of almonds.
+  components:
+  - type: StorageFill
+    contents:
+      - id: DSMG8PoisonHandgrenade
+        amount: 3
+
+- type: entity
+  id: CrateSRMTwistcapGrenade
+  parent: CrateGenericSteel
+  name: Twistcap Grenade Shipment
+  description: A shipment of the DSM G-4 twistcap handgrenade, smells faintly of blackpowder.
+  components:
+  - type: StorageFill
+    contents:
+      - id: DSMG4TwistcapHandgrenade
+        amount: 3
+
+- type: entity
+  id: CrateSRMStickGrenade
+  parent: CrateGenericSteel
+  name: Stick Grenade Shipment
+  description: A shipment of the DSM G-3 stick handgrenade, smells faintly of chlorine.
+  components:
+  - type: StorageFill
+    contents:
+      - id: DSMG3StickHandgrenade
+        amount: 3
+
+- type: entity
+  id: CrateSRMMassScanner
+  parent: CrateGenericSteel
+  name: Mass Scanner Shipment
+  description: A shipment of handheld mass scanners, relatively easy to come by.
+  components:
+  - type: StorageFill
+    contents:
+      - id: HandHeldMassScannerEE
+        amount: 3
+
+- type: entity
+  id: CrateSRMDefibrillator
+  parent: CrateGenericSteel
+  name: Compact Defibrillator Shipment
+  description: A shipment of compact defibrillators, allegedly stolen from a Mandate hospital for felinid recovery, good riddance.
+  components:
+  - type: StorageFill
+    contents:
+      - id: DefibrillatorCompact
+        amount: 2
+
+- type: entity
+  id: CrateSRMPinpointer
+  parent: CrateGenericSteel
+  name: Pinpointer Shipment
+  description: A shipment of universal pinpointers, the crate looks hastily repackaged.
+  components:
+  - type: StorageFill
+    contents:
+      - id: PinpointerUniversal
+        amount: 2
+
+- type: entity
+  id: CrateSRMEVA
+  parent: CrateGenericSteel
+  name: EVA Supplies Shipment
+  description: A shipment of EVA supplies, some magboots and some jetpacks. Suits not included!
+  components:
+  - type: StorageFill
+    contents:
+      - id: JetpackBlackFilled
+        amount: 2
+      - id: ClothingShoesBootsMagCombat
+        amount: 2
+
+- type: entity
+  id: CrateSRMMagboots
+  parent: CrateGenericSteel
+  name: Magboots Shipment
+  description: A shipment of heavy combat magboots, perfect for zero-G operations.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingShoesBootsMagSec
+        amount: 2
+
+- type: entity
+  id: CrateSRMRifleMagUranium
+  parent: CrateGenericSteel
+  name: Black-Tip Rifle Magazine Shipment
+  description: A shipment of 7.62x51mm black-tipped rifle magazines, the crate has clearly seen better days.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineRifleUranium
+        amount: 6
+
+- type: entity
+  id: CrateSRMSMGMagUranium
+  parent: CrateGenericSteel
+  name: Black-Tip Submachine Gun Magazine Shipment
+  description: A shipment of 9x19mm black-tipped submachine gun magazines, the crate has clearly seen better days.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazinePistolSubMachineGunUranium
+        amount: 6
+
+- type: entity
+  id: CrateSRMRifleMag
+  parent: CrateGenericSteel
+  name: Rifle Magazine Shipment
+  description: A shipment containing of 7.62x51mm rifle magazines, the crate has clearly seen better days.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineRifle
+        amount: 6
