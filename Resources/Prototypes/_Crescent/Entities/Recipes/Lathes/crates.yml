@@ -98,8 +98,7 @@
   completetime: 2
   materials:
     Steel: 500
-    Glass: 300
-    Gold: 200
+    Glass: 500
 
 - type: latheRecipe
   id: BadscrapCrate
@@ -158,5 +157,13 @@
   materials:
     Steel: 1000
     Uranium: 500
+
+- type: latheRecipe
+  id: DrugCrate
+  result: TradeGoodDrugs
+  completetime: 2
+  materials:
+    Biomass: 50
+    Glass: 1000
 
 
