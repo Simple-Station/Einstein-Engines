@@ -1,0 +1,18 @@
+- type: entity
+  parent: BaseVendingMachineRestock
+  id: VendingMachineRestockOnion
+  name: ONION restock box
+  description: Weird stained box, with promise of more ONION gifts.
+  components:
+  - type: VendingMachineRestock
+    canRestock:
+    - OnionInventory
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/Service/vending_machine_restock.rsi
+    layers:
+    - state: base
+    - state: green_bit
+      shader: unshaded
+    - state: refill_onion
+  - type: StaticPrice
+    price: 10000

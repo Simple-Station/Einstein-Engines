@@ -1,0 +1,19 @@
+#allows mappers to automate random holes and damage in a wreck
+- type: entity
+  name: Ind. Thrust Wreck Randomizer
+  id: IndThrustWreckRandomizer
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: Structures/Shuttles/thruster.rsi
+          state: base
+    - type: RandomSpawner
+      prototypes:
+       - ThrusterCMMWarship
+       - MachineFrameDestroyed
+      chance: 0.65
+      #rarePrototypes:
+
+      #rareChance: 0.05

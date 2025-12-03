@@ -1,0 +1,27 @@
+- type: soundCollection
+  id: LightBulletBounce
+  files:
+  - /Audio/_Crescent/Items/Ammo/Bounce/light1.ogg
+  - /Audio/_Crescent/Items/Ammo/Bounce/light2.ogg
+  - /Audio/_Crescent/Items/Ammo/Bounce/light3.ogg
+
+- type: soundCollection
+  id: MediumBulletBounce
+  files:
+  - /Audio/_Crescent/Items/Ammo/Bounce/med1.ogg
+  - /Audio/_Crescent/Items/Ammo/Bounce/med2.ogg
+  - /Audio/_Crescent/Items/Ammo/Bounce/med3.ogg
+
+- type: soundCollection
+  id: HeavyBulletBounce
+  files:
+  - /Audio/_Crescent/Items/Ammo/Bounce/heavy1.ogg
+  - /Audio/_Crescent/Items/Ammo/Bounce/heavy2.ogg
+  - /Audio/_Crescent/Items/Ammo/Bounce/heavy3.ogg
+
+- type: soundCollection
+  id: ShellBulletBounce
+  files:
+  - /Audio/_Crescent/Items/Ammo/Bounce/shell1.ogg
+  - /Audio/_Crescent/Items/Ammo/Bounce/shell2.ogg
+  - /Audio/_Crescent/Items/Ammo/Bounce/shell3.ogg

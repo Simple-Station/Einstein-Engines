@@ -31,6 +31,10 @@
     steps: 3
     zeroVisible: false
   - type: Appearance
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/mag_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/mag_drop.ogg
 
 # Magazines
 - type: entity

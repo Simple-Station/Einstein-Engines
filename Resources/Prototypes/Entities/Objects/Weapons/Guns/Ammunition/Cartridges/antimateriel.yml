@@ -20,6 +20,12 @@
   - type: SpentAmmoVisuals
   - type: StaticPrice
     price: 20
+  - type: EmitSoundOnLand
+    sound:
+      collection: HeavyBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: HeavyBulletBounce
 
 - type: entity
   parent: CartridgeAntiMateriel

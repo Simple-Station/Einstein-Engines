@@ -29,6 +29,15 @@
       ]
     },
     {
+      "name": "medium",
+      "delays": [
+        [
+          0.05,
+          0.05
+        ]
+      ]
+    },
+    {
       "name": "rubber",
       "delays": [
         [

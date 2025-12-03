@@ -1,0 +1,65 @@
+﻿- type: entity
+  parent: ReinforcementRadioSyndicate
+  id: ReinforcementFlatpackSyndicateCyborgAssault
+  name: syndicate assault cyborg Flat pack.
+  description: The pride and joy of the Cybersun currently booting up
+  suffix: CDT
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/flatpack.rsi
+    layers:
+    - state: kit
+  - type: GhostRole
+    name: ghost-role-information-syndicate-cyborg-assault-name
+    description: ghost-role-information-syndicate-cyborg-description
+    rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleGhostRoleSilicon
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: PlayerBorgSyndicateAssaultBattery
+
+- type: entity
+  parent: ReinforcementRadioSyndicate
+  id: ReinforcementFlatpackSyndicateCyborgMedical
+  name: syndicate Medical cyborg Flat pack.
+  description: An advanced Medical cyborg currently booting up.
+  suffix: CDT
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/flatpack.rsi
+    layers:
+    - state: kit
+  - type: GhostRole
+    name: ghost-role-information-syndicate-cyborg-Medical-name
+    description: ghost-role-information-syndicate-cyborg-description
+    rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleGhostRoleSilicon
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: PlayerBorgSyndicateMedicalBattery
+
+- type: entity
+  parent: ReinforcementRadioSyndicate
+  id: ReinforcementFlatpackSyndicateCyborgSaboteur
+  name: syndicate Saboteur cyborg Flat pack.
+  description: An advanced cyborg with a miniature hard bomb implanted within it currently booting up.
+  suffix: CDT
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/flatpack.rsi
+    layers:
+    - state: kit
+  - type: GhostRole
+    name: ghost-role-information-syndicate-cyborg-Saboteur-name
+    description: ghost-role-information-syndicate-cyborg-description
+    rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleGhostRoleSilicon
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: PlayerBorgSyndicateSaboteurBattery

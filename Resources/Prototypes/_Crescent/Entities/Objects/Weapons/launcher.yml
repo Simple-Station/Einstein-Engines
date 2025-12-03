@@ -216,6 +216,10 @@
       - SemiAuto
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/non_collection/gl_fire.ogg
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/gun_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/gun_drop.ogg
 
 - type: entity
   name: PTA M-5 Carl Gustaf 84mm #This one is alright, not many people use rocket launchers.

@@ -18,6 +18,10 @@
     steps: 3
     zeroVisible: false
   - type: Appearance
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/mag_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/mag_drop.ogg
 
 - type: entity
   id: CartridgeHeavyRifle
@@ -61,6 +65,10 @@
     steps: 3
     zeroVisible: false
   - type: Appearance
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/big_mag_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/big_mag_drop.ogg
 
 - type: entity
   abstract: true

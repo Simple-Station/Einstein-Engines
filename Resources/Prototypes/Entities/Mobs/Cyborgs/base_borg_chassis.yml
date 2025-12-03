@@ -31,8 +31,8 @@
         layer:
         - MobLayer
   - type: MovementSpeedModifier
-    baseWalkSpeed : 2.5
-    baseSprintSpeed : 4.5
+    baseWalkSpeed : 3
+    baseSprintSpeed : 5
   - type: Sprite
     sprite: Mobs/Silicon/chassis.rsi
   - type: RotationVisuals
@@ -317,37 +317,73 @@
   parent: BaseBorgChassis
   abstract: true
   components:
+  - type: NightVision
+    toggleAction: ToggleNightVision
+  - type: ShowHealthBars
   - type: NpcFactionMember
     factions:
     - Syndicate
+    - TFSC
   - type: Access
     tags:
-    - NuclearOperative
-    - SyndicateAgent
+    - SyndicateBasic
+    - SyndicateRamzi
+    - SyndicateCommand
+    - SyndicateGorlex
+    - SyndicateInterdyne
+    - SyndicateSaws
+  - type: LanguageKnowledge
+    speaks:
+    - SolCommon
+    - Freespeak
+    - RobotTalk
+    understands:
+    - TauCetiBasic
+    - SolCommon
+    - Freespeak
+    - RobotTalk
+    - Tradeband
   - type: AccessReader
-    access: [["SyndicateAgent"], ["NuclearOperative"]]
+    access: [["SyndicateRamzi"], ["SyndicateCommand"]]
   - type: SiliconLawProvider
     laws: SyndicateStatic
   - type: IntrinsicRadioTransmitter
     channels:
     - Binary
     - Syndicate
+    - Gorlex
+    - Common
+    - Cyberdawn
+    - Saws
+    - Traffic
+    - Interdyne
   - type: ActiveRadio
     channels:
     - Syndicate
+    - Gorlex
+    - Common
+    - Cyberdawn
+    - Saws
+    - Traffic
+    - Interdyne
   - type: ShowSyndicateIcons
   - type: MovementAlwaysTouching
   - type: Speech
     speechSounds: SyndieBorg
     allowedEmotes:
     - Laugh
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
   - type: Vocal
     sounds:
       Unsexed: UnisexSiliconSyndicate
   - type: PointLight
     color: "#dd200b"
-  - type: Damageable 
+  - type: Damageable
     damageContainer: Silicon
-    damageModifierSet: SiliconProtected 
+    damageModifierSet: SiliconProtected
   - type: ExplosionResistance
     damageCoefficient: 0.5

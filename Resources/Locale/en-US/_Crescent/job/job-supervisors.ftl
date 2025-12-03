@@ -21,3 +21,4 @@ job-supervisors-unionfall-dsm = The Knight-Bannaret, then the Grand Steward of t
 job-supervisors-unionfall-dsm-high = your house's quest to restore its honor
 job-supervisors-unionfall-ncwl = The Kommissar, then the Captain of the Dear Clementine
 job-supervisors-unionfall-ncwl-high = the revolution's embers
+

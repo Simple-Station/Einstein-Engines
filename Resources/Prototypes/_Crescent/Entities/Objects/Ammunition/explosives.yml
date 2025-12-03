@@ -58,6 +58,12 @@
   - type: SpentAmmoVisuals
   - type: StaticPrice
     price: 20
+  - type: EmitSoundOnLand
+    sound:
+      collection: HeavyBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: HeavyBulletBounce
 
 - type: entity
   id: Projectile27mmHE
@@ -108,6 +114,12 @@
         fontSize: 12
         color: "#ffb700"
         requireDetailRange: false
+  - type: EmitSoundOnLand
+    sound:
+      collection: HeavyBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: HeavyBulletBounce
 
 - type: entity
   id: Projectile40mmCan
@@ -164,6 +176,12 @@
         fontSize: 12
         color: "#ffffff"
         requireDetailRange: false
+  - type: EmitSoundOnLand
+    sound:
+      collection: HeavyBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: HeavyBulletBounce
 
 - type: entity
   id: Projectile40mmSmoke
@@ -215,6 +233,12 @@
         fontSize: 12
         color: "#ff4f00"
         requireDetailRange: false
+  - type: EmitSoundOnLand
+    sound:
+      collection: HeavyBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: HeavyBulletBounce
 
 - type: entity
   id: Projectile40mmThermobaric
@@ -267,6 +291,12 @@
         fontSize: 12
         color: "#ffb700"
         requireDetailRange: false
+  - type: EmitSoundOnLand
+    sound:
+      collection: HeavyBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: HeavyBulletBounce
 
 - type: entity
   id: Projectile40mmFrag
@@ -319,6 +349,12 @@
         fontSize: 12
         color: "#1aff00"
         requireDetailRange: false
+  - type: EmitSoundOnLand
+    sound:
+      collection: HeavyBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: HeavyBulletBounce
 
 - type: entity
   id: Projectile40mmHEDP
@@ -375,6 +411,12 @@
         fontSize: 12
         color: "#1aff00"
         requireDetailRange: false
+  - type: EmitSoundOnLand
+    sound:
+      collection: HeavyBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: HeavyBulletBounce
 
 - type: entity
   id: Projectile40mmEMP

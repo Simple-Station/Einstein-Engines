@@ -1,0 +1,32 @@
+# Author Info
+# Discord: originally @fleshangel, later remade by @fullofautism_
+
+- type: vessel
+  id: Cherenzikov
+  name: NCWL Cherenzikov
+  description: A civillian ore-salvage freighter converted into a multi-purpose patrol corvette.
+  price: 65000
+  category: Medium
+  group: None
+  path: /Maps/_Crescent/Shuttles/NCWL/cherenzikov.yml
+
+- type: gameMap
+  id: Cherenzikov
+  mapName: 'NCWL Cherenzikov'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/cherenzikov.yml
+  minPlayers: 0
+  stations:
+    Cherenzikov:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: frigate
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Cherenzikov {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-gunship

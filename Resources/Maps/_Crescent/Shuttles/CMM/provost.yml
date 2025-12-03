@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 09/19/2025 12:22:58
-  entityCount: 241
+  time: 11/28/2025 03:27:51
+  entityCount: 242
 maps: []
 grids:
 - 1
@@ -98,6 +98,8 @@ entities:
             348: 6,-4
             382: -6,-4
             403: 6,-4
+            437: -6,-4
+            458: 6,-4
         - node:
             zIndex: 1
             angle: -3.141592653589793 rad
@@ -113,6 +115,8 @@ entities:
             347: 6,-4
             381: -6,-4
             402: 6,-4
+            436: -6,-4
+            457: 6,-4
         - node:
             zIndex: 1
             angle: -1.5707963267948966 rad
@@ -128,6 +132,8 @@ entities:
             343: 6,-4
             377: -6,-4
             398: 6,-4
+            432: -6,-4
+            453: 6,-4
         - node:
             zIndex: 1
             id: FloorTechMaintDirectionalCorner
@@ -142,6 +148,8 @@ entities:
             345: 6,-4
             379: -6,-4
             400: 6,-4
+            434: -6,-4
+            455: 6,-4
         - node:
             angle: -4.71238898038469 rad
             id: FloorTechMaintDirectionalEdge
@@ -156,6 +164,8 @@ entities:
             346: 6,-4
             380: -6,-4
             401: 6,-4
+            435: -6,-4
+            456: 6,-4
         - node:
             angle: -3.141592653589793 rad
             id: FloorTechMaintDirectionalEdge
@@ -170,6 +180,8 @@ entities:
             341: 6,-4
             375: -6,-4
             396: 6,-4
+            430: -6,-4
+            451: 6,-4
         - node:
             angle: -1.5707963267948966 rad
             id: FloorTechMaintDirectionalEdge
@@ -184,6 +196,8 @@ entities:
             342: 6,-4
             376: -6,-4
             397: 6,-4
+            431: -6,-4
+            452: 6,-4
         - node:
             id: FloorTechMaintDirectionalEdge
           decals:
@@ -197,6 +211,8 @@ entities:
             344: 6,-4
             378: -6,-4
             399: 6,-4
+            433: -6,-4
+            454: 6,-4
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
@@ -265,6 +281,9 @@ entities:
             371: -8,-6
             388: -2,-7
             393: 2,-7
+            426: -8,-6
+            443: -2,-7
+            448: 2,-7
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -290,6 +309,9 @@ entities:
             390: -2,-7
             395: 2,-7
             409: 8,-6
+            445: -2,-7
+            450: 2,-7
+            464: 8,-6
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -322,6 +344,10 @@ entities:
             368: -3,0
             374: -8,-3
             385: -6,-2
+            415: 0,0
+            423: -3,0
+            429: -8,-3
+            440: -6,-2
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -354,6 +380,10 @@ entities:
             365: 3,0
             406: 6,-2
             412: 8,-3
+            417: 0,0
+            420: 3,0
+            461: 6,-2
+            467: 8,-3
         - node:
             id: LatticeEdgeE
           decals:
@@ -406,6 +436,13 @@ entities:
             384: -6,-2
             386: -2,-7
             391: 2,-7
+            414: 0,0
+            422: -3,0
+            424: -8,-6
+            428: -8,-3
+            439: -6,-2
+            441: -2,-7
+            446: 2,-7
         - node:
             id: LatticeEdgeN
           decals:
@@ -437,6 +474,10 @@ entities:
             387: -2,-7
             392: 2,-7
             407: 8,-6
+            425: -8,-6
+            442: -2,-7
+            447: 2,-7
+            462: 8,-6
         - node:
             id: LatticeEdgeS
           decals:
@@ -489,6 +530,13 @@ entities:
             383: -6,-2
             404: 6,-2
             410: 8,-3
+            413: 0,0
+            418: 3,0
+            421: -3,0
+            427: -8,-3
+            438: -6,-2
+            459: 6,-2
+            465: 8,-3
         - node:
             id: LatticeEdgeW
           decals:
@@ -541,6 +589,13 @@ entities:
             405: 6,-2
             408: 8,-6
             411: 8,-3
+            416: 0,0
+            419: 3,0
+            444: -2,-7
+            449: 2,-7
+            460: 6,-2
+            463: 8,-6
+            466: 8,-3
         - node:
             color: '#52B4E996'
             id: WarnBoxGreyscale
@@ -733,6 +788,7 @@ entities:
     - type: ShuttleDeed
       shuttleName: Shuttle BET-307
       shuttleUid: 1
+    - type: SelfDeleteGrid
 - proto: AAAardpointMediumMissile
   entities:
   - uid: 2
@@ -1345,6 +1401,11 @@ entities:
     - type: Transform
       pos: 0.5,0.5
       parent: 1
+  - uid: 242
+    components:
+    - type: Transform
+      pos: 5.5,-3.5
+      parent: 1
 - proto: CableHV
   entities:
   - uid: 97
@@ -1576,15 +1637,15 @@ entities:
     - type: TargetingConsole
       cannonGroups:
         all:
-        - 27
-        - 28
-        - 29
         - 30
+        - 29
+        - 28
+        - 27
         medium 'Lancer' MRM missile system:
-        - 27
-        - 28
-        - 29
         - 30
+        - 29
+        - 28
+        - 27
 - proto: FaxMachineShip
   entities:
   - uid: 123
@@ -1956,7 +2017,7 @@ entities:
           occludes: True
           ent: null
     - type: Battery
-      startingCharge: 19813.73
+      startingCharge: 19205.615
     - type: ApcPowerReceiverBattery
       enabled: True
 - proto: SpawnPointLatejoin
