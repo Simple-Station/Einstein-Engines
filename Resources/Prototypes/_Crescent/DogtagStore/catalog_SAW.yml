@@ -1,4 +1,10 @@
 # SAWs catalog for the id/dogtag console, using Scrap as currency
+
+- type: storeCategory
+  id: StoreCategorySAWPointExchange
+  name: Point Exchange
+  priority: 13
+
 - type: storeCategory
   id: StoreCategorySAW
   name: SAWs
@@ -180,7 +186,7 @@
   icon: { sprite: /Textures/_Crescent/Objects/Weapons/plasmacutter.rsi, state: icon }
   productEntity: WeaponDonorPlasmaCutter
   cost:
-    ScrapSAW: 65
+    ScrapSAW: 30
   categories:
   - StoreCategorySAW
 
@@ -191,7 +197,7 @@
   icon: { sprite: _Crescent/Structures/shieldemittermedium.rsi, state: icon }
   productEntity: ShieldEmitterMediumFlatpack
   cost:
-    ScrapSAW: 140
+    ScrapSAW: 210
   categories:
   - StoreCategorySAWshipmods
 
@@ -202,7 +208,7 @@
   icon: { sprite: _Crescent/Structures/shieldemittersmall.rsi, state: icon}
   productEntity: ShieldEmitterSmallFlatpack
   cost:
-    ScrapSAW: 70
+    ScrapSAW: 140
   categories:
   - StoreCategorySAWshipmods
 
@@ -284,6 +290,61 @@
   - StoreCategorySAWshipmods
 
 - type: listing
+  id: StoreListingSAWSubstation
+  name: Substation Flatpack
+  description: A substation for supplying power to APC's.
+  icon: { sprite: Structures/Power/substation.rsi, state: substation_static }
+  productEntity: SubstationFlatpack
+  cost:
+    ScrapSAW: 10
+  categories:
+  - StoreCategorySAWshipmods
+
+- type: listing
+  id: StoreListingSAWSMES
+  name: SMES Flatpack
+  description: A SMES for supplying power to substations.
+  icon: { sprite: Structures/Power/smes.rsi, state: static }
+  productEntity: SMESFlatpack
+  cost:
+    ScrapSAW: 25
+  categories:
+  - StoreCategorySAWshipmods
+
+- type: listing
+  id: StoreListingSAWEinstein
+  name: Einstein generator Flatpack
+  description: A boriatic generator 'einstein' provied 95kW of power.
+  icon: { sprite: _Crescent/Structures/boriatic_reactor.rsi, state: portgen0 }
+  productEntity: EinsteinFlatpack
+  cost:
+    ScrapSAW: 30
+  categories:
+  - StoreCategorySAWshipmods
+
+- type: listing
+  id: StoreListingSAWHercules
+  name: Hercules generator Flatpack
+  description: A boriatic generator 'hercules' provied 50kW of power.
+  icon: { sprite: Structures/Power/Generation/portable_generator.rsi, state: portgen0 }
+  productEntity: HerculesFlatpack
+  cost:
+    ScrapSAW: 15
+  categories:
+  - StoreCategorySAWshipmods
+
+- type: listing
+  id: StoreListingSAWTinyFan
+  name: Salvaged Fan Flatpack
+  description: A tiny fan made for traping air flows within itself.
+  icon: { sprite: Structures/Piping/Atmospherics/tinyfan.rsi, state: icon }
+  productEntity: TinyFanFlatpack
+  cost:
+    ScrapSAW: 40
+  categories:
+  - StoreCategorySAWshipmods
+
+- type: listing
   id: StoreListingSAWHardpoint
   name: Salvaged fixed hardpoint
   description: A true desire of every shipbreaker, provided for you from all the salvaged ships which were hauled to Dochenskaya over the years.
@@ -323,7 +384,7 @@
   icon: { sprite: _Crescent/Objects/Misc/lpcchip.rsi, state: icon }
   productEntity: ShipVoucherCaracal
   cost:
-    ScrapSAW: 75
+    ScrapSAW: 175
   categories:
   - StoreCategorySAWships
 
@@ -334,7 +395,7 @@
   icon: { sprite: _Crescent/Objects/Misc/lpcchip.rsi, state: icon }
   productEntity: ShipVoucherRokh
   cost:
-    ScrapSAW: 205
+    ScrapSAW: 370
   categories:
   - StoreCategorySAWships
 
@@ -345,6 +406,58 @@
   icon: { sprite: _Crescent/Objects/Misc/lpcchip.rsi, state: icon }
   productEntity: ShipVoucherAmadeus
   cost:
-    ScrapSAW: 140
+    ScrapSAW: 420
   categories:
   - StoreCategorySAWships
+
+- type: listing
+  id: StoreListingSAWPointsLow
+  name: 10 SAWs Autopeddler points deed
+  description: A deed equivelent to 10 autopeddler points.
+  icon: { sprite: _Crescent/Objects/TradeGoods/deed.rsi, state: icon }
+  productEntity: SAWDeedLow
+  cost:
+    ScrapSAW: 10
+  categories:
+  - StoreCategorySAWPointExchange
+
+- type: listing
+  id: StoreListingSAWPointsHigh
+  name: 50 SAWs Autopeddler points deed
+  description: A deed equivelent to 50 autopeddler points.
+  icon: { sprite: _Crescent/Objects/TradeGoods/deed.rsi, state: icon }
+  productEntity: SAWDeedHigh
+  cost:
+    ScrapSAW: 50
+  categories:
+  - StoreCategorySAWPointExchange
+
+# points-deed
+
+- type: entity
+  parent: BaseItem
+  id: SAWDeedLow
+  name: deed of delivery
+  description: A printed deed of SAWs labour. It provides equivelent of 10 points in SAWs requisitions autopeddler.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/deed.rsi
+    layers:
+    - state: icon
+  - type: Currency
+    price:
+      ScrapSAW: 10
+
+- type: entity
+  parent: BaseItem
+  id: SAWDeedHigh
+  name: deed of delivery
+  description: A printed deed of SAWs labour. It provides equivelent of 50 points in SAWs requisitions autopeddler.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/deed.rsi
+    layers:
+    - state: icon
+  - type: Currency
+    price:
+      ScrapSAW: 50
