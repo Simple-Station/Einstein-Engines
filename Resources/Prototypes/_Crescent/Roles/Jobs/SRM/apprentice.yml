@@ -11,6 +11,8 @@
   supervisors: job-supervisors-imperial
   canBeAntag: false
   requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 35000
     - !type:FactionRequirement
       factionID: "SRM"
     - !type:CharacterSpeciesRequirement

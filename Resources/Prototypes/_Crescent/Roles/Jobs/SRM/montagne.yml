@@ -13,7 +13,7 @@
   requirements:
     - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
-      min: 40000
+      min: 64800
     - !type:FactionRequirement
       factionID: "SRM"
     - !type:CharacterSpeciesRequirement

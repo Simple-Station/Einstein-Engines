@@ -17,6 +17,8 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Human
+    - !type:CharacterOverallTimeRequirement
+      min: 500000
   access:
   - Command
   - Hunter
