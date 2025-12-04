@@ -36,7 +36,6 @@
   components:
   - type: BreathMask
   - type: EyeProtection
-  - type: FlashImmunity
   - type: Sprite
     sprite: _Crescent/Clothing/Syndicate/Head/syndicatedonator.rsi
   - type: Clothing
@@ -176,7 +175,6 @@
   description: Spaceworthy protection for your fragile skull.
   components:
   - type: BreathMask
-  - type: FlashImmunity
   - type: Sprite
     sprite: _Crescent/Clothing/Syndicate/Head/coordinator_helmet.rsi
   - type: Clothing
