@@ -2,10 +2,11 @@
                       xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                       xmlns:ui="clr-namespace:Content.Client.Shuttles.UI"
                       Title="{Loc 'radar-console-window-title'}"
-                      SetSize="658 668"
+                      SetSize="658 678"
                       MinSize="256 256">
     <ui:ShuttleNavControl Name="RadarScreen"
                      Margin="4"
                      HorizontalExpand = "True"
                      VerticalExpand = "True"/>
 </controls:FancyWindow>
+<!-- SetSize has to be changed in the above because if you do not the window is not wide or tall enough. -->
