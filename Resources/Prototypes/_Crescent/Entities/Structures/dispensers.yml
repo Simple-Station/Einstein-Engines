@@ -416,7 +416,7 @@
       TradeGoodAntibiotics: TradeDeedVeryHigh
       TradeGoodCybernetics: TradeDeedVeryHigh
       TradeGoodUnionBallistic: TradeDeedExotic
-      TradeGoodUnionVodka: TradeDeedUnique
+      TradeGoodUnionVodka: TradeDeedExotic
   - type: Sprite
     sprite: _Crescent/Structures/cargochute.rsi
     layers:
