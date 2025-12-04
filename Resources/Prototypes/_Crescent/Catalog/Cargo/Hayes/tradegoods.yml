@@ -1,11 +1,11 @@
-- type: cargoProduct
-  id: AntibioticGoodsHayes
-  icon:
-    sprite: _Crescent/Objects/TradeGoods/antibiotics.rsi
-    state: icon
-  product: TradeGoodAntibiotics
-  cost: 750
-  category: cargoproduct-category-name-tradegoods
-  group: hayes
+#- type: cargoProduct
+#  id: AntibioticGoodsHayes
+#  icon:
+#    sprite: _Crescent/Objects/TradeGoods/antibiotics.rsi
+#    state: icon
+#  product: TradeGoodAntibiotics
+#  cost: 750
+#  category: cargoproduct-category-name-tradegoods
+#  group: hayes
 
 

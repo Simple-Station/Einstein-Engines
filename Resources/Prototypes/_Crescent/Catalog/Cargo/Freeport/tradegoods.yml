@@ -1,29 +1,29 @@
-- type: cargoProduct
-  id: ScrapGoodsFreeport
-  icon:
-    sprite: _Crescent/Objects/TradeGoods/scrap.rsi
-    state: icon
-  product: TradeGoodScrap
-  cost: 450
-  category: cargoproduct-category-name-tradegoods
-  group: freeport
+#- type: cargoProduct
+#  id: ScrapGoodsFreeport
+#  icon:
+#    sprite: _Crescent/Objects/TradeGoods/scrap.rsi
+#    state: icon
+#  product: TradeGoodScrap
+#  cost: 450
+#  category: cargoproduct-category-name-tradegoods
+#  group: freeport
 
-- type: cargoProduct
-  id: AmmoGoodsFreeport
-  icon:
-    sprite: _Crescent/Objects/TradeGoods/ammo.rsi
-    state: icon
-  product: TradeGoodAmmo
-  cost: 450
-  category: cargoproduct-category-name-tradegoods
-  group: freeport
+#- type: cargoProduct
+#  id: AmmoGoodsFreeport
+#  icon:
+#    sprite: _Crescent/Objects/TradeGoods/ammo.rsi
+#    state: icon
+#  product: TradeGoodAmmo
+#  cost: 450
+#  category: cargoproduct-category-name-tradegoods
+#  group: freeport
 
-- type: cargoProduct
-  id: GunPartsFreeport
-  icon:
-    sprite: _Crescent/Objects/TradeGoods/gunparts.rsi
-    state: icon
-  product: TradeGoodGunparts
-  cost: 750
-  category: cargoproduct-category-name-tradegoods
-  group: freeport
+#- type: cargoProduct
+#  id: GunPartsFreeport
+#  icon:
+#    sprite: _Crescent/Objects/TradeGoods/gunparts.rsi
+#    state: icon
+#  product: TradeGoodGunparts
+#  cost: 750
+#  category: cargoproduct-category-name-tradegoods
+#  group: freeport

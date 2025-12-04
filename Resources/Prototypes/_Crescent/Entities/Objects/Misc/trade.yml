@@ -45,8 +45,8 @@
 - type: entity
   parent: BaseTradeItem
   id: TradeGoodAlcohol
-  name: alcohol crate
-  description: A sealed crate of distilled potato vodka - Chengridz brand. A sticker on the side identifies the export console this was bought from.
+  name: Alcohol Crate
+  description: A sealed crate of beer, made from synthetic organic matter.
   components:
   - type: Fixtures
     fixtures:
@@ -70,7 +70,7 @@
 - type: entity
   parent: BaseTradeItem
   id: TradeGoodAmmo
-  name: sealed ammunition crate
+  name: Sealed Ammunition Crate
   description: A hermetically sealed crate of pre-war munitions. A sticker on the side identifies the export console this was bought from.
   components:
   - type: Sprite
@@ -102,7 +102,7 @@
 - type: entity
   parent: BaseTradeItem
   id: TradeGoodAntibiotics
-  name: sealed antibiotics case
+  name: Sealed Antibiotics Case
   description: A hermetically sealed case of high-grade antibiotics. A sticker on the side identifies the export console this was bought from.
   components:
   - type: Sprite
@@ -127,7 +127,7 @@
 - type: entity
   parent: BaseTradeItem
   id: TradeGoodCybernetics
-  name: sealed crate of cybernetic parts
+  name: Sealed Crate of Cybernetic Parts
   description: A hermetically sealed case of high-grade prosthetics and spare parts. A sticker on the side identifies the export console this was bought from.
   components:
   - type: Sprite
@@ -140,7 +140,7 @@
 - type: entity
   parent: BaseTradeItem
   id: TradeGoodScrap
-  name: sealed scrap crate
+  name: Sealed Scrap Crate
   description: A hermetically sealed case of assorted scrap parts. A sticker on the side identifies the export console this was bought from.
   components:
   - type: Sprite
@@ -180,7 +180,7 @@
 - type: entity
   parent: BaseTradeItem
   id: TradeGoodGunparts
-  name: sealed crate of gun parts
+  name: Sealed Crate of Gun Parts
   description: A hermetically sealed case of assorted armament parts. A sticker on the side identifies the export console this was bought from.
   components:
   - type: Sprite
@@ -206,7 +206,7 @@
 - type: entity
   parent: BaseTradeItem
   id: TradeGoodPlasma
-  name: sealed plasma fuel crate
+  name: Sealed Plasma Fuel Crate
   description: A hermetically sealed case of assorted, recycled plasma fuel rods, fuel pumps, and liquid canisters. A sticker on the side identifies the station this was produced in as Dochenskaya.
   components:
   - type: Sprite
@@ -232,7 +232,7 @@
 - type: entity
   parent: BaseTradeItem
   id: TradeGoodWine
-  name: sealed taypan wine shipment
+  name: Sealed Taypan Wine Shipment
   description: A sealed case of aged, fine Taypan wine. A sticker on the side identifies the station this was produced in. The same sticker warns you that the product is an imitation and not really made from berries.
   components:
   - type: Currency
@@ -259,7 +259,7 @@
 - type: entity
   parent: BaseTradeItem
   id: TradeGoodDrugs
-  name: secured chemical crate
+  name: Secured Chemical Crate
   description: A secured crate of 'fun chemical byproducts'. It bears no identification stickers, making it difficult to suss out which station this shipment was produced in.
   components:
   - type: Sprite
@@ -287,7 +287,7 @@
 - type: entity
   parent: BaseTradeItem
   id: TradeGoodOrgans
-  name: unmarked shipment
+  name: Unmarked Shipment
   description: A secured crate of reconstructed humanoid organs, the interior cooled to prevent the rotting of the merchandise. It bears no identification stickers, making it difficult to suss out which station this shipment was produced in.
   components:
   - type: Sprite
@@ -299,7 +299,7 @@
 - type: entity
   parent: BaseTradeItem
   id: TradeGoodMiltech
-  name: miltech cybernetics shipment
+  name: Miltech Cybernetics Shipment
   description: A secured crate of military-grade cybernetic parts. Useless on their own and likely has to be reconstructed at a specialized facility. A sticker on the side reveals that this shipment is created by Shinohara Heavy Industries.
   components:
   - type: Sprite
@@ -312,7 +312,7 @@
 - type: entity
   parent: BaseTradeItem
   id: TradeGoodNanoTrasen
-  name: NanoTrasen corporate goods crate
+  name: NanoTrasen Corporate Goods Crate
   description: An antique cargo crate full of NanoTrasen consumer products that never got delivered. Not really worth much at face value anymore. But some collectors might pay a good sum for it.
   components:
   - type: Sprite
@@ -325,7 +325,7 @@
 - type: entity
   parent: BaseTradeItem
   id: TradeGoodOldCyber
-  name: antique cybernetic goods crate
+  name: Antique Cybernetic Goods Crate
   description: An antique cargo crate full of NanoTrasen cybernetics and replacement parts that never got delivered. Most of this crap is broken. But sealed crates resell for decent prices to scavs hoping to get lucky.
   components:
   - type: Sprite
@@ -338,7 +338,7 @@
 - type: entity
   parent: BaseTradeItem
   id: TradeGoodOldParts
-  name: antique parts goods crate
+  name: Antique Parts Goods Crate
   description: An antique cargo crate full of NanoTrasen mechanical products and replacement parts that never got delivered. Most of this crap is broken. But sealed crates resell for decent prices to scavs hoping to get lucky.
   components:
   - type: Sprite
@@ -351,8 +351,8 @@
 - type: entity
   parent: BaseTradeItem
   id: TradeGoodAlloys
-  name: high-grade plasteel alloys shipment
-  description: A secured crate of specialized plasteel alloys. Most commonly put to use in military vessels. A sticker on the side reveals that this shipment is created by Shinohara Heavy Industries.
+  name: High-grade Plasteel Alloys Shipment
+  description: A secured crate of specialized plasteel alloys. Most commonly put to use in military vessels. A sticker on the side indicates where it was manufactured.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/TradeGoods/militarysurplus.rsi
@@ -380,8 +380,8 @@
 - type: entity
   parent: BaseTradeItem
   id: TradeGoodFabrics
-  name: secured fabrics shipment
-  description: A secured shipment of fine Surezai-produced fabrics.
+  name: Secured Fabrics Shipment
+  description: A secured shipment of fine Imperial-produced fabrics.
   components:
   - type: Currency
     price:
@@ -407,8 +407,8 @@
 - type: entity
   parent: BaseTradeItem
   id: TradeGoodGoodScrap
-  name: secured scrap components shipment
-  description: A secured shipment of usable scrap components. Half-unctional electronics, mostly-intact hull plating...
+  name: Secured Scrap Components Shipment
+  description: A secured shipment of usable scrap components. Half-functional electronics, mostly-intact hull plating...
   components:
   - type: Sprite
     sprite: _Crescent/Objects/TradeGoods/militarysurplus.rsi
@@ -460,7 +460,7 @@
 - type: entity
   parent: BaseTradeItem
   id: TradeGoodFlour
-  name: bag of export flour
+  name: Gag of Export Flour
   description: A bag of export-grade flour.
   components:
   - type: Sprite
@@ -473,7 +473,7 @@
 - type: entity
   parent: BaseTradeItem
   id: TradeGoodRice
-  name: bag of export rice
+  name: Bag of Export Rice
   description: A bag of export-grade rice.
   components:
   - type: Sprite
@@ -482,11 +482,22 @@
     - state: icon
   - type: StaticPrice
     price: 300
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.29,0.25,0.32"
+        density: 40
+        mask:
+        - CrateMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
 
 - type: entity
   parent: BaseTradeItem
   id: TradeGoodSugar
-  name: bag of export sugar
+  name: Bag of Export Sugar
   description: A bag of export-grade sugar.
   components:
   - type: Sprite
@@ -495,6 +506,137 @@
     - state: icon
   - type: StaticPrice
     price: 300
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.29,0.25,0.32"
+        density: 40
+        mask:
+        - CrateMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodUnionWeapon
+  name: Crate of Union-made Weapon Parts
+  description: A crate filled with mass-produced weapon parts, manufactured by the union.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/militarycybernetics.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 300
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.29,0.25,0.32"
+        density: 40
+        mask:
+        - CrateMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodUnionArmor
+  name: Crate of Union-made Armor Parts
+  description: A crate filled with mass-produced Armor parts, manufactured by the union.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/militarysurplus.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 300
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.29,0.25,0.32"
+        density: 40
+        mask:
+        - CrateMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodUnionVodka
+  name: Crate of Union Vodka
+  description: A sealed crate of distilled potato vodka - Chengridz brand. A sticker on the side identifies the export console this was bought from.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/alcohol.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 1500
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.29,0.25,0.32"
+        density: 40
+        mask:
+        - CrateMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodScop
+  name: Sealed Scop Crate
+  description: A crate full of Single Cell Organic Proteins- Scop for short. Usually comes in the form of synthetic meats.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/organs.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 1500
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.29,0.25,0.32"
+        density: 40
+        mask:
+        - CrateMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodUnionBallistic
+  name: Sealed Union-Ballistics Crate
+  description: A crate full of Union-made parts for Ballisic Weaponry
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/partydrugs.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 1500
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.29,0.25,0.32"
+        density: 40
+        mask:
+        - CrateMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
 
 #deeds
 
@@ -583,6 +725,17 @@
   id: TradeDeedUnique
   name: deed of delivery
   description: A printed deed of delivery. Blocky letting informs that this deed is worth seven thousand five hundred Union credits to an official chartered station.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/deed.rsi
+    layers:
+    - state: icon
+
+- type: entity
+  parent: BaseItem
+  id: TradeDeed10k
+  name: deed of delivery
+  description: A printed deed of delivery. Blocky letting informs that this deed is worth ten thousand Union credits to an official chartered station.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/TradeGoods/deed.rsi
