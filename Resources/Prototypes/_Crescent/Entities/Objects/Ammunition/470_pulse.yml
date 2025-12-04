@@ -34,10 +34,10 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 100
+        Piercing: 140 # trades mag size for damage
   - type: ExplodeOnTrigger
   - type: Explosive
-    explosionType: Thermobaric
+    explosionType: Thermobaric # mostly just strutural damage
     maxIntensity: 2
     intensitySlope: 2
     totalIntensity: 5
