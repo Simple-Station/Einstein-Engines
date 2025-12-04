@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 09/01/2025 17:55:05
-  entityCount: 190
+  time: 12/02/2025 01:48:53
+  entityCount: 191
 maps: []
 grids:
 - 1
@@ -76,6 +76,9 @@ entities:
             95: -4,6
             100: -4,7
             105: -4,8
+            131: -4,6
+            136: -4,7
+            141: -4,8
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -83,6 +86,9 @@ entities:
             77: 2,6
             82: 2,7
             87: 2,8
+            113: 2,6
+            118: 2,7
+            123: 2,8
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -91,6 +97,10 @@ entities:
             98: -4,7
             103: -4,8
             108: -4,9
+            129: -4,6
+            134: -4,7
+            139: -4,8
+            144: -4,9
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -99,6 +109,10 @@ entities:
             81: 2,7
             86: 2,8
             90: 2,9
+            112: 2,6
+            117: 2,7
+            122: 2,8
+            126: 2,9
         - node:
             id: LatticeEdgeE
           decals:
@@ -106,6 +120,10 @@ entities:
             97: -4,7
             102: -4,8
             107: -4,9
+            128: -4,6
+            133: -4,7
+            138: -4,8
+            143: -4,9
         - node:
             id: LatticeEdgeN
           decals:
@@ -115,6 +133,12 @@ entities:
             94: -4,6
             99: -4,7
             104: -4,8
+            110: 2,6
+            115: 2,7
+            120: 2,8
+            130: -4,6
+            135: -4,7
+            140: -4,8
         - node:
             id: LatticeEdgeS
           decals:
@@ -126,6 +150,14 @@ entities:
             96: -4,7
             101: -4,8
             106: -4,9
+            109: 2,6
+            114: 2,7
+            119: 2,8
+            124: 2,9
+            127: -4,6
+            132: -4,7
+            137: -4,8
+            142: -4,9
         - node:
             id: LatticeEdgeW
           decals:
@@ -133,6 +165,10 @@ entities:
             80: 2,7
             85: 2,8
             89: 2,9
+            111: 2,6
+            116: 2,7
+            121: 2,8
+            125: 2,9
         - node:
             color: '#FFFFFFFF'
             id: TechE
@@ -360,6 +396,7 @@ entities:
       shuttleUid: 1
     - type: BecomesStation
       id: Lucifer
+    - type: SelfDeleteGrid
 - proto: AirlockCommand
   entities:
   - uid: 2
@@ -386,14 +423,14 @@ entities:
       parent: 1
 - proto: AirTankFilled
   entities:
-  - uid: 13
+  - uid: 7
     components:
     - type: Transform
       parent: 6
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 23
+  - uid: 16
     components:
     - type: Transform
       parent: 15
@@ -923,14 +960,14 @@ entities:
       parent: 1
 - proto: ClothingMaskBreath
   entities:
-  - uid: 10
+  - uid: 8
     components:
     - type: Transform
       parent: 6
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 19
+  - uid: 17
     components:
     - type: Transform
       parent: 15
@@ -939,14 +976,14 @@ entities:
     - type: InsideEntityStorage
 - proto: ClothingOuterHardsuitDraugr
   entities:
-  - uid: 7
+  - uid: 9
     components:
     - type: Transform
       parent: 6
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 20
+  - uid: 18
     components:
     - type: Transform
       parent: 15
@@ -968,14 +1005,14 @@ entities:
     - type: InsideEntityStorage
 - proto: ClothingShoesBootsMagMercenaryFilled
   entities:
-  - uid: 11
+  - uid: 10
     components:
     - type: Transform
       parent: 6
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 22
+  - uid: 19
     components:
     - type: Transform
       parent: 15
@@ -1100,14 +1137,14 @@ entities:
       parent: 1
 - proto: HandheldGPSBasic
   entities:
-  - uid: 9
+  - uid: 11
     components:
     - type: Transform
       parent: 6
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 21
+  - uid: 20
     components:
     - type: Transform
       parent: 15
@@ -1127,13 +1164,13 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 8
           - 12
+          - 13
+          - 11
+          - 8
           - 9
           - 10
           - 7
-          - 11
-          - 13
           - 14
         paper_label: !type:ContainerSlot
           showEnts: False
@@ -1150,27 +1187,20 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 17
-          - 16
-          - 18
-          - 21
-          - 19
-          - 20
           - 22
+          - 21
           - 23
+          - 20
+          - 17
+          - 18
+          - 19
+          - 16
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
           ent: null
 - proto: MagazineRifle
   entities:
-  - uid: 8
-    components:
-    - type: Transform
-      parent: 6
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
   - uid: 12
     components:
     - type: Transform
@@ -1178,20 +1208,34 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 16
+  - uid: 13
+    components:
+    - type: Transform
+      parent: 6
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 21
     components:
     - type: Transform
       parent: 15
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 17
+  - uid: 22
     components:
     - type: Transform
       parent: 15
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: NFHolopadShip
+  entities:
+  - uid: 191
+    components:
+    - type: Transform
+      pos: -0.5,7.5
+      parent: 1
 - proto: Poweredlight
   entities:
   - uid: 126
@@ -1590,7 +1634,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 18
+  - uid: 23
     components:
     - type: Transform
       parent: 15
