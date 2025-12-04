@@ -339,7 +339,7 @@
       TradeGoodAmmo: TradeDeedHigh
       TradeGoodScrap: TradeDeedHigh
       TradeGoodUnionBallistic: TradeDeedExotic
-      TradeGoodUnionVodka: TradeDeedUnique
+      TradeGoodUnionVodka: TradeDeedExotic
   - type: Sprite
     sprite: _Crescent/Structures/cargochute.rsi
     layers:

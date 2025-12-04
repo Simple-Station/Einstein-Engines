@@ -147,7 +147,7 @@
   result: TradeGoodUnionVodka
   completetime: 2
   materials:
-    Biomass: 10
+    Biomass: 50
     Glass: 500
 
 - type: latheRecipe
