@@ -299,13 +299,13 @@
       WeaponPistolHimehabu: SpaceCash2500
       WeaponPistolComplianceImperial: SpaceCash2500
       WeaponPistolSmartpistol: SpaceCash2500
-      TradeGoodOrgans: SpaceCash10000
-      TradeGoodDrugs: SpaceCash10000
+      TradeGoodOrgans: SpaceCash15000
+      TradeGoodDrugs: SpaceCash15000
       FoodAmbrosiaVulgaris: SpaceCash1000
-      TradeGoodSilks: SpaceCash10000
-      TradeGoodNanoTrasen: SpaceCash10000
-      TradeGoodOldCyber: SpaceCash10000
-      TradeGoodOldParts: SpaceCash10000
+      TradeGoodSilks: SpaceCash15000
+      TradeGoodNanoTrasen: SpaceCash15000
+      TradeGoodOldCyber: SpaceCash15000
+      TradeGoodOldParts: SpaceCash15000
   - type: Sprite
     sprite: _Crescent/Structures/onionchute.rsi
     layers:
