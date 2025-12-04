@@ -1,29 +1,29 @@
-- type: cargoProduct
-  id: ScrapGoodsSurezai
-  icon:
-    sprite: _Crescent/Objects/TradeGoods/scrap.rsi
-    state: icon
-  product: TradeGoodScrap
-  cost: 750
-  category: cargoproduct-category-name-tradegoods
-  group: suzerai
+#- type: cargoProduct
+#  id: ScrapGoodsSurezai
+#  icon:
+#    sprite: _Crescent/Objects/TradeGoods/scrap.rsi
+#    state: icon
+#  product: TradeGoodScrap
+#  cost: 750
+#  category: cargoproduct-category-name-tradegoods
+#  group: suzerai
 
-- type: cargoProduct
-  id: AmmoGoodsSurezai
-  icon:
-    sprite: _Crescent/Objects/TradeGoods/ammo.rsi
-    state: icon
-  product: TradeGoodAmmo
-  cost: 750
-  category: cargoproduct-category-name-tradegoods
-  group: suzerai
+#- type: cargoProduct
+#  id: AmmoGoodsSurezai
+#  icon:
+#    sprite: _Crescent/Objects/TradeGoods/ammo.rsi
+#    state: icon
+#  product: TradeGoodAmmo
+#  cost: 750
+#  category: cargoproduct-category-name-tradegoods
+#  group: suzerai
 
-- type: cargoProduct
-  id: RiceGoodsSurezai
-  icon:
-    sprite: _Crescent/Objects/TradeGoods/rice.rsi
-    state: icon
-  product: TradeGoodRice
-  cost: 500
-  category: cargoproduct-category-name-tradegoods
-  group: suzerai
+#- type: cargoProduct
+#  id: RiceGoodsSurezai
+#  icon:
+#    sprite: _Crescent/Objects/TradeGoods/rice.rsi
+#    state: icon
+#  product: TradeGoodRice
+#  cost: 500
+#  category: cargoproduct-category-name-tradegoods
+#  group: suzerai
