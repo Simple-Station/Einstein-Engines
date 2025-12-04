@@ -335,6 +335,18 @@
     BallisticCycler: 1000
 
 - type: latheRecipe
+  id: WeaponPlasmaRifleSeethe
+  result: WeaponDSMPlasmaRifle
+  completetime: 2
+  materials:
+    Steel: 2500
+    Plasma: 1000
+    Copper: 500
+    NanotrasenElectronics: 500
+    BasicMechatronics: 1000
+    WeakLaserLocus: 5000
+
+- type: latheRecipe
   id: WeaponSniperDSMLegax
   result: WeaponSniperDSMLegax
   completetime: 2

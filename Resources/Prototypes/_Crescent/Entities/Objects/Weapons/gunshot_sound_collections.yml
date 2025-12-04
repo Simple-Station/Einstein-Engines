@@ -125,6 +125,15 @@
   - "/Audio/_Crescent/Weapons/Guns/lmg_2/lmg_gunshot_3.ogg"
   - "/Audio/_Crescent/Weapons/Guns/lmg_2/lmg_gunshot_4.ogg"
 
+- type: soundCollection
+  id: Infantry_Plasma_Rifle_Gunshots
+  files:
+  - "/Audio/_Crescent/Weapons/Guns/infantry_plasma_rifle/Fire_01.ogg"
+  - "/Audio/_Crescent/Weapons/Guns/infantry_plasma_rifle/Fire_02.ogg"
+  - "/Audio/_Crescent/Weapons/Guns/infantry_plasma_rifle/Fire_03.ogg"
+  - "/Audio/_Crescent/Weapons/Guns/infantry_plasma_rifle/Fire_04.ogg"
+
+
 # Gun specific shit
 
 - type: soundCollection

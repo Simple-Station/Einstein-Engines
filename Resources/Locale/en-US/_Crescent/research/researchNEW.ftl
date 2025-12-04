@@ -91,6 +91,7 @@ research-technology-imperial-sunesis = Imperial Exploration Cruiser
 research-technology-imperial-frigate = Imperial Assault Frigate
 research-technology-imperial-antiinfantrymechguns = Anti Infantry Mechasuit Weaponry
 research-technology-imperial-plasmamechguns = Plasma Mechasuit Weaponry
+research-technology-imperial-plasmaguns = Infantry Plasma Weaponry
 research-technology-imperial-paladin = Imperial Combat Exosuit
 research-technology-imperial-wanderer = Imperial Scout Exosuit
 research-technology-imperial-carrion = Imperial Utility Exosuit
