@@ -59,5 +59,13 @@
     gloves: ClothingHandsGlovesFingerless
     outerClothing: ClothingOuterArmorKendoBogu
     ears: ClothingHeadsetNCSPCyberdawn
-    back: ClothingBackpackNCSPFilledInfanteer
+    back: ClothingBackpackNCSP
     pocket1: WeaponPistolAnsem
+    belt: ClothingBeltSyndicateWebbing
+  storage:
+    belt:
+      - Flash
+      - Tourniquet
+      - MagazinePistolHeavy
+      - CombatKnife
+      - Zipties

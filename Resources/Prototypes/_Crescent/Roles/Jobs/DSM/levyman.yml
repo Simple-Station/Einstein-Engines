@@ -64,9 +64,9 @@
     pocket2: RomaineBible
     belt: ClothingBeltAssault
   storage:
-    back:
+    belt:
       - Flash
       - Tourniquet
-      - Zipties
       - MagazinePistol
       - CombatKnife
+      - Zipties

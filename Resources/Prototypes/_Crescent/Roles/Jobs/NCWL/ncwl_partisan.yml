@@ -56,17 +56,17 @@
     jumpsuit: ClothingUniformJumpsuitNCWL
     id: NCWLHomeguardSoldatPDA
     outerClothing: ClothingOuterArmorNCWLHeavyCarapace
-    belt: ClothingBeltNCWLPouches
     pocket1: WeaponPistolComrade
-    pocket2: MagazinePistol
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesCombat
     head: ClothingHeadHelmetNCWLBasic
     mask: ClothingMaskNCWLGasmask
     ears: ClothingHeadsetNCWL
+    belt: ClothingBeltNCWLPouches
   storage:
-    back:
+    belt:
       - Flash
       - Tourniquet
-      - Zipties
+      - MagazinePistol
       - CombatKnife
+      - Zipties

@@ -40,10 +40,10 @@
   description: A scabbard meant to hold a noble's rapier.
   components:
   - type: Sprite
-    sprite: _Crescent/Clothing/Empire/Belt/sabre_sheath.rsi
+    sprite: _Crescent/Clothing/Empire/Belt/rapier_sheath.rsi
     state: sheath
   - type: Clothing
-    sprite: _Crescent/Clothing/Empire/Belt/sabre_sheath.rsi
+    sprite: _Crescent/Clothing/Empire/Belt/rapier_sheath.rsi
   - type: Item
     size: Ginormous
   - type: ItemSlots
