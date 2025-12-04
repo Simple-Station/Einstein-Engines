@@ -1225,6 +1225,9 @@
         - 48mmHighYieldRocket
         - 48mmLowYieldRocket
         - RocketMagazineEmpty
+        - LensInfaredRecipe
+        - LensPlasmaRecipe
+        - LensXrayRecipe
         - Cartridge40mmFrag
         - Cartridge40mmCan
         - Cartridge40mmHEDP
