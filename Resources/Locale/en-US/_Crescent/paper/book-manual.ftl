@@ -83,11 +83,11 @@ book-accelerated-conscript-training-manual-1 = GS-10095-W-1
         'Lancer' MRM missile system: 680-960m
         NT-6 48mm "Sumitomo" missile rack: 1,000m
         SHI 180mm "Magwell" torpedo launcher: 1,200-2,000m
-        350c "Compakt" hybrid energy gatling: 2,375m (Infrared) and 1,330m (Plasma)
+        350c "Compakt" hybrid energy gatling: 2,375m (Infrared), 1,330m (Plasma) and 760m (Xray)
         NCWL-3 48mm "Kurosawa" rocket pod: 1,350m
         88mm 'Prince' flak-screen turret: 1,350m
         'Gargoyle' LRM cruise missile launcher: 1,500-2,000m
-        SHI 400c plasma bolt repeater: 1,980m
+        SHI 400c plasma bolt repeater: 1,045m
         SHI MG-213: 2,175m
         60mm PTA 'Needler': 2600m
         230mm 'Hephaeustus' assault artillery platform: 3,900m
@@ -95,7 +95,7 @@ book-accelerated-conscript-training-manual-1 = GS-10095-W-1
         90mm heavy mortar-pounder: 15,600m
         SHI Type 99 120mm artillery: 22,800m
         320mm high-frequency accelerator cannon: 39,000m
-        
+
         Chapter 2.4 Loading Doctrine
 
         A loader's duties are multifaceted, you repair the ship, fend off boarders, replace any missing or dead crew, but most importantly: load the ship's guns.
