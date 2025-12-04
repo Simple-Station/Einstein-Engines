@@ -8,7 +8,7 @@
   alwaysUseSpawner: true
   requireAdminNotify: false
   icon: "JobIconMontagne"
-  supervisors: job-supervisors-imperial
+  supervisors: job-supervisors-srm-leaders
   canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement

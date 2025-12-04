@@ -8,7 +8,7 @@
   alwaysUseSpawner: true
   requireAdminNotify: false
   icon: "JobIconAcolyte"
-  supervisors: job-supervisors-imperial
+  supervisors: job-supervisors-srm-apprentice
   canBeAntag: false
   requirements:
     - !type:CharacterOverallTimeRequirement

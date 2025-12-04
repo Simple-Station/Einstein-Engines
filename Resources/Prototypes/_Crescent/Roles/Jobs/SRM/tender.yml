@@ -8,7 +8,7 @@
   alwaysUseSpawner: true
   requireAdminNotify: false
   icon: "JobIconTender"
-  supervisors: job-supervisors-imperial
+  supervisors: job-supervisors-srm-hunters
   canBeAntag: false
   requirements:
     - !type:CharacterOverallTimeRequirement
