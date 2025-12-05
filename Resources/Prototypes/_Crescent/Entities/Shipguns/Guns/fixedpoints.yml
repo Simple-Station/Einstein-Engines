@@ -100,7 +100,7 @@
   - type: Gun
     fireOnDropChance: 0
     projectileSpeed: 65
-    fireRate: 3
+    fireRate: 5
     selectedMode: SemiAuto
     angleDecay: 45
     minAngle: 5
@@ -112,7 +112,7 @@
       params:
         variation: 0.12
   - type: RechargeBasicEntityAmmo
-    rechargeCooldown: 1
+    rechargeCooldown: 0.1
     rechargeSound:
       path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
       params:
