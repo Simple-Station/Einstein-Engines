@@ -2,6 +2,20 @@
 # RIFLE AMMUNITIONS
 
 - type: latheRecipe
+  id: BaseCartridgeRailgun15mm
+  result: BaseCartridgeRailgun15mm
+  completetime: 1
+  materials:
+    Steel: 600
+
+- type: latheRecipe
+  id: MagazineClip18gBuck
+  result: MagazineClip18gBuck
+  completetime: 1
+  materials:
+    Steel: 300
+
+- type: latheRecipe
   id: MagazinePulse350
   result: MagazinePulse350
   completetime: 1
@@ -137,7 +151,7 @@
   completetime: 1
   materials:
     Steel: 900
-    
+
 - type: latheRecipe
   id: MagazineBoxImperialRifleBig
   result: MagazineLightRifleBox
@@ -229,7 +243,7 @@
   materials:
     Steel: 350
     Gold: 100
-    
+
 # SMALL ARMS AMMUNITIONS
 - type: latheRecipe
   id: MagazinePistolHeavy
@@ -401,3 +415,33 @@
   materials:
     Steel: 500
     Plasma: 1500
+
+- type: latheRecipe
+  id: LensInfaredRecipe
+  result: LensInfared
+  completetime: 6
+  materials:
+    Glass: 1500
+    Plasma: 200
+    Gold: 200
+    Silver: 200
+
+- type: latheRecipe
+  id: LensPlasmaRecipe
+  result: LensPlasma
+  completetime: 6
+  materials:
+    Glass: 2000
+    Plasma: 600
+    Gold: 200
+    Silver: 200
+
+- type: latheRecipe
+  id: LensXrayRecipe
+  result: LensXray
+  completetime: 6
+  materials:
+    Glass: 2000
+    Steel: 600
+    Uranium: 600
+    Silver: 200

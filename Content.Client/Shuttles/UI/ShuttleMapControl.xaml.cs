@@ -70,7 +70,8 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
     private readonly Dictionary<Color, List<(Vector2, string)>> _strings = new();
     private readonly List<ShuttleExclusionObject> _viewportExclusions = new();
 
-    public ShuttleMapControl() : base(256f, 512f, 512f)
+    //Changing from 256 512 512 to 256 2048 2048, this shows in testing to be about 4000 units ish. presume 1024>2048 units
+    public ShuttleMapControl() : base(256f, 2048f, 2048f)
     {
         RobustXamlLoader.Load(this);
         _shuttles = EntManager.System<ShuttleSystem>();

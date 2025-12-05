@@ -3,7 +3,7 @@
     "license": "",
     "copyright": "Made by the Sector Crescent team for the Hullrot Project. All rights reserved. Do not modify, publish, use, relicense, or edit.",
     "size": {
-        "x": 48,
+        "x": 64,
         "y": 32
     },
     "states": [
@@ -15,21 +15,6 @@
         },
         {
             "name": "bolt-open"
-        },
-        {
-            "name": "mag-0"
-        },
-        {
-            "name": "mag-1"
-        },
-        {
-            "name": "mag-2"
-        },
-        {
-            "name": "mag-3"
-        },
-        {
-            "name": "mag-4"
         },
         {
             "name": "inhand-left",

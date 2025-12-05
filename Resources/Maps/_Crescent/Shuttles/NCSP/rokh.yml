@@ -4,7 +4,7 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 11/28/2025 02:42:40
+  time: 12/04/2025 16:42:17
   entityCount: 1479
 maps: []
 grids:
@@ -463,6 +463,14 @@ entities:
             996: -10,23
             1002: -10,34
             1013: 4,38
+            1040: 10,7
+            1056: -9,15
+            1062: -8,7
+            1081: -10,18
+            1086: -10,19
+            1091: -10,23
+            1097: -10,34
+            1108: 4,38
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -497,6 +505,12 @@ entities:
             980: 11,19
             1024: 10,34
             1032: 11,32
+            1042: 10,7
+            1048: 11,7
+            1053: 11,8
+            1075: 11,19
+            1119: 10,34
+            1127: 11,32
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -531,6 +545,12 @@ entities:
             999: -10,24
             1005: -10,35
             1011: 4,38
+            1060: -8,7
+            1084: -10,19
+            1089: -10,23
+            1094: -10,24
+            1100: -10,35
+            1106: 4,38
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -580,6 +600,15 @@ entities:
             1027: 10,35
             1031: 11,32
             1035: 11,33
+            1047: 11,7
+            1052: 11,8
+            1074: 11,19
+            1078: 11,20
+            1103: -4,35
+            1118: 10,34
+            1122: 10,35
+            1126: 11,32
+            1130: 11,33
         - node:
             id: LatticeEdgeE
           decals:
@@ -633,6 +662,16 @@ entities:
             1000: -10,34
             1004: -10,35
             1010: 4,38
+            1038: 10,7
+            1054: -9,15
+            1059: -8,7
+            1079: -10,18
+            1083: -10,19
+            1088: -10,23
+            1093: -10,24
+            1095: -10,34
+            1099: -10,35
+            1105: 4,38
         - node:
             id: LatticeEdgeN
           decals:
@@ -756,6 +795,30 @@ entities:
             1018: 9,40
             1021: 10,34
             1029: 11,32
+            1037: 8,0
+            1039: 10,7
+            1043: 11,6
+            1045: 11,7
+            1050: 11,8
+            1055: -9,15
+            1057: -8,6
+            1061: -8,7
+            1063: -5,0
+            1064: 0,-2
+            1066: 0,-1
+            1067: 3,-2
+            1069: 3,-1
+            1070: 8,-1
+            1072: 11,19
+            1080: -10,18
+            1085: -10,19
+            1090: -10,23
+            1096: -10,34
+            1107: 4,38
+            1111: 9,39
+            1113: 9,40
+            1116: 10,34
+            1124: 11,32
         - node:
             id: LatticeEdgeS
           decals:
@@ -869,6 +932,28 @@ entities:
             1025: 10,35
             1028: 11,32
             1033: 11,33
+            1036: 8,0
+            1044: 11,7
+            1049: 11,8
+            1058: -8,7
+            1065: 0,-1
+            1068: 3,-1
+            1071: 11,19
+            1076: 11,20
+            1082: -10,19
+            1087: -10,23
+            1092: -10,24
+            1098: -10,35
+            1101: -4,35
+            1104: 4,38
+            1109: 4,39
+            1110: 9,39
+            1112: 9,40
+            1114: 9,41
+            1115: 10,34
+            1120: 10,35
+            1123: 11,32
+            1128: 11,33
         - node:
             id: LatticeEdgeW
           decals:
@@ -922,6 +1007,16 @@ entities:
             1026: 10,35
             1030: 11,32
             1034: 11,33
+            1041: 10,7
+            1046: 11,7
+            1051: 11,8
+            1073: 11,19
+            1077: 11,20
+            1102: -4,35
+            1117: 10,34
+            1121: 10,35
+            1125: 11,32
+            1129: 11,33
         - node:
             color: '#FFFFFFFF'
             id: TechE
@@ -7445,11 +7540,6 @@ entities:
     - type: Transform
       pos: 10.5,27.5
       parent: 1
-  - uid: 984
-    components:
-    - type: Transform
-      pos: 6.5,27.5
-      parent: 1
 - proto: PowerCellRecharger
   entities:
   - uid: 985
@@ -8197,6 +8287,13 @@ entities:
     components:
     - type: Transform
       pos: 4.6534705,29.48312
+      parent: 1
+- proto: SAWDogtagStore
+  entities:
+  - uid: 984
+    components:
+    - type: Transform
+      pos: 6.5,27.5
       parent: 1
 - proto: ScrapSalvageRandomSpawner
   entities:
@@ -9190,7 +9287,7 @@ entities:
           occludes: True
           ents: []
     - type: Battery
-      startingCharge: 19880.635
+      startingCharge: 19376.777
     - type: ApcPowerReceiverBattery
       enabled: True
   - uid: 1219
@@ -9216,7 +9313,7 @@ entities:
           occludes: True
           ents: []
     - type: Battery
-      startingCharge: 19877.314
+      startingCharge: 19373.457
     - type: ApcPowerReceiverBattery
       enabled: True
 - proto: VendingMachineCoffee

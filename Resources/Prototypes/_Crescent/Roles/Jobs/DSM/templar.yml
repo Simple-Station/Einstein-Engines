@@ -62,7 +62,16 @@
     id: TemplarPDA
     ears: ClothingHeadsetEmpire
     jumpsuit: ClothingUniformJumpsuitImperialCombat
-    back: ClothingBackpackDSMFilledSoldier
+    back: ClothingBackpackDSM
     shoes: ClothingShoesBootsJack
     gloves: ClothingHandsGlovesImperialLonggloves
+    pocket1: WeaponPistolNeoVolker
     pocket2: RomaineBible
+    belt: ClothingBeltAssault
+  storage:
+    belt:
+      - Flash
+      - Tourniquet
+      - MagazineMagnum
+      - CombatKnife
+      - Zipties

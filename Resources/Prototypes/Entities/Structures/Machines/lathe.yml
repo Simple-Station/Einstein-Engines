@@ -1225,6 +1225,9 @@
         - 48mmHighYieldRocket
         - 48mmLowYieldRocket
         - RocketMagazineEmpty
+        - LensInfaredRecipe
+        - LensPlasmaRecipe
+        - LensXrayRecipe
         - Cartridge40mmFrag
         - Cartridge40mmCan
         - Cartridge40mmHEDP
@@ -1234,6 +1237,8 @@
         - MagazineBoxImperialRifleBig
         - MagazineHeavyRifleSmall
         #Hullrot edit start
+        - BaseCartridgeRailgun15mm
+        - MagazineClip18gBuck
         - MagazinePulse470Fmj
         - MagazinePulse470
         - MagazinePulse350Fmj

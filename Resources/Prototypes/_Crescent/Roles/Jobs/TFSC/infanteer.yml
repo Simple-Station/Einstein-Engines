@@ -63,9 +63,9 @@
     gloves: ClothingHandsGlovesFingerless
     back: ClothingBackpackNCSP
   storage:
-    back:
+    belt:
       - Flash
       - Tourniquet
-      - Zipties
       - MagazinePistol
       - CombatKnife
+      - Zipties

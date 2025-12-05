@@ -33,6 +33,7 @@
   - type: Store
     name: saw-console
     categories:
+    - StoreCategorySAWPointExchange
     - StoreCategorySAW
     - StoreCategorySAWshipmods
     - StoreCategorySAWships

@@ -1,0 +1,118 @@
+- type: entity
+  id: ShellShotgun18g
+  name: shell (18.5g)
+  parent: BaseCartridge
+  components:
+  - type: CartridgeAmmo
+    proto: PelletShotgunSpread18g
+  - type: Tag
+    tags:
+      - ShellShotgun18g
+      - Cartridge
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/18.5g_shell.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: EmitSoundOnLand
+    sound:
+      collection: ShellBulletBounce
+  - type: EmitSoundOnCollide
+    sound:
+      collection: ShellBulletBounce
+
+- type: entity
+  id: PelletShotgun18g
+  name: pellet (18.5g buckshot)
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: buckshot
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 14 # 14 x 10 = 140
+
+- type: entity
+  id: PelletShotgunSpread18g
+  categories: [ HideSpawnMenu ]
+  parent: PelletShotgun18g
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgun18g
+    count: 10
+    spread: 15
+
+- type: entity
+  id: MagazineClip18g
+  name: 6-round clip (18.5g Empty)
+  suffix: Empty
+  parent: BaseMagazinePistol
+  components:
+  - type: Tag
+    tags:
+      - MagazineClip18g
+  - type: BallisticAmmoProvider
+    proto: null
+    mayTransfer: true
+    whitelist:
+      tags:
+        - ShellShotgun18g
+    capacity: 6
+  - type: MagazineVisuals
+    magState: mag
+    steps: 7
+    zeroVisible: false
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/18.5g_clip.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/mag_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/mag_drop.ogg
+
+- type: entity
+  id: MagazineClip18gBuck
+  name: 6-round clip (18.5g )
+  suffix: Buck
+  parent: MagazineClip18g
+  components:
+  - type: BallisticAmmoProvider
+    proto: ShellShotgun18g
+  - type: StaticPrice
+    price: 50
+
+- type: entity
+  parent: BaseAmmoProvider
+  id: AmmoProviderShotgunShell18g
+  abstract: true
+  components:
+    - type: BallisticAmmoProvider
+      mayTransfer: true
+      whitelist:
+        tags:
+        - ShellShotgun18g
+      capacity: 24
+
+- type: entity
+  name: 18.5g buckshot box
+  parent: AmmoProviderShotgunShell18g
+  id: BoxLethalshot18g
+  description: A box full of buckshot shells, designed for 18 gauge shotguns.
+  components:
+    - type: BallisticAmmoProvider
+      proto: ShellShotgun18g
+    - type: Sprite
+      layers:
+        - state: boxwide
+        - state: shelllethal

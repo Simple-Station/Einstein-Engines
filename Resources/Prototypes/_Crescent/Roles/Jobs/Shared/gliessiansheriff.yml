@@ -43,8 +43,16 @@
     shoes: ClothingShoesBootsCombat
     head: ClothingHeadHatCMMMarshal
     gloves: ClothingHandsGlovesCombat
-    belt: ClothingBeltMinutemanPouches
     pocket1: WeaponRevolverSnubnose
     id: GliessSheriffPDA
     ears: ClothingHeadsetCMM
     outerClothing: ClothingOuterArmorCMMCarapace
+    belt: ClothingBeltMinutemanPouches
+  storage:
+    belt:
+      - Flash
+      - Tourniquet
+      - BaseSpeedLoaderMagnum
+      - BaseSpeedLoaderMagnum
+      - CombatKnife
+      - Zipties

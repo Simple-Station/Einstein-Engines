@@ -7,11 +7,10 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 70 # AntiMateriel Sniper should hurt real bad
-        Structural: 400 # Sniper is rarely used this way, but this ammo type exists to burst down CONCRETE and TANKS
-    harmorPenetration: 180
-    stoppingPower: 45
-  #  gibsOnHit: true # hilarious but overpowered. use for rockets and ship guns maybe? .2 | 2025
+        Piercing: 100 # crits anybody in T1 armor and leaves anybody wearing T2 armor 1 sneze away from crit
+        Structural: 400
+  - type: StaminaDamageOnCollide
+    damage: 40
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -22,10 +21,10 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 50
+        Piercing: 100 # crits anybody in T1 armor and leaves anybody wearing T2 armor 1 sneze away from crit
         Structural: 1250
-    harmorPenetration: 200
-    stoppingPower: 35
+  - type: StaminaDamageOnCollide
+    damage: 40
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -40,9 +39,10 @@
         Heat: 25
         Structural: 200
     harmorPenetration: 25
-    stoppingPower: 35
   - type: IgniteOnCollide
     fireStacks: 1
+  - type: StaminaDamageOnCollide
+    damage: 40
 
 - type: entity
   id: BulletAntiMaterielShrapnel
@@ -55,7 +55,6 @@
       types:
         Piercing: 3
     harmorPenetration: 25
-    stoppingPower: 2
   - type: Sprite
     scale: 0.5, 0.5
 

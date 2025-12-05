@@ -11,7 +11,7 @@
   - type: FTLSmashImmune
   - type: CargoSellBlacklist
   - type: MovementSpeedModifier
-    baseSprintSpeed: 12
+    baseSprintSpeed: 64
     baseWalkSpeed: 8
   - type: MovementIgnoreGravity
   - type: Physics
@@ -44,7 +44,7 @@
     - state: animated
       shader: unshaded
   - type: ContentEye
-    maxZoom: 2,2
+    maxZoom: 8,8 #ghosts can see ship fights - wabash
   - type: Eye
     drawFov: false
     visMask:
@@ -87,6 +87,7 @@
   - type: RadarConsole
     followEntity: true
     keepWorldAligned: true
+    maxRange: 2048 # increases radar range for ghosts
 
 - type: entity
   id: ActionGhostBoo

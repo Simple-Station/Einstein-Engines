@@ -58,8 +58,7 @@
     Magazine6x24mmIon: 250
     Magazine6x24mmIncendiary: 250
     Magazine6x24mmShock: 250
-    MagazineRailgun15mmAP: 250
-    MagazineRailgun15mmDU: 250
+    BaseCartridgeRailgun15mm: 250
     MagazineHeavyRifle: 250
     MagazineCaselessRifle: 250
     MagazineRifle: 250
@@ -150,6 +149,8 @@
     WeaponPistolSmartpistol: 60
     WeaponPistolViper: 60
     WeaponPistolRongyu: 60
+    WeaponSpecialPulseAMR: 60
+    WeaponSpecialPulseRifle: 60
     WeaponPistolBlastpopGray: 60
     SecBreachingHammer: 60
     Katana: 60
@@ -158,8 +159,9 @@
     TelescopicShield: 100
     RiotShield: 100
     GrenadeFrag: 250
-    MagazineRailgun15mmAP: 250
-    MagazineRailgun15mmDU: 250
+    CartridgePulse350Fmj: 250
+    CartridgePulse470Fmj: 250
+    BaseCartridgeRailgun15mm: 250
     MagazineHeavyRifle: 250
     MagazineCaselessRifle: 250
     MagazineRifle: 250
@@ -247,13 +249,16 @@
     ClothingBeltSheathDSMRapierFilled: 60
     SecBreachingHammer: 60
     Katana: 60
+    WeaponSpecialPulseAMR: 60
+    WeaponSpecialPulseRifle: 60
     RiotBulletShield: 100
     RiotLaserShield: 100
     TelescopicShield: 100
     RiotShield: 100
     GrenadeFrag: 250
-    MagazineRailgun15mmAP: 250
-    MagazineRailgun15mmDU: 250
+    CartridgePulse350Fmj: 250
+    CartridgePulse470Fmj: 250
+    BaseCartridgeRailgun15mm: 250
     MagazineHeavyRifle: 250
     MagazineCaselessRifle: 250
     MagazineRifle: 250
@@ -343,8 +348,11 @@
     TelescopicShield: 100
     RiotShield: 100
     GrenadeFrag: 250
-    MagazineRailgun15mmAP: 250
-    MagazineRailgun15mmDU: 250
+    CartridgePulse350Fmj: 250
+    CartridgePulse470Fmj: 250
+    BaseCartridgeRailgun15mm: 250
+    WeaponSpecialPulseAMR: 60
+    WeaponSpecialPulseRifle: 60
     MagazineHeavyRifle: 250
     MagazineCaselessRifle: 250
     MagazineRifle: 250
@@ -435,8 +443,11 @@
     TelescopicShield: 100
     RiotShield: 100
     GrenadeFrag: 250
-    MagazineRailgun15mmAP: 250
-    MagazineRailgun15mmDU: 250
+    CartridgePulse350Fmj: 250
+    CartridgePulse470Fmj: 250
+    BaseCartridgeRailgun15mm: 250
+    WeaponSpecialPulseAMR: 60
+    WeaponSpecialPulseRifle: 60
     MagazineHeavyRifle: 250
     MagazineCaselessRifle: 250
     MagazineRifle: 250
@@ -521,8 +532,11 @@
     TelescopicShield: 100
     RiotShield: 100
     GrenadeFrag: 250
-    MagazineRailgun15mmAP: 250
-    MagazineRailgun15mmDU: 250
+    CartridgePulse350Fmj: 250
+    CartridgePulse470Fmj: 250
+    BaseCartridgeRailgun15mm: 250
+    WeaponSpecialPulseAMR: 60
+    WeaponSpecialPulseRifle: 60
     MagazineHeavyRifle: 250
     MagazineRifle: 250
     MagazineLightRifle: 250
@@ -625,8 +639,11 @@
     Magazine6x24mmIon: 250
     Magazine6x24mmIncendiary: 250
     Magazine6x24mmShock: 250
-    MagazineRailgun15mmAP: 250
-    MagazineRailgun15mmDU: 250
+    CartridgePulse350Fmj: 250
+    CartridgePulse470Fmj: 250
+    BaseCartridgeRailgun15mm: 250
+    WeaponSpecialPulseAMR: 60
+    WeaponSpecialPulseRifle: 60
     MagazineHeavyRifle: 250
     MagazineCaselessRifle: 250
     MagazineRifle: 250
@@ -726,8 +743,11 @@
     Magazine6x24mmIon: 250
     Magazine6x24mmIncendiary: 250
     Magazine6x24mmShock: 250
-    MagazineRailgun15mmAP: 250
-    MagazineRailgun15mmDU: 250
+    CartridgePulse350Fmj: 250
+    CartridgePulse470Fmj: 250
+    BaseCartridgeRailgun15mm: 250
+    WeaponSpecialPulseAMR: 60
+    WeaponSpecialPulseRifle: 60
     MagazineHeavyRifle: 250
     MagazineCaselessRifle: 250
     MagazineRifle: 250
@@ -833,8 +853,11 @@
     Magazine6x24mmIon: 250
     Magazine6x24mmIncendiary: 250
     Magazine6x24mmShock: 250
-    MagazineRailgun15mmAP: 250
-    MagazineRailgun15mmDU: 250
+    CartridgePulse350Fmj: 250
+    CartridgePulse470Fmj: 250
+    BaseCartridgeRailgun15mm: 250
+    WeaponSpecialPulseAMR: 60
+    WeaponSpecialPulseRifle: 60
     MagazineHeavyRifle: 250
     MagazineCaselessRifle: 250
     MagazineRifle: 250

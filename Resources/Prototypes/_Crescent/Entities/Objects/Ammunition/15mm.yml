@@ -3,9 +3,9 @@
 #---------- 15mm Railgun ----------
 - type: entity
   id: BaseCartridgeRailgun15mm
-  name: railgun slug (15mm)
+  name: railgun slug (15x110mm PTMD)
+  description: A 15x110mm fin-stabilized discarding-sabot slug.
   parent: BaseCartridge
-  abstract: true
   components:
   - type: Tag
     tags:
@@ -13,6 +13,7 @@
       - CartridgeRailgun15mm
   - type: CartridgeAmmo
     deleteOnSpawn: true
+    proto: BulletRailgun15mm
   - type: Item
     size: Small
   - type: Sprite
@@ -31,113 +32,17 @@
   - type: EmitSoundOnCollide
     sound:
       collection: HeavyBulletBounce
-#---------- Basic bullet ----------
-- type: entity
-  id: CartridgeRailgun15mmAP
-  name: railgun slug (15mm APFSDS)
-  parent: BaseCartridgeRailgun15mm
-  components:
-  - type: CartridgeAmmo
-    proto: BulletRailgun15mmAP
 
 - type: entity
-  id: BulletRailgun15mmAP
-  name: bullet (15mm APFSDS)
+  id: BulletRailgun15mm
+  name: bullet (15mm PTMD)
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 70
-    harmorPenetration: 65
-    stoppingPower: 10
-#---------- Uranium ammo of Railgun 15mm ----------
-- type: entity
-  id: CartridgeRailgun15mmDU
-  name: railgun slug (15mm APFSDS-DU)
-  parent: BaseCartridgeRailgun15mm
-  components:
-  - type: CartridgeAmmo
-    proto: BulletRailgun15mmDU
-  - type: Sprite
-    layers:
-      - state: green
-        map: [ "enum.AmmoVisualLayers.Base" ]
-
-- type: entity
-  id: BulletRailgun15mmDU
-  name: bullet (15mm APFSDS-DU)
-  parent: BaseBullet
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Projectile
-    damage:
-      types:
-        Piercing: 70
-        Radiation: 15
-    harmorPenetration: 80
-    stoppingPower: 10
-
-#---------- 15mm Railgun (empty) ----------
-- type: entity
-  id: BaseMagazineRailgun15mm
-  name: "4-round magazine (15mm)"
-  parent: BaseItem
-  abstract: true
-  components:
-  - type: Tag
-    tags:
-      - MagazineRailgun15mm
-  - type: BallisticAmmoProvider
-    mayTransfer: true
-    whitelist:
-      tags:
-        - CartridgeRailgun15mm
-    proto: null
-    capacity: 4
-  - type: Item
-    size: Normal
-  - type: ContainerContainer
-    containers:
-      ballistic-ammo: !type:Container
-  - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/15mm_mag.rsi
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-  - type: MagazineVisuals
-    magState: mag
-    steps: 5
-    zeroVisible: false
-  - type: Appearance
-  - type: EmitSoundOnPickup
-    sound: /Audio/_Crescent/Weapons/Interact/mag_pick.ogg
-  - type: EmitSoundOnDrop
-    sound: /Audio/_Crescent/Weapons/Interact/mag_drop.ogg
-
-#---------- 15mm Railgun (APFSDS) ----------  
-- type: entity
-  id: MagazineRailgun15mmAP
-  name: "4-round magazine (15mm APFSDS)"
-  parent: BaseMagazineRailgun15mm
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeRailgun15mmAP
-
-#---------- 15mm Railgun (APFSDS-DU) ----------  
-- type: entity
-  id: MagazineRailgun15mmDU
-  name: "4-round magazine (15mm APFSDS-DU)"
-  parent: BaseMagazineRailgun15mm
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeRailgun15mmDU
-  - type: Sprite
-    layers:
-    - state: green
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
+        Piercing: 145 # crits anybody in T1 armor and leaves anybody wearing T2 armor 1 sneze away from crit
+        Structural: 400
+  - type: StaminaDamageOnCollide
+    damage: 75

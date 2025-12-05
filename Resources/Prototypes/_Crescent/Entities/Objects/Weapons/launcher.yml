@@ -181,7 +181,7 @@
       - state: base
         map: ["enum.GunVisualLayers.Base"]
   - type: Item
-    size: Large
+    size: Normal
     sprite: _Crescent/Objects/Weapons/Guns/m320.rsi
   - type: ItemSlots
     slots:
