@@ -758,7 +758,6 @@
   - type: ItemBorgModule
     items:
     - OmnimedToolSyndie
-    - DefibrillatorOneHandedUnpowered
     droppableItems:
     - id: OrganHumanHeart
       whitelist:

@@ -33,40 +33,22 @@
   - WeaponPistolViperWoodCyberdawn
 
 - type: technology
-  id: CyberdawnPowersink
-  name: research-technology-cyberdawn-powersink
-  icon:
-    sprite: Objects/Power/powersink.rsi
-    state: powersink
-  discipline: Cyberdawn
-  tier: 1
-  cost: 5000
-  recipeUnlocks:
-  - PowerSinkCyberdawn
-
-- type: technology
-  id: CyberdawnDNAScrambler
-  name: research-technology-cyberdawn-dnascram
+  id: CyberdawnT1Infiltration
+  name: research-technology-cyberdawn-T1-Infiltration
   icon:
     sprite: Objects/Specific/Medical/syndi_implanter.rsi
     state: implanter0
   discipline: Cyberdawn
   tier: 1
-  cost: 3000
-  recipeUnlocks:
-  - DnaScramblerImplanter
-
-- type: technology
-  id: CyberdawnRadioJammer
-  name: research-technology-cyberdawn-radiojammer
-  icon:
-    sprite: Objects/Devices/jammer.rsi
-    state: jammer
-  discipline: Cyberdawn
-  tier: 1
   cost: 6000
   recipeUnlocks:
+  - DnaScramblerImplanter
+  - FreedomImplanter
   - RadioJammerCyberdawn
+  - PowerSinkCyberdawn
+  - ClothingBackpackChameleonFillCyberdawn
+  - ClothingMaskGasVoiceChameleonCyberdawn
+  - AgentIDCardCyberdawn
 
 - type: technology
   id: CyberdawnLPCT1
@@ -86,41 +68,22 @@
 #tier 2
 
 - type: technology
-  id: CyberdawnMuffler
-  name: research-technology-cyberdawn-ewar
-  icon:
-    sprite: _Crescent/Objects/Devices/jammerewar.rsi
-    state: jammer
-  discipline: Cyberdawn
-  tier: 2
-  cost: 8000
-  recipeUnlocks:
-  - MufflerFlatpack
-
-- type: technology
-  id: CyberdawnEmag
-  name: research-technology-cyberdawn-emag
+  id: CyberdawnT2Infiltration
+  name: research-technology-cyberdawn-T2-Infiltration
   icon:
     sprite: Objects/Tools/emag.rsi
     state: icon
   discipline: Cyberdawn
   tier: 2
-  cost: 7500
+  cost: 10000
   recipeUnlocks:
   - EmagCyberdawn
   - DoormagCyberdawn
-
-- type: technology
-  id: CyberdawnEmpImplanter
-  name: research-technology-cyberdawn-emp
-  icon:
-    sprite: Objects/Specific/Medical/syndi_implanter.rsi
-    state: implanter0
-  discipline: Cyberdawn
-  tier: 2
-  cost: 6000
-  recipeUnlocks:
+  - MufflerFlatpack
   - EmpImplanter
+  - SyndicateJawsOfLifeCyberdawn
+  - StorageImplanter
+  - MicroBombImplanter
 
 - type: technology
   id: CyberdawnAdvancedBallistics
@@ -151,7 +114,6 @@
   - TubeLoader1Craft
   - LaserLocus1Craft
   - HardlightGenerator1Craft
-
 
 - type: technology
   id: CDTAdvancedComponents
@@ -301,3 +263,18 @@
   cost: 10000
   recipeUnlocks:
   - EnergySwordDouble
+
+- type: technology
+  id: CyberdawnT3Infiltration
+  name: research-technology-cyberdawn-T3-Infiltration
+  icon:
+    sprite: Objects/Specific/Medical/syndi_implanter.rsi
+    state: implanter0
+  discipline: Cyberdawn
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - MacroBombImplanter
+  - ScramImplanter
+  - SyndicateBombCyberdawn
+  - StealthBoxCyberdawn

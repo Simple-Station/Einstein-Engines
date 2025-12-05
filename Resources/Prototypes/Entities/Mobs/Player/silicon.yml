@@ -780,6 +780,7 @@
       borg_module:
       - BorgModuleOperative
       - BorgModuleAdvancedSurgery
+      - BorgModuleDefibrillator
       - BorgModuleSyndicateWeapon
       - BorgModuleAdvancedTreatment
   - type: ItemSlots
