@@ -34,6 +34,8 @@
   - type: Tag
     tags:
     - Khopesh
+  - type: DisarmMalus
+  - type: MultiHandedItem
 
 - type: entity
   parent: ArmBladeChangeling

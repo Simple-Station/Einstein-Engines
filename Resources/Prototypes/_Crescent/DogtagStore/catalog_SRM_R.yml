@@ -50,7 +50,7 @@
 - type: listing
   id: StoreListingSRMRifleHunter
   name: The Hunter
-  description: The Hunter rifle, a reliable but poorly designed firearm for use by Militia forces.
+  description: The Hunter rifle, a reliable but poorly designed firearm for use by Militia forces, comes with a rifle and two magazines.
   icon: { sprite: _Crescent/Objects/Weapons/Guns/hunter.rsi, state: icon }
   productEntity: CrateSRMHunterDMR
   cost:
@@ -61,7 +61,7 @@
 - type: listing
   id: StoreListingSRMBeetleSMG
   name: The Beetle
-  description: The Beetle submachine gun, a compact if not poorly designed firearm for use by Militia forces.
+  description: The Beetle submachine gun, a compact if not poorly designed firearm for use by Militia forces, comes with a few SMGs and ammo.
   icon: { sprite: _Crescent/Objects/Weapons/Guns/beetle.rsi, state: icon }
   productEntity: CrateSRMBeetleSMG
   cost:
@@ -72,7 +72,7 @@
 - type: listing
   id: StoreListingSRMLauncher
   name: Stolen SHI LAM-17 84mm Shipment
-  description: The disposable SHI LAM-17 84mm rocket launcher, damaged in transit.. effectiveness varies.
+  description: The disposable SHI LAM-17 84mm rocket launcher, damaged in transit.. effectiveness varies, two to a shipment.
   icon: { sprite: _Crescent/Objects/Weapons/Guns/disposablerpg.rsi, state: icon }
   productEntity: CrateSRMLauncher
   cost:
@@ -87,7 +87,7 @@
 - type: listing
   id: StoreListingSRMStandardRifleMag
   name: 7.62x51mm Standard Magazine
-  description: A standard magazine for the Hunter rifle and compatible 7.62x51mm firearms.
+  description: A standard magazine for the Hunter rifle and compatible 7.62x51mm firearms, comes with a few magazines.
   icon: { sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/7.62mm_mag.rsi, state: icon }
   productEntity: CrateSRMRifleMag
   cost:
@@ -98,7 +98,7 @@
 - type: listing
   id: StoreListingSRMUraniumRifleMag
   name: 7.62x51mm Black-tipped Magazine
-  description: A black-tipped magazine for the Hunter rifle and compatible 7.62x51mm firearms, armor piercing.
+  description: A black-tipped magazine for the Hunter rifle and compatible 7.62x51mm firearms, armor piercing. A few magazines come packaged.
   icon: { sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/7.62mm_mag.rsi, state: icon }
   productEntity: CrateSRMRifleMagUranium
   cost:
@@ -120,7 +120,7 @@
 - type: listing
   id: StoreListingSRMUraniumSMGMag
   name: 9x19mm Black-tipped Magazine
-  description: A black-tipped magazine for the Beetle submachine gun and compatible 9x19mm firearms, armor piercing.
+  description: A black-tipped magazine for the Beetle submachine gun and compatible 9x19mm firearms, armor piercing. A few magazines come packaged.
   icon: { sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/9x19mm_mag.rsi, state: icon }
   productEntity: CrateSRMSMGMagUranium
   cost:
@@ -194,7 +194,7 @@
 - type: listing
   id: StoreListingSRMIncendiaryHandgrenade
   name: M14 Incendiary Handgrenade
-  description: An M14 Incendiary handgrenade.
+  description: An M14 Incendiary handgrenade. A few come packaged.
   icon: { sprite: _Crescent/Objects/Weapons/Grenades/incendiary.rsi, state: icon }
   productEntity: CrateSRMIncendiaryGrenade
   cost:
@@ -205,7 +205,7 @@
 - type: listing
   id: StoreListingSRMSmokeHandgrenade
   name: M18 Smoke Handgrenade
-  description: An M18 Smoke handgrenade.
+  description: An M18 Smoke handgrenade. A few come packaged.
   icon: { sprite: _Crescent/Objects/Weapons/Grenades/smoke.rsi, state: icon }
   productEntity: CrateSRMSmokeGrenade
   cost:
@@ -216,7 +216,7 @@
 - type: listing
   id: StoreListingSRMF1Handgrenade
   name: F1 Handgrenade
-  description: An F1 fragmentation handgrenade.
+  description: An F1 fragmentation handgrenade. A few come packaged.
   icon: { sprite: _Crescent/Objects/Weapons/Grenades/f1.rsi, state: icon }
   productEntity: CrateSRMFragGrenade
   cost:
@@ -227,7 +227,7 @@
 - type: listing
   id: StoreListingSRMG8PoisonHandgrenade
   name: G-8 Poison Handgrenade
-  description: A G-8 Poison handgrenade.
+  description: A G-8 Poison handgrenade. A few come packaged.
   icon: { sprite: _Crescent/Objects/Weapons/Grenades/dsm_smoke.rsi, state: icon }
   productEntity: CrateSRMPoisonGrenade
   cost:
@@ -238,7 +238,7 @@
 - type: listing
   id: StoreListingSRMG4TwistcapHandgrenade
   name: G-4 Twistcap Handgrenade
-  description: A G-4 Twistcap handgrenade.
+  description: A G-4 Twistcap handgrenade. A few come packaged.
   icon: { sprite: _Crescent/Objects/Weapons/Grenades/dsm_twist.rsi, state: icon }
   productEntity: CrateSRMTwistcapGrenade
   cost:
@@ -249,7 +249,7 @@
 - type: listing
   id: StoreListingSRMG3StickHandgrenade
   name: G-3 Stick Handgrenade
-  description: A G-3 Stick handgrenade.
+  description: A G-3 Stick handgrenade. A few come packaged.
   icon: { sprite: _Crescent/Objects/Weapons/Grenades/dsm_stick.rsi, state: icon }
   productEntity: CrateSRMStickGrenade
   cost:

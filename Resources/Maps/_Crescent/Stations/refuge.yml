@@ -16573,7 +16573,7 @@ entities:
     - type: Transform
       pos: -6.472779,-8.071793
       parent: 1
-- proto: MedkitCombat
+- proto: MedkitFilled
   entities:
   - uid: 1670
     components:
@@ -16604,7 +16604,7 @@ entities:
     - type: Transform
       pos: -6.5218663,-7.151598
       parent: 1
-- proto: MedkitToxin
+- proto: MedkitToxinFilled
   entities:
   - uid: 1675
     components:

@@ -28,9 +28,9 @@
 - type: listing
   id: StoreListingSRMSpider
   name: SRM Spider LPC
-  description:
+  description: An LPC fabprint disk loaded with a Sixth St. Romaine's Militia Spider-class stealth shuttle pattern. Has to be redeemed at a shipyard console.
   icon: { sprite: _Crescent/Objects/Misc/lpcchip.rsi, state: icon }
-  productEntity:
+  productEntity: ShipVoucherSpider
   cost:
     PietySRM: 20
   categories:
@@ -39,9 +39,9 @@
 - type: listing
   id: StoreListingSRMSaintsfall
   name: SRM Saintsfall LPC
-  description:
+  description: An LPC fabprint disk loaded with a Sixth St. Romaine's Militia Saintsfall-class gunship pattern. Has to be redeemed at a shipyard console.
   icon: { sprite: _Crescent/Objects/Misc/lpcchip.rsi, state: icon }
-  productEntity:
+  productEntity: ShipVoucherSaintsfall
   cost:
     PietySRM: 5
   categories:
@@ -76,7 +76,7 @@
 - type: listing
   id: StoreListingSRMHeavyMagboots
   name: Heavy Combat Magboots
-  description: Heavy duty combat magboots, make you a bit slower but they can carry a sidearm.
+  description: Heavy duty combat magboots, make you a bit slower but they can carry a sidearm. A few come packaged.
   icon: { sprite: Clothing/Shoes/Boots/magboots-combat.rsi, state: icon }
   productEntity: CrateSRMMagboots
   cost:
@@ -87,7 +87,7 @@
 - type: listing
   id: StoreListingSRMToolbox
   name: Stolen Toolbox
-  description: A toolbox stolen from some poor guy just leaving Freeport. Not like he'll be needing it anymore anyways.
+  description: A toolbox stolen from some poor guy just leaving Freeport. Not like he'll be needing it anymore anyways. A few come packaged.
   icon: { sprite: Objects/Tools/Toolboxes/toolbox_syn.rsi, state: icon }
   productEntity: CrateSRMToolbox
   cost:
@@ -98,7 +98,7 @@
 - type: listing
   id: StoreListingSRMPinpointer
   name: Tracking Pinpointer
-  description: A pinpointer used to track down anything, even small and unnoticeable things.
+  description: A pinpointer used to track down anything, even small and unnoticeable things. A few come packaged.
   icon: { sprite: Objects/Devices/pinpointer.rsi, state: pinpointer_thief }
   productEntity: CrateSRMPinpointer
   cost:
@@ -135,7 +135,7 @@
 - type: listing
   id: StoreListingSRMCompactDefibrillator
   name: Compact Defibrillator
-  description: A compact defibrillator that can be strapped to one's belt for ease of use in emergency situations.
+  description: A compact defibrillator that can be strapped to one's belt for ease of use in emergency situations. A few come packaged.
   icon: { sprite: Objects/Specific/Medical/defibsmall.rsi, state: icon }
   productEntity: CrateSRMDefibrillator
   cost:
@@ -190,7 +190,7 @@
 - type: listing
   id: StoreListingSRMMassScanner
   name: Mass Scanner
-  description: A handheld device handy for spaceborne operations.
+  description: A handheld device handy for spaceborne operations. A few come packaged.
   icon: { sprite: Objects/Tools/handheld_mass_scanner.rsi, state: icon }
   productEntity: CrateSRMMassScanner
   cost:

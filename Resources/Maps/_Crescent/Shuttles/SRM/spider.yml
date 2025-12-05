@@ -1119,7 +1119,7 @@ entities:
     - type: Transform
       pos: 1.5,5.5
       parent: 2
-- proto: ComputerTabletopIFF
+- proto: ComputerIFFSyndicate
   entities:
   - uid: 118
     components:
