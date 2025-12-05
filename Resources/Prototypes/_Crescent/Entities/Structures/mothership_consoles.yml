@@ -170,7 +170,6 @@
   name: refuge shipyard
   components:
   - type: ShipyardListing
-    shuttles:
 
 - type: entity
   id: AnathemaMothershipComputer
