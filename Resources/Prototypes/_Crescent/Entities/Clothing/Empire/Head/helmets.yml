@@ -36,7 +36,6 @@
   description: A combatant helmet with internal pressurization systems and a scanning hud for nearby targets and ballistics data.
   components:
   - type: BreathMask
-  - type: FlashImmunity
   - type: Sprite
     sprite: _Crescent/Clothing/Empire/Head/inspector.rsi
   - type: Clothing
@@ -133,7 +132,6 @@
   description: An Imperial hardsuit helmet with internal pressurization systems and sturdy armor plating.
   components:
   - type: BreathMask
-  - type: FlashImmunity
   - type: Sprite
     sprite: _Crescent/Clothing/Empire/Head/mandatecommand.rsi
   - type: Clothing
@@ -197,7 +195,6 @@
   description: A combat hardsuit helmet with internal pressurization systems and an inbuilt tracker system for ballistics.
   components:
   - type: BreathMask
-  - type: FlashImmunity
   - type: Sprite
     sprite: _Crescent/Clothing/Empire/Head/mandateknight.rsi
   - type: Clothing
@@ -523,7 +520,6 @@
   description: Suffocating black cloth is the mark of the Imperial Psion, lacking value or birthright enough to escape the clutches of the House of Questions. After processing and education for the betterment of the Mandate at large, their uniform remains as both a mark of origin and valuable tool - the design of the robe and accompanying mask isolates the wearer entirely from their surroundings so that they may focus upon the working of space and matter. In addition, the space-grade seals are suitable for EVA traversal.
   components:
   - type: BreathMask
-  - type: FlashImmunity
   - type: Sprite
     sprite: _Crescent/Clothing/Empire/Head/mandatenullweavepsion.rsi
   - type: Clothing

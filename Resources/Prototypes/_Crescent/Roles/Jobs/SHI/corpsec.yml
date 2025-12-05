@@ -63,9 +63,6 @@
     back: ClothingBackpackSHISatchel
     belt: ClothingBeltSecurityFilled
   storage:
-    back:
-    - Flash
+    belt:
     - Tourniquet
-    - Zipties
     - MagazinePistol
-    - CombatKnife

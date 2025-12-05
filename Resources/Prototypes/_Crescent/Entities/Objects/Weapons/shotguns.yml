@@ -156,10 +156,97 @@
   - type: ItemSlots
 
 - type: entity
-  name: SHI M135 Double-Barrel 4g
+  name: SHI-UA SH-13Lvr blaster 18.5g
+  parent: [BaseItem, BaseGunWieldable, StreeCredRedeemable]
+  id: WeaponShotgunBlaster
+  description: A large and very oddly designed lever-action shotgun fed by 18.5 gauge clips. Designed and manfucatured by United Arsenal for Shinoharas BudgetArms line.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/blaster.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,3,2
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/blaster.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: AmmoCounter
+  - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
+  - type: Gun
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/UnionfallWeapons/lever_fire.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+    fireOnDropChance: 0.3
+  - type: Wieldable
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineClip18gBuck
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineClip18g
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+      gun_chamber:
+        name: Chamber
+        startingItem: ShellShotgun18g
+        priority: 1
+        whitelist:
+          tags:
+            - ShellShotgun18g
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: ChamberMagazineAmmoProvider
+    autoEject: true
+    soundAutoEject:
+      path: /Audio/Weapons/Guns/EmptyAlarm/M1_empty_alarm.ogg
+  - type: Appearance
+  - type: StaticPrice
+    price: 2000
+  - type: Execution
+  - type: MeleeWeapon
+    attackRate: 1.4
+    damage:
+      types:
+        Blunt: 10
+    bluntStaminaDamageFactor: 1.3333
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 180
+    soundHit:
+      collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2.5
+  - type: DamageOtherOnHit
+    staminaCost: 9.5
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/gun_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/gun_drop.ogg
+
+- type: entity
+  name: SHI M135 Double-Barrel 12g
   parent: [BaseWeaponShotgun, BaseGunWieldable, StreeCredRedeemable]
   id: WeaponShotgunSHIDoubleBarreled4g
-  description: A cheap, oversized shotgun. Manufactured by Shinora for their BudgetArms line. Chambered in 4g shells.
+  description: A cheap, oversized shotgun. Manufactured by Shinora for their BudgetArms line. Chambered in 12g shells.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/dbshotgun.rsi
@@ -178,9 +265,9 @@
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-        - ShellShotgun4g
+        - ShellShotgun
     capacity: 2
-    proto: ShellShotgun4gBuckshot
+    proto: ShellShotgun
   - type: MeleeWeapon
     damage:
       types:

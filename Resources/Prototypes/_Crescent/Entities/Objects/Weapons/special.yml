@@ -62,60 +62,61 @@
     zeroVisible: true
   - type: Appearance
 
-
 - type: entity
-  name: PTA XCG-4 Lancer 15mm
-  parent: [BaseWeaponRifle, StreeCredRedeemable]
+  name: PTA XCG-4 Lancer 15x110mm
+  parent: [BaseItem, StreeCredRedeemable, BaseGunWieldable]
   id: WeaponSpecialRailgun
   description: A small-scale railgun developed by Pang Tai Arms. Not commonly seen due to the high price per unit. Chambered in 15mm.
   components:
-  - type: Clothing
-    sprite: _Crescent/Objects/Weapons/Guns/railgun.rsi
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/railgun.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
-      - state: mag-0
-        map: ["enum.GunVisualLayers.Mag"]
   - type: Item
+    size: Large
+    sprite: _Crescent/Objects/Weapons/Guns/railgun.rsi
     shape:
     - 0,0,5,2
-  - type: Gun
-    fireRate: 1
-    soundGunshot:
-      path: /Audio/_Crescent/Weapons/Guns/non_collection/railgun.ogg
-    fireOnDropChance: 0.5
-  - type: ChamberMagazineAmmoProvider
-    soundRack:
-      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
   - type: ItemSlots
     slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: MagazineRailgun15mmAP
-        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
-        priority: 2
-        whitelist:
-          tags:
-            - MagazineRailgun15mm
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeRailgun15mmAP
+        startingItem: BaseCartridgeRailgun15mm
         priority: 1
         whitelist:
           tags:
             - CartridgeRailgun15mm
   - type: ContainerContainer
     containers:
-      gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
-  - type: MagazineVisuals
-    magState: mag
-    steps: 5
-    zeroVisible: true
+  - type: ChamberMagazineAmmoProvider
+    autoCycle: false
+    boltClosed: true
+    canRack: false
+    soundBoltClosed: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+    soundBoltOpened: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+    soundRack: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/railgun.rsi
+    quickEquip: false
+    slots:
+    - Belt
+    - suitStorage
+  - type: GunRequiresWield
   - type: Appearance
+  - type: Gun
+    fireRate: 2
+    projectileSpeed: 45
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/railgun.ogg
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Interact/gun_pick.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Interact/gun_drop.ogg
 
 - type: entity
   name: PTA LAS-98 Mako laser cutter 200c
@@ -476,3 +477,63 @@
 # - type: Appearance
 # - type: StaticPrice
 #   price: 3000
+
+- type: entity
+  name: IRM 150c 'Seethe' Plasma rifle
+  parent: [BaseWeaponBattery, BaseGunWieldable]
+  id: WeaponDSMPlasmaRifle
+  description: A brutal weapon that boils the skin and internal organs of whomever it hits; the scope on top pulls double duty as an eye shield so the operator's eyes aren't fried by firing the thing.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/seethe.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/seethe.rsi
+  - type: GunRequiresWield
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: StaticPrice
+    price: 2500
+  - type: Gun
+    fireRate: 3
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      collection: Infantry_Plasma_Rifle_Gunshots
+      params:
+        variation: 0.125
+  - type: Battery
+    maxCharge: 2100
+    startingCharge: 2100
+  - type: ProjectileBatteryAmmoProvider
+    proto: InfantryPlasmaBoltMedium
+    fireCost: 35 # 60 shots, can't reload in the field
+
+- type: entity
+  id: InfantryPlasmaBoltMedium
+  name: plasma bolt
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Heat: 26
+        Structural: 20
+    harmorPenetration: 15
+  - type: PointLight
+    radius: 3.5
+    color: Purple
+    energy: 0.5
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Projectiles/plasma.rsi
+    layers:
+      - state: icon

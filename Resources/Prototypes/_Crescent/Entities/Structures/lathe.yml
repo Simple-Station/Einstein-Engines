@@ -252,6 +252,8 @@
     idleState: fab-idle
     runningState: fab-active
     staticRecipes:
+      - BaseCartridgeRailgun15mm
+      - MagazineClip18gBuck
       - MagazinePulse470Fmj
       - MagazinePulse470
       - MagazinePulse350Fmj
@@ -609,6 +611,7 @@
       - WeaponShotgunReno
       - WeaponSniperDSMLegax
       - WeaponRifleDSMLegionnaire
+      - WeaponPlasmaRifleSeethe
       - WeaponSubMachineGunC20rImperial
       - WeaponPistolNeoVolker
       - ClothingBeltSheathKhopesh

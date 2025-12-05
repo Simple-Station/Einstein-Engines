@@ -36,7 +36,6 @@
   description: Spaceworthy protection for your fragile skull.
   components:
   - type: BreathMask
-  - type: FlashImmunity
   - type: Sprite
     sprite: _Crescent/Clothing/SHI/Head/corpsec.rsi
   - type: Clothing
@@ -77,7 +76,6 @@
   description: Spaceworthy protection for your fragile skull. A SHI design.
   components:
   - type: BreathMask
-  - type: FlashImmunity
   - type: Sprite
     sprite: _Crescent/Clothing/SHI/Head/juggsuit.rsi
   - type: Clothing

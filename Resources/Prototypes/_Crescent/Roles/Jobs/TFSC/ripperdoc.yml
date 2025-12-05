@@ -58,12 +58,14 @@
     ears: ClothingHeadsetNCSPInterdyne
     mask: ClothingMaskSyndicateFacemask
     pocket1: WeaponPistolHKUSP
-    pocket2: MedkitCombatFilled
+    pocket2: MagazinePistol
     back: ClothingBackpackNCSP
+    belt: ClothingBeltSyndicateWebbingInterdyne
   storage:
-    back:
+    belt:
+      - MedkitCombatFilled
       - Flash
       - Tourniquet
-      - Zipties
-      - MagazinePistol
       - CombatKnife
+      - Zipties
+

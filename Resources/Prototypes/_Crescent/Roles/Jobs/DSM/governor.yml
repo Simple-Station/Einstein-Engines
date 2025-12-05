@@ -99,8 +99,9 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitImperialGovernor
     shoes: ClothingShoesBootsImperialGovernorBoots
-    back: ClothingBackpackSatchelLeatherFilledDSM
+    back: ClothingBackpackSatchelLeather
     head: ClothingHeadHatImperialBicorne
     outerClothing: ClothingOuterCoatImperialGovernor
     id: GovernorPDA
     ears: ClothingHeadsetEmpire
+    pocket2: RomaineBible

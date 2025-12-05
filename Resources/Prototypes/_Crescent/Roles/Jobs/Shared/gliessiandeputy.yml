@@ -42,9 +42,16 @@
     shoes: ClothingShoesBootsCombat
     head: ClothingHeadHatCMMDeputyMarshal
     gloves: ClothingHandsGlovesCombat
-    belt: ClothingBeltMinutemanPouches
     pocket1: WeaponPistolHKUSP
     id: GliessDeputyPDA
     ears: ClothingHeadsetCMM
     neck: ClothingNeckScarfCMMCloak
     outerClothing: ClothingOuterArmorCMMDeputyCarapace
+    belt: ClothingBeltMinutemanPouches
+  storage:
+    belt:
+      - Flash
+      - Tourniquet
+      - MagazinePistol
+      - CombatKnife
+      - Zipties

@@ -4,7 +4,7 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 11/29/2025 15:20:05
+  time: 12/02/2025 04:48:30
   entityCount: 649
 maps: []
 grids:
@@ -193,6 +193,7 @@ entities:
             122: 6,-3
             153: 6,-3
             302: 6,-3
+            348: 6,-3
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -202,6 +203,7 @@ entities:
             125: 10,-3
             156: 10,-3
             305: 10,-3
+            351: 10,-3
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -233,6 +235,12 @@ entities:
             279: 4,12
             288: 14,5
             293: 6,19
+            314: 0,3
+            317: 2,5
+            322: 3,8
+            325: 4,12
+            334: 14,5
+            339: 6,19
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -252,6 +260,12 @@ entities:
             290: 14,5
             298: 10,19
             310: 16,3
+            319: 2,5
+            328: 12,12
+            331: 13,8
+            336: 14,5
+            344: 10,19
+            356: 16,3
         - node:
             id: LatticeEdgeE
           decals:
@@ -287,6 +301,13 @@ entities:
             287: 14,5
             292: 6,19
             300: 6,-3
+            313: 0,3
+            316: 2,5
+            321: 3,8
+            324: 4,12
+            333: 14,5
+            338: 6,19
+            346: 6,-3
         - node:
             id: LatticeEdgeN
           decals:
@@ -311,6 +332,12 @@ entities:
             303: 10,-3
             306: 14,-2
             307: 16,0
+            311: 0,0
+            345: 2,-2
+            347: 6,-3
+            349: 10,-3
+            352: 14,-2
+            353: 16,0
         - node:
             id: LatticeEdgeS
           decals:
@@ -356,6 +383,18 @@ entities:
             295: 9,20
             296: 10,19
             308: 16,3
+            312: 0,3
+            315: 2,5
+            320: 3,8
+            323: 4,12
+            326: 12,12
+            329: 13,8
+            332: 14,5
+            337: 6,19
+            340: 7,20
+            341: 9,20
+            342: 10,19
+            354: 16,3
         - node:
             id: LatticeEdgeW
           decals:
@@ -379,6 +418,13 @@ entities:
             297: 10,19
             304: 10,-3
             309: 16,3
+            318: 2,5
+            327: 12,12
+            330: 13,8
+            335: 14,5
+            343: 10,19
+            350: 10,-3
+            355: 16,3
         - node:
             color: '#FFFFFFFF'
             id: TechE
@@ -698,6 +744,24 @@ entities:
       - 342
     - type: Physics
       canCollide: False
+- proto: AAAHardpointMediumBallistic
+  entities:
+  - uid: 7
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,2.5
+      parent: 1
+    - type: Physics
+      canCollide: False
+  - uid: 8
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 16.5,2.5
+      parent: 1
+    - type: Physics
+      canCollide: False
 - proto: AAAHardpointSmallBallistic
   entities:
   - uid: 5
@@ -711,23 +775,7 @@ entities:
   - uid: 6
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 0.5,2.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 7
-    components:
-    - type: Transform
       pos: 15.5,7.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 8
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 16.5,2.5
       parent: 1
     - type: Physics
       canCollide: False
@@ -1319,7 +1367,6 @@ entities:
     - type: DeviceLinkSink
       links:
       - 495
-      - 496
   - uid: 92
     components:
     - type: Transform
@@ -1327,7 +1374,6 @@ entities:
       parent: 1
     - type: DeviceLinkSink
       links:
-      - 496
       - 342
   - uid: 93
     components:
@@ -4080,12 +4126,6 @@ entities:
         89:
         - - Pressed
           - Toggle
-        91:
-        - - Pressed
-          - Toggle
-        92:
-        - - Pressed
-          - Toggle
 - proto: Sink
   entities:
   - uid: 497
@@ -4298,7 +4338,7 @@ entities:
           occludes: True
           ents: []
     - type: Battery
-      startingCharge: 7688.204
+      startingCharge: 7482.239
     - type: ApcPowerReceiverBattery
       enabled: True
 - proto: VendingMachineTankDispenserEVA
