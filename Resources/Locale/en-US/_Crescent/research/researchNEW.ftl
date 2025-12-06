@@ -53,7 +53,7 @@ research-technology-interdyne-pryarms = TT-42 Pryarms
 # CYBERDAWN
 research-technology-cyberdawn-clothing = Cyberdawn Clothing
 research-technology-cyberdawn-basicballistics = Basic Syndicate Ballistics
-esearch-technology-cyberdawn-advancedballistics = Advanced Syndicate Ballistics
+research-technology-cyberdawn-advancedballistics = Advanced Syndicate Ballistics
 research-technology-cyberdawn-T1-Infiltration = Basic infiltration technology
 research-technology-cyberdawn-T2-Infiltration = Advanced infiltration technology
 research-technology-cyberdawn-T3-Infiltration = Experimental infiltration technology
