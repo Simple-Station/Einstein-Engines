@@ -486,6 +486,15 @@
     Plasma: 2000
     AdvancedMechatronics: 1000
 
+- type: latheRecipe
+  id: WeaponMechGustaf
+  result: WeaponMechCombatCarlGustaf
+  completetime: 2
+  materials:
+    Steel: 3000
+    Plasma: 1000
+    AdvancedMechatronics: 1000
+
 # MARK: Flatpacks
 
 - type: latheRecipe
@@ -521,7 +530,7 @@
   completetime: 1
   materials:
     StarshipEngineComponents: 1500
-    ShipComponents: 5000
+    ShipComponents: 8000
     ShipHull: 1500
 
 - type: latheRecipe
@@ -846,4 +855,4 @@
     Plasma: 500
     Steel: 100
 
-    
+

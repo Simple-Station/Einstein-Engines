@@ -231,6 +231,13 @@
   - type: Tag
     tags:
     - Katana
+    - Knife
+  - type: Sharp
+  - type: Execution
+    doAfterDuration: 1
+  - type: Utensil
+    types:
+      - Knife
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Melee/shinoharakatana.rsi
     state: icon
@@ -270,6 +277,12 @@
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Melee/shiverblade.rsi
     state: icon
+  - type: Tag
+    tags:
+    - Katana
+  - type: Sharp
+  - type: Execution
+    doAfterDuration: 0.3
   - type: MeleeWeapon
     wideAnimationRotation: -90
     attackRate: 0.75

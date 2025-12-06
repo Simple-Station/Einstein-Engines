@@ -82,8 +82,11 @@
 
 - type: entity
   id: DefibrillatorOneHandedUnpowered
-  parent: BaseDefibrillator
+  parent: [ BaseDefibrillator ]
   suffix: One-Handed, Unpowered
+  components: #Why have all things does this work
+  - type: PowerCellDraw
+    useRate: 0
 
 - type: entity
   id: DefibrillatorCompact # This should be a research item at some point

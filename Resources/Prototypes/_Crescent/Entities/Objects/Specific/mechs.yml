@@ -36,8 +36,8 @@
       types:
         Blunt: 40
   - type: MovementSpeedModifier
-    baseWalkSpeed: 2.5
-    baseSprintSpeed: 4.5
+    baseWalkSpeed: 1.25
+    baseSprintSpeed: 2.25
     weightlessFriction: 0.4
     weightlessAcceleration: 0.33
     weightlessModifier: 4.5 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
@@ -107,8 +107,8 @@
         Blunt: 40
         Structural: 90
   - type: MovementSpeedModifier
-    baseWalkSpeed: 1.5
-    baseSprintSpeed: 3.5
+    baseWalkSpeed: 0.75
+    baseSprintSpeed: 1.75
     weightlessFriction: 0
     weightlessAcceleration: 0.1
     weightlessModifier: 4.75 # 15ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
@@ -175,8 +175,8 @@
       types:
         Blunt: 25
   - type: MovementSpeedModifier
-    baseWalkSpeed: 2.5
-    baseSprintSpeed: 4
+    baseWalkSpeed: 1.25
+    baseSprintSpeed: 2
     weightlessFriction: 0.4
     weightlessAcceleration: 0.33
     weightlessModifier: 6 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
@@ -242,8 +242,8 @@
       types:
         Blunt: 25
   - type: MovementSpeedModifier
-    baseWalkSpeed: 3.5
-    baseSprintSpeed: 5.5
+    baseWalkSpeed: 1.75
+    baseSprintSpeed: 2.75
     weightlessFriction: 0.4
     weightlessAcceleration: 0.4
     weightlessModifier: 4 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
@@ -313,8 +313,8 @@
   - type: Damageable
     damageModifierSet: HeavyArmorNT
   - type: MovementSpeedModifier
-    baseWalkSpeed: 1
-    baseSprintSpeed: 1.85
+    baseWalkSpeed: 0.5
+    baseSprintSpeed: 0.95 # not a full 50% nerf for SHI because this poor mech is never used anyway
     weightlessFriction: 0
     weightlessAcceleration: 0.1
     weightlessModifier: 5.5 # 10ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
@@ -385,8 +385,8 @@
         Blunt: 40
         Structural: 90
   - type: MovementSpeedModifier
-    baseWalkSpeed: 1.5
-    baseSprintSpeed: 3.5
+    baseWalkSpeed: 0.75
+    baseSprintSpeed: 1.75
     weightlessFriction: 0
     weightlessAcceleration: 0.15
     weightlessModifier: 4.75 # 15ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
@@ -470,8 +470,8 @@
         Blunt: 40
         Structural: 90
   - type: MovementSpeedModifier
-    baseWalkSpeed: 2.0
-    baseSprintSpeed: 2.5
+    baseWalkSpeed: 1.0
+    baseSprintSpeed: 1.25
     weightlessFriction: 0
     weightlessAcceleration: 0.33
     weightlessModifier: 5.35 # 18ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
@@ -537,8 +537,8 @@
       types:
         Blunt: 25
   - type: MovementSpeedModifier
-    baseWalkSpeed: 2.5
-    baseSprintSpeed: 4
+    baseWalkSpeed: 1.25
+    baseSprintSpeed: 2
     weightlessFriction: 0.4
     weightlessAcceleration: 0.33
     weightlessModifier: 6 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed

@@ -430,7 +430,7 @@
 
 - type: entity
   id: WeaponMechCombatGrenadeLauncher
-  name: IRC 'Mauler' 37mm exosuit grenade launcher system
+  name: IRC 'Mauler' 40mm exosuit grenade launcher system
   description: An exosuit weapons system developed for Scout to Medium-type mechsuits by the Iron Ring Company designed for crowd and room control. Watch your fire.
   suffix: Mech Weapon, Gun, Combat, Grenade Launcher
   parent: [ BaseMechWeaponRange, ScoutMechEquipment ]
@@ -446,7 +446,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ship_friendship.ogg
   - type: ProjectileBatteryAmmoProvider
-    proto: BulletGrenadeBlast
+    proto: Projectile40mmFrag
     fireCost: 50
   - type: Appearance
   - type: AmmoCounter
@@ -581,3 +581,32 @@
   - type: Tag
     tags:
     - MediumMechEquipment
+
+- type: entity
+  id: WeaponMechCombatCarlGustaf
+  name: SHI ME-5 'Carlos' HEAT mounted recoilless rifle
+  description: A recoilless rifle mounted over the shoulder of a mech, modified with an autoloader over the back and an electronic firing system. The overhang of the launcher tube itself is common cause for out-of-combat injuries.
+  suffix: Mech Weapon, Gun, Combat, HEAT
+  parent: [ BaseMechWeaponRange, ScoutMechEquipment ]
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: gustavmodified
+  - type: Gun
+    fireRate: 0.2
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/rpg_fire.ogg
+  - type: Battery
+    maxCharge: 300
+    startingCharge: 300
+  - type: ProjectileBatteryAmmoProvider
+    proto: Projectile84mmRecoillessHEAT
+    fireCost: 300
+  - type: Appearance
+  - type: AmmoCounter
+  - type: Tag
+    tags:
+    - ScoutMechEquipment
