@@ -519,6 +519,8 @@
       - Biological
     - type: SurgeryTarget # Shitmed
     - type: Sanitized # Shitmed
+    - type: SurgerySpeedModifier
+      speedModifier: 3
 
 - type: entity
   id: BorgChassisSyndicateSaboteur

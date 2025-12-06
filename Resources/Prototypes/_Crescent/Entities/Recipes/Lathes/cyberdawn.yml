@@ -54,6 +54,283 @@
     HardsuitElectronics: 500
 
 - type: latheRecipe
+  id: ClothingOuterHardsuitSyndieMedicCyberdawn
+  result: ClothingOuterHardsuitSyndieMedic
+  completetime: 1.5
+  materials:
+    HardsuitElectronics: 500
+    Silver: 500
+    Durathread: 1500
+    Steel: 1500
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitCybersunStealthCyberdawn
+  result: ClothingOuterHardsuitCybersunStealth
+  completetime: 1.5
+  materials:
+    HardsuitElectronics: 500
+    Silver: 750
+    Durathread: 1500
+    NanotrasenElectronics: 1000
+    Steel: 1500
+
+# Equipment
+
+- type: latheRecipe
+  id: PowerSinkCyberdawn
+  result: PowerSink
+  completetime: 1.5
+  materials:
+    BasicElectronics: 1500
+    BasicMechatronics: 250
+    Steel: 1500
+
+- type: latheRecipe
+  id: RadioJammerCyberdawn
+  result: RadioJammer
+  completetime: 1.5
+  materials:
+    BasicElectronics: 1500
+    Plastic: 250
+    Gold: 750
+
+- type: latheRecipe
+  id: MufflerFlatpack
+  result: MufflerFlatpack
+  completetime: 1.5
+  materials:
+    AdvancedElectronics: 1000
+    Plastic: 250
+    Silver: 500
+    Gold: 750
+
+- type: latheRecipe
+  id: EmagCyberdawn
+  result: Emag
+  completetime: 1.5
+  materials:
+    AdvancedElectronics: 1000
+    Plastic: 500
+    Gold: 500
+
+- type: latheRecipe
+  id: DoormagCyberdawn
+  result: Doorjack
+  completetime: 1.5
+  materials:
+    AdvancedElectronics: 1000
+    Plastic: 500
+    Gold: 500
+
+- type: latheRecipe
+  id: AgentIDCardCyberdawn
+  result: AgentIDCard
+  completetime: 1.5
+  materials:
+    AdvancedElectronics: 1000
+    Plastic: 500
+    Gold: 500
+
+- type: latheRecipe
+  id: ClothingBackpackChameleonFillCyberdawn
+  result: ClothingBackpackChameleonFill
+  completetime: 1.5
+  materials:
+    AdvancedElectronics: 1000
+    Cloth: 2000
+    Plastic: 500
+    Gold: 500
+
+- type: latheRecipe
+  id: ClothingMaskGasVoiceChameleonCyberdawn
+  result: ClothingMaskGasVoiceChameleon
+  completetime: 1.5
+  materials:
+    AdvancedElectronics: 1000
+    Cloth: 500
+    Plastic: 500
+    Gold: 500
+
+- type: latheRecipe
+  id: SyndicateJawsOfLifeCyberdawn
+  result: SyndicateJawsOfLife
+  completetime: 1.5
+  materials:
+    Steel: 1000
+    Glass: 500
+    Gold: 500
+    Plasma: 600
+    AdvancedElectronics: 500
+
+- type: latheRecipe
+  id: SyndicateBombCyberdawn
+  result: SyndicateBomb
+  completetime: 1.5
+  materials:
+    AdvancedElectronics: 1000
+    Plasma: 3000
+    Steel: 1000
+    Gold: 250
+
+- type: latheRecipe #The cardboard boxes the Pinnacle of stealth technology it is the most reliable Syndicate technology ever it has successfully defeated the entirety of Central Command.
+  id: StealthBoxCyberdawn
+  result: StealthBox
+  completetime: 1.5
+  materials:
+    NanotrasenElectronics:  500
+    Plastic: 500
+    Gold: 500
+
+#Implanter
+
+- type: latheRecipe
+  id: DnaScramblerImplanter
+  result: DnaScramblerImplanter
+  completetime: 1.5
+  materials:
+    BasicElectronics: 500
+    Biomass: 10
+    Silver: 400
+    Plastic: 500
+
+- type: latheRecipe
+  id: FreedomImplanter
+  result: FreedomImplanter
+  completetime: 1.5
+  materials:
+    BasicElectronics: 500
+    Biomass: 10
+    Gold: 400
+    Plastic: 500
+
+- type: latheRecipe
+  id: DeathacidifierImplanter
+  result: DeathAcidifierImplanter
+  completetime: 1.5
+  materials:
+    BasicElectronics: 500
+    Biomass: 10
+    Gold: 400
+    Plastic: 500
+
+
+- type: latheRecipe
+  id: EmpImplanter
+  result: EmpImplanter
+  completetime: 1.5
+  materials:
+    AdvancedElectronics: 500
+    Biomass: 10
+    Gold: 400
+    Plastic: 500
+    Plasma: 500
+
+- type: latheRecipe
+  id: StorageImplanter
+  result: StorageImplanter
+  completetime: 1.5
+  materials:
+    AdvancedElectronics: 500
+    Biomass: 10
+    Gold: 400
+    Plastic: 500
+    Plasma: 500
+
+- type: latheRecipe
+  id: MicroBombImplanter
+  result: MicroBombImplanter
+  completetime: 1.5
+  materials:
+    AdvancedElectronics: 500
+    Biomass: 10
+    Gold: 400
+    Plastic: 500
+    Plasma: 500
+
+- type: latheRecipe
+  id: MacroBombImplanter
+  result: MacroBombImplanter
+  completetime: 1.5
+  materials:
+    AdvancedElectronics: 1000
+    Biomass: 10
+    Gold: 400
+    Plastic: 500
+    Plasma: 1000
+
+- type: latheRecipe
+  id: ScramImplanter
+  result: ScramImplanter
+  completetime: 1.5
+  materials:
+    AdvancedElectronics: 1000
+    Biomass: 10
+    Gold: 400
+    Plastic: 500
+    Plasma: 1000
+
+#Weapons
+
+- type: latheRecipe
+  id: EnergyDagger
+  result: EnergyDaggerBox
+  completetime: 1.5
+  materials:
+    AdvancedElectronics: 1000
+    Plastic: 250
+    WeakLaserLocus: 500
+    Plasma: 250
+
+- type: latheRecipe
+  id: EnergySword
+  result: EnergySword
+  completetime: 1.5
+  materials:
+    AdvancedElectronics: 1000
+    Steel: 500
+    WeakLaserLocus: 500
+    HardlightGenerator: 500
+    Plasma: 500
+
+- type: latheRecipe
+  id: EnergySwordDouble
+  result: EnergySwordDouble
+  completetime: 1.5
+  materials:
+    NanotrasenElectronics: 1000
+    HardlightGenerator: 500
+    Steel: 500
+    LaserLocus: 1000
+    Plasma: 1000
+
+- type: latheRecipe
+  id: WeaponPistolPsiBreakerCyberdawn
+  result: WeaponPistolPsiBreaker
+  completetime: 1.5
+  materials:
+    Gold: 750
+    BallisticCycler: 250
+    AdvancedMechatronics: 500
+    Steel: 1000
+
+- type: latheRecipe
+  id: MagazinePistolSpecialMindbreakerCyberdawn
+  result: MagazinePistolSpecialMindbreaker
+  completetime: 1.5
+  materials:
+    Silver: 750
+    Steel: 1000
+
+- type: latheRecipe
+  id: ClothingEyesThermalVisionGogglesCyberdawn
+  result: ClothingEyesThermalVisionGoggles
+  completetime: 1.5
+  materials:
+    Silver: 750
+    Steel: 1000
+    NanotrasenElectronics: 500
+
+- type: latheRecipe
   id: WeaponSubMachineGunAtreidesCyberdawn
   result: WeaponSubMachineGunAtreides
   completetime: 1.5
@@ -105,152 +382,6 @@
     Plastic: 1500
     Silver: 1000
     BallisticCycler: 500
-
-- type: latheRecipe
-  id: PowerSinkCyberdawn
-  result: PowerSink
-  completetime: 1.5
-  materials:
-    BasicElectronics: 1500
-    BasicMechatronics: 250
-    Steel: 1500
-
-- type: latheRecipe
-  id: RadioJammerCyberdawn
-  result: RadioJammer
-  completetime: 1.5
-  materials:
-    BasicElectronics: 1500
-    Plastic: 250
-    Gold: 750
-
-- type: latheRecipe
-  id: MufflerFlatpack
-  result: MufflerFlatpack
-  completetime: 1.5
-  materials:
-    AdvancedElectronics: 1000
-    Plastic: 250
-    Silver: 500
-    Gold: 750
-
-- type: latheRecipe
-  id: EmagCyberdawn
-  result: Emag
-  completetime: 1.5
-  materials:
-    AdvancedElectronics: 1000
-    Plastic: 500
-    Gold: 500
-
-- type: latheRecipe
-  id: DoormagCyberdawn
-  result: Doorjack
-  completetime: 1.5
-  materials:
-    AdvancedElectronics: 1000
-    Plastic: 500
-    Gold: 500
-
-- type: latheRecipe
-  id: DnaScramblerImplanter
-  result: DnaScramblerImplanter
-  completetime: 1.5
-  materials:
-    AdvancedElectronics: 500
-    Biomass: 10
-    Silver: 400
-
-- type: latheRecipe
-  id: EmpImplanter
-  result: EmpImplanter
-  completetime: 1.5
-  materials:
-    AdvancedElectronics: 500
-    Biomass: 10
-    Gold: 400
-
-#Weapons
-
-- type: latheRecipe
-  id: EnergyDagger
-  result: EnergyDaggerBox
-  completetime: 1.5
-  materials:
-    AdvancedElectronics: 1000
-    Plastic: 250
-    WeakLaserLocus: 500
-    Plasma: 250
-
-- type: latheRecipe
-  id: EnergySword
-  result: EnergySword
-  completetime: 1.5
-  materials:
-    AdvancedElectronics: 1000
-    Steel: 500
-    WeakLaserLocus: 500
-    HardlightGenerator: 500
-    Plasma: 500
-
-- type: latheRecipe
-  id: EnergySwordDouble
-  result: EnergySwordDouble
-  completetime: 1.5
-  materials:
-    NanotrasenElectronics: 1000
-    HardlightGenerator: 500
-    Steel: 500
-    LaserLocus: 1000
-    Plasma: 1000
-
-- type: latheRecipe
-  id: ClothingOuterHardsuitSyndieMedicCyberdawn
-  result: ClothingOuterHardsuitSyndieMedic
-  completetime: 1.5
-  materials:
-    HardsuitElectronics: 500
-    Silver: 500
-    Durathread: 1500
-    Steel: 1500
-
-- type: latheRecipe
-  id: ClothingOuterHardsuitCybersunStealthCyberdawn
-  result: ClothingOuterHardsuitCybersunStealth
-  completetime: 1.5
-  materials:
-    HardsuitElectronics: 500
-    Silver: 750
-    Durathread: 1500
-    NanotrasenElectronics: 1000
-    Steel: 1500
-
-- type: latheRecipe
-  id: WeaponPistolPsiBreakerCyberdawn
-  result: WeaponPistolPsiBreaker
-  completetime: 1.5
-  materials:
-    Gold: 750
-    BallisticCycler: 250
-    AdvancedMechatronics: 500
-    Steel: 1000
-
-- type: latheRecipe
-  id: MagazinePistolSpecialMindbreakerCyberdawn
-  result: MagazinePistolSpecialMindbreaker
-  completetime: 1.5
-  materials:
-    Silver: 750
-    Steel: 1000
-
-- type: latheRecipe
-  id: ClothingEyesThermalVisionGogglesCyberdawn
-  result: ClothingEyesThermalVisionGoggles
-  completetime: 1.5
-  materials:
-    Silver: 750
-    Steel: 1000
-    NanotrasenElectronics: 500
 
 - type: latheRecipe
   id:  WeaponRifleSVDMarksmanNCSP

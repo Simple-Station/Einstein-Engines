@@ -53,13 +53,10 @@ research-technology-interdyne-pryarms = TT-42 Pryarms
 # CYBERDAWN
 research-technology-cyberdawn-clothing = Cyberdawn Clothing
 research-technology-cyberdawn-basicballistics = Basic Syndicate Ballistics
-research-technology-cyberdawn-powersink = Power Sink
-research-technology-cyberdawn-radiojammer = Radio Jammer
-research-technology-cyberdawn-ewar = Electronic Warfare
-research-technology-cyberdawn-emag = Cryptographic Sequencer Card
-research-technology-cyberdawn-advancedballistics = Advanced Ballistics
-research-technology-cyberdawn-dnascram = DNA Scrambler
-research-technology-cyberdawn-emp = Electromagnetic Pulse Implant
+research-technology-cyberdawn-advancedballistics = Advanced Syndicate Ballistics
+research-technology-cyberdawn-T1-Infiltration = Basic infiltration technology
+research-technology-cyberdawn-T2-Infiltration = Advanced infiltration technology
+research-technology-cyberdawn-T3-Infiltration = Experimental infiltration technology
 research-technology-cyberdawn-energydagger = Concealable Hardlight Dagger
 research-technology-cyberdawn-zhongyao = Zhongyao Tacsuit
 research-technology-cyberdawn-egui = Egui Stealth Tacsuit

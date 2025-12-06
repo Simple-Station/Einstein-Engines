@@ -17,6 +17,9 @@
     - type: Geiger
       showControl: true
       showExamine: true
+      localSoundOnly: false
+      audioParameters:
+        maxDistance: 10
     - type: Appearance
     - type: GenericVisualizer
       visuals:

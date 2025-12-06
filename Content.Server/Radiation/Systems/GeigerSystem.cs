@@ -152,6 +152,9 @@ public sealed class GeigerSystem : SharedGeigerSystem
 
         component.Stream = _audio.Stop(component.Stream);
 
+        if (!component.IsEnabled)
+            return;
+
         if (component.Sounds.TryGetValue(component.DangerLevel, out var sounds))
         {
             var sound = _audio.GetSound(sounds);
