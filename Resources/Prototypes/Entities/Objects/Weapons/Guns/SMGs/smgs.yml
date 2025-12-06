@@ -124,7 +124,7 @@
     minAngle: -19
     maxAngle: -16
   - type: Gun
-    fireRate: 6 #Really good for something made so easily, and available roundstart.
+    fireRate: 14 #Really good for something made so easily, and available roundstart.
     minAngle: 21
     maxAngle: 32
     availableModes:
