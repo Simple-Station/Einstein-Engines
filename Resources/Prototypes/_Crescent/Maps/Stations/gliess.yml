@@ -26,9 +26,9 @@
           availableJobs:
             OverseerSRM: [ 1, 1 ]
             MontagneSRM: [ 1, 1 ]
-            HunterSRM: [ 3, 3 ]
-            TenderSRM: [ 2, 2 ]
-            AcolyteSRM: [ 2, 2 ]
+            HunterSRM: [ 4, 4 ]
+            TenderSRM: [ 1, 1 ]
+            AcolyteSRM: [ 5, 5 ]
 
 - type: gameMap
   id: GliessSanto
@@ -51,7 +51,7 @@
         - type: VesselDesignation
           designation: vessel-designation-headquarters
         - type: VesselDescription
-          description: An independent trade station that has seen better days. 
+          description: An independent trade station that has seen better days.
         - type: VesselMusic
           ambientMusicPrototype: GliessMusic
         - type: Grammar

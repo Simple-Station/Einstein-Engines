@@ -64,6 +64,12 @@
         posY: 9000
         IFFColor: Purple
         IFFFaction: DSM
+      Refuge:
+        gameMapID: Refuge
+        posX: -9000
+        posY: -3000
+        randomOffsetX: 3000
+        randomOffsetY: 3000
       TribalHideout:
         gameMapID: TribalHideout
         posX: -4800
@@ -321,7 +327,7 @@
       #   posY: -50
       #   IFFColor: FireBrick
       #   IFFFaction: Remnant
-        
+
 
 - type: gamePreset
   id: HyperwarNTvsNCWLvsDSM

@@ -766,6 +766,48 @@
 
 - type: entity
   parent: BaseItem
+  id: PietyRedeemableLow
+  name: Piety Scrap
+  description: A scrap of scripture, carried by the pious and given as an offering to objects of importance. It's rather worn and damaged.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/deed.rsi
+    layers:
+    - state: icon
+  - type: Currency
+    price:
+      PietySRM: 1
+
+- type: entity
+  parent: BaseItem
+  id: PietyRedeemable
+  name: Piety Scrap
+  description: A scrap of scripture, carried by the pious and given as an offering to objects of importance. It's in decent shape, showing some age.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/deed.rsi
+    layers:
+    - state: icon
+  - type: Currency
+    price:
+      PietySRM: 5
+
+- type: entity
+  parent: BaseItem
+  id: PietyRedeemableHigh
+  name: Piety Scrap
+  description: A scrap of scripture, carried by the pious and given as an offering to objects of importance. It's in excellent shape, almost untouched.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/deed.rsi
+    layers:
+    - state: icon
+  - type: Currency
+    price:
+      PietySRM: 10
+
+- type: entity
+  parent: BaseItem
   id: BountyHuntersPermit
   name: bounty hunter's permit of business
   description: A printed, stamped sheet of paper bearing the authority of the Imperial Navy to capture posted criminals. Dead or alive.

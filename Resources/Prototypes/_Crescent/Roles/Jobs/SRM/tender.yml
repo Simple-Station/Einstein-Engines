@@ -8,9 +8,12 @@
   alwaysUseSpawner: true
   requireAdminNotify: false
   icon: "JobIconTender"
-  supervisors: job-supervisors-imperial
+  supervisors: job-supervisors-srm-hunters
   canBeAntag: false
   requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:CharacterOverallTimeRequirement
+      min: 57600
     - !type:FactionRequirement
       factionID: "SRM"
     - !type:CharacterSpeciesRequirement
@@ -29,11 +32,21 @@
     components:
       - type: HullrotFaction
         faction: SRM
-      - type: Telepathic
       - type: BibleUser
       - type: CPRTraining
       - type: SurgerySpeedModifier
         speedModifier: 1.75
+      - type: LanguageAdder
+        addSpoken:
+          - LowImperial
+          - Saintspact
+        addUnderstood:
+          - LowImperial
+          - Saintspact
+      - type: InnatePsionicPowers
+        powersToAdd:
+          - TelepathyPower
+          - AssayPower
 
 - type: startingGear
   id: TenderGear
@@ -46,3 +59,5 @@
     outerClothing: ClothingOuterArmorHunterTender
     gloves: ClothingHandsGlovesHunter
     pocket1: RomaineBible
+    pocket2: RomaineBible
+    belt: ClothingBeltAssault

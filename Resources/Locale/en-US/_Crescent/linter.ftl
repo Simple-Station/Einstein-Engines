@@ -20,3 +20,7 @@ gsc-console = gsc bounty console. uses plunder as currency
 ipm-console = Interdyne Bounty Console. Uses exotic proteins as currency.
 
 ship-comm-console = ship communications console
+
+saint-romaine = A statue depicting the legendary Saint Romaine, wearing what appears to be his signature moth cloak.
+
+saint-serraine = A statue depicting our dearest Saint Serraine, a veil placed over her head as a sign of respect.

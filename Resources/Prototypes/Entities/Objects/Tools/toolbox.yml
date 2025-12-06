@@ -141,7 +141,7 @@
   name: suspicious toolbox
   parent: ToolboxBase
   id: ToolboxSyndicate
-  description: A sinister looking toolbox filled with elite syndicate tools.
+  description: A rather sketchy toolbox, I wonder who made it.
   components:
   - type: Sprite
     sprite: Objects/Tools/Toolboxes/toolbox_syn.rsi

@@ -297,23 +297,6 @@
   - WeaponPlasmaRifleSeethe
 
 - type: technology
-  id: ImperialSRM
-  name: research-technology-imperial-srmimitation
-  icon:
-    sprite: _Crescent/Structures/flagssrm.rsi
-    state: icon
-  discipline: Imperial
-  tier: 3
-  cost: 18000
-  recipeUnlocks:
-  - ClothingBeltSheathKhopesh
-  - SRMKhopesh
-  - WeaponSubMachineGunBeetle
-  - WeaponRifleHunter
-  - ClothingOuterHardsuitHunterElite
-  - MetempsychoticMachineCircuitboard
-
-- type: technology
   id: ImperialBomb
   name: research-technology-imperial-bomblauncher
   icon:

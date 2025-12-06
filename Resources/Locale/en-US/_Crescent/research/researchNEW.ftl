@@ -93,7 +93,6 @@ research-technology-imperial-paladin = Imperial Combat Exosuit
 research-technology-imperial-wanderer = Imperial Scout Exosuit
 research-technology-imperial-carrion = Imperial Utility Exosuit
 research-technology-imperial-advancedrifling = Advanced Rifling
-research-technology-imperial-srmimitation = Sixth Fireteam Imitation
 research-technology-imperial-bomblauncher = M320 Launcher
 research-technology-imperial-triumphant = Imperial Cruiser
 research-technology-imperial-suzerain = Imperial Siege Battlecruiser

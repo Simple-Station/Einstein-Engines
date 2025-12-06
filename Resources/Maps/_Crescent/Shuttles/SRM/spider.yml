@@ -1119,7 +1119,7 @@ entities:
     - type: Transform
       pos: 1.5,5.5
       parent: 2
-- proto: ComputerTabletopIFF
+- proto: ComputerIFFSyndicate
   entities:
   - uid: 118
     components:
@@ -1127,6 +1127,10 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -0.5,2.5
       parent: 2
+    - type: IFFConsole
+      heatDissipation: 1.5
+      heatGeneration: 2
+      heatCapacity: 300
 - proto: ComputerTabletopPowerMonitoring
   entities:
   - uid: 174

@@ -648,7 +648,7 @@
 
 - type: entity
   name: PTA 3AX Halyad 12.7x99mm
-  parent: [BaseWeaponRifle, StreeCredRedeemable]
+  parent: [BaseWeaponRifleDMR, StreeCredRedeemable]
   id: WeaponRifleHalyadMarksman
   description: A hefty long-range precision rifle. Packs devastating 12.7x99mm punches. Developed as part of Pang Tai's mercenary package.
   components:
@@ -704,7 +704,7 @@
 
 - type: entity
   name: SHI M215 Hound 5.56x45mm
-  parent: [BaseWeaponRifle, StreeCredRedeemable]
+  parent: [BaseWeaponRifleDMR, StreeCredRedeemable]
   id: WeaponRifleHoundMarksman
   description: A cheap marksman's rifle, one of the few weapons produced for an external market by Shinohara Heavy Industries. Often seen in the hands of wanna-be mercs and thugs.
   components:
@@ -762,8 +762,8 @@
     price: 1000
 
 - type: entity
-  name: HP M17-SA Hunter 5.56x45mm
-  parent: [BaseWeaponRifle, StreeCredRedeemable]
+  name: HP M17-SA Hunter 7.62x51mm
+  parent: [BaseWeaponRifleDMR, StreeCredRedeemable]
   id: WeaponRifleHunter
   description: A marksman's rifle of foreign make, repurposed as a mainline battle carbine amongst the predators of this Sector.
   components:
@@ -780,6 +780,7 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/hunter.rsi
   - type: Gun
+    fireRate: 5.5
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/M16/rifle_gunshot_2.ogg
     selectedMode: SemiAuto
@@ -789,16 +790,16 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineLightRifle
+        startingItem: MagazineRifle
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazineLightRifle
+            - MagazineRifle
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeLightRifle
+        startingItem: CartridgeRifle
         priority: 1
         whitelist:
           tags:
@@ -929,7 +930,7 @@
 
 - type: entity
   name: NCSP SVD 12.7x99mm
-  parent: BaseWeaponRifle
+  parent: BaseWeaponRifleDMR
   id: WeaponRifleSVDMarksman
   description: A large designated marksman rifle. Chambered in 12.7x99mm for long range engagements. Commonly in use by terrorist militia forces.
   components:
