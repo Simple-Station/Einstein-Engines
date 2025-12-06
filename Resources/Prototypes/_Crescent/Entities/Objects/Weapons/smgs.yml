@@ -316,7 +316,7 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/mp5.rsi
   - type: Gun
-    fireRate: 8
+    fireRate: 14
     selectedMode: FullAuto
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/smg_2/smg_gunshot_3.ogg
