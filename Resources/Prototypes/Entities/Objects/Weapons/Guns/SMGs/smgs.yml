@@ -94,7 +94,7 @@
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
   - type: Gun
-    fireRate: 10
+    fireRate: 14
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/smg_3/smg_gunshot_2.ogg
     fireOnDropChance: 0.3
@@ -124,7 +124,7 @@
     minAngle: -19
     maxAngle: -16
   - type: Gun
-    fireRate: 6 #Really good for something made so easily, and available roundstart.
+    fireRate: 14 #Really good for something made so easily, and available roundstart.
     minAngle: 21
     maxAngle: 32
     availableModes:
