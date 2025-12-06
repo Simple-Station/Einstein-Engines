@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 09/30/2025 19:21:51
-  entityCount: 351
+  time: 12/06/2025 09:51:38
+  entityCount: 361
 maps: []
 grids:
 - 1
@@ -95,6 +95,11 @@ entities:
             442: -11,-1
             445: -5,-2
             448: -2,-3
+            472: 2,4
+            525: -2,4
+            539: -11,-1
+            542: -5,-2
+            545: -2,-3
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -119,6 +124,11 @@ entities:
             451: 2,-3
             454: 5,-2
             457: 11,-1
+            475: 2,4
+            528: -2,4
+            548: 2,-3
+            551: 5,-2
+            554: 11,-1
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -175,6 +185,19 @@ entities:
             417: -5,9
             426: -2,4
             437: -1,4
+            460: 0,4
+            465: 1,4
+            470: 2,4
+            478: 2,5
+            481: 3,7
+            484: 4,9
+            502: -11,0
+            505: -9,1
+            508: -8,4
+            511: -6,8
+            514: -5,9
+            523: -2,4
+            534: -1,4
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -231,6 +254,19 @@ entities:
             430: -2,4
             434: -2,5
             439: -1,4
+            462: 0,4
+            467: 1,4
+            474: 2,4
+            487: 5,9
+            490: 6,8
+            493: 8,4
+            496: 9,1
+            499: 11,0
+            517: -4,9
+            520: -3,7
+            527: -2,4
+            531: -2,5
+            536: -1,4
         - node:
             id: LatticeEdgeE
           decals:
@@ -298,6 +334,22 @@ entities:
             440: -11,-1
             443: -5,-2
             446: -2,-3
+            459: 0,4
+            464: 1,4
+            469: 2,4
+            477: 2,5
+            480: 3,7
+            483: 4,9
+            501: -11,0
+            504: -9,1
+            507: -8,4
+            510: -6,8
+            513: -5,9
+            522: -2,4
+            533: -1,4
+            537: -11,-1
+            540: -5,-2
+            543: -2,-3
         - node:
             id: LatticeEdgeN
           decals:
@@ -333,6 +385,14 @@ entities:
             449: 2,-3
             452: 5,-2
             455: 11,-1
+            471: 2,4
+            524: -2,4
+            538: -11,-1
+            541: -5,-2
+            544: -2,-3
+            546: 2,-3
+            549: 5,-2
+            552: 11,-1
         - node:
             id: LatticeEdgeS
           decals:
@@ -420,6 +480,27 @@ entities:
             424: -2,4
             432: -2,5
             435: -1,4
+            458: 0,4
+            463: 1,4
+            468: 2,4
+            476: 2,5
+            479: 3,7
+            482: 4,9
+            485: 5,9
+            488: 6,8
+            491: 8,4
+            494: 9,1
+            497: 11,0
+            500: -11,0
+            503: -9,1
+            506: -8,4
+            509: -6,8
+            512: -5,9
+            515: -4,9
+            518: -3,7
+            521: -2,4
+            529: -2,5
+            532: -1,4
         - node:
             id: LatticeEdgeW
           decals:
@@ -487,6 +568,22 @@ entities:
             450: 2,-3
             453: 5,-2
             456: 11,-1
+            461: 0,4
+            466: 1,4
+            473: 2,4
+            486: 5,9
+            489: 6,8
+            492: 8,4
+            495: 9,1
+            498: 11,0
+            516: -4,9
+            519: -3,7
+            526: -2,4
+            530: -2,5
+            535: -1,4
+            547: 2,-3
+            550: 5,-2
+            553: 11,-1
         - node:
             color: '#FFFFFFFF'
             id: TechE
@@ -691,6 +788,7 @@ entities:
     - type: RadiationGridResistance
     - type: BecomesStation
       id: Ibis
+    - type: SelfDeleteGrid
 - proto: AAAHardpointFixed
   entities:
   - uid: 2
@@ -772,6 +870,12 @@ entities:
     components:
     - type: Transform
       pos: -4.5,1.5
+      parent: 1
+  - uid: 352
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 6.5,5.5
       parent: 1
 - proto: AtmosDeviceFanTiny
   entities:
@@ -1279,7 +1383,7 @@ entities:
   - uid: 108
     components:
     - type: Transform
-      pos: 4.5,4.5
+      pos: 3.5,3.5
       parent: 1
   - uid: 109
     components:
@@ -1431,6 +1535,16 @@ entities:
     - type: Transform
       pos: 7.5,5.5
       parent: 1
+  - uid: 358
+    components:
+    - type: Transform
+      pos: 3.5,5.5
+      parent: 1
+  - uid: 359
+    components:
+    - type: Transform
+      pos: 5.5,5.5
+      parent: 1
 - proto: CableHV
   entities:
   - uid: 139
@@ -1509,6 +1623,31 @@ entities:
     components:
     - type: Transform
       pos: 4.5,1.5
+      parent: 1
+  - uid: 353
+    components:
+    - type: Transform
+      pos: 5.5,2.5
+      parent: 1
+  - uid: 354
+    components:
+    - type: Transform
+      pos: 5.5,3.5
+      parent: 1
+  - uid: 355
+    components:
+    - type: Transform
+      pos: 5.5,4.5
+      parent: 1
+  - uid: 356
+    components:
+    - type: Transform
+      pos: 5.5,5.5
+      parent: 1
+  - uid: 357
+    components:
+    - type: Transform
+      pos: 6.5,5.5
       parent: 1
 - proto: Catwalk
   entities:
@@ -1909,11 +2048,6 @@ entities:
     - type: Transform
       pos: -4.5,7.5
       parent: 1
-  - uid: 207
-    components:
-    - type: Transform
-      pos: 5.5,7.5
-      parent: 1
 - proto: Gyroscope
   entities:
   - uid: 208
@@ -2120,6 +2254,27 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 7.5,0.5
+      parent: 1
+- proto: RubberStampApproved
+  entities:
+  - uid: 361
+    components:
+    - type: Transform
+      pos: -5.086357,2.946236
+      parent: 1
+- proto: RubberStampDenied
+  entities:
+  - uid: 360
+    components:
+    - type: Transform
+      pos: -5.117607,2.414986
+      parent: 1
+- proto: ShieldEmitterSmall
+  entities:
+  - uid: 207
+    components:
+    - type: Transform
+      pos: 5.5,7.5
       parent: 1
 - proto: SignalButton
   entities:
