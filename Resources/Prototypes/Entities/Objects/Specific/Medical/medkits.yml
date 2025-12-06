@@ -100,14 +100,3 @@
     heldPrefix: blackkit
     size: Normal
 
-- type: entity
-  name: bloodloss treatment kit
-  description: "A kit containing blood bags for emergency transfusions."
-  parent: Medkit
-  id: MedkitBlood
-  components:
-  - type: Sprite
-    state: bloodkit
-  - type: Item
-    heldPrefix: bloodkit
-    size: Normal

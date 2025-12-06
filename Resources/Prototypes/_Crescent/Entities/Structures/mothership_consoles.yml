@@ -172,6 +172,9 @@
   name: refuge shipyard
   components:
   - type: ShipyardListing
+    shuttles:
+    - Saintsfall
+    - Spider
 
 - type: entity
   id: AnathemaMothershipComputer

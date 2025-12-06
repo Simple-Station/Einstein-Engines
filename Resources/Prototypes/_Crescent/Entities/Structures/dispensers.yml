@@ -205,7 +205,7 @@
   parent: BaseDispenser
   id: HuntersBounty
   name: hunter's bounty
-  description: A near-derelict machine that accepts ID cards for cold, hard credits. Some say he accepts heads for scraps of piety.
+  description: A near-derelict machine that accepts ID cards for cold, hard credits.
   components:
   - type: Anchorable
     flags:
@@ -215,16 +215,11 @@
     inventory:
       NCWLIDCardFactionLeader: SpaceCash30000
       NCWLIDCardHomeguardLeader: SpaceCash30000
-      NCWLIDCardMVDLeader: SpaceCash30000
-      NCWLIDCardMVDGrunt: SpaceCash20000
       NCWLIDCardHomeguardSquadCaptain: SpaceCash20000
       NCWLIDCardHomeguardSoldat: SpaceCash15000
       NCWLIDCardLogisticLeader: SpaceCash20000
-      NCWLIDCardLogisticWorker: SpaceCash10000
-      NCWLIDCardMedicalLeader: SpaceCash20000
       NCWLIDCardMedicalWorker: SpaceCash10000
       NCWLIDCardEngineeringLeader: SpaceCash20000
-      NCWLIDCardEngineeringWorker: SpaceCash10000
       NCWLIDCardWorker: SpaceCash5000
       NCSPIDCardRingleader: SpaceCash30000
       NCSPIDCardLieutenant: SpaceCash30000
@@ -232,46 +227,24 @@
       NCSPIDCardCoordinator: SpaceCash20000
       NCSPIDCardRipperdoc: SpaceCash10000
       NCSPIDCardTraumasec: SpaceCash10000
-      NCSPIDCardCyberdawnTech: SpaceCash10000
-      NCSPIDCardOperative: SpaceCash15000
+      NCSPIDCardOperative: SpaceCash10000
       NCSPIDCardIntelligenceOfficer: SpaceCash20000
       NCSPIDCardForeman: SpaceCash20000
       NCSPIDCardShipbreaker: SpaceCash10000
+      IDCardAntiquarian: SpaceCash10000
+      CMMIDCardMinuteman: SpaceCash10000
+      CMMIDCardPhysician: SpaceCash10000
+      CMMIDCardMachinist: SpaceCash10000
+      CMMIDCardOrdnanceman: SpaceCash10000
+      CMMIDCardWatchmaster: SpaceCash20000
+      CMMIDCardDeputyMarshal: SpaceCash30000
+      CMMIDCardMarshal: SpaceCash30000
       DSMIDCardFreeholder: SpaceCash5000
-      DSMIDCardTemplar: SpaceCash15000
-      DSMIDCardAdvocatus: SpaceCash20000
-      DSMIDCardArchmaester: SpaceCash30000
-      DSMIDCardScribe: SpaceCash10000
-      DSMIDCardSurgeon: SpaceCash10000
-      DSMIDCardWealth: SpaceCash20000
-      DSMIDCardLabor: SpaceCash20000
-      DSMIDCardForeman: SpaceCash10000
-      DSMIDCardRitter: SpaceCash15000
       DSMIDCardLevyman: SpaceCash10000
       DSMIDCardKnight: SpaceCash20000
       DSMIDCardCourtier: SpaceCash20000
       DSMIDCardAdjutant: SpaceCash30000
       DSMIDCardGovernor: SpaceCash30000
-      SHIIDCardExecutive: SpaceCash30000
-      SHIIDCardBoard: SpaceCash30000
-      SHIIDCardCorpSec: SpaceCash15000
-      SHIIDCardHighSec: SpaceCash20000
-      SHIIDCardEmployee: SpaceCash5000
-      SHIIDCardMedtech: SpaceCash10000
-      GliessIDCardDockmaster: SpaceCash30000
-      DockhandIDCard: SpaceCash10000
-      GliessIDCardSheriff: SpaceCash30000
-      GliessIDCardDeputy: SpaceCash10000
-      SpacerIDCard: SpaceCash5000
-      IDCardAntiquarian: SpaceCash20000
-      TAPIDCardBeltrunner: SpaceCash15000
-      TAPIDCardDraugr: SpaceCash15000
-      HeadHuman: PietyRedeemableLow
-      HeadArachnid: PietyRedeemableHigh
-      HeadIPC: PietyRedeemable
-      HeadMoth: PietyRedeemableHigh
-      HeadReptilian: PietyRedeemable
-      HeadVoidborn: PietyRedeemableHigh
   - type: Sprite
     sprite: _Crescent/Structures/hunter.rsi
     layers:
@@ -642,16 +615,11 @@
     inventory:
       NCWLIDCardFactionLeader: SpaceCash30000
       NCWLIDCardHomeguardLeader: SpaceCash30000
-      NCWLIDCardMVDLeader: SpaceCash30000
-      NCWLIDCardMVDGrunt: SpaceCash20000
       NCWLIDCardHomeguardSquadCaptain: SpaceCash20000
       NCWLIDCardHomeguardSoldat: SpaceCash15000
       NCWLIDCardLogisticLeader: SpaceCash20000
-      NCWLIDCardLogisticWorker: SpaceCash10000
-      NCWLIDCardMedicalLeader: SpaceCash20000
       NCWLIDCardMedicalWorker: SpaceCash10000
       NCWLIDCardEngineeringLeader: SpaceCash20000
-      NCWLIDCardEngineeringWorker: SpaceCash10000
       NCWLIDCardWorker: SpaceCash5000
       NCSPIDCardRingleader: SpaceCash30000
       NCSPIDCardLieutenant: SpaceCash30000
@@ -659,40 +627,11 @@
       NCSPIDCardCoordinator: SpaceCash20000
       NCSPIDCardRipperdoc: SpaceCash10000
       NCSPIDCardTraumasec: SpaceCash10000
-      NCSPIDCardCyberdawnTech: SpaceCash10000
-      NCSPIDCardOperative: SpaceCash15000
+      NCSPIDCardOperative: SpaceCash10000
       NCSPIDCardIntelligenceOfficer: SpaceCash20000
       NCSPIDCardForeman: SpaceCash20000
       NCSPIDCardShipbreaker: SpaceCash10000
-      DSMIDCardFreeholder: SpaceCash5000
-      DSMIDCardTemplar: SpaceCash15000
-      DSMIDCardAdvocatus: SpaceCash20000
-      DSMIDCardArchmaester: SpaceCash30000
-      DSMIDCardScribe: SpaceCash10000
-      DSMIDCardSurgeon: SpaceCash10000
-      DSMIDCardWealth: SpaceCash20000
-      DSMIDCardLabor: SpaceCash20000
-      DSMIDCardForeman: SpaceCash10000
-      DSMIDCardRitter: SpaceCash15000
-      DSMIDCardKnight: SpaceCash15000
-      DSMIDCardLevyman: SpaceCash10000
-      DSMIDCardCourtier: SpaceCash15000
-      DSMIDCardAdjutant: SpaceCash30000
-      DSMIDCardGovernor: SpaceCash30000
-      SHIIDCardExecutive: SpaceCash30000
-      SHIIDCardBoard: SpaceCash30000
-      SHIIDCardCorpSec: SpaceCash15000
-      SHIIDCardHighSec: SpaceCash20000
-      SHIIDCardEmployee: SpaceCash5000
-      SHIIDCardMedtech: SpaceCash10000
-      GliessIDCardDockmaster: SpaceCash30000
-      DockhandIDCard: SpaceCash10000
-      GliessIDCardSheriff: SpaceCash30000
-      GliessIDCardDeputy: SpaceCash10000
-      SpacerIDCard: SpaceCash5000
-      IDCardAntiquarian: SpaceCash20000
-      TAPIDCardBeltrunner: SpaceCash15000
-      TAPIDCardDraugr: SpaceCash15000
+      IDCardAntiquarian: SpaceCash10000
   - type: Sprite
     sprite: _Crescent/Structures/deedsmachine.rsi
     layers:

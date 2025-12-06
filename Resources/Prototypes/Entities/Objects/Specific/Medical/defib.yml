@@ -105,11 +105,6 @@
       - state: ready
         map: ["enum.PowerDeviceVisualLayers.Powered"]
         shader: unshaded
-  - type: Clothing
-    sprite: Objects/Specific/Medical/defibsmall.rsi
-    quickEquip: true
-    slots:
-    - belt
   - type: Item
     size: Normal
   - type: ToggleCellDraw

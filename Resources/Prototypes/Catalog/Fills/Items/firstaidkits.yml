@@ -112,12 +112,3 @@
       - id: StimpackMini
         amount: 6
 
-- type: entity
-  id: MedkitBloodFilled
-  suffix: Filled
-  parent: MedkitBlood
-  components:
-  - type: StorageFill
-    contents:
-      - id: Bloodpack
-        amount: 4
