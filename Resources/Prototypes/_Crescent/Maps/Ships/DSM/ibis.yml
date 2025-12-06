@@ -1,8 +1,8 @@
 - type: vessel
   id: Ibis
   name: DSM Ibis
-  description: A heavy fighter, designed for ranging and harassment missions.
-  price: 35000
+  description: A heavy fighter equipped with an errant shield emitter, designed for ranging and harassment missions.
+  price: 38000
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/DSM/ibis.yml
