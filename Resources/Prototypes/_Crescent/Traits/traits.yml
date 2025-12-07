@@ -3,9 +3,6 @@
   category: TraitsSpeechLanguages
   points: -4
   requirements:
-    - !type:FactionRequirement
-      inverted: true
-      factionID: "DSM"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -35,9 +32,6 @@
   category: TraitsSpeechLanguages
   points: -4
   requirements:
-    - !type:FactionRequirement
-      inverted: true
-      factionID: "NCWL"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -56,9 +50,6 @@
   category: TraitsSpeechLanguages
   points: -4
   requirements:
-    - !type:FactionRequirement
-      inverted: true
-      factionID: "TFSC"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -77,9 +68,6 @@
   category: TraitsSpeechLanguages
   points: -4
   requirements:
-    - !type:FactionRequirement
-      inverted: true
-      factionID: "SHI"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -97,11 +85,6 @@
   id: Clarizian
   category: TraitsSpeechLanguages
   points: -2
-  requirements:
-    - !type:CharacterNationalityRequirement
-      inverted: true
-      nationalities:
-        - Clarizian
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -113,11 +96,6 @@
   id: SolBasic
   category: TraitsSpeechLanguages
   points: -2
-  requirements:
-    - !type:CharacterNationalityRequirement
-      inverted: true
-      nationalities:
-        - Authority
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -144,11 +122,6 @@
   id: American
   category: TraitsSpeechLanguages
   points: -2
-  requirements:
-    - !type:CharacterNationalityRequirement
-      inverted: true
-      nationalities:
-        - Bieselite # NAP
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
