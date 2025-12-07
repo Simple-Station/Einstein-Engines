@@ -87,6 +87,26 @@
 
 - type: entity
   parent: BaseSign
+  id: BaseTAPRug
+  abstract: true
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _Crescent/Structures/taprug.rsi
+
+- type: entity
+  parent: BaseTAPRug
+  id: MotherRug
+  name: Rug al-Mother
+  description: "A handmade rug depicting the Mother herself. Sewed by a now forgotten Arabeti. Legends say the silk used for sewing it was made from a Lepidopod's wings, a divine sacrifice to tell an ancient story."
+  components:
+  - type: Sprite
+    state: motherrug
+
+- type: entity
+  parent: BaseSign
   id: RotLayerThin
   name: welt tendrils
   description: "A tendril of Rotwelt. They tend to grow on corpses where Fog is abundant."
