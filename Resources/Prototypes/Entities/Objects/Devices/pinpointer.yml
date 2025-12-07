@@ -76,14 +76,14 @@
   components:
   - type: Sprite
     layers:
-    - state: pinpointer-way
+    - state: pinpointer_thief
       map: ["enum.PinpointerLayers.Base"]
     - state: pinonnull
       map: ["enum.PinpointerLayers.Screen"]
       shader: unshaded
       visible: false
   - type: Icon
-    state: pinpointer-way
+    state: pinpointer_thief
   - type: Pinpointer
     updateTargetName: true
     canRetarget: true

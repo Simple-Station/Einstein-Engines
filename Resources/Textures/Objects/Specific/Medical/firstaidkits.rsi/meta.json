@@ -105,6 +105,17 @@
     {
       "name": "advkit-inhand-left",
       "directions": 4
+    },
+    {
+            "name": "bloodkit"
+        },
+        {
+      "name": "bloodkit-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "bloodkit-inhand-left",
+      "directions": 4
     }
 	]
 }

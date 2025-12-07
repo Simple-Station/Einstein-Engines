@@ -2,7 +2,7 @@
   id: Spider
   name: SRM Spider
   description: A repurposed civilian hull, converted into a fragile EWAR shuttle.
-  price: 35000
+  price: 100000
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/SRM/spider.yml
@@ -23,9 +23,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-expeditions
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            APRTMontagneSRM: [ 1, 1 ]
-            APRTHunterSRM: [ 2, 2 ]
-            AcolyteSRM: [ 1, 1 ]

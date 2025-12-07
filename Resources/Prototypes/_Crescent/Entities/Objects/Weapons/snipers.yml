@@ -1,6 +1,6 @@
 - type: entity
   name: SHI PLCR-3M2 Hristov 15.2x169mm
-  parent: [BaseWeaponRifle, BaseGunWieldable, StreeCredRedeemable]
+  parent: [BaseWeaponRifleDMR, BaseGunWieldableDMR, StreeCredRedeemable]
   id: WeaponSniperHristov
   description: A portable anti-materiel rifle, equipped with a long range scope. Fires the large 15.2×169mm round.
   components:
@@ -57,7 +57,7 @@
 
 - type: entity
   name: IRM AVR-H Imperator 15.2x169mm
-  parent: [BaseWeaponRifle, BaseGunWieldable, StreeCredRedeemable]
+  parent: [BaseWeaponRifleDMR, BaseGunWieldableDMR, StreeCredRedeemable]
   id: WeaponSniperImperator
   description: A imperial anti-materiel rifle. Fires the large 15.2×169mm round.
   components:
@@ -113,7 +113,7 @@
 
 - type: entity
   name: NCWL PTRD-94 Molot 15.2x169mm
-  parent: [BaseWeaponRifle, BaseGunWieldable, StreeCredRedeemable]
+  parent: [BaseWeaponRifleDMR, BaseGunWieldableDMR, StreeCredRedeemable]
   id: WeaponSniperMolot
   description: A cheap communard anti-materiel. Fires the large 15.2×169mm round.
   components:
@@ -169,7 +169,7 @@
 
 - type: entity
   name: NCSP AK-60 15.2x169mm
-  parent: [BaseWeaponRifle, BaseGunWieldable]
+  parent: [BaseWeaponRifleDMR, BaseGunWieldableDMR]
   id: WeaponSniperAK60
   description: A unlicensed .60 version of a AK. Its a less simple than a AK-74 but pack a massive 15.2x169mm Pounch.
   components:
@@ -225,7 +225,7 @@
 
 - type: entity
   name: PTA AC-8 Spear 15.2x169mm
-  parent: [BaseWeaponRifle, BaseGunWieldable, StreeCredRedeemable]
+  parent: [BaseWeaponRifleDMR, BaseGunWieldableDMR, StreeCredRedeemable]
   id: WeaponSniperSpear
   description: A high-end AMR by Pang Tai Arms, capable of firing significantly faster than its competitors.
   components:

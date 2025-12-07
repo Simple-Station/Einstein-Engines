@@ -1,0 +1,308 @@
+- type: storeCategory
+  id: StoreCategorySRMLPC
+  name: LPCs
+  priority: 4
+
+- type: storeCategory
+  id: StoreCategorySRMTools
+  name: Tools
+  priority: 6
+
+- type: storeCategory
+  id: StoreCategorySRMSupport
+  name: Medical & Support
+  priority: 8
+
+- type: storeCategory
+  id: StoreCategorySRMMaterials
+  name: Materials
+  priority: 10
+
+- type: storeCategory
+  id: StoreCategorySRMPietySerraine
+  name: Piety Scraps
+  priority: 12
+
+#LPCs
+
+- type: listing
+  id: StoreListingSRMSpider
+  name: SRM Spider LPC
+  description: An LPC fabprint disk loaded with a Sixth St. Romaine's Militia Spider-class stealth shuttle pattern. Has to be redeemed at a shipyard console.
+  icon: { sprite: _Crescent/Objects/Misc/lpcchip.rsi, state: icon }
+  productEntity: ShipVoucherSpider
+  cost:
+    PietySRM: 20
+  categories:
+  - StoreCategorySRMLPC
+
+- type: listing
+  id: StoreListingSRMSaintsfall
+  name: SRM Saintsfall LPC
+  description: An LPC fabprint disk loaded with a Sixth St. Romaine's Militia Saintsfall-class gunship pattern. Has to be redeemed at a shipyard console.
+  icon: { sprite: _Crescent/Objects/Misc/lpcchip.rsi, state: icon }
+  productEntity: ShipVoucherSaintsfall
+  cost:
+    PietySRM: 5
+  categories:
+  - StoreCategorySRMLPC
+
+#LPCs End
+
+#Tools
+
+- type: listing
+  id: StoreListingSRMJaws
+  name: Jaws of Life
+  description: A pair of jaws of life, plucked off some unlucky bastard during a raid on a CD vessel.
+  icon: { sprite: Objects/Tools/jaws_of_life.rsi, state: syn_jaws_pry }
+  productEntity: SyndicateJawsOfLife
+  cost:
+    PietySRM: 4
+  categories:
+  - StoreCategorySRMTools
+
+- type: listing
+  id: StoreListingSRMEVA
+  name: EVA Equipment
+  description: Standard issue combat magboots and some jetpacks, good enough for boarding actions... if you're lucky.
+  icon: { sprite: _NF/Clothing/Shoes/Boots/magboots-combat.rsi, state: icon }
+  productEntity: CrateSRMEVA
+  cost:
+    PietySRM: 2
+  categories:
+  - StoreCategorySRMTools
+
+- type: listing
+  id: StoreListingSRMHeavyMagboots
+  name: Heavy Combat Magboots
+  description: Heavy duty combat magboots, make you a bit slower but they can carry a sidearm. A few come packaged.
+  icon: { sprite: Clothing/Shoes/Boots/magboots-combat.rsi, state: icon }
+  productEntity: CrateSRMMagboots
+  cost:
+    PietySRM: 2
+  categories:
+  - StoreCategorySRMTools
+
+- type: listing
+  id: StoreListingSRMToolbox
+  name: Stolen Toolbox
+  description: A toolbox stolen from some poor guy just leaving Freeport. Not like he'll be needing it anymore anyways. A few come packaged.
+  icon: { sprite: Objects/Tools/Toolboxes/toolbox_syn.rsi, state: icon }
+  productEntity: CrateSRMToolbox
+  cost:
+    PietySRM: 3
+  categories:
+  - StoreCategorySRMTools
+
+- type: listing
+  id: StoreListingSRMPinpointer
+  name: Tracking Pinpointer
+  description: A pinpointer used to track down anything, even small and unnoticeable things. A few come packaged.
+  icon: { sprite: Objects/Devices/pinpointer.rsi, state: pinpointer_thief }
+  productEntity: CrateSRMPinpointer
+  cost:
+    PietySRM: 2
+  categories:
+  - StoreCategorySRMTools
+
+#Tools End
+
+#Support
+
+- type: listing
+  id: StoreListingSRMMedkitShipment
+  name: Medkit Shipment
+  description: A pair of sturdy medkits, often used by the tenders to patch up idiotic hunters.
+  icon: { sprite: Objects/Specific/Medical/firstaidkits.rsi, state: blackkit }
+  productEntity: CrateSRMMedkit
+  cost:
+    PietySRM: 1
+  categories:
+  - StoreCategorySRMSupport
+
+- type: listing
+  id: StoreListingSRMMedicalSupplies
+  name: Medical Supplies Shipment
+  description: A shipment full of all the medical supplies one might need to create an effective field triage.
+  icon: { sprite: _Shitmed/Clothing/Back/Duffels/abductor.rsi, state: icon }
+  productEntity: CrateSRMMedicalSupplies
+  cost:
+    PietySRM: 5
+  categories:
+  - StoreCategorySRMSupport
+
+- type: listing
+  id: StoreListingSRMCompactDefibrillator
+  name: Compact Defibrillator
+  description: A compact defibrillator that can be strapped to one's belt for ease of use in emergency situations. A few come packaged.
+  icon: { sprite: Objects/Specific/Medical/defibsmall.rsi, state: icon }
+  productEntity: CrateSRMDefibrillator
+  cost:
+    PietySRM: 2
+  categories:
+  - StoreCategorySRMSupport
+
+- type: listing
+  id: StoreListingSRMNvg
+  name: Night Vision Goggles
+  description: Night vision goggles, typically used by hunters when the lights are out.
+  icon: { sprite: Clothing/Eyes/Goggles/nightvision.rsi, state: icon }
+  productEntity: ClothingEyesNightVisionGoggles
+  cost:
+    PietySRM: 8
+  categories:
+  - StoreCategorySRMSupport
+
+- type: listing
+  id: StoreListingSRMNVgMedical
+  name: Medical Night Vision Goggles
+  description: Night vision goggles with built-in medical HUDs, useful for tenders working in low-light conditions.
+  icon: { sprite: Clothing/Eyes/Goggles/medical_nightvision.rsi, state: icon }
+  productEntity: ClothingEyesNightVisionMedicalGoggles
+  cost:
+    PietySRM: 10
+  categories:
+  - StoreCategorySRMSupport
+
+- type: listing
+  id: StoreListingSRMNvgAdvanced
+  name: Advanced Night Vision Goggles
+  description: Advanced night vision goggles, enhanced with the ability to read the ID of an individual from afar.
+  icon: { sprite: Clothing/Eyes/Goggles/security_nightvision.rsi, state: icon }
+  productEntity: ClothingEyesNightVisionSecurityGoggles
+  cost:
+    PietySRM: 10
+  categories:
+  - StoreCategorySRMSupport
+
+- type: listing
+  id: StoreListingSRMThermoMonocle
+  name: Thermal Monocle
+  description: A monocle that allows the wearer to see heat signatures, useful in its own right.
+  icon: { sprite: Clothing/Eyes/Goggles/monocle_thermal.rsi, state: icon }
+  productEntity: ClothingEyesThermalVisionMonocle
+  cost:
+    PietySRM: 10
+  categories:
+  - StoreCategorySRMSupport
+
+- type: listing
+  id: StoreListingSRMMassScanner
+  name: Mass Scanner
+  description: A handheld device handy for spaceborne operations. A few come packaged.
+  icon: { sprite: Objects/Tools/handheld_mass_scanner.rsi, state: icon }
+  productEntity: CrateSRMMassScanner
+  cost:
+    PietySRM: 1
+  categories:
+  - StoreCategorySRMSupport
+
+- type: listing
+  id: StoreListingSRMMedScanner
+  name: Medical Scanner
+  description: A scanner used for medical purposes, useful for tenders in the field.
+  icon: { sprite: Objects/Specific/Medical/healthanalyzer.rsi, state: icon }
+  productEntity: HandheldHealthAnalyzer
+  cost:
+    PietySRM: 0
+  categories:
+  - StoreCategorySRMSupport
+
+- type: listing
+  id: StoreListingSRMMRE
+  name: Meal Ready to Eat
+  description: Your classic MRE, designed not for taste but for hunters on the go.
+  icon: { sprite: Objects/Consumable/Food/bay_food.rsi, state: meatmre }
+  productEntity: BoxMRE
+  cost:
+    PietySRM: 0
+  categories:
+  - StoreCategorySRMSupport
+
+#Support End
+
+#Materials
+
+- type: listing
+  id: StoreListingSRMPlasteel
+  name: Plasteel Shipment
+  description: A shipment of plasteel, useful for various construction purposes.
+  icon: { sprite: _Nuclear14/Structures/Storage/Crates/woodencrates.rsi, state: army_crate }
+  productEntity: CrateMaterialPlasteel
+  cost:
+    PietySRM: 1
+  categories:
+  - StoreCategorySRMMaterials
+
+- type: listing
+  id: StoreListingSRMPlastic
+  name: Plastic Shipment
+  description: A shipment of plastic for whatever turtle-killing you may desire.
+  icon: { sprite: _Nuclear14/Structures/Storage/Crates/woodencrates.rsi, state: army_crate }
+  productEntity: CrateMaterialPlastic
+  cost:
+    PietySRM: 1
+  categories:
+  - StoreCategorySRMMaterials
+
+- type: listing
+  id: StoreListingSRMSteel
+  name: Steel Shipment
+  description: A shipment of steel, useful for various repair jobs.
+  icon: { sprite: _Nuclear14/Structures/Storage/Crates/woodencrates.rsi, state: army_crate }
+  productEntity: CrateMaterialSteel
+  cost:
+    PietySRM: 1
+  categories:
+  - StoreCategorySRMMaterials
+
+- type: listing
+  id: StoreListingSRMGlass
+  name: Glass Shipment
+  description: Careful not to run into it, it's fragile.
+  icon: { sprite: _Nuclear14/Structures/Storage/Crates/woodencrates.rsi, state: army_crate }
+  productEntity: CrateMaterialGlass
+  cost:
+    PietySRM: 1
+  categories:
+  - StoreCategorySRMMaterials
+
+#Materials End
+
+#Piety Redeemable
+
+- type: listing
+  id: StoreListingSRMPRLowSerraine
+  name: Piety Scrap
+  description: A scrap of piety, used by hunters to redeem various goods and services. This one appears to be rather worn and damaged.
+  icon: { sprite: _Crescent/Objects/TradeGoods/deed.rsi, state: icon }
+  productEntity: PietyRedeemableLow
+  cost:
+    PietySRM: 1
+  categories:
+  - StoreCategorySRMPietySerraine
+
+- type: listing
+  id: StoreListingSRMPRSerraine
+  name: Piety Scrap
+  description: A scrap of piety, used by hunters to redeem various goods and services. This one appears to be in decent shape.
+  icon: { sprite: _Crescent/Objects/TradeGoods/deed.rsi, state: icon }
+  productEntity: PietyRedeemable
+  cost:
+    PietySRM: 5
+  categories:
+  - StoreCategorySRMPietySerraine
+
+- type: listing
+  id: StoreListingSRMPRHighSerraine
+  name: Piety Scrap
+  description: A scrap of piety, used by hunters to redeem various goods and services. This one appears to be almost untouched.
+  icon: { sprite: _Crescent/Objects/TradeGoods/deed.rsi, state: icon }
+  productEntity: PietyRedeemableHigh
+  cost:
+    PietySRM: 10
+  categories:
+  - StoreCategorySRMPietySerraine
+
+# Piety Redeemable End
