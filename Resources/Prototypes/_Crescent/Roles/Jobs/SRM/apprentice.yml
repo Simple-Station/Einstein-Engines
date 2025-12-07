@@ -8,11 +8,9 @@
   alwaysUseSpawner: true
   requireAdminNotify: false
   icon: "JobIconAcolyte"
-  supervisors: job-supervisors-srm-apprentice
+  supervisors: job-supervisors-imperial
   canBeAntag: false
   requirements:
-    - !type:CharacterOverallTimeRequirement
-      min: 21600
     - !type:FactionRequirement
       factionID: "SRM"
     - !type:CharacterSpeciesRequirement
@@ -29,20 +27,9 @@
   special:
   - !type:AddComponentSpecial
     components:
-      - type: HullrotFaction
-        faction: SRM
-      - type: BibleUser
-      - type: LanguageAdder
-        addSpoken:
-          - LowImperial
-          - Saintspact
-        addUnderstood:
-          - LowImperial
-          - Saintspact
-      - type: InnatePsionicPowers
-        powersToAdd:
-          - TelepathyPower
-          - AssayPower
+    - type: HullrotFaction
+      faction: SRM
+    - type: BibleUser
 
 - type: startingGear
   id: AcolyteGear
@@ -52,5 +39,3 @@
     jumpsuit: ClothingUniformJumpsuitHunterAcolyte
     shoes: ClothingShoesBootsHunter
     gloves: ClothingHandsGlovesHunter
-    pocket2: RomaineBible
-    belt: ClothingBeltAssault

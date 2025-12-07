@@ -8,12 +8,12 @@
   alwaysUseSpawner: true
   requireAdminNotify: false
   icon: "JobIconHunter"
-  supervisors: job-supervisors-srm-hunters
+  supervisors: job-supervisors-imperial
   canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
-      min: 43200
+      min: 20000
     - !type:FactionRequirement
       factionID: "SRM"
     - !type:CharacterSpeciesRequirement
@@ -32,17 +32,7 @@
     components:
       - type: HullrotFaction
         faction: SRM
-      - type: LanguageAdder
-        addSpoken:
-          - LowImperial
-          - Saintspact
-        addUnderstood:
-          - LowImperial
-          - Saintspact
-      - type: InnatePsionicPowers
-        powersToAdd:
-          - TelepathyPower
-          - AssayPower
+      - type: Telepathic
 
 - type: startingGear
   id: HunterGear
@@ -53,5 +43,3 @@
     head: ClothingHeadHatHunter
     shoes: ClothingShoesBootsHunter
     gloves: ClothingHandsGlovesHunter
-    pocket2: RomaineBible
-    belt: ClothingBeltAssault

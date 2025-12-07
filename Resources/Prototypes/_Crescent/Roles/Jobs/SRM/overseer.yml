@@ -8,7 +8,7 @@
   alwaysUseSpawner: true
   requireAdminNotify: false
   icon: "JobIconOverseer"
-  supervisors: job-supervisors-srm-overseer
+  supervisors: job-supervisors-imperial
   canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
@@ -17,8 +17,6 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Human
-    - !type:CharacterOverallTimeRequirement
-      min: 500000
   access:
   - Command
   - Hunter
@@ -34,19 +32,7 @@
     components:
       - type: HullrotFaction
         faction: SRM
-      - type: LanguageAdder
-        addSpoken:
-          - Saintspact
-          - HighImperial
-          - LowImperial
-        addUnderstood:
-          - Saintspact
-          - HighImperial
-          - LowImperial
-      - type: InnatePsionicPowers
-        powersToAdd:
-          - TelepathyPower
-          - AssayPower
+      - type: Telepathic
 
 - type: startingGear
   id: OverseerGear
@@ -58,5 +44,3 @@
     shoes: ClothingShoesBootsHunter
     outerClothing: ClothingOuterArmorHunterDusterOverseer
     gloves: ClothingHandsGlovesHunter
-    pocket2: RomaineBible
-    belt: ClothingBeltAssault

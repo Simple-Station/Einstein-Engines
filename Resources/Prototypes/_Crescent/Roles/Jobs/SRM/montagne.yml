@@ -8,12 +8,12 @@
   alwaysUseSpawner: true
   requireAdminNotify: false
   icon: "JobIconMontagne"
-  supervisors: job-supervisors-srm-leaders
+  supervisors: job-supervisors-imperial
   canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
-      min: 64800
+      min: 40000
     - !type:FactionRequirement
       factionID: "SRM"
     - !type:CharacterSpeciesRequirement
@@ -33,19 +33,7 @@
     components:
       - type: HullrotFaction
         faction: SRM
-      - type: LanguageAdder
-        addSpoken:
-          - Saintspact
-          - HighImperial
-          - LowImperial
-        addUnderstood:
-          - Saintspact
-          - HighImperial
-          - LowImperial
-      - type: InnatePsionicPowers
-        powersToAdd:
-          - TelepathyPower
-          - AssayPower
+      - type: Telepathic
 
 - type: startingGear
   id: MontagneGear
@@ -57,5 +45,3 @@
     shoes: ClothingShoesBootsHunter
     outerClothing: ClothingOuterArmorHunterDusterMontagne
     gloves: ClothingHandsGlovesHunter
-    pocket2: RomaineBible
-    belt: ClothingBeltAssault

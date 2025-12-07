@@ -14,7 +14,7 @@
     attackRate: 1
     damage:
       types:
-        Slash: 34
+        Slash: 38
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     heavyDamageBaseModifier: 1
