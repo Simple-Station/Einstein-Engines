@@ -1,0 +1,16 @@
+# Spoken by Saint Romaine's Milita
+- type: language
+  id: Saintspact
+  isVisibleLanguage: false
+  speech:
+    color: "#be3cc5"
+    fontId: Lymphatic
+    empathySpeech: true
+    speechVerbOverrides:
+    - chat-speech-verb-saintspact
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2
+    maxSyllables: 5
+    replacement:
+    - "*incomprehensible*"

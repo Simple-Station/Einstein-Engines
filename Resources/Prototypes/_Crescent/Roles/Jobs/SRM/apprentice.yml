@@ -8,14 +8,23 @@
   alwaysUseSpawner: true
   requireAdminNotify: false
   icon: "JobIconAcolyte"
-  supervisors: job-supervisors-imperial
+  supervisors: job-supervisors-srm-apprentice
   canBeAntag: false
   requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 21600
     - !type:FactionRequirement
       factionID: "SRM"
     - !type:CharacterSpeciesRequirement
       species:
         - Human
+    - !type:SexRequirement
+      sex: Male
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Muted
+        - Blindness
   access:
   - Command
   - Hunter
@@ -27,9 +36,20 @@
   special:
   - !type:AddComponentSpecial
     components:
-    - type: HullrotFaction
-      faction: SRM
-    - type: BibleUser
+      - type: HullrotFaction
+        faction: SRM
+      - type: BibleUser
+      - type: LanguageAdder
+        addSpoken:
+          - LowImperial
+          - Saintspact
+        addUnderstood:
+          - LowImperial
+          - Saintspact
+      - type: InnatePsionicPowers
+        powersToAdd:
+          - TelepathyPower
+          - AssayPower
 
 - type: startingGear
   id: AcolyteGear
@@ -39,3 +59,5 @@
     jumpsuit: ClothingUniformJumpsuitHunterAcolyte
     shoes: ClothingShoesBootsHunter
     gloves: ClothingHandsGlovesHunter
+    pocket2: RomaineBible
+    belt: ClothingBeltAssault

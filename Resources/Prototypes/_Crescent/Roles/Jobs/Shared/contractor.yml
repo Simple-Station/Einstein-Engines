@@ -4,6 +4,9 @@
   description: job-description-contractor
   playTimeTracker: JobContractor
   requirements:
+    - !type:FactionRequirement
+      inverted: true
+      factionID: "SRM"
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:

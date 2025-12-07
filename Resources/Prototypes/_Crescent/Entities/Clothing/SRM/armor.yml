@@ -21,11 +21,11 @@
     armorRepair: PlasteelPlate
     initialModifiers:
       flatReductions:
-        Blunt: 15
-        Slash: 15
-        Piercing: 35
-        Heat: 15
-        Caustic: 15
+        Blunt: 20
+        Slash: 20
+        Piercing: 40
+        Heat: 20
+        Caustic: 20
   - type: ClothingSpeedModifier
     walkModifier: 0.85
     sprintModifier: 0.9
@@ -49,15 +49,15 @@
     damageCoefficient: 0.6
   - type: DegradeableArmor
     armorMaxHealth: 750
-    armorType: Ceramic
-    armorRepair: NTCeramic
+    armorType: Metallic
+    armorRepair: PlasteelPlate
     initialModifiers:
       flatReductions:
         Blunt: 25
-        Slash: 15
+        Slash: 20
         Piercing: 70
-        Heat: 15
-        Caustic: 15
+        Heat: 20
+        Caustic: 20
   - type: ClothingSpeedModifier
     walkModifier: 0.80
     sprintModifier: 0.85
@@ -80,9 +80,9 @@
     armorRepair: PlasteelEncasedKevlar
     initialModifiers:
       flatReductions:
-        Blunt: 10
-        Slash: 10
-        Piercing: 30
+        Blunt: 15
+        Slash: 15
+        Piercing: 35
         Heat: 20
         Caustic: 15
   - type: ClothingSpeedModifier
@@ -136,8 +136,8 @@
     armorRepair: NTPolymer
     initialModifiers:
       flatReductions:
-        Blunt: 10
-        Slash: 10
+        Blunt: 15
+        Slash: 15
         Piercing: 25
         Heat: 20
         Caustic: 35
@@ -164,9 +164,9 @@
     armorRepair: NTPolymer
     initialModifiers:
       flatReductions:
-        Blunt: 10
-        Slash: 10
-        Piercing: 25
+        Blunt: 15
+        Slash: 15
+        Piercing: 30
         Heat: 20
         Caustic: 35
   - type: ClothingSpeedModifier
@@ -192,8 +192,8 @@
     armorRepair: NTPolymer
     initialModifiers:
       flatReductions:
-        Blunt: 10
-        Slash: 10
+        Blunt: 15
+        Slash: 15
         Piercing: 35
         Heat: 20
         Caustic: 35

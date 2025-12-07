@@ -8,6 +8,9 @@
   icon: "JobIconMinuteman"
   supervisors: job-supervisors-gliess
   requirements:
+    - !type:FactionRequirement
+      inverted: true
+      factionID: "SRM"
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:

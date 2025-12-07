@@ -10,6 +10,22 @@
       group: LoadoutBelt
     - !type:CharacterJobRequirement
       jobs:
-        - HunterSRM
         - MontagneSRM
         - OverseerSRM
+
+- type: loadout
+  id: LoadoutBeltSheathSRMDuelingKhopesh
+  category: Belt
+  cost: 0
+  items:
+    - ClothingBeltSheathDSMDuelingKhopeshFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - OverseerSRM
+        - MontagneSRM
+        - HunterSRM
+        - AcolyteSRM
+        - TenderSRM

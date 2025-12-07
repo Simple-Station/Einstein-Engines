@@ -213,7 +213,7 @@
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackSRM
+    - ClothingBackpackFilledSRM
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks
@@ -231,7 +231,7 @@
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackSRMSatchel
+    - ClothingBackpackSatchelFilledSRM
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks

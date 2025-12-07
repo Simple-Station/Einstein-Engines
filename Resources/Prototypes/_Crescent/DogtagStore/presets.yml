@@ -76,3 +76,37 @@
     - SampleIPM
     balance:
       SampleIPM: 0
+
+- type: entity
+  id: StorePresetHullrotDogtagSRMR
+  abstract: true
+  components:
+  - type: Store
+    name: saint-romaine
+    categories:
+    - StoreCategorySRMWeapons
+    - StoreCategorySRMAmmo
+    - StoreCategorySRMSuits
+    - StoreCategorySRMExplosives
+    - StoreCategorySRMPietyRomaine
+    currencyWhitelist:
+    - PietySRM
+    balance:
+      PietySRM: 0
+
+- type: entity
+  id: StorePresetHullrotDogtagSRMS
+  abstract: true
+  components:
+  - type: Store
+    name: saint-serraine
+    categories:
+    - StoreCategorySRMLPC
+    - StoreCategorySRMTools
+    - StoreCategorySRMSupport
+    - StoreCategorySRMMaterials
+    - StoreCategorySRMPietySerraine
+    currencyWhitelist:
+    - PietySRM
+    balance:
+      PietySRM: 0

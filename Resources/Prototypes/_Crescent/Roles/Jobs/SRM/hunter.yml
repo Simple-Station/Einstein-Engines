@@ -8,17 +8,24 @@
   alwaysUseSpawner: true
   requireAdminNotify: false
   icon: "JobIconHunter"
-  supervisors: job-supervisors-imperial
+  supervisors: job-supervisors-srm-hunters
   canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
-      min: 20000
+      min: 43200
     - !type:FactionRequirement
       factionID: "SRM"
     - !type:CharacterSpeciesRequirement
       species:
         - Human
+    - !type:SexRequirement
+      sex: Male
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Muted
+        - Blindness
   access:
   - Command
   - Hunter
@@ -32,7 +39,17 @@
     components:
       - type: HullrotFaction
         faction: SRM
-      - type: Telepathic
+      - type: LanguageAdder
+        addSpoken:
+          - LowImperial
+          - Saintspact
+        addUnderstood:
+          - LowImperial
+          - Saintspact
+      - type: InnatePsionicPowers
+        powersToAdd:
+          - TelepathyPower
+          - AssayPower
 
 - type: startingGear
   id: HunterGear
@@ -43,3 +60,5 @@
     head: ClothingHeadHatHunter
     shoes: ClothingShoesBootsHunter
     gloves: ClothingHandsGlovesHunter
+    pocket2: RomaineBible
+    belt: ClothingBeltAssault
