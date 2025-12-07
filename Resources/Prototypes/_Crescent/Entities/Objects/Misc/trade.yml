@@ -65,7 +65,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 500
+    price: 1500
 
 - type: entity
   parent: BaseTradeItem
@@ -110,7 +110,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 500
+    price: 1500
   - type: Fixtures
     fixtures:
       fix1:
@@ -135,7 +135,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 500
+    price: 1500
 
 - type: entity
   parent: BaseTradeItem
@@ -188,7 +188,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 500
+    price: 1500
   - type: Destructible
     thresholds:
       - trigger:
@@ -214,7 +214,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 750
+    price: 1500
   - type: Destructible
     thresholds:
       - trigger:
@@ -243,7 +243,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 750
+    price: 1500
   - type: Fixtures
     fixtures:
       fix1:
@@ -267,6 +267,8 @@
     layers:
     - state: icon
   - type: Contraband
+  - type: StaticPrice
+    price: 1500
   - type: Destructible
     thresholds:
       - trigger:
@@ -295,6 +297,8 @@
     layers:
     - state: icon
   - type: Contraband
+  - type: StaticPrice
+    price: 1500
 
 - type: entity
   parent: BaseTradeItem
@@ -307,7 +311,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 750
+    price: 1500
 
 - type: entity
   parent: BaseTradeItem
@@ -320,7 +324,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 750
+    price: 1500
 
 - type: entity
   parent: BaseTradeItem
@@ -333,7 +337,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 750
+    price: 1500
 
 - type: entity
   parent: BaseTradeItem
@@ -346,7 +350,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 750
+    price: 1500
 
 - type: entity
   parent: BaseTradeItem
@@ -362,7 +366,7 @@
     price:
       ScrapSAW: 2
   - type: StaticPrice
-    price: 750
+    price: 1500
   - type: Destructible
     thresholds:
       - trigger:
@@ -391,7 +395,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 750
+    price: 1500
   - type: Fixtures
     fixtures:
       fix1:
@@ -415,7 +419,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 750
+    price: 1500
   - type: Currency
     price:
       ScrapSAW: 1
@@ -444,7 +448,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 1000
+    price: 1500
   - type: Fixtures
     fixtures:
       fix1:
@@ -468,7 +472,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 300
+    price: 1500
 
 - type: entity
   parent: BaseTradeItem
@@ -481,7 +485,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 300
+    price: 1500
   - type: Fixtures
     fixtures:
       fix1:
@@ -505,7 +509,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 300
+    price: 1500
   - type: Fixtures
     fixtures:
       fix1:
@@ -529,7 +533,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 300
+    price: 1500
   - type: Fixtures
     fixtures:
       fix1:
@@ -553,7 +557,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 300
+    price: 1500
   - type: Fixtures
     fixtures:
       fix1:
