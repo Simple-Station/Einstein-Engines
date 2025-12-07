@@ -19,6 +19,13 @@
         - Human
     - !type:CharacterOverallTimeRequirement
       min: 500000
+    - !type:SexRequirement
+      sex: Male
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Muted
+        - Blindness
   access:
   - Command
   - Hunter
