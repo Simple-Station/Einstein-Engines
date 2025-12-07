@@ -118,6 +118,9 @@
       TradeGoodFabrics: TradeDeedExotic
       TradeGoodPlasma: TradeDeedVeryHigh
       TradeGoodSilks: TradeDeedUnique
+      TradeGoodSugar: TradeDeedHigh
+      TradeGoodRice: TradeDeedHigh
+      TradeGoodFlour: TradeDeedHigh
   - type: Sprite
     sprite: _Crescent/Structures/cargochute.rsi
     layers:
@@ -340,6 +343,9 @@
       TradeGoodScrap: TradeDeedHigh
       TradeGoodUnionBallistic: TradeDeedExotic
       TradeGoodUnionVodka: TradeDeedExotic
+      TradeGoodSugar: TradeDeedHigh
+      TradeGoodRice: TradeDeedHigh
+      TradeGoodFlour: TradeDeedHigh
   - type: Sprite
     sprite: _Crescent/Structures/cargochute.rsi
     layers:
@@ -417,6 +423,9 @@
       TradeGoodCybernetics: TradeDeedVeryHigh
       TradeGoodUnionBallistic: TradeDeedExotic
       TradeGoodUnionVodka: TradeDeedExotic
+      TradeGoodSugar: TradeDeedHigh
+      TradeGoodRice: TradeDeedHigh
+      TradeGoodFlour: TradeDeedHigh
   - type: Sprite
     sprite: _Crescent/Structures/cargochute.rsi
     layers:
@@ -457,7 +466,11 @@
       TradeGoodSilks: TradeDeedUnique
       TradeGoodUnionBallistic: TradeDeedUnique
       TradeGoodUnionVodka: TradeDeedUnique
-
+      TradeGoodSugar: TradeDeedHigh
+      TradeGoodRice: TradeDeedHigh
+      TradeGoodFlour: TradeDeedHigh
+      TradeGoodOrgans: TradeDeedLow
+      TradeGoodDrugs: TradeDeedLow
   - type: Sprite
     sprite: _Crescent/Structures/cargochute.rsi
     layers:
@@ -496,7 +509,9 @@
       TradeGoodSilks: TradeDeedUnique
       TradeGoodUnionBallistic: TradeDeedUnique
       TradeGoodUnionVodka: TradeDeedExotic
-
+      TradeGoodSugar: TradeDeedHigh
+      TradeGoodRice: TradeDeedHigh
+      TradeGoodFlour: TradeDeedHigh
   - type: Sprite
     sprite: _Crescent/Structures/cargochute.rsi
     layers:
@@ -536,6 +551,9 @@
       TradeGoodUnionVodka: TradeDeedUnique
       TradeGoodOrgans: TradeDeedHigh
       TradeGoodDrugs: TradeDeedHigh
+      TradeGoodSugar: TradeDeedHigh
+      TradeGoodRice: TradeDeedHigh
+      TradeGoodFlour: TradeDeedHigh
 
   - type: Sprite
     sprite: _Crescent/Structures/cargochute.rsi
