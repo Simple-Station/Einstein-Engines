@@ -1,0 +1,26 @@
+# Inherent point light prototypes that can be attached to mobs using ESInherentLightComponent.
+- type: entity
+  id: ESMobDefaultInherentLight
+  name: inherent light
+  components:
+    - type: PointLight
+      netsync: false
+      color: "#ffffff"
+      energy: 2.5
+      radius: 1.35
+      # ES TODO uncomment once engine lighting done
+      # falloff: 30
+      # curveFactor: 1.0
+      castShadows: false
+      enabled: false
+
+- type: entity
+  id: ESMobObserverInherentLight
+  name: inherent light
+  components:
+    - type: PointLight
+      netsync: false
+      color: "#ffffff"
+      radius: 6
+      castShadows: false
+      enabled: false

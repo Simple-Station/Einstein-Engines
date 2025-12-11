@@ -1,4 +1,4 @@
-﻿using Content.Shared.Throwing;
+using Content.Shared.Throwing;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
 using Robust.Shared.Animations;
@@ -24,7 +24,7 @@ public sealed class ThrownItemVisualizerSystem : EntitySystem
 
     private void OnAutoHandleState(EntityUid uid, ThrownItemComponent component, ref AfterAutoHandleStateEvent args)
     {
-        if (!TryComp<SpriteComponent>(uid, out var sprite) || !component.Animate)
+        if (!TryComp<SpriteComponent>(uid, out var sprite))
             return;
 
         var animationPlayer = EnsureComp<AnimationPlayerComponent>(uid);
@@ -59,6 +59,7 @@ public sealed class ThrownItemVisualizerSystem : EntitySystem
         if (length <= TimeSpan.Zero)
             return null;
 
+        length += TimeSpan.FromSeconds(ThrowingSystem.FlyTimePercentage);
         var scale = ent.Comp2.Scale;
         var lenFloat = (float) length.TotalSeconds;
 

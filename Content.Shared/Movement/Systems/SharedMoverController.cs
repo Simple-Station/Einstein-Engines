@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using Content.Shared._ES.Viewcone;
 using Content.Shared.Alert;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.CCVar;
@@ -23,6 +24,7 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Controllers;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using PullableComponent = Content.Shared.Movement.Pulling.Components.PullableComponent;
@@ -51,6 +53,9 @@ public abstract partial class SharedMoverController : VirtualController
     [Dependency] protected readonly SharedPhysicsSystem Physics = default!;
     [Dependency] private   readonly SharedTransformSystem _transform = default!;
     [Dependency] private   readonly TagSystem _tags = default!;
+    // ES START
+    [Dependency] private   readonly ESViewconeEffectSystem _viewconeEffect = default!;
+    // ES END
 
     protected EntityQuery<InputMoverComponent> MoverQuery;
     protected EntityQuery<MobMoverComponent> MobMoverQuery;
@@ -65,6 +70,10 @@ public abstract partial class SharedMoverController : VirtualController
     protected EntityQuery<FootstepModifierComponent> FootstepModifierQuery;
     protected EntityQuery<MapGridComponent> MapGridQuery;
     protected EntityQuery<SleepingComponent> SleepingQuery;
+
+    // ES START
+    private static readonly EntProtoId ESFootstepViewconeEffect = "ESViewconeEffectFootstep";
+    // ES END
 
     /// <summary>
     /// <see cref="CCVars.StopSpeed"/>
@@ -222,6 +231,26 @@ public abstract partial class SharedMoverController : VirtualController
         var walkSpeed = moveSpeedComponent?.CurrentWalkSpeed ?? MovementSpeedModifierComponent.DefaultBaseWalkSpeed;
         var sprintSpeed = moveSpeedComponent?.CurrentSprintSpeed ?? MovementSpeedModifierComponent.DefaultBaseSprintSpeed;
 
+        var velocity = physicsComponent.LinearVelocity;
+        var worldRot = _transform.GetWorldRotation(xform);
+        bool forceWalk = false;
+
+        // ES START
+        // if facing backwards, start walking
+        // only applies in the non-weightless path
+        {
+            var backwardsAngle = moveSpeedComponent?.BackwardsAngle ??
+                MovementSpeedModifierComponent.ESDefaultBackwardsAngle;
+            var rotNorm = worldRot.ToWorldVec().Normalized();
+            var velNorm = velocity.Normalized();
+            var cosAngle = Vector2.Dot(velNorm, rotNorm);
+            var threshold = new Angle(MathF.PI) - (backwardsAngle / 2);
+
+            forceWalk = cosAngle < Math.Cos(threshold.Theta);
+            //wishDir = AssertValidWish(mover, walkSpeed, sprintSpeed, forceWalk);
+        }
+        // ES END
+
         var total = walkDir * walkSpeed + sprintDir * sprintSpeed;
 
         var parentRotation = GetParentGridAngle(mover);
@@ -232,7 +261,6 @@ public abstract partial class SharedMoverController : VirtualController
         float friction;
         float weightlessModifier;
         float accel;
-        var velocity = physicsComponent.LinearVelocity;
 
         // Whether we use weightless friction or not.
         if (weightless)
@@ -284,11 +312,11 @@ public abstract partial class SharedMoverController : VirtualController
             {
                 // TODO apparently this results in a duplicate move event because "This should have its event run during
                 // island solver"??. So maybe SetRotation needs an argument to avoid raising an event?
-                var worldRot = _transform.GetWorldRotation(xform);
                 _transform.SetLocalRotation(xform, xform.LocalRotation + wishDir.ToWorldAngle() - worldRot);
             }
 
             if (!weightless && MobMoverQuery.TryGetComponent(uid, out var mobMover) &&
+                mover.Sprinting && !forceWalk &&
                 TryGetSound(weightless, uid, mover, mobMover, xform, out var sound, tileDef: tileDef))
             {
                 var soundModifier = mover.Sprinting ? 3.5f : 1.5f;
@@ -306,6 +334,10 @@ public abstract partial class SharedMoverController : VirtualController
                 {
                     _audio.PlayPredicted(sound, uid, uid, audioParams);
                 }
+
+                // ES START
+                _viewconeEffect.SpawnEffect(uid, ESFootstepViewconeEffect, wishDir.ToWorldAngle());
+                // ES END
             }
         }
     }
@@ -569,5 +601,21 @@ public abstract partial class SharedMoverController : VirtualController
 
         sound = haveShoes ? tileDef.FootstepSounds : tileDef.BarestepSounds;
         return sound != null;
+    }
+
+    // ES START
+    // forceWalk in args to pass to GetVelocityInput
+    private Vector2 AssertValidWish(InputMoverComponent mover, float walkSpeed, float sprintSpeed, bool forceWalk=false)
+    {
+        var (walkDir, sprintDir) = GetVelocityInput(mover, forceWalk);
+        // ES END
+        var total = walkDir * walkSpeed + sprintDir * sprintSpeed;
+
+        var parentRotation = GetParentGridAngle(mover);
+        var wishDir = _relativeMovement ? parentRotation.RotateVec(total) : total;
+
+        DebugTools.Assert(MathHelper.CloseToPercent(total.Length(), wishDir.Length()));
+
+        return wishDir;
     }
 }

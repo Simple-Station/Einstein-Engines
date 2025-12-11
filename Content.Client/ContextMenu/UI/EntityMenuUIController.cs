@@ -162,21 +162,24 @@ namespace Content.Client.ContextMenu.UI
 
         private bool HandleOpenEntityMenu(in PointerInputCmdHandler.PointerInputCmdArgs args)
         {
+            if (!_gameTiming.IsFirstTimePredicted)
+                return true;
+
             if (args.State != BoundKeyState.Down)
-                return false;
+                return true;
 
             if (_stateManager.CurrentState is not GameplayStateBase)
-                return false;
+                return true;
 
             if (_combatMode.IsInCombatMode(args.Session?.AttachedEntity))
-                return false;
+                return true;
 
             var coords = _xform.ToMapCoordinates(args.Coordinates);
 
             if (_verbSystem.TryGetEntityMenuEntities(coords, out var entities))
                 OpenRootMenu(entities);
 
-            return true;
+            return false;
         }
 
         /// <summary>

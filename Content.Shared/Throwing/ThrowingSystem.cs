@@ -4,6 +4,7 @@ using Content.Shared.Camera;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.Friction;
+using Content.Shared.Interaction;
 using Content.Shared.Gravity;
 using Content.Shared.Projectiles;
 using Robust.Shared.Configuration;
@@ -38,6 +39,7 @@ public sealed class ThrowingSystem : EntitySystem
     [Dependency] private readonly SharedCameraRecoilSystem _recoil = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly IConfigurationManager _configManager = default!;
+    [Dependency] private readonly RotateToFaceSystem _rotate = default!;
 
     public override void Initialize()
     {
@@ -219,8 +221,7 @@ public sealed class ThrowingSystem : EntitySystem
         if (user == null)
             return;
 
-        if (recoil)
-            _recoil.KickCamera(user.Value, -direction * 0.04f);
+        _recoil.KickCamera(user.Value, -direction * 0.3f);
 
         // Give thrower an impulse in the other direction
         if (pushbackRatio != 0.0f &&
@@ -235,5 +236,7 @@ public sealed class ThrowingSystem : EntitySystem
             if (!msg.Cancelled)
                 _physics.ApplyLinearImpulse(user.Value, -impulseVector / physics.Mass * pushbackRatio * MathF.Min(massLimit, physics.Mass), body: userPhysics);
         }
+
+        _rotate.TryFaceAngle(user.Value, direction.ToWorldAngle());
     }
 }

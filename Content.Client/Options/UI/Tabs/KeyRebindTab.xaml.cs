@@ -259,6 +259,9 @@ namespace Content.Client.Options.UI.Tabs
             AddHeader("ui-options-header-general");
             AddCheckBox("ui-options-hotkey-keymap", _cfg.GetCVar(CVars.DisplayUSQWERTYHotkeys), HandleToggleUSQWERTYCheckbox);
 
+            AddHeader("ui-options-header-es");
+            AddButton(ContentKeyFunctions.ESHoldToFace);
+
             AddHeader("ui-options-header-movement");
             AddButton(EngineKeyFunctions.MoveUp);
             AddButton(EngineKeyFunctions.MoveLeft);

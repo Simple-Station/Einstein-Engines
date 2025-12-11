@@ -21,6 +21,7 @@ namespace Content.Server.Entry
             "OptionsVisualizer",
             "ToggleableLightWieldable", // Goobstation
             "ItemSlotRenderer", // WWDP EDIT
+            "ESInherentLight", //ES EDIT
         };
     }
 }

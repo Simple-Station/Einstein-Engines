@@ -26,6 +26,8 @@ namespace Content.Shared.Movement.Components
         public const float DefaultBaseWalkSpeed = 3f;
         public const float DefaultBaseSprintSpeed = 5f;
 
+        public static Angle ESDefaultBackwardsAngle = Angle.FromDegrees(150);
+
         [AutoNetworkedField, ViewVariables]
         public float WalkSpeedModifier = 1.0f;
 
@@ -59,6 +61,9 @@ namespace Content.Shared.Movement.Components
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite), DataField]
         public float MinimumFrictionSpeed = DefaultMinimumFrictionSpeed;
+
+        [DataField]
+        public Angle BackwardsAngle = ESDefaultBackwardsAngle;
 
         /// <summary>
         /// The negative velocity applied for friction when weightless and providing inputs.
