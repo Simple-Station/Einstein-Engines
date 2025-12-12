@@ -23,13 +23,13 @@
               weight: 5
             - id: WeaponShotgunDoubleBarreled
               weight: 7.5
-            - id: BoxDualettaKit
+            - id: WeaponRevolverK38Master
               weight: 7.5
-            - id: WeaponRifleM90
-              weight: 10
+            - id: WeaponSubMachineGunBRDIR25 
+              weight: 3
             - id: WeaponShotgunKammerer
               weight: 5
             - id: WeaponSubMachineGunWt550
-              weight: 1
+              weight: 4
             - id: WeaponRifleBurner
-              weight: 10
+              weight: 0.5
