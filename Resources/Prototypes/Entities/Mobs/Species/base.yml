@@ -250,6 +250,7 @@
     - type: SurgeryTarget
     - type: MovedByPressure
       cutoffTime: 1.0
+    - type: ESBlinker
 
 - type: entity
   save: false
