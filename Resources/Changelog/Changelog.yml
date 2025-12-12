@@ -16773,3 +16773,10 @@ Entries:
   id: 7317
   time: '2025-12-12T06:57:41.0000000+00:00'
   url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/185
+- author: ME4TA
+  changes:
+    - type: Add
+      message: Существа теперь моргают, а во время сна закрывают глазки
+  id: 7318
+  time: '2025-12-12T08:37:10.0000000+00:00'
+  url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/186
