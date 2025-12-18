@@ -35,7 +35,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitPrisoner
     shoes: ClothingShoesColorBlack
-    id: PrisonerPDA
+    id: PrisonerNyanoPDA
     ears: ClothingHeadsetPrison #deltaV
 
 - type: startingGear

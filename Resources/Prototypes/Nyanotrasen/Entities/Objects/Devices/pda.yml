@@ -1,6 +1,6 @@
 - type: entity
   parent: BasePDA
-  id: PrisonerPDA
+  id: PrisonerNyanoPDA
   name: prisoner PDA
   description: Clear, so you can make sure there's nothing being smuggled inside.
   components:
@@ -15,7 +15,7 @@
     state: pda-clear
 
 - type: entity
-  parent: PrisonerPDA
+  parent: PrisonerNyanoPDA
   id: GladiatorPDA
   name: gladiator PDA
   components:

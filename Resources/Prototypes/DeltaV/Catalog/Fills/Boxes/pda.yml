@@ -19,7 +19,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: PrisonerPDA
+      - id: PrisonerNyanoPDA
         amount: 4
 
 - type: entity

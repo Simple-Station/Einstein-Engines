@@ -690,6 +690,15 @@
 
 - type: entity
   parent: BaseSign
+  id: SignGenpop
+  name: genpop sign
+  description: Табличка, обозначающая общую тюрьму.
+  components:
+  - type: Sprite
+    state: genpop
+
+- type: entity
+  parent: BaseSign
   id: SignPrison
   name: prison sign
   description: A sign indicating the prison.
