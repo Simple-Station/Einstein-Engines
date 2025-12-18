@@ -16780,3 +16780,12 @@ Entries:
   id: 7318
   time: '2025-12-12T08:37:10.0000000+00:00'
   url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/186
+- author: Unenduring
+  changes:
+    - type: Add
+      message: Добавлена лоу-поп карта Snowball
+    - type: Add
+      message: Портирована общая тюрьма (генпоп), пока что имеется лишь на Snowball
+  id: 7319
+  time: '2025-12-18T22:39:33.0000000+00:00'
+  url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/188
