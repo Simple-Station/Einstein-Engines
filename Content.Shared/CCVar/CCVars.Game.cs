@@ -385,13 +385,13 @@ public sealed partial class CCVars
     ///     Whether to repeat eating doafters after completion
     /// </summary>
     public static readonly CVarDef<bool> GameAutoEatFood =
-        CVarDef.Create("game.auto_eat_food", false, CVar.REPLICATED);
+        CVarDef.Create("game.auto_eat_food", true, CVar.REPLICATED);
 
     /// <summary>
     ///     Whether to repeat drinking doafters after completion
     /// </summary>
     public static readonly CVarDef<bool> GameAutoEatDrinks =
-        CVarDef.Create("game.auto_eat_drinks", false, CVar.REPLICATED);
+        CVarDef.Create("game.auto_eat_drinks", true, CVar.REPLICATED);
 
     /// <summary>
     ///     Whether item slots, such as power cell slots or AME fuel cell slots, should support quick swap if it is not otherwise specified in their YAML prototype.
