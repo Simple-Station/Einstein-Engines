@@ -9,7 +9,7 @@
       - Cartridge
       - Cartridge20mm
   - type: CartridgeAmmo
-    deleteOnSpawn: true
+    deleteOnSpawn: false
     proto: Bullet20mmBase
   - type: Sprite
     sprite: _Crescent/Objects/Turrets/Ammunition/Cartridge/screamer.rsi
@@ -31,7 +31,7 @@
       - Cartridge
       - Cartridge20mmGyrostable
   - type: CartridgeAmmo
-    deleteOnSpawn: true
+    deleteOnSpawn: false
     proto: Bullet20mmGyrostable
   - type: Sprite
     sprite: _Crescent/Objects/Turrets/Ammunition/Cartridge/screamer.rsi
@@ -53,7 +53,7 @@
       - Cartridge
       - Cartridge20mmPlasma
   - type: CartridgeAmmo
-    deleteOnSpawn: true
+    deleteOnSpawn: false
     proto: Bullet20mmPlasma
   - type: Sprite
     sprite: _Crescent/Objects/Turrets/Ammunition/Cartridge/screamer.rsi

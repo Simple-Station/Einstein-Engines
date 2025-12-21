@@ -5,6 +5,7 @@
   id: BaseWeaponTurretShortbow
   suffix: ShipGun
   name: 48mm 'Shortbow' SRM rocket system
+  description: A rapid-fire short-range assault rocket system for skirmishing.
   components:
     - type: Sprite
       sprite: _Crescent/Objects/Turrets/Missile/shortbow.rsi
@@ -38,15 +39,356 @@
       soundGunshot: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
     - type: BallisticAmmoProvider
       cycleable: false
-      capacity: 8
+      capacity: 12
       fillWithDoAfter: true
       fillDelay: 1
-      #proto: LanceRocketCartridge - on being rebuilt from destruction this gives it free ammo
+      proto: Cartridge48mmRocket
       whitelist:
         tags:
-        - LanceRocket
+        - CartridgeShortbow
     - type: ApcPowerReceiver
       powerLoad: 2000
     - type: HardpointAnchorableOnly
       class: Missile
       size: Small
+
+- type: entity
+  parent: BaseWeaponTurretShortbow
+  id: BaseWeaponTurretShortbowGorlex
+  suffix: ShipGun
+  name: dread gorlex 48mm 'Shortbow' SRM rocket system
+  description: A rapid-fire short-range assault rocket system for skirmishing. This one seems to be a modified Gorlex Security Consulting turret with a higher rate of fire and more capacity.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Turrets/Missile/shortbow.rsi
+      drawdepth: Mobs
+      layers:
+        - state: shortbow-tfsc
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 500
+          # TODO: Construction graph
+          behaviors:
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
+    - type: Gun
+      fireOnDropChance: 0
+      projectileSpeed: 40
+      fireRate: 4.5
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+    - type: BallisticAmmoProvider
+      cycleable: false
+      capacity: 18
+      fillWithDoAfter: true
+      fillDelay: 1
+      proto: Cartridge48mmRocket
+      whitelist:
+        tags:
+        - CartridgeShortbow
+
+#azimuth
+
+- type: entity
+  parent: BaseTurretShipgun
+  id: BaseWeaponTurretAzimuth
+  suffix: ShipGun
+  name: 60mm 'Azimuth' rapid-fire LML system
+  description: A rapid-fire short-range light missile system for skirmishing.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Turrets/Missile/azimuth.rsi
+      drawdepth: Mobs
+      layers:
+        - state: azimuth
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 750
+          # TODO: Construction graph
+          behaviors:
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
+    - type: ProjectileIFF
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
+    - type: Gun
+      fireOnDropChance: 0
+      projectileSpeed: 60
+      fireRate: 2
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+    - type: BallisticAmmoProvider
+      cycleable: false
+      capacity: 6
+      fillWithDoAfter: true
+      fillDelay: 2
+      proto: Cartridge60mmRocket
+      whitelist:
+        tags:
+        - CartridgeAzimuth
+    - type: ApcPowerReceiver
+      powerLoad: 3500
+    - type: HardpointAnchorableOnly
+      class: Missile
+      size: Small
+
+- type: entity
+  parent: BaseWeaponTurretAzimuth
+  id: BaseWeaponTurretAzimuthNCWL
+  suffix: ShipGun
+  name: homeguard-issue 60mm 'Azimuth' rapid-fire LML system
+  description: A rapid-fire short-range light missile system for skirmishing. This one seems to have been officially issued by the Homeguard Fleet.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Turrets/Missile/azimuth.rsi
+      drawdepth: Mobs
+      layers:
+        - state: ncwl-azimuth
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 800
+          # TODO: Construction graph
+          behaviors:
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
+    - type: Gun
+      fireOnDropChance: 0
+      projectileSpeed: 65
+      fireRate: 1.5
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+    - type: BallisticAmmoProvider
+      cycleable: false
+      capacity: 8
+      fillWithDoAfter: true
+      fillDelay: 1.5
+      proto: Cartridge60mmRocket
+      whitelist:
+        tags:
+        - CartridgeAzimuth
+    - type: ApcPowerReceiver
+      powerLoad: 3000
+
+- type: entity
+  parent: BaseWeaponTurretAzimuth
+  id: BaseWeaponTurretAzimuthGSC
+  suffix: ShipGun
+  name: dread gorlex 60mm 'Azimuth' rapid-fire LML system
+  description: A rapid-fire short-range light missile system for skirmishing. This one seems to have been changed drastically with some ill-advised modifications.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Turrets/Missile/azimuth.rsi
+      drawdepth: Mobs
+      layers:
+        - state: tfsc-azimuth
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 800
+          # TODO: Construction graph
+          behaviors:
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
+    - type: Gun
+      fireOnDropChance: 0
+      projectileSpeed: 75
+      fireRate: 3
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+    - type: BallisticAmmoProvider
+      cycleable: false
+      capacity: 10
+      fillWithDoAfter: true
+      fillDelay: 0.25
+      proto: Cartridge60mmRocket
+      whitelist:
+        tags:
+        - CartridgeAzimuth
+    - type: ApcPowerReceiver
+      powerLoad: 3000
+
+#arbalest
+
+- type: entity
+  parent: BaseTurretShipgun
+  id: BaseWeaponTurretArbalest
+  suffix: ShipGun
+  name: 95mm 'Arbalest' heavy assault MRM platform
+  description: A heavy missile assault platform intended for extended, medium-range skirmishes and sieges.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Turrets/Missile/arbalest.rsi
+      drawdepth: Mobs
+      layers:
+        - state: arbalest
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 750
+          # TODO: Construction graph
+          behaviors:
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
+    - type: ProjectileIFF
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
+    - type: Gun
+      fireOnDropChance: 0
+      projectileSpeed: 60
+      fireRate: 1.2
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+    - type: BallisticAmmoProvider
+      cycleable: false
+      capacity: 5
+      fillWithDoAfter: true
+      fillDelay: 3.5
+      proto: Cartridge95mmRocket
+      whitelist:
+        tags:
+        - CartridgeArbalest
+    - type: ApcPowerReceiver
+      powerLoad: 6000
+    - type: HardpointAnchorableOnly
+      class: Missile
+      size: Medium
+
+- type: entity
+  parent: BaseTurretShipgun
+  id: BaseWeaponTurretArbalestTFSC
+  suffix: ShipGun
+  name: dread gorlex 95mm 'Arbalest' heavy assault MRM platform
+  description: A heavy missile assault platform intended for extended, medium-range skirmishes and sieges. Seems to be a Gorlex-modified design.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Turrets/Missile/arbalest.rsi
+      drawdepth: Mobs
+      layers:
+        - state: arbalest-tfsc
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 750
+          # TODO: Construction graph
+          behaviors:
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
+    - type: ProjectileIFF
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
+    - type: Gun
+      fireOnDropChance: 0
+      projectileSpeed: 75
+      fireRate: 2
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+    - type: BallisticAmmoProvider
+      cycleable: false
+      capacity: 5
+      fillWithDoAfter: true
+      fillDelay: 2
+      proto: Cartridge95mmRocketGSC
+      whitelist:
+        tags:
+        - CartridgeArbalest
+    - type: ApcPowerReceiver
+      powerLoad: 6000
+    - type: HardpointAnchorableOnly
+      class: Missile
+      size: Medium
+
+- type: entity
+  parent: BaseTurretShipgun
+  id: BaseWeaponTurretArbalestNCWL
+  suffix: ShipGun
+  name: homeguard-issue 95mm 'Arbalest' heavy assault MRM platform
+  description: A heavy missile assault platform intended for extended, medium-range skirmishes and sieges. Seems to be issued by the Union Homeguard.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Turrets/Missile/arbalest.rsi
+      drawdepth: Mobs
+      layers:
+        - state: arbalest-ncwl
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 750
+          # TODO: Construction graph
+          behaviors:
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
+    - type: ProjectileIFF
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
+    - type: Gun
+      fireOnDropChance: 0
+      projectileSpeed: 50
+      fireRate: 0.85
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+    - type: BallisticAmmoProvider
+      cycleable: false
+      capacity: 9
+      fillWithDoAfter: true
+      fillDelay: 3
+      proto: Cartridge95mmRocketNCWL
+      whitelist:
+        tags:
+        - CartridgeArbalest
+    - type: ApcPowerReceiver
+      powerLoad: 6000
+    - type: HardpointAnchorableOnly
+      class: Missile
+      size: Medium

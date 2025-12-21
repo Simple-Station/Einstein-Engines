@@ -2,6 +2,21 @@
 
 - type: Tag
   id: CartridgeShortbow
+
+#gargoyle tags
+
+- type: Tag
+  id: CartridgeGargoyle
+
+#azimuth
+
+- type: Tag
+  id: CartridgeAzimuth
+
+#arbalest
+
+- type: Tag
+  id: CartridgeArbalest
   
 #35mm tag
  

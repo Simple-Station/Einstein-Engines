@@ -12,13 +12,12 @@
       drawdepth: Mobs
       layers:
         - state: machinegun
-    - type: Damageable
-      damageContainer: Inorganic
     - type: Destructible
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 500
+            damage: 800
+          # TODO: Construction graph
           behaviors:
             - !type:ChangeConstructionNodeBehavior
               node: machineFrame
@@ -28,30 +27,39 @@
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
+          ents: []
     - type: Gun
       fireOnDropChance: 0
-      projectileSpeed: 70
-      fireRate: 3
+      fireRate: 3.8
+      projectileSpeed: 80
       selectedMode: FullAuto
       availableModes:
         - FullAuto
-      soundGunshot: /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
-    - type: BasicEntityAmmoProvider
-      proto: Bullet20mmBase
-      capacity: 60
-      count: 60
-    - type: RechargeBasicEntityAmmo
-      rechargeCooldown: 5
-      rechargeSound:
-        path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
-        params:
-          pitch: 1.2
-          variation: 0.08
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/vulcan.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: Magazine20mm
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - Magazine20mm
+        gun_chamber:
+          name: Chamber
+          startingItem: Cartridge20mm
+          priority: 1
+          whitelist:
+            tags:
+              - Cartridge20mm
     - type: ApcPowerReceiver
-      powerLoad: 1000
+      powerLoad: 2500
     - type: HardpointAnchorableOnly
       class: Ballistic
       size: Small
+    - type: MagazineAmmoProvider
 
 - type: entity
   parent: BaseTurretShipgun
@@ -65,13 +73,12 @@
       drawdepth: Mobs
       layers:
         - state: ncwl-machinegun
-    - type: Damageable
-      damageContainer: Inorganic
     - type: Destructible
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 850
+            damage: 800
+          # TODO: Construction graph
           behaviors:
             - !type:ChangeConstructionNodeBehavior
               node: machineFrame
@@ -81,27 +88,39 @@
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
+          ents: []
     - type: Gun
       fireOnDropChance: 0
-      projectileSpeed: 75
-      fireRate: 4.2
+      fireRate: 4.3
+      projectileSpeed: 85
       selectedMode: FullAuto
       availableModes:
         - FullAuto
-      soundGunshot: /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
-    - type: BasicEntityAmmoProvider
-      proto: Bullet20mmBase
-      capacity: 80
-      count: 80
-    - type: RechargeBasicEntityAmmo
-      rechargeCooldown: 3
-      rechargeSound:
-        path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
-        params:
-          pitch: 1.2
-          variation: 0.08
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/vulcan.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: Magazine20mm
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - Magazine20mm
+        gun_chamber:
+          name: Chamber
+          startingItem: Cartridge20mm
+          priority: 1
+          whitelist:
+            tags:
+              - Cartridge20mm
     - type: ApcPowerReceiver
-      powerLoad: 500
+      powerLoad: 2500
+    - type: HardpointAnchorableOnly
+      class: Ballistic
+      size: Small
+    - type: MagazineAmmoProvider
 
 # vulcan 35mm
 
@@ -130,6 +149,7 @@
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
+    - type: MagazineAmmoProvider
     - type: Gun
       fireOnDropChance: 0
       projectileSpeed: 80
@@ -146,7 +166,7 @@
       slots:
         gun_magazine:
           name: Magazine
-          #startingItem: Magazine35mm
+          startingItem: Magazine35mm
           insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
           priority: 2
@@ -175,6 +195,7 @@
   name: 50mm 'Whistler' light autocannon
   description: An ubiquitous weapons system commonly fitted to support corvettes or as secondary weapons systems to larger warships. The light autocannon excels at long-range skirmishes, but struggles in dogfights due to it's relatively slow turning and firing rate.
   components:
+    - type: MagazineAmmoProvider
     - type: Sprite
       sprite: _Crescent/Objects/Turrets/Projectile/autocannon.rsi
       drawdepth: Mobs
@@ -209,7 +230,7 @@
       slots:
         gun_magazine:
           name: Magazine
-          #startingItem: Magazine50mm
+          startingItem: Magazine50mm
           insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
           priority: 2
@@ -237,6 +258,7 @@
   name: homeguard-issue 50mm light autocannon
   description: An ubiquitous weapons system commonly fitted to support corvettes or as secondary weapons systems to larger warships. The light autocannon excels at long-range skirmishes, but struggles in dogfights due to it's relatively slow turning and firing rate. This one is a Homeguard Fleet-issue weapon, upgraded with better materials and performing a lot better compared to generic models.
   components:
+    - type: MagazineAmmoProvider
     - type: Sprite
       sprite: _Crescent/Objects/Turrets/Projectile/autocannon.rsi
       drawdepth: Mobs

@@ -20,3 +20,191 @@
   - type: SpentAmmoVisuals
   - type: StaticPrice
     price: 150
+
+- type: entity
+  id: Cartridge48mmRocketGorlex
+  name: dread gorlex 48mm assault rocket
+  description: Luckily not armed. You think. Seems to be a Gorlex Security Consulting-modified warhead.
+  parent: BaseCartridge
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - CartridgeShortbow
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: ShortbowRocketProjectileGorlex
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Cartridge/shortbow.rsi
+    layers:
+    - state: shortbow-tfsc
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 150
+
+#azimuth
+
+- type: entity
+  id: Cartridge60mmRocketGorlex
+  name: dread gorlex 60mm light missile
+  description: Luckily not armed. You think. Seems to be a Gorlex Security Consulting-modified warhead.
+  parent: BaseCartridge
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - CartridgeAzimuth
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: AzimuthRocketProjectileGorlex
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Cartridge/azimuth.rsi
+    layers:
+    - state: gscrocket
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 150
+
+- type: entity
+  id: Cartridge60mmRocketNCWL
+  name: homeguard-issue 60mm light missile
+  description: Luckily not armed. You think. Seems to be a Homeguard Fleet-issue warhead.
+  parent: BaseCartridge
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - CartridgeAzimuth
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: AzimuthRocketProjectileNCWL
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Cartridge/azimuth.rsi
+    layers:
+    - state: ncwlazimuth
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 150
+
+- type: entity
+  id: Cartridge60mmRocket
+  name: 60mm light missile
+  description: Luckily not armed. You think.
+  parent: BaseCartridge
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - CartridgeAzimuth
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: AzimuthRocketProjectile
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Cartridge/azimuth.rsi
+    layers:
+    - state: azimuthrocket
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 100
+
+- type: entity
+  id: Cartridge60mmRocketAdvanced
+  name: advanced 60mm light missile
+  description: Luckily not armed. You think. This seems to be an improved design.
+  parent: BaseCartridge
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - CartridgeAzimuth
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: AzimuthRocketProjectileAdvanced
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Cartridge/azimuth.rsi
+    layers:
+    - state: azimuthmk2
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 125
+
+#arbalest
+
+- type: entity
+  id: Cartridge95mmRocket
+  name: high-explosive 95mm heavy assault missile
+  description: Luckily not armed. You think.
+  parent: BaseCartridge
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - CartridgeArbalest
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: ArbalestRocketProjectile
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Cartridge/arbalest.rsi
+    layers:
+    - state: arbalest
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  id: Cartridge95mmRocketNCWL
+  name: homeguard-issue 95mm heavy assault missile
+  description: Luckily not armed. You think. Seems to be issued by the Homeguard Fleet. Seems to have a bigger fuel bay and heavier armor plating than usual.
+  parent: BaseCartridge
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - CartridgeArbalest
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: ArbalestRocketProjectileNCWL
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Cartridge/arbalest.rsi
+    layers:
+    - state: arbalest-ncwl
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  id: Cartridge95mmRocketGSC
+  name: dread gorlex 95mm heavy assault missile
+  description: Luckily not armed. You think. Seems to be a Gorlex-modified design. Seems to have upgraded thruster nozzles and a bigger payload, although the tracking module has been degraded and the fuel bay is smaller than usual.
+  parent: BaseCartridge
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - CartridgeArbalest
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: ArbalestRocketProjectileGSC
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Cartridge/arbalest.rsi
+    layers:
+    - state: arbalest-tfsc
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 250
