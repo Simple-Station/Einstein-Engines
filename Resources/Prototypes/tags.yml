@@ -860,6 +860,9 @@
 # Magazines ordered by slot then caliber
 
 - type: Tag
+  id: Magazine
+
+- type: Tag
   id: MagazineBoxRifleMinigun
 
 - type: Tag
