@@ -16796,3 +16796,10 @@ Entries:
   id: 7320
   time: '2025-12-22T15:19:21.0000000+00:00'
   url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/189
+- author: firfaronde
+  changes:
+    - type: Fix
+      message: Пофиксил прототипы используемые омегой
+  id: 7321
+  time: '2025-12-23T23:10:12.0000000+00:00'
+  url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/190
