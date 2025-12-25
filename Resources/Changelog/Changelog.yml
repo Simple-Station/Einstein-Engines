@@ -16803,3 +16803,10 @@ Entries:
   id: 7321
   time: '2025-12-23T23:10:12.0000000+00:00'
   url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/190
+- author: firfaronde
+  changes:
+    - type: Add
+      message: Упакованная СМ.
+  id: 7322
+  time: '2025-12-25T15:27:28.0000000+00:00'
+  url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/191
