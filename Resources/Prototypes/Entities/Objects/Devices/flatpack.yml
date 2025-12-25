@@ -285,3 +285,13 @@
   components:
   - type: Flatpack
     entity: ComputerCrewMonitoring
+
+
+- type: entity
+  parent: BaseFlatpack
+  id: SupermatterFlatpack
+  name: supermatter flatpack
+  description: A flatpack used for constructing a supermatter.
+  components:
+  - type: Flatpack
+    entity: Supermatter

@@ -186,3 +186,13 @@
       - id: GasAnalyzer
       - id: SheetSteel
         amount: 1
+
+- type: entity
+  id: CrateEngineeringSupermatterCrate
+  parent: CrateEngineeringSecure
+  name: supermatter crate
+  description: boom!
+  components:
+  - type: StorageFill
+    contents:
+      - id: SupermatterFlatpack
