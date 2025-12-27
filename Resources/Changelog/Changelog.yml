@@ -16819,3 +16819,18 @@ Entries:
   id: 7323
   time: '2025-12-27T13:18:04.0000000+00:00'
   url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/192
+- author: shershenARP
+  changes:
+    - type: Add
+      message: Теперь во время удушения линчеватель меняет спрайт
+    - type: Add
+      message: Во время добивающего удара линчеватель также меняет спрайт
+    - type: Fix
+      message: >-
+        Теперь, если удар по линчевателю во время удушения не был завершающим,
+        то атака не ломается (раньше у него возобновлялась скорость)
+    - type: Add
+      message: Переделал свою фигню на ftl'ки
+  id: 7324
+  time: '2025-12-27T22:55:21.0000000+00:00'
+  url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/180
