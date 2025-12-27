@@ -226,8 +226,8 @@
 - type: entity
   parent: LavalandWeaponKineticBase
   id: LavalandWeaponKineticScythe
-  name: коса линчевателя
-  description: Коса с настолько хлипкой конструкцией, что ты даже не уверен, выдержит ли она ещё один удар.
+  name: vigilante scythe
+  description: vigilante scythe
   components:
   - type: Sprite
     sprite: _Lavaland/Objects/Weapons/Crushers/vigilante_scythe.rsi

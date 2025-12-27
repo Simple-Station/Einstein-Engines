@@ -21,8 +21,8 @@
   icons:
   - sprite: /Textures/Mobs/Aliens/Lavaland/watcher.rsi
     state: dead-unshaded
-  name: Мёртвые останки
-  description: Мурашки пробегают по вашей коже. Скорость передвижения снижена.
+  name: alerts-icylook-name
+  description: alerts-icylook-desc
 
 
 - type: alert
@@ -31,8 +31,8 @@
   icons:
   - sprite: /Textures/_Lavaland/Interface/Alerts/carp_blood.rsi
     state: carp
-  name: Кровавый голод
-  description: Вы чувствуете слабость.
+  name: alerts-carpblood-name
+  description: alerts-carpblood-desc
 
 
 - type: alert
@@ -41,5 +41,5 @@
   icons:
   - sprite: /Textures/_Lavaland/Interface/Alerts/vigilante_eye.rsi
     state: vigilante
-  name: Глаз Линчевателя
-  description: Вас переполняет решимость. 100% входящего урона будет заблокировано.
+  name: alerts-vigilanteeye-name
+  description: alerts-vigilanteeye-desc

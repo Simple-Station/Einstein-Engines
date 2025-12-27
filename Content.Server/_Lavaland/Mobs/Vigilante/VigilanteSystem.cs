@@ -31,6 +31,8 @@ using Content.Shared._Lavaland.Weapons.Crusher;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
 
+using Content.Shared._Lavaland.Mobs.Components;
+
 #pragma warning disable CS4014 // ВИСКАС ВИЧ КАЛЛ ИС НОТ АВАИТЕД, ЭКЗЕ СОНИК ОФ ЗЕ КУРЫ РЕНТ МЕТОДИКА КОНТИНЕНТ БЕФАРЕ ЗЕ КАЛЛ ИС КАМ ПЛИТЕД
 
 namespace Content.Server._Lavaland.Mobs.Vigilante;
@@ -139,6 +141,7 @@ public sealed class VigilanteSystem : EntitySystem
 
             if (randomFlagBuliBuliBuli)
             {
+                SetSprite(ent, "vigilante_dead");
                 var xform = Transform(ent);
 
                 if (xform.GridUid == null ||
@@ -207,7 +210,8 @@ public sealed class VigilanteSystem : EntitySystem
         if (!TryComp<AggressiveComponent>(ent, out var aggressive)
             || !TryComp<MobThresholdsComponent>(ent, out var thresholds))
             return;
-        _movement.ChangeBaseSpeed(ent, 4f, 4.5f, 20f);
+        if (!ent.Comp.isStrangle)
+            _movement.ChangeBaseSpeed(ent, 4f, 4.5f, 20f);
         UpdateScaledThresholds(ent, aggressive, thresholds);
     }
 
@@ -378,6 +382,11 @@ public sealed class VigilanteSystem : EntitySystem
         _movement.ChangeBaseSpeed(target.Value, 0f, 0f, 0f);
 
         ent.Comp.isStrangle = true;
+
+
+        SetSprite(ent, "vigilante_strangle");
+
+
         var startDamage = bossDamage.TotalDamage;
 
         bool hasThrown = false;
@@ -411,6 +420,7 @@ public sealed class VigilanteSystem : EntitySystem
 
                 Timer.Spawn(TimeSpan.FromSeconds(1), () =>
                 {
+                    SetSprite(ent, "vigilante");
                     ent.Comp.isStrangle = false;
                     //BlinkRandom(ent);
                     Blink(ent, _xform.GetWorldPosition(target.Value));
@@ -428,6 +438,7 @@ public sealed class VigilanteSystem : EntitySystem
 
             if (bossDamage.TotalDamage - startDamage >= 50)
             {
+                _movement.ChangeBaseSpeed(ent, 4f, 4.5f, 20f);
                 DoThrow();
             }
         }, _strangleCts.Token);
@@ -436,6 +447,7 @@ public sealed class VigilanteSystem : EntitySystem
         {
             if (ent.Comp.isStrangle)
             {
+                _movement.ChangeBaseSpeed(ent, 4f, 4.5f, 20f);
                 DoThrow();
             }
         });
@@ -656,5 +668,12 @@ public sealed class VigilanteSystem : EntitySystem
         return Direction.North;
     }
 
+
+    public void SetSprite(EntityUid uid, string spriteId)
+    {
+        var comp = EnsureComp<MegafaunaVisualComponent>(uid);
+        comp.SpriteState = spriteId;
+        Dirty(uid, comp);
+    }
     #endregion
 }

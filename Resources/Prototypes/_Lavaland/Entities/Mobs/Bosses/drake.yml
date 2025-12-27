@@ -15,9 +15,9 @@
 
 # сам дрейк
 - type: entity
-  name: Пепельный Дрейк
+  name: ash drake
   id: LavalandBossAshDrake
-  description: Ого! Огнедышущие драконы? Интересно, может тут и пони будут?
+  description: drakeeeeeee
   components:
   - type: HTN
     rootTask:
@@ -72,6 +72,7 @@
 
   - type: Sprite
     noRot: true
+    drawdepth: Mobs
     sprite: _Lavaland/Mobs/Bosses/ash_drake.rsi
     state: dragon
   - type: AshDrakeBoss
@@ -103,11 +104,12 @@
 - type: entity
   id: LavalandAshDrakeDead
   parent: BaseMob
-  name: останки дракона
-  description: Даже столь могущественному существу однажды придёт конец.
+  name: drake dead
+  description: drakeeeeee.
   components:
   - type: Sprite
     noRot: true
+    drawdepth: Mobs
     sprite: _Lavaland/Mobs/Bosses/ash_drake.rsi
     state: dragon_dead
  # - type: Damageable
@@ -124,11 +126,12 @@
 - type: entity
   id: LavalandCrusherAshDrakeDead
   parent: BaseMob
-  name: останки дракона
-  description: Даже столь могущественному существу однажды придёт конец.
+  name: drake dead
+  description: drakeeeeee.
   components:
   - type: Sprite
     noRot: true
+    drawdepth: Mobs
     sprite: _Lavaland/Mobs/Bosses/ash_drake.rsi
     state: dragon_dead
   - type: MovementSpeedModifier
@@ -148,16 +151,16 @@
 - type: entity
   id: LavalandAshDrakeFire
   parent: HereticFireAA
-  name: драконье пламя
-  description: Не стоило играть с огнём...
+  name: fire
+  description: fireeeeeeee.
   components:
     - type: TimedDespawn
       lifetime: 1.2
 
 - type: entity 
   id: LavalandSupportMarkAshDrake
-  name: метка
-  description: Что-то летит, лучше тебе отойти от неё подальше.
+  name: metka 
+  description: metkeeeeeeeeee.
   parent: WoodenSupport
   components:
   - type: Sprite
@@ -182,8 +185,8 @@
 
 - type: entity 
   id: LavalandSupportLavaMarkAshDrake
-  name: лавовая метка
-  description: Зачем ты на это смотришь? У тебя щас боссфайт, не потеряй концентрацию!
+  name: metkaaaaa
+  description: eeeeee
   parent: WoodenSupport
   components:
   - type: Sprite
@@ -209,8 +212,8 @@
 
 - type: entity 
   id: LavalandSupportSafeMarkAshDrake
-  name: безопасная метка
-  description: Зачем ты на это смотришь? У тебя щас боссфайт, не потеряй концентрацию!
+  name: metka
+  description: ya ystal
   parent: WoodenSupport
   components:
   - type: Sprite
@@ -235,8 +238,8 @@
         
 - type: entity 
   id: FloorLavaEntityDrake
-  name: лава
-  description: Вот это поворот!
+  name: lava
+  description: suka!
   parent: FloorLavaEntity 
   components:
   - type: TimedDespawn 
@@ -247,7 +250,7 @@
 - type: entity
   parent: LavalandSupportLavaMarkAshDrake
   id: LavalandSupportLavaArenaMarkAshDrake
-  name: лавовая метка
+  name: metka
   description: Bruh.
   components:
   - type: TileEmission
@@ -259,8 +262,8 @@
 
 - type: entity 
   id: FloorLavaArenaEntityDrake
-  name: лава
-  description: Вот это поворот!
+  name: lava
+  description: suka!
   parent: FloorLavaEntity 
   components:
   - type: TimedDespawn 
@@ -268,8 +271,8 @@
 
 
 - type: entity
-  name: сундук с наградой Пепельного Дрейка
-  description: Всему когда-нибудь приходит конец. Этот дракон не стал исключением.
+  name: sunduk
+  description: sunduk alee.
   id: LavalandCrateNecropolisAshDrake
   parent: LavalandCrateNecropolis
   suffix: AshDrake

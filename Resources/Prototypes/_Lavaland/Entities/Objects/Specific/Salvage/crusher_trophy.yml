@@ -1,8 +1,8 @@
 - type: entity
   id: LavalandGoliathCrusherUpgrade
   parent: BaseItem
-  name: щупальце голиафа
-  description: Всё ещё извивается. 
+  name: goliath upgrade
+  description: upgrade
   components:
   - type: Sprite
     sprite: _Lavaland/Objects/Specific/Salvage/crusher_trophy.rsi
@@ -24,8 +24,8 @@
 - type: entity
   id: LavalandDrakeCrusherUpgrade
   parent: BaseItem
-  name: хвостовой шип
-  description: Острый шип, который находился на хвосте убитого дракона. Думаю, твоему оружию он нужнее.
+  name: drake upgrade
+  description: upgrade
   components:
   - type: Sprite
     sprite: _Lavaland/Objects/Specific/Salvage/crusher_trophy.rsi
@@ -44,8 +44,8 @@
 - type: entity
   id: LavalandHivelordCrusherUpgrade
   parent: BaseItem
-  name: череп
-  description: Череп пове- погодите, откуда он?
+  name: hivelord upgrade
+  description: upgrade
   components:
   - type: Sprite
     sprite: _Lavaland/Objects/Specific/Salvage/crusher_trophy.rsi
@@ -64,8 +64,8 @@
 - type: entity
   id: LavalandIcyWatcherCrusherUpgrade
   parent: BaseItem
-  name: крыло ледяного наблюдателя
-  description: Такое же холодное, как и твоё сердце.
+  name: watcher upgrade
+  description: upgrade
   components:
   - type: Sprite
     sprite: _Lavaland/Objects/Specific/Salvage/crusher_trophy.rsi
@@ -85,8 +85,8 @@
 - type: entity
   id: LavalandWatcherCrusherUpgrade
   parent: BaseItem
-  name: крыло наблюдателя
-  description: И на этих штуках они летают?
+  name: watcher upgrade
+  description: upgrade
   components:
   - type: Sprite
     sprite: _Lavaland/Objects/Specific/Salvage/crusher_trophy.rsi
@@ -106,8 +106,8 @@
 - type: entity
   id: LavalandMagmaWatcherCrusherUpgrade
   parent: BaseItem
-  name: крыло магмового наблюдателя
-  description: Выглядит горячо.
+  name: watcher upgrade
+  description: upgrade
   components:
   - type: Sprite
     sprite: _Lavaland/Objects/Specific/Salvage/crusher_trophy.rsi
@@ -142,8 +142,8 @@
 - type: entity
   id: LavalandHierophantCrusherUpgrade
   parent: BaseItem
-  name: вортекс-талисман
-  description: Залипа- А нет, в нём погасла фиолетовая сила, что находилась в Иерофанте.
+  name: hierophant upgrade
+  description: upgrade
   components:
   - type: Sprite
     sprite: _Lavaland/Objects/Specific/Salvage/crusher_trophy.rsi
@@ -162,8 +162,8 @@
 - type: entity
   id: LavalandCarpCrusherUpgrade
   parent: BaseItem
-  name: клык карпа
-  description: Пусть клыки карпов и острые, этого недостаточно для защиты от безумцев с мачете. 
+  name: carp upgrade
+  description: upgrade
   components:
   - type: Sprite
     sprite: _Lavaland/Objects/Specific/Salvage/crusher_trophy.rsi
@@ -186,8 +186,8 @@
 - type: entity
   id: LavalandVigilanteCrusherUpgrade
   parent: BaseItem
-  name: глаз Линчевателя
-  description: Ты монстр.
+  name: vigilante upgrade
+  description: upgrade
   components:
   - type: Sprite
     sprite: _Lavaland/Objects/Specific/Salvage/crusher_trophy.rsi

@@ -1,7 +1,6 @@
 - type: entity
   id: LavalandVigilanteTelepad
-  name: линчеватель
-#  description:
+  name: vigilante
   placement:
     mode: SnapgridCenter
   components:

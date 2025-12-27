@@ -1,8 +1,8 @@
 # сам дрейк
 - type: entity
-  name: Линчеватель
+  name: vigilante
   id: LavalandBossVigilante
-  description: У меня наконец появился напарник?!
+  description: vigilante
   components:
   - type: HTN
     rootTask:
@@ -60,9 +60,6 @@
     sprite: _Lavaland/Mobs/Bosses/vigilante.rsi
     state: vigilante
     drawDepth: 5
-#  - type: AshDrakeBoss
-    #loot: LavalandAshDrakeDead
-    #crusherLoot: LavalandCrusherAshDrakeDead
   - type: MovementSpeedModifier
     baseWalkSpeed: 0.5
     baseSprintSpeed: 1.5
@@ -96,11 +93,12 @@
 - type: entity
   id: LavalandVigilanteDead
   parent: BaseMob
-  name: Линчеватель
-  description: Не хотелось бы быть на его месте.
+  name: vigilante dead
+  description: vigilante dead
   components:
   - type: Sprite
     noRot: true
+    drawdepth: Mobs
     sprite: _Lavaland/Mobs/Bosses/vigilante.rsi
     state: vigilante_dead
  # - type: Damageable
@@ -116,8 +114,8 @@
 - type: entity
   id: LavalandVigilanteDeadWithoutEye
   parent: BaseMob
-  name: Линчеватель
-  description: Не хотелось бы быть на его месте.
+  name: vigilante
+  description: vigilante dead
   components:
   - type: Sprite
     noRot: true
@@ -127,12 +125,3 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 0
     baseSprintSpeed: 0
-
-
-- type: damageModifierSet
-  id: VigilanteEye
-  coefficients:
-    Piercing: 0
-    Heat: 0
-    Blunt: 0
-    Slash: 0

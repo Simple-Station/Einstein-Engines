@@ -1,13 +1,14 @@
 - type: entity
   id: LavalandAshDrakeTelepad
-  name: сломанная статуя Пепельного Дрейка
-  description: Это разбитая статуя великого дракона, что правил этими землями задолго до твоего появления.
+  name: ash drake statueeeee
+  description: statueeeee.
   placement:
     mode: SnapgridCenter
   components:
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite
+    drawdepth: Mobs
     sprite: _Lavaland/Structures/Specific/drake_statue.rsi
     state: drake_broken
   - type: AshDrakeTelepad
@@ -15,13 +16,14 @@
 
 - type: entity
   id: LavalandAshDrakeStatue
-  name: статуя Пепельного Дрейка
-  description: Это статуя великого дракона. На голове зверя имеется надпись "Ты тоже когда-нибудь станешь пеплом..."
+  name: ash drake statue
+  description: statue
   placement:
     mode: SnapgridCenter
   components:
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite
+    drawdepth: Mobs
     sprite: _Lavaland/Structures/Specific/drake_statue.rsi
     state: drake
