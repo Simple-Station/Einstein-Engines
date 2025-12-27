@@ -30,6 +30,7 @@ verb-categories-select-faction = Select Faction
 verb-categories-rename = Rename
 verb-categories-fax = Set Destination
 verb-categories-power-level = Power Level
+verb-categories-adjust = Adjust
 verb-categories-interaction = Interact
 verb-categories-blood-cult = Blood Cult
 

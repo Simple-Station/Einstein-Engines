@@ -136,6 +136,7 @@
         - prototype: GasPipeHalf
         - prototype: GasPipeStraight
         - prototype: GasPipeTJunction
+        - prototype: GasPipeManifold
     - category:
         name: Disposals
         icon:

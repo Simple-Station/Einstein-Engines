@@ -9,15 +9,17 @@ namespace Content.Shared.DrawDepth
         /// <summary>
         ///     This is for sub-floors, the floors you see after prying off a tile.
         /// </summary>
-        LowFloors = DrawDepthTag.Default - 18,
+        LowFloors = DrawDepthTag.Default - 16,
 
         // various entity types that require different
         // draw depths, as to avoid hiding
         #region SubfloorEntities
-        ThickPipe = DrawDepthTag.Default - 17,
-        ThickWire = DrawDepthTag.Default - 16,
-        ThinPipe = DrawDepthTag.Default - 15,
-        ThinWire = DrawDepthTag.Default - 14,
+        ThickPipe = DrawDepthTag.Default - 15,
+        ThickWire = DrawDepthTag.Default - 14,
+        ThinPipeAlt2 = DrawDepthTag.Default - 13,
+        ThinPipeAlt1 = DrawDepthTag.Default - 12,
+        ThinPipe = DrawDepthTag.Default - 11,
+        ThinWire = DrawDepthTag.Default - 10,
         #endregion
 
         /// <summary>

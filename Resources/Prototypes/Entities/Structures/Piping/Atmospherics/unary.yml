@@ -14,8 +14,7 @@
       blockAmbience: false
     - type: NodeContainer
       nodes:
-        pipe:
-          !type:PipeNode
+        pipe: !type:PipeNode
           nodeGroupID: Pipe
           pipeDirection: South
     - type: CollideOnAnchor
@@ -38,17 +37,17 @@
         - Unstackable
     - type: SubFloorHide
       visibleLayers:
-      - enum.SubfloorLayers.FirstLayer
+        - enum.SubfloorLayers.FirstLayer
     - type: Sprite
       drawdepth: FloorObjects
       sprite: Structures/Piping/Atmospherics/vent.rsi
       noRot: true
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
-          state: pipeHalf
-          map: [ "enum.PipeVisualLayers.Pipe" ]
+          state: pipeUnaryConnectors
+          map: ["enum.PipeVisualLayers.Pipe"]
         - state: vent_off
-          map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+          map: ["enabled", "enum.SubfloorLayers.FirstLayer"]
     - type: Appearance
     - type: PipeColorVisuals
     - type: GenericVisualizer
@@ -76,8 +75,8 @@
       navMapBlip: GasVentOpening
     - type: GuideHelp
       guides:
-      - AirVent
-      - DeviceMonitoringAndControl
+        - AirVent
+        - DeviceMonitoringAndControl
 
 - type: entity
   parent: GasUnaryBase
@@ -89,17 +88,17 @@
   components:
     - type: SubFloorHide
       visibleLayers:
-      - enum.SubfloorLayers.FirstLayer
+        - enum.SubfloorLayers.FirstLayer
     - type: Sprite
       drawdepth: FloorObjects
       sprite: Structures/Piping/Atmospherics/vent.rsi
       noRot: true
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
-          state: pipeHalf
-          map: [ "enum.PipeVisualLayers.Pipe" ]
+          state: pipeUnaryConnectors
+          map: ["enum.PipeVisualLayers.Pipe"]
         - state: vent_passive
-          map: [ "enum.SubfloorLayers.FirstLayer" ]
+          map: ["enum.SubfloorLayers.FirstLayer"]
     - type: Appearance
     - type: PipeColorVisuals
     - type: GasPassiveVent
@@ -110,7 +109,7 @@
       navMapBlip: GasVentOpening
     - type: GuideHelp
       guides:
-      - PassiveVent
+        - PassiveVent
 
 - type: entity
   parent: [GasUnaryBase, AirSensorBase]
@@ -130,17 +129,17 @@
         - Unstackable
     - type: SubFloorHide
       visibleLayers:
-      - enum.SubfloorLayers.FirstLayer
+        - enum.SubfloorLayers.FirstLayer
     - type: Sprite
       drawdepth: FloorObjects
       sprite: Structures/Piping/Atmospherics/scrubber.rsi
       noRot: true
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
-          state: pipeHalf
-          map: [ "enum.PipeVisualLayers.Pipe" ]
+          state: pipeUnaryConnectors
+          map: ["enum.PipeVisualLayers.Pipe"]
         - state: scrub_off
-          map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+          map: ["enabled", "enum.SubfloorLayers.FirstLayer"]
     - type: Appearance
     - type: PipeColorVisuals
     - type: GenericVisualizer
@@ -168,8 +167,8 @@
       navMapBlip: GasVentScrubber
     - type: GuideHelp
       guides:
-      - AirScrubber
-      - DeviceMonitoringAndControl
+        - AirScrubber
+        - DeviceMonitoringAndControl
 
 - type: entity
   parent: GasUnaryBase
@@ -183,23 +182,23 @@
       drawdepth: FloorObjects
       sprite: Structures/Piping/Atmospherics/outletinjector.rsi
       layers:
-        - state: pipeHalf
+        - state: pipeUnaryConnectors
           sprite: Structures/Piping/Atmospherics/pipe.rsi
-          map: [ "enum.PipeVisualLayers.Pipe" ]
+          map: ["enum.PipeVisualLayers.Pipe"]
         - state: injector
-          map: [ "enum.SubfloorLayers.FirstLayer" ]
+          map: ["enum.SubfloorLayers.FirstLayer"]
         - state: injector-unshaded
           shader: unshaded
-          map: [ "enum.LightLayers.Unshaded" ]
+          map: ["enum.LightLayers.Unshaded"]
           color: "#990000"
+    - type: Appearance
     - type: GenericVisualizer
       visuals:
-       # toggle color of the unshaded light:
-       enum.OutletInjectorVisuals.Enabled:
-         enum.LightLayers.Unshaded:
-           True: { color: "#5eff5e" }
-           False: { color: "#990000" }
-    - type: Appearance
+        # toggle color of the unshaded light:
+        enum.OutletInjectorVisuals.Enabled:
+          enum.LightLayers.Unshaded:
+            True: { color: "#5eff5e" }
+            False: { color: "#990000" }
     - type: PipeColorVisuals
     - type: GasOutletInjector
     - type: Construction
@@ -207,16 +206,16 @@
       node: outletinjector
     - type: SubFloorHide
       visibleLayers:
-      - enum.SubfloorLayers.FirstLayer
-      - enum.LightLayers.Unshaded
+        - enum.SubfloorLayers.FirstLayer
+        - enum.LightLayers.Unshaded
     - type: AtmosMonitoringConsoleDevice
       navMapBlip: GasVentOpening
     - type: GuideHelp
       guides:
-      - AirInjector
+        - AirInjector
 
 - type: entity
-  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  parent: [BaseMachinePowered, ConstructibleMachine]
   id: BaseGasThermoMachine
   name: thermomachine
   abstract: true
@@ -231,6 +230,12 @@
     - type: Rotatable
     - type: GasThermoMachine
     - type: AtmosPipeColor
+    - type: AtmosPipeLayers
+      spriteLayersRsiPaths:
+        enum.PipeVisualLayers.Pipe:
+          Primary: Structures/Piping/Atmospherics/thermomachine.rsi
+          Secondary: Structures/Piping/Atmospherics/thermomachine_alt1.rsi
+          Tertiary: Structures/Piping/Atmospherics/thermomachine_alt2.rsi
     - type: AtmosDevice
     - type: UserInterface
       interfaces:
@@ -244,8 +249,7 @@
     # - type: PipeRestrictOverlap  Allow for pipe stacking
     - type: NodeContainer
       nodes:
-        pipe:
-          !type:PipeNode
+        pipe: !type:PipeNode
           nodeGroupID: Pipe
           pipeDirection: South
     - type: Transform
@@ -262,7 +266,7 @@
       navMapBlip: Thermoregulator
     - type: GuideHelp
       guides:
-      - Thermomachines
+        - Thermomachines
 
 - type: entity
   parent: BaseGasThermoMachine
@@ -277,11 +281,11 @@
       granularLayersRendering: true
       layers:
         - state: freezerOff
-          map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+          map: ["enum.PowerDeviceVisualLayers.Powered"]
         - state: freezerPanelOpen
-          map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
         - state: pipe
-          map: [ "enum.PipeVisualLayers.Pipe" ]
+          map: ["enum.PipeVisualLayers.Pipe"]
           renderingStrategy: Default
     - type: GenericVisualizer
       visuals:
@@ -305,9 +309,9 @@
   id: GasThermoMachineFreezerEnabled
   suffix: Enabled
   components:
-  - type: GasThermoMachine
-  - type: ApcPowerReceiver
-    powerDisabled: false
+    - type: GasThermoMachine
+    - type: ApcPowerReceiver
+      powerDisabled: false
 
 - type: entity
   parent: BaseGasThermoMachine
@@ -319,14 +323,14 @@
   components:
     - type: StationAiWhitelist
     - type: Sprite
-      granularLayersRendering : true
+      granularLayersRendering: true
       layers:
         - state: heaterOff
-          map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+          map: ["enum.PowerDeviceVisualLayers.Powered"]
         - state: heaterPanelOpen
           map: ["enum.WiresVisualLayers.MaintenancePanel"]
         - state: pipe
-          map: [ "enum.PipeVisualLayers.Pipe" ]
+          map: ["enum.PipeVisualLayers.Pipe"]
           renderingStrategy: Default
     - type: GenericVisualizer
       visuals:
@@ -350,9 +354,9 @@
   id: GasThermoMachineHeaterEnabled
   suffix: Enabled
   components:
-  - type: GasThermoMachine
-  - type: ApcPowerReceiver
-    powerDisabled: false
+    - type: GasThermoMachine
+    - type: ApcPowerReceiver
+      powerDisabled: false
 
 - type: entity
   parent: GasThermoMachineFreezer
@@ -360,14 +364,14 @@
   name: hellfire freezer
   description: An advanced machine that cools gas in connected pipes. Has the side effect of chilling the surrounding area. Cold as Hell!
   components:
-  - type: Sprite
-    sprite: Structures/Piping/Atmospherics/hellfirethermomachine.rsi
-  - type: GasThermoMachine
-    minTemperature: 23.15
-    heatCapacity: 40000
-    energyLeakPercentage: 0.15
-  - type: Machine
-    board: HellfireFreezerMachineCircuitBoard
+    - type: Sprite
+      sprite: Structures/Piping/Atmospherics/hellfirethermomachine.rsi
+    - type: GasThermoMachine
+      minTemperature: 23.15
+      heatCapacity: 40000
+      energyLeakPercentage: 0.15
+    - type: Machine
+      board: HellfireFreezerMachineCircuitBoard
 
 - type: entity
   parent: GasThermoMachineHeater
@@ -375,101 +379,101 @@
   name: hellfire heater
   description: An advanced machine that heats gas in connected pipes. Has the side effect of leaking heat into the surrounding area. Hot as Hell!
   components:
-  - type: Sprite
-    sprite: Structures/Piping/Atmospherics/hellfirethermomachine.rsi
-  - type: GasThermoMachine
-    maxTemperature: 1193.15
-    heatCapacity: 40000
-    energyLeakPercentage: 0.15
-  - type: Machine
-    board: HellfireHeaterMachineCircuitBoard
+    - type: Sprite
+      sprite: Structures/Piping/Atmospherics/hellfirethermomachine.rsi
+    - type: GasThermoMachine
+      maxTemperature: 1193.15
+      heatCapacity: 40000
+      energyLeakPercentage: 0.15
+    - type: Machine
+      board: HellfireHeaterMachineCircuitBoard
 
 - type: entity
-  parent: [ BaseMachinePowered, SmallConstructibleMachine ]
+  parent: [BaseMachinePowered, SmallConstructibleMachine]
   id: BaseGasCondenser
   name: condenser
   description: Condenses gases into liquids. Now we just need some plumbing.
   placement:
     mode: SnapgridCenter
   components:
-  - type: Sprite
-    sprite: Structures/Piping/Atmospherics/condenser.rsi
-    snapCardinals: true
-    granularLayersRendering: true
-    layers:
-    - state: off
-      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
-    - state: panel
-      map: ["enum.WiresVisualLayers.MaintenancePanel"]
-    - state: pipe
-      map: [ "enum.PipeVisualLayers.Pipe" ]
-      renderingStrategy: Default
-    - state: fill-1
-      map: ["enum.SolutionContainerLayers.Fill"]
-      visible: false
-    - state: trans
-  - type: GenericVisualizer
-    visuals:
-      enum.PowerDeviceVisuals.Powered:
-        enum.PowerDeviceVisualLayers.Powered:
-          True: { state: on }
-          False: { state: off }
-  - type: SolutionContainerVisuals
-    maxFillLevels: 7
-    fillBaseName: fill-
-  - type: Appearance
-  - type: PipeColorVisuals
-  - type: Rotatable
-  - type: GasCondenser
-  - type: AtmosPipeColor
-  - type: AtmosDevice
-  # - type: PipeRestrictOverlap # Allow pipe stacking on device.
-  - type: ApcPowerReceiver
-    powerLoad: 10000
-  - type: Machine
-    board: CondenserMachineCircuitBoard
-  - type: WiresPanel
-  - type: WiresVisuals
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 200
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:SpillBehavior
-        solution: tank
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-  - type: NodeContainer
-    nodes:
-      pipe:
-        !type:PipeNode
-        nodeGroupID: Pipe
-        pipeDirection: South
-  - type: Transform
-    noRot: false
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        maxVol: 400
-  - type: MixableSolution
-    solution: tank
-  - type: DrainableSolution
-    solution: tank
-  - type: ExaminableSolution
-    solution: tank
-  - type: PowerSwitch
-  - type: AtmosMonitoringConsoleDevice
-    navMapBlip: Thermoregulator
-  - type: GuideHelp
-    guides:
-    - GasCondensing
+    - type: Sprite
+      sprite: Structures/Piping/Atmospherics/condenser.rsi
+      snapCardinals: true
+      granularLayersRendering: true
+      layers:
+        - state: off
+          map: ["enum.PowerDeviceVisualLayers.Powered"]
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+        - state: pipe
+          map: ["enum.PipeVisualLayers.Pipe"]
+          renderingStrategy: Default
+        - state: fill-1
+          map: ["enum.SolutionContainerLayers.Fill"]
+          visible: false
+        - state: trans
+    - type: Appearance
+    - type: GenericVisualizer
+      visuals:
+        enum.PowerDeviceVisuals.Powered:
+          enum.PowerDeviceVisualLayers.Powered:
+            True: { state: on }
+            False: { state: off }
+    - type: SolutionContainerVisuals
+      maxFillLevels: 7
+      fillBaseName: fill-
+    - type: PipeColorVisuals
+    - type: Rotatable
+    - type: GasCondenser
+    - type: AtmosPipeColor
+    - type: AtmosPipeLayers
+      spriteLayersRsiPaths:
+        enum.PipeVisualLayers.Pipe:
+          Primary: Structures/Piping/Atmospherics/condenser.rsi
+          Secondary: Structures/Piping/Atmospherics/condenser_alt1.rsi
+          Tertiary: Structures/Piping/Atmospherics/condenser_alt2.rsi
+    - type: AtmosDevice
+    # - type: PipeRestrictOverlap # Allow pipe stacking on device.
+    - type: ApcPowerReceiver
+      powerLoad: 10000
+    - type: Machine
+      board: CondenserMachineCircuitBoard
+    - type: WiresPanel
+    - type: WiresVisuals
+    - type: Destructible
+      thresholds:
+        - trigger: !type:DamageTrigger
+            damage: 200
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+        - trigger: !type:DamageTrigger
+            damage: 100
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+            - !type:SpillBehavior
+              solution: tank
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalBreak
+    - type: NodeContainer
+      nodes:
+        pipe: !type:PipeNode
+          nodeGroupID: Pipe
+          pipeDirection: South
+    - type: Transform
+      noRot: false
+    - type: SolutionContainerManager
+      solutions:
+        tank:
+          maxVol: 400
+    - type: MixableSolution
+      solution: tank
+    - type: DrainableSolution
+      solution: tank
+    - type: ExaminableSolution
+      solution: tank
+    - type: PowerSwitch
+    - type: AtmosMonitoringConsoleDevice
+      navMapBlip: Thermoregulator
