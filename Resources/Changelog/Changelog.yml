@@ -16810,3 +16810,12 @@ Entries:
   id: 7322
   time: '2025-12-25T15:27:28.0000000+00:00'
   url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/191
+- author: ME4TA
+  changes:
+    - type: Add
+      message: Слои труб
+    - type: Tweak
+      message: Труба может принимать в одном направлении 3 позиции
+  id: 7323
+  time: '2025-12-27T13:18:04.0000000+00:00'
+  url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/192
