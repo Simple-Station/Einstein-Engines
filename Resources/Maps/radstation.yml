@@ -75675,30 +75675,26 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-- proto: FloraTree01
+- proto: FloraTree
   entities:
   - uid: 11335
     components:
     - type: Transform
       pos: -3.5,-5.5
       parent: 2
-- proto: FloraTree03
-  entities:
   - uid: 11336
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 6.5,5.5
       parent: 2
-- proto: FloraTreeLarge01
+- proto: FloraTreeLarge
   entities:
   - uid: 11337
     components:
     - type: Transform
       pos: 7.5,-3.5
       parent: 2
-- proto: FloraTreeLarge04
-  entities:
   - uid: 11338
     components:
     - type: Transform

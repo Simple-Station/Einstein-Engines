@@ -131,6 +131,19 @@ public sealed class AirAlarmSystem : EntitySystem
         SyncDevice(uid, address);
     }
 
+    private void SetAllThresholds(EntityUid uid, string address, AtmosSensorData data)
+    {
+        var payload = new NetworkPayload
+        {
+            [DeviceNetworkConstants.Command] = AtmosMonitorSystem.AtmosMonitorSetAllThresholdsCmd,
+            [AtmosMonitorSystem.AtmosMonitorAllThresholdData] = data
+        };
+
+        _deviceNet.QueuePacket(uid, address, payload);
+
+        SyncDevice(uid, address);
+    }
+
     /// <summary>
     ///     Sync this air alarm's mode with the rest of the network.
     /// </summary>
@@ -174,7 +187,6 @@ public sealed class AirAlarmSystem : EntitySystem
             subs.Event<AirAlarmUpdateAlarmThresholdMessage>(OnUpdateThreshold);
             subs.Event<AirAlarmUpdateDeviceDataMessage>(OnUpdateDeviceData);
             subs.Event<AirAlarmCopyDeviceDataMessage>(OnCopyDeviceData);
-            subs.Event<AirAlarmTabSetMessage>(OnTabChange);
         });
     }
 
@@ -199,12 +211,6 @@ public sealed class AirAlarmSystem : EntitySystem
         UpdateUI(uid, component);
 
         SyncRegisterAllDevices(uid);
-    }
-
-    private void OnTabChange(EntityUid uid, AirAlarmComponent component, AirAlarmTabSetMessage msg)
-    {
-        component.CurrentTab = msg.Tab;
-        UpdateUI(uid, component);
     }
 
     private void OnPowerChanged(EntityUid uid, AirAlarmComponent component, ref PowerChangedEvent args)
@@ -346,6 +352,13 @@ public sealed class AirAlarmSystem : EntitySystem
                 foreach (string addr in component.ScrubberData.Keys)
                 {
                     SetData(uid, addr, args.Data);
+                }
+                break;
+
+            case AtmosSensorData sensorData:
+                foreach (string addr in component.SensorData.Keys)
+                {
+                    SetAllThresholds(uid, addr, sensorData);
                 }
                 break;
         }
@@ -614,34 +627,19 @@ public sealed class AirAlarmSystem : EntitySystem
 
         var pressure = CalculatePressureAverage(alarm);
         var temperature = CalculateTemperatureAverage(alarm);
-        var dataToSend = new Dictionary<string, IAtmosDeviceData>();
+        var dataToSend = new List<(string, IAtmosDeviceData)>();
 
-        if (alarm.CurrentTab != AirAlarmTab.Settings)
+        foreach (var (addr, data) in alarm.VentData)
         {
-            switch (alarm.CurrentTab)
-            {
-                case AirAlarmTab.Vent:
-                    foreach (var (addr, data) in alarm.VentData)
-                    {
-                        dataToSend.Add(addr, data);
-                    }
-
-                    break;
-                case AirAlarmTab.Scrubber:
-                    foreach (var (addr, data) in alarm.ScrubberData)
-                    {
-                        dataToSend.Add(addr, data);
-                    }
-
-                    break;
-                case AirAlarmTab.Sensors:
-                    foreach (var (addr, data) in alarm.SensorData)
-                    {
-                        dataToSend.Add(addr, data);
-                    }
-
-                    break;
-            }
+            dataToSend.Add((addr, data));
+        }
+        foreach (var (addr, data) in alarm.ScrubberData)
+        {
+            dataToSend.Add((addr, data));
+        }
+        foreach (var (addr, data) in alarm.SensorData)
+        {
+            dataToSend.Add((addr, data));
         }
 
         var deviceCount = alarm.KnownDevices.Count;
@@ -654,7 +652,7 @@ public sealed class AirAlarmSystem : EntitySystem
         _ui.SetUiState(
             uid,
             SharedAirAlarmInterfaceKey.Key,
-            new AirAlarmUIState(devNet.Address, deviceCount, pressure, temperature, dataToSend, alarm.CurrentMode, alarm.CurrentTab, highestAlarm.Value, alarm.AutoMode));
+            new AirAlarmUIState(devNet.Address, deviceCount, pressure, temperature, dataToSend, alarm.CurrentMode, highestAlarm.Value, alarm.AutoMode));
     }
 
     private const float Delay = 8f;

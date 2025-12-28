@@ -90,7 +90,7 @@
             variation: 0.05
       - !type:SpawnEntitiesBehavior
         spawn:
-          RMCStump1:
+          FloraTreeStump:
             min: 1
             max: 1
         offset: 0
@@ -154,7 +154,7 @@
             variation: 0.05
       - !type:SpawnEntitiesBehavior
         spawn:
-          RMCStump2:
+          FloraTreeStumpConifer:
             min: 1
             max: 1
         offset: 0
@@ -201,7 +201,7 @@
             variation: 0.05
       - !type:SpawnEntitiesBehavior
         spawn:
-          RMCStump3:
+          FloraAlienStump:
             min: 1
             max: 1
         offset: 0
@@ -215,3 +215,14 @@
   components:
   - type: Sprite
     state: treealien01
+
+- type: entity
+  parent: FloraTreeStump
+  id: FloraAlienStump
+  name: alien tree stump
+  description: There used to be a weird tree here.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Flora/flora_treealien.rsi
+    state: treestumpalien
+    offset: 0,0.7

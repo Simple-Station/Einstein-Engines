@@ -229,6 +229,7 @@
     stripTimeReduction: 1
   - type: ToggleClothing
     action: ActionToggleNinjaGloves
+    disableOnUnequip: true
   - type: Unremoveable
   - type: NinjaGloves
     abilities:
@@ -296,7 +297,7 @@
         Piercing: 0.95
 
 - type: entity
-  parent: ClothingHandsGlovesCombat
+  parent: [ BaseSecurityCargoContraband, ClothingHandsGlovesCombat ]
   id: ClothingHandsMercGlovesCombat
   name: mercenary combat gloves
   description: High-quality combat gloves to protect hands from mechanical damage during combat.

@@ -1,10 +1,12 @@
 # Numbers for armor here largely taken from /tg/.
 # NOTE: Half of the kind of armor you're probably thinking of is in vests.yml. These should probably be merged some day.
 
+#Basic armor vest for inheritance
 - type: entity
   parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing, BaseRestrictedContraband]
-  id: ClothingOuterArmorBasic
+  id: ClothingOuterArmorBase
   name: armor vest
+  abstract: true
   description: A standard Type I armored vest that provides decent protection against most types of damage.
   components:
   - type: Sprite
@@ -31,6 +33,11 @@
         - ItemMask
         restitution: 0.3
         friction: 0.2
+
+#Standard armor vest, allowed for security and bartenders
+- type: entity
+  parent: [ BaseSecurityBartenderContraband, ClothingOuterArmorBase]
+  id: ClothingOuterArmorBasic
 
 #Alternate / slim basic armor vest
 - type: entity
@@ -97,7 +104,7 @@
   - type: GroupExamine
 
 - type: entity
-  parent: ClothingOuterArmorBasic
+  parent: ClothingOuterArmorBase
   id: ClothingOuterArmorBulletproof
   name: bulletproof vest
   description: A Type III heavy bulletproof vest that provides superb protection against bullets, but is lackluster against anything else.
@@ -117,7 +124,7 @@
         Heat: 0.95
 
 - type: entity
-  parent: ClothingOuterArmorBasic
+  parent: ClothingOuterArmorBase
   id: ClothingOuterArmorReflective
   name: reflective vest
   description: An armored vest with advanced shielding to protect against energy weapons.
@@ -139,7 +146,7 @@
     reflectProb: 0.33
     innate: true # armor grants a passive shield that does not require concentration to maintain
     reflects:
-      - Energy
+    - Energy
 
 - type: entity
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseSyndicateContraband ]
@@ -191,21 +198,21 @@
     netsync: false
   - type: LightBehaviour
     behaviours:
-      - !type:FadeBehaviour
-        id: radiating
-        interpolate: Linear
-        maxDuration: 2.0
-        startValue: 3.0
-        endValue: 2.0
-        isLooped: true
-        reverseWhenFinished: true
-      - !type:PulseBehaviour
-        id: blinking
-        interpolate: Nearest
-        maxDuration: 1.0
-        minValue: 0.1
-        maxValue: 2.0
-        isLooped: true
+    - !type:FadeBehaviour
+      id: radiating
+      interpolate: Linear
+      maxDuration: 2.0
+      startValue: 3.0
+      endValue: 2.0
+      isLooped: true
+      reverseWhenFinished: true
+    - !type:PulseBehaviour
+      id: blinking
+      interpolate: Nearest
+      maxDuration: 1.0
+      minValue: 0.1
+      maxValue: 2.0
+      isLooped: true
   - type: Battery
     maxCharge: 600
     startingCharge: 600
@@ -256,7 +263,7 @@
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
-      - FullBodyOuter
+    - FullBodyOuter
 
 - type: entity
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
@@ -281,7 +288,7 @@
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
-      - FullBodyOuter
+    - FullBodyOuter
 
 - type: entity
   parent: ClothingOuterArmorHeavy
@@ -382,7 +389,7 @@
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
-      - FullBodyOuter
+    - FullBodyOuter
 
 - type: entity
   parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ]

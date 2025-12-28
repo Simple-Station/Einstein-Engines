@@ -14,7 +14,7 @@ namespace Content.Server.Botany;
 [Prototype("seed")]
 public sealed partial class SeedPrototype : SeedData, IPrototype
 {
-    [IdDataField] public string ID { get; private init; } = default!;
+    [IdDataField] public string ID { get; private set; } = default!;
 }
 
 public enum HarvestType : byte
@@ -296,12 +296,13 @@ public partial class SeedData
             CanScream = CanScream,
             TurnIntoKudzu = TurnIntoKudzu,
             SplatPrototype = SplatPrototype,
-            Mutations = Mutations,
+            Mutations = new List<RandomPlantMutation>(),
 
             // Newly cloned seed is unique. No need to unnecessarily clone if repeatedly modified.
             Unique = true,
         };
 
+        newSeed.Mutations.AddRange(Mutations);
         return newSeed;
     }
 

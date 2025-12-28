@@ -83,6 +83,7 @@ public sealed partial class CloningSystem : EntitySystem
     [Dependency] private readonly ThirstSystem _thirst = default!;
     [Dependency] private readonly SharedDrunkSystem _drunk = default!;
     [Dependency] private readonly MobThresholdSystem _thresholds = default!;
+    [Dependency] private readonly EmagSystem _emag = default!;
     public readonly Dictionary<MindComponent, EntityUid> ClonesWaitingForMind = new();
 
     // <summary>
@@ -163,13 +164,18 @@ public sealed partial class CloningSystem : EntitySystem
     /// </summary>
     private void OnEmagged(EntityUid uid, CloningPodComponent clonePod, ref GotEmaggedEvent args)
     {
+        if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
+            return;
+
+        if (_emag.CheckFlag(uid, EmagType.Interaction))
+            return;
+
         if (!this.IsPowered(uid, EntityManager))
             return;
 
         if (clonePod.ActivelyCloning)
             CauseCloningFail(uid, clonePod);
 
-        _audio.PlayPvs(clonePod.SparkSound, uid);
         _popupSystem.PopupEntity(Loc.GetString("cloning-pod-component-upgrade-emag-requirement"), uid);
         args.Handled = true;
     }

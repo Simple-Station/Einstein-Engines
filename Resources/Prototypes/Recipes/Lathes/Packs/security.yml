@@ -1,0 +1,229 @@
+## Static recipes
+
+- type: latheRecipePack
+  id: SecurityEquipmentStatic
+  recipes:
+  - ClothingEyesHudSecurity
+  - ForensicPad
+  - Handcuffs
+  - TargetClown
+  - TargetHuman
+  - TargetSyndicate
+  - Zipties
+  # EE EDIT START
+  - HoloprojectorSecurity
+  - TelescopicShield
+  - BolaEnergy
+  # EE EDIT END
+
+# Practice ammo/mags and practice weapons
+- type: latheRecipePack
+  id: SecurityPracticeStatic
+  recipes:
+  - BoxShotgunPractice
+  - MagazineBoxLightRiflePractice
+  - MagazineBoxMagnumPractice
+  - MagazineBoxPistolPractice
+  - MagazineBoxRiflePractice
+  - WeaponDisablerPractice
+  - WeaponLaserCarbinePractice
+  - WeaponFlareGunSecurity
+  # EE EDIT START
+  - MagazineBoxCaselessRiflePractice
+  - MagazineBoxSpecialPractice
+  - MagazineCaselessRiflePractice
+  - MagazineCaselessRifleShortPractice
+  - MagazinePistolCaselessRiflePractice
+  # EE EDIT END
+
+# Shared between secfab and emagged autolathe
+- type: latheRecipePack
+  id: SecurityAmmoStatic
+  recipes:
+  - BoxLethalshot
+  - BoxShotgunSlug
+  - MagazineBoxLightRifle
+  - MagazineBoxMagnum
+  - MagazineBoxPistol
+  - MagazineBoxRifle
+  - MagazineLightRifle
+  - MagazineLightRifleEmpty
+  - MagazinePistol
+  - MagazinePistolEmpty
+  - MagazinePistolSubMachineGun
+  - MagazinePistolSubMachineGunEmpty
+  - MagazinePistolSubMachineGunTopMounted
+  - MagazinePistolSubMachineGunTopMountedEmpty
+  - MagazineRifle
+  - MagazineRifleEmpty
+  - MagazineShotgun
+  - MagazineShotgunEmpty
+  - MagazineShotgunSlug
+  - SpeedLoaderMagnum
+  - SpeedLoaderMagnumEmpty
+  # EE EDIT START
+  - BoxBeanbag
+  - BoxShellTranquilizer
+  - BoxShotgunBirdshot
+  - BoxShotgun00Buckshot
+  - BoxShotgun0000Buckshot
+  - BoxShotgunLumen
+  - MagazineBoxCaselessRifle
+  - MagazineBoxSpecial
+  - MagazineCaselessRifle
+  - MagazineCaselessRifleShort
+  - MagazineLightRifleLowCapacity
+  - MagazineLightRifleLowCapacityEmpty
+  - MagazineLightRifleMarkOne
+  - MagazineLightRifleMarkOneEmpty
+  - MagazineMagnum
+  - MagazineMagnumEmpty
+  - MagazineMagnumLeverRifle
+  - MagazineMagnumLeverRifleEmpty
+  - MagazineNovaliteC1
+  - MagazineNovaliteC1Empty
+  - MagazinePistolCaselessRifle
+  - MagazinePistolSpecial
+  - MagazineShotgunBeanbag
+  - MagazineUniversalMagnum
+  - MagazineUniversalMagnumEmpty
+  - SpeedLoaderRifleHeavy
+  - SpeedLoaderRifleHeavyEmpty
+  - SpeedLoaderSpecial
+  # EE EDIT END
+
+- type: latheRecipePack
+  id: SecurityWeaponsStatic
+  recipes:
+  - Flash
+  - Stunbaton
+  - CombatKnife
+  - RiotShield
+  # EE EDIT START
+  - WeaponRifleNovaliteC1
+  - WeaponRifleGestio
+  # EE EDIT END
+
+
+## Dynamic recipes
+
+- type: latheRecipePack
+  id: SecurityEquipment
+  recipes:
+  - ClothingBackpackElectropack
+  # - HoloprojectorSecurity - EE EDIT: moved to static
+  - PortableRecharger
+  - PowerCageHigh
+  - PowerCageMedium
+  - PowerCageSmall
+  # - TelescopicShield - EE EDIT: moved to static
+
+- type: latheRecipePack
+  id: SecurityBoards
+  recipes:
+  - ShuttleGunDusterCircuitboard
+  - ShuttleGunFriendshipCircuitboard
+  - ShuttleGunPerforatorCircuitboard
+  - ShuttleGunSvalinnMachineGunCircuitboard
+  # EE EDIT START
+  - WeaponEnergyTurretAIMachineCircuitboard
+  - WeaponEnergyTurretStationMachineCircuitboard
+  - WeaponEnergyTurretAIControlPanelElectronics
+  - WeaponEnergyTurretStationControlPanelElectronics
+  # EE EDIT END
+
+- type: latheRecipePack
+  parent:
+  - ScienceExplosives # sec gets everything for modular grenade making that sci does
+  id: SecurityExplosives
+  recipes:
+  - ExplosivePayload
+  - GrenadeBlast
+  - GrenadeEMP
+  - GrenadeFlash
+  - MagazineGrenadeEmpty
+
+# Shared between secfab and emagged protolathe
+- type: latheRecipePack
+  id: SecurityAmmo
+  recipes:
+  # - BoxBeanbag - EE EDIT: moved to static
+  - BoxShotgunIncendiary
+  - BoxShotgunUranium
+  # - BoxShellTranquilizer - EE EDIT: moved to static
+  - MagazineBoxLightRifleIncendiary
+  - MagazineBoxLightRifleUranium
+  - MagazineBoxMagnumIncendiary
+  - MagazineBoxMagnumUranium
+  - MagazineBoxPistolIncendiary
+  - MagazineBoxPistolUranium
+  - MagazineBoxRifleIncendiary
+  - MagazineBoxRifleUranium
+  - MagazineLightRifleIncendiary
+  - MagazineLightRifleUranium
+  - MagazinePistolIncendiary
+  - MagazinePistolUranium
+  - MagazinePistolSubMachineGunIncendiary
+  - MagazinePistolSubMachineGunUranium
+  - MagazineRifleIncendiary
+  - MagazineRifleUranium
+  # - MagazineShotgunBeanbag - EE EDIT: moved to static
+  - MagazineShotgunIncendiary
+  - SpeedLoaderMagnumIncendiary
+  - SpeedLoaderMagnumUranium
+  # EE EDIT START
+  - ShellSoulbreaker
+  - MagazineBoxCaselessRifleIncendiary
+  - MagazineBoxCaselessRifleShrapnel
+  - MagazineBoxCaselessRifleUranium
+  - MagazineBoxLightRifleShrapnel
+  - MagazineBoxMagnumShrapnel
+  - MagazineBoxPistolShrapnel
+  - MagazineBoxRifleShrapnel
+  - MagazineBoxSpecialIncendiary
+  - MagazineBoxSpecialUranium
+  - MagazineBoxSpecialMindbreaker
+  - MagazineCaselessRifleShrapnel
+  - MagazineCaselessRifleIncendiary
+  - MagazineCaselessRifleUranium
+  - MagazineLightRifleShrapnel
+  - MagazineMagnumIncendiary
+  - MagazineMagnumShrapnel
+  - MagazineMagnumUranium
+  - MagazinePistolShrapnel
+  - MagazinePistolSubMachineGunShrapnel
+  - MagazineRifleShrapnel
+  - MagazineUniversalMagnumUranium
+  - MagazineUniversalMagnumIncendiary
+  - MagazineUniversalMagnumShrapnel
+  - SpeedLoaderRifleHeavyIncendiary
+  - SpeedLoaderRifleHeavyUranium
+  # EE EDIT END
+
+- type: latheRecipePack
+  id: SecurityWeapons
+  recipes:
+  - Truncheon
+  - WeaponAdvancedLaser
+  - WeaponDisabler
+  - WeaponDisablerSMG
+  - WeaponLaserCannon
+  - WeaponLaserCarbine
+  - WeaponXrayCannon
+  # EE EDIT START
+  - Terminus
+  - WeaponEnergyGun
+  - WeaponEnergyGunMini
+  - WeaponEnergyGunPistol
+  - WeaponGunLaserCarbineAutomatic
+  - EnergySword
+  - EnergySwordDouble
+  - EnergyCutlass
+  - WeaponSubMachineGunFPA90
+  - WeaponSubMachineGunBRDIR25
+  - WeaponPistolMk58
+  - WeaponPistolN1984
+  - WeaponPistolViper
+  - WeaponPistolCobra
+  - WeaponPistolUniversal
+  # EE EDIT END

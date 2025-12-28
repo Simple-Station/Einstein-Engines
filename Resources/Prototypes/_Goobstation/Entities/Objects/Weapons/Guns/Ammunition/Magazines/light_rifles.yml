@@ -7,6 +7,7 @@
     tags:
       - MagazineLightRifleSubsonic
       - MagazineLightRifle
+      - Magazine
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifleSubsonic
     mayTransfer: true
@@ -16,7 +17,7 @@
     capacity: 35
   - type: Sprite
     layers:
-    - state: rubber
+    - state: practice
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]

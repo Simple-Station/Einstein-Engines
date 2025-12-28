@@ -102,7 +102,6 @@ public struct PowerMonitoringConsoleEntry
     public NetEntity NetEntity;
     public PowerMonitoringConsoleGroup Group;
     public double PowerValue;
-
     public float? BatteryLevel;
 
     [NonSerialized] public PowerMonitoringDeviceMetaData? MetaData = null;

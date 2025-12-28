@@ -27,57 +27,8 @@
   - type: Lathe
     idleState: icon
     runningState: building
-    staticRecipes:
-    - RevolutionaryManifesto
-    - BookSpaceEncyclopedia
-    - BookTheBookOfControl
-    - BookBartendersManual
-    - BookHowToCookForFortySpaceman
-    - BookLeafLoversSecret
-    - BookEngineersHandbook
-    - BookScientistsGuidebook
-    - BookSecurity
-    - BookHowToKeepStationClean
-    - BookHowToRockAndStone
-    - BookMedicalReferenceBook
-    - BookHowToSurvive
-    - BookChemicalCompendium
-    - BookAtmosDistro
-    - BookAtmosWaste
-    - BookAtmosAirAlarms
-    - BookAtmosVentsMore
-    - BookPsionicsGuidebook
-    - BookNarsieLegend
-    - BookTruth
-    - BookWorld
-    - BookIanAntarctica
-    - BookSlothClownSSS
-    - BookSlothClownPranks
-    - BookSlothClownMMD
-    - BookStruck
-    - BookSun
-    - BookPossum
-    - BookCafe
-    - BookFeather
-    - BookIanLostWolfPup
-    - BookIanRanch
-    - BookIanOcean
-    - BookIanMountain
-    - BookIanCity
-    - BookIanArctic
-    - BookIanDesert
-    - BookNames
-    - BookEarth
-    - BookAurora
-    - BookTemple
-    - BookWatched
-    - BookMedicalOfficer
-    - BookMorgue
-    - BookRufus
-    - BookMap
-    - BookJourney
-    - BookInspiration
-    - BookJanitorTale
+    staticPacks:
+    - BookStatic
 #  - type: EmagLatheRecipes
 #    emagStaticRecipes:
 #    - SuperIllegalDangerousBook

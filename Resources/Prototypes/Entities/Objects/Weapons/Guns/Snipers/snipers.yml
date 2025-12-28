@@ -18,8 +18,6 @@
     - Back
     - suitStorage
   - type: AmmoCounter
-  - type: Wieldable
-  - type: GunRequiresWield
   - type: Gun
     fireRate: 0.75
     selectedMode: SemiAuto
@@ -119,10 +117,10 @@
     proto: null
   - type: ExtendDescription
     descriptionList:
-      - description: "gun-legality-salvage"
-        fontSize: 12
-        color: "#ff4f00"
-        requireDetailRange: false
+    - description: "gun-legality-salvage"
+      fontSize: 12
+      color: "#ff4f00"
+      requireDetailRange: false
 
 - type: entity
   name: Hristov
@@ -134,16 +132,27 @@
     sprite: Objects/Weapons/Guns/Snipers/heavy_sniper.rsi
   - type: Clothing
     sprite: Objects/Weapons/Guns/Snipers/heavy_sniper.rsi
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 0.4
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
   - type: BallisticAmmoProvider
     whitelist:
       tags:
       - CartridgeAntiMateriel
     capacity: 5
     proto: CartridgeAntiMateriel
-  - type: Telescope
-  - type: GunRequiresWield # DeltaV - Firing an antimateriel rifle is.. incredibly unweildy with one hand.
-  - type: Gun # DeltaV
-    fireRate: 0.5
+  - type: SpeedModifiedOnWield
+    walkModifier: 0.25
+    sprintModifier: 0.25
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 3
+    pvsIncrease: 0.3
 
 - type: entity
   name: musket

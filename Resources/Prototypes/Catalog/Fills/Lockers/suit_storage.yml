@@ -7,10 +7,10 @@
   components:
   - type: StorageFill
     contents:
-        - id: OxygenTankFilled
-        - id: ClothingOuterHardsuitEVA
-        - id: ClothingHeadHelmetEVA
-        - id: ClothingMaskBreath
+    - id: OxygenTankFilled
+    - id: ClothingOuterHardsuitEVA
+    - id: ClothingHeadHelmetEVA
+    - id: ClothingMaskBreath
 
 #Basic EVA (Big Ass Helmet)
 - type: entity
@@ -20,10 +20,10 @@
   components:
   - type: StorageFill
     contents:
-        - id: OxygenTankFilled
-        - id: ClothingOuterHardsuitEVA
-        - id: ClothingHeadHelmetEVALarge
-        - id: ClothingMaskBreath
+    - id: OxygenTankFilled
+    - id: ClothingOuterHardsuitEVA
+    - id: ClothingHeadHelmetEVALarge
+    - id: ClothingMaskBreath
 
 #Emergency EVA
 - type: entity
@@ -33,9 +33,9 @@
   components:
   - type: StorageFill
     contents:
-        - id: OxygenTankFilled
-        - id: ClothingOuterSuitEmergency
-        - id: ClothingMaskBreath
+    - id: OxygenTankFilled
+    - id: ClothingOuterSuitEmergency
+    - id: ClothingMaskBreath
 
 #Prisoner EVA
 - type: entity
@@ -45,10 +45,10 @@
   components:
   - type: StorageFill
     contents:
-        - id: OxygenTankFilled
-        - id: ClothingOuterHardsuitEVAPrisoner
-        - id: ClothingHeadHelmetEVALarge
-        - id: ClothingMaskBreath
+    - id: OxygenTankFilled
+    - id: ClothingOuterHardsuitEVAPrisoner
+    - id: ClothingHeadHelmetEVALarge
+    - id: ClothingMaskBreath
 
 #Syndicate EVA
 - type: entity
@@ -58,10 +58,10 @@
   components:
   - type: StorageFill
     contents:
-        - id: OxygenTankFilled
-        - id: ClothingOuterHardsuitSyndicate
-        - id: ClothingHeadHelmetSyndicate
-        - id: ClothingMaskGasSyndicate
+    - id: OxygenTankFilled
+    - id: ClothingOuterHardsuitSyndicate
+    - id: ClothingHeadHelmetSyndicate
+    - id: ClothingMaskGasSyndicate
 
 #Pirate EVA
 - type: entity
@@ -71,9 +71,9 @@
   components:
   - type: StorageFill
     contents:
-        - id: OxygenTankFilled
-        - id: ClothingOuterHardsuitPirateEVA
-        - id: ClothingMaskGas
+    - id: OxygenTankFilled
+    - id: ClothingOuterHardsuitPirateEVA
+    - id: ClothingMaskGas
 
 #NTSRA Voidsuit
 - type: entity
@@ -83,10 +83,10 @@
   components:
   - type: StorageFill
     contents:
-        - id: JetpackVoidFilled
-        - id: ClothingOuterHardsuitAncientEVA
-        - id: ClothingHeadHelmetAncient
-        - id: ClothingMaskBreath
+    - id: JetpackVoidFilled
+    - id: ClothingOuterHardsuitAncientEVA
+    - id: ClothingHeadHelmetAncient
+    - id: ClothingMaskBreath
 
 #HARDSUITS
 #Basic hardsuit
@@ -97,9 +97,9 @@
   components:
   - type: StorageFill
     contents:
-        - id: OxygenTankFilled
-        - id: ClothingOuterHardsuitBasic
-        - id: ClothingMaskBreath
+    - id: OxygenTankFilled
+    - id: ClothingOuterHardsuitBasic
+    - id: ClothingMaskBreath
 
 #Engineering hardsuit
 - type: entity
@@ -109,10 +109,10 @@
   components:
   - type: StorageFill
     contents:
-        - id: OxygenTankFilled
-        - id: ClothingShoesBootsMagEng
-        - id: ClothingOuterHardsuitEngineering
-        - id: ClothingMaskBreath
+    - id: OxygenTankFilled
+    - id: ClothingShoesBootsMagEng
+    - id: ClothingOuterHardsuitEngineering
+    - id: ClothingMaskBreath
   - type: AccessReader
     access: [["Engineering"]]
 
@@ -124,9 +124,9 @@
   components:
   - type: StorageFill
     contents:
-        - id: OxygenTankFilled
-        - id: ClothingOuterHardsuitAtmos
-        - id: ClothingMaskBreath
+    - id: OxygenTankFilled
+    - id: ClothingOuterHardsuitAtmos
+    - id: ClothingMaskBreath
   - type: AccessReader
     access: [["Atmospherics"]]
 
@@ -138,14 +138,14 @@
   components:
   - type: StorageFill
     contents:
-        - id: OxygenTankFilled
-          amount: 2 #DeltaV - Double the tanks
-        - id: ClothingOuterHardsuitCombatOfficer # DeltaV - ClothingOuterHardsuitSecurity replaced in favour of security combat hardsuit.
-          amount: 2 #DeltaV - Double the suits
-        - id: ClothingMaskBreath
-          amount: 2 #Delta-V Double the masks
-        - id: ClothingShoesBootsMagSec
-          amount: 2
+    - id: OxygenTankFilled
+      amount: 2 #DeltaV - Double the tanks
+    - id: ClothingOuterHardsuitCombatOfficer # DeltaV - ClothingOuterHardsuitSecurity replaced in favour of security combat hardsuit.
+      amount: 2 #DeltaV - Double the suits
+    - id: ClothingMaskBreath
+      amount: 2 #Delta-V Double the masks
+    - id: ClothingShoesBootsMagSec
+      amount: 2
   - type: AccessReader
     access: [["Security"]]
 
@@ -209,10 +209,10 @@
   components:
   - type: StorageFill
     contents:
-        - id: OxygenTankFilled
-        - id: ClothingOuterHardsuitCombatWarden # DeltaV - ClothingOuterHardsuitWarden replaced in favour of warden's riot combat hardsuit.
-        - id: ClothingMaskBreath
-        - id: ClothingShoesBootsMagSec
+    - id: OxygenTankFilled
+    - id: ClothingOuterHardsuitCombatWarden # DeltaV - ClothingOuterHardsuitWarden replaced in favour of warden's riot combat hardsuit.
+    - id: ClothingMaskBreath
+    - id: ClothingShoesBootsMagSec
   - type: AccessReader
     access: [["Armory"]]
 
@@ -283,10 +283,10 @@
   components:
   - type: StorageFill
     contents:
-        - id: OxygenTankFilled
-        - id: ClothingOuterHardsuitSyndie
-        - id: ClothingShoesBootsMagSyndie
-        - id: ClothingMaskGasSyndicate
+    - id: OxygenTankFilled
+    - id: ClothingOuterHardsuitSyndie
+    - id: ClothingShoesBootsMagSyndie
+    - id: ClothingMaskGasSyndicate
 
 #Pirate Captain's hardsuit
 - type: entity
@@ -296,9 +296,9 @@
   components:
   - type: StorageFill
     contents:
-        - id: OxygenTankFilled
-        - id: ClothingOuterHardsuitPirateCap
-        - id: ClothingMaskGas
+    - id: OxygenTankFilled
+    - id: ClothingOuterHardsuitPirateCap
+    - id: ClothingMaskGas
 
 #Wizard
 - type: entity
@@ -308,9 +308,10 @@
   components:
   - type: StorageFill
     contents:
-        - id: OxygenTankFilled
-        - id: ClothingOuterHardsuitWizard
-        - id: ClothingMaskBreath
+    - id: OxygenTankFilled
+    - id: ClothingOuterHardsuitWizard
+    - id: ClothingMaskBreath
+    - id: JetpackVoidFilled
 
 # Cybersun Armoring Corporation
 - type: entity

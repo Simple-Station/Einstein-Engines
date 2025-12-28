@@ -113,11 +113,11 @@
 
     # Shuttle
     - id: shuttleCalled # The shuttle is on its way
-      path: shuttle/called.ogg
+      path: shuttle/shuttlecalled.ogg
     - id: shuttleRecalled # The shuttle is going back to Central Command
-      path: shuttle/recalled.ogg
+      path: shuttle/shuttlerecalled.ogg
     - id: shuttleDock # The shuttle has arrived at the station
-      path: shuttle/dock.ogg
+      path: shuttle/shuttledock.ogg
     # - id: shuttleNearby # The shuttle couldn't dock, it's at a specified location
     #   path: shuttle/nearby.ogg
     # - id: shuttleGoodLuck # The shuttle could not find its way to the station, good luck crew

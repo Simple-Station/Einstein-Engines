@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 using Content.Server.Speech.Components;
+using Content.Server.Speech.Prototypes;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -24,9 +25,6 @@ namespace Content.Server.Speech.EntitySystems
 
         private void OnAccent(EntityUid uid, ReplacementAccentComponent component, AccentGetEvent args)
         {
-            if (!_random.Prob(component.ReplacementChance))
-                return;
-
             args.Message = ApplyReplacements(args.Message, component.Accent);
         }
 
@@ -37,6 +35,9 @@ namespace Content.Server.Speech.EntitySystems
         public string ApplyReplacements(string message, string accent)
         {
             if (!_proto.TryIndex<ReplacementAccentPrototype>(accent, out var prototype))
+                return message;
+
+            if (!_random.Prob(prototype.ReplacementChance))
                 return message;
 
             // Prioritize fully replacing if that exists--

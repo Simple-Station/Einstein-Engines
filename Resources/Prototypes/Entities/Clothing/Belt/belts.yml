@@ -34,6 +34,7 @@
       - WeldingMask
       - RPD
       components:
+      - StationMap
       - SprayPainter
       - NetworkConfigurator
       - RCD
@@ -118,6 +119,7 @@
       - AppraisalTool
       - RPD
       components:
+      - StationMap
       - SprayPainter
       - NetworkConfigurator
       - RCD
@@ -231,7 +233,6 @@
       - CigPack
       - TrashBag
       - WetFloorSign
-      - HolosignProjector
       - Plunger
       components:
       - LightReplacer
@@ -483,7 +484,7 @@
   - type: Appearance
 
 - type: entity
-  parent: [ClothingBeltStorageBase, BaseRestrictedContraband]
+  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseRestrictedContraband]
   id: ClothingBeltSecurity
   name: security belt
   description: Can hold security gear like handcuffs and flashes.
@@ -493,7 +494,7 @@
   - type: Clothing
     sprite: Clothing/Belt/security.rsi
   - type: ExplosionResistance
-    damageCoefficient: 0.5
+    damageCoefficient: 0.9
   - type: Storage
     whitelist:
       tags:
@@ -577,7 +578,7 @@
 # Belts without visualizers
 
 - type: entity
-  parent: [ClothingBeltAmmoProviderBase, BaseRestrictedContraband]
+  parent: [ClothingBeltAmmoProviderBase, BaseSecurityBartenderContraband]
   id: ClothingBeltBandolier
   name: bandolier
   description: A bandolier for holding shotgun ammunition.
@@ -782,7 +783,7 @@
     sprite: Clothing/Belt/suspenders_black.rsi
 
 - type: entity
-  parent: ClothingBeltStorageBase
+  parent: [ ClothingBeltStorageBase, BaseMagicalContraband ]
   id: ClothingBeltWand
   name: wand belt
   description: A belt designed to hold various rods of power. A veritable fanny pack of exotic magic.
