@@ -175,9 +175,6 @@ ui-options-function-try-pull-object = Pull object
 ui-options-function-move-pulled-object = Move pulled object
 ui-options-function-release-pulled-object = Release pulled object
 ui-options-function-point = Point at location
-ui-options-function-rotate-object-clockwise = Rotate clockwise
-ui-options-function-rotate-object-counterclockwise = Rotate counterclockwise
-ui-options-function-flip-object = Flip
 
 ui-options-function-target-head = Target head
 ui-options-function-target-torso = Target torso
