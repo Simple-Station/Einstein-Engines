@@ -32,6 +32,6 @@ public sealed partial class CCVars
     /// <summary>
     ///     Disables multiple announcement sounds from playing at once
     /// </summary>
-    public static readonly CVarDef<bool> AnnouncerDisableMultipleEnabled =
+    public static readonly CVarDef<bool> AnnouncerDisableMultipleSounds =
         CVarDef.Create("announcer.disable_multiple_sounds", false, CVar.ARCHIVE | CVar.CLIENTONLY);
 }

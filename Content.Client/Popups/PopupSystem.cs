@@ -1,5 +1,8 @@
 using System.Linq;
 using Content.Shared.Containers;
+using Content.Client.UserInterface.Systems.Chat;
+using Content.Shared._White;
+using Content.Shared.Chat;
 using Content.Shared.Examine;
 using Content.Shared.GameTicking;
 using Content.Shared.Popups;
@@ -41,6 +44,18 @@ namespace Content.Client.Popups
         public const float MaximumPopupLifetime = 5f;
         public const float PopupLifetimePerCharacter = 0.04f;
 
+        // WD EDIT START
+        private static readonly Dictionary<PopupType, string> FontSizeDict = new()
+        {
+            { PopupType.Medium, "12" },
+            { PopupType.MediumCaution, "12" },
+            { PopupType.Large, "15" },
+            { PopupType.LargeCaution, "15" }
+        };
+
+        private bool _shouldLogInChat;
+        // WD EDIT END
+
         public override void Initialize()
         {
             SubscribeNetworkEvent<PopupCursorEvent>(OnPopupCursorEvent);
@@ -58,6 +73,11 @@ namespace Content.Client.Popups
                     _examine,
                     _transform,
                     this));
+
+            // WD EDIT START
+            _shouldLogInChat = _configManager.GetCVar(WhiteCVars.LogInChat);
+            _configManager.OnValueChanged(WhiteCVars.LogInChat, log => { _shouldLogInChat = log; });
+            // WD EDIT END
         }
 
         public override void Shutdown()
@@ -103,6 +123,26 @@ namespace Content.Client.Popups
             };
 
             _aliveWorldLabels.Add(popupData, label);
+
+            // WD EDIT START
+            if (!_shouldLogInChat)
+                return;
+
+            if (_playerManager.LocalEntity == null)
+                return;
+
+            if (!_examine.InRangeUnOccluded(_playerManager.LocalEntity.Value, coordinates, 10))
+                return;
+
+            var fontsize = FontSizeDict.GetValueOrDefault(type, "10");
+            var fontcolor = type is PopupType.LargeCaution or PopupType.MediumCaution or PopupType.SmallCaution
+                ? "#C62828"
+                : "#AEABC4";
+
+            var wrappedMessage = $"[font size={fontsize}][color={fontcolor}]{message}[/color][/font]";
+            var chatMsg = new ChatMessage(ChatChannel.Emotes, message, wrappedMessage, GetNetEntity(EntityUid.Invalid), null);
+            _uiManager.GetUIController<ChatUIController>().ProcessChatMessage(chatMsg);
+            // WD EDIT END
         }
 
         #region Abstract Method Implementations

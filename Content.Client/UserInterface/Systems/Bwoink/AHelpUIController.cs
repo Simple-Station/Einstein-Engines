@@ -33,7 +33,6 @@ namespace Content.Client.UserInterface.Systems.Bwoink;
 public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSystem>, IOnStateChanged<GameplayState>, IOnStateChanged<LobbyState>
 {
     [Dependency] private readonly IClientAdminManager _adminManager = default!;
-    [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IClyde _clyde = default!;
     [Dependency] private readonly IUserInterfaceManager _uiManager = default!;
@@ -46,11 +45,11 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
 
     private bool _discordRelayActive;
     private bool _hasUnreadAHelp;
-    private bool _bwoinkSoundEnabled;
 
     public const string AHelpErrorSound = "/Audio/Admin/ahelp_error.ogg";
     public const string AHelpReceiveSound = "/Audio/Admin/ahelp_receive.ogg";
     public const string AHelpSendSound = "/Audio/Admin/ahelp_send.ogg";
+
 
     public override void Initialize()
     {
@@ -60,8 +59,8 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
         SubscribeNetworkEvent<BwoinkPlayerTypingUpdated>(PeopleTypingUpdated);
 
         _adminManager.AdminStatusUpdated += OnAdminStatusUpdated;
-        _config.OnValueChanged(CCVars.BwoinkSoundEnabled, v => _bwoinkSoundEnabled = v, true);
     }
+
 
     public void UnloadButton()
     {
@@ -135,7 +134,7 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
 
         EnsureUIHelper();
 
-        if (message.PlaySound && localPlayer.UserId != message.TrueSender && !UIHelper!.IsOpen && (_bwoinkSoundEnabled || !_adminManager.IsActive()))
+        if (message.PlaySound && localPlayer.UserId != message.TrueSender && !UIHelper!.IsOpen)
         {
             _audio.PlayGlobal(AHelpReceiveSound, Filter.Local(), false);
             _clyde.RequestWindowAttention();
