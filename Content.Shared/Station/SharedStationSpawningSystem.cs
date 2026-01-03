@@ -95,7 +95,7 @@ public abstract class SharedStationSpawningSystem : EntitySystem
         {
             foreach (var slot in slotDefinitions)
             {
-                var equipmentStr = startingGear.GetGear(slot.Name, null);
+                var equipmentStr = startingGear.GetGear(slot.Name);
                 if (string.IsNullOrEmpty(equipmentStr))
                     continue;
 
@@ -208,9 +208,6 @@ public abstract class SharedStationSpawningSystem : EntitySystem
                 newStartingGear = new StartingGearPrototype()
                 {
                     Equipment = startingGear.Equipment.ToDictionary(static entry => entry.Key, static entry => entry.Value),
-                    InnerClothingSkirt = startingGear.InnerClothingSkirt,
-                    Satchel = startingGear.Satchel,
-                    Duffelbag = startingGear.Duffelbag,
                     Inhand = new List<EntProtoId>(startingGear.Inhand),
                     Storage = startingGear.Storage.ToDictionary(
                         static entry => entry.Key,
@@ -219,22 +216,12 @@ public abstract class SharedStationSpawningSystem : EntitySystem
                 };
             }
 
-            // Apply the sub-gear's equipment to this starting gear
-            if (subGearProto.InnerClothingSkirt != null)
-                newStartingGear.InnerClothingSkirt = subGearProto.InnerClothingSkirt;
-
-            if (subGearProto.Satchel != null)
-                newStartingGear.Satchel = subGearProto.Satchel;
-
-            if (subGearProto.Duffelbag != null)
-                newStartingGear.Duffelbag = subGearProto.Duffelbag;
-
             foreach (var (slot, entProtoId) in subGearProto.Equipment)
             {
                 // Hullrot edit - add generic pocket handler
                 void InsertIntoPocket(EntProtoId pocketProtoId)
                 {
-                    if (string.IsNullOrEmpty(newStartingGear.GetGear("back", null)))
+                    if (string.IsNullOrEmpty(newStartingGear.GetGear("back")))
                         newStartingGear.Inhand.Add(pocketProtoId);
                     else
                     {

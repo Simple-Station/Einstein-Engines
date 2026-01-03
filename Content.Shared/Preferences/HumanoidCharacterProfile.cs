@@ -111,12 +111,6 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     [DataField]
     public HumanoidCharacterAppearance Appearance { get; set; } = new();
 
-    [DataField]
-    public ClothingPreference Clothing { get; set; }
-
-    [DataField]
-    public BackpackPreference Backpack { get; set; }
-
     /// When spawning into a round what's the preferred spot to spawn
     [DataField]
     public SpawnPriorityPreference SpawnPriority { get; private set; } = SpawnPriorityPreference.None;
@@ -165,8 +159,6 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         HumanoidCharacterAppearance appearance,
         SpawnPriorityPreference spawnPriority,
         Dictionary<string, JobPriority> jobPriorities,
-        ClothingPreference clothing,
-        BackpackPreference backpack,
         PreferenceUnavailableMode preferenceUnavailable,
         HashSet<string> antagPreferences,
         HashSet<string> traitPreferences,
@@ -195,8 +187,6 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         Appearance = appearance;
         SpawnPriority = spawnPriority;
         _jobPriorities = jobPriorities;
-        Clothing = clothing;
-        Backpack = backpack;
         PreferenceUnavailable = preferenceUnavailable;
         _antagPreferences = antagPreferences;
         _traitPreferences = traitPreferences;
@@ -229,8 +219,6 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.Appearance.Clone(),
             other.SpawnPriority,
             new Dictionary<string, JobPriority>(other.JobPriorities),
-            other.Clothing,
-            other.Backpack,
             other.PreferenceUnavailable,
             new HashSet<string>(other.AntagPreferences),
             new HashSet<string>(other.TraitPreferences),
@@ -370,13 +358,6 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     public HumanoidCharacterProfile WithCharacterAppearance(HumanoidCharacterAppearance appearance) =>
         new(this) { Appearance = appearance };
-
-    public HumanoidCharacterProfile WithClothingPreference(ClothingPreference clothing) =>
-        new(this) { Clothing = clothing };
-
-    public HumanoidCharacterProfile WithBackpackPreference(BackpackPreference backpack) =>
-        new(this) { Backpack = backpack };
-
     public HumanoidCharacterProfile WithSpawnPriorityPreference(SpawnPriorityPreference spawnPriority) =>
         new(this) { SpawnPriority = spawnPriority };
 

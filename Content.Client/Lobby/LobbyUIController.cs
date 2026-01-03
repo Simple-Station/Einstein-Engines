@@ -295,7 +295,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
         foreach (var slot in slots)
         {
-            var itemType = gear.GetGear(slot.Name, profile);
+            var itemType = gear.GetGear(slot.Name);
 
             if (_inventory.TryUnequip(dummy, slot.Name, out var unequippedItem, silent: true, force: true, reparent: false))
                 EntityManager.DeleteEntity(unequippedItem.Value);
