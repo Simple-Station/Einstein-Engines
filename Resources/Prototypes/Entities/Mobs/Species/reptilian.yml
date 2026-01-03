@@ -93,6 +93,13 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
+  - type: Bloodstream
+    bloodReagent: ReptilianBlood
+  - type: DamageVisuals
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#e34e29"
 
 - type: entity
   parent: BaseSpeciesDummy

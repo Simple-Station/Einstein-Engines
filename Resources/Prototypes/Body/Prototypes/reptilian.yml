@@ -8,16 +8,16 @@
       connections:
       - torso
       organs:
-        brain: OrganHumanBrain
-        eyes: OrganHumanEyes
+        brain: OrganReptilianBrain
+        eyes: OrganReptilianEyes
     torso:
       part: TorsoReptilian
       organs:
-        heart: OrganAnimalHeart
-        lungs: OrganHumanLungs
+        heart: OrganReptilianHeart
+        lungs: OrganReptilianLungs
         stomach: OrganReptilianStomach
-        liver: OrganAnimalLiver
-        kidneys: OrganHumanKidneys
+        liver: OrganReptilianLiver
+        kidneys: OrganReptilianKidneys
       connections:
       - right arm
       - left arm
