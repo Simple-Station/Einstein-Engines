@@ -51,7 +51,11 @@
 
 - type: markingPoints
   id: MobIPCMarkingLimits
+  onlyWhitelisted: true
   points:
+    Hair:
+      points: 1
+      required: false
     Head:
       points: 6
       required: true
@@ -99,7 +103,7 @@
       required: false
       defaultMarkings: [ MobIPCLHandDefault ]
     Wings:
-      points: 1
+      points: 0
       required: false
 
 - type: humanoidBaseSprite
