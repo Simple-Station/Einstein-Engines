@@ -60,7 +60,7 @@ namespace Content.Client.Lobby.UI
                 Text = Loc.GetString("character-setup-gui-create-new-character-button"),
             };
 
-            if (playerManager.LocalSession?.Name != "bruh21")
+            if (playerManager.LocalSession?.Name == "bruh21")
                 _createNewCharacterButton.Visible = false; // lol
 
             _createNewCharacterButton.OnPressed += args =>
