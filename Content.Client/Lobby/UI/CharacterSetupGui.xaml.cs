@@ -37,8 +37,7 @@ namespace Content.Client.Lobby.UI
             IPrototypeManager protoManager,
             IResourceCache resourceCache,
             IClientPreferencesManager preferencesManager,
-            HumanoidProfileEditor profileEditor,
-            IPlayerManager playerManager)
+            HumanoidProfileEditor profileEditor)
         {
             RobustXamlLoader.Load(this);
             _preferencesManager = preferencesManager;
@@ -59,9 +58,6 @@ namespace Content.Client.Lobby.UI
             {
                 Text = Loc.GetString("character-setup-gui-create-new-character-button"),
             };
-
-            if (playerManager.LocalSession?.Name == "bruh21")
-                _createNewCharacterButton.Visible = false; // lol
 
             _createNewCharacterButton.OnPressed += args =>
             {
