@@ -1,7 +1,6 @@
 ﻿- type: entity
   id: OrganReptilianStomach
   parent: OrganAnimalStomach
-  categories: [ HideSpawnMenu ]
   components:
   - type: Stomach
     specialDigestible:
@@ -21,3 +20,54 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
+  - type: Sprite
+    sprite: Mobs/Species/Reptilian/organs.rsi
+    state: stomach
+
+- type: entity
+  id: OrganReptilianLungs
+  parent: OrganHumanLungs
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Reptilian/organs.rsi
+    state: lungs
+
+- type: entity
+  id: OrganReptilianHeart
+  parent: OrganAnimalHeart
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Reptilian/organs.rsi
+    state: heart-on
+
+- type: entity
+  id: OrganReptilianKidneys
+  parent: OrganHumanKidneys
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Reptilian/organs.rsi
+    state: kidneys
+
+- type: entity
+  id: OrganReptilianLiver
+  parent: OrganAnimalLiver
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Reptilian/organs.rsi
+    state: liver
+
+- type: entity
+  id: OrganReptilianBrain
+  parent: OrganHumanBrain
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Reptilian/organs.rsi
+    state: brain
+
+- type: entity
+  id: OrganReptilianEyes
+  parent: OrganHumanEyes
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Reptilian/organs.rsi
+    state: eyes

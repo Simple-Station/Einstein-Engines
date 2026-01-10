@@ -1,0 +1,7 @@
+- type: reagent
+  parent: Blood
+  id: ReptilianBlood
+  name: reagent-name-reptilian-blood
+  group: Biological
+  desc: reagent-desc-reptilian-blood
+  color: "#e34e29"
