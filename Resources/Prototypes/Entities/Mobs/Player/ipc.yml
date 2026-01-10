@@ -134,14 +134,15 @@
   - type: Damageable
     damageContainer: SiliconUnshielded
     damageModifierSet: IPC
-  - type: Barotrauma
-    damage:
-      types:
-        Heat: 0.55 #per second, scales with pressure and other constants. Uniquely Heat instead of blunt, to simulate mechanical overheating in vacuum. IPCs are normally air cooled.
+#  - type: Barotrauma
+#    damage:
+#      types:
+#        Heat: 0.55 #per second, scales with pressure and other constants. Uniquely Heat instead of blunt, to simulate mechanical overheating in vacuum. IPCs are normally air cooled.
   - type: Bloodstream
     bloodlossDamage:
       types:
         Bloodloss: 0
+        Heat: 0.05
     bloodlossHealDamage:
       types:
         Bloodloss: 0
@@ -149,6 +150,12 @@
     bloodRegenerationThirst: 0
     bloodReagent: IPCCoolant
     cauterizeMessage: null
+  - type: ThermalRegulator
+    metabolismHeat: 1300
+    radiatedHeat: 100
+    implicitHeatRegulation: 0
+    sweatHeatRegulation: 0
+    shiveringHeatRegulation: 0
 
 - type: entity
   save: false
