@@ -143,7 +143,7 @@ namespace Content.Shared.Atmos
         /// <summary>
         ///     For the purposes of making space "colder"
         /// </summary>
-        public const float SpaceHeatCapacity = 7000f;
+        public const float SpaceHeatCapacity = 10f;
 
         /// <summary>
         ///     Dictionary of chemical abbreviations for <see cref="Gas"/>
