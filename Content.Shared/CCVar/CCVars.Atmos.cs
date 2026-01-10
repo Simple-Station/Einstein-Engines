@@ -15,20 +15,20 @@ public sealed partial class CCVars
     ///     Whether gas differences will move entities.
     /// </summary>
     public static readonly CVarDef<bool> SpaceWind =
-        CVarDef.Create("atmos.space_wind", true, CVar.SERVERONLY);
+        CVarDef.Create("atmos.space_wind", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     A direct multiplier on how violent space wind is.
     /// </summary>
     public static readonly CVarDef<float> SpaceWindStrengthMultiplier =
-        CVarDef.Create("atmos.space_wind_strength_multiplier", 1f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.space_wind_strength_multiplier", 0.5f, CVar.SERVERONLY);
 
     /// <summary>
     ///     The maximum Force (in Newtons) that may be applied to an object by atmospheric pressure differences.
     ///     Useful to prevent clipping through objects.
     /// </summary>
     public static readonly CVarDef<float> SpaceWindMaxForce =
-        CVarDef.Create("atmos.space_wind_max_force", 200f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.space_wind_max_force", 100f, CVar.SERVERONLY);
 
     /// <summary>
     ///     The maximum angular velocity that space wind can spin objects at while throwing them. This one is mostly for fun.
@@ -141,27 +141,27 @@ public sealed partial class CCVars
     ///     in-game.
     /// </summary>
     public static readonly CVarDef<float> AtmosSpeedup =
-        CVarDef.Create("atmos.speedup", 8f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.speedup", 4f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Like atmos.speedup, but only for gas and reaction heat values. 64x means
     ///     gases heat up and cool down 64x faster than real life.
     /// </summary>
     public static readonly CVarDef<float> AtmosHeatScale =
-        CVarDef.Create("atmos.heat_scale", 8f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.heat_scale", 4f, CVar.SERVERONLY);
 
     /// <summary>
     ///     A multiplier on the amount of force applied to Humanoid entities, as tracked by HumanoidAppearanceComponent
     ///     This multiplier is added after all other checks are made, and applies to both throwing force, and how easy it is for an entity to be thrown.
     /// </summary>
     public static readonly CVarDef<float> AtmosHumanoidThrowMultiplier =
-        CVarDef.Create("atmos.humanoid_throw_multiplier", 2f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.humanoid_throw_multiplier", 1f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether or not Space Wind is allowed to attempt to knock down player characters.
     /// </summary>
     public static readonly CVarDef<bool> SpaceWindAllowKnockdown =
-        CVarDef.Create("atmos.space_wind_allow_knockdown", true, CVar.SERVERONLY);
+        CVarDef.Create("atmos.space_wind_allow_knockdown", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether or not Space Wind will create subtle visual indicators for the presence of air currents.
