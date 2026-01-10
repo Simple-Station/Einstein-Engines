@@ -11,7 +11,7 @@
     - state: active
   - type: Item
     sprite: Objects/Devices/gps.rsi
-  - type: HandheldGPS
+  - type: GPS # Goob Station - what if gps didnt suck doo doo balls
   - type: PhysicalComposition
     materialComposition:
       Aluminum: 300
@@ -20,3 +20,11 @@
   - type: Tag
     tags:
     - GPS
+  - type: ActivatableUI
+    key: enum.GpsUiKey.Key # Goob Station - what if gps didnt suck doo doo balls
+    inHandsOnly: true
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.GpsUiKey.Key: # Goob Station - what if gps didnt suck doo doo balls
+        type: GpsBoundUserInterface

@@ -230,6 +230,7 @@
     - id: Fulton
       amount: !type:RangeNumberSelector
         range: 1, 3
+    - id: HandheldGPSBasic
     - id: WeaponCrusherDagger
     - id: MiningDrill
     - id: ClothingEyesGlassesMeson
