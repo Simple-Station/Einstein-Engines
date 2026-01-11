@@ -34,3 +34,33 @@
   source: "https://idlethumbs.bandcamp.com/track/the-wizard"
   # The source is a direct link the the track, but not the "main" bandcamp of the author. Hence the link is also included separately in the copyright.
   # Got permission from Chris for this song as well on 02/25/25, requires same attributions
+
+- files: ["80salloveragain.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "80s All Over Again by A Drop A Day."
+  source: "https://youtu.be/CbR3VOwQOA4?si=WT41mAftz_XNbksk"
+
+- files: ["torn.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Torn by Macamoto."
+  source: "https://freemusicarchive.org/music/Macamoto/Drunk_City_Blues/Macamoto_-_Drunk_City_Blues_-_05_Torn"
+
+- files: ["lysendraa.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Memories of Lysendraa by TALES."
+  source: "https://freemusicarchive.org/music/TALES/The_Seskian_Wars/8-Memories_Of_Lysendraa"
+
+- files: ["rimward_cruise.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Rimward Cruise by Haplogynae."
+  source: "https://soundcloud.com/haplogynae/baystation-12-rimward-cruise"
+
+- files: ["MartianCowboy.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "Martian Cowboy by Kevin MacLeod."
+  source: "https://youtu.be/VnFmToDweFM?si=4oMMdRW_pxa0QgTe"
+
+- files: ["clouds.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "Clouds of Fire by Hector, converted from s3m to OGG."
+  source: "https://modarchive.org/index.php?request=view_by_moduleid&query=73980"

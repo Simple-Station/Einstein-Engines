@@ -39,3 +39,27 @@
   name: PigeonBeans - Sunset
   path:
     path: /Audio/Jukebox/sunset.ogg
+
+- type: jukebox
+  id: clouds
+  name: Hector - Clouds of Fire
+  path:
+    path: /Audio/Lobby/clouds.ogg
+
+- type: jukebox
+  id: lysendraa
+  name: TALES - Memories of Lysendraa
+  path:
+    path: /Audio/Lobby/lysendraa.ogg
+
+- type: jukebox
+  id: 80s
+  name: A Drop A Day - 80s All Over Again
+  path:
+    path: /Audio/Lobby/80salloveragain.ogg
+
+- type: jukebox
+  id: cruise
+  name: Haplogynae - Rimward Cruise
+  path:
+    path: /Audio/Lobby/rimward_cruise.ogg
