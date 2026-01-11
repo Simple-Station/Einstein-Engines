@@ -16834,3 +16834,14 @@ Entries:
   id: 7324
   time: '2025-12-27T22:55:21.0000000+00:00'
   url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/180
+- author: Unenduring
+  changes:
+    - type: Tweak
+      message: Добавлен генпоп (общая тюрьма) на часто используемые карты
+    - type: Fix
+      message: Исправлены ошибки в сроках корпоративного закона (те, что увидел)
+    - type: Remove
+      message: Удалена карта "Pebble" из пула
+  id: 7325
+  time: '2026-01-11T11:44:47.0000000+00:00'
+  url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/193
