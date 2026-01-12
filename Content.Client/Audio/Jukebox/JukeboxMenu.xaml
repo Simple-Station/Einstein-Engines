@@ -25,14 +25,39 @@
         />
         <BoxContainer Orientation="Vertical">
             <Label Name="SongSelected" Text="{Loc 'jukebox-menu-selectedsong'}" />
-            <Label Name="SongName" Text="---" />
+            <BoxContainer
+                Orientation="Horizontal"
+                HorizontalExpand="True"
+                VerticalExpand="False"
+                SizeFlagsStretchRatio="1"
+            >
+                <Label Name="SongName" Text="---" />
+                <Label Name="DurationLabel" Text="00:00 / 00:00" HorizontalAlignment="Right" HorizontalExpand="True" />
+            </BoxContainer>
             <Slider Name="PlaybackSlider" HorizontalExpand="True" />
+            <Label Name="VolumeNumberLabel" Text="0" HorizontalAlignment="Right" HorizontalExpand="True" />
+            <BoxContainer
+                Orientation="Horizontal"
+                HorizontalExpand="True"
+                VerticalExpand="False"
+                SizeFlagsStretchRatio="1"
+            >
+                <Label Name="VolumeLabel" Text="{Loc 'jukebox-menu-volume'} " />
+                <Slider Name="VolumeSlider" HorizontalExpand="True" />
+            </BoxContainer>
         </BoxContainer>
-        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="False" SizeFlagsStretchRatio="1">
-            <Button Name="PlayButton" Text="{Loc 'jukebox-menu-buttonplay'}" />
-            <Button Name="StopButton" Text="{Loc 'jukebox-menu-buttonstop'}" />
-            <Button Name="LoopButton" Text="{Loc 'jukebox-menu-buttonloop-off'}" />
-            <Label Name="DurationLabel" Text="00:00 / 00:00" HorizontalAlignment="Right" HorizontalExpand="True" />
+        <BoxContainer Orientation="Vertical">
+            <PanelContainer StyleClasses="LowDivider" />
+            <BoxContainer
+                Orientation="Horizontal"
+                HorizontalExpand="True"
+                VerticalExpand="False"
+                SizeFlagsStretchRatio="1"
+            >
+                <Button Name="PlayButton" Text="{Loc 'jukebox-menu-buttonplay'}" />
+                <Button Name="StopButton" Text="{Loc 'jukebox-menu-buttonstop'}" />
+                <Button Name="LoopButton" Text="{Loc 'jukebox-menu-buttonloop-off'}" />
+            </BoxContainer>
         </BoxContainer>
     </BoxContainer>
 </ui:FancyWindow>

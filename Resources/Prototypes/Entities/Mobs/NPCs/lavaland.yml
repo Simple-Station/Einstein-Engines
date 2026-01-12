@@ -1,253 +1,255 @@
-﻿- type: entity
+- type: entity
   name: magma hand
   id: MobMagmaHand
-  parent: [ LavalandMobBase, MobCombat ]
+  parent: [LavalandMobBase, MobCombat]
   description: Looks hot to the touch... Better not shake its hand!
   components:
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: Mobs/Aliens/Lavaland/magma_hand.rsi
-    layers:
-    - map: [ "enum.DamageStateVisualLayers.Base" ]
-      state: magma_hand
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.30
-        density: 80
-        mask:
-        - MobMask
-        layer:
-        - MobLayer
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      120: Dead
-  - type: MovementSpeedModifier
-    baseWalkSpeed: 2
-    baseSprintSpeed: 4
-  - type: FootstepModifier
-    footstepSoundCollection:
-      path: /Audio/Effects/Footsteps/slime1.ogg
-      params:
-        volume: 3
-  - type: Tag
-    tags:
-    - FootstepSound
-    - DoorBumpOpener
-  - type: Respirator
-    damage:
-      types:
-        Asphyxiation: 0.2
-    damageRecovery:
-      types:
-        Asphyxiation: -1.0
-    maxSaturation: 15
-  - type: Absorbable
-  - type: Damageable
-    damageContainer: Biological
-    damageModifierSet: MagmaHand
-  - type: Bloodstream
-    bloodReagent: Sulfur
-    bloodlossDamage:
-      types:
-        Bloodloss:
-          0.5
-    bloodlossHealDamage:
-      types:
-        Bloodloss:
-          -0.25
-  - type: Barotrauma
-    damage:
-      types:
-        Blunt: 0.45
-  - type: Reactive
-    groups:
-      Flammable: [ Touch ]
-      Extinguish: [ Touch ]
-    reactions:
-    - reagents: [ Water, SpaceCleaner ]
-      methods: [ Touch ]
-      effects:
-      - !type:WashCreamPieReaction
-    - reagents: [ Water ]
-      methods: [ Touch ]
-      effects:
-      - !type:HealthChange
-        scaleByQuantity: true
-        damage:
-          types:
-            Cold: 3
-    - reagents: [ Ice ]
-      methods: [ Touch ]
-      effects:
-      - !type:HealthChange
-        scaleByQuantity: true
-        damage:
-          types:
-            Cold: 10
-  - type: MeleeWeapon
-    altDisarm: false
-    soundHit:
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: Mobs/Aliens/Lavaland/magma_hand.rsi
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: magma_hand
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PhysShapeCircle
+            radius: 0.30
+          density: 80
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        120: Dead
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 2
+      baseSprintSpeed: 4
+    - type: FootstepModifier
+      footstepSoundCollection:
+        path: /Audio/Effects/Footsteps/slime1.ogg
+        params:
+          volume: 3
+    - type: Tag
+      tags:
+        - FootstepSound
+        - DoorBumpOpener
+    - type: Respirator
+      damage:
+        types:
+          Asphyxiation: 0.2
+      damageRecovery:
+        types:
+          Asphyxiation: -1.0
+      maxSaturation: 15
+    - type: Absorbable
+    - type: Damageable
+      damageContainer: Biological
+      damageModifierSet: MagmaHand
+    - type: Bloodstream
+      bloodReagent: Sulfur
+      bloodlossDamage:
+        types:
+          Bloodloss: 0.5
+      bloodlossHealDamage:
+        types:
+          Bloodloss: -0.25
+    - type: Barotrauma
+      damage:
+        types:
+          Blunt: 0.45
+    - type: Reactive
+      groups:
+        Flammable: [Touch]
+        Extinguish: [Touch]
+      reactions:
+        - reagents: [Water, SpaceCleaner]
+          methods: [Touch]
+          effects:
+            - !type:WashCreamPieReaction
+        - reagents: [Water]
+          methods: [Touch]
+          effects:
+            - !type:HealthChange
+              scaleByQuantity: true
+              damage:
+                types:
+                  Cold: 3
+        - reagents: [Ice]
+          methods: [Touch]
+          effects:
+            - !type:HealthChange
+              scaleByQuantity: true
+              damage:
+                types:
+                  Cold: 10
+    - type: MeleeWeapon
+      altDisarm: false
+      soundHit:
         path: /Audio/Weapons/punch3.ogg
-    angle: 0
-    animation: WeaponArcPunch
-    damage:
-      types:
-        Blunt: 3
-        Structural: 4
-        Heat: 8
-  - type: InteractionPopup
-    successChance: 0.05
-    interactSuccessString: petting-success-magmahand
-    interactFailureString: petting-failure-magmahand
-  - type: Fauna
-  - type: NpcFactionMember
-    factions:
-    - SimpleHostile
-  - type: HTN
-    rootTask:
-      task: SimpleHostileCompound
+      angle: 0
+      animation: WeaponArcPunch
+      damage:
+        types:
+          Blunt: 3
+          Structural: 4
+          Heat: 8
+    - type: InteractionPopup
+      successChance: 0.05
+      interactSuccessString: petting-success-magmahand
+      interactFailureString: petting-failure-magmahand
+    - type: Fauna
+    - type: NpcFactionMember
+      factions:
+        - SimpleHostile
+    - type: HTN
+      rootTask:
+        task: SimpleHostileCompound
 
 - type: entity
   name: watcher
   id: MobWatcherBase
-  parent: [ SimpleSpaceMobBase, FlyingMobBase ]
+  parent: [SimpleSpaceMobBase, FlyingMobBase]
   abstract: true
   description: It's like it's staring right through you.
   components:
-  - type: NpcFactionMember
-    factions:
-    - SimpleHostile
-  - type: HTN
-    rootTask:
-      task: SimpleRangedHostileCompound
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: Mobs/Aliens/Lavaland/watcher.rsi
-    layers:
-    - map: [ "enum.DamageStateVisualLayers.Base" ]
-      state: base
-    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-      state: unshaded
-      shader: unshaded
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.30
-        density: 80
-        mask:
-          - FlyingMobMask
-        layer:
-        - FlyingMobLayer
-  - type: DamageStateVisuals
-    states:
-      Alive:
-        Base: base
-        BaseUnshaded: unshaded
-      Dead:
-        Base: dead
-        BaseUnshaded: dead-unshaded
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      50: Dead
-  - type: MovementSpeedModifier
-    baseWalkSpeed: 4 # Lavaland change
-    baseSprintSpeed: 5 # Lavaland change
-  - type: ProjectileBatteryAmmoProvider
-    proto: WatcherBolt
-    fireCost: 50
-  - type: BatterySelfRecharger
-    autoRecharge: true
-    autoRechargeRate: 50
-  - type: Battery
-    maxCharge: 1000
-    startingCharge: 1000
-  - type: Gun
-    fireRate: 0.5
-    useKey: false
-    selectedMode: SemiAuto
-    availableModes:
-    - SemiAuto
-    soundGunshot: /Audio/Weapons/Guns/Gunshots/taser2.ogg
-  - type: CombatMode
-  - type: InteractionPopup
-    successChance: 0.3
-    interactSuccessString: petting-success-slimes
-    interactFailureString: petting-failure-generic
-    interactSuccessSound:
-      path: /Audio/Animals/lizard_happy.ogg
-  - type: Fauna # Lavaland Change
+    - type: NpcFactionMember
+      factions:
+        - SimpleHostile
+    - type: HTN
+      rootTask:
+        task: SimpleRangedHostileCompound
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: Mobs/Aliens/Lavaland/watcher.rsi
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: base
+        - map: ["enum.DamageStateVisualLayers.BaseUnshaded"]
+          state: unshaded
+          shader: unshaded
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PhysShapeCircle
+            radius: 0.30
+          density: 80
+          mask:
+            - FlyingMobMask
+          layer:
+            - FlyingMobLayer
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: base
+          BaseUnshaded: unshaded
+        Dead:
+          Base: dead
+          BaseUnshaded: dead-unshaded
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        50: Dead
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 4 # Lavaland change
+      baseSprintSpeed: 5 # Lavaland change
+    - type: ProjectileBatteryAmmoProvider
+      proto: WatcherBolt
+      fireCost: 50
+    - type: BatterySelfRecharger
+      autoRecharge: true
+      autoRechargeRate: 50
+    - type: Battery
+      maxCharge: 1000
+      startingCharge: 1000
+    - type: Gun
+      fireRate: 0.5
+      useKey: false
+      selectedMode: SemiAuto
+      availableModes:
+        - SemiAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/taser2.ogg
+    - type: CombatMode
+    - type: InteractionPopup
+      successChance: 0.3
+      interactSuccessString: petting-success-slimes
+      interactFailureString: petting-failure-generic
+      interactSuccessSound:
+        path: /Audio/Animals/lizard_happy.ogg
+    - type: Fauna # Lavaland Change
 
 - type: entity
   id: MobWatcherLavaland
   parent: MobWatcherBase
   components:
-  - type: Sprite
-    layers:
-    - map: [ "enum.DamageStateVisualLayers.Base" ]
-      state: base
-    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-      state: unshaded
-      shader: unshaded
+    - type: Sprite
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: base
+        - map: ["enum.DamageStateVisualLayers.BaseUnshaded"]
+          state: unshaded
+          shader: unshaded
+          color: red
+    - type: PointLight
+      radius: 1.5
+      energy: 0.5
       color: red
-  - type: PointLight
-    radius: 1.5
-    energy: 0.5
-    color: red
-  - type: Butcherable
-    spawned:
-    - id: LavalandWatcherCrusherUpgrade
+    - type: Butcherable
+      spawned:
+        - id: LavalandWatcherCrusherUpgrade
 
 - type: entity
   id: MobWatcherIcewing
   parent: MobWatcherBase
   name: icewing watcher
   components:
-  - type: Sprite
-    layers:
-    - map: [ "enum.DamageStateVisualLayers.Base" ]
-      state: base
-    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-      state: unshaded
-      shader: unshaded
+    - type: Sprite
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: base
+        - map: ["enum.DamageStateVisualLayers.BaseUnshaded"]
+          state: unshaded
+          shader: unshaded
+          color: deepskyblue
+    - type: PointLight
+      radius: 1.5
+      energy: 1
       color: deepskyblue
-  - type: PointLight
-    radius: 1.5
-    energy: 1
-    color: deepskyblue
-  - type: Butcherable
-    spawned:
-    - id: LavalandIcyWatcherCrusherUpgrade
+    - type: Butcherable
+      spawned:
+        - id: LavalandIcyWatcherCrusherUpgrade
 
 - type: entity
   id: MobWatcherMagmawing
   parent: MobWatcherBase
   name: magmawing watcher
   components:
-  - type: Sprite
-    layers:
-    - map: [ "enum.DamageStateVisualLayers.Base" ]
-      state: base
-    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-      state: unshaded
-      shader: unshaded
+    - type: Sprite
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: base
+        - map: ["enum.DamageStateVisualLayers.BaseUnshaded"]
+          state: unshaded
+          shader: unshaded
+          color: orangered
+    - type: PointLight
+      radius: 1.5
+      energy: 1
       color: orangered
-  - type: PointLight
-    radius: 1.5
-    energy: 1
-    color: orangered
-  - type: ProjectileBatteryAmmoProvider
-    proto: WatcherBoltMagmawing
-    fireCost: 50
-  - type: Butcherable
-    spawned:
-    - id: LavalandMagmaWatcherCrusherUpgrade
+    - type: ProjectileBatteryAmmoProvider
+      proto: WatcherBoltMagmawing
+      fireCost: 50
+    - type: Butcherable
+      spawned:
+        - id: LavalandMagmaWatcherCrusherUpgrade
+        - id: MaterialBones1
+          maxAmount: 3
+        - id: PlasmaOre1
+          maxAmount: 2
+        - id: DiamondOre1
+          maxAmount: 2
 
 - type: entity
   id: MobWatcherPride
@@ -256,15 +258,15 @@
   suffix: Admeme
   description: This rare subspecies only appears in June.
   components:
-  - type: Sprite
-    layers:
-    - map: [ "enum.DamageStateVisualLayers.Base" ]
-      state: base
-    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-      state: unshaded
-      shader: unshaded
-  - type: PointLight
-    radius: 1.5
-    energy: 1
-  - type: RgbLightController
-    layers: [ 1 ]
+    - type: Sprite
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: base
+        - map: ["enum.DamageStateVisualLayers.BaseUnshaded"]
+          state: unshaded
+          shader: unshaded
+    - type: PointLight
+      radius: 1.5
+      energy: 1
+    - type: RgbLightController
+      layers: [1]
