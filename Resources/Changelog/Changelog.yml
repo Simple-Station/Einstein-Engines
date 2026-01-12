@@ -16845,3 +16845,16 @@ Entries:
   id: 7325
   time: '2026-01-11T11:44:47.0000000+00:00'
   url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/193
+- author: IsNotAcceptable
+  changes:
+    - type: Add
+      message: '[jukebox] ползунок громкости'
+    - type: Add
+      message: '[jukebox] автосортировка по алфавиту'
+    - type: Tweak
+      message: '[admin] логи игроков, когда подключается/отключается'
+    - type: Tweak
+      message: '[lavaland] магмакарыл после смерти дропает алмазы/плазмы'
+  id: 7326
+  time: '2026-01-12T11:28:21.0000000+00:00'
+  url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/194
