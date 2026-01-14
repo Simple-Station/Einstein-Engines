@@ -2,7 +2,7 @@ using Content.Shared.Pinpointer;
 using Content.Goobstation.Shared.GPS;
 using Content.Goobstation.Shared.GPS.Components;
 using System.Linq;
-using Content.Goobstation.Common.CCVar;
+using Content.Shared._Goobstation.CCVar;
 using Robust.Shared.Configuration;
 using Robust.Shared.Random;
 

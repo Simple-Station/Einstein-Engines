@@ -27,4 +27,12 @@ public sealed partial class GoobCVars
         CVarDef.Create("blob.grow_space", true, CVar.SERVER);
 
     #endregion
+
+    #region GPS
+    /// <summary>
+    /// Controls how often GPS updates.
+    /// </summary>
+    public static readonly CVarDef<float> GpsUpdateRate =
+        CVarDef.Create("gps.update_rate", 1f, CVar.SERVER | CVar.REPLICATED);
+    #endregion
 }
