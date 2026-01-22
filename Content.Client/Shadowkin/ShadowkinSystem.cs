@@ -6,6 +6,7 @@ using Robust.Shared.Player;
 using Content.Shared.Humanoid;
 using Content.Shared.Abilities.Psionics;
 using Content.Client.Overlays;
+using System.Numerics;
 
 namespace Content.Client.Shadowkin;
 
@@ -52,7 +53,7 @@ public sealed partial class ShadowkinSystem : EntitySystem
     {
         if (_cfg.GetCVar(CCVars.NoVisionFilters))
             return;
-            
+
         _overlayMan.AddOverlay(_overlay);
     }
 

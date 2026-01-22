@@ -4,6 +4,7 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared.Overlays.Switchable;
 
+[AutoGenerateComponentState]
 public abstract partial class SwitchableOverlayComponent : BaseOverlayComponent
 {
     [DataField, AutoNetworkedField]

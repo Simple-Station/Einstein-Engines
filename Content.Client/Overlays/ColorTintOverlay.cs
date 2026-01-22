@@ -4,6 +4,7 @@ using Robust.Client.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Content.Shared.Shadowkin;
+using System.Numerics;
 
 namespace Content.Client.Overlays;
 
@@ -23,7 +24,7 @@ public sealed class ColorTintOverlay : Overlay
     /// <summary>
     ///     The color to tint the screen to as RGB on a scale of 0-1.
     /// </summary>
-    public Robust.Shared.Maths.Vector3? TintColor = null;
+    public Vector3? TintColor = null;
     /// <summary>
     ///     The percent to tint the screen by on a scale of 0-1.
     /// </summary>
