@@ -57,7 +57,6 @@ public sealed class PullingSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly ActionBlockerSystem _blocker = default!;
     [Dependency] private readonly AlertsSystem _alertsSystem = default!;
     [Dependency] private readonly SharedGravitySystem _gravity = default!;
@@ -181,7 +180,7 @@ public sealed class PullingSystem : EntitySystem
 
     public override void Update(float frameTime)
     {
-        if (_net.IsClient) // Client cannot predict this
+        if (_netManager.IsClient) // Client cannot predict this
             return;
 
         var query = EntityQueryEnumerator<PullerComponent, PhysicsComponent, TransformComponent>();
