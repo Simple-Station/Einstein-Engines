@@ -83,8 +83,6 @@
       groups:
         Brute: -3
   - type: AntiRottingContainer
-  - type: SpawnOnDespawn
-    prototype: CrateFunBingleLoot
 
 - type: entity
   id: BinglePitBingleless
