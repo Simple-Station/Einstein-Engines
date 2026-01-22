@@ -4,7 +4,6 @@ using Robust.Client.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Content.Shared.Shadowkin;
-using System.Numerics;
 
 namespace Content.Client.Overlays;
 
@@ -51,7 +50,7 @@ public sealed class ColorTintOverlay : Overlay
 
         _shader.SetParameter("SCREEN_TEXTURE", ScreenTexture);
         if (TintColor != null)
-            _shader.SetParameter("tint_color", (Robust.Shared.Maths.Vector3) TintColor);
+            _shader.SetParameter("tint_color", (Vector3) TintColor);
         if (TintAmount != null)
             _shader.SetParameter("tint_amount", (float) TintAmount);
 
