@@ -16,7 +16,6 @@ namespace Content.Goobstation.Client.Entry;
 
 public sealed class EntryPoint : GameClient
 {
-
     public override void PreInit()
     {
         base.PreInit();

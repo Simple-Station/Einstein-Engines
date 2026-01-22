@@ -1,3 +1,7 @@
+// All changes made to AtmosphereSystem.HighPressureDelta.cs as well as associated changes to the AtmosphereSystem and adjacent systems made by
+// Tyler Chase Johnson (also known as VMSolidus) are marked CC0 1.0. To view a copy of this mark, visit https://creativecommons.org/publicdomain/zero/1.0/
+// As these changes are done to more files than I am reasonably able to track down in order to mark them all,
+// this notice may be taken in good faith that all code modifications necessary for the functioning of Space Wind V5 may also be considered as CC0 1.0 even without included marks.
 using Content.Server.Atmos.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;

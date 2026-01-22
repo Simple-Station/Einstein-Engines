@@ -33,7 +33,6 @@
 
 # Needs testing
 - type: entity
-  abstract: true
   parent: BaseWizardRule
   id: SubWizard
   components:
@@ -45,8 +44,6 @@
       max: 1
       playerRatio: 1
       spawnerPrototype: SpawnPointGhostWizard
-      roleLoadout:
-      - RoleSurvivalExtended
       briefing:
         text: wizard-role-greeting
         color: Turquoise

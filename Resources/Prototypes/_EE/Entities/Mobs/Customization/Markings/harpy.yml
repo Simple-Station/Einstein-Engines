@@ -1,3 +1,4 @@
+## harpy.yml by Tyler Chase Johnson (also known as VMSolidus) is marked CC0 1.0. To view a copy of this mark, visit https://creativecommons.org/publicdomain/zero/1.0/
 - type: marking
   id: HarpyTricolorParrotZetawing
   bodyPart: RArm
@@ -10,7 +11,7 @@
       state: tricolor_parrot_zetawing_layer2
     - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
       state: tricolor_parrot_zetawing_layer3
-      
+
 - type: marking
   id: HarpyMonocolorParrotZetawing
   bodyPart: RArm
@@ -27,7 +28,7 @@
   sprites:
     - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
       state: monocolor_parrot_zetawing
-      
+
 - type: marking
   id: HarpyMacawZetawing
   bodyPart: RArm
@@ -42,7 +43,7 @@
   sprites:
     - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
       state: macaw_zetawing
-      
+
 - type: marking
   id: HarpyColorlessZetawing
   bodyPart: RArm
@@ -59,7 +60,7 @@
   sprites:
     - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
       state: colorless_zetawing
-      
+
 - type: marking
   id: HarpyLimeZetawing
   bodyPart: RArm
@@ -74,7 +75,7 @@
   sprites:
     - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
       state: lime_zetawing
-      
+
 - type: marking
   id: HarpyColorableDragobatZetawing
   bodyPart: RArm
@@ -100,7 +101,7 @@
   sprites:
     - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
       state: dragobat_zetawing
-      
+
 - type: marking
   id: HarpyColorableAsymagicalZetawing
   bodyPart: RArm
@@ -126,7 +127,7 @@
   sprites:
     - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
       state: asymagical_zetawing
-      
+
 - type: marking
   id: HarpySmallZetawing
   bodyPart: RArm
@@ -143,7 +144,7 @@
   sprites:
     - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
       state: small_zetawing
-      
+
 - type: marking
   id: HarpyQuintetZetawing
   bodyPart: RArm
@@ -160,7 +161,7 @@
   sprites:
     - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
       state: quintet_zetawing
-      
+
 - type: marking
   id: HarpyDownwardZetawing
   bodyPart: RArm

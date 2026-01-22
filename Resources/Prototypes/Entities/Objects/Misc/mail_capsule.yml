@@ -30,7 +30,7 @@
           - Document
           - Mail
           components:
-          - Mail
+          - Delivery
           - Paper
           - HyperlinkBook
         insertOnInteract: true
@@ -91,7 +91,7 @@
           - Document
           - Mail
           components:
-          - Mail
+          - Delivery
           - Paper
           - HyperlinkBook
     sprite: Objects/Misc/mail_capsule.rsi
