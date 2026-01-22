@@ -25,7 +25,7 @@ public sealed partial class BingleComponent : Component
     [DataField]
     public EntityUid? MyPit;
     [DataField]
-    public EntProtoId? UpgradedID;
+    public EntProtoId UpgradedID;
 }
 
 [Serializable, NetSerializable]

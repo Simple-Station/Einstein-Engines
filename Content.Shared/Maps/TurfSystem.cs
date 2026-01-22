@@ -12,6 +12,7 @@ namespace Content.Shared.Maps;
 public sealed class TurfSystem : EntitySystem
 {
     [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
+    [Dependency] private readonly ITileDefinitionManager _tileDefinitions = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     /// <summary>
@@ -94,5 +95,21 @@ public sealed class TurfSystem : EntitySystem
         var grid = Comp<MapGridComponent>(turf.GridUid);
         var center = (turf.GridIndices + new Vector2(0.5f, 0.5f)) * grid.TileSize;
         return new EntityCoordinates(turf.GridUid, center);
+    }
+
+    /// <summary>
+    ///     Returns the content tile definition for a tile.
+    /// </summary>
+    public ContentTileDefinition GetContentTileDefinition(Tile tile)
+    {
+        return (ContentTileDefinition)_tileDefinitions[tile.TypeId];
+    }
+
+    /// <summary>
+    ///     Returns the content tile definition for a tile ref.
+    /// </summary>
+    public ContentTileDefinition GetContentTileDefinition(TileRef tile)
+    {
+        return GetContentTileDefinition(tile.Tile);
     }
 }

@@ -54,6 +54,7 @@ using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared.Sprite;
 
 namespace Content.Goobstation.Server.Bingle;
 

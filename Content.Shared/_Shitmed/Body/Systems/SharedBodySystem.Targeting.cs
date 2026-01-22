@@ -92,7 +92,7 @@ public partial class SharedBodySystem
         //UpdateOrgan(frameTime);
         _integrityJobQueue.Process();
 
-        if (!_timing.IsFirstTimePredicted)
+        if (!_gameTiming.IsFirstTimePredicted)
             return;
 
         using var query = EntityQueryEnumerator<BodyPartComponent>();
@@ -178,7 +178,7 @@ public partial class SharedBodySystem
             && TryComp(partEnt.Comp.Body.Value, out InventoryComponent? inventory))
             _inventory.RelayEvent((partEnt.Comp.Body.Value, inventory), ref args);
 
-        if (Prototypes.TryIndex<DamageModifierSetPrototype>("PartDamage", out var partModifierSet))
+        if (_prototypeManager.TryIndex<DamageModifierSetPrototype>("PartDamage", out var partModifierSet))
             args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, partModifierSet);
 
         args.Damage *= GetPartDamageModifier(partEnt.Comp.PartType);
@@ -257,7 +257,7 @@ public partial class SharedBodySystem
     /// </summary>
     private TargetBodyPart GetRandomPartSpread(ushort torsoWeight = 9)
     {
-        var rand = new System.Random((int) _timing.CurTick.Value);
+        var rand = new System.Random((int) _gameTiming.CurTick.Value);
 
         const int targetPartsAmount = 9;
         // 5 = amount of target parts except Torso
@@ -281,7 +281,7 @@ public partial class SharedBodySystem
         if (!Resolve(uid, ref target, false))
             return null;
 
-        var rand = new System.Random((int) _timing.CurTick.Value);
+        var rand = new System.Random((int) _gameTiming.CurTick.Value);
 
         var totalWeight = target.TargetOdds.Values.Sum();
         var randomValue = rand.NextFloat() * totalWeight;
@@ -510,7 +510,7 @@ public partial class SharedBodySystem
         if (evadeChance == 0f)
             return false;
 
-        var rand = new System.Random((int) _timing.CurTick.Value);
+        var rand = new System.Random((int) _gameTiming.CurTick.Value);
 
         return rand.Prob(evadeChance);
     }
