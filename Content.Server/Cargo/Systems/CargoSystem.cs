@@ -47,7 +47,6 @@ public sealed partial class CargoSystem : SharedCargoSystem
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly MetaDataSystem _metaSystem = default!;
     [Dependency] private readonly RadioSystem _radio = default!;
-    [Dependency] private readonly IConfigurationManager _cfgManager = default!;
     [Dependency] private readonly SharedMapSystem _sharedMapSystem = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
