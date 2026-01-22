@@ -25,9 +25,9 @@ entities:
     - type: Transform
     - type: Map
       mapPaused: True
-     
+
     - type: GridTree
-    - type: MovedGrids
+
     - type: Broadphase
     - type: OccluderTree
   - uid: 2
