@@ -27,10 +27,3 @@ public sealed partial class BingleComponent : Component
     [DataField]
     public EntProtoId UpgradedID;
 }
-
-[Serializable, NetSerializable]
-public enum BingleVisual : byte
-{
-    Upgraded,
-    Combat
-}
