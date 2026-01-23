@@ -119,7 +119,7 @@
     successChance: 0.5
     interactSuccessString: petting-success-slimes
     interactFailureString: petting-failure-generic
-  - type: VentCrawler
+#  - type: VentCrawler # ! HEY! DIPSHIT! PORT THIS BEFORE YOU RELEASE XENOBIOLOGY OR HELLCAT IS GOING TO RIP YOUR HEAD CLEAN OFF
   - type: Speech
     speechVerb: Slime
     speechSounds: Slime

@@ -8,7 +8,6 @@
 using System.Linq;
 using System.Numerics;
 using Content.Shared._Goobstation.Wizard.FadingTimedDespawn;
-using Content.Shared._Goobstation.Wizard.Guardian;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
 using Content.Shared.Emoting;
@@ -226,9 +225,6 @@ public sealed class FreezeContactsSystem : EntitySystem
             return;
         }
 
-        if (IsImmune(otherUid) || TryComp(otherUid, out GuardianSharedComponent? guardian) && IsImmune(guardian.Host))
-            return;
-
         EnsureComp<FrozenComponent>(otherUid).FreezeTime = despawn.Lifetime;
 
         if (TryComp(otherUid, out otherDespawn))
@@ -245,11 +241,6 @@ public sealed class FreezeContactsSystem : EntitySystem
         Dirty(otherUid, thrownItem);
 
         return;
-
-        bool IsImmune(EntityUid entity)
-        {
-            return _actions.GetActions(entity).Any(e => _tag.HasTag(e.Owner, FrozenIgnoreMindActionTag));
-        }
     }
 
     private bool ShouldCollideWith(Fixture fix, string id)
