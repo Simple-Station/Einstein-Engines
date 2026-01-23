@@ -3,9 +3,18 @@
   name: chat-speech-verb-name-supermatter
   speechVerbStrings:
   - chat-speech-verb-supermatter
-  
+
 - type: speechVerb
   id: Xelthia
   name: chat-speech-verb-name-xelthia
   speechVerbStrings:
   - chat-speech-verb-default
+
+- type: speechVerb
+  id: Wawa
+  name: chat-speech-verb-name-wawa
+  speechVerbStrings:
+  - chat-speech-verb-wawa-1
+  - chat-speech-verb-wawa-2
+  - chat-speech-verb-wawa-3
+  - chat-speech-verb-wawa-4
