@@ -16,7 +16,7 @@ public sealed class ReactiveSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IRobustRandom _robustRandom = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-
+    [Dependency] private readonly EntityEffectSystem _effect = default!; // goob edit - use system instead
     public void DoEntityReaction(EntityUid uid, Solution solution, ReactionMethod method)
     {
         foreach (var reagent in solution.Contents.ToArray())

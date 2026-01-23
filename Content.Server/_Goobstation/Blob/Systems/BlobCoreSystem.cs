@@ -20,7 +20,7 @@ using Content.Shared._Goobstation.Blob.Components;
 using Content.Shared.Damage;
 using Content.Shared.Destructible;
 using Content.Shared.Explosion.Components;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Popups;

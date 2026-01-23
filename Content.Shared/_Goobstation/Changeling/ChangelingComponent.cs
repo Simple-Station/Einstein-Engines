@@ -1,7 +1,7 @@
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Humanoid;
 using Content.Shared.Popups;
 using Content.Shared.StatusIcon;

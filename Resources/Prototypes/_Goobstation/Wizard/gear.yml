@@ -1,0 +1,131 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: startingGear
+  id: WizardGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorDarkBlue
+    head: ClothingHeadHatWizardReal
+    outerClothing: ClothingOuterWizardReal
+    shoes: ClothingShoesWizard
+    back: ClothingBackpack
+    belt: ScrollTeleport
+    gloves: ClothingHandsGlovesWizard
+    id: WizardPDA
+    pocket1: CrowbarWizard
+    pocket2: WizardsGrimoire
+
+- type: startingGear
+  id: LichGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorBlack
+    head: ClothingHeadHatBlackwizardReal
+    outerClothing: ClothingOuterWizardBlackReal
+    shoes: ClothingShoesWizard
+    gloves: ClothingHandsGlovesWizard
+    back: ClothingBackpack
+    pocket1: CrowbarWizard
+
+- type: startingGear
+  id: OblivionEnforcerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorWhite
+    outerClothing: ClothingOuterOblivionEnforcer
+    mask: ClothingMaskGasOblivionEnforcer
+    shoes: ClothingShoesColorWhite
+    back: ClothingBackpack
+
+- type: startingGear
+  id: ApprenticeGearBlue
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorDarkBlue
+    head: ClothingHeadHatWizardReal
+    outerClothing: ClothingOuterWizardReal
+    shoes: ClothingShoesWizard
+    back: ClothingBackpack
+    belt: ScrollTeleportApprentice
+    gloves: ClothingHandsGlovesWizard
+    id: WizardPDA
+    pocket1: CrowbarWizard
+
+- type: startingGear
+  id: ApprenticeGearRed
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorRed
+    head: ClothingHeadHatRedwizardReal
+    outerClothing: ClothingOuterWizardRedReal
+    shoes: ClothingShoesWizard
+    back: ClothingBackpack
+    belt: ScrollTeleportApprentice
+    gloves: ClothingHandsGlovesWizard
+    id: WizardPDA
+    pocket1: CrowbarWizard
+
+- type: startingGear
+  id: ApprenticeGearPurple
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorPurple
+    head: ClothingHeadHatVioletwizardReal
+    outerClothing: ClothingOuterWizardVioletReal
+    shoes: ClothingShoesWizard
+    back: ClothingBackpack
+    belt: ScrollTeleportApprentice
+    gloves: ClothingHandsGlovesWizard
+    id: WizardPDA
+    pocket1: CrowbarWizard
+
+- type: startingGear
+  id: ApprenticeGearBlack
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorBlack
+    head: ClothingHeadHatBlackwizardReal
+    outerClothing: ClothingOuterWizardBlackReal
+    shoes: ClothingShoesWizard
+    back: ClothingBackpack
+    belt: ScrollTeleportApprentice
+    gloves: ClothingHandsGlovesWizard
+    id: WizardPDA
+    pocket1: CrowbarWizard
+
+- type: startingGear
+  id: ApprenticeGearYellow
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorYellow
+    head: ClothingHeadHatYellowwizardReal
+    outerClothing: ClothingOuterWizardYellowReal
+    shoes: ClothingShoesWizard
+    back: ClothingBackpack
+    belt: ScrollTeleportApprentice
+    gloves: ClothingHandsGlovesWizard
+    id: WizardPDA
+    pocket1: CrowbarWizard
+
+- type: startingGear
+  id: ApprenticeGearRobeless
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorDarkBlue
+    outerClothing: ClothingOuterVestTank
+    shoes: ClothingShoesWizard
+    back: ClothingBackpack
+    belt: ScrollTeleportApprentice
+    gloves: ClothingHandsGlovesWizard
+    id: WizardPDA
+    pocket1: CrowbarWizard
+
+- type: startingGear
+  id: ApprenticeGearPsy
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorPurple
+    head: ClothingHeadHatPsyReal
+    outerClothing: ClothingOuterWizardPsyReal
+    shoes: ClothingShoesWizard
+    back: ClothingBackpack
+    belt: ScrollTeleportApprentice
+    gloves: ClothingHandsGlovesWizard
+    id: WizardPDA
+    pocket1: CrowbarWizard
