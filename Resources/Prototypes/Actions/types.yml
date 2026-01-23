@@ -233,7 +233,7 @@
   components:
   - type: InstantAction
     icon: { sprite: Objects/Weapons/Melee/shields.rsi, state: teleriot-icon }
-    iconOn: Objects/Weapons/Melee/shields.rsi/teleriot-on.png
+    iconOn: { sprite: Objects/Weapons/Melee/shields.rsi, state: teleriot-on }
     event: !type:ToggleActionEvent
 
 - type: entity

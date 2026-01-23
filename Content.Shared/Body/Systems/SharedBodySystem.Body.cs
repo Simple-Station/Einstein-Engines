@@ -118,7 +118,7 @@ public partial class SharedBodySystem
 
         // One-time setup
         // Obviously can't run in Init to avoid double-spawns on save / load.
-        var prototype = Prototypes.Index(ent.Comp.Prototype.Value);
+        var prototype = _prototypeManager.Index(ent.Comp.Prototype.Value);
         MapInitBody(ent, prototype);
     }
 
@@ -473,7 +473,7 @@ public partial class SharedBodySystem
             && bodyPart is not null)
         {
             var bodyPartString = bodyPart.Value.ToString().ToLower();
-            var prototype = Prototypes.Index(targetBody.Prototype.Value);
+            var prototype = _prototypeManager.Index(targetBody.Prototype.Value);
             var hasPartConnection = prototype.Slots.Values.Any(slot =>
                 slot.Connections.Contains(bodyPartString));
 

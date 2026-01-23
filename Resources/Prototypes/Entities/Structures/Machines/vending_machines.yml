@@ -958,7 +958,7 @@
     autoRot: true
   - type: GuideHelp
     guides:
-    - Medical Doctor
+    - MedicalDoctor
   - type: Transform
     noRot: false
   - type: Rotatable

@@ -3,10 +3,10 @@ using Robust.Shared.GameStates;
 namespace Content.Shared._CorvaxNext.CrewMedal;
 
 /// <summary>
-/// Component for a medal that can be awarded to a player and 
+/// Component for a medal that can be awarded to a player and
 /// will be displayed in the final round summary screen.
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent,  AutoGenerateComponentState(true)]
 public sealed partial class CrewMedalComponent : Component
 {
     /// <summary>

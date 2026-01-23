@@ -193,7 +193,7 @@ public abstract class ClothingSystem : EntitySystem
         // If this clothing is equipped by the performer of this action, and the clothing has an unequip delay, stop the attempt
         if (ent.Comp.UnequipDelay <= TimeSpan.Zero
             || !_invSystem.TryGetContainingSlot(ent.Owner, out var slot)
-            || !_containerSys.TryGetContainingContainer(ent, out var container)
+            || !_containerSys.TryGetContainingContainer(ent.Owner, out var container)
             || container.Owner != args.User)
             return;
 
