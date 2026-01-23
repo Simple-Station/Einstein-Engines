@@ -122,7 +122,7 @@ public sealed partial class XenoVacuumSystem : EntitySystem
             else
                 _throw.TryThrow(removedEnt, args.ClickLocation);
             _stun.TryParalyze(removedEnt, TimeSpan.FromSeconds(2), true);
-            _htn.SetHTNEnabled(removedEnt, true,2f);
+            _htn.SetHTNEnabled(removedEnt, true, 2f);
         }
 
         _audio.PlayEntity(ent.Comp.ClearSound, ent, args.User, AudioParams.Default.WithVolume(-2f));
