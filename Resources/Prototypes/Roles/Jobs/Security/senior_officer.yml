@@ -4,34 +4,7 @@
   description: job-description-senior-officer
   playTimeTracker: JobSeniorOfficer
   setPreference: true
-  requirements:
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobWarden
-      min: 21600 #6 hrs
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobDetective
-      min: 7200 #2 hrs
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobSecurityOfficer
-      min: 21600 #6 hrs
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 216000 # 60 hrs
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Foreigner
-        - ForeignerLight
-        - Muted
-        - Blindness
-        - Pacifist
-        - BrittleBoneDisease
-    - !type:CharacterEmployerRequirement
-      employers:
-      - ZavodskoiInterstellar
-      - PMCG
-      - NanoTrasen
-      - EastOrionCompany
+ 
   startingGear: SeniorOfficerGear
   icon: "JobIconSeniorOfficer"
   supervisors: job-supervisors-hos

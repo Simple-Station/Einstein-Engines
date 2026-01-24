@@ -3,25 +3,9 @@
   name: job-name-security
   description: job-description-security
   playTimeTracker: JobSecurityOfficer
-  requirements:
-  - !type:CharacterDepartmentTimeRequirement
-    department: Security
-    min: 36000 # 10 hours
-  - !type:CharacterTraitRequirement
-    inverted: true
-    traits:
-    - Foreigner
-    - ForeignerLight
-    - Muted
-    - Blindness
-    - Pacifist
-    - BrittleBoneDisease
-  - !type:CharacterEmployerRequirement
-    employers:
-    - ZavodskoiInterstellar
-    - PMCG
-    - NanoTrasen
-    - EastOrionCompany
+
+ 
+ 
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos
