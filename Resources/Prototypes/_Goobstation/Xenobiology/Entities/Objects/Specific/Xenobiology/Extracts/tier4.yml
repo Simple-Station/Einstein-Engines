@@ -182,7 +182,7 @@
       effects:
       - !type:MakeUnreactiveEntityEffect
       - !type:CreateGas
-        gas: Healium
+        gas: Frezon # wasn't this healium? Yes, but we don't have Healium.
         multiplier: 55
       - !type:PlaySoundEffect
         sound: /Audio/Effects/Chemistry/bubbles.ogg

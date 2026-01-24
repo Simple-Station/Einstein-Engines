@@ -127,10 +127,6 @@
   - type: Sprite
     sprite: _Goobstation/Xenobiology/Specific/Xenobiology/floors.rsi
     state: icon-bluespace
-  - type: UserInterface
-    interfaces:
-      enum.StackCustomSplitUiKey.Key:
-        type: StackCustomSplitBoundUserInterface
   - type: SpawnAfterInteract
     prototype: FloorBluespaceEntity
     removeOnInteract: true
@@ -148,10 +144,6 @@
   - type: Sprite
     sprite: _Goobstation/Xenobiology/Specific/Xenobiology/floors.rsi
     state: icon-sepia
-  - type: UserInterface
-    interfaces:
-      enum.StackCustomSplitUiKey.Key:
-        type: StackCustomSplitBoundUserInterface
   - type: SpawnAfterInteract
     prototype: FloorSepiaEntity
     removeOnInteract: true
