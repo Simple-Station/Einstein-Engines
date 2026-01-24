@@ -8,7 +8,7 @@ using Content.Shared.CombatMode;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.DeltaV.CCVars;
 using Content.Shared.Explosion.Components;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Flash.Components;
 using Content.Shared.Store.Components;
 using Robust.Server.Player;

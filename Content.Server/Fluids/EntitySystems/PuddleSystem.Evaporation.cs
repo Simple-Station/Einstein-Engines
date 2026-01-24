@@ -1,5 +1,5 @@
 using Content.Shared.Chemistry.Components;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Fluids.Components;
 
 namespace Content.Server.Fluids.EntitySystems;

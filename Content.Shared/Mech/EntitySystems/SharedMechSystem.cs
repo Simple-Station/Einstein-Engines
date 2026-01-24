@@ -5,7 +5,7 @@ using Content.Shared.Actions;
 using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
 using Content.Shared.DragDrop;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Interaction.Events;
@@ -23,7 +23,7 @@ using Robust.Shared.Timing;
 
 // Goobstation Change
 using Content.Shared.CCVar;
-using Content.Shared._Goobstation.CCVar;
+using Content.Goobstation.Common.CCVar;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Hands.Components;
@@ -56,7 +56,7 @@ public abstract class SharedMechSystem : EntitySystem
 
     // Goobstation: Local variable for checking if mech guns can be used out of them.
     private bool _canUseMechGunOutside;
-    
+
     /// <inheritdoc/>
     public override void Initialize()
     {
