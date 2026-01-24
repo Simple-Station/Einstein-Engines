@@ -245,7 +245,7 @@
       - !type:PlaySoundEffect
         sound: /Audio/Effects/Chemistry/bubbles.ogg
       - !type:CreateEntityReactionEffect
-        entity: MaterialBSCrystal1
+        entity: MaterialBluespace1
         number: 5
     - reagents: [ Blood ]
       methods: [ Touch, Injection ]
@@ -284,9 +284,9 @@
         messages: [ "xeno-extract-reaction-reagent" ]
       - !type:PlaySoundEffect
         sound: /Audio/Effects/Chemistry/bubbles.ogg
-      - !type:AdjustReagent
-        reagent: Tilenol
-        amount: 100
+#      - !type:AdjustReagent
+#        reagent: Tilenol # ! READD WHEN TILENOL IS ADDED
+#        amount: 100
     - reagents: [ Plasma ]
       methods: [ Touch, Injection ]
       effects:

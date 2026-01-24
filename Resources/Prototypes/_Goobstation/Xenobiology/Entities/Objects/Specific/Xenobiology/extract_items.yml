@@ -41,16 +41,10 @@
       shootMaxInterval: 300
       shootRange: 5
       lightningPrototype: Lightning
-    intCap: 32
-    integrity: 32
-    integrityThresholds:
-      Normal: 32
-      Damaged: 9
-      Destroyed: 0
     slotId: heart
   - type: Metabolizer
-    maxPoisonsProcessable: 2
-    metabolizerTypes: [ Cybernetic ]
+    maxReagents: 2
+    metabolizerTypes: [ Slime ]
     groups:
     - id: Medicine
       rateModifier: 0.4

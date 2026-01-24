@@ -35,11 +35,14 @@ public sealed class ReactiveSystem : EntitySystem
     public void ReactionEntity(EntityUid uid, ReactionMethod method, ReagentPrototype proto,
         ReagentQuantity reagentQuantity, Solution? source)
     {
-        if (!TryComp(uid, out ReactiveComponent? reactive))
+        if (!TryComp<ReactiveComponent>(uid, out var reactive))
             return;
 
         // If we have a source solution, use the reagent quantity we have left. Otherwise, use the reaction volume specified.
         var args = new EntityEffectReagentArgs(uid, EntityManager, null, source, source?.GetReagentQuantity(reagentQuantity.Reagent) ?? reagentQuantity.Quantity, proto, method, 1f);
+
+        if (reactive.OneUnitReaction) // goob edit
+            args.Quantity = 1;
 
         // First, check if the reagent wants to apply any effects.
         if (proto.ReactiveEffects != null && reactive.ReactiveGroups != null)
