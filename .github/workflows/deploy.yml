@@ -1,0 +1,75 @@
+name: Build and Deploy Server
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+
+    - name: Build packaging tool
+      run: dotnet build Content.Packaging --configuration Release
+
+    - name: Package server
+      run: dotnet run --project Content.Packaging server --platform linux-x64 --hybrid-acz
+
+    - name: Extract package
+      run: |
+        cd release
+        unzip SS14.Server_linux-x64.zip -d server-deploy
+
+    - name: Setup SSH
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+        SERVER_IP: ${{ secrets.SERVER_IP }}
+      run: |
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+        chmod 600 ~/.ssh/deploy_key
+        ssh-keyscan -H $SERVER_IP >> ~/.ssh/known_hosts
+
+    - name: Deploy to server
+      env:
+        SERVER_IP: ${{ secrets.SERVER_IP }}
+      run: |
+        # Stop the server
+        ssh -i ~/.ssh/deploy_key root@$SERVER_IP "systemctl stop ss14-server"
+
+        # Backup current server (keep last 3 backups)
+        ssh -i ~/.ssh/deploy_key root@$SERVER_IP << 'ENDSSH'
+          if [ -d /home/ss14/server ]; then
+            mv /home/ss14/server /home/ss14/server-backup-$(date +%Y%m%d-%H%M%S)
+            ls -dt /home/ss14/server-backup-* | tail -n +4 | xargs rm -rf
+          fi
+        ENDSSH
+
+        # Upload new server
+        rsync -avz -e "ssh -i ~/.ssh/deploy_key" release/server-deploy/ root@$SERVER_IP:/home/ss14/server/
+
+        # Set permissions and restart
+        ssh -i ~/.ssh/deploy_key root@$SERVER_IP << 'ENDSSH'
+          chmod +x /home/ss14/server/Robust.Server
+          chown -R ss14:ss14 /home/ss14/server
+          systemctl start ss14-server
+          sleep 5
+          systemctl status ss14-server --no-pager
+        ENDSSH
+
+    - name: Verify deployment
+      env:
+        SERVER_IP: ${{ secrets.SERVER_IP }}
+      run: |
+        ssh -i ~/.ssh/deploy_key root@$SERVER_IP "systemctl is-active ss14-server"
