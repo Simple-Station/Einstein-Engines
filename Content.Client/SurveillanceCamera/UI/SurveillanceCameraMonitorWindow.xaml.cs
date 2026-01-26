@@ -16,7 +16,6 @@ using Robust.Shared.Graphics;
 using Robust.Shared.Map; // Goobstation
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-using SDL3; // Goobstation
 
 namespace Content.Client.SurveillanceCamera.UI;
 

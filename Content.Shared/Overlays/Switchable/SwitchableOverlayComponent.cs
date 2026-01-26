@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -6,7 +15,7 @@ namespace Content.Shared.Overlays.Switchable;
 
 public abstract partial class SwitchableOverlayComponent : BaseOverlayComponent
 {
-    [DataField, AutoNetworkedField]
+    [DataField]
     public virtual bool IsActive { get; set; }
 
     [DataField]
@@ -18,9 +27,6 @@ public abstract partial class SwitchableOverlayComponent : BaseOverlayComponent
     [DataField]
     public virtual bool IsEquipment { get; set; }
 
-    /// <summary>
-    /// If it is greater than 0, overlay isn't toggled but pulsed instead
-    /// </summary>
     [DataField]
     public virtual float PulseTime { get; set; }
 

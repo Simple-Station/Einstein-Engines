@@ -23,8 +23,6 @@ namespace Content.Shared.Body.Systems;
 public partial class SharedBodySystem
 {
     [Dependency] private readonly RandomHelperSystem _randomHelper = default!; // Shitmed Change
-    [Dependency] private readonly InventorySystem _inventorySystem = default!; // Shitmed Change
-
     private void InitializeParts()
     {
         // TODO: This doesn't handle comp removal on child ents.
@@ -127,7 +125,7 @@ public partial class SharedBodySystem
             && TryGetPartSlotContainerName(partEnt.Comp.PartType, out var containerNames))
         {
             foreach (var containerName in containerNames)
-                _inventorySystem.DropSlotContents(partEnt.Comp.Body.Value, containerName, inventory);
+                _inventory.DropSlotContents(partEnt.Comp.Body.Value, containerName, inventory);
         }
 
     }
@@ -378,7 +376,7 @@ public partial class SharedBodySystem
             bodyEnt.Comp.LegEntities.Remove(legEnt);
             UpdateMovementSpeed(bodyEnt);
             Dirty(bodyEnt, bodyEnt.Comp);
-            Standing.Down(bodyEnt); // Shitmed Change
+            _standing.Down(bodyEnt); // Shitmed Change
         }
     }
 
@@ -387,13 +385,13 @@ public partial class SharedBodySystem
         if (!Resolve(bodyEnt, ref bodyEnt.Comp, logMissing: false))
             return;
 
-        if (!_timing.ApplyingState
+        if (!_gameTiming.ApplyingState
             && partEnt.Comp.IsVital
             && !GetBodyChildrenOfType(bodyEnt, partEnt.Comp.PartType, bodyEnt.Comp).Any()
         )
         {
-            var damage = new DamageSpecifier(Prototypes.Index<DamageTypePrototype>("Bloodloss"), partEnt.Comp.VitalDamage); // Shitmed Change
-            Damageable.TryChangeDamage(bodyEnt, damage, partMultiplier: 0f); // Shitmed Change
+            var damage = new DamageSpecifier(_prototypeManager.Index<DamageTypePrototype>("Bloodloss"), partEnt.Comp.VitalDamage); // Shitmed Change
+            _damageable.TryChangeDamage(bodyEnt, damage, partMultiplier: 0f); // Shitmed Change
         }
     }
 

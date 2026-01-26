@@ -3,15 +3,15 @@
   name: guide-entry-medical
   text: "/ServerInfo/Guidebook/Medical/Medical.xml"
   children:
-  - Medical Doctor
+  - MedicalDoctor
   - Chemist
   - Cloning
   - Cryogenics
   - Surgery
-  - Medical Patches # Fix for Medicine Patches
+  - MedicalPatches # Fix for Medicine Patches
 
 - type: guideEntry
-  id: Medical Doctor
+  id: MedicalDoctor
   name: guide-entry-medicaldoctor
   text: "/ServerInfo/Guidebook/Medical/MedicalDoctor.xml"
 
