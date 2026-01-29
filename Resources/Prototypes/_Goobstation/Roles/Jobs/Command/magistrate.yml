@@ -3,23 +3,7 @@
   name: Magistrate
   description: "Ensure Space Law is being followed, Uphold Justice and Legality, Hold Hearings and Trials, Follow SOP, Ensure Command is Following Space Law."
   playTimeTracker: JobMagistrate
-  requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Command
-      min: 54000 # 15 hours
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 54000 # 15 hours
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Foreigner
-        - ForeignerLight
-        - Muted
-    - !type:CharacterEmployerRequirement
-      employers:
-      - IdrisIncorporated
-      - NanoTrasen
+  
   weight: 20
   startingGear: MagistrateGear
   icon: "JobIconMagistrate"

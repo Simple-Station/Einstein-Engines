@@ -15,15 +15,7 @@
     - !type:CharacterTraitRequirement
       traits:
       - AnomalousPositronics
-  - !type:CharacterTraitRequirement
-    inverted: true
-    traits:
-    - Muted
-    - Foreigner
-    - ForeignerLight
-  - !type:CharacterEmployerRequirement
-    employers:
-    - NanoTrasen
+
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"

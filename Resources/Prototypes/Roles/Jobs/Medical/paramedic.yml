@@ -3,15 +3,7 @@
   name: job-name-paramedic
   description: job-description-paramedic
   playTimeTracker: JobParamedic
-  requirements:
-  - !type:CharacterDepartmentTimeRequirement
-    department: Medical
-    min: 28800
-  - !type:CharacterEmployerRequirement
-    employers:
-    - Interdyne
-    - NanoTrasen
-    - ZengHuPharmaceuticals
+ 
   startingGear: ParamedicGear
   icon: "JobIconParamedic"
   supervisors: job-supervisors-cmo

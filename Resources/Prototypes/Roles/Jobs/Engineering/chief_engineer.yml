@@ -3,17 +3,7 @@
   name: job-name-ce
   description: job-description-ce
   playTimeTracker: JobChiefEngineer
-  requirements:
-  - !type:CharacterTraitRequirement
-    inverted: true
-    traits:
-    - Foreigner
-    - ForeignerLight
-  - !type:CharacterEmployerRequirement
-    employers:
-    - NanoTrasen
-    - ZavodskoiInterstellar
-    - HephaestusIndustries
+  
   weight: 10
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"
