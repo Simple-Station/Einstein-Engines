@@ -16858,3 +16858,10 @@ Entries:
   id: 7326
   time: '2026-01-12T11:28:21.0000000+00:00'
   url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/194
+- author: IsNotAcceptable
+  changes:
+    - type: Add
+      message: Иконка ивентового персонажа
+  id: 7327
+  time: '2026-02-05T17:53:33.0000000+00:00'
+  url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/196
