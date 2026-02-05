@@ -1,0 +1,11 @@
+- type: factionIcon
+  id: EventFaction
+  priority: 11
+  showTo:
+    components:
+      - Ghost
+      - ShowEventIcon
+  locationPreference: Right
+  icon:
+    sprite: /Textures/_Orehum/ME4TA/Event/icons.rsi
+    state: Event
