@@ -102,21 +102,23 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction Hotbar7 = "Hotbar7";
         public static readonly BoundKeyFunction Hotbar8 = "Hotbar8";
         public static readonly BoundKeyFunction Hotbar9 = "Hotbar9";
-        public static BoundKeyFunction[] GetHotbarBoundKeys() =>
-            new[] { Hotbar1, Hotbar2, Hotbar3, Hotbar4, Hotbar5, Hotbar6, Hotbar7, Hotbar8, Hotbar9, Hotbar0, };
+        public static readonly BoundKeyFunction HotbarCtrl0 = "HotbarCtrl0";
+        public static readonly BoundKeyFunction HotbarCtrl1 = "HotbarCtrl1";
+        public static readonly BoundKeyFunction HotbarCtrl2 = "HotbarCtrl2";
+        public static readonly BoundKeyFunction HotbarCtrl3 = "HotbarCtrl3";
+        public static readonly BoundKeyFunction HotbarCtrl4 = "HotbarCtrl4";
+        public static readonly BoundKeyFunction HotbarCtrl5 = "HotbarCtrl5";
+        public static readonly BoundKeyFunction HotbarCtrl6 = "HotbarCtrl6";
+        public static readonly BoundKeyFunction HotbarCtrl7 = "HotbarCtrl7";
+        public static readonly BoundKeyFunction HotbarCtrl8 = "HotbarCtrl8";
+        public static readonly BoundKeyFunction HotbarCtrl9 = "HotbarCtrl9";
 
-        public static readonly BoundKeyFunction Loadout0 = "Loadout0";
-        public static readonly BoundKeyFunction Loadout1 = "Loadout1";
-        public static readonly BoundKeyFunction Loadout2 = "Loadout2";
-        public static readonly BoundKeyFunction Loadout3 = "Loadout3";
-        public static readonly BoundKeyFunction Loadout4 = "Loadout4";
-        public static readonly BoundKeyFunction Loadout5 = "Loadout5";
-        public static readonly BoundKeyFunction Loadout6 = "Loadout6";
-        public static readonly BoundKeyFunction Loadout7 = "Loadout7";
-        public static readonly BoundKeyFunction Loadout8 = "Loadout8";
-        public static readonly BoundKeyFunction Loadout9 = "Loadout9";
-        public static BoundKeyFunction[] GetLoadoutBoundKeys() =>
-            new[] { Loadout1, Loadout2, Loadout3, Loadout4, Loadout5, Loadout6, Loadout7, Loadout8, Loadout9, Loadout0, };
+        public static BoundKeyFunction[] GetHotbarBoundKeys() =>
+            new[]
+            {
+                Hotbar1, Hotbar2, Hotbar3, Hotbar4, Hotbar5, Hotbar6, Hotbar7, Hotbar8, Hotbar9, Hotbar0,
+                HotbarCtrl1, HotbarCtrl2, HotbarCtrl3, HotbarCtrl4, HotbarCtrl5, HotbarCtrl6, HotbarCtrl7, HotbarCtrl8, HotbarCtrl9, HotbarCtrl0
+            };
 
         public static readonly BoundKeyFunction Vote0 = "Vote0";
         public static readonly BoundKeyFunction Vote1 = "Vote1";

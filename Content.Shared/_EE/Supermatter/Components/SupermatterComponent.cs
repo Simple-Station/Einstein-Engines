@@ -386,13 +386,13 @@ public sealed partial class SupermatterComponent : Component
     #region Announcements
 
     [DataField]
-    public string AlertCodeYellowId = "yellow";
+    public string AlertCodeYellowId = "enigma";
 
     [DataField]
-    public string AlertCodeDeltaId = "altdelta";
+    public string AlertCodeDeltaId = "enigma";
 
     [DataField]
-    public string AlertCodeCascadeId = "cascade";
+    public string AlertCodeCascadeId = "enigma";
 
     [DataField]
     public bool DelamAnnounced;

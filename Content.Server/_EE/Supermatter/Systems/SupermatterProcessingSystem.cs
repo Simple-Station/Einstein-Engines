@@ -289,7 +289,7 @@ public sealed partial class SupermatterSystem
         // Cascade Delam
         if (_config.GetCVar(CCVars.SupermatterDoCascadeDelam) && sm.ResonantFrequency >= 1)
         {
-            _alert.SetLevel(stationId, sm.AlertCodeCascadeId, true, true, true, false);
+            _alert.SetLevel(stationId, sm.AlertCodeCascadeId, true, true, true, true);
             sm.Cascade = true;
             return DelamType.Cascade;
         }
@@ -304,7 +304,7 @@ public sealed partial class SupermatterSystem
 
             if (moles >= _config.GetCVar(CCVars.SupermatterMolePenaltyThreshold))
             {
-                _alert.SetLevel(stationId, sm.AlertCodeDeltaId, true, true, true, false);
+                _alert.SetLevel(stationId, sm.AlertCodeDeltaId, true, true, true, true);
                 return DelamType.Singularity;
             }
         }
@@ -312,12 +312,12 @@ public sealed partial class SupermatterSystem
         // Tesla Delam
         if (sm.Power >= _config.GetCVar(CCVars.SupermatterSeverePowerPenaltyThreshold))
         {
-            _alert.SetLevel(stationId, sm.AlertCodeDeltaId, true, true, true, false);
+            _alert.SetLevel(stationId, sm.AlertCodeDeltaId, true, true, true, true);
             return DelamType.Tesla;
         }
 
         // Base explosion
-        _alert.SetLevel(stationId, sm.AlertCodeDeltaId, true, true, true, false);
+        _alert.SetLevel(stationId, sm.AlertCodeDeltaId, true, true, true, true);
         return DelamType.Explosion;
     }
 
@@ -406,7 +406,7 @@ public sealed partial class SupermatterSystem
                 if (station.HasValue)
                 {
                     var stationId = station.Value;
-                    _alert.SetLevel(stationId, sm.AlertCodeYellowId, true, true, true, false);
+                    _alert.SetLevel(stationId, sm.AlertCodeYellowId, true, true, true, true);
                 }
                 break;
         }

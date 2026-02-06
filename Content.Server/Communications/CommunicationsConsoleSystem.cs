@@ -140,6 +140,7 @@ namespace Content.Server.Communications
             List<string>? levels = null;
             string currentLevel = default!;
             float currentDelay = 0;
+            var currentAlertColor = Color.White;
 
             if (stationUid != null)
             {
@@ -155,6 +156,11 @@ namespace Content.Server.Communications
                             {
                                 levels.Add(id);
                             }
+
+                            if (id == alertComp.CurrentLevel)
+                            {
+                                currentAlertColor = detail.Color;
+                            }
                         }
                     }
 
@@ -168,6 +174,7 @@ namespace Content.Server.Communications
                 CanCallOrRecall(comp),
                 levels,
                 currentLevel,
+                currentAlertColor,
                 currentDelay,
                 _roundEndSystem.ExpectedCountdownEnd
             ));
