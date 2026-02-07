@@ -338,28 +338,28 @@
     interactSuccessSound:
       path: /Audio/Animals/lizard_happy.ogg
 
-- type: entity
-  id: neutralXenoVents
-  parent: BaseGameRule
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: StationEvent
-    startAnnouncement: true
-    earliestStart: 20
-    reoccurrenceDelay: 12
-    minimumPlayers: 1
-    weight: 6 # Really weak compared to other critters
-    duration: 60
-  - type: VentCrittersRule
-    entries:
-    - id: MobXenoNeutralRouny
-      prob: 0.0075
-    - id: MobXenoNeutralDrone
-      prob: 0.0075
-    - id: MobXenoNeutralPraetorian
-      prob: 0.0075
-    - id: MobXenoNeutralRavager
-      prob: 0.0075
+#- type: entity
+#  id: neutralXenoVents
+#  parent: BaseGameRule
+#  categories: [ HideSpawnMenu ]
+#  components:
+#  - type: StationEvent
+#    startAnnouncement: true
+#    earliestStart: 20
+#    reoccurrenceDelay: 12
+#    minimumPlayers: 1
+#    weight: 6 # Really weak compared to other critters
+#    duration: 60
+#  - type: VentCrittersRule
+#    entries:
+#    - id: MobXenoNeutralRouny
+#      prob: 0.0075
+#    - id: MobXenoNeutralDrone
+#      prob: 0.0075
+#    - id: MobXenoNeutralPraetorian
+#      prob: 0.0075
+#    - id: MobXenoNeutralRavager
+#      prob: 0.0075
 
 - type: entity
   id: ArgocyteVents
