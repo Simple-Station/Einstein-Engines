@@ -166,7 +166,6 @@
       settings: default
   - type: GhostTakeoverAvailable
 
-
 - type: entity
   parent: BaseBlob
   id: FactoryBlobTile

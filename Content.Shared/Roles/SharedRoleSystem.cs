@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared._White.Roles;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
 using Content.Shared.Customization;
@@ -173,6 +174,9 @@ public abstract class SharedRoleSystem : EntitySystem
 
         // RoleType refresh, Role time tracking, Update Admin playerlist
 
+        var addMessage = new RoleAddingEvent(mindId, mind, mindRoleId, mindRoleComp); // WWDP EDIT
+        RaiseLocalEvent(mindId, addMessage); // WWDP EDIT
+
         var message = new RoleAddedEvent(mindId, mind, update, silent);
         RaiseLocalEvent(mindId, message, true);
 
@@ -310,6 +314,8 @@ public abstract class SharedRoleSystem : EntitySystem
 
         foreach (var role in delete)
         {
+            var removingMessage = new RoleRemovingEvent(mind.Owner, mind.Comp, role, Comp<MindRoleComponent>(role)); // WWDP EDIT
+            RaiseLocalEvent(mind, removingMessage); // WWDP EDIT
             _entityManager.DeleteEntity(role);
         }
 
