@@ -16897,3 +16897,10 @@ Entries:
   id: 7329
   time: '2026-02-07T13:44:05.0000000+00:00'
   url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/198
+- author: IsNotAcceptable
+  changes:
+    - type: Remove
+      message: Мутантов из канализации больше нет
+  id: 7330
+  time: '2026-02-07T14:03:16.0000000+00:00'
+  url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/199
