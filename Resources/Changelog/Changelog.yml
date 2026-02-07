@@ -16888,3 +16888,12 @@ Entries:
   id: 7328
   time: '2026-02-06T20:10:28.0000000+00:00'
   url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/197
+- author: IsNotAcceptable
+  changes:
+    - type: Add
+      message: Удобство с менюшкой Госта
+    - type: Tweak
+      message: Редизайн меню Госта
+  id: 7329
+  time: '2026-02-07T13:44:05.0000000+00:00'
+  url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/198
