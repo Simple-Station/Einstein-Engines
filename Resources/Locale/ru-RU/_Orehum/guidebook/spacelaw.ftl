@@ -1,12 +1,12 @@
 # Goob Space Law
 # - Main Folder
-guide-entry-spacelaw-folder = Космический закон
+guide-entry-spacelaw-folder = Корпоративный Закон
 # - Subdirectories/Subfolders
 guide-entry-spacelaw-contraband = Контрабанда
 guide-entry-spacelaw-trials = Судебные процедуры
 guide-entry-spacelaw-procedures = Процедуры
 guide-entry-spacelaw-courtrulings = Судебные решения
-guide-entry-spacelaw-crimechart = Таблица преступлений
+guide-entry-spacelaw-crimechart = Корпоративный Закон
 guide-entry-spacelaw-categories = Категории
 # - Standalones
 guide-entry-spacelaw-modifiers = Модификаторы
