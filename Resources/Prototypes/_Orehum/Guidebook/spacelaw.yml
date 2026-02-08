@@ -15,7 +15,7 @@
   id: SpaceLawContraband
   name: guide-entry-spacelaw-contraband
   text: "/ServerInfo/Guidebook/SpaceLaw/Contraband/SpaceLaw_Contraband.xml"
-  priority: 4
+  priority: 0
   children:
   - SubstancesSpaceLaw
   - GearSpaceLaw
@@ -25,7 +25,7 @@
   id: SpaceLawTrials
   name: guide-entry-spacelaw-trials
   text: "/ServerInfo/Guidebook/SpaceLaw/Trials/SpaceLaw_Trials.xml"
-  priority: 3
+  priority: 2
   children:
   - EscalationPolicySpaceLaw
   - TrialPolicySpaceLaw
@@ -35,7 +35,7 @@
   id: SpaceLawProcedures
   name: guide-entry-spacelaw-procedures
   text: "/ServerInfo/Guidebook/SpaceLaw/Procedures/SpaceLaw_Procedures.xml"
-  priority: 2
+  priority: 3
   children:
   - SentencingSpaceLaw
   - TreatmentSpaceLaw
@@ -58,7 +58,7 @@
   id: SpaceLawCrimeChart
   name: guide-entry-spacelaw-crimechart
   text: "/ServerInfo/Guidebook/SpaceLaw/CrimeList/SpaceLaw_CrimeChart.xml"
-  priority: 0
+  priority: 4
   children:
   - SpaceLawModifiers
   - SpaceLawCategories
