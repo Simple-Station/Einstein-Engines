@@ -1,0 +1,59 @@
+{
+    "version": 2,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "by WWDP TEAM",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "head_slim",
+            "directions": 4
+        },
+        {
+            "name": "head_slim_f",
+            "directions": 4
+        },
+        {
+            "name": "l_arm_slim",
+            "directions": 4
+        },
+        {
+            "name": "l_foot_slim",
+            "directions": 4
+        },
+        {
+            "name": "l_hand_slim",
+            "directions": 4
+        },
+        {
+            "name": "l_leg_slim",
+            "directions": 4
+        },
+        {
+            "name": "r_arm_slim",
+            "directions": 4
+        },
+        {
+            "name": "r_foot_slim",
+            "directions": 4
+        },
+        {
+            "name": "r_hand_slim",
+            "directions": 4
+        },
+        {
+            "name": "r_leg_slim",
+            "directions": 4
+        },
+        {
+            "name": "torso_slim",
+            "directions": 4
+        },
+        {
+            "name": "torso_slim_f",
+            "directions": 4
+        }
+    ]
+}

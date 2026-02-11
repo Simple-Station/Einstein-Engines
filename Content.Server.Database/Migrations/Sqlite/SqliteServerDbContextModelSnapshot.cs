@@ -674,6 +674,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("custom_color_tint");
 
+                    b.Property<string>("CustomContent")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("custom_content");
+
                     b.Property<string>("CustomDescription")
                         .HasColumnType("TEXT")
                         .HasColumnName("custom_description");
@@ -819,6 +823,32 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Property<int>("Age")
                         .HasColumnType("INTEGER")
                         .HasColumnName("age");
+
+                    b.Property<byte>("BarkPause")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("bark_pause");
+
+                    b.Property<byte>("BarkPitch")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("bark_pitch");
+
+                    b.Property<byte>("BarkPitchVariance")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("bark_pitch_variance");
+
+                    b.Property<string>("BarkVoice")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("bark_voice");
+
+                    b.Property<byte>("BarkVolume")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("bark_volume");
+
+                    b.Property<string>("BodyType")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("body_type");
 
                     b.Property<string>("CharacterName")
                         .IsRequired()

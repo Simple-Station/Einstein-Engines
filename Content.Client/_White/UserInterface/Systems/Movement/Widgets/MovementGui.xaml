@@ -1,0 +1,5 @@
+<controls:MovementGui
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._White.UserInterface.Systems.Movement.Widgets">
+    <TextureButton Name="MovementButton" ToggleMode="True" TexturePath="running" SetSize="64 64"/>
+</controls:MovementGui>

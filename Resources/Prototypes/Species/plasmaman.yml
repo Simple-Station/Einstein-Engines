@@ -3,7 +3,10 @@
   name: species-name-plasmaman
   roundStart: true
   prototype: MobPlasmaman
-  sprites: MobPlasmamanSprites
+  # WD EDIT START
+  bodyTypes:
+  - PlasmamanNormal
+  # WD EDIT END
   defaultSkinTone: "#a349a4"
   markingLimits: MobPlasmamanMarkingLimits
   dollPrototype: MobPlasmamanDummy
@@ -17,8 +20,11 @@
   sexes:
   - Unsexed
 
-- type: speciesBaseSprites
-  id: MobPlasmamanSprites
+# WD EDIT START
+- type: bodyType
+  id: PlasmamanNormal
+  name: body-normal
+# WD EDIT END
   sprites:
     Head: MobPlasmamanHead
     Face: MobHumanoidAnyMarking

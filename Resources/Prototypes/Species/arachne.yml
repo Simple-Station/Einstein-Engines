@@ -3,7 +3,10 @@
   name: species-name-arachne
   roundStart: false # I'll kill these issues somehow.
   prototype: MobArachne
-  sprites: MobArachneSprites
+  # WD EDIT START
+  bodyTypes:
+  - ArachneNormal
+  # WD EDIT END
   defaultSkinTone: "#c0967f"
   markingLimits: MobArachneMarkingLimits
   dollPrototype: MobArachneDummy
@@ -47,9 +50,11 @@
       points: 6
       required: false
 
-
-- type: speciesBaseSprites
-  id: MobArachneSprites
+# WD EDIT START
+- type: bodyType
+  id: ArachneNormal
+  name: body-normal
+# WD EDIT END
   sprites:
     Head: MobHumanHead
     Face: MobHumanoidAnyMarking

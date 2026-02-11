@@ -1,0 +1,46 @@
+- type: emote
+  id: Nod
+  name: chat-emote-name-nod
+  chatMessages: [ "chat-emote-msg-nod" ]
+  chatTriggers:
+  - "chat-emote-trigger-nod-1"
+
+- type: emote
+  id: ShakeHead
+  name: chat-emote-name-shake-head
+  chatMessages: [ "chat-emote-msg-shake-head" ]
+  chatTriggers:
+  - "chat-emote-trigger-shake-head-1"
+  - "chat-emote-trigger-shake-head-2"
+
+- type: emote
+  id: Frown
+  name: chat-emote-name-frown
+  chatMessages: [ "chat-emote-msg-frown" ]
+  chatTriggers:
+  - "chat-emote-trigger-frown-1"
+
+- type: emote
+  id: Smile
+  name: chat-emote-name-smile
+  chatMessages: [ "chat-emote-msg-smile" ]
+  chatTriggers:
+  - "chat-emote-trigger-smile-1"
+
+- type: emote
+  id: XenomorphQueenDeathgasp
+  name: chat-emote-name-deathgasp
+  icon: Interface/Emotes/deathgasp.png
+  chatMessages: ["chat-emote-msg-deathgasp"]
+
+- type: emote
+  id: XenomorphDeathgasp
+  name: chat-emote-name-deathgasp
+  icon: Interface/Emotes/deathgasp.png
+  chatMessages: ["chat-emote-msg-deathgasp"]
+
+- type: emote
+  id: LarvaDeathgasp
+  name: chat-emote-name-deathgasp
+  icon: Interface/Emotes/deathgasp.png
+  chatMessages: ["chat-emote-msg-deathgasp"]

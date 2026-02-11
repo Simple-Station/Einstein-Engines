@@ -41,8 +41,13 @@ public sealed partial class SpeciesPrototype : IPrototype
     // sprite layout, and leave this null. Keep in mind that this will disable
     // sprite accessories.
 
-    [DataField("sprites")]
-    public string SpriteSet { get; private set; } = default!;
+    // WD EDIT START
+    /// <summary>
+    ///     Default body type for this species.
+    /// </summary>
+    [DataField(required: true)]
+    public List<string> BodyTypes { get; } = default!;
+    // WD EDIT END
 
     /// <summary>
     ///     Default skin tone for this species. This applies for non-human skin tones.

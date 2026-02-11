@@ -25,6 +25,11 @@
     - id: SpiderClownSpawn
     - id: SpiderSpawn
     - id: VentClog
+    # WD EDIT START
+    - id: WormholesSpawn
+    - id: StraySupplyPod
+    - id: StraySupplyPodSyndicate
+    # WD EDIT END
 
 - type: entityTable
   id: BasicAntagEventsTable
@@ -42,6 +47,10 @@
     - id: WizardSpawn
     - id: LoneOpsSpawn  # ADT tweak - вернул лон опса в список... АНТАГОВ
     # - id: ZombieOutbreak
+    # WD EDIT START
+    - id: XenomorphsInfestation
+    - id: HeadcrabInvasion
+    # WD EDIT END
 
 - type: entity
   id: BaseStationEvent

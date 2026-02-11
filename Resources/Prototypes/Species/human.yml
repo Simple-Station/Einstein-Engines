@@ -3,7 +3,11 @@
   name: species-name-human
   roundStart: true
   prototype: MobHuman
-  sprites: MobHumanSprites
+  # WD EDIT START
+  bodyTypes:
+  - HumanNormal
+  - HumanSlim
+  # WD EDIT END
   defaultSkinTone: "#c0967f"
   markingLimits: MobHumanMarkingLimits
   dollPrototype: MobHumanDummy
@@ -16,8 +20,11 @@
 # be defined as a 'custom base layer'
 # in either the mob's starting marking prototype,
 # or it has to be added in C#.
-- type: speciesBaseSprites
-  id: MobHumanSprites
+# WD EDIT START
+- type: bodyType
+  id: HumanNormal
+  name: body-normal
+# WD EDIT END
   sprites:
     Head: MobHumanHead
     Face: MobHumanoidAnyMarking

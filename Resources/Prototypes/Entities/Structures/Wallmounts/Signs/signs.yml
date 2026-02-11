@@ -695,6 +695,7 @@
   description: Табличка, обозначающая общую тюрьму.
   components:
   - type: Sprite
+    sprite: Structures/Wallmounts/signs.rsi
     state: genpop
 
 - type: entity

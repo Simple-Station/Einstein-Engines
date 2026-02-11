@@ -1,0 +1,71 @@
+- type: entity
+  parent: BaseGameRule
+  id: StraySupplyPod
+  components:
+    - type: StationEvent
+      startAnnouncement: true
+      weight: 8
+      duration: 1
+      minimumPlayers: 5
+      earliestStart: 10
+      reoccurrenceDelay: 15
+    - type: RandomSpawnRule
+      prototype: SpawnStraySupplyPod
+
+- type: entity
+  parent: BaseGameRule
+  id: StraySupplyPodSyndicate
+  components:
+    - type: StationEvent
+      startAnnouncement: true
+      weight: 6
+      duration: 1
+      minimumPlayers: 10
+      earliestStart: 15
+      reoccurrenceDelay: 40
+    - type: RandomSpawnRule
+      prototype: SpawnStraySupplyPodSyndicate
+
+- type: entity
+  parent: BaseGameRule
+  id: XenomorphsInfestation
+  components:
+  - type: StationEvent
+    weight: 5
+    duration: null
+    minimumPlayers: 20
+    earliestStart: 35
+    reoccurrenceDelay: 50
+  - type: VentSpawnRule
+  - type: AntagSpawner
+    prototype: MobXenomorphLarva
+  - type: XenomorphsRule
+  - type: AntagObjectives
+    objectives:
+    - XenomorphSurviveObjective
+  - type: AntagSelection
+    agentName: xenomorph-round-end-agent-name
+    definitions:
+    - spawnerPrototype: SpawnPointGhostXenomorph
+      min: 2
+      max: 4
+      pickPlayer: false
+      briefing:
+        text: xenomorph-role-greeting
+        color: "#8c3986"
+      mindRoles:
+      - MindRoleXenomorph
+
+- type: entity
+  parent: BaseGameRule
+  id: HeadcrabInvasion
+  components:
+    - type: StationEvent
+      startAnnouncement: true
+      weight: 8
+      duration: 1
+      minimumPlayers: 15
+      earliestStart: 15
+      reoccurrenceDelay: 25
+    - type: RandomSpawnRule
+      prototype: SpawnHeadcrabNest

@@ -485,7 +485,7 @@
     - ChefPilot
     - Meat
   - type: CombatMode
-    combatToggleAction: ActionCombatModeToggleOff
+    # combatToggleAction: ActionCombatModeToggleOff
   - type: Bloodstream
     bloodMaxVolume: 30
     bloodReagent: Cryoxadone

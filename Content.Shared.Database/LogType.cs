@@ -482,4 +482,9 @@ public enum LogType
     /// Events related to players connecting/disconnecting.
     /// </summary>
     Connection = 104,
+
+    //WD EDIT
+    AspectStarted = 201,
+    AspectAnnounced = 141,
+    AspectStopped = 142,
 }

@@ -17,6 +17,7 @@ using Content.Shared.Chemistry.EntitySystems;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Prototypes;
+using IngestionBlockerComponent = Content.Shared.Nutrition.Components.IngestionBlockerComponent;
 
 namespace Content.Server.Abilities.Felinid;
 

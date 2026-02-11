@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Linq;
+using Content.Shared._White.Humanoid.Prototypes;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Content.Shared._Shitmed.Body.Events;
@@ -83,13 +84,12 @@ public partial class SharedBodySystem
 
     private string? CreateIdFromPart(HumanoidAppearanceComponent bodyAppearance, HumanoidVisualLayers part)
     {
-        var speciesProto = _prototypeManager.Index(bodyAppearance.Species);
-        var baseSprites = _prototypeManager.Index<HumanoidSpeciesBaseSpritesPrototype>(speciesProto.SpriteSet);
+        var bodyType = _prototypeManager.Index<BodyTypePrototype>(bodyAppearance.BodyType); // WD EDIT
 
-        if (!baseSprites.Sprites.ContainsKey(part))
+        if (!bodyType.Sprites.ContainsKey(part)) // WD EDIT
             return null;
 
-        return HumanoidVisualLayersExtension.GetSexMorph(part, bodyAppearance.Sex, baseSprites.Sprites[part]);
+        return HumanoidVisualLayersExtension.GetSexMorph(part, bodyAppearance.Sex, bodyType.Sprites[part]); // WD EDIT
     }
 
     public void ModifyMarkings(EntityUid uid,

@@ -1,0 +1,49 @@
+- type: body
+  id: XenomorphMaid
+  name: xenomorph maid
+  root: torso
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - torso
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+    torso:
+      part: TorsoXenomorph
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+        plasma_vessel: OrganXenomorphPlasmaVessel
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph

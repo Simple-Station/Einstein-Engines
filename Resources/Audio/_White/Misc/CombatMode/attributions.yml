@@ -1,0 +1,9 @@
+- files: [ "combat_mode_off" ]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from https://github.com/tgstation/tgstation/blob/master/sound/misc/ui_toggleoffcombat.ogg."
+  source: "https://github.com/tgstation/tgstation/blob/master/sound/misc/ui_toggleoffcombat.ogg"
+
+- files: [ "combat_mode_on" ]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from https://github.com/tgstation/tgstation/blob/master/sound/misc/ui_togglecombat.ogg."
+  source: "https://github.com/tgstation/tgstation/blob/master/sound/misc/ui_togglecombat.ogg"

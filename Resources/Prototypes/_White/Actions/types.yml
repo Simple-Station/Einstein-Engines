@@ -1,0 +1,45 @@
+# - type: entity
+#   id: ActivateHardlightSpearImplant
+#   name: Create hardlight spear
+#   description: Creates hardlight spear in your hands.
+#   components:
+#   - type: InstantAction
+#     useDelay: 1.5
+#     itemIconStyle: BigAction
+#     priority: -20
+#     icon:
+#       sprite: _White/Objects/Weapons/Melee/Spear/hardlight_spear.rsi
+#       state: spear
+#     event: !type:ActivateSpawnImplantEvent
+
+- type: entity
+  id: ActivateSmokeImplant
+  name: Release a cloud of smoke
+  description: Releases a cloud of smoke around you.
+  components:
+  - type: InstantAction
+    useDelay: 20
+    itemIconStyle: BigAction
+    priority: -20
+    icon:
+      sprite: Objects/Weapons/Grenades/smoke.rsi
+      state: icon
+    event: !type:ActivateImplantEvent
+
+- type: entity
+  id: ActionJumpHeadcrab
+  name: Jump
+  description: Do super jump.
+  components:
+  - type: WorldTargetAction
+    priority: 0
+    useDelay: 3
+    checkCanAccess: false
+    range: 10
+    icon:
+      sprite: _White/Interface/Actions/headcrab.rsi
+      state: jump-off
+    iconOn:
+      sprite: _White/Interface/Actions/headcrab.rsi
+      state: jump-on
+    event: !type:JumpActionEvent

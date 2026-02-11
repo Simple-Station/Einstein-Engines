@@ -1,0 +1,18 @@
+- type: soundCollection
+  id: BarkTenna
+  files:
+  - /Audio/_White/Voice/Barks/tenna/snd_tv_voice_short.wav
+  - /Audio/_White/Voice/Barks/tenna/snd_tv_voice_short_2.wav
+  - /Audio/_White/Voice/Barks/tenna/snd_tv_voice_short_3.wav
+  - /Audio/_White/Voice/Barks/tenna/snd_tv_voice_short_4.wav
+  - /Audio/_White/Voice/Barks/tenna/snd_tv_voice_short_5.wav
+  - /Audio/_White/Voice/Barks/tenna/snd_tv_voice_short_6.wav
+  - /Audio/_White/Voice/Barks/tenna/snd_tv_voice_short_7.wav
+  - /Audio/_White/Voice/Barks/tenna/snd_tv_voice_short_8.wav
+  - /Audio/_White/Voice/Barks/tenna/snd_tv_voice_short_9.wav
+  - /Audio/_White/Voice/Barks/tenna/snd_tv_voice_short_10.wav
+
+- type: barkVoice
+  id: Tenna
+  barkSound:
+    collection: BarkTenna

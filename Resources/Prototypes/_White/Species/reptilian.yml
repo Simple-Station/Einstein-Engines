@@ -1,0 +1,124 @@
+- type: bodyType
+  id: ReptilianSlim
+  name: body-slim
+  sexRestrictions:
+  - Male
+  sprites:
+    Head: MobReptilianSlimHead
+    Face: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
+    Chest: MobReptilianSlimTorso
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
+    Eyes: MobHumanoidEyes
+    LArm: MobReptilianSlimLArm
+    RArm: MobReptilianSlimRArm
+    LHand: MobReptilianSlimLHand
+    RHand: MobReptilianSlimRHand
+    LLeg: MobReptilianSlimLLeg
+    RLeg: MobReptilianSlimRLeg
+    LFoot: MobReptilianSlimLFoot
+    RFoot: MobReptilianSlimRFoot
+
+# Slim types
+
+- type: humanoidBaseSprite
+  id: MobReptilianSlimHead
+  baseSprite:
+    sprite: _White/Mobs/Species/Reptilian/parts.rsi
+    state: head_slim_f
+
+- type: humanoidBaseSprite
+  id: MobReptilianSlimHeadFemale
+  baseSprite:
+    sprite: _White/Mobs/Species/Reptilian/parts.rsi
+    state: head_slim_f
+
+- type: humanoidBaseSprite
+  id: MobReptilianSlimTorso
+  baseSprite:
+    sprite: _White/Mobs/Species/Reptilian/parts.rsi
+    state: torso_slim_f
+
+- type: humanoidBaseSprite
+  id: MobReptilianSlimTorsoFemale
+  baseSprite:
+    sprite: _White/Mobs/Species/Reptilian/parts.rsi
+    state: torso_slim_f
+
+- type: humanoidBaseSprite
+  id: MobReptilianSlimLLeg
+  baseSprite:
+    sprite: _White/Mobs/Species/Reptilian/parts.rsi
+    state: l_leg_slim
+
+- type: humanoidBaseSprite
+  id: MobReptilianSlimLArm
+  baseSprite:
+    sprite: _White/Mobs/Species/Reptilian/parts.rsi
+    state: l_arm_slim
+
+- type: humanoidBaseSprite
+  id: MobReptilianSlimLHand
+  baseSprite:
+    sprite: _White/Mobs/Species/Reptilian/parts.rsi
+    state: l_hand_slim
+
+- type: humanoidBaseSprite
+  id: MobReptilianSlimLFoot
+  baseSprite:
+    sprite: _White/Mobs/Species/Reptilian/parts.rsi
+    state: l_foot_slim
+
+- type: humanoidBaseSprite
+  id: MobReptilianSlimRLeg
+  baseSprite:
+    sprite: _White/Mobs/Species/Reptilian/parts.rsi
+    state: r_leg_slim
+
+- type: humanoidBaseSprite
+  id: MobReptilianSlimRArm
+  baseSprite:
+    sprite: _White/Mobs/Species/Reptilian/parts.rsi
+    state: r_arm_slim
+
+- type: humanoidBaseSprite
+  id: MobReptilianSlimRHand
+  baseSprite:
+    sprite: _White/Mobs/Species/Reptilian/parts.rsi
+    state: r_hand_slim
+
+- type: humanoidBaseSprite
+  id: MobReptilianSlimRFoot
+  baseSprite:
+    sprite: _White/Mobs/Species/Reptilian/parts.rsi
+    state: r_foot_slim
+
+# Digitigrade types
+
+- type: humanoidBaseSprite
+  id: MobReptilianDigiLLeg
+  baseSprite:
+    sprite: _White/Mobs/Species/Reptilian/parts.rsi
+    state: l_leg_digi
+
+- type: humanoidBaseSprite
+  id: MobReptilianDigiLFoot
+  baseSprite:
+    sprite: _White/Mobs/Species/Reptilian/parts.rsi
+    state: l_foot_digi
+
+- type: humanoidBaseSprite
+  id: MobReptilianDigiRLeg
+  baseSprite:
+    sprite: _White/Mobs/Species/Reptilian/parts.rsi
+    state: r_leg_digi
+
+- type: humanoidBaseSprite
+  id: MobReptilianDigiRFoot
+  baseSprite:
+    sprite: _White/Mobs/Species/Reptilian/parts.rsi
+    state: r_foot_digi

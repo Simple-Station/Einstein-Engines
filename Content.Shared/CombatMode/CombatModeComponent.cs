@@ -33,11 +33,11 @@ namespace Content.Shared.CombatMode
 
         #endregion
 
-        [DataField("combatToggleAction", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-        public string CombatToggleAction = "ActionCombatModeToggle";
+        // [DataField("combatToggleAction", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+        // public string CombatToggleAction = "ActionCombatModeToggle";
 
-        [DataField, AutoNetworkedField]
-        public EntityUid? CombatToggleActionEntity;
+        // [DataField, AutoNetworkedField]
+        // public EntityUid? CombatToggleActionEntity;
 
         [ViewVariables(VVAccess.ReadWrite), DataField("isInCombatMode"), AutoNetworkedField]
         public bool IsInCombatMode;
@@ -48,5 +48,8 @@ namespace Content.Shared.CombatMode
         /// </summary>
         [DataField, AutoNetworkedField]
         public bool ToggleMouseRotator = true;
+
+        [DataField, AutoNetworkedField]
+        public bool Enable = true;
     }
 }

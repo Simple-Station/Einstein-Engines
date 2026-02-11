@@ -48,7 +48,7 @@ public sealed partial class CharacterItemGroupItem
                     p => protoMan.Index<TraitPrototype>((string) p).ID == ID);
                 return value != null;
             case "loadout":
-                return profile.LoadoutPreferences.TryFirstOrDefault(
+                return profile.LoadoutPreferencesList.TryFirstOrDefault(
                     p => protoMan.Index<LoadoutPrototype>(((Loadout) p).LoadoutName).ID == ID, out value);
             default:
                 DebugTools.Assert($"Invalid CharacterItemGroupItem Type: {Type}");

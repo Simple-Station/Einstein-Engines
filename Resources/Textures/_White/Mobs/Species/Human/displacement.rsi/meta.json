@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Made by Spatison",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "load": {
+      "srgb": false
+  },
+  "states": [
+    {
+      "name": "jumpsuit",
+      "directions": 4
+    },
+    {
+      "name": "gloves",
+      "directions": 4
+    },
+    {
+      "name": "shoes",
+      "directions" : 4
+    },
+    {
+      "name": "outer",
+      "directions" : 4
+    },
+    {
+      "name": "hardsuit",
+      "directions" : 4
+    },
+    {
+      "name": "suit",
+      "directions" : 4
+    }
+  ]
+}

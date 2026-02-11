@@ -1,0 +1,9 @@
+﻿- type: entity
+  parent: Smoke
+  id: SmokeRed
+  name: red smoke
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Effects/chemsmoke.rsi
+    state: chemsmoke_red

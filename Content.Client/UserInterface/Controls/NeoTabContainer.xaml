@@ -24,7 +24,7 @@
             VerticalExpand="True"
             VScrollEnabled="True"
             ReturnMeasure="True">
-            <BoxContainer Name="ContentContainer" HorizontalExpand="True" VerticalExpand="True" />
+
         </ScrollContainer>
     </BoxContainer>
 </BoxContainer>

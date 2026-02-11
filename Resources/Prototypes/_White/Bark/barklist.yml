@@ -1,0 +1,49 @@
+- type: barkList
+  id: default
+  voiceList:
+    Meow: []
+    Mtt:
+    - !type:CharacterGenderRequirement
+      gender: Male
+    Tem: []
+    Tenna:
+    - !type:CharacterGenderRequirement
+      gender: Male
+    Flowey: []
+    Txt1: []
+    Txt2: []
+    TxtAl: []
+    TxtAsg:
+    - !type:CharacterGenderRequirement
+      gender: Male
+    TxtAsr: []
+    TxtBer:
+    - !type:CharacterGenderRequirement
+      gender: Male
+    TxtJok:
+    - !type:CharacterGenderRequirement
+      gender: Male
+    TxtLan:
+    - !type:CharacterGenderRequirement
+      gender: Male
+    TxtNoe:
+    - !type:CharacterGenderRequirement
+      gender: Female
+    TxtPap:
+    - !type:CharacterGenderRequirement
+      gender: Male
+    TxtQueen:
+    - !type:CharacterGenderRequirement
+      gender: Female
+    TxtSans:
+    - !type:CharacterGenderRequirement
+      gender: Male
+    TxtSpam:
+    - !type:CharacterGenderRequirement
+      gender: Male
+    TxtSus: []
+    TxtTor:
+    - !type:CharacterGenderRequirement
+      gender: Female
+    TxtUnd: []
+    Gav: []

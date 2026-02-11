@@ -182,6 +182,7 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
         }
 
         component.IsActive = activate;
+        _actions.SetToggled(component.ToggleActionEntity, activate); // WD EDIT - it's white dream system but okay
         Dirty(uid, component);
     }
 

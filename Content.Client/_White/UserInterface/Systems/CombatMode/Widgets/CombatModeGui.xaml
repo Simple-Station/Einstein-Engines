@@ -1,0 +1,7 @@
+<controls:CombatModeGui
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._White.UserInterface.Systems.CombatMode.Widgets">
+    <TextureButton Name="CombatModeButton" ToggleMode="True" TexturePath="combat_off" SetSize="64 64">
+        <AnimatedTextureRect Name="CombatModeFlash" SetSize="64 64" Visible="False"/>
+    </TextureButton>
+</controls:CombatModeGui>

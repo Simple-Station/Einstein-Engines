@@ -3,7 +3,11 @@
   name: species-name-reptilian
   roundStart: true
   prototype: MobReptilian
-  sprites: MobReptilianSprites
+  # WD EDIT START
+  bodyTypes:
+    - ReptilianNormal
+    - ReptilianSlim
+  # WD EDIT END
   defaultSkinTone: "#34a223"
   markingLimits: MobReptilianMarkingLimits
   dollPrototype: MobReptilianDummy
@@ -18,8 +22,11 @@
   defaultWidth: 0.95
   maxWidth: 1.3
 
-- type: speciesBaseSprites
-  id: MobReptilianSprites
+# WD EDIT START
+- type: bodyType
+  id: ReptilianNormal
+  name: body-normal
+# WD EDIT END
   sprites:
     Head: MobReptilianHead
     Face: MobHumanoidAnyMarking
@@ -35,10 +42,12 @@
     RArm: MobReptilianRArm
     LHand: MobReptilianLHand
     RHand: MobReptilianRHand
+    # WD EDIT START
     LLeg: MobReptilianLLeg
     RLeg: MobReptilianRLeg
     LFoot: MobReptilianLFoot
     RFoot: MobReptilianRFoot
+    # WD EDIT END
 
 - type: markingPoints
   id: MobReptilianMarkingLimits

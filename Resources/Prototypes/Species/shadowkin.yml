@@ -3,7 +3,10 @@
   name: species-name-shadowkin
   roundStart: false
   prototype: MobShadowkin
-  sprites: MobShadowkinSprites
+  # WD EDIT START
+  bodyTypes:
+    - ShadowkinNormal
+  # WD EDIT END
   defaultSkinTone: "#FFFFFF"
   markingLimits: MobShadowkinMarkingLimits
   dollPrototype: MobShadowkinDummy
@@ -25,8 +28,11 @@
   defaultWidth: 0.85
   maxWidth: 1.2
 
-- type: speciesBaseSprites
-  id: MobShadowkinSprites
+# WD EDIT START
+- type: bodyType
+  id: ShadowkinNormal
+  name: body-normal
+# WD EDIT END
   sprites:
     Head: MobShadowkinHead
     Snout: MobShadowkinAnyMarkingFollowSkin

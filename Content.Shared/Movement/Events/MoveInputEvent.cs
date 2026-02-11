@@ -1,5 +1,6 @@
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.Movement.Events;
 
@@ -25,3 +26,16 @@ public readonly struct MoveInputEvent
         State = state;
     }
 }
+
+// WD EDIT START
+/// <summary>
+/// Raised on an entity whenever it has a sprinting input change.
+/// </summary>
+public readonly struct SprintingInputEvent(Entity<InputMoverComponent> entity)
+{
+    public readonly Entity<InputMoverComponent> Entity = entity;
+}
+
+[Serializable, NetSerializable]
+public sealed class ToggleInputMoverRequestEvent : EntityEventArgs;
+// WD EDIT END

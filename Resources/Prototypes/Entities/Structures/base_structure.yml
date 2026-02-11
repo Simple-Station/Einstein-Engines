@@ -33,6 +33,7 @@
     staminaCost: 50
     soundHit:
       collection: MetalThud
+  - type: Structure # WD EDIT. TODO: Kill me pls
 
 - type: entity
   # This means that it's not anchored on spawn.

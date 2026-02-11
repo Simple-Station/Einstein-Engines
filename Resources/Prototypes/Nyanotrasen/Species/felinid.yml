@@ -3,7 +3,10 @@
   name: species-name-felinid
   roundStart: true
   prototype: MobFelinid
-  sprites: MobHumanSprites
+  # WD EDIT START
+  bodyTypes:
+  - HumanNormal
+  # WD EDIT END
   defaultSkinTone: "#c0967f"
   markingLimits: MobFelinidMarkingLimits
   dollPrototype: MobFelinidDummy

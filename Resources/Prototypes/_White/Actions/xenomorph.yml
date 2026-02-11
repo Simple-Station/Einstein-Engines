@@ -1,0 +1,220 @@
+# # Combat action
+# - type: entity
+#   id: ActionCombatModeToggleXenomorph
+#   parent: ActionCombatModeToggle
+#   components:
+#   - type: InstantAction
+#     icon: { sprite: _White/Interface/Actions/xenomorph.rsi, state: help }
+#     iconOn: { sprite: _White/Interface/Actions/xenomorph.rsi, state: harm }
+
+# Thermal action
+- type: entity
+  id: ToggleThermalVisionXenomorph
+  parent: ToggleThermalVision
+  components:
+  - type: InstantAction
+    icon: { sprite: _White/Interface/Actions/xenomorph.rsi, state: vision_off }
+    iconOn: { sprite: _White/Interface/Actions/xenomorph.rsi, state: vision_on }
+
+# Evolution actions
+- type: entity
+  id: ActionEvolution
+  name: Evolve
+  description: Evolve into a higher xenomorph caste.
+  components:
+  - type: InstantAction
+    checkCanInteract: false
+    itemIconStyle: BigAction
+    useDelay: 0
+    icon: { sprite: _White/Interface/Actions/xenomorph.rsi, state: evolve }
+    event: !type:EvolutionsActionEvent
+
+- type: entity
+  id: ActionEvolutionPraetorian
+  parent: ActionEvolution
+  name: Evolve to praetorian (500)
+  description: Evolve into the main defender of the hive.
+  components:
+  - type: InstantAction
+    icon: { sprite: _White/Interface/Actions/xenomorph.rsi, state: evolve_praetorian }
+  - type: PlasmaCostAction
+    plasmaCost: 500
+
+- type: entity
+  id: ActionEvolutionQueen
+  parent: ActionEvolutionPraetorian
+  name: Evolve to queen (500)
+  description: Produce an internal egg sac capable of spawning children. Only one queen can exist at a time.
+  components:
+  - type: InstantAction
+    icon: { sprite: _White/Interface/Actions/xenomorph.rsi, state: evolve_queen }
+
+# Structures actions
+- type: entity
+  id: ActionSpawnResinWeedNode
+  name: Plant weeds (50)
+  description: Plants some xenomorph weeds.
+  components:
+  - type: InstantAction
+    checkCanInteract: false
+    itemIconStyle: BigAction
+    useDelay: 2
+    icon: { sprite: _White/Interface/Actions/xenomorph.rsi, state: plant_seed }
+    event: !type:SpawnTileEntityActionEvent
+      entity: ResinWeedNode
+      blockedCollisionMask:
+      - SlipLayer
+      blockedCollisionLayer:
+      - Impassable
+      - MidImpassable
+      - LowImpassable
+  - type: PlasmaCostAction
+
+- type: entity
+  id: ActionSpawnXenomorphEgg
+  name: Lay egg (75)
+  description: Lay an egg to produce facehuggers to impregnate prey with.
+  components:
+  - type: InstantAction
+    checkCanInteract: false
+    itemIconStyle: BigAction
+    useDelay: 2
+    icon: { sprite: _White/Interface/Actions/xenomorph.rsi, state: egg }
+    event: !type:SpawnTileEntityActionEvent
+      entity: XenomorphEgg
+      blockedCollisionMask:
+      - TableMask
+      blockedCollisionLayer:
+      - TableLayer
+      - BulletImpassable
+  - type: PlasmaCostAction
+    plasmaCost: 75
+
+# TODO: delete it
+- type: entity
+  id: ActionSpawnWallResin
+  name: Build a resin wall (50)
+  description: Secrete tough malleable resin.
+  components:
+  - type: WorldTargetAction
+    useDelay: 1
+    range: 2
+    itemIconStyle: BigAction
+    icon: { sprite: _White/Structures/Walls/resin.rsi, state: full }
+    event: !type:PlaceTileEntityEvent
+      entity: WallResin
+      length: 0.5
+      blockedCollisionMask:
+      - FullTileMask
+      blockedCollisionLayer:
+      - WallLayer
+  - type: PlasmaCostAction
+
+# TODO: delete it
+- type: entity
+  id: ActionSpawnResinMembrane
+  name: Build a resin membrane (50)
+  description: Secrete tough malleable resin.
+  components:
+  - type: WorldTargetAction
+    useDelay: 1
+    range: 2
+    itemIconStyle: BigAction
+    icon: { sprite : _White/Structures/Windows/resin_membrane.rsi, state: full }
+    event: !type:PlaceTileEntityEvent
+      entity: ResinMembrane
+      length: 0.5
+      blockedCollisionMask:
+      - FullTileMask
+      blockedCollisionLayer:
+      - GlassLayer
+  - type: PlasmaCostAction
+
+# TODO: delete it
+- type: entity
+  id: ActionSpawnResinNest
+  name: Build a resin nest (50)
+  description: Secrete tough malleable resin.
+  components:
+  - type: WorldTargetAction
+    useDelay: 1
+    range: 2
+    itemIconStyle: BigAction
+    icon: { sprite : _White/Structures/Windows/resin_membrane.rsi, state: full }
+    event: !type:PlaceTileEntityEvent
+      entity: ResinNest
+      length: 0.5
+      blockedCollisionMask:
+      - TableMask
+      blockedCollisionLayer:
+      - TableLayer
+      - BulletImpassable
+  - type: PlasmaCostAction
+
+# Tail lash action
+- type: entity
+  id: ActionTailLash
+  name: Tail lash
+  description: Hit your opponent with your tail.
+  components:
+  - type: WorldTargetAction
+    useDelay: 11
+    range: 10
+    itemIconStyle: BigAction
+    icon: { sprite : _White/Interface/Actions/xenomorph.rsi, state: tail_attack }
+    event: !type:TailLashActionEvent
+
+# Acid action
+- type: entity
+  id: ActionAcid
+  name: Corrosive acid (200)
+  description: Drench an object in acid, destroying it over time.
+  components:
+  - type: EntityTargetAction
+    useDelay: 11
+    icon: { sprite : _White/Interface/Actions/xenomorph.rsi, state: acid }
+    event: !type:AcidActionEvent
+  - type: PlasmaCostAction
+    plasmaCost: 200
+
+# Jump action
+- type: entity
+  id: ActionJumpXenomorph
+  name: Jump
+  description: Stun your enemies with a quick jump.
+  components:
+  - type: WorldTargetAction
+    priority: 0
+    useDelay: 3
+    checkCanAccess: false
+    range: 10
+    icon: { sprite : _White/Interface/Actions/xenomorph.rsi, state: leap_off }
+    iconOn: { sprite : _White/Interface/Actions/xenomorph.rsi, state: leap_on }
+    event: !type:JumpActionEvent
+
+# Transfer plasma action
+- type: entity
+  id: ActionTransferPlasma
+  name: Transfer plasma (50)
+  description: Passes plasma to your friend.
+  components:
+  - type: EntityTargetAction
+    priority: 0
+    icon: { sprite : _White/Interface/Actions/xenomorph.rsi, state: plasma_transfer_off }
+    iconOn: { sprite : _White/Interface/Actions/xenomorph.rsi, state: plasma_transfer_on }
+    event: !type:TransferPlasmaActionEvent
+
+# Promotion action
+- type: entity
+  id: ActionXenomorphPromotion
+  name: Create royal parasite (500)
+  description: Produce a royal parasite to grant one of your children the honor of being your Praetorian.
+  components:
+  - type: InstantAction
+    checkCanInteract: false
+    itemIconStyle: BigAction
+    useDelay: 0
+    icon: { sprite : _White/Interface/Actions/xenomorph.rsi, state: promote }
+    event: !type:PromotionActionEvent
+  - type: PlasmaCostAction
+    plasmaCost: 500

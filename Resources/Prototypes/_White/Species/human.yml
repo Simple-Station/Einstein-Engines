@@ -1,0 +1,98 @@
+- type: bodyType
+  id: HumanSlim
+  name: body-slim
+  sexRestrictions:
+  - Male
+  sprites:
+    Head: MobHumanSlimHead
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
+    Chest: MobHumanSlimTorso
+    HeadTop: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
+    Eyes: MobHumanoidEyes
+    LArm: MobHumanSlimLArm
+    RArm: MobHumanSlimRArm
+    LHand: MobHumanSlimLHand
+    RHand: MobHumanSlimRHand
+    LLeg: MobHumanSlimLLeg
+    RLeg: MobHumanSlimRLeg
+    LFoot: MobHumanSlimLFoot
+    RFoot: MobHumanSlimRFoot
+
+# Slim types
+
+- type: humanoidBaseSprite
+  id: MobHumanSlimHead
+  baseSprite:
+    sprite: _White/Mobs/Species/Human/parts.rsi
+    state: head_slim
+
+- type: humanoidBaseSprite
+  id: MobHumanSlimHeadFemale
+  baseSprite:
+    sprite: _White/Mobs/Species/Human/parts.rsi
+    state: head_slim_f
+
+- type: humanoidBaseSprite
+  id: MobHumanSlimTorso
+  baseSprite:
+    sprite: _White/Mobs/Species/Human/parts.rsi
+    state: torso_slim
+
+- type: humanoidBaseSprite
+  id: MobHumanSlimTorsoFemale
+  baseSprite:
+    sprite: _White/Mobs/Species/Human/parts.rsi
+    state: torso_slim_f
+
+- type: humanoidBaseSprite
+  id: MobHumanSlimLLeg
+  baseSprite:
+    sprite: _White/Mobs/Species/Human/parts.rsi
+    state: l_leg_slim
+
+- type: humanoidBaseSprite
+  id: MobHumanSlimLArm
+  baseSprite:
+    sprite: _White/Mobs/Species/Human/parts.rsi
+    state: l_arm_slim
+
+- type: humanoidBaseSprite
+  id: MobHumanSlimLHand
+  baseSprite:
+    sprite: _White/Mobs/Species/Human/parts.rsi
+    state: l_hand_slim
+
+- type: humanoidBaseSprite
+  id: MobHumanSlimLFoot
+  baseSprite:
+    sprite: _White/Mobs/Species/Human/parts.rsi
+    state: l_foot_slim
+
+- type: humanoidBaseSprite
+  id: MobHumanSlimRLeg
+  baseSprite:
+    sprite: _White/Mobs/Species/Human/parts.rsi
+    state: r_leg_slim
+
+- type: humanoidBaseSprite
+  id: MobHumanSlimRArm
+  baseSprite:
+    sprite: _White/Mobs/Species/Human/parts.rsi
+    state: r_arm_slim
+
+- type: humanoidBaseSprite
+  id: MobHumanSlimRHand
+  baseSprite:
+    sprite: _White/Mobs/Species/Human/parts.rsi
+    state: r_hand_slim
+
+- type: humanoidBaseSprite
+  id: MobHumanSlimRFoot
+  baseSprite:
+    sprite: _White/Mobs/Species/Human/parts.rsi
+    state: r_foot_slim

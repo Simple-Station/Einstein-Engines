@@ -5,12 +5,12 @@
   components:
   - type: Appearance
   - type: EntityStorageVisuals
-    stateBaseClosed: cj 
+    stateBaseClosed: cj
     stateDoorOpen: cj_open
     stateDoorClosed: cj_door
   - type: AccessReader
     access: [["ChiefJustice"]]
-    
+
 - type: entity
   id: LockerClerk
   parent: LockerBaseSecure

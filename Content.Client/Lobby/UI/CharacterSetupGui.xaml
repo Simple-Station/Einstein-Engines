@@ -41,7 +41,25 @@
             </PanelContainer>
             <BoxContainer Orientation="Horizontal" VerticalExpand="True" SeparationOverride="0">
                 <ScrollContainer MinSize="325 0" Margin="5 5 0 0">
-                    <BoxContainer Name="Characters" Orientation="Vertical" />
+                    <BoxContainer Orientation="Vertical" VerticalExpand="True">
+                        <BoxContainer VerticalExpand="True" Name="Characters" Orientation="Vertical" />
+                        <PanelContainer>
+                            <PanelContainer.PanelOverride>
+                                <gfx:StyleBoxFlat BackgroundColor="{x:Static style:StyleNano.NanoGold}" ContentMarginTopOverride="2" />
+                            </PanelContainer.PanelOverride>
+                        </PanelContainer>
+                        <BoxContainer Orientation="Vertical" HorizontalAlignment="Center">
+                            <SpriteView Name="CharacterSpriteView" Access="Public" OverrideDirection="South" Scale="7 7" />
+                            <BoxContainer HorizontalAlignment="Center">
+                                <Button Name="PreviewRotateLeftButton" StyleClasses="OpenRight" >
+                                    <TextureRect TexturePath="/Textures/Interface/Default/left_arrow.svg.192dpi.png" Stretch="KeepAspectCentered"/>
+                                </Button>
+                                <Button Name="PreviewRotateRightButton" StyleClasses="OpenLeft">
+                                    <TextureRect TexturePath="/Textures/Interface/Default/right_arrow.svg.192dpi.png" Stretch="KeepAspectCentered"/>
+                                </Button>
+                            </BoxContainer>
+                        </BoxContainer>
+                    </BoxContainer>
                 </ScrollContainer>
                 <PanelContainer MinSize="2 0">
                     <PanelContainer.PanelOverride>

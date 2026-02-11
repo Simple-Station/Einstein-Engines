@@ -1,0 +1,7 @@
+- type: speciesDictionaryGroup
+  id: Other
+  weight: 3
+
+- type: speciesDictionaryGroup
+  id: Humanoid
+  weight: 0

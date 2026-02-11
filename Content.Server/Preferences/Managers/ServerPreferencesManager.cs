@@ -331,6 +331,7 @@ namespace Content.Server.Preferences.Managers
             var sponsorPrototypes = _sponsors != null && _sponsors.TryGetServerPrototypes(session.UserId, out var prototypes) ? prototypes.ToArray() : []; // Corvax-Sponsors
             return new PlayerPreferences(prefs.Characters.Select(p => new KeyValuePair<int, ICharacterProfile>(p.Key,
                     p.Value.Validated(session, collection, sponsorPrototypes))), prefs.SelectedCharacterIndex, prefs.AdminOOCColor);
+            // WWDP EDIT END
         }
 
         public IEnumerable<KeyValuePair<NetUserId, ICharacterProfile>> GetSelectedProfilesForPlayers(

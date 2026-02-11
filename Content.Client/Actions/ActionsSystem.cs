@@ -153,7 +153,7 @@ namespace Content.Client.Actions
             if (!ResolveActionData(actionId, ref action))
                 return;
 
-            action.IconColor = action.Charges < 1 ? action.DisabledIconColor : action.OriginalIconColor;
+            action.IconColor = action.Enabled ? action.OriginalIconColor : action.DisabledIconColor; // WD EDIT
 
             base.UpdateAction(actionId, action);
             if (_playerManager.LocalEntity != action.AttachedEntity)

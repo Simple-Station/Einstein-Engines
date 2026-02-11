@@ -1,0 +1,94 @@
+- type: bodyType
+  id: HarpySlim
+  name: body-slim
+  sprites:
+    Head: MobHarpyHeadSlim
+    Face: MobHumanoidAnyMarking
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    Chest: MobHarpyTorsoSlim
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
+    Eyes: MobHumanoidEyes
+    LArm: MobHarpyLArmSlim
+    RArm: MobHarpyRArmSlim
+    LHand: MobHarpyLHandSlim
+    RHand: MobHarpyRHandSlim
+    LLeg: MobHarpyLLegSlim
+    RLeg: MobHarpyRLegSlim
+    LFoot: MobHarpyLFootSlim
+    RFoot: MobHarpyRFootSlim
+
+- type: humanoidBaseSprite
+  id: MobHarpyHeadSlim
+  baseSprite:
+    sprite: _White/Mobs/Species/Harpy/parts.rsi
+    state: head_slim_f
+
+- type: humanoidBaseSprite
+  id: MobHarpyHeadSlimFemale
+  baseSprite:
+    sprite: _White/Mobs/Species/Harpy/parts.rsi
+    state: head_slim_f
+
+- type: humanoidBaseSprite
+  id: MobHarpyTorsoSlim
+  baseSprite:
+    sprite: _White/Mobs/Species/Harpy/parts.rsi
+    state: torso_slim_f
+
+- type: humanoidBaseSprite
+  id: MobHarpyTorsoSlimFemale
+  baseSprite:
+    sprite: _White/Mobs/Species/Harpy/parts.rsi
+    state: torso_slim_f
+
+- type: humanoidBaseSprite
+  id: MobHarpyLLegSlim
+  baseSprite:
+    sprite: _White/Mobs/Species/Harpy/parts.rsi
+    state: l_leg_slim
+
+- type: humanoidBaseSprite
+  id: MobHarpyLHandSlim
+  baseSprite:
+    sprite: _White/Mobs/Species/Harpy/parts.rsi
+    state: l_hand_slim
+
+- type: humanoidBaseSprite
+  id: MobHarpyLArmSlim
+  baseSprite:
+    sprite: _White/Mobs/Species/Harpy/parts.rsi
+    state: l_arm_slim
+
+- type: humanoidBaseSprite
+  id: MobHarpyLFootSlim
+  baseSprite:
+    sprite: _White/Mobs/Species/Harpy/parts.rsi
+    state: l_foot_slim
+
+- type: humanoidBaseSprite
+  id: MobHarpyRLegSlim
+  baseSprite:
+    sprite: _White/Mobs/Species/Harpy/parts.rsi
+    state: r_leg_slim
+
+- type: humanoidBaseSprite
+  id: MobHarpyRHandSlim
+  baseSprite:
+    sprite: _White/Mobs/Species/Harpy/parts.rsi
+    state: r_hand_slim
+
+- type: humanoidBaseSprite
+  id: MobHarpyRArmSlim
+  baseSprite:
+    sprite: _White/Mobs/Species/Harpy/parts.rsi
+    state: r_arm_slim
+
+- type: humanoidBaseSprite
+  id: MobHarpyRFootSlim
+  baseSprite:
+    sprite: _White/Mobs/Species/Harpy/parts.rsi
+    state: r_foot_slim

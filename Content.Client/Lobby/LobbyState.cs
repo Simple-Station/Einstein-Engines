@@ -238,6 +238,9 @@ namespace Content.Client.Lobby
             {
                 Lobby!.Background.Texture = null;
             }
+
+            _sawmill.Warning("_gameTicker.LobbyBackground was null! No lobby background selected.");
+            Lobby!.LobbyBackground.SetMarkup(Loc.GetString("lobby-state-background-no-background-text"));
         }
 
         private void SetReady(bool newReady)

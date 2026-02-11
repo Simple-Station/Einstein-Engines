@@ -3,7 +3,8 @@
   name: species-name-feroxi
   roundStart: true
   prototype: MobFeroxi
-  sprites: MobFeroxiSprites
+  bodyTypes:
+  - FeroxiNormal
   defaultSkinTone: "#8DB9D6"
   markingLimits: MobFeroxiMarkingLimits
   dollPrototype: MobFeroxiDummy
@@ -12,8 +13,9 @@
   femaleFirstNames: names_first_female
   lastNames: names_last
 
-- type: speciesBaseSprites
-  id: MobFeroxiSprites
+- type: bodyType
+  id: FeroxiNormal
+  name: body-normal
   sprites:
     Head: MobFeroxiHead
     Hair: MobHumanoidAnyMarking

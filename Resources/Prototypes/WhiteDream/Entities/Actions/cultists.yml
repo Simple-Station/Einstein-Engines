@@ -205,6 +205,7 @@
       sprite: WhiteDream/BloodCult/actions.rsi
       state: create_cult_floor
     event: !type:PlaceTileEntityEvent
+      entity: CultTileSpawnEffect
       tileId: CultFloor
       audio:  !type:SoundPathSpecifier
         path: /Audio/WhiteDream/BloodCult/curse.ogg
@@ -229,6 +230,7 @@
       state: lesser_construct
     event: !type:PlaceTileEntityEvent
       entity: WallCult
+      length: 2
       audio:  !type:SoundPathSpecifier
         path: /Audio/WhiteDream/BloodCult/curse.ogg
   - type: BaseCultSpell

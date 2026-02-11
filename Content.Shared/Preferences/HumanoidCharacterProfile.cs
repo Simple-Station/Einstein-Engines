@@ -1,5 +1,7 @@
 using System.Linq;
 using System.Text.RegularExpressions;
+using Content.Shared._White.Bark;
+using Content.Shared._White.Bark.Systems;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Clothing.Loadouts.Systems;
@@ -25,11 +27,12 @@ namespace Content.Shared.Preferences;
 [Serializable, NetSerializable]
 public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 {
-    private static readonly Regex RestrictedNameRegex = new(@"[^А-Яа-яёЁ0-9' -]");
+    private static readonly Regex RestrictedNameRegex = new(@"[^A-Za-z0-9А-Яа-я '\-]");
     private static readonly Regex ICNameCaseRegex = new(@"^(?<word>\w)|\b(?<word>\w)(?=\w*$)");
 
     public const int MaxNameLength = 64;
     public const int MaxDescLength = 1024;
+    public const int MaxCustomContentLength = 524288; // WD EDIT
 
     /// Job preferences for initial spawn
     [DataField]
@@ -49,10 +52,11 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     private HashSet<ProtoId<TraitPrototype>> _traitPreferences = new();
 
     /// <see cref="_loadoutPreferences"/>
-    public HashSet<LoadoutPreference> LoadoutPreferences => _loadoutPreferences;
+    public Dictionary<string, Loadout> LoadoutPreferences => _loadoutPreferences; // WWDP EDIT
+    public IEnumerable<Loadout> LoadoutPreferencesList => _loadoutPreferences.Values; // WWDP EDIT
 
     [DataField]
-    private HashSet<LoadoutPreference> _loadoutPreferences = new();
+    private Dictionary<string, Loadout> _loadoutPreferences = new(); // WWDP EDIT
 
     [DataField]
     public string Name { get; set; } = "John Doe";
@@ -90,6 +94,17 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     [DataField]
     public Sex Sex { get; private set; } = Sex.Male;
+
+    // WD EDIT START
+    [DataField]
+    public string BodyType { get; set; } = SharedHumanoidAppearanceSystem.DefaultBodyType;
+
+    [DataField]
+    public string BarkVoice { get; set; } = SharedHumanoidAppearanceSystem.DefaultBarkVoice;
+
+    [DataField]
+    public BarkPercentageApplyData BarkSettings { get; set; } = BarkPercentageApplyData.Default;
+    // WD EDIT END
 
     [DataField]
     public Gender Gender { get; private set; } = Gender.Male;
@@ -142,6 +157,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         float width,
         int age,
         Sex sex,
+        string barkVoice, // WD EDIT
+        BarkPercentageApplyData barkSettings, // WD EDIT
+        string bodyType, // WD EDIT
         Gender gender,
         string? displayPronouns,
         string? stationAiName,
@@ -152,7 +170,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         PreferenceUnavailableMode preferenceUnavailable,
         HashSet<ProtoId<AntagPrototype>> antagPreferences,
         HashSet<ProtoId<TraitPrototype>> traitPreferences,
-        HashSet<LoadoutPreference> loadoutPreferences)
+        Dictionary<string, Loadout> loadoutPreferences) // WWDP EDIT
     {
         Name = name;
         FlavorText = flavortext;
@@ -167,6 +185,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         Width = width;
         Age = age;
         Sex = sex;
+        BarkVoice = barkVoice; // WD EDIT
+        BodyType = bodyType; // WD EDIT
+        BarkSettings = barkSettings.Clone(); // WD EDIT
         Gender = gender;
         DisplayPronouns = displayPronouns;
         StationAiName = stationAiName;
@@ -210,6 +231,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.Width,
             other.Age,
             other.Sex,
+            other.BarkVoice, // WD EDIT
+            other.BarkSettings.Clone(), // WD EDIT
+            other.BodyType, // WD EDIT
             other.Gender,
             other.DisplayPronouns,
             other.StationAiName,
@@ -220,7 +244,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.PreferenceUnavailable,
             new HashSet<ProtoId<AntagPrototype>>(other.AntagPreferences),
             new HashSet<ProtoId<TraitPrototype>>(other.TraitPreferences),
-            new HashSet<LoadoutPreference>(other.LoadoutPreferences))
+            new Dictionary<string, Loadout>(other.LoadoutPreferences)) // WWDP EDIT
     {
     }
 
@@ -264,12 +288,17 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     {
         var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
         var random = IoCManager.Resolve<IRobustRandom>();
-
-        var species = random.Pick(prototypeManager
+        // WWDP edit start
+        var specieslist = prototypeManager
             .EnumeratePrototypes<SpeciesPrototype>()
-            .Where(x => ignoredSpecies == null ? x.RoundStart : x.RoundStart && !ignoredSpecies.Contains(x.ID))
-            .ToArray()
-        ).ID;
+            .Where(x => !ignoredSpecies?.Contains(x.ID) ?? true) // WWDP
+            .ToArray();
+
+        if (specieslist.Length == 0) // Fallback
+            specieslist = [prototypeManager.Index<SpeciesPrototype>(SharedHumanoidAppearanceSystem.DefaultSpecies)];
+
+        var species = random.Pick(specieslist).ID;
+        // WWDP edit end
 
         return RandomWithSpecies(species);
     }
@@ -281,10 +310,12 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
         var sex = Sex.Unsexed;
         var age = 18;
+        var bodyType = SharedHumanoidAppearanceSystem.DefaultBodyType; // WD EDIT
         if (prototypeManager.TryIndex<SpeciesPrototype>(species, out var speciesPrototype))
         {
             sex = random.Pick(speciesPrototype.Sexes);
             age = random.Next(speciesPrototype.MinAge, speciesPrototype.OldAge); // people don't look and keep making 119 year old characters with zero rp, cap it at middle aged
+            bodyType = speciesPrototype.BodyTypes.First(); // WD EDIT
         }
 
         var gender = Gender.Epicene;
@@ -299,24 +330,45 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
                 break;
         }
 
+
         var name = GetName(species, gender);
 
-        return new HumanoidCharacterProfile()
+        var profile = new HumanoidCharacterProfile() // WD EDIT
         {
             Name = name,
             Sex = sex,
             Age = age,
             Gender = gender,
+            BodyType = bodyType, // WD EDIT
             Species = species,
             Appearance = HumanoidCharacterAppearance.Random(species, sex),
             Nationality = SharedHumanoidAppearanceSystem.DefaultNationality,
             Employer = SharedHumanoidAppearanceSystem.DefaultEmployer,
             Lifepath = SharedHumanoidAppearanceSystem.DefaultLifepath,
         };
+
+        // WD EDIT START
+        var barkSystem = IoCManager.Resolve<IEntityManager>().System<SharedBarkSystem>();
+        var barkVoiceList = barkSystem.GetVoiceList(profile);
+
+        var barkVoice = SharedHumanoidAppearanceSystem.DefaultBarkVoice;
+        if (barkVoiceList.Any())
+        {
+            barkVoice = random.Pick(barkVoiceList).ID;
+        }
+
+        profile.BarkVoice = barkVoice;
+
+        return profile;
+        // WD EDIT END
     }
 
     public HumanoidCharacterProfile WithName(string name) => new(this) { Name = name };
     public HumanoidCharacterProfile WithFlavorText(string flavorText) => new(this) { FlavorText = flavorText };
+    public HumanoidCharacterProfile WithBodyType(string bodyType) => new(this) { BodyType = bodyType }; // WD EDIT
+    public HumanoidCharacterProfile WithBarkVoice(string barkVoice, BarkPercentageApplyData setting) =>
+        new(this) { BarkVoice = barkVoice, BarkSettings = setting.Clone() }; // WD EDIT
+
     public HumanoidCharacterProfile WithAge(int age) => new(this) { Age = age };
     // EE - Contractors Change Start
     public HumanoidCharacterProfile WithNationality(string nationality) => new(this) { Nationality = nationality };
@@ -413,22 +465,14 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         return new(this) { _traitPreferences = list };
     }
 
-    public HumanoidCharacterProfile WithLoadoutPreference(
-        string loadoutId,
-        bool pref,
-        string? customName = null,
-        string? customDescription = null,
-        string? customColor = null,
-        bool? customHeirloom = null)
+    // WWDP EDIT START
+    // I'll rip the hands off whoever coded this piece of shit named Loadouts
+    public HumanoidCharacterProfile WithLoadoutPreference(List<Loadout> loadouts)
     {
-        var list = new HashSet<LoadoutPreference>(_loadoutPreferences);
-
-        list.RemoveWhere(l => l.LoadoutName == loadoutId);
-        if (pref)
-            list.Add(new(loadoutId, customName, customDescription, customColor, customHeirloom) { Selected = pref });
-
-        return new HumanoidCharacterProfile(this) { _loadoutPreferences = list };
+        var dictionary = loadouts.ToDictionary(p => p.LoadoutName);
+        return new(this) { _loadoutPreferences = dictionary };
     }
+    // WWDP EDIT END
 
     public string Summary =>
         Loc.GetString(
@@ -444,6 +488,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && Name == other.Name
             && Age == other.Age
             && Sex == other.Sex
+            && BarkVoice == other.BarkVoice // WD EDIT
+            && BodyType == other.BodyType // WD EDIT
             && Gender == other.Gender
             && Species == other.Species
             // EE - Contractors Change Start
@@ -504,6 +550,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             Gender.Neuter => Gender.Neuter,
             _ => Gender.Epicene // Invalid enum values.
         };
+
+        var bodyType = speciesPrototype.BodyTypes.Contains(BodyType) ? BodyType : speciesPrototype.BodyTypes.First(); // WD EDIT
 
         string name;
         if (string.IsNullOrEmpty(Name))
@@ -605,8 +653,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             .ToList();
 
         var loadouts = LoadoutPreferences
-            .Where(l => prototypeManager.HasIndex<LoadoutPrototype>(l.LoadoutName))
-            .Distinct()
+            .Where(l => prototypeManager.HasIndex<LoadoutPrototype>(l.Key))
             .ToList();
 
         Name = name;
@@ -615,6 +662,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         Age = age;
         Sex = sex;
         Gender = gender;
+        BodyType = bodyType; // WD EDIT
         Appearance = appearance;
         SpawnPriority = spawnPriority;
 
@@ -634,8 +682,76 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         _traitPreferences.UnionWith(traits);
 
         _loadoutPreferences.Clear();
-        _loadoutPreferences.UnionWith(loadouts);
+
+        // WD EDIT START
+        if(!CanHaveBark(prototypeManager, collection))
+            BarkVoice = SharedHumanoidAppearanceSystem.DefaultBarkVoice;
+
+        foreach (var (key, loadout) in loadouts)
+        {
+            if (loadout.CustomContent is not { Length: > MaxCustomContentLength, })
+            {
+                _loadoutPreferences[key] = loadout;
+                continue;
+            }
+            var truncated = loadout.CustomContent.AsSpan(0, MaxCustomContentLength);
+            while (truncated.Length > 0 && char.IsLowSurrogate(truncated[^1]))
+                truncated = truncated[..^1];
+
+            var truncatedLoadout = new Loadout(
+                    loadout.LoadoutName,
+                    loadout.CustomName,
+                    loadout.CustomDescription,
+                    truncated.ToString(),
+                    loadout.CustomColorTint,
+                    loadout.CustomHeirloom);
+
+            _loadoutPreferences[key] = truncatedLoadout;
+        }
+        // WD EDIT END
     }
+
+    // WD EDIT START
+    public bool CanHaveBark(
+        IPrototypeManager prototypeManager,IDependencyCollection collection,
+        ProtoId<BarkListPrototype>? id = null
+    )
+    {
+        var voice = BarkVoice;
+        if(
+            !prototypeManager.TryIndex<BarkListPrototype>(id ?? "default", out var barkList) ||
+            !barkList.VoiceList.TryGetValue(voice, out var voiceRequirements) ||
+            !prototypeManager.TryIndex<BarkVoicePrototype>(voice, out var voicePrototype))
+        {
+            return false;
+        }
+
+        var isValid = true;
+        var reason = "";
+
+        foreach (var requirement in voiceRequirements)
+        {
+            var passes = requirement.IsValid(
+                default!,
+                this,
+                new Dictionary<string, TimeSpan>(),
+                false,
+                voicePrototype,
+                collection.Resolve<IEntityManager>(),
+                prototypeManager,
+                collection.Resolve<IConfigurationManager>(),
+                out reason);
+
+            if (passes == !requirement.Inverted)
+                continue;
+
+            isValid = false;
+            break;
+        }
+
+        return isValid;
+    }
+    // WD EDIT END
 
     public ICharacterProfile Validated(ICommonSession session, IDependencyCollection collection, string[] sponsorPrototypes)
     {
@@ -673,6 +789,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         hashCode.Add(Age);
         hashCode.Add((int) Sex);
         hashCode.Add((int) Gender);
+        hashCode.Add(BodyType); // WD EDIT
+        hashCode.Add(BarkVoice); // WD EDIT
+        hashCode.Add(BarkSettings); // WD EDIT
         hashCode.Add(Appearance);
         hashCode.Add((int) SpawnPriority);
         hashCode.Add((int) PreferenceUnavailable);

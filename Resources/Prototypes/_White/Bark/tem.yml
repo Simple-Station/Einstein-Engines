@@ -1,0 +1,14 @@
+- type: soundCollection
+  id: BarkTem
+  files:
+  - /Audio/_White/Voice/Barks/tem/snd_tem.wav
+  - /Audio/_White/Voice/Barks/tem/snd_tem2.wav
+  - /Audio/_White/Voice/Barks/tem/snd_tem3.wav
+  - /Audio/_White/Voice/Barks/tem/snd_tem4.wav
+  - /Audio/_White/Voice/Barks/tem/snd_tem5.wav
+  - /Audio/_White/Voice/Barks/tem/snd_tem6.wav
+
+- type: barkVoice
+  id: Tem
+  barkSound:
+    collection: BarkTem

@@ -10,6 +10,8 @@
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:inventory="clr-namespace:Content.Client.UserInterface.Systems.Inventory.Widgets"
     xmlns:targeting="clr-namespace:Content.Client._Shitmed.UserInterface.Systems.Targeting.Widgets"
+    xmlns:combatMode="clr-namespace:Content.Client._White.UserInterface.Systems.CombatMode.Widgets"
+    xmlns:movement="clr-namespace:Content.Client._White.UserInterface.Systems.Movement.Widgets"
     Name="DefaultHud"
     VerticalExpand="False"
     VerticalAlignment="Bottom"
@@ -29,7 +31,11 @@
     <widgets:GhostGui Name="Ghost" Access="Protected" />
     <inventory:InventoryGui Name="Inventory" Access="Protected" />
     <hotbar:HotbarGui Name="Hotbar" Access="Protected" />
-    <targeting:TargetingControl Name="Targeting" Access="Protected"/> <!-- Shitmed Change -->
+    <BoxContainer Name="BottomRight" Align="End" SeparationOverride="3" Access="Protected">
+        <combatMode:CombatModeGui Name="CombatMode" Access="Protected"/>
+        <movement:MovementGui Name="Movement" Access="Protected"/>
+        <targeting:TargetingControl Name="Targeting" Access="Protected"/>
+    </BoxContainer>
     <chat:ResizableChatBox Name="Chat" Access="Protected" />
     <alerts:AlertsUI Name="Alerts" Access="Protected" />
 </screens:OverlayChatGameScreen>

@@ -8,6 +8,7 @@
     sprite: Clothing/OuterClothing/Suits/bombsuit.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/bombsuit.rsi
+    clothingType: suit # WD EDIT
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.8
@@ -63,6 +64,7 @@
     sprite: Clothing/OuterClothing/Suits/fire.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/fire.rsi
+    clothingType: suit # WD EDIT
   - type: PressureProtection
     highPressureMultiplier: 0.04
   - type: TemperatureProtection
@@ -140,6 +142,7 @@
         Radiation: 0.001
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/rad.rsi
+    clothingType: suit # WD EDIT
   - type: GroupExamine
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodRad
@@ -165,6 +168,7 @@
     sprite: Clothing/OuterClothing/Suits/spaceninja.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/spaceninja.rsi
+    clothingType: suit # WD EDIT
   # hardsuit stuff
   - type: PressureProtection
     highPressureMultiplier: 0.6
@@ -246,6 +250,7 @@
     sprite: Clothing/OuterClothing/Suits/shrine-maiden.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/shrine-maiden.rsi
+    clothingType: suit # WD EDIT
 
 - type: entity
   parent: ClothingOuterBase
@@ -257,6 +262,7 @@
     sprite: Clothing/OuterClothing/Suits/monkey.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/monkey.rsi
+    clothingType: suit # WD EDIT
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:Container {}
@@ -278,6 +284,7 @@
     size: Normal
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/iansuit.rsi
+    clothingType: suit # WD EDIT
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodIan
   - type: ContainerContainer
@@ -301,6 +308,7 @@
     size: Normal
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/carpsuit.rsi
+    clothingType: suit # WD EDIT
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodCarp
   - type: ContainerContainer
@@ -332,3 +340,4 @@
     sprite: Clothing/OuterClothing/Suits/witchrobe.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/witchrobe.rsi
+    clothingType: suit # WD EDIT

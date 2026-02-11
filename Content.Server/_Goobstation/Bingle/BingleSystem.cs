@@ -23,7 +23,7 @@ public sealed class BingleSystem : EntitySystem
         SubscribeLocalEvent<BingleComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<BingleComponent, AttackAttemptEvent>(OnAttackAttempt);
         SubscribeLocalEvent<BingleComponent, ToggleNightVisionEvent>(OnNightvision);
-        SubscribeLocalEvent<BingleComponent, ToggleCombatActionEvent>(OnCombatToggle);
+        SubscribeLocalEvent<BingleComponent, CombatModeToggledEvent>(OnCombatToggle);
     }
 
     private void OnMapInit(EntityUid uid, BingleComponent component, MapInitEvent args)
@@ -73,11 +73,9 @@ public sealed class BingleSystem : EntitySystem
         flashComp.Enabled = !flashComp.Enabled;
     }
 
-    private void OnCombatToggle(EntityUid uid, BingleComponent component, ToggleCombatActionEvent args)
+    private void OnCombatToggle(EntityUid uid, BingleComponent component, CombatModeToggledEvent args)
     {
-        if (!TryComp<CombatModeComponent>(uid, out var combat))
-            return;
-        _appearance.SetData(uid, BingleVisual.Combat, combat.IsInCombatMode);
+        _appearance.SetData(uid, BingleVisual.Combat, args.CombatMode);
     }
 }
 

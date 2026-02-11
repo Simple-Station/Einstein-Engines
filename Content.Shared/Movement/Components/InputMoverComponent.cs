@@ -88,8 +88,8 @@ namespace Content.Shared.Movement.Components
         [ViewVariables(VVAccess.ReadWrite)]
         public bool CanMove = true;
 
-        [DataField]
-        public ProtoId<AlertPrototype> WalkingAlert = "Walking";
+        // [DataField]
+        // public ProtoId<AlertPrototype> WalkingAlert = "Walking";
     }
 
     [Serializable, NetSerializable]

@@ -3,7 +3,10 @@
   name: species-name-ipc
   roundStart: true
   prototype: MobIPC
-  sprites: MobIPCSprites
+  # WD EDIT START
+  bodyTypes:
+  - IPCNormal
+  # WD EDIT END
   defaultSkinTone: "#aaa9ad"
   markingLimits: MobIPCMarkingLimits
   dollPrototype: MobIPCDummy
@@ -25,8 +28,11 @@
 # be defined as a 'custom base layer'
 # in either the mob's starting marking prototype,
 # or it has to be added in C#.
-- type: speciesBaseSprites
-  id: MobIPCSprites
+# WD EDIT START
+- type: bodyType
+  id: IPCNormal
+  name: body-normal
+# WD EDIT END
   sprites:
     Head: MobIPCHead
     Face: MobHumanoidAnyMarking

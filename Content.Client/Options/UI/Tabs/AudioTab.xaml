@@ -14,6 +14,11 @@
                 <ui:OptionSlider Name="SliderVolumeLobby" Title="{Loc 'ui-options-lobby-volume'}" />
                 <ui:OptionSlider Name="SliderVolumeInterface" Title="{Loc 'ui-options-interface-volume'}" />
                 <ui:OptionSlider Name="SliderVolumeAnnouncer" Title="{Loc 'ui-options-announcer-volume'}" />
+                <!--WD EDIT START-->
+                <!-- <ui:OptionSlider Name="SliderVolumeTts" Title="{Loc 'ui-options-tts-volume'}" /> -->
+                <ui:OptionSlider Name="SliderVolumeBark" Title="{Loc 'ui-options-bark-volume'}" />
+                <ui:OptionSlider Name="SliderLimitBark" Title="{Loc 'ui-options-bark-limit'}" />
+                <!--WD EDIT END-->
                 <ui:OptionSlider Name="SliderMaxAmbienceSounds" Title="{Loc 'ui-options-ambience-max-sounds'}"
                                  Margin="0 0 0 8" />
                 <CheckBox Name="LobbyMusicCheckBox" Text="{Loc 'ui-options-lobby-music'}" />
@@ -22,6 +27,10 @@
                 <CheckBox Name="AnnouncerDisableMultipleSoundsCheckBox" Text="{Loc 'ui-options-announcer-disable-multiple-sounds'}" ToolTip="{Loc 'ui-options-announcer-disable-multiple-sounds-tooltip'}" />
                 <CheckBox Name="AdminSoundsCheckBox" Text="{Loc 'ui-options-admin-sounds'}" />
                 <CheckBox Name="BwoinkSoundCheckBox" Text="{Loc 'ui-options-bwoink-sound'}" />
+                <!--WD EDIT START-->
+                <CheckBox Name="CombatModeSoundCheckBox" Text="{Loc 'ui-options-toggle-combat-mode-sounds'}" />
+                <ui:OptionDropDown Name="DropDownVoiceType" Title="{Loc 'ui-voice-option'}" />
+                <!--WD EDIT END-->
             </BoxContainer>
         </BoxContainer>
         <ui:OptionsTabControlRow Name="Control" Access="Public" />

@@ -72,6 +72,10 @@
         - PlushieHarpy
         - PlushieMort
         - PlushieShadowkin
+        # WD EDIT START
+        - PlushieSanabi
+        - FaceHuggerToys
+        # WD EDIT END
       chance: 0.5
       offset: 0.2
 

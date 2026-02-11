@@ -3,7 +3,10 @@
   name: species-name-diona
   roundStart: true
   prototype: MobDiona
-  sprites: MobDionaSprites
+  # WD EDIT START
+  bodyTypes:
+    - DionaNormal
+  # WD EDIT END
   defaultSkinTone: "#cdb369"
   markingLimits: MobDionaMarkingLimits
   dollPrototype: MobDionaDummy
@@ -13,8 +16,11 @@
   lastNames: DionaLast
   naming: TheFirstofLast
 
-- type: speciesBaseSprites
-  id: MobDionaSprites
+# WD EDIT START
+- type: bodyType
+  id: DionaNormal
+  name: body-normal
+# WD EDIT END
   sprites:
     Head: MobDionaHead
     HeadTop: MobHumanoidAnyMarking

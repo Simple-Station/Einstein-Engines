@@ -113,6 +113,17 @@ public sealed partial class MarkingPicker : Control
         Populate(CMarkingSearch.Text);
     }
 
+    public bool Select(MarkingCategories category)
+    {
+        _selectedMarkingCategory = category;
+        if (!CMarkingCategoryButton.TrySelectId(_markingCategories.IndexOf(_selectedMarkingCategory)))
+            return false;
+
+        Populate(CMarkingSearch.Text);
+        UpdatePoints();
+        return true;
+    }
+
     public MarkingPicker()
     {
         RobustXamlLoader.Load(this);
@@ -128,6 +139,9 @@ public sealed partial class MarkingPicker : Control
 
         Populate(CMarkingSearch.Text);
     }
+
+    public bool IsCategoryValid(MarkingCategories category) =>
+        !_ignoreCategories.Contains(category) && GetMarkings(category).Count > 0;
 
     private void SetupCategoryButtons()
     {
@@ -211,6 +225,7 @@ public sealed partial class MarkingPicker : Control
                     {
                         Texture = marking.Sprites[0].DirFrame0().TextureFor(
                             Enum.TryParse<Direction>(marking.PreviewDirection, out var dir) ? dir : Direction.South),
+                        TextureScale = new Vector2(1.5f)
                     },
                 },
             };

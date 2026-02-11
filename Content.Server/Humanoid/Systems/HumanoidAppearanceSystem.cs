@@ -41,6 +41,8 @@ public sealed partial class HumanoidAppearanceSystem : SharedHumanoidAppearanceS
         targetHumanoid.SkinColor = sourceHumanoid.SkinColor;
         targetHumanoid.EyeColor = sourceHumanoid.EyeColor;
         targetHumanoid.Age = sourceHumanoid.Age;
+        // SetTTSVoice(target, sourceHumanoid.Voice, humanoid:targetHumanoid); // WD EDIT
+        targetHumanoid.BodyType = sourceHumanoid.BodyType; // WD EDIT
         targetHumanoid.Height = sourceHumanoid.Height;
         targetHumanoid.Width = sourceHumanoid.Width;
         SetSex(target, sourceHumanoid.Sex, false, targetHumanoid);

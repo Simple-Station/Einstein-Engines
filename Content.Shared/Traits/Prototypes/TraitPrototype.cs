@@ -45,7 +45,6 @@ public sealed partial class TraitPrototype : IPrototype, IComparable
     public bool SponsorOnly = false;
     // Corvax-Sponsors-End
 
-
     [DataField]
     public List<CharacterRequirement> Requirements = new();
 
@@ -64,6 +63,11 @@ public sealed partial class TraitPrototype : IPrototype, IComparable
 
         return Priority.CompareTo(other.Priority); // No need for total ordering, only care about things that want to be loaded earlier or later.
     }
+
+    // WD EDIT START
+    [DataField]
+    public bool Enable = true;
+    // WD EDIT END
 }
 
 /// This serves as a hook for trait functions to modify a player character upon spawning in.

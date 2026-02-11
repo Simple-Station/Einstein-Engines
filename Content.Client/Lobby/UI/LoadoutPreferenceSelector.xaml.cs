@@ -39,8 +39,8 @@ public sealed partial class LoadoutPreferenceSelector : Control
 
     public LoadoutPrototype Loadout { get; }
 
-    private LoadoutPreference _preference = null!;
-    public LoadoutPreference Preference
+    private Loadout _preference = null!;
+    public Loadout Preference
     {
         get => _preference;
         set
@@ -48,11 +48,11 @@ public sealed partial class LoadoutPreferenceSelector : Control
             _preference = value;
             NameEdit.Text = value.CustomName ?? "";
             DescriptionEdit.TextRope = new Rope.Leaf(value.CustomDescription ?? "");
+            BookTextEdit.TextRope = new Rope.Leaf(value.CustomContent ?? ""); // WD EDIT
             ColorEdit.Color = Color.FromHex(value.CustomColorTint, Color.White);
             if (value.CustomColorTint != null)
                 UpdatePaint(new(DummyEntityUid, _entityManager.GetComponent<PaintedComponent>(DummyEntityUid)), _entityManager);
             HeirloomButton.Pressed = value.CustomHeirloom ?? false;
-            PreferenceButton.Pressed = value.Selected;
         }
     }
 
@@ -83,8 +83,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
         }
     }
 
-    public event Action<LoadoutPreference>? PreferenceChanged;
-
+    public event Action<Loadout>? PreferenceChanged;
 
     public LoadoutPreferenceSelector(LoadoutPrototype loadout, JobPrototype highJob,
         HumanoidCharacterProfile profile, ref Dictionary<string, EntityUid> entities,
@@ -98,9 +97,10 @@ public sealed partial class LoadoutPreferenceSelector : Control
 
         // Show/hide the special menu and items depending on what's allowed
         HeirloomButton.Visible = loadout.CanBeHeirloom;
-        SpecialMenu.Visible = Loadout.CustomName || Loadout.CustomDescription || Loadout.CustomColorTint;
+        SpecialMenu.Visible = Loadout.CustomName || Loadout.CustomDescription || Loadout.CustomContent || Loadout.CustomColorTint; // WD EDIT
         SpecialName.Visible = Loadout.CustomName;
         SpecialDescription.Visible = Loadout.CustomDescription;
+        SpecialBookText.Visible = Loadout.CustomContent; // WD EDIT
         SpecialColorTintToggle.Visible = Loadout.CustomColorTint;
 
 
@@ -205,34 +205,16 @@ public sealed partial class LoadoutPreferenceSelector : Control
                 },
             },
         });
-        PreferenceButton.OnToggled += args =>
-        {
-            if (args.Pressed == _preference.Selected)
-                return;
-
-            _preference.Selected = args.Pressed;
-            PreferenceChanged?.Invoke(Preference);
-        };
-        HeirloomButton.OnToggled += args =>
-        {
-            if (args.Pressed == _preference.Selected)
-                return;
-
-            _preference.CustomHeirloom = args.Pressed ? true : null;
-            PreferenceChanged?.Invoke(Preference);
-        };
-        SaveButton.OnPressed += _ =>
-        {
-            _preference.CustomColorTint = SpecialColorTintToggle.Pressed ? ColorEdit.Color.ToHex() : null;
-            _preference.Selected = PreferenceButton.Pressed;
-            PreferenceChanged?.Invoke(Preference);
-        };
 
         // Update prefs cache when something changes
         NameEdit.OnTextChanged += _ =>
             _preference.CustomName = string.IsNullOrEmpty(NameEdit.Text) ? null : NameEdit.Text;
         DescriptionEdit.OnTextChanged += _ =>
             _preference.CustomDescription = string.IsNullOrEmpty(Rope.Collapse(DescriptionEdit.TextRope)) ? null : Rope.Collapse(DescriptionEdit.TextRope);
+        // WD EDIT START
+        BookTextEdit.OnTextChanged += _ =>
+            _preference.CustomContent = string.IsNullOrEmpty(Rope.Collapse(BookTextEdit.TextRope)) ? null : Rope.Collapse(BookTextEdit.TextRope);
+            // WD EDIT END
         SpecialColorTintToggle.OnToggled += args =>
             ColorEdit.Visible = args.Pressed;
         ColorEdit.OnColorChanged += _ =>
@@ -244,6 +226,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
         var desc = Loc.GetString(loadoutDesc);
         NameEdit.PlaceHolder = loadoutName;
         DescriptionEdit.Placeholder = new Rope.Leaf(desc);
+        BookTextEdit.Placeholder = new Rope.Leaf(Loc.GetString("humanoid-profile-editor-loadouts-customize-book-text-placeholder")); // WD EDIT
 
 
         var tooltip = new Tooltip();

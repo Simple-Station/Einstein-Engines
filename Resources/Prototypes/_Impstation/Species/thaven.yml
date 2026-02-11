@@ -3,7 +3,8 @@
   name: species-name-thaven
   roundStart: true
   prototype: MobThaven
-  sprites: MobThavenSprites
+  bodyTypes:
+  - ThavenNormal
   defaultSkinTone: "#ffffff"
   markingLimits: MobThavenMarkingLimits
   dollPrototype: MobThavenDummy
@@ -12,8 +13,9 @@
   femaleFirstNames: names_thaven
   naming: First
 
-- type: speciesBaseSprites
-  id: MobThavenSprites
+- type: bodyType
+  id: ThavenNormal
+  name: body-normal
   sprites:
     Hair: MobHumanoidAnyMarking
     Eyes: MobThavenEyes

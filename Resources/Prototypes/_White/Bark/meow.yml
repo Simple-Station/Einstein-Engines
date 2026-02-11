@@ -1,0 +1,16 @@
+- type: soundCollection
+  id: BarkMeow
+  files:
+  - /Audio/_White/Voice/Barks/Meow/meow1.wav
+  - /Audio/_White/Voice/Barks/Meow/meow2.wav
+  - /Audio/_White/Voice/Barks/Meow/meow3.wav
+  - /Audio/_White/Voice/Barks/Meow/meow4.wav
+
+
+- type: barkVoice
+  id: Meow
+  barkSound:
+    collection: BarkMeow
+  clampData:
+    volumeMax: 0.5
+

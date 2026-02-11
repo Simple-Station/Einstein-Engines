@@ -1,0 +1,70 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Digi from https://github.com/tgstation/tgstation/blob/08898964e67a0d517ca4e47eec7039394b694ac2/icons/mob/species/lizard/bodyparts.dmi | Edited by PuroSlavKing (Github). Slim by canceredpussy (discord)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "l_foot_digi",
+            "directions": 4
+        },
+        {
+            "name": "l_leg_digi",
+            "directions": 4
+        },
+        {
+            "name": "r_foot_digi",
+            "directions": 4
+        },
+        {
+            "name": "r_leg_digi",
+            "directions": 4
+        },
+        {
+            "name": "full_slim"
+        },
+        {
+            "name": "head_slim_f",
+            "directions": 4
+        },
+        {
+            "name": "l_arm_slim",
+            "directions": 4
+        },
+        {
+            "name": "l_foot_slim",
+            "directions": 4
+        },
+        {
+            "name": "l_hand_slim",
+            "directions": 4
+        },
+        {
+            "name": "l_leg_slim",
+            "directions": 4
+        },
+        {
+            "name": "r_arm_slim",
+            "directions": 4
+        },
+        {
+            "name": "r_foot_slim",
+            "directions": 4
+        },
+        {
+            "name": "r_hand_slim",
+            "directions": 4
+        },
+        {
+            "name": "r_leg_slim",
+            "directions": 4
+        },
+        {
+            "name": "torso_slim_f",
+            "directions": 4
+        }
+    ]
+}

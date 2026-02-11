@@ -1,0 +1,18 @@
+- type: soundCollection
+  id: BarkMtt
+  files:
+  - /Audio/_White/Voice/Barks/mtt/snd_mtt1.wav
+  - /Audio/_White/Voice/Barks/mtt/snd_mtt2.wav
+  - /Audio/_White/Voice/Barks/mtt/snd_mtt3.wav
+  - /Audio/_White/Voice/Barks/mtt/snd_mtt4.wav
+  - /Audio/_White/Voice/Barks/mtt/snd_mtt5.wav
+  - /Audio/_White/Voice/Barks/mtt/snd_mtt6.wav
+  - /Audio/_White/Voice/Barks/mtt/snd_mtt7.wav
+  - /Audio/_White/Voice/Barks/mtt/snd_mtt8.wav
+  - /Audio/_White/Voice/Barks/mtt/snd_mtt9.wav
+
+
+- type: barkVoice
+  id: Mtt
+  barkSound:
+    collection: BarkMtt

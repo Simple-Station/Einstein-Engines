@@ -9,7 +9,6 @@ using Content.Server.Warps;
 using Content.Server.Preferences.Managers;
 using Content.Server.Roles;
 using Content.Server.Roles.Jobs;
-using Content.Shared._White.CustomGhostSystem;
 using Content.Shared._White.Roles;
 using Content.Shared.Actions;
 using Content.Shared.CCVar;

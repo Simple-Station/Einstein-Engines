@@ -3,13 +3,15 @@
   name: species-name-Shadow
   roundStart: false
   prototype: MobShadow
-  sprites: MobShadowSprites
+  bodyTypes:
+  - ShadowNormal
   markingLimits: MobHumanMarkingLimits
   dollPrototype: MobShadowDummy
   skinColoration: HumanToned
 
-- type: speciesBaseSprites
-  id: MobShadowSprites
+- type: bodyType
+  id: ShadowNormal
+  name: body-normal
   sprites:
     Head: MobShadowHead
     Face: MobHumanoidAnyMarking

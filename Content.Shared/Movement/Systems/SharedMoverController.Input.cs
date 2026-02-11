@@ -53,11 +53,13 @@ namespace Content.Shared.Movement.Systems
                 .Register<SharedMoverController>();
 
             SubscribeLocalEvent<InputMoverComponent, ComponentInit>(OnInputInit);
+            SubscribeLocalEvent<InputMoverComponent, ComponentStartup>(OnStartup);
             SubscribeLocalEvent<InputMoverComponent, ComponentGetState>(OnMoverGetState);
             SubscribeLocalEvent<InputMoverComponent, ComponentHandleState>(OnMoverHandleState);
             SubscribeLocalEvent<InputMoverComponent, EntParentChangedMessage>(OnInputParentChange);
 
             SubscribeLocalEvent<FollowedComponent, EntParentChangedMessage>(OnFollowedParentChange);
+            SubscribeAllEvent<ToggleInputMoverRequestEvent>(OnToggleInputMoverRequest);
 
             Subs.CVar(_configManager, CCVars.CameraRotationLocked, obj => CameraRotationLocked = obj, true);
             Subs.CVar(_configManager, CCVars.GameDiagonalMovement, value => DiagonalMovementEnabled = value, true);
@@ -310,6 +312,26 @@ namespace Content.Shared.Movement.Systems
             Dirty(entity.Owner, entity.Comp);
         }
 
+        // WD EDIT START
+        private void OnToggleInputMoverRequest(ToggleInputMoverRequestEvent msg, EntitySessionEventArgs args)
+        {
+            if (Timing is { IsFirstTimePredicted: false, InPrediction: true, })
+                return;
+
+            if (args.SenderSession.AttachedEntity is not {Valid: true, } attached
+                || !TryComp<InputMoverComponent>(attached, out var inputMover))
+            {
+                Log.Warning($"User {args.SenderSession.Name} sent an invalid {nameof(ToggleInputMoverRequestEvent)}");
+                return;
+            }
+
+            inputMover.DefaultSprinting = !inputMover.DefaultSprinting;
+            Dirty(attached, inputMover);
+
+            SprintingMovementUpdate((attached, inputMover));
+        }
+        // WD EDIT END
+
         private void HandleDirChange(EntityUid entity, Direction dir, ushort subTick, bool state)
         {
             // Relayed movement just uses the same keybinds given we're moving the relayed entity
@@ -364,8 +386,15 @@ namespace Content.Shared.Movement.Systems
 
             entity.Comp.RelativeEntity = xform.GridUid ?? xform.MapUid;
             entity.Comp.TargetRelativeRotation = Angle.Zero;
-            WalkingAlert(entity);
+            SprintingMovementUpdate(entity);
         }
+
+        // WD EDIT START
+        protected virtual void OnStartup(Entity<InputMoverComponent> entity, ref ComponentStartup args)
+        {
+            _actionBlocker.UpdateCanMove(entity, entity.Comp);
+        }
+        // WD EDIT END
 
         private void HandleRunChange(EntityUid uid, ushort subTick, bool walking)
         {
@@ -377,7 +406,7 @@ namespace Content.Shared.Movement.Systems
                 if (moverComp != null)
                 {
                     SetMoveInput((uid, moverComp), MoveButtons.None);
-                    WalkingAlert((uid, moverComp));
+                    SprintingMovementUpdate((uid, moverComp));
                 }
 
                 HandleRunChange(relayMover.RelayEntity, subTick, walking);
@@ -496,9 +525,12 @@ namespace Content.Shared.Movement.Systems
         public void SetSprinting(Entity<InputMoverComponent> entity, ushort subTick, bool walking)
         {
             // Logger.Info($"[{_gameTiming.CurTick}/{subTick}] Sprint: {enabled}");
+            var comp = entity.Comp;
+            if (!Resolve(entity, ref comp))
+                return;
 
             SetMoveInput(entity, subTick, walking, MoveButtons.Walk);
-            WalkingAlert(entity);
+            SprintingMovementUpdate(entity);
         }
 
         /// <summary>

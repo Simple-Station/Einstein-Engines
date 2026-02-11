@@ -189,7 +189,12 @@ binds:
     mod1: Alt
   - function: OpenCharacterMenu
     type: State
+    key: J
+  # WD EDIT START
+  - function: ToggleCombatMode
+    type: State
     key: C
+  #  WD EDIT END
   - function: OpenEmotesMenu
     type: State
     key: Y

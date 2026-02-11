@@ -65,6 +65,24 @@
                             </PanelContainer>
                         </BoxContainer>
 
+                        <!--WD EDIT START-->
+                        <BoxContainer Name="SpecialBookText" Orientation="Vertical" HorizontalExpand="True">
+                            <Label Text="{Loc 'humanoid-profile-editor-loadouts-customize-book-text'}" />
+                            <PanelContainer HorizontalExpand="True">
+                                <PanelContainer.PanelOverride>
+                                    <graphics:StyleBoxFlat BackgroundColor="#222222" />
+                                </PanelContainer.PanelOverride>
+
+                                <controls:ResizableControl
+                                    AllowedResizeDirection="Vertical"
+                                    HorizontalExpand="True"
+                                    MinSize="128 64">
+                                    <TextEdit Name="BookTextEdit" StyleClasses="PaperLineEdit" HorizontalExpand="True" VerticalExpand="True" Margin="3" />
+                                </controls:ResizableControl>
+                            </PanelContainer>
+                        </BoxContainer>
+                        <!--WD EDIT END-->
+
                         <Button Name="SpecialColorTintToggle" Text="{Loc 'humanoid-profile-editor-loadouts-customize-color'}" ToggleMode="True" Margin="0 3 0 0" StyleClasses="OpenBoth" />
                         <ColorSelectorSliders Name="ColorEdit" Color="#fff" HorizontalExpand="True" />
 

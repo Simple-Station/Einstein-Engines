@@ -1,0 +1,86 @@
+- type: speciesDictionary
+  id: Human
+  guidePrototype: Human
+  groupPrototype: Humanoid
+
+- type: speciesDictionary
+  id: Reptilian
+  guidePrototype: Reptilian
+  groupPrototype: Other
+
+# - type: speciesDictionary
+#   id: SlimePerson
+#   guidePrototype: SlimePerson
+#   groupPrototype: Humanoid
+
+- type: speciesDictionary
+  id: Oni
+  guidePrototype: Oni
+  groupPrototype: Other
+
+- type: speciesDictionary
+  id: Felinid
+  guidePrototype: Felinid
+  groupPrototype: Humanoid
+
+# - type: speciesDictionary
+#   id: Vulpkanin
+#   guidePrototype: Vulpkanin
+#   groupPrototype: Other
+
+- type: speciesDictionary
+  id: Diona
+  guidePrototype: Diona
+  groupPrototype: Other
+
+# - type: speciesDictionary
+#   id: Shadowkin
+#   guidePrototype: Shadowkin
+#   groupPrototype: Other
+
+- type: speciesDictionary
+  id: Tajaran
+  guidePrototype: Tajaran
+  groupPrototype: Other
+
+# - type: speciesDictionary
+#   id: Xelthia
+#   guidePrototype: Xelthia
+#   groupPrototype: Other
+
+# - type: speciesDictionary
+#   id: Arachnid
+#   guidePrototype: Arachnid
+#   groupPrototype: Other
+
+- type: speciesDictionary
+  id: Moth
+  guidePrototype: Moth
+  groupPrototype: Other
+
+- type: speciesDictionary
+  id: IPC
+  guidePrototype: IPC
+  groupPrototype: Other
+
+- type: speciesDictionary
+  id: Harpy
+  guidePrototype: Harpy
+  groupPrototype: Humanoid
+
+- type: speciesDictionary
+  id: Plasmaman
+  guidePrototype: Plasmaman
+  groupPrototype: Other
+
+- type: speciesDictionary
+  id: Thaven
+  guidePrototype: Thaven
+  groupPrototype: Other
+
+- type: speciesDictionary
+  id: Feroxi
+  guidePrototype: Feroxi
+  groupPrototype: Other
+
+

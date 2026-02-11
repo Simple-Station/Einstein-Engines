@@ -30,6 +30,8 @@
   - alertType: Pacified
   - alertType: Offer
   - alertType: Deflecting
+  - alertType: RecentlyBlocked # WD EDIT
+  - category: Counter # WD EDIT
 
 - type: entity
   id: AlertSpriteView
@@ -150,18 +152,18 @@
   name: alerts-weightless-name
   description: alerts-weightless-desc
 
-- type: alert
-  id: Walking
-  icons:
-  - sprite: /Textures/Interface/Alerts/walking.rsi
-    state: walking
-  - sprite: /Textures/Interface/Alerts/walking.rsi
-    state: running
-  name: alerts-walking-name
-  description: alerts-walking-desc
-  minSeverity: 0
-  maxSeverity: 1
-  clientHandled: true
+# - type: alert
+#   id: Walking
+#   icons:
+#   - sprite: /Textures/Interface/Alerts/walking.rsi
+#     state: walking
+#   - sprite: /Textures/Interface/Alerts/walking.rsi
+#     state: running
+#   name: alerts-walking-name
+#   description: alerts-walking-desc
+#   minSeverity: 0
+#   maxSeverity: 1
+#   clientHandled: true
 
 - type: alert
   id: Stun

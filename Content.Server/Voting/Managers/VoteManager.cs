@@ -55,7 +55,7 @@ namespace Content.Server.Voting.Managers
         private readonly StandardVoteType[] _standardVoteTypeValues = Enum.GetValues<StandardVoteType>();
 
         private bool _syncedWithDb = false;
-        private readonly List<string> _whitelistedPresets = ["Secret", "Traitor", "Survival", "Greenshift", "Extended"]; // Orehum
+        private readonly List<string> _whitelistedPresets = ["Secret", "Traitor", "Survival", "Greenshift", "Extended"];
 
         public List<string> GetWhitelistedPresets() => _whitelistedPresets;
 

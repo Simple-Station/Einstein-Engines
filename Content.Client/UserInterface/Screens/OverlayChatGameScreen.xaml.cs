@@ -22,11 +22,11 @@ public sealed partial class OverlayChatGameScreen : InGameScreen
         SetAnchorAndMarginPreset(Hotbar, LayoutPreset.BottomWide, margin: 5);
         SetAnchorAndMarginPreset(Chat, LayoutPreset.TopRight, margin: 10);
         SetAnchorAndMarginPreset(Alerts, LayoutPreset.TopRight, margin: 10);
-        SetAnchorAndMarginPreset(Targeting, LayoutPreset.BottomRight, margin: 5); // Shitmed Change
+        SetAnchorAndMarginPreset(BottomRight, LayoutPreset.BottomRight, margin: 5); // WD EDIT
 
         Chat.OnResized += ChatOnResized;
         Chat.OnChatResizeFinish += ChatOnResizeFinish;
-        MainViewport.OnResized += ResizeAlertsContainer; // Shitmed Change
+        MainViewport.OnResized += ResizeActionContainer;
         Inventory.OnResized += ResizeActionContainer;
     }
 
@@ -34,12 +34,6 @@ public sealed partial class OverlayChatGameScreen : InGameScreen
     {
         float indent = Inventory.Size.Y + TopBar.Size.Y + 40;
         Actions.ActionsContainer.MaxGridHeight = MainViewport.Size.Y - indent;
-    }
-
-    private void ResizeAlertsContainer()
-    {
-        float indent = Chat.Size.Y + Targeting.Size.Y + 120;
-        Alerts.AlertContainer.MaxGridHeight = Math.Max(MainViewport.Size.Y - indent, 1);
     }
 
     private void ChatOnResizeFinish(Vector2 _)

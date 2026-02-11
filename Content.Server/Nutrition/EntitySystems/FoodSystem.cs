@@ -2,7 +2,7 @@ using System.Linq;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Server.Inventory;
-using Content.Server.Nutrition.Components;
+// using Content.Server.Nutrition.Components;
 using Content.Server.Popups;
 using Content.Server.Stack;
 using Content.Server.Traits.Assorted.Components;

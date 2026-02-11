@@ -73,7 +73,7 @@ namespace Content.Server.Database
                 .HasIndex(p => new { HumanoidProfileId = p.ProfileId, p.TraitName })
                 .IsUnique();
 
-            modelBuilder.Entity<Loadout>()
+            modelBuilder.Entity<LoadoutItem>()
                 .HasIndex(p => new { HumanoidProfileId = p.ProfileId, p.LoadoutName })
                 .IsUnique();
 
@@ -401,6 +401,15 @@ namespace Content.Server.Database
         public string Lifepath { get; set; } = null!;
         public int Age { get; set; }
         public string Sex { get; set; } = null!;
+        public string BodyType { get; set; } = null!; // WD EDIT
+        // public string Voice { get; set; } = null!; // WD EDIT
+        public string BarkVoice { get; set; } = null!; // WD EDIT
+
+        public byte BarkPause { get; set; } = byte.MaxValue / 2; // WD EDIT
+        public byte BarkVolume { get; set; } = byte.MaxValue / 2; // WD EDIT
+        public byte BarkPitch { get; set; } = byte.MaxValue / 2; // WD EDIT
+        public byte BarkPitchVariance { get; set; } = byte.MaxValue / 2; // WD EDIT
+
         public string Gender { get; set; } = null!;
         public string? DisplayPronouns { get; set; }
         public string? StationAiName { get; set; }
@@ -419,7 +428,7 @@ namespace Content.Server.Database
         public List<Job> Jobs { get; } = new();
         public List<Antag> Antags { get; } = new();
         public List<Trait> Traits { get; } = new();
-        public List<Loadout> Loadouts { get; } = new();
+        public List<LoadoutItem> Loadouts { get; } = new();
 
         [Column("pref_unavailable")] public DbPreferenceUnavailableMode PreferenceUnavailable { get; set; }
 
@@ -464,20 +473,36 @@ namespace Content.Server.Database
         public string TraitName { get; set; } = null!;
     }
 
-    [Serializable]
-    public partial class Loadout : Shared.Clothing.Loadouts.Systems.Loadout
+    [Table("loadout")]
+    public class LoadoutItem
     {
+        public string LoadoutName { get; set; } = null!;
+        public string? CustomName { get; set; }
+        public string? CustomDescription { get; set; }
+        public string? CustomContent { get; set; } // WD EDIT
+        public string? CustomColorTint { get; set; }
+        public bool? CustomHeirloom { get; set; }
+
         public int Id { get; set; }
         public Profile Profile { get; set; } = null!;
         public int ProfileId { get; set; }
 
-        public Loadout(
+        public LoadoutItem(
             string loadoutName,
             string? customName = null,
             string? customDescription = null,
+            string? customContent = null, // WD EDIT
             string? customColorTint = null,
             bool? customHeirloom = null
-        ) : base(loadoutName, customName, customDescription, customColorTint, customHeirloom) { }
+        )
+        {
+            LoadoutName = loadoutName;
+            CustomName = customName;
+            CustomDescription = customDescription;
+            CustomContent = customContent;
+            CustomColorTint = customColorTint;
+            CustomHeirloom = customHeirloom;
+        }
     }
 
     public enum DbPreferenceUnavailableMode

@@ -3,6 +3,9 @@ using System.Linq;
 using System.Numerics;
 using Content.Corvax.Interfaces.Shared;
 using Content.Shared._EE.Contractors.Prototypes;
+using Content.Shared._White.Humanoid.Prototypes;
+// using Content.Shared._White.TTS;
+using Content.Shared.Decals;
 using Content.Shared.Examine;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -22,8 +25,9 @@ using Robust.Shared.Serialization.Markdown;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
 using Content.Shared._EE.GenderChange;
+using Content.Shared._White.Bark.Systems;
 
-namespace Content.Shared.Humanoid;
+ namespace Content.Shared.Humanoid;
 
 /// <summary>
 ///     HumanoidSystem. Primarily deals with the appearance and visual data
@@ -43,6 +47,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     [Dependency] private readonly ISerializationManager _serManager = default!;
     [Dependency] private readonly HeightAdjustSystem _heightAdjust = default!;
     [Dependency] private readonly ISharedPlayerManager _sharedPlayerManager = default!;
+    [Dependency] private readonly SharedBarkSystem _barkSystem = default!; // WWDP EDIT
 
     private ISharedSponsorsManager? _sponsors;
 
@@ -51,6 +56,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
     [ValidatePrototypeId<EmployerPrototype>]
     public const string DefaultEmployer = "NanoTrasen";
+    // WD EDIT START
 
     [ValidatePrototypeId<NationalityPrototype>]
     public const string DefaultNationality = "Bieselite";
@@ -58,10 +64,25 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     [ValidatePrototypeId<LifepathPrototype>]
     public const string DefaultLifepath = "Spacer";
 
+    // WD EDIT START
+    [ValidatePrototypeId<BodyTypePrototype>]
+    public const string DefaultBodyType = "HumanNormal";
+
+    // public const string DefaultVoice = "Aidar";
+    public const string DefaultBarkVoice = "Txt1";
+
+    // public static readonly Dictionary<Sex, string> DefaultSexVoice = new()
+    // {
+    //     { Sex.Male, "Aidar" },
+    //     { Sex.Female, "Kseniya" },
+    //     { Sex.Unsexed, "Baya" },
+    // };
+    // WD EDIT END
+
     public override void Initialize()
     {
         base.Initialize();
-        IoCManager.Instance!.TryResolveType(out _sponsors); // Corvax-Sponsors
+        // IoCManager.Instance!.TryResolveType(out _sponsors); // Corvax-Sponsors
 
         SubscribeLocalEvent<HumanoidAppearanceComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<HumanoidAppearanceComponent, ExaminedEvent>(OnExamined);
@@ -332,6 +353,59 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
             Dirty(uid, humanoid);
     }
 
+    // WD EDIT START
+    /// <summary>
+    ///     Set a humanoid mob's voice type.
+    /// </summary>
+    /// <param name="uid">The humanoid mob's UID.</param>
+    /// <param name="voiceId">The tts voice to set the mob to.</param>
+    /// <param name="sync">Whether to immediately synchronize this to the humanoid mob, or not.</param>
+    /// <param name="humanoid">Humanoid component of the entity</param>
+    // ReSharper disable once InconsistentNaming
+    // public void SetTTSVoice(
+    //     EntityUid uid,
+    //     ProtoId<TTSVoicePrototype> voiceId,
+    //     bool sync = true,
+    //     HumanoidAppearanceComponent? humanoid = null)
+    // {
+    //     if (!TryComp<TTSComponent>(uid, out var comp)
+    //         || !Resolve(uid, ref humanoid))
+    //         return;
+
+    //     humanoid.Voice = voiceId;
+    //     comp.VoicePrototypeId = voiceId;
+
+    //     if (sync)
+    //         Dirty(uid, humanoid);
+    // }
+
+    /// <summary>
+    ///     Set a humanoid mob's body tupe. This will change their base sprites.
+    /// </summary>
+    /// <param name="uid">The humanoid mob's UID.</param>
+    /// <param name="bodyType">The body type to set the mob to. Will return if the body type prototype was invalid.</param>
+    /// <param name="sync">Whether to immediately synchronize this to the humanoid mob, or not.</param>
+    /// <param name="humanoid">Humanoid component of the entity</param>
+    public void SetBodyType(
+        EntityUid uid,
+        ProtoId<BodyTypePrototype> bodyType,
+        bool sync = true,
+        HumanoidAppearanceComponent? humanoid = null)
+    {
+        if (!Resolve(uid, ref humanoid))
+            return;
+
+        var speciesPrototype = _proto.Index<SpeciesPrototype>(humanoid.Species);
+        if (speciesPrototype.BodyTypes.Contains(bodyType))
+            humanoid.BodyType = bodyType;
+        else
+            humanoid.BodyType = speciesPrototype.BodyTypes.First();
+
+        if (sync)
+            Dirty(uid, humanoid);
+    }
+    // WD EDIT END
+
     /// <summary>
     ///     Set the height of a humanoid mob
     /// </summary>
@@ -410,6 +484,9 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         SetSpecies(uid, profile.Species, false, humanoid);
         SetSex(uid, profile.Sex, false, humanoid);
+        // SetTTSVoice(uid, profile.Voice, false, humanoid); // WD EDIT
+        SetBodyType(uid, profile.BodyType, false, humanoid); // WD EDIT
+        _barkSystem.ApplyBark(uid, profile.BarkVoice, profile.BarkSettings); // WD EDIT
 
         humanoid.Gender = profile.Gender;
         if (TryComp<GrammarComponent>(uid, out var grammar))

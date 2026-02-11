@@ -1,0 +1,103 @@
+- type: emoteSounds
+  id: MaleResomi
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/_White/Voice/Resomi/resomi_scream.ogg
+    Laugh:
+      path: /Audio/_White/Voice/Resomi/resomi_laught.ogg
+    Sneeze:
+      path: /Audio/_White/Voice/Resomi/resomi_sneeze.ogg
+    Cough:
+      path: /Audio/_White/Voice/Resomi/resomi_sneeze.ogg
+    Honk:
+      collection: BikeHorn
+    Whistle:
+      collection: Whistles
+    Crying:
+      collection: MaleCry
+    Weh:
+      collection: Weh
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
+      collection: MaleSigh
+
+- type: emoteSounds
+  id: FemaleResomi
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/_White/Voice/Resomi/resomi_scream.ogg
+    Laugh:
+      path: /Audio/_White/Voice/Resomi/resomi_laught.ogg
+    Sneeze:
+      path: /Audio/_White/Voice/Resomi/resomi_sneeze.ogg
+    Cough:
+      path: /Audio/_White/Voice/Resomi/resomi_cough.ogg
+    Honk:
+      collection: BikeHorn
+    Whistle:
+      collection: Whistles
+    Crying:
+      collection: FemaleCry
+    Weh:
+      collection: Weh
+    Yawn:
+      collection: FemaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
+      collection: FemaleSigh
+
+- type: emoteSounds
+  id: Xenomorph
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: XenomorphScreams
+      params:
+        volume: -12
+    Laugh:
+      collection: XenomorphLaugh
+      params:
+        volume: -12
+    Sneeze:
+      collection: XenomorphCoughs
+      params:
+        volume: -12
+    Cough:
+      collection: XenomorphCoughs
+      params:
+        volume: -12
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: XenomorphHiss
+      params:
+        volume: -12
+    Snore:
+      collection: XenomorphSnores
+      params:
+        volume: -12
+    Honk:
+      collection: BikeHorn
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: MaleCry
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh

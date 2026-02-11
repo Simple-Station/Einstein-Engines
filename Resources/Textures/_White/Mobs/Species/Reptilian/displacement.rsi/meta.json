@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Digi by Litogin. Slim by Spatison (Github)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "load": {
+      "srgb": false
+  },
+  "states": [
+    {
+      "name": "jumpsuit-digi",
+      "directions": 4
+    },
+    {
+      "name": "jumpsuit-female-digi",
+      "directions": 4
+    },
+    {
+      "name": "shoes-digi",
+      "directions" : 4
+    },
+    {
+      "name": "jumpsuit-female-slim",
+      "directions": 4
+    },
+    {
+      "name": "shoes-slim",
+      "directions": 4
+    }
+  ]
+}

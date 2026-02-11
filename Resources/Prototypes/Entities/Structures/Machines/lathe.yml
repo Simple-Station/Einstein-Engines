@@ -801,8 +801,25 @@
     staticPacks:
     - PrizeStatic
   - type: EmagLatheRecipes
-    emagStaticPacks:
-    - SyndicatePrizeStatic
+    emagStaticRecipes:
+    - PlushieGhost
+    - PlushieRGBee
+    - PlushieRainbowCarp
+    - PlushieJester
+    - PlushieSlips
+    - PlushieTrystan
+    - PlushieAbductor
+    - PlushieAbductorAgent
+    - PlushieNuke
+    - ToyNuke
+    - FoamBlade
+    - BalloonSyn
+    - SingularityToy
+    - TeslaToy
+    - ToySword
+    - BwoinkHammer
+    - ThronglerToy
+    - FaceHuggerToys # WD EDIT
   - type: MaterialStorage
     whitelist:
       tags:

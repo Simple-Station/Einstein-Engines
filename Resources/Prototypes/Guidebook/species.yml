@@ -3,16 +3,17 @@
   name: guide-entry-species
   text: "/ServerInfo/Guidebook/Mobs/Species.xml"
   children:
-    - Arachnid
+    # - Arachnid
     - Diona
     - Human
+    - Felinid
     - Moth
     - Oni
     - Reptilian
-    - SlimePerson
+    # - SlimePerson
     - IPC
     - Harpy
-    - Shadowkin
+    # - Shadowkin
     - Plasmaman
 #    - Chitinid
     - Tajaran
@@ -85,3 +86,8 @@
   id: Shell
   name: species-name-shell
   text: "/ServerInfo/Guidebook/Mobs/Shell.xml"
+
+- type: guideEntry
+  id: Felinid
+  name: species-name-felinid
+  text: "/ServerInfo/Guidebook/Mobs/Felinid.xml"

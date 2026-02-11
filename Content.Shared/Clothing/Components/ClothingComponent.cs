@@ -89,6 +89,11 @@ public sealed partial class ClothingComponent : Component
     /// </summary>
     [DataField(serverOnly: true)]
     public TraitFunction[] OnUnequipFunctions { get; private set; } = Array.Empty<TraitFunction>();
+
+    // WD EDIT START
+    [DataField]
+    public string? ClothingType;
+    // WD EDIT END
 }
 
 [Serializable, NetSerializable]

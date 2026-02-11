@@ -1,0 +1,40 @@
+<controls:LoadoutEntry
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._White.Loadouts"
+    xmlns:controls1="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client">
+    <Control>
+        <BoxContainer Orientation="Horizontal">
+            <controls1:StyledButtonGroup Name="ButtonGroup" Orientation="Horizontal" HorizontalExpand="True">
+                <Button
+                    Name="PreferenceButton"
+                    ToggleMode="True"
+                    VerticalAlignment="Center" >
+                    <BoxContainer Orientation="Horizontal">
+                        <Label Name="LoadoutCostText"
+                               MinWidth="32"
+                               StyleClasses="LabelHeading"
+                               MaxWidth="32"
+                               ClipText="True"
+                               Margin="0,0,8,0"/>
+                        <PanelContainer>
+                            <PanelContainer.PanelOverride>
+                                <graphics:StyleBoxFlat BackgroundColor="#2f2f2f" />
+                            </PanelContainer.PanelOverride>
+                            <SpriteView Name="PreviewLoadout" OverrideDirection="South" VerticalAlignment="Center" Margin="0" Scale="1.2,1.2" Stretch="Fill"/>
+                        </PanelContainer>
+                        <Label Name="LoadoutNameLabel" Margin="8,0,0,0"/>
+                    </BoxContainer>
+                </Button>
+
+                <Button Visible="False"
+                        Name="HeirloomButton"
+                        Text="{Loc 'humanoid-profile-editor-loadouts-heirloom'}"
+                        ToolTip="{Loc 'humanoid-profile-editor-loadouts-heirloom-tooltip'}"
+                        ToggleMode="True"/>
+
+                <Button Name="HeadingButton" Text="{Loc 'humanoid-profile-editor-loadouts-customize'}"/>
+            </controls1:StyledButtonGroup>
+        </BoxContainer>
+    </Control>
+</controls:LoadoutEntry>

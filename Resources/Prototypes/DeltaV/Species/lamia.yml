@@ -4,7 +4,10 @@
   roundStart: false
   prototype: MobLamia
   dollPrototype: MobLamiaDummy
-  sprites: MobLamiaSprites
+  # WD EDIT START
+  bodyTypes:
+  - LamiaNormal
+  # WD EDIT END
   defaultSkinTone: "#c0967f"
   markingLimits: MobLamiaMarkingLimits
   skinColoration: HumanToned
@@ -50,9 +53,11 @@
       points: 3
       required: false
 
-
-- type: speciesBaseSprites
-  id: MobLamiaSprites
+# WD EDIT START
+- type: bodyType
+  id: LamiaNormal
+  name: body-normal
+# WD EDIT END
   sprites:
     Head: MobHumanHead
     Face: MobHumanoidAnyMarking

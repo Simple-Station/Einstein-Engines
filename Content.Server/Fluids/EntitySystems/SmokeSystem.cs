@@ -21,7 +21,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using System.Linq;
-using Content.Server.Nutrition.Components;
+using Content.Shared.Nutrition.Components;
 using Content.Shared.Inventory;
 using TimedDespawnComponent = Robust.Shared.Spawners.TimedDespawnComponent;
 
