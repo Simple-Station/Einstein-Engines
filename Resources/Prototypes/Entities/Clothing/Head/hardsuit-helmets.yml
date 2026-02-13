@@ -776,8 +776,6 @@
     clothingVisuals:
       head:
       - state: off-equipped-HELMET
-      - state: off-equipped-HELMET-unshaded
-        shader: unshaded
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertleader.rsi
   - type: PointLight
     color: "#addbff"
@@ -786,8 +784,6 @@
     clothingVisuals:
       head:
       - state: on-equipped-HELMET
-      - state: on-equipped-HELMET-unshaded
-        shader: unshaded
   - type: Armor
     modifiers:
       coefficients:
@@ -809,8 +805,6 @@
     clothingVisuals:
       head:
       - state: off-equipped-HELMET
-      - state: off-equipped-HELMET-unshaded
-        shader: unshaded
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertchaplain.rsi
   - type: PointLight
     color: "#ffffff"
@@ -819,8 +813,6 @@
     clothingVisuals:
       head:
       - state: on-equipped-HELMET
-      - state: on-equipped-HELMET-unshaded
-        shader: unshaded
 
 #ERT Engineer Hardsuit
 - type: entity
@@ -835,8 +827,6 @@
     clothingVisuals:
       head:
       - state: off-equipped-HELMET
-      - state: off-equipped-HELMET-unshaded
-        shader: unshaded
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertengineer.rsi
   - type: PointLight
     color: "#f4ffad"
@@ -845,8 +835,6 @@
     clothingVisuals:
       head:
       - state: on-equipped-HELMET
-      - state: on-equipped-HELMET-unshaded
-        shader: unshaded
   - type: Armor
     modifiers:
       coefficients:
@@ -869,8 +857,6 @@
     clothingVisuals:
       head:
       - state: off-equipped-HELMET
-      - state: off-equipped-HELMET-unshaded
-        shader: unshaded
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertmedical.rsi
   - type: PointLight
     color: "#adffec"
@@ -879,8 +865,6 @@
     clothingVisuals:
       head:
       - state: on-equipped-HELMET
-      - state: on-equipped-HELMET-unshaded
-        shader: unshaded
 
 #ERT Security Hardsuit
 - type: entity
@@ -895,8 +879,6 @@
     clothingVisuals:
       head:
       - state: off-equipped-HELMET
-      - state: off-equipped-HELMET-unshaded
-        shader: unshaded
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertsecurity.rsi
   - type: PointLight
     color: "#ffadc6"
@@ -905,8 +887,6 @@
     clothingVisuals:
       head:
       - state: on-equipped-HELMET
-      - state: on-equipped-HELMET-unshaded
-        shader: unshaded
   - type: Armor
     modifiers:
       coefficients:
@@ -928,8 +908,6 @@
     clothingVisuals:
       head:
       - state: off-equipped-HELMET
-      - state: off-equipped-HELMET-unshaded
-        shader: unshaded
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertjanitor.rsi
   - type: PointLight
     color: "#cbadff"
@@ -938,8 +916,6 @@
     clothingVisuals:
       head:
       - state: on-equipped-HELMET
-      - state: on-equipped-HELMET-unshaded
-        shader: unshaded
 
 #CBURN Hardsuit
 - type: entity
