@@ -16904,3 +16904,10 @@ Entries:
   id: 7330
   time: '2026-02-07T14:03:16.0000000+00:00'
   url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/199
+- author: ME4TA
+  changes:
+    - type: Remove
+      message: Откат изменений боевки
+  id: 7331
+  time: '2026-02-13T16:14:10.0000000+00:00'
+  url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/201
