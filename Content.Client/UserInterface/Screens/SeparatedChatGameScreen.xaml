@@ -11,8 +11,6 @@
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     xmlns:inventory="clr-namespace:Content.Client.UserInterface.Systems.Inventory.Widgets"
     xmlns:targeting="clr-namespace:Content.Client._Shitmed.UserInterface.Systems.Targeting.Widgets"
-    xmlns:combatMode="clr-namespace:Content.Client._White.UserInterface.Systems.CombatMode.Widgets"
-    xmlns:movement="clr-namespace:Content.Client._White.UserInterface.Systems.Movement.Widgets"
     Name="SeparatedChatHud"
     VerticalExpand="False"
     VerticalAlignment="Bottom"
@@ -23,11 +21,7 @@
             <widgets:GhostGui Name="Ghost" Access="Protected" />
             <inventory:InventoryGui Name="Inventory" Access="Protected"/>
             <hotbar:HotbarGui Name="Hotbar" Access="Protected"/>
-            <BoxContainer Name="BottomRight" Align="End" SeparationOverride="3" Access="Protected">
-                <combatMode:CombatModeGui Name="CombatMode" Access="Protected"/>
-                <movement:MovementGui Name="Movement" Access="Protected"/>
-                <targeting:TargetingControl Name="Targeting" Access="Protected"/>
-            </BoxContainer>
+            <targeting:TargetingControl Name="Targeting" Access="Protected"/> <!-- Shitmed Change -->
             <BoxContainer Name="TopLeftContainer" Orientation="Vertical">
                 <actions:ActionsBar Name="Actions" Access="Protected" />
                 <BoxContainer Name="VoteMenu" Access="Public" Orientation="Vertical"/>

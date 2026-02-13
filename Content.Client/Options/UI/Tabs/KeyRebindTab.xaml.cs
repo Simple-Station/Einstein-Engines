@@ -296,7 +296,6 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.SaveItemLocation);
             AddButton(ContentKeyFunctions.ToggleStanding);
             AddButton(ContentKeyFunctions.ToggleCrawlingUnder);
-            AddButton(ContentKeyFunctions.ToggleCombatMode);
             AddButton(ContentKeyFunctions.LookUp);
             AddCheckBox("ui-options-function-auto-get-up", _cfg.GetCVar(CCVars.AutoGetUp), HandleToggleAutoGetUp);
             AddCheckBox("ui-options-function-toggle-look-up", _cfg.GetCVar(WhiteCVars.ToggleLookUp), HandleToggleLookUp); // WD EDIT

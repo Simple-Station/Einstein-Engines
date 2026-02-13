@@ -179,29 +179,29 @@
       useDelay: 1 # equip noise spam.
       event: !type:ToggleClothingEvent
 
-# - type: entity
-#   id: ActionCombatModeToggle
-#   name: "[color=red]Combat Mode[/color]"
-#   description: Enter combat mode
-#   components:
-#     - type: InstantAction
-#       checkCanInteract: false
-#       checkConsciousness: false
-#       icon: Interface/Actions/harmOff.png
-#       iconOn: Interface/Actions/harm.png
-#       event: !type:ToggleCombatActionEvent
-#       priority: -100
+- type: entity
+  id: ActionCombatModeToggle
+  name: "[color=red]Combat Mode[/color]"
+  description: Enter combat mode
+  components:
+    - type: InstantAction
+      checkCanInteract: false
+      checkConsciousness: false
+      icon: Interface/Actions/harmOff.png
+      iconOn: Interface/Actions/harm.png
+      event: !type:ToggleCombatActionEvent
+      priority: -100
 
-# - type: entity
-#   id: ActionCombatModeToggleOff
-#   parent: ActionCombatModeToggle
-#   name: "[color=red]Combat Mode[/color]"
-#   description: Enter combat mode
-#   components:
-#     - type: InstantAction
-#       enabled: false
-#       autoPopulate: false
-#       priority: -100
+- type: entity
+  id: ActionCombatModeToggleOff
+  parent: ActionCombatModeToggle
+  name: "[color=red]Combat Mode[/color]"
+  description: Enter combat mode
+  components:
+    - type: InstantAction
+      enabled: false
+      autoPopulate: false
+      priority: -100
 
 - type: entity
   id: ActionChangeVoiceMask
