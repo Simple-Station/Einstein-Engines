@@ -16911,3 +16911,20 @@ Entries:
   id: 7331
   time: '2026-02-13T16:14:10.0000000+00:00'
   url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/201
+- author: IsNotAcceptable
+  changes:
+    - type: Remove
+      message: Трейт "Ограниченное снаряжение"
+    - type: Fix
+      message: В боевом режиме мышь получает урон(EE#1922)
+    - type: Fix
+      message: >-
+        Изменена проверка пристегивания(?)(Buckle), сущности спокойно
+        пристегиваются
+    - type: Remove
+      message: Удалено Новогоднее веселье
+    - type: Remove
+      message: дубликаты прототипов(EE#2531)
+  id: 7332
+  time: '2026-02-19T09:49:22.0000000+00:00'
+  url: https://github.com/BohdanNovikov0207/Orehum-Project/pull/202
