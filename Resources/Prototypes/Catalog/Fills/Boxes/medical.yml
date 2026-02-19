@@ -102,9 +102,6 @@
     layers:
       - state: box
       - state: bodybags
-    whitelist:
-      tags:
-        - BodyBag
 
 - type: entity
   name: vial box

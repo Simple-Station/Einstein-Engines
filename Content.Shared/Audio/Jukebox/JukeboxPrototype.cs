@@ -18,9 +18,6 @@ public sealed partial class JukeboxPrototype : IPrototype
     [DataField(required: true)]
     public string Name = string.Empty;
 
-    [DataField("tags")]
-    public IReadOnlyList<string> Tags { get; } = new List<string>();
-
     [DataField(required: true)]
     public SoundPathSpecifier Path = default!;
 }

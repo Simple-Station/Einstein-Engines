@@ -151,10 +151,10 @@ public readonly record struct UnstrappedEvent(Entity<StrapComponent> Strap, Enti
 [ByRefEvent]
 public readonly record struct UnbuckledEvent(Entity<StrapComponent> Strap, Entity<BuckleComponent> Buckle);
 
-// WD EDIT START
-[Serializable, NetSerializable]
-public sealed partial class UnbuckleDoAfterEvent : SimpleDoAfterEvent;
-// WD EDIT END
+// // WD EDIT START
+// [Serializable, NetSerializable]
+// public sealed partial class UnbuckleDoAfterEvent : SimpleDoAfterEvent;
+// // WD EDIT END
 
 [Serializable, NetSerializable]
 public enum BuckleVisuals

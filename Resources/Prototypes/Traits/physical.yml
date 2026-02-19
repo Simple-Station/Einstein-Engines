@@ -781,6 +781,7 @@
   id: RestrictedGear
   category: Physical
   points: -6
+  enable: false
   requirements:
   - !type:CVarRequirement
     cvar: trait.restrictedgear_enabled

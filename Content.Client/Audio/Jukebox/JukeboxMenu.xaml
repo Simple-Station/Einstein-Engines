@@ -1,28 +1,9 @@
-<ui:FancyWindow
-    xmlns="https://spacestation14.io"
-    xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
-    SetSize="400 500"
-    Title="{Loc 'jukebox-menu-title'}"
->
+<ui:FancyWindow xmlns="https://spacestation14.io" xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+                SetSize="400 500" Title="{Loc 'jukebox-menu-title'}">
     <BoxContainer Margin="4 0" Orientation="Vertical">
-        <LineEdit
-            Name="SearchBar"
-            PlaceHolder="{Loc 'jukebox-search-placeholder'}"
-            HorizontalExpand="True"
-            Margin="4 4"
-        />
-        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="4 0 4 4">
-            <Button Name="AllSongsButton" Text="{Loc 'jukebox-menu-buttonall'}" />
-            <Button Name="HolidaySongsButton" Text="{Loc 'jukebox-menu-buttonholiday'}" Margin="4 0 0 0" />
-        </BoxContainer>
-        <ItemList
-            Name="MusicList"
-            SelectMode="Button"
-            Margin="3 3 3 3"
-            HorizontalExpand="True"
-            VerticalExpand="True"
-            SizeFlagsStretchRatio="8"
-        />
+        <LineEdit Name="SearchBar" PlaceHolder="{Loc 'jukebox-search-placeholder'}" HorizontalExpand="True"  Margin ="4 4"/>
+        <ItemList Name="MusicList" SelectMode="Button" Margin="3 3 3 3"
+        HorizontalExpand="True" VerticalExpand="True" SizeFlagsStretchRatio="8"/>
         <BoxContainer Orientation="Vertical">
             <Label Name="SongSelected" Text="{Loc 'jukebox-menu-selectedsong'}" />
             <BoxContainer
