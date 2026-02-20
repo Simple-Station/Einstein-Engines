@@ -1291,7 +1291,7 @@
   - type: Instrument
     allowPercussion: false
     handheld: true
-    bank: 1
+    bank: 100
     program: 2
 
 - type: entity
