@@ -37,6 +37,8 @@
   - Security
   #- Brig #Delta V: Removed brig access
   - Maintenance
+  - GenpopEnter
+  - GenpopLeave
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
