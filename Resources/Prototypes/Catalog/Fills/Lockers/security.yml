@@ -129,6 +129,7 @@
     - id: HandheldGPSBasic
     - id: MedkitFilled
     - id: MedkitCombatFilled
+    - id: FieldSurgeryKit
       prob: 0.6
     - id: MedkitAdvancedFilled
       prob: 0.4
@@ -160,6 +161,7 @@
     - id: HandheldGPSBasic
     - id: MedkitFilled
     - id: MedkitCombatFilled
+    - id: FieldSurgeryKit
       prob: 0.6
     - id: MedkitAdvancedFilled
       prob: 0.4
