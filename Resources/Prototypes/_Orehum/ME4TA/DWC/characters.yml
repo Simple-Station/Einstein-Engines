@@ -1,0 +1,316 @@
+#Vergil
+- type: entity
+  parent: MobHuman
+  id: DWCVergil
+  name: Виталик
+  suffix: ME4TA
+  components:
+  - type: Loadout
+    prototypes: [DWCGearVergil]
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      500: Critical
+      600: Dead
+  - type: StaminaDamageResistance
+    coefficient: 0.5
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 8
+    baseWalkSpeed: 5
+  - type: Damageable
+    damageModifierSet: VergilResist
+  - type: ZombieImmune
+  - type: Actions
+  - type: StatusEffects
+    allowed:
+    - Stun
+    - KnockedDown
+    - SlowedDown
+  - type: NoSlip
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  - type: VergilAbilities
+    actions:
+    - ActionVergilDash
+    - ActionVergilJudgementCut
+
+- type: entity
+  id: ActionVergilJudgementCut
+  name: "Judgement Cut"
+  description: "Мгновенный разрез пространства в указанной точке."
+  components:
+  - type: WorldTargetAction
+    event: !type:VergilJudgementCutEvent
+    icon: { sprite: Effects/crayondecals.rsi, state: slash }
+    range: 9
+    useDelay: 6
+    itemRadius: 2.5
+    checkCanAccess: false
+
+- type: entity
+  id: ActionVergilJudgementCutEffect
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Effects
+    layers:
+    - shader: unshaded
+      sprite: _ES/Effects/viewcone_effects.rsi
+      state: attack
+  - type: PointLight
+    color: "#5050FF"
+    radius: 2
+    energy: 0.7
+  - type: TimedDespawn
+    lifetime: 1.3
+  - type: EffectVisuals
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: AnimationPlayer
+
+- type: entity
+  id: ActionVergilDash
+  name: "Мгновенный шаг"
+  components:
+  - type: WorldTargetAction
+    event: !type:VergilDashEvent
+    icon: { sprite: Objects/Magic/magicactions.rsi, state: blink }
+    range: 12
+    checkCanAccess: false
+
+- type: damageModifierSet
+  id: VergilResist
+  coefficients:
+    Blunt: 0.4
+    Slash: 0.4
+    Piercing: 0.6
+    Heat: 0.5
+    Cold: 0.5
+    Shock: 0.0
+    Poison: 0.0
+    Radiation: 0.3
+    Bloodloss: 0.4
+  flatReductions:
+    Blunt: 15
+    Heat: 15
+
+- type: startingGear
+  id: DWCGearVergil
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSolNavyCoveralls
+    gloves: ClothingHandsTacticalMaidGlovesLoadout
+    shoes: ClothingShoesBootsCowboyBlack
+    id: VisitorIDCard
+    belt: DWCYamato
+    outerClothing: ClothingOuterCoatAcidRaincoatBlue
+
+- type: entity
+  parent: Katana
+  id: DWCYamato
+  name: Ямато
+  suffix: ME4TA
+  description: "Острый клинок, разделяющий саму реальность. Вы чувствуете прилив мотивации."
+  components:
+  - type: Sprite
+    sprite: _Orehum/ME4TA/DWC/yamato.rsi
+    state: icon
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 35
+        Piercing: 10
+        Structural: 80
+  - type: Reflect
+    reflectProb: 0.7
+  - type: Tag
+    tags:
+    - Yamato
+  - type: LimitedCharges
+    maxCharges: 5
+    charges: 5
+  - type: AutoRecharge
+    rechargeDuration: 16
+  - type: Item
+    size: Normal
+    sprite: _Orehum/ME4TA/DWC/yamato.rsi
+  - type: Clothing
+    sprite: _Orehum/ME4TA/DWC/yamato.rsi
+    slots:
+    - Belt
+    - Back
+
+#Dante
+- type: entity
+  parent: MobHuman
+  id: DWCDante
+  name: Даниэль
+  suffix: ME4TA
+  components:
+  - type: Loadout
+    prototypes: [DWCGearDante]
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      450: Critical
+      550: Dead
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 8
+    baseWalkSpeed: 5
+  - type: Damageable
+    damageModifierSet: DanteResist
+  - type: ZombieImmune
+  - type: Actions
+  - type: StatusEffects
+    allowed:
+    - Stun
+    - KnockedDown
+    - SlowedDown
+  - type: NoSlip
+  - type: DanteAbilities
+    actions:
+    - ActionDanteRainStorm
+    - ActionDanteStinger
+
+- type: startingGear
+  id: DWCGearDante
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitGreyShirt
+    outerClothing: ClothingOuterCoatVictorianRed
+    gloves: ClothingHandsGlovesCombatTCAF
+    shoes: ClothingShoesBootsJackFake
+    id: VisitorIDCard
+    belt: ClothingBeltSyndieHolster
+    back: DWCRebellion
+  storage:
+    belt:
+    - DWCEbony
+    - DWCIvory
+    - MagazinePistolHighCapacity
+    - MagazinePistolHighCapacity
+    - MagazinePistolHighCapacity
+    - MagazinePistolHighCapacity
+
+- type: entity
+  parent: WeaponPistolDualetta
+  id: DWCEbony
+  name: Ebony
+  description: "Модифицированный пистолет. На левом затворе выгравировано 'For Tony Redgrave'."
+  suffix: ME4TA
+  components:
+  - type: Tag
+    tags:
+    - EbonyIvory
+    - DanteWeapon
+    - WeaponPistolDualetta
+  - type: Multishot
+    spreadMultiplier: 1.25
+  - type: RequiresDualWield
+    whitelist:
+      tags:
+      - WeaponPistolDualetta
+
+- type: entity
+  parent: WeaponPistolDualetta
+  id: DWCIvory
+  name: Ivory
+  description: "Модифицированный пистолет. На правом затворе выгравировано 'By. 45 Art Warks'."
+  suffix: ME4TA
+  components:
+  - type: Tag
+    tags:
+    - EbonyIvory
+    - DanteWeapon
+    - WeaponPistolDualetta
+  - type: Multishot
+    spreadMultiplier: 1.25
+  - type: RequiresDualWield
+    whitelist:
+      tags:
+      - WeaponPistolDualetta
+
+- type: entity
+  parent: BaseSword
+  id: DWCRebellion
+  name: Мятежник
+  description: "Огромный клинок, пробуждающий истинную силу."
+  components:
+  - type: Sprite
+    sprite: _Orehum/ME4TA/DWC/rebellion.rsi
+    state: icon
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 21
+        Blunt: 10
+    animation: WeaponArcSlash
+  - type: Tag
+    tags:
+    - Rebellion
+    - DanteWeapon
+  - type: Item
+    size: Huge
+    sprite: _Orehum/ME4TA/DWC/rebellion.rsi
+  - type: Clothing
+    sprite: _Orehum/ME4TA/DWC/rebellion.rsi
+    slots:
+    - Back
+
+- type: damageModifierSet
+  id: DanteResist
+  coefficients:
+    Blunt: 0.6
+    Slash: 0.5
+    Piercing: 0.7
+    Heat: 0.5
+    Cold: 0.8
+    Shock: 0.8
+    Poison: 1.0
+    Radiation: 1.0
+    Bloodloss: 0.8
+
+- type: entity
+  id: ActionDanteStinger
+  name: "Stinger"
+  description: "Рывок с мечом в указанном направлении. При попадании во врага наносит урон, при ударе о стену оглушает."
+  components:
+  - type: WorldTargetAction
+    event: !type:DanteStingerEvent
+    icon: { sprite: _Orehum/ME4TA/DWC/rebellion.rsi, state: icon }
+    range: 7
+    useDelay: 3.0
+    checkCanAccess: false
+    checkCanInteract: true
+
+- type: entity
+  id: ActionDanteRainStorm
+  name: "Rain Storm"
+  description: "Град пуль с воздуха по всем врагам вокруг."
+  components:
+  - type: InstantAction
+    event: !type:DanteRainStormEvent
+    icon: { sprite: _Goobstation/Objects/Weapons/Guns/Pistols/Dualetta.rsi, state: icon }
+    useDelay: 4.0
+    checkCanInteract: true
+
+- type: entity
+  id: ActionDanteRainEffect
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Effects
+    layers:
+    - shader: unshaded
+      sprite: _ES/Effects/viewcone_effects.rsi
+      state: gunfire
+      color: "#FFD700"
+  - type: PointLight
+    color: "#FFA500"
+    radius: 1.5
+    energy: 1.2
+  - type: TimedDespawn
+    lifetime: 0.3
+  - type: EffectVisuals

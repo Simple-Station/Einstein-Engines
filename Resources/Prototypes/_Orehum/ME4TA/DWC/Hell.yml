@@ -1,0 +1,38 @@
+# tree
+- type: entity
+  parent: FleshKudzu
+  id: DWCCore
+  name: "Древо Клипот"
+  suffix: ME4TA
+  components:
+  - type: Sprite
+    sprite: _Orehum/ME4TA/DWC/core.rsi
+    state: kudzu_11
+    drawdepth: Overdoors
+  - type: Flammable
+    fireSpread: false
+  - type: DWCCore
+    maxSpawns: 1
+    mobsToDefeat: 5
+    spawns:
+    - DWCMob
+
+# mobs
+- type: entity
+  parent: MobFleshGolem
+  id: DWCMob
+  name: Эмпуза
+  suffix: ME4TA
+  components:
+  - type: Sprite
+    sprite: _Orehum/ME4TA/DWC/mob.rsi
+    state: golem
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: golem
+      Critical:
+        Base: die
+      Dead:
+        Base: die
+  - type: DWCCoreMob
