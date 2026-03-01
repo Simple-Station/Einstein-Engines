@@ -52,16 +52,22 @@
         type: SiliconLawBoundUserInterface
       enum.CommunicationsConsoleUiKey.Key:
         type: CommunicationsConsoleBoundUserInterface
+      enum.AtmosAlertsComputerUiKey.Key:
+        type: AtmosAlertsComputerBoundUserInterface
+      enum.StationAiInfoUiKey.Key:
+        type: StationAiInfoBoundUserInterface
   - type: IntrinsicUI
     uis:
       enum.RadarConsoleUiKey.Key:
-        toggleAction: ActionAGhostShowRadar
+        toggleAction: ActionStationAiRadar
       enum.CrewMonitoringUIKey.Key:
-        toggleAction: ActionAGhostShowCrewMonitoring
+        toggleAction: ActionStationAiCrewMonitoring
       enum.GeneralStationRecordConsoleKey.Key:
-        toggleAction: ActionAGhostShowStationRecords
+        toggleAction: ActionStationAiStationRecords
       enum.CommunicationsConsoleUiKey.Key:
-        toggleAction: ActionAGhostShowCommunications
+        toggleAction: ActionStationAiCommunications
+      enum.AtmosAlertsComputerUiKey.Key:
+        toggleAction: ActionStationAiAtmosphericAlerts
   - type: CrewMonitoringConsole
   - type: GeneralStationRecordConsole
   - type: DeviceNetwork
@@ -74,6 +80,9 @@
     canShuttle: false
     title: comms-console-announcement-title-station-ai
     color: "#5ed7aa"
+  - type: StationAiInfo
+  - type: CrewManifestViewer
+    ownerKey: enum.StationAiInfoUiKey.Key
   - type: HolographicAvatar
     layerData:
     - sprite: Mobs/Silicon/station_ai.rsi

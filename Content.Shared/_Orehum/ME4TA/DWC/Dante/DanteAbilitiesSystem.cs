@@ -151,8 +151,8 @@ public sealed class DanteAbilitiesSystem : EntitySystem
             if (HasComp<DamageableComponent>(hitEntity.Value))
             {
                 var damage = new DamageSpecifier();
-                damage.DamageDict.Add("Slash", 25);
-                damage.DamageDict.Add("Piercing", 10);
+                damage.DamageDict.Add("Slash", 17);
+                damage.DamageDict.Add("Piercing", 5);
                 _damageable.TryChangeDamage(hitEntity.Value, damage, ignoreResistances: false);
                 _audio.PlayPvs("/Audio/Weapons/star_hit.ogg", hitEntity.Value);
                 _popup.PopupEntity("Stinger!", hitEntity.Value, PopupType.Medium);

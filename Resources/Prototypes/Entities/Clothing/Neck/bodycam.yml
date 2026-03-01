@@ -1,0 +1,30 @@
+- type: entity
+  parent: Clothing
+  id: ClothingNeckBodyCamera
+  name: бодикамера
+  description: Носимая камера для обеспечения подотчетности и ответственности.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    state: icon
+    sprite: Clothing/Neck/Misc/bodycam.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Misc/bodycam.rsi
+    quickEquip: true
+    slots:
+    - neck
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: SurveillanceCameraSecurity
+    transmitFrequencyId: SurveillanceCamera
+  - type: SurveillanceCamera
+    networkSet: true
+    nameSet: true
+  - type: ActiveListener
+    range: 3
+  - type: Eye
+  - type: WirelessNetworkConnection
+    range: 100
+  - type: StationAiVision
+  - type: Bodycam

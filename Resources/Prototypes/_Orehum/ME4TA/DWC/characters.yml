@@ -2,16 +2,11 @@
 - type: entity
   parent: MobHuman
   id: DWCVergil
-  name: Виталик
+  name: Вергилий
   suffix: ME4TA
   components:
   - type: Loadout
     prototypes: [DWCGearVergil]
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      500: Critical
-      600: Dead
   - type: StaminaDamageResistance
     coefficient: 0.5
   - type: MovementSpeedModifier
@@ -84,18 +79,15 @@
 - type: damageModifierSet
   id: VergilResist
   coefficients:
-    Blunt: 0.4
-    Slash: 0.4
-    Piercing: 0.6
-    Heat: 0.5
+    Blunt: 0.2
+    Slash: 0.1
+    Piercing: 0.15
+    Heat: 0.3
     Cold: 0.5
     Shock: 0.0
     Poison: 0.0
     Radiation: 0.3
     Bloodloss: 0.4
-  flatReductions:
-    Blunt: 15
-    Heat: 15
 
 - type: startingGear
   id: DWCGearVergil
@@ -120,9 +112,8 @@
   - type: MeleeWeapon
     damage:
       types:
-        Slash: 35
-        Piercing: 10
-        Structural: 80
+        Slash: 16
+        Piercing: 2
   - type: Reflect
     reflectProb: 0.7
   - type: Tag
@@ -146,16 +137,11 @@
 - type: entity
   parent: MobHuman
   id: DWCDante
-  name: Даниэль
+  name: Данте
   suffix: ME4TA
   components:
   - type: Loadout
     prototypes: [DWCGearDante]
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      450: Critical
-      550: Dead
   - type: MovementSpeedModifier
     baseSprintSpeed: 8
     baseWalkSpeed: 5
@@ -243,8 +229,8 @@
   - type: MeleeWeapon
     damage:
       types:
-        Slash: 21
-        Blunt: 10
+        Slash: 13
+        Blunt: 4
     animation: WeaponArcSlash
   - type: Tag
     tags:
@@ -261,15 +247,13 @@
 - type: damageModifierSet
   id: DanteResist
   coefficients:
-    Blunt: 0.6
-    Slash: 0.5
-    Piercing: 0.7
+    Blunt: 0.3
+    Slash: 0.2
+    Piercing: 0.17
     Heat: 0.5
     Cold: 0.8
     Shock: 0.8
-    Poison: 1.0
-    Radiation: 1.0
-    Bloodloss: 0.8
+    Bloodloss: 0.5
 
 - type: entity
   id: ActionDanteStinger

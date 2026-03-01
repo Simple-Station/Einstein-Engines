@@ -19,6 +19,9 @@
 		{
 			"name": "manifest"
 		},
+        {
+            "name": "atmos_alerts"
+        },
 		{
 			"name": "state_laws"
 		},

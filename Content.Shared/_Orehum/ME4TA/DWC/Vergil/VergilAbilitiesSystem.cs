@@ -98,7 +98,7 @@ public sealed class VergilAbilitiesSystem : EntitySystem
         _audio.PlayPvs("/Audio/Weapons/plasma_cutter.ogg", args.Target);
         _entManager.SpawnEntity("ActionVergilJudgementCutEffect", args.Target);
 
-        _stamina.TakeStaminaDamage(uid, 35f);
+        _stamina.TakeStaminaDamage(uid, 25f);
         args.Handled = true;
     }
 
@@ -117,7 +117,7 @@ public sealed class VergilAbilitiesSystem : EntitySystem
             return;
         }
 
-        _stamina.TakeStaminaDamage(uid, 25f);
+        _stamina.TakeStaminaDamage(uid, 10f);
 
         _audio.PlayPvs("/Audio/Magic/blink.ogg", uid);
         _transform.SetCoordinates(uid, args.Target);

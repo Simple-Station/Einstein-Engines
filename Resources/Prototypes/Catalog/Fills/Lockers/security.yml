@@ -57,6 +57,7 @@
     - id: RemoteSignaller
       amount: 2
     - id: BoxPDAPrisoner
+    - id: ClothingNeckBodyCamera
     - id: ClothingShoesBootsWinterWarden
     - id: BoxEncryptionKeyPrisoner
     - id: BoxPrisonerHeadset
