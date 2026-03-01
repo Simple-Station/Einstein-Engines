@@ -15,7 +15,7 @@
     slots:
     - neck
   - type: DeviceNetwork
-    deviceNetId: Wireless
+    deviceNetId: Wired
     receiveFrequencyId: SurveillanceCameraSecurity
     transmitFrequencyId: SurveillanceCamera
   - type: SurveillanceCamera
