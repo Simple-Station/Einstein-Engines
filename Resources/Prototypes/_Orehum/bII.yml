@@ -78,7 +78,6 @@
     - Reptilian
     - Vulpkanin
     - Shadowkin
-    - Xelthia
     - Felinid
     - Oni
     - Tajaran
@@ -90,6 +89,16 @@
     - Plasmaman
     - Thaven
     - Feroxi
+    - Gingerbread
+    - Kobold
+    - Skeleton
+    - Lamia
+    - Shadow
+    - Shadowling
+    - SynthHuman
+    - Abductor
+    - Monkey
+    - AshWalker
   components:
     - type: RandomHumanoidAppearance
       randomizeName: false
