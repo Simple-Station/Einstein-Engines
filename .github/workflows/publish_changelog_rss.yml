@@ -8,7 +8,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  changelog_rss:
     runs-on: self-hosted
     steps:
     - name: Install dependencies
