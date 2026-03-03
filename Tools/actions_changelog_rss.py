@@ -38,8 +38,8 @@ CHANGELOG_RSS_KEY = os.environ.get("CHANGELOG_RSS_KEY")
 SSH_HOST = "136.243.32.120"
 SSH_USER = "changelog-rss"
 SSH_PORT = 22
-RSS_FILE = "/var/www/html/changelog.xml"
-XSL_FILE = "/var/www/html/stylesheet.xsl"
+RSS_FILE = "changelog.xml"
+XSL_FILE = "stylesheet.xsl"
 HOST_KEYS = [
     "AAAAC3NzaC1lZDI1NTE5AAAAIGpFfKfwiDlKdf3t8A+pwupschcRnQfBf9Mj/EbCGKxB"
 ]
