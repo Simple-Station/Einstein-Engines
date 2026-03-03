@@ -39,7 +39,7 @@ SSH_HOST = "136.243.32.120"
 SSH_USER = "changelog-rss"
 SSH_PORT = 22
 RSS_FILE = "upload/changelog.xml"
-XSL_FILE = "upload/stylesheet.xsl"
+XSL_FILE = "stylesheet.xsl"
 HOST_KEYS = [
     "AAAAC3NzaC1lZDI1NTE5AAAAIGpFfKfwiDlKdf3t8A+pwupschcRnQfBf9Mj/EbCGKxB"
 ]
