@@ -21691,3 +21691,9 @@ Entries:
       message: Fixed xenovac interaction bug.
   id: 2466
   time: '2026-03-04T00:27:40.0000000+00:00'
+- author: Naxel11
+  changes:
+    - type: Fix
+      message: Anti-stun reagents remove stun again
+  id: 2467
+  time: '2026-03-04T00:55:21.0000000+00:00'
