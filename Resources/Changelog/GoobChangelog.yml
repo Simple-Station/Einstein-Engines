@@ -21697,3 +21697,9 @@ Entries:
       message: Anti-stun reagents remove stun again
   id: 2467
   time: '2026-03-04T00:55:21.0000000+00:00'
+- author: Durk
+  changes:
+    - type: Fix
+      message: Fixed servers crashing on round restart.
+  id: 2468
+  time: '2026-03-04T01:03:50.0000000+00:00'
