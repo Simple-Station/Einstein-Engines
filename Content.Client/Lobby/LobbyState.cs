@@ -13,6 +13,7 @@ using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Configuration;
+using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
 namespace Content.Client.Lobby
@@ -27,6 +28,7 @@ namespace Content.Client.Lobby
         [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly IVoteManager _voteManager = default!;
+        [Dependency] private readonly IRobustRandom _random = default!;
 
         private ISawmill _sawmill = default!;
         private ClientGameTicker _gameTicker = default!;
@@ -201,6 +203,17 @@ namespace Content.Client.Lobby
 
             if (_gameTicker.ServerInfoBlob != null)
                 Lobby!.ServerInfo.SetInfoBlob(_gameTicker.ServerInfoBlob);
+            
+            if(_gameTicker.LobbySplashText is string splashText)
+            {
+                Lobby!.Splash.Visible = true;
+                Lobby!.Splash.Text = Loc.GetString(splashText, ("d10", _random.Next(1, 11) ), ("d20", _random.Next(1, 21) ));
+            }
+            else
+            {
+                Lobby!.Splash.Visible = true;
+                Lobby!.Splash.Text = "disabled";
+            }
         }
 
         private void UpdateLobbySoundtrackInfo(LobbySoundtrackChangedEvent ev)

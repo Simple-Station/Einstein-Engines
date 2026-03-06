@@ -661,6 +661,7 @@ namespace Content.Server.GameTicking
 
             RunLevel = GameRunLevel.PreRoundLobby;
             RandomizeLobbyBackground();
+            UpdateSplashText();
             ResettingCleanup();
             IncrementRoundNumber();
             SendRoundStartingDiscordMessage();

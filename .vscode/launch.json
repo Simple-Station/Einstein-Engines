@@ -11,7 +11,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/bin/Content.Client/Content.Client.dll",
             "args": [],
-            "console": "internalConsole",
+            "console": "externalTerminal",
             "stopAtEntry": false
         },
         {
@@ -21,7 +21,7 @@
             "preLaunchTask": "build (Tools)",
             "program": "${workspaceFolder}/bin/Content.Client/Content.Client.dll",
             "args": [],
-            "console": "internalConsole",
+            "console": "externalTerminal",
             "stopAtEntry": false
         },
         {
@@ -31,7 +31,7 @@
             "preLaunchTask": "build (Release)",
             "program": "${workspaceFolder}/bin/Content.Client/Content.Client.dll",
             "args": [],
-            "console": "internalConsole",
+            "console": "externalTerminal",
             "stopAtEntry": false
         },
         // COMPATABILITY RENDERERS
@@ -41,7 +41,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/bin/Content.Client/Content.Client.dll",
             "args": "--cvar display.compat=true",
-            "console": "internalConsole",
+            "console": "externalTerminal",
             "stopAtEntry": false
         },
         {
@@ -51,7 +51,7 @@
             "preLaunchTask": "build (Tools)",
             "program": "${workspaceFolder}/bin/Content.Client/Content.Client.dll",
             "args": ["--cvar display.compat=true"],
-            "console": "internalConsole",
+            "console": "externalTerminal",
             "stopAtEntry": false
         },
         {
@@ -61,7 +61,7 @@
             "preLaunchTask": "build (Release)",
             "program": "${workspaceFolder}/bin/Debug/Content.Client/Content.Client.dll",
             "args": ["--cvar display.compat=true"],
-            "console": "internalConsole",
+            "console": "externalTerminal",
             "stopAtEntry": false
         },
         // SERVER CONFIGS
@@ -71,7 +71,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/bin/Content.Server/Content.Server.dll",
             "args": [],
-            "console": "integratedTerminal",
+            "console": "externalTerminal",
             "stopAtEntry": false
         },
         {
@@ -81,7 +81,7 @@
             "preLaunchTask": "build (Tools)",
             "program": "${workspaceFolder}/bin/Content.Server/Content.Server.dll",
             "args": [],
-            "console": "internalConsole",
+            "console": "externalTerminal",
             "stopAtEntry": false
         },
         {
@@ -91,7 +91,7 @@
             "preLaunchTask": "build (Release)",
             "program": "${workspaceFolder}/bin/Content.Server/Content.Server.dll",
             "args": [],
-            "console": "internalConsole",
+            "console": "externalTerminal",
             "stopAtEntry": false
         },
         // LINTER
@@ -102,7 +102,7 @@
             "preLaunchTask": "build-yaml-linter",
             "program": "${workspaceFolder}/bin/Content.YAMLLinter/Content.YAMLLinter.dll",
             "cwd": "${workspaceFolder}/Content.YAMLLinter",
-            "console": "internalConsole",
+            "console": "externalTerminal",
             "stopAtEntry": false
         }
     ],

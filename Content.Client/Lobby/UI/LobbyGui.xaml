@@ -44,6 +44,8 @@
                                                 StyleClasses="ButtonBig" MinWidth="137" />
                                     </BoxContainer>
                                 </controls:StripeBack>
+                                <Label Name="Splash" Access="Public" StyleClasses="StyleClassLabelSmall" VAlign="Center"
+                                    HorizontalExpand="True" HorizontalAlignment="Center" />
                             </BoxContainer>
                         </PanelContainer>
                         <!-- Voting Popups -->

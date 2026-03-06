@@ -8,6 +8,7 @@ namespace Content.Shared.Localizations
     public sealed class ContentLocalizationManager
     {
         [Dependency] private readonly ILocalizationManager _loc = default!;
+        private System.Random _rng = new();
 
         // If you want to change your codebase's language, do it here.
         private const string Culture = "en-US";
@@ -36,6 +37,7 @@ namespace Content.Shared.Localizations
             _loc.AddFunction(culture, "LOC", FormatLoc);
             _loc.AddFunction(culture, "NATURALFIXED", FormatNaturalFixed);
             _loc.AddFunction(culture, "NATURALPERCENT", FormatNaturalPercent);
+            _loc.AddFunction(culture, "RANDOM", PickRandom);
 
 
             /*
@@ -62,7 +64,12 @@ namespace Content.Shared.Localizations
                 return (LocValueString) FormatMakePlural(args);
             }
         }
-
+        private ILocValue PickRandom(LocArgs args)
+        {
+            if(args.Args.Count == 0)
+                return new LocValueNone(string.Empty);
+            return args.Args[_rng.Next(args.Args.Count)];
+        }
         private ILocValue FormatNaturalPercent(LocArgs args)
         {
             var number = ((LocValueNumber) args.Args[0]).Value * 100;
