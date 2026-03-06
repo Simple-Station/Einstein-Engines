@@ -1,3 +1,7 @@
+### Keep it silly and related to the game.
+### References to other media go well here if edited slightly to use the game terminology
+### 
+
 lobby-splash-text-1  = Don't breathe the plasma.
 lobby-splash-text-2  = How you're doin' fellow assistants?
 lobby-splash-text-3  = Floor tiles: The assistant's weapon of choice since 2136.
@@ -37,12 +41,9 @@ lobby-splash-text-35 = Don't trust anything this line of text says.
 ## it's either that or overcomplicating things by implementing weighted pools for a stupid joke in the lobby 
 lobby-splash-text-36 = { -lobby-splash-fortune }
 lobby-splash-text-37 = { -lobby-splash-fortune }
-lobby-splash-text-38 = { -lobby-splash-fortune }
-lobby-splash-text-39 = { -lobby-splash-fortune }
-lobby-splash-text-40 = { -lobby-splash-fortune }
-lobby-splash-text-41 = Whatever in creation honks without my knowledge, honks without my consent.
-lobby-splash-text-42 = HARPY UNIT NEVER KILLED
-lobby-splash-text-43 = The game was rigged from the start (to never give you antags)
+lobby-splash-text-38 = Whatever in creation honks without my knowledge, honks without my consent.
+lobby-splash-text-39 = HARPY UNIT NEVER KILLED
+lobby-splash-text-40 = The game was rigged from the start (to never give you antags)
 
 # different for each player, for added intrigue
 -lobby-splash-fortune = Your fortune for this round: {
@@ -53,7 +54,7 @@ lobby-splash-text-43 = The game was rigged from the start (to never give you ant
     "Do not trust the polite one.",
     "You are going to fall victim to your own hubris.",
     "Avoid monkeys at all costs.",
-    "All roads lead to the beginning.",
+    "Step off the beaten path.",
     "Stick to the sidelines.",
     "Remember to stay hydrated. You'll need it.",
     "The fate is extra malleable today. Bend it to your will.",
@@ -64,7 +65,7 @@ lobby-splash-text-43 = The game was rigged from the start (to never give you ant
     "Don't expect much.",
     "Not all that glimmers is gold. But it's surely yours for the taking though.",
     "You may find a treasure only you can see. Make it count.",
-    "The higher you are, the harded you'll fall.",
+    "The higher you are, the harder you'll fall.",
     "Something beautiful is going to happen.",
     "Something beautiful is going to happen.",
     )

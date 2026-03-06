@@ -211,8 +211,7 @@ namespace Content.Client.Lobby
             }
             else
             {
-                Lobby!.Splash.Visible = true;
-                Lobby!.Splash.Text = "disabled";
+                Lobby!.Splash.Visible = false;
             }
         }
 
