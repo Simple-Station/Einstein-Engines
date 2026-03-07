@@ -363,3 +363,9 @@
   name: The Weeknd - Save Your Tears
   path:
     path: /Audio/_Orehum/Jukebox/SYT.ogg
+
+- type: jukebox
+  id: deadsouls
+  name: SKWLKR - Мёртвые души
+  path:
+    path: /Audio/_Orehum/Jukebox/Dead-souls.ogg
