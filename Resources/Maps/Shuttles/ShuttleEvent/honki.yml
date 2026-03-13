@@ -746,15 +746,15 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingOuterWinterClown
-  entities:
-  - uid: 105
-    components:
-    - type: Transform
-      parent: 103
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
+# - proto: ClothingOuterWinterClown
+#   entities:
+#   - uid: 105
+#     components:
+#     - type: Transform
+#       parent: 103
+#     - type: Physics
+#       canCollide: False
+#     - type: InsideEntityStorage
 - proto: ClownRecorder
   entities:
   - uid: 107

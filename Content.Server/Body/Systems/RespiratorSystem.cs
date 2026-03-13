@@ -26,6 +26,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Shared.Movement.Pulling.Components; // Goobstation
 using Content.Shared.Movement.Pulling.Systems; // Goobstation
+using Content.Shared._DV.CosmicCult.Components; // DeltaV
+
 
 namespace Content.Server.Body.Systems;
 
@@ -62,7 +64,7 @@ public sealed class RespiratorSystem : EntitySystem
     // Can breathe check for grab
     public bool CanBreathe(EntityUid uid, RespiratorComponent respirator)
     {
-        if(respirator.Saturation < respirator.SuffocationThreshold)
+        if (respirator.Saturation < respirator.SuffocationThreshold)
             return false;
         if (TryComp<PullableComponent>(uid, out var pullable)
             && pullable.GrabStage == GrabStage.Suffocate)
@@ -126,6 +128,13 @@ public sealed class RespiratorSystem : EntitySystem
 
             if (!CanBreathe(uid, respirator)) // Goobstation edit
             {
+                // DeltaV: Cosmic Cult - One line change but a refactor would be better. this is kinda cringe.
+                // Makes cultists gasp and respirate but not asphyxiate in space.
+                if (TryComp<CosmicCultComponent>(uid, out var cultComponent)
+                    && !cultComponent.Respiration
+                    && !_mobState.IsIncapacitated(uid))
+                    return;
+
                 if (_gameTiming.CurTime >= respirator.LastGaspEmoteTime + respirator.GaspEmoteCooldown)
                 {
                     respirator.LastGaspEmoteTime = _gameTiming.CurTime;

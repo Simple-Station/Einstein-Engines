@@ -59535,17 +59535,17 @@ entities:
     - type: Transform
       pos: 25.514149,-62.429245
       parent: 2
-- proto: ClothingOuterWinterClown
-  entities:
-  - uid: 911
-    components:
-    - type: Transform
-      parent: 899
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
+# - proto: ClothingOuterWinterClown
+#   entities:
+#   - uid: 911
+#     components:
+#     - type: Transform
+#       parent: 899
+#     - type: Physics
+#       angularDamping: 0
+#       linearDamping: 0
+#       canCollide: False
+#     - type: InsideEntityStorage
 - proto: ClothingOuterWinterCoatMantis
   entities:
   - uid: 8863

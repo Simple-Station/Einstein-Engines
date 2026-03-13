@@ -81511,17 +81511,17 @@ entities:
     - type: Transform
       pos: 5.238703,-58.393845
       parent: 2
-- proto: ClothingOuterWinterClown
-  entities:
-  - uid: 12618
-    components:
-    - type: Transform
-      parent: 12609
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
+# - proto: ClothingOuterWinterClown
+#   entities:
+#   - uid: 12618
+#     components:
+#     - type: Transform
+#       parent: 12609
+#     - type: Physics
+#       angularDamping: 0
+#       linearDamping: 0
+#       canCollide: False
+#     - type: InsideEntityStorage
 - proto: ClothingOuterWinterHydro
   entities:
   - uid: 12850

@@ -37205,13 +37205,13 @@ entities:
     - type: Transform
       pos: -19.253672,26.663033
       parent: 1
-- proto: ClothingOuterWinterClown
-  entities:
-  - uid: 2395
-    components:
-    - type: Transform
-      pos: -38.370983,1.4833837
-      parent: 1
+# - proto: ClothingOuterWinterClown
+#   entities:
+#   - uid: 2395
+#     components:
+#     - type: Transform
+#       pos: -38.370983,1.4833837
+#       parent: 1
 - proto: ClothingOuterWinterCoat
   entities:
   - uid: 12729

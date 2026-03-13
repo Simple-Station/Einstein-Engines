@@ -625,10 +625,10 @@
   id: ClothingOuterWinterMusician
   result: ClothingOuterWinterMusician
 
-- type: latheRecipe
-  parent: BaseCoatRecipe
-  id: ClothingOuterWinterClown
-  result: ClothingOuterWinterClown
+# - type: latheRecipe
+#   parent: BaseCoatRecipe
+#   id: ClothingOuterWinterClown
+#   result: ClothingOuterWinterClown
 
 - type: latheRecipe
   parent: BaseCoatRecipe

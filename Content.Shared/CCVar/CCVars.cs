@@ -47,4 +47,10 @@ public sealed partial class CCVars : CVars
     /// </summary>
     public static readonly CVarDef<bool> DebugPow3rDisableParallel =
         CVarDef.Create("debug.pow3r_disable_parallel", false, CVar.SERVERONLY);
+
+    /// <summary>
+    ///    Maximum number of characters in objective summaries.
+    /// </summary>
+    public static readonly CVarDef<int> MaxObjectiveSummaryLength =
+        CVarDef.Create("game.max_objective_summary_length", 512, CVar.SERVER | CVar.REPLICATED);
 }

@@ -48519,13 +48519,13 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
-- proto: ClothingOuterWinterClown
-  entities:
-  - uid: 6611
-    components:
-    - type: Transform
-      pos: -25.555714,-12.544914
-      parent: 2
+# - proto: ClothingOuterWinterClown
+#   entities:
+#   - uid: 6611
+#     components:
+#     - type: Transform
+#       pos: -25.555714,-12.544914
+#       parent: 2
 - proto: ClothingOuterWinterCMO
   entities:
   - uid: 6612

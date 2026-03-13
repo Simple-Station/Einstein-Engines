@@ -48,7 +48,7 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
 
         Subs.CVar(_cfg, CCVars.GameShowGreentext, value => _showGreentext = value, true);
 
-        Subs.CVar(_cfg, DCCVars.MaxObjectiveSummaryLength, len => _maxLengthSummaryLength = len, true); // DeltaV
+        Subs.CVar(_cfg, CCVars.MaxObjectiveSummaryLength, len => _maxLengthSummaryLength = len, true); // DeltaV
 
         _prototypeManager.PrototypesReloaded += CreateCompletions;
     }

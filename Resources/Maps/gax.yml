@@ -53062,17 +53062,17 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingOuterWinterClown
-  entities:
-  - uid: 942
-    components:
-    - type: Transform
-      parent: 930
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
+# - proto: ClothingOuterWinterClown
+#   entities:
+#   - uid: 942
+#     components:
+#     - type: Transform
+#       parent: 930
+#     - type: Physics
+#       angularDamping: 0
+#       linearDamping: 0
+#       canCollide: False
+#     - type: InsideEntityStorage
 - proto: ClothingOuterWinterCoat
   entities:
   - uid: 7964

@@ -6,7 +6,7 @@ namespace Content.Shared.Eye
     [FlagsFor(typeof(VisibilityMaskLayer))]
     public enum VisibilityFlags : int
     {
-        None   = 0,
+        None = 0,
         Normal = 1 << 0,
         Ghost  = 1 << 1,
         Subfloor = 1 << 2,
@@ -14,5 +14,6 @@ namespace Content.Shared.Eye
         Ethereal = 1 << 3,
         TelegnosticProjection = 5,
         Abductor = 1 << 10, // I HATE BITWISE OPERATIONS!! GRAAAAH
+        CosmicCultMonument = 1 << 4, // DeltaV - Cosmic Cult
     }
 }

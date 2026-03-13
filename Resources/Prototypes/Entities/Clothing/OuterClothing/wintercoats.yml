@@ -277,15 +277,15 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterCMO
 
-- type: entity
-  parent: ClothingOuterWinterCoat
-  id: ClothingOuterWinterClown
-  name: clown winter coat
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coatclown.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coatclown.rsi
+# - type: entity
+#   parent: ClothingOuterWinterCoat
+#   id: ClothingOuterWinterClown
+#   name: clown winter coat
+#   components:
+#   - type: Sprite
+#     sprite: Clothing/OuterClothing/WinterCoats/coatclown.rsi
+#   - type: Clothing
+#     sprite: Clothing/OuterClothing/WinterCoats/coatclown.rsi
 
 - type: entity
   parent: ClothingOuterWinterCoatToggleable

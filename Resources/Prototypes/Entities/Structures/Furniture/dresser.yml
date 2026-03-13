@@ -206,9 +206,9 @@
       - id: BedsheetGrey
         prob: 0.03
         orGroup: dressermainloot
-      - id: ClothingOuterWinterClown
-        prob: 0.03
-        orGroup: dressersecondloot
+      # - id: ClothingOuterWinterClown
+      #   prob: 0.03
+      #   orGroup: dressersecondloot
       - id: ClothingOuterCoatBomber
         prob: 0.03
         orGroup: dressersecondloot

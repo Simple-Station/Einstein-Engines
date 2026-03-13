@@ -1125,6 +1125,10 @@
       effects:
       - !type:ModifyBloodLevel
         amount: 0.1
+      - !type:CleanseCult # DeltaV - Cosmic Cult
+        conditions:
+        - !type:ReagentThreshold
+          min: 10
       - !type:HealthChange
         conditions:
         - !type:TotalDamage

@@ -60709,15 +60709,15 @@ entities:
     - type: Transform
       pos: 37.107964,-4.375332
       parent: 2
-- proto: ClothingOuterWinterClown
-  entities:
-  - uid: 1106
-    components:
-    - type: Transform
-      parent: 1102
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
+# - proto: ClothingOuterWinterClown
+#   entities:
+#   - uid: 1106
+#     components:
+#     - type: Transform
+#       parent: 1102
+#     - type: Physics
+#       canCollide: False
+#     - type: InsideEntityStorage
 - proto: ClothingOuterWinterCoat
   entities:
   - uid: 8687

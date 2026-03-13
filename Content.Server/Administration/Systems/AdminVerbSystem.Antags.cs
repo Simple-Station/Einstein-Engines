@@ -1,6 +1,7 @@
 using Content.Server._Goobstation.Devil.GameTicking.Rules;
 using Content.Server._Orehum.GameTicking.Components;
 using Content.Server._Orehum.GameTicking.Rules;
+using Content.Server._DV.CosmicCult.Components;
 using Content.Server.Administration.Commands;
 using Content.Server.Antag;
 using Content.Server.GameTicking.Rules.Components;
@@ -274,5 +275,22 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", armsDealerName, Loc.GetString("admin-verb-make-arms-dealer")),
         };
         args.Verbs.Add(armsDealer);
+
+        // Begin DeltaV Additions
+        var cosmicCultName = Loc.GetString("admin-verb-text-make-cosmiccultist");
+        Verb cosmiccult = new()
+        {
+            Text = cosmicCultName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/_DV/CosmicCult/Icons/antag_icons.rsi"), "CosmicCult"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<CosmicCultRuleComponent>(targetPlayer, "CosmicCult");
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", cosmicCultName, Loc.GetString("admin-verb-make-cosmiccultist")),
+        };
+        args.Verbs.Add(cosmiccult);
+        // End DeltaV Additions
     }
 }
