@@ -175,7 +175,7 @@
     - id: VentClog
     #- id: TidemindDevelop # Goobstation - Tidemind
     - id: MothroachSpawn # DeltaV
-    # - id: DerelictCyborgSyndicateSpawn # Goobstation - usually calm
+    - id: DerelictCyborgSyndicateSpawn # Goobstation - usually calm
     - id: MalignRiftSpawn # DeltaV
     - id: FloorGoblinMidRound # Goobstation
     - id: ClownGoblinMigration # Goobstation - New Midrounds

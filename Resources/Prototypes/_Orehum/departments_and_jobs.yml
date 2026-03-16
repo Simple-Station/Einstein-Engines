@@ -4,3 +4,27 @@
   description: department-Orehum-description
   color: "#800080"
   editorHidden: true
+
+- type: department
+  id: Exclusive
+  name: department-Exclusive
+  description: department-Exclusive-description
+  color: "#82CAFF"
+  editorHidden: true
+  roles:
+  - BestyExclusive
+  - ME4TAExclusive
+
+- type: job
+  id: BestyExclusive
+  name: Эксклюзивный доступ (Sakuraq1)
+  description: Discord - sakuraq1
+  playTimeTracker: JobBestyExclusive
+  setPreference: false
+
+- type: job
+  id: ME4TAExclusive
+  name: Эксклюзивный доступ (ME4TA)
+  description: Discord - _vibeman_
+  playTimeTracker: JobME4TAExclusive
+  setPreference: false

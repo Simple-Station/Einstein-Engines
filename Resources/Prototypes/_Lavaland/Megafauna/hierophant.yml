@@ -10,6 +10,7 @@
 - type: megafaunaSelector
   id: PickTargetSimple
   selector: !type:AggressivePickTargetSelector
+    delay: 0.0
     priority: 10
     targetConditions:
     # Hit closer aggressors more often.

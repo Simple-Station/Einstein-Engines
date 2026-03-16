@@ -25,11 +25,24 @@
     BlobGameMode: 0.05
     Wizard: 0.025
     CosmicCult: 0.05 # make it semi often so we can test it
+    #HonkOps: 0.01 # this test fail was real holy shit it was only a preset the entire a time i was lied too by myself
+
 
 - type: incompatibleModes
   id: Nukeops
   modes:
   - Nukeops
+  - HonkOps
+  - Zombie
+  - Revolutionary
+  - BlobGameMode
+  - CosmicCult
+
+- type: incompatibleModes
+  id: HonkOps
+  modes:
+  - Nukeops
+  - HonkOps
   - Zombie
   - Revolutionary
   - BlobGameMode
@@ -52,23 +65,27 @@
   - BlobGameMode
   - Nukeops
   - CosmicCult
+  - HonkOps
 
 - type: incompatibleModes
   id: Zombie
   modes:
   - Nukeops
   - CosmicCult
+  - HonkOps
 
 - type: incompatibleModes
   id: Revolutionary
   modes:
   - Nukeops
   - CosmicCult
+  - HonkOps
 
 - type: incompatibleModes
   id: CosmicCult
   modes:
   - Nukeops
+  - HonkOps
   - Zombie
   - Revolutionary
   - BlobGameMode

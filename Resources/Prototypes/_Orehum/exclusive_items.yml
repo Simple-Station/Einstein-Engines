@@ -1,0 +1,28 @@
+- type: loadout
+  id: LoadoutBestyEsword
+  category: JobsSecurityWeapons
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - Warden
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobBestyExclusive
+      min: 60
+  items:
+  - EnergySwordDoubleSec
+
+- type: loadout
+  id: LoadoutME4TA
+  category: Items
+  cost: 4
+  requirements:
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobME4TAExclusive
+      min: 60
+  items:
+  - CrayonMagic

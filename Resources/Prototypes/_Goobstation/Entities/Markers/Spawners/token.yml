@@ -100,6 +100,16 @@
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
+  parent: SpawnPointGhostLaughterDemon
+  id: SpawnPointLaughterDemonToken
+  components:
+  - type: GhostRole
+    name: roles-laughter-demon-name-token
+    description: ghost-role-information-description-token-generic
+    rules: ghost-role-information-laughter-demon-rules
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
   parent: SpawnPointGhostAncientRogueKing
   id: AncientRogueKingToken
   components:

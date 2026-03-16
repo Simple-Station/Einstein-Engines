@@ -9,6 +9,7 @@
     Blob: 0.5
     Dragon: 0.3
     SlaughterDemon: 0.3
+    LaughterDemon: 0.3
     WizApprentice: 0.1
 
 # Threats
@@ -27,6 +28,11 @@
   id: Blob
   announcement: terror-blob
   rule: BlobSpawn
+
+- type: ninjaHackingThreat
+  id: LaughterDemon
+  announcement: terror-slaughter-demon
+  rule: LaughterDemonSummon
 
 - type: ninjaHackingThreat
   id: ShuttleInstigator
