@@ -1,72 +1,94 @@
+# SPDX-FileCopyrightText: 2022 EmoGarbage404 <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2022 moonheart08 <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 EmoGarbage404 <retron404@gmail.com>
+# SPDX-FileCopyrightText: 2023 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+# SPDX-FileCopyrightText: 2023 Skye <22365940+Skyedra@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 coolmankid12345 <55817627+coolmankid12345@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 coolmankid12345 <coolmankid12345@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Kevin Zheng <kevinz5000@gmail.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pancake <Pangogie@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 PoTeletubby <108604614+PoTeletubby@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 PoTeletubby <ajcraigaz@gmail.com>
+# SPDX-FileCopyrightText: 2024 Southbridge <7013162+southbridge-fur@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Spanky <scott@wearejacob.com>
+# SPDX-FileCopyrightText: 2024 Spessmann <156740760+Spessmann@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 shamp <140359015+shampunj@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
+# SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Comet.Void <80859724+CometVoid@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 CometVoid <cometsstrile@gmail.com>
+# SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Unlumination <144041835+Unlumy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 YoungThug <ramialanbagy@gmail.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+# SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+# SPDX-FileCopyrightText: 2025 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 shibe <95730644+shibechef@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: gamePreset
   id: Survival
   alias:
-  - survival
+    - survival
   name: survival-title
-  showInVote: true # secret # DeltaV - Me when the survival. Used for periapsis.
+  showInVote: true
   description: survival-description
   rules:
-  - MeteorSwarmScheduler
-  - RampingStationEventScheduler
-  - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
-  - GlimmerEventScheduler # fix glimmer events
+    - MeteorSwarmScheduler
+    - RampingStationEventScheduler
+    - SpaceTrafficControlEventScheduler
+    - SpaceTrafficControlFriendlyEventScheduler
+    - BasicRoundstartVariation
 
 - type: gamePreset
   id: KesslerSyndrome
   alias:
-  - kessler
-  - junk
-  - meteorhell
+    - kessler
+    - junk
+    - meteorhell
   name: kessler-syndrome-title
   showInVote: false # secret
   description: kessler-syndrome-description
   rules:
-  - KesslerSyndromeScheduler
-  - RampingStationEventScheduler
-  - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
-  - GlimmerEventScheduler # fix glimmer events
-
-- type: gamePreset
-  id: SurvivalHellshift
-  alias:
-  - hellshift
-  showInVote: false
-  name: hellshift-title
-  description: hellshift-description
-  rules:
-  - MeteorSwarmScheduler
-  - HellshiftStationEventScheduler
-  - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
-  - GlimmerEventScheduler # fix glimmer events
-
-- type: gamePreset
-  id: SurvivalIrregular
-  alias: [irregular]
-  showInVote: true
-  name: irregular-title
-  description: irregular-description
-  rules:
-  - MeteorSwarmScheduler
-  - IrregularStationEventScheduler
-  - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
-  - GlimmerEventScheduler # fix glimmer events
-
-- type: gamePreset
-  id: SurvivalIrregularExtended
-  alias: [irregular-extended]
-  showInVote: true
-  name: irregular-extended-title
-  description: irregular-extended-description
-  rules:
-  - MeteorSwarmScheduler
-  - IrregularExtendedStationEventScheduler
-  - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
-  - GlimmerEventScheduler # fix glimmer events
+    - KesslerSyndromeScheduler
+    - RampingStationEventScheduler
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation
 
 - type: gamePreset
   id: AllAtOnce
@@ -76,18 +98,20 @@
   description: all-at-once-description
   showInVote: false
   rules:
-  - Nukeops
-  - Traitor
-  - Revolutionary
-  - Zombie
-  - Changeling
-  - Shadowling
-  - BloodCult
-  - KesslerSyndromeScheduler
-  - RampingStationEventScheduler
-  - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
-  - GlimmerEventScheduler # fix glimmer events
+    - Nukeops
+    - Traitor
+    - Revolutionary
+    - Zombie
+    - Thief
+    - Heretic
+    - BlobGameMode
+    - LoneAbductorSpawn
+    - KesslerSyndromeScheduler
+    - Wizard
+    - RampingStationEventScheduler
+    - Changeling # Goobstation - changeling playtest
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation
 
 - type: gamePreset
   id: AllerAtOnce
@@ -100,21 +124,25 @@
   description: aller-at-once-description
   showInVote: false #Please god dont do this
   rules:
-  - Nukeops
-  - Traitor
-  - Revolutionary
-  - Zombie
-  - Changeling
-  - Shadowling
-  - BloodCult
-  - BasicStationEventScheduler
-  - KesslerSyndromeScheduler
-  - MeteorSwarmMildScheduler
-  - MeteorSwarmScheduler
-  - RampingStationEventScheduler
-  - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
-  - GlimmerEventScheduler # fix glimmer events
+    - Nukeops
+    - Traitor
+    - Revolutionary
+    - Zombie
+    - Thief
+    - Heretic
+    - BlobGameMode
+    - LoneAbductorSpawn
+    - Wizard
+    - BasicStationEventScheduler
+    - KesslerSyndromeScheduler
+    - MeteorSwarmMildScheduler # Goob Edit
+    - MeteorSwarmScheduler # Goob edit
+    - RampingStationEventScheduler
+    - SpaceTrafficControlEventScheduler
+    - SpaceTrafficControlFriendlyEventScheduler
+    - BasicRoundstartVariation
+    - Changeling # Goobstation - changeling playtest
+    - Shadowling # Einstein Engines - Shadowlings
 
 - type: gamePreset
   id: Extended
@@ -122,13 +150,13 @@
   - extended
   - shittersafari
   name: extended-title
-  showInVote: true #2boring2vote # DeltaV - I'd like to disagree, used for periapsis.
+  showInVote: true
   description: extended-description
   rules:
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
-  - LavalandStormScheduler # Lavaland Change
-  - GlimmerEventScheduler # fix glimmer events
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
 
 - type: gamePreset
   id: Greenshift
@@ -136,36 +164,36 @@
   - greenshift
   - shittersafarideluxeedition
   name: greenshift-title
-  showInVote: true
+  showInVote: false
   description: greenshift-description
   rules:
+  - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
-  - GlimmerEventScheduler # fix glimmer events
 
 - type: gamePreset
   id: Secret
   alias:
-  - secret
-  - sekrit
+    - secret
+    - sekrit
   name: secret-title
   showInVote: true
   description: secret-description
   rules:
-  - Secret
+    - Secret
+    - BasicStationEventScheduler
 
 - type: gamePreset
   id: SecretExtended #For Admin Use: Runs Extended but shows "Secret" in lobby.
   alias:
-  - secretextended
+    - secretextended
   name: secret-title
   showInVote: false #Admin Use
   description: secret-description
   rules:
-  - MeteorSwarmScheduler
-  - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
-  - GlimmerEventScheduler # fix glimmer events
+    - BasicStationEventScheduler
+    - MeteorSwarmScheduler
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation
 
 - type: gamePreset
   id: SecretGreenshift #For Admin Use: Runs Greenshift but shows "Secret" in lobby.
@@ -175,99 +203,83 @@
   showInVote: false #Admin Use
   description: secret-description
   rules:
+  - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
-  - GlimmerEventScheduler # fix glimmer events
 
 - type: gamePreset
   id: Sandbox
   alias:
-  - sandbox
+    - sandbox
   name: sandbox-title
   description: sandbox-description
   showInVote: false # Not suitable for use without admin intervention, since entity spamming can quickly crash a server
   maxPlayers: 5
   rules:
-  - Sandbox
-  - LavalandStormScheduler # Lavaland Change
-  - GlimmerEventScheduler # fix glimmer events
+    - Sandbox
 
 - type: gamePreset
   id: Traitor
   alias:
-  - traitor
-  - tator
+    - traitor
+    - tator
   name: traitor-title
   description: traitor-description
   showInVote: true
   rules:
+  - DummyNonAntagChance
   - Traitor
+  - CalmTraitor
   - SubGamemodesRule
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
-  - GlimmerEventScheduler # fix glimmer events
 
 - type: gamePreset
   id: Deathmatch
   alias:
-  - deathmatch
-  - dm
+    - deathmatch
+    - dm
   name: death-match-title
   description: death-match-description
-  #maxPlayers: 15
-  showInVote: false # DeltaV - No.
+  maxPlayers: 15
+  showInVote: false
   supportedMaps: DeathMatchMapPool
   rules:
-  - DeathMatch31
+    - DeathMatch31
 
 - type: gamePreset
   id: Nukeops
   alias:
-  - nukeops
+    - nukeops
   name: nukeops-title
   description: nukeops-description
   showInVote: false
   rules:
   - Nukeops
+  - DummyNonAntagChance
   - SubGamemodesRule
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
-  - GlimmerEventScheduler # fix glimmer events
 
 - type: gamePreset
   id: Revolutionary
   alias:
-  - rev
-  - revs
-  - revolutionaries
+    - rev
+    - revs
+    - revolutionaries
   name: rev-title
   description: rev-description
   showInVote: false
   rules:
+  - DummyNonAntagChance
   - Revolutionary
   - SubGamemodesRule
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
-  - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
-  - GlimmerEventScheduler # fix glimmer events
-
-- type: gamePreset
-  id: Wizard
-  alias:
-  - wizard
-  name: wizard-title
-  description: wizard-description
-  showInVote: false
-  rules:
-  - Wizard
-  - SubGamemodesRuleNoWizard #No Dual Wizards at the start, midround is fine
-  - BasicStationEventScheduler
-  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
 
 - type: gamePreset
@@ -285,9 +297,8 @@
   - Zombie
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
-  - GlimmerEventScheduler # fix glimmer events
 
 - type: gamePreset
   id: Zombieteors
@@ -302,25 +313,5 @@
   - Zombie
   - BasicStationEventScheduler
   - KesslerSyndromeScheduler
+  - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
-  - GlimmerEventScheduler # fix glimmer events
-
-- type: gamePreset
-  id: Changeling
-  alias:
-  - Changeling
-  - Changelings
-  - Ling
-  - Lings
-  name: changeling-gamemode-title
-  description: changeling-gamemode-description
-  showInVote: false
-  rules:
-  - Changeling
-  - SubGamemodesRule
-  - BasicStationEventScheduler
-  - MeteorSwarmScheduler
-  - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
-  - GlimmerEventScheduler # fix glimmer events

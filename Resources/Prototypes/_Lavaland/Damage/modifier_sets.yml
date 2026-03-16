@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: damageModifierSet
+  id: Hierophant
+  coefficients:
+    Piercing: 0.1 # No bullets
+    Heat: 0.5 # No lasers
+
+- type: damageModifierSet
+  id: Ashwood
+  coefficients:
+    Blunt: 0.5
+    Slash: 2.0
+    Piercing: 1.0
+    Heat: 0.5 # Heat resistant
+    Structural: 0.5
+  flatReductions:
+    Blunt: 6 # Just a bit more tough

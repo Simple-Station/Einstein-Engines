@@ -1,4 +1,3 @@
-advertisement-snack-0 = Выпейте ещё немного Getmore!
 advertisement-snack-1 = Попробуйте наш новый батончик с нугой!
 advertisement-snack-2 = В два раза больше калорий за полцены!
 advertisement-snack-3 = Самый здоровый!
@@ -20,4 +19,3 @@ thankyou-snack-3 = Приятного аппетита.
 thankyou-snack-4 = Вкуснятина!
 thankyou-snack-5 = Объедение!
 thankyou-snack-6 = Спасибо, что покупаете наши снеки!
-thankyou-snack-0 = Спасибо что воспользовались { $name }!

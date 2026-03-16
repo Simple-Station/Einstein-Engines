@@ -1,14 +1,29 @@
+# SPDX-FileCopyrightText: 2022 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Phill101 <28949487+Phill101@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Phill101 <holypics4@gmail.com>
+# SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lapatison <100279397+lapatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hannah Giovanna Dawson <karakkaraz@gmail.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Simon <63975668+Simyon264@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SpeltIncorrectyl <66873282+SpeltIncorrectyl@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 alerts-low-oxygen-name = [color=red]Low Oxygen[/color]
 alerts-low-oxygen-desc = There is [color=red]not enough oxygen[/color] in the air you are breathing. Put on [color=green]internals[/color].
 
 alerts-low-nitrogen-name = [color=red]Low Nitrogen[/color]
 alerts-low-nitrogen-desc = There is [color=red]not enough nitrogen[/color] in the air you are breathing. Put on [color=green]internals[/color].
-
-alerts-low-plasma-name = [color=red]Low Plasma[/color]
-alerts-low-plasma-desc = There is [color=red]not enough plasma[/color] in the air you are breathing. Put on [color=green]internals[/color].
-
-alerts-high-oxygen-name = [color=red]High Oxygen[/color]
-alerts-high-oxygen-desc = There is [color=red]too much oxygen[/color] in the air you are breathing. Put on [color=green]internals[/color].
 
 alerts-high-toxin-name = [color=red]High Toxin Level[/color]
 alerts-high-toxin-desc = There are [color=red]too many toxins[/color] in the air you are breathing. Put on [color=green]internals[/color] or get away.
@@ -34,10 +49,13 @@ alerts-weightless-desc =
     Mag-boots or jetpacks would help you move with more control.
 
 alerts-walking-name = Walking
-alerts-walking-desc = Indicates how fast you're moving.
+alerts-walking-desc = You are walking, moving at a slow pace.
 
 alerts-stunned-name = [color=yellow]Stunned[/color]
 alerts-stunned-desc = You're [color=yellow]stunned[/color]! Something is impairing your ability to move or interact with objects.
+
+alerts-knockdown-name = [color=yellow]Knocked Down[/color]
+alerts-knockdown-desc = You're [color=yellow]Knocked Down[/color]! Something has slipped or pushed you over, encumbering your movement.
 
 alerts-handcuffed-name = [color=yellow]Handcuffed[/color]
 alerts-handcuffed-desc = You're [color=yellow]handcuffed[/color] and can't use your hands. If anyone drags you, you won't be able to resist.
@@ -120,8 +138,8 @@ alerts-revenant-essence-desc = The power of souls. It sustains you and is used f
 alerts-revenant-corporeal-name = Corporeal
 alerts-revenant-corporeal-desc = You have manifested physically. People around you can see and hurt you.
 
-alerts-offer-name = Offer
-alerts-offer-desc = Someone offers you an item.
+alerts-rooted-name = Rooted
+alerts-rooted-desc = You are attached to the ground. You can't slip, but you absorb fluids under you.
 
-alerts-deflecting-name = Deflecting
-alerts-deflecting-desc = You have a chance to deflect incoming projectiles. Standing still or moving slowly will increase this chance.
+alerts-stealthy-name = Pickpocketing
+alerts-stealthy-desc = Whether you are currently pickpocketing. Click to toggle.

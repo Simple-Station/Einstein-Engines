@@ -1,74 +1,7 @@
-
-# Acid raincoat
-- type: entity
-  parent: ClothingOuterStorageToggleableBase
-  id: ClothingOuterCoatAcidRaincoat
-  name: acid raincoat
-  description: Mostly transparent raincoat made out of acid resistant polymers. Please, for the love of Space God, do wear undergarments.
-  components:
-  - type: Sprite
-    sprite: _NF/Clothing/OuterClothing/Coats/acid_raincoat.rsi
-  - type: Clothing
-    sprite: _NF/Clothing/OuterClothing/Coats/acid_raincoat.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Caustic: 0.4
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodAcidRaincoat
-
-- type: entity
-  parent: ClothingOuterCoatAcidRaincoat
-  id: ClothingOuterCoatAcidRaincoatBlue
-  name: blue acid raincoat
-  components:
-  - type: Sprite
-    sprite: _NF/Clothing/OuterClothing/Coats/acid_raincoat_blue.rsi
-  - type: Clothing
-    sprite: _NF/Clothing/OuterClothing/Coats/acid_raincoat_blue.rsi
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodAcidRaincoatBlue
-
-- type: entity
-  parent: ClothingOuterCoatAcidRaincoat
-  id: ClothingOuterCoatAcidRaincoatGreen
-  name: green acid raincoat
-  components:
-  - type: Sprite
-    sprite: _NF/Clothing/OuterClothing/Coats/acid_raincoat_green.rsi
-  - type: Clothing
-    sprite: _NF/Clothing/OuterClothing/Coats/acid_raincoat_green.rsi
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodAcidRaincoatGreen
-
-- type: entity
-  parent: ClothingOuterCoatAcidRaincoat
-  id: ClothingOuterCoatAcidRaincoatMagenta
-  name: magenta acid raincoat
-  components:
-  - type: Sprite
-    sprite: _NF/Clothing/OuterClothing/Coats/acid_raincoat_magenta.rsi
-  - type: Clothing
-    sprite: _NF/Clothing/OuterClothing/Coats/acid_raincoat_magenta.rsi
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodAcidRaincoatMagenta
-
-- type: entity
-  parent: ClothingOuterCoatAcidRaincoat
-  id: ClothingOuterCoatAcidRaincoatYellow
-  name: yellow acid raincoat
-  components:
-  - type: Sprite
-    sprite: _NF/Clothing/OuterClothing/Coats/acid_raincoat_yellow.rsi
-  - type: Clothing
-    sprite: _NF/Clothing/OuterClothing/Coats/acid_raincoat_yellow.rsi
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodAcidRaincoatGreen
-
 # Jackets
 - type: entity
-  parent: ClothingOuterStorageBase
   id: ClothingOuterCoatBomberPunkRed
+  parent: ClothingOuterStorageBase
   name: red punk bomber
   description: Ya gotta 'ave style on dem streets.
   components:
@@ -78,8 +11,8 @@
     sprite: _NF/Clothing/OuterClothing/Coats/bomber_punk_red.rsi
 
 - type: entity
-  parent: ClothingOuterStorageBase
   id: ClothingOuterCoatJacketLeather
+  parent: ClothingOuterStorageBase
   name: leather jacket
   description: Rock'n'roll, babe!
   components:
@@ -89,8 +22,8 @@
     sprite: _NF/Clothing/OuterClothing/Coats/jacket_leather.rsi
 
 - type: entity
-  parent: ClothingOuterStorageBase
   id: ClothingOuterCoatJacketBiker
+  parent: ClothingOuterStorageBase
   name: biker jacket
   description: Made out of toughest synthleather for toughest badasses.
   components:
@@ -100,8 +33,8 @@
     sprite: _NF/Clothing/OuterClothing/Coats/jacket_biker.rsi
 
 - type: entity
-  parent: ClothingOuterStorageBase
   id: ClothingOuterCoatJacketJamrock
+  parent: ClothingOuterStorageBase
   name: jamrock blazer
   description: Welcome to jamrock.
   components:
@@ -111,8 +44,8 @@
     sprite: _NF/Clothing/OuterClothing/Coats/blazer_jamrock.rsi
 
 - type: entity
-  parent: ClothingOuterStorageBase
   id: ClothingOuterCoatBomberAerostatic
+  parent: ClothingOuterStorageBase
   name: aerostatic bomber
   description: When you wear it, you can always hear the sickest guitar solo in your mind.
   components:
@@ -122,8 +55,8 @@
     sprite: _NF/Clothing/OuterClothing/Coats/bomber_aerostatic.rsi
 
 - type: entity
-  parent: ClothingOuterStorageBase
   id: ClothingOuterCoatJacketLettermanBlue
+  parent: ClothingOuterStorageBase
   name: blue letterman jacket
   description: Where is your lacrosse stick?
   components:
@@ -133,8 +66,8 @@
     sprite: _NF/Clothing/OuterClothing/Coats/jacket_letterman_blue.rsi
 
 - type: entity
-  parent: ClothingOuterStorageBase
   id: ClothingOuterCoatJacketLettermanBrown
+  parent: ClothingOuterStorageBase
   name: brown letterman jacket
   description: Where is your lacrosse stick?
   components:
@@ -144,8 +77,8 @@
     sprite: _NF/Clothing/OuterClothing/Coats/jacket_letterman_brown.rsi
 
 - type: entity
-  parent: ClothingOuterStorageBase
   id: ClothingOuterCoatJacketLettermanRed
+  parent: ClothingOuterStorageBase
   name: red letterman jacket
   description: Where is your lacrosse stick?
   components:
@@ -155,8 +88,8 @@
     sprite: _NF/Clothing/OuterClothing/Coats/jacket_letterman_red.rsi
 
 - type: entity
-  parent: ClothingOuterStorageBase
   id: ClothingOuterCoatJacketLettermanMagenta
+  parent: ClothingOuterStorageBase
   name: magenta letterman jacket
   description: Where is your holocrosse joystick?
   components:
@@ -166,8 +99,8 @@
     sprite: _NF/Clothing/OuterClothing/Coats/jacket_letterman_magenta.rsi
 
 - type: entity
-  parent: ClothingOuterStorageBase
   id: ClothingOuterCoatBomberPinkSleeves
+  parent: ClothingOuterStorageBase
   name: bomber jacket
   description: Oi! Whatcha lookin' at?
   components:
@@ -175,81 +108,3 @@
     sprite: _NF/Clothing/OuterClothing/Coats/bomber_pinksleeves.rsi
   - type: Clothing
     sprite: _NF/Clothing/OuterClothing/Coats/bomber_pinksleeves.rsi
-
-# Procedural punk jackets
-- type: entity
-  parent: ClothingOuterStorageBase
-  id: ClothingOuterCoatBomberRandomized
-  name: punk jacket
-  description: Oi! Whatcha lookin' at?
-  suffix: Random visuals
-  components:
-  - type: Sprite
-    sprite: _NF/Clothing/OuterClothing/Coats/jacket_procedural.rsi
-    layers:
-    - state: base_OuterClothing_jacket_01
-      map: [ "jacket_main" ]
-    - state: decor_base_OuterClothing_jacket_01
-      map: [ "jacket_decor" ]
-    - state: mask_null
-      map: [ "jacket_overlay" ]
-      shader: unshaded
-  - type: Clothing
-    sprite: _NF/Clothing/OuterClothing/Coats/jacket_procedural.rsi
-    clothingVisuals:
-      outerClothing:
-      - state: base_OuterClothing_jacket_01
-        map: [ "jacket_main" ]
-      - state: decor_base_OuterClothing_jacket_01
-        map: [ "jacket_decor" ]
-      - state: mask_null
-        map: [ "jacket_overlay" ]
-        shader: unshaded
-  - type: RandomSprite
-    available:
-    - jacket_main:
-        base_OuterClothing_jacket_01: Cyberpunk
-        base_OuterClothing_jacket_02: Cyberpunk
-        base_OuterClothing_jacket_03: Cyberpunk
-        base_OuterClothing_jacket_04: Cyberpunk
-      jacket_decor:
-        decor_base_OuterClothing_jacket_01: Cyberpunk
-        decor_base_OuterClothing_jacket_02: Cyberpunk
-      jacket_overlay:
-        overlay_base_OuterClothing_jacket_01: CyberpunkNeon
-        overlay_base_OuterClothing_jacket_02: CyberpunkNeon
-        overlay_base_OuterClothing_jacket_03: CyberpunkNeon
-        overlay_base_OuterClothing_jacket_04: CyberpunkNeon
-        overlay_base_OuterClothing_jacket_05: CyberpunkNeon
-        overlay_base_OuterClothing_jacket_06: CyberpunkNeon
-        overlay_base_OuterClothing_jacket_07: CyberpunkNeon
-        mask_null: ""
-
-- type: entity
-  parent: ClothingOuterStorageBase
-  id: ClothingOuterCoatLettermanRandomized
-  name: punk letterman jacket
-  description: Where is your holocrosse joystick?
-  suffix: Random visuals
-  components:
-  - type: Sprite
-    sprite: _NF/Clothing/OuterClothing/Coats/jacket_procedural.rsi
-    layers:
-    - state: base_OuterClothing_letterman
-      map: [ "jacket_main" ]
-    - state: decor_base_OuterClothing_letterman
-      map: [ "jacket_decor" ]
-  - type: Clothing
-    sprite: _NF/Clothing/OuterClothing/Coats/jacket_procedural.rsi
-    clothingVisuals:
-      outerClothing:
-      - state: base_OuterClothing_letterman
-        map: [ "jacket_main" ]
-      - state: decor_base_OuterClothing_letterman
-        map: [ "jacket_decor" ]
-  - type: RandomSprite
-    available:
-    - jacket_main:
-        base_OuterClothing_letterman: Cyberpunk
-      jacket_decor:
-        decor_base_OuterClothing_letterman: Cyberpunk

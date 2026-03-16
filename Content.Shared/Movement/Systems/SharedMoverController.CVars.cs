@@ -1,14 +1,21 @@
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 MarkerWicker <markerWicker@proton.me>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.CCVar;
 using Content.Shared.Mind.Components;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
 using Robust.Shared.Configuration;
+using Robust.Shared.Player;
 
 namespace Content.Shared.Movement.Systems;
 
 public abstract partial class SharedMoverController
 {
     [Dependency] private readonly INetConfigurationManager _netConfig = default!;
+    [Dependency] private readonly ISharedPlayerManager _player = default!;
 
     private void InitializeCVars()
     {
@@ -19,11 +26,12 @@ public abstract partial class SharedMoverController
 
     private void OnMindAdded(Entity<InputMoverComponent> ent, ref MindAddedMessage args)
     {
-        if (args.Mind.Comp.Session?.Channel is not { } channel)
-            return;
+        if (!_player.TryGetSessionById(args.Mind.Comp.UserId, out var session)) return;
+
+        if (session.Channel is not { } channel) return;
 
         ent.Comp.DefaultSprinting = _netConfig.GetClientCVar(channel, CCVars.DefaultWalk);
-        WalkingAlert(ent);
+        RaiseLocalEvent(ent, new SprintingInputEvent(ent)); // WD EDIT
     }
 
     private void OnMindRemoved(Entity<InputMoverComponent> ent, ref MindRemovedMessage args)
@@ -38,6 +46,6 @@ public abstract partial class SharedMoverController
             return;
 
         mover.DefaultSprinting = _netConfig.GetClientCVar(args.SenderSession.Channel, CCVars.DefaultWalk);
-        WalkingAlert((uid, mover));
+        RaiseLocalEvent(uid, new SprintingInputEvent((uid, mover))); // WD EDIT
     }
 }

@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using Content.Shared.Clothing.Loadouts.Prototypes;
+using Content.Shared.Preferences.Loadouts;
 using Robust.Shared.Network;
 
 namespace Content.Corvax.Interfaces.Shared;

@@ -1,7 +1,15 @@
+<!--
+SPDX-FileCopyrightText: 2023 Sir Winters <7543955+Owai-Seek@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Ian <ignaz.k@live.de>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <Document>
 # Ботаника
 
-Ботаника и химия нередко работают в связке, чтобы получать более эффективные лекарства (или безобидные коктейли для отдыха). Имеет смысл обеспечивать ботаников удобрениями и просить взамен лекарственные растения.
+Ботаника и Химия часто могут сотрудничать для производства лекарств получше (или развлекательных коктейлей). Возможно, стоит дать им необходимые удобрения, а взамен попросить несколько лекарственных растений.
 
 <Box>
 <GuideEntityEmbed Entity="FoodGalaxythistle"/>

@@ -1,25 +1,26 @@
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: species
   id: Kobold
   name: species-name-kobold
   roundStart: false # sad...
   prototype: MobKobold
-  # WD EDIT START
-  bodyTypes:
-  - KoboldNormal
-  # WD EDIT END
+  sprites: MobKoboldSprites
   dollPrototype: MobKoboldDummy
   skinColoration: Hues
   defaultSkinTone: "#9a7c5a"
   markingLimits: MobKoboldMarkingLimits
 
-# WD EDIT START
-- type: bodyType
-  id: KoboldNormal
-  name: body-normal
-# WD EDIT END
+- type: speciesBaseSprites
+  id: MobKoboldSprites
   sprites:
+    Special: MobKoboldAnyMarking
     Head: MobKoboldHead
-    Chest: MobKoboldTorso
+    Chest: MobKoboldChest
+    Groin: MobKoboldGroin
     Tail: MobKoboldTail
     Eyes: MobKoboldEyes
     HeadTop: MobKoboldHorns
@@ -65,22 +66,40 @@
     state: head_f
 
 - type: humanoidBaseSprite
-  id: MobKoboldTorso
+  id: MobKoboldChest
   baseSprite:
     sprite: Mobs/Animals/kobold.rsi
-    state: torso_m
+    state: chest_m
 
 - type: humanoidBaseSprite
-  id: MobKoboldTorsoMale
+  id: MobKoboldChestMale
   baseSprite:
     sprite: Mobs/Animals/kobold.rsi
-    state: torso_m
+    state: chest_m
 
 - type: humanoidBaseSprite
-  id: MobKoboldTorsoFemale
+  id: MobKoboldChestFemale
   baseSprite:
     sprite: Mobs/Animals/kobold.rsi
-    state: torso_f
+    state: chest_f
+
+- type: humanoidBaseSprite
+  id: MobKoboldGroin
+  baseSprite:
+    sprite: Mobs/Animals/kobold.rsi
+    state: groin_m
+
+- type: humanoidBaseSprite
+  id: MobKoboldGroinMale
+  baseSprite:
+    sprite: Mobs/Animals/kobold.rsi
+    state: groin_m
+
+- type: humanoidBaseSprite
+  id: MobKoboldGroinFemale
+  baseSprite:
+    sprite: Mobs/Animals/kobold.rsi
+    state: groin_f
 
 - type: humanoidBaseSprite
   id: MobKoboldLLeg
@@ -145,6 +164,9 @@
 - type: markingPoints
   id: MobKoboldMarkingLimits
   points:
+    Special: # the cat ear joke
+      points: 1
+      required: false
     Chest:
       points: 1
       required: false

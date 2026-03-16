@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Inventory;
@@ -30,12 +39,11 @@ public sealed class BlurryVisionSystem : EntitySystem
         RaiseLocalEvent(ent, ev);
 
         var blur = Math.Clamp(ev.Blur, 0, BlurryVisionComponent.MaxMagnitude);
-        ///if (blur <= 0)
-        ///{
-        ///    RemCompDeferred<BlurryVisionComponent>(ent);
-        ///    return;
-        ///}
-        /// this makes prediction freak out when you put on glasses
+        if (blur <= 0)
+        {
+            RemCompDeferred<BlurryVisionComponent>(ent);
+            return;
+        }
 
         var blurry = EnsureComp<BlurryVisionComponent>(ent);
         blurry.Magnitude = blur;

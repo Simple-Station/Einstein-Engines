@@ -1,3 +1,42 @@
+# SPDX-FileCopyrightText: 2021 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+# SPDX-FileCopyrightText: 2022 Chris V <HoofedEar@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Martin Petkovski <63034378+martin69420@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Morber <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 AsikKEsel <115815982+AsikKEsel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 FungiFellow <151778459+FungiFellow@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MACMAN2003 <macman2003c@gmail.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   abstract: true
   parent: BaseItem
@@ -15,7 +54,8 @@
   - type: Tag
     tags:
     - Sheet
-    - NoPaint
+    - SheetGlass # Goobstation
+    - DroneUsable # Goobstation
   - type: Material
   - type: Damageable
     damageContainer: Inorganic
@@ -49,11 +89,11 @@
     solutions:
       glass:
         canReact: false
-  # Estacao Pirata - IPC Healing
+  # EE - IPC Healing
   - type: BlindHealing
     damageContainers:
       - Silicon
-      - SiliconUnshielded
+      - SiliconRadiation # Goobstation - Make IPCs take radiation
   - type: StackPrice
     price: 2
 
@@ -93,22 +133,6 @@
         reagents:
         - ReagentId: Silicon
           Quantity: 10
-  - type: UserInterface
-    interfaces:
-      enum.RadialSelectorUiKey.Key:
-        type: RadialSelectorMenuBUI
-  - type: ActivatableUI
-    key: enum.RadialSelectorUiKey.Key
-    inHandsOnly: true
-    requireActiveHand: false
-  - type: ShortConstruction
-    entries:
-    - prototype: Window
-    - prototype: WindowDirectional
-    - prototype: WindowDiagonal
-    - prototype: SheetRGlass
-    - prototype: SheetPGlass
-    - prototype: SheetUGlass
 
 - type: entity
   parent: SheetGlass
@@ -195,21 +219,6 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: UserInterface
-    interfaces:
-      enum.RadialSelectorUiKey.Key:
-        type: RadialSelectorMenuBUI
-  - type: ActivatableUI
-    key: enum.RadialSelectorUiKey.Key
-    inHandsOnly: true
-    requireActiveHand: false
-  - type: ShortConstruction
-    entries:
-    - prototype: SheetRPGlass1
-    - prototype: SheetRUGlass1
-    - prototype: ReinforcedWindow
-    - prototype: ReinforcedWindowDiagonal
-    - prototype: WindowReinforcedDirectional
 
 - type: entity
   parent: SheetRGlass
@@ -238,15 +247,12 @@
 
 - type: entity
   parent: SheetRGlass
-  id: SheetRGlass10
-  name: reinforced glass
-  suffix: Single
+  id: SheetRGlassLingering0
+  suffix: Lingering, 0
   components:
-  - type: Sprite
-    state: rglass
   - type: Stack
-    stackType: ReinforcedGlass
-    count: 10
+    lingering: true
+    count: 0
 
 - type: entity
   parent: SheetGlassBase
@@ -299,20 +305,6 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: UserInterface
-    interfaces:
-      enum.RadialSelectorUiKey.Key:
-        type: RadialSelectorMenuBUI
-  - type: ActivatableUI
-    key: enum.RadialSelectorUiKey.Key
-    inHandsOnly: true
-    requireActiveHand: false
-  - type: ShortConstruction
-    entries:
-    - prototype: SheetRPGlass0
-    - prototype: PlasmaWindow
-    - prototype: PlasmaWindowDiagonal
-    - prototype: PlasmaWindowDirectional
 
 - type: entity
   parent: SheetPGlass
@@ -336,18 +328,6 @@
         - ReagentId: Plasma
           Quantity: 10
         canReact: false
-
-- type: entity
-  parent: SheetPGlass
-  id: SheetPGlass10
-  name: plasma glass
-  suffix: 10
-  components:
-  - type: Sprite
-    state: pglass
-  - type: Stack
-    stackType: PlasmaGlass
-    count: 10
 
 - type: entity
   parent: SheetPGlass
@@ -391,19 +371,6 @@
         - ReagentId: Carbon
           Quantity: 0.5
         canReact: false
-  - type: UserInterface
-    interfaces:
-      enum.RadialSelectorUiKey.Key:
-        type: RadialSelectorMenuBUI
-  - type: ActivatableUI
-    key: enum.RadialSelectorUiKey.Key
-    inHandsOnly: true
-    requireActiveHand: false
-  - type: ShortConstruction
-    entries:
-    - prototype: ReinforcedPlasmaWindow
-    - prototype: ReinforcedPlasmaWindowDiagonal
-    - prototype: PlasmaReinforcedWindowDirectional
 
 - type: entity
   parent: SheetRPGlass
@@ -419,15 +386,12 @@
 
 - type: entity
   parent: SheetRPGlass
-  id: SheetRPGlass10
-  name: reinforced plasma glass
-  suffix: Single
+  id: SheetRPGlassLingering0
+  suffix: Lingering, 0
   components:
-  - type: Sprite
-    state: rpglass
   - type: Stack
-    stackType: ReinforcedPlasmaGlass
-    count: 10
+    lingering: true
+    count: 0
 
 - type: entity
   parent: SheetGlassBase
@@ -491,20 +455,6 @@
         - ReagentId: Uranium
           Quantity: 10
         canReact: false
-  - type: UserInterface
-    interfaces:
-      enum.RadialSelectorUiKey.Key:
-        type: RadialSelectorMenuBUI
-  - type: ActivatableUI
-    key: enum.RadialSelectorUiKey.Key
-    inHandsOnly: true
-    requireActiveHand: false
-  - type: ShortConstruction
-    entries:
-    - prototype: SheetRUGlass0
-    - prototype: UraniumWindow
-    - prototype: UraniumWindowDiagonal
-    - prototype: UraniumWindowDirectional
 
 - type: entity
   parent: SheetUGlass
@@ -517,18 +467,6 @@
   - type: Stack
     stackType: UraniumGlass
     count: 1
-
-- type: entity
-  parent: SheetUGlass
-  id: SheetUGlass10
-  name: uranium glass
-  suffix: 10
-  components:
-  - type: Sprite
-    state: uglass
-  - type: Stack
-    stackType: UraniumGlass
-    count: 10
 
 - type: entity
   parent: SheetUGlass
@@ -571,19 +509,6 @@
         - ReagentId: Carbon
           Quantity: 0.5
         canReact: false
-  - type: UserInterface
-    interfaces:
-      enum.RadialSelectorUiKey.Key:
-        type: RadialSelectorMenuBUI
-  - type: ActivatableUI
-    key: enum.RadialSelectorUiKey.Key
-    inHandsOnly: true
-    requireActiveHand: false
-  - type: ShortConstruction
-    entries:
-    - prototype: ReinforcedUraniumWindow
-    - prototype: ReinforcedUraniumWindowDiagonal
-    - prototype: UraniumReinforcedWindowDirectional
 
 - type: entity
   parent: SheetRUGlass
@@ -596,18 +521,6 @@
   - type: Stack
     stackType: ReinforcedUraniumGlass
     count: 1
-
-- type: entity
-  parent: SheetRUGlass
-  id: SheetRUGlass10
-  name: reinforced uranium glass
-  suffix: 10
-  components:
-  - type: Sprite
-    state: ruglass
-  - type: Stack
-    stackType: ReinforcedUraniumGlass
-    count: 10
 
 - type: entity
   parent: SheetGlassBase
@@ -685,15 +598,3 @@
   - type: Stack
     stackType: ClockworkGlass
     count: 1
-
-- type: entity
-  parent: SheetClockworkGlass
-  id: SheetClockworkGlass10
-  name: clockwork glass
-  suffix: 10
-  components:
-  - type: Sprite
-    state: cglass
-  - type: Stack
-    stackType: ClockworkGlass
-    count: 10

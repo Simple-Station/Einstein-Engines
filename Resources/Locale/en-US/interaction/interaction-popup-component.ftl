@@ -1,3 +1,36 @@
+# SPDX-FileCopyrightText: 2022 Aerocrux <69610864+Aerocrux@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Anthemic <93178783+jproads@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Júlio César Ueti <52474532+Mirino97@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Lucas <luc4s.rib3iro@gmail.com>
+# SPDX-FileCopyrightText: 2022 MaxNox7 <99754140+MaxNox7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Willhelm53 <97707302+Willhelm53@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 lapatison <100279397+lapatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Alekshhh <44923899+Alekshhh@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Nim <128169402+Nimfar11@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 potato1234_x <79580518+potato1234x@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 CookieMasterT <124045269+CookieMasterT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Golinth <amh2023@gmail.com>
+# SPDX-FileCopyrightText: 2024 LankLTE <135308300+LankLTE@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 S1rFl0 <49481675+S1rFl0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ScarKy0 <scarky0@onet.eu>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2024 The Canned One <greentopcan@gmail.com>
+# SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 ### Interaction Popup component
 
 ## Petting animals
@@ -32,6 +65,7 @@ petting-success-slimes = You pet {THE($target)} on {POSS-ADJ($target)} mucous su
 petting-success-snake = You pet {THE($target)} on {POSS-ADJ($target)} scaly large head.
 petting-success-monkey = You pet {THE($target)} on {POSS-ADJ($target)} mischevious little head.
 petting-success-nymph = You pet {THE($target)} on {POSS-ADJ($target)} wooden little head.
+petting-success-scurret = You pet {THE($target)} on {POSS-ADJ($target)} legally distinct head.
 
 petting-failure-generic = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BE($target)} aloof towards you.
 
@@ -53,7 +87,7 @@ petting-failure-bear = You reach out to pet {THE($target)}, but {SUBJECT($target
 petting-failure-monkey = You reach out to pet {THE($target)}, but {SUBJECT($target)} almost {CONJUGATE-BASIC($target, "bite", "bites")} your fingers!
 petting-failure-nymph = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BASIC($target, "move", "moves")} {POSS-ADJ($target)} branches away.
 petting-failure-shadow = You try to pet {THE($target)}, but your hand passes through the cold darkness of {POSS-ADJ($target)} body.
-petting-failure-pibble = You reach out to pet {THE($target)}, and {SUBJECT($target)} lunges at you!
+petting-failure-scurret = You reach out to pet {THE($target)}, but {SUBJECT($target)} does a backflip!
 
 ## Petting silicons
 
@@ -72,13 +106,6 @@ petting-success-syndicate-cyborg = You pet {THE($target)} on {POSS-ADJ($target)}
 petting-success-derelict-cyborg = You pet {THE($target)} on {POSS-ADJ($target)} rusty metal head.
 petting-success-recycler = You pet {THE($target)} on {POSS-ADJ($target)} mildly threatening steel exterior.
 petting-success-station-ai = You pet {THE($target)} on {POSS-ADJ($target)} cold, square screen.
-petting-success-gladiabot = You pet {THE($target)} on {POSS-ADJ($target)} vicious cardboard head.
-petting-success-batonbot = You pet {THE($target)} on {POSS-ADJ($target)} protective metal head.
-petting-success-disablerbot = You pet {THE($target)} on {POSS-ADJ($target)} protective metal head.
-petting-success-minebot = You pet {THE($target)} on {POSS-ADJ($target)} hardened metal head.
-petting-success-fillbot = You pet {THE($target)} on {POSS-ADJ($target)} diligent metal head.
-petting-success-plantbot = You pet {THE($target)} on {POSS-ADJ($target)} muddy metal head.
-petting-success-weldbot = You pet {THE($target)} on {POSS-ADJ($target)} stained metal head.
 
 petting-failure-honkbot = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BASIC($target, "honk", "honks")} in refusal!
 petting-failure-cleanbot = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BE($target)} busy mopping!
@@ -94,13 +121,6 @@ petting-failure-service-cyborg = You reach out to pet {THE($target)}, but {SUBJE
 petting-failure-syndicate-cyborg = You reach out to pet {THE($target)}, but {POSS-ADJ($target)} treacherous affiliation makes you reconsider.
 petting-failure-derelict-cyborg = You reach out to pet {THE($target)}, but {POSS-ADJ($target)} rusty and jagged exterior makes you reconsider.
 petting-failure-station-ai = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BASIC($target, "zap", "zaps")} your hand away.
-petting-failure-gladiabot = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BE($target)} only wants to fight!
-petting-failure-batonbot = You reach out to pet {THE($target)}, but {SUBJECT($target)} nearly prods you with its baton!
-petting-failure-disablerbot = You reach out to pet {THE($target)}, but {SUBJECT($target)} angrily waves its weapon at you!
-petting-failure-minebot = You reach out to pet {THE($target)}, but {SUBJECT($target)} nearly swings its pickaxe at you!
-petting-failure-fillbot = You reach out to pet {THE($target)}, but {SUBJECT($target)} pushes your hand away!
-petting-failure-plantbot = You reach out to pet {THE($target)}, but {POSS-ADJ($target)} clippers nearly snip your fingers off!
-petting-failure-weldbot = You reach out to pet {THE($target)}, but {POSS-ADJ($target)} welder nearly burns your hand!
 
 petting-success-station-ai-others = { CAPITALIZE(THE($user)) } pets {THE($target)} on {POSS-ADJ($target)} cold, square screen.
 
@@ -118,8 +138,3 @@ hugging-success-generic-target = { CAPITALIZE(THE($user)) } hugs you.
 
 petting-success-tesla = You pet {THE($target)}, violating the laws of nature and physics.
 petting-failure-tesla = You reach out towards {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BASIC($target, "zap", "zaps")} your hand away.
-
-## Lavaland
-
-petting-success-magmahand = Somehow, miraculously, you pet {THE($target)} on {POSS-ADJ($target)} red-hot surface.
-petting-failure-magmahand = You reach out to pet {THE($target)}, but {POSS-ADJ($target)} blistering hot surface makes you reconsider.

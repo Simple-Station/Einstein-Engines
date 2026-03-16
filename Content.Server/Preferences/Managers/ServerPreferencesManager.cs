@@ -1,3 +1,37 @@
+// SPDX-FileCopyrightText: 2020 DamianX <DamianX@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Leo <lzimann@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Metal Gear Sloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 mirrorcult <notzombiedude@gmail.com>
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2024 Firewatch <54725557+musicmanvr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mr. 27 <koolthunder019@gmail.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
@@ -5,6 +39,7 @@ using System.Threading.Tasks;
 using Content.Corvax.Interfaces.Shared;
 using Content.Server.Database;
 using Content.Shared.CCVar;
+using Content.Shared.Construction.Prototypes;
 using Content.Shared.Preferences;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
@@ -12,7 +47,6 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-
 
 namespace Content.Server.Preferences.Managers
 {
@@ -29,7 +63,7 @@ namespace Content.Server.Preferences.Managers
         [Dependency] private readonly IDependencyCollection _dependencies = default!;
         [Dependency] private readonly ILogManager _log = default!;
         [Dependency] private readonly UserDbDataManager _userDb = default!;
-        [Dependency] private readonly IPrototypeManager _protos = default!;
+        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
         private ISharedSponsorsManager? _sponsors;
 
@@ -48,6 +82,7 @@ namespace Content.Server.Preferences.Managers
             _netManager.RegisterNetMessage<MsgSelectCharacter>(HandleSelectCharacterMessage);
             _netManager.RegisterNetMessage<MsgUpdateCharacter>(HandleUpdateCharacterMessage);
             _netManager.RegisterNetMessage<MsgDeleteCharacter>(HandleDeleteCharacterMessage);
+            _netManager.RegisterNetMessage<MsgUpdateConstructionFavorites>(HandleUpdateConstructionFavoritesMessage);
             _sawmill = _log.GetSawmill("prefs");
         }
 
@@ -58,7 +93,7 @@ namespace Content.Server.Preferences.Managers
 
             if (!_cachedPlayerPrefs.TryGetValue(userId, out var prefsData) || !prefsData.PrefsLoaded)
             {
-                _sawmill.Error($"User {userId} tried to modify preferences before they loaded.");
+                Logger.WarningS("prefs", $"User {userId} tried to modify preferences before they loaded.");
                 return;
             }
 
@@ -75,7 +110,7 @@ namespace Content.Server.Preferences.Managers
                 return;
             }
 
-            prefsData.Prefs = new PlayerPreferences(curPrefs.Characters, index, curPrefs.AdminOOCColor);
+            prefsData.Prefs = new PlayerPreferences(curPrefs.Characters, index, curPrefs.AdminOOCColor, curPrefs.ConstructionFavorites);
 
             if (ShouldStorePrefs(message.MsgChannel.AuthType))
             {
@@ -120,10 +155,26 @@ namespace Content.Server.Preferences.Managers
                 [slot] = profile
             };
 
-            prefsData.Prefs = new PlayerPreferences(profiles, slot, curPrefs.AdminOOCColor);
+            prefsData.Prefs = new PlayerPreferences(profiles, slot, curPrefs.AdminOOCColor, curPrefs.ConstructionFavorites);
 
             if (ShouldStorePrefs(session.Channel.AuthType))
                 await _db.SaveCharacterSlotAsync(userId, profile, slot);
+        }
+
+        public async Task SetConstructionFavorites(NetUserId userId, List<ProtoId<ConstructionPrototype>> favorites)
+        {
+            if (!_cachedPlayerPrefs.TryGetValue(userId, out var prefsData) || !prefsData.PrefsLoaded)
+            {
+                _sawmill.Error($"Tried to modify user {userId} preferences before they loaded.");
+                return;
+            }
+
+            var curPrefs = prefsData.Prefs!;
+            prefsData.Prefs = new PlayerPreferences(curPrefs.Characters, curPrefs.SelectedCharacterIndex, curPrefs.AdminOOCColor, favorites);
+
+            var session = _playerManager.GetSessionById(userId);
+            if (ShouldStorePrefs(session.Channel.AuthType))
+                await _db.SaveConstructionFavoritesAsync(userId, favorites);
         }
 
         private async void HandleDeleteCharacterMessage(MsgDeleteCharacter message)
@@ -133,7 +184,7 @@ namespace Content.Server.Preferences.Managers
 
             if (!_cachedPlayerPrefs.TryGetValue(userId, out var prefsData) || !prefsData.PrefsLoaded)
             {
-                _sawmill.Warning($"User {userId} tried to modify preferences before they loaded.");
+                Logger.WarningS("prefs", $"User {userId} tried to modify preferences before they loaded.");
                 return;
             }
 
@@ -150,7 +201,7 @@ namespace Content.Server.Preferences.Managers
             if (curPrefs.SelectedCharacterIndex == slot)
             {
                 // That ! on the end is because Rider doesn't like .NET 5.
-                var (ns, profile) = curPrefs.Characters.FirstOrDefault(p => p.Key != message.Slot);
+                var (ns, profile) = curPrefs.Characters.FirstOrDefault(p => p.Key != message.Slot)!;
                 if (profile == null)
                 {
                     // Only slot left, can't delete.
@@ -163,20 +214,52 @@ namespace Content.Server.Preferences.Managers
             var arr = new Dictionary<int, ICharacterProfile>(curPrefs.Characters);
             arr.Remove(slot);
 
-            prefsData.Prefs = new PlayerPreferences(arr, nextSlot ?? curPrefs.SelectedCharacterIndex, curPrefs.AdminOOCColor);
+            prefsData.Prefs = new PlayerPreferences(arr, nextSlot ?? curPrefs.SelectedCharacterIndex, curPrefs.AdminOOCColor, curPrefs.ConstructionFavorites);
 
-            if (!ShouldStorePrefs(message.MsgChannel.AuthType))
+            if (ShouldStorePrefs(message.MsgChannel.AuthType))
             {
+                if (nextSlot != null)
+                {
+                    await _db.DeleteSlotAndSetSelectedIndex(userId, slot, nextSlot.Value);
+                }
+                else
+                {
+                    await _db.SaveCharacterSlotAsync(userId, null, slot);
+                }
+            }
+        }
+
+        private async void HandleUpdateConstructionFavoritesMessage(MsgUpdateConstructionFavorites message)
+        {
+            var userId = message.MsgChannel.UserId;
+            if (!_cachedPlayerPrefs.TryGetValue(userId, out var prefsData) || !prefsData.PrefsLoaded)
+            {
+                _sawmill.Warning($"User {userId} tried to modify preferences before they loaded.");
                 return;
             }
 
-            if (nextSlot != null)
+            // Validate items in the message so that a modified client cannot freely store a gigabyte of arbitrary data.
+            var validatedSet = new HashSet<ProtoId<ConstructionPrototype>>();
+            foreach (var favorite in message.Favorites)
             {
-                await _db.DeleteSlotAndSetSelectedIndex(userId, slot, nextSlot.Value);
+                if (_prototypeManager.HasIndex(favorite))
+                    validatedSet.Add(favorite);
             }
-            else
+
+            var validatedList = message.Favorites;
+            if (validatedSet.Count != message.Favorites.Count)
             {
-                await _db.SaveCharacterSlotAsync(userId, null, slot);
+                // A difference in counts indicates that unrecognized or duplicate IDs are present.
+                _sawmill.Warning($"User {userId} sent invalid construction favorites.");
+                validatedList = validatedSet.ToList();
+            }
+
+            var curPrefs = prefsData.Prefs!;
+            prefsData.Prefs = new PlayerPreferences(curPrefs.Characters, curPrefs.SelectedCharacterIndex, curPrefs.AdminOOCColor, validatedList);
+
+            if (ShouldStorePrefs(message.MsgChannel.AuthType))
+            {
+                await _db.SaveConstructionFavoritesAsync(userId, validatedList);
             }
         }
 
@@ -191,7 +274,7 @@ namespace Content.Server.Preferences.Managers
                     PrefsLoaded = true,
                     Prefs = new PlayerPreferences(
                         new[] { new KeyValuePair<int, ICharacterProfile>(0, HumanoidCharacterProfile.Random()) },
-                        0, Color.Transparent)
+                        0, Color.Transparent, [])
                 };
 
                 _cachedPlayerPrefs[session.UserId] = prefsData;
@@ -243,17 +326,6 @@ namespace Content.Server.Preferences.Managers
             _netManager.ServerSendMessage(msg, session.Channel);
         }
 
-        public void SanitizeData(ICommonSession session)
-        {
-            // This is a separate step from the actual database load.
-            // Sanitizing preferences requires play time info due to loadouts.
-            // And play time info is loaded concurrently from the DB with preferences.
-            var data = _cachedPlayerPrefs[session.UserId];
-            DebugTools.Assert(data.Prefs != null);
-            data.Prefs = SanitizePreferences(session, data.Prefs, _dependencies);
-            _sawmill.Debug("here");
-        }
-
         public void OnClientDisconnected(ICommonSession session)
         {
             _cachedPlayerPrefs.Remove(session.UserId);
@@ -263,6 +335,7 @@ namespace Content.Server.Preferences.Managers
         {
             return _cachedPlayerPrefs.ContainsKey(session.UserId);
         }
+
 
         /// <summary>
         /// Tries to get the preferences from the cache
@@ -285,7 +358,6 @@ namespace Content.Server.Preferences.Managers
 
         /// <summary>
         /// Retrieves preferences for the given username from storage.
-        /// Creates and saves default preferences if they are not found, then returns them.
         /// </summary>
         public PlayerPreferences GetPreferences(NetUserId userId)
         {
@@ -300,7 +372,6 @@ namespace Content.Server.Preferences.Managers
 
         /// <summary>
         /// Retrieves preferences for the given username from storage or returns null.
-        /// Creates and saves default preferences if they are not found, then returns them.
         /// </summary>
         public PlayerPreferences? GetPreferencesOrNull(NetUserId? userId)
         {
@@ -323,15 +394,15 @@ namespace Content.Server.Preferences.Managers
             return prefs;
         }
 
-        private PlayerPreferences SanitizePreferences(ICommonSession session, PlayerPreferences prefs,
-            IDependencyCollection collection)
+        private PlayerPreferences SanitizePreferences(ICommonSession session, PlayerPreferences prefs, IDependencyCollection collection)
         {
             // Clean up preferences in case of changes to the game,
             // such as removed jobs still being selected.
             var sponsorPrototypes = _sponsors != null && _sponsors.TryGetServerPrototypes(session.UserId, out var prototypes) ? prototypes.ToArray() : []; // Corvax-Sponsors
-            return new PlayerPreferences(prefs.Characters.Select(p => new KeyValuePair<int, ICharacterProfile>(p.Key,
-                    p.Value.Validated(session, collection, sponsorPrototypes))), prefs.SelectedCharacterIndex, prefs.AdminOOCColor);
-            // WWDP EDIT END
+            return new PlayerPreferences(prefs.Characters.Select(p =>
+            {
+                return new KeyValuePair<int, ICharacterProfile>(p.Key, p.Value.Validated(session, collection, sponsorPrototypes));
+            }), prefs.SelectedCharacterIndex, prefs.AdminOOCColor, prefs.ConstructionFavorites);
         }
 
         public IEnumerable<KeyValuePair<NetUserId, ICharacterProfile>> GetSelectedProfilesForPlayers(

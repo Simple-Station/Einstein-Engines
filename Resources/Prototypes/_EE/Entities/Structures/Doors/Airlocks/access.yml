@@ -1,9 +1,0 @@
-# Solarian Alliance Navy
-- type: entity
-  parent: HighSecDoor
-  id: HighSecSANLocked
-  suffix: SAN, Locked
-  components:
-    - type: ContainerFill
-      containers:
-        board: [DoorElectronicsSAN]

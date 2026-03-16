@@ -3,5 +3,5 @@ reagent-effect-guidebook-suppress-pain =
         [1] подавляет
        *[other] подавляют
     } боль пациента
-reagent-effect-guidebook-adjust-consciousness = Помогает пациенту дольше оставаться в сознании.
-reagent-effect-guidebook-adjust-bone-damage = Уменьшает повреждение костей за счет { $amount }
+reagent-effect-guidebook-adjust-consciousness = Помогает пациенту дольше сохранять сознание. *временно отключено в WoundMed
+reagent-effect-guidebook-adjust-bone-damage = Уменьшает повреджение костей на { $amount }

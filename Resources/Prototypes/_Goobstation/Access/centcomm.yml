@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 starch <starchpersonal@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: accessLevel
   id: NanotrasenRepresentative
   name: id-card-access-level-ntr
@@ -5,14 +10,3 @@
 - type: accessLevel
   id: BlueshieldOfficer
   name: id-card-access-level-bso
-
-- type: accessLevel
-  id: Magistrate
-  name: id-card-access-level-mag
-
-- type: accessGroup
-  id: Dignitary
-  tags:
-  - NanotrasenRepresentative
-  - BlueshieldOfficer
-  - Magistrate

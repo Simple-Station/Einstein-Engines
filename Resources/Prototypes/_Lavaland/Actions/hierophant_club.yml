@@ -1,50 +1,57 @@
-# Spawn cross
-- type: entity
-  id: ActionHierophantSpawnCross
-  name: action-hierophant-spawn-cross
-  description: action-hierophant-spawn-cross-desc
-  components:
-  - type: WorldTargetAction
-    icon:
-      sprite: _Lavaland/Objects/Weapons/hierophant_club.rsi
-      state: icon
-    itemIconStyle: NoItem
-    event: !type:HierophantClubActivateCrossEvent
-    checkCanAccess: true
-    range: 8
-    priority: -21
-    useDelay: 1
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
+# SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Unlumination <144041835+Unlumy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+# SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-# Spawn damage area
+# Hierophant club
 - type: entity
-  id: ActionHierophantSpawnDamageArea
-  name: Зона урона
-  description: Порождает зону урона, которая расходится волнами до конца радиуса. Пусть они узрят твой гнев!
+  id: ActionHierophantClubTileMovement
+  name: Curse of Tile Movement
+  description: Makes the target move only by tiles.
+  categories: [ HideSpawnMenu ]
   components:
-  - type: WorldTargetAction
+  - type: Action
+    priority: -23
+    useDelay: 30
     icon:
-      sprite: _Lavaland/Objects/Weapons/hierophant_club.rsi
-      state: icon
+      sprite: /Textures/_Lavaland/Interface/Alerts/hierophantbeat.rsi
+      state: hierophant
     itemIconStyle: NoItem
-    event: !type:HierophantClubActivateDamageAreaEvent
-    checkCanAccess: true
-    range: 8
-    priority: -21
-    useDelay: 2
+  - type: TargetAction
+    range: 5
+  - type: EntityTargetAction
+    event: !type:ToggleTileMovementActionEvent
 
-# Spawn chaser
 - type: entity
-  id: ActionHierophantSpawnChaser
-  name: Преследователь
-  description: Порождает преследователя, который будет двигаться на указанный тайл.
+  id: ActionHierophantClubBlink
+  parent: ActionBaseHierophant
+  name: Blink
+  description: Teleports you to any position you can physically reach.
   components:
-  - type: WorldTargetAction
+  - type: Action
+    raiseOnUser: true
+    priority: -24
+    useDelay: 10
     icon:
       sprite: _Lavaland/Objects/Weapons/hierophant_club.rsi
       state: icon
-    itemIconStyle: NoItem
-    event: !type:HierophantClubActivateChaserEvent
-    checkCanAccess: true
-    range: 16
-    priority: -21
-    useDelay: 2
+  - type: TargetAction
+    range: 10
+  - type: WorldTargetAction
+    event: !type:MegafaunaBlinkActionEvent

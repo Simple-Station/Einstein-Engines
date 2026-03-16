@@ -1,7 +1,29 @@
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Morbo <exstrominer@gmail.com>
+# SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2021 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Interrobang01 <113810873+Interrobang01@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 ZeroDayDaemon <60460608+ZeroDayDaemon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 OctoRocket <88291550+OctoRocket@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Arkanic <50847107+Arkanic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 ## Traitor
 
 traitor-round-end-codewords = The codewords were: [color=White]{$codewords}[/color]
-traitor-round-end-agent-name = traitor
+traitor-round-end-agent-name = a traitor
 
 objective-issuer-syndicate = [color=crimson]The Syndicate[/color]
 objective-issuer-unknown = Unknown
@@ -24,18 +46,20 @@ traitor-death-match-end-round-description-entry = {$originalName}'s PDA, with {$
 
 # TraitorRole
 traitor-role-greeting =
-    You are an agent sent by {$corporation} on behalf of The Syndicate.
+    You are an agent sent by {$corporation} on behalf of [color = darkred]The Syndicate.[/color]
     Your objectives and codewords are listed in the character menu.
     Use your uplink to buy the tools you'll need for this mission.
     Death to Nanotrasen!
 traitor-role-codewords =
-    The codewords are:
-    {$codewords}.
-    Codewords can be used in regular conversation to identify yourself discretely to other syndicate agents.
-    Listen for them, and keep them secret.
+    The codewords are: [color = lightgray]
+    {$codewords}.[/color]
+    Codewords can be used in regular conversation to identify yourself discreetly to other traitors.
 traitor-role-uplink-code =
-    Set your ringtone to the notes {$code} to lock or unlock your uplink.
+    Your uplink code is [color=white]{$code}[/color]. Set it as your PDA ringtone to access the black market.
     Remember to lock it after, or the stations crew will easily open it too!
+traitor-role-uplink-pen-code =
+    Spin your pen to the combination [color = lightgray]{$code}[/color] to unlock your uplink.
+    The degrees represent rotation angles. The uplink locks automatically when closed.
 traitor-role-uplink-implant =
     Your uplink implant has been activated, access it from your hotbar.
     The uplink is secure unless someone removes it from your body.
@@ -44,5 +68,20 @@ traitor-role-uplink-implant =
 traitor-role-codewords-short =
     The codewords are:
     {$codewords}.
-traitor-role-uplink-code-short = Your uplink code is {$code}. Set it as your PDA ringtone to access uplink.
+
+traitor-role-uplink-code-short = Your uplink code is {$code}. Set it as your PDA ringtone to access the black market.
+traitor-role-uplink-pen-code-short = Your pen uplink code is {$code}. Spin the pen to unlock. Locks when closed.
 traitor-role-uplink-implant-short = Your uplink was implanted. Access it from your hotbar.
+
+traitor-role-moreinfo =
+    Find more information about your role in the character menu.
+
+traitor-role-nouplink =
+    Unfortunately you do not have access to the black market.
+
+traitor-role-allegiances =
+    Your allegiances:
+
+traitor-role-notes =
+    Additional notes:
+

@@ -1,10 +1,14 @@
-- files: ["mod.flip-flap.ogg"]
-  license: "Custom"
-  copyright: "Flip Flap by X-ceed is licensed under a short but clear license (see flip-flap.txt in Audio/Lobby) and is free for non-commercial use. Converted to mono OGG."
-  source: "http://aminet.net/package/mods/xceed/Flipflap"
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Hmeister-real <118129069+Hmeister-real@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 iNVERTED <alextjorgensen@gmail.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 pigeonpeas <147350443+pigeonpeas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-- files: ["title3.ogg"]
-  license: "CC-BY-NC-SA-3.0"
-  copyright: "Title3 by Cuboos. It is a remix of the song 'Tintin on the Moon'. Converted to mono OGG."
-  source: "https://www.youtube.com/watch?v=YKVmXn-Gv0M"
-
+- files: ["sunset.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Sunset by PigeonBeans. Exported in Mono OGG."
+  source: "https://soundcloud.com/pigeonbeans/sunset"

@@ -1,6 +1,32 @@
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Theomund <34360334+Theomund@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 faint <46868845+ficcialfaint@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2023 moonheart08 <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <drsmugleaf@gmail.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
+// SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Zachary Higgs <compgeek223@gmail.com>
+// SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Access.Systems;
-using Content.Server.Forensics;
 using Content.Shared.Access.Components;
 using Content.Shared.Forensics.Components;
 using Content.Shared.GameTicking;
@@ -34,7 +60,7 @@ namespace Content.Server.StationRecords.Systems;
 ///     depend on this general record being created. This is subject
 ///     to change.
 /// </summary>
-public sealed class StationRecordsSystem : SharedStationRecordsSystem
+public sealed partial class StationRecordsSystem : SharedStationRecordsSystem
 {
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly StationRecordKeyStorageSystem _keyStorage = default!;
@@ -97,12 +123,6 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
         TryComp<DnaComponent>(player, out var dnaComponent);
 
         CreateGeneralRecord(station, idUid.Value, profile.Name, profile.Age, profile.Species, profile.Gender, jobId, fingerprintComponent?.Fingerprint, dnaComponent?.DNA, profile, records);
-
-        string specie = profile.Species;
-        if (!string.IsNullOrEmpty(profile.Customspeciename))
-            specie = profile.Customspeciename;
-
-        CreateGeneralRecord(station, idUid.Value, profile.Name, profile.Age, specie, profile.Gender, jobId, fingerprintComponent?.Fingerprint, dnaComponent?.DNA, profile, records);
     }
 
 
@@ -392,12 +412,21 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
         if (filter.Value.Length == 0)
             return false;
 
+        if (filter.Type == StationRecordFilterType.Prints && someRecord.Fingerprint == null) // Goobstation - IPC
+            return true;
+        if (filter.Type == StationRecordFilterType.DNA && someRecord.DNA == null) // Goobstation - IPC
+            return true;
+
         var filterLowerCaseValue = filter.Value.ToLower();
 
         return filter.Type switch
         {
             StationRecordFilterType.Name =>
                 !someRecord.Name.ToLower().Contains(filterLowerCaseValue),
+            StationRecordFilterType.Job =>
+                !someRecord.JobTitle.ToLower().Contains(filterLowerCaseValue),
+            StationRecordFilterType.Species =>
+                !someRecord.Species.ToLower().Contains(filterLowerCaseValue),
             StationRecordFilterType.Prints => someRecord.Fingerprint != null
                 && IsFilterWithSomeCodeValue(someRecord.Fingerprint, filterLowerCaseValue),
             StationRecordFilterType.DNA => someRecord.DNA != null
@@ -406,10 +435,13 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
         };
     }
 
+    /* Goobstation - Criminal Records Wildcard
+    // Refer to StationRecordsSystem.Goob.cs for implementation
     private bool IsFilterWithSomeCodeValue(string value, string filter)
     {
         return !value.ToLower().StartsWith(filter);
     }
+    */
 
     /// <summary>
     /// Build a record listing of id to name for a station and filter.

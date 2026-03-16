@@ -1,3 +1,19 @@
+# SPDX-FileCopyrightText: 2022 Aru Moon <anton17082003@gmail.com>
+# SPDX-FileCopyrightText: 2022 Julian Giebel <juliangiebel@live.de>
+# SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 MishaUnity <81403616+MishaUnity@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Phill101 <28949487+Phill101@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Phill101 <holypics4@gmail.com>
+# SPDX-FileCopyrightText: 2024 ArchRBX <5040911+ArchRBX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kot <1192090+koteq@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lapatison <100279397+lapatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Эдуард <36124833+Ertanic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 device-pda-slot-component-slot-name-cartridge = Cartridge
 
 default-program-name = Program
@@ -64,11 +80,11 @@ nano-task-ui-description-placeholder = Get something important
 nano-task-ui-requester-label = Requester:
 nano-task-ui-requester-placeholder = John Nanotrasen
 nano-task-ui-item-title = Edit Task
-nano-task-printed-description = Description: {$description}
-nano-task-printed-requester = Requester: {$requester}
-nano-task-printed-high-priority = Priority: High
-nano-task-printed-medium-priority = Priority: Medium
-nano-task-printed-low-priority = Priority: Low
+nano-task-printed-description = [bold]Description[/bold]: {$description}
+nano-task-printed-requester = [bold]Requester[/bold]: {$requester}
+nano-task-printed-high-priority = [bold]Priority[/bold]: [color=red]High[/color]
+nano-task-printed-medium-priority = [bold]Priority[/bold]: Medium
+nano-task-printed-low-priority = [bold]Priority[/bold]: Low
 
 # Wanted list cartridge
 wanted-list-program-name = Wanted list
@@ -98,8 +114,3 @@ wanted-list-status-label = [color=darkgray]status:[/color] {$status ->
 wanted-list-history-table-time-col = Time
 wanted-list-history-table-reason-col = Crime
 wanted-list-history-table-initiator-col = Initiator
-
-glimmer-monitor-program-name = Glimmer Monitor
-glimmer-monitor-current-glimmer = Current Glimmer: {$glimmer}Ψ
-glimmer-monitor-interval = Interval
-glimmer-monitor-sync = Sync

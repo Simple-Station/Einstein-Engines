@@ -1,0 +1,1242 @@
+<!--
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
+# Заклинания Волшебника
+  <Table Columns="6">
+    <ColorBox>
+      <Box>
+        Название заклинания
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Стоимость
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Наличие мантии?
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Перезарядка
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Описание
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Призыв
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Недуг Мима
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Да
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        30/25/20/15/10
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Превращает вашу цель в мима, который не может нарушить свою клятву.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Н/Д
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Банановое касание
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Да
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        30/25/20/15/10
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Превращает вашу цель в неуклюжего клоуна.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]NWOLC YRGNA[/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Проклятие Клувня
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Да
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        60/40/20
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Превращает вашу цель в проклятого клувня.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]NWOLC EGNEVER[/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Волшебная ракета
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Да
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        20/13/6
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Выпускает медленно движущиеся самонаводящиеся оглушающие снаряды по ближайшим целям.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]FORTI GY AMA[/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Отключатель\nТехнологий
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Да
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        20/16/12/8/4
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Создает ЕМП взрыв большой площади.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]NEC CANTIO[/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Дым
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e422e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Нет
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        12/7/2
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Выпускает облако удушливого дыма.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Н/Д
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Отталкивание
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Да
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        40/33.75/27.5/21.25/15
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Отбрасывает все, что тебя окружает, прочь.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]GITTAH WEIGH[/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Остановить время
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Да
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        50/35/20
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Останавливает время в пространстве вокруг вас.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]TOKI YO TOMARE[/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Взрыв покойника
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e422e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Нет
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        10
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Взрывает труп, нанося урон и сбивая с ног всех вокруг. Заклинатель невосприимчив к взрыву.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]JAH ITH BER[/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Ослепление
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e422e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Нет
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        15/12/9/6/3
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Временно ослепляет цель.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]STI KALY[/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Связать душу
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e422e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Нет
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Н/Д
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Делает вас бессмертным, пока ваша филактерия цела.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]NECREM IMORTIUM![/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Мутация
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Да
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        40/30
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Превращает вас в халка с лазерными глазами на 30 секунд.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]BIRUZ BENNAR[/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Взрыв Теслы
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Да
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        30/23.25/16.5/9.75/3
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Выстреливает зарядом тесла по ближайшему врагу после 10-секундного заряда.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]UN'LTD P'WAH![/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Удар молнии
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e422e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Нет
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        8/6.75/5.5/4.25/3
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Стреляет молнией в вашу цель.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]P'WAH, UNLIM'TED P'WAH![/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Самонаводящийся ящик
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e422e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Нет
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        8/6.75/5.5/4.25/3
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Запускает самонаводящийся снаряд, который повреждает и сбивает цель с ног.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]ROBUSTIO![/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Карты заклинаний
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e422e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Нет
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        6/4/2
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Выпускает до 5 очередей карт самонаводящихся заклинаний.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]Sigi'lu M'Fan 'Tasia![/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Тайный шквал
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Да
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        60/40/20
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Позволяет вам быстро стрелять магическими разрядами.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Н/Д
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Призыв оружия
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Да
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        60/40/20
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Позволяет вам стрелять бесконечным потоком из винтовок с затвором.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Н/Д
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Проклятие Стойла
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e422e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Нет
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        15/9/3
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Проклинает вашу цель, заставляя ее носить маску животного и превращая ее речь в звериные звуки.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]KN'A FTAGHU, PUCK 'BTHNK![/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Крик Крови
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Да
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        60/50/40/30/20
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Проливает всю кровь цели.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]КРИЧИ ДЛЯ МЕНЯ!![/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Мгновенный призыв
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e422e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Нет
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        10
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Позволяет вам отметить любой предмет и вызвать его по своему желанию.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]GAR YOK[/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Телепорт
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Да
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        60/40/20
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Позволяет вам телепортироваться в любое место на станции.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]SCYAR NILA[/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Ловушки!
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Да
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        25/20/15/10/5
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Призовите 5 смертельных ловушек вокруг себя.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]CAVERE INSIDIAS[/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Призыв Пчел
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Да
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        50/30/10
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Вызывает рой разъяренных пчел.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]NOT THE BEES[/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Вызов Приматов
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Да
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        90/75/60/45/30
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Призывает разъяренных шимпанзе и горилл.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]OOGA OOGA OOGA!!!![/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Обескровливающий удар
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Да
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        15/10/5
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Позволяет вашему оружию наносить больший урон, а также забирать здоровье и кровь у ваших врагов.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]SHAPSDAY[/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Заклинания Чууни
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e422e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Нет
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Н/Д
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Заменяет вашу шляпу волшебника на несъемную медицинскую повязку на глазу, которая по-прежнему позволяет вам произносить заклинания, не снимая мантии. Для всех заклинаний требуются специальные заклинания. После произнесения заклинания немного заживает.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]...[/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Обмен
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e422e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Нет
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        25/15/5
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Меняйтесь позициями со своей целью.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Н/Д
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Прикосновение к душе
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Да
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Обменивает 20 единиц максимального здоровья на перезарядку всех ваших заклинаний.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]AT ANY COST![/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Метание\nМолний
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e422e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Нет
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Позволяет вам использовать пакет заклинаний "молния", который оглушает ваших врагов.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]LIGHTNINGBOLT!![/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Мерцание
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Да
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        3/2/1
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Случайным образом телепортирует вас на небольшое расстояние.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Н/Д
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Эфирное Хождение
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Да
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        30/22/14
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Делает вас невидимым и позволяет на короткое время проходить сквозь стены.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Н/Д
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Огненный шар
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e422e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Нет
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        6/4/2
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Стреляет взрывчатым огненным шаром в место щелчка.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]ONI'SOMA![/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Форма стержня
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Да
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        25/21.25/17.5/13.75/10
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        На короткое время превращает вас в неподвижный стержень.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]CLANG![/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Силовая стена
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e422e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Нет
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        10/8.75/7.5/6.25/5
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Создает магическую стену размером 3х1, через которую никто, кроме вас, не сможет пройти.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]TARCOL MINTI ZHERI[/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Заряд
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e422e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Нет
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        60/50/40/30/20
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Заряжает волшебные палочки, посохи или энергетические предметы.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]DI'RI CEL[/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Обмен сознаниями
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e422e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Нет
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        60/40/20
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Обмениваетесь сознаниями со своей целью.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]GIN'YU CAPAN![/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Поражение
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Да
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        60/40/20
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Уничтожает вашу цель.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]EI NATH![/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Стук
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e422e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Нет
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        10/6/2
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Открывает ближайшие двери и шкафчики.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]AULIE OXIN FIERA[/italic]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        Tile Movement
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e422e">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        No
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        10
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Toggles tile movement for the target.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        [italic]RUK'AT[/italic]
+      </Box>
+    </ColorBox>
+  </Table>
+</Document>

@@ -1,6 +1,18 @@
-<Document>
-# Drinks
-Knowing how to make a requested drink is important. Here are the different drinks in the game, including their recipes:
+<!--
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 
-<GuideReagentGroupEmbed Group="Drinks"/>
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
+# Напитки
+Умение приготовить запрашиваемый напиток важно. Вот различные напитки в игре, включая их рецепты:
+
+## Alcoholic Drinks
+<GuideReagentGroupEmbed Group="AlcoholicDrinks"/>
+
+## Non-Alcoholic Drinks
+<GuideReagentGroupEmbed Group="NonAlcoholicDrinks"/>
+<!-- Goobstation - Split the drinks page into separte 'Alcoholic' and 'Non-alcoholic' categories-->
 </Document>

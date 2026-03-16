@@ -1,6 +1,26 @@
+// SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 EmoGarbage404 <retron404@gmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 coolmankid12345 <55817627+coolmankid12345@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 coolmankid12345 <coolmankid12345@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Winkarst <74284083+Winkarst-cpu@users.noreply.github.co>
+// SPDX-FileCopyrightText: 2025 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Shared.Actions;
-using Content.Shared.Chat;
 using Content.Shared.Implants.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
@@ -8,18 +28,21 @@ using Content.Shared.Mobs;
 using Content.Shared.Tag;
 using JetBrains.Annotations;
 using Robust.Shared.Containers;
-using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Implants;
 
 public abstract class SharedSubdermalImplantSystem : EntitySystem
 {
-    [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
 
     public const string BaseStorageId = "storagebase";
+
+    private static readonly ProtoId<TagPrototype> MicroBombTag = "MicroBomb";
+    private static readonly ProtoId<TagPrototype> MacroBombTag = "MacroBomb";
 
     public override void Initialize()
     {
@@ -30,12 +53,11 @@ public abstract class SharedSubdermalImplantSystem : EntitySystem
         SubscribeLocalEvent<ImplantedComponent, MobStateChangedEvent>(RelayToImplantEvent);
         SubscribeLocalEvent<ImplantedComponent, AfterInteractUsingEvent>(RelayToImplantEvent);
         SubscribeLocalEvent<ImplantedComponent, SuicideEvent>(RelayToImplantEvent);
-        SubscribeLocalEvent<ImplantedComponent, TransformSpeakerNameEvent>(RelayToImplantEvent);
     }
 
     private void OnInsert(EntityUid uid, SubdermalImplantComponent component, EntGotInsertedIntoContainerMessage args)
     {
-        if (component.ImplantedEntity == null || _net.IsClient)
+        if (component.ImplantedEntity == null)
             return;
 
         if (!string.IsNullOrWhiteSpace(component.ImplantAction))
@@ -43,15 +65,16 @@ public abstract class SharedSubdermalImplantSystem : EntitySystem
             _actionsSystem.AddAction(component.ImplantedEntity.Value, ref component.Action, component.ImplantAction, uid);
         }
 
-        //replace micro bomb with macro bomb
-        if (_container.TryGetContainer(component.ImplantedEntity.Value, ImplanterComponent.ImplantSlotId, out var implantContainer) && _tag.HasTag(uid, "MacroBomb"))
+        // replace micro bomb with macro bomb
+        // TODO: this shouldn't be hardcoded here
+        if (_container.TryGetContainer(component.ImplantedEntity.Value, ImplanterComponent.ImplantSlotId, out var implantContainer) && _tag.HasTag(uid, MacroBombTag))
         {
             foreach (var implant in implantContainer.ContainedEntities)
             {
-                if (_tag.HasTag(implant, "MicroBomb"))
+                if (_tag.HasTag(implant, MicroBombTag))
                 {
                     _container.Remove(implant, implantContainer);
-                    QueueDel(implant);
+                    PredictedQueueDel(implant);
                 }
             }
         }
@@ -74,19 +97,19 @@ public abstract class SharedSubdermalImplantSystem : EntitySystem
         if (component.ImplantAction != null)
             _actionsSystem.RemoveProvidedActions(component.ImplantedEntity.Value, uid);
 
+        // <GoobStation>
+        var ev = new ImplantRemovedEvent(uid, component.ImplantedEntity.Value);
+        RaiseLocalEvent(uid, ref ev);
+        // </GoobStation>
+
         if (!_container.TryGetContainer(uid, BaseStorageId, out var storageImplant))
             return;
-
-        var entCoords = Transform(component.ImplantedEntity.Value).Coordinates;
 
         var containedEntites = storageImplant.ContainedEntities.ToArray();
 
         foreach (var entity in containedEntites)
         {
-            if (Terminating(entity))
-                continue;
-
-            _container.RemoveEntity(storageImplant.Owner, entity, force: true, destination: entCoords);
+            _transformSystem.DropNextTo(entity, uid);
         }
     }
 
@@ -94,7 +117,7 @@ public abstract class SharedSubdermalImplantSystem : EntitySystem
     /// Add a list of implants to a person.
     /// Logs any implant ids that don't have <see cref="SubdermalImplantComponent"/>.
     /// </summary>
-    public void AddImplants(EntityUid uid, IEnumerable<String> implants)
+    public void AddImplants(EntityUid uid, IEnumerable<EntProtoId> implants)
     {
         foreach (var id in implants)
         {
@@ -183,7 +206,7 @@ public abstract class SharedSubdermalImplantSystem : EntitySystem
         if (!_container.TryGetContainer(uid, ImplanterComponent.ImplantSlotId, out var implantContainer))
             return;
 
-        var relayEv = new ImplantRelayEvent<T>(args);
+        var relayEv = new ImplantRelayEvent<T>(args, uid);
         foreach (var implant in implantContainer.ContainedEntities)
         {
             if (args is HandledEntityEventArgs { Handled : true })
@@ -198,9 +221,12 @@ public sealed class ImplantRelayEvent<T> where T : notnull
 {
     public readonly T Event;
 
-    public ImplantRelayEvent(T ev)
+    public readonly EntityUid ImplantedEntity;
+
+    public ImplantRelayEvent(T ev, EntityUid implantedEntity)
     {
         Event = ev;
+        ImplantedEntity = implantedEntity;
     }
 }
 
@@ -223,3 +249,10 @@ public readonly struct ImplantImplantedEvent
         Implanted = implanted;
     }
 }
+
+/// <summary>
+/// Goobstation - Event that is raised whenever an implant is removed from an implanted entity.
+/// Raised on the implant.
+/// </summary>
+[ByRefEvent]
+public readonly record struct ImplantRemovedEvent(EntityUid Implant, EntityUid Implanted);

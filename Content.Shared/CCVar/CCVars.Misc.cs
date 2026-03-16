@@ -1,4 +1,9 @@
-﻿using Robust.Shared.Configuration;
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.CCVar;
 
@@ -38,7 +43,7 @@ public sealed partial class CCVars
     ///     some food object won't spam a user with flavors.
     /// </summary>
     public static readonly CVarDef<int>
-        FlavorLimit = CVarDef.Create("flavor.limit", 10, CVar.SERVERONLY);
+        FlavorLimit = CVarDef.Create("flavor.limit", 10, CVar.SERVER | CVar.REPLICATED);
 
     public static readonly CVarDef<string> DestinationFile =
         CVarDef.Create("autogen.destination_file", "", CVar.SERVER | CVar.SERVERONLY);
@@ -96,11 +101,17 @@ public sealed partial class CCVars
         CVarDef.Create("pointing.cooldown_seconds", 0.5f, CVar.SERVERONLY);
 
     /// <summary>
-    ///     The amount of time between NPC Silicons draining their battery in seconds.
+    ///     The last time the client recorded a valid connection to a game server.
+    ///     Used in conjunction with <see cref="PlaytimeMinutesToday"/> to track how long the player has been playing for the given day.
     /// </summary>
-    public static readonly CVarDef<float> SiliconNpcUpdateTime =
-        CVarDef.Create("silicon.npcupdatetime", 1.5f, CVar.SERVERONLY);
+    public static readonly CVarDef<string> PlaytimeLastConnectDate =
+        CVarDef.Create("playtime.last_connect_date", "", CVar.CLIENTONLY | CVar.ARCHIVE);
 
-    public static readonly CVarDef<bool> AllowScreamAction =
-        CVarDef.Create("vocal.allow_scream_action", true, CVar.SERVERONLY);
+    /// <summary>
+    ///     The total minutes that the client has spent since the date of last connection.
+    ///     This is reset to 0 when the last connect date is updated.
+    ///     Do not read this value directly, use <code>ClientsidePlaytimeTrackingManager</code> instead.
+    /// </summary>
+    public static readonly CVarDef<float> PlaytimeMinutesToday =
+        CVarDef.Create("playtime.minutes_today", 0f, CVar.CLIENTONLY | CVar.ARCHIVE);
 }

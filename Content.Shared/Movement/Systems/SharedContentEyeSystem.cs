@@ -1,8 +1,20 @@
+// SPDX-FileCopyrightText: 2023 Artjom <artjombebenin@gmail.com>
+// SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
+using Content.Shared._Goobstation.Wizard.ScryingOrb;
 using Content.Shared.Administration;
 using Content.Shared.Administration.Managers;
 using Content.Shared.Camera;
-using Content.Shared.CCVar;
 using Content.Shared.Ghost;
 using Content.Shared.Input;
 using Content.Shared.Movement.Components;
@@ -18,15 +30,14 @@ namespace Content.Shared.Movement.Systems;
 public abstract class SharedContentEyeSystem : EntitySystem
 {
     [Dependency] private readonly ISharedAdminManager _admin = default!;
+    [Dependency] private readonly SharedScryingOrbSystem _scrying = default!;
 
     // Admin flags required to ignore normal eye restrictions.
     public const AdminFlags EyeFlag = AdminFlags.Debug;
 
-    // Will be overridden according to config.
-    public readonly Vector2 DefaultZoom = Vector2.One;
-    public float ZoomMod { get; private set; } = 1f;
-    public int ZoomLevels { get; private set; } = 1;
-    public Vector2 MinZoom { get; private set; } = Vector2.One;
+    public const float ZoomMod = 1.5f;
+    public static readonly Vector2 DefaultZoom = Vector2.One;
+    public static readonly Vector2 MinZoom = DefaultZoom * (float)Math.Pow(ZoomMod, -3);
 
     [Dependency] private readonly SharedEyeSystem _eye = default!;
 
@@ -108,7 +119,7 @@ public abstract class SharedContentEyeSystem : EntitySystem
         if (args.SenderSession.AttachedEntity is not { } player)
             return;
 
-        if (!HasComp<GhostComponent>(player) && !_admin.IsAdmin(player))
+        if (!HasComp<GhostComponent>(player) && !_admin.IsAdmin(player) && !_scrying.IsScryingOrbEquipped(player)) // Goob edit
             return;
 
         if (TryComp<EyeComponent>(player, out var eyeComp))
@@ -145,6 +156,15 @@ public abstract class SharedContentEyeSystem : EntitySystem
 
     public void UpdateEyeOffset(Entity<EyeComponent> eye)
     {
+        var evAttempt = new GetEyeOffsetAttemptEvent();
+        RaiseLocalEvent(eye, ref evAttempt);
+
+        if (evAttempt.Cancelled)
+        {
+            _eye.SetOffset(eye, Vector2.Zero, eye);
+            return;
+        }
+
         var ev = new GetEyeOffsetEvent();
         RaiseLocalEvent(eye, ref ev);
 
@@ -158,6 +178,15 @@ public abstract class SharedContentEyeSystem : EntitySystem
     {
         if (!Resolve(uid, ref contentEye) || !Resolve(uid, ref eye))
             return;
+
+        var evAttempt = new GetEyePvsScaleAttemptEvent();
+        RaiseLocalEvent(uid, ref evAttempt);
+
+        if (evAttempt.Cancelled)
+        {
+            _eye.SetPvsScale((uid, eye), 1);
+            return;
+        }
 
         var ev = new GetEyePvsScaleEvent();
         RaiseLocalEvent(uid, ref ev);

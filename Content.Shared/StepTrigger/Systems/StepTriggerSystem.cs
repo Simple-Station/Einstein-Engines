@@ -1,6 +1,30 @@
+// SPDX-FileCopyrightText: 2022 Alex Klos <alexklos@prohobo.dev>
+// SPDX-FileCopyrightText: 2022 Alex Klos <alexklos@proton.me>
+// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2022 Ygg01 <y.laughing.man.y@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Adeinitas <147965189+adeinitas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Danger Revolution! <142105406+DangerRevolution@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 KISS <59531932+YuriyKiss@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Timemaster99 <57200767+Timemaster99@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2024 Yurii Kis <yurii.kis@smartteksas.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 no <165581243+pissdemon@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Gravity;
+using Content.Shared.Inventory; // Goobstation
 using Content.Shared.StepTrigger.Components;
-using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.Whitelist;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
@@ -16,21 +40,14 @@ public sealed class StepTriggerSystem : EntitySystem
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
-    private EntityQuery<MapGridComponent> _mapGridQuery;
-    private EntityQuery<TraitSpeedModifierComponent> _traitSpeedModifierQuery;
-    private EntityQuery<PhysicsComponent> _physicsQuery;
-
     public override void Initialize()
     {
-        _mapGridQuery = GetEntityQuery<MapGridComponent>();
-        _traitSpeedModifierQuery = GetEntityQuery<TraitSpeedModifierComponent>();
-        _physicsQuery = GetEntityQuery<PhysicsComponent>();
-
         UpdatesOutsidePrediction = true;
         SubscribeLocalEvent<StepTriggerComponent, AfterAutoHandleStateEvent>(TriggerHandleState);
 
         SubscribeLocalEvent<StepTriggerComponent, StartCollideEvent>(OnStartCollide);
         SubscribeLocalEvent<StepTriggerComponent, EndCollideEvent>(OnEndCollide);
+        SubscribeLocalEvent<StepTriggerCleanupComponent, EntityTerminatingEvent>(OnTerminating); // Goobstation - Fix
 #if DEBUG
         SubscribeLocalEvent<StepTriggerComponent, ComponentStartup>(OnStartup);
     }
@@ -52,7 +69,9 @@ public sealed class StepTriggerSystem : EntitySystem
         while (enumerator.MoveNext(out var uid, out var active, out var trigger, out var transform))
         {
             if (!Update(uid, trigger, transform, query))
+            {
                 continue;
+            }
 
             RemCompDeferred(uid, active);
         }
@@ -60,10 +79,13 @@ public sealed class StepTriggerSystem : EntitySystem
 
     private bool Update(EntityUid uid, StepTriggerComponent component, TransformComponent transform, EntityQuery<PhysicsComponent> query)
     {
-        if (!component.Active || component.Colliding.Count == 0)
+        if (!component.Active ||
+            component.Colliding.Count == 0)
+        {
             return true;
+        }
 
-        if (component.Blacklist != null && _mapGridQuery.TryComp(transform.GridUid, out var grid))
+        if (component.Blacklist != null && TryComp<MapGridComponent>(transform.GridUid, out var grid))
         {
             var positon = _map.LocalToTile(transform.GridUid.Value, grid, transform.Coordinates);
             var anch = _map.GetAnchoredEntitiesEnumerator(uid, grid, positon);
@@ -74,12 +96,16 @@ public sealed class StepTriggerSystem : EntitySystem
                     continue;
 
                 if (_whitelistSystem.IsBlacklistPass(component.Blacklist, ent.Value))
+                {
                     return false;
+                }
             }
         }
 
         foreach (var otherUid in component.Colliding)
+        {
             UpdateColliding(uid, component, transform, otherUid, query);
+        }
 
         return false;
     }
@@ -97,8 +123,9 @@ public sealed class StepTriggerSystem : EntitySystem
         if (!ourAabb.Intersects(otherAabb))
         {
             if (component.CurrentlySteppedOn.Remove(otherUid))
+            {
                 Dirty(uid, component);
-
+            }
             return;
         }
 
@@ -106,15 +133,13 @@ public sealed class StepTriggerSystem : EntitySystem
         // this is hard to explain
         var intersect = Box2.Area(otherAabb.Intersect(ourAabb));
         var ratio = Math.Max(intersect / Box2.Area(otherAabb), intersect / Box2.Area(ourAabb));
-        var requiredTriggeredSpeed = component.RequiredTriggeredSpeed;
-        if (_traitSpeedModifierQuery.TryComp(otherUid, out var speedModifier))
-            requiredTriggeredSpeed *= speedModifier.RequiredTriggeredSpeedModifier;
-
-        if (otherPhysics.LinearVelocity.Length() < requiredTriggeredSpeed
+        if (otherPhysics.LinearVelocity.Length() < component.RequiredTriggeredSpeed
             || component.CurrentlySteppedOn.Contains(otherUid)
             || ratio < component.IntersectRatio
             || !CanTrigger(uid, otherUid, component))
+        {
             return;
+        }
 
         if (component.StepOn)
         {
@@ -136,15 +161,24 @@ public sealed class StepTriggerSystem : EntitySystem
         if (!component.Active || component.CurrentlySteppedOn.Contains(otherUid))
             return false;
 
+        // Goobstation Change Start: Immunity checks
+        if (TryComp<StepTriggerImmuneComponent>(otherUid, out var stepTriggerImmuneComponent)
+            && component.TriggerGroups != null
+            && component.TriggerGroups.IsValid(stepTriggerImmuneComponent))
+            return false;
+        // Goobstation Change End
+
         // Can't trigger if we don't ignore weightless entities
         // and the entity is flying or currently weightless
         // Makes sense simulation wise to have this be part of steptrigger directly IMO
-        if (!component.IgnoreWeightless && _physicsQuery.TryComp(otherUid, out var physics) &&
+        if (!component.IgnoreWeightless && TryComp<PhysicsComponent>(otherUid, out var physics) &&
             (physics.BodyStatus == BodyStatus.InAir || _gravity.IsWeightless(otherUid, physics)))
             return false;
 
-        var msg = new StepTriggerAttemptEvent { Source = (uid, component), Tripper = otherUid };
+        var msg = new StepTriggerAttemptEvent { Source = uid, Tripper = otherUid };
+
         RaiseLocalEvent(uid, ref msg);
+        RaiseLocalEvent(otherUid, ref msg); // Goobstation - let enchants handle it too
 
         return msg.Continue && !msg.Cancelled;
     }
@@ -153,14 +187,20 @@ public sealed class StepTriggerSystem : EntitySystem
     {
         var otherUid = args.OtherEntity;
 
-        if (!args.OtherFixture.Hard
-            || !CanTrigger(uid, otherUid, component))
+        if (!args.OtherFixture.Hard)
+            return;
+
+        if (!CanTrigger(uid, otherUid, component))
             return;
 
         EnsureComp<StepTriggerActiveComponent>(uid);
 
         if (component.Colliding.Add(otherUid))
+        {
+            var cleanup = EnsureComp<StepTriggerCleanupComponent>(otherUid); // Goobstation - Fix
+            cleanup.StepTrigger = uid;
             Dirty(uid, component);
+        }
     }
 
     private void OnEndCollide(EntityUid uid, StepTriggerComponent component, ref EndCollideEvent args)
@@ -171,6 +211,7 @@ public sealed class StepTriggerSystem : EntitySystem
             return;
 
         component.CurrentlySteppedOn.Remove(otherUid);
+        RemComp<StepTriggerCleanupComponent>(otherUid); // Goobstation - Fix
         Dirty(uid, component);
 
         if (component.StepOn)
@@ -180,21 +221,29 @@ public sealed class StepTriggerSystem : EntitySystem
         }
 
         if (component.Colliding.Count == 0)
+        {
             RemCompDeferred<StepTriggerActiveComponent>(uid);
+        }
     }
 
     private void TriggerHandleState(EntityUid uid, StepTriggerComponent component, ref AfterAutoHandleStateEvent args)
     {
         if (component.Colliding.Count > 0)
+        {
             EnsureComp<StepTriggerActiveComponent>(uid);
+        }
         else
+        {
             RemCompDeferred<StepTriggerActiveComponent>(uid);
+        }
     }
 
     public void SetIntersectRatio(EntityUid uid, float ratio, StepTriggerComponent? component = null)
     {
-        if (!Resolve(uid, ref component)
-            || MathHelper.CloseToPercent(component.IntersectRatio, ratio))
+        if (!Resolve(uid, ref component))
+            return;
+
+        if (MathHelper.CloseToPercent(component.IntersectRatio, ratio))
             return;
 
         component.IntersectRatio = ratio;
@@ -203,8 +252,10 @@ public sealed class StepTriggerSystem : EntitySystem
 
     public void SetRequiredTriggerSpeed(EntityUid uid, float speed, StepTriggerComponent? component = null)
     {
-        if (!Resolve(uid, ref component)
-            || MathHelper.CloseToPercent(component.RequiredTriggeredSpeed, speed))
+        if (!Resolve(uid, ref component))
+            return;
+
+        if (MathHelper.CloseToPercent(component.RequiredTriggeredSpeed, speed))
             return;
 
         component.RequiredTriggeredSpeed = speed;
@@ -213,30 +264,61 @@ public sealed class StepTriggerSystem : EntitySystem
 
     public void SetActive(EntityUid uid, bool active, StepTriggerComponent? component = null)
     {
-        if (!Resolve(uid, ref component)
-            || active == component.Active)
+        if (!Resolve(uid, ref component))
+            return;
+
+        if (active == component.Active)
             return;
 
         component.Active = active;
         Dirty(uid, component);
     }
+
+    // Goobstation
+    public void SetIgnoreWeightless(EntityUid uid, bool ignore, StepTriggerComponent? component = null)
+    {
+        if (!Resolve(uid, ref component))
+            return;
+
+        if (ignore == component.IgnoreWeightless)
+            return;
+
+        component.IgnoreWeightless = ignore;
+        Dirty(uid, component);
+    }
+
+    private void OnTerminating(EntityUid uid, StepTriggerCleanupComponent component, ref EntityTerminatingEvent args) // Goobstation - Fix
+    {
+        if (!TryComp<StepTriggerComponent>(component.StepTrigger, out var step))
+            return;
+
+        if (step.Colliding.Remove(uid) || step.CurrentlySteppedOn.Remove(uid))
+            Dirty(component.StepTrigger, step);
+    }
+
+}
+
+[ByRefEvent]
+public struct StepTriggerAttemptEvent : IInventoryRelayEvent // Goobstation
+{
+    SlotFlags IInventoryRelayEvent.TargetSlots => SlotFlags.FEET | SlotFlags.OUTERCLOTHING; // Goobstation
+    public EntityUid Source;
+    public EntityUid Tripper;
+    public bool Continue;
+    /// <summary>
+    ///     Set by systems which wish to cancel the step trigger event, regardless of event ordering.
+    /// </summary>
+    public bool Cancelled;
 }
 
 /// <summary>
-///     Raised at the beginning of a step trigger, and before entering the checks.
-///     Allows for entities to end the steptrigger early via args.Cancelled.
-/// </summary>
-[ByRefEvent]
-public record struct StepTriggerAttemptEvent(Entity<StepTriggerComponent> Source, EntityUid Tripper, bool Continue, bool Cancelled);
-
-/// <summary>
-///     Raised when an entity stands on a steptrigger initially (assuming it has both on and off states).
+/// Raised when an entity stands on a steptrigger initially (assuming it has both on and off states).
 /// </summary>
 [ByRefEvent]
 public readonly record struct StepTriggeredOnEvent(EntityUid Source, EntityUid Tripper);
 
 /// <summary>
-///     Raised when an entity leaves a steptrigger if it has on and off states OR when an entity intersects a steptrigger.
+/// Raised when an entity leaves a steptrigger if it has on and off states OR when an entity intersects a steptrigger.
 /// </summary>
 [ByRefEvent]
 public readonly record struct StepTriggeredOffEvent(EntityUid Source, EntityUid Tripper);

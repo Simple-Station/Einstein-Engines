@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
@@ -8,10 +13,7 @@ namespace Content.Shared.Pinpointer;
 /// </summary>
 [RegisterComponent, NetworkedComponent]
 [Access(typeof(SharedNavMapSystem))]
-public sealed partial class ConfigurableNavMapBeaconComponent : Component
-{
-
-}
+public sealed partial class ConfigurableNavMapBeaconComponent : Component;
 
 [Serializable, NetSerializable]
 public sealed class NavMapBeaconConfigureBuiMessage : BoundUserInterfaceMessage
@@ -31,11 +33,11 @@ public sealed class NavMapBeaconConfigureBuiMessage : BoundUserInterfaceMessage
 [Serializable, NetSerializable]
 public enum NavMapBeaconUiKey : byte
 {
-    Key
+    Key,
 }
 
 [Serializable, NetSerializable]
 public enum NavMapBeaconVisuals : byte
 {
-    Enabled
+    Enabled,
 }

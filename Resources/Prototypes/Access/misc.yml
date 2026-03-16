@@ -1,3 +1,17 @@
+# SPDX-FileCopyrightText: 2022 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Jeff <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2023 Puro <103608145+PuroSlavKing@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 PoTeletubby <108604614+PoTeletubby@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: accessGroup
   id: AllAccess
   tags:
@@ -13,7 +27,7 @@
   - Security
   - Detective
   - Armory
-  #- Brig #Delta V Removed
+  - Brig
   - Lawyer
   - Engineering
   - Medical
@@ -34,26 +48,8 @@
   - Atmospherics
   - GenpopEnter
   - GenpopLeave
-  - Mail # Nyanotrasen - MailCarrier, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Cargo/mail-carrier.yml
-  - Orders # DeltaV - Orders, see Resources/Prototypes/DeltaV/Access/cargo.yml
-  - Mantis # DeltaV - Mantis, see Resources/Prototypes/DeltaV/Access/epistemics.yml
-  - Paramedic # DeltaV - Add Paramedic access
-  - Psychologist # DeltaV - Add Psychologist access
-  - Boxer # DeltaV - Add Boxer access
-  - Clown # DeltaV - Add Clown access
-  - Library # DeltaV - Add Library access
-  - Mime # DeltaV - Add Mime access
-  - Musician # DeltaV - Add Musician access
-  - Reporter # DeltaV - Add Reporter access
-  - Zookeeper # DeltaV - Add Zookeeper access
-  - Justice # DeltaV - Add Justice dept access
-  - ChiefJustice # DeltaV - Add Chief Justice access
-  - Prosecutor # DeltaV - Add Prosecutor access
-  - Clerk # DeltaV - Add Clerk access
-  - Corpsman # DeltaV - Add Corpsman access
-  - BlueshieldOfficer # Goobstation - Add BSO Access
-  - NanotrasenRepresentative # Goobstation - Add NTR Access
-  - Magistrate # Goobstation - Add Magistrate Access
+  - Robotics #Goob
+  - Journalism #Goob
 
 - type: accessGroup
   id: General

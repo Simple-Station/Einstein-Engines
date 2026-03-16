@@ -1,3 +1,14 @@
+// SPDX-FileCopyrightText: 2023 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 BramvanZijp <56019239+BramvanZijp@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Database;
@@ -53,7 +64,7 @@ public sealed class BatteryWeaponFireModesSystem : EntitySystem
         if (component.FireModes.Count < 2)
             return;
 
-        if (TryComp<AccessReaderComponent>(uid, out var accessReader) && !_accessReaderSystem.IsAllowed(args.User, uid, accessReader))
+        if (!_accessReaderSystem.IsAllowed(args.User, uid))
             return;
 
         for (var i = 0; i < component.FireModes.Count; i++)
@@ -68,11 +79,11 @@ public sealed class BatteryWeaponFireModesSystem : EntitySystem
                 Category = VerbCategory.SelectType,
                 Text = entProto.Name,
                 Disabled = i == component.CurrentFireMode,
-                Impact = LogImpact.Low,
+                Impact = LogImpact.Medium,
                 DoContactInteraction = true,
                 Act = () =>
                 {
-                    SetFireMode(uid, component, index, args.User);
+                    TrySetFireMode(uid, component, index, args.User);
                 }
             };
 
@@ -86,27 +97,24 @@ public sealed class BatteryWeaponFireModesSystem : EntitySystem
             return;
 
         args.Handled = true;
-        if (component.FireModes.Count < 2)
-            return;
-
-        if (TryComp<AccessReaderComponent>(uid, out var accessReader) && !_accessReaderSystem.IsAllowed(args.User, uid, accessReader))
-            return;
-
-        CycleFireMode(uid, component, args.User);
+        TryCycleFireMode(uid, component, args.User);
     }
 
-    private void CycleFireMode(EntityUid uid, BatteryWeaponFireModesComponent component, EntityUid user)
+    public void TryCycleFireMode(EntityUid uid, BatteryWeaponFireModesComponent component, EntityUid? user = null)
     {
         if (component.FireModes.Count < 2)
             return;
 
         var index = (component.CurrentFireMode + 1) % component.FireModes.Count;
-        SetFireMode(uid, component, index, user);
+        TrySetFireMode(uid, component, index, user);
     }
 
     public bool TrySetFireMode(EntityUid uid, BatteryWeaponFireModesComponent component, int index, EntityUid? user = null)
     {
         if (index < 0 || index >= component.FireModes.Count)
+            return false;
+
+        if (user != null && !_accessReaderSystem.IsAllowed(user.Value, uid))
             return false;
 
         SetFireMode(uid, component, index, user);
@@ -120,14 +128,14 @@ public sealed class BatteryWeaponFireModesSystem : EntitySystem
         component.CurrentFireMode = index;
         Dirty(uid, component);
 
-        if (!_prototypeManager.TryIndex<EntityPrototype>(fireMode.Prototype, out var prototype))
-            return;
+        if (_prototypeManager.TryIndex<EntityPrototype>(fireMode.Prototype, out var prototype))
+        {
+            if (TryComp<AppearanceComponent>(uid, out var appearance))
+                _appearanceSystem.SetData(uid, BatteryWeaponFireModeVisuals.State, prototype.ID, appearance);
 
-        if (TryComp<AppearanceComponent>(uid, out var appearance))
-            _appearanceSystem.SetData(uid, BatteryWeaponFireModeVisuals.State, prototype.ID, appearance);
-
-        if (user != null)
-            _popupSystem.PopupClient(Loc.GetString("gun-set-fire-mode", ("mode", prototype.Name)), uid, user.Value);
+            if (user != null)
+                _popupSystem.PopupClient(Loc.GetString("gun-set-fire-mode", ("mode", prototype.Name)), uid, user.Value);
+        }
 
         if (TryComp(uid, out ProjectileBatteryAmmoProviderComponent? projectileBatteryAmmoProviderComponent))
         {
@@ -141,6 +149,7 @@ public sealed class BatteryWeaponFireModesSystem : EntitySystem
             projectileBatteryAmmoProviderComponent.Capacity = (int)Math.Round(projectileBatteryAmmoProviderComponent.Capacity / FireCostDiff);
 
             Dirty(uid, projectileBatteryAmmoProviderComponent);
+
             var updateClientAmmoEvent = new UpdateClientAmmoEvent();
             RaiseLocalEvent(uid, ref updateClientAmmoEvent);
         }

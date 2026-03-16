@@ -22,6 +22,12 @@ public sealed partial class FoodSequenceStartPointComponent : Component
     public ProtoId<TagPrototype> Key = string.Empty;
 
     /// <summary>
+    /// Goob - Can we put anything on the food?
+    /// </summary>
+    [DataField]
+    public bool AcceptAll;
+
+    /// <summary>
     /// The maximum number of layers of food that can be placed on this item.
     /// </summary>
     [DataField]
@@ -145,6 +151,11 @@ public partial record struct FoodSequenceVisualLayer
     /// The offset of a particular layer. Allows a little position randomization of each layer.
     /// </summary>
     public Vector2 LocalOffset { get; set; } = Vector2.Zero;
+
+    /// <summary>
+    /// Goob - The original entity prototype this layer was made from, if any.
+    /// </summary>
+    public EntProtoId? EntProto;
 
     public FoodSequenceVisualLayer(ProtoId<FoodSequenceElementPrototype> proto,
         SpriteSpecifier? sprite,

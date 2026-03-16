@@ -1,8 +1,16 @@
-﻿<mapping:MappingActionsButton
+<!--
+SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<mapping:MappingActionsButton
     xmlns="https://spacestation14.io"
     xmlns:mapping="clr-namespace:Content.Client.Mapping"
-    StyleClasses="ButtonSquare" ToggleMode="True" SetSize="48 48" Margin="0 0 5 0"
+    StyleClasses="ButtonSquare" ToggleMode="True" SetSize="32 32" Margin="0 0 5 0"
     TooltipDelay="0">
-    <TextureRect Name="Texture" Access="Public" Stretch="KeepAspectCentered" SetSize="24 24"
+    <TextureRect Name="Texture" Access="Public" Stretch="Scale" SetSize="16 16"
                  HorizontalAlignment="Center" VerticalAlignment="Center" />
 </mapping:MappingActionsButton>

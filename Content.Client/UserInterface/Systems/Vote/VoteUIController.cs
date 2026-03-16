@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Client.UserInterface.Screens;
 using Content.Client.UserInterface.Systems.Gameplay;
 using Content.Client.Voting;
@@ -23,11 +28,11 @@ public sealed class VoteUIController : UIController
     {
         switch (UIManager.ActiveScreen)
         {
+            case DefaultGameScreen game:
+                _votes.SetPopupContainer(game.VoteMenu);
+                break;
             case SeparatedChatGameScreen separated:
                 _votes.SetPopupContainer(separated.VoteMenu);
-                break;
-            case OverlayChatGameScreen overlay:
-                _votes.SetPopupContainer(overlay.VoteMenu);
                 break;
         }
     }

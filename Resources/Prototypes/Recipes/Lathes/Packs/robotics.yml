@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 ImHoks <imhokzzzz@gmail.com>
+# SPDX-FileCopyrightText: 2025 RatherUncreative <RatherUncreativeName@proton.me>
+# SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 ## Static
 
 - type: latheRecipePack
@@ -7,21 +17,13 @@
   - PositronicBrain
   - SciFlash
   - CyborgEndoskeleton
-  # EE EDIT START
-  - MechAirTank
-  - MechThruster
-  # EE EDIT END
 
 - type: latheRecipePack
   id: BorgModulesStatic
   recipes:
+  - BorgModuleTool
   - BorgModuleCable
   - BorgModuleFireExtinguisher
-  - BorgModuleRadiationDetection
-  - BorgModuleTool
-  # EE EDIT START
-  - BorgModuleSurgery
-  # EE EDIT END
 
 - type: latheRecipePack
   id: BorgLimbsStatic
@@ -39,27 +41,17 @@
   id: Robotics
   recipes:
   - ProximitySensor
-  # EE EDIT START
-  - ReverseMMI
-  # EE EDIT END
+  - Drone
+  - AiRemoteBrain
 
 - type: latheRecipePack
   id: BorgModules
   recipes:
   - BorgModuleAdvancedCleaning
   - BorgModuleAdvancedTool
-  - BorgModuleGPS
-  - BorgModuleArtifact
-  - BorgModuleAnomaly
-  - BorgModuleGardening
-  - BorgModuleHarvesting
-  - BorgModuleDefibrillator
-  - BorgModuleAdvancedTreatment
-  # EE EDIT START
-  - BorgModulePka
-  - BorgModuleAdvancedSurgery
-  - BorgModuleJetpack
-  # EE EDIT END
+  # - BorgModuleAdvancedClowning # goobedit
+  # - BorgModuleAdvancedChemical # Goob edit
+  - BorgModuleAdvancedMining
 
 - type: latheRecipePack
   id: MechParts
@@ -80,27 +72,6 @@
   - HamtrLLeg
   - HamtrRLeg
   - VimHarness
-  # EE EDIT START
-  - ClarkeHarness
-  - ClarkeHead
-  - ClarkeLArm
-  - ClarkeRArm
-  - ClarkeTreads
-  - DurandHarness
-  - DurandArmor
-  - DurandHead
-  - DurandLArm
-  - DurandLLeg
-  - DurandRArm
-  - DurandRLeg
-  - GygaxHarness
-  - GygaxArmor
-  - GygaxHead
-  - GygaxLArm
-  - GygaxLLeg
-  - GygaxRArm
-  - GygaxRLeg
-  # EE EDIT END
 
 - type: latheRecipePack
   id: MechEquipment
@@ -108,14 +79,3 @@
     - MechEquipmentGrabber
     - MechEquipmentHorn
     - MechEquipmentGrabberSmall
-    # EE EDIT START
-    - PowerCageMedium
-    - PowerCageSmall
-    - RipleyMKIIHarness
-    - RipleyUpgradeKit
-    - MechEquipmentDrill
-    - MechEquipmentDrillDiamond
-    - MechEquipmentKineticAccelerator
-    - MechEquipmentHonkerBananaMortar
-    - MechEquipmentHonkerMousetrapMortar
-    # EE EDIT END

@@ -1,6 +1,49 @@
+// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Alice "Arimah" Heurlin <30327355+arimah@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 HS <81934438+HolySSSS@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pspritechologist <naaronn@gmail.com>
+// SPDX-FileCopyrightText: 2024 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 SkaldetSkaeg <impotekh@gmail.com>
+// SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 Truoizys <153248924+Truoizys@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 osjarw <62134478+osjarw@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Coolsurf6 <coolsurf24@yahoo.com.au>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Actions;
+using Content.Shared.Actions.Components;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Events;
 using Content.Shared.Damage.ForceSay;
 using Content.Shared.Emoting;
 using Content.Shared.Examine;
@@ -12,14 +55,15 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Pointing;
 using Content.Shared.Popups;
-using Content.Shared.Rejuvenate;
 using Content.Shared.Slippery;
 using Content.Shared.Sound;
 using Content.Shared.Sound.Components;
 using Content.Shared.Speech;
-using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Content.Shared.Stunnable;
+using Content.Shared.Traits.Assorted;
 using Content.Shared.Verbs;
+using Content.Shared.Zombies;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -34,10 +78,12 @@ public sealed partial class SleepingSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedEmitSoundSystem _emitSound = default!;
-    [Dependency] private readonly StatusEffectsSystem _statusEffectsSystem = default!;
+    [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
+    [Dependency] private readonly SharedStunSystem _stun = default!;
 
     public static readonly EntProtoId SleepActionId = "ActionSleep";
     public static readonly EntProtoId WakeActionId = "ActionWake";
+    public static readonly EntProtoId StatusEffectForcedSleeping = "StatusEffectForcedSleeping";
 
     public override void Initialize()
     {
@@ -50,6 +96,7 @@ public sealed partial class SleepingSystem : EntitySystem
         SubscribeLocalEvent<MobStateComponent, SleepActionEvent>(OnSleepAction);
 
         SubscribeLocalEvent<SleepingComponent, DamageChangedEvent>(OnDamageChanged);
+        SubscribeLocalEvent<SleepingComponent, EntityZombifiedEvent>(OnZombified);
         SubscribeLocalEvent<SleepingComponent, MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<SleepingComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<SleepingComponent, SpeakAttemptEvent>(OnSpeakAttempt);
@@ -60,12 +107,14 @@ public sealed partial class SleepingSystem : EntitySystem
         SubscribeLocalEvent<SleepingComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<SleepingComponent, GetVerbsEvent<AlternativeVerb>>(AddWakeVerb);
         SubscribeLocalEvent<SleepingComponent, InteractHandEvent>(OnInteractHand);
-        SubscribeLocalEvent<SleepingComponent, ComponentRemove>(OnComponentRemoved);
-        SubscribeLocalEvent<SleepingComponent, RejuvenateEvent>(OnRejuvenate);
+        SubscribeLocalEvent<SleepingComponent, StunEndAttemptEvent>(OnStunEndAttempt);
+        SubscribeLocalEvent<SleepingComponent, StandUpAttemptEvent>(OnStandUpAttempt);
 
-        SubscribeLocalEvent<ForcedSleepingComponent, ComponentInit>(OnInit);
+        SubscribeLocalEvent<ForcedSleepingStatusEffectComponent, StatusEffectAppliedEvent>(OnStatusEffectApplied);
         SubscribeLocalEvent<SleepingComponent, UnbuckleAttemptEvent>(OnUnbuckleAttempt);
         SubscribeLocalEvent<SleepingComponent, EmoteAttemptEvent>(OnEmoteAttempt);
+
+        SubscribeLocalEvent<SleepingComponent, BeforeForceSayEvent>(OnChangeForceSay, after: new []{typeof(PainNumbnessSystem)});
     }
 
     private void OnUnbuckleAttempt(Entity<SleepingComponent> ent, ref UnbuckleAttemptEvent args)
@@ -92,12 +141,6 @@ public sealed partial class SleepingSystem : EntitySystem
         TrySleeping((ent, ent.Comp));
     }
 
-    private void OnRejuvenate(Entity<SleepingComponent> ent, ref RejuvenateEvent args)
-    {
-        // WAKE UP!!!
-        RemComp<SleepingComponent>(ent);
-    }
-
     /// <summary>
     /// when sleeping component is added or removed, we do some stuff with other components.
     /// </summary>
@@ -105,10 +148,7 @@ public sealed partial class SleepingSystem : EntitySystem
     {
         if (args.FellAsleep)
         {
-            // Expiring status effects would remove the components needed for sleeping
-            _statusEffectsSystem.TryRemoveStatusEffect(ent.Owner, "Stun");
-            _statusEffectsSystem.TryRemoveStatusEffect(ent.Owner, "KnockedDown");
-
+            // Just in case we're not using the sleeping status
             EnsureComp<StunnedComponent>(ent);
             EnsureComp<KnockedDownComponent>(ent);
 
@@ -128,29 +168,18 @@ public sealed partial class SleepingSystem : EntitySystem
             return;
         }
 
-        RemComp<StunnedComponent>(ent);
-        RemComp<KnockedDownComponent>(ent);
+        _stun.TryUnstun(ent.Owner);
+        _stun.TryStanding(ent.Owner);
+
         RemComp<SpamEmitSoundComponent>(ent);
     }
 
     private void OnMapInit(Entity<SleepingComponent> ent, ref MapInitEvent args)
     {
-        ent.Comp.SleepingSince = _gameTiming.CurTime;
-
         var ev = new SleepStateChangedEvent(true);
         RaiseLocalEvent(ent, ref ev);
         _blindableSystem.UpdateIsBlind(ent.Owner);
         _actionsSystem.AddAction(ent, ref ent.Comp.WakeAction, WakeActionId, ent);
-    }
-
-    private void OnComponentRemoved(Entity<SleepingComponent> ent, ref ComponentRemove args)
-    {
-        _actionsSystem.RemoveAction(ent.Owner, ent.Comp.WakeAction);
-
-        var ev = new SleepStateChangedEvent(false);
-        RaiseLocalEvent(ent, ref ev);
-
-        _blindableSystem.UpdateIsBlind(ent.Owner);
     }
 
     private void OnSpeakAttempt(Entity<SleepingComponent> ent, ref SpeakAttemptEvent args)
@@ -186,6 +215,17 @@ public sealed partial class SleepingSystem : EntitySystem
         args.Cancelled = true;
     }
 
+    private void OnStunEndAttempt(Entity<SleepingComponent> ent, ref StunEndAttemptEvent args)
+    {
+        args.Cancelled = true;
+    }
+
+    private void OnStandUpAttempt(Entity<SleepingComponent> ent, ref StandUpAttemptEvent args)
+    {
+        // Shh the Urist McHands is sleeping...
+        args.Cancelled = true;
+    }
+
     private void OnExamined(Entity<SleepingComponent> ent, ref ExaminedEvent args)
     {
         if (args.IsInDetailsRange)
@@ -199,7 +239,6 @@ public sealed partial class SleepingSystem : EntitySystem
         if (!args.CanInteract || !args.CanAccess)
             return;
 
-        var target = args.Target;
         var user = args.User;
         AlternativeVerb verb = new()
         {
@@ -232,9 +271,25 @@ public sealed partial class SleepingSystem : EntitySystem
         if (!args.DamageIncreased || args.DamageDelta == null)
             return;
 
+        /* Shitmed Change Start - Surgery needs this, sorry! If the nocturine gamers get too feisty
+        I'll probably just increase the threshold */
+
+
         if (args.DamageDelta.GetTotal() >= ent.Comp.WakeThreshold
-            && !HasComp<ForcedSleepingComponent>(ent))
+            && !_statusEffect.HasEffectComp<ForcedSleepingStatusEffectComponent>(ent))
             TryWaking((ent, ent.Comp));
+
+        // Shitmed Change End
+    }
+
+    /// <summary>
+    /// Wake up on being zombified.
+    /// In some cases, zombification might theoretically occur without a mob state change or being damaged
+    /// </summary>
+    /// //TODO Perhaps a generic component should be introduced that guarantees that a mob will wake up immediately and can't go to sleep again
+    private void OnZombified(Entity<SleepingComponent> ent, ref EntityZombifiedEvent args)
+    {
+        TryWaking((ent, ent.Comp), true);
     }
 
     /// <summary>
@@ -253,9 +308,23 @@ public sealed partial class SleepingSystem : EntitySystem
             _emitSound.SetEnabled((ent, spam), args.NewMobState == MobState.Alive);
     }
 
-    private void OnInit(Entity<ForcedSleepingComponent> ent, ref ComponentInit args)
+    private void OnStatusEffectApplied(Entity<ForcedSleepingStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
     {
-        TrySleeping(ent.Owner);
+        // Applying state check needed so we don't add SleepingComp during
+        // entity reset due to the status effect getting inserted
+        if (!_gameTiming.ApplyingState)
+            TrySleeping(args.Target);
+    }
+
+    private void Wake(Entity<SleepingComponent> ent)
+    {
+        RemComp<SleepingComponent>(ent);
+        _actionsSystem.RemoveAction(ent.Owner, ent.Comp.WakeAction);
+
+        var ev = new SleepStateChangedEvent(false);
+        RaiseLocalEvent(ent, ref ev);
+
+        _blindableSystem.UpdateIsBlind(ent.Owner);
     }
 
     /// <summary>
@@ -301,7 +370,7 @@ public sealed partial class SleepingSystem : EntitySystem
         if (!Resolve(ent, ref ent.Comp, false))
             return false;
 
-        if (!force && HasComp<ForcedSleepingComponent>(ent))
+        if (!force && _statusEffect.HasEffectComp<ForcedSleepingStatusEffectComponent>(ent))
         {
             if (user != null)
             {
@@ -317,7 +386,8 @@ public sealed partial class SleepingSystem : EntitySystem
             _popupSystem.PopupClient(Loc.GetString("wake-other-success", ("target", Identity.Entity(ent, EntityManager))), ent, user);
         }
 
-        return RemComp<SleepingComponent>(ent);
+        Wake((ent, ent.Comp));
+        return true;
     }
 
     /// <summary>
@@ -326,6 +396,11 @@ public sealed partial class SleepingSystem : EntitySystem
     public void OnEmoteAttempt(Entity<SleepingComponent> ent, ref EmoteAttemptEvent args)
     {
         args.Cancel();
+    }
+
+    private void OnChangeForceSay(Entity<SleepingComponent> ent, ref BeforeForceSayEvent args)
+    {
+        args.Prefix = ent.Comp.ForceSaySleepDataset;
     }
 }
 
@@ -338,17 +413,4 @@ public sealed partial class WakeActionEvent : InstantActionEvent;
 /// Raised on an entity when they fall asleep or wake up.
 /// </summary>
 [ByRefEvent]
-public record struct SleepStateChangedEvent
-{
-    public bool FellAsleep = false;
-
-    /// <summary>
-    ///     The amount of time this entity slept for. Null if <see cref="FellAsleep"/> is true.
-    /// </summary>
-    public TimeSpan? TimeSlept;
-
-    public SleepStateChangedEvent(bool fellAsleep)
-    {
-        FellAsleep = fellAsleep;
-    }
-}
+public record struct SleepStateChangedEvent(bool FellAsleep);

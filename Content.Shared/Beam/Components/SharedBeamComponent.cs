@@ -1,5 +1,12 @@
-﻿﻿using Robust.Shared.Audio;
-using Robust.Shared.Map;
+// SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Robust.Shared.Audio;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Beam.Components;
@@ -47,14 +54,11 @@ public abstract partial class SharedBeamComponent : Component
     public SoundSpecifier? Sound;
 
     /// <summary>
-    /// Allow the sprite to be randomized.
+    /// Goobstation
+    /// Beams of the same family have unique index. Used to make sure lightning hits an entity no more than once.
     /// </summary>
-    /// <remarks>
-    /// Ported from imp
-    /// </remarks>
-    [ViewVariables]
-    [DataField("allowSpriteOverwrite")]
-    public bool AllowSpriteOverwrite = true;
+    [ViewVariables(VVAccess.ReadOnly)]
+    public uint BeamIndex;
 }
 
 /// <summary>
@@ -79,28 +83,12 @@ public sealed class BeamControllerCreatedEvent : EntityEventArgs
 public sealed class CreateBeamSuccessEvent : EntityEventArgs
 {
     public readonly EntityUid User;
-
-    /// <summary>
-    /// The entity the beam targeted.
-    /// Imp - This may be null if the beam targeted a map coordinate.
-    /// </summary>
-    public readonly EntityUid? Target;
-
-    /// <summary>
-    /// The coordinates the beam targeted. This may be null if the beam targeted an entity.
-    /// </summary>
-    public readonly MapCoordinates? Coordinates;
+    public readonly EntityUid Target;
 
     public CreateBeamSuccessEvent(EntityUid user, EntityUid target)
     {
         User = user;
         Target = target;
-    }
-
-    public CreateBeamSuccessEvent(EntityUid user, MapCoordinates coordinates)
-    {
-        User = user;
-        Coordinates = coordinates;
     }
 }
 

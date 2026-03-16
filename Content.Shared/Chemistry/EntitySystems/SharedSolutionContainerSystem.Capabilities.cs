@@ -1,8 +1,17 @@
+// SPDX-FileCopyrightText: 2023 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2024 LucasTheDrgn <kirbyfan.95@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Verm <32827189+Vermidia@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Chemistry.Components;
+using Content.Shared.Kitchen.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
-using Content.Shared.Chemistry.Reaction;
-using Content.Shared.FixedPoint;
-using Robust.Shared.Utility;
+using Content.Goobstation.Maths.FixedPoint;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
@@ -32,6 +41,17 @@ public abstract partial class SharedSolutionContainerSystem
         }
 
         return TryGetSolution((entity.Owner, entity.Comp2), entity.Comp1.Solution, out soln, out solution);
+    }
+
+    public bool TryGetExtractableSolution(Entity<ExtractableComponent?, SolutionContainerManagerComponent?> entity, [NotNullWhen(true)] out Entity<SolutionComponent>? soln, [NotNullWhen(true)] out Solution? solution)
+    {
+        if (!Resolve(entity, ref entity.Comp1, logMissing: false))
+        {
+            (soln, solution) = (default!, null);
+            return false;
+        }
+
+        return TryGetSolution((entity.Owner, entity.Comp2), entity.Comp1.GrindableSolution, out soln, out solution);
     }
 
     public bool TryGetDumpableSolution(Entity<DumpableSolutionComponent?, SolutionContainerManagerComponent?> entity, [NotNullWhen(true)] out Entity<SolutionComponent>? soln, [NotNullWhen(true)] out Solution? solution)
@@ -127,12 +147,13 @@ public abstract partial class SharedSolutionContainerSystem
 
     #endregion Solution Modifiers
 
+    /// <returns>A value between 0 and 100 inclusive.</returns>
     public float PercentFull(EntityUid uid)
     {
-        if (!TryGetDrainableSolution(uid, out _, out var solution) || solution.MaxVolume.Equals(FixedPoint2.Zero))
+        if (!TryGetDrainableSolution(uid, out _, out var solution))
             return 0;
 
-        return solution.FillFraction * 100;
+        return PercentFull(solution);
     }
 
     #region Static Methods
@@ -161,6 +182,15 @@ public abstract partial class SharedSolutionContainerSystem
 
         sb.Append(']');
         return sb.ToString();
+    }
+
+    /// <returns>A value between 0 and 100 inclusive.</returns>
+    public static float PercentFull(Solution sol)
+    {
+        if (sol.MaxVolume.Equals(FixedPoint2.Zero))
+            return 0;
+
+        return sol.FillFraction * 100;
     }
 
     #endregion Static Methods

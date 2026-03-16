@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Client.Guidebook.Richtext;
@@ -42,7 +47,7 @@ public sealed partial class GuideTechDisciplineEmbed : BoxContainer, IDocumentTa
         control = null;
         if (!args.TryGetValue("Discipline", out var group))
         {
-            Logger.GetSawmill("guide.techdisciplin.embed").Error("Technology discipline embed tag is missing discipline argument");
+            Logger.Error("Technology discipline embed tag is missing discipline argument");
             return false;
         }
 

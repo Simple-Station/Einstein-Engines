@@ -1,4 +1,9 @@
-using Content.Shared.Polymorph;
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Polymorph.Systems;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
@@ -25,22 +30,26 @@ public sealed partial class ChameleonProjectorComponent : Component
     public EntityWhitelist? Blacklist;
 
     /// <summary>
-    /// Polymorph configuration for the disguise entity.
+    /// Disguise entity to spawn and use.
     /// </summary>
     [DataField(required: true)]
-    public PolymorphConfiguration Polymorph = new();
+    public EntProtoId DisguiseProto = string.Empty;
 
     /// <summary>
     /// Action for disabling your disguise's rotation.
     /// </summary>
     [DataField]
     public EntProtoId NoRotAction = "ActionDisguiseNoRot";
+    [DataField]
+    public EntityUid? NoRotActionEntity;
 
     /// <summary>
     /// Action for anchoring your disguise in place.
     /// </summary>
     [DataField]
     public EntProtoId AnchorAction = "ActionDisguiseAnchor";
+    [DataField]
+    public EntityUid? AnchorActionEntity;
 
     /// <summary>
     /// Minimum health to give the disguise.
@@ -55,14 +64,8 @@ public sealed partial class ChameleonProjectorComponent : Component
     public float MaxHealth = 100f;
 
     /// <summary>
-    /// Popup shown to the user when they try to disguise as an invalid entity.
+    /// User currently disguised by this projector, if any
     /// </summary>
     [DataField]
-    public LocId InvalidPopup = "chameleon-projector-invalid";
-
-    /// <summary>
-    /// Popup shown to the user when they disguise as a valid entity.
-    /// </summary>
-    [DataField]
-    public LocId SuccessPopup = "chameleon-projector-success";
+    public EntityUid? Disguised;
 }

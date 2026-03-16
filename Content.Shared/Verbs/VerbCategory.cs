@@ -1,3 +1,34 @@
+// SPDX-FileCopyrightText: 2021 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 ike709 <ike709@github.com>
+// SPDX-FileCopyrightText: 2021 ike709 <ike709@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 EmoGarbage404 <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
+// SPDX-FileCopyrightText: 2022 drakewill <drake@drakewill-crl>
+// SPDX-FileCopyrightText: 2022 drakewill-CRL <46307022+drakewill-CRL@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 moonheart08 <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Ygg01 <y.laughing.man.y@gmail.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 RadsammyT <radsammyt@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
@@ -28,23 +59,10 @@ namespace Content.Shared.Verbs
         /// </remarks>
         public readonly bool IconsOnly;
 
-        public VerbCategory(string text, bool iconsOnly = false)
+        public VerbCategory(string text, string? icon, bool iconsOnly = false)
         {
             Text = Loc.GetString(text);
-            IconsOnly = iconsOnly;
-        }
-
-        public VerbCategory(string text, string icon, bool iconsOnly = false)
-        {
-            Text = Loc.GetString(text);
-            Icon = new SpriteSpecifier.Texture(new ResPath(icon));
-            IconsOnly = iconsOnly;
-        }
-
-        public VerbCategory(string text, SpriteSpecifier? sprite, bool iconsOnly = false)
-        {
-            Text = Loc.GetString(text);
-            Icon = sprite;
+            Icon = icon == null ? null : new SpriteSpecifier.Texture(new(icon));
             IconsOnly = iconsOnly;
         }
 
@@ -52,8 +70,7 @@ namespace Content.Shared.Verbs
             new("verb-categories-admin", "/Textures/Interface/character.svg.192dpi.png");
 
         public static readonly VerbCategory Antag =
-            new("verb-categories-antag", "/Textures/Interface/VerbIcons/antag-e_sword-temp.192dpi.png", iconsOnly: true)
-                { Columns = 5 };
+            new("verb-categories-antag", "/Textures/Interface/VerbIcons/antag-e_sword-temp.192dpi.png", iconsOnly: true) { Columns = 5 };
 
         public static readonly VerbCategory Examine =
             new("verb-categories-examine", "/Textures/Interface/VerbIcons/examine.svg.192dpi.png");
@@ -74,50 +91,38 @@ namespace Content.Shared.Verbs
             new("verb-categories-unbuckle", "/Textures/Interface/VerbIcons/unbuckle.svg.192dpi.png");
 
         public static readonly VerbCategory Rotate =
-            new("verb-categories-rotate", "/Textures/Interface/VerbIcons/refresh.svg.192dpi.png", iconsOnly: true)
-                { Columns = 5 };
+            new("verb-categories-rotate", "/Textures/Interface/VerbIcons/refresh.svg.192dpi.png", iconsOnly: true) { Columns = 5 };
 
         public static readonly VerbCategory Smite =
-            new("verb-categories-smite", "/Textures/Interface/VerbIcons/smite.svg.192dpi.png", iconsOnly: true)
-                { Columns = 6 };
-
+            new("verb-categories-smite", "/Textures/Interface/VerbIcons/smite.svg.192dpi.png", iconsOnly: true) { Columns = 6 };
         public static readonly VerbCategory Tricks =
-            new("verb-categories-tricks", "/Textures/Interface/AdminActions/tricks.png", iconsOnly: true)
-                { Columns = 5 };
+            new("verb-categories-tricks", "/Textures/Interface/AdminActions/tricks.png", iconsOnly: true) { Columns = 5 };
 
         public static readonly VerbCategory SetTransferAmount =
             new("verb-categories-transfer", "/Textures/Interface/VerbIcons/spill.svg.192dpi.png");
 
-        public static readonly VerbCategory Split = new("verb-categories-split");
+        public static readonly VerbCategory Split =
+            new("verb-categories-split", null);
 
-        public static readonly VerbCategory InstrumentStyle = new("verb-categories-instrument-style");
+        public static readonly VerbCategory InstrumentStyle =
+            new("verb-categories-instrument-style", null);
 
-        public static readonly VerbCategory ChannelSelect = new("verb-categories-channel-select");
+        public static readonly VerbCategory ChannelSelect = new("verb-categories-channel-select", null);
 
-        public static readonly VerbCategory SetSensor = new("verb-categories-set-sensor");
+        public static readonly VerbCategory SetSensor = new("verb-categories-set-sensor", null);
 
-        public static readonly VerbCategory Lever = new("verb-categories-lever");
+        public static readonly VerbCategory Lever = new("verb-categories-lever", null);
 
-        public static readonly VerbCategory SelectType = new("verb-categories-select-type");
+        public static readonly VerbCategory SelectType = new("verb-categories-select-type", null);
 
-        public static readonly VerbCategory SelectFaction = new("verb-categories-select-faction");
-
-        public static readonly VerbCategory Rename = new("verb-categories-rename");
-
-        public static readonly VerbCategory SexChange = new("verb-categories-sex-change");
-
-        public static readonly VerbCategory GenderChange = new("verb-categories-gender-change");
-
-        public static readonly VerbCategory PowerLevel = new("verb-categories-power-level");
-
-        public static readonly VerbCategory Switch = new("verb-categories-switch");
-
-        public static readonly VerbCategory Interaction = new("verb-categories-interaction");
-
-        public static readonly VerbCategory BloodSpells = new("verb-categories-blood-cult",
-            new SpriteSpecifier.Rsi(new ResPath("/Textures/_White/BloodCult/actions.rsi"), "blood_spells"));
+        public static readonly VerbCategory PowerLevel = new("verb-categories-power-level", null);
 
         public static readonly VerbCategory Adjust =
             new("verb-categories-adjust", "/Textures/Interface/VerbIcons/screwdriver.png");
+        
+        // Shitmed - Starlight Abductors
+        public static readonly VerbCategory Switch = new("verb-categories-switch", "/Textures/Interface/VerbIcons/group.svg.192dpi.png");
+        // Einstein Engines - Interaction Verbs
+        public static readonly VerbCategory Interaction = new("verb-categories-interaction", null);
     }
 }

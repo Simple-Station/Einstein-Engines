@@ -1,0 +1,142 @@
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mary <mary@thughunt.ing>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 IrisTheAmped <iristheamped@gmail.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Kill
+
+# random alive traitor
+- type: entity
+  parent: [BaseTraitorObjective, BaseKillObjective]
+  id: PermaKillRandomTraitorObjective
+  description: Do it however you like, as long as they're not breathing anymore.
+  components:
+  - type: Objective
+    difficulty: 2.5 # Most cases tots are armed themselves so have fun
+    unique: false
+  - type: TargetObjective
+    title: objective-condition-pkill-person
+  - type: PickRandomTraitor
+  - type: KillPersonCondition
+    requireDead: true
+  - type: MultipleTraitorsRequirement
+
+# random person
+# This is a separate objective to prevent metagaming by having a different condition for killing traitors, by also requiring you just kill someone entirely
+- type: entity
+  parent: [BaseTraitorObjective, BaseKillObjective]
+  id: PermaKillRandomPersonObjective
+  description: Do it however you like, as long as they're not breathing anymore.
+  components:
+  - type: Objective
+    difficulty: 1.75
+    unique: false
+  - type: TargetObjective
+    title: objective-condition-pkill-person
+  - type: PickRandomPerson
+  - type: KillPersonCondition
+    requireDead: true
+
+# Protect
+
+# another traitor's target
+# Note: The possibility of having both protect and kill objectives on the same person is intentional
+# to cause kino situations where the traitor kills the person they were protecting at the end of the round
+- type: entity
+  parent: [BaseTraitorSocialObjective, BaseKeepAliveObjective]
+  id: RandomTraitorTargetAliveObjective
+  description: Rival agents intend to assassinate this target. Identify yourself at your own risk.
+  components:
+  - type: Objective
+    difficulty: 1 # This can be either protect HoS (objective solves itself) or having some tider die in maints silently. Difficulty is set to 1 to have other objectives.
+  - type: TargetObjective
+    title: objective-condition-traitor-target-alive-title
+  - type: RandomTraitorTarget
+  - type: MultipleTraitorsRequirement
+
+# Steal
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseTraitorStealObjective
+  id: StealSupermatterSliverObjective
+  components:
+  - type: Objective
+    difficulty: 3.5
+  - type: StealCondition
+    verifyMapExistence: true
+    stealGroup: SupermatterSliver
+    objectiveNoOwnerText: objective-condition-steal-smsliver-title
+    descriptionText: objective-condition-steal-smsliver-description
+
+- type: entity
+  parent: BaseTraitorStealObjective
+  id: LawbringerStealObjective
+  components:
+  - type: Objective
+    # HoS will have this on them a lot of the time so..
+    difficulty: 3
+  - type: NotJobRequirement
+    job: HeadOfSecurity
+  - type: StealCondition
+    stealGroup: WeaponEnergyGunLawbringer
+    owner: job-name-hos
+
+- type: entity
+  parent: BaseTraitorStealObjective
+  id: JusticeStealObjective
+  components:
+  - type: Objective
+    difficulty: 5 #Cannot be pocketed/bagged like Lawbringer or similar, requires your belt slot or hand to hold.
+  - type: NotJobRequirement
+    job: HeadOfSecurity
+  - type: StealCondition
+    stealGroup: WeaponSecHeadSword
+    owner: job-name-hos
+
+- type: entity
+  parent: BaseCMOStealObjective
+  id: CMORapidSyringeGunStealObjective
+  components:
+  - type: StealCondition
+    stealGroup: RapidSyringeGun
+  - type: Objective
+    difficulty: 3 # Slightly more than normal as it does not fit into storage implant
+
+- type: entity
+  parent: BaseTraitorStealObjective
+  id: ExecutiveBriefcaseStealObjective
+  components:
+  - type: Objective
+    difficulty: 3 # its an item that you cant store anywhere without being noticed, good luck
+  - type: NotJobRequirement
+    job: NanotrasenRepresentative
+  - type: StealCondition
+    stealGroup: ExecutiveBriefcase
+
+- type: entity
+  parent: BaseRDStealObjective
+  id: GeminiProjectorStealObjective
+  components:
+  - type: NotJobRequirement
+    job: ResearchDirector
+  - type: StealCondition
+    stealGroup: ClothingBeltGeminiHoloProjector
+    descriptionText: objective-condition-steal-gemini-projector-description
+  - type: Objective
+    # This bad boy is LITERALLY directly screwed into the RDs spinal cord. Good luck!
+    difficulty: 3.5

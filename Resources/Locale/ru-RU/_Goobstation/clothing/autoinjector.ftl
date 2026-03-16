@@ -1,3 +1,3 @@
-autoinjector-injection-hardsuit = Вы чувствуете легкий укол, когда костюм плотно облегает вас.
-comp-autoinjector-examined-on = Автоинъектор заправлен и готов к работе.
-comp-autoinjector-examined-off = В настоящее время автоинъектор заряжается. Пожалуйста, подождите { $time } секунд.
+autoinjector-injection-hardsuit = Вы чувствуете лёгкое покалывание, когда костюм туго сжимается вокруг вас.
+comp-autoinjector-examined-on = Автоинжектор готов к использованию.
+comp-autoinjector-examined-off = Автоинжектор сейчас заряжается. Пожалуйста, подождите { $time } секунд.

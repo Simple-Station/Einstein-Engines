@@ -1,3 +1,54 @@
+# SPDX-FileCopyrightText: 2020 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2020 Metal Gear Sloth <metalgearsloth@gmail.com>
+# SPDX-FileCopyrightText: 2020 Peter Wedder <burneddi@gmail.com>
+# SPDX-FileCopyrightText: 2020 Vera Aguilera Puerto <zddm@outlook.es>
+# SPDX-FileCopyrightText: 2021 Kara D <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2021 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 lapatison <100279397+lapatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+# SPDX-FileCopyrightText: 2023 AsikKEsel <115815982+AsikKEsel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 TaralGit <76408146+TaralGit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 and_a <and_a@DESKTOP-RJENGIR>
+# SPDX-FileCopyrightText: 2023 deltanedas <user@zenith>
+# SPDX-FileCopyrightText: 2023 liltenhead <104418166+liltenhead@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Adeinitas <147965189+adeinitas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Danger Revolution! <142105406+DangerRevolution@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hmeister <nathan.springfredfoxbon4@gmail.com>
+# SPDX-FileCopyrightText: 2024 MACMAN2003 <macman2003c@gmail.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Plykiya <plykiya@protonmail.com>
+# SPDX-FileCopyrightText: 2024 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SoulFN <164462467+SoulFN@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Timemaster99 <57200767+Timemaster99@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2024 Verm <32827189+Vermidia@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   abstract: true
   parent: BaseItem
@@ -45,12 +96,11 @@
         mask:
         - ItemMask
   - type: DamageOtherOnHit
-    meleeDamageMultiplier: 2
-  - type: EmbeddableProjectile
+    damage:
+      types:
+        Slash: 2
+  - type: EmbeddableProjectile # Goobstation - Make shards embeddable so spacewind doesnt massacre the entire station :-)
     sound: /Audio/Weapons/bladeslice.ogg
-    removalTime: 2.5
-    autoRemoveDuration: 30
-  - type: EmbedPassiveDamage
   - type: Tag
     tags:
     - Trash
@@ -67,31 +117,32 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: StepTrigger
-    triggerGroups:
+    intersectRatio: 0.2
+    triggerGroups: # Goobstation
       types:
       - Shard
-    intersectRatio: 0.2
   - type: PreventableStepTrigger
   - type: Slippery
     slipSound:
       path: /Audio/Effects/glass_step.ogg
-    launchForwardsMultiplier: 0
+    slipData:
+      launchForwardsMultiplier: 0
   - type: TriggerOnStepTrigger
-  - type: DamageUserOnTrigger
+  - type: DamageOnTrigger
+    targetUser: true
     damage:
       types:
         Piercing: 5
   - type: DeleteOnTrigger
   - type: StaticPrice
     price: 0
-  # Shitmed Change
-  - type: Scalpel
+  - type: Scalpel # Shitmed
     speed: 0.45
-  - type: SurgeryTool
-    startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/scalpel1.ogg
-    endSound:
-      path: /Audio/_Shitmed/Medical/Surgery/scalpel2.ogg
+  - type: ThrowableBlocked # Goobstation
+    behavior: Damage
+    damage:
+      types:
+        Blunt: 100
 
 - type: entity
   parent: ShardBase
@@ -104,7 +155,7 @@
   - type: ToolRefinable
     refineResult:
     - id: SheetGlass1
-  - type: DamageUserOnTrigger
+  - type: DamageOnTrigger
     damage:
       types:
         Piercing: 4.5
@@ -123,6 +174,9 @@
   - type: Construction
     graph: ShivConstruct
     node: start
+  - type: PhysicalComposition #Goobstation - Recycle update
+    materialComposition:
+      Glass: 25
 
 - type: entity
   parent: ShardBase
@@ -140,7 +194,7 @@
     refineResult:
     - id: SheetGlass1
     - id: PartRodMetal1
-  - type: DamageUserOnTrigger
+  - type: DamageOnTrigger
     damage:
       types:
         Piercing: 5.5
@@ -159,6 +213,10 @@
   - type: Construction
     graph: ReinforcedShivConstruct
     node: start
+  - type: PhysicalComposition #Goobstation - Recycle update
+    materialComposition:
+      Glass: 25
+      Steel: 12
 
 - type: entity
   parent: ShardBase
@@ -174,13 +232,9 @@
         Slash: 5.5
   - type: ToolRefinable
     refineResult:
-      - id: SheetGlass1
-      - id: SheetPlasma1
-  - type: EmbedPassiveDamage
-    damage:
-      types:
-        Slash: 0.15
-  - type: DamageUserOnTrigger
+    - id: SheetGlass1
+    - id: SheetPlasma1
+  - type: DamageOnTrigger
     damage:
       types:
         Piercing: 6.5
@@ -201,6 +255,10 @@
   - type: Construction
     graph: PlasmaShivConstruct
     node: start
+  - type: PhysicalComposition #Goobstation - Recycle update
+    materialComposition:
+      Glass: 25
+      Plasma: 25
 
 - type: entity
   parent: ShardBase
@@ -219,7 +277,7 @@
     refineResult:
     - id: SheetGlass1
     - id: SheetUranium1
-  - type: DamageUserOnTrigger
+  - type: DamageOnTrigger
     damage:
       types:
         Piercing: 5
@@ -241,6 +299,10 @@
   - type: Construction
     graph: UraniumShivConstruct
     node: start
+  - type: PhysicalComposition #Goobstation - Recycle update
+    materialComposition:
+      Glass: 25
+      Uranium: 25
 
 - type: entity
   parent: ShardBase
@@ -254,7 +316,7 @@
     refineResult:
     - id: SheetGlass1
     - id: SheetBrass1
-  - type: DamageUserOnTrigger
+  - type: DamageOnTrigger
     damage:
       types:
         Piercing: 5
@@ -274,3 +336,7 @@
           Quantity: 1.65
         - ReagentId: Copper
           Quantity: 3.35
+  - type: PhysicalComposition #Goobstation - Recycle update
+    materialComposition:
+      Glass: 25
+      Brass: 25

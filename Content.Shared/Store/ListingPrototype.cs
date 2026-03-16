@@ -1,13 +1,39 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Repo <47093363+Titian3@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 AJCM <AJCM@tutanota.com>
+// SPDX-FileCopyrightText: 2024 ActiveMammmoth <140334666+ActiveMammmoth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Fildrance <fildrance@gmail.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 emmafornash <89596994+emmafornash@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 pa.pecherskij <pa.pecherskij@interfax.ru>
+// SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
-using Content.Shared.FixedPoint;
-using Content.Shared.Store.Components;
-using Content.Shared.StoreDiscount.Components;
+using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared.Heretic.Prototypes; // Goob
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
-using Content.Shared.Heretic.Prototypes;
 
 namespace Content.Shared.Store;
+
+// IF SOMEONE IS LOOKING AT THIS,
+// AND CONSIDERING MERGING WIZDEN NEWSTORE HERE:
+// DO NOT.
+// I AM NOT RESPONSIBLE IF YOU DO.
+// I WILL NOT FIX YOUR BULLSHIT IF YOU BREAK EVERY SINGLE STORE BASED ANTAG EVER AGAIN.
+// regards. :heart:
 
 /// <summary>
 ///     This is the data object for a store listing which is passed around in code.
@@ -16,83 +42,8 @@ namespace Content.Shared.Store;
 /// </summary>
 [Serializable, NetSerializable]
 [Virtual, DataDefinition]
-public partial class ListingData : IEquatable<ListingData>
+public partial class ListingData : IEquatable<ListingData>, ICloneable
 {
-    public ListingData()
-    {
-    }
-
-    public ListingData(ListingData other) : this(
-        other.Name,
-        other.DiscountCategory,
-        other.Description,
-        other.Conditions,
-        other.Icon,
-        other.Priority,
-        other.ProductEntity,
-        other.ProductAction,
-        other.ProductUpgradeId,
-        other.ProductActionEntity,
-        other.ProductEvent,
-        other.RaiseProductEventOnUser,
-        other.PurchaseAmount,
-        other.ID,
-        other.Categories,
-        other.OriginalCost,
-        other.RestockTime,
-        other.DiscountDownTo,
-        other.DisableRefund,
-        other.ProductHereticKnowledge ///goob edit
-    )
-    {
-
-    }
-
-    public ListingData(
-        string? name,
-        ProtoId<DiscountCategoryPrototype>? discountCategory,
-        string? description,
-        List<ListingCondition>? conditions,
-        SpriteSpecifier? icon,
-        int priority,
-        EntProtoId? productEntity,
-        EntProtoId? productAction,
-        ProtoId<ListingPrototype>? productUpgradeId,
-        EntityUid? productActionEntity,
-        object? productEvent,
-        bool raiseProductEventOnUser,
-        int purchaseAmount,
-        string id,
-        HashSet<ProtoId<StoreCategoryPrototype>> categories,
-        IReadOnlyDictionary<ProtoId<CurrencyPrototype>, FixedPoint2> originalCost,
-        TimeSpan restockTime,
-        Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> dataDiscountDownTo,
-        bool disableRefund,
-        ProtoId<HereticKnowledgePrototype>? productHereticKnowledge ///goob edit
-    )
-    {
-        Name = name;
-        DiscountCategory = discountCategory;
-        Description = description;
-        Conditions = conditions?.ToList();
-        Icon = icon;
-        Priority = priority;
-        ProductEntity = productEntity;
-        ProductAction = productAction;
-        ProductUpgradeId = productUpgradeId;
-        ProductActionEntity = productActionEntity;
-        ProductEvent = productEvent;
-        RaiseProductEventOnUser = raiseProductEventOnUser;
-        PurchaseAmount = purchaseAmount;
-        ProductHereticKnowledge = productHereticKnowledge; //goob edit
-        ID = id;
-        Categories = categories.ToHashSet();
-        OriginalCost = originalCost;
-        RestockTime = restockTime;
-        DiscountDownTo = new Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2>(dataDiscountDownTo);
-        DisableRefund = disableRefund;
-    }
-
     [ViewVariables]
     [IdDataField]
     public string ID { get; private set; } = default!;
@@ -104,12 +55,6 @@ public partial class ListingData : IEquatable<ListingData>
     public string? Name;
 
     /// <summary>
-    /// Discount category for listing item. This marker describes chance of how often will item be discounted.
-    /// </summary>
-    [DataField]
-    public ProtoId<DiscountCategoryPrototype>? DiscountCategory;
-
-    /// <summary>
     /// The description of the listing. If empty, uses the entity's description (if present)
     /// </summary>
     [DataField]
@@ -119,7 +64,7 @@ public partial class ListingData : IEquatable<ListingData>
     /// The categories that this listing applies to. Used for filtering a listing for a store.
     /// </summary>
     [DataField]
-    public HashSet<ProtoId<StoreCategoryPrototype>> Categories = new();
+    public List<ProtoId<StoreCategoryPrototype>> Categories = new();
 
     /// <summary>
     /// The original cost of the listing. FixedPoint2 represents the amount of that currency.
@@ -127,7 +72,7 @@ public partial class ListingData : IEquatable<ListingData>
     /// cost modifiers (due to discounts or surplus). Use Cost property on derived class instead.
     /// </summary>
     [DataField]
-    public IReadOnlyDictionary<ProtoId<CurrencyPrototype>, FixedPoint2> OriginalCost = new Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2>();
+    public Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> Cost = new();
 
     /// <summary>
     /// Specific customizable conditions that determine whether or not the listing can be purchased.
@@ -141,13 +86,6 @@ public partial class ListingData : IEquatable<ListingData>
     /// </summary>
     [DataField]
     public SpriteSpecifier? Icon;
-
-    // goobstation - heretics
-    // i am too tired of making separate systems for knowledge adding
-    // and all that shit. i've had like 4 failed attempts
-    // so i'm just gonna shitcode my way out of my misery
-    [DataField]
-    public ProtoId<HereticKnowledgePrototype>? ProductHereticKnowledge;
 
     /// <summary>
     /// The priority for what order the listings will show up in on the menu.
@@ -184,8 +122,15 @@ public partial class ListingData : IEquatable<ListingData>
     /// <summary>
     /// The event that is broadcast when the listing is purchased.
     /// </summary>
-    [DataField]
+    [DataField(serverOnly: true), NonSerialized] // Goob edit
     public object? ProductEvent;
+
+    // goobstation - heretics
+    // i am too tired of making separate systems for knowledge adding
+    // and all that shit. i've had like 4 failed attempts
+    // so i'm just gonna shitcode my way out of my misery
+    [DataField]
+    public ProtoId<HereticKnowledgePrototype>? ProductHereticKnowledge;
 
     [DataField]
     public bool RaiseProductEventOnUser;
@@ -202,17 +147,44 @@ public partial class ListingData : IEquatable<ListingData>
     [DataField]
     public TimeSpan RestockTime = TimeSpan.Zero;
 
-    /// <summary>
-    /// Options for discount - from max amount down to how much item costs can be cut by discount, absolute value.
-    /// </summary>
+    // WD START
+    [DataField] public int SaleLimit = 1;
+
+    [DataField] public bool SaleBlacklist;
+
+    public int DiscountValue;
+
+    public Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> OldCost = new();
+
+    // Goobstation
+    public Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2>? SaleCost;
+
     [DataField]
-    public Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> DiscountDownTo = new();
+    public List<string> Components = new();
+    // WD END
 
     /// <summary>
     /// Whether or not to disable refunding for the store when the listing is purchased from it.
+    /// Goob edit: This won't disable refund, but instead you won't be able to refund this listing.
     /// </summary>
     [DataField]
     public bool DisableRefund = false;
+
+    /// <summary>
+    /// Goobstation.
+    /// When purchased, it will block refunds of these listings.
+    /// </summary>
+    [DataField]
+    public HashSet<ProtoId<ListingPrototype>> BlockRefundListings = new();
+
+    [DataField]
+    public bool ResetRestockOnPurchase = false; // goob edit
+
+    [DataField]
+    public TimeSpan RestockDuration = TimeSpan.FromMinutes(10); // goob edit
+
+    [DataField]
+    public TimeSpan? RestockAfterPurchase { get; private set; } // goob edit
 
     public bool Equals(ListingData? listing)
     {
@@ -225,11 +197,21 @@ public partial class ListingData : IEquatable<ListingData>
             Description != listing.Description ||
             ProductEntity != listing.ProductEntity ||
             ProductAction != listing.ProductAction ||
-            ProductEvent?.GetType() != listing.ProductEvent?.GetType() ||
+            RaiseProductEventOnUser != listing.RaiseProductEventOnUser || // Goobstation
+            DisableRefund != listing.DisableRefund || // Goobstation
+            ResetRestockOnPurchase != listing.ResetRestockOnPurchase || // Goobstation
+            RestockAfterPurchase != listing.RestockAfterPurchase || // Goobstation
             RestockTime != listing.RestockTime)
             return false;
 
+        if (ProductEvent != null && listing.ProductEvent != null && ProductEvent.GetType() != listing.ProductEvent.GetType()) // Goobstation
+            return false;
+
         if (Icon != null && !Icon.Equals(listing.Icon))
+            return false;
+
+        // Goobstation
+        if (!BlockRefundListings.OrderBy(x => x).SequenceEqual(listing.BlockRefundListings.OrderBy(x => x)))
             return false;
 
         // more complicated conditions that eat perf. these don't really matter
@@ -237,7 +219,7 @@ public partial class ListingData : IEquatable<ListingData>
         if (!Categories.OrderBy(x => x).SequenceEqual(listing.Categories.OrderBy(x => x)))
             return false;
 
-        if (!OriginalCost.OrderBy(x => x).SequenceEqual(listing.OriginalCost.OrderBy(x => x)))
+        if (!Cost.OrderBy(x => x).SequenceEqual(listing.Cost.OrderBy(x => x)))
             return false;
 
         if ((Conditions != null && listing.Conditions != null) &&
@@ -247,210 +229,51 @@ public partial class ListingData : IEquatable<ListingData>
         return true;
     }
 
+    /// <summary>
+    /// Creates a unique instance of a listing. ALWAWYS USE THIS WHEN ENUMERATING LISTING PROTOTYPES
+    /// DON'T BE DUMB AND MODIFY THE PROTOTYPES
+    /// </summary>
+    /// <returns>A unique copy of the listing data.</returns>
+    public object Clone()
+    {
+        return new ListingData
+        {
+            ID = ID,
+            Name = Name,
+            Description = Description,
+            Categories = Categories,
+            Cost = Cost,
+            Conditions = Conditions,
+            Icon = Icon,
+            Priority = Priority,
+            ProductEntity = ProductEntity,
+            ProductAction = ProductAction,
+            ProductUpgradeId = ProductUpgradeId,
+            ProductActionEntity = ProductActionEntity,
+            ProductEvent = ProductEvent,
+            RaiseProductEventOnUser = RaiseProductEventOnUser, // goob edit
+            ProductHereticKnowledge = ProductHereticKnowledge, // goob edit
+            DisableRefund = DisableRefund, // goob edit
+            BlockRefundListings = BlockRefundListings, // goob edit
+            ResetRestockOnPurchase = ResetRestockOnPurchase, // goob edit
+            RestockAfterPurchase = RestockAfterPurchase, // goob edit
+            PurchaseAmount = PurchaseAmount,
+            RestockTime = RestockTime,
+            // WD START
+            SaleLimit = SaleLimit,
+            SaleBlacklist = SaleBlacklist,
+            DiscountValue = DiscountValue,
+            OldCost = OldCost,
+            SaleCost = SaleCost,
+            Components = Components,
+            // WD END
+        };
+    }
 }
 
 /// <summary>
 ///     Defines a set item listing that is available in a store
 /// </summary>
 [Prototype("listing")]
-[Serializable, NetSerializable]
 [DataDefinition]
-public sealed partial class ListingPrototype : ListingData, IPrototype
-{
-    /// <summary> Setter/getter for item cost from prototype. </summary>
-    [DataField]
-    public IReadOnlyDictionary<ProtoId<CurrencyPrototype>, FixedPoint2> Cost
-    {
-        get => OriginalCost;
-        set => OriginalCost = value;
-    }
-}
-
-/// <summary> Wrapper around <see cref="ListingData"/> that enables controller and centralized cost modification. </summary>
-/// <remarks>
-/// Server lifecycle of those objects is bound to <see cref="StoreComponent.FullListingsCatalog"/>, which is their local cache. To fix
-/// cost changes after server side change (for example, when all items with set discount are bought up) <see cref="ApplyAllModifiers"/> is called
-/// on changes.
-/// Client side lifecycle is possible due to modifiers and original cost being transferred fields and cost being calculated when needed. Modifiers changes
-/// should not (are not expected) be happening on client.
-/// </remarks>
-[Serializable, NetSerializable, DataDefinition]
-public sealed partial class ListingDataWithCostModifiers : ListingData
-{
-    private IReadOnlyDictionary<ProtoId<CurrencyPrototype>, FixedPoint2>? _costModified;
-
-    /// <summary>
-    /// Map of values, by which calculated cost should be modified, with modification sourceId.
-    /// Instead of modifying this field - use <see cref="RemoveCostModifier"/> and <see cref="AddCostModifier"/>
-    /// when possible.
-    /// </summary>
-    [DataField]
-    public Dictionary<string, Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2>> CostModifiersBySourceId = new();
-
-    /// <inheritdoc />
-    public ListingDataWithCostModifiers(ListingData listingData)
-        : base(
-            listingData.Name,
-            listingData.DiscountCategory,
-            listingData.Description,
-            listingData.Conditions,
-            listingData.Icon,
-            listingData.Priority,
-            listingData.ProductEntity,
-            listingData.ProductAction,
-            listingData.ProductUpgradeId,
-            listingData.ProductActionEntity,
-            listingData.ProductEvent,
-            listingData.RaiseProductEventOnUser,
-            listingData.PurchaseAmount,
-            listingData.ID,
-            listingData.Categories,
-            listingData.OriginalCost,
-            listingData.RestockTime,
-            listingData.DiscountDownTo,
-            listingData.DisableRefund,
-            listingData.ProductHereticKnowledge  //goob edit
-        )
-    {
-    }
-
-    /// <summary> Marker, if cost of listing item have any modifiers. </summary>
-    public bool IsCostModified => CostModifiersBySourceId.Count > 0;
-
-    /// <summary> Cost of listing item after applying all available modifiers. </summary>
-    public IReadOnlyDictionary<ProtoId<CurrencyPrototype>, FixedPoint2> Cost
-    {
-        get
-        {
-            return _costModified ??= CostModifiersBySourceId.Count == 0
-                ? new Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2>(OriginalCost)
-                : ApplyAllModifiers();
-        }
-    }
-
-    /// <summary> Add map with currencies and value by which cost should be modified when final value is calculated. </summary>
-    /// <param name="modifierSourceId">Id of modifier source. Can be used for removing modifier later.</param>
-    /// <param name="modifiers">Values for cost modification.</param>
-    public void AddCostModifier(string modifierSourceId, Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> modifiers)
-    {
-        CostModifiersBySourceId.Add(modifierSourceId, modifiers);
-        if (_costModified != null)
-        {
-            _costModified = ApplyAllModifiers();
-        }
-    }
-
-    /// <summary> Remove cost modifier with passed sourceId. </summary>
-    public void RemoveCostModifier(string modifierSourceId)
-    {
-        CostModifiersBySourceId.Remove(modifierSourceId);
-        if (_costModified != null)
-        {
-            _costModified = ApplyAllModifiers();
-        }
-    }
-
-    /// <summary> Check if listing item can be bought with passed balance. </summary>
-    public bool CanBuyWith(Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> balance)
-    {
-        foreach (var (currency, amount) in Cost)
-        {
-            if (!balance.ContainsKey(currency))
-                return false;
-
-            if (balance[currency] < amount)
-                return false;
-        }
-
-        return true;
-    }
-
-    /// <summary>
-    /// Gets percent of reduced/increased cost that modifiers give respective to <see cref="ListingData.OriginalCost"/>.
-    /// Percent values are numbers between 0 and 1.
-    /// </summary>
-    public IReadOnlyDictionary<ProtoId<CurrencyPrototype>, float> GetModifiersSummaryRelative()
-    {
-        var modifiersSummaryAbsoluteValues = CostModifiersBySourceId.Aggregate(
-            new Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2>(),
-            (accumulator, x) =>
-            {
-                foreach (var (currency, amount) in x.Value)
-                {
-                    accumulator.TryGetValue(currency, out var accumulatedAmount);
-                    accumulator[currency] = accumulatedAmount + amount;
-                }
-
-                return accumulator;
-            }
-        );
-        var relativeModifiedPercent = new Dictionary<ProtoId<CurrencyPrototype>, float>();
-        foreach (var (currency, discountAmount) in modifiersSummaryAbsoluteValues)
-        {
-            if (OriginalCost.TryGetValue(currency, out var originalAmount))
-            {
-                var discountPercent = (float)discountAmount.Value / originalAmount.Value;
-                relativeModifiedPercent.Add(currency, discountPercent);
-            }
-        }
-
-        return relativeModifiedPercent;
-
-    }
-
-    private Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> ApplyAllModifiers()
-    {
-        var dictionary = new Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2>(OriginalCost);
-        foreach (var (_, modifier) in CostModifiersBySourceId)
-        {
-            ApplyModifier(dictionary, modifier);
-        }
-
-        return dictionary;
-    }
-
-    private void ApplyModifier(
-        Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> applyTo,
-        IReadOnlyDictionary<ProtoId<CurrencyPrototype>, FixedPoint2> modifier
-    )
-    {
-        foreach (var (currency, modifyBy) in modifier)
-        {
-            if (applyTo.TryGetValue(currency, out var currentAmount))
-            {
-                var modifiedAmount = currentAmount + modifyBy;
-                if (modifiedAmount < 0)
-                {
-                    modifiedAmount = 0;
-                    // no negative cost allowed
-                }
-                applyTo[currency] = modifiedAmount;
-            }
-        }
-    }
-}
-
-/// <summary>
-///     Defines set of rules for category of discounts -
-///     how <see cref="StoreDiscountComponent"/> will be filled by respective system.
-/// </summary>
-[Prototype("discountCategory")]
-[DataDefinition, Serializable, NetSerializable]
-public sealed partial class DiscountCategoryPrototype : IPrototype
-{
-    [ViewVariables]
-    [IdDataField]
-    public string ID { get; private set; } = default!;
-
-    /// <summary>
-    /// Weight that sets chance to roll discount of that category.
-    /// </summary>
-    [DataField]
-    public int Weight { get; private set; }
-
-    /// <summary>
-    /// Maximum amount of items that are allowed to be picked from this category.
-    /// </summary>
-    [DataField]
-    public int? MaxItems { get; private set; }
-}
+public sealed partial class ListingPrototype : ListingData, IPrototype;

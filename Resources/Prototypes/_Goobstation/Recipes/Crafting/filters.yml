@@ -1,0 +1,61 @@
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: construction
+  id: AutomationFilterLabel
+  graph: AutomationFilter
+  targetNode: label
+  category: construction-category-misc
+  objectType: Item
+
+- type: construction
+  id: AutomationFilterName
+  graph: AutomationFilter
+  targetNode: name
+  category: construction-category-misc
+  objectType: Item
+
+- type: construction
+  id: AutomationFilterStack
+  graph: AutomationFilter
+  targetNode: stack
+  category: construction-category-misc
+  objectType: Item
+
+- type: construction
+  id: AutomationFilterPressure
+  graph: AutomationFilter
+  targetNode: pressure
+  category: construction-category-misc
+  objectType: Item
+
+- type: construction
+  id: AutomationFilterCombined
+  graph: AutomationFilter
+  targetNode: combined
+  category: construction-category-misc
+  objectType: Item
+
+- type: construction
+  id: AutomationFilterAnchor
+  graph: AutomationFilter
+  targetNode: anchor
+  category: construction-category-misc
+  objectType: Item
+
+- type: construction
+  id: AutomationFilterMob
+  graph: AutomationFilter
+  targetNode: mob
+  category: construction-category-misc
+  objectType: Item
+
+- type: construction
+  id: AutomationFilterCuff
+  graph: AutomationFilter
+  targetNode: cuff
+  category: construction-category-misc
+  objectType: Item

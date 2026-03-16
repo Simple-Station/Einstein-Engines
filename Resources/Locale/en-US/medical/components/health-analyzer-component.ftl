@@ -1,3 +1,23 @@
+# SPDX-FileCopyrightText: 2022 Fishfish458 <47410468+Fishfish458@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rinkashikachi <15rinkashikachi15@gmail.com>
+# SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
+# SPDX-FileCopyrightText: 2023 Artjom <artjombebenin@gmail.com>
+# SPDX-FileCopyrightText: 2023 Maxtone <124747282+MagnusCrowe@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 KrasnoshchekovPavel <119816022+KrasnoshchekovPavel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Rainfey <rainfey0+github@gmail.com>
+# SPDX-FileCopyrightText: 2024 Saphire Lattice <lattice@saphi.re>
+# SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 health-analyzer-window-no-patient-data-text = No patient data.
 health-analyzer-window-entity-unknown-text = Unknown
 health-analyzer-window-entity-unknown-species-text = Non-Humanoid
@@ -14,39 +34,14 @@ health-analyzer-window-entity-damage-total-text = Total Damage:
 
 health-analyzer-window-damage-group-text = {$damageGroup}: {$amount}
 health-analyzer-window-damage-type-text = {$damageType}: {$amount}
-health-analyzer-window-damage-type-duplicate-text = {$damageType}: {$amount} (duplicate)
 
-health-analyzer-window-damage-group-Brute = Brute
-health-analyzer-window-damage-type-Blunt = Blunt
-health-analyzer-window-damage-type-Slash = Slash
-health-analyzer-window-damage-type-Piercing = Piercing
-
-health-analyzer-window-damage-group-Burn = Burn
-health-analyzer-window-damage-type-Heat = Heat
-health-analyzer-window-damage-type-Shock = Shock
-health-analyzer-window-damage-type-Cold = Cold
-health-analyzer-window-damage-type-Caustic = Caustic
-
-health-analyzer-window-damage-group-Airloss = Airloss
-health-analyzer-window-damage-type-Asphyxiation = Asphyxiation
-health-analyzer-window-damage-type-Bloodloss = Bloodloss
-
-health-analyzer-window-damage-group-Toxin = Toxin
-health-analyzer-window-damage-type-Poison = Poison
-health-analyzer-window-damage-type-Radiation = Radiation
-
-health-analyzer-window-damage-group-Genetic = Genetic
-health-analyzer-window-damage-type-Cellular = Cellular
-
-health-analyzer-window-malnutrition = Severely malnourished
-
-health-analyzer-popup-scan-target = {CAPITALIZE(THE($user))} is trying to scan you!
-
-health-analyzer-window-entity-unrevivable-text = Unique body composition detected! Patient can not be resuscitated by normal means!
-health-analyzer-window-entity-bleeding-text = Patient is bleeding!
+health-analyzer-window-entity-unrevivable-text = [color=yellow]Unique body composition detected! Patient can not be resuscitated by normal means![/color]
+health-analyzer-window-entity-bleeding-text = [color=red]Patient has open wounds![/color]
 
 health-analyzer-window-scan-mode-text = Scan Mode:
 health-analyzer-window-scan-mode-active = Active
 health-analyzer-window-scan-mode-inactive = Inactive
 
+health-analyzer-popup-scan-target = {CAPITALIZE(THE($user))} is trying to scan you!
+## Shitmed Change
 health-analyzer-window-return-button-text = < Return

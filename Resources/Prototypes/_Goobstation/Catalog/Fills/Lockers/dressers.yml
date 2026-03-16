@@ -1,0 +1,48 @@
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: DresserBlueshieldOfficerFilled
+  parent: Dresser
+  suffix: Filled, Blueshield
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: DresserBlueshieldOfficerFilled
+
+- type: entityTable
+  id: DresserBlueshieldOfficerFilled
+  table: !type:AllSelector
+    children:
+    - id: ClothingUniformJumpskirtBlueshieldOfficer
+    - id: ClothingUniformJumpsuitBlueshieldOfficer
+    - id: ClothingUniformJumpsuitBlueshieldShirt
+    - id: ClothingBlueshieldArmoredJacket
+    # - id: ClothingHeadHatBeretNavy - NO. ITS A NAVY OFFICER HAT. NOT THE BLUESHIELD HAT. BAD BAD BAD BAD.
+
+- type: entity
+  id: DresserNanorepFilled
+  parent: Dresser
+  suffix: Filled, Nanorep
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: DresserNanorepFilled
+
+- type: entityTable
+  id: DresserNanorepFilled
+  table: !type:AllSelector
+    children:
+    - id: ClothingUniformJumpskirtNanotrasenRepresentative
+    - id: ClothingUniformJumpsuitNanotrasenRepresentative
+    - id: ClothingHeadHatTophat
+    - id: ClothingNeckScarfStripedCentcom
+    - id: ClothingHandsGlovesColorWhite

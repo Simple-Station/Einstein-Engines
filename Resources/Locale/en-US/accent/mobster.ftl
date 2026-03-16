@@ -1,8 +1,18 @@
-﻿accent-mobster-prefix-1 = Nyehh,
+# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+accent-mobster-prefix-1 = Nyehh,
 
 accent-mobster-suffix-boss-1 = , see?
 accent-mobster-suffix-boss-2 = , fugeddaboutit.
 accent-mobster-suffix-boss-3 = , capiche?
+# Goob edit start
+accent-mobster-suffix-boss-4 = , gabagool. 
+accent-mobster-suffix-boss-5 = , how ya doin'? 
+# Goob edit end
 
 accent-mobster-suffix-minion-1 = , yeah!
 accent-mobster-suffix-minion-2 = , boss says!

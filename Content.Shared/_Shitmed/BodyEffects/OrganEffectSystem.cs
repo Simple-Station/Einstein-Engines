@@ -1,16 +1,27 @@
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 // We keep this clone of the other system since I don't know yet if I'll need organ specific functions in the future.
 // will delete or refactor as time goes on.
 using Content.Shared._Shitmed.Body.Organ;
 using Content.Shared.Body.Organ;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Timing;
 using System.Linq;
+using Robust.Shared.Network;
 
 
 namespace Content.Shared._Shitmed.BodyEffects;
 public sealed partial class OrganEffectSystem : EntitySystem
 {
+    [Dependency] private readonly IComponentFactory _compFactory = default!;
+    [Dependency] private readonly ISerializationManager _serManager = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly INetManager _net = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -41,6 +52,9 @@ public sealed partial class OrganEffectSystem : EntitySystem
     private void OnOrganComponentsModify(Entity<OrganComponent> organEnt,
         ref OrganComponentsModifyEvent ev)
     {
+        if (_gameTiming.ApplyingState)
+            return;
+
         if (organEnt.Comp.OnAdd != null)
         {
             if (ev.Add)

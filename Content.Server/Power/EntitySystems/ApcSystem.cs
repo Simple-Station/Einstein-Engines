@@ -1,3 +1,34 @@
+// SPDX-FileCopyrightText: 2022 CommieFlowers <rasmus.cedergren@hotmail.com>
+// SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 rolfero <45628623+rolfero@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <drsmugleaf@gmail.com>
+// SPDX-FileCopyrightText: 2023 James Simonson <jamessimo89@gmail.com>
+// SPDX-FileCopyrightText: 2023 Kevin Zheng <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2023 deltanedas <deltanedas@laptop>
+// SPDX-FileCopyrightText: 2023 deltanedas <user@zenith>
+// SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 keronshb <keronshb@live.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Emp;
 using Content.Server.Popups;
 using Content.Server.Power.Components;
@@ -5,7 +36,6 @@ using Content.Server.Power.Pow3r;
 using Content.Shared.Access.Systems;
 using Content.Shared.APC;
 using Content.Shared.Emag.Systems;
-using Content.Shared.Emp;
 using Content.Shared.Popups;
 using Content.Shared.Rounding;
 using Robust.Server.GameObjects;
@@ -17,8 +47,6 @@ namespace Content.Server.Power.EntitySystems;
 
 public sealed class ApcSystem : EntitySystem
 {
-    private static readonly Enum UiKey = ApcUiKey.Key;
-
     [Dependency] private readonly AccessReaderSystem _accessReader = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly EmagSystem _emag = default!;
@@ -27,17 +55,9 @@ public sealed class ApcSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
 
-    private EntityQuery<PowerNetworkBatteryComponent> _powerNetworkBatteryQuery;
-    private EntityQuery<UserInterfaceComponent> _uiQuery;
-    private EntityQuery<AppearanceComponent> _appearanceQuery;
-
     public override void Initialize()
     {
         base.Initialize();
-
-        _powerNetworkBatteryQuery = GetEntityQuery<PowerNetworkBatteryComponent>();
-        _uiQuery = GetEntityQuery<UserInterfaceComponent>();
-        _appearanceQuery = GetEntityQuery<AppearanceComponent>();
 
         UpdatesAfter.Add(typeof(PowerNetSystem));
 
@@ -48,19 +68,14 @@ public sealed class ApcSystem : EntitySystem
         SubscribeLocalEvent<ApcComponent, GotEmaggedEvent>(OnEmagged);
 
         SubscribeLocalEvent<ApcComponent, EmpPulseEvent>(OnEmpPulse);
-        SubscribeLocalEvent<ApcComponent, EmpDisabledRemoved>(OnEmpDisabledRemoved);
     }
 
     public override void Update(float deltaTime)
     {
-        var query = EntityQueryEnumerator<ApcComponent>();
-        while (query.MoveNext(out var uid, out var apc))
+        var query = EntityQueryEnumerator<ApcComponent, PowerNetworkBatteryComponent, UserInterfaceComponent>();
+        while (query.MoveNext(out var uid, out var apc, out var battery, out var ui))
         {
-            if (!_powerNetworkBatteryQuery.TryComp(uid, out var battery)
-                || !_uiQuery.TryComp(uid, out var ui))
-                continue;
-
-            if (apc.LastUiUpdate + ApcComponent.VisualsChangeDelay < _gameTiming.CurTime && _ui.IsUiOpen((uid, ui), UiKey))
+            if (apc.LastUiUpdate + ApcComponent.VisualsChangeDelay < _gameTiming.CurTime && _ui.IsUiOpen((uid, ui), ApcUiKey.Key))
             {
                 apc.LastUiUpdate = _gameTiming.CurTime;
                 UpdateUIState(uid, apc, battery);
@@ -151,7 +166,7 @@ public sealed class ApcSystem : EntitySystem
                 apc.LastChargeState = newState;
                 apc.LastChargeStateTime = _gameTiming.CurTime;
 
-                if (_appearanceQuery.TryComp(uid, out var appearance))
+                if (TryComp(uid, out AppearanceComponent? appearance))
                 {
                     _appearance.SetData(uid, ApcVisuals.ChargeState, newState, appearance);
                 }
@@ -221,13 +236,12 @@ public sealed class ApcSystem : EntitySystem
 
     private void OnEmpPulse(EntityUid uid, ApcComponent component, ref EmpPulseEvent args)
     {
-        EnsureComp<EmpDisabledComponent>(uid, out var emp); //event calls before EmpDisabledComponent is added, ensure it to force sprite update
-        UpdateApcState(uid);
-    }
-
-    private void OnEmpDisabledRemoved(EntityUid uid, ApcComponent component, ref EmpDisabledRemoved args)
-    {
-        UpdateApcState(uid);
+        if (component.MainBreakerEnabled)
+        {
+            args.Affected = true;
+            args.Disabled = true;
+            ApcToggleBreaker(uid, component);
+        }
     }
 }
 

@@ -1,7 +1,16 @@
+<!--
+SPDX-FileCopyrightText: 2022 Eoin Mcloughlin <helloworld@eoinrul.es>
+SPDX-FileCopyrightText: 2022 eoineoineoin <eoin.mcloughlin+gh@gmail.com>
+SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: MIT
+-->
+
 <BoxContainer xmlns="https://spacestation14.io"
     HorizontalExpand="True" Orientation="Vertical"
             Margin = "20 0 0 0" MinSize="160 0" >
     <Label Name="CBoundLabel" HorizontalAlignment="Center" />
-    <CheckBox Name="CBoundEnabled" HorizontalAlignment="Center" Text="{Loc 'Enable'}" Pressed="True" />
+    <CheckBox Name="CBoundEnabled" HorizontalAlignment="Center" Text="{Loc 'air-alarm-ui-widget-enable'}" Pressed="True" />
     <FloatSpinBox Name="CSpinner" />
 </BoxContainer>

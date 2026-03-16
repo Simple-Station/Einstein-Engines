@@ -1,4 +1,60 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Alice "Arimah" Heurlin <30327355+arimah@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 HS <81934438+HolySSSS@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 Truoizys <153248924+Truoizys@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2024 Zylofan <80375291+Zylofan@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 osjarw <62134478+osjarw@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2024 yglop <95057024+yglop@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
+// SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
+// SPDX-FileCopyrightText: 2025 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+// SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
+// SPDX-FileCopyrightText: 2025 Unlumination <144041835+Unlumy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+// SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
+using Content.Shared._Goobstation.Silo;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Stacks;
@@ -6,6 +62,8 @@ using Content.Shared.Whitelist;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
+using Content.Shared.Research.Components;
 
 namespace Content.Shared.Materials;
 
@@ -19,7 +77,7 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
-    [Dependency] private readonly SharedMaterialSiloSystem _materialSilo = default!;
+    [Dependency] private readonly SharedSiloSystem _silo = default!; // Goobstation
 
     /// <summary>
     /// Default volume for a sheet if the material's entity prototype has no material composition.
@@ -33,6 +91,7 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
 
         SubscribeLocalEvent<MaterialStorageComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<MaterialStorageComponent, InteractUsingEvent>(OnInteractUsing);
+        SubscribeLocalEvent<MaterialStorageComponent, TechnologyDatabaseModifiedEvent>(OnDatabaseModified);
     }
 
     public override void Update(float frameTime)
@@ -73,16 +132,13 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
     /// <param name="uid"></param>
     /// <param name="material"></param>
     /// <param name="component"></param>
-    /// <param name="utilizer"></param>
     /// <returns>The volume of the material</returns>
-    public int GetMaterialAmount(EntityUid uid, string material, MaterialStorageComponent? component = null, MaterialSiloUtilizerComponent? utilizer = null)
+    public int GetMaterialAmount(EntityUid uid, string material, MaterialStorageComponent? component = null)
     {
         if (!Resolve(uid, ref component))
             return 0; //you have nothing
-
-        if (Resolve(uid, ref utilizer, false) && utilizer.Silo.HasValue)
-            return _materialSilo.GetSiloMaterialAmount(uid, material, utilizer);
-
+        if (component.ConnectToSilo && _silo.TryGetMaterialAmount(uid, material, out var amount)) // Goobstation
+            return amount;
         return component.Storage.GetValueOrDefault(material, 0);
     }
 
@@ -91,16 +147,13 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
     /// </summary>
     /// <param name="uid"></param>
     /// <param name="component"></param>
-    /// <param name="utilizer"></param>
     /// <returns>The volume of all materials in the storage</returns>
-    public int GetTotalMaterialAmount(EntityUid uid, MaterialStorageComponent? component = null, MaterialSiloUtilizerComponent? utilizer = null)
+    public int GetTotalMaterialAmount(EntityUid uid, MaterialStorageComponent? component = null)
     {
         if (!Resolve(uid, ref component))
             return 0;
-
-        if (Resolve(uid, ref utilizer, false) && utilizer.Silo.HasValue)
-            return _materialSilo.GetSiloTotalMaterialAmount(uid, utilizer);
-
+        if (component.ConnectToSilo && _silo.TryGetTotalMaterialAmount(uid, out var amount)) // Goobstation
+            return amount;
         return component.Storage.Values.Sum();
     }
 
@@ -110,18 +163,12 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
     /// <param name="uid"></param>
     /// <param name="volume"></param>
     /// <param name="component"></param>
-    /// <param name="utilizer"></param>
     /// <returns>If the specified volume will fit</returns>
-    public bool CanTakeVolume(EntityUid uid, int volume, MaterialStorageComponent? component = null, MaterialSiloUtilizerComponent? utilizer = null)
+    public bool CanTakeVolume(EntityUid uid, int volume, MaterialStorageComponent? component = null)
     {
         if (!Resolve(uid, ref component))
             return false;
-
-        var storageLimit = component.StorageLimit;
-        if (Resolve(uid, ref utilizer, false) && utilizer.Silo.HasValue)
-            storageLimit = _materialSilo.GetSiloStorage(uid, utilizer)?.Comp.StorageLimit;
-
-        return storageLimit == null || GetTotalMaterialAmount(uid, component) + volume <= storageLimit;
+        return component.StorageLimit == null || GetTotalMaterialAmount(uid, component) + volume <= component.StorageLimit;
     }
 
     /// <summary>
@@ -131,16 +178,23 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
     /// <param name="materialId"></param>
     /// <param name="volume"></param>
     /// <param name="component"></param>
-    /// <param name="utilizer"></param>
     /// <returns>If the amount can be changed</returns>
-    public bool CanChangeMaterialAmount(EntityUid uid, string materialId, int volume, MaterialStorageComponent? component = null, MaterialSiloUtilizerComponent? utilizer = null)
+    public bool CanChangeMaterialAmount(EntityUid uid, string materialId, int volume, MaterialStorageComponent? component = null)
     {
-        if (!Resolve(uid, ref component)
-            || !CanTakeVolume(uid, volume, component, utilizer)
-            || (!component.MaterialWhiteList?.Contains(materialId) ?? false))
+        if (!Resolve(uid, ref component))
             return false;
 
-        var amount = GetMaterialAmount(uid, materialId, component, utilizer);
+        if (!CanTakeVolume(uid, volume, component))
+            return false;
+
+        if (!component.IgnoreMaterialWhiteList) // Goobstation Change - Shitcode.
+            if (component.MaterialWhiteList == null ? false : !component.MaterialWhiteList.Contains(materialId))
+                return false;
+
+        if (component.ConnectToSilo && _silo.TryGetMaterialAmount(uid, materialId, out var siloAmount)) // Goobstation
+            return siloAmount + volume >= 0;
+
+        var amount = component.Storage.GetValueOrDefault(materialId);
         return amount + volume >= 0;
     }
 
@@ -149,16 +203,15 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
     /// </summary>
     /// <param name="entity"></param>
     /// <param name="materials"></param>
-    /// <param name="utilizer"></param>
     /// <returns>If the amount can be changed</returns>
-    public bool CanChangeMaterialAmount(Entity<MaterialStorageComponent?> entity, Dictionary<string,int> materials, MaterialSiloUtilizerComponent? utilizer = null)
+    public bool CanChangeMaterialAmount(Entity<MaterialStorageComponent?> entity, Dictionary<string,int> materials)
     {
         if (!Resolve(entity, ref entity.Comp))
             return false;
 
         foreach (var (material, amount) in materials)
         {
-            if (!CanChangeMaterialAmount(entity, material, amount, entity.Comp, utilizer))
+            if (!CanChangeMaterialAmount(entity, material, amount, entity.Comp))
                 return false;
         }
 
@@ -173,37 +226,47 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
     /// <param name="materialId"></param>
     /// <param name="volume"></param>
     /// <param name="component"></param>
-    /// <param name="utilizer"></param>
     /// <param name="dirty"></param>
     /// <returns>If it was successful</returns>
-    public bool TryChangeMaterialAmount(EntityUid uid, string materialId, int volume, MaterialStorageComponent? component = null, MaterialSiloUtilizerComponent? utilizer = null, bool dirty = true)
+    public bool TryChangeMaterialAmount(EntityUid uid, string materialId, int volume, MaterialStorageComponent? component = null, bool dirty = true)
     {
         if (!Resolve(uid, ref component))
             return false;
-
-        var storage = component;
-        var storageUid = uid;
-        if (Resolve(uid, ref utilizer, false) && utilizer.Silo.HasValue)
-        {
-            var silo = _materialSilo.GetSiloStorage(uid, utilizer);
-            if (silo.HasValue)
-            {
-                storage = silo.Value.Comp;
-                storageUid = silo.Value;
-            }
-        }
-
-        if (!CanChangeMaterialAmount(uid, materialId, volume, component, utilizer))
+        if (!CanChangeMaterialAmount(uid, materialId, volume, component))
             return false;
 
-        storage.Storage.TryAdd(materialId, 0);
-        storage.Storage[materialId] += volume;
+        // Goob start
+        EntityUid storageUid;
+        Dictionary<ProtoId<MaterialPrototype>, int> storage;
+        if (component.ConnectToSilo)
+        {
+            var silo = _silo.GetSilo(uid);
+            if (dirty && silo != null)
+                Dirty(silo.Value);
+            storage = silo != null ? silo.Value.Comp.Storage : component.Storage;
+            storageUid = silo != null ? silo.Value : uid;
+        }
+        else
+        {
+            storage = component.Storage;
+            storageUid = uid;
+        }
+
+        var existing = storage.GetOrNew(materialId);
+        // Goob end
+
+        existing += volume;
+
+        if (existing == 0)
+            storage.Remove(materialId); // Goob edit
+        else
+            storage[materialId] = existing; // Goob edit
 
         var ev = new MaterialAmountChangedEvent();
-        RaiseLocalEvent(storageUid, ref ev);
+        RaiseLocalEvent(storageUid, ref ev); // Goob edit
 
         if (dirty)
-            Dirty(storageUid, storage);
+            Dirty(uid, component);
         return true;
     }
 
@@ -219,28 +282,18 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
         if (!Resolve(entity, ref entity.Comp))
             return false;
 
-        var storage = entity.Comp;
-        var storageUid = entity;
-        if (TryComp<MaterialSiloUtilizerComponent>(entity, out var utilizer) && utilizer.Silo.HasValue)
-        {
-            var silo = _materialSilo.GetSiloStorage(entity, utilizer);
-            if (silo.HasValue)
-            {
-                storage = silo.Value.Comp;
-                storageUid = silo.Value.Owner;
-            }
-        }
-
-        if (!CanChangeMaterialAmount(entity, materials, utilizer))
+        if (!CanChangeMaterialAmount(entity, materials))
             return false;
 
         foreach (var (material, amount) in materials)
         {
-            if (!TryChangeMaterialAmount(entity, material, amount, entity.Comp, utilizer, false))
+            if (!TryChangeMaterialAmount(entity, material, amount, entity.Comp, false))
                 return false;
         }
 
-        Dirty(storageUid, storage);
+        if (entity.Comp.ConnectToSilo) // Goobstation
+            _silo.DirtySilo(entity);
+        Dirty(entity, entity.Comp);
         return true;
     }
 
@@ -252,28 +305,28 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
     /// <param name="materialId">The ID of the material to change.</param>
     /// <param name="volume">The stored material volume to set the storage to.</param>
     /// <param name="component">The storage component on <paramref name="uid"/>. Resolved automatically if not given.</param>
-    /// <param name="utilizer">The material silo utilizer component on <paramref name="uid"/>.</param>
     /// <returns>True if it was successful (enough space etc).</returns>
     public bool TrySetMaterialAmount(
         EntityUid uid,
         string materialId,
         int volume,
-        MaterialStorageComponent? component = null,
-        MaterialSiloUtilizerComponent? utilizer = null)
+        MaterialStorageComponent? component = null)
     {
         if (!Resolve(uid, ref component))
             return false;
 
-        var curAmount = GetMaterialAmount(uid, materialId, component, utilizer);
+        var curAmount = GetMaterialAmount(uid, materialId, component);
         var delta = volume - curAmount;
-        return TryChangeMaterialAmount(uid, materialId, delta, component, utilizer);
+        return TryChangeMaterialAmount(uid, materialId, delta, component);
     }
 
+    /// <summary>
+    /// Einstein Engines
+    /// </summary>
     public virtual bool CanInsertMaterialEntity(
         EntityUid toInsert,
         EntityUid receiver,
         MaterialStorageComponent? storage = null,
-        MaterialSiloUtilizerComponent? utilizer = null,
         MaterialComponent? material = null,
         PhysicalCompositionComponent? composition = null
     )
@@ -290,12 +343,12 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
         var totalVolume = 0;
         foreach (var (mat, vol) in composition.MaterialComposition)
         {
-            if (!CanChangeMaterialAmount(receiver, mat, vol * multiplier, storage, utilizer))
+            if (!CanChangeMaterialAmount(receiver, mat, vol * multiplier, storage))
                 return false;
             totalVolume += vol * multiplier;
         }
 
-        return CanTakeVolume(receiver, totalVolume, storage, utilizer);
+        return CanTakeVolume(receiver, totalVolume, storage);
     }
 
     /// <summary>
@@ -305,7 +358,6 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
         EntityUid toInsert,
         EntityUid receiver,
         MaterialStorageComponent? storage = null,
-        MaterialSiloUtilizerComponent? utilizer = null,
         MaterialComponent? material = null,
         PhysicalCompositionComponent? composition = null)
     {
@@ -327,17 +379,17 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
         var totalVolume = 0;
         foreach (var (mat, vol) in composition.MaterialComposition)
         {
-            if (!CanChangeMaterialAmount(receiver, mat, vol * multiplier, storage, utilizer))
+            if (!CanChangeMaterialAmount(receiver, mat, vol * multiplier, storage))
                 return false;
             totalVolume += vol * multiplier;
         }
 
-        if (!CanTakeVolume(receiver, totalVolume, storage, utilizer))
+        if (!CanTakeVolume(receiver, totalVolume, storage))
             return false;
 
         foreach (var (mat, vol) in composition.MaterialComposition)
         {
-            TryChangeMaterialAmount(receiver, mat, vol * multiplier, storage, utilizer);
+            TryChangeMaterialAmount(receiver, mat, vol * multiplier, storage);
         }
 
         var insertingComp = EnsureComp<InsertingMaterialStorageComponent>(receiver);
@@ -378,6 +430,11 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
         args.Handled = TryInsertMaterialEntity(args.User, args.Used, uid, component);
     }
 
+    private void OnDatabaseModified(Entity<MaterialStorageComponent> ent, ref TechnologyDatabaseModifiedEvent args)
+    {
+        UpdateMaterialWhitelist(ent);
+    }
+
     public int GetSheetVolume(MaterialPrototype material)
     {
         if (material.StackEntity == null)
@@ -385,7 +442,7 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
 
         var proto = _prototype.Index<EntityPrototype>(material.StackEntity);
 
-        if (!proto.TryGetComponent<PhysicalCompositionComponent>(out var composition))
+        if (!proto.TryGetComponent<PhysicalCompositionComponent>(out var composition, EntityManager.ComponentFactory))
             return DefaultSheetVolume;
 
         return composition.MaterialComposition.FirstOrDefault(kvp => kvp.Key == material.ID).Value;

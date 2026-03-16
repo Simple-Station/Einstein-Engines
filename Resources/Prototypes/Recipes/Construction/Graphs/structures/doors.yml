@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2022 Chris V <HoofedEar@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Fishfish458 <47410468+Fishfish458@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 - type: constructionGraph
   id: DoorGraph
   start: start
@@ -55,6 +65,13 @@
             - material: Paper
               amount: 20
               doAfter: 15
+        - to: cardDoor
+          completed:
+            - !type:SnapToGrid { }
+          steps:
+            - material: Cardboard
+              amount: 5
+              doAfter: 6
     - node: metalDoor
       entity: MetalDoor
       edges:
@@ -121,6 +138,20 @@
           steps:
             - tool: Anchoring
               doAfter: 15
+    - node: cardDoor
+      entity: CardDoor
+      edges:
+        - to: start
+          completed:
+          - !type:PlaySound
+            sound: /Audio/Items/Toys/ToyFall2.ogg
+          - !type:SpawnPrototype
+                prototype: MaterialCardboard1
+                amount: 5
+          - !type:DeleteEntity {}
+          steps:
+            - tool: Slicing
+              doAfter: 2
     - node: bananiumDoor
       entity: BananiumDoor
       edges:

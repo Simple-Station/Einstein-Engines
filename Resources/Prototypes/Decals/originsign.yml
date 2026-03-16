@@ -1,10 +1,10 @@
-﻿- type: decal
-  id: OriginStationSign
-  abstract: true
+# SPDX-FileCopyrightText: 2022 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
 
 - type: decal
   id: OriginStationSign1
-  parent: OriginStationSign
   tags: ["station"]
   sprite:
     sprite: Decals/originsign.rsi
@@ -12,7 +12,6 @@
 
 - type: decal
   id: OriginStationSign2
-  parent: OriginStationSign
   tags: ["station"]
   sprite:
     sprite: Decals/originsign.rsi
@@ -20,7 +19,6 @@
 
 - type: decal
   id: OriginStationSign3
-  parent: OriginStationSign
   tags: ["station"]
   sprite:
     sprite: Decals/originsign.rsi
@@ -28,7 +26,6 @@
 
 - type: decal
   id: OriginStationSign4
-  parent: OriginStationSign
   tags: ["station"]
   sprite:
     sprite: Decals/originsign.rsi
@@ -36,7 +33,6 @@
 
 - type: decal
   id: OriginStationSign5
-  parent: OriginStationSign
   tags: ["station"]
   sprite:
     sprite: Decals/originsign.rsi
@@ -44,7 +40,6 @@
 
 - type: decal
   id: OriginStationSign6
-  parent: OriginStationSign
   tags: ["station"]
   sprite:
     sprite: Decals/originsign.rsi
@@ -52,7 +47,6 @@
 
 - type: decal
   id: OriginStationSign7
-  parent: OriginStationSign
   tags: ["station"]
   sprite:
     sprite: Decals/originsign.rsi
@@ -61,7 +55,6 @@
 
 - type: decal
   id: OriginStationSign8
-  parent: OriginStationSign
   tags: ["station"]
   sprite:
     sprite: Decals/originsign.rsi
@@ -69,7 +62,6 @@
 
 - type: decal
   id: OriginStationSign9
-  parent: OriginStationSign
   tags: ["station"]
   sprite:
     sprite: Decals/originsign.rsi
@@ -77,7 +69,6 @@
 
 - type: decal
   id: OriginStationSign10
-  parent: OriginStationSign
   tags: ["station"]
   sprite:
     sprite: Decals/originsign.rsi
@@ -85,7 +76,6 @@
 
 - type: decal
   id: OriginStationSign11
-  parent: OriginStationSign
   tags: ["station"]
   sprite:
     sprite: Decals/originsign.rsi
@@ -93,7 +83,6 @@
 
 - type: decal
   id: OriginStationSign12
-  parent: OriginStationSign
   tags: ["station"]
   sprite:
     sprite: Decals/originsign.rsi
@@ -101,9 +90,7 @@
 
 - type: decal
   id: OriginStationSign13
-  parent: OriginStationSign
   tags: ["station"]
   sprite:
     sprite: Decals/originsign.rsi
     state: origin13
-

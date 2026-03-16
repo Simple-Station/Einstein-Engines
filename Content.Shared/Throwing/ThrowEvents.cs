@@ -1,4 +1,11 @@
-using Content.Shared._Shitmed.Targeting;
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
 
 namespace Content.Shared.Throwing
 {
@@ -7,24 +14,15 @@ namespace Content.Shared.Throwing
     /// </summary>
     public abstract class ThrowEvent : HandledEntityEventArgs
     {
-        ///Nyano - Summary: Allows us to tell who threw the item. It matters!
-        /// <summary>
-        ///     The entity that threw <see cref="Thrown"/>.
-        /// </summary>
-        public EntityUid? User { get; }
-        // End Nyano code.
         public readonly EntityUid Thrown;
         public readonly EntityUid Target;
         public ThrownItemComponent Component;
-        public TargetBodyPart? TargetPart;
 
-        public ThrowEvent(EntityUid? user, EntityUid thrown, EntityUid target, ThrownItemComponent component, TargetBodyPart? targetPart) //Nyano - Summary: User added.
+        public ThrowEvent(EntityUid thrown, EntityUid target, ThrownItemComponent component)
         {
-            User = user; //Nyano - Summary: User added.
             Thrown = thrown;
             Target = target;
             Component = component;
-            TargetPart = targetPart;
         }
     }
 
@@ -33,7 +31,7 @@ namespace Content.Shared.Throwing
     /// </summary>
     public sealed class ThrowHitByEvent : ThrowEvent
     {
-        public ThrowHitByEvent(EntityUid? user, EntityUid thrown, EntityUid target, ThrownItemComponent component, TargetBodyPart? targetPart) : base(user, thrown, target, component, targetPart) //Nyano - Summary: User added.
+        public ThrowHitByEvent(EntityUid thrown, EntityUid target, ThrownItemComponent component) : base(thrown, target, component)
         {
         }
     }
@@ -43,7 +41,7 @@ namespace Content.Shared.Throwing
     /// </summary>
     public sealed class ThrowDoHitEvent : ThrowEvent
     {
-        public ThrowDoHitEvent(EntityUid thrown, EntityUid target, ThrownItemComponent component, TargetBodyPart? targetPart) : base(null, thrown, target, component, targetPart) //Nyano - Summary: User added.
+        public ThrowDoHitEvent(EntityUid thrown, EntityUid target, ThrownItemComponent component) : base(thrown, target, component)
         {
         }
     }

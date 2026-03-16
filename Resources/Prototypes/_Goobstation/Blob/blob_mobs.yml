@@ -1,3 +1,18 @@
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2024 fishbait <gnesse@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rinary <72972221+Rinary1@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Theodore Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 shibe <95730644+shibechef@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 # Pod
 - type: entity
   id: MobBlobPod
@@ -6,9 +21,6 @@
   parent: SimpleSpaceMobBase
   categories: [ HideSpawnMenu ]
   components:
-    - type: IgniteFromGasImmunity # Orehum start блоб поджигает плазмаменов bruh
-      parts:
-      - Head # Orehum end
     - type: ZombieImmune
     - type: TriggerOnMobstateChange
       mobState:
@@ -33,6 +45,10 @@
       tags:
         - HidesHair
         - BlobMob
+    - type: CollectiveMind
+      defaultChannel: Blobmind
+      channels:
+      - Blobmind
     - type: IngestionBlocker
     - type: IdentityBlocker
     - type: BlobPod
@@ -52,14 +68,15 @@
         NavBlob: !type:Bool
           true
     - type: BlobMob
-    - type: BlobSpeak
-    # start backmen languages
+    # - type: BlobSpeak
+    # Einstein Engines - Language begin
+    - type: LanguageSpeaker
     - type: LanguageKnowledge
       speaks:
       - Blob
       understands:
       - Blob
-    # end backmen languages
+    # Einstein Engines - Language end
     - type: CombatMode
     - type: NpcFactionMember
       factions:
@@ -72,7 +89,7 @@
       animation: WeaponArcSmash
       damage:
         types:
-          Piercing: 5
+          Blunt: 8
     - type: DamageStateVisuals
       states:
         Alive:
@@ -122,10 +139,15 @@
     - type: ZombieImmune
     - type: Damageable
       damageContainer: Blob
-      damageModifierSet: BlobMob
+      damageModifierSet: BlobBlobbernaut
     - type: Tag
       tags:
+        - Blobbernaut
         - BlobMob
+    - type: CollectiveMind
+      defaultChannel: Blobmind
+      channels:
+      - Blobmind
     - type: GhostRole
       name: ghost-role-information-blobbernaut-name
       description: ghost-role-information-blobbernaut-description
@@ -140,18 +162,15 @@
     - type: InputMover
     - type: MobMover
     - type: BlobMob
-    - type: BlobSpeak
-    # start backmen languages
+    # - type: BlobSpeak
+    # Einstein Engines - Language begin
     - type: LanguageSpeaker
-      currentLanguage: Blob
     - type: LanguageKnowledge
       speaks:
       - Blob
       understands:
       - Blob
-      - Xeno
-      - TauCetiBasic
-    # end backmen languages
+    # Einstein Engines - Language end
     - type: CombatMode
     - type: HTN
       rootTask:
@@ -216,6 +235,10 @@
     - type: GuideHelp
       guides:
       - Blob
+    - type: Bloodstream
+      bloodMaxVolume: 300
+      bloodReagent: Blood
+      bleedReductionAmount: 5
 
 # Observer
 - type: entity
@@ -230,12 +253,7 @@
           type: BlobChemSwapBoundUserInterface
     - type: Actions
     - type: Alerts
-    # start backmen language
-    - type: ActiveRadio
-      channels:
-      - Hivemind
-    - type: BlobSpeak
-      name: speak-vv-blob-core
+    # Einstein Engines - Language begin
     - type: LanguageSpeaker
       currentLanguage: Blob
     - type: LanguageKnowledge
@@ -245,12 +263,12 @@
       - Blob
       - Xeno
       - TauCetiBasic
-    # end backmen language
+    # Einstein Engines - Language end
     - type: Hands
       showInHands: true
     - type: BlobObserver
     - type: Visibility
-      layer: 2
+      layer: 2 # Ghost visflag
     - type: ContentEye
     - type: MindContainer
     - type: Clickable
@@ -261,9 +279,12 @@
     - type: GhostRole
       name: ghost-role-information-blob-name
       description: ghost-role-information-blob-description
-      mindRoles:
-      - MindRoleGhostRoleTeamAntagonist
       rules: You are an antagonist, destroy the station!
+      mindRoles:
+      - MindRoleGhostRoleSoloAntagonist
+      requirements:
+      - !type:OverallPlaytimeRequirement
+        time: 18000 #5 hours
     - type: GhostTakeoverAvailable
     - type: Fixtures
       fixtures:
@@ -292,3 +313,7 @@
     - type: Tag
       tags:
       - BypassInteractionRangeChecks
+    - type: CollectiveMind
+      defaultChannel: Blobmind
+      channels:
+      - Blobmind

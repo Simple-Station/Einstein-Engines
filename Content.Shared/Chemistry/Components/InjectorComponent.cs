@@ -1,7 +1,22 @@
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2024 Preston Smith <92108534+thetolbean@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 blueDev2 <89804215+blueDev2@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 osjarw <62134478+osjarw@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 veprolet <68151557+veprolet@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.DoAfter;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Chemistry.Components;
@@ -44,6 +59,15 @@ public sealed partial class InjectorComponent : Component
     public bool IgnoreMobs;
 
     /// <summary>
+    /// Whether or not the injector is able to draw from or inject into containers that are closed/sealed
+    /// </summary>
+    /// <remarks>
+    ///     for example: droppers can not inject into cans, but syringes can
+    /// </remarks>
+    [DataField]
+    public bool IgnoreClosed = true;
+
+    /// <summary>
     ///     The minimum amount of solution that can be transferred at once from this solution.
     /// </summary>
     [DataField("minTransferAmount")]
@@ -53,7 +77,7 @@ public sealed partial class InjectorComponent : Component
     ///     The maximum amount of solution that can be transferred at once from this solution.
     /// </summary>
     [DataField("maxTransferAmount")]
-    public FixedPoint2 MaximumTransferAmount = FixedPoint2.New(50);
+    public FixedPoint2 MaximumTransferAmount = FixedPoint2.New(15);
 
     /// <summary>
     /// Amount to inject or draw on each usage. If the injector is inject only, it will
@@ -74,6 +98,12 @@ public sealed partial class InjectorComponent : Component
     public TimeSpan Delay = TimeSpan.FromSeconds(5);
 
     /// <summary>
+    /// Each additional 1u after first 5u increases the delay by X seconds.
+    /// </summary>
+    [DataField]
+    public TimeSpan DelayPerVolume = TimeSpan.FromSeconds(0.1);
+
+    /// <summary>
     /// The state of the injector. Determines it's attack behavior. Containers must have the
     /// right SolutionCaps to support injection/drawing. For InjectOnly injectors this should
     /// only ever be set to Inject
@@ -81,6 +111,30 @@ public sealed partial class InjectorComponent : Component
     [AutoNetworkedField]
     [DataField]
     public InjectorToggleMode ToggleState = InjectorToggleMode.Draw;
+
+    /// <summary>
+    /// Reagents that are allowed to be within this injector.
+    /// If a solution has both allowed and non-allowed reagents, only allowed reagents will be drawn into this injector.
+    /// A null ReagentWhitelist indicates all reagents are allowed.
+    /// </summary>
+    [DataField]
+    public List<ProtoId<ReagentPrototype>>? ReagentWhitelist = null;
+
+    #region Arguments for injection doafter
+
+    /// <inheritdoc cref=DoAfterArgs.NeedHand>
+    [DataField]
+    public bool NeedHand = true;
+
+    /// <inheritdoc cref=DoAfterArgs.BreakOnHandChange>
+    [DataField]
+    public bool BreakOnHandChange = true;
+
+    /// <inheritdoc cref=DoAfterArgs.MovementThreshold>
+    [DataField]
+    public float MovementThreshold = 0.1f;
+
+    #endregion
 }
 
 /// <summary>

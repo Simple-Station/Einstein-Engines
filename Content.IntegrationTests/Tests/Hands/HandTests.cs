@@ -1,3 +1,15 @@
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared.Hands.Components;
@@ -6,7 +18,6 @@ using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.Containers;
 using Robust.Shared.GameObjects;
-using Robust.Shared.Map;
 
 namespace Content.IntegrationTests.Tests.Hands;
 
@@ -38,7 +49,7 @@ public sealed class HandTests
 
         var entMan = server.ResolveDependency<IEntityManager>();
         var playerMan = server.ResolveDependency<IPlayerManager>();
-        var mapMan = server.ResolveDependency<IMapManager>();
+        var mapSystem = server.System<SharedMapSystem>();
         var sys = entMan.System<SharedHandsSystem>();
         var tSys = entMan.System<TransformSystem>();
 
@@ -54,22 +65,22 @@ public sealed class HandTests
             var xform = entMan.GetComponent<TransformComponent>(player);
             item = entMan.SpawnEntity("Crowbar", tSys.GetMapCoordinates(player, xform: xform));
             hands = entMan.GetComponent<HandsComponent>(player);
-            sys.TryPickup(player, item, hands.ActiveHand!);
+            sys.TryPickup(player, item, hands.ActiveHandId!);
         });
 
         // run ticks here is important, as errors may happen within the container system's frame update methods.
         await pair.RunTicksSync(5);
-        Assert.That(hands.ActiveHandEntity, Is.EqualTo(item));
+        Assert.That(sys.GetActiveItem((player, hands)), Is.EqualTo(item));
 
         await server.WaitPost(() =>
         {
-            sys.TryDrop(player, item, null!);
+            sys.TryDrop(player, item);
         });
 
         await pair.RunTicksSync(5);
-        Assert.That(hands.ActiveHandEntity, Is.Null);
+        Assert.That(sys.GetActiveItem((player, hands)), Is.Null);
 
-        await server.WaitPost(() => mapMan.DeleteMap(data.MapId));
+        await server.WaitPost(() => mapSystem.DeleteMap(data.MapId));
         await pair.CleanReturnAsync();
     }
 
@@ -87,7 +98,7 @@ public sealed class HandTests
 
         var entMan = server.ResolveDependency<IEntityManager>();
         var playerMan = server.ResolveDependency<IPlayerManager>();
-        var mapMan = server.ResolveDependency<IMapManager>();
+        var mapSystem = server.System<SharedMapSystem>();
         var sys = entMan.System<SharedHandsSystem>();
         var tSys = entMan.System<TransformSystem>();
         var containerSystem = server.System<SharedContainerSystem>();
@@ -106,10 +117,10 @@ public sealed class HandTests
             player = playerMan.Sessions.First().AttachedEntity!.Value;
             tSys.PlaceNextTo(player, item);
             hands = entMan.GetComponent<HandsComponent>(player);
-            sys.TryPickup(player, item, hands.ActiveHand!);
+            sys.TryPickup(player, item, hands.ActiveHandId!);
         });
         await pair.RunTicksSync(5);
-        Assert.That(hands.ActiveHandEntity, Is.EqualTo(item));
+        Assert.That(sys.GetActiveItem((player, hands)), Is.EqualTo(item));
 
         // Open then close the box to place the player, who is holding the crowbar, inside of it
         var storage = server.System<EntityStorageSystem>();
@@ -126,15 +137,15 @@ public sealed class HandTests
         // with the item not being in the player's hands
         await server.WaitPost(() =>
         {
-            sys.TryDrop(player, item, null!);
+            sys.TryDrop(player, item);
         });
         await pair.RunTicksSync(5);
         var xform = entMan.GetComponent<TransformComponent>(player);
         var itemXform = entMan.GetComponent<TransformComponent>(item);
-        Assert.That(hands.ActiveHandEntity, Is.Not.EqualTo(item));
+        Assert.That(sys.GetActiveItem((player, hands)), Is.Not.EqualTo(item));
         Assert.That(containerSystem.IsInSameOrNoContainer((player, xform), (item, itemXform)));
 
-        await server.WaitPost(() => mapMan.DeleteMap(map.MapId));
+        await server.WaitPost(() => mapSystem.DeleteMap(map.MapId));
         await pair.CleanReturnAsync();
     }
 }

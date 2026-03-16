@@ -1,16 +1,126 @@
+# SPDX-FileCopyrightText: 2021 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 EmoGarbage404 <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 Morbo <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 12rabbits <53499656+12rabbits@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 CaasGit <87243814+CaasGit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Dimastra <65184747+Dimastra@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Dimastra <dimastra@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 EmoGarbage404 <retron404@gmail.com>
+# SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hrosts <35345601+Hrosts@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ian <ignaz.k@live.de>
+# SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 JIPDawg <51352440+JIPDawg@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 JIPDawg <JIPDawg93@gmail.com>
+# SPDX-FileCopyrightText: 2024 Joel Zimmerman <JoelZimmerman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 JustCone <141039037+JustCone14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ko4ergaPunk <62609550+Ko4ergaPunk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kukutis96513 <146854220+Kukutis96513@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Lye <128915833+Lyroth001@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MerrytheManokit <167581110+MerrytheManokit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+# SPDX-FileCopyrightText: 2024 Moomoobeef <62638182+Moomoobeef@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MureixloI <132683811+MureixloI@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 NakataRin <45946146+NakataRin@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 OrangeMoronage9622 <whyteterry0092@gmail.com>
+# SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 PopGamer46 <yt1popgamer@gmail.com>
+# SPDX-FileCopyrightText: 2024 Preston Smith <92108534+thetolbean@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 PursuitInAshes <pursuitinashes@gmail.com>
+# SPDX-FileCopyrightText: 2024 QueerNB <176353696+QueerNB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Repo <47093363+Titian3@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 RiceMar1244 <138547931+RiceMar1244@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Saphire Lattice <lattice@saphi.re>
+# SPDX-FileCopyrightText: 2024 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Spessmann <156740760+Spessmann@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Stalen <33173619+stalengd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TakoDragon <69509841+BackeTako@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st <shadowstalkermll@gmail.com>
+# SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2024 Vigers Ray <60344369+VigersRay@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 degradka <69397649+degradka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 dffdff2423 <dffdff2423@gmail.com>
+# SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+# SPDX-FileCopyrightText: 2024 foboscheshir <156405958+foboscheshir@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 hiucko <86206040+Hiucko@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+# SPDX-FileCopyrightText: 2024 saintmuntzer <47153094+saintmuntzer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 shamp <140359015+shampunj@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 stellar-novas <stellar_novas@riseup.net>
+# SPDX-FileCopyrightText: 2024 strO0pwafel <153459934+strO0pwafel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 stroopwafel <j.o.luijkx@student.tudelft.nl>
+# SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: BaseSign
   id: PosterBase
   abstract: true
   components:
-  - type: WallMount
-    arc: 360
   - type: Sprite
-    drawdepth: WallMountedItems
     sprite: Structures/Wallmounts/posters.rsi
-    snapCardinals: true
   - type: Destructible
     thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/poster_broken.ogg
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
     - trigger:
         !type:DamageTrigger
         damage: 5
@@ -67,14 +177,6 @@
   components:
   - type: Sprite
     state: poster2_contraband
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-atmosia"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -84,20 +186,12 @@
   components:
   - type: Sprite
     state: poster3_contraband
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-funpolice"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
-  id: PosterContrabandLustyExomorph
-  name: "Lusty Exomorph"
-  description: "A heretical poster depicting the titular star of an equally heretical book."
+  id: PosterContrabandRealExomorph
+  name: "Real! Exomorph"
+  description: "A conspiratorial poster about dangerous alien lifeforms."
   components:
   - type: Sprite
     state: poster4_contraband
@@ -110,14 +204,6 @@
   components:
   - type: Sprite
     state: poster5_contraband
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-syndicaterecruitment"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -136,14 +222,6 @@
   components:
   - type: Sprite
     state: poster7_contraband
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-contrabandsmoke"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -153,14 +231,6 @@
   components:
   - type: Sprite
     state: poster8_contraband
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-greytide"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -188,14 +258,6 @@
   components:
   - type: Sprite
     state: poster11_contraband
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-ripbadger"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -241,14 +303,6 @@
   components:
   - type: Sprite
     state: poster16_contraband
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-contrabandpower"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -272,7 +326,7 @@
   parent: PosterBase
   id: PosterContrabandLamarr
   name: "Lamarr"
-  description: "This poster depicts Lamarr. Probably made by a traitorous Mystagogue." # DeltaV - Epistemics Department replacing Science
+  description: "This poster depicts Lamarr. Probably made by a traitorous Research Director."
   components:
   - type: Sprite
     state: poster19_contraband
@@ -303,14 +357,6 @@
   components:
   - type: Sprite
     state: poster22_contraband
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-KosmicheskayaStantsiya"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -320,14 +366,6 @@
   components:
   - type: Sprite
     state: poster23_contraband
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-rebelsunite"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -427,20 +465,12 @@
   components:
   - type: Sprite
     state: poster35_contraband
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-freedrone"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
-  id: PosterContrabandBustyBackdoorExoBabes6
-  name: "Busty Backdoor Exo Babes 6"
-  description: "Get a load, or give, of these all natural Exos!"
+  id: PosterContrabandRouny
+  name: "Have You Seen Him?"
+  description: "An old poster for a missing alien. Where did he run off to?"
   components:
   - type: Sprite
     state: poster36_contraband
@@ -534,14 +564,6 @@
   components:
   - type: Sprite
     state: poster46_contraband
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-syndicateencryption"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -642,14 +664,6 @@
   components:
     - type: Sprite
       state: poster58_contraband
-    - type: ExtendDescription
-      descriptionList:
-        - description: "mindshield-extenddescription-poster-cybersun600"
-          fontSize: 12
-          color: "#11aaff"
-          requireDetailRange: false
-          requirements:
-          - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -698,30 +712,30 @@
 
 - type: entity
   parent: PosterBase
-  id: PosterContrabandBanzai
-  name: "Rising Sun"
-  description: "A poster with rays of rising sun and japanese script '天皇陛下万歳' on it. Obviously that is too old."
+  id: PosterContrabandExoAcid
+  name: "Exomorph Warning: Acid Spit!"
+  description: "This poster warns you about an exomorph's acidic spit. Not that such exomorphs are real... Right?"
   components:
-    - type: Sprite
-      state: poster64_contraband
+  - type: Sprite
+    state: poster64_contraband
 
 - type: entity
   parent: PosterBase
-  id: PosterContrabandHotVulpsIsland
-  name: "Hot Vulps Island"
-  description: "High sun, hot sands and boundless sea waits for you on a tropical island. Just sign up our vacation trip right now at that.beautifullife.nt! You will be not disappointed!"
+  id: PosterContrabandExoRun
+  name: "Exomorph Warning: Run Away!"
+  description: "This poster warns you about an athletic exomorph capable of dragging away anyone who gets caught; so don't get caught!"
   components:
-    - type: Sprite
-      state: poster65_contraband
+  - type: Sprite
+    state: poster65_contraband
 
 - type: entity
   parent: PosterBase
-  id: PosterContrabandPinkEvil
-  name: "I'm not evil!"
-  description: "A poster depicting crying pink vulpkanin, who are commonly accused of being a creature of Satana."
+  id: PosterContrabandExoChomp
+  name: "Exomorph Warning: Dangerous Bites!"
+  description: "This poster warns you about the lethal bites exomorphs can have. Don't become an alien snack!"
   components:
-    - type: Sprite
-      state: poster66_contraband
+  - type: Sprite
+    state: poster66_contraband
 
 # Legit
 - type: entity
@@ -732,14 +746,6 @@
   components:
   - type: Sprite
     state: poster1_legit
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-foryoursafety"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -749,14 +755,6 @@
   components:
   - type: Sprite
     state: poster2_legit
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-nanotrasen"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -775,14 +773,6 @@
   components:
   - type: Sprite
     state: poster4_legit
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-helpothers"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -828,14 +818,6 @@
   components:
   - type: Sprite
     state: poster9_legit
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-obey"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -899,14 +881,6 @@
   components:
   - type: Sprite
     state: poster16_legit
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-donotquestion"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -952,14 +926,6 @@
   components:
   - type: Sprite
     state: poster21_legit
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-safetyreport"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -969,14 +935,6 @@
   components:
   - type: Sprite
     state: poster22_legit
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-reportcrimes"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -1013,14 +971,6 @@
   components:
   - type: Sprite
     state: poster26_legit
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-vintagereprint50"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -1039,31 +989,15 @@
   components:
   - type: Sprite
     state: poster28_legit
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-pdaad"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
   id: PosterLegitEnlist
   name: "Enlist"
-  description: "Enlist in the NanoTrasen ERT reserves today!" # DeltaV - expunged blatant reference to Division of Asset Protection death squads
+  description: "Enlist in the Nanotrasen ERT reserves today!" # Goobstation - There's no such thing as a deathsquad.
   components:
   - type: Sprite
     state: poster29_legit
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-enlist"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -1100,14 +1034,6 @@
   components:
   - type: Sprite
     state: poster33_legit
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-theowl"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -1144,14 +1070,6 @@
   components:
   - type: Sprite
     state: poster37_legit
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-nogasgiant"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -1170,14 +1088,6 @@
   components:
   - type: Sprite
     state: poster39_legit
-  - type: ExtendDescription
-    descriptionList:
-      - description: "mindshield-extenddescription-poster-watchingyou"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -1226,9 +1136,9 @@
 
 - type: entity
   parent: PosterBase
-  id: PosterLegitSafetyMothHardhat
-  name: "Safety Moth - Hardhats"
-  description: "This informational poster uses Safety Moth™ to tell the viewer to wear hardhats in cautious areas. \"It's like a lamp for your head!\""
+  id: PosterLegitSafetyMothPiping
+  name: "Safety Moth - Piping"
+  description: "This informational poster uses Safety Moth™ to tell atmospheric technicians correct types of piping to be used. \"Pipes, not Pumps! Proper pipe placement prevents poor performance!\""
   components:
     - type: Sprite
       state: poster45_legit
@@ -1244,9 +1154,9 @@
 
 - type: entity
   parent: PosterBase
-  id: PosterLegitSafetyMothPiping
-  name: "Safety Moth - Piping"
-  description: "This informational poster uses Safety Moth™ to tell atmospheric technicians correct types of piping to be used. \"Pipes, not Pumps! Proper pipe placement prevents poor performance!\""
+  id: PosterLegitSafetyMothHardhat
+  name: "Safety Moth - Hardhats"
+  description: "This informational poster uses Safety Moth™ to tell the viewer to wear hardhats in cautious areas. \"It's like a lamp for your head!\""
   components:
     - type: Sprite
       state: poster47_legit
@@ -1259,14 +1169,6 @@
   components:
     - type: Sprite
       state: poster48_legit
-    - type: ExtendDescription
-      descriptionList:
-        - description: "mindshield-extenddescription-poster-vacation"
-          fontSize: 12
-          color: "#11aaff"
-          requireDetailRange: false
-          requirements:
-          - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -1294,14 +1196,6 @@
   components:
     - type: Sprite
       state: poster51_legit
-    - type: ExtendDescription
-      descriptionList:
-        - description: "mindshield-extenddescription-poster-buycards"
-          fontSize: 12
-          color: "#11aaff"
-          requireDetailRange: false
-          requirements:
-          - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -1323,12 +1217,21 @@
 
 - type: entity
   parent: PosterBase
-  id: PosterLegitKeepWater
-  name: "Keep Water"
-  description: "A poster appealing to save limited amount of water."
+  id: PosterLegitTyrone
+  name: "Tyrone's Guide to Space"
+  description: "A poster advertising online schooling about space. The classes listed seem to cover things from the basic usage of station equipment to complicated subjects like creating pipebombs or covering entire hallways in spacelube. A disclaimer reads \"It's never THAT bad, and at the end you might even get a tortilla.\""
   components:
   - type: Sprite
     state: poster54_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitHelio
+  name: Helio Logistics ad
+  description: "A poster advertising Helio Logistics and their adorable mascot. The slogan reads 'Come rain or shine, we deliver on time.'"
+  components:
+  - type: Sprite
+    state: poster55_legit
 
 #maps
 

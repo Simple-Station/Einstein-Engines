@@ -1,3 +1,16 @@
+// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2024 faint <46868845+ficcialfaint@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.Access.Components;
 using Content.Shared.Containers.ItemSlots;
 using Robust.Shared.Containers;
@@ -29,7 +42,6 @@ namespace Content.Shared.PDA
             ItemSlotsSystem.AddItemSlot(uid, PdaComponent.PdaIdSlotId, pda.IdSlot);
             ItemSlotsSystem.AddItemSlot(uid, PdaComponent.PdaPenSlotId, pda.PenSlot);
             ItemSlotsSystem.AddItemSlot(uid, PdaComponent.PdaPaiSlotId, pda.PaiSlot);
-            ItemSlotsSystem.AddItemSlot(uid, PdaComponent.PdaPassportSlotId, pda.PassportSlot);
 
             UpdatePdaAppearance(uid, pda);
         }
@@ -39,13 +51,15 @@ namespace Content.Shared.PDA
             ItemSlotsSystem.RemoveItemSlot(uid, pda.IdSlot);
             ItemSlotsSystem.RemoveItemSlot(uid, pda.PenSlot);
             ItemSlotsSystem.RemoveItemSlot(uid, pda.PaiSlot);
-            ItemSlotsSystem.RemoveItemSlot(uid, pda.PassportSlot);
         }
 
         protected virtual void OnItemInserted(EntityUid uid, PdaComponent pda, EntInsertedIntoContainerMessage args)
         {
             if (args.Container.ID == PdaComponent.PdaIdSlotId)
                 pda.ContainedId = args.Entity;
+            //goob addition for pen
+            if (args.Container.ID == PdaComponent.PdaPenSlotId)
+                pda.ContainedPen = args.Entity;
 
             UpdatePdaAppearance(uid, pda);
         }
@@ -54,6 +68,9 @@ namespace Content.Shared.PDA
         {
             if (args.Container.ID == pda.IdSlot.ID)
                 pda.ContainedId = null;
+            //goob addition for pen
+            if (args.Container.ID == pda.PenSlot.ID)
+                pda.ContainedPen = null;
 
             UpdatePdaAppearance(uid, pda);
         }
@@ -67,6 +84,14 @@ namespace Content.Shared.PDA
         private void UpdatePdaAppearance(EntityUid uid, PdaComponent pda)
         {
             Appearance.SetData(uid, PdaVisuals.IdCardInserted, pda.ContainedId != null);
+            //goob addition for pen
+            Appearance.SetData(uid, PdaVisuals.PenInserted, pda.ContainedPen != null);
+        }
+
+        public virtual void UpdatePdaUi(EntityUid uid, PdaComponent? pda = null)
+        {
+            // This does nothing yet while I finish up PDA prediction
+            // Overriden by the server
         }
     }
 }

@@ -1,8 +1,22 @@
+# SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 ScyronX <166930367+ScyronX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Theodore Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   name: Dualetta
-  parent: BaseWeaponPistol
+  parent: [BaseWeaponPistol, BaseSyndicateContraband]
   id: WeaponPistolDualetta
-  description: The coolest pistol in the sector. It is said that nobody is strong enough of will to tarnish this weapon's reputation by daring to fire it without another paired pistol. Though, some people have mustered the will to simply use a different gun in the other hand.
+  description: The coolest pistol in the sector. It is said that nobody is strong enough of will to tarnish this weapon's reputation by daring to fire it without its paired pistol. Feeds from .35 Auto pistol magazines.
   components:
   - type: Sprite
     sprite: _Goobstation/Objects/Weapons/Guns/Pistols/Dualetta.rsi
@@ -18,7 +32,7 @@
     maxAngle: 5
     angleIncrease: 1
     angleDecay: 4
-    fireRate: 8
+    fireRate: 6
     availableModes:
     - SemiAuto
     - FullAuto
@@ -36,6 +50,7 @@
           tags:
             - MagazinePistol
             - MagazinePistolHighCapacity
+        whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
         startingItem: CartridgePistol
@@ -47,17 +62,19 @@
     tags:
     - WeaponPistolDualetta
   - type: Multishot
-    spreadMultiplier: 1.25
+    missChance: 0
+    spreadMultiplier: 1
+    spreadAddition: 0
   - type: RequiresDualWield
     whitelist:
       tags:
       - WeaponPistolDualetta
 
 - type: entity
-  parent: BaseItem
+  parent: [ BaseItem, BaseSyndicateContraband ]
   id: WeaponPistolAnaconda
   name: Anaconda
-  description: A heavy pistol capable of supplying itself with the ammo on the way using a built-in fabricator.
+  description: A bulky hand cannon with a built in fabricator in its grip. Slowly prints ammo for itself, though don't count on it being fast enough for sustained firefights.
   components:
   - type: Item
     size: Small
@@ -85,15 +102,68 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
   - type: BasicEntityAmmoProvider
-    proto: BulletAnaconda
+    proto: BulletCaselessRifle
     capacity: 7
     count: 7
   - type: RechargeBasicEntityAmmo
     rechargeCooldown: 4
     rechargeSound:
       path: /Audio/Weapons/Guns/Cock/shotgun_close.ogg
+  - type: RestrictGunshotsByUserTag # Goobstation
+    doesntContain:
+    - Oni
+    messages:
+    - oni-cannot-shoot-guns-1
+    - oni-cannot-shoot-guns-2
+    - oni-cannot-shoot-guns-3
   - type: AmmoCounter
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
-  - type: Multishot
+
+- type: entity
+  name: Contract Terminator
+  parent: [BaseWeaponPistol, BaseCentcommContraband]
+  id: WeaponPistolCentcommAgent
+  description: Necessity is the mother of deception.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Weapons/Guns/Pistols/agentpistol.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Goobstation/Objects/Weapons/Guns/Pistols/agentpistol.rsi
+  - type: Gun
+    minAngle: 1
+    maxAngle: 5
+    angleIncrease: 1
+    angleDecay: 4
+    fireRate: 4
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
+      params:
+        volume: -14
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolNeurotoxin
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineMagnum
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMagnumNeurotoxin
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeMagnum

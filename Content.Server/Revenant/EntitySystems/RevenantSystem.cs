@@ -1,14 +1,32 @@
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <drsmugleaf@gmail.com>
+// SPDX-FileCopyrightText: 2023 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 keronshb <keronshb@live.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 DisposableCrewmember42 <disposablecrewmember42@proton.me>
+// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using Content.Server.Actions;
 using Content.Server.GameTicking;
-using Content.Server.Store.Components;
 using Content.Server.Store.Systems;
 using Content.Shared.Alert;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Eye;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Interaction;
 using Content.Shared.Maps;
 using Content.Shared.Mobs.Systems;
@@ -45,9 +63,9 @@ public sealed partial class RevenantSystem : EntitySystem
     [Dependency] private readonly StoreSystem _store = default!;
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly VisibilitySystem _visibility = default!;
+    [Dependency] private readonly TurfSystem _turf = default!;
 
-    [ValidatePrototypeId<EntityPrototype>]
-    private const string RevenantShopId = "ActionRevenantShop";
+    private static readonly EntProtoId RevenantShopId = "ActionRevenantShop";
 
     public override void Initialize()
     {
@@ -164,7 +182,7 @@ public sealed partial class RevenantSystem : EntitySystem
             return false;
         }
 
-        var tileref = Transform(uid).Coordinates.GetTileRef();
+        var tileref = _turf.GetTileRef(Transform(uid).Coordinates);
         if (tileref != null)
         {
             if(_physics.GetEntitiesIntersectingBody(uid, (int) CollisionGroup.Impassable).Count > 0)
@@ -174,10 +192,10 @@ public sealed partial class RevenantSystem : EntitySystem
             }
         }
 
-        ChangeEssenceAmount(uid, abilityCost, component, false);
+        ChangeEssenceAmount(uid, -abilityCost, component, false);
 
         _statusEffects.TryAddStatusEffect<CorporealComponent>(uid, "Corporeal", TimeSpan.FromSeconds(debuffs.Y), false);
-        _stun.TryStun(uid, TimeSpan.FromSeconds(debuffs.X), false);
+        _stun.TryAddStunDuration(uid, TimeSpan.FromSeconds(debuffs.X));
 
         return true;
     }

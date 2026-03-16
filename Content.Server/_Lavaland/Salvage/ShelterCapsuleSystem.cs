@@ -1,5 +1,26 @@
-﻿using System.Linq;
-using Content.Server._Lavaland.Procedural.Components;
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
+// SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Unlumination <144041835+Unlumy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+// SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.GridPreloader;
 using Content.Shared._Lavaland.Shelter;
@@ -19,7 +40,6 @@ public sealed class ShelterCapsuleSystem : SharedShelterCapsuleSystem
     [Dependency] private readonly SmokeSystem _smoke = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
-    [Dependency] private readonly IMapManager _mapMan = default!;
 
     public override void Initialize()
     {
@@ -53,6 +73,7 @@ public sealed class ShelterCapsuleSystem : SharedShelterCapsuleSystem
             return false;
 
         // Load and place shelter
+        var path = proto.Path;
         var mapEnt = xform.MapUid.Value;
         var posFixed = new MapCoordinates((worldPos.Position + comp.Offset).Rounded(), worldPos.MapId);
 
@@ -64,16 +85,13 @@ public sealed class ShelterCapsuleSystem : SharedShelterCapsuleSystem
         if (!_preloader.TryGetPreloadedGrid(comp.PreloadedGrid, out var shelter))
         {
             _mapSystem.CreateMap(out var dummyMap);
-            if (!_mapLoader.TryLoadGrid(dummyMap, proto.Path, out var roots))
+            if (!_mapLoader.TryLoadGrid(dummyMap, path, out var shelterEnt))
             {
                 Log.Error("Failed to load Shelter grid properly on it's deployment.");
                 return false;
             }
 
-            var shelters = _mapMan.GetAllGrids(dummyMap);
-            shelter = shelters.FirstOrDefault(x => !TerminatingOrDeleted(x));
-
-            SetupShelter(shelter.Value, new EntityCoordinates(mapEnt, posFixed.Position));
+            SetupShelter(shelterEnt.Value.Owner, new EntityCoordinates(mapEnt, posFixed.Position));
             _mapSystem.DeleteMap(dummyMap);
             return true;
         }
@@ -87,11 +105,9 @@ public sealed class ShelterCapsuleSystem : SharedShelterCapsuleSystem
         if (!Resolve(shelter, ref shelter.Comp))
             return;
 
-        _transform.SetCoordinates(
-            shelter,
+        _transform.SetCoordinates(shelter,
             shelter.Comp,
             coords,
             Angle.Zero);
-        EnsureComp<LavalandMemberComponent>(shelter);
     }
 }

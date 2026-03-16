@@ -1,3 +1,14 @@
+// SPDX-FileCopyrightText: 2021 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Net;
 using Content.Server.Database;
 using Content.Shared.CCVar;
@@ -18,22 +29,25 @@ public sealed class RulesManager
     public void Initialize()
     {
         _netManager.Connected += OnConnected;
-        _netManager.RegisterNetMessage<ShowRulesPopupMessage>();
+        _netManager.RegisterNetMessage<SendRulesInformationMessage>();
         _netManager.RegisterNetMessage<RulesAcceptedMessage>(OnRulesAccepted);
     }
 
     private async void OnConnected(object? sender, NetChannelArgs e)
     {
-        if (IPAddress.IsLoopback(e.Channel.RemoteEndPoint.Address) && _cfg.GetCVar(CCVars.RulesExemptLocal))
-            return;
+         var isLocalhost = IPAddress.IsLoopback(e.Channel.RemoteEndPoint.Address) &&
+                               _cfg.GetCVar(CCVars.RulesExemptLocal);
 
         var lastRead = await _dbManager.GetLastReadRules(e.Channel.UserId);
-        if (lastRead > LastValidReadTime)
-            return;
+        var hasCooldown = lastRead > LastValidReadTime;
 
-        var message = new ShowRulesPopupMessage();
-        message.PopupTime = _cfg.GetCVar(CCVars.RulesWaitTime);
-        _netManager.ServerSendMessage(message, e.Channel);
+        var showRulesMessage = new SendRulesInformationMessage
+        {
+            PopupTime = _cfg.GetCVar(CCVars.RulesWaitTime),
+            CoreRules = _cfg.GetCVar(CCVars.RulesFile),
+            ShouldShowRules = !isLocalhost && !hasCooldown,
+        };
+        _netManager.ServerSendMessage(showRulesMessage, e.Channel);
     }
 
     private async void OnRulesAccepted(RulesAcceptedMessage message)

@@ -1,3 +1,16 @@
+// SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2023 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Server.DeviceLinking.Components;
 using Content.Server.DeviceNetwork;
 using Content.Server.DeviceNetwork.Components;
@@ -5,6 +18,8 @@ using Content.Server.DeviceNetwork.Systems;
 using Content.Shared.DeviceLinking;
 using Content.Shared.DeviceLinking.Events;
 using Content.Shared.DeviceNetwork;
+using Content.Shared.DeviceNetwork.Events;
+using Content.Shared.DeviceNetwork.Components;
 
 namespace Content.Server.DeviceLinking.Systems;
 
@@ -88,23 +103,6 @@ public sealed class DeviceLinkSystem : SharedDeviceLinkSystem
         // force using wireless network so things like atmos devices are able to send signals
         var network = (int) DeviceNetworkComponent.DeviceNetIdDefaults.Wireless;
         _deviceNetworkSystem.QueuePacket(source, sinkNetwork.Address, payload, sinkNetwork.ReceiveFrequency, network);
-    }
-
-    /// <summary>
-    /// Helper function that invokes a port with a high/low binary logic signal.
-    /// </summary>
-    public void SendSignal(EntityUid uid, string port, bool signal, DeviceLinkSourceComponent? comp = null)
-    {
-        if (!Resolve(uid, ref comp))
-            return;
-
-        var data = new NetworkPayload
-        {
-            [DeviceNetworkConstants.LogicState] = signal ? SignalState.High : SignalState.Low
-        };
-        InvokePort(uid, port, data, comp);
-
-        comp.LastSignals[port] = signal;
     }
 
     /// <summary>

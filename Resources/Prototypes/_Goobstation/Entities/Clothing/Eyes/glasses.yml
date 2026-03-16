@@ -1,33 +1,274 @@
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Icepick <122653407+Icepicked@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Baptr0b0t <152836416+Baptr0b0t@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+# SPDX-FileCopyrightText: 2025 Creatorbot01 <creatorbot20@gmail.com>
+# SPDX-FileCopyrightText: 2025 GMWQ <garethquaile@gmail.com>
+# SPDX-FileCopyrightText: 2025 Gareth Quaile <garethquaile@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+# SPDX-FileCopyrightText: 2025 shityaml <unalterableness@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
-  parent: [ClothingEyesBase, ShowSecurityIcons, ShowMedicalIcons]
+  parent: [ClothingEyesBase, ShowSecurityIcons, ShowMedicalIcons, BaseSecurityContraband, ClothingEyesGlassesSunglasses]
   id: ClothingEyesGlassesMedSec
-  name: blueshield glasses
-  description: Advanced Sunglasses with a deep blue hue and a built-in HUD capable of displaying Security, Medical, and Diagnostics information.
+  name: medical security glasses
+  description: Sunglasses with a medical and security hud
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Eyes/Glasses/medsecglasses.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Eyes/Glasses/medsecglasses.rsi
+  - type: Construction
+    graph: GlassesMedSecHUD
+    node: glassesMedSec
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesPrescriptionGlasses
+  name: prescription glasses
+  description: Your insurance doesn't cover these. Don't lose them.
+  components:
+    - type: Sprite
+      sprite: Clothing/Eyes/Glasses/glasses.rsi
+    - type: Clothing
+      sprite: Clothing/Eyes/Glasses/glasses.rsi
+    - type: VisionCorrection
+    - type: Damageable
+      damageContainer: Inorganic
+    - type: Tag
+      tags:
+      - WhitelistChameleon
+    - type: PhysicalComposition
+      materialComposition:
+        Glass: 125
+        Steel: 125
+    - type: StaticPrice
+      price: 38
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 10
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+            - !type:PlaySoundBehavior
+              sound:
+                collection: GlassBreak
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                ClothingEyesGlassesBroken:
+                  min: 1
+                  max: 1
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesGlassesBroken
+  name: broken glasses
+  description: My glasses! I can't see without my glasses!
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Eyes/Glasses/brokenglasses.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Eyes/Glasses/brokenglasses.rsi
+  - type: Tag
+    tags:
+    - Trash
+  - type: PhysicalComposition
+    materialComposition:
+      Glass: 125
+      Steel: 125
+  - type: StaticPrice
+    price: 38
+
+- type: entity
+  parent: [ClothingEyesBase, ClothingEyesGlassesSunglasses]
+  id: ClothingEyesGlassesDiag
+  name: diagnostic glasses
+  description: Sunglasses with a diagnostic hud.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Eyes/Glasses/diagglasses.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Eyes/Glasses/diagglasses.rsi
+  - type: Construction
+    graph: GlassesDiagHUD
+    node: glassesDiag
+  - type: ShowHealthBars
+    damageContainers:
+    - Inorganic
+    - Silicon
+    - SiliconRadiation
+
+- type: entity
+  parent: [ClothingEyesBase, ShowMedicalIcons, ClothingEyesGlassesSunglasses]
+  id: ClothingEyesGlassesMed
+  name: medical glasses
+  description: Sunglasses with a medical hud.
   components:
   - type: Sprite
     sprite: _Goobstation/Clothing/Eyes/Glasses/medglasses.rsi
   - type: Clothing
     sprite: _Goobstation/Clothing/Eyes/Glasses/medglasses.rsi
+  - type: Construction
+    graph: GlassesMedHUD
+    node: glassesMed
+
+- type: entity
+  parent: [ClothingEyesHudOmni, BaseCentcommContraband]
+  id: ClothingEyesGlassesDeathsquad
+  suffix: DO NOT MAP
+  name: central commander shades
+  description: Pride. Hubris. Wrath. It's not a sin if you're right.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Eyes/Glasses/deathsquad.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Eyes/Glasses/deathsquad.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+  - type: IdentityBlocker
+    coverage: EYES
+  - type: ThermalVision
+    isEquipment: true
+    color: "#98EEFB"
+    lightRadius: 15
+  - type: ChameleonClothing
+    slot: [ eyes ]
+    default: ClothingEyesGlassesDeathsquad
+  - type: UserInterface
+    interfaces:
+      enum.ChameleonUiKey.Key:
+        type: ChameleonBoundUserInterface
+  - type: ClothingGrantComponent
+    component:
+    - type: KravMaga # Silly
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag
+
+- type: entity
+  parent: [ClothingEyesHudOmni, BaseCentcommContraband]
+  id: ClothingEyesGlassesCentComm
+  suffix: DO NOT MAP
+  name: central command shades
+  description: A pair of shades designed for central command personnel. It's nothing personal. # *teleports behind you*, Nothing personnel, kid.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Eyes/Glasses/centcommglasses.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Eyes/Glasses/centcommglasses.rsi
   - type: FlashImmunity
   - type: EyeProtection
     protectionTime: 5
   - type: Tag
     tags:
-     - WhitelistChameleon
-     - HudMedical
-     - HudSecurity
+    - WhitelistChameleon
+  - type: IdentityBlocker
+    coverage: EYES
+  - type: ThermalVision
+    isEquipment: true
+    color: "#2ebf40"
+    lightRadius: 15
+
+- type: entity
+  parent: [ClothingEyesBase, ShowSecurityIcons, ShowMedicalIcons, BaseCentcommContraband]
+  id: ClothingEyesGlassesCentCommNoThermal
+  suffix: No thermals, DO NOT MAP
+  name: central command shades
+  description: A pair of shades designed for central command personnel. Comes with more features than you could imagine.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Eyes/Glasses/centcommglasses.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Eyes/Glasses/centcommglasses.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+  - type: Tag
+    tags:
+    - WhitelistChameleon
   - type: IdentityBlocker
     coverage: EYES
   - type: ShowHealthBars
     damageContainers:
-     - Biological
-     - Inorganic
-     - Silicon
-     - SiliconUnshielded
-  - type: ShowHealthIcons
-    damageContainers:
-     - Biological
-     - Inorganic
-     - Silicon
-     - SiliconUnshielded
+    - Biological
+    - Inorganic
+  - type: ShowHungerIcons
+  - type: ShowThirstIcons
 
+- type: entity
+  parent: [ClothingEyesBase, ShowHealthRelatedIcons, BaseCentcommContraband, ClothingEyesGlassesSunglasses]
+  id: ClothingEyesGlassesBSO
+  name: blueshield officer glasses
+  description: Sunglasses with a medical, job and diagnostic hud.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Eyes/Glasses/bsoglasses.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Eyes/Glasses/bsoglasses.rsi
+  - type: ShowJobIcons
+  - type: ShowMindShieldIcons
+
+
+- type: entity
+  parent: [ClothingEyesBase, ClothingEyesGlassesSunglasses, ShowHealthRelatedIcons]
+  id: ClothingEyesGlassesMedDiag
+  name: meddiag glasses
+  description: Sunglasses with a medical and diagnostic hud.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Eyes/Glasses/meddiagglasses.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Eyes/Glasses/meddiagglasses.rsi
+  - type: Construction
+    graph: GlassesMedDiagHUD
+    node: glassesMedDiag
+
+- type: entity
+  parent: [ClothingEyesBase, ShowSecurityIcons, BaseSecurityCommandContraband]
+  id: ClothingEyesGlassesSecurityAdvanced
+  name: advanced security goggles
+  description: A set of goggles that provide flash protection, a security HUD, and basic thermal vision.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Eyes/Glasses/hos-expi.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Eyes/Glasses/hos-expi.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: GuideHelp
+    guides:
+    - Security
+    - Antagonists
+  - type: ThermalVision
+    flashDurationMultiplier: 2
+    pulseTime: 2
+    isEquipment: true
+    toggleAction: PulseThermalVision
+  - type: IdentityBlocker
+    coverage: EYES
+
+- type: entity
+  parent: [ClothingEyesGlassesSecurity, BaseSecurityContraband]
+  id: ClothingEyesGlassesSecurityContraDetect
+  name: contraband detector security glasses
+  description: A set of glasses that provide flash protection, a security HUD, and a built in contraband detector.
+  components:
+  - type: ShowContrabandIcons

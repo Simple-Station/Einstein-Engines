@@ -1,3 +1,15 @@
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Eoin Mcloughlin <helloworld@eoinrul.es>
+# SPDX-FileCopyrightText: 2023 eoineoineoin <eoin.mcloughlin+gh@gmail.com>
+# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: DiseaseDiagnoser
   parent: [ BaseMachinePowered, SmallConstructibleMachine ]
@@ -10,13 +22,57 @@
     sprite: Structures/Machines/diagnoser.rsi
     layers:
     - state: icon
-      map: ["enum.DiseaseMachineVisualLayers.IsRunning"]
+    - state: running
+      visible: false
+      map: ["running"]
     - state: unlit
       shader: unshaded
-      map: ["enum.DiseaseMachineVisualLayers.IsOn"]
+      map: ["enum.PowerDeviceVisualLayers.Powered"] # Goobstation
   - type: Appearance
   - type: Machine
     board: DiagnoserMachineCircuitboard
+  # <Goobstation>
+  - type: VirologyMachine
+    idleState: icon
+    runningState: running
+    swabSlot:
+      occludesLight: True
+      insertSound: !type:SoundPathSpecifier
+        path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
+      ejectSound: !type:SoundPathSpecifier
+        path: /Audio/Weapons/Guns/MagOut/revolver_magout.ogg
+      insertOnInteract: True
+      swap: True
+      whitelist:
+        requireAll: False
+        components:
+        - DiseaseSwab
+  - type: ContainerContainer
+    containers:
+      disease_swab_slot: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      machine_board: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+      machine_parts: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: ItemSlots
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+      enum.DiseaseMachineVisuals.IsRunning:
+        running:
+          True: { visible: true }
+          False: { visible: false }
+  # </Goobstation>
 
 - type: entity
   name: disease diagnoser report
@@ -40,6 +96,12 @@
     headerMargin: 0.0, 0.0, 0.0, 6.0
     backgroundImageTile: true
     backgroundPatchMargin: 0.0, 6.0, 0.0, 6.0
-    contentMargin: 12.0, 0.0, 12.0, 0.0
-    # This is a narrow piece of paper
-    maxWritableArea: 128.0, 0.0
+  - type: ContainerContainer #goob edit start - swabs in disease reports
+    containers:
+      item: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      item:
+        whitelist:
+          components:
+          - DiseaseSwab # goob edit end

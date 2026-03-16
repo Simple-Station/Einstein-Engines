@@ -1,4 +1,14 @@
-﻿- Flags: QUERY
+# SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+# SPDX-FileCopyrightText: 2023 moonheart08 <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ElectroJr <leonsfriedrich@gmail.com>
+# SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- Flags: QUERY
   Commands:
     - entities
     - nearby
@@ -43,14 +53,6 @@
     - allcomps
     - entitysystemupdateorder
     - mind
-
-- Flags: HOST
-  Commands:
-    - methods
-    - ioc
-
-- Flags: ADMIN
-  Commands:
     - fuck
     - '=>'
     - '?'
@@ -82,7 +84,7 @@
     - '%'
     - '%/'
     - '&~'
-    - '|~'
+    - bitornot
     - '^~'
     - '~'
     - '<'
@@ -96,7 +98,7 @@
     - '*/'
     - '//'
     - '&'
-    - '|'
+    - bitor
     - '^'
     - neg
     - abs
@@ -189,3 +191,9 @@
     - realtime
     - servertime
     - more
+
+- Flags: FULLADMIN # Goobstation
+  Commands:
+  - self
+  - entities
+  - nearby

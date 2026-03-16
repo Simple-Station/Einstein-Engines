@@ -1,4 +1,12 @@
-using System.Linq;
+// SPDX-FileCopyrightText: 2023 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using Content.Server.Physics.Components;
 using Robust.Shared.Random;
@@ -61,6 +69,9 @@ public sealed class ChasingWalkSystem : VirtualController
 
     private void ChangeTarget(EntityUid uid, ChasingWalkComponent component)
     {
+        if (component.ChasingComponent.Count <= 0)
+            return;
+
         //We find our coordinates and calculate the radius of the target search.
         var xform = Transform(uid);
         var range = component.MaxChaseRadius;

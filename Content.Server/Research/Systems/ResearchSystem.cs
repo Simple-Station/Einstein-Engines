@@ -1,3 +1,22 @@
+// SPDX-FileCopyrightText: 2019 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2020 ComicIronic <comicironic@gmail.com>
+// SPDX-FileCopyrightText: 2020 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 chairbender <kwhipke1@gmail.com>
+// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 Chris <HoofedEar@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Administration.Logs;
@@ -18,6 +37,7 @@ namespace Content.Server.Research.Systems
         [Dependency] private readonly IAdminLogManager _adminLog = default!;
         [Dependency] private readonly IGameTiming _timing = default!;
         [Dependency] private readonly AccessReaderSystem _accessReader = default!;
+        [Dependency] private readonly EntityLookupSystem _lookup = default!;
         [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
         [Dependency] private readonly SharedPopupSystem _popup = default!;
         [Dependency] private readonly RadioSystem _radio = default!;
@@ -34,19 +54,20 @@ namespace Content.Server.Research.Systems
         }
 
         /// <summary>
-        /// Gets a server based on it's unique numeric id.
+        /// Gets a server based on its unique numeric id.
         /// </summary>
+        /// <param name="client"></param>
         /// <param name="id"></param>
         /// <param name="serverUid"></param>
         /// <param name="serverComponent"></param>
         /// <returns></returns>
-        public bool TryGetServerById(int id, [NotNullWhen(true)] out EntityUid? serverUid, [NotNullWhen(true)] out ResearchServerComponent? serverComponent)
+        public bool TryGetServerById(EntityUid client, int id, [NotNullWhen(true)] out EntityUid? serverUid, [NotNullWhen(true)] out ResearchServerComponent? serverComponent)
         {
             serverUid = null;
             serverComponent = null;
 
-            var query = EntityQueryEnumerator<ResearchServerComponent>();
-            while (query.MoveNext(out var uid, out var server))
+            var query = GetServers(client);
+            foreach (var (uid, server) in query)
             {
                 if (server.Id != id)
                     continue;
@@ -61,34 +82,29 @@ namespace Content.Server.Research.Systems
         /// Gets the names of all the servers.
         /// </summary>
         /// <returns></returns>
-        public string[] GetServerNames()
+        public string[] GetServerNames(EntityUid client)
         {
-            var allServers = EntityQuery<ResearchServerComponent>(true).ToArray();
-            var list = new string[allServers.Length];
-
-            for (var i = 0; i < allServers.Length; i++)
-            {
-                list[i] = allServers[i].ServerName;
-            }
-
-            return list;
+            return GetServers(client).Select(x => x.Comp.ServerName).ToArray();
         }
 
         /// <summary>
         /// Gets the ids of all the servers
         /// </summary>
         /// <returns></returns>
-        public int[] GetServerIds()
+        public int[] GetServerIds(EntityUid client)
         {
-            var allServers = EntityQuery<ResearchServerComponent>(true).ToArray();
-            var list = new int[allServers.Length];
+            return GetServers(client).Select(x => x.Comp.Id).ToArray();
+        }
 
-            for (var i = 0; i < allServers.Length; i++)
-            {
-                list[i] = allServers[i].Id;
-            }
+        public HashSet<Entity<ResearchServerComponent>> GetServers(EntityUid client)
+        {
+            var clientXform = Transform(client);
+            if (clientXform.GridUid is not { } grid)
+                return [];
 
-            return list;
+            var set = new HashSet<Entity<ResearchServerComponent>>();
+            _lookup.GetGridEntities(grid, set);
+            return set;
         }
 
         public override void Update(float frameTime)

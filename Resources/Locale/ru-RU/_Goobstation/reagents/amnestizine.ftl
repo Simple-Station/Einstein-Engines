@@ -3,12 +3,12 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-amnestizine-effect-forget = Вам кажется, что вы забыли что-то важное...
-amnestizine-effect-hole = Вы чувствуете, как в вашем сознании прожигают дыру.
-amnestizine-effect-blank = Вашем разум кажется пустым.
+amnestizine-effect-forget = Вы чувствуете, что забыли что-то важное...
+amnestizine-effect-hole = Кажется, в вашем сознании звенит дыра.
+amnestizine-effect-blank = Ваш разум кажется пустым.
 amnestizine-effect-distracted = А? Где вы? Кто вы?
-amnestizine-effect-leave = Вы чувствуете, что вам следует убраться отсюда.
-amnestizine-effect-peaceful = Вы испытываете странное чувство умиротворения...
-amnestizine-effect-soul = Вы чувствуете, что кто-то пристально смотрит на вашу душу.
-amnestizine-effect-widen = Вы чувствуете, что ваше зрение расширяется почти мгновенно..
-amnestizine-effect-listen = Вам... следует прислушиваться к начальству.
+amnestizine-effect-leave = Вам кажется, что пора уходить отсюда.
+amnestizine-effect-peaceful = Вы ощущаете странное чувство спокойствия...
+amnestizine-effect-soul = Вам кажется, что кто-то смотрит прямо вам в душу.
+amnestizine-effect-widen = Ваше зрение почти мгновенно расширяется...
+amnestizine-effect-listen = Вы... должны слушать своих начальников.

@@ -1,6 +1,7 @@
 ﻿using Content.Corvax.Interfaces.Shared;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Mind;
+using Content.Shared.Mind.Components;
 using Content.Shared.Roles;
 using JetBrains.Annotations;
 using Robust.Shared.Configuration;
@@ -27,18 +28,14 @@ public sealed partial class SponsorRequirement : CharacterRequirement
         IConfigurationManager configManager,
         out string? reason,
         int depth = 0,
-        MindComponent? mind = null
-    )
+        MindComponent? mind = null)
     {
         reason = null;
 
         if (mind == null)
             return true;
 
-        if (mind.Session == null)
-            return true;
-
-        var sponsorProtos = GetPrototypes(mind.Session);
+        var sponsorProtos = GetPrototypes(mind, entityManager);
         if (!sponsorProtos.Contains(prototype.ID))
         {
             reason = Loc.GetString("loadout-sponsor-only");
@@ -48,22 +45,26 @@ public sealed partial class SponsorRequirement : CharacterRequirement
         return true;
     }
 
-    public List<string> GetPrototypes(ICommonSession session)
+    public List<string> GetPrototypes(MindComponent mind, IEntityManager entManager)
     {
         var ioc = IoCManager.Instance;
+        if (ioc == null) return [];
 
-        if (ioc == null)
+        var mindSystem = entManager.System<SharedMindSystem>();
+        if (mind.UserId == null)
             return [];
 
+        var userId = mind.UserId.Value;
+
         if (!ioc.TryResolveType<ISharedSponsorsManager>(out var sponsorsManager))
-            return new List<string>();
+            return [];
 
         var net = ioc.Resolve<INetManager>();
 
         if (net.IsClient)
             return sponsorsManager.GetClientPrototypes();
 
-        sponsorsManager.TryGetServerPrototypes(session.UserId, out var props);
+        sponsorsManager.TryGetServerPrototypes(userId, out var props);
         return props ?? [];
     }
 }

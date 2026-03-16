@@ -1,0 +1,16 @@
+ent-SpawnPointGhostGreyTide = спавнер грейтайд
+    .desc = { ent-BaseAntagSpawner.desc }
+ent-SpawnPointGhostSingulothKnight = спавнер рыцарь Сингулота
+    .desc = { ent-BaseAntagSpawner.desc }
+ent-SpawnPointGhostDarkLord = спавнер тёмный лорд
+    .desc = { ent-BaseAntagSpawner.desc }
+ent-SpawnPointGhostMimeAssassin = спавнер ассамим
+    .desc = { ent-BaseAntagSpawner.desc }
+ent-SpawnPointGhostChosenOne = спавнер избранный
+    .desc = { ent-BaseAntagSpawner.desc }
+ent-SpawnPointGhostDarkPriest = спавнер тёмный жрец
+    .desc = { ent-BaseAntagSpawner.desc }
+ent-MaintsSpawnMarker = спавнер техтоннель
+    .desc = { ent-MarkerBase.desc }
+ent-SpawnPointGhostDerelictCyborgSyndicate = { ent-BaseAntagSpawner }
+    .desc = { ent-BaseAntagSpawner.desc }

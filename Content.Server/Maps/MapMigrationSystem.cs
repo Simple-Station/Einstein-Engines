@@ -1,4 +1,10 @@
-﻿using System.Diagnostics.CodeAnalysis;
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using Robust.Shared.ContentPack;
@@ -22,7 +28,7 @@ public sealed class MapMigrationSystem : EntitySystem
 #pragma warning restore CS0414
     [Dependency] private readonly IResourceManager _resMan = default!;
 
-    private const string MigrationsFolder = "/Migrations";
+    private const string MigrationFile = "/migration.yml";
 
     public override void Initialize()
     {
@@ -30,7 +36,7 @@ public sealed class MapMigrationSystem : EntitySystem
         SubscribeLocalEvent<BeforeEntityReadEvent>(OnBeforeReadEvent);
 
 #if DEBUG
-        if (!TryReadFolder(out var mappings))
+        if (!TryReadFile(out var mappings))
             return;
 
         // Verify that all of the entries map to valid entity prototypes.
@@ -43,41 +49,10 @@ public sealed class MapMigrationSystem : EntitySystem
 #endif
     }
 
-    private bool TryReadFolder([NotNullWhen(true)] out MappingDataNode? mappings)
-    {
-        var migrationFolderPath = new ResPath(MigrationsFolder);
-        var mappingsFinal = new MappingDataNode();
-
-        foreach (var filePath in _resMan.ContentFindFiles(migrationFolderPath))
-        {
-            var result = TryReadFile(filePath, out var mappingsResult);
-
-            if (!result || mappingsResult == null)
-                continue;
-
-            foreach (var (key, value) in mappingsResult)
-            {
-                if (mappingsFinal.ContainsKey(key))
-                    continue;
-
-                mappingsFinal.TryAdd(key, value);
-            }
-        }
-
-        if (mappingsFinal.Count == 0)
-        {
-            mappings = null;
-            return false;
-        }
-
-        mappings = mappingsFinal;
-        return true;
-    }
-
-    private bool TryReadFile(ResPath path, [NotNullWhen(true)] out MappingDataNode? mappings)
+    private bool TryReadFile([NotNullWhen(true)] out MappingDataNode? mappings)
     {
         mappings = null;
-
+        var path = new ResPath(MigrationFile);
         if (!_resMan.TryContentFileRead(path, out var stream))
             return false;
 
@@ -93,7 +68,7 @@ public sealed class MapMigrationSystem : EntitySystem
 
     private void OnBeforeReadEvent(BeforeEntityReadEvent ev)
     {
-        if (!TryReadFolder(out var mappings))
+        if (!TryReadFile(out var mappings))
             return;
 
         foreach (var (key, value) in mappings)

@@ -1,0 +1,80 @@
+<!--
+SPDX-FileCopyrightText: 2023 coolmankid12345 <55817627+coolmankid12345@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Ghagliiarghii <68826635+Ghagliiarghii@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
+  # Революционеры
+
+  <Box>
+    [color=#999999][italic]"Да здравствует революция!!"[/italic][/color]
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="PosterContrabandRevolt" Caption=""/>
+  </Box>
+
+  Революционеры — это конверсионные антагонисты, спонсируемые [color=#ff0000]Синдикатом[/color], которым поручено взять под контроль станцию. У них нет никаких хитростей или дешёвых приёмов, у них есть только дело и сила в числах.
+
+  ## Цели
+  Вы должны задержать, убить, конвертировать или изгнать всех из [textlink="Руководство станции" link="Command"] на станции в любом порядке.
+
+  Ваша цель — не уничтожить станцию, а [italic]захватить её[/italic], поэтому старайтесь минимизировать ущерб по возможности.
+
+  [bold]Революция провалится[/bold], если все [bold][color=#5e9cff]Главные революционеры[/color][/bold] погибнут или все их гипнотические способности будут отключены имплантом MindShield, и все [color=red]Революционеры[/color] будут деконвертированы в этом случае.
+
+  ## Главные революционеры и конвертирование
+  [bold][color=#5e9cff]Главные революционеры[/color][/bold] выбираются в начале смены и начинают с [color=cyan]вспышки[/color], [color=cyan]шифровального ключа синдиката[/color] и пары [color=cyan]солнечных очков[/color].
+
+  <Box>
+    <GuideEntityEmbed Entity="RevolutionaryManifesto"/>
+    <GuideEntityEmbed Entity="EncryptionKeySyndie"/>
+  </Box>
+
+  Вы можете конвертировать членов экипажа на свою сторону, взяв любой [bold]вспышки[/bold] и атаковав им кого-либо в режиме [color=#ff0000]вреда[/color].
+  Однако вы не сможете конвертировать цель, если на ней есть [color=cyan]защита от вспышки[/color], такая как [bold]солнечные очки[/bold] или [bold]сварочная маска[/bold].
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingEyesGlassesSunglasses"/>
+    <GuideEntityEmbed Entity="ClothingEyesGlassesSecurity"/>
+    <GuideEntityEmbed Entity="ClothingHeadHatWelding"/>
+  </Box>
+
+  Ещё одним препятствием являются надоедливые [color=cyan]имплантеры MindShield[/color]. Они:
+  - Не дают имплантированному человеку стать [color=red]Революционером[/color]
+  - Деконвертируют революционеров, лишая их лояльности к вашей цели
+  - Видимо меняют внешний вид у [bold][color=#5e9cff]Главных революционеров[/color][/bold], выдавая их и отключая вашу способность конверсии
+  - НЕ защищают от дезориентации вспышки
+
+  Предполагается, что все [color=#cb0000]Сотрудники безопасности[/color] и [color=#1b67a5]Руководство[/color] уже имплантированы MindShield.
+
+  <Box>
+    <GuideEntityEmbed Entity="MindShieldImplanter"/>
+  </Box>
+
+  ## Борьба с МайдШилд
+
+  Имплант МайдШилд можно извлечь у цели с помощью пустого [color=cyan]имплантера[/color], который можно изготовить на [color=yellow]медицинском техфабе[/color], расположенном в медицинском отделе.
+
+  После удаления импланта вы сможете конвертировать цель, включая руководство и сотрудников безопасности.
+
+  Если ваша способность конверсии была отключена из-за [color=cyan]импланта MindShield[/color], вам просто нужно удалить этот имплант, чтобы снова активировать конверсию.
+
+  <Box>
+    <GuideEntityEmbed Entity="Implanter"/>
+    <GuideEntityEmbed Entity="MedicalTechFab"/>
+  </Box>
+
+  ## Революционер
+  [bold][color=red]Революционер[/color][/bold] — это член экипажа, который был конвертирован [bold][color=#5e9cff]Главным революционером[/color][/bold].
+
+  [bold][color=red]Революционеры[/color] не могут сами конвертировать других,[/bold] но они отлично подходят для грязной работы и выполнения приказов.
+
+</Document>

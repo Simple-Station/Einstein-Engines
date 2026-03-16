@@ -1,3 +1,17 @@
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2023 Arendian <137322659+Arendian@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <drsmugleaf@gmail.com>
+// SPDX-FileCopyrightText: 2023 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 godisdeadLOL <169250097+godisdeadLOL@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 RichardBlonski <48651647+RichardBlonski@users.noreply.github.com> Goobstation
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Shared.NPC.Components;
@@ -7,19 +21,13 @@ using Content.Shared.Damage;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Silicons.Bots;
+using Content.Shared.Stealth.Components; // Goobstation
 using Content.Shared.Emag.Components;
-using Content.Shared.Silicon.Components;
-using Microsoft.Extensions.ObjectPool;
-using Robust.Shared.Utility;
-
 
 namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
 
 public sealed partial class PickNearbyInjectableOperator : HTNOperator
 {
-    private static readonly ObjectPool<HashSet<EntityUid>> EntPool =
-        new DefaultObjectPool<HashSet<EntityUid>>(new SetPolicy<EntityUid>(), 64);
-
     [Dependency] private readonly IEntityManager _entManager = default!;
     private EntityLookupSystem _lookup = default!;
     private MedibotSystem _medibot = default!;
@@ -63,19 +71,16 @@ public sealed partial class PickNearbyInjectableOperator : HTNOperator
         var recentlyInjected = _entManager.GetEntityQuery<NPCRecentlyInjectedComponent>();
         var mobState = _entManager.GetEntityQuery<MobStateComponent>();
         var emaggedQuery = _entManager.GetEntityQuery<EmaggedComponent>();
+        var stealthQuery = _entManager.GetEntityQuery<StealthComponent>(); // Goobstation
 
-        var entities = EntPool.Get();
-        _lookup.GetEntitiesInRange(owner, range, entities);
-        foreach (var entity in entities)
+        foreach (var entity in _lookup.GetEntitiesInRange(owner, range))
         {
             if (mobState.TryGetComponent(entity, out var state) &&
                 injectQuery.HasComponent(entity) &&
                 damageQuery.TryGetComponent(entity, out var damage) &&
-                !recentlyInjected.HasComponent(entity))
+                !recentlyInjected.HasComponent(entity) &&
+                !(stealthQuery.TryGetComponent(entity, out var stealth) && stealth.Enabled)) // Goobstation - stealth check
             {
-                if (_entManager.HasComponent<SiliconComponent>(entity))
-                    continue;
-
                 // no treating dead bodies
                 if (!_medibot.TryGetTreatment(medibot, state.CurrentState, out var treatment))
                     continue;
@@ -101,7 +106,6 @@ public sealed partial class PickNearbyInjectableOperator : HTNOperator
                 });
             }
         }
-        EntPool.Return(entities);
 
         return (false, null);
     }

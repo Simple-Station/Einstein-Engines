@@ -1,3 +1,13 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Movement.Components;
 using Content.Shared.Station.Components;
 using Robust.Shared.GameStates;
@@ -170,10 +180,11 @@ public sealed partial class ReplaySpectatorSystem
         {
             var size = grid.LocalAABB.Size.LengthSquared();
 
-            if (maxSize is not null && size < maxSize)
-                continue;
-
             var station = HasComp<StationMemberComponent>(uid);
+
+            //We want the first station grid to overwrite any previous non-station grids no matter the size, in case the vgroid was found first
+            if (maxSize is not null && size < maxSize && !(!stationFound && station))
+                continue;
 
             if (!station && stationFound)
                continue;
@@ -183,7 +194,6 @@ public sealed partial class ReplaySpectatorSystem
 
             if (station)
                 stationFound = true;
-
         }
 
         coords = new EntityCoordinates(maxUid ?? default, default);

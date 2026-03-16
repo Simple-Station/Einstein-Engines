@@ -1,4 +1,16 @@
-﻿using Robust.Shared.Prototypes;
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 Jajsha <101492056+Zap527@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ScarKy0 <scarky0@onet.eu>
+// SPDX-FileCopyrightText: 2024 Zachary Higgs <compgeek223@gmail.com>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Robust.Shared.Prototypes;
 using Robust.Shared.Audio;
 
 namespace Content.Shared.Silicons.Laws.Components;
@@ -6,7 +18,7 @@ namespace Content.Shared.Silicons.Laws.Components;
 /// <summary>
 /// This is used for an entity which grants laws to a <see cref="SiliconLawBoundComponent"/>
 /// </summary>
-[RegisterComponent, Access(typeof(SharedSiliconLawSystem))]
+[RegisterComponent] // Goobstation - Make this component not locked to SharedSiliconLawSystem
 public sealed partial class SiliconLawProviderComponent : Component
 {
     /// <summary>
@@ -28,14 +40,6 @@ public sealed partial class SiliconLawProviderComponent : Component
     /// </summary>
     [DataField]
     public SoundSpecifier? LawUploadSound = new SoundPathSpecifier("/Audio/Misc/cryo_warning.ogg");
-
-    /// <summary>
-    ///     Whether this lawset cannot ever be removed, such as Antagonistic laws. This is largely needed for MALF AI,
-    ///     since it is imperative that the MALF AI needs to be destroyed, and can't simply be rendered harmless by
-    ///     the research director getting a board out of his closet.
-    /// </summary>
-    [DataField]
-    public bool UnRemovable;
 
     /// <summary>
     /// Whether this silicon is subverted by an ion storm or emag.

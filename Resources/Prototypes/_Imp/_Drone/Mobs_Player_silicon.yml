@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 acatrw <wispycat07@gmail.com>
+# SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 # Drones and OneStar mech
 - type: entity
   save: false
@@ -18,6 +27,16 @@
   - type: Clickable
   - type: Damageable
     damageContainer: Inorganic
+  - type: Bloodstream
+    bloodReagent: Oil
+    bloodlossDamage:
+      types:
+        Bloodloss:
+          1
+    bloodlossHealDamage:
+      types:
+        Bloodloss:
+          -1
   - type: InteractionOutline
   - type: Fixtures
     fixtures:
@@ -56,13 +75,18 @@
   - type: Body
     prototype: Drone
   - type: IntrinsicRadioReceiver
-  - type: IntrinsicRadioTransmitter
-    channels:
-    - Binary
+  #- type: IntrinsicRadioTransmitter
+  #  channels:
+  #  - Binary # Goobstation - replaced with collective mind
   - type: ActiveRadio
     channels:
-    - Binary
+    # - Binary # Goobstation - replaced with collective mind
     - Common
+  # Goobstation
+  - type: CollectiveMind
+    defaultChannel: Binary
+    channels:
+    - Binary
   - type: DoAfter
   - type: Pullable
   - type: Examiner
@@ -71,10 +95,18 @@
   - type: Alerts
   - type: ProtectedFromStepTriggers
   - type: Targeting # Shitmed Change
+  # <Goobstation>
+  - type: FlashVulnerable
+  - type: TypingIndicator
+    proto: robot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Borg
+  # </Goobstation>
 
 - type: entity
   name: drone
-  id: MobDrone
+  id: Drone
   parent: [PlayerSiliconBase, BaseBorgTransponder]
   components:
   - type: Drone # this system has too much going on, it should really be like three different components
@@ -91,9 +123,6 @@
       components:
       - Gun
       - EnergySword
-  - type: PAI # imp; this is added specifically for the internal station map feature but the other aspects are not especially against the identity of drones. and i dont want to put the work into ECS-ifying PAIComponent
-    mapActionId: ActionDroneOpenMap # redefining these to reflavor their descriptions.
-    midiActionId: ActionDronePlayMidi
   - type: Instrument # imp
     allowPercussion: false
     handheld: false
@@ -106,7 +135,6 @@
     group: Drone
   - type: Inventory
     templateId: drone
-  - type: ComplexInteraction
   - type: InventorySlots
   - type: Strippable
   - type: UserInterface
@@ -121,6 +149,12 @@
       enum.StationMapUiKey.Key: #imp
         type: StationMapBoundUserInterface
         requireInputValidation: false
+  - type: IntrinsicUI # Goob edit
+    uis:
+      enum.StationMapUiKey.Key:
+        toggleAction: ActionShowStationMap
+      enum.InstrumentUiKey.Key:
+        toggleAction: ActionDronePlayMidi
   - type: StationMap #imp
   - type: GhostRole
     requirements:
@@ -134,13 +168,15 @@
     name: ghost-role-information-drone-name
     description: ghost-role-information-drone-description
     rules: ghost-role-information-drone-rules
+    mindRoles:
+    - MindRoleGhostRoleSilicon
   - type: GhostTakeoverAvailable
   - type: SiliconLawBound
   - type: SiliconLawProvider
     laws: Drone
   - type: MovementSpeedModifier
-    baseWalkSpeed : 6
-    baseSprintSpeed : 6
+    baseWalkSpeed : 5
+    baseSprintSpeed : 5
   - type: MobState
     allowedStates:
     - Alive
@@ -149,13 +185,18 @@
     thresholds:
       0: Alive
       60: Dead
-  - type: Flash
+  #- type: Flash # Goobstation - Remove drone flashing.
   - type: NoSlip
   - type: StatusEffects
     allowed:
     - Stun
     - KnockedDown
     - SlowedDown
+    - Flashed # Goobstation - counter to shitter drones
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      30: 0.7
+      50: 0.5
   - type: Temperature
     heatDamageThreshold: 5000
     currentTemperature: 310.15
@@ -181,7 +222,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.3
-        density: 50
+        density: 30
         mask:
         - SmallMobMask
         layer:
@@ -193,6 +234,18 @@
         base:
           Off: { state: shell }
           On: { state: drone }
+  - type: LanguageSpeaker # Einstein Engines - Language
+  - type: LanguageKnowledge # Einstein Engines - Language
+    speaks:
+    - DroneTalk
+    understands:
+    - DroneTalk
+    - TauCetiBasic
+  - type: TypingIndicator
+    proto: robot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Pai
   - type: Repairable
     fuelCost: 15
     doAfterDelay: 8
@@ -208,6 +261,10 @@
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
   - type: ProtectedFromStepTriggers
+  - type: DamageOnInteractProtection # Goobstation - Copied from borgs
+    damageProtection:
+      flatReductions:
+        Heat: 10 # capable of touching light bulbs and stoves without feeling pain!
   - type: InputMover
   - type: MobMover
   - type: ContentEye
@@ -218,24 +275,14 @@
     - EmagImmune
     - CanPilot
     - VimPilot
+    - Bot # Goobstation
+  - type: CollectiveMind # Goobstation
+    defaultChannel: Dronemind
+    channels:
+    - Dronemind
   - type: Access
     tags:
     - Engineering
     - Maintenance
-  - type: RandomMetadata
-    nameSegments:
-    - names_drone # maintainer drones get named after maintainers get it? its funny
-  - type: Construction
-    graph: Drone
-    node: bot
-  - type: LanguageKnowledge
-    speaks:
-    - DroneTalk
-    understands:
-    - DroneTalk
-    - TauCetiBasic
-  - type: TypingIndicator
-    proto: robot
-  - type: Speech
-    speechVerb: Robotic
-    speechSounds: Pai
+    - Atmospherics # Goobstation
+  - type: ContributorName # Goobstation - Maint drones get up to date contributor names

@@ -1,4 +1,26 @@
-﻿# Generic borg
+# SPDX-FileCopyrightText: 2024 AstroDogeDX <48888500+AstroDogeDX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Nox <nebulousnox38@gmail.com>
+# SPDX-FileCopyrightText: 2025 RatherUncreative <RatherUncreativeName@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Whatstone <whatston3@gmail.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+# SPDX-FileCopyrightText: 2025 mubururu_ <139181059+muburu@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Generic borg
 - type: borgType
   id: generic
 
@@ -10,10 +32,12 @@
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
+    - BorgModuleScience #until sciborgs are added
 
   defaultModules:
   - BorgModuleTool
-
+  - BorgModuleArtifact
+  - BorgModuleAnomaly
   radioChannels:
   - Science
 
@@ -48,7 +72,6 @@
   - BorgModuleConstruction
   - BorgModuleRCD
   - BorgModuleCable
-  - BorgModuleFireExtinguisher
 
   lawset: Engineer # DeltaV: Custom lawset
 
@@ -83,14 +106,22 @@
     - BorgModuleCargo
 
   defaultModules:
-#  - BorgModuleGrapplingGun
+  - BorgModuleTool
   - BorgModuleMining
+  - BorgModuleTraversal
   - BorgModuleAppraisal
   - BorgModulePKA # Lavaland
 
   radioChannels:
   - Supply
   - Science
+
+  addComponents: # Goobstation
+  - type: NoWieldNeeded
+  - type: SlavedBorg # Goobstation: Special AI labeling for salv borgs.
+    law: ObeyAI
+
+  lawset: Salvage # DeltaV: Custom lawset
 
   # Visual
   inventoryTemplateId: borgTall
@@ -120,14 +151,15 @@
     - BorgModuleJanitor
 
   defaultModules:
-  - BorgModuleLightReplacer
+  - BorgModuleTool
   - BorgModuleCleaning
-
-  lawset: Janitor # DeltaV: Custom lawset
+  - BorgModuleCustodial
 
   radioChannels:
   - Science
   - Service
+
+  lawset: Janitor # DeltaV: Custom lawset
 
   # Visual
   inventoryTemplateId: borgShort
@@ -157,14 +189,18 @@
     - BorgModuleMedical
 
   defaultModules:
-  - BorgModuleTreatment
-  - BorgModuleDiagnosis
+  - BorgModuleTool
+  - BorgModuleChemical
+  - BorgModuleTopicals
+  - BorgModuleRescue
+  - BorgModuleSurgery
+  - BorgModuleLollypop # Goobstation
+
+  lawset: Medical # DeltaV: Custom lawset
 
   radioChannels:
   - Science
   - Medical
-
-  lawset: Medical # DeltaV: Custom lawset
 
   addComponents:
   - type: SolutionScanner
@@ -174,15 +210,11 @@
   - type: ShowHealthIcons
     damageContainers:
     - Biological
-  - type: FabricateActions
-    actions:
-    - ActionFabricateLollipop
-    - ActionFabricateGumball
+  - type: Sanitized # Shitmed
+  - type: SurgeryTarget # Shitmed
   - type: SurgeryIgnoreClothing
   - type: SurgerySpeedModifier
     speedModifier: 1.5
-  - type: SurgeryTarget
-  - type: Sanitized
 
   # Visual
   inventoryTemplateId: borgDutch
@@ -216,9 +248,15 @@
     - BorgModuleService
 
   defaultModules:
+  - BorgModuleTool
   - BorgModuleMusique
   - BorgModuleService
-  - BorgModuleClowning
+  # - BorgModuleClowning # goobedit
+  - BorgModuleGardening
+  - BorgModuleHarvesting
+  - BorgModuleLollypop # Goobstation
+
+  lawset: Clown # DeltaV: Custom lawset
 
   radioChannels:
   - Science

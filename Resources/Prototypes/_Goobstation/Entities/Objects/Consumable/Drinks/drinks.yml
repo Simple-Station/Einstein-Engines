@@ -1,0 +1,93 @@
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Pspritechologist <naaronn@gmail.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: DrinkBase
+  id: DrinkBasePlastic
+  abstract: true
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 50
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 100
+
+- type: entity
+  parent: DrinkBasePlastic
+  id: DrinkFitnessShakerBlack
+  name: fitness shaker
+  description: Big enough to contain enough protein to get perfectly swole. Don't mind the bits.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Consumable/Drinks/shakerblack.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkFitnessShakerBlack
+  id: DrinkFitnessShakerRed
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Consumable/Drinks/shakerred.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkFitnessShakerBlack
+  id: DrinkFitnessShakerBlue
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Consumable/Drinks/shakerblue.rsi
+    state: icon
+
+- type: reagent
+  id: MilkChoco
+  name: reagent-name-milk-choco
+  group: NonAlcoholicDrinks #- Goob: Drinks guidebook split
+  desc: reagent-desc-milk-choco
+  physicalDesc: reagent-physical-desc-opaque
+  flavor: chocolate
+  color: "#664300"
+  recognizable: true
+  plantMetabolism:
+    - !type:PlantAdjustNutrition
+      amount: 0.1
+    - !type:PlantAdjustWater
+      amount: 0.9
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 4
+
+- type: entity
+  parent: [DrinkBottleVisualsAll, DrinkBottlePlasticSmallBaseFull]
+  id: DrinkMilkBottleFull
+  name: milk bottle
+  description: How do plasmamen even drink this?
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Milk
+          Quantity: 30
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/waterbottle.rsi
+  - type: SolutionContainerVisuals
+    inHandsMaxFillLevels: 2
+    inHandsFillBaseName: -fill-
+  - type: Label
+    currentLabel: reagent-name-milk
+  - type: Sealable
+  - type: Tag # Goobstation
+    tags:
+    - DrinkBottle

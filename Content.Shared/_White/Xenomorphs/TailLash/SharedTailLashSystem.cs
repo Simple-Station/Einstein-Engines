@@ -87,7 +87,7 @@ public sealed class SharedTailLashSystem : EntitySystem
         _interaction.DoContactInteraction(uid, uid);
 
         var hitEntities = results.Where(result => _interaction.InRangeUnobstructed(uid, result, range: range)).ToList();
-        var hitEvent = new MeleeHitEvent(hitEntities, uid, uid, component.TailDamage, null);
+        var hitEvent = new MeleeHitEvent(hitEntities, uid, uid, component.TailDamage, null, args.Target);
         RaiseLocalEvent(uid, hitEvent);
 
         foreach (var hit in hitEntities)
@@ -108,7 +108,7 @@ public sealed class SharedTailLashSystem : EntitySystem
         }
 
         var localPos = transform.LocalRotation.RotateVec(matrix);
-        _meleeWeapon.DoLunge(uid, uid, rotation, localPos, component.TailAnimationId, true);
+        _meleeWeapon.DoLunge(uid, uid, rotation, localPos, component.TailAnimationId, new Angle(0), false);
         _audio.PlayPredicted(component.HitSound, uid, uid);
 
         var attackEv = new MeleeAttackEvent(uid);

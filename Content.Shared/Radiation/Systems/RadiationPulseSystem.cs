@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.Radiation.Components;
 using Robust.Shared.Spawners;
 using Robust.Shared.Timing;
@@ -23,10 +29,15 @@ public sealed class RadiationPulseSystem : EntitySystem
         {
             component.VisualDuration = despawn.Lifetime;
         }
+        /*
+        goobstation - Long depricated wizden system, changes to RadiationSystem and RadiationSourceComponent
+        have changed how radiation range is calculated.
+        Fix/adjust if reimplementation occurs, default visual range is "fine" for now.
         // try to get radiation range or keep default visual range
         if (TryComp<RadiationSourceComponent>(uid, out var radSource))
         {
             component.VisualRange = radSource.Intensity / radSource.Slope;
         }
+        */
     }
 }

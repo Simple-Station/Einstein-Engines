@@ -1,5 +1,11 @@
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: ShadowKudzuLootSpawner
+  name: shadow kudzu loot spawner
   parent: MarkerBase
   components:
     - type: Sprite
@@ -23,37 +29,4 @@
       rareChance: 0.05
       rarePrototypes:
         - MobCatShadow
-        - ArtifactFragment
-
-- type: entity
-  id: ShadowKudzuLootSpawnerTemp #literally just the other loot spawner but spawns a temp ver of the shadowportal
-  parent: MarkerBase
-  components:
-    - type: Sprite
-      layers:
-      - state: red
-      - sprite: Structures/Specific/Anomalies/shadow_anom.rsi
-        state: anom
-    - type: RandomSpawner
-      offset: 0.05
-      chance: 0.7
-      prototypes:
-        - CrystalPink
-        - CrystalPink
-        - ShadowPortalTemp
-        - ShadowPortalTemp
-        - ShadowPortalTemp
-        - ShadowPortalTemp
-        - ShadowPortalTemp
-        - ShadowPortalTemp
-        - ShadowTree
-        - ShadowTree
-        - ShadowTree
-        - ShadowTree
-        - ShadowTree
-        - ShadowTree
-      rareChance: 0.05
-      rarePrototypes:
-        - MobCatShadow
-        - MobCatShadow
-        - ArtifactFragment
+        - ArtifactFragment1

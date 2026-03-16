@@ -1,28 +1,56 @@
+# SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+# SPDX-FileCopyrightText: 2022 ChilbroBaggins <107660393+ChilbroBaggins@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Jeff <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 bloodrizer <cheshire.panther@gmail.com>
+# SPDX-FileCopyrightText: 2022 corentt <36075110+corentt@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Patrik Caes-Sayrs <heartofgoldfish@gmail.com>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 #
-# Base component for consumable food
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Base component for edible food-like items
 #
 - type: entity
-  parent: BaseItem
-  id: FoodBase
   abstract: true
+  parent: BaseItem
+  id: EdibleBase
   components:
   - type: FlavorProfile
     flavors:
       - food
-  - type: Food
-  - type: SpaceGarbage
+  - type: Edible
   - type: Sprite
   - type: StaticPrice
     price: 0
+
+#
+# Base component for consumable food
+# that should be cleaned up in space
+#
+- type: entity
+  abstract: true
+  parent: EdibleBase
+  id: FoodBase
+  components:
+  - type: SpaceGarbage
 
 # This base type is used to cover all of the "obvious" things that should be doable to open-package food.
 # Practically this means injection.
 # But it might in future also mean drawing with a syringe, so this is a base prototype just in case.
 
 - type: entity
+  abstract: true
   parent: FoodBase
   id: FoodInjectableBase
-  abstract: true
   components:
   - type: InjectableSolution
     solution: food
@@ -32,8 +60,8 @@
 # usable by any food that can be opened
 # handles appearance with states "icon" and "icon-open"
 - type: entity
-  id: FoodOpenableBase
   abstract: true
+  id: FoodOpenableBase
   components:
   - type: Appearance
   - type: Sprite

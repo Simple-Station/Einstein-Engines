@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using System.IO.Compression;
 using System.Linq;
 using Content.Client.Message;
@@ -263,7 +270,7 @@ public sealed class ReplayMainScreen : State
         }
         catch (Exception ex)
         {
-            Logger.GetSawmill("replay.mainmenu").Error($"Failed to load replay info. Exception: {ex}");
+            Logger.Error($"Failed to load replay info. Exception: {ex}");
             SelectReplay(null);
             return;
         }

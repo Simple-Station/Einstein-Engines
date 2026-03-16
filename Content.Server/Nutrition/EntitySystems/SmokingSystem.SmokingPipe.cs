@@ -1,3 +1,14 @@
+// SPDX-FileCopyrightText: 2022 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Nutrition.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Containers.ItemSlots;
@@ -30,7 +41,7 @@ namespace Content.Server.Nutrition.EntitySystems
             if (args.Handled)
                 return;
 
-            if (!EntityManager.TryGetComponent(entity, out SmokableComponent? smokable))
+            if (!TryComp(entity, out SmokableComponent? smokable))
                 return;
 
             if (smokable.State != SmokableState.Unlit)
@@ -42,7 +53,7 @@ namespace Content.Server.Nutrition.EntitySystems
             if (!isHotEvent.IsHot)
                 return;
 
-            if (TryTransferReagents(entity.Comp, smokable))
+            if (TryTransferReagents(entity, (entity.Owner, smokable)))
                 SetSmokableState(entity, SmokableState.Lit, smokable);
             args.Handled = true;
         }
@@ -52,7 +63,7 @@ namespace Content.Server.Nutrition.EntitySystems
             var targetEntity = args.Target;
             if (targetEntity == null ||
                 !args.CanReach ||
-                !EntityManager.TryGetComponent(entity, out SmokableComponent? smokable) ||
+                !TryComp(entity, out SmokableComponent? smokable) ||
                 smokable.State == SmokableState.Lit)
                 return;
 
@@ -62,7 +73,7 @@ namespace Content.Server.Nutrition.EntitySystems
             if (!isHotEvent.IsHot)
                 return;
 
-            if (TryTransferReagents(entity.Comp, smokable))
+            if (TryTransferReagents(entity, (entity.Owner, smokable)))
                 SetSmokableState(entity, SmokableState.Lit, smokable);
             args.Handled = true;
         }
@@ -74,15 +85,15 @@ namespace Content.Server.Nutrition.EntitySystems
         }
 
         // Convert smokable item into reagents to be smoked
-        private bool TryTransferReagents(SmokingPipeComponent component, SmokableComponent smokable)
+        private bool TryTransferReagents(Entity<SmokingPipeComponent> entity, Entity<SmokableComponent> smokable)
         {
-            if (component.BowlSlot.Item == null)
+            if (entity.Comp.BowlSlot.Item == null)
                 return false;
 
-            EntityUid contents = component.BowlSlot.Item.Value;
+            EntityUid contents = entity.Comp.BowlSlot.Item.Value;
 
             if (!TryComp<SolutionContainerManagerComponent>(contents, out var reagents) ||
-                !_solutionContainerSystem.TryGetSolution(smokable.Owner, smokable.Solution, out var pipeSolution, out _))
+                !_solutionContainerSystem.TryGetSolution(smokable.Owner, smokable.Comp.Solution, out var pipeSolution, out _))
                 return false;
 
             foreach (var (_, soln) in _solutionContainerSystem.EnumerateSolutions((contents, reagents)))
@@ -91,9 +102,9 @@ namespace Content.Server.Nutrition.EntitySystems
                 _solutionContainerSystem.TryAddSolution(pipeSolution.Value, reagentSolution);
             }
 
-            EntityManager.DeleteEntity(contents);
+            Del(contents);
 
-            _itemSlotsSystem.SetLock(component.Owner, component.BowlSlot, true); //no inserting more until current runs out
+            _itemSlotsSystem.SetLock(entity.Owner, entity.Comp.BowlSlot, true); //no inserting more until current runs out
 
             return true;
         }

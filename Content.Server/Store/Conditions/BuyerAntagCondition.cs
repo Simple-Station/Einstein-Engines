@@ -1,3 +1,18 @@
+// SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vyacheslav Titov <rincew1nd@ya.ru>
+// SPDX-FileCopyrightText: 2023 Титов Вячеслав Витальевич <rincew1nd@yandex.ru>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+// SPDX-FileCopyrightText: 2025 ActiveMammmoth <140334666+ActiveMammmoth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Mind;
 using Content.Shared.Roles;
 using Content.Shared.Store;
@@ -27,13 +42,12 @@ public sealed partial class BuyerAntagCondition : ListingCondition
     public override bool Condition(ListingConditionArgs args)
     {
         var ent = args.EntityManager;
-        var minds = ent.System<SharedMindSystem>();
 
-        if (!minds.TryGetMind(args.Buyer, out var mindId, out var mind))
-            return true;
+        if (!ent.HasComponent<MindComponent>(args.Buyer))
+            return true; // inanimate objects don't have minds
 
         var roleSystem = ent.System<SharedRoleSystem>();
-        var roles = roleSystem.MindGetAllRoleInfo(mindId);
+        var roles = roleSystem.MindGetAllRoleInfo(args.Buyer);
 
         if (Blacklist != null)
         {

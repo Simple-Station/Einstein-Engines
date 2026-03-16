@@ -1,9 +1,25 @@
+// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Saphire Lattice <lattice@saphi.re>
+// SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Dylan Corrales <DeathCamel58@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Net;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
-
+using System.Net.Http;
+using System.Text.Json;
 
 namespace Content.Server.Database
 {
@@ -38,12 +54,12 @@ namespace Content.Server.Database
             ServerUnbanDef? unban,
             ServerBanExemptFlags exemptFlags = default)
         {
-            if (userId == null && address == null && hwId ==  null)
+            if (userId == null && address == null && hwId == null)
             {
                 throw new ArgumentException("Must have at least one of banned user, banned address or hardware ID");
             }
 
-            if (address is {} addr && addr.Item1.IsIPv4MappedToIPv6)
+            if (address is { } addr && addr.Item1.IsIPv4MappedToIPv6)
             {
                 // Fix IPv6-mapped IPv4 addresses
                 // So that IPv4 addresses are consistent between separate-socket and dual-stack socket modes.
@@ -84,10 +100,39 @@ namespace Content.Server.Database
 
             return $"""
                    {loc.GetString("ban-banned-1")}
-                   {loc.GetString("ban-banned-2", ("reason", Reason))}
+                   {loc.GetString("ban-banned-2", ("adminName", GetUsername(BanningAdmin.ToString())))}
+                   {loc.GetString("ban-banned-3", ("reason", Reason))}
                    {expires}
-                   {loc.GetString("ban-banned-3")}
+                   {loc.GetString("ban-banned-4")}
                    """;
+        }
+
+        static string GetUsername(string? userId)
+        {
+            if (userId == null)
+            {
+                return "Unknown";
+            }
+
+            using (var client = new HttpClient())
+            {
+                string apiUrl = "https://auth.spacestation14.com/api/query/userid?userid=" + userId;
+
+                HttpResponseMessage response = client.Send(new HttpRequestMessage(HttpMethod.Get, apiUrl));
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonResponse = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                    var jsonObject = JsonDocument.Parse(jsonResponse).RootElement;
+
+                    return jsonObject.GetProperty("userName").GetString() ?? "Unknown";
+
+                }
+                else
+                {
+                    return "Unknown";
+                }
+            }
         }
     }
 }

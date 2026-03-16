@@ -1,4 +1,14 @@
-﻿<controls:FancyWindow xmlns="https://spacestation14.io"
+<!--
+SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<controls:FancyWindow xmlns="https://spacestation14.io"
                       xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                       xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                       xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
@@ -16,7 +26,6 @@
             <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True">
                 <RichTextLabel Name="ResearchAmountLabel"/>
                 <RichTextLabel Name="MainDisciplineLabel"/>
-                <RichTextLabel Name="SoftcapAmountLabel"/>
                 <Control VerticalExpand="True"/>
                 <BoxContainer Name="TierDisplayContainer" Orientation="Horizontal" HorizontalExpand="True" VerticalAlignment="Bottom"/>
                 <!-- This is where we put all of the little graphics that display discipline tiers!-->

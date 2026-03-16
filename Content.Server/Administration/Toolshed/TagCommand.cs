@@ -1,4 +1,13 @@
-﻿using System.Linq;
+// SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+// SPDX-FileCopyrightText: 2023 moonheart08 <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tornado Tech <54727692+Tornado-Technology@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 dffdff2423 <dffdff2423@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using System.Linq;
 using Content.Shared.Administration;
 using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
@@ -23,6 +32,16 @@ public sealed class TagCommand : ToolshedCommand
                 return (IEnumerable<ProtoId<TagPrototype>>)tags.Tags;
             return Array.Empty<ProtoId<TagPrototype>>();
         });
+    }
+
+    [CommandImplementation("with")]
+    public IEnumerable<EntityUid> With(
+        [CommandInvocationContext] IInvocationContext ctx,
+        [PipedArgument] IEnumerable<EntityUid> entities,
+        [CommandArgument] ProtoId<TagPrototype> tag)
+    {
+        _tag ??= GetSys<TagSystem>();
+        return entities.Where(e => _tag.HasTag(e, tag!));
     }
 
     [CommandImplementation("add")]

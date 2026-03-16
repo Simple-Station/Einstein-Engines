@@ -1,12 +1,31 @@
+// SPDX-FileCopyrightText: 2020 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 Swept <sweptwastaken@protonmail.com>
+// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 E F R <602406+Efruit@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2021 chairbender <kwhipke1@gmail.com>
+// SPDX-FileCopyrightText: 2022 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ike709 <ike709@github.com>
+// SPDX-FileCopyrightText: 2024 ike709 <ike709@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Rane <60792108+Elijahrane@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 bedroomvampire <leannetoni@proton.me>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using Content.Client.Resources;
-using Content.Client.UserInterface.Controls;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
-using Robust.Shared.Maths;
 
 namespace Content.Client.Stylesheets
 {
@@ -26,7 +45,6 @@ namespace Content.Client.Stylesheets
         public const string ButtonSquare = "ButtonSquare";
 
         public const string ButtonCaution = "Caution";
-        public const string ButtonDanger = "Danger";
 
         public const int DefaultGrabberSize = 10;
 
@@ -43,6 +61,7 @@ namespace Content.Client.Stylesheets
         protected StyleBoxTexture BaseAngleRect { get; }
         protected StyleBoxTexture AngleBorderRect { get; }
 
+        // Goobstation - ZH text support
         protected StyleBase(IResourceCache resCache)
         {
             var notoSans12 = resCache.GetFont
@@ -50,8 +69,9 @@ namespace Content.Client.Stylesheets
                 new []
                 {
                     "/Fonts/NotoSans/NotoSans-Regular.ttf",
+                    "/Fonts/NotoSans/NotoSansSC-Regular.ttf",
                     "/Fonts/NotoSans/NotoSansSymbols-Regular.ttf",
-                    "/Fonts/NotoSans/NotoSansSymbols2-Regular.ttf"
+                    "/Fonts/NotoSans/NotoSansSymbols2-Regular.ttf",
                 },
                 12
             );
@@ -60,8 +80,9 @@ namespace Content.Client.Stylesheets
                 new []
                 {
                     "/Fonts/NotoSans/NotoSans-Italic.ttf",
+                    "/Fonts/NotoSans/NotoSansSC-Regular.ttf",
                     "/Fonts/NotoSans/NotoSansSymbols-Regular.ttf",
-                    "/Fonts/NotoSans/NotoSansSymbols2-Regular.ttf"
+                    "/Fonts/NotoSans/NotoSansSymbols2-Regular.ttf",
                 },
                 12
             );
@@ -179,7 +200,7 @@ namespace Content.Client.Stylesheets
                     new[]
                     {
                         new StyleProperty(TextureButton.StylePropertyTexture, textureCloseButton),
-                        new StyleProperty(Control.StylePropertyModulateSelf, StyleNano.NanoGold),
+                        new StyleProperty(Control.StylePropertyModulateSelf, Color.FromHex("#4B596A")),
                     }),
                 // Window close button hover.
                 new StyleRule(

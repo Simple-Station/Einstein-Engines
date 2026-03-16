@@ -1,0 +1,34 @@
+<!--
+SPDX-FileCopyrightText: 2024 ScyronX <166930367+ScyronX@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
+  # Они
+
+  <Box>
+    <GuideEntityEmbed Entity="MobOni" Caption=""/>
+  </Box>
+
+  Крупные люди с рогами, встречающиеся в разных цветах. Их точность с огнестрельным оружием ужасна, но их физическая сила приносит множество преимуществ как в бою, так и вне.
+
+  ## Diet
+  - Практически все, что угодно. Многие блюда могут есть даже сырыми.
+
+  ## Преимущества
+  - Получают на 15% меньше урона ушибами.
+  - Наносят больше урона в ближнем бою: на 35% больше урона ушибами и удушающего, на 20% больше режущего и колющего.
+  - Благодаря большому размеру могут легко переносить и тащить представителей других рас.
+
+  ## Недостатки
+  - Они слишком большие и неповоротливые, поэтому обычно им нужна дополнительная рука для использования оружия. Если оружие уже требует двух рук, они, скорее всего, не смогут стрелять из него вообще.
+  - Их сложнее нести и тянуть.
+  - Они больше людей, что делает их легче уязвимыми для ударов.
+
+</Document>

@@ -1,3 +1,15 @@
+// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 T-Stalker <43253663+DogZeroX@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 T-Stalker <le0nel_1van@hotmail.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2024 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.Map;
@@ -6,11 +18,9 @@ namespace Content.Server.Weapons.Ranged.Systems;
 
 public sealed partial class GunSystem
 {
-    protected override void Cycle(EntityUid uid, BallisticAmmoProviderComponent component, MapCoordinates coordinates, GunComponent? gunComponent)
+    protected override void Cycle(EntityUid uid, BallisticAmmoProviderComponent component, MapCoordinates coordinates)
     {
         EntityUid? ent = null;
-        //if (!Resolve(uid, ref gunComponent, false))
-        //    return;
 
         // TODO: Combine with TakeAmmo
         if (component.Entities.Count > 0)
@@ -21,7 +31,6 @@ public sealed partial class GunSystem
 
             Containers.Remove(existing, component.Container);
             EnsureShootable(existing);
-            EjectCartridge(existing, gunComp: gunComponent);
         }
         else if (component.UnspawnedCount > 0)
         {
@@ -32,7 +41,7 @@ public sealed partial class GunSystem
         }
 
         if (ent != null)
-            EjectCartridge(ent.Value, gunComp: gunComponent);
+            EjectCartridge(ent.Value);
 
         var cycledEvent = new GunCycledEvent();
         RaiseLocalEvent(uid, ref cycledEvent);

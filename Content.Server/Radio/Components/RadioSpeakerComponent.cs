@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Server.Radio.EntitySystems;
 using Content.Shared.Chat;
 using Content.Shared.Radio;
@@ -24,4 +31,18 @@ public sealed partial class RadioSpeakerComponent : Component
 
     [DataField("enabled")]
     public bool Enabled;
+
+    // Goob start
+    /// <summary>
+    /// speaks normally when true whispers when false
+    /// </summary>
+    [DataField]
+    public bool SpeakNormally;
+
+    /// <summary>
+    /// Does the radio need to be on a power grid to work?
+    /// </summary>
+    [DataField]
+    public bool PowerRequired;
+    // Goob end
 }

@@ -1,9 +1,17 @@
+<!--
+SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 end <72604018+laok233@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <Document>
 # Технологии
 
-Все технологии имеют стоимость и требуемый уровень (tier) для исследования. Их открытие добавляет набор рецептов, которые можно печатать на различных станках.
+Все технологии имеют определенную стоимость и требования к уровню для их изучения. Их открытие расширяет ассортимент рецептов, доступных для печати на фабрикаторах и станках.
 
-Ниже перечислены технологии и соответствующие им направления.
+Ниже перечислены различные технологии и соответствующие им дисциплины.
 
 ## Промышленность
 <GuideTechDisciplineEmbed Discipline="Industrial"/>
@@ -14,10 +22,10 @@
 ## Арсенал
 <GuideTechDisciplineEmbed Discipline="Arsenal"/>
 
-## Экспериментальные
+## Экспериментальное
 <GuideTechDisciplineEmbed Discipline="Experimental"/>
 
-## Гражданские службы
+## Обслуживание персонала
 <GuideTechDisciplineEmbed Discipline="CivilianServices"/>
 
 </Document>

@@ -1,4 +1,15 @@
-using System.Linq;
+// SPDX-FileCopyrightText: 2024 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using Content.Client.Shuttles.Systems;
 using Content.Shared.Shuttles.BUIStates;
@@ -15,7 +26,6 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
-using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -261,7 +271,7 @@ public sealed partial class MapScreen : BoxContainer
             ourMap = shuttleXform.MapID;
         }
 
-        while (mapComps.MoveNext(out var mapComp, out var mapXform, out var mapMetadata))
+        while (mapComps.MoveNext(out var mapUid, out var mapComp, out var mapXform, out var mapMetadata))
         {
             if (_console != null && !_shuttles.CanFTLTo(_shuttleEntity.Value, mapComp.MapId, _console.Value))
             {
@@ -311,7 +321,7 @@ public sealed partial class MapScreen : BoxContainer
             };
 
             _mapHeadings.Add(mapComp.MapId, gridContents);
-            foreach (var grid in _mapManager.GetAllMapGrids(mapComp.MapId))
+            foreach (var grid in _mapManager.GetAllGrids(mapComp.MapId))
             {
                 _entManager.TryGetComponent(grid.Owner, out IFFComponent? iffComp);
 
@@ -327,8 +337,10 @@ public sealed partial class MapScreen : BoxContainer
                 {
                     AddMapObject(mapComp.MapId, gridObj);
                 }
-                else if (!_shuttles.IsBeaconMap(_mapManager.GetMapEntityId(mapComp.MapId)) && (iffComp == null ||
-                         (iffComp.Flags & IFFFlags.Hide) == 0x0))
+                // If we can show it then add it to pending.
+                else if (!_shuttles.IsBeaconMap(mapUid) && (iffComp == null ||
+                         (iffComp.Flags & IFFFlags.Hide) == 0x0) &&
+                         !gridObj.HideButton)
                 {
                     _pendingMapObjects.Add((mapComp.MapId, gridObj));
                 }
@@ -336,11 +348,17 @@ public sealed partial class MapScreen : BoxContainer
 
             foreach (var (beacon, _) in _shuttles.GetExclusions(mapComp.MapId, _exclusions))
             {
+                if (beacon.HideButton)
+                    continue;
+
                 _pendingMapObjects.Add((mapComp.MapId, beacon));
             }
 
             foreach (var (beacon, _) in _shuttles.GetBeacons(mapComp.MapId, _beacons))
             {
+                if (beacon.HideButton)
+                    continue;
+
                 _pendingMapObjects.Add((mapComp.MapId, beacon));
             }
 
@@ -424,9 +442,6 @@ public sealed partial class MapScreen : BoxContainer
     {
         var existing = _mapObjects.GetOrNew(mapId);
         existing.Add(mapObj);
-
-        if (mapObj.HideButton)
-            return;
 
         var gridContents = _mapHeadings[mapId];
 

@@ -1,4 +1,15 @@
-﻿# Popups
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Julian Giebel <juliangiebel@live.de>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Popups
 
 network-configurator-device-saved = Successfully saved network device {$device} with address {$address}!
 network-configurator-device-failed = Failed to save network device {$device}! No address assigned!
@@ -26,6 +37,12 @@ network-configurator-title-device-configuration = Device Configuration
 network-configurator-ui-clear-button = Clear
 network-configurator-ui-count-label = {$count} Devices
 
+network-configurator-text-set = Set
+network-configurator-text-add = Add
+network-configurator-text-clear = Clear
+network-configurator-text-copy = Copy
+network-configurator-text-show = Show
+
 # tooltips
 network-configurator-tooltip-set = Sets targets device list
 network-configurator-tooltip-add = Adds to targets device list
@@ -43,3 +60,7 @@ network-configurator-examine-switch-modes = Press {$key} to switch modes
 # item status
 network-configurator-item-status-label = Mode: {$mode}
     Switch: {$keybinding}
+
+# command
+cmd-clearnetworklinkoverlays-desc = Clear all network link overlays.
+cmd-clearnetworklinkoverlays-help = Usage: clearnetworklinkoverlays

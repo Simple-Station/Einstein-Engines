@@ -1,3 +1,19 @@
+# SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 NULL882 <gost6865@yandex.ru>
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 BramvanZijp <56019239+BramvanZijp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: CombatMech
   abstract: true
@@ -41,7 +57,7 @@
 # Ripley MK-II
 - type: entity
   id: MechRipley2
-  parent: [ BaseMech, IndustrialMech ]
+  parent: [ BaseMech, IndustrialMech, BaseCargoContraband ]
   name: Ripley APLU MK-II
   description: The "MK-II" has a pressurized cabin for space operations, but the added weight has slowed it down.
   components:
@@ -74,8 +90,8 @@
       types:
         Blunt: 20
   - type: MovementSpeedModifier
-    baseWalkSpeed: 1
-    baseSprintSpeed: 2
+    baseWalkSpeed: 2
+    baseSprintSpeed: 2 #Goobedit
   - type: Damageable
     damageModifierSet: MediumArmorNT
   - type: StaticPrice
@@ -85,7 +101,7 @@
     - DoorBumpOpener
     - FootstepSound
     - RipleyMkII
-    
+
 - type: entity
   id: MechRipley2Battery
   parent: MechRipley2
@@ -99,7 +115,7 @@
 # Clarke
 - type: entity
   id: MechClarke
-  parent: [ BaseMech, IndustrialMech ]
+  parent: [ BaseMech, IndustrialMech, BaseCargoContraband ]
   name: Clarke
   description: A fast-moving mech for space travel. It has built-in trusts.
   components:
@@ -115,7 +131,7 @@
       state: paper
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+      collection: FootstepBorg
   - type: Mech
     baseState: clarke
     openState: clarke-open
@@ -132,8 +148,8 @@
       types:
         Blunt: 26
   - type: MovementSpeedModifier
-    baseWalkSpeed: 2.5
-    baseSprintSpeed: 4.5
+    baseWalkSpeed: 3.5
+    baseSprintSpeed: 3.5 #Goobedit
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: StaticPrice
@@ -170,7 +186,7 @@
 # Gygax
 - type: entity
   id: MechGygax
-  parent: [ BaseMech, CombatMech ]
+  parent: [ BaseMech, CombatMech, BaseSecurityContraband ]
   name: Gygax
   description: While lightly armored, the Gygax has incredible mobility thanks to its ability that lets it smash through walls at high speeds.
   components:
@@ -204,10 +220,10 @@
         Blunt: 25
         Structural: 180
   - type: CanMoveInAir
-  - type: MovementAlwaysTouching        
+  - type: MovementAlwaysTouching
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
-    baseSprintSpeed: 2.6
+    baseSprintSpeed: 2 #Goobedit
   - type: StaticPrice
     price: 3000
   - type: Tag
@@ -229,7 +245,7 @@
 # Durand
 - type: entity
   id: MechDurand
-  parent: [ BaseMech, CombatMech ]
+  parent: [ BaseMech, CombatMech, BaseSecurityContraband ]
   name: Durand
   description: A slow but beefy combat exosuit that is extra scary in confined spaces due to its punches. Xenos hate it!
   components:
@@ -265,7 +281,7 @@
         Structural: 220
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.5
-    baseSprintSpeed: 2
+    baseSprintSpeed: 1.5 #Goobedit
   - type: Damageable
     damageModifierSet: MediumArmorNT
   - type: CanMoveInAir
@@ -296,7 +312,7 @@
 # Marauder
 - type: entity
   id: MechMarauder
-  parent: [ BaseMech, CombatMech ]
+  parent: [ BaseMech, CombatMech, BaseCentcommContraband ]
   name: Marauder
   description: Looks like we're all saved. # ERT mech
   components:
@@ -333,7 +349,7 @@
         Structural: 200
   - type: MovementSpeedModifier
     baseWalkSpeed: 1
-    baseSprintSpeed: 1.5
+    baseSprintSpeed: 1 #Goobedit
   - type: Damageable
     damageModifierSet: HeavyArmorNT
   - type: CanMoveInAir
@@ -369,7 +385,7 @@
 # Seraph
 - type: entity
   id: MechSeraph
-  parent: [ BaseMech, CombatMech ]
+  parent: [ BaseMech, CombatMech, BaseCentcommContraband ]
   name: Seraph
   description: That's the last thing you'll see. # Death Squad mech
   components:
@@ -406,7 +422,7 @@
         Structural: 400
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
-    baseSprintSpeed: 3.7
+    baseSprintSpeed: 2.2 
   - type: Damageable
     damageModifierSet: HeavyArmorNT
   - type: CanMoveInAir
@@ -445,7 +461,7 @@
 # Dark Gygax
 - type: entity
   id: MechGygaxSyndie
-  parent: [ BaseMech, CombatMech ]
+  parent: [ BaseMech, CombatMech, BaseSyndicateAnchoredContraband ]
   name: Dark Gygax
   description: A modified Gygax used for nefarious purposes. On the back of the armor plate there is an inscription "Cybersun Inc."
   components:
@@ -482,7 +498,7 @@
         Structural: 200
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
-    baseSprintSpeed: 3.7
+    baseSprintSpeed: 2.2 #Goobedit
   - type: Damageable
     damageModifierSet: MediumArmorSyndi
   - type: CanMoveInAir
@@ -518,7 +534,7 @@
 # Mauler
 - type: entity
   id: MechMaulerSyndie
-  parent: [ BaseMech, CombatMech ]
+  parent: [ BaseMech, CombatMech, BaseSyndicateContraband ]
   name: Mauler
   description: A modified Marauder used by the Syndicate that's not as maneuverable as the Dark Gygax, but it makes up for that in armor and sheer firepower. On the back of the armor plate there is an inscription "Cybersun Inc."
   components:
@@ -555,7 +571,7 @@
         Structural: 400
   - type: MovementSpeedModifier
     baseWalkSpeed: 1
-    baseSprintSpeed: 1.5
+    baseSprintSpeed: 1 #Goobedit
   - type: Damageable
     damageModifierSet: HeavyArmorSyndi
   - type: CanMoveInAir

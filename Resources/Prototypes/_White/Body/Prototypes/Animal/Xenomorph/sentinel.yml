@@ -1,30 +1,36 @@
 - type: body
   id: XenomorphSentinel
   name: xenomorph sentinel
-  root: torso
+  root: chest
   slots:
     head:
       part: HeadXenomorph
       connections:
-      - torso
+      - chest
       organs:
         brain: OrganXenomorphBrain
         eyes: OrganXenomorphEyes
         hive_node: OrganXenomorphHiveNode
         neurotoxin_gland: OrganXenomorphNeurotoxinGland
         acid_gland: OrganXenomorphAcidGland
-    torso:
-      part: TorsoXenomorph
+    chest:
+      part: ChestXenomorph
       connections:
       - right arm
       - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphPlasmaVessel
+    groin:
+      part: GroinXenomorph
+      connections:
       - right leg
       - left leg
       - head
       organs:
         stomach: OrganXenomorphStomach
         liver: OrganXenomorphLiver
-        plasma_vessel: OrganXenomorphPlasmaVessel
     right arm:
       part: RightArmXenomorph
       connections:

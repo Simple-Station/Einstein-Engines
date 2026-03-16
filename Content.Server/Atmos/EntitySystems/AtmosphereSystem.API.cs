@@ -1,3 +1,14 @@
+// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.Piping.Components;
@@ -279,6 +290,14 @@ public partial class AtmosphereSystem
 
     public bool RemovePipeNet(Entity<GridAtmosphereComponent?> grid, PipeNet pipeNet)
     {
+        // Technically this event can be fired even on grids that don't
+        // actually have grid atmospheres.
+        if (pipeNet.Grid is not null)
+        {
+            var ev = new PipeNodeGroupRemovedEvent(grid, pipeNet.NetId);
+            RaiseLocalEvent(ref ev);
+        }
+
         return _atmosQuery.Resolve(grid, ref grid.Comp, false) && grid.Comp.PipeNets.Remove(pipeNet);
     }
 
@@ -329,3 +348,12 @@ public partial class AtmosphereSystem
     [ByRefEvent] private record struct IsHotspotActiveMethodEvent
         (EntityUid Grid, Vector2i Tile, bool Result = false, bool Handled = false);
 }
+
+
+/// <summary>
+/// Raised broadcasted when a pipe node group within a grid has been removed.
+/// </summary>
+/// <param name="Grid">The grid with the removed node group.</param>
+/// <param name="NetId">The net id of the removed node group.</param>
+[ByRefEvent]
+public record struct PipeNodeGroupRemovedEvent(EntityUid Grid, int NetId);

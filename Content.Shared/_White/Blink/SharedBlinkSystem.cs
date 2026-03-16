@@ -1,5 +1,13 @@
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using System.Numerics;
+using Content.Goobstation.Common.BlockTeleport;
 using Content.Shared._White.Standing;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Physics;
@@ -49,6 +57,11 @@ public abstract class SharedBlinkSystem : EntitySystem
 
         var user = args.SenderSession.AttachedEntity.Value;
 
+        var ev = new TeleportAttemptEvent();
+        RaiseLocalEvent(user, ref ev);
+        if (ev.Cancelled)
+            return;
+
         if (!TryComp(user, out TransformComponent? xform))
             return;
 
@@ -59,8 +72,11 @@ public abstract class SharedBlinkSystem : EntitySystem
             return;
 
         var coords = _transform.GetWorldPosition(xform);
+        var length = msg.Direction.Length();
+        if (length <= 0f)
+            return;
         var dir = msg.Direction.Normalized();
-        var range = MathF.Min(blink.Distance, msg.Direction.Length());
+        var range = MathF.Min(blink.Distance, length);
 
         var ray = new CollisionRay(coords, dir, (int) (CollisionGroup.Impassable | CollisionGroup.InteractImpassable));
         var rayResults = _physics.IntersectRay(xform.MapID, ray, range, user, false).ToList();
@@ -75,6 +91,6 @@ public abstract class SharedBlinkSystem : EntitySystem
         _transform.SetWorldPosition(user, targetPos);
         _audio.PlayPredicted(blink.BlinkSound, user, user);
         if (_net.IsServer) // Prediction issues
-            _telefrag.DoTelefrag(user, xform.Coordinates, blink.KnockdownTime);
+            _telefrag.DoTelefrag(user, xform.Coordinates, blink.KnockdownTime, blink.KnockdownRadius, autoStandUp: true);
     }
 }

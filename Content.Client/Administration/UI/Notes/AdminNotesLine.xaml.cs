@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using System.Text;
 using Content.Shared.Administration.Notes;
 using Content.Shared.Database;
@@ -61,7 +70,7 @@ public sealed partial class AdminNotesLine : BoxContainer
         if (iconPath is null)
         {
             SeverityRect.Visible = false;
-            Logger.GetSawmill("admin.notes").Warning($"Could not find an icon for note ID {Note.Id}");
+            Logger.WarningS("admin.notes", $"Could not find an icon for note ID {Note.Id}");
         }
         else
         {

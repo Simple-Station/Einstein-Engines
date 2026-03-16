@@ -1,7 +1,16 @@
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.NPC.HTN;
 using Content.Shared.Damage;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Mobs;
+using Content.Shared.Mobs.Systems;
 using Robust.Shared.Player;
 
 namespace Content.Server.KillTracking;
@@ -14,7 +23,8 @@ public sealed class KillTrackingSystem : EntitySystem
     /// <inheritdoc/>
     public override void Initialize()
     {
-        SubscribeLocalEvent<KillTrackerComponent, DamageChangedEvent>(OnDamageChanged);
+        // Add damage to LifetimeDamage before MobStateChangedEvent gets raised
+        SubscribeLocalEvent<KillTrackerComponent, DamageChangedEvent>(OnDamageChanged, before: [ typeof(MobThresholdSystem) ]);
         SubscribeLocalEvent<KillTrackerComponent, MobStateChangedEvent>(OnMobStateChanged);
     }
 
@@ -50,7 +60,7 @@ public sealed class KillTrackingSystem : EntitySystem
         var largestSource = GetLargestSource(component.LifetimeDamage);
         largestSource ??= killImpulse;
 
-        KillSource? killSource;
+        KillSource killSource;
         KillSource? assistSource = null;
 
         if (killImpulse is KillEnvironmentSource)
@@ -69,13 +79,13 @@ public sealed class KillTrackingSystem : EntitySystem
             killSource = killImpulse;
 
             // no assist is given to environmental kills
-            if (largestSource is not KillEnvironmentSource)
+            if (largestSource is not KillEnvironmentSource
+                && component.LifetimeDamage.TryGetValue(largestSource, out var largestDamage))
             {
-                // you have to do at least 50% of largest source's damage to get the assist.
-                if (component.LifetimeDamage[largestSource] >= component.LifetimeDamage[killSource] / 2)
-                {
+                var killDamage = component.LifetimeDamage.GetValueOrDefault(killSource);
+                // you have to do at least twice as much damage as the killing source to get the assist.
+                if (largestDamage >= killDamage / 2)
                     assistSource = largestSource;
-                }
             }
         }
 

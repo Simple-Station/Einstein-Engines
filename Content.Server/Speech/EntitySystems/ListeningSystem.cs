@@ -1,5 +1,16 @@
+// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Errant <35878406+dmnct@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 CerberusWolfie <wb.johnb.willis@gmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Server.Chat.Systems;
-using Content.Server.Speech.Components;
+using Content.Shared.Speech;
+using Content.Shared.Speech.Components;
 
 namespace Content.Server.Speech.EntitySystems;
 
@@ -19,10 +30,10 @@ public sealed class ListeningSystem : EntitySystem
 
     private void OnSpeak(EntitySpokeEvent ev)
     {
-        PingListeners(ev.Source, ev.Message, ev.IsWhisper);
+        PingListeners(ev.Source, ev.Message, ev.IsWhisper); // Einstein Engines - Languages
     }
 
-    public void PingListeners(EntityUid source, string message, bool isWhisper)
+    public void PingListeners(EntityUid source, string message, bool isWhisper) // Einstein Engines - Language
     {
         // TODO whispering / audio volume? Microphone sensitivity?
         // for now, whispering just arbitrarily reduces the listener's max range.
@@ -33,7 +44,7 @@ public sealed class ListeningSystem : EntitySystem
 
         var attemptEv = new ListenAttemptEvent(source);
         var ev = new ListenEvent(message, source);
-        var obfuscatedEv = !isWhisper ? new() : new ListenEvent(_chat.ObfuscateMessageReadability(message), source);
+        var obfuscatedEv = !isWhisper ? null : new ListenEvent(_chat.ObfuscateMessageReadability(message), source); // Einstein Engines - Language
         var query = EntityQueryEnumerator<ActiveListenerComponent, TransformComponent>();
 
         while(query.MoveNext(out var listenerUid, out var listener, out var xform))
@@ -47,17 +58,17 @@ public sealed class ListeningSystem : EntitySystem
             if (distance > listener.Range * listener.Range)
                 continue;
 
-            RaiseLocalEvent(listenerUid, ref attemptEv);
+            RaiseLocalEvent(listenerUid, attemptEv);
             if (attemptEv.Cancelled)
             {
                 attemptEv.Uncancel();
                 continue;
             }
 
-            if (isWhisper && distance > ChatSystem.WhisperClearRange)
-                RaiseLocalEvent(listenerUid, ref obfuscatedEv);
+            if (obfuscatedEv != null && distance > ChatSystem.WhisperClearRange)
+                RaiseLocalEvent(listenerUid, obfuscatedEv);
             else
-                RaiseLocalEvent(listenerUid, ref ev);
+                RaiseLocalEvent(listenerUid, ev);
         }
     }
 }

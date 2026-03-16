@@ -1,7 +1,20 @@
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 0tito <147736056+0tito@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Centronias <me@centronias.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.DeviceLinking.Components;
 using Content.Server.DeviceNetwork;
 using Content.Shared.DeviceLinking;
 using Content.Shared.DeviceLinking.Events;
+using Content.Shared.DeviceNetwork;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
@@ -44,7 +57,7 @@ public sealed class LogicGateSystem : EntitySystem
             }
             if (comp.StateB == SignalState.Momentary)
             {
-                comp.StateB = SignalState.High;
+                comp.StateB = SignalState.Low;
             }
 
             // output most likely changed so update it
@@ -102,10 +115,12 @@ public sealed class LogicGateSystem : EntitySystem
         if (args.Port == comp.InputPortA)
         {
             comp.StateA = state;
+            _appearance.SetData(uid, LogicGateVisuals.InputA, state == SignalState.High); //If A == High => Sets input A sprite to True
         }
         else if (args.Port == comp.InputPortB)
         {
             comp.StateB = state;
+            _appearance.SetData(uid, LogicGateVisuals.InputB, state == SignalState.High); //If B == High => Sets input B sprite to True
         }
 
         UpdateOutput(uid, comp);
@@ -142,6 +157,8 @@ public sealed class LogicGateSystem : EntitySystem
                 output = a == b;
                 break;
         }
+
+        _appearance.SetData(uid, LogicGateVisuals.Output, output);
 
         // only send a payload if it actually changed
         if (output != comp.LastOutput)

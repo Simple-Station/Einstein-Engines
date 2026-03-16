@@ -1,20 +1,24 @@
+// SPDX-FileCopyrightText: 2023 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 PoTeletubby <151896601+PoTeletubby@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
+using System.Threading.Tasks;
 using Content.Server.Administration;
-using Content.Server.Atmos;
-using Content.Server.Atmos.Components;
-using Content.Server.Atmos.EntitySystems;
 using Content.Server.Parallax;
 using Content.Shared.Administration;
-using Content.Shared.Atmos;
-using Content.Shared.Gravity;
-using Content.Shared.Movement.Components;
 using Content.Shared.Parallax.Biomes;
-using Robust.Shared.Audio;
+using Content.Shared.Procedural.Loot;
+using Content.Shared.Random;
+using Content.Shared.Salvage;
 using Robust.Shared.Console;
 using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
 
 namespace Content.Server.Maps;
 
@@ -28,10 +32,12 @@ public sealed class PlanetCommand : IConsoleCommand
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
 
+
+
     public string Command => "planet";
     public string Description => Loc.GetString("cmd-planet-desc");
     public string Help => Loc.GetString("cmd-planet-help", ("command", Command));
-    public void Execute(IConsoleShell shell, string argStr, string[] args)
+    public async void Execute(IConsoleShell shell, string argStr, string[] args)
     {
         if (args.Length != 2)
         {
@@ -63,8 +69,57 @@ public sealed class PlanetCommand : IConsoleCommand
         var mapUid = _mapManager.GetMapEntityId(mapId);
         biomeSystem.EnsurePlanet(mapUid, biomeTemplate);
 
+        // - Beginning of GoobStation changes -
+
+        var budgetEntries = new List<IBudgetEntry>();
+        var randomSystem = _entManager.System<RandomSystem>();
+
+        foreach (var lootProto in _protoManager.EnumeratePrototypes<SalvageLootPrototype>())
+        {
+            if (!lootProto.Guaranteed)
+                continue;
+
+            await SpawnDungeonLoot(lootProto, mapUid);
+        }
+        var probSum = budgetEntries.Sum(x => x.Prob);
+        var allLoot = _protoManager.Index<SalvageLootPrototype>(SharedSalvageSystem.ExpeditionsLootProto);
+        var seed = _entManager.GetComponent<BiomeComponent>(mapUid).Seed;
+        var random = new Random(seed);
+
+
         shell.WriteLine(Loc.GetString("cmd-planet-success", ("mapId", mapId)));
     }
+
+    private async Task SpawnDungeonLoot(SalvageLootPrototype loot, EntityUid gridUid)
+    {
+        var biomeSystem = _entManager.System<BiomeSystem>();
+        for (var i = 0; i < loot.LootRules.Count; i++)
+        {
+            var rule = loot.LootRules[i];
+
+            switch (rule)
+            {
+                case BiomeMarkerLoot biomeLoot:
+                    {
+                        if (_entManager.TryGetComponent<BiomeComponent>(gridUid, out var biome))
+                        {
+                            biomeSystem.AddMarkerLayer(gridUid, biome, biomeLoot.Prototype);
+                        }
+                    }
+                    break;
+                case BiomeTemplateLoot biomeLoot:
+                    {
+                        if (_entManager.TryGetComponent<BiomeComponent>(gridUid, out var biome))
+                        {
+                            biomeSystem.AddTemplate(gridUid, biome, "Loot", _protoManager.Index<BiomeTemplatePrototype>(biomeLoot.Prototype), i);
+                        }
+                    }
+                    break;
+            }
+        }
+    }
+
+    // - End of GoobStation changes -
 
     public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
     {

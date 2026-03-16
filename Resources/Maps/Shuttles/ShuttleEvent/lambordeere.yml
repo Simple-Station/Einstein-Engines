@@ -1,3 +1,18 @@
+# SPDX-FileCopyrightText: 2023 Alzore <140123969+Blackern5000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 PopGamer46 <yt1popgamer@gmail.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 meta:
   format: 6
   postmapinit: false
@@ -21,7 +36,7 @@ entities:
       name: NT-Lambordeere
     - type: Transform
       pos: -0.453125,-0.4375
-      parent: invalid
+
     - type: MapGrid
       chunks:
         0,0:
@@ -1206,6 +1221,10 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 0.5,5.5
       parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        50:
+        - Pressed: DoorBolt
   - uid: 199
     components:
     - type: MetaData
@@ -1214,6 +1233,10 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 0.5,2.5
       parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        82:
+        - Pressed: DoorBolt
 - proto: SMESBasic
   entities:
   - uid: 65
@@ -1460,6 +1483,45 @@ entities:
     - type: Transform
       pos: -1.5,7.5
       parent: 1
+- proto: WallShuttleDiagonal
+  entities:
+  - uid: 18
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 2.5,-4.5
+      parent: 1
+  - uid: 20
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.5,-5.5
+      parent: 1
+  - uid: 30
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -0.5,-5.5
+      parent: 1
+  - uid: 31
+    components:
+    - type: Transform
+      pos: 2.5,-3.5
+      parent: 1
+  - uid: 32
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -1.5,-4.5
+      parent: 1
+  - uid: 33
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -1.5,-3.5
+      parent: 1
+- proto: WallShuttleInterior
+  entities:
   - uid: 6
     components:
     - type: Transform
@@ -1507,43 +1569,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 0.5,2.5
-      parent: 1
-- proto: WallShuttleDiagonal
-  entities:
-  - uid: 18
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 2.5,-4.5
-      parent: 1
-  - uid: 20
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 1.5,-5.5
-      parent: 1
-  - uid: 30
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -0.5,-5.5
-      parent: 1
-  - uid: 31
-    components:
-    - type: Transform
-      pos: 2.5,-3.5
-      parent: 1
-  - uid: 32
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -1.5,-4.5
-      parent: 1
-  - uid: 33
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -1.5,-3.5
       parent: 1
 - proto: WheatSeeds
   entities:

@@ -1,7 +1,13 @@
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: soundCollection
   id: FelinidScreams
   files:
-  - /Audio/Nyanotrasen/Voice/Felinid/cat_scream1.ogg
+  #- /Audio/Nyanotrasen/Voice/Felinid/cat_scream1.ogg - Goobstation - Remove mute sound from felinid + harpy screams
   - /Audio/Nyanotrasen/Voice/Felinid/cat_scream2.ogg
   - /Audio/Nyanotrasen/Voice/Felinid/cat_scream3.ogg
 
@@ -17,6 +23,25 @@
   - /Audio/Nyanotrasen/Voice/Felinid/cat_meow1.ogg
   - /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
   - /Audio/Nyanotrasen/Voice/Felinid/cat_meow3.ogg
+  #GOOBSTATION GOIDAEDIT START - Wilhelm is hardcoded for screams only ouurgh
+  - /Audio/_Goobstation/Voice/Tajaran/deep_meow.ogg
+  - /Audio/Nyanotrasen/Voice/Felinid/cat_meow1.ogg
+  - /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - /Audio/Nyanotrasen/Voice/Felinid/cat_meow3.ogg
+  - /Audio/Nyanotrasen/Voice/Felinid/cat_meow1.ogg
+  - /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - /Audio/Nyanotrasen/Voice/Felinid/cat_meow3.ogg
+  - /Audio/Nyanotrasen/Voice/Felinid/cat_meow1.ogg
+  - /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - /Audio/Nyanotrasen/Voice/Felinid/cat_meow3.ogg
+  - /Audio/Nyanotrasen/Voice/Felinid/cat_meow1.ogg
+  - /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - /Audio/Nyanotrasen/Voice/Felinid/cat_meow3.ogg
+  - /Audio/Nyanotrasen/Voice/Felinid/cat_meow1.ogg
+  - /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - /Audio/Nyanotrasen/Voice/Felinid/cat_meow3.ogg
+  #GOOBSTATION GOIDAEDIT END
+
 
 - type: soundCollection
   id: FelinidMews

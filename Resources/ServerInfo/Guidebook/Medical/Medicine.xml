@@ -1,8 +1,16 @@
+<!--
+SPDX-FileCopyrightText: 2023 Sir Winters <7543955+Owai-Seek@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Fluffiest Floofers <thebluewulf@gmail.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: MIT
+-->
+
 <Document>
 
-# Базовые препараты
+# Основные лекарства
 
-Эти лекарства почти всегда пригождаются в медблоке тем или иным образом.
+Эти препараты почти всегда так или иначе полезны для медблока.
 
 <GuideReagentEmbed Reagent="Bicaridine"/>
 <GuideReagentEmbed Reagent="Kelotane"/>
@@ -13,9 +21,9 @@
 <GuideReagentEmbed Reagent="DexalinPlus"/>
 <GuideReagentEmbed Reagent="Iron"/>
 
-# Специализированные препараты
+# Специальные препараты
 
-Эти лекарства применяются в более узких случаях.
+Эти препараты, как правило, имеют специфические случаи применения.
 
 <GuideReagentEmbed Reagent="Cryoxadone"/>
 <GuideReagentEmbed Reagent="Epinephrine"/>
@@ -27,9 +35,9 @@
 <GuideReagentEmbed Reagent="Ambuzol"/>
 <GuideReagentEmbed Reagent="Oculine"/>
 
-# Полный список
+# Все лекарства
 
-Ниже приведён перечень всех доступных препаратов, включая уже перечисленные.
+Это список всех имеющихся лекарств, включая ранее перечисленные.
 
 <GuideReagentGroupEmbed Group="Medicine"/>
 

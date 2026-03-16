@@ -1,4 +1,11 @@
-﻿- type: entity
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
   parent: BaseItem
   id: NodeScanner
   name: node scanner
@@ -12,13 +19,13 @@
     - type: NodeScanner
     - type: UseDelay
       delay: 1
-    - type: ReverseEngineering # Nyano
-      difficulty: 2
-      recipes:
-        - NodeScanner
     - type: GuideHelp
       guides:
       - ArtifactReports
+    - type: PhysicalComposition #Goobstation - Recycle update
+      materialComposition:
+        Steel: 25
+        Plastic: 12
     - type: ActivatableUI
       key: enum.NodeScannerUiKey.Key
       singleUser: true

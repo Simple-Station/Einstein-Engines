@@ -32,8 +32,14 @@ player-join-message = Игрок { $name } зашёл!
 player-first-join-message = Игрок { $name } зашёл на сервер впервые.
 # Displayed in chat to admins when a player leaves
 player-leave-message = Игрок { $name } вышел!
-latejoin-arrival-announcement = { $character } ({ $job }) прибывает на станцию!
-latejoin-arrival-announcement-special = { $job } { $character } прибывает на станцию!
+latejoin-arrival-announcement =
+    { $character } ({ $job }) { GENDER($entity) ->
+        [male] прибыл
+        [female] прибыла
+        [epicene] прибыли
+       *[neuter] прибыло
+    } на станцию!
+latejoin-arrival-announcement-special = { $job } { $character } на палубе!
 latejoin-arrival-sender = Станции
 latejoin-arrivals-direction = Вскоре прибудет шаттл, который доставит вас на станцию.
 latejoin-arrivals-direction-time = Шаттл, который доставит вас на станцию, прибудет через { $time }.
@@ -44,8 +50,3 @@ preset-no-one-ready = Не удалось запустить режим { $prese
 game-run-level-PreRoundLobby = Предраундовое лобби
 game-run-level-InRound = В раунде
 game-run-level-PostRound = После раунда
-#Reserve edit
-player-first-join-date =  первый заход: { $firstSeenTime }
-player-first-join-account-date = Дата создания аккаунта: { $creationDate }
-player-first-join-message-webhook = { $name } зашёл на сервер недавно/впервые.
-game-ticker-welcome-to-the-station = Добро пожаловать на станцию, персонал, наслаждайтесь своим пребыванием!

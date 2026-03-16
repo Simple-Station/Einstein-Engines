@@ -1,22 +1,33 @@
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 eclips_e <67359748+Just-a-Unity-Dev@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Adrian16199 <144424013+Adrian16199@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 LaCumbiaDelCoronavirus <90893484+LaCumbiaDelCoronavirus@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Zalycon <84675130+Zalycon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 - type: species
   id: SlimePerson
   name: species-name-slime
-  roundStart: false
+  roundStart: true
   prototype: MobSlimePerson
-  # WD EDIT START
-  bodyTypes:
-    - SlimeNormal
-  # WD EDIT END
+  sprites: MobSlimeSprites
   defaultSkinTone: "#b8b8b8"
   markingLimits: MobSlimeMarkingLimits
   dollPrototype: MobSlimePersonDummy
   skinColoration: Hues
 
-# WD EDIT START
-- type: bodyType
-  id: SlimeNormal
-  name: body-normal
-# WD EDIT END
+- type: speciesBaseSprites
+  id: MobSlimeSprites
   sprites:
     Face: MobHumanoidAnyMarking
     Head: MobSlimeHead
@@ -25,7 +36,8 @@
     FacialHair: MobSlimeMarkingFollowSkin
     Underwear: MobHumanoidAnyMarking
     Undershirt: MobHumanoidAnyMarking
-    Chest: MobSlimeTorso
+    Chest: MobSlimeChest
+    Groin: MobSlimeGroin
     Eyes: MobHumanoidEyes
     LArm: MobSlimeLArm
     RArm: MobSlimeRArm
@@ -43,13 +55,13 @@
       points: 1
       required: false
     HeadSide:
-      points: 6
+      points: 3
       required: false
     FacialHair:
       points: 1
       required: false
     Chest:
-      points: 6
+      points: 8
       required: false
     Underwear:
       points: 1
@@ -61,25 +73,25 @@
       points: 2
       required: false
     RightFoot:
-      points: 6
+      points: 2
       required: false
     LeftLeg:
-      points: 6
+      points: 2
       required: false
     LeftFoot:
-      points: 6
+      points: 2
       required: false
     RightArm:
-      points: 6
+      points: 2
       required: false
     RightHand:
-      points: 6
+      points: 2
       required: false
     LeftArm:
-      points: 6
+      points: 2
       required: false
     LeftHand:
-      points: 6
+      points: 2
       required: false
 
 - type: humanoidBaseSprite
@@ -106,22 +118,40 @@
     state: head_f
 
 - type: humanoidBaseSprite
-  id: MobSlimeTorso
+  id: MobSlimeChest
   baseSprite:
     sprite: Mobs/Species/Slime/parts.rsi
-    state: torso_m
+    state: chest_m
 
 - type: humanoidBaseSprite
-  id: MobSlimeTorsoMale
+  id: MobSlimeChestMale
   baseSprite:
     sprite: Mobs/Species/Slime/parts.rsi
-    state: torso_m
+    state: chest_m
 
 - type: humanoidBaseSprite
-  id: MobSlimeTorsoFemale
+  id: MobSlimeChestFemale
   baseSprite:
     sprite: Mobs/Species/Slime/parts.rsi
-    state: torso_f
+    state: chest_f
+
+- type: humanoidBaseSprite
+  id: MobSlimeGroin
+  baseSprite:
+    sprite: Mobs/Species/Slime/parts.rsi
+    state: groin_m
+
+- type: humanoidBaseSprite
+  id: MobSlimeGroinMale
+  baseSprite:
+    sprite: Mobs/Species/Slime/parts.rsi
+    state: groin_m
+
+- type: humanoidBaseSprite
+  id: MobSlimeGroinFemale
+  baseSprite:
+    sprite: Mobs/Species/Slime/parts.rsi
+    state: groin_f
 
 - type: humanoidBaseSprite
   id: MobSlimeLLeg

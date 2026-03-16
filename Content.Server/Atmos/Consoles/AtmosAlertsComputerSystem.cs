@@ -1,5 +1,11 @@
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Atmos.Monitor.Components;
-using Content.Server.DeviceNetwork.Components;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Pinpointer;
 using Content.Server.Power.Components;
@@ -19,7 +25,7 @@ namespace Content.Server.Atmos.Monitor.Systems;
 
 public sealed class AtmosAlertsComputerSystem : SharedAtmosAlertsComputerSystem
 {
-    [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
+    [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
     [Dependency] private readonly AirAlarmSystem _airAlarmSystem = default!;
     [Dependency] private readonly AtmosDeviceNetworkSystem _atmosDevNet = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
@@ -31,7 +37,7 @@ public sealed class AtmosAlertsComputerSystem : SharedAtmosAlertsComputerSystem
     private const float UpdateTime = 1.0f;
 
     // Note: this data does not need to be saved
-    private float _updateTimer = 0f;
+    private float _updateTimer = 1.0f;
 
     public override void Initialize()
     {
@@ -52,14 +58,20 @@ public sealed class AtmosAlertsComputerSystem : SharedAtmosAlertsComputerSystem
 
     #region Event handling
 
-    private void OnConsoleInit(EntityUid uid, AtmosAlertsComputerComponent component, ComponentInit args) =>
+    private void OnConsoleInit(EntityUid uid, AtmosAlertsComputerComponent component, ComponentInit args)
+    {
         InitalizeConsole(uid, component);
+    }
 
-    private void OnConsoleParentChanged(EntityUid uid, AtmosAlertsComputerComponent component, EntParentChangedMessage args) =>
+    private void OnConsoleParentChanged(EntityUid uid, AtmosAlertsComputerComponent component, EntParentChangedMessage args)
+    {
         InitalizeConsole(uid, component);
+    }
 
-    private void OnFocusChangedMessage(EntityUid uid, AtmosAlertsComputerComponent component, AtmosAlertsComputerFocusChangeMessage args) =>
+    private void OnFocusChangedMessage(EntityUid uid, AtmosAlertsComputerComponent component, AtmosAlertsComputerFocusChangeMessage args)
+    {
         component.FocusDevice = args.FocusDevice;
+    }
 
     private void OnGridSplit(ref GridSplitEvent args)
     {
@@ -83,20 +95,28 @@ public sealed class AtmosAlertsComputerSystem : SharedAtmosAlertsComputerSystem
         }
     }
 
-    private void OnDeviceAnchorChanged(EntityUid uid, AtmosAlertsDeviceComponent component, AnchorStateChangedEvent args) =>
+    private void OnDeviceAnchorChanged(EntityUid uid, AtmosAlertsDeviceComponent component, AnchorStateChangedEvent args)
+    {
         OnDeviceAdditionOrRemoval(uid, component, args.Anchored);
+    }
 
-    private void OnDeviceTerminatingEvent(EntityUid uid, AtmosAlertsDeviceComponent component, ref EntityTerminatingEvent args) =>
+    private void OnDeviceTerminatingEvent(EntityUid uid, AtmosAlertsDeviceComponent component, ref EntityTerminatingEvent args)
+    {
         OnDeviceAdditionOrRemoval(uid, component, false);
+    }
 
     private void OnDeviceAdditionOrRemoval(EntityUid uid, AtmosAlertsDeviceComponent component, bool isAdding)
     {
         var xform = Transform(uid);
         var gridUid = xform.GridUid;
 
-        if (gridUid == null
-            || !TryComp<NavMapComponent>(xform.GridUid, out var navMap)
-            || !TryGetAtmosDeviceNavMapData(uid, component, xform, out var data))
+        if (gridUid == null)
+            return;
+
+        if (!TryComp<NavMapComponent>(xform.GridUid, out var navMap))
+            return;
+
+        if (!TryGetAtmosDeviceNavMapData(uid, component, xform, out var data))
             return;
 
         var netEntity = GetNetEntity(uid);
@@ -129,54 +149,56 @@ public sealed class AtmosAlertsComputerSystem : SharedAtmosAlertsComputerSystem
         base.Update(frameTime);
 
         _updateTimer += frameTime;
-        if (_updateTimer < UpdateTime)
-            return;
-        _updateTimer = 0f;
 
-        // Keep a list of UI entries for each gridUid, in case multiple consoles stand on the same grid
-        var airAlarmEntriesForEachGrid = new Dictionary<EntityUid, AtmosAlertsComputerEntry[]>();
-        var fireAlarmEntriesForEachGrid = new Dictionary<EntityUid, AtmosAlertsComputerEntry[]>();
-
-        var query = AllEntityQuery<AtmosAlertsComputerComponent, TransformComponent>();
-        while (query.MoveNext(out var ent, out var entConsole, out var entXform))
+        if (_updateTimer >= UpdateTime)
         {
-            if (entXform?.GridUid == null)
-                continue;
+            _updateTimer -= UpdateTime;
 
-            // Make a list of alarm state data for all the air and fire alarms on the grid
-            if (!airAlarmEntriesForEachGrid.TryGetValue(entXform.GridUid.Value, out var airAlarmEntries))
+            // Keep a list of UI entries for each gridUid, in case multiple consoles stand on the same grid
+            var airAlarmEntriesForEachGrid = new Dictionary<EntityUid, AtmosAlertsComputerEntry[]>();
+            var fireAlarmEntriesForEachGrid = new Dictionary<EntityUid, AtmosAlertsComputerEntry[]>();
+
+            var query = AllEntityQuery<AtmosAlertsComputerComponent, TransformComponent>();
+            while (query.MoveNext(out var ent, out var entConsole, out var entXform))
             {
-                airAlarmEntries = GetAlarmStateData(entXform.GridUid.Value, AtmosAlertsComputerGroup.AirAlarm).ToArray();
-                airAlarmEntriesForEachGrid[entXform.GridUid.Value] = airAlarmEntries;
+                if (entXform?.GridUid == null)
+                    continue;
+
+                // Make a list of alarm state data for all the air and fire alarms on the grid
+                if (!airAlarmEntriesForEachGrid.TryGetValue(entXform.GridUid.Value, out var airAlarmEntries))
+                {
+                    airAlarmEntries = GetAlarmStateData(entXform.GridUid.Value, AtmosAlertsComputerGroup.AirAlarm).ToArray();
+                    airAlarmEntriesForEachGrid[entXform.GridUid.Value] = airAlarmEntries;
+                }
+
+                if (!fireAlarmEntriesForEachGrid.TryGetValue(entXform.GridUid.Value, out var fireAlarmEntries))
+                {
+                    fireAlarmEntries = GetAlarmStateData(entXform.GridUid.Value, AtmosAlertsComputerGroup.FireAlarm).ToArray();
+                    fireAlarmEntriesForEachGrid[entXform.GridUid.Value] = fireAlarmEntries;
+                }
+
+                // Determine the highest level of alert for the console (based on non-silenced alarms)
+                var highestAlert = AtmosAlarmType.Invalid;
+
+                foreach (var entry in airAlarmEntries)
+                {
+                    if (entry.AlarmState > highestAlert && !entConsole.SilencedDevices.Contains(entry.NetEntity))
+                        highestAlert = entry.AlarmState;
+                }
+
+                foreach (var entry in fireAlarmEntries)
+                {
+                    if (entry.AlarmState > highestAlert && !entConsole.SilencedDevices.Contains(entry.NetEntity))
+                        highestAlert = entry.AlarmState;
+                }
+
+                // Update the appearance of the console based on the highest recorded level of alert
+                if (TryComp<AppearanceComponent>(ent, out var entAppearance))
+                    _appearance.SetData(ent, AtmosAlertsComputerVisuals.ComputerLayerScreen, (int) highestAlert, entAppearance);
+
+                // If the console UI is open, send UI data to each subscribed session
+                UpdateUIState(ent, airAlarmEntries, fireAlarmEntries, entConsole, entXform);
             }
-
-            if (!fireAlarmEntriesForEachGrid.TryGetValue(entXform.GridUid.Value, out var fireAlarmEntries))
-            {
-                fireAlarmEntries = GetAlarmStateData(entXform.GridUid.Value, AtmosAlertsComputerGroup.FireAlarm).ToArray();
-                fireAlarmEntriesForEachGrid[entXform.GridUid.Value] = fireAlarmEntries;
-            }
-
-            // Determine the highest level of alert for the console (based on non-silenced alarms)
-            var highestAlert = AtmosAlarmType.Invalid;
-
-            foreach (var entry in airAlarmEntries)
-            {
-                if (entry.AlarmState > highestAlert && !entConsole.SilencedDevices.Contains(entry.NetEntity))
-                    highestAlert = entry.AlarmState;
-            }
-
-            foreach (var entry in fireAlarmEntries)
-            {
-                if (entry.AlarmState > highestAlert && !entConsole.SilencedDevices.Contains(entry.NetEntity))
-                    highestAlert = entry.AlarmState;
-            }
-
-            // Update the appearance of the console based on the highest recorded level of alert
-            if (TryComp<AppearanceComponent>(ent, out var entAppearance))
-                _appearance.SetData(ent, AtmosAlertsComputerVisuals.ComputerLayerScreen, (int) highestAlert, entAppearance);
-
-            // If the console UI is open, send UI data to each subscribed session
-            UpdateUIState(ent, airAlarmEntries, fireAlarmEntries, entConsole, entXform);
         }
     }
 
@@ -187,7 +209,7 @@ public sealed class AtmosAlertsComputerSystem : SharedAtmosAlertsComputerSystem
         AtmosAlertsComputerComponent component,
         TransformComponent xform)
     {
-        if (!_uiSystem.IsUiOpen(uid, AtmosAlertsComputerUiKey.Key))
+        if (!_userInterfaceSystem.IsUiOpen(uid, AtmosAlertsComputerUiKey.Key))
             return;
 
         var gridUid = xform.GridUid!.Value;
@@ -202,7 +224,7 @@ public sealed class AtmosAlertsComputerSystem : SharedAtmosAlertsComputerSystem
         var focusAlarmData = GetFocusAlarmData(uid, GetEntity(component.FocusDevice), gridUid);
 
         // Set the UI state
-        _uiSystem.SetUiState(uid, AtmosAlertsComputerUiKey.Key,
+        _userInterfaceSystem.SetUiState(uid, AtmosAlertsComputerUiKey.Key,
             new AtmosAlertsComputerBoundInterfaceState(airAlarmStateData, fireAlarmStateData, focusAlarmData));
     }
 
@@ -295,7 +317,7 @@ public sealed class AtmosAlertsComputerSystem : SharedAtmosAlertsComputerSystem
         }
 
         // Force update the sensors attached to the alarm
-        if (!_uiSystem.IsUiOpen(focusDevice.Value, SharedAirAlarmInterfaceKey.Key))
+        if (!_userInterfaceSystem.IsUiOpen(focusDevice.Value, SharedAirAlarmInterfaceKey.Key))
         {
             _atmosDevNet.Register(focusDevice.Value, null);
             _atmosDevNet.Sync(focusDevice.Value, null);

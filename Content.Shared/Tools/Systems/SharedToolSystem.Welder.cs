@@ -1,9 +1,19 @@
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Verm <32827189+Vermidia@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.ActionBlocker;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Interaction;
 using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Tools.Components;
@@ -12,24 +22,30 @@ namespace Content.Shared.Tools.Systems;
 
 public abstract partial class SharedToolSystem
 {
+    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
+
     public void InitializeWelder()
     {
+        SubscribeLocalEvent<WelderComponent, MapInitEvent>(OnWelderInit);
         SubscribeLocalEvent<WelderComponent, ExaminedEvent>(OnWelderExamine);
         SubscribeLocalEvent<WelderComponent, AfterInteractEvent>(OnWelderAfterInteract);
 
-        SubscribeLocalEvent<WelderComponent, ToolUseAttemptEvent>((uid, comp, ev) => {
+        SubscribeLocalEvent<WelderComponent, ToolUseAttemptEvent>((uid, comp, ev) =>
+        {
             CanCancelWelderUse((uid, comp), ev.User, ev.Fuel, ev);
         });
-        SubscribeLocalEvent<WelderComponent, DoAfterAttemptEvent<ToolDoAfterEvent>>((uid, comp, ev) => {
+        SubscribeLocalEvent<WelderComponent, DoAfterAttemptEvent<ToolDoAfterEvent>>((uid, comp, ev) =>
+        {
             CanCancelWelderUse((uid, comp), ev.Event.User, ev.Event.Fuel, ev);
         });
         SubscribeLocalEvent<WelderComponent, ToolDoAfterEvent>(OnWelderDoAfter);
 
         SubscribeLocalEvent<WelderComponent, ItemToggledEvent>(OnToggle);
         SubscribeLocalEvent<WelderComponent, ItemToggleActivateAttemptEvent>(OnActivateAttempt);
+        SubscribeLocalEvent<WelderComponent, ItemToggleDeactivateAttemptEvent>(OnDeactivateAttempt);
     }
 
-    public virtual void TurnOn(Entity<WelderComponent> entity, EntityUid? user)
+    public void TurnOn(Entity<WelderComponent> entity, EntityUid? user)
     {
         if (!SolutionContainerSystem.TryGetSolution(entity.Owner, entity.Comp.FuelSolutionName, out var solutionComp, out _))
             return;
@@ -65,6 +81,12 @@ public abstract partial class SharedToolSystem
         }
 
         return (fuelSolution.GetTotalPrototypeQuantity(welder.FuelReagent), fuelSolution.MaxVolume);
+    }
+
+    private void OnWelderInit(Entity<WelderComponent> ent, ref MapInitEvent args)
+    {
+        ent.Comp.NextUpdate = _timing.CurTime + ent.Comp.WelderUpdateTimer;
+        Dirty(ent);
     }
 
     private void OnWelderExamine(Entity<WelderComponent> entity, ref ExaminedEvent args)
@@ -165,6 +187,12 @@ public abstract partial class SharedToolSystem
 
     private void OnActivateAttempt(Entity<WelderComponent> entity, ref ItemToggleActivateAttemptEvent args)
     {
+        if (args.User != null && !_actionBlocker.CanComplexInteract(args.User.Value))
+        {
+            args.Cancelled = true;
+            return;
+        }
+
         if (!SolutionContainerSystem.TryGetSolution(entity.Owner, entity.Comp.FuelSolutionName, out _, out var solution))
         {
             args.Cancelled = true;
@@ -177,6 +205,39 @@ public abstract partial class SharedToolSystem
         {
             args.Popup = Loc.GetString("welder-component-no-fuel-message");
             args.Cancelled = true;
+        }
+    }
+
+    private void OnDeactivateAttempt(Entity<WelderComponent> entity, ref ItemToggleDeactivateAttemptEvent args)
+    {
+        if (args.User != null && !_actionBlocker.CanComplexInteract(args.User.Value))
+        {
+            args.Cancelled = true;
+        }
+    }
+
+    private void UpdateWelders()
+    {
+        var query = EntityQueryEnumerator<WelderComponent, SolutionContainerManagerComponent>();
+        var curTime = _timing.CurTime;
+        while (query.MoveNext(out var uid, out var welder, out var solutionContainer))
+        {
+            if (curTime < welder.NextUpdate)
+                continue;
+
+            welder.NextUpdate += welder.WelderUpdateTimer;
+            Dirty(uid, welder);
+
+            if (!welder.Enabled)
+                continue;
+
+            if (!SolutionContainerSystem.TryGetSolution((uid, solutionContainer), welder.FuelSolutionName, out var solutionComp, out var solution))
+                continue;
+
+            SolutionContainerSystem.RemoveReagent(solutionComp.Value, welder.FuelReagent, welder.FuelConsumption * welder.WelderUpdateTimer.TotalSeconds);
+
+            if (solution.GetTotalPrototypeQuantity(welder.FuelReagent) <= FixedPoint2.Zero)
+                ItemToggle.Toggle(uid);
         }
     }
 }

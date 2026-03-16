@@ -1,4 +1,15 @@
-﻿using System.Linq;
+// SPDX-FileCopyrightText: 2023 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Audio;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Materials;
@@ -6,7 +17,7 @@ using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Popups;
 using Content.Shared.Power.Generator;
 using Robust.Server.GameObjects;
@@ -26,11 +37,8 @@ public sealed class GeneratorSystem : SharedGeneratorSystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly PuddleSystem _puddle = default!;
 
-    private EntityQuery<UpgradePowerSupplierComponent> _upgradeQuery;
-
     public override void Initialize()
     {
-        _upgradeQuery = GetEntityQuery<UpgradePowerSupplierComponent>();
 
         UpdatesBefore.Add(typeof(PowerNetSystem));
 
@@ -228,9 +236,7 @@ public sealed class GeneratorSystem : SharedGeneratorSystem
 
             supplier.Enabled = true;
 
-            var upgradeMultiplier = _upgradeQuery.CompOrNull(uid)?.ActualScalar ?? 1f;
-
-            supplier.MaxSupply = gen.TargetPower * upgradeMultiplier;
+            supplier.MaxSupply = gen.TargetPower;
 
             var eff = 1 / CalcFuelEfficiency(gen.TargetPower, gen.OptimalPower, gen);
             var consumption = gen.OptimalBurnRate * frameTime * eff;

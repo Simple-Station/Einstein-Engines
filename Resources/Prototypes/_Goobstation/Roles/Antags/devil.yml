@@ -11,15 +11,19 @@
   setPreference: true
   objective: roles-antag-devil-description
   guides: [ Devil ]
-#  requirements:
-#  - !type:OverallPlaytimeRequirement
-#    time: 108000 # 30h
-#  - !type:DepartmentTimeRequirement
-#    department: Command
-#    time: 18000 # 5 hours
-#  - !type:RoleTimeRequirement
-#    role: JobLawyer
-#    time: 3600 # 1 Hour
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 108000 # 30h
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 18000 # 5 hours
+  - !type:RoleTimeRequirement
+    role: JobLawyer
+    time: 3600 # 1 Hour
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - Plasmaman
 
 - type: startingGear
   id: DevilStartingGear
@@ -28,4 +32,3 @@
     - GuidebookCodexUmbra
     - PenDevil
     - ClothingEyesGlassesSunglasses
-    - ClothingUniformJumpsuitDevil

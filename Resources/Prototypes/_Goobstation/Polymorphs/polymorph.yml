@@ -14,16 +14,16 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-#- type: polymorph
-##  id: Gondola
-##  configuration:
-##    entity: MobGondola
-##    forced: true
-##    transferName: false
-##    transferHumanoidAppearance: false
-##    inventory: Drop
-##    revertOnDeath: false
-##    revertOnCrit: false
+- type: polymorph
+  id: Gondola
+  configuration:
+    entity: MobGondola
+    forced: true
+    transferName: false
+    transferHumanoidAppearance: false
+    inventory: Drop
+    revertOnDeath: false
+    revertOnCrit: false
 
 - type: polymorph
   id: Bingle
@@ -36,17 +36,17 @@
     revertOnDeath: false
     revertOnCrit: false
 
-#- type: polymorph
-#  id: Bananamen
-#  configuration:
-#    entity: MobBananaMen
-#    forced: true
-#    transferName: true
-#    transferHumanoidAppearance: false
-#    revertOnDeath: false
-#    revertOnCrit: false
-#    polymorphSound: /Audio/Items/bikehorn.ogg
-#    inventory: Transfer
+- type: polymorph
+  id: Bananamen
+  configuration:
+    entity: MobBananaMen
+    forced: true
+    transferName: true
+    transferHumanoidAppearance: false
+    revertOnDeath: false
+    revertOnCrit: false
+    polymorphSound: /Audio/Items/bikehorn.ogg
+    inventory: Transfer
 
 - type: polymorph
   id: Cat
@@ -60,15 +60,15 @@
     revertOnCrit: true
     duration: 20
 
-#- type: polymorph
-#  id: MouseSentient
-#  configuration:
-#    entity: MobMouseSentient
-#    forced: true
-#    inventory: Transfer
-#    revertOnDeath: true
-#    transferName: true
-#    revertOnCrit: true
+- type: polymorph
+  id: MouseSentient
+  configuration:
+    entity: MobMouseSentient
+    forced: true
+    inventory: Transfer
+    revertOnDeath: true
+    transferName: true
+    revertOnCrit: true
 
 - type: polymorph
   id: MobFrogPolymorph
@@ -76,9 +76,7 @@
     entity: MobFrog
     forced: true
     inventory: Transfer
-    revertOnDeath: true
     transferName: true
-    revertOnCrit: true
 
 - type: polymorph
   id: BinglePolymorph
@@ -97,14 +95,14 @@
     entity: PolymorphShadowJaunt
     forced: true
     duration: 4
-#    attachToGridOrMap: true
+    attachToGridOrMap: true
 
 - type: polymorph
   id: ShadowJauntPermanent
   configuration:
     entity: PolymorphShadowJaunt
     forced: true
-#    attachToGridOrMap: true
+    attachToGridOrMap: true
 
 - type: polymorph
   id: ShadowJaunt180
@@ -112,4 +110,4 @@
     entity: PolymorphShadowJaunt
     forced: true
     duration: 180
-#    attachToGridOrMap: true
+    attachToGridOrMap: true

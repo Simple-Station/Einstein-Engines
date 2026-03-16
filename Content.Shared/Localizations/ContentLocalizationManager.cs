@@ -1,3 +1,24 @@
+// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 E F R <602406+Efruit@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 moonheart08 <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 KrasnoshchekovPavel <119816022+KrasnoshchekovPavel@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Stalen <33173619+stalengd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 icekot8 <93311212+icekot8@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Myra <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2025 pathetic meowmeow <uhhadd@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -32,18 +53,19 @@ namespace Content.Shared.Localizations
             _loc.LoadCulture(culture);
             _loc.LoadCulture(fallbackCulture);
             _loc.SetFallbackCluture(fallbackCulture);
-            foreach (var cu in new[] {culture, fallbackCulture}) // orehum костыль локализашион эдишион
-            {
-                _loc.AddFunction(cu, "MANY", FormatMany);
-                _loc.AddFunction(cu, "PRESSURE", FormatPressure);
-                _loc.AddFunction(cu, "POWERWATTS", FormatPowerWatts);
-                _loc.AddFunction(cu, "POWERJOULES", FormatPowerJoules);
-                _loc.AddFunction(cu, "UNITS", FormatUnits);
-                _loc.AddFunction(cu, "TOSTRING", args => FormatToString(cu, args));
-                _loc.AddFunction(cu, "LOC", FormatLoc);
-                _loc.AddFunction(cu, "NATURALFIXED", FormatNaturalFixed);
-                _loc.AddFunction(cu, "NATURALPERCENT", FormatNaturalPercent);
-            }
+            _loc.AddFunction(culture, "MANY", FormatMany);
+            _loc.AddFunction(culture, "PRESSURE", FormatPressure);
+            _loc.AddFunction(culture, "POWERWATTS", FormatPowerWatts);
+            _loc.AddFunction(culture, "POWERJOULES", FormatPowerJoules);
+            // NOTE: ENERGYWATTHOURS() still takes a value in joules, but formats as watt-hours.
+            _loc.AddFunction(culture, "ENERGYWATTHOURS", FormatEnergyWattHours);
+            _loc.AddFunction(culture, "UNITS", FormatUnits);
+            _loc.AddFunction(culture, "TOSTRING", args => FormatToString(culture, args));
+            _loc.AddFunction(culture, "LOC", FormatLoc);
+            _loc.AddFunction(culture, "NATURALFIXED", FormatNaturalFixed);
+            _loc.AddFunction(fallbackCulture, "NATURALFIXED", FormatNaturalFixed);
+            _loc.AddFunction(culture, "NATURALPERCENT", FormatNaturalPercent);
+            _loc.AddFunction(culture, "PLAYTIME", FormatPlaytime);
 
 
             /*
@@ -149,6 +171,17 @@ namespace Content.Shared.Localizations
             return Loc.GetString($"zzzz-fmt-direction-{dir.ToString()}");
         }
 
+        /// <summary>
+        /// Formats playtime as hours and minutes.
+        /// </summary>
+        public static string FormatPlaytime(TimeSpan time)
+        {
+            time = TimeSpan.FromMinutes(Math.Ceiling(time.TotalMinutes));
+            var hours = (int)time.TotalHours;
+            var minutes = time.Minutes;
+            return Loc.GetString($"zzzz-fmt-playtime", ("hours", hours), ("minutes", minutes));
+        }
+
         private static ILocValue FormatLoc(LocArgs args)
         {
             var id = ((LocValueString) args.Args[0]).Value;
@@ -168,10 +201,16 @@ namespace Content.Shared.Localizations
             return new LocValueString(obj?.ToString() ?? "");
         }
 
-        private static ILocValue FormatUnitsGeneric(LocArgs args, string mode)
+        private static ILocValue FormatUnitsGeneric(
+            LocArgs args,
+            string mode,
+            Func<double, double>? transformValue = null)
         {
             const int maxPlaces = 5; // Matches amount in _lib.ftl
             var pressure = ((LocValueNumber) args.Args[0]).Value;
+
+            if (transformValue != null)
+                pressure = transformValue(pressure);
 
             var places = 0;
             while (pressure > 1000 && places < maxPlaces)
@@ -196,6 +235,13 @@ namespace Content.Shared.Localizations
         private static ILocValue FormatPowerJoules(LocArgs args)
         {
             return FormatUnitsGeneric(args, "zzzz-fmt-power-joules");
+        }
+
+        private static ILocValue FormatEnergyWattHours(LocArgs args)
+        {
+            const double joulesToWattHours = 1.0 / 3600;
+
+            return FormatUnitsGeneric(args, "zzzz-fmt-energy-watt-hours", joules => joules * joulesToWattHours);
         }
 
         private static ILocValue FormatUnits(LocArgs args)
@@ -236,6 +282,16 @@ namespace Content.Shared.Localizations
             );
 
             return new LocValueString(res);
+        }
+
+        private static ILocValue FormatPlaytime(LocArgs args)
+        {
+            var time = TimeSpan.Zero;
+            if (args.Args is { Count: > 0 } && args.Args[0].Value is TimeSpan timeArg)
+            {
+                time = timeArg;
+            }
+            return new LocValueString(FormatPlaytime(time));
         }
     }
 }

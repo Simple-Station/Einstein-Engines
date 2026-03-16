@@ -1,9 +1,35 @@
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Arendian <137322659+Arendian@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 chavonadelal <156101927+chavonadelal@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 12rabbits <53499656+12rabbits@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 vanx <61917534+Vaaankas@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Goobstation.Common.Identity;
 using Content.Server.Access.Systems;
 using Content.Server.Administration.Logs;
 using Content.Server.CriminalRecords.Systems;
-using Content.Server.PsionicsRecords.Systems;
 using Content.Server.Humanoid;
-using Content.Shared._EE.GenderChange;
 using Content.Shared.Clothing;
 using Content.Shared.Database;
 using Content.Shared.Hands;
@@ -29,7 +55,7 @@ public sealed class IdentitySystem : SharedIdentitySystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
     [Dependency] private readonly CriminalRecordsConsoleSystem _criminalRecordsConsole = default!;
-    [Dependency] private readonly PsionicsRecordsConsoleSystem _psionicsRecordsConsole = default!;
+    [Dependency] private readonly GrammarSystem _grammarSystem = default!;
     [Dependency] private readonly InventorySystem _inventorySystem = default!; // Goobstation - Update component state on component toggle
 
     private HashSet<EntityUid> _queuedIdentityUpdates = new();
@@ -44,7 +70,6 @@ public sealed class IdentitySystem : SharedIdentitySystem
         SubscribeLocalEvent<IdentityComponent, DidUnequipHandEvent>((uid, _, _) => QueueIdentityUpdate(uid));
         SubscribeLocalEvent<IdentityComponent, WearerMaskToggledEvent>((uid, _, _) => QueueIdentityUpdate(uid));
         SubscribeLocalEvent<IdentityComponent, EntityRenamedEvent>((uid, _, _) => QueueIdentityUpdate(uid));
-        SubscribeLocalEvent<IdentityComponent, GenderChangeEvent>((uid, _, _) => QueueIdentityUpdate(uid));
         SubscribeLocalEvent<IdentityComponent, MapInitEvent>(OnMapInit);
 
         SubscribeLocalEvent<IdentityBlockerComponent, ComponentInit>(BlockerUpdateIdentity); // Goobstation - Update component state on component toggle
@@ -79,10 +104,20 @@ public sealed class IdentitySystem : SharedIdentitySystem
     /// <summary>
     ///     Queues an identity update to the start of the next tick.
     /// </summary>
-    public void QueueIdentityUpdate(EntityUid uid)
+    public override void QueueIdentityUpdate(EntityUid uid)
     {
         _queuedIdentityUpdates.Add(uid);
     }
+
+    // WWDP simple public API
+    public string GetEntityIdentity(EntityUid uid)
+    {
+        var representation = GetIdentityRepresentation(uid);
+        var name = GetIdentityName(uid, representation);
+
+        return name;
+    }
+    // WWDP edit end
 
     #region Private API
 
@@ -110,7 +145,8 @@ public sealed class IdentitySystem : SharedIdentitySystem
 
             // If presumed name is null and we're using that, we set proper noun to be false ("the old woman")
             if (name != representation.TrueName && representation.PresumedName == null)
-                identityGrammar.ProperNoun = false;
+                _grammarSystem.SetProperNoun((ident, identityGrammar), false);
+
             Dirty(ident, identityGrammar);
         }
 
@@ -122,7 +158,7 @@ public sealed class IdentitySystem : SharedIdentitySystem
         _adminLog.Add(LogType.Identity, LogImpact.Medium, $"{ToPrettyString(uid)} changed identity to {name}");
         var identityChangedEvent = new IdentityChangedEvent(uid, ident);
         RaiseLocalEvent(uid, ref identityChangedEvent);
-        SetIdentityRecordsIcon(uid);
+        SetIdentityCriminalIcon(uid);
     }
 
     private string GetIdentityName(EntityUid target, IdentityRepresentation representation)
@@ -134,14 +170,13 @@ public sealed class IdentitySystem : SharedIdentitySystem
     }
 
     /// <summary>
-    ///     When the identity of a person is changed, searches the criminal records and psionics records to see if the name
-    ///     of the new identity has a record. If the new name has a criminal status or psionics status attached to it, the
-    ///     person will get the criminal status and/or psionics status until they change identity again.
+    ///     When the identity of a person is changed, searches the criminal records to see if the name of the new identity
+    ///     has a record. If the new name has a criminal status attached to it, the person will get the criminal status
+    ///     until they change identity again.
     /// </summary>
-    private void SetIdentityRecordsIcon(EntityUid uid)
+    private void SetIdentityCriminalIcon(EntityUid uid)
     {
         _criminalRecordsConsole.CheckNewIdentity(uid);
-        _psionicsRecordsConsole.CheckNewIdentity(uid);
     }
 
     /// <summary>
@@ -150,8 +185,19 @@ public sealed class IdentitySystem : SharedIdentitySystem
     /// </summary>
     private IdentityRepresentation GetIdentityRepresentation(EntityUid target,
         InventoryComponent? inventory=null,
-        HumanoidAppearanceComponent? appearance=null)
+        HumanoidAppearanceComponent? appearance=null,
+        bool raiseIdentityRepresentationEntityEvent = true)
     {
+        // Goobstation start
+        if (raiseIdentityRepresentationEntityEvent)
+        {
+            var ev = new GetIdentityRepresentationEntityEvent();
+            RaiseLocalEvent(target, ref ev);
+            if (ev.Uid != null)
+                return GetIdentityRepresentation(ev.Uid.Value, raiseIdentityRepresentationEntityEvent: false);
+        }
+        // Goobstation end
+
         int age = 18;
         Gender gender = Gender.Epicene;
         string species = SharedHumanoidAppearanceSystem.DefaultSpecies;

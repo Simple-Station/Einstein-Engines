@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Weide <64257676+Lyacs@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lanse12 <cloudability.ez@gmail.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 yglop <95057024+yglop@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 # Okay so my general thought is this:
 # 1. Generate the large mass
 # 2. Generate smaller masses offset
@@ -10,119 +20,97 @@
 - type: dungeonConfig
   id: VGRoid
   layers:
-  - !type:PrototypeDunGen
-    proto: VGRoidBlob
-  - !type:PrototypeDunGen
-    proto: VGRoidExterior
-  #- !type:PrototypeDunGen # Orehum no small grids spam no fun
-  #  proto: VGRoidSmaller
-  - !type:PrototypeDunGen
-    proto: VGRoidSmallPaths
-  - !type:EntityTableDunGen
-    minCount: 7
-    maxCount: 12
-    table:
-      id: VGRoidInteriorRoomMarker
-  # Fill
-  - !type:PrototypeDunGen
-    proto: VGRoidFill
-  # Ores
-  - !type:OreDunGen
-    replacement: IronRock
-    entity: IronRockIron
-    count: 50
-    minGroupSize: 10
-    maxGroupSize: 15
-  - !type:OreDunGen
-    replacement: IronRock
-    entity: IronRockCoal
-    count: 50
-    minGroupSize: 8
-    maxGroupSize: 12
-  - !type:OreDunGen
-    replacement: IronRock
-    entity: IronRockQuartz
-    count: 50
-    minGroupSize: 10
-    maxGroupSize: 15
-  - !type:OreDunGen
-    replacement: IronRock
-    entity: IronRockSalt
-    count: 50
-    minGroupSize: 8
-    maxGroupSize: 12
-  - !type:OreDunGen
-    replacement: IronRock
-    entity: IronRockGold
-    count: 40
-    minGroupSize: 8
-    maxGroupSize: 12
-  - !type:OreDunGen
-    replacement: IronRock
-    entity: IronRockDiamond
-    count: 15
-    minGroupSize: 1
-    maxGroupSize: 2
-  - !type:OreDunGen
-    replacement: IronRock
-    entity: IronRockSilver
-    count: 40
-    minGroupSize: 8
-    maxGroupSize: 12
-  - !type:OreDunGen
-    replacement: IronRock
-    entity: IronRockPlasma
-    count: 35
-    minGroupSize: 4
-    maxGroupSize: 8
-  - !type:OreDunGen
-    replacement: IronRock
-    entity: IronRockUranium
-    count: 35
-    minGroupSize: 4
-    maxGroupSize: 8
-  - !type:OreDunGen
-    replacement: IronRock
-    entity: IronRockArtifactFragment
-    count: 25
-    minGroupSize: 1
-    maxGroupSize: 3
-  - !type:OreDunGen
-    replacement: IronRock
-    entity: IronRockBluespace
-    count: 15
-    minGroupSize: 1
-    maxGroupSize: 3
-  - !type:OreDunGen
-    replacement: IronRock
-    entity: IronRockNormality
-    count: 15
-    minGroupSize: 1
-    maxGroupSize: 3
-  - !type:OreDunGen
-    replacement: IronRock
-    entity: IronRockAluminium
-    count: 50
-    minGroupSize: 20
-    maxGroupSize: 30
-  - !type:OreDunGen
-    replacement: IronRock
-    entity: IronRockLead
-    count: 50
-    minGroupSize: 20
-    maxGroupSize: 30
-  - !type:OreDunGen
-    replacement: IronRock
-    entity: IronRockCopper
-    count: 50
-    minGroupSize: 20
-    maxGroupSize: 30
-  - !type:OreDunGen
-    replacement: IronRock
-    entity: IronRockTungsten
-    count: 50
-    minGroupSize: 20
-    maxGroupSize: 30
+    - !type:PrototypeDunGen
+      proto: VGRoidBlob
+    - !type:PrototypeDunGen
+      proto: VGRoidExterior
+    - !type:PrototypeDunGen
+      proto: VGRoidSmaller
+    - !type:PrototypeDunGen
+      proto: VGRoidSmallPaths
+      inheritDungeons: All
+    - !type:EntityTableDunGen
+      minCount: 7
+      maxCount: 12
+      table:
+        id: VGRoidInteriorRoomMarker
+    # Fill
+    - !type:PrototypeDunGen
+      proto: VGRoidFill
+      inheritDungeons: All
+    # Ores
+    - !type:OreDunGen
+      replacement: IronRock
+      entity: IronRockIron
+      count: 50
+      minGroupSize: 20
+      maxGroupSize: 30
+    - !type:OreDunGen
+      replacement: IronRock
+      entity: IronRockCoal
+      count: 50
+      minGroupSize: 15
+      maxGroupSize: 20
+    - !type:OreDunGen
+      replacement: IronRock
+      entity: IronRockQuartz
+      count: 50
+      minGroupSize: 20
+      maxGroupSize: 30
+    - !type:OreDunGen
+      replacement: IronRock
+      entity: IronRockGold
+      count: 50
+      minGroupSize: 10
+      maxGroupSize: 20
+    - !type:OreDunGen
+      replacement: IronRock
+      entity: IronRockSilver
+      count: 50
+      minGroupSize: 10
+      maxGroupSize: 20
+    - !type:OreDunGen
+      replacement: IronRock
+      entity: IronRockPlasma
+      count: 50
+      minGroupSize: 10
+      maxGroupSize: 20
+    - !type:OreDunGen
+      replacement: IronRock
+      entity: IronRockUranium
+      count: 50
+      minGroupSize: 10
+      maxGroupSize: 20
+    - !type:OreDunGen #Goob wiznerf partial revert
+      replacement: IronRock
+      entity: IronRockBananium
+      count: 50
+      minGroupSize: 5
+      maxGroupSize: 10
+    - !type:OreDunGen
+      replacement: IronRock
+      entity: IronRockArtifactFragment
+      count: 50
+      minGroupSize: 2
+      maxGroupSize: 4
+    - !type:OreDunGen
+      replacement: IronRock
+      entity: IronRockDiamond
+      count: 15
+      minGroupSize: 1
+      maxGroupSize: 2
+    - !type:OreDunGen # Goobstation
+      replacement: IronRock
+      entity: IronRockBSCrystal
+      count: 40
+      minGroupSize: 2
+      maxGroupSize: 5
+    - !type:OreDunGen
+      replacement: IronRock
+      entity: IronRockGibtonite
+      count: 60 # you don't really hit it on purpose so it should be common
+      minGroupSize: 1
+      maxGroupSize: 1
 
 # Configs
 - type: dungeonConfig
@@ -165,14 +153,12 @@
 - type: dungeonConfig
   id: VGRoidExterior
   reserveTiles: true
-  data:
-    tiles:
-      FallbackTile: PlatingAsteroid
-      WidenTile: FloorAsteroidSand
   layers:
   - !type:PrototypeDunGen
     proto: VGRoidExteriorDungeons
   - !type:SplineDungeonConnectorDunGen
+    tile: PlatingAsteroid
+    widenTile: FloorAsteroidSand
 
 - type: dungeonConfig
   id: VGRoidExteriorDungeons
@@ -193,29 +179,24 @@
     table: !type:NestedSelector
       tableId: SalvageScrapSpawnerValuable
   - !type:EntityTableDunGen
-    minCount: 15
-    maxCount: 25
+    minCount: 30
+    maxCount: 45
     table: !type:NestedSelector
       tableId: SalvageTreasureSpawnerCommon
   - !type:EntityTableDunGen
-    minCount: 15
-    maxCount: 25
-    table: !type:NestedSelector
-      tableId: SalvageEquipmentSpawnerCommon
-  - !type:EntityTableDunGen
-    minCount: 15
-    maxCount: 20
+    minCount: 30
+    maxCount: 45
     table: !type:NestedSelector
       tableId: SalvageTreasureSpawnerValuable
-  - !type:EntityTableDunGen
-    minCount: 15
-    maxCount: 20
-    table: !type:NestedSelector
-      tableId: SalvageEquipmentSpawnerValuable
   - !type:MobsDunGen
     minCount: 8
     maxCount: 15
-    groups:
+    contents: VGRoidExteriorDungeonsMobs
+
+- type: entityTable
+  id: VGRoidExteriorDungeonsMobs
+  table: !type:GroupSelector
+    children:
     - id: SalvageSpawnerMobMiningAsteroid
       amount: 1
 
@@ -245,7 +226,12 @@
   - !type:MobsDunGen
     minCount: 25
     maxCount: 35
-    groups:
+    contents: VGRoidSmallPathsMobs
+
+- type: entityTable
+  id: VGRoidSmallPathsMobs
+  table: !type:GroupSelector
+    children:
     - id: SalvageSpawnerMobMiningAsteroid
       amount: 1
 
@@ -255,10 +241,8 @@
 # Fill with rocks.
 - type: dungeonConfig
   id: VGRoidFill
-  data:
-    entities:
-      Fill: IronRock
   layers:
   - !type:FillGridDunGen
+    entity: IronRock
     allowedTiles:
     - FloorAsteroidSand

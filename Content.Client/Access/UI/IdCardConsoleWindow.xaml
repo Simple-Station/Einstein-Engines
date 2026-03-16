@@ -1,3 +1,17 @@
+<!--
+SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 c4llv07e <38111072+c4llv07e@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <DefaultWindow xmlns="https://spacestation14.io"
             MinSize="650 290">
     <BoxContainer Orientation="Vertical">
@@ -30,6 +44,16 @@
             <Label Text="{Loc 'id-card-console-window-job-selection-label'}" />
             <OptionButton Name="JobPresetOptionButton" />
         </GridContainer>
+        <!-- Goobstation Start -->
+        <GridContainer Columns="3">
+            <Label Text="{Loc 'id-card-console-window-job-search-label'}" />
+            <TextureRect SetSize="16 16"
+                         Stretch="KeepAspectCentered"
+                         TexturePath="/Textures/Interface/VerbIcons/examine.svg.192dpi.png">
+            </TextureRect>
+            <LineEdit Name="SearchLineEdit" HorizontalExpand="True" />
+        </GridContainer>
         <Control Name="AccessLevelControlContainer" />
+        <!-- Goobstation End -->
     </BoxContainer>
 </DefaultWindow>

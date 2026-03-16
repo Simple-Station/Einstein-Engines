@@ -1,33 +1,29 @@
 <Document>
-  # Ферокси
+  # Feroxi
 
   <Box>
     <GuideEntityEmbed Entity="MobFeroxiDummy" Caption=""/>
   </Box>
 
-  Ферокси (фер-окси) — это раса гуманоидных существ, напоминающих акул. Хищники по своей природе, обладающие мощной силой укуса.
+  The Feroxi (fer-ox-i) are a race of humanoid shark-like beings. Carnivourous in nature with a strong bite force.
 
-  ## Диета
+  ## Diet
 
-  - Могут есть ТОЛЬКО мясо.
-  - Получают отравление от теобромина (шоколад, чай, кофе) и аллицина (лук, чеснок).
+  - Can ONLY eat meat.
 
-  ## Преимущества
+  ## Benefits
 
-  - Используют челюсти для нанесения колющего урона, сильнее, чем у большинства видов, сопоставимо с Они.
+  - Uses their jaws to do piercing damage, and harder than other species, rivaling Oni.
+  - Their cartilaginous skeleton allows them to resist blunt force trauma 10% more easily.
+  - Their adaptation to native environments allows them to resist the cold 10% more easily.
+  - Their biology allow them to breathe water vapour.
 
-  - Их хрящевой скелет делает их более устойчивыми к тупым повреждениям.
+  ## Drawbacks
 
-  - Адаптация к природным условиям позволяет легче переносить холод.
-
-  - Биология позволяет им дышать водяным паром.
-
-  ## Недостатки
-
-  - Получают на 10% больше урона от режущих атак.
-  - Испытывают жажду на 100% быстрее. Быстрее, чем Диона!
-  - Когда уровень жажды падает до состояния «Пересох», они начинают задыхаться. Держите воду под рукой!
-  - Физиологический раствор слишком солёный — он восполняет жажду гораздо хуже!
-  - Их лёгкие неотделимы, так как интегрированы с жабрами.
+  - They take 10% more Slash damage.
+  - Gets thirsty 100% faster. That's faster than a Diona!
+  - When thirst falls to "Parched" they begin to suffocate. Have water handy!
+  - Saline is too salty! It hydrates you much less!
+  - Your lungs are unremovable as theyre intergrated with your gills.
 
 </Document>

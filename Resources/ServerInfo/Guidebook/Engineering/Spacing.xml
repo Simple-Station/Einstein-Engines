@@ -1,23 +1,30 @@
-﻿<Document>
-  # Spacing
-  Spacing is the most common form of atmospheric upset that can occur on the station.
+<!--
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
 
-  While the damage that caused the spacing is often time-consuming to [textlink="fix" link="ExpandingRepairingStation"], the actual spacing problem can be quickly resolved by simply repressurizing the area.
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
 
-  Fixing spacing generally follows two simple steps:
+<Document>
+  # Разгерметизация
+  Разгерметизация — это самая распространённая форма нарушения атмосферы на станции.
 
-  1. Identify the area that has been spaced, and [textlink="seal the hole." link="ExpandingRepairingStation"]
+  Хотя устранение повреждений, вызвавших разгерметизацию, часто требует времени на [textlink="починку" link="ExpandingRepairingStation"], сама проблема с разгерметизацией может быть быстро решена простым восстановлением давления в зоне.
 
-  - If you're having trouble finding the hole, you can carefully listen for the flow of air rushing by you, if air is currently leaking to space.
-  - Look for any holes underneath girders that may be hard to see.
+  Устранение разгерметизации обычно включает два простых шага:
 
-  2. Repressurize the area.
+  1. Определите зону, подвергшуюся разгерметизации, и [textlink="запечатайте дыру." link="ExpandingRepairingStation"]
 
-  - [textlink="Air vents" link="AirVent"] enter pressure lockout when a room is spaced, so you'll need to override the vents to repressurize the area. You can do this by setting the connected [textlink="air alarm" link="AirAlarms"] to fill, or by using a screwdriver on a vent to manually override it temporarily.
+  - Если трудно найти дыру, можно прислушиваться к потоку воздуха, если он в данный момент выходит в космос.
+  - Обратите внимание на дыры на полу, ведь их может быть трудно заметить.
 
-  ## Things to Avoid
-  - Keep in mind that while you have an infinite supply of [textlink="mined gas" link="GasMiningAndStorage"], it is not quick enough to fill up multiple rooms at once. Setting [textlink="air alarms" link="AirAlarms"] to fill first [italic]before[/italic] fixing the root problem will often lead to wasted time and gas.
+  2. Восстановите давление в зоне.
 
-  - Leaving [textlink="air alarms" link="AirAlarms"] on the Fill mode unsupervised may lead to overpressuring a room, which can potentially harm crew if it gets out of hand.
+  - [textlink="Вентиляция" link="AirVent"] входит в блокировку давления, чтобы не потерять больше воздуха, поэтому потребуется временно обойти блокировку. Это можно сделать, установив связанную [textlink="воздушную сигнализацию" link="AirAlarms"] на режим заполнения, или щёлкнув правой кнопкой мыши на воздуховоде и выбрав «Снять блокировку давления» для временного ручного обхода.
+
+  ## Чего следует избегать
+  - Имейте в виду, что хоть у вас есть неограниченный запас [textlink="добытого газа" link="GasMiningAndStorage"], его не хватает для быстрого заполнения нескольких помещений одновременно. Установка [textlink="воздушные сигнализации" link="AirAlarms"] на заполнение [italic]до[/italic] устранения основной проблемы часто приводит к потере времени и газа.
+
+  - Оставление [textlink="воздушных сигнализаций" link="AirAlarms"] в режиме Заполнения без присмотра может привести к избыточному давлению в помещении, что потенциально может навредить экипажу, если ситуация выйдет из-под контроля.
 
 </Document>

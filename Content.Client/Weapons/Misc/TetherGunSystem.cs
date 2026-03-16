@@ -1,3 +1,14 @@
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Kyle Tyo <36606155+VerinSenpai@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Weapons.Misc;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -16,6 +27,8 @@ public sealed class TetherGunSystem : SharedTetherGunSystem
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IOverlayManager _overlay = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private readonly MapSystem _mapSystem = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     public override void Initialize()
     {
@@ -32,7 +45,7 @@ public sealed class TetherGunSystem : SharedTetherGunSystem
         if (!TryComp<SpriteComponent>(component.Tethered, out var sprite))
             return;
 
-        sprite.Color = component.LineColor;
+        _sprite.SetColor((component.Tethered.Value, sprite), component.LineColor);
     }
 
     public override void Shutdown()
@@ -57,7 +70,7 @@ public sealed class TetherGunSystem : SharedTetherGunSystem
         var player = _player.LocalEntity;
 
         if (player == null ||
-            !TryGetTetherGun(player.Value, out var gunUid, out var gun) ||
+            !TryGetTetherGun(player.Value, out _, out var gun) ||
             gun.TetherEntity == null)
         {
             return;
@@ -73,18 +86,18 @@ public sealed class TetherGunSystem : SharedTetherGunSystem
 
         if (_mapManager.TryFindGridAt(mouseWorldPos, out var gridUid, out _))
         {
-            coords = EntityCoordinates.FromMap(gridUid, mouseWorldPos, TransformSystem);
+            coords = TransformSystem.ToCoordinates(gridUid, mouseWorldPos);
         }
         else
         {
-            coords = EntityCoordinates.FromMap(_mapManager.GetMapEntityId(mouseWorldPos.MapId), mouseWorldPos, TransformSystem);
+            coords = TransformSystem.ToCoordinates(_mapSystem.GetMap(mouseWorldPos.MapId), mouseWorldPos);
         }
 
-        const float BufferDistance = 0.1f;
+        const float bufferDistance = 0.1f;
 
         if (TryComp(gun.TetherEntity, out TransformComponent? tetherXform) &&
             tetherXform.Coordinates.TryDistance(EntityManager, TransformSystem, coords, out var distance) &&
-            distance < BufferDistance)
+            distance < bufferDistance)
         {
             return;
         }
@@ -104,11 +117,11 @@ public sealed class TetherGunSystem : SharedTetherGunSystem
 
         if (TryComp<ForceGunComponent>(component.Tetherer, out var force))
         {
-            sprite.Color = force.LineColor;
+            _sprite.SetColor((uid, sprite), force.LineColor);
         }
         else if (TryComp<TetherGunComponent>(component.Tetherer, out var tether))
         {
-            sprite.Color = tether.LineColor;
+            _sprite.SetColor((uid, sprite), tether.LineColor);
         }
     }
 
@@ -117,6 +130,6 @@ public sealed class TetherGunSystem : SharedTetherGunSystem
         if (!TryComp<SpriteComponent>(uid, out var sprite))
             return;
 
-        sprite.Color = Color.White;
+        _sprite.SetColor((uid, sprite), Color.White);
     }
 }

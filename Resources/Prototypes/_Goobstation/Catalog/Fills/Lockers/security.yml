@@ -1,0 +1,43 @@
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Orion-416 <cliveocelot@gmail.com>
+# SPDX-FileCopyrightText: 2025 PunishedJoe <PunishedJoeseph@proton.me>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [GunSafeBaseSecure, BaseSecurityContraband]
+  id: GunSafeLauncherNonLethal
+  name: riot launcher safe
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponLauncherNonLethal
+    - id: BoxGrenadesBaton
+    - id: BoxGrenadesFlash
+    - id: BoxGrenadesTeargas
+
+# Detective Locker with Hardsuit
+- type: entityTable
+  id: FillLockerDetectiveHardsuit
+  table: !type:AllSelector
+    children:
+    - id: ClothingOuterHardsuitDetective
+    - id: OxygenTankFilled
+    - id: NitrogenTankFilled
+    - id: ClothingMaskBreath
+
+# Goobstation
+- type: entity
+  id: LockerDetectiveFilledHardsuit
+  suffix: Filled, Hardsuit
+  parent: LockerDetective
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:NestedSelector
+          tableId: FillLockerDetective
+        - !type:NestedSelector
+          tableId: FillLockerDetectiveHardsuit

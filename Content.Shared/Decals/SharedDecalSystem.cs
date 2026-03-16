@@ -1,4 +1,23 @@
-using System.Collections;
+// SPDX-FileCopyrightText: 2022 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2022 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Paul <ritter.paul1+git@googlemail.com>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 moonheart08 <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Robust.Shared.GameStates;
@@ -6,7 +25,6 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using static Content.Shared.Decals.DecalGridComponent;
-using ChunkIndicesEnumerator = Robust.Shared.Map.Enumerators.ChunkIndicesEnumerator;
 
 namespace Content.Shared.Decals
 {
@@ -103,33 +121,6 @@ namespace Content.Shared.Decals
             DirtyChunk(gridId, indices, chunk);
             OnDecalRemoved(gridId, decalId, component, indices, chunk);
             return true;
-        }
-
-        public HashSet<(uint Index, Decal Decal)> GetDecalsIntersecting(EntityUid gridUid, Box2 bounds, DecalGridComponent? component = null)
-        {
-            var decalIds = new HashSet<(uint, Decal)>();
-            var chunkCollection = ChunkCollection(gridUid, component);
-
-            if (chunkCollection == null)
-                return decalIds;
-
-            var chunks = new ChunkIndicesEnumerator(bounds, ChunkSize);
-
-            while (chunks.MoveNext(out var chunkOrigin))
-            {
-                if (!chunkCollection.TryGetValue(chunkOrigin.Value, out var chunk))
-                    continue;
-
-                foreach (var (id, decal) in chunk.Decals)
-                {
-                    if (!bounds.Contains(decal.Coordinates))
-                        continue;
-
-                    decalIds.Add((id, decal));
-                }
-            }
-
-            return decalIds;
         }
 
         protected virtual void OnDecalRemoved(EntityUid gridId, uint decalId, DecalGridComponent component, Vector2i indices, DecalChunk chunk)

@@ -1,4 +1,4 @@
-- type: accessLevel
+﻿- type: accessLevel
   id: Borg
   name: id-card-access-level-borg
   canAddToIdCard: false
@@ -12,7 +12,7 @@
   id: StationAi
   name: id-card-access-level-station-ai
   canAddToIdCard: false
-
+  
 - type: accessGroup
   id: Silicon
   tags:

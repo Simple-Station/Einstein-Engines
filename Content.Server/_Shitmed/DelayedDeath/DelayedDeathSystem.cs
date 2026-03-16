@@ -9,7 +9,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared._Goobstation.DelayedDeath;
+using Content.Goobstation.Common.DelayedDeath;
 using Content.Server.Chat.Systems;
 using Content.Shared.Chat;
 using Content.Shared.Medical;
@@ -49,7 +49,7 @@ public partial class DelayedDeathSystem : EntitySystem
                 _mobState.ChangeMobState(ent, MobState.Dead, mob);
 
                 // goob code
-                var ev = new DelayedDeathEvent(ent);
+                var ev = new DelayedDeathEvent(ent, PreventRevive: comp.PreventAllRevives);
                 RaiseLocalEvent(ent, ref ev);
 
                 if (ev.Cancelled)
@@ -59,7 +59,7 @@ public partial class DelayedDeathSystem : EntitySystem
                 }
 
                 if (!string.IsNullOrWhiteSpace(comp.DeathMessageId)) // Goobstation
-                    _popupSystem.PopupEntity(Loc.GetString(comp.DeathMessageId), ent, PopupType.LargeCaution);
+                    _popupSystem.PopupEntity(Loc.GetString(comp.DeathMessageId), ent, ent, PopupType.LargeCaution);
             }
         }
     }
@@ -69,7 +69,7 @@ public partial class DelayedDeathSystem : EntitySystem
         // can't defib someone without a heart or brain pal
         args.Cancel();
 
-        var failPopup = Loc.GetString(ent.Comp.DeathMessageId); // Goobstation
+        var failPopup = Loc.GetString(ent.Comp.DefibFailMessageId); // Goobstation
         _chat.TrySendInGameICMessage(args.Defib, failPopup, InGameICChatType.Speak, true);
     }
 }

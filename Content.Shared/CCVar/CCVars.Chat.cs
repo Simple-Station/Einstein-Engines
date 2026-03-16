@@ -1,4 +1,10 @@
-﻿using Robust.Shared.Configuration;
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aineias1 <142914808+Aineias1@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.CCVar;
 
@@ -34,7 +40,7 @@ public sealed partial class CCVars
         CVarDef.Create("chat.max_message_length", 1000, CVar.SERVER | CVar.REPLICATED);
 
     public static readonly CVarDef<int> ChatMaxAnnouncementLength =
-        CVarDef.Create("chat.max_announcement_length", 256, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("chat.max_announcement_length", 512, CVar.SERVER | CVar.REPLICATED);
 
     public static readonly CVarDef<bool> ChatSanitizerEnabled =
         CVarDef.Create("chat.chat_sanitizer_enabled", true, CVar.SERVERONLY);
@@ -54,9 +60,6 @@ public sealed partial class CCVars
             CVar.CLIENTONLY | CVar.ARCHIVE,
             "Toggles displaying a background under the speaking character's name.");
 
-    public static readonly CVarDef<int> ChatStackLastLines =
-        CVarDef.Create("chat.chatstack_last_lines", 1, CVar.CLIENTONLY | CVar.ARCHIVE, "How far into the chat history to look when looking for similiar messages to coalesce them.");
-
     /// <summary>
     ///     A message broadcast to each player that joins the lobby.
     ///     May be changed by admins ingame through use of the "set-motd" command.
@@ -68,4 +71,39 @@ public sealed partial class CCVars
             "",
             CVar.SERVER | CVar.SERVERONLY | CVar.ARCHIVE,
             "A message broadcast to each player that joins the lobby.");
+
+    /// <summary>
+    /// A string containing a list of newline-separated words to be highlighted in the chat.
+    /// </summary>
+    public static readonly CVarDef<string> ChatHighlights =
+        CVarDef.Create("chat.highlights", "", CVar.CLIENTONLY | CVar.ARCHIVE, "A list of newline-separated words to be highlighted in the chat.");
+
+    /// <summary>
+    /// An option to toggle the automatic filling of the highlights with the character's info, if available.
+    /// </summary>
+    public static readonly CVarDef<bool> ChatAutoFillHighlights =
+        CVarDef.Create("chat.auto_fill_highlights", false, CVar.CLIENTONLY | CVar.ARCHIVE, "Toggles automatically filling the highlights with the character's information.");
+
+    /// <summary>
+    /// The color in which the highlights will be displayed.
+    /// </summary>
+    public static readonly CVarDef<string> ChatHighlightsColor =
+        CVarDef.Create("chat.highlights_color", "#17FFC1FF", CVar.CLIENTONLY | CVar.ARCHIVE, "The color in which the highlights will be displayed.");
+
+    #region Goobstation - Chat Highlight sounds!
+    // Goobstation - Chat Highlight sounds!
+    /// <summary>
+    ///     Whether to play a sound when a highlighted message is received.
+    /// </summary>
+    public static readonly CVarDef<bool> ChatHighlightSound =
+        CVarDef.Create("chat.highlight_sound", true, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+    /// <summary>
+    ///     Volume of the highlight sound when a highlighted message is received.
+    /// </summary>
+    public static readonly CVarDef<float> ChatHighlightVolume =
+        CVarDef.Create("chat.highlight_volume", 1.0f, CVar.ARCHIVE | CVar.CLIENTONLY);
+    // Goobstation - end
+    #endregion
+
 }

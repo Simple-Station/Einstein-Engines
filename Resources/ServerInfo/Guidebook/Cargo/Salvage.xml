@@ -1,37 +1,49 @@
+<!--
+SPDX-FileCopyrightText: 2023 AjexRose <112997230+AjexRose@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 TurboTrackerss14 <130304754+TurboTrackerss14@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 end <72604018+laok233@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <Document>
-# Salvage
+# Утилизация обломков
 
-Salvage is one of Logistics' key sources of income... until atmos comes along with a bajillion dollars worth of frezon. Until then though, your main job will be making them money, and totally not making a shuttle
+Утилизация пролетающих мимо станции обломков является одним из основных источников дохода отдела снабжения... пока крайней мере до того момента, когда атмосферные техники притащат канистру фризона, стоимостью в дофиглион кредитов. Однако до тех пор вашей основной задачей будет заработок кредитов, а не постройка шаттла.
 
-## How to prepare for a salvage
+## Подготовка к утилизации
 
-Firstly you need a few things before you can commence on your salvaging.
+Прежде чем приступить к утилизации обломков, вам понадобится несколько вещей.
 
 <Box>
 <GuideEntityEmbed Entity="ClothingOuterHardsuitSpatio"/>
 <GuideEntityEmbed Entity="ClothingShoesBootsMag"/>
 </Box>
-Your Hardsuit is important, as it provides EVA protection. Meaning the lack of pressure and tempurature of space wont kill you. It will also provide minor defense against any space fauna you may encounter. The magboots will ensure you can move smoothly on a salvage and pull things in and out. They also make you slip proof!
+Без скафандра вам не обойтись, поскольку именно он защищает от космоса. С ним отсутствие давления и сверхнизкие температуры космического пространства вам не страшны. Кроме того, он обеспечивает вас дополнительной защитой от любых представителей космической фауны, с которыми вы можете столкнуться. Магнитные ботинки, будучи включёнными, дадут вам возможность спокойно ходить по обломку и передвигать предметы, и защитят вас от подскальзывания!
 
 <Box>
 <GuideEntityEmbed Entity="JetpackBlue"/>
 <GuideEntityEmbed Entity="JetpackMini"/>
 </Box>
-Jetpacks will be needed to move thoughout space, since without floors and gravity, you will not be able to move. Its fueled by gases like oxygen, nitrogen, water vapor, or other gases that can be found in canisters.
+Для перемещения по космосу в отсутствии пола и гравитации вам потребуются джетпаки. Топливом джетпакам служат газы вроде кислорода, азота, водяного пара, или любые другие, которые можно найти в канистрах.
 
 <Box>
 <GuideEntityEmbed Entity="ClothingMaskGasExplorer"/>
 <GuideEntityEmbed Entity="OxygenTankFilled"/>
 <GuideEntityEmbed Entity="NitrogenTankFilled"/>
 </Box>
-Internals will be important, given all species need to breathe, and space doesnt have any gases. Your mask is used to connect the gas tank to your mouth to breath, while the gas tanks hold consumable gases and can be refilled at gas canisters. All species breathe oxygen (blue + yellow tanks) except slimes, which need nitrogen (red tanks)
+В космосе газов нет, всем расам необходимо чем-то дышать, следовательно, не обойтись без дыхательной экипировки. Дыхательная маска используется для подключения газового баллона к вашему дыхательному отверстию, рту; в газовом баллоне хранится потребляемый газ, и его запас можно пополнить, поместив баллон в канистру с газом. Все расы дышат кислородом (по умолчанию содержится в синих и жёлтых баллонах), кроме слаймолюдов, которым нужен азот (красные баллоны).
 
 <Box>
 <GuideEntityEmbed Entity="WeaponCrusher"/>
 <GuideEntityEmbed Entity="WeaponCrusherDagger"/>
 <GuideEntityEmbed Entity="WeaponProtoKineticAccelerator"/>
 </Box>
-The crusher devices are your first and last line of defense against space fauna and other things that want to bring harm to logistics personnel. While the dagger is just a standard knife, the crusher is has a special property that if you shoot something with it, then follow up with a melee attack, it deals 2x more damage. The protokinetic accelerator is like a recharging weapon that can provide thrust in the scenerio that your jetpack runs dry, or mine for you.
+Крушители это ваша первая и последняя линия обороны от космической фауны и всего остального, желающего вам навредить. Кинжал представляет собой обычный нож, а вот крашер обладает особым свойством: если вы выстрелите из неё во что-то, а затем нанесёте удар в ближнем бою, то цель получит двойной урон. Протокинетический ускоритель - это оружие дальнего боя, обладающее автоматической перезарядкой, которым можно копать руду, и которое может придать вам ускорение в случае, если ваш джетпак закончится в космосе.
 
 <Box>
 <GuideEntityEmbed Entity="Pickaxe"/>
@@ -39,19 +51,174 @@ The crusher devices are your first and last line of defense against space fauna 
 <GuideEntityEmbed Entity="OreBag"/>
 <GuideEntityEmbed Entity="ClothingBeltUtilityFilled"/>
 </Box>
-The pickaxe and mining drill are both useful for mining rocks or breaking structures quickly.
-The ore bag magnetises nearby ore and automatically picks it up if equipped to a belt slot.
-The utility belt can be useful for holding miscellaneous items when not occupied by your ore bag.
+Кирка и горный бур полезны для быстрой добычи камней или разрушения конструкций.
+Мешок с рудой автоматически подбирает ближайшую руду, если он находится на поясе.
+Пояс для инструментов может быть полезен для хранения различных предметов, если уже не занято сумкой с рудой.
 
-## How to make money as a salvager
-<Box>
-<GuideEntityEmbed Entity="SalvageMagnet"/>
-</Box>
-<Box>
-<GuideEntityEmbed Entity="ComputerSalvageExpedition"/>
-</Box>
-There are 2 primary forms of income for salvage. The magnet and Expeditions.
-The salvage magnet, when activated, calls in one of many random salvages to be generated somewhere within space. Once you find the salvage, you will need to fight off any present space fauna as well as loot it as much possible. A salvage will only be present for 4 minutes, before dissapearing, taking everything unlooted with it. And in worse case scenerios, will take the bodies of other salvagers in critical condition or dead. Afterwards, the magnet needs some time to recharge before being usable again.
-Expeditions are like adventures that you can do with your salvage buddies. First you must pick a mission from the salvage console, each of which of varying difficulty and reward. Afterwards you must FTL to the location via a shuttle. Once you arrive, the chat will tell you in which direction the dungeon of the salvage is, and you must go and conquer the dangers and gain the loot!
+  - [color=cyan]Скафандр[/color]: Он сохранит вам жизнь в космосе. [italic]Не забудьте активировать шлем, чтобы вы могли дышать, и включить встроенный фонарик[/italic].
+  - [color=cyan]Магнитные сапоги[/color]: Обеспечивают гравитацию при исследовании космических обломков и защищают от подскальзываний.
+  - [color=cyan]Кислород/Азот[/color]: В зависимости от вашей расы, вам понадобится [color=cyan]Азот[/color] (слаймолюды и воксы) или [color=cyan]Кислород[/color] (все остальные). В [color=cyan]раздатчике газовых баллонов[/color] есть все необходимые баллоны, так что запаситесь ими.
 
+  <Box>
+    <GuideEntityEmbed Entity="WeaponProtoKineticAccelerator"/>
+  </Box>
+
+  Все утилизаторы должны быть вооружены, на случай если придется защищаться от противников.
+
+  - [color=cyan]Протокинетический ускоритель[/color]: Это оружие имеет бесконечный боезапас, позволяя вам медленно добывать ресурсы и перемещаться в космосе. Научный отдел может напечатать улучшения, чтобы увеличить урон, дальность стрельбы и скорость перезарядки.
+
+  <Box>
+    <GuideEntityEmbed Entity="Pickaxe"/>
+    <GuideEntityEmbed Entity="OreBag"/>
+  </Box>
+
+  Хотя теоретически можно добывать руду только с помощью ПКА и рюкзака, утилизаторы начинают с более специализированного снаряжения.
+
+  - [color=cyan]Кирка[/color]: Необходима для добычи с разумной скоростью при использовании двумя руками. Также может служить оружием ближнего боя!
+  - [color=cyan]Мешок для руды[/color]: Если надет на слот пояса, притягивает ближайшую руду и автоматически подбирает её.
+
+  <Box>
+    <GuideEntityEmbed Entity="FireExtinguisher"/>
+    <GuideEntityEmbed Entity="WeaponGrapplingGun"/>
+    <GuideEntityEmbed Entity="SalvagePDA"/>
+    <GuideEntityEmbed Entity="ComputerRadar"/>
+  </Box>
+
+  Хоть вы можете получить более продвинутые способы перемещения, начнёте вы с более простых средств.
+
+  - [color=cyan]Огнетушитель[/color]: Бюджетный вариант джетпака. В космосе можно использовать отдачу от огнетушителя для движения в противоположную сторону. Его можно заправить любой жидкостью.
+  - [color=cyan]Крюк-кошка[/color]: Инструмент для передвижения с огромным потенциалом. Стреляет как обычное оружие, а втягивается перезарядкой. После зацепа нажмите [color=yellow][bold][keybind="UseSecondary"][/bold][/color], чтобы подтянуть себя.
+  - [color=cyan]КПК утилизатора[/color]: В вашем КПК установлена программа AstroNav GPS, позволяющая использовать его как GPS, держа в руках. Обязательно запомните координаты станции перед выходом!
+  - [color=cyan]Сканер массы[/color]: Консоль, показывающая вид сверху на станцию и ближайшие объекты в космосе. Используйте, чтобы проверить расположение обломков или астероидов перед вылетом.
+
+  <Box>
+    <GuideEntityEmbed Entity="RadioHandheld"/>
+    <GuideEntityEmbed Entity="HandheldGPSBasic"/>
+    <GuideEntityEmbed Entity="ClothingBeltUtilityFilled"/>
+  </Box>
+
+  Наконец, есть полезное, но необязательное снаряжение для утилизации.
+
+  - [color=cyan]Портативная рация[/color]: Позволяет общаться с другими утилизаторами, даже если обычная связь недоступна.
+  - [color=cyan]GPS[/color]: Запасная система GPS, аналогичная установленной в КПК. Полезна как резерв или для новобранцев.
+  - [color=cyan]Пояс с инструментами[/color]: Вмещает всё необходимое для разборки машин и оборудования с обломков и астероидов. Носите его, если не планируете заниматься добычей.
+
+  ## Захват магнитом обломков
+
+  Когда вы готовы, пора отправляться исследовать звёзды.
+
+  <Box>
+    <GuideEntityEmbed Entity="SalvageMagnet"/>
+  </Box>
+
+  [color=cyan]Магнит обломков[/color] — это машина, которая притягивает космические обломки на близкое расстояние.
+
+  Магнит обломков предлагает пять вариантов: случайную смесь [color=cyan]астероидов[/color], [color=cyan]разрушенных кораблей[/color] и [color=cyan]космических обломков[/color]. Выбрав один из вариантов, вы притянете его в течение следующих [bold]6-ти минут[/bold]. По истечении этого времени весь оставшийся на нём лут исчезнет. Если ни один вариант не нравится, список обновляется каждые [bold]3 минуты[/bold], если ничего не выбрано.
+
+  В течение этих 6-ти минут летите к притянутому объекту, соберите всё ценное и возвращайтесь на станцию.
+
+### Астероиды
+
+  <Box>
+    <GuideEntityEmbed Entity="Pickaxe"/>
+    <GuideEntityEmbed Entity="OreBag"/>
+    <GuideEntityEmbed Entity="OreProcessor"/>
+  </Box>
+
+  Магнит обломков показывает типы ресурсов на астероиде, что поможет выбрать, что добывать в первую очередь, исходя из нужд станции. Это относительно безопасный способ добычи — на астероидах нет враждебных существ, хотя угрозы всё же есть...
+
+  Просто летайте и добывайте руду киркой и мешком для руды. Собрав всё, переработайте её в материалы через [color=cyan]переработчик руды[/color].
+
+  Будьте осторожны! В обычных на вид камнях могут скрываться куски [color=red]Гибтонита[/color], готовые взорваться при малейшем воздействии.
+
+### Космические обломки
+
+  <Box>
+    <GuideEntityEmbed Entity="Wrench"/>
+    <GuideEntityEmbed Entity="FireExtinguisher"/>
+    <GuideEntityEmbed Entity="Recycler"/>
+  </Box>
+
+  [color=cyan]Космические обломки[/color] — универсальный источник базовых материалов (сталь, стекло и т. д.), особенно ценных в начале смены. Предметы и лом разбросаны по обломкам, их нужно собирать. Можно взять с собой шкаф или ящик с обломков для удобства хранения.
+
+  Но обломки опасны. Кровожадные [color=red]космические карпы[/color] и [color=red]космические акулы[/color] населяют их, нападая на утилизаторов. Иногда встречаются и [color=red]мины[/color], способные вывести из строя невнимательного исследователя.
+
+  Вернувшись, положите найденный лом в [color=cyan]переработчик руды[/color] вашего отдела, чтобы превратить его в полезные материалы, которые затем через Снабжение пойдут на станцию. Ценные находки вроде [color=yellow]монет, колец и часов[/color] отдайте Снабжению для продажи на [color=cyan]автоматической торговой станции[/color].
+
+### Разрушенные корабли
+
+  <Box>
+    <GuideEntityEmbed Entity="SurvivalKnife"/>
+    <GuideEntityEmbed Entity="Fulton"/>
+    <GuideEntityEmbed Entity="WeaponProtoKineticAccelerator"/>
+  </Box>
+
+  Магнит обломков показывает размер обломков корабля. Они могут сильно отличаться по уровню угрозы и ценности, но обычно опаснее обломков. Держитесь подальше от врагов и стреляйте в них из ПКА. Ищите ценный лут и оборудование, проверяйте их стоимость с помощью [color=cyan]оценивающего инструмента[/color].
+
+  ## Прогресс и улучшения
+
+  Базового снаряжения хватит для начала работы, но продвинутое оборудование сделает её проще и позволит осваивать [color=red]шахтёрский астероид[/color].
+
+  ### Доска заданий утилизаторов
+
+  <Box>
+    <GuideEntityEmbed Entity="ComputerSalvageJobBoard"/>
+  </Box>
+
+  [color=cyan]Доска заданий утилизаторов[/color] — это компьютер в отсеке утилизаторов. Она как [color=cyan]консоль заказов[/color], но для заданий утилизаторов: выполняйте их, чтобы заработать кредиты и открыть [color=yellow]продвинутое снаряжение[/color].
+
+  После сбора ресурсов для задания напечатайте [color=cyan]этикетку поставки утилизаторской работы[/color] и прикрепите её к ящику или шкафу с грузом. С помощью [color=cyan]инструмента оценки[/color] можно проверить готовность к продаже. Готовый груз отнесите на [color=cyan]автоматическую торговую станцию[/color], чтобы получить кредиты и открыть новые ящики в [color=cyan]консоли заказов грузов[/color].
+
+  <Box>
+    <GuideEntityEmbed Entity="Fulton1"/>
+    <GuideEntityEmbed Entity="WeaponCrusher"/>
+    <GuideEntityEmbed Entity="SeismicCharge"/>
+  </Box>
+
+  Выполнение заданий повышает ваш ранг и открывает новые покупки в [color=cyan]компьютере заказов грузов[/color], включая:
+
+  - [color=cyan]Фултон[/color]: Привязав Фултон к маяку, можно прикреплять его к незафиксированным объектам (ящики, машины), чтобы телепортировать их к маяку через короткое время. Полезно и для предметов, и для людей.
+  - [color=cyan]Крушитель[/color]: Улучшенное оружие ближнего боя. [color=red]Кинжал-крушитель[/color] — апгрейд ножа выживания, бьёт автоматически и быстрее. [color=red]Крушитель[/color] и [color=red]Глефа-крушитель[/color] — огромные древковые, стреляющие особым снарядом. Он не наносит урона сам по себе, но при быстром ударе по отмеченной цели восстанавливает вам здоровье. Всё оружие-крушитель оснащено фонариком.
+  - [color=cyan]Сейсмический заряд[/color]: Взрывчатка для дробления астероидов или вскрытия опасных обломков. Можно подключить к дистанционному детонатору или настроить автоматический взрыв при установке.
+
+  ### Работа с научным отделом
+
+  <Box>
+    <GuideEntityEmbed Entity="ToyFigurineScientist"/>
+    <GuideEntityEmbed Entity="ResearchDisk"/>
+  </Box>
+
+  [color=purple]Научный отдел[/color] — ключевой партнёр утилизации. Наука зависит от утилизации в поставках как базовых материалов (сталь, пластик, стекло), так и редких (серебро, золото, плазма, уран). Утилизация же получает от науки улучшения снаряжения.
+
+  По возможности, общайтесь с научным отделом и учитывайте их запросы. Им нужны большие объёмы базовых материалов, но золото, серебро и уран они получают только от вас. Хотите, чтобы наука помогала вам — помогайте им.
+
+  <Box>
+    <GuideEntityEmbed Entity="MiningDrill"/>
+    <GuideEntityEmbed Entity="HandHeldMassScanner"/>
+    <GuideEntityEmbed Entity="PKAUpgradeRange"/>
+  </Box>
+
+  Наука — единственный источник полезного снаряжения, включая:
+
+  - [color=cyan]Снаряжение для добычи[/color]: [color=yellow]Бур[/color] и [color=yellow]минеральный сканер[/color] ускоряют добычу. Могут построить [color=yellow]промышленный переработчик руды[/color], перерабатывающий материалы с лучшей эффективностью.
+  - [color=cyan]Портативный сканер массы[/color]: Карманная версия компьютера сканера массы. Требует батарейку, но показывает ваше местоположение в космосе.
+  - [color=cyan]Улучшения ПКА[/color]: Можно установить до двух из трёх улучшений: [color=red]урон[/color], [color=yellow]скорострельность[/color] и [color=green]дальность[/color].
+
+  ## Добывающий астероид
+
+  Когда освоите магнит обломков, следующим шагом станет [color=red]шахтёрский астероид[/color]. Чтобы добраться до него, обычно нужен шаттл или джетпак, и не стоит исследовать его в одиночку — он крайне опасен.
+
+  <Box>
+    <GuideEntityEmbed Entity="MobGoliath"/>
+    <GuideEntityEmbed Entity="MobHivelord"/>
+    <GuideEntityEmbed Entity="MobBasilisk"/>
+  </Box>
+
+  Шахтёрский астероид делится на две зоны: [color=cyan]комплекс[/color] — случайно сгенерированную структуру с врагами и лутом, и [color=cyan]астероид[/color] — богатый залежами руды, лута и монстров.
+
+  Берегитесь обитателей шахтёрского астероида — они значительно опаснее врагов на обломках.
+
+  - [color=cyan]Голиафы[/color]: Огромные твари, парализующие цель щупальцами и разрывающие её когтями и зубами. Сложны в убийстве, но дают ценную [color=cyan]шкуру голиафа[/color], полезную для заданий и улучшения скафандра.
+  - [color=cyan]Повелители улья[/color]: Быстрые и непредсказуемые аномалии. Держатся на расстоянии, выпуская [color=cyan]отродье улья[/color], чтобы окружить врага. Слабы, поэтому их лучше убивать быстро. Дают быстро портящееся [color=cyan]ядро повелителя улья[/color], используемое в заданиях и восстанавливающее здоровье при поедании.
+  - [color=cyan]Василиски[/color]: Ледяные хищники, стреляющие замораживающими снарядами, замедляющими цель перед атакой. Дают ценную [color=cyan]алмазную руду[/color].
 </Document>

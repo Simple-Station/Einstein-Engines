@@ -1,3 +1,14 @@
+// SPDX-FileCopyrightText: 2022 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using System.Numerics;
 using JetBrains.Annotations;
@@ -264,12 +275,6 @@ public class ListContainer : Control
             _updateChildren = false;
 
             var toRemove = new Dictionary<ListData, ListContainerButton>(_buttons);
-            foreach (var child in Children.ToArray())
-            {
-                if (child == _vScrollBar)
-                    continue;
-                RemoveChild(child);
-            }
 
             if (_data.Count > 0)
             {
@@ -292,8 +297,9 @@ public class ListContainer : Control
 
                         if (Toggle && data == _selected)
                             button.Pressed = true;
+                        AddChild(button);
                     }
-                    AddChild(button);
+                    button.SetPositionInParent(i - _topIndex);
                     button.Measure(finalSize);
                 }
             }

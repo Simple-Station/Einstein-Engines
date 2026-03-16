@@ -1,6 +1,18 @@
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
 using Content.Server.Ninja.Systems;
+using Content.Server.Power.EntitySystems; // goobstation - check power 
 using Content.Shared.Communications;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
@@ -8,9 +20,6 @@ using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Robust.Shared.Serialization;
-using Content.Server.Announcements.Systems;
-using Robust.Shared.Player;
 
 namespace Content.Server.Communications;
 
@@ -23,8 +32,7 @@ public sealed class CommsHackerSystem : SharedCommsHackerSystem
     // TODO: remove when generic check event is used
     [Dependency] private readonly NinjaGlovesSystem _gloves = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly AnnouncerSystem _announcer = default!;
-
+    [Dependency] private readonly PowerReceiverSystem _powerReceiverSystem = default!; // Goobstation check power
     public override void Initialize()
     {
         base.Initialize();
@@ -40,7 +48,8 @@ public sealed class CommsHackerSystem : SharedCommsHackerSystem
     {
         if (args.Handled || !HasComp<CommunicationsConsoleComponent>(args.Target))
             return;
-
+        if (!_powerReceiverSystem.IsPowered(args.Target)) // Goobstation - is powererd
+            return;
         // TODO: generic check event
         if (!_gloves.AbilityCheck(uid, args, out var target))
             return;
@@ -50,7 +59,8 @@ public sealed class CommsHackerSystem : SharedCommsHackerSystem
             BreakOnDamage = true,
             BreakOnMove = true,
             MovementThreshold = 0.5f,
-            CancelDuplicate = false
+            CancelDuplicate = false,
+            MultiplyDelay = false, // Goobstation
         };
 
         _doAfter.TryStartDoAfter(doAfterArgs);
@@ -62,7 +72,7 @@ public sealed class CommsHackerSystem : SharedCommsHackerSystem
     /// </summary>
     private void OnDoAfter(EntityUid uid, CommsHackerComponent comp, TerrorDoAfterEvent args)
     {
-        if (args.Cancelled || args.Handled || args.Target == null)
+        if (args.Cancelled || args.Handled || args.Target == null || !_powerReceiverSystem.IsPowered(args.Target.Value)) // Goobsstation - is powered
             return;
 
         var threats = _proto.Index<WeightedRandomPrototype>(comp.Threats);
@@ -82,8 +92,7 @@ public sealed class CommsHackerSystem : SharedCommsHackerSystem
     public void CallInThreat(NinjaHackingThreatPrototype ninjaHackingThreat)
     {
         _gameTicker.StartGameRule(ninjaHackingThreat.Rule, out _);
-        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("NinjaHacking"),
-            ninjaHackingThreat.Announcement, colorOverride: Color.Red);
+        _chat.DispatchGlobalAnnouncement(Loc.GetString(ninjaHackingThreat.Announcement), playSound: true, colorOverride: Color.Red);
     }
 }
 

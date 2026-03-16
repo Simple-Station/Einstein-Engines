@@ -1,12 +1,5 @@
-- type: dataset
+- type: localizedDataset
   id: TraitorCorporations
   values:
-  - Промышленное объединение "Киберсан"
-  - Мародёры Горлекса
-  - МИ-13
-  - Кооператив "Тигр"
-  - С.Е.Л.Ф.
-  - "Консорциум по защите прав животных"
-  - "Донк ко."
-  - Корпорация "Ваффля"
-  - Интердайн Фармасьютикалс
+    prefix: traitor-corporations-dataset-
+    count: 9

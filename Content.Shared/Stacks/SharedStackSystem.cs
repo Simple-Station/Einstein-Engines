@@ -1,13 +1,37 @@
+// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2021 ike709 <ike709@github.com>
+// SPDX-FileCopyrightText: 2021 ike709 <ike709@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using Content.Shared.Examine;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
+using Content.Shared.Nutrition;
 using Content.Shared.Popups;
 using Content.Shared.Storage.EntitySystems;
-using Content.Shared.Verbs;
 using JetBrains.Annotations;
 using Robust.Shared.GameStates;
+using Robust.Shared.Map; // Goobstation
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -29,8 +53,6 @@ namespace Content.Shared.Stacks
         [Dependency] protected readonly SharedPopupSystem Popup = default!;
         [Dependency] private readonly SharedStorageSystem _storage = default!;
 
-        public static readonly int[] DefaultSplitAmounts = { 1, 5, 10, 20, 30, 50 };
-
         public override void Initialize()
         {
             base.Initialize();
@@ -40,7 +62,8 @@ namespace Content.Shared.Stacks
             SubscribeLocalEvent<StackComponent, ComponentStartup>(OnStackStarted);
             SubscribeLocalEvent<StackComponent, ExaminedEvent>(OnStackExamined);
             SubscribeLocalEvent<StackComponent, InteractUsingEvent>(OnStackInteractUsing);
-            SubscribeLocalEvent<StackComponent, GetVerbsEvent<AlternativeVerb>>(OnStackAlternativeInteract);
+            SubscribeLocalEvent<StackComponent, BeforeIngestedEvent>(OnBeforeEaten);
+            SubscribeLocalEvent<StackComponent, IngestedEvent>(OnEaten);
 
             _vvm.GetTypeHandler<StackComponent>()
                 .AddPath(nameof(StackComponent.Count), (_, comp) => comp.Count, SetCount);
@@ -150,7 +173,7 @@ namespace Content.Shared.Stacks
             }
 
             // This is shit code until hands get fixed and give an easy way to enumerate over items, starting with the currently active item.
-            foreach (var held in Hands.EnumerateHeld(user, hands))
+            foreach (var held in Hands.EnumerateHeld((user, hands)))
             {
                 TryMergeStacks(item, held, out _, donorStack: itemStack);
 
@@ -183,6 +206,15 @@ namespace Content.Shared.Stacks
 
             Appearance.SetData(uid, StackVisuals.Actual, component.Count);
             RaiseLocalEvent(uid, new StackCountChangedEvent(old, component.Count));
+        }
+
+        /// <summary>
+        /// Goobstation - virtual method to allow calling from shared.
+        /// Does nothing on the client.
+        /// </summary>
+        public virtual EntityUid? Split(EntityUid uid, int amount, EntityCoordinates spawnPosition, StackComponent? stack = null)
+        {
+            return null;
         }
 
         /// <summary>
@@ -261,7 +293,7 @@ namespace Content.Shared.Stacks
         public int GetMaxCount(string entityId)
         {
             var entProto = _prototype.Index<EntityPrototype>(entityId);
-            entProto.TryGetComponent<StackComponent>(out var stackComp);
+            entProto.TryGetComponent<StackComponent>(out var stackComp, EntityManager.ComponentFactory);
             return GetMaxCount(stackComp);
         }
 
@@ -394,49 +426,49 @@ namespace Content.Shared.Stacks
             );
         }
 
-        private void OnStackAlternativeInteract(EntityUid uid, StackComponent stack, GetVerbsEvent<AlternativeVerb> args)
+        private void OnBeforeEaten(Entity<StackComponent> eaten, ref BeforeIngestedEvent args)
         {
-            if (!args.CanAccess || !args.CanInteract || args.Hands == null || stack.Count == 1)
+            if (args.Cancelled)
                 return;
 
-            AlternativeVerb halve = new()
+            if (args.Solution is not { } sol)
+                return;
+
+            // If the entity is empty and is a lingering entity we can't eat from it.
+            if (eaten.Comp.Count <= 0)
             {
-                Text = Loc.GetString("comp-stack-split-halve"),
-                Category = VerbCategory.Split,
-                Act = () => UserSplit(uid, args.User, stack.Count / 2, stack),
-                Priority = 1
-            };
-            args.Verbs.Add(halve);
-
-            var priority = 0;
-            foreach (var amount in DefaultSplitAmounts)
-            {
-                if (amount >= stack.Count)
-                    continue;
-
-                AlternativeVerb verb = new()
-                {
-                    Text = amount.ToString(),
-                    Category = VerbCategory.Split,
-                    Act = () => UserSplit(uid, args.User, amount, stack),
-                    // we want to sort by size, not alphabetically by the verb text.
-                    Priority = priority
-                };
-
-                priority--;
-
-                args.Verbs.Add(verb);
+                args.Cancelled = true;
+                return;
             }
+
+            /*
+            Edible stacked items is near completely evil so we must choose one of the following:
+            - Option 1: Eat the entire solution each bite and reduce the stack by 1.
+            - Option 2: Multiply the solution eaten by the stack size.
+            - Option 3: Divide the solution consumed by stack size.
+            The easiest and safest option is and always will be Option 1 otherwise we risk reagent deletion or duplication.
+            That is why we cancel if we cannot set the minimum to the entire volume of the solution.
+            */
+            if(args.TryNewMinimum(sol.Volume))
+                return;
+
+            args.Cancelled = true;
         }
 
-        /// <remarks>
-        ///     Predicted interactions with spawned entities is weird, so we're not going to predict entity spawn/deletion.
-        ///     This empty virtual method exists to call UserSplit() only on the server for that reason.
-        /// </remarks>
-        protected virtual void UserSplit(EntityUid uid, EntityUid userUid, int amount,
-            StackComponent? stack = null,
-            TransformComponent? userTransform = null)
+        private void OnEaten(Entity<StackComponent> eaten, ref IngestedEvent args)
         {
+            if (!Use(eaten, 1))
+                return;
+
+            // We haven't eaten the whole stack yet or are unable to eat it completely.
+            if (eaten.Comp.Count > 0 || eaten.Comp.Lingering)
+            {
+                args.Refresh = true;
+                return;
+            }
+
+            // Here to tell the food system to do destroy stuff.
+            args.Destroy = true;
         }
     }
 

@@ -1,4 +1,3 @@
-advertisement-block-game-0 = Бип буп! Бвуууп!
 advertisement-block-game-1 = Юридически разрешено!
 advertisement-block-game-2 = Что, чёрт побери, такое Т-спин?
 advertisement-block-game-3 = Эти блоки сами себя не расчистят!
@@ -24,4 +23,3 @@ thankyou-block-game-9 = Всегда найдётся время для ново
 thankyou-block-game-10 = Не сдавайтесь!
 thankyou-block-game-11 = Всегда найдутся новые блоки!
 thankyou-block-game-12 = Блоки ждут вашего возвращения!
-thankyou-block-game-0 = Спасибо за игру!

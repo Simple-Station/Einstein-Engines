@@ -1,10 +1,20 @@
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Plyush <121322002+Plyushsune@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 plyush <121322002+toasterpm87@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 # Felinid Ears
 
 - type: marking
   id: FelinidEarsBasic
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Felinid, Human] # Einstein Engines - Humans get felinid markings
+  speciesRestriction: [Felinid, Human]
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_ears.rsi
     state: basic_outer
@@ -15,7 +25,7 @@
   id: FelinidEarsCurled
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Felinid, Human] # Einstein Engines - Humans get felinid markings
+  speciesRestriction: [Felinid]
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_ears.rsi
     state: curled_outer
@@ -26,7 +36,7 @@
   id: FelinidEarsDroopy
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Felinid, Human] # Einstein Engines - Humans get felinid markings
+  speciesRestriction: [Felinid]
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_ears.rsi
     state: droopy_outer
@@ -37,7 +47,7 @@
   id: FelinidEarsFuzzy
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Felinid, Human] # Einstein Engines - Humans get felinid markings
+  speciesRestriction: [Felinid]
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_ears.rsi
     state: basic_outer
@@ -48,7 +58,7 @@
   id: FelinidEarsStubby
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Felinid, Human] # Einstein Engines - Humans get felinid markings
+  speciesRestriction: [Felinid]
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_ears.rsi
     state: stubby_outer
@@ -59,7 +69,7 @@
   id: FelinidEarsTall
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Felinid, Human] # Einstein Engines - Humans get felinid markings
+  speciesRestriction: [Felinid]
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_ears.rsi
     state: tall_outer
@@ -72,7 +82,7 @@
   id: FelinidEarsTorn
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Felinid, Human] # Einstein Engines - Humans get felinid markings
+  speciesRestriction: [Felinid]
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_ears.rsi
     state: torn_outer
@@ -83,7 +93,7 @@
   id: FelinidEarsWide
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Felinid, Human, Tajaran] # Einstein Engines - Humans get felinid markings, Tajaran directly use felinid tails
+  speciesRestriction: [Felinid]
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_ears.rsi
     state: wide_outer
@@ -91,12 +101,13 @@
     state: wide_inner
 
 # Felinid Tails
+# Goobstation - Tajaran since they're fully compatible
 
 - type: marking
   id: FelinidTailBasic
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Felinid, Human, Tajaran] # Einstein Engines - Humans get felinid markings
+  speciesRestriction: [Felinid, Tajaran, Human] # Goobstation - Tajaran
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_tails.rsi
     state: basic_tail_tip
@@ -109,7 +120,7 @@
   id: FelinidTailBasicWithBow
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Felinid, Human, Tajaran] # Einstein Engines - Humans get felinid markings, Tajaran directly use felinid tails
+  speciesRestriction: [Felinid, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_tails.rsi
     state: basic_tail_tip
@@ -124,7 +135,7 @@
   id: FelinidTailBasicWithBell
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Felinid, Human, Tajaran] # Einstein Engines - Humans get felinid markings, Tajaran directly use felinid tails
+  speciesRestriction: [Felinid, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_tails.rsi
     state: basic_tail_tip
@@ -139,7 +150,7 @@
   id: FelinidTailBasicWithBowAndBell
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Felinid, Human, Tajaran] # Einstein Engines - Humans get felinid markings, Tajaran directly use felinid tails
+  speciesRestriction: [Felinid, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_tails.rsi
     state: basic_tail_tip

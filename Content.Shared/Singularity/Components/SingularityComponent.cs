@@ -1,8 +1,19 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Zoldorf <silvertorch5@gmail.com>
+// SPDX-FileCopyrightText: 2023 keronshb <keronshb@live.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.GameStates;
 
 using Content.Shared.Singularity.EntitySystems;
 using Robust.Shared.Audio;
-using Robust.Shared.Utility;
 
 namespace Content.Shared.Singularity.Components;
 
@@ -81,26 +92,4 @@ public sealed partial class SingularityComponent : Component
     );
 
     #endregion Audio
-
-    #region Update Timing
-
-    /// <summary>
-    /// The amount of time that should elapse between automated updates to this singularity.
-    /// </summary>
-    [DataField("updatePeriod")]
-    [ViewVariables(VVAccess.ReadWrite)]
-    public TimeSpan TargetUpdatePeriod = TimeSpan.FromSeconds(1.0);
-
-    /// <summary>
-    /// </summary>
-    [ViewVariables(VVAccess.ReadOnly)]
-    public TimeSpan NextUpdateTime = default!;
-
-    /// <summary>
-    /// The last time this singularity was updated.
-    /// </summary>
-    [ViewVariables(VVAccess.ReadOnly)]
-    public TimeSpan LastUpdateTime = default!;
-
-    #endregion Update Timing
 }

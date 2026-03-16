@@ -1,3 +1,24 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
+# SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Unlumination <144041835+Unlumy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+# SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 meta:
   format: 6
   postmapinit: false
@@ -13,7 +34,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: Shelter
+      name: grid
     - type: Transform
       pos: -0.5,-0.5
       parent: invalid
@@ -44,7 +65,6 @@ entities:
         version: 2
         nodes: []
     - type: GridAtmosphere
-      simulatedTurf: false
       version: 2
       data:
         tiles:
@@ -73,6 +93,10 @@ entities:
           - 0
           - 0
           - 0
+          - 0
+          - 0
+          - 0
+          - 0
         - volume: 2500
           temperature: 293.15
           moles:
@@ -88,20 +112,13 @@ entities:
           - 0
           - 0
           - 0
+          - 0
+          - 0
+          - 0
+          - 0
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
-- proto: AcousticGuitarInstrument
-  entities:
-  - uid: 29
-    components:
-    - type: Transform
-      parent: 23
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: AirAlarm
   entities:
   - uid: 27
@@ -114,18 +131,6 @@ entities:
       devices:
       - 24
       - 25
-- proto: AirCanister
-  entities:
-  - uid: 63
-    components:
-    - type: Transform
-      anchored: True
-      pos: 1.5,3.5
-      parent: 1
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      bodyType: Static
 - proto: AirlockMiningGlass
   entities:
   - uid: 42
@@ -133,8 +138,6 @@ entities:
     - type: Transform
       pos: 2.5,0.5
       parent: 1
-    missingComponents:
-    - AccessReader
 - proto: APCBasic
   entities:
   - uid: 30
@@ -226,37 +229,6 @@ entities:
     - type: Transform
       pos: 3.5,3.5
       parent: 1
-- proto: DiceBag
-  entities:
-  - uid: 56
-    components:
-    - type: Transform
-      parent: 23
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: DrinkWaterBottleFull
-  entities:
-  - uid: 28
-    components:
-    - type: Transform
-      parent: 23
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 53
-    components:
-    - type: Transform
-      parent: 23
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: ExtendedEmergencyOxygenTankFilled
   entities:
   - uid: 50
@@ -264,88 +236,25 @@ entities:
     - type: Transform
       pos: 1.6876874,1.4972172
       parent: 1
-- proto: FoodDonkpocketWarm
+- proto: GasMixer
   entities:
-  - uid: 52
-    components:
-    - type: Transform
-      parent: 23
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 54
-    components:
-    - type: Transform
-      parent: 23
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 60
-    components:
-    - type: Transform
-      parent: 23
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 61
-    components:
-    - type: Transform
-      parent: 23
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 62
-    components:
-    - type: Transform
-      parent: 23
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: GasOutletInjector
-  entities:
-  - uid: 65
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 4.5,0.5
-      parent: 1
-    - type: AtmosPipeColor
-      color: '#990000FF'
-- proto: GasPipeBend
-  entities:
-  - uid: 18
+  - uid: 23
     components:
     - type: Transform
       pos: 2.5,2.5
       parent: 1
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
+    - type: GasMixer
+      inletTwoConcentration: 0.22000003
+      inletOneConcentration: 0.78
+      targetPressure: 250
+- proto: GasPipeBend
+  entities:
   - uid: 22
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 1.5,2.5
       parent: 1
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
-  - uid: 64
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 3.5,0.5
-      parent: 1
-    - type: AtmosPipeColor
-      color: '#990000FF'
 - proto: GasPort
   entities:
   - uid: 17
@@ -353,8 +262,11 @@ entities:
     - type: Transform
       pos: 1.5,3.5
       parent: 1
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
+  - uid: 18
+    components:
+    - type: Transform
+      pos: 2.5,3.5
+      parent: 1
 - proto: GasVentPump
   entities:
   - uid: 24
@@ -366,8 +278,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 27
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
 - proto: GasVentScrubber
   entities:
   - uid: 25
@@ -378,8 +288,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 27
-    - type: AtmosPipeColor
-      color: '#990000FF'
 - proto: GeneratorWallmountBasic
   entities:
   - uid: 34
@@ -418,94 +326,20 @@ entities:
     - type: Transform
       pos: 4.5,2.5
       parent: 1
-- proto: N14ClosetCabinetWood
+- proto: NitrogenCanister
   entities:
-  - uid: 23
+  - uid: 29
     components:
     - type: Transform
       pos: 2.5,3.5
       parent: 1
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 28
-          - 29
-          - 52
-          - 53
-          - 54
-          - 55
-          - 56
-          - 57
-          - 58
-          - 59
-          - 60
-          - 61
-          - 62
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-- proto: Paper
+- proto: OxygenCanister
   entities:
-  - uid: 57
+  - uid: 28
     components:
     - type: Transform
-      parent: 23
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 58
-    components:
-    - type: Transform
-      parent: 23
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 59
-    components:
-    - type: Transform
-      parent: 23
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: Pen
-  entities:
-  - uid: 55
-    components:
-    - type: Transform
-      parent: 23
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
+      pos: 1.5,3.5
+      parent: 1
 - proto: Poweredlight
   entities:
   - uid: 48

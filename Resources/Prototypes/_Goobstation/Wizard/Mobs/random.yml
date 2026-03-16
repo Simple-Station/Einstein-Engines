@@ -1,0 +1,51 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: MobArachnid
+  id: MobArachnidRandom
+  name: Urist McWeb
+  suffix: Random Appearance
+  components:
+  - type: RandomHumanoidAppearance
+  - type: RandomMetadata
+    nameSegments:
+    - NamesArachnidFirst
+    - NamesArachnidLast
+    nameFormat: name-format-standard
+
+- type: entity
+  parent: MobIPC
+  id: MobIPCRandom
+  name: Urist McPositronic
+  suffix: Random Appearance
+  components:
+  - type: RandomHumanoidAppearance
+  - type: RandomMetadata
+    nameSegments:
+    - IpcFirst
+
+- type: entity
+  parent: MobOni
+  id: MobOniRandom
+  name: Urist McOni
+  suffix: Random Appearance
+  components:
+  - type: RandomHumanoidAppearance
+  - type: RandomMetadata
+    nameSegments:
+    - NamesOniLast
+
+- type: entity
+  parent: MobCluwne
+  id: MobCluwneRandom
+  suffix: Random Appearance
+  components:
+  - type: RandomHumanoidAppearance
+  - type: RandomMetadata
+    nameSegments:
+    - NamesFirst
+    - NamesLast
+    nameFormat: name-format-standard 

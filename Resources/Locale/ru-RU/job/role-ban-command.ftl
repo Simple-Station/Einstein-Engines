@@ -9,7 +9,7 @@ cmd-roleban-hint-1 = <name or user ID>
 cmd-roleban-hint-2 = <job>
 cmd-roleban-hint-3 = <reason>
 cmd-roleban-hint-4 = [продолжительность в минутах, не указывать или 0 для навсегда]
-cmd-roleban-hint-5 = [severity]
+cmd-roleban-hint-5 = [тяжесть]
 cmd-roleban-hint-duration-1 = Навсегда
 cmd-roleban-hint-duration-2 = 1 день
 cmd-roleban-hint-duration-3 = 3 дня
@@ -21,6 +21,9 @@ cmd-roleban-hint-duration-6 = 1 месяц
 
 cmd-roleunban-desc = Возвращает пользователю возможность играть на роли
 cmd-roleunban-help = Использование: roleunban <role ban id>
+cmd-roleunban-unable-to-parse-id =
+    Не удалось спарсить { $id } как ban id integer.
+    { $help }
 
 ## Completion result hints
 
@@ -35,8 +38,8 @@ cmd-rolebanlist-help = Использование: <name or user ID> [include un
 
 cmd-rolebanlist-hint-1 = <name or user ID>
 cmd-rolebanlist-hint-2 = [include unbanned]
-cmd-roleban-minutes-parse = { $time } - недопустимое количество минут.\n{ $help }
-cmd-roleban-severity-parse = ${ severity } is not a valid severity\n{ $help }.
+cmd-roleban-minutes-parse = { $time } — недопустимое количество минут.\n{ $help }
+cmd-roleban-severity-parse = ${ severity } не является валидной тяжестью\n{ $help }.
 cmd-roleban-arg-count = Недопустимое количество аргументов.
 cmd-roleban-job-parse = Работа { $job } не существует.
 cmd-roleban-name-parse = Невозможно найти игрока с таким именем.

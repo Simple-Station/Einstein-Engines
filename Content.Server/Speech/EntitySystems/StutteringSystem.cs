@@ -1,6 +1,18 @@
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 pointer-to-null <91910481+pointer-to-null@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vasilis <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using System.Text;
 using System.Text.RegularExpressions;
 using Content.Server.Speech.Components;
+using Content.Shared.Speech;
 using Content.Shared.Speech.EntitySystems;
 using Content.Shared.StatusEffect;
 using Robust.Shared.Random;
@@ -9,7 +21,7 @@ namespace Content.Server.Speech.EntitySystems
 {
     public sealed class StutteringSystem : SharedStutteringSystem
     {
-        [Dependency] private readonly StatusEffectsSystem _statusEffectsSystem = default!;
+        [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _statusEffectsSystem = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
 
         // Regex of characters to stutter.
@@ -26,7 +38,10 @@ namespace Content.Server.Speech.EntitySystems
             if (!Resolve(uid, ref status, false))
                 return;
 
-            _statusEffectsSystem.TryAddStatusEffect<StutteringAccentComponent>(uid, StutterKey, time, refresh, status);
+            if (Terminating(uid))
+                return;
+
+            _statusEffectsSystem.TryAddStatusEffect(uid, StutterKey.Id, out _, time); //todo goobstation migrate stutter.
         }
 
         private void OnAccent(EntityUid uid, StutteringAccentComponent component, AccentGetEvent args)

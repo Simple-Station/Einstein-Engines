@@ -1,40 +1,58 @@
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 heretic-roundend-name = еретик
-roundend-prepend-heretic-ascension-success = { $name }, [color=green] вознесся![/color]
-roundend-prepend-heretic-ascension-fail = { $name }, [color=red] не удалось![/color]
-roundend-prepend-heretic-knowledge-named = [color=white]{ $name }[/color] исследовал в общей сложности [color=purple]{ $number }[/color] знаний.
-roundend-prepend-heretic-ascension-fail-owls = { $name }, [color=red] отказался от своего вознесения и, таким образом, потерпел неудачу![/color]
+roundend-prepend-heretic-ascension-success = { $name }, [color=green]вознёсся![/color]
+roundend-prepend-heretic-ascension-fail = { $name }, [color=red]потерпел неудачу![/color]
+roundend-prepend-heretic-ascension-fail-owls = { $name }, [color=red]отрекся от вознесения и потерпел неудачу![/color]
+roundend-prepend-heretic-knowledge-named = [color=white]{ $name }[/color] изучил всего [color=purple]{ $number }[/color] знаний.
 heretic-gamemode-title = Еретики
-heretic-gamemode-description = На станции обнаружена пространственная аномалия. Дополнительных данных нет.
+heretic-gamemode-description = Обнаружена измерительная аномалия на станции. Дополнительных данных нет.
 heretic-role-greeting-fluff =
-    Еще один день на бессмысленной работе. Вы чувствуете мерцание вокруг себя, когда осознаете, что в воздухе витает нечто странное. Вы заглядываете внутрь себя и обнаруживаете нечто, что изменит вашу жизнь.
-
-    Врата Мансуса открываются перед вашим разумом.
+    Ещё один день бессмысленной работы. Вы ощущаете лёгкое мерцание. Вы заглядываете внутрь себя и обнаруживаете нечто, что изменит вашу жизнь.
+    
+    Врата Мансуса открываются вашему разуму.
 heretic-role-greeting =
-    Вы - Еретик!
-
-    Подробнее о вашей роли читайте в гайде.
+    Вы — Еретик!
+    
+    Подробнее о вашей роли читайте в руководстве.
 heretic-role-greeting-short =
-    Вы - Еретик!
-    Чтобы выучить Последний Ритуал и вознестись, вы должны выполнить поставленные перед вами задачи.
+    Вы — Еретик!
+    Выполните свои цели, чтобы узнать Финальный Ритуал и Вознестись.
 
-## ghoul
+## Ghoul
 
 heretic-ghoul-greeting =
-    Вы были призваны в этот мир { CAPITALIZE(THE($ent)) }!
-    Вы должны помочь ему в путешествии к вознесению и защитить его любой ценой.
-    Вы можете последовать за другими еретиками, если ваш хозяин не может быть воскрешен.
+    Вы были вызваны в этот мир { CAPITALIZE($ent) }!
+    Вы должны помочь ему вознестись и защищать любой ценой.
+    Вы можете следовать за другими еретиками, если хозяин уже не воскреснет.
 heretic-ghoul-greeting-noname =
-    Вы были призваны в этот мир Жуткими силами.
-    Выполняйте приказы своих хозяев, несмотря ни на что.
-ghostrole-ghoul-name = Упырь
-ghostrole-prophet-name = Сырой пророк
+    Вы были призван из бездны.
+    Подчиняйтесь приказам своих хозяев во что бы то ни стало.
+heretic-ghoul-briefing-start = Вы были призваны в этот мир { CAPITALIZE($ent) }!
+heretic-ghoul-briefing-start-noname = Вы были призваны в этот мир сверхъестественной силой.
+heretic-ghoul-briefing-end =
+    Подчиняйтесь воле своего призывателя, не смотря ни на что.
+    
+    используйте +m для общения через Разум Мансуса.
+ghostrole-ghoul-name = Гуль
+ghostrole-flesh-mimic-name = Имитатор плоти
+ghostrole-prophet-name = Пророк
 ghostrole-stalker-name = Сталкер
-ghostrole-ghoul-desc = Помогать своему призывателю в достижении вознесения.
-ghostrole-rustwalker-name = Ржавый ходок
-ghostrole-prophet-desc = Помочь своему призывателю в достижении вознесения. Подключать других верующих к Связи Мансуса.
-ghostrole-stalker-desc = Помочь своему призывателю в достижении вознесения. Охотьтесь на экипаж станции.
-ghostrole-ghoul-rules = Вы являетесь [color=red][bold]командным антагонистом[/bold][/color] с тем, кто вызвал вас и других жутких существ.
-ghostrole-rustwalker-desc = Помогите своему призывателю достичь вознесения. Распространите ржавчину повсюду.
-
-# Спи спокойно, Мансур.
-
+ghostrole-fire-shark-name = Пылающая акула
+ghostrole-rustwalker-name = Ржавый странник
+ghostrole-stargazer-name = Звёздный наблюдатель
+ghostrole-ghoul-desc = Помогите вашему призывателю достичь вознесения.
+ghostrole-flesh-mimic-desc = Помогите вознестись своему призывателю. Помните, что со временем вы умрёте.
+ghostrole-prophet-desc = Помогите вашему призывателю достичь вознесения. Коммуницируйте с другими верующими через Связь Мансуса.
+ghostrole-stalker-desc = Помогите вашему призывателю достичь вознесения. Телепортируйтесь и саботируйте освещение экипажа.
+ghostrole-fire-shark-desc = Помогите вашему призывателю достичь вознесения. Сжигайте своих жертв.
+ghostrole-rustwalker-desc = Помогай своему призывателю достичь вознесения. Распространяйте ржавчину повсюду.
+ghostrole-stargazer-desc = Помогайте своему призывателю сеять хаос.
+ghostrole-ghoul-rules = Вы — [color=red][bold]Командный антагонист[/bold][/color] вместе с тем, кто вас призвал, и прочими древними силами.

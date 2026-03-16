@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Icepick <122653407+Icepicked@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 starch <starchpersonal@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 # CC locked
 
 - type: entity
@@ -78,22 +87,62 @@
     containers:
       board: [ DoorElectronicsNTR ]
 
-# MAG locked
-
 - type: entity
-  parent: AirlockCentralCommand
-  id: AirlockMagistrateCommandLocked
-  suffix: Magistrate, Locked
+  parent: AirlockServiceLocked
+  id: AirlockAllServiceLocked
+  suffix: All Service, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsMAG ]
+      board: [ DoorElectronicsAllService ]
+  - type: Wires
+    layoutId: AirlockService
 
 - type: entity
-  parent: AirlockCentralCommandGlass
-  id: AirlockMagistrateCommandGlassLocked
-  suffix: Magistrate, Locked
+  parent: AirlockServiceGlassLocked
+  id: AirlockAllServiceGlassLocked
+  suffix: All Service, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsMAG ]
+      board: [ DoorElectronicsAllService ]
+  - type: Wires
+    layoutId: AirlockService
+
+#Robo
+
+- type: entity
+  parent: AirlockRobotics
+  id: AirlockRoboticsLocked
+  suffix: Robotics, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsRobotics ]
+
+# Journalism
+
+- type: entity
+  parent: AirlockServiceLocked
+  id: AirlockJournalismLocked
+  suffix: Journalism, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsJournalism ]
+
+- type: entity
+  parent: AirlockServiceGlassLocked
+  id: AirlockJournalismGlassLocked
+  suffix: Journalism, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsJournalism ]
+
+- type: entity
+  parent: AirlockJournalismLocked
+  id: AirlockMaintJournalismLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi

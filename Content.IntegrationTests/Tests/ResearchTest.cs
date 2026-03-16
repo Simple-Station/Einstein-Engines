@@ -1,8 +1,20 @@
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Collections.Generic;
 using System.Linq;
 using Content.Shared.Lathe;
 using Content.Shared.Research.Prototypes;
-using Content.Shared.ReverseEngineering;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
 
@@ -63,7 +75,6 @@ public sealed class ResearchTest
         {
             var allEnts = protoManager.EnumeratePrototypes<EntityPrototype>();
             var latheTechs = new HashSet<ProtoId<LatheRecipePrototype>>();
-            var unlockedTechs = new HashSet<ProtoId<LatheRecipePrototype>>();
             foreach (var proto in allEnts)
             {
                 if (proto.Abstract)
@@ -71,9 +82,6 @@ public sealed class ResearchTest
 
                 if (pair.IsTestPrototype(proto))
                     continue;
-
-                if (proto.TryGetComponent<ReverseEngineeringComponent>(out var reverseEngineering, compFact) && reverseEngineering.Recipes != null)
-                    unlockedTechs.UnionWith(reverseEngineering.Recipes);
 
                 if (!proto.TryGetComponent<LatheComponent>(out var lathe, compFact))
                     continue;
@@ -87,6 +95,7 @@ public sealed class ResearchTest
             Assert.Multiple(() =>
             {
                 // check that every recipe a tech adds can be made on some lathe
+                var unlockedTechs = new HashSet<ProtoId<LatheRecipePrototype>>();
                 foreach (var tech in protoManager.EnumeratePrototypes<TechnologyPrototype>())
                 {
                     unlockedTechs.UnionWith(tech.RecipeUnlocks);

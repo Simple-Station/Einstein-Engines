@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 meta:
   format: 6
   postmapinit: false
@@ -18,7 +25,6 @@ entities:
       name: grid
     - type: Transform
       pos: -1.53125,0.062469482
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -168,7 +174,6 @@ entities:
             1: 9,17
             2: 10,16
     - type: GridAtmosphere
-      simulatedTurf: false
       version: 2
       data:
         tiles:

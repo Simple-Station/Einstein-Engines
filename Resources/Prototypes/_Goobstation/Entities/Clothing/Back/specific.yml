@@ -1,0 +1,212 @@
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 starch <starchpersonal@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackStasisBattery
+  name: stasis storage
+  description: Stores energy to freeze time flow, warping the space inside for more capacity.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Back/Backpacks/stasis_back.rsi
+    state: icon
+  - type: Clothing
+    slots: BACK
+    sprite: _Goobstation/Clothing/Back/Backpacks/stasis_back.rsi
+  - type: BasicEntityAmmoProvider
+    proto: BulletStasis
+    capacity: 1
+    count: 1
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 2.5
+    rechargeSound:
+      path: /Audio/_Goobstation/Weapons/ChronoLegionnaire/stasisgun_reload.ogg
+  - type: Item
+    size: Ginormous
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,8,5
+  - type: Tag
+    tags:
+    - StasisBattery
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingBackpackStasisBattery
+  id: ClothingBackpackStasisBatteryUnremoveable
+  suffix: Unremoveable
+  components:
+  - type: Unremoveable
+
+- type: entity
+  parent: ClothingBackpackStasisBatteryUnremoveable
+  id: ClothingBackpackStasisBatteryUnremoveableFilled
+  suffix: Filled, Unremoveable
+  components:
+  - type: StorageFill
+    contents:
+      - id: StasisCage
+        amount: 4
+      - id: MedkitCombatStasiziumFilled
+      - id: StasisBaton
+      - id: FreedomImplanter
+      - id: ScramImplanter
+      - id: MindShieldImplanter
+      - id: RCDChrono
+      - id: ChronoTeleporter
+      - id: HandheldGPSBasic # Mass Scanner Removed by Lavaland
+      - id: Flash
+      - id: TimelineDisruptorFlatpack
+
+- type: entity
+  parent: ClothingBackpackMerc
+  id: ClothingBackpackMercFilledHECU
+  suffix: Filled, HECU
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxMagazinePistolSubMachineGun
+      - id: MindShieldImplanter
+      - id: Zipties
+      - id: Zipties
+      - id: MedkitAdvancedFilled
+      - id: WeaponPistolEchis
+      - id: Flash
+
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelGman
+  name: strange duffelbag
+  description: A strange, unremovable, bag capable of containing an absurd amount of items. Seemingly invisible to the naked eye.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Duffels/duffel.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Armor/covert_armor.rsi
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,19,9
+  - type: Unremoveable # No looting the gman.
+
+- type: entity
+  parent: [Clothing, ClothingSlotBase]
+  id: ClothingBackpackLMGBattery
+  name: EL-20 storage
+  description: Accepts specialized car batteries to power the EL-20 HAMRR LMG.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Back/Backpacks/lmg_backpack.rsi
+    layers:
+    - state: icon
+      visible: false
+    - state: base
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: true
+    zeroNoAmmo: true
+  - type: Clothing
+    slots: BACK
+    sprite: _Goobstation/Clothing/Back/Backpacks/lmg_backpack.rsi
+    clothingVisuals:
+      back:
+      - state: equipped-BACKPACK
+      - state: green-equipped-BACKPACK
+        shader: unshaded
+      - state: mag-equipped-BACKPACK
+  - type: MagazineAmmoProvider
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        whitelist:
+          tags:
+          - MilitaryPowerCellLMG
+      item:
+        name: LMG
+        priority: 2
+        startingItem: WeaponLaserLMG
+        whitelist:
+          tags:
+          - LaserLMG
+  - type: Appearance
+  - type: StaticPrice
+    price: 500
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      item: !type:ContainerSlot
+  - type: Item
+    size: Ginormous
+  - type: Tag
+    tags:
+    - LaserLMGBackpack
+    - WhitelistChameleon
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: HeldSpeedModifier
+
+# Assmos - Extinguisher Nozzle
+- type: entity
+  parent: Clothing
+  id: ClothingBackpackFirefighterTank
+  name: firefighter water tank backpack
+  description: A refrigerated water tank backpack that can switch modes to launch ATMOS resin or work as a high pressure extinguisher.
+  components:
+  - type: Tag
+    tags:
+    - AtmosBackTank
+    - WhitelistChameleon
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/atmosbackpacktank.rsi
+    state: icon
+  - type: Item
+    size: Ginormous
+  - type: Clothing
+    slots: BACK
+    sprite: Clothing/Back/Backpacks/atmosbackpacktank.rsi
+  - type: SolutionAmmoProvider
+    solutionId: tank
+    proto: AtmosResin
+    fireCost: 25
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 1200
+        reagents:
+        - ReagentId: Water
+          Quantity: 1200
+  - type: DrawableSolution
+    solution: tank
+  - type: DrainableSolution
+    solution: tank
+  - type: ExaminableSolution
+    solution: tank
+  - type: ItemSlots
+    slots:
+      nozzle_slot:
+        name: FirefighterNozzle
+        startingItem: FirefighterNozzle
+        whitelist:
+          tags:
+          - Nozzle
+  - type: FirefighterTankRefillable
+  - type: ContainerContainer
+    containers:
+      nozzle_slot: !type:ContainerSlot

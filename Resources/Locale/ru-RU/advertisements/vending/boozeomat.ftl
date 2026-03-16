@@ -1,4 +1,3 @@
-advertisement-boozeomat-0 = Бухло лучшего качества с 2053 года!
 advertisement-boozeomat-1 = Надеюсь, никто не попросит у меня чёртову чашку чая...
 advertisement-boozeomat-2 = Алкоголь - друг человечества. Вы бы отказались от друга?
 advertisement-boozeomat-3 = Очень рад вас обслужить!
@@ -18,7 +17,6 @@ advertisement-boozeomat-16 = Вино со множеством наград!
 advertisement-boozeomat-17 = Максимум алкоголя!
 advertisement-boozeomat-18 = Мужчины любят пиво.
 advertisement-boozeomat-19 = Тост за прогресс!
-thankyou-boozeomat-0 = Пожалуйста!
 thankyou-boozeomat-1 = Пожалуйста, пейте ответственно!
 thankyou-boozeomat-2 = Пожалуйста, пейте безответственно!
 thankyou-boozeomat-3 = Пожалуйста, наслаждайтесь вашим напитком!

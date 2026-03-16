@@ -1,5 +1,6 @@
 using Content.Shared._White.Xenomorphs;
 using Content.Shared.Actions;
+using Content.Shared.Actions.Components;
 
 namespace Content.Shared._White.Actions;
 
@@ -18,7 +19,7 @@ public sealed class ActionRelaySystem : EntitySystem
         var actions = _actions.GetActions(uid, component);
         foreach (var action in actions)
         {
-            RaiseLocalEvent(action.Id, ev);
+            RaiseLocalEvent(action.Owner, ev);
         }
     }
 }

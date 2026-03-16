@@ -1,3 +1,26 @@
+# SPDX-FileCopyrightText: 2021 metalgearsloth <metalgearsloth@gmail.com>
+# SPDX-FileCopyrightText: 2021 shaeone <60476183+shaeone@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Myctai <108953437+Myctai@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Radrark <76271993+Radrark@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rinkashikachi <15rinkashikachi15@gmail.com>
+# SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+# SPDX-FileCopyrightText: 2023 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: BaseThruster
   parent: BaseStructureDynamic
@@ -46,7 +69,7 @@
       thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 100  # Considering we need a lot of thrusters didn't want to make an individual one too tanky
+          damage: 300  # Changed 100->300 because impact damage is real
         behaviors:
           - !type:DoActsBehavior
             acts: ["Destruction"]
@@ -72,13 +95,13 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 300
+        damage: 600
       behaviors:
         - !type:DoActsBehavior
           acts: ["Destruction"]
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 300
       behaviors:
         - !type:DoActsBehavior
           acts: ["Destruction"]
@@ -146,7 +169,6 @@
   - type: Thruster
     thrusterType: Angular
     requireSpace: false
-    baseThrust: 2000
     thrust: 2000
     machinePartThrust: Manipulator
   - type: Sprite
@@ -196,9 +218,6 @@
             collection: MetalBreak
         - !type:ChangeConstructionNodeBehavior
           node: machineFrame
-  - type: UpgradePowerDraw
-    powerDrawMultiplier: 0.75
-    scaling: Exponential
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: Electronic
@@ -223,7 +242,6 @@
   - type: Thruster
     thrusterType: Angular
     requireSpace: false
-    baseThrust: 100
     thrust: 100
   - type: ApcPowerReceiver
     needsPower: false
@@ -242,3 +260,77 @@
       map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
       shader: unshaded
       visible: false
+
+# Goobstation
+- type: entity
+  id: ThrusterShuttleEvac # Can't be unanchored and hard to destroy
+  parent: BaseStructure
+  name: thruster
+  description: A thruster that allows a shuttle to move.
+  suffix: Evac shuttle, unanchorable
+  components:
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.45,-0.45,0.45,0.45"
+          density: 60
+          mask:
+          - MachineMask
+          layer:
+          - MachineLayer
+    - type: AmbientSound
+      enabled: false
+      range: 4
+      volume: -4
+      sound:
+        path: /Audio/Effects/shuttle_thruster.ogg
+    - type: Transform
+      anchored: true
+    - type: Physics
+      bodyType: Static
+    - type: Rotatable
+    - type: Thruster
+      damage:
+        types:
+          Heat: 40
+    - type: InteractionOutline
+    - type: Appearance
+    - type: ThrusterVisuals
+    - type: ApcPowerReceiver
+      powerLoad: 1500
+    - type: ExtensionCableReceiver
+    - type: Damageable
+      damageContainer: StructuralInorganic
+      damageModifierSet: Electronic
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 5000
+        behaviors:
+          - !type:DoActsBehavior
+            acts: ["Destruction"]
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalBreak
+    - type: Clickable
+    - type: StaticPrice
+      price: 300
+    - type: Sprite
+      sprite: Structures/Shuttles/thruster.rsi
+      layers:
+      - state: base
+        map: ["enum.ThrusterVisualLayers.Base"]
+      - state: thrust
+        map: ["enum.ThrusterVisualLayers.ThrustOn"]
+        shader: unshaded
+        visible: false
+      - state: thrust_burn_unshaded
+        map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+        shader: unshaded
+        visible: false
+        offset: 0, 1
+  placement:
+    mode: SnapgridCenter

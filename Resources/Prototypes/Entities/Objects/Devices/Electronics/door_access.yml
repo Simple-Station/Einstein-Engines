@@ -1,3 +1,15 @@
+# SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Velcroboy <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2024 c4llv07e <38111072+c4llv07e@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 # Command
 - type: entity
   parent: DoorElectronics
@@ -103,6 +115,14 @@
   components:
   - type: AccessReader
     access: [["Service"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsServiceTheatre
+  suffix: Service, Theatre, Locked
+  components:
+  - type: AccessReader
+    access: [["Service"], ["Theatre"]]
 
 # Cargo
 - type: entity
@@ -310,134 +330,3 @@
   components:
   - type: AccessReader
     access: [["Security"], ["Command"]]
-
-- type: entity
-  parent: DoorElectronics
-  id: DoorElectronicsChiefJustice
-  suffix: ChiefJustice, Locked
-  components:
-  - type: AccessReader
-    access: [["ChiefJustice"]]
-
-- type: entity
-  parent: DoorElectronics
-  id: DoorElectronicsClerk
-  suffix: Clerk, Locked
-  components:
-  - type: AccessReader
-    access: [["Clerk"]]
-
-- type: entity
-  parent: DoorElectronics
-  id: DoorElectronicsJustice
-  suffix: Justice, Locked
-  components:
-  - type: AccessReader
-    access: [["Justice"]]
-
-- type: entity
-  parent: DoorElectronics
-  id: DoorElectronicsProsecutor
-  suffix: Prosecutor, Locked
-  components:
-  - type: AccessReader
-    access: [["Prosecutor"]]
-
-- type: entity
-  parent: DoorElectronics
-  id: DoorElectronicsMantis
-  suffix: Mantis, Locked
-  components:
-  - type: AccessReader
-    access: [["Mantis"]]
-
-- type: entity
-  parent: DoorElectronics
-  id: DoorElectronicsCorpsman
-  suffix: Corpsman, Locked
-  components:
-  - type: AccessReader
-    access: [["Corpsman"]]
-
-- type: entity
-  parent: DoorElectronics
-  id: DoorElectronicsBoxer
-  suffix: Boxer, Locked
-  components:
-  - type: AccessReader
-    access: [["Boxer"]]
-
-- type: entity
-  parent: DoorElectronics
-  id: DoorElectronicsClown
-  suffix: Clown, Locked
-  components:
-  - type: AccessReader
-    access: [["Clown"]]
-
-- type: entity
-  parent: DoorElectronics
-  id: DoorElectronicsMime
-  suffix: Mime, Locked
-  components:
-  - type: AccessReader
-    access: [["Mime"]]
-
-- type: entity
-  parent: DoorElectronics
-  id: DoorElectronicsMusician
-  suffix: Musician, Locked
-  components:
-  - type: AccessReader
-    access: [["Musician"]]
-
-
-- type: entity
-  parent: DoorElectronics
-  id: DoorElectronicsReporter
-  suffix: Reporter, Locked
-  components:
-  - type: AccessReader
-    access: [["Reporter"]]
-
-
-- type: entity
-  parent: DoorElectronics
-  id: DoorElectronicsLibrary
-  suffix: Library, Locked
-  components:
-  - type: AccessReader
-    access: [["Library"]]
-
-- type: entity
-  parent: DoorElectronics
-  id: DoorElectronicsZookeeper
-  suffix: Zookeeper, Locked
-  components:
-  - type: AccessReader
-    access: [["Zookeeper"]]
-
-- type: entity
-  parent: DoorElectronics
-  id: DoorElectronicsPsychologist
-  suffix: Psychologist, Locked
-  components:
-  - type: AccessReader
-    access: [["Psychologist"]]
-
-- type: entity
-  parent: DoorElectronics
-  id: DoorElectronicsMail
-  suffix: Mail, Locked
-  components:
-  - type: AccessReader
-    access: [["Mail"]]
-
-# Sol Alliance
-- type: entity
-  parent: DoorElectronics
-  id: DoorElectronicsSAN
-  suffix: SAN, Locked
-  components:
-  - type: AccessReader
-    access: [["SAN"]]

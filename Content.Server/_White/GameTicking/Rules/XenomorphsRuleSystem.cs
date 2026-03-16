@@ -1,7 +1,7 @@
 using System.Linq;
 using Content.Server._White.GameTicking.Rules.Components;
-using Content.Server.Announcements.Systems;
 using Content.Server.Antag;
+using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Nuke;
@@ -22,23 +22,29 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Robust.Server.Audio; // Goobstation - Play music on announcement
+using Content.Server.Ghost.Roles.Components;
+using Content.Shared.Station.Components;
 
 namespace Content.Server._White.GameTicking.Rules;
 
 public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponent>
 {
+    private static readonly EntProtoId XenomorphSpawnerProto = "SpawnPointGhostXenomorph";
+
     [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
 
-    [Dependency] private readonly AnnouncerSystem _announcer = default!;
+    [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly EmergencyShuttleSystem _emergencyShuttle = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly NukeCodePaperSystem _nukeCodePaper = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly RoundEndSystem _roundEnd = default!;
     [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private readonly AudioSystem _audioSystem = default!; // Goobstation - Play music on announcement
 
     public override void Initialize()
     {
@@ -64,7 +70,6 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
             return;
 
         component.Xenomorphs.Add(args.EntityUid);
-        component.AnnouncementTime ??= _timing.CurTime + _random.Next(component.MinTimeToAnnouncement, component.MaxTimeToAnnouncement);
     }
 
     private void OnXenomorphInit(EntityUid uid, XenomorphComponent component, ComponentInit args)
@@ -88,16 +93,17 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
         var query = QueryActiveRules();
         while (query.MoveNext(out _, out _, out var xenomorphsRule, out _))
         {
-            if (!xenomorphsRule.Xenomorphs.Contains(uid)
-                || GetXenomorphs(xenomorphsRule, args.Caste).Count >= cast.MaxCount
-                || cast.NeedCasteDeath != null && GetXenomorphs(xenomorphsRule, cast.NeedCasteDeath).Count > 0)
+            if (!xenomorphsRule.Xenomorphs.Contains(uid))
                 continue;
 
-            return;
+            if (GetXenomorphs(xenomorphsRule, args.Caste).Count >= cast.MaxCount
+                || cast.NeedCasteDeath != null && GetXenomorphs(xenomorphsRule, cast.NeedCasteDeath).Count > 0)
+            {
+                _popup.PopupEntity(Loc.GetString("xenomorphs-evolution-no-cast-slot", ("caste", Loc.GetString(cast.Name))), uid, uid);
+                args.Cancel();
+                return;
+            }
         }
-
-        _popup.PopupEntity(Loc.GetString("xenomorphs-evolution-no-cast-slot", ("caste", Loc.GetString(cast.Name))), uid, uid);
-        args.Cancel();
     }
 
     private void AfterXenomorphEvolution(
@@ -223,25 +229,27 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
     {
         base.ActiveTick(uid, component, gameRule, frameTime);
 
-        if (!component.AnnouncementTime.HasValue || component.NextCheck > _timing.CurTime)
+        if (component.NextCheck > _timing.CurTime)
             return;
 
+        if (!component.AnnouncementTime.HasValue)
+        {
+            var allQueens = GetXenomorphs(component, "Queen");
+            if (allQueens.Count > 0)
+            {
+                component.AnnouncementTime ??= _timing.CurTime + _random.Next(component.MinTimeToAnnouncement, component.MaxTimeToAnnouncement);
+            }
+        }
         component.NextCheck = _timing.CurTime + component.CheckDelay;
 
         if (!component.Announced && component.AnnouncementTime <= _timing.CurTime)
         {
             component.Announced = true;
 
-            if (MetaData(uid).EntityPrototype?.ID is { } id && !string.IsNullOrEmpty(component.Announcement)) // you really fucked up
-            {
-                var ruleId = _announcer.GetAnnouncementId(id);
-                _announcer.SendAnnouncement(
-                    ruleId,
-                    component.Announcement,
-                    component.Sender,
-                    colorOverride: component.AnnouncementColor
-                );
-            }
+            if (!string.IsNullOrEmpty(component.Announcement))
+                _chat.DispatchGlobalAnnouncement(Loc.GetString(component.Announcement), component.Sender != null ? Loc.GetString(component.Sender) : null, colorOverride: component.AnnouncementColor);
+
+            _audioSystem.PlayGlobal(component.XenomorphInfestationSound, Filter.Broadcast(), true); // Goobstation - Play music on announcement
         }
 
         CheckRoundEnd(uid, component, gameRule);
@@ -254,20 +262,22 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
         var humans = GetHumans(stationGrids);
         var xenomorphs = GetXenomorphs(component);
 
-        if (xenomorphs.Count == 0)
+        // Check if there are any xenomorph larva ghost role present
+        var hasXenomorphSpawners = false;
+        var spawnerQuery = AllEntityQuery<GhostRoleComponent, MetaDataComponent>();
+        while (spawnerQuery.MoveNext(out var spawnerUid, out _, out var metaData))
         {
-            if (component.Announced
-                && !string.IsNullOrEmpty(component.NoMoreThreatAnnouncement)
-                && MetaData(uid).EntityPrototype?.ID is { } id)
+            if (metaData.EntityPrototype != null && metaData.EntityPrototype.ID == XenomorphSpawnerProto)
             {
-                var ruleId = _announcer.GetAnnouncementId(id);
-                _announcer.SendAnnouncement(
-                    ruleId,
-                    component.NoMoreThreatAnnouncement,
-                    component.Sender,
-                    colorOverride: component.NoMoreThreatAnnouncementColor
-                );
+                hasXenomorphSpawners = true;
+                break;
             }
+        }
+
+        if (xenomorphs.Count == 0 && !hasXenomorphSpawners)
+        {
+            if (component.Announced && !string.IsNullOrEmpty(component.NoMoreThreatAnnouncement))
+                _chat.DispatchGlobalAnnouncement(Loc.GetString(component.NoMoreThreatAnnouncement), component.Sender != null ? Loc.GetString(component.Sender) : null, colorOverride: component.NoMoreThreatAnnouncementColor);
 
             component.WinType = WinType.CrewMajor;
             component.WinConditions.Add(WinCondition.AllReproduceXenoDead);
@@ -294,6 +304,7 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
             component.RoundEndTextShuttleCall,
             component.RoundEndTextAnnouncement
         );
+        _audioSystem.PlayGlobal(component.XenomorphTakeoverSound, Filter.Broadcast(), true); // Goobstation - Play music on announcement
 
         component.WinType = WinType.XenoMinor;
         component.WinConditions.Add(WinCondition.XenoTakeoverStation);
@@ -327,7 +338,7 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
     {
         var xenomorphs = new List<EntityUid>();
 
-        foreach(var xenomorph in xenomorphsRule.Xenomorphs.ToList())
+        foreach (var xenomorph in xenomorphsRule.Xenomorphs.ToList())
         {
             if (!Exists(xenomorph) || !TryComp<XenomorphComponent>(xenomorph, out var xenomorphComponent))
             {
@@ -349,7 +360,7 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
         var stationGrids = new HashSet<EntityUid>();
         foreach (var station in _gameTicker.GetSpawnableStations())
         {
-            if (TryComp<StationDataComponent>(station, out var data) && _station.GetLargestGrid(data) is { } grid)
+            if (TryComp<StationDataComponent>(station, out var _) && _station.GetLargestGrid(station) is { } grid)
                 stationGrids.Add(grid);
         }
 

@@ -1,4 +1,3 @@
-advertisement-vendomat-0 = Лучшее снаряжение в космосе!
 advertisement-vendomat-1 = Только самое лучшее!
 advertisement-vendomat-2 = Возьмите инструментов.
 advertisement-vendomat-3 = Самое надёжное оборудование.

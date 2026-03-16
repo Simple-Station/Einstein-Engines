@@ -1,21 +1,35 @@
+// SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
+// SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+//
+// SPDX-License-Identifier: MIT
+
+using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared._Shitmed.Damage;
 using Content.Shared.Mobs;
-using Content.Shared.FixedPoint;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Robust.Shared.GameStates;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared.Damage.Components;
 
 /// <summary>
 /// Passively damages the entity on a specified interval.
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)] // Goobstation - Networked all  fields
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState] // Goobstation - Networked all  fields
 public sealed partial class PassiveDamageComponent : Component
 {
     /// <summary>
     /// The entitys' states that passive damage will apply in
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
-    public List<MobState> AllowedStates = new();
+    public List<MobState>? AllowedStates = null; // Goobstation
 
     /// <summary>
     /// Damage / Healing per interval dealt to the entity every interval
@@ -37,4 +51,12 @@ public sealed partial class PassiveDamageComponent : Component
 
     [DataField("nextDamage", customTypeSerializer: typeof(TimeOffsetSerializer)), ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
     public TimeSpan NextDamage = TimeSpan.Zero;
+
+    /// <summary>
+    /// Goobstation - How passive damage split damage between parts
+    /// Split for damage and SplitEnsureAllDamagedAndOrganic for passive regen
+    /// MOCHO, I DON'T CARE -> COME AND FIX YOUR MED!!
+    /// </summary>
+    [DataField]
+    public SplitDamageBehavior SplitBehavior = SplitDamageBehavior.Split;
 }

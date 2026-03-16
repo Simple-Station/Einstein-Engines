@@ -1,3 +1,36 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+# SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 FaDeOkno <logkedr18@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: technology
+  id: Pinpointers
+  name: research-technology-pinpointing
+  icon:
+    sprite: Objects/Devices/pinpointer.rsi
+    state: pinpointer
+  discipline: Experimental
+  tier: 2
+  cost: 7500
+  recipeUnlocks:
+  - Pinpointer
+  - PinpointerArtifact
+  - PinpointerAnomaly
+  - PinpointerBorg
+  position: -3,-3
+  technologyPrerequisites:
+  - DeterrenceTechnologies
+
 - type: technology
   id: ModsuitsTech
   name: research-technology-modsuits
@@ -5,11 +38,8 @@
     sprite: _Goobstation/Objects/Specific/Robotics/modsuit_parts.rsi
     state: mod-core-standard
   discipline: Experimental
-  tier: 3
+  tier: 1
   cost: 5000
-  technologyPrerequisites:
-  - AdvancedTacsuits
-  softCapContribution: 1.5
   recipeUnlocks:
   - ModsuitChestplate
   - ModsuitBoots
@@ -17,3 +47,82 @@
   - ModsuitGauntlets
   - ModsuitShell
   - ModsuitPlatingExternal
+  position: -4,-1
+  technologyPrerequisites:
+  - MagnetsTech
+
+- type: technology
+  id: Xenobiology
+  name: research-technology-xenobiology
+  icon:
+    sprite: _Goobstation/Xenobiology/Specific/Xenobiology/slime_nozzle.rsi
+    state: icon
+  discipline: Experimental
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - SlimeGrinderMachineCircuitboard
+  - ClothingBackpackXenoBioTank
+  position: -3,3
+  technologyPrerequisites:
+  - BasicXenoArcheology
+
+- type: technology
+  id: BluespaceTheory
+  name: research-technology-bluespace-theory
+  icon:
+    sprite: _Goobstation/Objects/Materials/materials.rsi
+    state: bluespace_crystal
+  discipline: Experimental
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - MaterialBSCrystal
+  position: -4,-2
+  technologyPrerequisites:
+  - DeterrenceTechnologies
+
+- type: technology
+  id: ExperimentalScience
+  name: research-technology-experimental-science
+  icon:
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  discipline: Experimental
+  tier: 2
+  cost: 7500
+  recipeUnlocks:
+  - ExperimentalCircuitBoard
+  position: -4,0
+  technologyPrerequisites:
+  - AdvancedAnomalyResearch
+
+- type: technology
+  id: XenoBiology # :trollface:
+  name: research-technology-xeno-biology
+  icon:
+    sprite: _White/Mobs/Aliens/Xenomorphs/drone.rsi
+    state: xenomorph
+  discipline: Experimental
+  tier: 2
+  cost: 15000
+  recipeUnlocks:
+  - XenoCompatibilityImplanter
+  position: -5,0
+  technologyPrerequisites:
+  - ExperimentalScience
+
+- type: technology
+  id: XenobagHolding
+  name: research-technology-xenobag-holding
+  icon:
+    sprite: _Goobstation/Clothing/Belt/xenobag_holding.rsi
+    state: icon
+  discipline: Experimental
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - ClothingBeltChemBagXenobiologyHolding
+  position: -4,3
+  technologyPrerequisites:
+  - Xenobiology

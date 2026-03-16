@@ -1,1 +1,1 @@
-restricted-by-id-component-attack-fail-id-wrong = Доступ запрещен. Ваша ID карта не соответствует требуемому доступу(-ам)
+restricted-by-id-component-attack-fail-id-wrong = Доступ запрещён. Ваша ID-карта не обладает необходимыми правами доступа.

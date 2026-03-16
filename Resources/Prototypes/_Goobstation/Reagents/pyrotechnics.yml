@@ -1,0 +1,30 @@
+# SPDX-FileCopyrightText: 2024 Ashley Woodiss-Field <ash@DESKTOP-H64M4AI.localdomain>
+# SPDX-FileCopyrightText: 2024 ColesMagnum <98577947+AW-FulCode@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Speebro <100388782+Speebr0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Speebro <speebro@notreal.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: reagent
+  id: BlackPowder
+  name: reagent-name-blackpowder
+  group: Pyrotechnic
+  desc: reagent-desc-blackpowder
+  flavor: gunpowder
+  physicalDesc: reagent-physical-desc-grainy
+# we havent upstreamed yet  contrabandSeverity: Major # explosive, with no other functions
+  color: black
+  metabolisms:
+    Poison:
+      metabolismRate: 0.05 # slow, so that I can later implement it exploding when people are on fire/hot
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Yowie
+          shouldHave: false
+        damage:
+          types: # black powder is bad for your health.
+            Poison: 0.1 # 2 damage/u

@@ -1,3 +1,17 @@
+# SPDX-FileCopyrightText: 2022 ChilbroBaggins <107660393+ChilbroBaggins@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
+# SPDX-FileCopyrightText: 2023 Jeff <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2023 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lapatison <100279397+lapatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: RandomFoodMeal
   name: random food spawner
@@ -28,7 +42,6 @@
       - FoodMealRibs
       - FoodMealEggsbenedict
       - FoodMealOmelette
-      - FoodMealScrambledEggs #DeltaV
       - FoodMealFriedegg
       - FoodMealQueso
       - FoodMealSashimi
@@ -70,31 +83,6 @@
       - FoodSoupOnion
       - FoodSoupBisque
       - FoodSoupBungo
-      - FoodMothHerbyCheese # Nyanotrasen - Moth Recipes
-      - FoodMothSqueakingFry # Nyanotrasen - Moth Recipes
-      - FoodMothChiliCabbageWrap # Nyanotrasen - Moth Recipes
-      - FoodMothBakedCheese # Nyanotrasen - Moth Recipes
-      - FoodMothBakedRice # Nyanotrasen - Moth Recipes
-      - FoodMothGreenLasagne # Nyanotrasen - Moth Recipes
-      - FoodMothBakedCorn # Nyanotrasen - Moth Recipes
-      - FoodMothButteredBakedCorn # Nyanotrasen - Moth Recipes
-      - FoodMothMozzarellaSticks # Nyanotrasen - Moth Recipes
-      - FoodMothMacBalls # Nyanotrasen - Moth Recipes
-      - FoodMothCottonSoup # Nyanotrasen - Moth Recipes
-      - FoodMothCheeseSoup # Nyanotrasen - Moth Recipes
-      - FoodMothSeedSoup # Nyanotrasen - Moth Recipes
-      - FoodMothBeanStew # Nyanotrasen - Moth Recipes
-      - FoodMothOatStew # Nyanotrasen - Moth Recipes
-      - FoodMothHeartburnSoup # Nyanotrasen - Moth Recipes
-      - FoodMothHuaMulanCongee # Nyanotrasen - Moth Recipes
-      - FoodMothCornmealPorridge # Nyanotrasen - Moth Recipes
-      - FoodMothCheesyPorridge # Nyanotrasen - Moth Recipes
-      - FoodMothEggplantPolenta # Nyanotrasen - Moth Recipes
-      - FoodMothCapreseSalad # Nyanotrasen - Moth Recipes
-      - FoodMothFleetSalad # Nyanotrasen - Moth Recipes
-      - FoodMothCottonSalad # Nyanotrasen - Moth Recipes
-      - FoodMothKachumbariSalad # Nyanotrasen - Moth Recipes
-      - FoodMealSoftTaco
       - FoodMealCornInButter
       - FoodSoupStew
     chance: 0.8
@@ -119,6 +107,5 @@
       - FoodSoupMonkey
       - FoodSoupEyeball
       - FoodSoupElectron
-      - FoodMothBakedCheesePlatter # Nyanotrasen - Moth Recipes
       - FoodNoodlesCopy
     rareChance: 0.05

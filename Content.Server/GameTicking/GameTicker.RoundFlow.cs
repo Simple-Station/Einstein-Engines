@@ -1,3 +1,83 @@
+// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Jessica M <jessica@jessicamaybe.com>
+// SPDX-FileCopyrightText: 2022 Julian Giebel <j.giebel@netrocks.info>
+// SPDX-FileCopyrightText: 2022 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2022 KIBORG04 <bossmira4@gmail.com>
+// SPDX-FileCopyrightText: 2022 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Morber <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
+// SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 moonheart08 <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 theashtronaut <112137107+theashtronaut@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Kevin Zheng <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+// SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Tom Leys <tom@crump-leys.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Alice "Arimah" Heurlin <30327355+arimah@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Fildrance <fildrance@gmail.com>
+// SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 HS <81934438+HolySSSS@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Hannah Giovanna Dawson <karakkaraz@gmail.com>
+// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 Truoizys <153248924+Truoizys@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2024 Wrexbe (Josh) <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 osjarw <62134478+osjarw@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 pa.pecherskij <pa.pecherskij@interfax.ru>
+// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+// SPDX-FileCopyrightText: 2024 wrexbe <wrexbe@protonmail.com>
+// SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 pathetic meowmeow <uhhadd@gmail.com>
+// SPDX-FileCopyrightText: 2025 RichardBlonski <48651647+RichardBlonski@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using System.Numerics;
 using Content.Server.Announcements;
@@ -12,6 +92,8 @@ using Content.Shared.GameTicking;
 using Content.Shared.Mind;
 using Content.Shared.Players;
 using Content.Shared.Preferences;
+using Content.Server.Voting.Managers;
+using Content.Shared.Voting;
 using JetBrains.Annotations;
 using Prometheus;
 using Robust.Shared.Asynchronous;
@@ -24,8 +106,14 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
-using Content.Server.Announcements.Systems;
-using System.Text.RegularExpressions;
+
+// Goob Station - End of Round Screen
+using Content.Goobstation.Common.LastWords;
+using Content.Shared.Damage;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
+using Content.Goobstation.Maths.FixedPoint;
+using Content.Goobstation.Shared.Mind.Components;
 
 namespace Content.Server.GameTicking
 {
@@ -34,7 +122,7 @@ namespace Content.Server.GameTicking
         [Dependency] private readonly DiscordWebhook _discord = default!;
         [Dependency] private readonly RoleSystem _role = default!;
         [Dependency] private readonly ITaskManager _taskManager = default!;
-        [Dependency] private readonly AnnouncerSystem _announcer = default!;
+        [Dependency] private readonly IVoteManager _voteManager = default!;
 
         private static readonly Counter RoundNumberMetric = Metrics.CreateCounter(
             "ss14_round_number",
@@ -183,7 +271,7 @@ namespace Content.Server.GameTicking
         /// to modify the options and react to the map creation.
         /// </remarks>
         /// <param name="proto">Game map prototype to load in.</param>
-        /// <param name="mapId">The id of the map that was loaded.</param>Add commentMore actions
+        /// <param name="mapId">The id of the map that was loaded.</param>
         /// <param name="options">Entity loading options, including whether the maps should be initialized.</param>
         /// <param name="stationName">Name to assign to the loaded station.</param>
         /// <returns>All loaded entities and grids.</returns>
@@ -199,13 +287,13 @@ namespace Content.Server.GameTicking
 
             if (ev.GameMap.IsGrid)
             {
-                var mapUid = _map.CreateMap(out mapId);
+                var mapUid = _map.CreateMap(out mapId, runMapInit: options?.InitializeMaps ?? false);
                 if (!_loader.TryLoadGrid(mapId,
-                    ev.GameMap.MapPath,
-                    out var grid,
-                    ev.Options,
-                    ev.Offset,
-                    ev.Rotation))
+                        ev.GameMap.MapPath,
+                        out var grid,
+                        ev.Options,
+                        ev.Offset,
+                        ev.Rotation))
                 {
                     throw new Exception($"Failed to load game-map grid {ev.GameMap.ID}");
                 }
@@ -217,11 +305,11 @@ namespace Content.Server.GameTicking
             }
 
             if (!_loader.TryLoadMap(ev.GameMap.MapPath,
-                out var map,
-                out var grids,
-                ev.Options,
-                ev.Offset,
-                ev.Rotation))
+                    out var map,
+                    out var grids,
+                    ev.Options,
+                    ev.Offset,
+                    ev.Rotation))
             {
                 throw new Exception($"Failed to load game map {ev.GameMap.ID}");
             }
@@ -251,11 +339,11 @@ namespace Content.Server.GameTicking
             {
                 var mapUid = _map.CreateMap(mapId);
                 if (!_loader.TryLoadGrid(mapId,
-                    ev.GameMap.MapPath,
-                    out var grid,
-                    ev.Options,
-                    ev.Offset,
-                    ev.Rotation))
+                        ev.GameMap.MapPath,
+                        out var grid,
+                        ev.Options,
+                        ev.Offset,
+                        ev.Rotation))
                 {
                     throw new Exception($"Failed to load game-map grid {ev.GameMap.ID}");
                 }
@@ -267,13 +355,13 @@ namespace Content.Server.GameTicking
             }
 
             if (!_loader.TryLoadMapWithId(
-                mapId,
-                ev.GameMap.MapPath,
-                out var map,
-                out var grids,
-                ev.Options,
-                ev.Offset,
-                ev.Rotation))
+                    mapId,
+                    ev.GameMap.MapPath,
+                    out var map,
+                    out var grids,
+                    ev.Options,
+                    ev.Offset,
+                    ev.Rotation))
             {
                 throw new Exception($"Failed to load map");
             }
@@ -302,11 +390,11 @@ namespace Content.Server.GameTicking
             if (ev.GameMap.IsGrid)
             {
                 if (!_loader.TryLoadGrid(targetMap,
-                    ev.GameMap.MapPath,
-                    out var grid,
-                    ev.Options,
-                    ev.Offset,
-                    ev.Rotation))
+                        ev.GameMap.MapPath,
+                        out var grid,
+                        ev.Options,
+                        ev.Offset,
+                        ev.Rotation))
                 {
                     throw new Exception($"Failed to load game-map grid {ev.GameMap.ID}");
                 }
@@ -318,11 +406,11 @@ namespace Content.Server.GameTicking
             }
 
             if (!_loader.TryMergeMap(targetMap,
-                ev.GameMap.MapPath,
-                out var grids,
-                ev.Options,
-                ev.Offset,
-                ev.Rotation))
+                    ev.GameMap.MapPath,
+                    out var grids,
+                    ev.Options,
+                    ev.Offset,
+                    ev.Rotation))
             {
                 throw new Exception($"Failed to load map");
             }
@@ -441,7 +529,6 @@ namespace Content.Server.GameTicking
             AnnounceRound();
             UpdateInfoText();
             SendRoundStartedDiscordMessage();
-            RaiseLocalEvent(new RoundStartedEvent(RoundId));
 
 #if EXCEPTION_TOLERANCE
             }
@@ -561,10 +648,37 @@ namespace Content.Server.GameTicking
 
                 if (TryGetEntity(mind.OriginalOwnedEntity, out var entity) && pvsOverride)
                 {
-                    _pvsOverride.AddGlobalOverride(GetNetEntity(entity.Value), recursive: true);
+                    _pvsOverride.AddGlobalOverride(entity.Value);
                 }
 
                 var roles = _roles.MindGetAllRoleInfo(mindId);
+
+                // Goobstation - End of round last words
+                #region Goob Station - End of round last words
+
+                var lastWords = "";
+                var mobState = MobState.Invalid;
+                var damagePerGroup = new Dictionary<string, FixedPoint2>();
+                var lastMob = TryComp<MindLastMobComponent>(mindId, out var lastMobComponent)
+                    ? lastMobComponent.LastMob
+                    : null;
+
+                // Get last words if they exist (stored on the mind)
+                if (TryComp<LastWordsComponent>(mindId, out var lastWordsComponent))
+                    lastWords = lastWordsComponent.LastWords;
+
+                // Get mob state and damage if the mob still exists
+                if (lastMob != null && !TerminatingOrDeleted(lastMob))
+                {
+                    if (TryComp<MobStateComponent>(lastMob, out var mobStateComp))
+                        mobState = mobStateComp.CurrentState;
+
+                    if (TryComp<DamageableComponent>(lastMob, out var damageableComp))
+                        damagePerGroup = damageableComp.DamagePerGroup;
+                }
+
+                #endregion
+                // END
 
                 var playerEndRoundInfo = new RoundEndMessageEvent.RoundEndPlayerInfo()
                 {
@@ -582,7 +696,11 @@ namespace Content.Server.GameTicking
                     JobPrototypes = roles.Where(role => !role.Antagonist).Select(role => role.Prototype).ToArray(),
                     AntagPrototypes = roles.Where(role => role.Antagonist).Select(role => role.Prototype).ToArray(),
                     Observer = observer,
-                    Connected = connected
+                    Connected = connected,
+                    // Goob Station - End of Round Screen
+                    LastWords = lastWords,
+                    EntMobState = mobState,
+                    DamagePerGroup = damagePerGroup
                 };
                 listOfPlayerInfo.Add(playerEndRoundInfo);
             }
@@ -605,7 +723,6 @@ namespace Content.Server.GameTicking
 
             _replayRoundPlayerInfo = listOfPlayerInfoFinal;
             _replayRoundText = roundEndText;
-            RaiseLocalEvent(new RoundEndedEvent(RoundId, roundDuration));
         }
 
         private async void SendRoundEndDiscordMessage()
@@ -616,32 +733,11 @@ namespace Content.Server.GameTicking
                     return;
 
                 var duration = RoundDuration();
-                var gamemodeTitle = CurrentPreset != null ? Loc.GetString(CurrentPreset.ModeTitle) : string.Empty;
-
-                var textEv = new RoundEndTextAppendEvent();
-                RaiseLocalEvent(textEv);
-
-                var manifest = Regex.Replace(textEv.Text, @"\[/\.*?\]", "");
-                manifest = Regex.Replace(manifest, @"\[.*?\]", "");
-
                 var content = Loc.GetString("discord-round-notifications-end",
                     ("id", RoundId),
                     ("hours", Math.Truncate(duration.TotalHours)),
                     ("minutes", duration.Minutes),
-                    ("seconds", duration.Seconds),
-                    ("gamemode", gamemodeTitle),
-                    ("manifest", manifest));
-
-                if (textEv.Text == String.Empty)
-                {
-                    content = Loc.GetString("discord-round-notifications-end-no-manifest",
-                        ("id", RoundId),
-                        ("hours", Math.Truncate(duration.TotalHours)),
-                        ("minutes", duration.Minutes),
-                        ("seconds", duration.Seconds),
-                        ("gamemode", gamemodeTitle));
-                }
-
+                    ("seconds", duration.Seconds));
                 var payload = new WebhookPayload { Content = content };
 
                 await _discord.CreateMessage(_webhookIdentifier.Value, payload);
@@ -673,6 +769,9 @@ namespace Content.Server.GameTicking
             if (_serverUpdates.RoundEnded())
                 return;
 
+            // Check if the GamePreset needs to be reset
+            TryResetPreset();
+
             _sawmill.Info("Restarting round!");
 
             SendServerMessage(Loc.GetString("game-ticker-restart-round"));
@@ -702,6 +801,9 @@ namespace Content.Server.GameTicking
                 UpdateInfoText();
 
                 ReqWindowAttentionAll();
+
+                _voteManager.CreateStandardVote(null, StandardVoteType.Map);
+                _taskManager.RunOnMainThread(() => _voteManager.CreateStandardVote(null, StandardVoteType.Preset));
             }
         }
 
@@ -759,15 +861,19 @@ namespace Content.Server.GameTicking
 
             DisallowLateJoin = false;
             _playerGameStatuses.Clear();
-
             foreach (var session in _playerManager.Sessions)
+            {
                 _playerGameStatuses[session.UserId] = LobbyEnabled ? PlayerGameStatus.NotReadyToPlay : PlayerGameStatus.ReadyToPlay;
+            }
         }
 
         public bool DelayStart(TimeSpan time)
         {
             if (_runLevel != GameRunLevel.PreRoundLobby)
+            {
                 return false;
+            }
+
             _roundStartTime += time;
 
             RaiseNetworkEvent(new TickerLobbyCountdownEvent(_roundStartTime, Paused));
@@ -815,7 +921,11 @@ namespace Content.Server.GameTicking
 
             var proto = _robustRandom.Pick(options);
 
-            _announcer.SendAnnouncement(_announcer.GetAnnouncementId(proto.ID), proto.Message ?? "game-ticker-welcome-to-the-station");
+            if (proto.Message != null)
+                _chatSystem.DispatchGlobalAnnouncement(Loc.GetString(proto.Message), playSound: true);
+
+            if (proto.Sound != null)
+                _audio.PlayGlobal(proto.Sound, Filter.Broadcast(), true);
         }
 
         private async void SendRoundStartedDiscordMessage()
@@ -1008,6 +1118,12 @@ namespace Content.Server.GameTicking
 
             Text += text;
             _doNewLine = true;
+        }
+
+        // goob edit
+        public void AppendAtStart(string text)
+        {
+            Text = text + Text;
         }
     }
 }

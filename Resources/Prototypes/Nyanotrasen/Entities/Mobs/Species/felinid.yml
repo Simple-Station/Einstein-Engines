@@ -1,3 +1,22 @@
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Rank #1 Jonestown partygoer <mary@thughunt.ing>
+# SPDX-FileCopyrightText: 2024 Spatison <137375981+Spatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 MarkerWicker <markerWicker@proton.me>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   save: false
   name: Urist McFelinid
@@ -6,7 +25,9 @@
   abstract: true
   components:
   - type: Sprite
-    scale: 0.8, 0.8
+    # scale: 0.8, 0.8 # Goobstation: port EE height/width sliders
+  - type: ScaleData # Goobstation
+    # scale: 0.8, 0.8 # Goobstation: port EE height/width sliders
   - type: HumanoidAppearance
     species: Felinid
   - type: Fixtures
@@ -14,7 +35,7 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 0.28
+          radius: 0.35
         density: 140
         restitution: 0.0
         mask:
@@ -25,10 +46,11 @@
     prototype: Felinid
   - type: Damageable
     damageModifierSet: Felinid
-  - type: SlowOnDamage
-    speedModifierThresholds:
-      60: 0.85  # 0.7 is base speed.
-      80: 0.75  # 0.5 is base speed.
+  # Goobstation - Siouxcide, felinids have standard slow on damage numbers
+# - type: SlowOnDamage
+#   speedModifierThresholds:
+#     60: 0.85  # 0.7 is base speed.
+#     80: 0.75  # 0.5 is base speed.
   - type: MeleeWeapon
     soundHit:
       collection: Punch
@@ -42,13 +64,20 @@
 #    - OwOnavirus
   - type: Speech
     speechSounds: Alto
+  - type: LanguageKnowledge # Einstein Engines - Languages
+    speaks:
+    - TauCetiBasic
+    - Nekomimetic
+    understands:
+    - TauCetiBasic
+    - Nekomimetic
   - type: DamageOnHighSpeedImpact # Landing on all fours!
     damage:
       types:
         Blunt: 1
   - type: Stamina
-    critThreshold: 85
-    decay: 2.55 # 3 base decay multiplied by 0.85 = 2.55
+    critThreshold: 75 # Goobstation - Siouxcide, felinids take 3 disabler shots to down
+    animationThreshold: 40 # Goob edit
   - type: TypingIndicator
     proto: felinid
   - type: PseudoItem
@@ -63,67 +92,20 @@
       Male: MaleFelinid
       Female: FemaleFelinid
       Unsexed: MaleFelinid
+  #- type: OwOAccent this is just like that book by jorjorwell... 1984
   - type: Felinid
   - type: NoShoesSilentFootsteps
-  - type: LanguageKnowledge
-    speaks:
-    - TauCetiBasic
-    - Nekomimetic
-    understands:
-    - TauCetiBasic
-    - Nekomimetic
-  - type: Thieving
-    ignoreStripHidden: true
-    stealth: Subtle
-    stripTimeReduction: 0
-    stripTimeMultiplier: 0.667
-  - type: ProtectedFromStepTriggers
-    whitelist:
-      types:
-        - Shard
-        - Landmine
-        - Mousetrap
-        - SlipEntity
   - type: Tag
     tags:
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
+    - AnomalyHost
     - FelinidEmotes
-  # WD EDIT START
-  - type: Inventory
-    femaleDisplacements:
-      jumpsuit-body-slim:
-        sizeMaps:
-          32:
-            sprite: _White/Mobs/Species/Human/displacement.rsi
-            state: jumpsuit
-      shoes-body-slim:
-        sizeMaps:
-          32:
-            sprite: _White/Mobs/Species/Human/displacement.rsi
-            state: shoes
-      gloves-body-slim:
-        sizeMaps:
-          32:
-            sprite: _White/Mobs/Species/Human/displacement.rsi
-            state: gloves
-      outerClothing-body-slim:
-        sizeMaps:
-          32:
-            sprite: _White/Mobs/Species/Human/displacement.rsi
-            state: outer
-      hardsuit-body-slim:
-        sizeMaps:
-          32:
-            sprite: _White/Mobs/Species/Human/displacement.rsi
-            state: hardsuit
-      suit-body-slim:
-        sizeMaps:
-          32:
-            sprite: _White/Mobs/Species/Human/displacement.rsi
-            state: suit
-  # WD EDIT END
+  #- type: FootPrints # WD EDIT
+  - type: Consciousness
+    cap: 160
+    threshold: 80
 
 - type: entity
   save: false
@@ -135,37 +117,3 @@
   components:
   - type: HumanoidAppearance
     species: Felinid
-  # WD EDIT START
-  - type: Inventory
-    femaleDisplacements:
-      jumpsuit-body-slim:
-        sizeMaps:
-          32:
-            sprite: _White/Mobs/Species/Human/displacement.rsi
-            state: jumpsuit
-      shoes-body-slim:
-        sizeMaps:
-          32:
-            sprite: _White/Mobs/Species/Human/displacement.rsi
-            state: shoes
-      gloves-body-slim:
-        sizeMaps:
-          32:
-            sprite: _White/Mobs/Species/Human/displacement.rsi
-            state: gloves
-      outerClothing-body-slim:
-        sizeMaps:
-          32:
-            sprite: _White/Mobs/Species/Human/displacement.rsi
-            state: outer
-      hardsuit-body-slim:
-        sizeMaps:
-          32:
-            sprite: _White/Mobs/Species/Human/displacement.rsi
-            state: hardsuit
-      suit-body-slim:
-        sizeMaps:
-          32:
-            sprite: _White/Mobs/Species/Human/displacement.rsi
-            state: suit
-  # WD EDIT END

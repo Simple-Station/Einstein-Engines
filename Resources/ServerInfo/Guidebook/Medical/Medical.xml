@@ -1,8 +1,17 @@
-<Document>
-# Медицинский отдел
-Сюда приходят, когда нужна помощь. Ваша задача — вернуть людей в строй.
+<!--
+SPDX-FileCopyrightText: 2023 Sir Winters <7543955+Owai-Seek@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Tunguso4ka <71643624+Tunguso4ka@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 
-Сейчас медблок разделён на два направления работы:
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
+# Медбей
+Это отдел, куда люди обращаются с травмами, и только от работающих здесь людей зависит их устранение.
+
+В настоящее время медблок делится на два разных направления:
 
 ## Медицинская помощь
 <Box>
@@ -12,7 +21,7 @@
 <GuideEntityEmbed Entity="Gauze"/>
 <GuideEntityEmbed Entity="HandheldHealthAnalyzer"/>
 </Box>
-## Производство реагентов
+## Химическое производство
 <Box>
 <GuideEntityEmbed Entity="ChemDispenser"/>
 <GuideEntityEmbed Entity="LargeBeaker"/>

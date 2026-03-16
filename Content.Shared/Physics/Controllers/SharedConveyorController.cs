@@ -1,7 +1,45 @@
-﻿using System.Numerics;
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Alice "Arimah" Heurlin <30327355+arimah@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 HS <81934438+HolySSSS@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2024 Truoizys <153248924+Truoizys@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 osjarw <62134478+osjarw@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using System.Numerics;
 using Content.Shared.Conveyor;
 using Content.Shared.Gravity;
-using Content.Shared.Magic;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
@@ -97,6 +135,11 @@ public abstract class SharedConveyorController : VirtualController
         {
             var other = contact.OtherEnt(conveyorUid);
 
+            if (contact.OtherFixture(conveyorUid).Item2.Hard && contact.OtherBody(conveyorUid).BodyType != BodyType.Static)
+            {
+                EnsureComp<ConveyedComponent>(other);
+            }
+
             if (_conveyedQuery.HasComp(other))
             {
                 PhysicsSystem.WakeBody(other);
@@ -156,7 +199,9 @@ public abstract class SharedConveyorController : VirtualController
                 // they'll go too slow.
                 if (!_mover.UsedMobMovement.TryGetValue(ent.Entity.Owner, out var usedMob) || !usedMob)
                 {
-                    _mover.Friction(0f, frameTime: frameTime, friction: 5f, ref velocity);
+                    // We provide a small minimum friction speed as well for those times where the friction would stop large objects
+                    // snagged on corners from sliding into the centerline.
+                    _mover.Friction(0.2f, frameTime: frameTime, friction: 5f, ref velocity);
                 }
 
                 SharedMoverController.Accelerate(ref velocity, targetDir, 20f, frameTime);
@@ -319,7 +364,9 @@ public abstract class SharedConveyorController : VirtualController
         var p = direction * (Vector2.Dot(itemRelative, direction) / Vector2.Dot(direction, direction));
         var r = itemRelative - p;
 
-        if (r.Length() < 0.1)
+        // 0.01 is considered close enough to the centerline that (most) large objects shouldn't
+        // snag on walls next to the conveyor, without smaller entities repeatedly overshooting.
+        if (r.Length() < 0.01)
         {
             var velocity = direction * speed;
             return velocity;
@@ -329,7 +376,10 @@ public abstract class SharedConveyorController : VirtualController
             // Give a slight nudge in the direction of the conveyor to prevent
             // to collidable objects (e.g. crates) on the locker from getting stuck
             // pushing each other when rounding a corner.
-            var velocity = (r + direction).Normalized() * speed;
+            // The direction of the conveyorbelt is de-emphasized to ensure offset objects primarily push centerwards,
+            // to prevent large items getting snagged on corner turns.
+            // 0.2f seems like a good compromise between forwards and sideways movement.
+            var velocity = (r + direction * 0.2f).Normalized() * speed;
             return velocity;
         }
     }
@@ -383,7 +433,7 @@ public abstract class SharedConveyorController : VirtualController
 
             var other = contact.OtherEnt(ent.Owner);
 
-            if (_conveyorQuery.HasComp(other))
+            if (_conveyorQuery.TryComp(other, out var comp) && CanRun(comp))
                 return true;
         }
 

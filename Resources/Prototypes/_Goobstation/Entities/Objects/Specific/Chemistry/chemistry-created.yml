@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: ShardCrystalRed
   id: ShardCrystalStyptic
@@ -12,4 +19,25 @@
         - ReagentId: StypticPowder
           Quantity: 10
 
-
+- type: entity
+  name: synth meat
+  parent: FoodMeatRotten # you can, but you shouldn't eat this
+  id: FoodMeatSynth
+  description: Artificially created chunk of... synthetic meat? Can it even be cooked? Better not to eat it.
+  components:
+  - type: Sprite
+    state: bear # looks pretty disgusting
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Synthflesh
+          Quantity: 20
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+        - ReagentId: GastroToxin
+          Quantity: 5
+  - type: FoodSequenceElement
+    entries:
+      Burger: FSE_FoodMeatSynth # just in case you really want to
+      Taco: FSE_FoodMeatSynth

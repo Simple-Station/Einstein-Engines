@@ -1,11 +1,22 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Speebro <100388782+Speebr0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Speebro <speebro@notreal.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 ## Static
 
 - type: latheRecipePack
   id: ScienceBoardsStatic
   recipes:
-  - ProtolatheMachineCircuitboard
-  - AutolatheMachineCircuitboard
-  - CircuitImprinterMachineCircuitboard
+  #- ProtolatheMachineCircuitboard - Goobstation - Moved to SharedBoardsStatic
+  #- AutolatheMachineCircuitboard
+  #- CircuitImprinterMachineCircuitboard
   - ExosuitFabricatorMachineCircuitboard
   - CutterMachineCircuitboard
   - BorgChargerCircuitboard
@@ -17,6 +28,13 @@
   - FloorBlueCircuit
   - FloorRedCircuit
 
+# Keeps flash payloads out of the hands of tiders, I guess. All triggers roundstart for autolathes and med/sci/secfab
+- type: latheRecipePack
+  id: ScienceExplosives
+  recipes:
+  - ChemicalPayload
+  - FlashPayload
+
 ## Dynamic
 
 - type: latheRecipePack
@@ -27,49 +45,39 @@
   - AnomalyLocator
   - AnomalyLocatorWide
   - HoloprojectorField
-  - SignallerAdvanced
+  #- SignallerAdvanced - Goobstation - Removed from there. Still in Equipment.
   - DeviceQuantumSpinInverter
-  # EE EDIT START
-  - AntiMindControlDevice
-  # EE EDIT END
+  - DeviceDesynchronizer
+  - ClothingBackpackHarmpack
 
 - type: latheRecipePack
   id: ScienceClothing
   recipes:
-  - ClothingShoesBootsMag # EE EDIT: ClothingShoesBootsMagSci -> ClothingShoesBootsMag
+  - ClothingShoesBootsMagSci
   - ClothingShoesBootsMoon
-  - ClothingShoesBootsSpeed
+#  - ClothingShoesBootsSpeed - Goobstation - Nuked due to sprinting.
+  - ClothingShoesBootsJump
   - ClothingBackpackHolding
   - ClothingBackpackSatchelHolding
   - ClothingBackpackDuffelHolding
-  # EE EDIT START
-  - ClothingShoesBootsMagAdv
-  - ClothingEyesNightVisionGoggles
-  - ClothingEyesNightVisionDiagnosticGoggles
-  - ClothingEyesThermalVisionGoggles
-  # EE EDIT END
+  - ClothingBackpackMessengerHolding # Frontier
 
 - type: latheRecipePack
   id: PowerCells
   recipes:
   - PowerCellMicroreactor
   - PowerCellHigh
-  # EE EDIT START
-  - PowerCellMicrortg
-  # EE EDIT END
+  - PowerCellHyper
 
 - type: latheRecipePack
   id: ScienceWeapons
   recipes:
   - WeaponPistolCHIMP
-  # - WeaponForceGun - EE EDIT
-  - WeaponLaserSvalinn
-  - WeaponProtoKineticAccelerator
-  # - WeaponTetherGun - EE EDIT
+  - WeaponForceGun
+  #- WeaponLaserSvalinn - Goobstation - Moved to ServiceWeapons
+  #- WeaponProtoKineticAccelerator - Goobstation - Moved to MiningWeapons
+  - WeaponTetherGun
   - WeaponGauntletGorilla
-  # EE EDIT START
-  - WeaponCivilianDisabler
-  # EE EDIT END
 
 - type: latheRecipePack
   id: FauxTiles
@@ -81,27 +89,19 @@
   - FauxTileAstroSnow
   - FauxTileAstroAsteroidSand
 
-# Only contains parts for making basic modular grenades, no actual explosives
-- type: latheRecipePack
-  id: ScienceExplosives
-  recipes:
-  - ChemicalPayload
-  - FlashPayload
-  - TimerTrigger
-  - SignalTrigger
-  - VoiceTrigger
-
 - type: latheRecipePack
   id: ScienceBoards
   recipes:
-  - TurboItemRechargerCircuitboard
-  - AutolatheHyperConvectionMachineCircuitboard
-  - ProtolatheHyperConvectionMachineCircuitboard
-  - CircuitImprinterHyperConvectionMachineCircuitboard
+  #- TurboItemRechargerCircuitboard - Goobstation - Moved to SharedBoards
+  # Begin DeltaV Removals - replaced by techfabs/upgrade kits
+  #- AutolatheHyperConvectionMachineCircuitboard
+  #- ProtolatheHyperConvectionMachineCircuitboard
+  #- CircuitImprinterHyperConvectionMachineCircuitboard
+  # End DeltaV Removals
   - TechDiskComputerCircuitboard
-  - FlatpackerMachineCircuitboard
-  - SheetifierMachineCircuitboard
-  - PowerCageRechargerCircuitboard
+  #- FlatpackerMachineCircuitboard - Moved to SharedBoards
+  #- SheetifierMachineCircuitboard - Moved to ServiceBoards
+  #- PowerCageRechargerCircuitboard - Moved to SharedBoards
   - AnalysisComputerCircuitboard
   - AnomalyVesselCircuitboard
   - AnomalyVesselExperimentalCircuitboard
@@ -109,14 +109,6 @@
   - APECircuitboard
   - ArtifactAnalyzerMachineCircuitboard
   - ArtifactCrusherMachineCircuitboard
-  - MachineBluespaceHarvesterCircuitboard # fucking harvestor
-  # EE EDIT START
-  - MetempsychoticMachineCircuitboard
-  - BaseComputerModularCircuitBoard
-  - DiskBurnerMachineCircuitboard
-  - ExosuitFabricatorMachineCircuitboard
-  - DroneElectronics
-  # EE EDIT END
 
 - type: latheRecipePack
   id: CameraBoards
@@ -139,16 +131,6 @@
   - HonkerTargetingElectronics
   - HamtrCentralElectronics
   - HamtrPeripheralsElectronics
-  # EE EDIT START
-  - GygaxCentralElectronics
-  - GygaxPeripheralsElectronics
-  - GygaxTargetingElectronics
-  - DurandCentralElectronics
-  - DurandPeripheralsElectronics
-  - DurandTargetingElectronics
-  - ClarkeCentralElectronics
-  - ClarkePeripheralsElectronics
-  # EE EDIT END
 
 - type: latheRecipePack
   id: ShuttleBoards

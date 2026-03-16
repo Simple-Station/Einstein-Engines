@@ -1,6 +1,10 @@
-using Content.Shared.DoAfter;
+// SPDX-FileCopyrightText: 2024 Nikolai Korolev <korolevns98@gmail.com>
+// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Inventory;
-using Robust.Shared.Serialization;
 
 namespace Content.Shared.Chemistry.Hypospray.Events;
 
@@ -37,10 +41,4 @@ public sealed class SelfBeforeHyposprayInjectsEvent : BeforeHyposprayInjectsTarg
 public sealed class TargetBeforeHyposprayInjectsEvent : BeforeHyposprayInjectsTargetEvent
 {
     public TargetBeforeHyposprayInjectsEvent(EntityUid user, EntityUid hypospray, EntityUid target) : base(user, hypospray, target) { }
-}
-
-
-[Serializable, NetSerializable]
-public sealed partial class HyposprayDoAfterEvent : SimpleDoAfterEvent
-{
 }

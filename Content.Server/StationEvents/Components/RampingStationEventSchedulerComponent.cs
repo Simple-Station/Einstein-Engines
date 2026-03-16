@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.EntityTable.EntitySelectors;
 
 namespace Content.Server.StationEvents.Components;
@@ -6,48 +15,18 @@ namespace Content.Server.StationEvents.Components;
 public sealed partial class RampingStationEventSchedulerComponent : Component
 {
     /// <summary>
-    ///     The maximum number by which the event rate will be multiplied when shift time reaches the end time.
-    /// </summary>
-    [DataField]
-    public float ChaosModifier = 3f;
-
-    /// <summary>
-    ///     The minimum number by which the event rate will be multiplied when the shift has just begun.
-    /// </summary>
-    [DataField]
-    public float StartingChaosRatio = 0.1f;
-
-    /// <summary>
-    ///     The number by which all event delays will be multiplied. Unlike chaos, remains constant throughout the shift.
-    /// </summary>
-    [DataField]
-    public float EventDelayModifier = 1f;
-
-    /// <summary>
-    ///     The number by which average expected shift length is multiplied. Higher values lead to slower chaos growth.
-    /// </summary>
-    [DataField]
-    public float ShiftLengthModifier = 1f;
-
-    [DataField]
-    public float MinimumTimeUntilNextEvent = 240f;
-
-    [DataField]
-    public float MaximumTimeUntilNextEvent = 720f;
-
-    /// <summary>
     ///     Average ending chaos modifier for the ramping event scheduler. Higher means faster.
     ///     Max chaos chosen for a round will deviate from this
     /// </summary>
     [DataField]
-    public float AverageChaos = 6f;
+    public float AverageChaos = 12f;
 
     /// <summary>
     ///     Average time (in minutes) for when the ramping event scheduler should stop increasing the chaos modifier.
     ///     Close to how long you expect a round to last, so you'll probably have to tweak this on downstreams.
     /// </summary>
     [DataField]
-    public float AverageEndTime = 40f;
+    public float AverageEndTime = 90f;
 
     [DataField]
     public float EndTime;

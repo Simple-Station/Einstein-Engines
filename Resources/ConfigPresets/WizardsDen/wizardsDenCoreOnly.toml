@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Configuration preset layer for "Core Only" Wizard's Den servers.
+# Intended to be loaded after wizardsDen.toml
+
+# hostname is a placeholder
+# needs region tag
+
+[game]
+soft_max_players = 50
+hostname = "[EN] Wizard's Den Red Firefly [US East]"
+desc = "Official English Space Station 14 servers. Vanilla, core ruleset."
+panic_bunker.min_overall_minutes = 15
+
+[server]
+rules_file = "CoreRuleset"
+
+[hub]
+tags = "lang:en,region:am_n_e,rp:none"

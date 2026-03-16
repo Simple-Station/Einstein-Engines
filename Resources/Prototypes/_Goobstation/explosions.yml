@@ -1,0 +1,124 @@
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 John Doe <johndoe@example.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Speebro <100388782+Speebr0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 PunishedJoe <PunishedJoeseph@proton.me>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: explosion
+  id: Supermatter
+  damagePerIntensity:
+    types:
+      Radiation: 5
+      Heat: 4
+      Blunt: 3
+      Slash: 3
+  tileBreakChance: [0, 0.5, 1]
+  tileBreakIntensity: [0, 10, 30]
+  tileBreakRerollReduction: 20
+  lightColor: Yellow
+  fireColor: Green
+  texturePath: /Textures/Effects/fire_greyscale.rsi
+  fireStates: 3
+
+- type: explosion
+  id: Methsplosion
+  damagePerIntensity: # yeah I want it less damaging than the default explosion, considering it's high intensity slope
+    types:
+      Heat: 3
+      Blunt: 5
+  tileBreakChance: [0, 0.5, 1]
+  tileBreakIntensity: [0, 10, 30]
+  tileBreakRerollReduction: 20
+  lightColor: Orange
+  texturePath: /Textures/Effects/fire.rsi
+  fireStates: 3
+
+- type: explosion
+  id: Corpse
+  damagePerIntensity:
+    types:
+      Heat: 0
+  tileBreakChance: [0]
+  tileBreakIntensity: [0]
+  lightColor: Red
+  fireColor: Red
+  texturePath: /Textures/Effects/fire_greyscale.rsi
+  fireStates: 3
+
+- type: explosion
+  id: Electrical
+  damagePerIntensity:
+    types:
+      Shock: 10
+      Structural: 20
+      Ion: 20
+  lightColor: Cyan
+  fireColor: Cyan
+  texturePath: /Textures/Effects/fire_greyscale.rsi
+  sound:
+    path: /Audio/Effects/tesla_collapse.ogg
+  smallSound:
+    path: /Audio/Effects/tesla_collapse.ogg
+
+
+  # Used by BulletHighCaliberExplosive, identical to FireBomb but less firestacks
+- type: explosion
+  id: FireBombWeak
+  damagePerIntensity:
+    types:
+      Heat: 1
+      Blunt: 2
+      Slash: 3
+  lightColor: Orange
+  texturePath: /Textures/Effects/fire.rsi
+  fireStates: 6
+  fireStacks: 1.3
+
+- type: explosion
+  id: Holy
+  damagePerIntensity:
+    types:
+      Heat: 4
+      Blunt: 7
+      Slash: 4
+      Holy: 10
+  tileBreakChance: [0, 0.5, 1]
+  tileBreakIntensity: [0, 10, 30]
+  tileBreakRerollReduction: 20
+  lightColor: Orange
+  texturePath: /Textures/Effects/fire.rsi
+  fireStates: 3
+
+- type: explosion
+  id: Molotov
+  damagePerIntensity:
+    types:
+      Heat: 1
+  lightColor: Orange
+  texturePath: /Textures/Effects/fire.rsi
+  fireStates: 6
+  fireStacks: 5
+
+  # Used by RPO-A shmel
+- type: explosion
+  id: Thermobaric
+  damagePerIntensity:
+    types:
+      Heat: 3
+      Blunt: 2
+      Slash: 2
+  lightColor: Orange
+  texturePath: /Textures/Effects/fire.rsi
+  fireStates: 8
+  fireStacks: 4

@@ -1,0 +1,209 @@
+# alto
+- type: soundCollection
+  id: AltoBark
+  files:
+  - /Audio/Voice/Talk/speak_2.ogg
+  - /Audio/Voice/Talk/speak_2_ask.ogg
+  - /Audio/Voice/Talk/speak_2_exclaim.ogg
+
+- type: barkVoice
+  id: Alto
+  barkSound:
+    collection: AltoBark
+
+# baritone
+- type: soundCollection
+  id: BaritoneBark
+  files:
+    - /Audio/Voice/Talk/speak_1.ogg
+    - /Audio/Voice/Talk/speak_1_ask.ogg
+    - /Audio/Voice/Talk/speak_1_exclaim.ogg
+
+- type: barkVoice
+  id: Baritone
+  barkSound:
+    collection: BaritoneBark
+
+# bass
+- type: soundCollection
+  id: BassBark
+  files:
+    - /Audio/Voice/Talk/speak_4.ogg
+    - /Audio/Voice/Talk/speak_4_ask.ogg
+    - /Audio/Voice/Talk/speak_4_exclaim.ogg
+
+- type: barkVoice
+  id: Bass
+  barkSound:
+    collection: BassBark
+  clampData:
+    volumeMax: 2
+
+# tenor
+- type: soundCollection
+  id: TenorBark
+  files:
+    - /Audio/Voice/Talk/speak_3.ogg
+    - /Audio/Voice/Talk/speak_3_ask.ogg
+    - /Audio/Voice/Talk/speak_3_exclaim.ogg
+
+- type: barkVoice
+  id: Tenor
+  barkSound:
+    collection: TenorBark
+  clampData:
+    volumeMax: 1
+
+# MaleAvali
+- type: soundCollection
+  id: MaleAvaliBark
+  files:
+    - /Audio/_Floofstation/Voice/Avali/avali_1.ogg
+    - /Audio/_Floofstation/Voice/Avali/avali_1_ask.ogg
+    - /Audio/_Floofstation/Voice/Avali/avali_1_exclaim.ogg
+
+- type: barkVoice
+  id: MaleAvali
+  barkSound:
+    collection: MaleAvaliBark
+  clampData:
+    volumeMax: 0.7
+
+# FemaleAvali
+- type: soundCollection
+  id: FemaleAvaliBark
+  files:
+    - /Audio/_Floofstation/Voice/Avali/avali_2.ogg
+    - /Audio/_Floofstation/Voice/Avali/avali_2_ask.ogg
+    - /Audio/_Floofstation/Voice/Avali/avali_2_exclaim.ogg
+
+- type: barkVoice
+  id: FemaleAvali
+  barkSound:
+    collection: FemaleAvaliBark
+  clampData:
+    volumeMax: 0.7
+
+# Pai
+- type: soundCollection
+  id: PaiBark
+  files:
+    - /Audio/Voice/Talk/pai.ogg
+    - /Audio/Voice/Talk/pai_ask.ogg
+    - /Audio/Voice/Talk/pai_exclaim.ogg
+
+- type: barkVoice
+  id: Pai
+  barkSound:
+    collection: PaiBark
+  clampData:
+    volumeMax: 1
+
+# Borg
+- type: soundCollection
+  id: BorgBark
+  files:
+    - /Audio/Voice/Talk/Silicon/borg.ogg
+    - /Audio/Voice/Talk/Silicon/borg_ask.ogg
+    - /Audio/Voice/Talk/Silicon/borg_exclaim.ogg
+
+- type: barkVoice
+  id: Borg
+  barkSound:
+    collection: BorgBark
+  clampData:
+    volumeMax: 0.7
+
+# BorgSyndie
+- type: soundCollection
+  id: BorgSyndieBark
+  files:
+    - /Audio/Voice/Talk/Silicon/syndieborg.ogg
+    - /Audio/Voice/Talk/Silicon/syndieborg_ask.ogg
+    - /Audio/Voice/Talk/Silicon/syndieborg_exclaim.ogg
+
+- type: barkVoice
+  id: BorgSyndie
+  barkSound:
+    collection: BorgSyndieBark
+  clampData:
+    volumeMax: 0.5
+
+# Durk
+- type: soundCollection
+  id: DurkBark
+  files:
+    - /Audio/_Goobstation/Voice/Barks/Durk/a.wav
+    - /Audio/_Goobstation/Voice/Barks/Durk/e.wav
+    - /Audio/_Goobstation/Voice/Barks/Durk/i.wav
+    - /Audio/_Goobstation/Voice/Barks/Durk/o.wav
+    - /Audio/_Goobstation/Voice/Barks/Durk/u.wav
+    - /Audio/_Goobstation/Voice/Barks/Durk/y.wav
+
+- type: barkVoice
+  id: Durk
+  barkSound:
+    collection: DurkBark
+  clampData:
+    volumeMax: 1
+
+# Aviu
+- type: soundCollection
+  id: Aviu1Bark
+  files:
+    - /Audio/_Goobstation/Voice/Barks/aviu1/1.ogg
+    - /Audio/_Goobstation/Voice/Barks/aviu1/2.ogg
+    - /Audio/_Goobstation/Voice/Barks/aviu1/3.ogg
+    - /Audio/_Goobstation/Voice/Barks/aviu1/4.ogg
+    - /Audio/_Goobstation/Voice/Barks/aviu1/5.ogg
+    - /Audio/_Goobstation/Voice/Barks/aviu1/6.ogg
+
+- type: barkVoice
+  id: Aviu1
+  barkSound:
+    collection: Aviu1Bark
+
+- type: soundCollection
+  id: Aviu2Bark
+  files:
+    - /Audio/_Goobstation/Voice/Barks/aviu2/1.ogg
+    - /Audio/_Goobstation/Voice/Barks/aviu2/2.ogg
+    - /Audio/_Goobstation/Voice/Barks/aviu2/3.ogg
+    - /Audio/_Goobstation/Voice/Barks/aviu2/4.ogg
+    - /Audio/_Goobstation/Voice/Barks/aviu2/5.ogg
+    - /Audio/_Goobstation/Voice/Barks/aviu2/6.ogg
+
+- type: barkVoice
+  id: Aviu2
+  barkSound:
+    collection: Aviu2Bark
+
+- type: soundCollection
+  id: Aviu3Bark
+  files:
+    - /Audio/_Goobstation/Voice/Barks/aviu3/1.ogg
+    - /Audio/_Goobstation/Voice/Barks/aviu3/2.ogg
+    - /Audio/_Goobstation/Voice/Barks/aviu3/3.ogg
+    - /Audio/_Goobstation/Voice/Barks/aviu3/4.ogg
+    - /Audio/_Goobstation/Voice/Barks/aviu3/5.ogg
+    - /Audio/_Goobstation/Voice/Barks/aviu3/6.ogg
+
+- type: barkVoice
+  id: Aviu3
+  barkSound:
+    collection: Aviu3Bark
+
+- type: soundCollection
+  id: Aviu4Bark
+  files:
+    - /Audio/_Goobstation/Voice/Barks/aviu4/1.ogg
+    - /Audio/_Goobstation/Voice/Barks/aviu4/2.ogg
+    - /Audio/_Goobstation/Voice/Barks/aviu4/3.ogg
+    - /Audio/_Goobstation/Voice/Barks/aviu4/4.ogg
+    - /Audio/_Goobstation/Voice/Barks/aviu4/5.ogg
+    - /Audio/_Goobstation/Voice/Barks/aviu4/6.ogg
+
+- type: barkVoice
+  id: Aviu4
+  barkSound:
+    collection: Aviu4Bark

@@ -1,3 +1,17 @@
+// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <wrexbe@protonmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using System.Numerics;
 using Content.Server.Construction.Components;
 using Content.Shared.Construction.Prototypes;
@@ -36,22 +50,9 @@ namespace Content.IntegrationTests.Tests.Construction
                     if (!proto.Components.ContainsKey("Construction"))
                         continue;
 
-                    EntityUid? ent = null;
+                    var ent = entMan.SpawnEntity(proto.ID, new MapCoordinates(Vector2.Zero, map.MapId));
+                    var construction = entMan.GetComponent<ConstructionComponent>(ent);
 
-                    try
-                    {
-                        ent = entMan.SpawnEntity(proto.ID, new MapCoordinates(Vector2.Zero, map.MapId));
-                    }
-                    catch
-                    {
-                        Assert.Fail(proto.ID);
-                        return;
-                    }
-
-                    if (ent == null)
-                        return;
-
-                    var construction = entMan.GetComponent<ConstructionComponent>(ent.Value);
                     var graph = protoMan.Index<ConstructionGraphPrototype>(construction.Graph);
                     entMan.DeleteEntity(ent);
 
@@ -116,7 +117,7 @@ namespace Content.IntegrationTests.Tests.Construction
             var protoMan = server.ResolveDependency<IPrototypeManager>();
             var compFact = server.ResolveDependency<IComponentFactory>();
 
-            var name = compFact.GetComponentName(typeof(ConstructionComponent));
+            var name = compFact.GetComponentName<ConstructionComponent>();
             Assert.Multiple(() =>
             {
                 foreach (var proto in protoMan.EnumeratePrototypes<EntityPrototype>())

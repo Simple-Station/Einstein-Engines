@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2024 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: BaseHardlightArrow
   abstract: true
@@ -10,16 +19,11 @@
     bodyType: Dynamic
     linearDamping: 0
     angularDamping: 0
+  - type: Reflective
+    reflective:
+    - Energy
   - type: Fixtures
     fixtures:
-      fix1:
-        shape: !type:PhysShapeCircle
-          radius: 0.2
-        density: 5
-        mask:
-        - ItemMask
-        restitution: 0.3
-        friction: 0.2
       projectile:
         shape:
           !type:PhysShapeAabb
@@ -55,7 +59,6 @@
     deleteOnRemove: true
   - type: ThrowingAngle
     angle: 0
-  - type: ProjectileIgnoreTransparent
 
 - type: entity
   parent: [BaseHardlightArrow, BaseHardlightEmbeddableArrow]
@@ -84,6 +87,7 @@
         Heat: 0
   - type: StaminaDamageOnCollide
     damage: 60
+    overtime: 30
 
 - type: entity
   parent: [BaseHardlightArrow, BaseHardlightEmbeddableArrow]
@@ -117,13 +121,13 @@
       types:
         Cold: 10
   - type: ChangeTemperatureOnCollide
-    heat: -300000
+    heat: -600000
 
 - type: entity
   parent: [BaseHardlightArrow, BaseHardlightEmbeddableArrow]
   id: ArrowExplosive
   name: explosive arrow
-  description: An arrow made from hardlight. This one explodes on hit.
+  description: An arrow made from hardlight. This one explodes on hit, but the energy dissapates quickly, it wont fly very far.
   components:
   - type: Sprite
     color: "#7300FF"
@@ -133,14 +137,16 @@
     damage:
       types:
         Heat: 0
+  - type: TimedDespawn
+    lifetime: 0.7
   - type: TriggerOnCollide
     fixtureID: projectile
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 12
-    intensitySlope: 0.4
-    maxIntensity: 4
+    totalIntensity: 18
+    intensitySlope: 0.6
+    maxIntensity: 6
     canCreateVacuum: false
 
 - type: entity
@@ -170,10 +176,10 @@
         mask:
         - Opaque
   - type: TimedDespawn
-    lifetime: 2
+    lifetime: 0.7
 
 - type: entity
-  parent: BaseHardlightArrow
+  parent: [BaseHardlightArrow, BaseHardlightEmbeddableArrow]
   id: ArrowBee
   name: bee arrow
   description: An arrow made from hardlight. This one summons angry bees.
@@ -183,10 +189,36 @@
   - type: PointLight
     color: yellow
   - type: Projectile
-    deleteOnCollide: true
     damage:
       types:
         Heat: 0
   - type: SpawnEntitiesOnHit
+    spawnOnlyIfHitMob: true
     proto: MobAngryBeeWeak
-    amount: 4
+    amount: 8
+    collideIgnoreEntities:
+    - MobBee
+    - MobAngryBee
+    - MobSyndieAngryBee
+    - MobAngryBeeWeak
+
+- type: entity
+  parent: [BaseHardlightArrow, BaseHardlightEmbeddableArrow]
+  id: ArrowIon
+  name: ion arrow
+  description: An arrow made from hardlight. causes EMP on hit.
+  components:
+  - type: Sprite
+    color: silver
+  - type: PointLight
+    color: silver
+  - type: Projectile
+    damage:
+      types:
+        Ion: 60
+  - type: TriggerOnCollide
+    fixtureID: projectile
+  - type: EmpOnTrigger
+    range: 1
+    energyConsumption: 360
+    disableDuration: 5

@@ -6,7 +6,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Timing;
 using Content.Shared.Verbs;
-using Content.Shared.Weapons.Ranged.Components;
+using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Wires;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics;
@@ -41,7 +41,7 @@ public abstract partial class SharedDeployableTurretSystem : EntitySystem
         if (!args.CanAccess || !args.CanInteract || !args.CanComplexInteract)
             return;
 
-        if (TryComp<AccessReaderComponent>(ent, out var accessReader) && !_accessReader.IsAllowed(args.User, ent, accessReader))
+        if (!_accessReader.IsAllowed(args.User, ent))
             return;
 
         var user = args.User;
@@ -64,7 +64,7 @@ public abstract partial class SharedDeployableTurretSystem : EntitySystem
         if (TryComp(ent, out UseDelayComponent? useDelay) && !_useDelay.TryResetDelay((ent, useDelay), true))
             return;
 
-        if (TryComp<AccessReaderComponent>(ent, out var reader) && !_accessReader.IsAllowed(args.User, ent, reader))
+        if (!_accessReader.IsAllowed(args.User, ent))
         {
             _popup.PopupClient(Loc.GetString("deployable-turret-component-access-denied"), ent, args.User);
             _audio.PlayPredicted(ent.Comp.AccessDeniedSound, ent, args.User);
@@ -80,7 +80,7 @@ public abstract partial class SharedDeployableTurretSystem : EntitySystem
         if (!ent.Comp.Enabled || args.Cancelled)
             return;
 
-        _popup.PopupClient(Loc.GetString("deployable-turret-component-cant-access-wires"), ent, args.User);
+        _popup.PopupClient(Loc.GetString("deployable-turret-component-cannot-access-wires"), ent, args.User);
 
         args.Cancelled = true;
     }
@@ -92,7 +92,7 @@ public abstract partial class SharedDeployableTurretSystem : EntitySystem
 
     public bool TrySetState(Entity<DeployableTurretComponent> ent, bool enabled, EntityUid? user = null)
     {
-        if (enabled && ent.Comp.Broken)
+        if (enabled && ent.Comp.CurrentState == DeployableTurretState.Broken)
         {
             if (user != null)
                 _popup.PopupClient(Loc.GetString("deployable-turret-component-is-broken"), ent, user.Value);
@@ -118,23 +118,25 @@ public abstract partial class SharedDeployableTurretSystem : EntitySystem
         if (ent.Comp.Enabled == enabled)
             return;
 
-        // Close the wires panel UI on activation
-        if (enabled && TryComp<WiresPanelComponent>(ent, out var wires))
+        // Hide the wires panel UI on activation
+        if (enabled && TryComp<WiresPanelComponent>(ent, out var wires) && wires.Open)
+        {
             _wires.TogglePanel(ent, wires, false);
-
-        // Update status
-        ent.Comp.Enabled = enabled;
+            _audio.PlayPredicted(wires.ScrewdriverCloseSound, ent, user);
+        }
 
         // Determine how much time is remaining in the current animation and the one next in queue
+        // We track this so that when a turret is toggled on/off, we can wait for all queued animations
+        // to end before the turret's HTN is reactivated
         var animTimeRemaining = MathF.Max((float)(ent.Comp.AnimationCompletionTime - _timing.CurTime).TotalSeconds, 0f);
-        var animTimeNext = ent.Comp.Enabled ? ent.Comp.DeploymentLength : ent.Comp.RetractionLength;
+        var animTimeNext = enabled ? ent.Comp.DeploymentLength : ent.Comp.RetractionLength;
 
         ent.Comp.AnimationCompletionTime = _timing.CurTime + TimeSpan.FromSeconds(animTimeNext + animTimeRemaining);
 
         // Change the turret's damage modifiers
         if (TryComp<DamageableComponent>(ent, out var damageable))
         {
-            var damageSetID = ent.Comp.Enabled ? ent.Comp.DeployedDamageModifierSetId : ent.Comp.RetractedDamageModifierSetId;
+            var damageSetID = enabled ? ent.Comp.DeployedDamageModifierSetId : ent.Comp.RetractedDamageModifierSetId;
             _damageable.SetDamageModifierSetId(ent, damageSetID, damageable);
         }
 
@@ -143,28 +145,23 @@ public abstract partial class SharedDeployableTurretSystem : EntitySystem
             TryComp(ent, out FixturesComponent? fixtures) &&
             fixtures.Fixtures.TryGetValue(ent.Comp.DeployedFixture, out var fixture))
         {
-            _physics.SetHard(ent, fixture, ent.Comp.Enabled);
+            _physics.SetHard(ent, fixture, enabled);
         }
 
-        // Display message
-        var msg = ent.Comp.Enabled ? "deployable-turret-component-activating" : "deployable-turret-component-deactivating";
+        // Play pop up message
+        var msg = enabled ? "deployable-turret-component-activating" : "deployable-turret-component-deactivating";
         _popup.PopupClient(Loc.GetString(msg), ent, user);
+
+        // Update enabled state
+        ent.Comp.Enabled = enabled;
+        DirtyField(ent, ent.Comp, "Enabled");
     }
 
     public bool HasAmmo(Entity<DeployableTurretComponent> ent)
     {
-        if (TryComp<ProjectileBatteryAmmoProviderComponent>(ent, out var projectilebatteryAmmo) &&
-            (projectilebatteryAmmo.Shots > 0 || ent.Comp.Powered))
-            return true;
+        var ammoCountEv = new GetAmmoCountEvent();
+        RaiseLocalEvent(ent, ref ammoCountEv);
 
-        if (TryComp<HitscanBatteryAmmoProviderComponent>(ent, out var hitscanBatteryAmmo) &&
-            (hitscanBatteryAmmo.Shots > 0 || ent.Comp.Powered))
-            return true;
-
-        if (TryComp<BallisticAmmoProviderComponent>(ent, out var ballisticAmmo) &&
-            ballisticAmmo.Count > 0)
-            return true;
-
-        return false;
+        return ammoCountEv.Count > 0;
     }
 }

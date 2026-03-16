@@ -5,16 +5,16 @@
   authors: Emisse
 
 - files: ["barratry.yml"]
-  authors: Emogarbage, Scribbles0
- 
+  authors: Emogarbage, Scribbles0, Piras314
+
 - files: ["box.yml"]
   authors: ACJM, Emisse
 
 - files: ["centcomm.yml"]
   authors: Emisse
 
-- files: ["_Orehum/ME4TA/cluster.yml"]
-  authors: ME4TA
+- files: ["cluster.yml"]
+  authors: Scribbles0
 
 - files: ["fland.yml"]
   authors: Emisse
@@ -23,7 +23,10 @@
   authors: DogZeroX, Emisse
 
 - files: ["kettle.yml"]
-  authors: Checkraze
+  authors: Checkraze, Piras314
+
+- files: ["gemini.yml"]
+  authors: Checkraze, TsjipTsjip, Luckyshotpictures
 
 - files: ["marathon.yml"]
   authors: Emisse
@@ -33,6 +36,9 @@
 
 - files: ["nukieplanet.yml"]
   authors: DogZeroX, Emisse, metalgearsloth
+
+- files: ["nukieplanet-honkops.yml"]
+  authors: Piras314, DogZeroX, Emisse, metalgearsloth
 
 - files: ["omega.yml"]
   authors: Emisse
@@ -46,5 +52,22 @@
 - files: ["core.yml"]
   authors: Ubaser
 
-- files: ["snowball.yml"]
+- files: ["oasis.yml"]
+  authors: CptJeanLuc
+
+- files: ["cog.yml"]
   authors: Spacemann
+
+- files: ["lambda.yml"]
+  authors: Ichai, Dapnee, Oraclestation's players
+
+- files: ["leonid.yml"]
+  authors: Gallagin, Derball
+
+- files: ["delta.yml", "chloris.yml"]
+  authors: Corvax team, pheenty
+- files: ["convex.yml"]
+  authors: Spacemann
+
+- file: ["amber.yml"]
+  authors: Southbridge, Flipsie27

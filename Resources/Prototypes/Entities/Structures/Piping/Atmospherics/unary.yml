@@ -1,3 +1,98 @@
+# SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+# SPDX-FileCopyrightText: 2021 Kara D <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+# SPDX-FileCopyrightText: 2022 E F R <602406+Efruit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Jack Fox <35575261+DubiousDoggo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Jane Lewis <inquisitivepenguin@protonmail.com>
+# SPDX-FileCopyrightText: 2022 Julian Giebel <juliangiebel@live.de>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 TekuNut <13456422+TekuNut@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
+# SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 corentt <36075110+corentt@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 vulppine <vulppine@gmail.com>
+# SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Ilya246 <ilyukarno@gmail.com>
+# SPDX-FileCopyrightText: 2023 Menshin <Menshin@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Skarletto <122584947+Skarletto@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 qwerltaz <69696513+qwerltaz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 AJCM <AJCM@tutanota.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2024 Alex Pavlenko <diraven@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Alice "Arimah" Heurlin <30327355+arimah@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ArkiveDev <95712736+ArkiveDev@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Doomsdrayk <robotdoughnut@comcast.net>
+# SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ghagliiarghii <68826635+Ghagliiarghii@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 HS <81934438+HolySSSS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Kevin Zheng <kevinz5000@gmail.com>
+# SPDX-FileCopyrightText: 2024 Ko4ergaPunk <62609550+Ko4ergaPunk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+# SPDX-FileCopyrightText: 2024 Partmedia <kevinz5000@gmail.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pspritechologist <naaronn@gmail.com>
+# SPDX-FileCopyrightText: 2024 Redfire1331 <125223432+Redfire1331@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2024 Truoizys <153248924+Truoizys@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2024 Verm <32827189+Vermidia@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 neutrino <67447925+neutrino-laser@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 osjarw <62134478+osjarw@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+# SPDX-FileCopyrightText: 2024 redfire1331 <Redfire1331@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+# SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Rinary <72972221+Rinary1@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
+# SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ss14-Starlight <ss14-Starlight@outlook.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: GasPipeBase
   abstract: true
@@ -14,7 +109,8 @@
       blockAmbience: false
     - type: NodeContainer
       nodes:
-        pipe: !type:PipeNode
+        pipe:
+          !type:PipeNode
           nodeGroupID: Pipe
           pipeDirection: South
     - type: CollideOnAnchor
@@ -27,6 +123,12 @@
   placement:
     mode: SnapgridCenter
   components:
+    - type: VentCrawlerTube  # Goobstation - ventcrawl
+      containerId: VentCrawlerTube
+    - type: VentCrawlerEntry
+    - type: ContainerContainer # Goobstation - ventcrawl
+      containers:
+        VentCrawlerTube: !type:Container
     - type: ApcPowerReceiver
     - type: ExtensionCableReceiver
     - type: DeviceNetwork
@@ -37,7 +139,7 @@
         - Unstackable
     - type: SubFloorHide
       visibleLayers:
-        - enum.SubfloorLayers.FirstLayer
+      - enum.SubfloorLayers.FirstLayer
     - type: Sprite
       drawdepth: FloorObjects
       sprite: Structures/Piping/Atmospherics/vent.rsi
@@ -45,9 +147,9 @@
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
           state: pipeUnaryConnectors
-          map: ["enum.PipeVisualLayers.Pipe"]
+          map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: vent_off
-          map: ["enabled", "enum.SubfloorLayers.FirstLayer"]
+          map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
     - type: Appearance
     - type: PipeColorVisuals
     - type: GenericVisualizer
@@ -60,6 +162,7 @@
             Welded: { state: vent_welded }
             Lockout: { state: vent_lockout }
     - type: GasVentPump
+      underPressureLockoutThreshold: 60
     - type: Construction
       graph: GasUnary
       node: ventpump
@@ -75,8 +178,8 @@
       navMapBlip: GasVentOpening
     - type: GuideHelp
       guides:
-        - AirVent
-        - DeviceMonitoringAndControl
+      - AirVent
+      - DeviceMonitoringAndControl
 
 - type: entity
   parent: GasUnaryBase
@@ -88,7 +191,7 @@
   components:
     - type: SubFloorHide
       visibleLayers:
-        - enum.SubfloorLayers.FirstLayer
+      - enum.SubfloorLayers.FirstLayer
     - type: Sprite
       drawdepth: FloorObjects
       sprite: Structures/Piping/Atmospherics/vent.rsi
@@ -96,9 +199,9 @@
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
           state: pipeUnaryConnectors
-          map: ["enum.PipeVisualLayers.Pipe"]
+          map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: vent_passive
-          map: ["enum.SubfloorLayers.FirstLayer"]
+          map: [ "enum.SubfloorLayers.FirstLayer" ]
     - type: Appearance
     - type: PipeColorVisuals
     - type: GasPassiveVent
@@ -109,7 +212,15 @@
       navMapBlip: GasVentOpening
     - type: GuideHelp
       guides:
-        - PassiveVent
+      - PassiveVent
+    - type: VentCrawlerEntry # Goobstation - ventcrawl
+    - type: VentCrawlerTube # Goobstation - ventcrawl
+      containerId: VentCrawlerTube
+    - type: ContainerContainer # Goobstation - ventcrawl
+      containers:
+        VentCrawlerTube: !type:Container
+    - type: Weldable  # Goobstation - ventcrawl
+      time: 3
 
 - type: entity
   parent: [GasUnaryBase, AirSensorBase]
@@ -119,6 +230,12 @@
   placement:
     mode: SnapgridCenter
   components:
+    - type: VentCrawlerTube # Goobstation - ventcrawl
+      containerId: VentCrawlerTube
+    - type: VentCrawlerEntry  # Goobstation - ventcrawl
+    - type: ContainerContainer # Goobstation - ventcrawl
+      containers:
+        VentCrawlerTube: !type:Container
     - type: ApcPowerReceiver
     - type: ExtensionCableReceiver
     - type: DeviceNetwork
@@ -129,7 +246,7 @@
         - Unstackable
     - type: SubFloorHide
       visibleLayers:
-        - enum.SubfloorLayers.FirstLayer
+      - enum.SubfloorLayers.FirstLayer
     - type: Sprite
       drawdepth: FloorObjects
       sprite: Structures/Piping/Atmospherics/scrubber.rsi
@@ -137,9 +254,9 @@
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
           state: pipeUnaryConnectors
-          map: ["enum.PipeVisualLayers.Pipe"]
+          map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: scrub_off
-          map: ["enabled", "enum.SubfloorLayers.FirstLayer"]
+          map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
     - type: Appearance
     - type: PipeColorVisuals
     - type: GenericVisualizer
@@ -165,10 +282,11 @@
     - type: Weldable
     - type: AtmosMonitoringConsoleDevice
       navMapBlip: GasVentScrubber
+    - type: VentCritterSpawnLocation # DeltaV
     - type: GuideHelp
       guides:
-        - AirScrubber
-        - DeviceMonitoringAndControl
+      - AirScrubber
+      - DeviceMonitoringAndControl
 
 - type: entity
   parent: GasUnaryBase
@@ -184,21 +302,21 @@
       layers:
         - state: pipeUnaryConnectors
           sprite: Structures/Piping/Atmospherics/pipe.rsi
-          map: ["enum.PipeVisualLayers.Pipe"]
+          map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: injector
-          map: ["enum.SubfloorLayers.FirstLayer"]
+          map: [ "enum.SubfloorLayers.FirstLayer" ]
         - state: injector-unshaded
           shader: unshaded
-          map: ["enum.LightLayers.Unshaded"]
+          map: [ "enum.LightLayers.Unshaded" ]
           color: "#990000"
     - type: Appearance
     - type: GenericVisualizer
       visuals:
-        # toggle color of the unshaded light:
-        enum.OutletInjectorVisuals.Enabled:
-          enum.LightLayers.Unshaded:
-            True: { color: "#5eff5e" }
-            False: { color: "#990000" }
+       # toggle color of the unshaded light:
+       enum.OutletInjectorVisuals.Enabled:
+         enum.LightLayers.Unshaded:
+           True: { color: "#5eff5e" }
+           False: { color: "#990000" }
     - type: PipeColorVisuals
     - type: GasOutletInjector
     - type: Construction
@@ -206,16 +324,24 @@
       node: outletinjector
     - type: SubFloorHide
       visibleLayers:
-        - enum.SubfloorLayers.FirstLayer
-        - enum.LightLayers.Unshaded
+      - enum.SubfloorLayers.FirstLayer
+      - enum.LightLayers.Unshaded
     - type: AtmosMonitoringConsoleDevice
       navMapBlip: GasVentOpening
     - type: GuideHelp
       guides:
-        - AirInjector
+      - AirInjector
+    - type: VentCrawlerTube # Goobstation - ventcrawl
+      containerId: VentCrawlerTube
+    - type: VentCrawlerJunction # Goobstation - ventcrawl
+      degrees:
+        - 0
+    - type: ContainerContainer # Goobstation - ventcrawl
+      containers:
+        VentCrawlerTube: !type:Container
 
 - type: entity
-  parent: [BaseMachinePowered, ConstructibleMachine]
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
   id: BaseGasThermoMachine
   name: thermomachine
   abstract: true
@@ -246,10 +372,11 @@
       key: enum.ThermomachineUiKey.Key
     - type: WiresPanel
     - type: WiresVisuals
-    # - type: PipeRestrictOverlap  Allow for pipe stacking
+    - type: PipeRestrictOverlap
     - type: NodeContainer
       nodes:
-        pipe: !type:PipeNode
+        pipe:
+          !type:PipeNode
           nodeGroupID: Pipe
           pipeDirection: South
     - type: Transform
@@ -266,7 +393,7 @@
       navMapBlip: Thermoregulator
     - type: GuideHelp
       guides:
-        - Thermomachines
+      - Thermomachines
 
 - type: entity
   parent: BaseGasThermoMachine
@@ -281,11 +408,11 @@
       granularLayersRendering: true
       layers:
         - state: freezerOff
-          map: ["enum.PowerDeviceVisualLayers.Powered"]
+          map: [ "enum.PowerDeviceVisualLayers.Powered" ]
         - state: freezerPanelOpen
-          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+          map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
         - state: pipe
-          map: ["enum.PipeVisualLayers.Pipe"]
+          map: [ "enum.PipeVisualLayers.Pipe" ]
           renderingStrategy: Default
     - type: GenericVisualizer
       visuals:
@@ -309,9 +436,9 @@
   id: GasThermoMachineFreezerEnabled
   suffix: Enabled
   components:
-    - type: GasThermoMachine
-    - type: ApcPowerReceiver
-      powerDisabled: false
+  - type: GasThermoMachine
+  - type: ApcPowerReceiver
+    powerDisabled: false
 
 - type: entity
   parent: BaseGasThermoMachine
@@ -323,14 +450,14 @@
   components:
     - type: StationAiWhitelist
     - type: Sprite
-      granularLayersRendering: true
+      granularLayersRendering : true
       layers:
         - state: heaterOff
-          map: ["enum.PowerDeviceVisualLayers.Powered"]
+          map: [ "enum.PowerDeviceVisualLayers.Powered" ]
         - state: heaterPanelOpen
           map: ["enum.WiresVisualLayers.MaintenancePanel"]
         - state: pipe
-          map: ["enum.PipeVisualLayers.Pipe"]
+          map: [ "enum.PipeVisualLayers.Pipe" ]
           renderingStrategy: Default
     - type: GenericVisualizer
       visuals:
@@ -354,9 +481,9 @@
   id: GasThermoMachineHeaterEnabled
   suffix: Enabled
   components:
-    - type: GasThermoMachine
-    - type: ApcPowerReceiver
-      powerDisabled: false
+  - type: GasThermoMachine
+  - type: ApcPowerReceiver
+    powerDisabled: false
 
 - type: entity
   parent: GasThermoMachineFreezer
@@ -364,14 +491,14 @@
   name: hellfire freezer
   description: An advanced machine that cools gas in connected pipes. Has the side effect of chilling the surrounding area. Cold as Hell!
   components:
-    - type: Sprite
-      sprite: Structures/Piping/Atmospherics/hellfirethermomachine.rsi
-    - type: GasThermoMachine
-      minTemperature: 23.15
-      heatCapacity: 40000
-      energyLeakPercentage: 0.15
-    - type: Machine
-      board: HellfireFreezerMachineCircuitBoard
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/hellfirethermomachine.rsi
+  - type: GasThermoMachine
+    minTemperature: 23.15
+    heatCapacity: 40000
+    energyLeakPercentage: 0.15
+  - type: Machine
+    board: HellfireFreezerMachineCircuitBoard
 
 - type: entity
   parent: GasThermoMachineHeater
@@ -379,101 +506,114 @@
   name: hellfire heater
   description: An advanced machine that heats gas in connected pipes. Has the side effect of leaking heat into the surrounding area. Hot as Hell!
   components:
-    - type: Sprite
-      sprite: Structures/Piping/Atmospherics/hellfirethermomachine.rsi
-    - type: GasThermoMachine
-      maxTemperature: 1193.15
-      heatCapacity: 40000
-      energyLeakPercentage: 0.15
-    - type: Machine
-      board: HellfireHeaterMachineCircuitBoard
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/hellfirethermomachine.rsi
+  - type: GasThermoMachine
+    maxTemperature: 1193.15
+    heatCapacity: 40000
+    energyLeakPercentage: 0.15
+  - type: Machine
+    board: HellfireHeaterMachineCircuitBoard
 
 - type: entity
-  parent: [BaseMachinePowered, SmallConstructibleMachine]
+  parent: [ BaseMachinePowered, SmallConstructibleMachine ]
   id: BaseGasCondenser
   name: condenser
   description: Condenses gases into liquids. Now we just need some plumbing.
   placement:
     mode: SnapgridCenter
   components:
-    - type: Sprite
-      sprite: Structures/Piping/Atmospherics/condenser.rsi
-      snapCardinals: true
-      granularLayersRendering: true
-      layers:
-        - state: off
-          map: ["enum.PowerDeviceVisualLayers.Powered"]
-        - state: panel
-          map: ["enum.WiresVisualLayers.MaintenancePanel"]
-        - state: pipe
-          map: ["enum.PipeVisualLayers.Pipe"]
-          renderingStrategy: Default
-        - state: fill-1
-          map: ["enum.SolutionContainerLayers.Fill"]
-          visible: false
-        - state: trans
-    - type: Appearance
-    - type: GenericVisualizer
-      visuals:
-        enum.PowerDeviceVisuals.Powered:
-          enum.PowerDeviceVisualLayers.Powered:
-            True: { state: on }
-            False: { state: off }
-    - type: SolutionContainerVisuals
-      maxFillLevels: 7
-      fillBaseName: fill-
-    - type: PipeColorVisuals
-    - type: Rotatable
-    - type: GasCondenser
-    - type: AtmosPipeColor
-    - type: AtmosPipeLayers
-      spriteLayersRsiPaths:
-        enum.PipeVisualLayers.Pipe:
-          Primary: Structures/Piping/Atmospherics/condenser.rsi
-          Secondary: Structures/Piping/Atmospherics/condenser_alt1.rsi
-          Tertiary: Structures/Piping/Atmospherics/condenser_alt2.rsi
-    - type: AtmosDevice
-    # - type: PipeRestrictOverlap # Allow pipe stacking on device.
-    - type: ApcPowerReceiver
-      powerLoad: 10000
-    - type: Machine
-      board: CondenserMachineCircuitBoard
-    - type: WiresPanel
-    - type: WiresVisuals
-    - type: Destructible
-      thresholds:
-        - trigger: !type:DamageTrigger
-            damage: 200
-          behaviors:
-            - !type:DoActsBehavior
-              acts: ["Destruction"]
-        - trigger: !type:DamageTrigger
-            damage: 100
-          behaviors:
-            - !type:DoActsBehavior
-              acts: ["Destruction"]
-            - !type:SpillBehavior
-              solution: tank
-            - !type:PlaySoundBehavior
-              sound:
-                collection: MetalBreak
-    - type: NodeContainer
-      nodes:
-        pipe: !type:PipeNode
-          nodeGroupID: Pipe
-          pipeDirection: South
-    - type: Transform
-      noRot: false
-    - type: SolutionContainerManager
-      solutions:
-        tank:
-          maxVol: 400
-    - type: MixableSolution
-      solution: tank
-    - type: DrainableSolution
-      solution: tank
-    - type: ExaminableSolution
-      solution: tank
-    - type: PowerSwitch
-    - type: AtmosMonitoringConsoleDevice
-      navMapBlip: Thermoregulator
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/condenser.rsi
+    snapCardinals: true
+    granularLayersRendering: true
+    layers:
+    - state: off
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - state: pipe
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+      renderingStrategy: Default
+    - state: fill-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+    - state: trans
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { state: on }
+          False: { state: off }
+  - type: SolutionContainerVisuals
+    maxFillLevels: 7
+    fillBaseName: fill-
+  - type: PipeColorVisuals
+  - type: Rotatable
+  - type: GasCondenser
+  - type: AtmosPipeColor
+  - type: AtmosPipeLayers
+    spriteLayersRsiPaths:
+      enum.PipeVisualLayers.Pipe:
+        Primary: Structures/Piping/Atmospherics/condenser.rsi
+        Secondary: Structures/Piping/Atmospherics/condenser_alt1.rsi
+        Tertiary: Structures/Piping/Atmospherics/condenser_alt2.rsi
+  - type: AtmosDevice
+  - type: PipeRestrictOverlap
+  - type: ApcPowerReceiver
+    powerLoad: 10000
+  - type: Machine
+    board: CondenserMachineCircuitBoard
+  - type: WiresPanel
+  - type: WiresVisuals
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpillBehavior
+        solution: tank
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: NodeContainer
+    nodes:
+      pipe:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: South
+  - type: Transform
+    noRot: false
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 400
+  - type: MixableSolution
+    solution: tank
+  - type: DrainableSolution
+    solution: tank
+  - type: ExaminableSolution
+    solution: tank
+  - type: PowerSwitch
+  - type: AtmosMonitoringConsoleDevice
+    navMapBlip: Thermoregulator
+  - type: AutomationSlots # Goobstation
+    slots:
+    - !type:AutomatedSolution
+      solutionName: tank
+      input: PlumbingInput
+      output: PlumbingOutput
+  - type: GuideHelp
+    guides:
+    - GasCondensing
+

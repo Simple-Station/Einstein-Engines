@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Text;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface.RichText;
@@ -14,6 +19,8 @@ public sealed class ScrambleTag : IMarkupTag
 {
     [Dependency] private readonly IGameTiming _timing = default!;
 
+    private const int MaxScrambleLength = 32;
+
     public string Name => "scramble";
 
     public string TextBefore(MarkupNode node)
@@ -29,8 +36,9 @@ public sealed class ScrambleTag : IMarkupTag
         var seed = (int) (_timing.CurTime.TotalMilliseconds / rate);
         var rand = new Random(seed + node.GetHashCode());
         var charOptions = chars.ToCharArray();
+        var realLength = MathF.Min(length.Value, MaxScrambleLength);
         var sb = new StringBuilder();
-        for (var i = 0; i < length; i++)
+        for (var i = 0; i < realLength; i++)
         {
             var index = rand.Next() % charOptions.Length;
             sb.Append(charOptions[index]);

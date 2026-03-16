@@ -1,4 +1,33 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 PixelTK <85175107+PixelTheKermit@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Adeinitas <147965189+adeinitas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Danger Revolution! <142105406+DangerRevolution@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Timemaster99 <57200767+Timemaster99@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Eagle <lincoln.mcqueen@gmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 nikitosych <boriszyn@gmail.com>
+// SPDX-FileCopyrightText: 2025 vanx <61917534+Vaaankas@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Goobstation.Maths.FixedPoint;
+using System.Numerics;
 using Content.Shared.Alert;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
@@ -21,13 +50,13 @@ public sealed partial class StaminaComponent : Component
     /// How much stamina reduces per second.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
-    public float Decay = 5f; // Stun meta
+    public float Decay = 5f; // goob edit
 
     /// <summary>
     /// How much time after receiving damage until stamina starts decreasing.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
-    public float Cooldown = 3f;
+    public float Cooldown = 5f; // goob edit
 
     /// <summary>
     /// How much stamina damage this entity has taken.
@@ -36,17 +65,20 @@ public sealed partial class StaminaComponent : Component
     public float StaminaDamage;
 
     /// <summary>
-    /// How much stamina damage is required to entire stam crit.
+    /// How much stamina damage is required to enter stam crit.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
     public float CritThreshold = 100f;
 
     /// <summary>
-    /// A dictionary of active stamina drains, with the key being the source of the drain,
+    /// Goob Edit: A dictionary of active stamina drains, with the key being the source of the drain,
     /// DrainRate how much it changes per tick, and ModifiesSpeed if it should slow down the user.
     /// </summary>
+    /// <remarks>
+    /// TODO: Refactor into a struct or another component at some point idk.
+    /// </remarks>
     [DataField, AutoNetworkedField]
-    public Dictionary<EntityUid, (float DrainRate, bool ModifiesSpeed)> ActiveDrains = new();
+    public Dictionary<string, (float DrainRate, bool ModifiesSpeed, NetEntity? Source, bool ApplyResistances)> ActiveDrains = new();
 
     /// <summary>
     /// How long will this mob be stunned for?
@@ -63,4 +95,123 @@ public sealed partial class StaminaComponent : Component
 
     [DataField]
     public ProtoId<AlertPrototype> StaminaAlert = "Stamina";
+
+    // Goobstation
+    [DataField]
+    public float StaminaOnShove = 7.5f;
+
+    /// <summary>
+    /// This flag indicates whether the value of <see cref="StaminaDamage"/> decreases after the entity exits stamina crit.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool AfterCritical;
+
+    /// <summary>
+    /// This float determines how fast stamina will regenerate after exiting the stamina crit.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float AfterCritDecayMultiplier = 5f;
+
+    /// <summary>
+    /// This is how much stamina damage a mob takes when it forces itself to stand up before modifiers
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float ForceStandStamina = 10f;
+
+    /// <summary>
+    /// What sound should play when we successfully stand up
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public SoundSpecifier ForceStandSuccessSound = new SoundPathSpecifier("/Audio/Effects/thudswoosh.ogg");
+
+    /// <summary>
+    /// Thresholds that determine an entity's slowdown as a function of stamina damage.
+    /// </summary>
+    [DataField] // Goob edit. No slowdown. todo goobstation refactor sprint shit so it isnt as dependent on stamina its kinda annoying to wrangle both at the same time.
+    public Dictionary<FixedPoint2, float> StunModifierThresholds = new() { {0, 1f } }; // Goob edit, 0.7 -> 1, 0.5 -> 1
+
+
+    #region Animation Data
+
+    /// <summary>
+    /// Threshold at which low stamina animations begin playing. This should be set to a value that means something.
+    /// At 50, it is aligned so when you hit 60 stun the entity will be breathing once per second (well above hyperventilation).
+    /// </summary>
+    [DataField]
+    public float AnimationThreshold = 50;
+
+    /// <summary>
+    /// Minimum y vector displacement for breathing at AnimationThreshold
+    /// </summary>
+    [DataField]
+    public float BreathingAmplitudeMin = 0.04f;
+
+    /// <summary>
+    /// Maximum y vector amount we add to the BreathingAmplitudeMin
+    /// </summary>
+    [DataField]
+    public float BreathingAmplitudeMod = 0.04f;
+
+    /// <summary>
+    /// Minimum vector displacement for jittering at AnimationThreshold
+    /// </summary>
+    [DataField]
+    public float JitterAmplitudeMin;
+
+    /// <summary>
+    /// Maximum vector amount we add to the JitterAmplitudeMin
+    /// </summary>
+    [DataField]
+    public float JitterAmplitudeMod = 0.04f;
+
+    /// <summary>
+    /// Min multipliers for JitterAmplitude in the X and Y directions, animation randomly chooses between these min and max multipliers
+    /// </summary>
+    [DataField]
+    public Vector2 JitterMin = Vector2.Create(0.5f, 0.125f);
+
+    /// <summary>
+    /// Max multipliers for JitterAmplitude in the X and Y directions, animation randomly chooses between these min and max multipliers
+    /// </summary>
+    [DataField]
+    public Vector2 JitterMax = Vector2.Create(1f, 0.25f);
+
+    /// <summary>
+    /// Minimum total animations per second
+    /// </summary>
+    [DataField]
+    public float FrequencyMin = 0.25f;
+
+    /// <summary>
+    /// Maximum amount we add to the Frequency min just before crit
+    /// </summary>
+    [DataField]
+    public float FrequencyMod = 1.75f;
+
+    /// <summary>
+    /// Jitter keyframes per animation
+    /// </summary>
+    [DataField]
+    public int Jitters = 4;
+
+    /// <summary>
+    /// Vector of the last Jitter so we can make sure we don't jitter in the same quadrant twice in a row.
+    /// </summary>
+    [DataField]
+    public Vector2 LastJitter;
+
+    /// <summary>
+    ///     The offset that an entity had before jittering started,
+    ///     so that we can reset it properly.
+    /// </summary>
+    [DataField]
+    public Vector2 StartOffset = Vector2.Zero;
+
+    #endregion
+
+    /// <summary>
+    /// Goobstation - Used for the sprinting event to get rather we sprinting or not from Goob Mod folder
+    /// </summary>
+    [DataField]
+    public bool IsSprinting { get; set; }
 }

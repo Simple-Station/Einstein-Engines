@@ -1,3 +1,22 @@
+# SPDX-FileCopyrightText: 2022 Chris V <HoofedEar@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
+# SPDX-FileCopyrightText: 2023 0x6273 <0x40@keemail.me>
+# SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Julian Giebel <juliangiebel@live.de>
+# SPDX-FileCopyrightText: 2023 Kevin Zheng <kevinz5000@gmail.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Saphire Lattice <lattice@saphi.re>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 signal-port-name-autoclose = Autoclose
 signal-port-description-autoclose = Toggles whether the device should automatically close.
 
@@ -11,10 +30,10 @@ signal-port-name-off-receiver = Off
 signal-port-description-off-receiver = Turns a device off.
 
 signal-port-name-forward = Forward
-signal-port-description-forward = Makes a device (e.g. conveyer) operate in the normal direction.
+signal-port-description-forward = Makes a device (e.g. conveyor) operate in the normal direction.
 
 signal-port-name-reverse = Reverse
-signal-port-description-reverse = Makes a device (e.g. conveyer) operate in the reverse direction.
+signal-port-description-reverse = Makes a device (e.g. conveyor) operate in the reverse direction.
 
 signal-port-name-open = Open
 signal-port-description-open = Opens a device.
@@ -25,8 +44,8 @@ signal-port-description-close = Closes a device.
 signal-port-name-doorbolt = Door bolt
 signal-port-description-doorbolt = Bolts door when HIGH.
 
-signal-port-name-trigger = Trigger
-signal-port-description-trigger = Triggers some mechanism on the device.
+signal-port-name-trigger-receiver = Trigger
+signal-port-description-trigger-receiver = Triggers some mechanism on the device.
 
 signal-port-name-order-sender = Order sender
 signal-port-description-order-sender = Cargo console order sender
@@ -82,8 +101,10 @@ signal-port-description-logic-input-b = Second input of a logic gate.
 signal-port-name-logic-input = Input
 signal-port-description-logic-input = Input to the edge detector, cannot be a pulse signal.
 
-signal-port-name-material-silo-utilizer = Silo utilizer
-signal-port-description-material-silo-utilizer = Utilizer for station material silo
+signal-port-description-logic-memory-input = Signal to load into the memory cell, when enabled.
 
-signal-port-name-fill-any-item = Fillbot Target
-signal-port-description-fill-any-item = Target port for Fillbot insertion.
+signal-port-name-logic-enable = Enable
+signal-port-description-logic-enable = Only loads the input signal into the memory cell when HIGH.
+
+signal-port-name-logic-random-input = Input Signal
+signal-port-description-logic-random-input = Receives any signal to trigger a random output.

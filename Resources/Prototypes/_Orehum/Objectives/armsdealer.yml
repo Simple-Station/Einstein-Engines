@@ -10,11 +10,10 @@
         state: icon
     - type: RoleRequirement
       roles:
-        mindRoles:
-          - ArmsDealerRole
+        - ArmsDealerRole
 
 - type: entity
-  parent: [BaseArmsDealerObjective, BaseFreeObjective]
+  parent: [BaseArmsDealerObjective, BaseObjective]
   id: ArmsDealerGunFreeObjective
   components:
     - type: Objective

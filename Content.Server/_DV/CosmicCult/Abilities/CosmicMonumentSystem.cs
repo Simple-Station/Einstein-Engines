@@ -12,6 +12,7 @@ using Content.Server.Station.Systems;
 using Content.Shared._DV.CosmicCult.Components;
 using Content.Shared._DV.CosmicCult;
 using Content.Shared.Maps;
+using Content.Shared.Station.Components;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -29,6 +30,7 @@ public sealed class CosmicMonumentSystem : EntitySystem
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private readonly TurfSystem _turf = default!;
 
     private static readonly EntProtoId MonumentCollider = "MonumentCollider";
     private static readonly EntProtoId MonumentCosmicCultMoveEnd = "MonumentCosmicCultMoveEnd";
@@ -54,7 +56,7 @@ public sealed class CosmicMonumentSystem : EntitySystem
         if (!VerifyPlacement(uid, out var pos))
             return;
 
-        _actions.RemoveAction(uid, uid.Comp.CosmicMonumentPlaceActionEntity);
+        _actions.RemoveAction(uid.Comp.CosmicMonumentPlaceActionEntity);
 
         Spawn(MonumentCollider, pos);
         var monument = Spawn(uid.Comp.MonumentPrototype, pos);
@@ -64,17 +66,20 @@ public sealed class CosmicMonumentSystem : EntitySystem
 
     private void OnCosmicMoveMonument(Entity<CosmicCultLeadComponent> uid, ref EventCosmicMoveMonument args)
     {
+
+        args.Handled = true;
         if (_cultRule.AssociatedGamerule(uid) is not { } cult
             || !VerifyPlacement(uid, out var pos))
             return;
 
-        _actions.RemoveAction(uid, uid.Comp.CosmicMonumentMoveActionEntity);
+        //The action to move the monument will instead now have a cooldown, to prevent security camping.
+        //_actions.RemoveAction(uid.Comp.CosmicMonumentMoveActionEntity);
 
         //delete all old monument colliders for 100% safety
         var colliderQuery = EntityQueryEnumerator<MonumentCollisionComponent>();
 
         while (colliderQuery.MoveNext(out var collider, out _))
-            QueueDel(collider);
+           QueueDel(collider);
 
         //spawn the destination effect first because we only need one
         var destEnt = Spawn(MonumentCosmicCultMoveEnd, pos);
@@ -112,7 +117,7 @@ public sealed class CosmicMonumentSystem : EntitySystem
         var worldPos = _transform.GetWorldPosition(xform);
         foreach (var tile in _map.GetTilesIntersecting(xform.GridUid.Value, grid, new Circle(worldPos, spaceDistance)))
         {
-            if (tile.IsSpace(_tileDef))
+            if (_turf.IsSpace(tile))
             {
                 _popup.PopupEntity(Loc.GetString("cosmicability-monument-spawn-error-space", ("DISTANCE", spaceDistance)), uid, uid);
                 return false;
@@ -124,8 +129,8 @@ public sealed class CosmicMonumentSystem : EntitySystem
 
         EntityUid? stationGrid = null;
 
-        if (TryComp<StationDataComponent>(station, out var stationData))
-            stationGrid = _station.GetLargestGrid(stationData);
+        if (TryComp<StationDataComponent>(station, out _))
+            stationGrid = _station.GetLargestGrid(station.Value);
 
         if (stationGrid is not null && stationGrid != xform.GridUid)
         {

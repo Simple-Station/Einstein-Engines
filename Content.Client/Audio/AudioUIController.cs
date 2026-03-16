@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.CCVar;
 using Robust.Client.Audio;
 using Robust.Client.ResourceManagement;
@@ -54,7 +61,7 @@ public sealed class AudioUIController : UIController
     {
         if (!string.IsNullOrEmpty(value))
         {
-            var resource = _cache.GetResource<AudioResource>(value);
+            var resource = GetSoundOrFallback(value, CCVars.UIClickSound.DefaultValue);
             var source =
                 _audioManager.CreateAudioSource(resource);
 
@@ -77,7 +84,7 @@ public sealed class AudioUIController : UIController
     {
         if (!string.IsNullOrEmpty(value))
         {
-            var hoverResource = _cache.GetResource<AudioResource>(value);
+            var hoverResource = GetSoundOrFallback(value, CCVars.UIHoverSound.DefaultValue);
             var hoverSource =
                 _audioManager.CreateAudioSource(hoverResource);
 
@@ -94,5 +101,13 @@ public sealed class AudioUIController : UIController
         {
             UIManager.SetHoverSound(null);
         }
+    }
+
+    private AudioResource GetSoundOrFallback(string path, string fallback)
+    {
+        if (!_cache.TryGetResource(path, out AudioResource? resource))
+            return _cache.GetResource<AudioResource>(fallback);
+
+        return resource;
     }
 }

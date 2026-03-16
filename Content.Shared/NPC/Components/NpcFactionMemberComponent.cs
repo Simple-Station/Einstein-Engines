@@ -1,3 +1,11 @@
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.NPC.Prototypes;
 using Content.Shared.NPC.Systems;
 using Robust.Shared.GameStates;
@@ -26,11 +34,15 @@ public sealed partial class NpcFactionMemberComponent : Component
     [ViewVariables]
     public readonly HashSet<ProtoId<NpcFactionPrototype>> HostileFactions = new();
 
-    // Nyano - Summary - Begin modified code block: support for specific entities to be friendly.
     /// <summary>
-    /// Permanently friendly specific entities. Our summoner, etc.
-    /// Would like to separate. Could I do that by extending this method, maybe?
+    /// Used to add friendly factions in prototypes.
     /// </summary>
-    public HashSet<EntityUid> ExceptionalFriendlies = new();
-    // Nyano - End modified code block.
+    [DataField, ViewVariables]
+    public HashSet<ProtoId<NpcFactionPrototype>>? AddFriendlyFactions;
+
+    /// <summary>
+    /// Used to add hostile factions in prototypes.
+    /// </summary>
+    [DataField, ViewVariables]
+    public HashSet<ProtoId<NpcFactionPrototype>>? AddHostileFactions;
 }

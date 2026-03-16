@@ -1,0 +1,36 @@
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 CMDR-Piboy314 <92357316+CMDR-Piboy314@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <92357316+Piras314@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: Banana soap
+  id: SoapHomemadeBanana
+  parent: Soap
+  description: A homemade bar of soap. Smells of banana.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Specific/Janitorial/soap.rsi
+    layers:
+    - state: bananasoap-4
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    fillBaseName: bananasoap-
+  - type: Slippery
+    slipData:
+      knockdownTime: 3.5
+      launchForwardsMultiplier: 2
+  - type: StepTrigger
+  - type: Item
+    heldPrefix: banana
+  - type: FlavorProfile
+    flavors:
+      - clean
+      - banana
+  - type: Residue
+    residueAdjective: residue-slippery
+    residueColor: residue-yellow

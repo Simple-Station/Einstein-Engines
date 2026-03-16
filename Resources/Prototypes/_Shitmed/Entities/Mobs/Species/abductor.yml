@@ -1,3 +1,18 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Poips <Hanakohashbrown@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rinary <72972221+Rinary1@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 Theodore Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 kamkoi <poiiiple1@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   save: false
   name: Urist McAlien
@@ -5,16 +20,11 @@
   - MobBloodstream
   - MobFlammable
   - BaseMobSpecies
+  - BaseMobDisgust # Goobstation
   id: MobAbductor
   components:
   - type: Absorbable # BLOOD FOR THE BLOOD GOD
-  - type: Psionic
-    removable: false
-    roller: false
-  - type: InnatePsionicPowers
-    powersToAdd:
-    - TelepathyPower
-    # no glorp accent for you.
+  # - type: GlorpAccent # GoobStation - Glorpshit # Removed for EE - Languages
   - type: HumanoidAppearance
     species: Abductor
   - type: Icon
@@ -34,35 +44,36 @@
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
-  - type: DamageVisuals
-    damageOverlayGroups:
-      Brute:
-        sprite: Mobs/Effects/brute_damage.rsi
-        color: "#878787"
-      Burn:
-        sprite: Mobs/Effects/burn_damage.rsi
-  - type: PassiveDamage
-    allowedStates:
-    - Alive
-    damageCap: 40
-    damage:
-      types:
-        Heat: -0.14
-      groups:
-        Brute: -0.14
+  - type: CollectiveMind
+    defaultChannel: Abductormind
+    channels:
+    - Abductormind
+  - type: LanguageKnowledge # Einstein Engines - Language
+    speaks:
+    - Xeeplian
+    understands:
+    - TauCetiBasic # Can understand, but cannot speak it.
+    - Xeeplian
+#  - type: DamageVisuals
+#    damageOverlayGroups:
+#      Brute:
+#        sprite: _Shitmed/Mobs/Effects/brute_damage.rsi
+#        color: "#878787"
+#      Burn:
+#        sprite: Mobs/Effects/burn_damage.rsi
+#  - type: PassiveDamage
+#    allowedStates:
+#    - Alive
+#    damageCap: 40
+#    damage:
+#      types:
+#        Heat: -0.14
+#      groups:
+#        Brute: -0.14
   - type: Targeting
   - type: SurgeryTarget
   - type: Bloodstream
     bloodReagent: AlienBlood
-  #EE changes
-  - type: LanguageSpeaker
-    currentLanguage: Xeeplian
-  - type: LanguageKnowledge
-    speaks:
-    - Xeeplian
-    understands:
-    - TauCetiBasic
-    - Xeeplian
 
 - type: entity
   parent: BaseSpeciesDummy

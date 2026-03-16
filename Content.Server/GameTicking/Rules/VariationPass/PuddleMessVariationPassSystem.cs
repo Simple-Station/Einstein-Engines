@@ -1,4 +1,9 @@
-﻿using Content.Server.Fluids.EntitySystems;
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
+using Content.Server.Fluids.EntitySystems;
 using Content.Server.GameTicking.Rules.VariationPass.Components;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Random.Helpers;
@@ -15,7 +20,7 @@ public sealed class PuddleMessVariationPassSystem : VariationPassSystem<PuddleMe
 
     protected override void ApplyVariation(Entity<PuddleMessVariationPassComponent> ent, ref StationVariationPassEvent args)
     {
-        var totalTiles = Stations.GetTileCount(args.Station);
+        var totalTiles = Stations.GetTileCount(args.Station.AsNullable());
 
         if (!_proto.TryIndex(ent.Comp.RandomPuddleSolutionFill, out var proto))
             return;

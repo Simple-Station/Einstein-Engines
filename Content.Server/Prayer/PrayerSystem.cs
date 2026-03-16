@@ -1,6 +1,31 @@
+// SPDX-FileCopyrightText: 2022 Just-a-Unity-Dev <just-a-unity-dev@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 eclips_e <67359748+Just-a-Unity-Dev@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 lzk228 <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Dae <60460608+ZeroDayDaemon@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Júlio César <j.cesarueti@yahoo.com>
+// SPDX-FileCopyrightText: 2024 Júlio César Ueti <52474532+Mirino97@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 Voomra <dimon550@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Goobstation.Common.Administration.Notifications; // Goobstation - Admin Notifications
+using Content.Goobstation.Common.Religion;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
-using Content.Server.Bible.Components;
 using Content.Server.Chat.Managers;
 using Content.Server.Popups;
 using Content.Shared.Database;
@@ -8,8 +33,9 @@ using Content.Shared.Popups;
 using Content.Shared.Chat;
 using Content.Shared.Prayer;
 using Content.Shared.Verbs;
-using Robust.Server.GameObjects;
 using Robust.Shared.Player;
+using Content.Server.Administration.Managers; // Goobstation - Admin Notifications
+using Robust.Server.Audio; // Goobstation - Admin Notifications
 
 namespace Content.Server.Prayer;
 /// <summary>
@@ -24,6 +50,8 @@ public sealed class PrayerSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly QuickDialogSystem _quickDialog = default!;
+    [Dependency] private readonly AudioSystem _audio = default!; // Goobstation - Admin Notifications
+    [Dependency] private readonly IAdminManager _admin = default!; // Goobstation - Admin Notifications
 
     public override void Initialize()
     {
@@ -35,7 +63,7 @@ public sealed class PrayerSystem : EntitySystem
     private void AddPrayVerb(EntityUid uid, PrayableComponent comp, GetVerbsEvent<ActivationVerb> args)
     {
         // if it doesn't have an actor and we can't reach it then don't add the verb
-        if (!EntityManager.TryGetComponent(args.User, out ActorComponent? actor))
+        if (!TryComp(args.User, out ActorComponent? actor))
             return;
 
         // this is to prevent ghosts from using it
@@ -48,7 +76,7 @@ public sealed class PrayerSystem : EntitySystem
             Icon = comp.VerbImage,
             Act = () =>
             {
-                if (comp.BibleUserOnly && !EntityManager.TryGetComponent<BibleUserComponent>(args.User, out var bibleUser))
+                if (comp.BibleUserOnly && !TryComp<BibleUserComponent>(args.User, out var bibleUser))
                 {
                     _popupSystem.PopupEntity(Loc.GetString("prayer-popup-notify-pray-locked"), uid, actor.PlayerSession, PopupType.Large);
                     return;
@@ -56,7 +84,9 @@ public sealed class PrayerSystem : EntitySystem
 
                 _quickDialog.OpenDialog(actor.PlayerSession, Loc.GetString(comp.Verb), Loc.GetString("prayer-popup-notify-pray-ui-message"), (string message) =>
                 {
-                    Pray(actor.PlayerSession, comp, message);
+                    // Make sure the player's entity and the Prayable entity+component still exist
+                    if (actor?.PlayerSession != null && HasComp<PrayableComponent>(uid))
+                        Pray(actor.PlayerSession, comp, message);
                 });
             },
             Impact = LogImpact.Low,
@@ -104,5 +134,10 @@ public sealed class PrayerSystem : EntitySystem
 
         _chatManager.SendAdminAnnouncement($"{Loc.GetString(comp.NotificationPrefix)} <{sender.Name}>: {message}");
         _adminLogger.Add(LogType.AdminMessage, LogImpact.Low, $"{ToPrettyString(sender.AttachedEntity.Value):player} sent prayer ({Loc.GetString(comp.NotificationPrefix)}): {message}");
+
+        // Goobstation - Admin Notifications
+        if (comp.NotificationSound != null) // estas goida
+            foreach (var admin in _admin.ActiveAdmins)
+                RaiseNetworkEvent(new AdminNotificationEvent(comp.NotificationSound), admin);
     }
 }

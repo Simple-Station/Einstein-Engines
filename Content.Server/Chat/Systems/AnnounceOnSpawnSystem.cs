@@ -1,11 +1,16 @@
-using Content.Server.Announcements.Systems;
-using Robust.Shared.Player;
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 chavonadelal <156101927+chavonadelal@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 namespace Content.Server.Chat.Systems;
 
 public sealed class AnnounceOnSpawnSystem : EntitySystem
 {
-    [Dependency] private readonly AnnouncerSystem _announcer = default!;
+    [Dependency] private readonly ChatSystem _chat = default!;
 
     public override void Initialize()
     {
@@ -16,8 +21,8 @@ public sealed class AnnounceOnSpawnSystem : EntitySystem
 
     private void OnInit(EntityUid uid, AnnounceOnSpawnComponent comp, MapInitEvent args)
     {
+        var message = Loc.GetString(comp.Message);
         var sender = comp.Sender != null ? Loc.GetString(comp.Sender) : Loc.GetString("chat-manager-sender-announcement");
-        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("SpawnAnnounceCaptain"),
-            comp.Message, sender, colorOverride: comp.Color);
+        _chat.DispatchGlobalAnnouncement(message, sender, playSound: true, comp.Sound, comp.Color);
     }
 }

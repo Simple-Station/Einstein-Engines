@@ -1,15 +1,41 @@
+// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2024 Krunklehorn <42424291+Krunklehorn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Body.Components;
 using Content.Server.Ghost.Components;
-using Content.Shared.Body.Components;
 using Content.Shared.Body.Events;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Pointing;
 
 // Shitmed Change
 using Content.Shared._Shitmed.Body.Organ;
 using Content.Shared.Body.Systems;
-using Content.Shared.Silicons.Borgs.Components;
+using Content.Goobstation.Common.Changeling;
+using Content.Shared.Body.Components;
+using Content.Goobstation.Shared.Changeling.Components;
+using Content.Goobstation.Common.Body;
+
 
 namespace Content.Server.Body.Systems
 {
@@ -29,8 +55,18 @@ namespace Content.Server.Body.Systems
 
         private void HandleRemoval(EntityUid uid, BrainComponent brain, ref OrganRemovedFromBodyEvent args)
         {
-            if (TerminatingOrDeleted(uid) || TerminatingOrDeleted(args.OldBody))
+            if (TerminatingOrDeleted(uid)
+                || TerminatingOrDeleted(args.OldBody))
                 return;
+
+            // goob start
+            var remEv = new BeforeBrainRemovedEvent();
+            RaiseLocalEvent(args.OldBody, ref remEv);
+
+            if (remEv.Blocked)
+                return;
+
+            // goob end
 
             brain.Active = false;
             if (!CheckOtherBrains(args.OldBody))
@@ -43,8 +79,18 @@ namespace Content.Server.Body.Systems
 
         private void HandleAddition(EntityUid uid, BrainComponent brain, ref OrganAddedToBodyEvent args)
         {
-            if (TerminatingOrDeleted(uid) || TerminatingOrDeleted(args.Body))
+            if (TerminatingOrDeleted(uid)
+                || TerminatingOrDeleted(args.Body))
                 return;
+
+            // goob start
+            var addEv = new BeforeBrainAddedEvent();
+            RaiseLocalEvent(args.Body, ref addEv);
+
+            if (addEv.Blocked)
+                return;
+
+            // goob end
 
             if (!CheckOtherBrains(args.Body))
             {
@@ -59,18 +105,14 @@ namespace Content.Server.Body.Systems
             if (TerminatingOrDeleted(newEntity) || TerminatingOrDeleted(oldEntity))
                 return;
 
-            EnsureComp<MindContainerComponent>(newEntity);
-            EnsureComp<MindContainerComponent>(oldEntity);
+        EnsureComp<MindContainerComponent>(newEntity);
+        EnsureComp<MindContainerComponent>(oldEntity);
 
-            var ghostOnMove = EnsureComp<GhostOnMoveComponent>(newEntity);
-            if (HasComp<BodyComponent>(newEntity))
-                ghostOnMove.MustBeDead = true;
+        var ghostOnMove = EnsureComp<GhostOnMoveComponent>(newEntity);
+        ghostOnMove.MustBeDead = HasComp<MobStateComponent>(newEntity); // Don't ghost living players out of their bodies.
 
-            if (HasComp<BorgBrainComponent>(newEntity))
-                EntityManager.RemoveComponent<GhostOnMoveComponent>(newEntity);
-
-            if (!_mindSystem.TryGetMind(oldEntity, out var mindId, out var mind))
-                return;
+        if (!_mindSystem.TryGetMind(oldEntity, out var mindId, out var mind))
+            return;
 
             _mindSystem.TransferTo(mindId, newEntity, mind: mind);
             if (brain != null)

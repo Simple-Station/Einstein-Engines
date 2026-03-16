@@ -1,3 +1,3 @@
-experimental-law-provider-start = Запуск юнит-тестов для наборов законов станционного ИИ, использующих экспериментальную плату законов. Очки исследования будут получены через: [bold]{ $timeLeft }[/bold] секунд.
-experimental-law-provider-success = Успешное тестирование набора экспериментальных законов. Получено [bold]{ $amount }[/bold] очков исследования.
-experimental-law-provider-fail = Не удалось провести модульное тестирование нового экспериментального набора законов, так как они были перезаписаны новой платой набора законов.
+experimental-law-provider-start = Starting unit tests for station AI lawsets using an experimental law board. Research points will be acquired in: [bold]{ $timeLeft }[/bold] seconds.
+experimental-law-provider-success = Successfully tested a set of experimental laws. Acquired [bold]{ $amount }[/bold] research points.
+experimental-law-provider-fail = Failed to unit test new experimental lawset, because they were overwritten by a new lawset board.

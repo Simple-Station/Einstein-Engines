@@ -4,8 +4,8 @@
         "x": 32,
         "y": 32
     },
-    "copyright": "Taken from tgstation, brigmedic locker is a resprited CMO locker by PuroSlavKing (Github), n2 sprites based on fire and emergency sprites, resprite by TheGypsyBaron",
-    "license": "CC-BY-NC-SA 3.0",
+    "copyright": "Taken from tgstation, brigmedic locker is a resprited CMO locker by PuroSlavKing (Github), n2 sprites based on fire and emergency sprites, genpop lockers by EmoGarbage404 (github), sci bio locker is a resprited bio viro locker by Alpha-Two (github), Evac lockers by EmoGarbage404 (GitHub)",
+    "license": "CC-BY-SA-3.0",
     "states": [
         {
             "name": "abductor"
@@ -27,15 +27,6 @@
         },
         {
             "name": "alien_open"
-        },
-        {
-            "name": "bartender"
-        },
-        {
-            "name": "bartender_open"
-        },
-        {
-            "name": "bartender_door"
         },
         {
             "name": "brigmedic_door"
@@ -125,15 +116,6 @@
             "name": "bomb_open"
         },
         {
-            "name": "jan"
-        },
-        {
-            "name": "jan_door"
-        },
-        {
-            "name": "jan_open"
-        },
-        {
             "name": "janitor_bomb"
         },
         {
@@ -189,24 +171,6 @@
         },
         {
             "name": "chemical_door"
-        },
-        {
-            "name": "cj"
-        },
-        {
-            "name": "cj_door"
-        },
-        {
-            "name": "cj_open"
-        },
-        {
-            "name": "clerk"
-        },
-        {
-            "name": "clerk_door"
-        },
-        {
-            "name": "clerk_open"
         },
         {
             "name": "cmo"
@@ -340,6 +304,9 @@
         },
         {
             "name": "eng_weld_door"
+        },
+        {
+            "name": "eng_evac_door"
         },
         {
             "name": "fire"
@@ -525,6 +492,9 @@
             "name": "red_door"
         },
         {
+            "name": "salvage_door"
+        },
+        {
             "name": "science"
         },
         {
@@ -585,15 +555,6 @@
         },
         {
             "name": "syndicate_open"
-        },
-        {
-            "name": "syndicate1"
-        },
-        {
-            "name": "syndicate1_door"
-        },
-        {
-            "name": "syndicate1_open"
         },
         {
             "name": "tac"

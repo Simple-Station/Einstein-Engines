@@ -1,77 +1,38 @@
+# SPDX-FileCopyrightText: 2022 CrudeWax <75271456+CrudeWax@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 I.K <45953835+notquitehadouken@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 EmoGarbage404 <retron404@gmail.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: [BaseItem, BaseSyndicateContraband]
   id: EmagUnlimited
   suffix: Unlimited
   name: cryptographic sequencer
-  description: A red circuit board with a charge indicator.
+  description: The all-in-one hacking solution. Friend of any syndicate. The iconic EMAG.
   components:
   - type: Emag
-  - type: ExtendDescription
-    descriptionList:
-    - description: "emag-extenddescription-command"
-      fontSize: 12
-      color: "#1155ff"
-      requireDetailRange: true
-      requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-        - Command
-    - description: "emag-extenddescription-engineering"
-      fontSize: 12
-      color: "#ffaf00"
-      requireDetailRange: true
-      requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-        - Engineering
-    - description: "emag-extenddescription-security"
-      fontSize: 12
-      color: "#ff0000"
-      requireDetailRange: true
-      requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-        - Security
-    - description: "emag-extenddescription-epistemics"
-      fontSize: 12
-      color: "#aa00aa"
-      requireDetailRange: true
-      requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-        - Epistemics
-    - description: "emag-extenddescription-syndicate"
-      fontSize: 12
-      color: "#880000"
-      requireDetailRange: false
-      requirements:
-      - !type:CharacterAntagonistRequirement
-        antagonists:
-        - Traitor
-        - TraitorSleeper
-        - SpaceNinja
-        - Nukeops
-        - NukeopsMedic
-        - NukeopsCommander
-    - description: "mindshield-extenddescription-emag"
-      fontSize: 12
-      color: "#11aaff"
-      requireDetailRange: true
-      requirements:
-      - !type:CharacterMindshieldRequirement
   - type: Sprite
     sprite: Objects/Tools/emag.rsi
     state: icon
   - type: Item
     sprite: Objects/Tools/emag.rsi
     storedRotation: -90
-  - type: DamageOtherOnHit # An emag has sharp edges
-    damage:
-      types:
-        Slash: 5
-  - type: EmbeddableProjectile
-    sound: /Audio/Weapons/star_hit.ogg
-  - type: EmbedPassiveDamage
+  - type: Tag # Goobstation
+    tags:
+    - Hacking
 
 - type: entity
   parent: EmagUnlimited
@@ -80,3 +41,5 @@
   components:
   - type: LimitedCharges
   - type: AutoRecharge
+  - type: StaticPrice
+    price: 2500

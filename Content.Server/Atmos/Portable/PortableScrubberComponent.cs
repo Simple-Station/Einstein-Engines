@@ -1,7 +1,17 @@
+// SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
+// SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Atmos;
-using Content.Shared.Construction.Prototypes;
 using Content.Shared.Guidebook;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Server.Atmos.Portable
 {
@@ -32,17 +42,9 @@ namespace Content.Server.Atmos.Portable
             Gas.Ammonia,
             Gas.NitrousOxide,
             Gas.Frezon,
-            Gas.BZ,
-            Gas.Pluoxium,
-            Gas.Hydrogen,
-            Gas.Nitrium,
-            Gas.Healium,
-            Gas.HyperNoblium,
-            Gas.ProtoNitrate,
-            Gas.Zauker,
-            Gas.Halon,
-            Gas.Helium,
-            Gas.AntiNoblium
+            Gas.BZ, // Assmos - /tg/ gases
+            Gas.Healium, // Assmos - /tg/ gases
+            Gas.Nitrium, // Assmos - /tg/ gases
         };
 
         [ViewVariables(VVAccess.ReadWrite)]
@@ -51,7 +53,7 @@ namespace Content.Server.Atmos.Portable
         /// <summary>
         /// Maximum internal pressure before it refuses to take more.
         /// </summary>
-        [DataField]
+        [DataField, ViewVariables(VVAccess.ReadWrite)]
         public float MaxPressure = 2500;
 
         /// <summary>
@@ -66,43 +68,5 @@ namespace Content.Server.Atmos.Portable
         public float Volume => Air.Volume;
 
         #endregion
-
-        /// <summary>
-        ///     The base amount of maximum internal pressure
-        /// </summary>
-        [DataField]
-        public float BaseMaxPressure = 2500;
-
-        /// <summary>
-        ///     The machine part that modifies the maximum internal pressure
-        /// </summary>
-        [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
-        public string MachinePartMaxPressure = "MatterBin";
-
-        /// <summary>
-        ///     How much the <see cref="MachinePartMaxPressure"/> will affect the pressure.
-        ///     The value will be multiplied by this amount for each increasing part tier.
-        /// </summary>
-        [DataField]
-        public float PartRatingMaxPressureModifier = 1.5f;
-
-        /// <summary>
-        ///     The base speed at which gas is scrubbed from the environment.
-        /// </summary>
-        [DataField]
-        public float BaseTransferRate = 800;
-
-        /// <summary>
-        ///     The machine part which modifies the speed of <see cref="TransferRate"/>
-        /// </summary>
-        [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
-        public string MachinePartTransferRate = "Manipulator";
-
-        /// <summary>
-        /// How much the <see cref="MachinePartTransferRate"/> will modify the rate.
-        /// The value will be multiplied by this amount for each increasing part tier.
-        /// </summary>
-        [DataField]
-        public float PartRatingTransferRateModifier = 1.4f;
     }
 }

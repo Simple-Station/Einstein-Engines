@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Джексон Миссиссиппи <tripwiregamer@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 ## Static
 
 - type: latheRecipePack
@@ -5,6 +10,7 @@
   recipes:
   - ClothingUniformJumpsuitColorGrey
   - ClothingUniformJumpskirtColorGrey
+  - ClothingUniformJumpsuitLoungewear
 
 - type: latheRecipePack
   id: ClothingCargo
@@ -19,10 +25,7 @@
   - ClothingUniformJumpsuitQMTurtleneck
   - ClothingUniformJumpskirtQMTurtleneck
   - ClothingUniformJumpsuitQMFormal
-  # EE EDIT START
-  - ClothingUniformCourier
-  - ClothingUniformSkirtCourier
-  # EE EDIT END
+  - ClothingUniformJumpsuitShaftMiner # Lavaland Change
 
 - type: latheRecipePack
   id: ClothingCommand
@@ -38,6 +41,11 @@
   - ClothingHeadHatHopcap
   - ClothingUniformJumpsuitHoP
   - ClothingUniformJumpskirtHoP
+  # Generic
+  - ClothingHeadHatBeretCommand
+  - ClothingHeadHatCommandSoft
+  - ClothingUniformJumpskirtCommandGeneric
+  - ClothingUniformJumpsuitCommandGeneric
 
 - type: latheRecipePack
   id: ClothingEngineering
@@ -81,10 +89,6 @@
   - ClothingUniformJumpskirtScientist
   - ClothingUniformJumpsuitSeniorResearcher
   - ClothingUniformJumpskirtSeniorResearcher
-  # EE EDIT START
-  - ClothingUniformJumpsuitMantis
-  - ClothingUniformSkirtMantis
-  # EE EDIT END
 
 - type: latheRecipePack
   id: ClothingSecurity
@@ -117,21 +121,6 @@
   - ClothingHeadHatWarden
   - ClothingUniformJumpsuitWarden
   - ClothingUniformJumpskirtWarden
-  # EE EDIT START
-  - ClothingUniformJumpsuitHoSBlue
-  - ClothingUniformJumpskirtHoSBlue
-  - ClothingUniformJumpsuitHoSGrey
-  - ClothingUniformJumpskirtHoSGrey
-  - ClothingUniformJumpsuitSecBlue
-  - ClothingUniformJumpskirtSecBlue
-  - ClothingUniformJumpsuitSecGrey
-  - ClothingUniformJumpskirtSecGrey
-  - ClothingUniformJumpsuitWardenBlue
-  - ClothingUniformJumpskirtWardenBlue
-  - ClothingUniformJumpsuitWardenGrey
-  - ClothingUniformJumpskirtWardenGrey
-  - ClothingOuterStasecSweater
-  # EE EDIT END
 
 - type: latheRecipePack
   id: ClothingService
@@ -153,6 +142,8 @@
   - ClothingUniformJumpsuitMime
   - ClothingUniformJumpskirtMime
   - ClothingUniformJumpsuitMusician
+  - ClothingUniformJumpsuitReporterGoob # goob change
+  - ClothingUniformJumpskirtReporterGoob # goob change
 
 - type: latheRecipePack
   id: WinterCoats
@@ -166,7 +157,7 @@
   - ClothingOuterWinterQM
   - ClothingOuterWinterRD
   - ClothingOuterWinterMusician
-  # - ClothingOuterWinterClown
+  - ClothingOuterWinterClown
   - ClothingOuterWinterMime
   - ClothingOuterWinterCoat
   - ClothingOuterWinterJani

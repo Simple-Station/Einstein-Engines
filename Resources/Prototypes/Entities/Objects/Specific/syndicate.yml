@@ -1,9 +1,44 @@
+# SPDX-FileCopyrightText: 2021 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 ZeroDayDaemon <60460608+ZeroDayDaemon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 corentt <36075110+corentt@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 Dvir <39403717+dvir001@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 CMDR-Piboy314 <92357316+CMDR-Piboy314@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 EmoGarbage404 <retron404@gmail.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <92357316+Piras314@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Plykiya <plykiya@protonmail.com>
+# SPDX-FileCopyrightText: 2024 Pspritechologist <naaronn@gmail.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
+# SPDX-FileCopyrightText: 2025 LuciferMkshelter <stepanteliatnik2022@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 loltart <lo1tartyt@gmail.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+# SPDX-FileCopyrightText: 2025 terminatorbo <kovalevb059@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
   name: telecrystal
   parent: [BaseItem, BaseSyndicateContraband]
   id: Telecrystal
-  suffix: 20 TC
+  # Goobstation - Telecrystal rework
+  suffix: 100 TC
   description: It seems to be pulsing with suspiciously enticing energies.
   components:
   - type: Sprite
@@ -13,15 +48,18 @@
     sprite: Objects/Specific/Syndicate/telecrystal.rsi
     size: Tiny
   - type: Stack
-    count: 20
+    count: 100
     stackType: Telecrystal
   - type: StaticPrice
     price: 0
   - type: StackPrice
-    price: 200
+    price: 1000
   - type: Currency
     price:
       Telecrystal: 1
+  - type: ScannableForPoints # Goobstation - NTR rework
+    points: 0 # there was a bug that let ntr get infinite points
+  # Goobstation
   - type: Tag
     tags:
     - Telecrystal
@@ -75,9 +113,33 @@
     balance:
       Telecrystal: 0
 
+# goobstation - duke nukies
 - type: entity
   parent: BaseUplinkRadio
-  id: BaseUplinkRadio20TC
+  id: BaseUplinkRadio50TC
+  suffix: 50 TC
+  components:
+  - type: Store
+    balance:
+      Telecrystal: 50
+
+- type: entity
+  parent: BaseUplinkRadio
+  id: BaseUplinkRadio50TCNukeOps
+  suffix: 50 TC, NukeOps reinforcement
+  components:
+  - type: Store
+    balance:
+      Telecrystal: 50
+  - type: Tag
+    tags:
+    - NukeOpsUplink
+    - NukeOpsReinforcementUplink
+
+- type: entity
+  parent: BaseUplinkRadio
+  # Goobstation - Telecrystal rework
+  id: BaseUplinkRadio100TC
   suffix: 100 TC
   components:
   - type: Store
@@ -86,37 +148,37 @@
 
 - type: entity
   parent: BaseUplinkRadio
-  id: BaseUplinkRadio25TC
+  # Goobstation - Telecrystal rework
+  id: BaseUplinkRadio125TC
   suffix: 125 TC
   components:
   - type: Store
     balance:
       Telecrystal: 125
 
-#this uplink MUST be used for nukeops, as it has the tag for filtering the listing.
 - type: entity
   parent: BaseUplinkRadio
-  id: BaseUplinkRadio40TC
-  suffix: 250 TC, NukeOps
+  # Goobstation - Telecrystal rework
+  id: BaseUplinkRadio200TC
+  suffix: 200 TC
   components:
   - type: Store
     balance:
-      Telecrystal: 250 # 5x TC, +cost of a tacsuit they no longer spawn with.
-  - type: Tag
-    tags:
-    - NukeOpsUplink
+      Telecrystal: 200
 
 - type: entity
   parent: BaseUplinkRadio
-  id: BaseUplinkRadio60TC
-  suffix: 350 TC, LoneOps
+  # Goobstation - Telecrystal rework
+  id: BaseUplinkRadio350TC
+  suffix: 350 TC, Commander #(LoneOps suffix Removed) Commander is goob only
   components:
   - type: Store
     balance:
-      Telecrystal: 350 # 5x TC, +cost of a tacsuit they no longer spawn with.
+      Telecrystal: 350
   - type: Tag
     tags:
     - NukeOpsUplink
+    - NukeOpsCommanderUplink
 
 - type: entity
   parent: BaseUplinkRadio
@@ -125,4 +187,34 @@
   components:
   - type: Store
     balance:
-      Telecrystal: 99999
+      # Goobstation - Telecrystal rework
+      Telecrystal: 999999
+
+- type: entity
+  parent: [BaseItem, StorePresetContractor, BaseSyndicateContraband]
+  id: BaseUplinkContractor
+  name: contractor uplink
+  description: A handheld terminal providing access to the guild store and bounty board.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Devices/contractoruplink.rsi
+    layers:
+    - state: icon
+      scale: .75,.75
+    - state: assign
+      scale: .75,.75
+  - type: Item
+    sprite: _Goobstation/Objects/Devices/contractoruplink.rsi
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Store
+    balance:
+      Telecrystal: 0
+  - type: Tag
+    tags:
+    - ContractorUplink

@@ -1,8 +1,17 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: latheRecipe
   abstract: true
+  parent: BaseRoboticsRecipe
   id: BaseIPCLimbRecipe
-  category: Robotics
-  completetime: 2
   materials:
     Steel: 250
     Plastic: 100
@@ -10,141 +19,97 @@
 
 - type: latheRecipe
   abstract: true
+  parent: BaseRoboticsRecipe
   id: BaseIPCOrganRecipe
-  category: Robotics
-  completetime: 2
   materials:
     Steel: 250
     Plasma: 100
     Plastic: 100
 
 - type: latheRecipe
-  id: TorsoIPC
-  result: TorsoIPC
-  category: Robotics
+  parent: BaseRoboticsRecipe
+  id: ChestIPC
+  result: ChestIPC
   completetime: 3
   materials:
-    Steel: 3000
-    Gold: 500
-    Plastic: 500
-    Plasma: 500
+    Steel: 1500
+    Gold: 250
+    Plastic: 250
+    Plasma: 250
+
+- type: latheRecipe
+  parent: BaseRoboticsRecipe
+  id: GroinIPC
+  result: GroinIPC
+  completetime: 3
+  materials:
+    Steel: 1500
+    Gold: 250
+    Plastic: 250
+    Plasma: 250
 
 # Generic
 
 - type: latheRecipe
+  parent: BaseIPCLimbRecipe
   id: LeftArmIPC
   result: LeftArmIPC
-  category: Robotics
-  completetime: 2
-  materials:
-    Steel: 250
-    Plastic: 100
-    Glass: 250
 
 - type: latheRecipe
+  parent: BaseIPCLimbRecipe
   id: RightArmIPC
   result: RightArmIPC
-  category: Robotics
-  completetime: 2
-  materials:
-    Steel: 250
-    Plastic: 100
-    Glass: 250
 
 - type: latheRecipe
+  parent: BaseIPCLimbRecipe
   id: LeftHandIPC
   result: LeftHandIPC
-  category: Robotics
-  completetime: 2
-  materials:
-    Steel: 250
-    Plastic: 100
-    Glass: 250
 
 - type: latheRecipe
+  parent: BaseIPCLimbRecipe
   id: RightHandIPC
   result: RightHandIPC
-  category: Robotics
-  completetime: 2
-  materials:
-    Steel: 250
-    Plastic: 100
-    Glass: 250
 
 - type: latheRecipe
+  parent: BaseBorgLimbRecipe
   id: LeftLegIPC
   result: LeftLegIPC
-  category: Robotics
-  completetime: 2
-  materials:
-    Steel: 250
-    Plastic: 100
-    Glass: 250
 
 - type: latheRecipe
+  parent: BaseBorgLimbRecipe
   id: RightLegIPC
   result: RightLegIPC
-  category: Robotics
-  completetime: 2
-  materials:
-    Steel: 250
-    Plastic: 100
-    Glass: 250
 
 - type: latheRecipe
+  parent: BaseIPCLimbRecipe
   id: LeftFootIPC
   result: LeftFootIPC
-  category: Robotics
-  completetime: 2
-  materials:
-    Steel: 250
-    Plastic: 100
-    Glass: 250
 
 - type: latheRecipe
+  parent: BaseIPCLimbRecipe
   id: RightFootIPC
   result: RightFootIPC
-  category: Robotics
-  completetime: 2
-  materials:
-    Steel: 250
-    Plastic: 100
-    Glass: 250
 
 - type: latheRecipe
+  parent: BaseIPCLimbRecipe
   id: HeadIPC
   result: HeadIPC
-  category: Robotics
-  completetime: 2
-  materials:
-    Steel: 250
-    Plastic: 100
-    Glass: 250
 
 - type: latheRecipe
+  parent: BaseIPCOrganRecipe
   id: OrganIPCEyes
   result: OrganIPCEyes
-  category: Robotics
-  completetime: 2
-  materials:
-    Steel: 250
-    Plastic: 100
-    Glass: 250
 
 - type: latheRecipe
+  parent: BaseIPCOrganRecipe
   id: OrganIPCPump
   result: OrganIPCPump
-  category: Robotics
-  completetime: 2
-  materials:
-    Steel: 250
-    Plastic: 100
-    Glass: 250
 
 - type: latheRecipe
   id: BorgModuleSurgery
   result: BorgModuleSurgery
-  category: Robotics
+  categories:
+  - Robotics
   completetime: 3
   materials:
     Steel: 250
@@ -154,7 +119,8 @@
 - type: latheRecipe
   id: BorgModuleAdvancedSurgery
   result: BorgModuleAdvancedSurgery
-  category: Robotics
+  categories:
+  - Robotics
   completetime: 3
   materials:
     Steel: 500
@@ -163,9 +129,10 @@
     Gold: 50
 
 - type: latheRecipe
-  id: JawsOfLifeLeftArm
-  result: JawsOfLifeLeftArm
-  category: Robotics
+  id: RightArmCybernetic
+  result: RightArmCybernetic
+  categories:
+  - Robotics
   completetime: 5
   materials:
     Steel: 1000
@@ -173,35 +140,155 @@
     Plastic: 500
     Gold: 300
     Silver: 300
+
+- type: latheRecipe
+  id: LeftArmCybernetic
+  result: LeftArmCybernetic
+  categories:
+  - Robotics
+  completetime: 5
+  materials:
+    Steel: 1000
+    Glass: 500
+    Plastic: 500
+    Gold: 300
+    Silver: 300
+
+- type: latheRecipe
+  id: RightLegCybernetic
+  result: RightLegCybernetic
+  categories:
+  - Robotics
+  completetime: 5
+  materials:
+    Steel: 1000
+    Glass: 500
+    Plastic: 500
+    Gold: 300
+    Silver: 300
+
+- type: latheRecipe
+  id: LeftLegCybernetic
+  result: LeftLegCybernetic
+  categories:
+  - Robotics
+  completetime: 5
+  materials:
+    Steel: 1000
+    Glass: 500
+    Plastic: 500
+    Gold: 300
+    Silver: 300
+
+- type: latheRecipe
+  id: RightHandCybernetic
+  result: RightHandCybernetic
+  categories:
+  - Robotics
+  completetime: 3
+  materials:
+    Steel: 500
+    Glass: 200
+    Plastic: 300
+    Gold: 100
+    Silver: 100
+
+- type: latheRecipe
+  id: LeftHandCybernetic
+  result: LeftHandCybernetic
+  categories:
+  - Robotics
+  completetime: 3
+  materials:
+    Steel: 500
+    Glass: 200
+    Plastic: 300
+    Gold: 100
+    Silver: 100
+
+- type: latheRecipe
+  id: RightFootCybernetic
+  result: RightFootCybernetic
+  categories:
+  - Robotics
+  completetime: 3
+  materials:
+    Steel: 500
+    Glass: 200
+    Plastic: 300
+    Gold: 100
+    Silver: 100
+
+- type: latheRecipe
+  id: LeftFootCybernetic
+  result: LeftFootCybernetic
+  categories:
+  - Robotics
+  completetime: 3
+  materials:
+    Steel: 500
+    Glass: 200
+    Plastic: 300
+    Gold: 100
+    Silver: 100
+
+- type: latheRecipe
+  id: JawsOfLifeLeftArm
+  result: JawsOfLifeLeftArm
+  categories:
+  - Robotics
+  completetime: 10
+  materials:
+    Steel: 2000
+    Glass: 1000
+    Plastic: 1000
+    Gold: 1000
+    Silver: 600
 
 - type: latheRecipe
   id: JawsOfLifeRightArm
   result: JawsOfLifeRightArm
-  category: Robotics
-  completetime: 5
+  categories:
+  - Robotics
+  completetime: 10
   materials:
-    Steel: 1000
-    Glass: 500
-    Plastic: 500
-    Gold: 300
-    Silver: 300
+    Steel: 2000
+    Glass: 1000
+    Plastic: 1000
+    Gold: 1000
+    Silver: 600
 
 - type: latheRecipe
   id: SpeedLeftLeg
   result: SpeedLeftLeg
-  category: Robotics
-  completetime: 5
+  categories:
+  - Robotics
+  completetime: 10
   materials:
-    Steel: 1000
-    Glass: 500
-    Plastic: 500
-    Gold: 300
-    Silver: 300
+    Steel: 2000
+    Glass: 1000
+    Plastic: 1000
+    Gold: 1000
+    Silver: 600
 
 - type: latheRecipe
   id: SpeedRightLeg
   result: SpeedRightLeg
-  category: Robotics
+  categories:
+  - Robotics
+  completetime: 10
+  materials:
+    Steel: 2000
+    Glass: 1000
+    Plastic: 1000
+    Gold: 1000
+    Silver: 600
+
+- type: latheRecipe
+  id: BasicCyberneticEyes
+  result: BasicCyberneticEyes
+  categories:
+  - Robotics
   completetime: 5
   materials:
     Steel: 1000
@@ -211,13 +298,98 @@
     Silver: 300
 
 - type: latheRecipe
-  id: BasicCyberneticEyes
-  result: BasicCyberneticEyes
-  category: Robotics
-  completetime: 5
+  id: DiagnosticCyberneticEyes
+  result: DiagnosticCyberneticEyes
+  categories:
+  - Robotics
+  completetime: 10
   materials:
-    Steel: 1000
-    Glass: 500
-    Plastic: 500
-    Gold: 300
-    Silver: 300
+    Steel: 2000
+    Glass: 1000
+    Plastic: 1000
+    Gold: 1000
+    Silver: 600
+
+- type: latheRecipe
+  id: DexLeftHand
+  result: DexLeftHand
+  categories:
+  - Robotics
+  completetime: 10
+  materials:
+    Steel: 2000
+    Glass: 1000
+    Plastic: 1000
+    Gold: 1000
+    Silver: 600
+
+- type: latheRecipe
+  id: DexRightHand
+  result: DexRightHand
+  categories:
+  - Robotics
+  completetime: 10
+  materials:
+    Steel: 2000
+    Glass: 1000
+    Plastic: 1000
+    Gold: 1000
+    Silver: 600
+
+## Augments
+
+- type: latheRecipe
+  abstract: true
+  parent: BaseBorgModuleRecipe
+  id: BaseAugmentRecipe
+  categories:
+  - Robotics
+
+# Power
+
+- type: latheRecipe
+  parent: BaseAugmentRecipe
+  id: AugmentPowerCellSlotCasing
+  result: AugmentPowerCellSlotCasing
+
+- type: latheRecipe
+  parent: BaseAugmentRecipe
+  id: AugmentRechargerCasing
+  result: AugmentRechargerCasing
+
+# Tools
+
+- type: latheRecipe
+  parent: BaseAugmentRecipe
+  id: AugmentToolPanelCasing
+  result: AugmentToolPanelCasing
+
+- type: latheRecipe
+  parent: BaseAugmentRecipe
+  id: AugmentUtilityPanelElectronics
+  result: AugmentUtilityPanelElectronics
+
+- type: latheRecipe
+  parent: BaseAugmentRecipe
+  id: AugmentBotanyPanelElectronics
+  result: AugmentBotanyPanelElectronics
+
+- type: latheRecipe
+  parent: BaseAugmentRecipe
+  id: AugmentSurgeryPanelElectronics
+  result: AugmentSurgeryPanelElectronics
+
+- type: latheRecipe
+  parent: BaseAugmentRecipe
+  id: AugmentPaperworkPanelElectronics
+  result: AugmentPaperworkPanelElectronics
+
+- type: latheRecipe
+  parent: BaseAugmentRecipe
+  id: AugmentStrengthCasing
+  result: AugmentStrengthCasing
+
+- type: latheRecipe
+  parent: BaseAugmentRecipe
+  id: AugmentStrengthElectronics
+  result: AugmentStrengthElectronics

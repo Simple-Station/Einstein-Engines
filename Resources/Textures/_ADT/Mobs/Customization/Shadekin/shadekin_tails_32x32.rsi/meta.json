@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Digi from https://github.com/tgstation/tgstation/blob/08898964e67a0d517ca4e47eec7039394b694ac2/icons/mob/species/lizard/bodyparts.dmi | Edited by PuroSlavKing (Github). Slim by canceredpussy (discord)",
+    "copyright": "Made team Adventure Time. medium_twocolored and shorter_brush made by discord:filokini",
     "size": {
         "x": 32,
         "y": 32
@@ -21,49 +21,6 @@
         },
         {
             "name": "shorter_brush",
-            "directions": 4
-        },
-        {
-            "name": "full_slim"
-        },
-        {
-            "name": "head_slim_f",
-            "directions": 4
-        },
-        {
-            "name": "l_arm_slim",
-            "directions": 4
-        },
-        {
-            "name": "l_foot_slim",
-            "directions": 4
-        },
-        {
-            "name": "l_hand_slim",
-            "directions": 4
-        },
-        {
-            "name": "l_leg_slim",
-            "directions": 4
-        },
-        {
-            "name": "r_arm_slim",
-            "directions": 4
-        },
-        {
-            "name": "r_foot_slim",
-            "directions": 4
-        },
-        {
-            "name": "r_hand_slim",
-            "directions": 4
-        },
-        {
-            "name": "r_leg_slim",
-            "directions": 4
-        },
-        {
-            "name": "torso_slim_f",
             "directions": 4
         }
     ]

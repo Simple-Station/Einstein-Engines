@@ -1,5 +1,9 @@
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Robust.Shared.Audio;
-using Content.Shared.Inventory;
 
 namespace Content.Shared.Movement.Events;
 
@@ -15,9 +19,4 @@ public record struct GetFootstepSoundEvent(EntityUid User)
     /// Set the sound to specify a footstep sound and mark as handled.
     /// </summary>
     public SoundSpecifier? Sound;
-}
-
-public record struct MakeFootstepSoundEvent : IInventoryRelayEvent
-{
-    public SlotFlags TargetSlots => SlotFlags.WITHOUT_POCKET;
 }

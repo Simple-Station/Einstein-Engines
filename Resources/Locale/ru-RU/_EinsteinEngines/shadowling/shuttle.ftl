@@ -1,4 +1,3 @@
 shadowling-destroy-engines-sender = Тенеморф
-shadowling-destroy-engines-message = Вмешательство не потребовалось. Двигатели прислушались к нашему влиянию и подчинились.
-shadowling-destroy-engines-delay = Шаттл задержится на {$time} минут.
-
+shadowling-destroy-engines-message = Вмешательство не требуется. Двигатели подчинились.
+shadowling-destroy-engines-delay = Шаттл будет задержан на { $time } минут.

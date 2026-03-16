@@ -1,7 +1,23 @@
+// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 faint <46868845+ficcialfaint@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Kevin Zheng <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Piping.Binary.Components;
 using Content.Server.Atmos.Piping.Components;
-using Content.Server.NodeContainer;
 using Content.Server.NodeContainer.EntitySystems;
 using Content.Server.NodeContainer.Nodes;
 using Content.Shared.Atmos;
@@ -39,7 +55,7 @@ namespace Content.Server.Atmos.Piping.Binary.EntitySystems
             var T2 = outlet.Air.Temperature;
             var pressureDelta = P1 - P2;
 
-            float dt = 1/_atmosphereSystem.AtmosTickRate;
+            float dt = args.dt;
             float dV = 0;
             var denom = (T1*V2 + T2*V1);
 
@@ -63,7 +79,9 @@ namespace Content.Server.Atmos.Piping.Binary.EntitySystems
                 var transferMoles = n1 - (n1+n2)*T2*V1 / denom;
 
                 // Get the volume transfered to update our flow meter.
-                dV = n1*Atmospherics.R*T1/P1;
+                // When you remove x from one side and add x to the other the total difference is 2x.
+                // Also account for atmos speedup so that measured flow rate matches the setting on the volume pump.
+                dV = 2*transferMoles*Atmospherics.R*T1/P1 / _atmosphereSystem.Speedup;
 
                 // Actually transfer the gas.
                 _atmosphereSystem.Merge(outlet.Air, inlet.Air.Remove(transferMoles));

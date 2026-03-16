@@ -1,8 +1,17 @@
-﻿using System.Threading;
+// SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using System.Threading;
 using System.Threading.Tasks;
-using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Preferences.Managers;
-using Robust.Server.Player;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
@@ -19,9 +28,7 @@ namespace Content.Server.Database;
 /// </remarks>
 public sealed class UserDbDataManager : IPostInjectInit
 {
-    [Dependency] private readonly IServerPreferencesManager _prefs = default!;
     [Dependency] private readonly ILogManager _logManager = default!;
-    [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
 
     private readonly Dictionary<NetUserId, UserData> _users = new();
     private readonly List<OnLoadPlayer> _onLoadPlayer = [];
@@ -69,14 +76,19 @@ public sealed class UserDbDataManager : IPostInjectInit
         {
             var tasks = new List<Task>();
             foreach (var action in _onLoadPlayer)
+            {
                 tasks.Add(action(session, cancel));
+            }
 
             await Task.WhenAll(tasks);
+
             cancel.ThrowIfCancellationRequested();
 
             foreach (var action in _onFinishLoad)
+            {
                 action(session);
-            _prefs.SanitizeData(session);
+            }
+
             _sawmill.Verbose($"Load complete for user {session}");
         }
         catch (OperationCanceledException)
@@ -126,11 +138,6 @@ public sealed class UserDbDataManager : IPostInjectInit
         return _users[session.UserId].Task;
     }
 
-    void IPostInjectInit.PostInject()
-    {
-        _sawmill = _logManager.GetSawmill("userdb");
-    }
-
     public void AddOnLoadPlayer(OnLoadPlayer action)
     {
         _onLoadPlayer.Add(action);
@@ -144,6 +151,11 @@ public sealed class UserDbDataManager : IPostInjectInit
     public void AddOnPlayerDisconnect(OnPlayerDisconnect action)
     {
         _onPlayerDisconnect.Add(action);
+    }
+
+    void IPostInjectInit.PostInject()
+    {
+        _sawmill = _logManager.GetSawmill("userdb");
     }
 
     private sealed record UserData(CancellationTokenSource Cancel, Task Task);

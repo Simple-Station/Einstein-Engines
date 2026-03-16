@@ -1,12 +1,20 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Lincoln McQueen <lincoln.mcqueen@gmail.com>
+# SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: martialArt
   id: SleepingCarp
   martialArtsForm: SleepingCarp
   roundstartCombos: SleepingCarpMoves
   randomDamageModifier: True
   baseDamageModifier: 5
+  damageModifierType: Slash
   randomSayings:
   - carp-saying-huah
-  - carv-saying-hya
+  - carv-vaying-hya
   - carp-saying-choo
   - carp-saying-wuo
   - carp-saying-kya
@@ -61,4 +69,3 @@
   - Disarm
   event: !type:SleepingCarpCrashingWavesPerformedEvent
   staminaDamage: 25
-

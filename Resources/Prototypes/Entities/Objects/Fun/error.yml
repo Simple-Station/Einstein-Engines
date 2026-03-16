@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2022 sunbear-dev <107123733+sunbear-dev@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 tijn <tijnjanssen7@gmail.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 K-Dynamic <20566341+K-Dynamic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: BaseItem
   id: Error
@@ -16,7 +24,9 @@
         - ReagentId: Nutriment
           Quantity: 5
   - type: Slippery
-    launchForwardsMultiplier: 5
+    slipData:
+      knockdownTime: 3
+      launchForwardsMultiplier: 3
   - type: StepTrigger
     intersectRatio: 0.2
   - type: CollisionWake
@@ -28,14 +38,14 @@
       slips:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.2,-0.2,0.2,0.2"
+          bounds: "-0.4,-0.3,0.4,0.3"
         hard: false
         layer:
         - SlipLayer
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.2,-0.2,0.2,0.2"
+          bounds: "-0.4,-0.3,0.4,0.3"
         density: 30
         mask:
         - ItemMask

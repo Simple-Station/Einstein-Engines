@@ -1,11 +1,21 @@
-using System.Diagnostics.CodeAnalysis;
+// SPDX-FileCopyrightText: 2022 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr.@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <jmaster9999@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <wrexbe@protonmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.UserInterface.Controls;
-using Robust.Shared.Graphics;
 using Robust.Shared.Input;
-using Robust.Shared.Utility;
 
 namespace Content.Client.UserInterface.Controls;
 
@@ -15,9 +25,9 @@ public sealed class MenuButton : ContainerButton
     public const string StyleClassLabelTopButton = "topButtonLabel";
     public const string StyleClassRedTopButton = "topButtonLabel";
 
-    private static readonly Color ColorNormal = Color.FromHex("#7b7e7e");
+    private static readonly Color ColorNormal = Color.FromHex("#7b7e9e");
     private static readonly Color ColorRedNormal = Color.FromHex("#FEFEFE");
-    private static readonly Color ColorHovered = Color.FromHex("#969999");
+    private static readonly Color ColorHovered = Color.FromHex("#9699bb");
     private static readonly Color ColorRedHovered = Color.FromHex("#FFFFFF");
     private static readonly Color ColorPressed = Color.FromHex("#789B8C");
 

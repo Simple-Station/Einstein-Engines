@@ -1,1 +1,2 @@
-metabolizer-type-shadowkin = Порождение тьмы
+metabolizer-type-shadowkin = Тенекин
+metabolizer-type-plasmaman = Плазмалюд

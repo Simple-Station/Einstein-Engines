@@ -1,11 +1,5 @@
-- type: dataset
-  id: ShuttleNames
+- type: localizedDataset
+  id: NamesCargoShuttle
   values:
-  - Шаттл Не Прибудет
-  - Шаттл Большой Навар
-  - Смена Двигателей
-  - Грузоперевозчик
-  - Шуутел
-  - Шаттл МакШаттлфейс
-  - ШаттлШаттл
-  - Урист МакШаттл
+    prefix: names-cargo-shuttle-dataset-
+    count: 8

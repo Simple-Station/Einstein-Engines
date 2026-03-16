@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 crazybrain23 <44417085+crazybrain23@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: BaseItem
   id: DeviceQuantumSpinInverter
@@ -26,7 +33,8 @@
   - type: Tag
     tags:
     - QuantumSpinInverter
-  - type: ReverseEngineering # Delta
-    difficulty: 4
-    recipes:
-      - DeviceQuantumSpinInverter
+  - type: PhysicalComposition #Goobstation - Recycle update
+    materialComposition:
+      Steel: 175
+      Glass: 25
+      Uranium: 25

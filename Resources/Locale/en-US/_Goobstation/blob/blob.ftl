@@ -1,3 +1,15 @@
+# SPDX-FileCopyrightText: 2024 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2024 fishbait <gnesse@gmail.com>
+# SPDX-FileCopyrightText: 2024 lanse12 <cloudability.ez@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 GitHubUser53123 <110841413+GitHubUser53123@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 JohnOakman <sremy2012@hotmail.fr>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 ent-SpawnPointGhostBlob = Blob spawner
     .suffix = DEBUG, Ghost Role Spawner
     .desc = { ent-MarkerBase.desc }
@@ -26,7 +38,7 @@ objective-issuer-blob = Blob
 
 
 ghost-role-information-blobbernaut-name = Blobbernaut
-ghost-role-information-blobbernaut-description = You are a Blobbernaut. You must defend the blob core.
+ghost-role-information-blobbernaut-description = You are a Blobbernaut. You must defend the blob core. Use + or +e in chat to talk in the Blobmind.
 
 ghost-role-information-blob-name = Blob
 ghost-role-information-blob-description = You are the Blob Infection. Consume the station.
@@ -54,7 +66,6 @@ blob-get-resource = +{ $point }
 blob-spent-resource = -{ $point }
 blobberaut-not-on-blob-tile = You are dying while not on blob tiles.
 carrier-blob-alert = You have { $second } seconds left before transformation.
-blob-core-under-attack = Your core is under attack!
 
 blob-mob-zombify-second-start = { $pod } starts turning you into a zombie.
 blob-mob-zombify-third-start = { $pod } starts turning { $target } into a zombie.
@@ -93,37 +104,13 @@ blob-alert-recall-shuttle = The emergency shuttle can not be sent while there is
 blob-alert-detect = Confirmed outbreak of level 5 biohazard aboard the station. All personnel must contain the outbreak.
 blob-alert-critical = Biohazard level critical, nuclear authentication codes have been sent to the station. Central Command orders any remaining personnel to activate the self-destruction mechanism.
 blob-alert-critical-NoNukeCode = Biohazard level critical. Central Command orders any remaining personnel to seek shelter, and await resque.
+blob-alert-shuttle-arrived = Biohazard detected on board. All personnel must evacuate immediately.
 
 # Actions
-blob-create-factory-action-name = Create Blob Factory (40)
-blob-create-factory-action-desc = Transforms a selected normal blob into a factory that can produce various blob minions, if there is a node or core nearby.
-blob-create-storage-action-name = Create Blob Storage (50)
-blob-create-storage-action-desc = Transforms a selected normal blob into storage, which increases the maximum amount of resources the blob can have.
-blob-create-turret-action-name = Create Blob Turret (75)
-blob-create-turret-action-desc = Transforms a selected normal blob into a turret that shoots at enemies with small spores, consuming points.
-blob-create-resource-action-name = Place Resource Blob (60)
-blob-create-resource-action-desc = Turns selected normal blob into a resource blob which will generates resources if placed next to a core or a node.
-blob-create-node-action-name = Place Node Blob (50)
-blob-create-node-action-desc = Turns selected normal blob into a node blob.
-                                A node blob will activate effects of factory and resource blobs, heal other blobs and slowly expand, destroying walls and creating normal blobs.
-blob-produce-blobbernaut-action-name = Produce a Blobbernaut (60)
-blob-produce-blobbernaut-action-desc = Creates a blobbernaut on the selected factory. Each factory can only do this once. The blobbernaut will take damage outside of blob tiles and heal when close to nodes.
-blob-split-core-action-name = Split Core (400)
-blob-split-core-action-desc = You can only do this once. Turns selected node into an independent core that will act on its own.
-blob-swap-core-action-name = Relocate Core (200)
-blob-swap-core-action-desc = Swaps the location of your core and the selected node.
-blob-teleport-to-core-action-name = Jump to Core (0)
-blob-teleport-to-core-action-desc = Teleports you to your Blob Core.
 blob-teleport-to-node-action-name = Jump to Node (0)
 blob-teleport-to-node-action-desc = Teleports you to a random blob node.
 blob-help-action-name = Help
 blob-help-action-desc = Get basic information about playing as blob.
-blob-swap-chem-action-name = Swap chemicals (70)
-blob-swap-chem-action-desc = Lets you swap your current chemical.
-blob-carrier-transform-to-blob-action-name = Transform into a blob
-blob-carrier-transform-to-blob-action-desc = Instantly destoys your body and creates a blob core. Make sure to stand on a floor tile, otherwise you will simply disappear.
-blob-downgrade-action-name = downgrade blob(0)
-blob-downgrade-action-desc = Turns the selected tile back into a normal blob to install other types of cages.
 
 # Ghost role
 blob-carrier-role-name = Blob carrier
@@ -148,11 +135,12 @@ blob-health-alert-desc = Your core's health. You will die if it reaches zero.
 blob-role-greeting =
     You are blob - a parasitic space creature capable of destroying entire stations.
         Your goal is to survive and grow as large as possible.
-    	You are almost invulnerable to physical damage, but heat can still hurt you.
+        You are almost invulnerable to physical damage, but heat can still hurt you.
         Use Alt+LMB to upgrade normal blob tiles to strong blob and strong blob to reflective blob.
-    	Make sure to place resource blobs to generate resources.
+        Make sure to place resource blobs to generate resources.
         Keep in mind that resource blobs and factories will only work when next to node blobs or cores.
-blob-zombie-greeting = You were infected and raised by a blob spore. Now you must help the blob take over the station.
+        You may use + or +e in chat to use the Blobmind to talk to your minions.
+blob-zombie-greeting = You were infected and raised by a blob spore. Now you must help the blob take over the station. Use +e in chat to talk in the Blobmind.
 
 # End round
 blob-round-end-result =
@@ -165,16 +153,11 @@ blob-user-was-a-blob = [color=gray]{$user}[/color] was a blob.
 blob-user-was-a-blob-named = [color=White]{$name}[/color] ([color=gray]{$user}[/color]) was a blob.
 blob-was-a-blob-named = [color=White]{$name}[/color] was a blob.
 
-blob-objective-percentage = It captured [color=White]{ $progress }%[/color] to the victory.
-blob-end-victory = [color=Red]Blob(s) successfully absorbed the station![/color]
-blob-end-fail = [color=Green]Blob(s) failed to absorb the station.[/color]
-blob-end-fail-progress = All blobs captured [color=Yellow]{ $progress }%[/color] to the victory.
-
 preset-blob-objective-issuer-blob = [color=#33cc00]Blob[/color]
 
-blob-user-was-a-blob-with-objectives = [color=gray]{$user}[/color] was a blob:
-blob-user-was-a-blob-with-objectives-named = [color=White]{$name}[/color] ([color=gray]{$user}[/color]) was a blob:
-blob-was-a-blob-with-objectives-named = [color=White]{$name}[/color] was a blob:
+blob-user-was-a-blob-with-objectives = [color=gray]{$user}[/color] was a blob who had the following objectives:
+blob-user-was-a-blob-with-objectives-named = [color=White]{$name}[/color] ([color=gray]{$user}[/color]) was a blob who had the following objectives:
+blob-was-a-blob-with-objectives-named = [color=White]{$name}[/color] was a blob who had the following objectives:
 
 # Objectivies
 objective-condition-blob-capture-title = Take over the station
@@ -182,9 +165,10 @@ objective-condition-blob-capture-description = Your only goal is to take over th
 objective-condition-success = { $condition } | [color={ $markupColor }]Success![/color]
 objective-condition-fail = { $condition } | [color={ $markupColor }]Failure![/color] ({ $progress }%)
 
-# Radio names
-speak-vv-blob = Blob
-speak-vv-blob-core = Blob core
+# Admin Verbs
+
+admin-verb-make-blob = Make the target into a blob carrier.
+admin-verb-text-make-blob = Make Blob Carrier
 
 # Language
 language-Blob-name = Blob

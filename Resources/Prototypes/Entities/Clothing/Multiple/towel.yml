@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tap <tapiocaphobe@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Ghagliiarghii <68826635+Ghagliiarghii@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: BaseTowel
   name: base towel
@@ -18,6 +25,9 @@
     unequipSound: 
   - type: Spillable
     solution: absorbed
+    spillWhenThrown: false
+  - type: DrainableSolution
+    solution: absorbed
   - type: Absorbent
     pickupAmount: 15
   - type: SolutionContainerManager
@@ -33,6 +43,7 @@
     delay: 1
   - type: Fiber
     fiberColor: fibers-white
+  - type: DnaSubstanceTrace
   - type: Item
     size: Small
 
@@ -282,7 +293,7 @@
       - state: equipped-BELT
         color: "#723A02"
   - type: Fiber
-    fiberColor: fibers-brown
+    fiberColor: fibers-light-brown
 
 - type: entity
   id: TowelColorLightBrown
@@ -733,7 +744,7 @@
 - type: entity
   id: TowelColorSyndicate
   name: syndicate towel
-  parent: BaseTowel
+  parent: [ BaseTowel, BaseSyndicateContraband ]
   components:
   - type: Sprite
     layers:

@@ -1,3 +1,13 @@
+// SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Spatison <137375981+Spatison@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.PowerCell;
@@ -13,6 +23,7 @@ public sealed class RechargeableBlockingSystem : EntitySystem
 {
     [Dependency] private readonly BatterySystem _battery = default!;
     [Dependency] private readonly ItemToggleSystem _itemToggle = default!;
+    [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly PowerCellSystem _powerCell = default!;
 
     public override void Initialize()
@@ -63,14 +74,22 @@ public sealed class RechargeableBlockingSystem : EntitySystem
         if (!component.Discharged)
             return;
 
-        args.Popup = Loc.GetString("rechargeable-blocking-remaining-time-popup",
-            ("remainingTime", GetRemainingTime(uid)));
+        if (HasComp<BatterySelfRechargerComponent>(uid))
+            args.Popup = Loc.GetString("rechargeable-blocking-remaining-time-popup", ("remainingTime", GetRemainingTime(uid)));
+        else
+            args.Popup = Loc.GetString("rechargeable-blocking-not-enough-charge-popup");
+
         args.Cancelled = true;
     }
+    private void OnChargeChanged(EntityUid uid, RechargeableBlockingComponent component, ChargeChangedEvent args)
+    {
+        CheckCharge(uid, component);
+    }
 
-    private void OnChargeChanged(EntityUid uid, RechargeableBlockingComponent component, ChargeChangedEvent args) => CheckCharge(uid, component);
-
-    private void OnPowerCellChanged(EntityUid uid, RechargeableBlockingComponent component, PowerCellChangedEvent args) => CheckCharge(uid, component);
+    private void OnPowerCellChanged(EntityUid uid, RechargeableBlockingComponent component, PowerCellChangedEvent args)
+    {
+        CheckCharge(uid, component);
+    }
 
     private void CheckCharge(EntityUid uid, RechargeableBlockingComponent component)
     {
@@ -88,11 +107,11 @@ public sealed class RechargeableBlockingSystem : EntitySystem
             return;
         }
 
-        if (battery.CurrentCharge < (battery.MaxCharge - 0.01)) // Auto recharge sometimes does not FULLY recharge, this compensates for that
+        if (MathF.Round(battery.CurrentCharge / battery.MaxCharge, 2) < component.RechargePercentage)
             return;
 
         component.Discharged = false;
         if (TryComp(uid, out recharger))
-                recharger.AutoRechargeRate = component.ChargedRechargeRate;
+            recharger.AutoRechargeRate = component.ChargedRechargeRate;
     }
 }

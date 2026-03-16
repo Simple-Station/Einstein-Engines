@@ -1,3 +1,17 @@
+# SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 wrexbe <81056464+wrexbe@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 20kdc <asdd2808@gmail.com>
+# SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 meta:
   format: 6
   postmapinit: false
@@ -21,7 +35,7 @@ entities:
       name: grid
     - type: Transform
       pos: -4.922083,-2.395518
-      parent: invalid
+
     - type: MapGrid
       chunks:
         0,0:
@@ -271,7 +285,6 @@ entities:
           decals:
             43: 1,4
     - type: GridAtmosphere
-      simulatedTurf: false
       version: 2
       data:
         tiles:
@@ -346,13 +359,6 @@ entities:
     components:
     - type: Transform
       pos: 0.5,5.5
-      parent: 1
-- proto: BloodTomatoSeeds
-  entities:
-  - uid: 51
-    components:
-    - type: Transform
-      pos: 4.5964127,8.285444
       parent: 1
 - proto: BookshelfFilled
   entities:
@@ -539,13 +545,6 @@ entities:
     - type: Transform
       pos: 0.5,1.5
       parent: 1
-- proto: CrateFunATV
-  entities:
-  - uid: 77
-    components:
-    - type: Transform
-      pos: 6.5,4.5
-      parent: 1
 - proto: CrateStoneGrave
   entities:
   - uid: 34
@@ -630,6 +629,13 @@ entities:
     components:
     - type: Transform
       pos: 6.5,5.5
+      parent: 1
+- proto: KillerTomatoSeeds
+  entities:
+  - uid: 51
+    components:
+    - type: Transform
+      pos: 4.6947265,8.268279
       parent: 1
 - proto: Lamp
   entities:

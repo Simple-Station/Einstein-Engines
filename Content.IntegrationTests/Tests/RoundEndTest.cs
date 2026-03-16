@@ -1,3 +1,19 @@
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <wrexbe@protonmail.com>
+// SPDX-FileCopyrightText: 2023 Arimah Greene <30327355+arimah@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Threading;
 using Content.Server.GameTicking;
 using Content.Server.RoundEnd;
@@ -22,7 +38,7 @@ namespace Content.IntegrationTests.Tests
 
             private void OnRoundEnd(RoundEndSystemChangedEvent ev)
             {
-                Interlocked.Increment(ref RoundCount);
+                RoundCount += 1;
             }
         }
 
@@ -127,13 +143,17 @@ namespace Content.IntegrationTests.Tests
 
             async Task WaitForEvent()
             {
-                var timeout = Task.Delay(TimeSpan.FromSeconds(10));
-                var currentCount = Thread.VolatileRead(ref sys.RoundCount);
-                while (currentCount == Thread.VolatileRead(ref sys.RoundCount) && !timeout.IsCompleted)
+                const int maxTicks = 60;
+                var currentCount = sys.RoundCount;
+                for (var i = 0; i < maxTicks; i++)
                 {
-                    await pair.RunTicksSync(5);
+                    if (currentCount != sys.RoundCount)
+                        return;
+
+                    await pair.RunTicksSync(1);
                 }
-                if (timeout.IsCompleted) throw new TimeoutException("Event took too long to trigger");
+
+                throw new TimeoutException("Event took too long to trigger");
             }
 
             // Need to clean self up

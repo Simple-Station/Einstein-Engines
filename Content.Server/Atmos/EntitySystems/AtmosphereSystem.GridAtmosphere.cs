@@ -1,5 +1,21 @@
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2024 Kevin Zheng <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 PraxisMapper <praxismapper@gmail.com>
+// SPDX-FileCopyrightText: 2024 drakewill-CRL <46307022+drakewill-CRL@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Atmos.Components;
-using Content.Server.Atmos.Reactions;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Atmos.Reactions;
@@ -44,8 +60,6 @@ public sealed partial class AtmosphereSystem
 
     private void OnGridAtmosphereInit(EntityUid uid, GridAtmosphereComponent component, ComponentInit args)
     {
-        base.Initialize();
-
         EnsureComp<GasTileOverlayComponent>(uid);
         foreach (var tile in component.Tiles.Values)
         {
@@ -74,7 +88,7 @@ public sealed partial class AtmosphereSystem
                 newGridAtmos = AddComp<GridAtmosphereComponent>(newGrid);
 
             // We assume the tiles on the new grid have the same coordinates as they did on the old grid...
-            var enumerator = mapGrid.GetAllTilesEnumerator();
+            var enumerator = _mapSystem.GetAllTilesEnumerator(newGrid, mapGrid);
 
             while (enumerator.MoveNext(out var tile))
             {
@@ -95,6 +109,8 @@ public sealed partial class AtmosphereSystem
                 newTileAtmosphere.Hotspot = tileAtmosphere.Hotspot;
                 newTileAtmosphere.HeatCapacity = tileAtmosphere.HeatCapacity;
                 newTileAtmosphere.Temperature = tileAtmosphere.Temperature;
+                newTileAtmosphere.PressureDifference = tileAtmosphere.PressureDifference;
+                newTileAtmosphere.PressureDirection = tileAtmosphere.PressureDirection;
 
                 // TODO ATMOS: Somehow force GasTileOverlaySystem to perform an update *right now, right here.*
                 // The reason why is that right now, gas will flicker until the next GasTileOverlay update.
@@ -174,7 +190,7 @@ public sealed partial class AtmosphereSystem
         tile.AdjacentBits = AtmosDirection.Invalid;
         for (var i = 0; i < Atmospherics.Directions; i++)
         {
-            var direction = (AtmosDirection) (1 << i);
+            var direction = (AtmosDirection)(1 << i);
             var adjacentIndices = tile.GridIndices.Offset(direction);
 
             TileAtmosphere? adjacent;
@@ -194,7 +210,7 @@ public sealed partial class AtmosphereSystem
                 AddActiveTile(atmos, adjacent);
 
             var oppositeIndex = i.ToOppositeIndex();
-            var oppositeDirection = (AtmosDirection) (1 << oppositeIndex);
+            var oppositeDirection = (AtmosDirection)(1 << oppositeIndex);
 
             if (adjBlockDirs.IsFlagSet(oppositeDirection) || blockedDirs.IsFlagSet(direction))
             {
@@ -267,7 +283,7 @@ public sealed partial class AtmosphereSystem
     private void GridFixTileVacuum(TileAtmosphere tile)
     {
         DebugTools.AssertNotNull(tile.Air);
-        DebugTools.Assert(tile.Air?.Immutable == false );
+        DebugTools.Assert(tile.Air?.Immutable == false);
         tile.AirArchived = null;
         tile.ArchivedCycle = 0;
 

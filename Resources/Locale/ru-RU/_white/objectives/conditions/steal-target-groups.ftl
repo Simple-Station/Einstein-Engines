@@ -1,1 +1,1 @@
-steal-target-groups-animal-lamarr = Ламарр
+steal-target-groups-animal-lamarr = Ламар

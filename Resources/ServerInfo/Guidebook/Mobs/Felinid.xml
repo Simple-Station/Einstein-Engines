@@ -1,0 +1,31 @@
+<!--
+SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+SPDX-FileCopyrightText: 2024 BeeRobynn <robynthewarcrime@proton.me>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
+  # Фелинид
+
+  <Box>
+    <GuideEntityEmbed Entity="MobFelinid" Caption=""/>
+  </Box>
+  
+  Фелиниды — это мутированные люди, отличающиеся фирменными ушами и хвостом из ваших любимых японских мультфильмов.
+  У них развитое шестое чувство при приземлении, и они [color=#1e90ff]получают на 80% меньше урона от падений или ударов на высокой скорости.[/color]
+  При ранении их скорость также снижается меньше.
+  
+  Вместо ударов кулаками они наносят удары когтями, причиняя [color=#ec3a3a]режущий[/color] и [color=#ec3a3a]колющий[/color] урон.
+  
+  ## Фу, комки шерсти
+  <Box>
+    <GuideEntityEmbed Entity="Hairball" Caption=""/>
+	<GuideEntityEmbed Entity="MobMouse" Caption=""/>
+  </Box>
+  
+  Они также могут есть живых крыс, что позволит им откашлять отвратительный комок шерсти.
+  Будьте осторожны при прикосновении к ним, так как они могут [color=#ffa500]царапать вас если их держать.[/color]
+  
+</Document>

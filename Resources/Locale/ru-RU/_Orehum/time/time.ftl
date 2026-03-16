@@ -1,1 +1,0 @@
-standard-date = 417/11/{$date}

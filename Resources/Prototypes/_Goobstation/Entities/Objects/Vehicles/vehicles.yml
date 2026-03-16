@@ -1,3 +1,22 @@
+# SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Scruq445 <storchdamien@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 BramvanZijp <56019239+BramvanZijp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
+# SPDX-FileCopyrightText: 2025 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Theodore Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Thom <119594676+ItsMeThom@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: BaseVehicle
   abstract: true
@@ -5,9 +24,10 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Vehicle
-    renderOver: East, SouthEast, South, SouthWest, West
+    renderOver: None
   - type: Strap
     position: Stand
+    blockMovement: false
   - type: Appearance
   - type: AmbientSound
     sound: "/Audio/Effects/Vehicle/vehicleengineidle.ogg"
@@ -42,21 +62,25 @@
         !type:DamageTrigger
         damage: 100
       behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
     - trigger:
         !type:DamageTrigger
         damage: 50
       behaviors:
       - !type:DoActsBehavior
-        acts: ["Destruction"]
+        #acts: ["Destruction"]
+        acts: ["Breakage"]
       - !type:PlaySoundBehavior
         sound:
           collection: MetalBreak
   - type: MovementSpeedModifier
-    acceleration: 8
-    friction: 5 # wheels dont stop instantly
-    baseSprintSpeed: 6
+    baseAcceleration: 8
+    baseFriction: 0.2 # wheels dont stop instantly
+    baseSprintSpeed: 8.5
     baseWalkSpeed: 4.5 # default walking speed
   - type: ItemSlots
     slots:
@@ -79,7 +103,7 @@
 
 - type: entity
   id: VehicleSecway
-  parent: BaseVehicle
+  parent: [ BaseVehicle, BaseSecurityContraband ]
   name: secway
   description: The future of transportation. Popularized by St. James, the patron saint of security officers and internet forum moderators.
   components:
@@ -88,7 +112,6 @@
     state: vehicle
     noRot: true
   - type: Vehicle
-    renderOver: North, NorthEast, NorthWest
     hornSound:
       collection: DeskBell
       params:
@@ -113,14 +136,13 @@
 
 - type: entity
   id: VehicleSyndicateSegway
-  parent: VehicleSecway
+  parent: [ BaseSyndicateContraband, VehicleSecway ]
   name: syndicate segway
   description: Be an enemy of the corporation, in style.
   components:
   - type: Sprite
     sprite: Objects/Vehicles/syndicatesegway.rsi
     state: vehicle
-    renderOver: North, NorthEast, NorthWest
     noRot: true
   - type: ItemSlots
     slots:
@@ -218,14 +240,34 @@
   - type: Vehicle
     requiredHands: 0
     engineRunning: true
-    renderOver: South, SouthEast, SouthWest
+    hornSound:
+      collection: BikeHorn
+      params:
+        variation: 0.125
+    renderOver: North, NorthEast, NorthWest
   - type: MovementSpeedModifier
     acceleration: 10
     friction: 10
     baseSprintSpeed: 3.5
     baseWalkSpeed: 2.5
   - type: StaticPrice
-    price: 75
+    price: 175
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 125
+      Plastic: 125
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 100
+        mask:
+          - MobMask
+        layer:
+          - None # can't be hit by projectiles or lasers
+        hard: true
 
 - type: entity
   parent: VehicleWheelchair
@@ -234,3 +276,130 @@
   components:
     - type: Foldable
       folded: true
+
+- type: entity
+  id: VehicleHoverchair
+  parent: BaseVehicle
+  name: hoverchair
+  description: A luxury hoverchair, kick back and relax.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Vehicles/hoverchair.rsi
+    layers:
+    - state: vehicle
+    noRot: true
+  - type: Vehicle
+    requiredHands: 0
+    engineRunning: true
+    renderOver: North, NorthEast, NorthWest, East, West
+  - type: MovementSpeedModifier
+    acceleration: 10
+    friction: 0.5
+    baseSprintSpeed: 3.5
+    baseWalkSpeed: 2.5
+  - type: StaticPrice
+    price: 175
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 125
+      Plastic: 125
+
+- type: entity
+  id: VehicleForkliftOverlay
+  name: forklift overlay
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Vehicles/forklift.rsi
+    layers:
+      - state: forklift1
+      - state: forklift_crate
+        map: [ "crateLayer0" ]
+        visible: false
+      - state: forklift_crate2
+        map: [ "crateLayer1" ]
+        visible: false
+      - state: forklift_crate3
+        map: [ "crateLayer2" ]
+        visible: false
+      - state: forklift_crate4
+        map: [ "crateLayer3" ]
+        visible: false
+    noRot: true
+    drawdepth: OverMobs # Set the drawdepth here to be above players non-clickable
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ForkliftVisuals.CrateState:
+        crateLayer0:
+          Empty: { visible: false }
+          OneCrate: { visible: true }
+          TwoCrates: { visible: true }
+          ThreeCrates: { visible: true }
+          FourCrates: { visible: true }
+        crateLayer1:
+          Empty: { visible: false }
+          OneCrate: { visible: false }
+          TwoCrates: { visible: true }
+          ThreeCrates: { visible: true }
+          FourCrates: { visible: true }
+        crateLayer2:
+          Empty: { visible: false }
+          OneCrate: { visible: false }
+          TwoCrates: { visible: false }
+          ThreeCrates: { visible: true }
+          FourCrates: { visible: true }
+        crateLayer3:
+          Empty: { visible: false }
+          OneCrate: { visible: false }
+          TwoCrates: { visible: false }
+          ThreeCrates: { visible: false }
+          FourCrates: { visible: true }
+
+- type: entity
+  id: VehicleForklift
+  parent: BaseVehicle
+  name: forklift
+  description: NanoTrasen approved Forklift Certification required.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Vehicles/forklift.rsi
+    layers:
+    - state: forklift
+    noRot: true
+  - type: Vehicle
+    overlayPrototype: VehicleForkliftOverlay
+    hornSound:
+      collection: BikeHorn
+      params:
+        variation: 0.125
+  - type: MovementSpeedModifier
+    baseAcceleration: 8
+    baseFriction: 0.2 # wheels dont stop instantly
+    baseSprintSpeed: 6.5
+    baseWalkSpeed: 4.5 # default walking speed
+  - type: Forklift
+    liftSound: !type:SoundPathSpecifier
+      path: /Audio/_Goobstation/Vehicle/Forklift/forklift.ogg
+      params:
+        playOffsetSeconds: 6
+        variation: 0.5
+  - type: ItemSlots
+    slots:
+      key_slot:
+        name: vehicle-slot-component-slot-name-keys
+        whitelist:
+          requireAll: true
+          tags:
+          - VehicleKey
+          - ForkliftKeys
+        insertSound:
+          path: /Audio/Effects/Vehicle/vehiclestartup.ogg
+          params:
+            volume: -3
+  - type: ContainerContainer
+    containers:
+      crate_storage: !type:Container

@@ -1,87 +1,21 @@
-﻿- type: stack
+# SPDX-FileCopyrightText: 2023 cOrigin <96662984+c0rigin@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TheWaffleJesus <106146578+TheWaffleJesus@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: stack
   id: ArtifactFragment
-  name: artifact fragment
+  name: stack-artifact-fragment
   spawn: ArtifactFragment1
   maxCount: 30
 
-# Machine Part
-
-# Rating 1
-
-- type: stack
-  id: Capacitor
-  name: capacitor
-  spawn: CapacitorStockPart
-  maxCount: 10
 
 - type: stack
   id: Manipulator
-  name: manipulator
+  name: stack-micro-manipulator
+  icon: { sprite: /Textures/Objects/Misc/stock_parts.rsi, state: micro_mani }
   spawn: MicroManipulatorStockPart
-  maxCount: 10
-
-- type: stack
-  id: MatterBin
-  name: matter bin
-  spawn: MatterBinStockPart
-  maxCount: 10
-
-# Rating 2
-
-- type: stack
-  id: AdvancedCapacitor
-  name: advanced capacitor
-  spawn: AdvancedCapacitorStockPart
-  maxCount: 10
-
-- type: stack
-  id: AdvancedManipulator
-  name: advanced manipulator
-  spawn: NanoManipulatorStockPart
-  maxCount: 10
-
-- type: stack
-  id: AdvancedMatterBin
-  name: advanced matter bin
-  spawn: AdvancedMatterBinStockPart
-  maxCount: 10
-
-# Rating 3
-
-- type: stack
-  id: SuperCapacitor
-  name: super capacitor
-  spawn: SuperCapacitorStockPart
-  maxCount: 10
-
-- type: stack
-  id: SuperManipulator
-  name: super manipulator
-  spawn: PicoManipulatorStockPart
-  maxCount: 10
-
-- type: stack
-  id: SuperMatterBin
-  name: super matter bin
-  spawn: SuperMatterBinStockPart
-  maxCount: 10
-
-# Rating 4
-
-- type: stack
-  id: BluespaceCapacitor
-  name: bluespace capacitor
-  spawn: BluespaceCapacitorStockPart
-  maxCount: 10
-
-- type: stack
-  id: BluespaceManipulator
-  name: bluespace manipulator
-  spawn: BluespaceManipulatorStockPart
-  maxCount: 10
-
-- type: stack
-  id: BluespaceMatterBin
-  name: bluespace matter bin
-  spawn: BluespaceMatterBinStockPart
   maxCount: 10

@@ -1,5 +1,6 @@
 using Content.Shared.Access;
 using Content.Shared.Access.Systems;
+using Content.Shared.Item.ItemToggle;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 
@@ -13,7 +14,8 @@ namespace Content.Shared.Turrets;
 public sealed partial class TurretTargetSettingsSystem : EntitySystem
 {
     [Dependency] private readonly AccessReaderSystem _accessReader = default!;
-
+    [Dependency] private readonly ItemToggleSystem _toggle = default!; // goob edit dont target disabled borgs
+    
     private ProtoId<AccessLevelPrototype> _accessLevelBorg = "Borg";
     private ProtoId<AccessLevelPrototype> _accessLevelBasicSilicon = "BasicSilicon";
 
@@ -23,38 +25,44 @@ public sealed partial class TurretTargetSettingsSystem : EntitySystem
     /// <param name="ent">The entity and its <see cref="TurretTargetSettingsComponent"/></param>
     /// <param name="exemption">The proto ID for the access level</param>
     /// <param name="enabled">Set 'true' to add the exemption, or 'false' to remove it</param>
+    /// <param name="dirty">Set 'true' to dirty the component</param>
     [PublicAPI]
-    public void SetAccessLevelExemption(TurretTargetSettingsComponent comp, ProtoId<AccessLevelPrototype> exemption, bool enabled)
+    public void SetAccessLevelExemption(Entity<TurretTargetSettingsComponent> ent, ProtoId<AccessLevelPrototype> exemption, bool enabled, bool dirty = true)
     {
         if (enabled)
-            comp.ExemptAccessLevels.Add(exemption);
+            ent.Comp.ExemptAccessLevels.Add(exemption);
         else
-            comp.ExemptAccessLevels.Remove(exemption);
+            ent.Comp.ExemptAccessLevels.Remove(exemption);
+
+        if (dirty)
+            Dirty(ent);
     }
 
     /// <summary>
     /// Adds or removes a collection of access levels from a <see cref="TurretTargetSettingsComponent.ExemptAccessLevels"/> list.
     /// </summary>
-    /// <param name="comp">The Component and its <see cref="TurretTargetSettingsComponent"/></param>
+    /// <param name="ent">The entity and its <see cref="TurretTargetSettingsComponent"/></param>
     /// <param name="exemption">The collection of access level proto IDs to add or remove</param>
     /// <param name="enabled">Set 'true' to add the collection as exemptions, or 'false' to remove them</param>
     [PublicAPI]
-    public void SetAccessLevelExemptions(TurretTargetSettingsComponent comp, ICollection<ProtoId<AccessLevelPrototype>> exemptions, bool enabled)
+    public void SetAccessLevelExemptions(Entity<TurretTargetSettingsComponent> ent, ICollection<ProtoId<AccessLevelPrototype>> exemptions, bool enabled)
     {
         foreach (var exemption in exemptions)
-            SetAccessLevelExemption(comp, exemption, enabled);
+            SetAccessLevelExemption(ent, exemption, enabled, false);
+
+        Dirty(ent);
     }
 
     /// <summary>
     /// Sets a <see cref="TurretTargetSettingsComponent.ExemptAccessLevels"/> list to contain only a supplied collection of access levels.
     /// </summary>
-    /// <param name="comp">The component and its <see cref="TurretTargetSettingsComponent"/></param>
+    /// <param name="ent">The entity and its <see cref="TurretTargetSettingsComponent"/></param>
     /// <param name="exemptions">The supplied collection of access level proto IDs</param>
     [PublicAPI]
-    public void SyncAccessLevelExemptions(TurretTargetSettingsComponent comp, ICollection<ProtoId<AccessLevelPrototype>> exemptions)
+    public void SyncAccessLevelExemptions(Entity<TurretTargetSettingsComponent> ent, ICollection<ProtoId<AccessLevelPrototype>> exemptions)
     {
-        comp.ExemptAccessLevels.Clear();
-        SetAccessLevelExemptions(comp, exemptions, true);
+        ent.Comp.ExemptAccessLevels.Clear();
+        SetAccessLevelExemptions(ent, exemptions, true);
     }
 
     /// <summary>
@@ -65,7 +73,7 @@ public sealed partial class TurretTargetSettingsSystem : EntitySystem
     [PublicAPI]
     public void SyncAccessLevelExemptions(Entity<TurretTargetSettingsComponent> target, Entity<TurretTargetSettingsComponent> source)
     {
-        SyncAccessLevelExemptions(target.Comp, source.Comp.ExemptAccessLevels);
+        SyncAccessLevelExemptions(target, source.Comp.ExemptAccessLevels);
     }
 
     /// <summary>
@@ -121,6 +129,9 @@ public sealed partial class TurretTargetSettingsSystem : EntitySystem
         if (accessLevels.Contains(_accessLevelBasicSilicon))
             return !HasAccessLevelExemption(ent, _accessLevelBasicSilicon);
 
+        if (!_toggle.IsActivated(target)) // goob edit dont target disabled borgs
+            return !HasAccessLevelExemption(ent, _accessLevelBorg); // goob edit dont target disabled borgs
+  
         return !HasAnyAccessLevelExemption(ent, accessLevels);
     }
 }

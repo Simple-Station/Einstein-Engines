@@ -1,4 +1,15 @@
-﻿using Robust.Shared.Configuration;
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Myra <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.CCVar;
 
@@ -31,15 +42,15 @@ public sealed partial class CCVars
     /// <summary>
     ///     The amount of days before the note starts fading. It will slowly lose opacity until it reaches stale. Set to 0 to disable.
     /// </summary>
-    public static readonly CVarDef<float> NoteFreshDays =
-        CVarDef.Create("admin.note_fresh_days", 91.31055f, CVar.ARCHIVE | CVar.REPLICATED | CVar.SERVER);
+    public static readonly CVarDef<double> NoteFreshDays =
+        CVarDef.Create("admin.note_fresh_days", 91.31055, CVar.ARCHIVE | CVar.REPLICATED | CVar.SERVER);
 
     /// <summary>
     ///     The amount of days before the note completely fades, and can only be seen by admins if they press "see more notes". Set to 0
     ///     if you want the note to immediately disappear without fading.
     /// </summary>
-    public static readonly CVarDef<float> NoteStaleDays =
-        CVarDef.Create("admin.note_stale_days", 365.2422f, CVar.ARCHIVE | CVar.REPLICATED | CVar.SERVER);
+    public static readonly CVarDef<double> NoteStaleDays =
+        CVarDef.Create("admin.note_stale_days", 365.2422, CVar.ARCHIVE | CVar.REPLICATED | CVar.SERVER);
 
     /// <summary>
     ///     How much time does the user have to wait in seconds before confirming that they saw an admin message?
@@ -88,6 +99,12 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> ServerBanErasePlayer =
         CVarDef.Create("admin.server_ban_erase_player", false, CVar.ARCHIVE | CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    ///     If true, will reset the last time the player has read the rules. This will mean on their next login they will be shown the rules again.
+    /// </summary>
+    public static readonly CVarDef<bool> ServerBanResetLastReadRules =
+        CVarDef.Create("admin.server_ban_reset_last_read_rules", true, CVar.ARCHIVE | CVar.SERVER);
 
     /// <summary>
     ///     Minimum players sharing a connection required to create an alert. -1 to disable the alert.
@@ -176,6 +193,12 @@ public sealed partial class CCVars
 
     public static readonly CVarDef<bool> BanHardwareIds =
         CVarDef.Create("ban.hardware_ids", true, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Determines if we'll reject connections from clients who don't have a modern hwid.
+    /// </summary>
+    public static readonly CVarDef<bool> RequireModernHardwareId =
+        CVarDef.Create("admin.require_modern_hwid", true, CVar.SERVERONLY);
 
     /// <summary>
     /// If true, players are allowed to connect to multiple game servers at once.

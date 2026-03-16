@@ -1,5 +1,15 @@
-using System.Linq;
-using System.Text;
+// SPDX-FileCopyrightText: 2022 Júlio César Ueti <52474532+Mirino97@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Administration.Managers;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
@@ -7,6 +17,8 @@ using Content.Shared.Database;
 using Content.Shared.Roles;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
+using Robust.Shared.Prototypes;
+
 namespace Content.Server.Administration.Commands;
 
 [AdminCommand(AdminFlags.Ban)]
@@ -15,6 +27,7 @@ public sealed class RoleBanCommand : IConsoleCommand
     [Dependency] private readonly IPlayerLocator _locator = default!;
     [Dependency] private readonly IBanManager _bans = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
 
     public string Command => "roleban";
     public string Description => Loc.GetString("cmd-roleban-desc");
@@ -28,7 +41,7 @@ public sealed class RoleBanCommand : IConsoleCommand
         uint minutes;
         if (!Enum.TryParse(_cfg.GetCVar(CCVars.RoleBanDefaultSeverity), out NoteSeverity severity))
         {
-            Logger.GetSawmill("admin.role_ban").Warning("Role ban severity could not be parsed from config! Defaulting to medium.");
+            Logger.WarningS("admin.role_ban", "Role ban severity could not be parsed from config! Defaulting to medium.");
             severity = NoteSeverity.Medium;
         }
 
@@ -74,6 +87,12 @@ public sealed class RoleBanCommand : IConsoleCommand
                 shell.WriteError(Loc.GetString("cmd-roleban-arg-count"));
                 shell.WriteLine(Help);
                 return;
+        }
+
+        if (!_proto.HasIndex<JobPrototype>(job))
+        {
+            shell.WriteError(Loc.GetString("cmd-roleban-job-parse",("job", job)));
+            return;
         }
 
         var located = await _locator.LookupIdByNameOrIdAsync(target);

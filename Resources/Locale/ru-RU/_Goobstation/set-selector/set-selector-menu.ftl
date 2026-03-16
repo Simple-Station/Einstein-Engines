@@ -1,14 +1,11 @@
-set-selector-window-title = неопределенный набор
-
+set-selector-window-title = Выбор оружия
 set-selector-window-description =
-    Внутри находятся ваши инструменты для работы, и они будут готовы, как только вы выберете их.
-    Выберите {$maxCount ->
-        [1] набор
-        *[other] {$maxCount} разных набора
+    Внутри находятся ваши рабочие инструменты, и они будут готовы к использованию, как только будете готовы вы.
+    Выбери { $maxCount ->
+        [1] один набор
+       *[other] { $maxCount } разных наборов
     } из списка.
-
-set-selector-window-selected = Выбрано наборов: ({$selectedCount}/{$maxCount})
-
-set-selector-window-approve-button = Принять
+set-selector-window-selected = Выбрано наборов: ({ $selectedCount }/{ $maxCount })
+set-selector-window-approve-button = Подтвердить
 set-selector-button-select = Выбрать [  ]
-set-selector-button-deselect = Выбрано [X]
+set-selector-button-deselect = Выбрать [X]

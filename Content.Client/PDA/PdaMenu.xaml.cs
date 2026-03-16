@@ -1,6 +1,31 @@
+// SPDX-FileCopyrightText: 2021 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2021 Alexander Evgrashin <evgrashin.adl@gmail.com>
+// SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Visne <vincefvanwijk@gmail.com>
+// SPDX-FileCopyrightText: 2022 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2023 Daniil Sikinami <60344369+VigersRay@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Ygg01 <y.laughing.man.y@gmail.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ivan Rubinov <linuxkernelpatch8234@riseup.net>
+// SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2024 faint <46868845+ficcialfaint@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 user424242420 <142989209+user424242420@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client.GameTicking.Managers;
 using Content.Shared.PDA;
-using Content.Shared._Orehum.Time;
+using Robust.Shared.Utility;
 using Content.Shared.CartridgeLoader;
 using Content.Client.Message;
 using Robust.Client.UserInterface;
@@ -9,7 +34,6 @@ using Robust.Client.Graphics;
 using Robust.Client.UserInterface.XAML;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
-using Robust.Shared.Utility;
 
 namespace Content.Client.PDA
 {
@@ -33,7 +57,7 @@ namespace Content.Client.PDA
         private string _stationName = Loc.GetString("comp-pda-ui-unknown");
         private string _alertLevel = Loc.GetString("comp-pda-ui-unknown");
         private string _instructions = Loc.GetString("comp-pda-ui-unknown");
-
+        
 
         private int _currentView;
 
@@ -117,13 +141,8 @@ namespace Content.Client.PDA
 
             StationTimeButton.OnPressed += _ =>
             {
-                var stationTime = _entitySystem.GetEntitySystem<TimeSystem>().GetStationTime();
-                _clipboard.SetText(stationTime.Time.ToString("hh\\:mm\\:ss"));
-            };
-            StationDateButton.OnPressed += _ =>
-            {
-              var stationDate = _entitySystem.GetEntitySystem<TimeSystem>().GetDate();
-              _clipboard.SetText((stationDate));
+                var stationTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
+                _clipboard.SetText((stationTime.ToString("hh\\:mm\\:ss")));
             };
 
             StationAlertLevelInstructionsButton.OnPressed += _ =>
@@ -131,7 +150,7 @@ namespace Content.Client.PDA
                 _clipboard.SetText(_instructions);
             };
 
-
+            
 
 
             HideAllViews();
@@ -171,15 +190,12 @@ namespace Content.Client.PDA
             _stationName = state.StationName ?? Loc.GetString("comp-pda-ui-unknown");
             StationNameLabel.SetMarkup(Loc.GetString("comp-pda-ui-station",
                 ("station", _stationName)));
+            
 
-
-            var stationTime = _entitySystem.GetEntitySystem<TimeSystem>().GetStationTime();
-            var stationDate = _entitySystem.GetEntitySystem<TimeSystem>().GetDate();
+            var stationTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
 
             StationTimeLabel.SetMarkup(Loc.GetString("comp-pda-ui-station-time",
-                ("time", stationTime.Time.ToString("hh\\:mm\\:ss"))));
-            StationDateLabel.SetMarkup(Loc.GetString("comp-pda-ui-station-date",
-                ("date", stationDate)));
+                ("time", stationTime.ToString("hh\\:mm\\:ss"))));
 
             var alertLevel = state.PdaOwnerInfo.StationAlertLevel;
             var alertColor = state.PdaOwnerInfo.StationAlertColor;
@@ -350,13 +366,10 @@ namespace Content.Client.PDA
         {
             base.Draw(handle);
 
-            var stationTime = _entitySystem.GetEntitySystem<TimeSystem>().GetStationTime();
-            var stationDate = _entitySystem.GetEntitySystem<TimeSystem>().GetDate();
+            var stationTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
 
             StationTimeLabel.SetMarkup(Loc.GetString("comp-pda-ui-station-time",
-                ("time", stationTime.Time.ToString("hh\\:mm\\:ss"))));
-            StationDateLabel.SetMarkup(Loc.GetString("comp-pda-ui-station-date",
-                ("date", stationDate)));
+                ("time", stationTime.ToString("hh\\:mm\\:ss"))));
         }
     }
 }

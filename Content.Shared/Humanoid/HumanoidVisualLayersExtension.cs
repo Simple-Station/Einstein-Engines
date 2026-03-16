@@ -1,4 +1,21 @@
-using Content.Shared.Body.Components;
+// SPDX-FileCopyrightText: 2022 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 ScyronX <166930367+ScyronX@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+// SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 kurokoTurbo <92106367+kurokoTurbo@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Trest <144359854+trest100@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kayzel <43700376+KayzelW@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Body.Part;
 
 namespace Content.Shared.Humanoid
@@ -9,6 +26,7 @@ namespace Content.Shared.Humanoid
         {
             return layer switch
             {
+                HumanoidVisualLayers.Groin => true,
                 HumanoidVisualLayers.Chest => true,
                 HumanoidVisualLayers.Head => true,
                 _ => false
@@ -47,35 +65,42 @@ namespace Content.Shared.Humanoid
                     yield return HumanoidVisualLayers.LArm;
                     yield return HumanoidVisualLayers.LHand;
                     break;
-                case HumanoidVisualLayers.LHand:
-                    yield return HumanoidVisualLayers.LHand;
-                    break;
                 case HumanoidVisualLayers.RArm:
                     yield return HumanoidVisualLayers.RArm;
-                    yield return HumanoidVisualLayers.RHand;
-                    break;
-                case HumanoidVisualLayers.RHand:
                     yield return HumanoidVisualLayers.RHand;
                     break;
                 case HumanoidVisualLayers.LLeg:
                     yield return HumanoidVisualLayers.LLeg;
                     yield return HumanoidVisualLayers.LFoot;
                     break;
-                case HumanoidVisualLayers.LFoot:
-                    yield return HumanoidVisualLayers.LFoot;
-                    break;
                 case HumanoidVisualLayers.RLeg:
                     yield return HumanoidVisualLayers.RLeg;
                     yield return HumanoidVisualLayers.RFoot;
                     break;
+                case HumanoidVisualLayers.Chest:
+                    yield return HumanoidVisualLayers.Chest;
+                    yield return HumanoidVisualLayers.Wings; // for IPC wings port from SimpleStation
+                    yield return HumanoidVisualLayers.Tail;
+                // Shitmed Change Start
+                    yield return HumanoidVisualLayers.Groin;
+                    break;
+                case HumanoidVisualLayers.Groin:
+                    yield return HumanoidVisualLayers.Groin;
+                    yield return HumanoidVisualLayers.Tail;
+                    break;
+                case HumanoidVisualLayers.LHand:
+                    yield return HumanoidVisualLayers.LHand;
+                    break;
+                case HumanoidVisualLayers.RHand:
+                    yield return HumanoidVisualLayers.RHand;
+                    break;
+                case HumanoidVisualLayers.LFoot:
+                    yield return HumanoidVisualLayers.LFoot;
+                    break;
                 case HumanoidVisualLayers.RFoot:
                     yield return HumanoidVisualLayers.RFoot;
                     break;
-                case HumanoidVisualLayers.Chest:
-                    yield return HumanoidVisualLayers.Chest;
-                    yield return HumanoidVisualLayers.Wings;
-                    yield return HumanoidVisualLayers.Tail;
-                    break;
+                // Shitmed Change End
                 default:
                     yield break;
             }
@@ -87,8 +112,10 @@ namespace Content.Shared.Humanoid
             {
                 case BodyPartType.Other:
                     break;
-                case BodyPartType.Torso:
+                case BodyPartType.Chest:
                     return HumanoidVisualLayers.Chest;
+                case BodyPartType.Groin:
+                    return HumanoidVisualLayers.Groin;
                 case BodyPartType.Tail:
                     return HumanoidVisualLayers.Tail;
                 case BodyPartType.Head:

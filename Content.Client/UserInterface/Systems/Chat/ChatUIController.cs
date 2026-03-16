@@ -1,3 +1,48 @@
+// SPDX-FileCopyrightText: 2022 Dylan Corrales <DeathCamel58@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr.@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <jmaster9999@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <wrexbe@protonmail.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 KP <13428215+nok-ko@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kot <1192090+koteq@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vasilis <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2023 Vasilis The Pikachu <vascreeper@yahoo.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deathride58 <deathride58@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 gus <august.eymann@gmail.ccom>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2023 router <messagebus@vk.com>
+// SPDX-FileCopyrightText: 2024 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Sk1tch <ben.peter.smith@gmail.com>
+// SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tainakov <136968973+Tainakov@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2024 Your Name <you@example.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Rinary <72972221+Rinary1@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Globalization;
 using System.Linq;
 using System.Numerics;
@@ -15,12 +60,12 @@ using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Screens;
 using Content.Client.UserInterface.Systems.Chat.Widgets;
 using Content.Client.UserInterface.Systems.Gameplay;
+using Content.Shared._Starlight.CollectiveMind; // Goobstation - Starlight collective mind port
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
-using Content.Shared.Decals;
 using Content.Shared.Damage.ForceSay;
-using Content.Shared.Examine;
+using Content.Shared.Decals;
 using Content.Shared.Input;
 using Content.Shared.Radio;
 using Content.Shared.Roles.RoleCodeword;
@@ -42,9 +87,10 @@ using Robust.Shared.Replays;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
+
 namespace Content.Client.UserInterface.Systems.Chat;
 
-public sealed class ChatUIController : UIController
+public sealed partial class ChatUIController : UIController
 {
     [Dependency] private readonly IClientAdminManager _admin = default!;
     [Dependency] private readonly IChatManager _manager = default!;
@@ -61,6 +107,7 @@ public sealed class ChatUIController : UIController
 
     [UISystemDependency] private readonly ExamineSystem? _examine = default;
     [UISystemDependency] private readonly GhostSystem? _ghost = default;
+    [UISystemDependency] private readonly CollectiveMindSystem? _collectiveMind = default!; // Goobstation - Starlight collective mind port
     [UISystemDependency] private readonly TypingIndicatorSystem? _typingIndicator = default;
     [UISystemDependency] private readonly ChatSystem? _chatSys = default;
     [UISystemDependency] private readonly PsionicChatUpdateSystem? _psionic = default!; //Nyano - Summary: makes the psionic chat available.
@@ -68,8 +115,7 @@ public sealed class ChatUIController : UIController
     [UISystemDependency] private readonly MindSystem? _mindSystem = default!;
     [UISystemDependency] private readonly RoleCodewordSystem? _roleCodewordSystem = default!;
 
-    [ValidatePrototypeId<ColorPalettePrototype>]
-    private const string ChatNamePalette = "ChatNames";
+    private static readonly ProtoId<ColorPalettePrototype> ChatNamePalette = "ChatNames";
     private string[] _chatNameColors = default!;
     private bool _chatNameColorsEnabled;
 
@@ -87,7 +133,8 @@ public sealed class ChatUIController : UIController
         {SharedChatSystem.AdminPrefix, ChatSelectChannel.Admin},
         {SharedChatSystem.RadioCommonPrefix, ChatSelectChannel.Radio},
         {SharedChatSystem.DeadPrefix, ChatSelectChannel.Dead},
-        {SharedChatSystem.TelepathicPrefix, ChatSelectChannel.Telepathic} //Nyano - Summary: adds the telepathic prefix =.
+        {SharedChatSystem.TelepathicPrefix, ChatSelectChannel.Telepathic}, //Nyano - Summary: adds the telepathic prefix =.
+        {SharedChatSystem.CollectiveMindPrefix, ChatSelectChannel.CollectiveMind} // Goobstation - Starlight collective mind port
     };
 
     public static readonly Dictionary<ChatSelectChannel, char> ChannelPrefixes = new()
@@ -101,7 +148,8 @@ public sealed class ChatUIController : UIController
         {ChatSelectChannel.Admin, SharedChatSystem.AdminPrefix},
         {ChatSelectChannel.Radio, SharedChatSystem.RadioCommonPrefix},
         {ChatSelectChannel.Dead, SharedChatSystem.DeadPrefix},
-        {ChatSelectChannel.Telepathic, SharedChatSystem.TelepathicPrefix } //Nyano - Summary: associates telepathic with =.
+        {ChatSelectChannel.Telepathic, SharedChatSystem.TelepathicPrefix }, //Nyano - Summary: associates telepathic with =.
+        {ChatSelectChannel.CollectiveMind, SharedChatSystem.CollectiveMindPrefix} // Goobstation - Starlight collective mind port
     };
 
     /// <summary>
@@ -153,6 +201,13 @@ public sealed class ChatUIController : UIController
     /// </summary>
     private readonly Dictionary<ChatChannel, int> _unreadMessages = new();
 
+
+    // Goobstation - Chat Pings
+    /// <summary>
+    /// Used for Goobstation's - Chat Pings
+    /// </summary>
+    private TimeSpan LastHighlightTime = TimeSpan.Zero;
+
     // TODO add a cap for this for non-replays
     public readonly List<(GameTick Tick, ChatMessage Msg)> History = new();
 
@@ -181,8 +236,8 @@ public sealed class ChatUIController : UIController
     {
         _sawmill = Logger.GetSawmill("chat");
         _sawmill.Level = LogLevel.Info;
-        _admin.AdminStatusUpdated += UpdateChannelPermissions;
-        _manager.PermissionsUpdated += UpdateChannelPermissions; //Nyano - Summary: the event for when permissions are updated for psionics.
+        _admin.AdminStatusUpdated += UpdateChannelPermissions; // Goobstation - Starlight collective mind port
+        _manager.PermissionsUpdated += UpdateChannelPermissions;
         _player.LocalPlayerAttached += OnAttachedChanged;
         _player.LocalPlayerDetached += OnAttachedChanged;
         _state.OnStateChanged += StateChanged;
@@ -232,11 +287,15 @@ public sealed class ChatUIController : UIController
         _input.SetInputCommand(ContentKeyFunctions.CycleChatChannelBackward,
             InputCmdHandler.FromDelegate(_ => CycleChatChannel(false)));
 
+        // Goobstation - Starlight collective mind port
+        _input.SetInputCommand(ContentKeyFunctions.FocusCollectiveMindChat,
+            InputCmdHandler.FromDelegate(_ => FocusChannel(ChatSelectChannel.CollectiveMind)));
+
         var gameplayStateLoad = UIManager.GetUIController<GameplayStateLoadController>();
         gameplayStateLoad.OnScreenLoad += OnScreenLoad;
         gameplayStateLoad.OnScreenUnload += OnScreenUnload;
 
-        var nameColors = _prototypeManager.Index<ColorPalettePrototype>(ChatNamePalette).Colors.Values.ToArray();
+        var nameColors = _prototypeManager.Index(ChatNamePalette).Colors.Values.ToArray();
         _chatNameColors = new string[nameColors.Length];
         for (var i = 0; i < nameColors.Length; i++)
         {
@@ -245,6 +304,7 @@ public sealed class ChatUIController : UIController
 
         _config.OnValueChanged(CCVars.ChatWindowOpacity, OnChatWindowOpacityChanged);
 
+        InitializeHighlights();
     }
 
     public void OnScreenLoad()
@@ -302,15 +362,15 @@ public sealed class ChatUIController : UIController
 
         switch (UIManager.ActiveScreen)
         {
+            case DefaultGameScreen defaultScreen:
+                chatBox = defaultScreen.ChatBox;
+                chatSizeRaw = _config.GetCVar(CCVars.DefaultScreenChatSize);
+                SetChatSizing(chatSizeRaw, defaultScreen, setting);
+                break;
             case SeparatedChatGameScreen separatedScreen:
                 chatBox = separatedScreen.ChatBox;
                 chatSizeRaw = _config.GetCVar(CCVars.SeparatedScreenChatSize);
                 SetChatSizing(chatSizeRaw, separatedScreen, setting);
-                break;
-            case OverlayChatGameScreen overlayScreen:
-                chatBox = overlayScreen.ChatBox;
-                chatSizeRaw = _config.GetCVar(CCVars.OverlayScreenChatSize);
-                SetChatSizing(chatSizeRaw, overlayScreen, setting);
                 break;
             default:
                 // this could be better?
@@ -360,11 +420,11 @@ public sealed class ChatUIController : UIController
             $"{size.X.ToString(CultureInfo.InvariantCulture)},{size.Y.ToString(CultureInfo.InvariantCulture)}";
         switch (UIManager.ActiveScreen)
         {
+            case DefaultGameScreen _:
+                _config.SetCVar(CCVars.DefaultScreenChatSize, stringSize);
+                break;
             case SeparatedChatGameScreen _:
                 _config.SetCVar(CCVars.SeparatedScreenChatSize, stringSize);
-                break;
-            case OverlayChatGameScreen _:
-                _config.SetCVar(CCVars.OverlayScreenChatSize, stringSize);
                 break;
             default:
                 // do nothing
@@ -431,6 +491,8 @@ public sealed class ChatUIController : UIController
     private void OnAttachedChanged(EntityUid uid)
     {
         UpdateChannelPermissions();
+
+        UpdateAutoFillHighlights();
     }
 
     private void AddSpeechBubble(ChatMessage msg, SpeechBubble.SpeechType speechType)
@@ -472,8 +534,9 @@ public sealed class ChatUIController : UIController
 
         if (existing.Count > SpeechBubbleCap)
         {
-            // Get the oldest to start fading fast.
-            var last = existing[0];
+            // Get the next speech bubble to fade
+            // Any speech bubbles before it are already fading
+            var last = existing[^(SpeechBubbleCap + 1)];
             last.FadeNow();
         }
     }
@@ -486,7 +549,7 @@ public sealed class ChatUIController : UIController
     private void EnqueueSpeechBubble(EntityUid entity, ChatMessage message, SpeechBubble.SpeechType speechType)
     {
         // Don't enqueue speech bubbles for other maps. TODO: Support multiple viewports/maps?
-        if (EntityManager.GetComponent<TransformComponent>(entity).MapID != _eye.CurrentMap)
+        if (EntityManager.GetComponent<TransformComponent>(entity).MapID != _eye.CurrentEye.Position.MapId)
             return;
 
         if (!_queuedSpeechBubbles.TryGetValue(entity, out var queueData))
@@ -561,6 +624,7 @@ public sealed class ChatUIController : UIController
             FilterableChannels |= ChatChannel.Admin;
             FilterableChannels |= ChatChannel.AdminAlert;
             FilterableChannels |= ChatChannel.AdminChat;
+            FilterableChannels |= ChatChannel.CollectiveMind; // Goobstation - Starlight collective mind port
             CanSendChannels |= ChatSelectChannel.Admin;
             FilterableChannels |= ChatChannel.Telepathic; //Nyano - Summary: makes admins able to see psionic chat.
         }
@@ -572,6 +636,12 @@ public sealed class ChatUIController : UIController
             CanSendChannels |= ChatSelectChannel.Telepathic;
         }
         // /Nyano - End modified code block
+        // Goobstation - Starlight collective mind port
+        if (_collectiveMind != null && _collectiveMind.IsCollectiveMind)
+        {
+            FilterableChannels |= ChatChannel.CollectiveMind;
+            CanSendChannels |= ChatSelectChannel.CollectiveMind;
+        }
 
         SelectableChannels = CanSendChannels;
 
@@ -644,7 +714,7 @@ public sealed class ChatUIController : UIController
         var predicate = static (EntityUid uid, (EntityUid compOwner, EntityUid? attachedEntity) data)
             => uid == data.compOwner || uid == data.attachedEntity;
         var playerPos = player != null
-            ? _transform?.GetMapCoordinates(player.Value) ?? MapCoordinates.Nullspace
+            ? _eye.CurrentEye.Position
             : MapCoordinates.Nullspace;
 
         var occluded = player != null && _examine.IsOccluded(player.Value);
@@ -702,21 +772,41 @@ public sealed class ChatUIController : UIController
            && _chatSys.TryProccessRadioMessage(uid, text, out _, out radioChannel, quiet: true);
     }
 
-    public void UpdateSelectedChannel(ChatBox box)
+    // Goobstation - Starlight collective mind port
+    private bool TryGetCollectiveMind(string text, out CollectiveMindPrototype? collectiveMind)
     {
-        var (prefixChannel, _, radioChannel) = SplitInputContents(box.ChatInput.Input.Text.ToLower());
-
-        if (prefixChannel == ChatSelectChannel.None)
-            box.ChatInput.ChannelSelector.UpdateChannelSelectButton(box.SelectedChannel, null);
-        else
-            box.ChatInput.ChannelSelector.UpdateChannelSelectButton(prefixChannel, radioChannel);
+        collectiveMind = null;
+        return _player.LocalEntity is { Valid: true } uid
+               && _chatSys != null
+               && _chatSys.TryProccessCollectiveMindMessage(uid, text, out _, out collectiveMind, quiet: true);
     }
 
-    public (ChatSelectChannel chatChannel, string text, RadioChannelPrototype? radioChannel) SplitInputContents(string text)
+    public void UpdateSelectedChannel(ChatBox box)
+    {
+        // <Goobstation> - Starlight collective mind port
+        var (prefixChannel, _, radioChannel, collectiveMind) = SplitInputContents(box.ChatInput.Input.Text.ToLower());
+
+        switch (prefixChannel)
+        {
+            case ChatSelectChannel.None:
+                box.ChatInput.ChannelSelector.UpdateChannelSelectButton(box.SelectedChannel, null, null);
+                break;
+            case ChatSelectChannel.CollectiveMind:
+                box.ChatInput.ChannelSelector.UpdateChannelSelectButton(prefixChannel, null, collectiveMind);
+                break;
+            default:
+                box.ChatInput.ChannelSelector.UpdateChannelSelectButton(prefixChannel, radioChannel, null);
+                break;
+        }
+        // </Goobstation>
+    }
+
+    // Goobstation - Starlight collective mind port
+    public (ChatSelectChannel chatChannel, string text, RadioChannelPrototype? radioChannel, CollectiveMindPrototype? collectiveMind) SplitInputContents(string text)
     {
         text = text.Trim();
         if (text.Length == 0)
-            return (ChatSelectChannel.None, text, null);
+            return (ChatSelectChannel.None, text, null, null); // Goobstation - Starlight collective mind port
 
         // We only cut off prefix only if it is not a radio or local channel, which both map to the same /say command
         // because ????????
@@ -728,20 +818,24 @@ public sealed class ChatUIController : UIController
             chatChannel = PrefixToChannel.GetValueOrDefault(text[0]);
 
         if ((CanSendChannels & chatChannel) == 0)
-            return (ChatSelectChannel.None, text, null);
+            return (ChatSelectChannel.None, text, null, null); // Goobstation - Starlight collective mind port
 
         if (chatChannel == ChatSelectChannel.Radio)
-            return (chatChannel, text, radioChannel);
+            return (chatChannel, text, radioChannel, null); // Goobstation - Starlight collective mind port
+
+        // Goobstation - Starlight collective mind port
+        if (TryGetCollectiveMind(text, out var collectiveMind) && chatChannel == ChatSelectChannel.CollectiveMind)
+            return (chatChannel, text, radioChannel, collectiveMind);
 
         if (chatChannel == ChatSelectChannel.Local)
         {
             if (_ghost?.IsGhost != true)
-                return (chatChannel, text, null);
+                return (chatChannel, text, null, null); // Goobstation - Starlight collective mind port
             else
                 chatChannel = ChatSelectChannel.Dead;
         }
 
-        return (chatChannel, text[1..].TrimStart(), null);
+        return (chatChannel, text[1..].TrimStart(), null, null); // Goobstation - Starlight collective mind port
     }
 
     public void SendMessage(ChatBox box, ChatSelectChannel channel)
@@ -756,7 +850,7 @@ public sealed class ChatUIController : UIController
         if (string.IsNullOrWhiteSpace(text))
             return;
 
-        (var prefixChannel, text, var _) = SplitInputContents(text);
+        (var prefixChannel, text, var _, var _) = SplitInputContents(text); // Goobstation - Starlight collective mind port
 
         // Check if message is longer than the character limit
         if (text.Length > MaxMessageLength)
@@ -851,6 +945,38 @@ public sealed class ChatUIController : UIController
             }
         }
 
+        #region Goobstation - Highlight chat sounds/pings!
+        // Goobstation - Highlight chat sounds/pings!
+        // Color any words chosen by the client and check for highlights
+        var hadHighlight = false;
+
+        // Skip highlight check if this is a message from the local player
+        if (_player.LocalSession?.AttachedEntity is not { } localEntity ||
+            msg.SenderEntity != _ent.GetNetEntity(localEntity))
+        {
+            foreach (var highlight in _highlights)
+            {
+                var newMessage = SharedChatSystem.InjectTagAroundString(msg, highlight, "color", _highlightsColor);
+                if (newMessage != msg.WrappedMessage)
+                {
+                    hadHighlight = true;
+                    msg.WrappedMessage = newMessage;
+                }
+            }
+
+            var currentTime = _timing.CurTime;
+
+            // Only play sound if enough time has passed since the last highlight
+            // This avoids playing multiple pings in less than a second
+            if (hadHighlight && (currentTime - LastHighlightTime).TotalMilliseconds >= 500)
+            {
+                LastHighlightTime = currentTime;
+                PlayHighlightSound();
+            }
+        }
+        // Goobstation end
+        #endregion
+
         // Log all incoming chat to repopulate when filter is un-toggled
         if (!msg.HideChat)
         {
@@ -929,6 +1055,11 @@ public sealed class ChatUIController : UIController
     public void NotifyChatTextChange()
     {
         _typingIndicator?.ClientChangedChatText();
+    }
+
+    public void NotifyChatFocus(bool isFocused)
+    {
+        _typingIndicator?.ClientChangedChatFocus(isFocused);
     }
 
     public void Repopulate()

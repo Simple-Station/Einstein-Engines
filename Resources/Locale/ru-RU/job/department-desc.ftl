@@ -8,4 +8,3 @@ department-Security-description = Поддерживайте порядок на
 department-Science-description = Изучайте артефакты и аномалии, обеспечивайте членов экипажа новыми продвинутыми устройствами.
 department-Silicon-description = Соблюдайте свои законы, служите экипажу.
 department-Specific-description = Должности, которые есть не на всех станциях.
-department-Dignitary-description = Помогайте Главе Персонала и Капитану, выполняйте свои обязанности.

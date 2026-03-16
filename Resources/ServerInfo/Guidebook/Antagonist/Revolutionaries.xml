@@ -1,45 +1,64 @@
+<!--
+SPDX-FileCopyrightText: 2023 coolmankid12345 <55817627+coolmankid12345@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+SPDX-FileCopyrightText: 2024 Ghagliiarghii <68826635+Ghagliiarghii@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <Document>
   # Революционеры
 
-  - Революционеры — антагонисты, которых поддерживает Синдикат для захвата станции.
-
-  ## Главари революции
-
-<Box>
-  <GuideEntityEmbed Entity="RevolutionaryManifesto" Caption="Манифест революционера"/>
-</Box>
-
-  [color=#5e9cff]Главари революции[/color] выбираются в начале смены и должны захватить станцию, устранив, сослав или заковав в наручники весь командный состав. В помощь им выдаётся [color=#a4885c]манифест революционера[/color].
-
-  ## Конвертация
-
   <Box>
-  <GuideEntityEmbed Entity="RevolutionaryManifesto" Caption="Манифест революционера"/>
-</Box>
+    [color=#999999][italic]"Viva la revolución!!"[/italic][/color]
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="PosterContrabandRevolt" Caption=""/>
+  </Box>
 
-  Вы можете обращать членов экипажа, используя [color=#a4885c]манифест революционера[/color]: кликните им по цели.
-
-<Box>
-  <GuideEntityEmbed Entity="MindShieldImplanter" Caption="Имплантер MindShield"/>
-</Box>
-
-  Осторожно! [color=#a4885c]Имплант MindShield[/color] не позволит сделать носителя революционером. Считайте, что у [color=#a4885c]службы безопасности[/color] и [color=#a4885c]командования[/color] импланты уже стоят.
-
-  ## Революционер
-
-  [color=#ff0000]Революционер[/color] — это обращённый [color=#5e9cff]главарём революции[/color] член экипажа. Революционеры подчиняются главарям и должны заботиться об их выживании превыше всего, ведь с их смертью вы проиграете.
-  Помните: обычные революционеры не могут обращать других — это прерогатива их начальства.
+    Революционеры — это антагонисты, спонсируемые [color=#ff0000]Синдикатом[/color], задача которых — захватить контроль над станцией. У них нет никаких хитростей или дешевых трюков, у них есть только цель и сила в количестве.
 
   ## Цели
+  Вы должны обратить, связать или убить весь [textlink="Командный состав" link="Command"] на станции в любом порядке.
 
-  Необходимо устранить, сослать или арестовать следующих членов командования на станции в любом порядке.
-  - Капитан
-  - Глава персонала
-  - Главный инженер
-  - Мистагог
-  - Офицер логистики
-  - Начальник службы безопасности
-  - Главврач
+  Ваша цель — [bold]не уничтожить станцию[/bold], а [italic]захватить её[/italic], поэтому старайтесь минимизировать ущерб, где это возможно.
 
-  Помните: ваша цель — захватить станцию, а не разрушить её, поэтому по возможности минимизируйте ущерб. Viva la revolución!
+  [bold]Революция потерпит поражение[/bold], если все [bold][color=#5e9cff]Главы революции[/color][/bold] погибнут, все [color=red]Революционеры[/color] будут де-конвертированы, если это произойдет.
+
+  ## Главы революции и обращение
+  [bold][color=#5e9cff]Главы революции[/color][/bold] выбираются в начале смены и начинают с [color=cyan]вспышкой[/color] и парой [color=cyan]солнцезащитных очков[/color].
+
+  <Box>
+    <GuideEntityEmbed Entity="Flash"/>
+    <GuideEntityEmbed Entity="ClothingEyesGlassesSunglasses"/>
+  </Box>
+
+  Вы можете обратить членов экипажа на свою сторону, взяв любую [bold]вспышку[/bold] и атаковав кого-то с её помощью в [color=#ff0000]боевом режиме[/color].
+  Однако, [bold]вы не сможете обратить свою цель, если на ней надета [color=cyan]защита от вспышек[/color][/bold], такая как солнцезащитные очки или сварочная маска.
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingEyesGlassesSunglasses"/>
+    <GuideEntityEmbed Entity="ClothingEyesGlassesSecurity"/>
+    <GuideEntityEmbed Entity="ClothingHeadHatWelding"/>
+  </Box>
+
+  Еще одним препятствием на вашем пути являются эти надоедливые [color=cyan]импланты защиты разума[/color]. Они:
+  - Предотвращают обращение человека в [color=red]Революционера[/color]
+  - Де-конвертируют Революционеров, делая их больше не лояльными вашей цели
+  - [bold]Видимо уничтожаются при имплантации в [color=#5e9cff]Главы революции[/color][/bold], выдавая вас
+  - НЕ защищают от дезориентации вспышкой
+
+    Предполагается, что вся [color=#cb0000]Служба Безопасности[/color] и [color=#1b67a5]Командный состав[/color] уже имеют импланты защиты разума, [bold]однако их можно удалить с помощью пустого имплантера, который можно получить в медицинском отделении в МедФабе.[/bold]
+
+  <Box>
+    <GuideEntityEmbed Entity="MindShieldImplanter"/>
+  </Box>
+
+  ## Революционер
+  [color=red]Революционер[/color] это член экипажа, который был обращен [bold][color=#5e9cff]Главой революции[/color][/bold].
+
+  [bold][color=red]Революционеры[/color] не могут сами обращать людей,[/bold] но они более чем способны выполнять грязную работу и выполнять приказы.
 </Document>

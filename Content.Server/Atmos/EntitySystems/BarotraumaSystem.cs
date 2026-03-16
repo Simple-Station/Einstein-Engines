@@ -1,15 +1,61 @@
+// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Kara D <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2021 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2022 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Menshin <Menshin@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Kayzel <43700376+KayzelW@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Marcus F <marcus2008stoke@gmail.com>
+// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+// SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Trest <144359854+trest100@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 kurokoTurbo <92106367+kurokoTurbo@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 thebiggestbruh <199992874+thebiggestbruh@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 thebiggestbruh <marcus2008stoke@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Diagnostics.CodeAnalysis;
+using Content.Goobstation.Shared.Atmos.Events; // goob edit
+using Content.Server._Goobstation.Wizard.Systems;
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.Components;
+using Content.Shared._Goobstation.Wizard.Spellblade;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
 using Content.Shared.Damage;
 using Content.Shared.Database;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
-using Content.Shared.Mood;
 using Robust.Shared.Containers;
+
+// Shitmed Change
+using Content.Shared._Shitmed.Targeting;
+using Content.Goobstation.Common.Atmos;
 
 namespace Content.Server.Atmos.EntitySystems
 {
@@ -18,14 +64,10 @@ namespace Content.Server.Atmos.EntitySystems
         [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
         [Dependency] private readonly DamageableSystem _damageableSystem = default!;
         [Dependency] private readonly AlertsSystem _alertsSystem = default!;
-        [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+        [Dependency] private readonly IAdminLogManager _adminLogger= default!;
         [Dependency] private readonly InventorySystem _inventorySystem = default!;
-
-        [Dependency] private readonly ILogManager _logManager = default!;
-
+        [Dependency] private readonly SpellbladeSystem _spellblade = default!; // Goobstation
         private const float UpdateTimer = 1f;
-
-        private ISawmill _sawmill = default!;
         private float _timer;
 
         public override void Initialize()
@@ -37,8 +79,6 @@ namespace Content.Server.Atmos.EntitySystems
 
             SubscribeLocalEvent<PressureImmunityComponent, ComponentInit>(OnPressureImmuneInit);
             SubscribeLocalEvent<PressureImmunityComponent, ComponentRemove>(OnPressureImmuneRemove);
-
-            // _sawmill = _logManager.GetSawmill("barotrauma");
         }
 
         private void OnPressureImmuneInit(EntityUid uid, PressureImmunityComponent pressureImmunity, ComponentInit args)
@@ -69,13 +109,13 @@ namespace Content.Server.Atmos.EntitySystems
                 slotTarget = slot.Name;
             }
 
-            if (!TryComp<BarotraumaComponent>(protectionTarget, out var barotrauma))
-                return;
+            if (TryComp<BarotraumaComponent>(protectionTarget, out var barotrauma))
+            {
+                if (slotTarget != null && !barotrauma.ProtectionSlots.Contains(slotTarget))
+                    return;
 
-            if (slotTarget != null && !(barotrauma.ProtectionSlots.Contains(slotTarget) || barotrauma.AlternativeProtectionSlots.Contains(slotTarget))) // Orehum
-                return;
-
-            UpdateCachedResistances(protectionTarget, barotrauma);
+                UpdateCachedResistances(protectionTarget, barotrauma);
+            }
         }
 
         /// <summary>
@@ -91,7 +131,7 @@ namespace Content.Server.Atmos.EntitySystems
 
         private void OnPressureProtectionEquipped(EntityUid uid, PressureProtectionComponent pressureProtection, GotEquippedEvent args)
         {
-            if (TryComp<BarotraumaComponent>(args.Equipee, out var barotrauma) && (barotrauma.ProtectionSlots.Contains(args.Slot) || barotrauma.AlternativeProtectionSlots.Contains(args.Slot))) // Orehum
+            if (TryComp<BarotraumaComponent>(args.Equipee, out var barotrauma) && barotrauma.ProtectionSlots.Contains(args.Slot))
             {
                 UpdateCachedResistances(args.Equipee, barotrauma);
             }
@@ -99,7 +139,7 @@ namespace Content.Server.Atmos.EntitySystems
 
         private void OnPressureProtectionUnequipped(EntityUid uid, PressureProtectionComponent pressureProtection, GotUnequippedEvent args)
         {
-            if (TryComp<BarotraumaComponent>(args.Equipee, out var barotrauma) && (barotrauma.ProtectionSlots.Contains(args.Slot) || barotrauma.AlternativeProtectionSlots.Contains(args.Slot))) // Orehum
+            if (TryComp<BarotraumaComponent>(args.Equipee, out var barotrauma) && barotrauma.ProtectionSlots.Contains(args.Slot))
             {
                 UpdateCachedResistances(args.Equipee, barotrauma);
             }
@@ -112,7 +152,7 @@ namespace Content.Server.Atmos.EntitySystems
         private void UpdateCachedResistances(EntityUid uid, BarotraumaComponent barotrauma)
         {
 
-            if (barotrauma.ProtectionSlots.Count != 0 || barotrauma.AlternativeProtectionSlots.Count != 0) // Orehum
+            if (barotrauma.ProtectionSlots.Count != 0)
             {
                 if (!TryComp(uid, out InventoryComponent? inv) || !TryComp(uid, out ContainerManagerComponent? contMan))
                 {
@@ -122,7 +162,7 @@ namespace Content.Server.Atmos.EntitySystems
                 var hPMultiplier = float.MinValue;
                 var lPModifier = float.MaxValue;
                 var lPMultiplier = float.MaxValue;
-                bool fuckedCheck = false; // Orehum
+
                 foreach (var slot in barotrauma.ProtectionSlots)
                 {
                     if (!_inventorySystem.TryGetSlotEntity(uid, slot, out var equipment, inv, contMan)
@@ -137,7 +177,6 @@ namespace Content.Server.Atmos.EntitySystems
                         hPMultiplier = 1f;
                         lPModifier = 0f;
                         lPMultiplier = 1f;
-                        fuckedCheck = true; // Orehum
                         break;
                     }
 
@@ -147,39 +186,6 @@ namespace Content.Server.Atmos.EntitySystems
                     lPModifier = Math.Min(lPModifier, itemLowModifier.Value);
                     lPMultiplier = Math.Min(lPMultiplier, itemLowMultiplier.Value);
                 }
-
-                // Orehum Start проверяем на альтернативный набор предметов для защиты от атмосферы. Надо для одежды плазмолюдов
-                if (fuckedCheck)
-                {
-                    hPModifier = float.MinValue;
-                    hPMultiplier = float.MinValue;
-                    lPModifier = float.MaxValue;
-                    lPMultiplier = float.MaxValue;
-                    foreach (var slot in barotrauma.AlternativeProtectionSlots)
-                    {
-                        if (!_inventorySystem.TryGetSlotEntity(uid, slot, out var equipment, inv, contMan)
-                            || !TryGetPressureProtectionValues(equipment.Value,
-                                out var itemHighMultiplier,
-                                out var itemHighModifier,
-                                out var itemLowMultiplier,
-                                out var itemLowModifier))
-                        {
-                            // Missing protection, skin is exposed.
-                            hPModifier = 0f;
-                            hPMultiplier = 1f;
-                            lPModifier = 0f;
-                            lPMultiplier = 1f;
-                            break;
-                        }
-
-                        // The entity is as protected as its weakest part protection
-                        hPModifier = Math.Max(hPModifier, itemHighModifier.Value);
-                        hPMultiplier = Math.Max(hPMultiplier, itemHighMultiplier.Value);
-                        lPModifier = Math.Min(lPModifier, itemLowModifier.Value);
-                        lPMultiplier = Math.Min(lPMultiplier, itemLowMultiplier.Value);
-                    }
-                }
-                // Orehum end
 
                 barotrauma.HighPressureModifier = hPModifier;
                 barotrauma.HighPressureMultiplier = hPMultiplier;
@@ -206,7 +212,7 @@ namespace Content.Server.Atmos.EntitySystems
         /// </summary>
         public float GetFeltLowPressure(EntityUid uid, BarotraumaComponent barotrauma, float environmentPressure)
         {
-            if (barotrauma.HasImmunity)
+            if (barotrauma.HasImmunity || HasComp<SpecialPressureImmunityComponent>(uid))
             {
                 return Atmospherics.OneAtmosphere;
             }
@@ -215,9 +221,12 @@ namespace Content.Server.Atmos.EntitySystems
             return Math.Min(modified, Atmospherics.OneAtmosphere);
         }
 
+        /// <summary>
+        /// Returns adjusted pressure after having applied resistances from equipment and innate (if any), to check against a high pressure hazard threshold
+        /// </summary>
         public float GetFeltHighPressure(EntityUid uid, BarotraumaComponent barotrauma, float environmentPressure)
         {
-            if (barotrauma.HasImmunity)
+            if (barotrauma.HasImmunity || HasComp<SpecialPressureImmunityComponent>(uid))
             {
                 return Atmospherics.OneAtmosphere;
             }
@@ -227,7 +236,7 @@ namespace Content.Server.Atmos.EntitySystems
         }
 
         public bool TryGetPressureProtectionValues(
-            Entity<PressureProtectionComponent?> ent,
+            EntityUid ent, // Goob edit
             [NotNullWhen(true)] out float? highMultiplier,
             [NotNullWhen(true)] out float? highModifier,
             [NotNullWhen(true)] out float? lowMultiplier,
@@ -237,17 +246,25 @@ namespace Content.Server.Atmos.EntitySystems
             highModifier = null;
             lowMultiplier = null;
             lowModifier = null;
-            if (!Resolve(ent, ref ent.Comp, false))
-                return false;
 
-            var comp = ent.Comp;
+            // Goob edit start
             var ev = new GetPressureProtectionValuesEvent
             {
-                HighPressureMultiplier = comp.HighPressureMultiplier,
-                HighPressureModifier = comp.HighPressureModifier,
-                LowPressureMultiplier = comp.LowPressureMultiplier,
-                LowPressureModifier = comp.LowPressureModifier
+                HighPressureMultiplier = 1f,
+                HighPressureModifier = 0f,
+                LowPressureMultiplier = 1f,
+                LowPressureModifier = 0f
             };
+
+            if (TryComp(ent, out PressureProtectionComponent? comp))
+            {
+                ev.HighPressureMultiplier = comp.HighPressureMultiplier;
+                ev.HighPressureModifier = comp.HighPressureModifier;
+                ev.LowPressureMultiplier = comp.LowPressureMultiplier;
+                ev.LowPressureModifier = comp.LowPressureModifier;
+            }
+            // Goob edit end
+
             RaiseLocalEvent(ent, ref ev);
             highMultiplier = ev.HighPressureMultiplier;
             highModifier = ev.HighPressureModifier;
@@ -264,19 +281,22 @@ namespace Content.Server.Atmos.EntitySystems
                 return;
 
             _timer -= UpdateTimer;
-
+            // Shitmed Change Start
             var enumerator = EntityQueryEnumerator<BarotraumaComponent, DamageableComponent>();
             while (enumerator.MoveNext(out var uid, out var barotrauma, out var damageable))
             {
                 var totalDamage = FixedPoint2.Zero;
-                foreach (var (barotraumaDamageType, _) in barotrauma.Damage.DamageDict)
+                foreach (var (damageType, _) in barotrauma.Damage.DamageDict)
                 {
-                    if (!damageable.Damage.DamageDict.TryGetValue(barotraumaDamageType, out var damage))
+                    if (!damageable.Damage.DamageDict.TryGetValue(damageType, out var damage))
                         continue;
+
                     totalDamage += damage;
                 }
+
                 if (totalDamage >= barotrauma.MaxDamage)
                     continue;
+            // Shitmed Change End
 
                 var pressure = 1f;
 
@@ -292,27 +312,45 @@ namespace Content.Server.Atmos.EntitySystems
                     >= Atmospherics.WarningHighPressure => GetFeltHighPressure(uid, barotrauma, pressure),
                     _ => pressure
                 };
+
                 if (pressure <= Atmospherics.HazardLowPressure)
                 {
+
+                    // goob start
+                    var resistEv = new ResistPressureEvent();
+                    resistEv.Pressure = pressure;
+                    RaiseLocalEvent(uid, ref resistEv);
+
+                    if (resistEv.Cancelled)
+                        return;
+                    // goob end
+
                     // Deal damage and ignore resistances. Resistance to pressure damage should be done via pressure protection gear.
-                    _damageableSystem.TryChangeDamage(uid, barotrauma.Damage * Atmospherics.LowPressureDamage, true, false, canSever: false, doPartDamage: false); // Shitmed Change
+                    _damageableSystem.TryChangeDamage(uid, barotrauma.Damage * Atmospherics.LowPressureDamage, true, false, targetPart: TargetBodyPart.All); // Shitmed Change
+
                     if (!barotrauma.TakingDamage)
                     {
                         barotrauma.TakingDamage = true;
                         _adminLogger.Add(LogType.Barotrauma, $"{ToPrettyString(uid):entity} started taking low pressure damage");
                     }
 
-                    var moodEv = new MoodEffectEvent("MobLowPressure");
-                    RaiseLocalEvent(uid, ref moodEv);
                     _alertsSystem.ShowAlert(uid, barotrauma.LowPressureAlert, 2);
                 }
-                else if (pressure >= Atmospherics.HazardHighPressure)
+                else if (pressure >= Atmospherics.HazardHighPressure && !_spellblade.IsHoldingItemWithComponent<FireSpellbladeEnchantmentComponent>(uid)) // Goob edit
                 {
+                    // goob start
+                    var resistEv = new ResistPressureEvent();
+                    resistEv.Pressure = pressure;
+                    RaiseLocalEvent(uid, ref resistEv);
+
+                    if (resistEv.Cancelled)
+                        return;
+                    // goob end
+
                     var damageScale = MathF.Min(((pressure / Atmospherics.HazardHighPressure) - 1) * Atmospherics.PressureDamageCoefficient, Atmospherics.MaxHighPressureDamage);
 
-                    _damageableSystem.TryChangeDamage(uid, barotrauma.Damage * damageScale, true, false, canSever: false, doPartDamage: false); // Shitmed Change
-                    var moodEv = new MoodEffectEvent("MobHighPressure");
-                    RaiseLocalEvent(uid, ref moodEv);
+                    // Deal damage and ignore resistances. Resistance to pressure damage should be done via pressure protection gear.
+                    _damageableSystem.TryChangeDamage(uid, barotrauma.Damage * damageScale, true, false, targetPart: TargetBodyPart.All); // Shitmed Change
 
                     if (!barotrauma.TakingDamage)
                     {
@@ -324,12 +362,18 @@ namespace Content.Server.Atmos.EntitySystems
                 }
                 else
                 {
+                    // goob start
+                    var pressureEv = new SendSafePressureEvent(pressure);
+                    RaiseLocalEvent(uid, ref pressureEv);
+                    // goob end
+
                     // Within safe pressure limits
                     if (barotrauma.TakingDamage)
                     {
                         barotrauma.TakingDamage = false;
                         _adminLogger.Add(LogType.Barotrauma, $"{ToPrettyString(uid):entity} stopped taking pressure damage");
                     }
+
                     // Set correct alert.
                     switch (pressure)
                     {

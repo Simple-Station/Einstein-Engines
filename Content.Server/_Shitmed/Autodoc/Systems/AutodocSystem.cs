@@ -1,13 +1,19 @@
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
-using Content.Shared.Chat;
 using Content.Server.Chat.Systems;
 using Content.Shared.DoAfter;
-using Content.Server.Power.EntitySystems;
+using Content.Shared.Power.EntitySystems;
 using Content.Shared._Shitmed.Autodoc.Components;
 using Content.Shared._Shitmed.Autodoc.Systems;
-using Content.Shared.Bed.Sleep;
-
+using Content.Shared.Body.Components;
+using Content.Shared.Chat;
 
 namespace Content.Server._Shitmed.Autodoc.Systems;
 
@@ -15,8 +21,7 @@ public sealed class AutodocSystem : SharedAutodocSystem
 {
     [Dependency] private readonly InternalsSystem _internals = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly PowerReceiverSystem _power = default!;
-    [Dependency] private readonly SleepingSystem _sleepingSystem = default!;
+    [Dependency] private readonly SharedPowerReceiverSystem _power = default!;
 
     public override void Update(float frameTime)
     {
@@ -44,7 +49,7 @@ public sealed class AutodocSystem : SharedAutodocSystem
         if (TryComp<InternalsComponent>(patient, out var internals) && _internals.AreInternalsWorking(patient, internals))
             _internals.DisconnectTank((patient, internals));
 
-        _sleepingSystem.TryWaking(patient);
+        base.WakePatient(patient);
     }
 
     public override void Say(EntityUid uid, string msg)

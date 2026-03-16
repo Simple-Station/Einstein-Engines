@@ -1,15 +1,26 @@
-﻿- type: entity
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
   id: WeaponStaffBase
   abstract: true
-  parent: [ BaseItem, BaseMagicalContraband ]
+  parent: [BaseItem, BaseMagicalContraband] # Goob edit
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Basic/staves.rsi
   - type: Item
     heldPrefix: staff
-    size: Normal
+    size: Huge # Goob edit
   - type: Gun
-    fireRate: 1
+    soundEmpty: null # Goobstation
+    soundMode: null # Goobstation
+    clumsyProof: true # Goobstation
+    fireRate: 1.5 # Goob edit
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -20,4 +31,15 @@
   - type: Tag
     tags:
     - WizardStaff
-
+  - type: Clothing # Goobstation
+    quickEquip: false
+    slots:
+      - Back
+      - suitStorage
+    clothingVisuals:
+      back:
+      - state: equipped-BACKPACK
+      suitstorage:
+      - state: equipped-BACKPACK
+  - type: StaticPrice # Goobstation
+    price: 30000

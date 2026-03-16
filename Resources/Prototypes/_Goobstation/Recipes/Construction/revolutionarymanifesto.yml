@@ -1,0 +1,9 @@
+- type: construction
+  id: RevolutionaryManifesto
+  graph: RevolutionaryManifesto
+  targetNode: revolutionaryManifesto
+  category: construction-category-weapons
+  objectType: Item
+  entityWhitelist:
+    components:
+    - HeadRevolutionary

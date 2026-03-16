@@ -1,3 +1,22 @@
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Rainfall <rainfey0+git@gmail.com>
+// SPDX-FileCopyrightText: 2023 Rainfey <11758391+Rainfey@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tornado Tech <54727692+Tornado-Technology@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Milon <milonpl.git@proton.me>
+// SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Access.Components;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Contraband;
@@ -5,28 +24,54 @@ using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Item;
 using Content.Shared.Tag;
+using Content.Shared.Verbs;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.Manager;
+using Robust.Shared.Timing;
+using Robust.Shared.Utility;
+using System.Linq;
 
 namespace Content.Shared.Clothing.EntitySystems;
 
 public abstract class SharedChameleonClothingSystem : EntitySystem
 {
-    [Dependency] private readonly IComponentFactory _factory = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly ISerializationManager _serialization = default!;
     [Dependency] private readonly ClothingSystem _clothingSystem = default!;
     [Dependency] private readonly ContrabandSystem _contraband = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly SharedItemSystem _itemSystem = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] protected readonly IGameTiming _timing = default!;
+
+    private static readonly SlotFlags[] IgnoredSlots =
+    {
+        SlotFlags.All,
+        SlotFlags.PREVENTEQUIP,
+        SlotFlags.NONE
+    };
+    private static readonly SlotFlags[] Slots = Enum.GetValues<SlotFlags>().Except(IgnoredSlots).ToArray();
+
+    private readonly Dictionary<SlotFlags, List<EntProtoId>> _data = new();
+
+    public readonly Dictionary<SlotFlags, List<string>> ValidVariants = new();
+    [Dependency] protected readonly SharedUserInterfaceSystem UI = default!;
+
+    private static readonly ProtoId<TagPrototype> WhitelistChameleonTag = "WhitelistChameleon";
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<ChameleonClothingComponent, GotEquippedEvent>(OnGotEquipped);
         SubscribeLocalEvent<ChameleonClothingComponent, GotUnequippedEvent>(OnGotUnequipped);
+        SubscribeLocalEvent<ChameleonClothingComponent, GetVerbsEvent<InteractionVerb>>(OnVerb);
+
+        SubscribeLocalEvent<ChameleonClothingComponent, PrototypesReloadedEventArgs>(OnPrototypeReload);
+        PrepareAllVariants();
+    }
+
+    private void OnPrototypeReload(EntityUid uid, ChameleonClothingComponent component, PrototypesReloadedEventArgs args)
+    {
+        PrepareAllVariants();
     }
 
     private void OnGotEquipped(EntityUid uid, ChameleonClothingComponent component, GotEquippedEvent args)
@@ -62,7 +107,7 @@ public abstract class SharedChameleonClothingSystem : EntitySystem
 
         // item sprite logic
         if (TryComp(uid, out ItemComponent? item) &&
-            proto.TryGetComponent(out ItemComponent? otherItem, _factory))
+            proto.TryGetComponent(out ItemComponent? otherItem, Factory))
         {
             _itemSystem.CopyVisuals(uid, otherItem, item);
         }
@@ -94,6 +139,22 @@ public abstract class SharedChameleonClothingSystem : EntitySystem
         }
     }
 
+    private void OnVerb(Entity<ChameleonClothingComponent> ent, ref GetVerbsEvent<InteractionVerb> args)
+    {
+        if (!args.CanAccess || !args.CanInteract || ent.Comp.User != args.User)
+            return;
+
+        // Can't pass args from a ref event inside of lambdas
+        var user = args.User;
+
+        args.Verbs.Add(new InteractionVerb()
+        {
+            Text = Loc.GetString("chameleon-component-verb-text"),
+            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/settings.svg.192dpi.png")),
+            Act = () => UI.TryToggleUi(ent.Owner, ChameleonUiKey.Key, user)
+        });
+    }
+
     protected virtual void UpdateSprite(EntityUid uid, EntityPrototype proto) { }
 
     /// <summary>
@@ -106,7 +167,7 @@ public abstract class SharedChameleonClothingSystem : EntitySystem
             return false;
 
         // check if it is marked as valid chameleon target
-        if (!proto.TryGetComponent(out TagComponent? tag, _factory) || !_tag.HasTag(tag, "WhitelistChameleon"))
+        if (!proto.TryGetComponent(out TagComponent? tag, Factory) || !_tag.HasTag(tag, WhitelistChameleonTag))
             return false;
 
         if (requiredTag != null && !_tag.HasTag(tag, requiredTag))
@@ -119,5 +180,56 @@ public abstract class SharedChameleonClothingSystem : EntitySystem
             return false;
 
         return true;
+    }
+
+    /// <summary>
+    ///     Get a list of valid chameleon targets for these slots.
+    /// </summary>
+    public IEnumerable<EntProtoId> GetValidTargets(SlotFlags slot, string? tag = null)
+    {
+        var validTargets = new List<EntProtoId>();
+        if (tag != null)
+        {
+            foreach (var proto in _data[slot])
+            {
+                if (IsValidTarget(_proto.Index(proto), slot, tag))
+                    validTargets.Add(proto);
+            }
+        }
+        else
+        {
+            validTargets = _data[slot];
+        }
+
+        return validTargets;
+    }
+
+    protected void PrepareAllVariants()
+    {
+        _data.Clear();
+        var prototypes = _proto.EnumeratePrototypes<EntityPrototype>();
+
+        foreach (var proto in prototypes)
+        {
+            // check if this is valid clothing
+            if (!IsValidTarget(proto))
+                continue;
+            if (!proto.TryGetComponent(out ClothingComponent? item, Factory))
+                continue;
+
+            // sort item by their slot flags
+            // one item can be placed in several buckets
+            foreach (var slot in Slots)
+            {
+                if (!item.Slots.HasFlag(slot))
+                    continue;
+
+                if (!_data.ContainsKey(slot))
+                {
+                    _data.Add(slot, new List<EntProtoId>());
+                }
+                _data[slot].Add(proto.ID);
+            }
+        }
     }
 }

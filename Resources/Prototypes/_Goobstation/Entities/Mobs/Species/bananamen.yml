@@ -1,0 +1,45 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BeeRobynn <166929042+BeeRobynn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseMobSpeciesOrganic
+  id: BaseMobBananaMen
+  name: Urist McPotassium
+  abstract: true
+  components:
+  - type: Hunger
+  - type: Icon
+    sprite: _Goobstation/Mobs/Species/BananaMen/parts.rsi
+    state: full
+  - type: Thirst
+  - type: SlipperyOnLayingDown
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodBanana
+      amount: 5
+  - type: Body
+    prototype: BananaMen
+    requiredLegs: 2
+  - type: HumanoidAppearance
+    species: BananaMen
+    hideLayersOnEquip:
+    - Hair
+    - Snout
+  - type: Bloodstream
+    bloodReagent: Potassium
+  - type: Inventory
+    templateId: human 
+
+- type: entity
+  parent: BaseSpeciesDummy
+  id: MobBananaMenDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HumanoidAppearance
+    species: BananaMen
+  - type: Inventory
+    templateId: human

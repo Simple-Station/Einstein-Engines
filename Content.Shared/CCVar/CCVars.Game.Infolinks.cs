@@ -1,4 +1,10 @@
-﻿using Robust.Shared.Configuration;
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 c4llv07e <igor@c4llv07e.xyz>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.CCVar;
 
@@ -51,4 +57,10 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<string> InfoLinksAppeal =
         CVarDef.Create("infolinks.appeal", "", CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    ///     Link to Telegram channel to show in the launcher.
+    /// </summary>
+    public static readonly CVarDef<string> InfoLinksTelegram =
+        CVarDef.Create("infolinks.telegram", "", CVar.SERVER | CVar.REPLICATED);
 }

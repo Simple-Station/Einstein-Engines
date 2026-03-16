@@ -1,0 +1,37 @@
+<!--
+SPDX-FileCopyrightText: 2024 Ashley Woodiss-Field <ash@DESKTOP-H64M4AI.localdomain>
+SPDX-FileCopyrightText: 2024 BeeRobynn <166929042+BeeRobynn@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 ColesMagnum <98577947+AW-FulCode@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
+  # Йови
+
+  <Box>
+    <GuideEntityEmbed Entity="MobYowie" Caption=""/>
+  </Box>
+
+  Йови — это ранее считавшееся городской легендой, недавно открытая мистическая двуногая шерстяная раса. 
+  Их тело больше, чем у большинства других рас, с недостатком в том, что они [color=#AAFF00]не могут носить большинство внешней одежды или обуви Нанотрейзен[/color] (едва помещаются в костюмы защиты), и [color=#AAFF00]их трудно перенести другим персонажем[/color].
+  Их шерсть позволяет им получать [color=#baf2ef]меньше урона от холода[/color].
+
+  Их рост делает их удары кулаком [color=#ec3a3a]в 2 раза сильнее[/color], чем у человека.
+
+  Они крупнее, что делает их легче уязвимыми в бою, но при этом получают на 25% меньше урона от урона [color=#ec3a3a]ушибами, режущим и колющим[/color]. 
+  Они также весят больше, что позволяет им легко тянуть более лёгкие расы.
+
+  ## Пиздец балдеж бро
+  <Box>
+    <GuideEntityEmbed Entity="Joint" Caption=""/>
+  </Box>
+
+  Исторически они жили рядом с человечеством на Земле в некоторых частях Австралии, что повлияло на формирование у них густого австралийского акцента со сленгом. 
+  Большую часть времени они проводили, экспериментируя с опасными и странными веществами, благодаря чему у них развилась повышенная толерантность к большинству химических веществ. Их печень уникально способна эффективно метаболизировать химические вещества.
+
+</Document>

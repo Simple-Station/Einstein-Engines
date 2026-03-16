@@ -1,11 +1,17 @@
+# SPDX-FileCopyrightText: 2022 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 T-Stalker <43253663+DogZeroX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 marking-TattooHiveChest-tattoo_hive_chest = Back Tattoo (Hive)
 marking-TattooHiveChest = Back Tattoo (Hive)
 
 marking-TattooNightlingChest-tattoo_nightling = Chest Tattoo (nightling)
 marking-TattooNightlingChest = Chest Tattoo (Nightling)
-
-marking-TattooNanotrasenChest-tattoo_nanotrasen_chest = Chest Tattoo (Nanotrasen)
-marking-TattooNanotrasenChest = Chest Tattoo (Nanotrasen)
 
 marking-TattooSilverburghLeftLeg-tattoo_silverburgh_l_leg = Left Leg Tattoo (Silverburg)
 marking-TattooSilverburghLeftLeg = Left Leg Tattoo (Silverburg)
@@ -31,8 +37,35 @@ marking-TattooEyeRight = Right Eye
 marking-TattooEyeLeft-tattoo_eye_l = Left Eye
 marking-TattooEyeLeft = Left Eye
 
-marking-TattooEyeArachneRight-tattoo_eye_arachne_r = Right Arachne Eye
-marking-TattooEyeArachneRight = Right Arachne Eye
+marking-TattooEyeMothRight-tattoo_eye_moth_r = Right Eye
+marking-TattooEyeMothRight = Right Eye
 
-marking-TattooEyeArachneLeft-tattoo_eye_arachne_l = Left Arachne Eye
-marking-TattooEyeArachneLeft = Left Arachne Eye
+marking-TattooEyeMothLeft-tattoo_eye_moth_l = Left Eye
+marking-TattooEyeMothLeft = Left Eye
+
+marking-TattooEyeVoxRight-tattoo_eye_vox_r = Right Eye
+marking-TattooEyeVoxRight = Right Eye
+
+marking-TattooEyeVoxLeft-tattoo_eye_vox_l = Left Eye
+marking-TattooEyeVoxLeft = Left Eye
+
+marking-TattooEyeshadowUpper-tattoo_eyeshadow_upper = Eyeshadow (Upper)
+marking-TattooEyeshadowUpper = Eyeshadow (Upper)
+
+marking-TattooEyeshadowLower-tattoo_eyeshadow_lower = Eyeshadow (Lower)
+marking-TattooEyeshadowLower = Eyeshadow (Lower)
+
+marking-TattooEyeshadowLowerReptilian-tattoo_eyeshadow_lower_reptilian = Eyeshadow (Lower)
+marking-TattooEyeshadowLowerReptilian = Eyeshadow (Lower)
+
+marking-TattooEyeshadowVoxSmall-tattoo_eyeshadow_small = Eyeshadow (Small)
+marking-TattooEyeshadowVoxSmall = Eyeshadow (Small)
+
+marking-TattooEyeshadowVoxMedium-tattoo_eyeshadow_medium = Eyeshadow (Medium)
+marking-TattooEyeshadowVoxMedium = Eyeshadow (Medium)
+
+marking-TattooEyeshadowVoxLarge-tattoo_eyeshadow_Large = Eyeshadow (Large)
+marking-TattooEyeshadowVoxLarge = Eyeshadow (Large)
+
+marking-TattooVoxTailRing-tattoo_vox_tail_ring = Tail Ring
+marking-TattooVoxTailRing = Tail Ring

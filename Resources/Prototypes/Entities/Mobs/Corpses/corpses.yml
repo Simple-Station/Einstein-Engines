@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2023 Kit0vras <123590995+Kit0vras@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 - type: entity
   parent: SalvageHumanCorpse
   id: MobRandomServiceCorpse
@@ -13,9 +18,8 @@
       - MusicianGear
       - BotanistGear
       - ChefGear
-      # - ChaplainGear # DeltaV - Move Chaplain into Epistemics
+      - ChaplainGear
       - PassengerGear
-      - MartialArtistGear # Nyanotrasen - MartialArtist, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Wildcards/martialartist.yml
 
 - type: entity
   parent: SalvageHumanCorpse
@@ -31,14 +35,12 @@
 - type: entity
   parent: SalvageHumanCorpse
   id: MobRandomCargoCorpse
-  suffix: Dead, Logistics # DeltaV - Logistics Department replacing Cargo
+  suffix: Dead, Cargo
   components:
   - type: Loadout
     prototypes:
     - CargoTechGear
     - SalvageSpecialistGear
-    - MailCarrierGear # Nyanotrasen - Old Mail Carrier gear, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Cargo/mail_carrier.yml
-    - CourierGear # DeltaV - Courier, see Resources/Prototypes/DeltaV/Roles/Jobs/Cargo/courier.yml
 
 - type: entity
   parent: SalvageHumanCorpse
@@ -55,20 +57,17 @@
 - type: entity
   parent: SalvageHumanCorpse
   id: MobRandomScienceCorpse
-  suffix: Dead, Epistemics # DeltaV - Epistemics Department replacing Science
+  suffix: Dead, Science
   components:
   - type: Loadout
     prototypes:
     - ResearchAssistantGear
     - ScientistGear
-    - ChaplainGear # DeltaV - Move Chaplain into Epistemics
-    - ForensicMantisGear # Nyanotrasen - Forensic Mantis
 
 - type: entity
   parent: SalvageHumanCorpse
   id: MobRandomSecurityCorpse
   suffix: Dead, Security
-  categories: [ HideSpawnMenu ] # DeltaV - Prevent security corpses from being mapped in
   components:
   - type: Loadout
     prototypes:
@@ -85,7 +84,7 @@
   - type: Loadout
     prototypes:
     - HoPGear
-    - CentcomGear
+    - MobRandomCommandCorpseCentComm # Goobstation Nerfed CentComm Space Salvage Gear
     - CaptainGear
     - HoSGear
     - ResearchDirectorGear

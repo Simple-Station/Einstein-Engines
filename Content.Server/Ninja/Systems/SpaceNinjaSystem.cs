@@ -1,14 +1,29 @@
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Vyacheslav Kovalevsky <40753025+Slava0135@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Goobstation.Common.Effects;
 using Content.Server.Communications;
-using Content.Server.Chat.Managers;
 using Content.Server.CriminalRecords.Systems;
-using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Objectives.Components;
 using Content.Server.Objectives.Systems;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.PowerCell;
 using Content.Server.Research.Systems;
-using Content.Server.Roles;
 using Content.Shared.Alert;
 using Content.Shared.Doors.Components;
 using Content.Shared.IdentityManagement;
@@ -17,10 +32,7 @@ using Content.Shared.Ninja.Components;
 using Content.Shared.Ninja.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Rounding;
-using Robust.Shared.Audio;
-using Robust.Shared.Player;
 using System.Diagnostics.CodeAnalysis;
-using Robust.Shared.Audio.Systems;
 
 namespace Content.Server.Ninja.Systems;
 
@@ -34,6 +46,7 @@ public sealed class SpaceNinjaSystem : SharedSpaceNinjaSystem
     [Dependency] private readonly CodeConditionSystem _codeCondition = default!;
     [Dependency] private readonly PowerCellSystem _powerCell = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private readonly SparksSystem _sparks = default!; // goob edit - sparks everywhere
 
     public override void Initialize()
     {
@@ -143,16 +156,19 @@ public sealed class SpaceNinjaSystem : SharedSpaceNinjaSystem
             : Loc.GetString("ninja-research-steal-success", ("count", gained), ("server", args.Target));
 
         Popup.PopupEntity(str, uid, uid, PopupType.Medium);
+        _sparks.DoSparks(Transform(args.Target).Coordinates); // goob edit - sparks everywhere
     }
 
     private void OnThreatCalledIn(Entity<SpaceNinjaComponent> ent, ref ThreatCalledInEvent args)
     {
         _codeCondition.SetCompleted(ent.Owner, ent.Comp.TerrorObjective);
+        _sparks.DoSparks(Transform(args.Target).Coordinates); // goob edit - sparks everywhere
     }
 
     private void OnCriminalRecordsHacked(Entity<SpaceNinjaComponent> ent, ref CriminalRecordsHackedEvent args)
     {
         _codeCondition.SetCompleted(ent.Owner, ent.Comp.MassArrestObjective);
+        _sparks.DoSparks(Transform(args.Target).Coordinates); // goob edit - sparks everywhere
     }
 
     /// <summary>

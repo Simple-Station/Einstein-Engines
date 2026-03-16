@@ -1,13 +1,4 @@
 - type: speechSounds
-  id: Gondola
-  saySound:
-    path: /Audio/_White/Voice/Gondola/ehh.ogg
-  askSound:
-    path: /Audio/_White/Voice/Gondola/ehh2.ogg
-  exclaimSound:
-    path: /Audio/_White/Voice/Gondola/ehh3.ogg
-
-- type: speechSounds
   id: Xenomorph
   saySound:
     path: /Audio/_White/Voice/Talk/xenomorph.ogg

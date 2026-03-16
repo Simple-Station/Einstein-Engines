@@ -1,40 +1,40 @@
 devil-contract-contractee = получатель
 devil-contract-contractor = исполнитель
-devil-contract-early-sign-failed = Получатель должен сначала дождаться подписания контракта!
-devil-contract-no-soul-sign-failed = У вас нет души на продажу!
-devil-sign-invalid-user = У вас нет полномочий для выполнения этого контракта!
-devil-contract-mind-shielded-failed = Голос доносится из вашего щита разума Nanotrasen™. "Хорошая попытка".
-contract-summon-flavor = Руки { $name } вспыхивают пламенем, обнажая черный свиток пергамента...
+devil-contract-early-sign-failed = Исполнитель должен дождаться, пока сначала подпишет получатель!
+devil-contract-no-soul-sign-failed = У вас нет души, чтобы продать!
+devil-sign-invalid-user = У вас нет силы выполнить этот контракт!
+devil-contract-mind-shielded-failed = Голос доносится из вашего импланта Защиты Разума: "Хорошая попытка."
+contract-summon-flavor = Рука { $name } вспыхивает пламенем, затем появляется черный свиток...
 burn-contract-prompt = Сжечь контракт.
-burn-contract-popup-success = Контракт сгорает в огне! Кажется, чья-то судьба решена...
-burn-contract-popup-fail = Вы не можете сжечь контракт, пока сделка активна!
-contract-victim-signed = Холодок пробегает у вас по спине, когда вы беретесь за ручку...
+burn-contract-popup-success = Контракт вспыхивает пламенем! Судьба кого-то, похоже, решена...
+burn-contract-popup-fail = Вы не можете сжечь контракт во время сделки!
+contract-victim-signed = Холод пробегает по спине, когда вы берете перо...
 contract-devil-signed = Контракт пульсирует темной энергией...
-contract-soul-added = Вы получили в свое распоряжение еще одну душу...
-contract-uneven-odds = Эта сделка не справедлива. Вам нужно увеличить вес контракта на { $number }.
-devil-contract-examined = Вес этого контракта: { $weight }.
-devil-deal-time-ran-out = В глазах темнеет, мышцы подводят. Время на исходе.
-revival-contract-accepted = Вы чувствуете, как укрепляется ваша связь с собственным телом...
-revival-contract-rejected = Вы отвергаете нечестивую сделку.
+contract-soul-added = Вы обрели еще одну душу...
+contract-uneven-odds = Эти условия нечестны. Вам нужно ещё { $number } единиц веса контракта.
+devil-contract-examined = Вес контракта: { $weight }.
+devil-deal-time-ran-out = Ваше зрение темнеет, мышцы отказывают. Время вышло.
+revival-contract-accepted = Вы чувствуете, как ваша связь с телом укрепляется...
+revival-contract-rejected = Вы отвергаете нечестивое предложение.
 revival-contract-expired = Время вышло.
-revival-contract-prompt = { $offerer } предлагает вернуть вам жизнь за определенную плату... Вы согласны?
-revival-contract-use-success = Вы предложили { $target } сделку, от которой невозможно отказаться...
-revival-contract-use-failed = Вы не можете заключить эту сделку.
-revival-contract-prompt-reject = Отклонить сделку
-revival-contract-prompt-accept = Принять сделку
-revival-contract-menu-title = Контракт из глубины ада
-revival-contract-menu-prompt = Продать душу за второй шанс?
+revival-contract-prompt = { $offerer } предлагает восстановить вашу жизнь за определённую цену... Принимаете?
+revival-contract-use-success = Вы предлагаете { $target } сделку, от которой нельзя отказаться...
+revival-contract-use-failed = Вы не можете предложить { $target } эту сделку.
+revival-contract-prompt-reject = Отказать
+revival-contract-prompt-accept = Принять
+revival-contract-menu-title = Контракт из глубин
+revival-contract-menu-prompt = Продать душу ради второго шанса?
 default-contract-content =
-    Это обязательный к исполнению контракт, заключенный в этот день между:
-
-    - Адской Стороной (в дальнейшем "Исполнитель контракта")
-    - Смертной Стороной (в дальнейшем "Получатель контракта")
-
-    { "[" }bold] Положения, имеющие обязательную силу:{ "[" }/bold]
-    { "[" }cursive] Следующие стороны отказываются от следующего имущества{ "[" }/cursive{ "]" }
-
-    Исполнитель: Владение душой
-    Получатель: Бессмертие
-
-    { "[" }cursive] Все пункты вступают в силу с момента подписания настоящего документа обеими сторонами.{ "[" }/cursive]
-    { "[" }cursive]{ "[" }color=#ac3a0d]Условия не могут быть нарушены. Когда-либо.{ "[" }/color]{ "[" }/cursive]
+    Этот обязательный контракт заключён в этот день между:
+    
+    - Адской стороной (в дальнейшем "Исполнитель")
+    - Смертная сторона (в дальнейшем "Получатель")
+    
+    { "[" }bold]Пункты обязательства:{ "[" }/bold]
+    { "[" }italic]Следующие стороны отказываются от следующих владений{ "[" }/italic{ "]" }
+    
+    Получатель: Право владения душой
+    Получатель: Смерть
+    
+    { "[" }italic]Все пункты вступают в силу после подписания этого документа обеими сторонами.{ "[" }/italic]
+    { "[" }italic]{ "[" }color=#ac3a0d]Пункты не могут быть нарушены. Никогда.{ "[" }/color]{ "[" }/italic]

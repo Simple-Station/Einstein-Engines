@@ -1,16 +1,25 @@
+// SPDX-FileCopyrightText: 2023 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Goobstation.Common.Speech;
 using Content.Server.Actions;
 using Content.Server.Chat.Systems;
-using Content.Server.Speech.Components;
-using Content.Server.Speech.Prototypes;
-using Content.Shared.ActionBlocker;
-using Content.Shared.CCVar;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Humanoid;
 using Content.Shared.Speech;
 using Content.Shared.Speech.Components;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -23,11 +32,6 @@ public sealed class VocalSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
-    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
-    [Dependency] private readonly IConfigurationManager _config = default!;
-
-    [ValidatePrototypeId<ReplacementAccentPrototype>]
-    private const string MuzzleAccent = "mumble";
 
     public override void Initialize()
     {
@@ -42,9 +46,8 @@ public sealed class VocalSystem : EntitySystem
 
     private void OnMapInit(EntityUid uid, VocalComponent component, MapInitEvent args)
     {
-        if (_config.GetCVar(CCVars.AllowScreamAction))
-            _actions.AddAction(uid, ref component.ScreamActionEntity, component.ScreamAction);
-
+        // try to add scream action when vocal comp added
+        _actions.AddAction(uid, ref component.ScreamActionEntity, component.ScreamAction);
         LoadSounds(uid, component);
     }
 
@@ -59,22 +62,13 @@ public sealed class VocalSystem : EntitySystem
 
     private void OnSexChanged(EntityUid uid, VocalComponent component, SexChangedEvent args)
     {
-        LoadSounds(uid, component);
+        LoadSounds(uid, component, args.NewSex);
     }
 
     private void OnEmote(EntityUid uid, VocalComponent component, ref EmoteEvent args)
     {
-        if (args.Handled
-            || !args.Emote.Category.HasFlag(EmoteCategory.Vocal)
-            || !_actionBlocker.CanSpeak(uid)
-            || TryComp<ReplacementAccentComponent>(uid, out var replacement) && replacement.Accent == MuzzleAccent) // This is not ideal, but it works.
+        if (args.Handled || !args.Emote.Category.HasFlag(EmoteCategory.Vocal))
             return;
-
-        if (_proto.TryIndex(component.ForceEmoteSounds, out var emoteSoundsPrototype, false))
-        {
-            component.EmoteSounds = emoteSoundsPrototype;
-            component.ForceEmoteSounds = null;
-        }
 
         // snowflake case for wilhelm scream easter egg
         if (args.Emote.ID == component.ScreamId)
@@ -83,28 +77,53 @@ public sealed class VocalSystem : EntitySystem
             return;
         }
 
+        // Goobstation start
+        var getSoundEv = new GetEmoteSoundsEvent();
+        RaiseLocalEvent(uid, ref getSoundEv);
+        if (getSoundEv.EmoteSoundProtoId != null &&
+            _proto.TryIndex(getSoundEv.EmoteSoundProtoId, out EmoteSoundsPrototype? evSounds))
+        {
+            args.Handled = _chat.TryPlayEmoteSound(uid, evSounds, args.Emote);
+            return;
+        }
+        // Goobstation end
+
+        if (component.EmoteSounds is not { } sounds)
+            return;
+
         // just play regular sound based on emote proto
-        args.Handled = _chat.TryPlayEmoteSound(uid, component.EmoteSounds, args.Emote);
+        args.Handled = _chat.TryPlayEmoteSound(uid, _proto.Index(sounds), args.Emote);
     }
 
     private void OnScreamAction(EntityUid uid, VocalComponent component, ScreamActionEvent args)
     {
-        if (args.Handled || !_config.GetCVar(CCVars.AllowScreamAction))
+        if (args.Handled)
             return;
 
-        _chat.TryEmoteWithChat(uid, component.ScreamId);
+        _chat.TryEmoteWithChat(uid, component.ScreamId); // Goob - emotespam
         args.Handled = true;
     }
 
     private bool TryPlayScreamSound(EntityUid uid, VocalComponent component)
     {
+        // Goobstation start
+        var getSoundEv = new GetEmoteSoundsEvent();
+        RaiseLocalEvent(uid, ref getSoundEv);
+        if (getSoundEv.EmoteSoundProtoId != null &&
+            _proto.TryIndex(getSoundEv.EmoteSoundProtoId, out EmoteSoundsPrototype? evSounds))
+            return _chat.TryPlayEmoteSound(uid, evSounds, component.ScreamId);
+        // Goobstation end
+
         if (_random.Prob(component.WilhelmProbability))
         {
             _audio.PlayPvs(component.Wilhelm, uid, component.Wilhelm.Params);
             return true;
         }
 
-        return _chat.TryPlayEmoteSound(uid, component.EmoteSounds, component.ScreamId);
+        if (component.EmoteSounds is not { } sounds)
+            return false;
+
+        return _chat.TryPlayEmoteSound(uid, _proto.Index(sounds), component.ScreamId);
     }
 
     private void LoadSounds(EntityUid uid, VocalComponent component, Sex? sex = null)
@@ -116,6 +135,10 @@ public sealed class VocalSystem : EntitySystem
 
         if (!component.Sounds.TryGetValue(sex.Value, out var protoId))
             return;
-        _proto.TryIndex(protoId, out component.EmoteSounds);
+
+        if (!_proto.HasIndex(protoId))
+            return;
+
+        component.EmoteSounds = protoId;
     }
 }

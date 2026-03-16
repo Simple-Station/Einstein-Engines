@@ -1,2 +1,2 @@
-cmd-hidemechanisms-desc = Отменяет действие { $showMechanismsCommand }
-cmd-hidemechanisms-help = Использование: { $command }
+cmd-hidemechanisms-desc = Reverts the effects of { $showMechanismsCommand }
+cmd-hidemechanisms-help = Usage: { $command }

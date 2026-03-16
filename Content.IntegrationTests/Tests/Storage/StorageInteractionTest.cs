@@ -1,9 +1,15 @@
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client.UserInterface.Systems.Hotbar.Widgets;
 using Content.Client.UserInterface.Systems.Storage.Controls;
 using Content.IntegrationTests.Tests.Interaction;
 using Content.Shared.Input;
 using Content.Shared.PDA;
 using Content.Shared.Storage;
+using Content.Shared.Timing;
 using Robust.Client.UserInterface;
 using Robust.Shared.Containers;
 using Robust.Shared.GameObjects;
@@ -27,10 +33,21 @@ public sealed class StorageInteractionTest : InteractionTest
         Assert.That(IsUiOpen(StorageComponent.StorageUiKey.Key), Is.False);
         Assert.That(IsUiOpen(PdaUiKey.Key), Is.False);
 
+        await Server.WaitPost(() => SEntMan.RemoveComponent<UseDelayComponent>(STarget!.Value));
+        await RunTicks(5);
+
         // Activating the backpack opens the UI
         await Activate();
         Assert.That(IsUiOpen(StorageComponent.StorageUiKey.Key), Is.True);
         Assert.That(IsUiOpen(PdaUiKey.Key), Is.False);
+
+        // Activating it again closes the UI
+        await Activate();
+        Assert.That(IsUiOpen(StorageComponent.StorageUiKey.Key), Is.False);
+
+        // Open it again
+        await Activate();
+        Assert.That(IsUiOpen(StorageComponent.StorageUiKey.Key), Is.True);
 
         // Pick up a PDA
         var pda = await PlaceInHands("PassengerPDA");

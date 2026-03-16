@@ -1,5 +1,37 @@
+# SPDX-FileCopyrightText: 2020 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2020 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 wrexbe <wrexbe@protonmail.com>
+# SPDX-FileCopyrightText: 2023 Naive817 <31364560+Naive817@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
-  parent: [ClothingEyesBase, FlippableEyesBase]
+  parent: ClothingEyesBase
+  id: ClothingEyesBlindfold
+  name: blindfold
+  description: The bind leading the blind.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Misc/blindfold.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Misc/blindfold.rsi
+    equipDelay: 3
+    unequipDelay: 3
+  - type: Blindfold
+  - type: Construction
+    graph: Blindfold
+    node: blindfold
+  - type: FlashImmunity
+
+- type: entity
+  parent: ClothingHeadEyeBaseFlippable
   id: ClothingEyesEyepatch
   name: eyepatch
   description: Yarr.
@@ -12,73 +44,6 @@
     protectionTime: 5
 
 - type: entity
-  parent: [ClothingEyesEyepatch, FlippableEyesBase]
-  id: ClothingEyesEyepatchColor
-  name: eyepatch
-  description: Yarr.
-  components:
-  - type: Sprite
-    sprite: Clothing/Eyes/Misc/eyepatch_color.rsi
-  - type: Clothing
-    sprite: Clothing/Eyes/Misc/eyepatch_color.rsi
-  - type: EyeProtection
-    protectionTime: 5
-
-- type: entity
-  parent: ClothingEyesEyepatchColor
-  id: ClothingEyesEyepatchColorFlipped
+  parent: [ClothingEyesEyepatch, ClothingHeadEyeBaseFlipped]
+  id: ClothingEyesEyepatchFlipped
   suffix: flipped
-  components:
-  - type: Foldable
-    folded: true
-  - type: Clothing
-    equippedPrefix: flipped
-
-- type: entity
-  parent: ClothingEyesBase
-  id: ClothingEyesBlindfold
-  name: blindfold
-  description: The bind leading the blind.
-  components:
-  - type: Sprite
-    sprite: Clothing/Eyes/Misc/blindfold.rsi
-  - type: Clothing
-    sprite: Clothing/Eyes/Misc/blindfold.rsi
-  - type: Blindfold
-  - type: Construction
-    graph: Blindfold
-    node: blindfold
-  - type: FlashImmunity
-
-- type: entity
-  parent: ClothingEyesBlindfold
-  id: ClothingEyesBlindfoldColor
-  suffix: colorable
-  components:
-  - type: Sprite
-    sprite: Clothing/Eyes/Misc/blindfold_color.rsi
-  - type: Clothing
-    sprite: Clothing/Eyes/Misc/blindfold_color.rsi
-
-- type: entity
-  parent: ClothingEyesBase
-  id: ClothingEyesBlindfoldFake
-  name: blindfold
-  description: The bind leading the blind.
-  suffix: fake
-  components:
-  - type: Sprite
-    sprite: Clothing/Eyes/Misc/blindfold.rsi
-  - type: Clothing
-    sprite: Clothing/Eyes/Misc/blindfold.rsi
-
-- type: entity
-  parent: ClothingEyesBlindfoldFake
-  id: ClothingEyesBlindfoldFakeColor
-  suffix: colorable, fake
-  components:
-  - type: Sprite
-    sprite: Clothing/Eyes/Misc/blindfold_color.rsi
-  - type: Clothing
-    sprite: Clothing/Eyes/Misc/blindfold_color.rsi
-

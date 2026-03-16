@@ -1,3 +1,16 @@
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 AstroDogeDX <48888500+AstroDogeDX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 BeeRobynn <robynthewarcrime@proton.me>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Sphiral <145869023+SphiraI@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: inventoryTemplate
   id: aghost
   slots:
@@ -18,9 +31,7 @@
       uiWindowPos: 2,2
       strippingWindowPos: 2,3
       displayName: ID
-
-    # For Pockets to hold stuffs.
-    - name: pocket1
+    - name: pocket1 # Goobstation - Pocket 1
       slotTexture: pocket
       fullTextureName: template_small
       slotFlags: POCKET
@@ -30,7 +41,7 @@
       strippingWindowPos: 0,4
       displayName: Pocket 1
       stripHidden: true
-    - name: pocket2
+    - name: pocket2 # Goobstation - Pocket 2
       slotTexture: pocket
       fullTextureName: template_small
       slotFlags: POCKET
@@ -40,7 +51,7 @@
       strippingWindowPos: 1,4
       displayName: Pocket 2
       stripHidden: true
-    - name: pocket3
+    - name: pocket3 # Goobstation - Pocket 3
       slotTexture: pocket
       fullTextureName: template_small
       slotFlags: POCKET
@@ -50,7 +61,7 @@
       strippingWindowPos: 2,4
       displayName: Pocket 3
       stripHidden: true
-    - name: pocket4
+    - name: pocket4 # Goobstation - Pocket 4
       slotTexture: pocket
       fullTextureName: template_small
       slotFlags: POCKET
@@ -65,9 +76,15 @@
     - name: head
       slotTexture: head
       slotFlags: HEAD
-      uiWindowPos: 0,2
+      uiWindowPos: 0,3 # Goobstation - Moved up slightly
       strippingWindowPos: 0,0
       displayName: Head
+    - name: neck # Goobstation - For drip reasons.
+      slotTexture: neck
+      slotFlags: NECK
+      uiWindowPos: 0,2
+      strippingWindowPos: 0,1
+      displayName: Neck
     - name: mask
       slotTexture: mask
       slotFlags: MASK

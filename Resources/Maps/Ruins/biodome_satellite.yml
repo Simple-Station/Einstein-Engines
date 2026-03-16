@@ -1,3 +1,17 @@
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 PuceTint <69696513+PuceTint@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Ubaser <ubaserblueknight2@gmail.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 meta:
   format: 6
   postmapinit: false
@@ -21,7 +35,6 @@ entities:
       name: grid
     - type: Transform
       pos: -1.84375,-1.953125
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -601,7 +614,6 @@ entities:
             129: 10.698979,3.1074004
             130: 16.624702,4.1164246
     - type: GridAtmosphere
-      simulatedTurf: false
       version: 2
       data:
         tiles:
@@ -2145,13 +2157,15 @@ entities:
     - type: Transform
       pos: 11.5,-2.5
       parent: 2
-- proto: FloraTree
+- proto: FloraTree02
   entities:
   - uid: 387
     components:
     - type: Transform
       pos: 16.897663,4.841407
       parent: 2
+- proto: FloraTree03
+  entities:
   - uid: 383
     components:
     - type: Transform
@@ -2167,6 +2181,8 @@ entities:
     - type: Transform
       pos: 17.093353,2.688822
       parent: 2
+- proto: FloraTree05
+  entities:
   - uid: 380
     components:
     - type: Transform
@@ -2177,13 +2193,15 @@ entities:
     - type: Transform
       pos: 15.845831,3.87519
       parent: 2
-- proto: FloraTreeLarge
+- proto: FloraTreeLarge02
   entities:
   - uid: 379
     components:
     - type: Transform
       pos: 11.870888,3.920478
       parent: 2
+- proto: FloraTreeLarge03
+  entities:
   - uid: 382
     components:
     - type: Transform

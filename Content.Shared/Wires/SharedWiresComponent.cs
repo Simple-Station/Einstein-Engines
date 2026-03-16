@@ -1,3 +1,25 @@
+// SPDX-FileCopyrightText: 2019 DamianX <DamianX@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2019 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2020 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Metal Gear Sloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+// SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 keronshb <keronshb@live.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.DoAfter;
 using JetBrains.Annotations;
@@ -209,22 +231,8 @@ namespace Content.Shared.Wires
     {
         public static string Name(this WireColor color)
         {
-            return Loc.GetString(color switch
-            {
-                WireColor.Red => "Red",
-                WireColor.Blue => "Blue",
-                WireColor.Green => "Green",
-                WireColor.Orange => "Orange",
-                WireColor.Brown => "Brown",
-                WireColor.Gold => "Gold",
-                WireColor.Gray => "Gray",
-                WireColor.Cyan => "Cyan",
-                WireColor.Navy => "Navy",
-                WireColor.Purple => "Purple",
-                WireColor.Pink => "Pink",
-                WireColor.Fuchsia => "Fuchsia",
-                _ => throw new InvalidOperationException()
-            });
+            var colorName = Enum.GetName(color) ?? throw new InvalidOperationException();
+            return Loc.GetString($"wire-name-color-{colorName.ToLower()}");
         }
 
         public static Color ColorValue(this WireColor color)
@@ -251,30 +259,30 @@ namespace Content.Shared.Wires
         {
             return Loc.GetString(letter switch
             {
-                WireLetter.α => "Alpha",
-                WireLetter.β => "Beta",
-                WireLetter.γ => "Gamma",
-                WireLetter.δ => "Delta",
-                WireLetter.ε => "Epsilon",
-                WireLetter.ζ => "Zeta",
-                WireLetter.η => "Eta",
-                WireLetter.θ => "Theta",
-                WireLetter.ι => "Iota",
-                WireLetter.κ => "Kappa",
-                WireLetter.λ => "Lambda",
-                WireLetter.μ => "Mu",
-                WireLetter.ν => "Nu",
-                WireLetter.ξ => "Xi",
-                WireLetter.ο => "Omicron",
-                WireLetter.π => "Pi",
-                WireLetter.ρ => "Rho",
-                WireLetter.σ => "Sigma",
-                WireLetter.τ => "Tau",
-                WireLetter.υ => "Upsilon",
-                WireLetter.φ => "Phi",
-                WireLetter.χ => "Chi",
-                WireLetter.ψ => "Psi",
-                WireLetter.ω => "Omega",
+                WireLetter.α => "wire-letter-name-alpha",
+                WireLetter.β => "wire-letter-name-beta",
+                WireLetter.γ => "wire-letter-name-gamma",
+                WireLetter.δ => "wire-letter-name-delta",
+                WireLetter.ε => "wire-letter-name-epsilon",
+                WireLetter.ζ => "wire-letter-name-zeta ",
+                WireLetter.η => "wire-letter-name-eta",
+                WireLetter.θ => "wire-letter-name-theta",
+                WireLetter.ι => "wire-letter-name-iota",
+                WireLetter.κ => "wire-letter-name-kappa",
+                WireLetter.λ => "wire-letter-name-lambda",
+                WireLetter.μ => "wire-letter-name-mu",
+                WireLetter.ν => "wire-letter-name-nu",
+                WireLetter.ξ => "wire-letter-name-xi",
+                WireLetter.ο => "wire-letter-name-omicron",
+                WireLetter.π => "wire-letter-name-pi",
+                WireLetter.ρ => "wire-letter-name-rho",
+                WireLetter.σ => "wire-letter-name-sigma",
+                WireLetter.τ => "wire-letter-name-tau",
+                WireLetter.υ => "wire-letter-name-upsilon",
+                WireLetter.φ => "wire-letter-name-phi",
+                WireLetter.χ => "wire-letter-name-chi",
+                WireLetter.ψ => "wire-letter-name-psi",
+                WireLetter.ω => "wire-letter-name-omega",
                 _ => throw new InvalidOperationException()
             });
         }

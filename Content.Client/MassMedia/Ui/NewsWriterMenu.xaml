@@ -1,11 +1,18 @@
+<!--
+SPDX-FileCopyrightText: 2024 Julian Giebel <juliangiebel@live.de>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: MIT
+-->
+
 <controls:FancyWindow
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:ui="clr-namespace:Content.Client.MassMedia.Ui"
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     Title="{Loc 'news-write-ui-default-title'}"
-    MinSize="404 443"
-    SetSize="404 443">
+    MinSize="348 443"
+    SetSize="348 443">
 
     <ui:ArticleEditorPanel Name="ArticleEditorPanel" HorizontalAlignment="Left" VerticalExpand="True"
                            MinWidth="410" MinHeight="370" Margin="0 0 0 30" Access="Public" Visible="False"/>

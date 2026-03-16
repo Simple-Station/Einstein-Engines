@@ -1,4 +1,11 @@
-using Content.Client.Language;
+// SPDX-FileCopyrightText: 2025 CerberusWolfie <wb.johnb.willis@gmail.com>
+// SPDX-FileCopyrightText: 2025 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using JetBrains.Annotations;
+using Content.Client._EinsteinEngines.Language;
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Input;
@@ -7,7 +14,6 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BaseButton;
-using JetBrains.Annotations;
 
 namespace Content.Client.UserInterface.Systems.Language;
 

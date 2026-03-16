@@ -1,4 +1,14 @@
-﻿using System.IO;
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
+using System.Collections.Generic;
+using System.IO;
 using Robust.Shared.Log;
 using Robust.Shared.Timing;
 using Serilog.Events;
@@ -31,6 +41,14 @@ public sealed class PoolTestLogHandler : ILogHandler
 
     public LogLevel? FailureLevel { get; set; }
 
+    /// <summary>
+    /// Sawmills whose messages should never cause test failure, even if they meet the <see cref="FailureLevel"/>.
+    /// </summary>
+    public HashSet<string> IgnoredSawmills { get; } = new()
+    {
+        "cfg",
+    };
+
     public PoolTestLogHandler(string? prefix)
     {
         _prefix = prefix != null ? $"{prefix}: " : "";
@@ -41,11 +59,6 @@ public sealed class PoolTestLogHandler : ILogHandler
     public void Log(string sawmillName, LogEvent message)
     {
         var level = message.Level.ToRobust();
-
-        // Ignore Sawmill Warnings. This means tests will only fail on debug asserts.
-        // Remove this when we fix the loadout performance issue.
-        if (level == LogLevel.Warning)
-            return;
 
         if (ShuttingDown && (FailureLevel == null || level < FailureLevel))
             return;
@@ -65,6 +78,9 @@ public sealed class PoolTestLogHandler : ILogHandler
         testContext.WriteLine(line);
 
         if (FailureLevel == null || level < FailureLevel)
+            return;
+
+        if (IgnoredSawmills.Contains(sawmillName))
             return;
 
         testContext.Flush();

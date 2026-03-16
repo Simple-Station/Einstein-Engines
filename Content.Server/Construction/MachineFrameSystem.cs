@@ -1,7 +1,23 @@
+// SPDX-FileCopyrightText: 2022 CommieFlowers <rasmus.cedergren@hotmail.com>
+// SPDX-FileCopyrightText: 2022 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 rolfero <45628623+rolfero@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 c4llv07e <38111072+c4llv07e@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Construction.Components;
 using Content.Server.Stack;
 using Content.Shared.Construction.Components;
-using Content.Shared.Construction.Prototypes;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Stacks;
@@ -14,7 +30,6 @@ namespace Content.Server.Construction;
 
 public sealed class MachineFrameSystem : EntitySystem
 {
-    [Dependency] private readonly IComponentFactory _factory = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly StackSystem _stack = default!;
@@ -63,13 +78,6 @@ public sealed class MachineFrameSystem : EntitySystem
         // If this changes in the future, then RegenerateProgress() also needs to be updated.
         // Note that one entity is ALLOWED to satisfy more than one kind of component or tag requirements. This is
         // necessary in order to avoid weird entity-ordering shenanigans in RegenerateProgress().
-        if (TryComp<MachinePartComponent>(args.Used, out var machinePart))
-        {
-            if (TryInsertPart(uid, args.Used, component, machinePart))
-                args.Handled = true;
-            return;
-        }
-
         if (TryComp<StackComponent>(args.Used, out var stack))
         {
             if (TryInsertStack(uid, args.Used, component, stack))
@@ -83,7 +91,7 @@ public sealed class MachineFrameSystem : EntitySystem
             if (component.ComponentProgress[compName] >= info.Amount)
                 continue;
 
-            var registration = _factory.GetRegistration(compName);
+            var registration = Factory.GetRegistration(compName);
 
             if (!HasComp(args.Used, registration.Type))
                 continue;
@@ -91,7 +99,7 @@ public sealed class MachineFrameSystem : EntitySystem
             // Insert the entity, if it hasn't already been inserted
             if (!args.Handled)
             {
-                if (!_container.TryRemoveFromContainer(args.Used))
+                if (!_container.TryRemoveFromContainer(args.Used, false, out var wasInContainer) && wasInContainer) // Goobstation - if it wasn't in container that's fine
                     return;
 
                 args.Handled = true;
@@ -123,7 +131,7 @@ public sealed class MachineFrameSystem : EntitySystem
             // Insert the entity, if it hasn't already been inserted
             if (!args.Handled)
             {
-                if (!_container.TryRemoveFromContainer(args.Used))
+                if (!_container.TryRemoveFromContainer(args.Used, false, out var wasInContainer) && wasInContainer) // Goobstation
                     return;
 
                 args.Handled = true;
@@ -148,7 +156,7 @@ public sealed class MachineFrameSystem : EntitySystem
         if (!TryComp<MachineBoardComponent>(used, out var machineBoard))
             return false;
 
-        if (!_container.TryRemoveFromContainer(used))
+        if (!_container.TryRemoveFromContainer(used, false, out var wasInContainer) && wasInContainer) // Goobstation
             return false;
 
         if (!_container.Insert(used, component.BoardContainer))
@@ -159,41 +167,6 @@ public sealed class MachineFrameSystem : EntitySystem
         // Reset edge so that prying the components off works correctly.
         if (TryComp(uid, out ConstructionComponent? construction))
             _construction.ResetEdge(uid, construction);
-
-        return true;
-    }
-
-    /// <returns>Whether or not the function had any effect. Does not indicate success.</returns>
-    private bool TryInsertPart(EntityUid uid, EntityUid? used, MachineFrameComponent component, MachinePartComponent machinePart)
-    {
-        if (!component.MachinePartRequirements.TryGetValue(machinePart.PartType, out var requirement))
-            return false;
-
-        var progress = component.MachinePartProgress[machinePart.PartType];
-        var needed = requirement - progress;
-
-        if (needed <= 0)
-            return false;
-
-        var count = 1;
-
-        if (TryComp<StackComponent>(used, out var stack))
-        {
-            count = stack.Count;
-
-            if (count > needed)
-                used = _stack.Split(used.Value, needed, Transform(uid).Coordinates, stack);
-        }
-
-        if (used == null)
-            return false;
-
-        if (!_container.Insert(used.Value, component.PartContainer))
-            return true;
-
-        component.MachinePartProgress[machinePart.PartType] += count;
-        if (IsComplete(component))
-            _popupSystem.PopupEntity(Loc.GetString("machine-frame-component-on-complete"), uid);
 
         return true;
     }
@@ -216,7 +189,7 @@ public sealed class MachineFrameSystem : EntitySystem
         var count = stack.Count;
         if (count < needed)
         {
-            if (!_container.TryRemoveFromContainer(used))
+            if (!_container.TryRemoveFromContainer(used, false, out var wasInContainer) && wasInContainer) // Goobstation
                 return false;
 
             if (!_container.Insert(used, component.PartContainer))
@@ -246,12 +219,6 @@ public sealed class MachineFrameSystem : EntitySystem
         if (!component.HasBoard)
             return false;
 
-        foreach (var (part, amount) in component.MachinePartRequirements)
-        {
-            if (component.MachinePartProgress[part] < amount)
-                return false;
-        }
-
         foreach (var (type, amount) in component.MaterialRequirements)
         {
             if (component.MaterialProgress[type] < amount)
@@ -275,20 +242,13 @@ public sealed class MachineFrameSystem : EntitySystem
 
     public void ResetProgressAndRequirements(MachineFrameComponent component, MachineBoardComponent machineBoard)
     {
-        component.MachinePartRequirements = new Dictionary<ProtoId<MachinePartPrototype>, int>(machineBoard.MachinePartRequirements);
         component.MaterialRequirements = new Dictionary<ProtoId<StackPrototype>, int>(machineBoard.StackRequirements);
         component.ComponentRequirements = new Dictionary<string, GenericPartInfo>(machineBoard.ComponentRequirements);
         component.TagRequirements = new Dictionary<ProtoId<TagPrototype>, GenericPartInfo>(machineBoard.TagRequirements);
 
-        component.MachinePartProgress.Clear();
         component.MaterialProgress.Clear();
         component.ComponentProgress.Clear();
         component.TagProgress.Clear();
-
-        foreach (var (machinePartId, _) in component.MachinePartRequirements)
-        {
-            component.MachinePartProgress[machinePartId] = 0;
-        }
 
         foreach (var (stackType, _) in component.MaterialRequirements)
         {
@@ -310,11 +270,10 @@ public sealed class MachineFrameSystem : EntitySystem
     {
         if (!component.HasBoard)
         {
-            component.MachinePartRequirements.Clear();
+            component.TagRequirements.Clear();
             component.MaterialRequirements.Clear();
             component.ComponentRequirements.Clear();
             component.TagRequirements.Clear();
-            component.MachinePartProgress.Clear();
             component.MaterialProgress.Clear();
             component.ComponentProgress.Clear();
             component.TagProgress.Clear();
@@ -333,19 +292,6 @@ public sealed class MachineFrameSystem : EntitySystem
 
         foreach (var part in component.PartContainer.ContainedEntities)
         {
-            if (TryComp<MachinePartComponent>(part, out var machinePart))
-            {
-                // Check this is part of the requirements...
-                if (!component.MachinePartRequirements.ContainsKey(machinePart.PartType))
-                    continue;
-
-                var count = CompOrNull<StackComponent>(part)?.Count ?? 1;
-                if (!component.MachinePartProgress.TryAdd(machinePart.PartType, count))
-                    component.MachinePartProgress[machinePart.PartType] += count;
-
-                continue;
-            }
-
             if (TryComp<StackComponent>(part, out var stack))
             {
                 var type = stack.StackTypeId;
@@ -353,7 +299,9 @@ public sealed class MachineFrameSystem : EntitySystem
                 if (!component.MaterialRequirements.ContainsKey(type))
                     continue;
 
-                if (!component.MaterialProgress.TryAdd(type, stack.Count))
+                if (!component.MaterialProgress.ContainsKey(type))
+                    component.MaterialProgress[type] = stack.Count;
+                else
                     component.MaterialProgress[type] += stack.Count;
 
                 continue;
@@ -362,7 +310,7 @@ public sealed class MachineFrameSystem : EntitySystem
             // I have many regrets.
             foreach (var (compName, _) in component.ComponentRequirements)
             {
-                var registration = _factory.GetRegistration(compName);
+                var registration = Factory.GetRegistration(compName);
 
                 if (!HasComp(part, registration.Type))
                     continue;

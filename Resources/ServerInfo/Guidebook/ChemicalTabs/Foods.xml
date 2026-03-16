@@ -1,7 +1,14 @@
-<Document>
-# Foods
+<!--
+SPDX-FileCopyrightText: 2024 f0x-n3rd <150924715+f0x-n3rd@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 
-These reagents are mostly used in the kitchen. Very helpful for Chefs and/or Service Workers.
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+# Еда
+
+Эти реагенты в основном используются на кухне. Очень полезны для поваров и/или сервисных работников.
 
 <GuideReagentGroupEmbed Group="Foods"/>
 

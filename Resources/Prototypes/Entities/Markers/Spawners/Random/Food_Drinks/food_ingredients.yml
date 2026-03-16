@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Velcroboy <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 pathetic meowmeow <uhhadd@gmail.com>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 #Spawners
 - type: entity
   id: RandomIngredient
@@ -36,8 +43,8 @@
       - id: FoodContainerEgg
       - id: FoodCondimentBottleEnzyme
       - id: DrinkSodaWaterBottleFull
-      - id: ReagentContainerSalt # DeltaV - Replaced salt and pepper shakers with bulk versions
-      - id: ReagentContainerPepper # DeltaV - Replaced salt and pepper shakers with bulk versions
+      - id: FoodShakerSalt
+      - id: FoodShakerPepper
       - !type:GroupSelector
         children:
         - id: ReagentContainerFlour
@@ -51,7 +58,6 @@
           - id: ReagentContainerCornmealSmall
           - id: ReagentContainerRiceSmall
           - id: ReagentContainerSugarSmall
-          - id: ReagentContainerChocolate # DeltaV - Adds bulk chocolate container
       - !type:GroupSelector
         children:
         - id: DrinkMilkCarton

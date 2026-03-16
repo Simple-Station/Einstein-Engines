@@ -1,3 +1,95 @@
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: MonkeyCube
+  id: HumanCube
+  name: human cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobHumanRandom
+
+- type: entity
+  parent: MonkeyCube
+  id: DionaCube
+  name: diona cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobDionaRandom
+
+- type: entity
+  parent: MonkeyCube
+  id: FelinidCube
+  name: felinid cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobFelinidRandom
+
+- type: entity
+  parent: MonkeyCube
+  id: GingerbreadCube
+  name: gingerbread cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobGingerbreadRandom
+
+- type: entity
+  parent: MonkeyCube
+  id: MothCube
+  name: moth person cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobMothRandom
+
+- type: entity
+  parent: MonkeyCube
+  id: DwarfCube
+  name: dwarf cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobDwarfRandom
+
+- type: entity
+  parent: MonkeyCube
+  id: HarpyCube
+  name: harpy cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobHarpyRandom
+
+- type: entity
+  parent: MonkeyCube
+  id: RodentiaCube
+  name: rodentia cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobRodentiaRandom
+
+- type: entity
+  parent: MonkeyCube
+  id: ReptilianCube
+  name: reptilian person cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobReptilianRandom
+
 - type: entity
   parent: MonkeyCube
   id: VulpkaninCube
@@ -9,9 +101,63 @@
 
 - type: entity
   parent: MonkeyCube
+  id: SlimePersonCube
+  name: slime person cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobSlimePersonRandom
+
+- type: entity
+  parent: MonkeyCube
   id: TajaranCube
   name: tajaran cube
   components:
   - type: Rehydratable
     possibleSpawns:
     - MobTajaranRandom
+
+- type: entity
+  parent: MonkeyCube
+  id: YowieCube
+  name: yowie cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobYowieRandom
+
+- type: entity
+  parent: MonkeyCube
+  id: VoxCube
+  name: vox cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobVoxRandom
+
+- type: entity
+  parent: MonkeyCube
+  id: ShadowkinCube
+  name: shadowkin cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobShadowkinRandom
+
+- type: entity
+  parent: MonkeyCube
+  id: ChitinidCube
+  name: chitinid cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobChitinidRandom
+
+- type: entity
+  parent: MonkeyCube
+  id: FeroxiCube
+  name: feroxi cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobFeroxiRandom

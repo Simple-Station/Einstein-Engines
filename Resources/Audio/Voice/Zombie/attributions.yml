@@ -1,4 +1,17 @@
-- files: ["zombie-1.ogg", "zombie-2.ogg", "zombie-3.ogg", "zombie-4.ogg"]
+# SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
+- files: ["zombie-1.ogg"]
   license: "CC-BY-NC-SA-3.0"
-  copyright: "https://github.com/dead-space-server"
-  source: "https://github.com/dead-space-server/space-station-14-fobos/tree/2fc59481ef0fffc32dbfe3e4f27129f57319040a/Resources/Audio/_DeadSpace/Necromorfs"
+  copyright: "Zombie 1 by Under7dude. Converted from MP3 to OGG."
+  source: "https://freesound.org/people/Under7dude/sounds/163440/"
+- files: ["zombie-2.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Zombie gargles by Breviceps. Converted from MP3 to OGG."
+  source: "https://freesound.org/people/Breviceps/sounds/445983/"
+- files: ["zombie-3.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Zombie Snarl by gneube. Converted from MP3 to OGG."
+  source: "https://freesound.org/people/gneube/sounds/315844/"

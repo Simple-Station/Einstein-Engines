@@ -1,12 +1,58 @@
+# SPDX-FileCopyrightText: 2023 Chronophylos <nikolai@chronophylos.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 fishbait <gnesse@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - files: ["ion_storm.ogg"]
   license: "CC-BY-SA-3.0"
-  copyright: "tgstation"
+  copyright: "Taken from tgstation"
   source: "https://github.com/tgstation/tgstation/blob/b77fa8c2a2490b43bf9174271ebfad72c4782d98/sound/ai/default/ionstorm.ogg"
+
+- files: ["aliens.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/95731342b97167d7883ff091d389f79c36442ee6/sound/ai/default/aliens.ogg"
+
+- files: ["attention.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/40d89d11ea4a5cb81d61dc1018b46f4e7d32c62a/sound/ai/default/attention.ogg"
+
+- files: ["meteors.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/95731342b97167d7883ff091d389f79c36442ee6/sound/ai/default/meteors.ogg"
 
 - files: ["outbreak5.ogg"]  # Goobstation - Blob
   license: "CC-BY-SA-3.0"
   copyright: "Taken from tgstation"
   source: "https://github.com/tgstation/tgstation/blob/40d89d11ea4a5cb81d61dc1018b46f4e7d32c62a/sound/ai/default/outbreak7.ogg"
+
+- files: ["outbreak7.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/40d89d11ea4a5cb81d61dc1018b46f4e7d32c62a/sound/ai/default/outbreak7.ogg"
+
+- files: ["welcome.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/40d89d11ea4a5cb81d61dc1018b46f4e7d32c62a/sound/ai/default/welcome.ogg"
+
+- files: ["announce.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation, cut from the beginning"
+  source: "https://github.com/tgstation/tgstation/blob/40d89d11ea4a5cb81d61dc1018b46f4e7d32c62a/sound/ai/default/shuttlerecalled.ogg"
+
+- files: ["shuttle_dock.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/b327cb667c1ca5d1aa14e6368e66cbfa7b343b9c/sound/ai/default/shuttledock.ogg"
 
 - files: ["war.ogg"]
   license: "CC-BY-SA-3.0"
@@ -17,3 +63,8 @@
   license: "CC-BY-SA-3.0"
   copyright: "Taken from tgstation"
   source: "https://github.com/tgstation/tgstation/blob/95731342b97167d7883ff091d389f79c36442ee6/sound/ai/default/intercept.ogg"
+
+- files: ["aliens.ogg", "attention.ogg", "meteors.ogg", "outbreak7.ogg", "power_off.ogg", "power_on.ogg", "radiation.ogg", "shuttle_dock.ogg", "shuttlecalled.ogg", "shuttlerecalled.ogg", "ventclog.ogg", "war.ogg", "welcome.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "discord:Basia (437113799137427460)"
+  source: "https://github.com/TauCetiStation/TauCetiClassic/pull/10207"

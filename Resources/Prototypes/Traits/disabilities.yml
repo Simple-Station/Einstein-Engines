@@ -1,355 +1,114 @@
-- type: trait
-  id: Blindness
-  category: Visual
-  points: 6
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Photophobia
-        - Nearsighted
-        - CyberEyes
-        - SecurityEyesModule
-        - MedicalEyesModule
-        - DiagnosticEyesModule
-        - OmniEyesModule
-        - LightAmplificationModule
-        - ThermographicVisionModule
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: PermanentBlindness
-          incurable: true
+# SPDX-FileCopyrightText: 2022 CommieFlowers <rasmus.cedergren@hotmail.com>
+# SPDX-FileCopyrightText: 2022 Moony <moony@hellomouse.net>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 moonheart08 <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 rolfero <45628623+rolfero@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 OctoRocket <88291550+OctoRocket@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Ray <vigersray@gmail.com>
+# SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 dahnte <70238020+dahnte@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 forkeyboards <91704530+forkeyboards@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Moomoobeef <62638182+Moomoobeef@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+# SPDX-FileCopyrightText: 2025 Coolsurf6 <coolsurf24@yahoo.com.au>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# If you add a new trait, make sure to add the corresponding component to the whitelist in \Resources\Prototypes\Entities\Mobs\Player\clone.yml so it gets copied to clones correctly!
 
 - type: trait
-  id: Nearsighted
-  category: Visual
-  points: 1
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Blindness
-        - CyberEyes
-        - SecurityEyesModule
-        - MedicalEyesModule
-        - DiagnosticEyesModule
-        - OmniEyesModule
-        - LightAmplificationModule
-        - ThermographicVisionModule
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: PermanentBlindness
-          blindness: 3
+  id: Blindness
+  name: trait-blindness-name
+  description: trait-blindness-desc
+  traitGear: WhiteCane
+  category: Disabilities
+  whitelist:
+    components:
+      - Blindable
+  components:
+    - type: PermanentBlindness
+
+- type: trait
+  id: PoorVision
+  name: trait-poor-vision-name
+  description: trait-poor-vision-desc
+  traitGear: ClothingEyesPrescriptionGlasses # Goobstation
+  category: Disabilities
+  whitelist:
+    components:
+      - Blindable
+  components:
+    - type: PermanentBlindness
+      blindness: 4
 
 - type: trait
   id: Narcolepsy
-  category: Mental
-  points: 6
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - IPC
-  functions:
-    - !type:TraitAddComponent
-      components:
-      - type: Narcolepsy
-        timeBetweenIncidents: 300, 600
-        durationOfIncident: 10, 30
+  name: trait-narcolepsy-name
+  description: trait-narcolepsy-desc
+  category: Disabilities
+  components:
+    - type: Narcolepsy
+      timeBetweenIncidents: 300, 600
+      durationOfIncident: 10, 30
 
 - type: trait
-  id: Pacifist
-  category: Mental
-  points: 6
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: Pacified
+  id: Unrevivable
+  name: trait-unrevivable-name
+  description: trait-unrevivable-desc
+  category: Disabilities
+  components:
+    - type: Unrevivable
+      cloneable: true
 
 - type: trait
-  id: Paracusia
-  category: Auditory
-  points: 1
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: Paracusia
-          minTimeBetweenIncidents: 0.1
-          maxTimeBetweenIncidents: 300
-          maxSoundDistance: 7
-          sounds:
-            collection: Paracusia
+  id: Monochromacy
+  name: trait-monochromacy-name
+  description: trait-monochromacy-desc
+  category: Disabilities
+  components:
+  - type: BlackAndWhiteOverlay
 
 - type: trait
   id: Muted
-  category: Mental
-  points: 6
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
-        - Mime
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: Muted
-    - !type:TraitModifyLanguages
-      languagesSpoken:
-        - Sign
-      languagesUnderstood:
-        - Sign
+  name: trait-muted-name
+  description: trait-muted-desc
+  category: Disabilities
+  blacklist:
+    components:
+      - BorgChassis
+  components:
+    - type: Muted
 
 - type: trait
-  id: Uncloneable
-  category: Physical
-  points: 1
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
-    - !type:CharacterLifepathRequirement
-      inverted: true
-      lifepaths:
-        - Clone
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - IPC
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: Uncloneable
+  id: Paracusia
+  name: trait-paracusia-name
+  description: trait-paracusia-desc
+  category: Disabilities
+  components:
+    - type: Paracusia
+      minTimeBetweenIncidents: 0.1
+      maxTimeBetweenIncidents: 300
+      maxSoundDistance: 7
+      sounds:
+        collection: Paracusia
 
 - type: trait
-  id: FrontalLisp
-  # slots: 0
-  # itemGroupSlots: 0
-  category: TraitsSpeechAccents
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - IPC
-    - !type:CharacterItemGroupRequirement
-      group: TraitsAccents
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: FrontalLisp
-
-- type: trait
-  id: Snoring
-  category: Auditory
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - IPC
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: Snoring
-
-- type: trait
-  id: BadKnees
-  category: Physical
-  points: 4
-  requirements:
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - ParkourTraining
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: ClimbDelayModifier
-          climbDelayMultiplier: 1.5
-        - type: SlippableModifier
-          paralyzeTimeMultiplier: 1.4
-        - type: SpeedModifiedByContactModifier
-          walkModifierEffectiveness: 1.35
-          sprintModifierEffectiveness: 1.35
-
-- type: trait
-  id: Sluggish
-  category: Physical
-  points: 5
-  requirements:
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - ParkourTraining
-        - SnailPaced
-        - WheelchairBound
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: TraitSpeedModifier
-          sprintModifier: 0.84
-          walkModifier: 0.84
-          requiredTriggeredSpeedModifier: 0.84
-
-- type: trait
-  id: SnailPaced
-  category: Physical
-  points: 8
-  requirements:
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - ParkourTraining
-        - Sluggish
-        - WheelchairBound
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: TraitSpeedModifier
-          sprintModifier: 0.68
-          walkModifier: 0.68
-          requiredTriggeredSpeedModifier: 0.68 # Still slip against normal slips with the new sprint speed
-
-- type: trait
-  id: BloodDeficiency
-  category: Physical
-  points: 4
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - IPC
-        - Lamia
-        - Plasmaman
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - PlateletFactories
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: BloodDeficiency # By default, start taking bloodloss damage at around ~21.4 minutes,
-          bloodLossPercentage: 0.0002333333  # then become crit ~10 minutes
-
-- type: trait
-  id: Hemophilia
-  category: Physical
-  points: 4
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - IPC
-        - Lamia
-        - Plasmaman
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: Hemophilia
-          bleedReductionModifier: 0.5
-          damageModifiers:
-            coefficients:
-              Blunt: 1.1
-
-- type: trait
-  id: Photophobia
-  category: Visual
-  points: 1
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Vulpkanin # This trait functions exactly as-is for the Vulpkanin trait.
-        - Shadowkin
-        - Tajaran
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Blindness
-        - CyberEyes
-        - SecurityEyesModule
-        - MedicalEyesModule
-        - DiagnosticEyesModule
-        - OmniEyesModule
-        - LightAmplificationModule
-        - ThermographicVisionModule
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: EyeDamageOnFlashing
-
-- type: trait
-  id: Clumsy
-  category: Physical
-  points: 5
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Clown # This trait functions exactly as is for the Clown's trait.
-    - !type:CharacterDepartmentRequirement
-      inverted: true
-      departments:
-        - Command # Because I know for a fact people will play Captain and grief with their inability to fight back.
-        - Security # Because I know for a fact people will play Security and grief with their inability to use guns.
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: Clumsy
-          gunShootFailDamage:
-            types:
-              Blunt: 5
-              Piercing: 4
-            groups:
-              Burn: 3
+  id: PainNumbness
+  name: trait-painnumbness-name
+  description: trait-painnumbness-desc
+  category: Disabilities
+  components:
+  - type: PainNumbness

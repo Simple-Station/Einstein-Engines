@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2024 CaasGit <87243814+CaasGit@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Client.GameObjects;
 using Content.Shared.Fax.Components;
 using Content.Shared.Fax;
@@ -25,24 +32,30 @@ public sealed class FaxVisualsSystem : EntitySystem
         if (args.Sprite == null)
             return;
 
-        if (_appearance.TryGetData(uid, FaxMachineVisuals.VisualState, out FaxMachineVisualState visuals) && visuals == FaxMachineVisualState.Inserting)
+        if (_player.HasRunningAnimation(uid, "faxecute"))
+            return;
+
+        if (_appearance.TryGetData(uid, FaxMachineVisuals.VisualState, out FaxMachineVisualState visuals) &&
+            visuals == FaxMachineVisualState.Inserting)
         {
-            _player.Play(uid, new Animation()
-            {
-                Length = TimeSpan.FromSeconds(2.4),
-                AnimationTracks =
+            _player.Play(uid,
+                new Animation()
                 {
-                    new AnimationTrackSpriteFlick()
+                    Length = TimeSpan.FromSeconds(2.4),
+                    AnimationTracks =
                     {
-                        LayerKey = FaxMachineVisuals.VisualState,
-                        KeyFrames =
+                        new AnimationTrackSpriteFlick()
                         {
-                            new AnimationTrackSpriteFlick.KeyFrame(component.InsertingState, 0f),
-                            new AnimationTrackSpriteFlick.KeyFrame("icon", 2.4f),
-                        }
-                    }
-                }
-            }, "faxecute");
+                            LayerKey = FaxMachineVisuals.VisualState,
+                            KeyFrames =
+                            {
+                                new AnimationTrackSpriteFlick.KeyFrame(component.InsertingState, 0f),
+                                new AnimationTrackSpriteFlick.KeyFrame("icon", 2.4f),
+                            },
+                        },
+                    },
+                },
+                "faxecute");
         }
     }
 }

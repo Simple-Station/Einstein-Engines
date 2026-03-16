@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 import requests
 import os
@@ -14,8 +20,8 @@ RELEASE_DIR = "release"
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-ROBUST_CDN_URL = "https://cdn.simplestation.org/"
-FORK_ID = "einstein-engines"
+ROBUST_CDN_URL = "https://cdn.goobstation.com/"
+FORK_ID = "GoobLRP"
 
 def main():
     session = requests.Session()

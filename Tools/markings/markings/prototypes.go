@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 package markings
 
 var accessoryLayerMapping map[string]string
@@ -15,7 +20,6 @@ const (
 	HumanFacialHair = "HumanFacialHair"
 	VoxFacialHair   = "VoxFacialHair"
 	VoxHair         = "VoxHair"
-	ThavenHair      = "ThavenHair" // DeltaV
 )
 
 func init() {
@@ -24,7 +28,6 @@ func init() {
 	accessoryLayerMapping[HumanFacialHair] = FacialHair
 	accessoryLayerMapping[VoxFacialHair] = FacialHair
 	accessoryLayerMapping[VoxHair] = Hair
-	accessoryLayerMapping[ThavenHair] = Hair // DeltaV
 }
 
 type SpriteAccessoryPrototype struct {
@@ -70,6 +73,7 @@ type MarkingPrototype struct {
 	MarkingCategory    string            `yaml:"markingCategory"`
 	SpeciesRestriction []string          `yaml:"speciesRestriction,omitempty"`
 	Sprites            []SpriteSpecifier `yaml:"sprites"`
+    Shader             string?           `yaml:"shader"`
 }
 
 type SpriteSpecifier struct {

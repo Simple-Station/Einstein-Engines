@@ -1,3 +1,22 @@
+# SPDX-FileCopyrightText: 2023 0x6273 <0x40@keemail.me>
+# SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 K-Dynamic <20566341+K-Dynamic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: MachineAnomalyVessel
   parent: [ BaseMachinePowered, ConstructibleMachine ]
@@ -100,9 +119,9 @@
     drawdepth: Mobs
   - type: SpriteFade
   - type: AnomalyVessel
-    basePointMultiplier: 2
+    pointMultiplier: 2
   - type: RadiationSource
-    slope: 0.1
+    intensity: 0.75
     enabled: false
   - type: Machine
     board: AnomalyVesselExperimentalCircuitboard
@@ -175,8 +194,8 @@
       SetParticleZeta: AnomalousParticleZeta
       SetParticleSigma: AnomalousParticleSigma
     fireBurstSize: 1
-    baseFireBurstDelayMin: 2
-    baseFireBurstDelayMax: 6
+    fireBurstDelayMin: 2
+    fireBurstDelayMax: 6
   - type: ApcPowerReceiver
     powerLoad: 100
   - type: GuideHelp

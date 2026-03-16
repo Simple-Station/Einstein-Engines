@@ -1,4 +1,10 @@
-﻿using Content.Shared.Chat.Prototypes;
+// SPDX-FileCopyrightText: 2024 Hannah Giovanna Dawson <karakkaraz@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Your Name <you@example.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Chat.V2;
 using Content.Shared.Radio;
 
@@ -91,4 +97,3 @@ public sealed class WhisperCreatedEvent(EntityUid speaker, string message, float
     public float MinRange = minRange;
     public float MaxRange = maxRange;
 }
-

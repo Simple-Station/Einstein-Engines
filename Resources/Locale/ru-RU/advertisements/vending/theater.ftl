@@ -1,4 +1,3 @@
-advertisement-theater-0 = Время шоу!
 advertisement-theater-1 = Одевайтесь для успеха!
 advertisement-theater-2 = Одетый и обутый!
 advertisement-theater-3 = Время шоу!

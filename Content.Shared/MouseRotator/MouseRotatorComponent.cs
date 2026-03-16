@@ -1,4 +1,11 @@
-﻿using System.Numerics;
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
@@ -15,7 +22,7 @@ public sealed partial class MouseRotatorComponent : Component
     ///     How much the desired angle needs to change before a predictive event is sent
     /// </summary>
     [DataField, AutoNetworkedField]
-    public Angle AngleTolerance = Angle.FromDegrees(20.0);
+    public Angle AngleTolerance = Angle.FromDegrees(5.0); // Goobstation edit - 20 => 5
 
     /// <summary>
     ///     The angle that will be lerped to
@@ -37,7 +44,7 @@ public sealed partial class MouseRotatorComponent : Component
     ///     like turrets or ship guns, which have finer range of movement.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public bool Simple4DirMode = true;
+    public bool Simple4DirMode = false; // Goobstation edit - false by default
 }
 
 /// <summary>
@@ -48,4 +55,5 @@ public sealed partial class MouseRotatorComponent : Component
 public sealed class RequestMouseRotatorRotationEvent : EntityEventArgs
 {
     public Angle Rotation;
+    public NetEntity? User;
 }

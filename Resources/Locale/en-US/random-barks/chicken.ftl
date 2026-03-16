@@ -1,9 +1,0 @@
-bark-chicken-1 = Coooot
-bark-chicken-2 = Coot
-bark-chicken-3 = Coot Coot Cooot
-bark-chicken-4 = Food
-bark-chicken-5 = Where is grass?
-bark-chicken-6 = Need to eat
-bark-chicken-7 = Egg
-bark-chicken-8 = Coot coot
-bark-chicken-count = 8

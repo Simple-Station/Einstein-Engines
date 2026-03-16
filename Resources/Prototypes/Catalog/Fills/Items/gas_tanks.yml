@@ -1,3 +1,25 @@
+# SPDX-FileCopyrightText: 2021 Kara D <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Fooberticus Bazly <34943053+fooberticus@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Myctai <108953437+Myctai@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 fooberticus <fooberticus@protonmail.com>
+# SPDX-FileCopyrightText: 2023 Danger Revolution! <142105406+DangerRevolution@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 DangerRevoltion <142105406+DangerRevoltion@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Errant <35878406+dmnct@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Kevin Zheng <kevinz5000@gmail.com>
+# SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 sneb <96957003+snebl@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
 # Moles calculation
 #
 #   moles = 1000 / (8.31446261 * 293.15 / volume)
@@ -63,22 +85,6 @@
         - 0.270782035 # nitrogen
       temperature: 293.15
 
-- type: entity
-  id: EmergencyPlasmaTankFilled
-  parent: EmergencyPlasmaTank
-  suffix: Filled
-  components:
-  - type: GasTank
-    outputPressure: 5.325
-    air:
-      # 16 minutes with Plasmaman lungs
-      volume: 0.66
-      moles:
-        - 0           # oxygen
-        - 0           # nitrogen
-        - 0           # CO2
-        - 0.270782035 # nitrogen
-      temperature: 293.15
 
 - type: entity
   id: ExtendedEmergencyOxygenTankFilled
@@ -109,22 +115,6 @@
         - 0.615413715 # nitrogen
       temperature: 293.15
 
-- type: entity
-  id: ExtendedEmergencyPlasmaTankFilled
-  parent: ExtendedEmergencyPlasmaTank
-  suffix: Filled
-  components:
-  - type: GasTank
-    outputPressure: 5.325
-    air:
-      # 37 minutes with Plasmaman lungs
-      volume: 1.5
-      moles:
-        - 0           # oxygen
-        - 0           # nitrogen
-        - 0           # CO2
-        - 0.615413715 # plasma
-      temperature: 293.15
 
 - type: entity
   id: DoubleEmergencyOxygenTankFilled
@@ -153,23 +143,6 @@
       moles:
         - 0 # oxygen
         - 1.025689525 # nitrogen
-      temperature: 293.15
-
-- type: entity
-  id: DoubleEmergencyPlasmaTankFilled
-  parent: DoubleEmergencyPlasmaTank
-  suffix: Filled
-  components:
-  - type: GasTank
-    outputPressure: 5.325
-    air:
-      # 62 minutes with Plasmaman lungs
-      volume: 1.5
-      moles:
-        - 0           # oxygen
-        - 0           # nitrogen
-        - 0           # CO2
-        - 1.025689525 # plasma
       temperature: 293.15
 
 - type: entity
@@ -262,7 +235,7 @@
   - type: GasTank
     outputPressure: 5.325
     air:
-      # 125.2 minutes with Plasmaman lungs
+      # 125.2 minutes with plasmaman lungs
       volume: 5
       moles:
         - 0           # oxygen
@@ -270,33 +243,3 @@
         - 0           # CO2
         - 2.051379050 # plasma
       temperature: 293.15
-
-- type: entity
-  id: HyperNobliumTankFilled
-  parent: OxygenTank
-  name: HyperNobFilledTank
-  description: write here something pls.
-  suffix: Filled
-  components:
-  - type: GasTank
-    air:
-      # 31 minutes
-      volume: 5
-      moles:
-      - 0 # oxygen
-      - 0 # nitrogen
-      - 0 # CO2
-      - 0 # Plasma
-      - 0 # Tritium
-      - 0 # Water vapor
-      - 0 # Miasma
-      - 0 # N2O
-      - 0 # Frezon
-      - 5 # Hyper-Noblium
-      temperature: 73.123
-  - type: Sprite
-    sprite: Objects/Tanks/hypernob.rsi
-  - type: Item
-    sprite: Objects/Tanks/hypernob.rsi
-  - type: Clothing
-    sprite: Objects/Tanks/hypernob.rsi

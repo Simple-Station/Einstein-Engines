@@ -1,3 +1,14 @@
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2023 crazybrain23 <44417085+crazybrain23@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 YuNii <benjamin@bhenrich.de>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 ## Generic Congrats
 
 holiday-greet = Have a happy {$holidayName}!
@@ -69,6 +80,7 @@ holiday-name-festive-season = Festive Season
 holiday-name-boxing-day = Boxing Day
 holiday-name-friday-thirteenth = Friday the 13th
 holiday-name-national-coming-out-day = National Coming Out Day
+holiday-name-pride-month = Pride Month
 
 ## Custom congrats
 

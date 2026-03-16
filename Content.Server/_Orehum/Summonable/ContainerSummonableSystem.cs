@@ -6,6 +6,7 @@ using Content.Shared.Mind;
 using Content.Shared.Popups;
 using Content.Server.Storage.Components;
 using Content.Shared.Storage.EntitySystems;
+using Content.Shared.Storage.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Content.Shared._Orehum.Summonable;
@@ -18,6 +19,7 @@ public sealed class SharedContainerSummonableSystem : EntitySystem
     [Dependency] private readonly SharedEntityStorageSystem _entityStorage = default!;
     [Dependency] private readonly EntityTableSystem _entityTable = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -36,7 +38,8 @@ public sealed class SharedContainerSummonableSystem : EntitySystem
         var spawns = _entityTable.GetSpawns(args.Table);
         foreach (var spawn in spawns)
         {
-            var ent = PredictedSpawnInContainerOrDrop(spawn, args.Target, storage.Contents.ID);
+            var ent = Spawn(spawn, _transform.GetMapCoordinates(args.Target));
+            _entityStorage.Insert(ent, args.Target, storage);
         }
 
         _popup.PopupEntity(Loc.GetString("container-summonable-summon-popup", ("target", args.Target)), args.Target, args.Performer);

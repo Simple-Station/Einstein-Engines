@@ -1,0 +1,51 @@
+# SPDX-FileCopyrightText: 2022 20kdc <asdd2808@gmail.com>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+# AutoLink variants of SignalButton (from Outer Rim)
+
+- type: entity
+  id: SignalButtonExt1
+  parent: SignalButton
+  name: exterior button 1
+  suffix: Autolink, Ext1
+  components:
+    - type: AutoLinkTransmitter
+      channel: Ext1
+
+- type: entity
+  id: SignalButtonExt2
+  parent: SignalButton
+  name: exterior button 2
+  suffix: Autolink, Ext2
+  components:
+    - type: AutoLinkTransmitter
+      channel: Ext2
+
+- type: entity
+  id: SignalButtonExt3
+  parent: SignalButton
+  name: exterior button 3
+  suffix: Autolink, Ext3
+  components:
+    - type: AutoLinkTransmitter
+      channel: Ext3
+
+- type: entity
+  id: SignalButtonBridge
+  parent: SignalButton
+  name: bridge windows button
+  suffix: Autolink, Bridge
+  components:
+    - type: AutoLinkTransmitter
+      channel: Bridge
+
+- type: entity
+  id: SignalButtonWindows
+  parent: SignalButton
+  name: exterior windows button
+  suffix: Autolink, Windows
+  components:
+    - type: AutoLinkTransmitter
+      channel: Windows

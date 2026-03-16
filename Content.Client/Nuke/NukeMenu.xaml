@@ -1,6 +1,21 @@
+<!--
+SPDX-FileCopyrightText: 2021 Alex Evgrashin <aevgrashin@yandex.ru>
+SPDX-FileCopyrightText: 2021 Alexander Evgrashin <evgrashin.adl@gmail.com>
+SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: MIT
+-->
+
 <DefaultWindow xmlns="https://spacestation14.io"
-    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client" Title="{Loc 'nuke-user-interface-title'}" MinSize="256 256" SetSize="256 256">
-    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+            xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+            Title="{Loc 'nuke-user-interface-title'}"
+            MinSize="256 256"
+            SetSize="256 256">
+    <BoxContainer Orientation="Vertical"
+                  HorizontalExpand="True"
+                  VerticalExpand="True">
         <!-- First status label -->
         <PanelContainer Margin="0 0 0 5">
             <PanelContainer.PanelOverride>
@@ -15,14 +30,26 @@
             </PanelContainer.PanelOverride>
             <Label Name="SecondStatusLabel"/>
         </PanelContainer>
-        <BoxContainer Orientation="Horizontal">
-            <GridContainer Columns="3" Name="KeypadGrid">
+        <BoxContainer Orientation="Horizontal" >
+            <GridContainer Columns="3"
+                           Name="KeypadGrid">
                 <!-- Keypad is filled by code -->
             </GridContainer>
-            <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="5 0">
-                <Button Name="EjectButton" Text="{Loc 'nuke-user-interface-eject-button'}" Margin="0 0 0 5" Access="Public"/>
-                <Button Name="AnchorButton" Text="{Loc 'nuke-user-interface-anchor-button'}" Margin="0 0 0 5" Access="Public"/>
-                <Button Name="ArmButton" Text="{Loc 'nuke-user-interface-arm-button'}" Access="Public" StyleClasses="Danger"/>
+            <BoxContainer Orientation="Vertical"
+                          HorizontalExpand="True"
+                          Margin="5 0">
+                <Button Name="EjectButton"
+                        Text="{Loc 'nuke-user-interface-eject-button'}"
+                        Margin="0 0 0 5"
+                        Access="Public"/>
+                <Button Name="AnchorButton"
+                        Text="{Loc 'nuke-user-interface-anchor-button'}"
+                        Margin="0 0 0 5"
+                        Access="Public"/>
+                <Button Name="ArmButton"
+                        Text="{Loc 'nuke-user-interface-arm-button'}"
+                        Access="Public"
+                        StyleClasses="Caution"/>
             </BoxContainer>
         </BoxContainer>
     </BoxContainer>

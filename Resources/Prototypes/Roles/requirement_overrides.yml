@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: jobRequirementOverride
+  id: Reduced
+  jobs:
+    Captain:
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 3600 # 1 hours
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 3600 # 1 hours
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 3600 # 1 hours
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 3600 # 1 hour

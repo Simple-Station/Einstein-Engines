@@ -1,4 +1,11 @@
-using Content.Server.Announcements.Systems;
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.StationEvents.Components;
 using Content.Shared.Access;
 using Content.Shared.Access.Systems;
@@ -7,10 +14,12 @@ using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
 using Content.Shared.Lock;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Station.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server.StationEvents.Events;
+
 
 /// <summary>
 ///     Greytide Virus event
@@ -19,7 +28,7 @@ namespace Content.Server.StationEvents.Events;
 public sealed class GreytideVirusRule : StationEventSystem<GreytideVirusRuleComponent>
 {
     [Dependency] private readonly AccessReaderSystem _access = default!;
-    [Dependency] private readonly AnnouncerSystem _announcer = default!;
+    [Dependency] private readonly SharedAirlockSystem _airlock = default!; // Goobstation - Greytide Virus EA instead of open-bolt
     [Dependency] private readonly SharedDoorSystem _door = default!;
     [Dependency] private readonly LockSystem _lock = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
@@ -27,24 +36,24 @@ public sealed class GreytideVirusRule : StationEventSystem<GreytideVirusRuleComp
 
     protected override void Added(EntityUid uid, GreytideVirusRuleComponent virusComp, GameRuleComponent gameRule, GameRuleAddedEvent args)
     {
-        base.Added(uid, virusComp, gameRule, args);
+        if (!TryComp<StationEventComponent>(uid, out var stationEvent))
+            return;
 
         // pick severity randomly from range if not specified otherwise
         virusComp.Severity ??= virusComp.SeverityRange.Next(_random);
         virusComp.Severity = Math.Min(virusComp.Severity.Value, virusComp.AccessGroups.Count);
 
-        _announcer.SendAnnouncement(
-            _announcer.GetAnnouncementId(args.RuleId),
-            "station-event-greytide-virus-start-announcement",
-            colorOverride: Color.FromHex("#18abf5"),
-            localeArgs: ("severity", virusComp.Severity.Value));
+        stationEvent.StartAnnouncement = Loc.GetString("station-event-greytide-virus-start-announcement", ("severity", virusComp.Severity.Value));
+        base.Added(uid, virusComp, gameRule, args);
     }
-
     protected override void Started(EntityUid uid, GreytideVirusRuleComponent virusComp, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
         base.Started(uid, virusComp, gameRule, args);
 
         if (virusComp.Severity == null)
+            return;
+
+        if (!TryGetRandomStation(out var chosenStation))
             return;
 
         // pick random access groups
@@ -61,10 +70,14 @@ public sealed class GreytideVirusRule : StationEventSystem<GreytideVirusRuleComp
         var firelockQuery = GetEntityQuery<FirelockComponent>();
         var accessQuery = GetEntityQuery<AccessReaderComponent>();
 
-        var lockQuery = AllEntityQuery<LockComponent>();
-        while (lockQuery.MoveNext(out var lockUid, out var lockComp))
+        var lockQuery = AllEntityQuery<LockComponent, TransformComponent>();
+        while (lockQuery.MoveNext(out var lockUid, out var lockComp, out var xform))
         {
             if (!accessQuery.TryComp(lockUid, out var accessComp))
+                continue;
+
+            // make sure not to hit CentCom or other maps
+            if (CompOrNull<StationMemberComponent>(xform.GridUid)?.Station != chosenStation)
                 continue;
 
             // check access
@@ -78,23 +91,27 @@ public sealed class GreytideVirusRule : StationEventSystem<GreytideVirusRuleComp
             _lock.Unlock(lockUid, null, lockComp);
         }
 
-        var airlockQuery = AllEntityQuery<AirlockComponent, DoorComponent>();
-        while (airlockQuery.MoveNext(out var airlockUid, out var airlockComp, out var doorComp))
+        var airlockQuery = AllEntityQuery<AirlockComponent, DoorComponent, TransformComponent>();
+        while (airlockQuery.MoveNext(out var airlockUid, out var airlockComp, out var doorComp, out var xform))
         {
             // don't space everything
             if (firelockQuery.HasComp(airlockUid))
                 continue;
 
+            // make sure not to hit CentCom or other maps
+            if (CompOrNull<StationMemberComponent>(xform.GridUid)?.Station != chosenStation)
+                continue;
+
             // use the access reader from the door electronics if they exist
-            if (!_access.GetMainAccessReader(airlockUid, out var accessComp))
+            if (!_access.GetMainAccessReader(airlockUid, out var accessEnt))
                 continue;
 
             // check access
-            if (!_access.AreAccessTagsAllowed(accessIds, accessComp) || _access.AreAccessTagsAllowed(virusComp.Blacklist, accessComp))
+            if (!_access.AreAccessTagsAllowed(accessIds, accessEnt.Value.Comp) || _access.AreAccessTagsAllowed(virusComp.Blacklist, accessEnt.Value.Comp))
                 continue;
 
-            // open and bolt airlocks
-            _door.TryOpenAndBolt(airlockUid, doorComp, airlockComp);
+            // Goobstation - EA instead of open-bolt
+            _airlock.SetEmergencyAccess((airlockUid, airlockComp), true, null);
         }
     }
 }

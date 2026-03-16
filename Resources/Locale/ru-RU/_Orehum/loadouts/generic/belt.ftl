@@ -1,6 +1,0 @@
-loadout-name-LoadoutBeltGeneric = пояс (можно раскрасить)
-loadout-name-LoadoutBeltGenericThin = тонкий пояс (можно раскрасить)
-loadout-name-LoadoutBeltGenericThick = толстая лента (можно раскрасить)
-loadout-name-LoadoutBeltWaist = поясной ремень (можно раскрасить)
-loadout-name-LoadoutBeltWaistThin = тонкий пояс на талии (можно раскрасить)
-loadout-name-LoadoutBeltWaistbagColor = поясная сумка (можно раскрасить)

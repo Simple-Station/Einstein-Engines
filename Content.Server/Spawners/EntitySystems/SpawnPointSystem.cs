@@ -1,3 +1,25 @@
+// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Tom Leys <tom@crump-leys.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Firewatch <54725557+musicmanvr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Krunklehorn <42424291+Krunklehorn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mr. 27 <koolthunder019@gmail.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.GameTicking;
 using Content.Server.Spawners.Components;
 using Content.Server.Station.Systems;
@@ -32,24 +54,6 @@ public sealed class SpawnPointSystem : EntitySystem
             if (args.Station != null && _stationSystem.GetOwningStation(uid, xform) != args.Station)
                 continue;
 
-            // Delta-V: Allow setting a desired SpawnPointType
-            if (args.DesiredSpawnPointType != SpawnPointType.Unset)
-            {
-                var isMatchingJob = spawnPoint.SpawnType == SpawnPointType.Job &&
-                    (args.Job == null || spawnPoint.Job == args.Job);
-
-                switch (args.DesiredSpawnPointType)
-                {
-                    case SpawnPointType.Job when isMatchingJob:
-                    case SpawnPointType.LateJoin when spawnPoint.SpawnType == SpawnPointType.LateJoin:
-                    case SpawnPointType.Observer when spawnPoint.SpawnType == SpawnPointType.Observer:
-                        possiblePositions.Add(xform.Coordinates);
-                        break;
-                    default:
-                        continue;
-                }
-            }
-
             if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin)
             {
                 possiblePositions.Add(xform.Coordinates);
@@ -69,7 +73,7 @@ public sealed class SpawnPointSystem : EntitySystem
             // TODO: Refactor gameticker spawning code so we don't have to do this!
             var points2 = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();
 
-            if (points2.MoveNext(out _, out var xform))
+            if (points2.MoveNext(out var spawnPoint, out var xform))
             {
                 possiblePositions.Add(xform.Coordinates);
             }

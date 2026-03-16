@@ -7,7 +7,6 @@
 
 - type: clause
   id: glassshard
-  name: Стеклянный
   clauseWeight: 90
   addedComponents:
   - type: MobThresholds
@@ -17,15 +16,7 @@
       4: Dead
 
 - type: clause
-  id: glimmer
-  name: Мерцающий
-  clauseWeight: 20
-  addedComponents:
-  - type: GlimmerSource
-
-- type: clause
   id: flammable
-  name: Боязнь огня
   clauseWeight: 20
   addedComponents:
   - type: Flammable
@@ -36,7 +27,6 @@
 
 - type: clause
   id: cancer
-  name: Рак
   clauseWeight: 60
   addedComponents:
   - type: PassiveDamage
@@ -47,10 +37,9 @@
     damage:
       types:
         Cellular: 0.3 # игрок умрет от рака через 11 минут
-  
+
 - type: clause
   id: plasmaboy
-  name: Метеоризм
   clauseWeight: 45
   addedComponents:
   - type: PyroclasticAnomaly
@@ -64,19 +53,14 @@
 
 - type: clause
   id: lightscary
-  name: Светобоязнь
   clauseWeight: 40
   addedComponents:
   - type: LightDetection
-  - type: LightDetectionDamageModifier
-    resistanceModifier: 0.5
-    healOnShadows: false
 
 # ПОЛОЖИТЕЛЬНЫЕ УСЛОВИЯ
 
 - type: clause
   id: mastersurgery
-  name: Мастер хирургии
   clauseWeight: -25
   addedComponents:
   - type: SurgerySpeedModifier
@@ -84,65 +68,32 @@
 
 - type: clause
   id: lordsurgery
-  name: Повелитель хирургии
   clauseWeight: -60
   addedComponents:
   - type: SurgerySpeedModifier
     speedModifier: 4
 
 - type: clause
-  id: giftedpsyker
-  name: Одаренный псионик
-  clauseWeight: -50
-  addedComponents:
-  - type: Psionic
-    powerSlots: 3
-    baselinePowerCost: 50
-    nextPowerCost: 50
-
-- type: clause
-  id: telepath
-  name: Телепат
-  clauseWeight: -10
-  addedComponents:
-  - type: InnatePsionicPowers
-    powersToAdd:
-    - TelepathyPower
-
-- type: clause
-  id: fearofglimmer
-  name: Страх мерцания
-  clauseWeight: -30
-  addedComponents:
-  - type: GlimmerSource
-    glimmerPerSecond: -1.0
-
-- type: clause
   id: fearofsledopyts
-  name: Страх следопытов
   clauseWeight: -10
   removedComponents:
-  - type: FootPrints
   - type: Fingerprint
   - type: Dna
 
 - type: clause
   id: anticuffable
-  name: Страх наручников
   clauseWeight: -20
   removedComponents:
   - type: Cuffable
 
 - type: clause
   id: ultravision
-  name: Ультра зрения
   clauseWeight: -20
   addedComponents:
   - type: UltraVision
 
 - type: clause
   id: thermalvision
-  name: Тепловое зрения
   clauseWeight: -20
   addedComponents:
   - type: ThermalVision
@@ -153,7 +104,6 @@
 
 - type: clause
   id: puller
-  name: Тягатель
   clauseWeight: -5
   addedComponents:
   - type: Puller
@@ -161,14 +111,12 @@
 
 - type: clause
   id: noslip
-  name: Равновесие
   clauseWeight: -10
   addedComponents:
   - type: NoSlip
 
 - type: clause
   id: spider
-  name: Паук
   clauseWeight: -20
   addedComponents:
   - type: Spider
@@ -176,7 +124,6 @@
 
 - type: clause
   id: zhivuchi
-  name: Живучий
   clauseWeight: -60
   addedComponents:
   - type: MobThresholds
@@ -187,7 +134,6 @@
 
 - type: clause
   id: firestarter
-  name: Поджигатель
   clauseWeight: -60
   addedComponents:
   - type: Firestarter

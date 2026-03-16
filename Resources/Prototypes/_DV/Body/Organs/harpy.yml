@@ -1,0 +1,51 @@
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: OrganHarpyLungs
+  parent: BaseHumanOrgan
+  name: lungs
+  description: "An advanced pair of avian lungs. Filters oxygen by way of moving air constantly through air sacs."
+  components:
+  - type: Sprite
+    layers:
+      - state: lung-l
+      - state: lung-r
+  - type: Lung
+  - type: Organ
+    slotId: lungs
+  - type: Metabolizer
+    updateInterval: 2.0
+    removeEmpty: true
+    solutionOnBody: false
+    solution: "Lung"
+    metabolizerTypes: [ Human ]
+    groups:
+    - id: Gas
+      rateModifier: 200.0
+  - type: SolutionContainerManager
+    solutions:
+      organ:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+      Lung:
+        maxVol: 100.0
+        canReact: false
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+  - type: Tag # goob edit
+    tags:
+     - Meat
+     - Organ
+     - Lungs

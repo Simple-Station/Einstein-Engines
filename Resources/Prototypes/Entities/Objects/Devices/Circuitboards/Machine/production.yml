@@ -1,16 +1,142 @@
-﻿- type: entity
+# SPDX-FileCopyrightText: 2020 Vera Aguilera Puerto <zddm@outlook.es>
+# SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+# SPDX-FileCopyrightText: 2021 SETh lafuente <cetaciocascarudo@gmail.com>
+# SPDX-FileCopyrightText: 2021 SethLafuente <84478872+SethLafuente@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 0x6273 <0x40@keemail.me>
+# SPDX-FileCopyrightText: 2022 August Eymann <august.eymann@gmail.com>
+# SPDX-FileCopyrightText: 2022 Chris V <HoofedEar@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Francesco <frafonia@gmail.com>
+# SPDX-FileCopyrightText: 2022 Jack Fox <35575261+DubiousDoggo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Lamrr <96937466+Lamrr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Ripmorld <60119809+UKNOWH@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 corentt <36075110+corentt@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 AjexRose <112997230+AjexRose@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 ChilbroBaggins <107660393+ChilbroBaggins@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Dawid Bla <46636558+DawBla@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Jeff <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2023 OttoMaticode <124523848+OttoMaticode@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Segonist <74138556+Segonist@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 crazybrain23 <44417085+crazybrain23@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 liltenhead <104418166+liltenhead@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Арт <123451459+JustArt1m@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 AWF <you@example.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 CaasGit <87243814+CaasGit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 EmoGarbage404 <retron404@gmail.com>
+# SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 GitHubUser53123 <110841413+GitHubUser53123@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hannah Giovanna Dawson <karakkaraz@gmail.com>
+# SPDX-FileCopyrightText: 2024 Hrosts <35345601+Hrosts@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ian <ignaz.k@live.de>
+# SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Joel Zimmerman <JoelZimmerman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Julian Giebel <juliangiebel@live.de>
+# SPDX-FileCopyrightText: 2024 JustCone <141039037+JustCone14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kevin Zheng <kevinz5000@gmail.com>
+# SPDX-FileCopyrightText: 2024 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ko4ergaPunk <62609550+Ko4ergaPunk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kukutis96513 <146854220+Kukutis96513@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Lye <128915833+Lyroth001@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Menshin <Menshin@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MerrytheManokit <167581110+MerrytheManokit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MureixloI <132683811+MureixloI@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 NakataRin <45946146+NakataRin@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 OrangeMoronage9622 <whyteterry0092@gmail.com>
+# SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Preston Smith <92108534+thetolbean@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Repo <47093363+Titian3@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 RiceMar1244 <138547931+RiceMar1244@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Stalen <33173619+stalengd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TakoDragon <69509841+BackeTako@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tunguso4ka <71643624+Tunguso4ka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st <shadowstalkermll@gmail.com>
+# SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2024 Vigers Ray <60344369+VigersRay@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 degradka <69397649+degradka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 dffdff2423 <dffdff2423@gmail.com>
+# SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+# SPDX-FileCopyrightText: 2024 foboscheshir <156405958+foboscheshir@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 iNVERTED <alextjorgensen@gmail.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+# SPDX-FileCopyrightText: 2024 saintmuntzer <47153094+saintmuntzer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 shamp <140359015+shampunj@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 strO0pwafel <153459934+strO0pwafel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 stroopwafel <j.o.luijkx@student.tudelft.nl>
+# SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 wafehling <wafehling@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 yglop <95057024+yglop@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
   id: AutolatheMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: autolathe machine board
   description: A machine printed circuit board for an autolathe.
   components:
-  - type: MachineBoard
-    prototype: Autolathe
-    machinePartRequirements:
-      MatterBin: 3
-      Manipulator: 1
-    stackRequirements:
-      Glass: 1
+    - type: MachineBoard
+      prototype: Autolathe
+      stackRequirements:
+        Manipulator: 4
+        Glass: 1
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -20,18 +146,13 @@
   components:
   - type: MachineBoard
     prototype: AutolatheHyperConvection
-    machinePartRequirements:
-      MatterBin: 3
     stackRequirements:
+      Manipulator: 3
       Glass: 1
     tagRequirements:
       Igniter:
         amount: 1
         defaultPrototype: Igniter
-  - type: ReverseEngineering # Delta
-    difficulty: 2
-    recipes:
-    - AutolatheHyperConvectionMachineCircuitboard
 
 - type: entity
   id: ProtolatheMachineCircuitboard
@@ -39,11 +160,12 @@
   name: protolathe machine board
   description: A machine printed circuit board for a protolathe.
   components:
+  - type: Sprite
+    state: science
   - type: MachineBoard
     prototype: Protolathe
-    machinePartRequirements:
-      MatterBin: 2
-      Manipulator: 2
+    stackRequirements:
+      Manipulator: 4
     tagRequirements:
       GlassBeaker:
         amount: 2
@@ -55,10 +177,12 @@
   name: hyper convection protolathe machine board
   description: A machine printed circuit board for a hyper convection protolathe.
   components:
+  - type: Sprite
+    state: science
   - type: MachineBoard
     prototype: ProtolatheHyperConvection
-    machinePartRequirements:
-      MatterBin: 2
+    stackRequirements:
+      Manipulator: 4
     tagRequirements:
       GlassBeaker:
         amount: 2
@@ -66,10 +190,6 @@
       Igniter:
         amount: 1
         defaultPrototype: Igniter
-  - type: ReverseEngineering # Delta
-    difficulty: 2
-    recipes:
-    - ProtolatheHyperConvectionMachineCircuitboard
 
 - type: entity
   id: BiofabricatorMachineCircuitboard
@@ -77,16 +197,13 @@
   name: biocube fabricator machine board
   description: A machine printed circuit board for a biocube fabricator.
   components:
+  - type: Sprite
+    state: service
   - type: MachineBoard
     prototype: Biofabricator
-    machinePartRequirements:
-      MatterBin: 4
     stackRequirements:
+      Manipulator: 4
       Glass: 1
-  - type: ReverseEngineering # Delta
-    difficulty: 2
-    recipes:
-    - BiofabricatorMachineCircuitboard
 
 - type: entity
   id: SecurityTechFabCircuitboard
@@ -94,17 +211,16 @@
   name: security techfab machine board
   description: A machine printed circuit board for a security techfab.
   components:
-  - type: Sprite
-    state: security
-  - type: MachineBoard
-    prototype: SecurityTechFab
-    machinePartRequirements:
-      MatterBin: 2
-      Manipulator: 2
-    tagRequirements:
-      GlassBeaker:
-        amount: 2
-        defaultPrototype: Beaker
+    - type: Sprite
+      state: security
+    - type: MachineBoard
+      prototype: SecurityTechFab
+      stackRequirements:
+        Manipulator: 4
+      tagRequirements:
+        GlassBeaker:
+          amount: 2
+          defaultPrototype: Beaker
 
 - type: entity
   id: AmmoTechFabCircuitboard
@@ -112,13 +228,12 @@
   name: ammo techfab circuit board
   description: A machine printed circuit board for an ammo techfab.
   components:
-  - type: Sprite
-    state: security
-  - type: MachineBoard
-    prototype: AmmoTechFab
-    machinePartRequirements:
-      MatterBin: 1
-      Manipulator: 1
+    - type: Sprite
+      state: security
+    - type: MachineBoard
+      prototype: AmmoTechFab
+      stackRequirements:
+        Manipulator: 2
 
 - type: entity
   id: MedicalTechFabCircuitboard
@@ -126,19 +241,18 @@
   name: medical techfab machine board
   description: A machine printed circuit board for a medical techfab.
   components:
-  - type: Sprite
-    state: medical
-  - type: MachineBoard
-    prototype: MedicalTechFab
-    machinePartRequirements:
-      MatterBin: 2
-      Manipulator: 2
-    tagRequirements:
-      GlassBeaker:
-        amount: 2
-        defaultPrototype: Beaker
-  - type: StealTarget
-    stealGroup: MedicalTechFabCircuitboard
+    - type: Sprite
+      state: medical
+    - type: MachineBoard
+      prototype: MedicalTechFab
+      stackRequirements:
+        Manipulator: 4
+      tagRequirements:
+        GlassBeaker:
+          amount: 2
+          defaultPrototype: Beaker
+    - type: StealTarget
+      stealGroup: MedicalTechFabCircuitboard
 
 - type: entity
   id: CircuitImprinterMachineCircuitboard
@@ -149,9 +263,8 @@
     state: science
   - type: MachineBoard
     prototype: CircuitImprinter
-    machinePartRequirements:
-      MatterBin: 1
-      Manipulator: 1
+    stackRequirements:
+      Manipulator: 2
     tagRequirements:
       GlassBeaker:
         amount: 2
@@ -167,8 +280,8 @@
     state: science
   - type: MachineBoard
     prototype: CircuitImprinterHyperConvection
-    machinePartRequirements:
-      MatterBin: 2
+    stackRequirements:
+      Manipulator: 2
     tagRequirements:
       GlassBeaker:
         amount: 2
@@ -186,15 +299,9 @@
     state: science
   - type: MachineBoard
     prototype: ExosuitFabricator
-    machinePartRequirements:
-      MatterBin: 1
-      Manipulator: 3
     stackRequirements:
+      Manipulator: 4
       Glass: 5
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
-    - ExosuitFabricatorMachineCircuitboard
   - type: GuideHelp
     guides:
     - Robotics
@@ -224,7 +331,7 @@
   - type: MachineBoard
     prototype: Biogenerator
     stackRequirements:
-      MatterBin: 2
+      Manipulator: 2
     tagRequirements:
       GlassBeaker:
         amount: 1
@@ -237,9 +344,8 @@
   components:
   - type: MachineBoard
     prototype: UniformPrinter
-    machinePartRequirements:
-      MatterBin: 1
-      Manipulator: 2
+    stackRequirements:
+      Manipulator: 3
 
 - type: entity
   id: VaccinatorMachineCircuitboard
@@ -250,19 +356,13 @@
     state: medical
   - type: MachineBoard
     prototype: Vaccinator
-    machinePartRequirements:
-      MatterBin: 1
-      Manipulator: 1
     stackRequirements:
+      Manipulator: 2
       Cable: 5
     tagRequirements:
-      GlassBeaker:
-        amount: 1
-        defaultPrototype: Beaker
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
-    - VaccinatorMachineCircuitboard
+        GlassBeaker:
+          amount: 1
+          defaultPrototype: Beaker
 
 - type: entity
   id: DiagnoserMachineCircuitboard
@@ -283,10 +383,6 @@
       BotanySwab:
         amount: 1
         defaultPrototype: DiseaseSwab
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
-    - DiagnoserMachineCircuitboard
 
 - type: entity
   id: ArtifactAnalyzerMachineCircuitboard
@@ -294,19 +390,13 @@
   name: artifact analyzer machine board
   description: A machine printed circuit board for an artifact analyzer.
   components:
-  - type: Sprite
-    state: science
-  - type: MachineBoard
-    prototype: MachineArtifactAnalyzer
-    machinePartRequirements:
-      Manipulator: 3
-      Capacitor: 1
-    stackRequirements:
-      Glass: 5
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
-    - ArtifactAnalyzerMachineCircuitboard
+    - type: Sprite
+      state: science
+    - type: MachineBoard
+      prototype: MachineArtifactAnalyzer
+      stackRequirements:
+        Manipulator: 1
+        Glass: 5
 
 - type: entity
   id: ArtifactCrusherMachineCircuitboard
@@ -318,15 +408,10 @@
     state: science
   - type: MachineBoard
     prototype: MachineArtifactCrusher
-    machinePartRequirements:
-      Manipulator: 2
     stackRequirements:
+      Manipulator: 2
       Glass: 1
       Steel: 5
-  - type: ReverseEngineering # Delta
-    difficulty: 3
-    recipes:
-    - ArtifactCrusherMachineCircuitboard
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -334,19 +419,14 @@
   name: anomaly vessel machine board
   description: A machine printed circuit board for an anomaly vessel.
   components:
-  - type: Sprite
-    state: science
-  - type: MachineBoard
-    prototype: MachineAnomalyVessel
-    machinePartRequirements:
-      Capacitor: 3
-    stackRequirements:
-      Cable: 1
-      PlasmaGlass: 10
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
-    - AnomalyVesselCircuitboard
+    - type: Sprite
+      state: science
+    - type: MachineBoard
+      prototype: MachineAnomalyVessel
+      stackRequirements:
+        Manipulator: 3
+        Cable: 1
+        PlasmaGlass: 10
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -358,16 +438,11 @@
     state: science
   - type: MachineBoard
     prototype: MachineAnomalyVesselExperimental
-    machinePartRequirements:
-      Capacitor: 3
     stackRequirements:
+      Manipulator: 3
       Cable: 5
       PlasmaGlass: 15
       MetalRod: 4
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
-    - AnomalyVesselExperimentalCircuitboard
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -375,20 +450,14 @@
   name: anomaly synchronizer machine board
   description: A machine printed circuit board for an anomaly synchronizer.
   components:
-  - type: Sprite
-    state: science
-  - type: MachineBoard
-    prototype: MachineAnomalySynchronizer
-    machinePartRequirements:
-      Manipulator: 2
-      Capacitor: 5
-    stackRequirements:
-      PlasmaGlass: 5
-      Cable: 5
-  - type: ReverseEngineering # Delta
-    difficulty: 3
-    recipes:
-    - AnomalySynchronizerCircuitboard
+    - type: Sprite
+      state: science
+    - type: MachineBoard
+      prototype: MachineAnomalySynchronizer
+      stackRequirements:
+        Manipulator: 7
+        PlasmaGlass: 5
+        Cable: 5
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -396,19 +465,14 @@
   name: A.P.E. machine board
   description: A machine printed circuit board for an A.P.E.
   components:
-  - type: Sprite
-    state: science
-  - type: MachineBoard
-    prototype: MachineAPE
-    machinePartRequirements:
-      Capacitor: 2
-    stackRequirements:
-      Cable: 1
-      Glass: 1
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
-    - APECircuitboard
+    - type: Sprite
+      state: science
+    - type: MachineBoard
+      prototype: MachineAPE
+      stackRequirements:
+        Manipulator: 2
+        Cable: 1
+        Glass: 1
 
 - type: entity
   id: ThermomachineFreezerMachineCircuitBoard
@@ -420,19 +484,13 @@
     state: engineering
   - type: MachineBoard
     prototype: GasThermoMachineFreezer
-    machinePartRequirements:
-      MatterBin: 2
-      Capacitor: 2
     stackRequirements:
+      Manipulator: 4
       Cable: 5
   - type: Construction
     deconstructionTarget: null
     graph: ThermomachineBoard
     node: freezer
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
-    - ThermomachineFreezerMachineCircuitBoard
 
 - type: entity
   id: ThermomachineHeaterMachineCircuitBoard
@@ -444,10 +502,8 @@
     state: engineering
   - type: MachineBoard
     prototype: GasThermoMachineHeater
-    machinePartRequirements:
-      MatterBin: 2
-      Capacitor: 2
     stackRequirements:
+      Manipulator: 4
       Cable: 5
   - type: Construction
     graph: ThermomachineBoard
@@ -464,19 +520,13 @@
     state: engineering
   - type: MachineBoard
     prototype: GasThermoMachineHellfireFreezer
-    machinePartRequirements:
-      MatterBin: 2
-      Capacitor: 2
     stackRequirements:
+      Manipulator: 4
       Plasma: 1
   - type: Construction
     deconstructionTarget: null
     graph: ThermomachineBoard
     node: hellfirefreezer
-  - type: ReverseEngineering # Delta
-    difficulty: 3
-    recipes:
-    - HellfireFreezerMachineCircuitBoard
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -488,10 +538,8 @@
     state: engineering
   - type: MachineBoard
     prototype: GasThermoMachineHellfireHeater
-    machinePartRequirements:
-      MatterBin: 2
-      Capacitor: 2
     stackRequirements:
+      Manipulator: 4
       Plasma: 1
   - type: Construction
     graph: ThermomachineBoard
@@ -508,9 +556,8 @@
     state: engineering
   - type: MachineBoard
     prototype: BaseGasCondenser
-    machinePartRequirements:
-      MatterBin: 1
     stackRequirements:
+      Manipulator: 1
       Glass: 1
 
 - type: entity
@@ -523,15 +570,10 @@
     state: engineering
   - type: MachineBoard
     prototype: PortableScrubber
-    machinePartRequirements:
-      MatterBin: 1
-      Manipulator: 2
     stackRequirements:
+      Manipulator: 3
       Cable: 5
       Glass: 2
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
 
 - type: entity
   id: SpaceHeaterMachineCircuitBoard
@@ -543,10 +585,8 @@
     state: engineering
   - type: MachineBoard
     prototype: SpaceHeater
-    machinePartRequirements:
-      MatterBin: 1
-      Capacitor: 2
     stackRequirements:
+      Manipulator: 3
       Cable: 5
 
 - type: entity
@@ -555,41 +595,14 @@
   name: cloning pod machine board
   description: A machine printed circuit board for a cloning pod.
   components:
-  - type: Sprite
-    state: medical
-  - type: MachineBoard
-    prototype: CloningPod
-    machinePartRequirements:
-      MatterBin: 2
-      Manipulator: 2
-    stackRequirements:
-      Glass: 1
-      Cable: 1
-  - type: ReverseEngineering # Nyano
-    difficulty: 4
-    recipes:
-    - CloningPodMachineCircuitboard
-
-- type: entity
-  id: MetempsychoticMachineCircuitboard
-  parent: BaseMachineCircuitboard
-  name: metempsychotic machine machine board
-  description: A machine printed circuit board for a cloning pod
-  components:
-  - type: Sprite
-    state: medical
-  - type: MachineBoard
-    prototype: MetempsychoticMachine
-    machinePartRequirements:
-      Capacitor: 2
-      Manipulator: 2
-    stackRequirements:
-      Glass: 1
-      Cable: 1
-  - type: ReverseEngineering
-    difficulty: 3
-    recipes:
-    - MetempsychoticMachineCircuitboard
+    - type: Sprite
+      state: medical
+    - type: MachineBoard
+      prototype: CloningPod
+      stackRequirements:
+        Manipulator: 4
+        Glass: 1
+        Cable: 1
 
 - type: entity
   id: MedicalScannerMachineCircuitboard
@@ -597,19 +610,14 @@
   name: medical scanner machine board
   description: A machine printed circuit board for a medical scanner.
   components:
-  - type: Sprite
-    state: medical
-  - type: MachineBoard
-    prototype: MedicalScanner
-    machinePartRequirements:
-      Capacitor: 1
-    stackRequirements:
-      Glass: 5
-      Cable: 1
-  - type: ReverseEngineering # Nyano
-    difficulty: 3
-    recipes:
-    - MedicalScannerMachineCircuitboard
+    - type: Sprite
+      state: medical
+    - type: MachineBoard
+      prototype: MedicalScanner
+      stackRequirements:
+        Manipulator: 1
+        Glass: 5
+        Cable: 1
 
 - type: entity
   id: CrewMonitoringServerMachineCircuitboard
@@ -617,11 +625,11 @@
   name: crew monitoring server machine board
   description: A machine printed circuit board for a crew monitoring server.
   components:
-  - type: MachineBoard
-    prototype: CrewMonitoringServer
-    stackRequirements:
-      Steel: 1
-      Cable: 2
+    - type: MachineBoard
+      prototype: CrewMonitoringServer
+      stackRequirements:
+        Steel: 1
+        Cable: 2
 
 - type: entity
   id: CryoPodMachineCircuitboard
@@ -629,17 +637,13 @@
   name: cryo pod machine board
   description: A machine printed circuit board for a cryo pod.
   components:
-  - type: Sprite
-    state: medical
-  - type: MachineBoard
-    prototype: CryoPod
-    stackRequirements:
-      Glass: 5
-      Cable: 1
-  - type: ReverseEngineering # Nyano
-    difficulty: 3
-    recipes:
-    - CryoPodMachineCircuitboard
+    - type: Sprite
+      state: medical
+    - type: MachineBoard
+      prototype: CryoPod
+      stackRequirements:
+        Glass: 5
+        Cable: 1
 
 - type: entity
   id: ChemMasterMachineCircuitboard
@@ -647,19 +651,18 @@
   name: ChemMaster 4000 machine board
   description: A machine printed circuit board for a ChemMaster 4000.
   components:
-  - type: Sprite
-    state: medical
-  - type: MachineBoard
-    prototype: ChemMaster
-    machinePartRequirements:
-      Capacitor: 1
-    stackRequirements:
-      Glass: 1
-      Cable: 1
-    tagRequirements:
-      GlassBeaker:
-        amount: 2
-        defaultPrototype: Beaker
+    - type: Sprite
+      state: medical
+    - type: MachineBoard
+      prototype: ChemMaster
+      stackRequirements:
+        Manipulator: 1
+        Glass: 1
+        Cable: 1
+      tagRequirements:
+        GlassBeaker:
+          amount: 2
+          defaultPrototype: Beaker
 
 - type: entity
   id: ChemDispenserMachineCircuitboard
@@ -667,19 +670,18 @@
   name: chem dispenser machine board
   description: A machine printed circuit board for a chem dispenser.
   components:
-  - type: Sprite
-    state: medical
-  - type: MachineBoard
-    prototype: ChemDispenserEmpty
-    machinePartRequirements:
-      Capacitor: 1
-    stackRequirements:
-      Glass: 1
-      Steel: 3
-    tagRequirements:
-      GlassBeaker:
-        amount: 2
-        defaultPrototype: Beaker
+    - type: Sprite
+      state: medical
+    - type: MachineBoard
+      prototype: ChemDispenserEmpty
+      stackRequirements:
+        Manipulator: 1
+        Glass: 1
+        Steel: 3
+      tagRequirements:
+        GlassBeaker:
+          amount: 2
+          defaultPrototype: Beaker
 
 - type: entity
   id: BiomassReclaimerMachineCircuitboard
@@ -687,22 +689,18 @@
   name: biomass reclaimer machine board
   description: A machine printed circuit board for a biomass reclaimer.
   components:
+  - type: Sprite
+    state: medical
   - type: MachineBoard
     prototype: BiomassReclaimer
-    machinePartRequirements:
-      MatterBin: 2
-      Manipulator: 1
+    stackRequirements:
+      Manipulator: 3
+      Steel: 5
     tagRequirements:
       Knife:
         amount: 2
         defaultPrototype: KitchenKnife
         examineName: construction-insert-info-examine-name-knife
-    stackRequirements:
-      Steel: 5
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
-    - BiomassReclaimerMachineCircuitboard
 
 - type: entity
   id: HydroponicsTrayMachineCircuitboard
@@ -710,22 +708,18 @@
   name: hydroponics tray machine board
   description: A machine printed circuit board for a hydroponics tray.
   components:
-  - type: Sprite
-    state: service
-  - type: MachineBoard
-    prototype: HydroponicsTrayEmpty
-    stackRequirements:
-      # replacing the console screen
-      Glass: 5
-      Cable: 2
-    tagRequirements:
-      GlassBeaker:
-        amount: 2
-        defaultPrototype: Beaker
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
-    - HydroponicsTrayMachineCircuitboard
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: HydroponicsTrayEmpty
+      stackRequirements:
+        # replacing the console screen
+        Glass: 5
+        Cable: 2
+      tagRequirements:
+        GlassBeaker:
+          amount: 2
+          defaultPrototype: Beaker
 
 - type: entity
   id: SeedExtractorMachineCircuitboard
@@ -733,21 +727,15 @@
   name: seed extractor machine board
   description: A machine printed circuit board for a seed extractor.
   components:
-  - type: Sprite
-    state: service
-  - type: MachineBoard
-    prototype: SeedExtractor
-    machinePartRequirements:
-      Manipulator: 2
-      Capacitor: 1
-    stackRequirements:
-      # replacing the console screen
-      Glass: 1
-      Cable: 2
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
-    - SeedExtractorMachineCircuitboard
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: SeedExtractor
+      stackRequirements:
+        Manipulator: 3
+        # replacing the console screen
+        Glass: 1
+        Cable: 2
 
 - type: entity
   id: SMESMachineCircuitboard
@@ -755,16 +743,18 @@
   name: SMES machine board
   description: A machine printed circuit board for a SMES.
   components:
-  - type: Sprite
-    sprite: Objects/Misc/module.rsi
-    state: power_mod
-  - type: MachineBoard
-    prototype: SMESBasicEmpty
-    machinePartRequirements:
-      Capacitor: 1
-      PowerCell: 4
-    stackRequirements:
-      CableHV: 10
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: power_mod
+    - type: MachineBoard
+      prototype: SMESBasicEmpty
+      stackRequirements:
+        Manipulator: 1
+        CableHV: 10
+      componentRequirements:
+        PowerCell:
+          amount: 4
+          defaultPrototype: PowerCellSmall
 
 - type: entity
   id: SMESAdvancedMachineCircuitboard
@@ -777,11 +767,13 @@
     state: power_mod
   - type: MachineBoard
     prototype: SMESAdvancedEmpty
-    machinePartRequirements:
-      Capacitor: 2
-      PowerCell: 4
     stackRequirements:
+      Manipulator: 2
       CableHV: 20
+    componentRequirements:
+      PowerCell:
+        amount: 4
+        defaultPrototype: PowerCellMedium
 
 - type: entity
   id: CellRechargerCircuitboard
@@ -789,21 +781,24 @@
   name: cell recharger machine board
   description: A machine printed circuit board for a cell recharger.
   components:
-  - type: Sprite
-    sprite: Objects/Misc/module.rsi
-    state: charger_APC
-  - type: MachineBoard
-    prototype: PowerCellRecharger
-    machinePartRequirements:
-      Capacitor: 2
-    stackRequirements:
-      Cable: 5
-  - type: PhysicalComposition
-    materialComposition:
-      Steel: 30
-      Plastic: 30
-  - type: StaticPrice
-    price: 15
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: charger_APC
+    - type: MachineBoard
+      prototype: PowerCellRecharger
+      stackRequirements:
+        Manipulator: 2
+        Cable: 5
+    - type: PhysicalComposition #Goobstation - Recycle update
+      materialComposition:
+        Steel: 12
+        Plastic: 12
+    - type: StaticPrice
+      price: 15
+    - type: Tag # Goobstation - augment construction
+      tags:
+      - DroneUsable
+      - AugmentRechargerBoard
 
 - type: entity
   id: PowerCageRechargerCircuitboard
@@ -811,22 +806,21 @@
   name: cage recharger machine board
   description: A machine printed circuit board for a energy cage recharger.
   components:
-  - type: Sprite
-    sprite: Objects/Misc/module.rsi
-    state: charger_APC
-  - type: MachineBoard
-    prototype: PowerCageRecharger
-    machinePartRequirements:
-      Capacitor: 4
-    stackRequirements:
-      Steel: 5
-      Cable: 10
-  - type: PhysicalComposition
-    materialComposition:
-      Steel: 30
-      Plastic: 30
-  - type: StaticPrice
-    price: 30
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: charger_APC
+    - type: MachineBoard
+      prototype: PowerCageRecharger
+      stackRequirements:
+        Manipulator: 4
+        Steel: 5
+        Cable: 10
+    - type: PhysicalComposition #Goobstation - Recycle update
+      materialComposition:
+        Steel: 25
+        Glass: 125
+    - type: StaticPrice
+      price: 30
 
 - type: entity
   id: BorgChargerCircuitboard
@@ -834,21 +828,24 @@
   name: cyborg recharging station machine board
   description: A machine printed circuit board for a robot recharging station.
   components:
-  - type: Sprite
-    sprite: Objects/Misc/module.rsi
-    state: charger_APC
-  - type: MachineBoard
-    prototype: BorgCharger
-    machinePartRequirements:
-      Capacitor: 2
-    stackRequirements:
-      Cable: 5
-  - type: PhysicalComposition
-    materialComposition:
-      Steel: 30
-      Plastic: 30
-  - type: StaticPrice
-    price: 15
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: charger_APC
+    - type: MachineBoard
+      prototype: BorgCharger
+      stackRequirements:
+        Manipulator: 2
+        Cable: 5
+    - type: PhysicalComposition #Goobstation - Recycle update
+      materialComposition:
+        Steel: 12
+        Plastic: 12
+    - type: StaticPrice
+      price: 15
+    - type: Tag # Goobstation - augment construction
+      tags:
+      - DroneUsable
+      - AugmentStationBoard
 
 - type: entity
   id: WeaponCapacitorRechargerCircuitboard
@@ -856,21 +853,20 @@
   name: recharger machine board
   description: A machine printed circuit board for a recharger.
   components:
-  - type: Sprite
-    sprite: Objects/Misc/module.rsi
-    state: charger_APC
-  - type: MachineBoard
-    prototype: WeaponCapacitorRecharger
-    machinePartRequirements:
-      Capacitor: 2
-    stackRequirements:
-      CableMV: 5
-  - type: PhysicalComposition
-    materialComposition:
-      Steel: 30
-      Plastic: 30
-  - type: StaticPrice
-    price: 15
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: charger_APC
+    - type: MachineBoard
+      prototype: WeaponCapacitorRecharger
+      stackRequirements:
+        Manipulator: 2
+        CableMV: 5
+    - type: PhysicalComposition #Goobstation - Recycle update
+      materialComposition:
+        Steel: 12
+        Plastic: 12
+    - type: StaticPrice
+      price: 15
 
 - type: entity
   id: TurboItemRechargerCircuitboard
@@ -883,18 +879,14 @@
     state: charger_APC
   - type: MachineBoard
     prototype: TurboItemRecharger
-    machinePartRequirements:
-      Capacitor: 2
     stackRequirements:
+      Manipulator: 2
       CableMV: 5
-  - type: PhysicalComposition
+  - type: PhysicalComposition #Goobstation - Recycle update
     materialComposition:
-      Steel: 30
-      Plastic: 30
-  - type: ReverseEngineering # Delta
-    difficulty: 2
-    recipes:
-    - TurboItemRechargerCircuitboard
+      Steel: 25
+      Glass: 125
+      Gold: 25
 
 - type: entity
   id: SubstationMachineCircuitboard
@@ -902,166 +894,144 @@
   name: substation machine board
   description: A machine printed circuit board for a substation.
   components:
-  - type: MachineBoard
-    prototype: SubstationBasicEmpty
-    machinePartRequirements:
-      Capacitor: 1
-      PowerCell: 1
-    stackRequirements:
-      CableMV: 5
-      CableHV: 5
-  - type: PhysicalComposition
-    materialComposition:
-      Glass: 200
-    chemicalComposition:
-      Silicon: 20
-  - type: StaticPrice
-    price: 58
+    - type: MachineBoard
+      prototype: SubstationBasicEmpty
+      stackRequirements:
+        Manipulator: 1
+        CableMV: 5
+        CableHV: 5
+      componentRequirements:
+        PowerCell:
+          amount: 1
+          defaultPrototype: PowerCellSmall
+    - type: PhysicalComposition #Goobstation - Recycle update
+      materialComposition:
+        Glass: 125
+      chemicalComposition:
+        Silicon: 5
+    - type: StaticPrice
+      price: 58
 
 - type: entity
   parent: BaseMachineCircuitboard
   id: DawInstrumentMachineCircuitboard
   name: digital audio workstation machine board
   components:
+  - type: Sprite
+    state: service
   - type: MachineBoard
     prototype: DawInstrument
     stackRequirements:
       Glass: 1
       Cable: 1
     tagRequirements:
-      #      One instrument to bring them all and in the darkness bind them...
-      KeyedInstrument:
-        amount: 1
-        defaultPrototype: SynthesizerInstrument
-        examineName: construction-insert-info-examine-name-instrument-keyed
-      StringInstrument:
-        amount: 1
-        defaultPrototype: AcousticGuitarInstrument
-        examineName: construction-insert-info-examine-name-instrument-string
-      PercussionInstrument:
-        amount: 1
-        defaultPrototype: GlockenspielInstrument
-        examineName: construction-insert-info-examine-name-instrument-percussion
-      BrassInstrument:
-        amount: 1
-        defaultPrototype: TrumpetInstrument
-        examineName: construction-insert-info-examine-name-instrument-brass
-      WoodwindInstrument:
-        amount: 1
-        defaultPrototype: SaxophoneInstrument
-        examineName: construction-insert-info-examine-name-instrument-woodwind
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
-    - DawInstrumentMachineCircuitboard
+#      One instrument to bring them all and in the darkness bind them...
+       KeyedInstrument:
+          amount: 1
+          defaultPrototype: SynthesizerInstrument
+          examineName: construction-insert-info-examine-name-instrument-keyed
+       StringInstrument:
+          amount: 1
+          defaultPrototype: AcousticGuitarInstrument
+          examineName: construction-insert-info-examine-name-instrument-string
+       PercussionInstrument:
+          amount: 1
+          defaultPrototype: GlockenspielInstrument
+          examineName: construction-insert-info-examine-name-instrument-percussion
+       BrassInstrument:
+          amount: 1
+          defaultPrototype: TrumpetInstrument
+          examineName: construction-insert-info-examine-name-instrument-brass
+       WoodwindInstrument:
+          amount: 1
+          defaultPrototype: SaxophoneInstrument
+          examineName: construction-insert-info-examine-name-instrument-woodwind
 
 - type: entity
   id: PortableGeneratorPacmanMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: P.A.C.M.A.N.-type portable generator machine board
   components:
-  - type: Sprite
-    state: engineering
-  - type: MachineBoard
-    prototype: PortableGeneratorPacman
-    machinePartRequirements:
-      Capacitor: 1
-    stackRequirements:
-      CableHV: 5
-  - type: PhysicalComposition
-    materialComposition:
-      Glass: 200
-    chemicalComposition:
-      Silicon: 20
-  - type: StaticPrice
-    price: 40
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
-    - PortableGeneratorPacmanMachineCircuitboard
+    - type: Sprite
+      state: engineering
+    - type: MachineBoard
+      prototype: PortableGeneratorPacman
+      stackRequirements:
+        Manipulator: 1
+        CableHV: 5
+    - type: PhysicalComposition #Goobstation - Recycle update
+      materialComposition:
+        Glass: 125
+      chemicalComposition:
+        Silicon: 5
+    - type: StaticPrice
+      price: 40
 
 - type: entity
   id: ThrusterMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: thruster machine board
   components:
+  - type: Sprite
+    state: supply
   - type: MachineBoard
     prototype: Thruster
-    machinePartRequirements:
-      Capacitor: 4
     stackRequirements:
+      Manipulator: 4
       Steel: 5
-  - type: ReverseEngineering # Delta
-    difficulty: 3
-    recipes:
-    - ThrusterMachineCircuitboard
 
 - type: entity
   id: GyroscopeMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: gyroscope machine board
   components:
+  - type: Sprite
+    state: supply
   - type: MachineBoard
     prototype: Gyroscope
-    machinePartRequirements:
-      Manipulator: 2
-      Capacitor: 1
     stackRequirements:
+      Manipulator: 3
       Glass: 2
-  - type: ReverseEngineering # Delta
-    difficulty: 3
-    recipes:
-    - GyroscopeMachineCircuitboard
 
 - type: entity
   id: PortableGeneratorSuperPacmanMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: S.U.P.E.R.P.A.C.M.A.N.-type portable generator machine board
   components:
-  - type: Sprite
-    state: engineering
-  - type: MachineBoard
-    prototype: PortableGeneratorSuperPacman
-    machinePartRequirements:
-      Capacitor: 2
-    stackRequirements:
-      CableHV: 10
-  - type: PhysicalComposition
-    materialComposition:
-      Glass: 200
-    chemicalComposition:
-      Silicon: 20
-  - type: StaticPrice
-    price: 40
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
-    - PortableGeneratorSuperPacmanMachineCircuitboard
+    - type: Sprite
+      state: engineering
+    - type: MachineBoard
+      prototype: PortableGeneratorSuperPacman
+      stackRequirements:
+        Manipulator: 2
+        CableHV: 10
+    - type: PhysicalComposition #Goobstation - Recycle update
+      materialComposition:
+        Glass: 125
+      chemicalComposition:
+        Silicon: 5
+    - type: StaticPrice
+      price: 40
 
 - type: entity
   id: PortableGeneratorJrPacmanMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: J.R.P.A.C.M.A.N.-type portable generator machine board
   components:
-  - type: Sprite
-    state: engineering
-  - type: MachineBoard
-    prototype: PortableGeneratorJrPacman
-    machinePartRequirements:
-      Capacitor: 1
-    stackRequirements:
-      Cable: 10
-  - type: PhysicalComposition
-    materialComposition:
-      Glass: 200
-    chemicalComposition:
-      Silicon: 20
-  - type: StaticPrice
-    price: 40
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
-    - PortableGeneratorJrPacmanMachineCircuitboard
+    - type: Sprite
+      state: engineering
+    - type: MachineBoard
+      prototype: PortableGeneratorJrPacman
+      stackRequirements:
+        Manipulator: 1
+        Cable: 10
+    - type: PhysicalComposition #Goobstation - Recycle update
+      materialComposition:
+        Glass: 125
+      chemicalComposition:
+        Silicon: 5
+    - type: StaticPrice
+      price: 40
 
 - type: entity
   id: ReagentGrinderMachineCircuitboard
@@ -1069,19 +1039,14 @@
   name: reagent grinder machine board
   description: A machine printed circuit board for a reagent grinder.
   components:
-  - type: MachineBoard
-    prototype: KitchenReagentGrinder
-    machinePartRequirements:
-      MatterBin: 2
-      Manipulator: 2
-    tagRequirements:
-      GlassBeaker:
-        amount: 1
-        defaultPrototype: Beaker
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
-    - ReagentGrinderMachineCircuitboard
+    - type: MachineBoard
+      prototype: KitchenReagentGrinder
+      stackRequirements:
+        Manipulator: 4
+      tagRequirements:
+        GlassBeaker:
+          amount: 1
+          defaultPrototype: Beaker
 
 - type: entity
   id: HotplateMachineCircuitboard
@@ -1089,16 +1054,13 @@
   name: hotplate machine board
   description: A machine printed circuit board for a hotplate.
   components:
+  - type: Sprite
+    state: medical
   - type: MachineBoard
     prototype: ChemistryHotplate
-    machinePartRequirements:
-      Capacitor: 2
     stackRequirements:
+      Manipulator: 2
       Glass: 1
-  - type: ReverseEngineering # Delta
-    difficulty: 2
-    recipes:
-    - HotplateMachineCircuitboard
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -1106,37 +1068,28 @@
   name: electric grill machine board
   description: A machine printed circuit board for an electric grill.
   components:
+  - type: Sprite
+    state: service
   - type: MachineBoard
     prototype: KitchenElectricGrill
-    machinePartRequirements:
-      Capacitor: 4
     stackRequirements:
+      Manipulator: 4
       Glass: 2
       Cable: 5
-  - type: ReverseEngineering # Delta
-    difficulty: 2
-    recipes:
-    - ElectricGrillMachineCircuitboard
 
 - type: entity
   id: StasisBedMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: stasis bed machine board
   components:
-  - type: Sprite
-    state: medical
-  - type: MachineBoard
-    prototype: StasisBed
-    machinePartRequirements:
-      Capacitor: 1
-      Manipulator: 1
-    stackRequirements:
-      Cable: 3
-      Steel: 2
-  - type: ReverseEngineering # Nyano
-    difficulty: 3
-    recipes:
-    - StasisBedMachineCircuitboard
+    - type: Sprite
+      state: medical
+    - type: MachineBoard
+      prototype: StasisBed
+      stackRequirements:
+        Manipulator: 2
+        Cable: 3
+        Steel: 2
 
 - type: entity
   id: ElectrolysisUnitMachineCircuitboard
@@ -1148,9 +1101,8 @@
     state: medical
   - type: MachineBoard
     prototype: MachineElectrolysisUnit
-    machinePartRequirements:
-      Capacitor: 2
     stackRequirements:
+      Manipulator: 2
       Cable: 1
 
 - type: entity
@@ -1163,25 +1115,35 @@
     state: medical
   - type: MachineBoard
     prototype: MachineCentrifuge
-    machinePartRequirements:
-      Manipulator: 1
     stackRequirements:
+      Manipulator: 1
       Steel: 1
+
+- type: entity
+  id: MaterialSiloMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: material silo machine board
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: MaterialSilo #Goobstation - Silo
+    stackRequirements:
+      Manipulator: 4
+      Cable: 1
 
 - type: entity
   id: OreProcessorMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: ore processor machine board
   components:
-  - type: Sprite
-    state: supply
-  - type: MachineBoard
-    prototype: OreProcessor
-    machinePartRequirements:
-      MatterBin: 1
-      Manipulator: 3
-    stackRequirements:
-      Glass: 1
+    - type: Sprite
+      state: supply
+    - type: MachineBoard
+      prototype: OreProcessor
+      stackRequirements:
+        Manipulator: 4
+        Glass: 1
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -1192,15 +1154,9 @@
     state: supply
   - type: MachineBoard
     prototype: OreProcessorIndustrial
-    machinePartRequirements:
-      MatterBin: 1
-      Manipulator: 3
     stackRequirements:
+      Manipulator: 4
       Glass: 1
-  - type: ReverseEngineering # Delta
-    difficulty: 2
-    recipes:
-    - OreProcessorIndustrialMachineCircuitboard
 
 - type: entity
   id: SheetifierMachineCircuitboard
@@ -1209,63 +1165,57 @@
   components:
   - type: MachineBoard
     prototype: Sheetifier
-    machinePartRequirements:
-      MatterBin: 1
-      Manipulator: 1
+    stackRequirements:
+      Manipulator: 2
 
 - type: entity
   id: MicrowaveMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: microwave machine board
   components:
-  - type: Sprite
-    state: service
-  - type: MachineBoard
-    prototype: KitchenMicrowave
-    machinePartRequirements:
-      Capacitor: 1
-    stackRequirements:
-      Glass: 2
-      Cable: 2
-  - type: Tag
-    tags:
-    - MicrowaveMachineBoard
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: KitchenMicrowave
+      stackRequirements:
+        Manipulator: 1
+        Glass: 2
+        Cable: 2
+    - type: Tag
+      tags:
+      - DroneUsable # Goobstation
+      - MicrowaveMachineBoard
 
 - type: entity
   id: SyndicateMicrowaveMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: donk co. microwave machine board
   components:
-  - type: Sprite
-    state: service
-  - type: MachineBoard
-    prototype: SyndicateMicrowave
-    machinePartRequirements:
-      Capacitor: 1
-    stackRequirements:
-      Glass: 2
-      Cable: 2
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: SyndicateMicrowave
+      stackRequirements:
+        Manipulator: 1
+        Glass: 2
+        Cable: 2
 
 - type: entity
   id: FatExtractorMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: lipid extractor machine board
   components:
-  - type: Sprite
-    state: service
-  - type: MachineBoard
-    prototype: FatExtractor
-    machinePartRequirements:
-      Manipulator: 1
-    componentRequirements:
-      Utensil:
-        amount: 1
-        defaultPrototype: ForkPlastic
-        examineName: construction-insert-info-examine-name-utensil
-  - type: ReverseEngineering # Delta
-    difficulty: 2
-    recipes:
-    - FatExtractorMachineCircuitboard
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: FatExtractor
+      stackRequirements:
+        Manipulator: 1
+      componentRequirements:
+        Utensil:
+          amount: 1
+          defaultPrototype: ForkPlastic
+          examineName: construction-insert-info-examine-name-utensil
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -1274,34 +1224,23 @@
   components:
   - type: MachineBoard
     prototype: MachineFlatpacker
-    machinePartRequirements:
-      Manipulator: 2
-      MatterBin: 1
     stackRequirements:
+      Manipulator: 3
       Steel: 1
-  - type: ReverseEngineering # Delta
-    difficulty: 2
-    recipes:
-    - FlatpackerMachineCircuitboard
 
 - type: entity
   id: EmitterCircuitboard
   parent: BaseMachineCircuitboard
   name: emitter machine board
   components:
-  - type: Sprite
-    state: engineering
-  - type: MachineBoard
-    prototype: Emitter
-    machinePartRequirements:
-      Capacitor: 2
-    stackRequirements:
-      CableHV: 5
-      Glass: 2
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
-    - EmitterCircuitboard
+    - type: Sprite
+      state: engineering
+    - type: MachineBoard
+      prototype: Emitter
+      stackRequirements:
+        Manipulator: 2
+        CableHV: 5
+        Glass: 2
 
 - type: entity
   id: SurveillanceCameraRouterCircuitboard
@@ -1309,14 +1248,12 @@
   name: surveillance camera router board
   description: A machine printed circuit board for a surveillance camera router.
   components:
+  - type: Sprite
+    state: security
   - type: MachineBoard
     prototype: SurveillanceCameraRouterConstructed
     stackRequirements:
       Cable: 1
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
-    - SurveillanceCameraRouterCircuitboard
 
 - type: entity
   id: SurveillanceCameraWirelessRouterCircuitboard
@@ -1324,15 +1261,13 @@
   name: surveillance camera wireless router board
   description: A machine printed circuit board for a surveillance camera wireless router.
   components:
+  - type: Sprite
+    state: service
   - type: MachineBoard
     prototype: SurveillanceCameraWirelessRouterConstructed
     stackRequirements:
       Cable: 2
       Glass: 1
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
-    - SurveillanceCameraWirelessRouterCircuitboard
 
 - type: entity
   id: SurveillanceWirelessCameraMovableCircuitboard
@@ -1340,15 +1275,13 @@
   name: movable wireless camera board
   description: A machine printed circuit board for a movable wireless camera.
   components:
+  - type: Sprite
+    state: service
   - type: MachineBoard
     prototype: SurveillanceWirelessCameraMovableConstructed
     stackRequirements:
       Glass: 2
       Cable: 2
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
-    - SurveillanceWirelessCameraMovableCircuitboard
 
 - type: entity
   id: SurveillanceWirelessCameraAnchoredCircuitboard
@@ -1356,15 +1289,13 @@
   name: wireless camera board
   description: A machine printed circuit board for a wireless camera.
   components:
+  - type: Sprite
+    state: service
   - type: MachineBoard
     prototype: SurveillanceWirelessCameraAnchoredConstructed
     stackRequirements:
       Cable: 2
       Glass: 1
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
-    - SurveillanceWirelessCameraAnchoredCircuitboard
 
 - type: entity
   id: GasRecyclerMachineCircuitboard
@@ -1372,18 +1303,14 @@
   name: gas recycler board
   description: A printed circuit board for a gas recycler.
   components:
+  - type: Sprite
+    state: engineering
   - type: MachineBoard
     prototype: GasRecycler
-    machinePartRequirements:
-      Capacitor: 1
-      Manipulator: 1
     stackRequirements:
+      Manipulator: 2
       Steel: 10
       Plasma: 5
-  - type: ReverseEngineering # Nyano
-    difficulty: 2
-    recipes:
-    - GasRecyclerMachineCircuitboard
 
 - type: entity
   id: BoozeDispenserMachineCircuitboard
@@ -1391,16 +1318,16 @@
   name: booze dispenser machine board
   description: A machine printed circuit board for a booze dispenser.
   components:
-  - type: Sprite
-    state: service
-  - type: MachineBoard
-    prototype: BoozeDispenserEmpty
-    stackRequirements:
-      Steel: 5
-    tagRequirements:
-      GlassBeaker:
-        amount: 1
-        defaultPrototype: Beaker
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: BoozeDispenserEmpty
+      stackRequirements:
+        Steel: 5
+      tagRequirements:
+          GlassBeaker:
+            amount: 1
+            defaultPrototype: Beaker
 
 - type: entity
   id: CargoTelepadMachineCircuitboard
@@ -1408,19 +1335,14 @@
   name: cargo telepad machine board
   description: A machine printed circuit board for a cargo telepad.
   components:
-  - type: Sprite
-    state: supply
-  - type: MachineBoard
-    prototype: CargoTelepad
-    machinePartRequirements:
-      Capacitor: 2
-    stackRequirements:
-      Steel: 5
-      Bluespace: 2  #DeltaV Bluespace Exists
-  - type: ReverseEngineering # Delta
-    difficulty: 3
-    recipes:
-    - CargoTelepadMachineCircuitboard
+    - type: Sprite
+      state: supply
+    - type: MachineBoard
+      prototype: CargoTelepad
+      stackRequirements:
+        Manipulator: 2
+        Steel: 5
+        BSCrystal: 2 # Goobstation
 
 - type: entity
   id: MailTeleporterMachineCircuitboard
@@ -1431,9 +1353,9 @@
   - type: Sprite
     state: supply
   - type: MachineBoard
-    prototype: CargoMailTeleporter
+    prototype: MailTeleporter #Goobstation
     stackRequirements:
-      Capacitor: 2
+      Manipulator: 2
       Steel: 5
 
 - type: entity
@@ -1442,16 +1364,16 @@
   name: soda dispenser machine board
   description: A machine printed circuit board for a soda dispenser.
   components:
-  - type: Sprite
-    state: service
-  - type: MachineBoard
-    prototype: SodaDispenserEmpty
-    stackRequirements:
-      Steel: 5
-    tagRequirements:
-      GlassBeaker:
-        amount: 1
-        defaultPrototype: Beaker
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: SodaDispenserEmpty
+      stackRequirements:
+        Steel: 5
+      tagRequirements:
+          GlassBeaker:
+            amount: 1
+            defaultPrototype: Beaker
 
 - type: entity
   id: TelecomServerCircuitboard
@@ -1459,14 +1381,13 @@
   name: telecommunication server machine board
   description: A machine printed circuit board for an telecommunication server.
   components:
+  - type: Sprite
+    state: engineering
   - type: MachineBoard
     prototype: TelecomServer
     stackRequirements:
       Steel: 1
       Cable: 2
-  - type: ReverseEngineering # Nyano
-    recipes:
-    - TelecomServerCircuitboard
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -1478,15 +1399,11 @@
     state: supply
   - type: MachineBoard
     prototype: SalvageMagnet
-    machinePartRequirements:
-      Capacitor: 4
     stackRequirements:
+      Manipulator: 4
       Steel: 5
       CableHV: 5
       Cable: 2
-  - type: ReverseEngineering # Nyano
-    recipes:
-    - SalvageMagnetMachineCircuitboard
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -1494,19 +1411,15 @@
   name: mini gravity generator machine board
   description: A machine printed circuit board for a mini gravity generator.
   components:
+  - type: Sprite
+    state: supply
   - type: MachineBoard
     prototype: GravityGeneratorMini
-    machinePartRequirements:
-      Capacitor: 4
-      MatterBin: 3
     stackRequirements:
+      Manipulator: 7
       Steel: 5
       CableHV: 5
       Uranium: 2
-  - type: ReverseEngineering # Delta
-    difficulty: 3
-    recipes:
-    - MiniGravityGeneratorCircuitboard
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -1516,10 +1429,8 @@
   components:
   - type: MachineBoard
     prototype: StationAnchor
-    machinePartRequirements:
-      Capacitor: 4
-      MatterBin: 3
     stackRequirements:
+      Manipulator: 7
       Steel: 10
       Glass: 5
       CableHV: 8
@@ -1532,15 +1443,9 @@
   components:
   - type: MachineBoard
     prototype: ReagentGrinderIndustrial
-    machinePartRequirements:
-      MatterBin: 1
-      Manipulator: 3
     stackRequirements:
+      Manipulator: 4
       Glass: 1
-  - type: ReverseEngineering # Delta
-    difficulty: 2
-    recipes:
-    -  ReagentGrinderIndustrialMachineCircuitboard
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -1548,6 +1453,8 @@
   name: jukebox machine board
   description: A machine printed circuit board for a jukebox.
   components:
+  - type: Sprite
+    state: service
   - type: MachineBoard
     prototype: Jukebox
     stackRequirements:
@@ -1555,10 +1462,6 @@
       Steel: 2
       Glass: 5
       Cable: 2
-  - type: ReverseEngineering # Delta
-    difficulty: 2
-    recipes:
-    -  JukeboxCircuitBoard
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -1567,38 +1470,22 @@
   components:
   - type: MachineBoard
     prototype: CutterMachine
-    machinePartRequirements:
-      Capacitor: 1
-      Manipulator: 1
     stackRequirements:
       Steel: 2
+      Manipulator: 2
       Cable: 1
 
+# Shitmed Change Start
 - type: entity
-  id: MaterialSiloCircuitboard
+  id: MedicalBiofabMachineBoard
   parent: BaseMachineCircuitboard
-  name: material silo machine board
-  description: A machine printed circuit board for a material silo.
+  name: medical biofab machine board
+  description: A machine printed circuit board for a medical biofab.
   components:
-  - type: Sprite
-    state: supply
-  - type: MachineBoard
-    prototype: MaterialSilo
-    machinePartRequirements:
-      MatterBin: 10
-    stackRequirements:
-      Steel: 5
-      Gold: 5
-      Bluespace: 5
-
-- type: entity
-  id: BookPressMachineCircuitboard
-  parent: BaseMachineCircuitboard
-  name: book press machine board
-  description: A machine printed circuit board for a book press
-  components:
-  - type: MachineBoard
-    prototype: BookPress
-    machinePartRequirements:
-      MatterBin: 1
-      Manipulator: 2
+    - type: Sprite
+      state: medical
+    - type: MachineBoard
+      prototype: MedicalBiofabricator
+      stackRequirements:
+        Manipulator: 4
+# Shitmed Change End

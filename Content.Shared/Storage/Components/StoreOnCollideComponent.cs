@@ -1,4 +1,10 @@
-﻿using Content.Shared.Storage.EntitySystems;
+// SPDX-FileCopyrightText: 2024 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Whitelist;
 using Robust.Shared.GameStates;
 
@@ -31,4 +37,18 @@ public sealed partial class StoreOnCollideComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool Disabled;
+
+    /// <summary>
+    ///     Goobstation
+    ///     Don't store this entity, it is used for shooter if this is projectile
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public EntityUid? IgnoredEntity;
+
+    /// <summary>
+    ///     Goobstation
+    ///     Should the behavior be disabled when entity (physics) sleeps?
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool DisableOnSleep;
 }

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 ## Static
 
 - type: latheRecipePack
@@ -20,8 +24,11 @@
   - BioGenLeft4Zed
   - BioGenEZNutrient
   - BioGenRobustHarvest
-  - BioGenMutagen # Orehum add mutagen to biogen
-  - BioGenDiseaseSwab # Orehum add палочки to biogen
+  - BioGenDylo #Goobstation Change
+  - BioGenPhalanx #Goobstation Change
+  - BioGenDiethyl #Goobstation Change
+  - BioGenMuta #Goobstation Change
+  - BioGenEgg #Goobstation Change
 
 - type: latheRecipePack
   id: BioGenMaterialsStatic

@@ -1,3 +1,25 @@
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2022 Bright0 <55061890+Bright0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Lucas <luc4s.rib3iro@gmail.com>
+// SPDX-FileCopyrightText: 2022 Moony <moony@hellomouse.net>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 zero <ribeirolucasdev@gmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Systems;
@@ -9,6 +31,7 @@ using Content.Shared.Explosion;
 using Content.Shared.Foldable;
 using Content.Shared.Interaction;
 using Content.Shared.Lock;
+using Content.Shared.Materials;
 using Content.Shared.Movement.Events;
 using Content.Shared.Storage.Components;
 using Content.Shared.Storage.EntitySystems;
@@ -42,6 +65,7 @@ public sealed class EntityStorageSystem : SharedEntityStorageSystem
         SubscribeLocalEvent<EntityStorageComponent, GetVerbsEvent<InteractionVerb>>(AddToggleOpenVerb);
         SubscribeLocalEvent<EntityStorageComponent, ContainerRelayMovementEntityEvent>(OnRelayMovement);
         SubscribeLocalEvent<EntityStorageComponent, FoldAttemptEvent>(OnFoldAttempt);
+        SubscribeLocalEvent<EntityStorageComponent, GotReclaimedEvent>(OnReclaimed); // Goobstation - Recycle update
 
         SubscribeLocalEvent<EntityStorageComponent, ComponentGetState>(OnGetState);
         SubscribeLocalEvent<EntityStorageComponent, ComponentHandleState>(OnHandleState);
@@ -68,7 +92,7 @@ public sealed class EntityStorageSystem : SharedEntityStorageSystem
         }
     }
 
-    protected override void OnComponentInit(EntityUid uid, SharedEntityStorageComponent component, ComponentInit args)
+    protected override void OnComponentInit(EntityUid uid, EntityStorageComponent component, ComponentInit args)
     {
         base.OnComponentInit(uid, component, args);
 
@@ -76,7 +100,7 @@ public sealed class EntityStorageSystem : SharedEntityStorageSystem
             _construction.AddContainer(uid, ContainerName, construction);
     }
 
-    public override bool ResolveStorage(EntityUid uid, [NotNullWhen(true)] ref SharedEntityStorageComponent? component)
+    public override bool ResolveStorage(EntityUid uid, [NotNullWhen(true)] ref EntityStorageComponent? component)
     {
         if (component != null)
             return true;
@@ -107,7 +131,7 @@ public sealed class EntityStorageSystem : SharedEntityStorageSystem
         args.Contents.AddRange(ent.Comp.Contents.ContainedEntities);
     }
 
-    protected override void TakeGas(EntityUid uid, SharedEntityStorageComponent component)
+    protected override void TakeGas(EntityUid uid, EntityStorageComponent component)
     {
         if (!component.Airtight)
             return;
@@ -121,7 +145,7 @@ public sealed class EntityStorageSystem : SharedEntityStorageSystem
         }
     }
 
-    public override void ReleaseGas(EntityUid uid, SharedEntityStorageComponent component)
+    public override void ReleaseGas(EntityUid uid, EntityStorageComponent component)
     {
         var serverComp = (EntityStorageComponent) component;
 
@@ -139,7 +163,7 @@ public sealed class EntityStorageSystem : SharedEntityStorageSystem
 
     private TileRef? GetOffsetTileRef(EntityUid uid, EntityStorageComponent component)
     {
-        var targetCoordinates = new EntityCoordinates(uid, component.EnteringOffset).ToMap(EntityManager, TransformSystem);
+        var targetCoordinates = TransformSystem.ToMapCoordinates(new EntityCoordinates(uid, component.EnteringOffset));
 
         if (_map.TryFindGridAt(targetCoordinates, out var gridId, out var grid))
         {

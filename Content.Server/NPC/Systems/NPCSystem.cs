@@ -1,8 +1,30 @@
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <drsmugleaf@gmail.com>
+// SPDX-FileCopyrightText: 2023 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2024 faint <46868845+ficcialfaint@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.NPC.Components;
 using Content.Server.NPC.HTN;
 using Content.Shared.CCVar;
-using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
@@ -28,10 +50,6 @@ namespace Content.Server.NPC.Systems
         [Dependency] private readonly HTNSystem _htn = default!;
         [Dependency] private readonly MobStateSystem _mobState = default!;
 
-        private EntityQuery<HTNComponent> _htnQuery;
-        private EntityQuery<ActorComponent> _actorQuery;
-        private EntityQuery<MindContainerComponent> _mindContainerQuery;
-
         /// <summary>
         /// Whether any NPCs are allowed to run at all.
         /// </summary>
@@ -45,10 +63,6 @@ namespace Content.Server.NPC.Systems
         public override void Initialize()
         {
             base.Initialize();
-
-            _htnQuery = GetEntityQuery<HTNComponent>();
-            _actorQuery = GetEntityQuery<ActorComponent>();
-            _mindContainerQuery = GetEntityQuery<MindContainerComponent>();
 
             Subs.CVar(_configurationManager, CCVars.NPCEnabled, value => Enabled = value, true);
             Subs.CVar(_configurationManager, CCVars.NPCMaxUpdates, obj => _maxUpdates = obj, true);
@@ -65,7 +79,7 @@ namespace Content.Server.NPC.Systems
                 return;
 
             // This NPC has an attached mind, so it should not wake up.
-            if (_mindContainerQuery.TryComp(uid, out var mindContainer) && mindContainer.HasMind)
+            if (TryComp<MindContainerComponent>(uid, out var mindContainer) && mindContainer.HasMind)
                 return;
 
             WakeNPC(uid, component);
@@ -94,7 +108,7 @@ namespace Content.Server.NPC.Systems
         {
             // If you add your own NPC components then add them here.
 
-            if (_htnQuery.TryComp(uid, out var htn))
+            if (TryComp<HTNComponent>(uid, out var htn))
             {
                 component = htn;
                 return true;
@@ -126,7 +140,7 @@ namespace Content.Server.NPC.Systems
             }
 
             // Don't bother with an event
-            if (_htnQuery.TryComp(uid, out var htn))
+            if (TryComp<HTNComponent>(uid, out var htn))
             {
                 if (htn.Plan != null)
                 {
@@ -149,7 +163,6 @@ namespace Content.Server.NPC.Systems
             if (!Enabled)
                 return;
 
-            _count = 0;
             // Add your system here.
             _htn.UpdateNPC(ref _count, _maxUpdates, frameTime);
 
@@ -158,7 +171,7 @@ namespace Content.Server.NPC.Systems
 
         public void OnMobStateChange(EntityUid uid, HTNComponent component, MobStateChangedEvent args)
         {
-            if (_actorQuery.HasComp(uid))
+            if (HasComp<ActorComponent>(uid))
                 return;
 
             switch (args.NewMobState)

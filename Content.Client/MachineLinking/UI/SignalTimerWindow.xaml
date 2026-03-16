@@ -1,16 +1,22 @@
+<!--
+SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: MIT
+-->
+
 <DefaultWindow xmlns="https://spacestation14.io"
             Title="{Loc signal-timer-menu-title}">
-    <BoxContainer Orientation="Vertical" SeparationOverride="4" MinWidth="150">
+    <BoxContainer Orientation="Vertical" SeparationOverride="4" MinSize="200 100"> <!-- Goob: changed to MinSize instead of MinWidth -->
         <BoxContainer Name="TextEdit" Orientation="Horizontal">
             <Label Name="CurrentLabel" Text="{Loc signal-timer-menu-label}" />
-            <LineEdit Name="CurrentTextEdit" MinWidth="80" />
+            <LineEdit Name="CurrentTextEdit" MinWidth="160" /> <!-- Goob: increased MinWidth -->
         </BoxContainer>
         <BoxContainer Name="DelayEdit" Orientation="Horizontal">
             <Label Name="CurrentDelay" Text="{Loc signal-timer-menu-delay}" />
-            <LineEdit Name="CurrentDelayEditMinutes" MinWidth="32" />
-            <Label Name="Colon" Text=":" />
-            <LineEdit Name="CurrentDelayEditSeconds" MinWidth="32" />
-            <Label Name="DelayInfo" Text=" (mm:ss)" />
+            <!-- Mono: Changed from integer MM:SS to float seconds -->
+            <FloatSpinBox Name="CurrentDelayEdit" MinWidth="160" /> <!-- Goob: increased MinWidth -->
+            <Label Text="s" />
         </BoxContainer>
         <Button Name="StartTimer" Text="{Loc signal-timer-menu-start}" />
     </BoxContainer>

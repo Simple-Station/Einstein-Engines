@@ -41,7 +41,8 @@ delivery-spam-robust-toolboxes = [color=blue][head=1]
     -ИЛИ СО СВИНЦОМ И АСБЕСТОМ, ЕСЛИ ВЫ ПРЕДПОЧИТАЕТЕ ТАК!
     -ДЁШЕВО! ВСЕГО ЛИШЬ ОДИН ОРГАН! ЭТО МЕНЬШЕ ЧЕМ ДВА ОРГАНЫ!
     -НЕВАЖНО, ЕСЛИ ОРГАН НЕ ВАШ! НАМ НАСРАТЬ!
-delivery-spam-reasons-to-chose-nanotrasen = {-delivery-header-nanotrasen}
+delivery-spam-reasons-to-chose-nanotrasen =
+    { -delivery-header-nanotrasen }
     
     { "[head=2]ТОП ТРИ ПРИЧИНЫ НЕКОМПЕТЕНТНОСТИ СИНДИКАТА[/head]" }
     
@@ -53,9 +54,10 @@ delivery-spam-reasons-to-chose-nanotrasen = {-delivery-header-nanotrasen}
     
     { "[bold]ПРИЧИНА ТРИ[/bold]" }
     ИХ ЛОГОТИП УЖАСЕН! ОНИ ДУМАЮТ, ЧТО ТИПО КРУТЫЕ СО СВОИМ ЛОГОТИПОМ! ОО, ВЗГЛЯНИТЕ НА НАС, МЫ ТАКИЕ КРУТЫЕ! ААА, ЗМЕЯ, КОТОРАЯ ТИПО КАК S! КАК КРЕАТИВНО! МОЙ ТРЁХЛЕТНИЙ СЫН И ТО БЫ СМОГ НАРИСОВАТЬ ЛОГОТИП ПОЛУЧШЕ!
-delivery-spam-reasons-to-choose-syndicate = {-delivery-header-syndicate}
+delivery-spam-reasons-to-choose-syndicate =
+    { -delivery-header-syndicate }
     
-    { "[head=2]ТОП ТРИ ПРИЧИНЫ НЕКОМПЕТЕНТНОСТИ НАНОТРЕЙЗЕН[/head]" }
+    { "[head=2]ТОП ТРИ ПРИЧИНЫ НЕКОМПЕТЕНТНОСТИ NANOTRASEN[/head]" }
     
     { "[bold]ПРИЧИНА ОДИН[/bold]" }
     ИХ ОРУЖИЕ ОТСТОЙ! У НИХ НЕТ ДАЖЕ СНАЙПЕРСКИХ ВИНТОВОК! А ИХ СЛУЖБА БЕЗОПАСНСТИ НЕ МОЖЕТ ДАЖЕ НОСИТЬ БОЛЬШИЕ ПУШКИ В БОЛЬШИНСТВЕ СИТУАЦИЙ!
@@ -98,12 +100,13 @@ delivery-spam-centcomm-retribution = [color=red] ОФИЦИАЛНОЕ СООБЩ
     Уважаемый сэр или мадам или другой незначимый персонал станци
     
     если вы не хотите чтобы эта станция была обьявлена Нерентабельной в глазах
-    { "[head=2][italic] Нашей Великой и Славной [color=blue]Нанотрасен[[/color][/head]" }
+    { "[head=2][italic] Нашей Великой и Славной [color=blue]Nanotrasen[/color][/head]" }
     То вы обязаны организовать поставку золотых слитков стандартна [color=blue]нт[/color] в стопках образца [color=blue]Нт[/color] в торговый пост вашей станции в течение 5 Стандартных рабочих [color=blue]нТ[/color] смен.
     
     { "[head=2][color=red]ИГНОРИРОВАНИЕ ЭТОГО ПРИКАЗА ГРОЗИТ ВАМ КАРОЙ ОТ [color=green]ЦЕНТКО[/color]!!!!![/head][/color]" }
-delivery-spam-alternate-timeline = {-delivery-header-nanotrasen-alternate-timeline}
-
+delivery-spam-alternate-timeline =
+    { -delivery-header-nanotrasen-alternate-timeline }
+    
     { "[head=2]Это официальное уведомление [color=red]Начальника Службы Безопасности[/color] Космической станции 15 Nanotrasen.[/head]" }
     
     Кому бы ни попало это письмо... Я сержант Ригель, начальник службы безопасности. Нам срочно нужно подкрепление.

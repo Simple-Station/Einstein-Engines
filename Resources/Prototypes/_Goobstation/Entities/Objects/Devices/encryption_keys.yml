@@ -1,0 +1,33 @@
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyFuture
+  name: futuristic encryption key
+  description: whiskey echo... what's next?
+  components:
+  - type: EncryptionKey
+    channels:
+    - Common
+    - Command
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    - Service
+    - Supply
+    - Freelance
+    # - Binary # replaced with collective mind
+    - Handheld
+    - CentCom
+    - Future
+    - Syndicate
+  - type: Sprite
+    sprite: Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_silver
+    - state: nano_label

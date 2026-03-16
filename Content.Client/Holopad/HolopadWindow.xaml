@@ -1,3 +1,10 @@
+<!--
+SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <controls:FancyWindow xmlns="https://spacestation14.io"
                xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
@@ -29,7 +36,7 @@
                     <Label Name="CallStatusText" Margin="10 5 10 0" ReservesSpace="False"/>
                     <BoxContainer Name="CallerIdContainer" Orientation="Vertical" ReservesSpace="False">
                         <RichTextLabel Name="CallerIdText" HorizontalAlignment="Center" Margin="0 0 0 0"/>
-                        <Label Text="{Loc 'holopad-window-relay-label'}" Margin="10 5 10 0" ReservesSpace="False"/>
+                        <Label Text="{Loc 'holopad-window-relay-label'}" Margin="10 10 10 0" ReservesSpace="False"/>
                         <RichTextLabel Name="HolopadIdText" HorizontalAlignment="Center" Margin="0 0 0 10"/>
                     </BoxContainer>
                 </BoxContainer>

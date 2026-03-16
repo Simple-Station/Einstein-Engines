@@ -1,3 +1,28 @@
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr.@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2022 Júlio César Ueti <52474532+Mirino97@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Willhelm53 <97707302+Willhelm53@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <drsmugleaf@gmail.com>
+// SPDX-FileCopyrightText: 2023 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 Vasilis The Pikachu <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Bed.Sleep;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction.Components;
@@ -5,7 +30,6 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
-using Content.Shared.Mood;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
@@ -95,19 +119,7 @@ public sealed class InteractionPopupSystem : EntitySystem
         if (_random.Prob(component.SuccessChance))
         {
             if (component.InteractSuccessString != null)
-            {
                 msg = Loc.GetString(component.InteractSuccessString, ("target", Identity.Entity(uid, EntityManager))); // Success message (localized).
-                if (component.InteractSuccessString == "hugging-success-generic")
-                {
-                    var ev = new MoodEffectEvent("BeingHugged");
-                    RaiseLocalEvent(target, ref ev);
-                }
-                else if (component.InteractSuccessString.Contains("petting-success-"))
-                {
-                    var ev = new MoodEffectEvent("PetAnimal");
-                    RaiseLocalEvent(user, ref ev);
-                }
-            }
 
             if (component.InteractSuccessSound != null)
                 sfx = component.InteractSuccessSound;
@@ -115,8 +127,8 @@ public sealed class InteractionPopupSystem : EntitySystem
             if (component.InteractSuccessSpawn != null)
                 Spawn(component.InteractSuccessSpawn, _transform.GetMapCoordinates(uid));
 
-            var ev2 = new InteractionSuccessEvent(user);
-            RaiseLocalEvent(target, ref ev2);
+            var ev = new InteractionSuccessEvent(user);
+            RaiseLocalEvent(target, ref ev);
         }
         else
         {
@@ -133,7 +145,7 @@ public sealed class InteractionPopupSystem : EntitySystem
             RaiseLocalEvent(target, ref ev);
         }
 
-        if (component.MessagePerceivedByOthers != null)
+        if (!string.IsNullOrEmpty(component.MessagePerceivedByOthers))
         {
             var msgOthers = Loc.GetString(component.MessagePerceivedByOthers,
                 ("user", Identity.Entity(user, EntityManager)), ("target", Identity.Entity(uid, EntityManager)));
@@ -151,7 +163,7 @@ public sealed class InteractionPopupSystem : EntitySystem
             return;
         }
 
-        _popupSystem.PopupPredicted(msg, uid, user);
+        _popupSystem.PopupClient(msg, uid, user);
 
         if (sfx == null)
             return;

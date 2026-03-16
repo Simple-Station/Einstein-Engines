@@ -1,53 +1,47 @@
+<!--
+SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Myakot <30875116+Myakot@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 end <72604018+laok233@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+SPDX-FileCopyrightText: 2024 Terraspark4941 <terraspark4941@gmail.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <Document>
-  # Электроснабжение
+  # Энергия
+  Энергия — это жизненная сила станции.
+  Без неё станция быстро погрузится в хаос.
+  Инженеры отвечают за поддержание энергосети станции, обеспечивая подачу и распределение энергии, а также удовлетворённость всех отделов.
 
-  В SS14 система питания достаточно детально смоделирована: все устройства станции получают электричество через три основные сети — высоковольтную, средневольтную и низковольтную.
   <Box>
-  <GuideEntityEmbed Entity="CableHVStack"/>
-  <GuideEntityEmbed Entity="CableMVStack"/>
-  <GuideEntityEmbed Entity="CableApcStack"/>
+    <GuideEntityEmbed Entity="SingularityGenerator" Caption=""/>
+    <GuideEntityEmbed Entity="TeslaGenerator" Caption=""/>
+    <GuideEntityEmbed Entity="AmeController" Caption=""/>
+    <GuideEntityEmbed Entity="SMESBasic" Caption=""/>
+    <GuideEntityEmbed Entity="SubstationBasic" Caption=""/>
+    <GuideEntityEmbed Entity="APCBasic" Caption=""/>
   </Box>
 
-  ## Кабели
-  Три основных типа кабелей (HV, MV и LV) позволяют создавать независимые энергосети. Осматривайте их в игре, чтобы увидеть подробности применения.
-  <Box>
-  <GuideEntityEmbed Entity="CableHV"/>
-  <GuideEntityEmbed Entity="CableMV"/>
-  <GuideEntityEmbed Entity="CableApcExtension"/>
-  </Box>
+  В системе питания Space Station 14 есть множество аспектов, а также задуманная геймплейная роль Инженеров.
 
-  ## Накопители энергии
-  Каждый из устройств накопления энергии одновременно играет роль «трансформатора» для своего уровня напряжения (HV, MV и LV) и предоставляет ёмкий резервный аккумулятор для сглаживания провалов и всплесков потребления.
-  <Box>
-  <GuideEntityEmbed Entity="SMESBasic"/>
-  <GuideEntityEmbed Entity="SubstationBasic"/>
-  <GuideEntityEmbed Entity="APCBasic"/>
-  </Box>
+  Важно учитывать следующее:
+  - [textlink="Генераторы" link="Generators"] на станции имеют уровни иерархии. Чем ниже уровень, тем они менее устойчивы, но проще в установке. Чем выше уровень, тем устойчивее они, но сложнее в настройке.
+  - Space Station 14 использует [textlink="сетевые напряжения" link="VoltageNetworks"], которые распределяют энергию по станции и понижаются машинами до напряжения, пригодного для других устройств.
+  - [textlink="Генераторы" link="Generators"] имеют [textlink="разгон" link="Ramping"], что означает, что им нужно время, чтобы подстроиться под потребности сети.
 
-  ## Рамп‑ап
-  Вопреки ожиданиям от «игровой электрички», мощность не подаётся мгновенно по требованию. Генераторам и батареям требуется время, чтобы нарастить отдачу под возросшую нагрузку, из‑за чего при резких скачках потребления возможны просадки напряжения, например, когда батареи опустошаются.
+  ## Начало работы
+  В начале смены станция работает исключительно от [textlink="СМЭС" link="PowerStorage"].
+  Этого хватит максимум на 5–10 минут, в зависимости от потребления энергии станцией.
 
-  ## Установка накопителей
-  Подстанции — самые понятные: установите машину поверх кабелей MV и HV; она будет брать мощность из HV и подавать в MV.
+  Чтобы продлить этот период, можно запустить [textlink="ДАМ" link="AME"].
+  Это значительно увеличит время работы батарей, давая больше времени на настройку генераторов более высокого уровня.
+  Ещё больше энергии можно получить, настроив [textlink="солнечные панели" link="SolarPanels"], которые бесплатно вырабатывают энергию.
 
-  APC ставятся похоже, но это строго настенные устройства — на пол их не поставить. Убедитесь, что подключены и MV, и LV.
+  После установки [textlink="ДАМ" link="AME"] и [textlink="солнечных панелей" link="SolarPanels"] вы должны генерировать достаточное количество энергии.
 
-  Для SMES требуется построить клемму ввода. SMES берёт питание с клеммы и выдаёт вниз. Клемма гарантирует, что вход HV и выход HV не соединяются напрямую. Не подключайте SMES к самому себе: это короткое замыкание, чреватое мерцанием питания или отключениями.
-
-  ## Отсечка APC
-  Сейчас только APC ограничивает мощность, которую отдаёт в сеть: если суммарное потребление подключённых устройств превысит [color=#a4885c]24 кВт[/color], автомат выбьет и всё отключится. Если вы не инженер — вызовите инженера (или киборга), чтобы включить обратно, снизив нагрузку [color=#a4885c]ниже[/color] 24 кВт.
-  <Box>
-  <GuideEntityEmbed Entity="APCBasic"/>
-  </Box>
-
-  ## Проверка энергосети
-  1. Используйте [color=#a4885c]t‑ray сканер[/color], чтобы находить кабели под плиткой. (пропустите, если кабели не скрыты)
-  2. Подденьте плитку [color=#a4885c]ломом[/color], чтобы открыть доступ к кабелю. (пропустите, если кабели не скрыты)
-  3. Возьмите [color=#a4885c]мультитул[/color] и кликните по любому кабелю, чтобы увидеть параметры сети.
-  <Box>
-  <GuideEntityEmbed Entity="Multitool"/>
-  <GuideEntityEmbed Entity="Crowbar"/>
-  <GuideEntityEmbed Entity="trayScanner"/>
-  </Box>
-
+  Теперь, когда вы выиграли время, можно сосредоточиться на настройке генераторов более высокого уровня, таких как [textlink="двигатель Сингулярности" link="SingularityEngine"], который сможет обеспечивать энергией всю оставшуюся смену.
 </Document>

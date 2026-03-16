@@ -1,4 +1,3 @@
-advertisement-clothes-0 = Ты выглядишь стильно!
 advertisement-clothes-1 = Одевайтесь для успеха!
 advertisement-clothes-2 = Приготовтесь выглядеть мегакруто!
 advertisement-clothes-3 = Взгляните на все эти крутости!

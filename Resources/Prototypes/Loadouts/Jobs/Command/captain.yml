@@ -1,537 +1,232 @@
-# Captain
-# Backpacks
-- type: loadout
-  id: LoadoutBackpackCaptain
-  category: JobsCommandCaptain
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackCaptain
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 CaasGit <87243814+CaasGit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 EmoGarbage404 <retron404@gmail.com>
+# SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Firewatch <54725557+musicmanvr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hrosts <35345601+Hrosts@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ian <ignaz.k@live.de>
+# SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Joel Zimmerman <JoelZimmerman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 JustCone <141039037+JustCone14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ko4ergaPunk <62609550+Ko4ergaPunk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kukutis96513 <146854220+Kukutis96513@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Lye <128915833+Lyroth001@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MerrytheManokit <167581110+MerrytheManokit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <koolthunder019@gmail.com>
+# SPDX-FileCopyrightText: 2024 MureixloI <132683811+MureixloI@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 NakataRin <45946146+NakataRin@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 OrangeMoronage9622 <whyteterry0092@gmail.com>
+# SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Preston Smith <92108534+thetolbean@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Repo <47093363+Titian3@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 RiceMar1244 <138547931+RiceMar1244@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Stalen <33173619+stalengd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TakoDragon <69509841+BackeTako@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st <shadowstalkermll@gmail.com>
+# SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2024 Vigers Ray <60344369+VigersRay@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 dffdff2423 <dffdff2423@gmail.com>
+# SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+# SPDX-FileCopyrightText: 2024 foboscheshir <156405958+foboscheshir@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+# SPDX-FileCopyrightText: 2024 saintmuntzer <47153094+saintmuntzer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 shamp <140359015+shampunj@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 strO0pwafel <153459934+strO0pwafel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 stroopwafel <j.o.luijkx@student.tudelft.nl>
+# SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+# SPDX-FileCopyrightText: 2025 starch <starchpersonal@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# For mantles
+- type: loadoutEffectGroup
+  id: MasterCap
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobCaptain
+      time: 72000 #20 hrs
 
-- type: loadout
-  id: LoadoutBackpackSatchelCaptain
-  category: JobsCommandCaptain
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackSatchelCaptain
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
+# Goobstation - For Ensembles
+- type: loadoutEffectGroup
+  id: GrandMasterCap
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobCaptain
+      time: 360000 # 100 hrs
 
+# Jumpsuit
 - type: loadout
-  id: LoadoutBackpackDuffelCaptain
-  category: JobsCommandCaptain
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackDuffelCaptain
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
+  id: CaptainJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCaptain
 
-# Belt
-- type: loadout
-  id: LoadoutCaptainSwordSheath
-  category: JobsCommandCaptain
-  cost: 0
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainBelt
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingBeltSheathFilled
-
-# Ears
-
-# Equipment
-- type: loadout
-  id: LoadoutCaptainDrinkFlask
-  category: JobsCommandCaptain
-  cost: 0
-  canBeHeirloom: true
-  customColorTint: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainTrinkets
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - DrinkFlask
-
-- type: loadout
-  id: LoadoutCaptainMedalCase
-  category: JobsCommandCaptain
-  cost: 0
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainTrinkets
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - MedalCase
-
-- type: loadout
-  id: LoadoutCaptainSpaceCash1000
-  category: JobsCommandCaptain
-  cost: 0
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainTrinkets
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - SpaceCash1000
-
-- type: loadout
-  id: LoadoutCaptainCigarCase
-  category: JobsCommandCaptain
-  cost: 0
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainTrinkets
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - CigarGoldCase
 
 - type: loadout
-  id: LoadoutCaptainAntiqueLaserPistol
-  category: JobsCommandCaptain
-  cost: 0
-  canBeHeirloom: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainWeapon
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-    - !type:CharacterAgeRequirement
-      min: 21
-  items:
-    - WeaponAntiqueLaser
+  id: CaptainJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtCaptain
+
 
 - type: loadout
-  id: LoadoutCaptainPulsePistol
-  category: JobsCommandCaptain
-  cost: 0
-  canBeHeirloom: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainWeapon
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-    - !type:CharacterAgeRequirement
-      min: 21
-  items:
-    - WeaponPulsePistolCaptain
+  id: CaptainFormalSuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCapFormal
+
 
 - type: loadout
-  id: LoadoutCaptainTerminus
-  category: JobsCommandCaptain
-  cost: 0
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainWeapon
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-    - !type:CharacterAgeRequirement
-      min: 21
-    - !type:CharacterSpeciesRequirement
-      species:
-      - Oni
-  items:
-    - Terminus
-
-- type: loadout
-  id: LoadoutCaptainRevolverShotgun
-  category: JobsCommandCaptain
-  cost: 0
-  canBeHeirloom: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainWeapon
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-    - !type:CharacterAgeRequirement
-      min: 21
-  items:
-    - WeaponCaptainRevolverShotgun
+  id: CaptainFormalSkirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtCapFormalDress
 
 
-# Eyes
-- type: loadout
-  id: LoadoutCaptainEyesSunglasses
-  category: JobsCommandCaptain
-  cost: 0
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainEyes
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingEyesGlassesSunglasses
+- type: loadout # goob
+  id: CaptainJumpsuitMilitary
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryCaptain
 
-# Gloves
-- type: loadout
-  id: LoadoutCaptainGlovesCapGloves
-  category: JobsCommandCaptain
-  cost: 0
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainGloves
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingHandsGlovesCaptain
-
-- type: loadout
-  id: LoadoutCaptainGlovesInspection
-  category: JobsCommandCaptain
-  cost: 0
-  exclusive: true
-  customColorTint: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainGloves
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingHandsGlovesInspection
 
 # Head
 - type: loadout
-  id: LoadoutCommandCapHat
-  category: JobsCommandCaptain
-  cost: 0
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainHead
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingHeadHatCaptain
+  id: CaptainHead
+  equipment:
+    head: ClothingHeadHatCaptain
+
 
 - type: loadout
-  id: LoadoutCommandCapHatCapcap
-  category: JobsCommandCaptain
-  cost: 0
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainHead
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingHeadHatCapcap
+  id: CaptainCap
+  equipment:
+    head: ClothingHeadHatCapcap
+
+- type: loadout # Goobstation - Ensembles
+  id: CaptainCapcapSenior
+  equipment:
+    head: ClothingHeadHatCapcapSenior
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: GrandMasterCap
+
+
+# Mask - Tbh idk if this should be here or in _goob but this is easier.
 
 - type: loadout
-  id: LoadoutCommandCapHatBeret
-  category: JobsCommandCaptain
-  cost: 0
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainHead
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingHeadHatBeretCap
-
-# Id
-- type: loadout
-  id: LoadoutCaptainNTPDA
-  category: JobsCommandCaptain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobCaptain
-      min: 36000 # 10 hours
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainId
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - CaptainNTPDA
+  id: CaptainMask
+  equipment:
+    mask: FoodSnackLollypopCaptain
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MasterCap
 
 # Neck
 - type: loadout
-  id: LoadoutCommandCapNeckMantle
-  category: JobsCommandCaptain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainNeck
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingNeckMantleCap
+  id: CaptainCloak
+  equipment:
+    neck: ClothingNeckCloakCap
 
 - type: loadout
-  id: LoadoutCommandCapNeckCloak
-  category: JobsCommandCaptain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainNeck
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingNeckCloakCap
+  id: CaptainCloakFormal
+  equipment:
+    neck: ClothingNeckCloakCapFormal
 
 - type: loadout
-  id: LoadoutCommandCapNeckCloakFormal
-  category: JobsCommandCaptain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainNeck
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingNeckCloakCapFormal
+  id: CaptainMantle
+  equipment:
+    neck: ClothingNeckMantleCap
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MasterCap
+
+- type: startingGear
+  id: CaptainMantle
+  equipment:
+    neck: ClothingNeckMantleCap
 
 - type: loadout
-  id: LoadoutCaptainNeckGoldMedal
-  category: JobsCommandCaptain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainNeck
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingNeckGoldmedal
+  id: VeteranCaptainCloak
+  equipment:
+    neck: ClothingNeckCloakVetCap
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobCaptain
+      time: 360000 #100 hrs
 
-# Mask
+- type: loadout # Goobstation - Ensembles
+  id: CaptainEnsemble
+  equipment:
+    neck: ClothingNeckEnsembleCaptain
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: GrandMasterCap
+
+# Back
 - type: loadout
-  id: LoadoutCommandCapMaskGas
-  category: JobsCommandCaptain
-  cost: 0
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainMask
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingMaskGasCaptain
+  id: CaptainBackpack
+  equipment:
+    back: ClothingBackpackCaptain
 
 - type: loadout
-  id: LoadoutCommandCapMaskGasCombat
-  category: JobsCommandCaptain
-  cost: 0
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainMask
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingMaskGasCaptainCombat
-
-# Outer
-- type: loadout
-  id: LoadoutCommandCapOuterWinter
-  category: JobsCommandCaptain
-  cost: 0
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainOuter
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingOuterWinterCap
+  id: CaptainSatchel
+  equipment:
+    back: ClothingBackpackSatchelCaptain
 
 - type: loadout
-  id: LoadoutCaptainOuterCarapace
-  category: JobsCommandCaptain
-  cost: 0
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainOuter
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingOuterArmorCaptainCarapace
+  id: CaptainDuffel
+  equipment:
+    back: ClothingBackpackDuffelCaptain
+
+# Outer clothing
+- type: loadout
+  id: CaptainOuterClothing
+  equipment:
+    outerClothing: ClothingOuterArmorCaptainCarapace
 
 - type: loadout
-  id: LoadoutCaptainOuterDogi
-  category: JobsCommandCaptain
-  cost: 0
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainOuter
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingOuterArmorCaptainDogi
-
-- type: loadout
-  id: LoadoutCaptainOuterTrench
-  category: JobsCommandCaptain
-  cost: 0
-  exclusive: true
-  canBeHeirloom: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainOuter
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingOuterCoatCapTrench
-
-# Shoes
-- type: loadout
-  id: LoadoutCaptainShoesLaceup
-  category: JobsCommandCaptain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainShoes
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingShoesBootsLaceup
-
-- type: loadout
-  id: LoadoutCaptainShoesLeather
-  category: JobsCommandCaptain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainShoes
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingShoesLeather
-
-- type: loadout
-  id: LoadoutCaptainShoesWinter
-  category: JobsCommandCaptain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainShoes
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingShoesBootsWinterCap
-
-- type: loadout
-  id: LoadoutCaptainShoesCombat
-  category: JobsCommandCaptain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainShoes
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingShoesBootsCombatFilled
-
-# Uniforms
-- type: loadout
-  id: LoadoutCommandCapJumpsuit
-  category: JobsCommandCaptain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingUniformJumpsuitCaptain
-
-- type: loadout
-  id: LoadoutCommandCapJumpskirt
-  category: JobsCommandCaptain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingUniformJumpskirtCaptain
-
-- type: loadout
-  id: LoadoutCommandCapJumpsuitFormal
-  category: JobsCommandCaptain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingUniformJumpsuitCapFormal
-
-- type: loadout
-  id: LoadoutCommandCapJumpskirtFormal
-  category: JobsCommandCaptain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingUniformJumpskirtCapFormalDress
+  id: CaptainWintercoat
+  equipment:
+    outerClothing: ClothingOuterWinterCapArmored # Goob edit

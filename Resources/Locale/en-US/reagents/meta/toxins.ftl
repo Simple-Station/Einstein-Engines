@@ -1,3 +1,29 @@
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 lapatison <100279397+lapatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 Alekshhh <44923899+Alekshhh@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Doru991 <75124791+Doru991@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 QuantumSeanyGlass <quantum1002@gmail.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Avalon <148660190+BYONDFuckery@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 JustCone <141039037+JustCone14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 potato1234_x <79580518+potato1234x@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 reagent-name-toxin = toxin
 reagent-desc-toxin = An unsurprisingly toxic chemical. Available at an emagged chem dispenser.
 
@@ -35,7 +61,7 @@ reagent-name-lexorin = lexorin
 reagent-desc-lexorin = A fast-acting chemical used to asphyxiate people rapidly.
 
 reagent-name-mindbreaker-toxin = mindbreaker toxin
-reagent-desc-mindbreaker-toxin = A potent, brain damaging poison that can remove psionics.
+reagent-desc-mindbreaker-toxin = A potent hallucinogenic compound that is formerly known as LSD.
 
 reagent-name-histamine = histamine
 reagent-desc-histamine = A chemical caused by allergenics reacting with antibodies. Lethal at large quantities.
@@ -44,7 +70,7 @@ reagent-name-theobromine = theobromine
 reagent-desc-theobromine = A bitter alkaloid of the cacao plant, commonly found in chocolate. Do not feed to animals.
 
 reagent-name-amatoxin = amatoxin
-reagent-desc-amatoxin = A deadly toxin found in some mushrooms, primarily fly amanita. Small dosages can be lethal.
+reagent-desc-amatoxin = A deadly toxin found in some mushrooms, primarily fly amanita. Small doses can be lethal.
 
 reagent-name-vent-crud = vent crud
 reagent-desc-vent-crud = A jet black substance found in poorly maintained ventilation systems. Can cause vent cough.
@@ -65,13 +91,13 @@ reagent-name-honk = honk
 reagent-desc-honk = A toxin found in bananium. Causes severe honking and internal bleeding, may also cause the patient to mutate.
 
 reagent-name-lead = lead
-reagent-desc-lead = A slow-acting but incredibly lethal toxin found in steel, albiet in trace amounts. Tasteless.
+reagent-desc-lead = A slow-acting but incredibly lethal toxin found in steel, albeit in trace amounts. Tasteless.
 
 reagent-name-bungotoxin = bungotoxin
 reagent-desc-bungotoxin = A moderately slow-acting poison found within the pit of the bungo fruit.
 
 reagent-name-vestine = vestine
-reagent-desc-vestine = Has an adverse reaction within the body causing major jittering. While not particularly useful on it's own, it can be used to produce a small variety of chemicals.
+reagent-desc-vestine = Has an adverse reaction within the body causing major jittering. While not particularly useful on its own, it can be used to produce a small variety of chemicals.
 
 reagent-name-tazinide = tazinide
 reagent-desc-tazinide = A highly dangerous metallic mixture which can interfere with most movement through an electrifying current.
@@ -82,17 +108,5 @@ reagent-desc-lipolicide = A powerful toxin that will destroy fat cells, massivel
 reagent-name-mechanotoxin = mechanotoxin
 reagent-desc-mechanotoxin = A neurotoxin used as venom by some species of spider. Degrades movement when built up.
 
-reagent-name-soulbreaker-toxin = soulbreaker toxin
-reagent-desc-soulbreaker-toxin = An anti-psionic about 4 times as powerful as mindbreaker toxin.
-
-reagent-name-lotophagoi-oil = lotophagoi oil
-reagent-desc-lotophagoi-oil = A super potent drug that is much better at inducing psionics than normal hallucinogens, but with worse side effects.
-
-reagent-name-ectoplasm = ectoplasm
-reagent-desc-ectoplasm = The physical component of semi-corporeal spirits.
-
-reagent-name-ousiana-dust = ousiana dust
-reagent-desc-ousiana-dust = A silent scream echos from this powder, it is a sledgehammer to the mind capable of violently breaking through any psionic blocks, at a cost.
-
-reagent-name-formic-acid = formic acid
-reagent-desc-formic-acid = A corrosive chemical used in the production of enzymes.
+reagent-name-toxintrash = trash 
+reagent-desc-toxintrash = An awful-smelling fluid. Deadly to non-vox.

@@ -4,4 +4,4 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-clothing-modify-stand-up-time-examine = Время на подъем сокращено на [color=yellow]{ $mod }%[/color]
+clothing-modify-stand-up-time-examine = Время подъёма сокращено на [color=yellow]{ $mod }%[/color]

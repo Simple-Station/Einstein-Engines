@@ -1,4 +1,4 @@
-using Content.Client._White.UserInterface.Controls;
+using Content.Client._White.UI.Controls;
 using Content.Shared._White.RadialSelector;
 using JetBrains.Annotations;
 

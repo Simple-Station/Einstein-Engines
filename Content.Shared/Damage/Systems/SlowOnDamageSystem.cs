@@ -1,7 +1,21 @@
+// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 EmoGarbage404 <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Clothing;
 using Content.Shared.Damage.Components;
 using Content.Shared.Examine;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Inventory;
 using Content.Shared.Movement.Systems;
 
@@ -30,7 +44,7 @@ namespace Content.Shared.Damage
 
         private void OnRefreshMovespeed(EntityUid uid, SlowOnDamageComponent component, RefreshMovementSpeedModifiersEvent args)
         {
-            if (!EntityManager.TryGetComponent<DamageableComponent>(uid, out var damage))
+            if (!TryComp<DamageableComponent>(uid, out var damage))
                 return;
 
             if (damage.TotalDamage == FixedPoint2.Zero)
@@ -65,13 +79,17 @@ namespace Content.Shared.Damage
 
         private void OnModifySpeed(Entity<ClothingSlowOnDamageModifierComponent> ent, ref InventoryRelayedEvent<ModifySlowOnDamageSpeedEvent> args)
         {
+            var dif = 1 - args.Args.Speed;
+            if (dif <= 0)
+                return;
+
             // reduces the slowness modifier by the given coefficient
-            args.Args.Speed = 1 - (1 - args.Args.Speed) * ent.Comp.Modifier;
+            args.Args.Speed += dif * ent.Comp.Modifier;
         }
 
         private void OnExamined(Entity<ClothingSlowOnDamageModifierComponent> ent, ref ExaminedEvent args)
         {
-            var msg = Loc.GetString("slow-on-damage-modifier-examine", ("mod", Math.Round((1 - ent.Comp.Modifier) * 100)));
+            var msg = Loc.GetString("slow-on-damage-modifier-examine", ("mod", Math.Round(100 - ent.Comp.Modifier * 100))); // Goob edit
             args.PushMarkup(msg);
         }
 

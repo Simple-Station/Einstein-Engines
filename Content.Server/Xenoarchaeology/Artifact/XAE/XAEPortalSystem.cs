@@ -1,5 +1,14 @@
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kevin Matuschzik <92296572+Gamer3107@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Xenoarchaeology.Artifact.XAE.Components;
 using Content.Shared.Mind.Components;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Teleportation.Systems;
 using Content.Shared.Xenoarchaeology.Artifact;
 using Content.Shared.Xenoarchaeology.Artifact.XAE;
@@ -29,8 +38,8 @@ public sealed class XAEPortalSystem : BaseXAESystem<XAEPortalComponent>
 
         var map = Transform(ent).MapID;
         var validMinds = new ValueList<EntityUid>();
-        var mindQuery = EntityQueryEnumerator<MindContainerComponent, TransformComponent, MetaDataComponent>();
-        while (mindQuery.MoveNext(out var uid, out var mc, out var xform, out var meta))
+        var mindQuery = EntityQueryEnumerator<MindContainerComponent, MobStateComponent, TransformComponent, MetaDataComponent>();
+        while (mindQuery.MoveNext(out var uid, out var mc, out _, out var xform, out var meta))
         {
             // check if the MindContainer has a Mind and if the entity is not in a container (this also auto excludes AI) and if they are on the same map
             if (mc.HasMind && !_container.IsEntityOrParentInContainer(uid, meta: meta, xform: xform) && xform.MapID == map)

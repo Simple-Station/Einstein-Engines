@@ -1,16 +1,136 @@
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 starch <starchpersonal@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 GMWQ <garethquaile@gmail.com>
+# SPDX-FileCopyrightText: 2025 Gareth Quaile <garethquaile@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 PunishedJoe <PunishedJoeseph@proton.me>
+# SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 crasg <109207982+Scruq445@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
-  parent: ERTLeaderPDA
+  parent: AdminPDA
+  id: ChronoPDA
+  name: futuristic PDA
+  description: A powerful quantum computer disguised as a regular pda for disguise.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Devices/pda.rsi
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-chrono
+  - type: Pda
+    id: ChronoIDCard
+    penSlot:
+      startingItem: PenFuture
+      whitelist:
+        tags:
+        - Write
+  - type: PdaBorderColor
+    borderColor: "#dee4e7"
+    accentVColor: "#59bcee"
+  - type: Icon
+    sprite: _Goobstation/Objects/Devices/pda.rsi
+    state: pda-chrono
+
+- type: entity
+  parent: AdminPDA
+  id: GmanPDA
+  name: strange PDA
+  description: Your mind can't quite comprehend this.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Devices/pda.rsi # todo - make a unique texture.
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-chrono
+  - type: Pda
+    id: GmanIDCard
+    penSlot:
+      startingItem: PenFuture
+      whitelist:
+        tags:
+        - Write
+  - type: PdaBorderColor
+    borderColor: "#dee4e7"
+    accentVColor: "#59bcee"
+  - type: Icon
+    sprite: _Goobstation/Objects/Devices/pda.rsi
+    state: pda-chrono
+
+- type: entity
+  parent: SalvagePDA
+  id: HelldiverPDA
+  name: salvage diver PDA
+  description: Smells like corpses of insects and androids.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Devices/pda.rsi
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-heccd
+  - type: Pda
+    id: HelldiverIDCard
+  - type: PdaBorderColor
+    borderColor: "#272727"
+    accentVColor: "#cec100"
+  - type: Icon
+    sprite: _Goobstation/Objects/Devices/pda.rsi
+    state: pda-heccd
+  - type: Tag # Ignore Chameleon tags, this is too cool 4 u
+    tags:
+    - DoorBumpOpener
+
+- type: entity
+  parent: CentcomPDA
+  id: HecuPDA
+  name: HECU PDA
+  description: Smells of gunpowder.
+  components:
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-centcom
+  - type: Pda
+    id: HecuIDCard
+    penSlot:
+      startingItem: PenCentcom
+      whitelist:
+        tags:
+        - Write
+  - type: PdaBorderColor
+    borderColor: "#00842e"
+
+- type: entity
+  parent: BaseMedicalPDA
   id: BlueshieldPDA
-  name: Blueshield Officer PDA
+  name: blueshield officer PDA
   description: The silver shield of the Blueshield is engraved on the front.
   components:
-  - type: Pda
-    id: BlueshieldIDCard
   - type: Appearance
     appearanceDataInit:
       enum.PdaVisuals.PdaType:
         !type:String
         pda-blueshield
+  - type: Pda
+    id: BlueshieldIDCard
   - type: Icon
     sprite: _Goobstation/Objects/Devices/pda.rsi
     state: pda-blueshield
@@ -19,3 +139,251 @@
     state: pda-blueshield
   - type: PdaBorderColor
     borderColor: "#3c94c5"
+
+- type: entity
+  parent: CentcomPDA
+  id: DeathsquadPDA
+  name: deathsquad PDA
+  description: Rip and tear until it is done.
+  components:
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-deathsquad
+  - type: Pda
+    id: CentcomIDCardDeathsquad
+  - type: Icon
+    sprite: _Goobstation/Objects/Devices/pda.rsi
+    state: pda-deathsquad
+  - type: Sprite
+    sprite: _Goobstation/Objects/Devices/pda.rsi
+    state: pda-deathsquad
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag
+  - type: PdaBorderColor
+    borderColor: "#04040a"
+    accentVColor: "#16bab5"
+
+- type: entity
+  parent: CentcomPDA
+  id: NanotrasenRepresentativePDA
+  name: nanotrasen representative's PDA
+  description: The devil's in the details.
+  components:
+  - type: Pda
+    id: NanotrasenRepresentativeIDCard
+
+- type: entity
+  parent: CentcomPDA
+  id: TrainerPDA
+  name: nct's PDA
+  description: A standard-issue nanotrasen career trainer PDA.
+  components:
+  - type: Pda
+    id: NanotrasenCareerTrainerIDCard
+
+- type: entity
+  parent: CentcomPDA
+  id: NavyCaptainPDA
+  name: navy captain's PDA
+  description: The devil's in the details.
+  components:
+  - type: Pda
+    id: CentcomIDCardNavyCaptain
+  - type: HealthAnalyzer
+    scanDelay: 0
+    silent: true
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    notificationsEnabled: false
+    diskSpace: 10 # DeltaV
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NewsReaderCartridge
+    - LogProbeCartridge
+    - WantedListCartridge
+    - MedTekCartridge
+    - AstroNavCartridge
+    - NanoChatCartridge # DeltaV
+
+- type: entity
+  parent: NavyCaptainPDA
+  id: NavyOfficerPDA
+  name: navy officer's PDA
+  components:
+  - type: Pda
+    id: CentcomIDCardNavyOfficer
+
+- type: entity
+  parent: NavyCaptainPDA
+  id: SpecialOperationsOfficerPDA
+  name: special operations officer's PDA
+  components:
+  - type: Pda
+    id: CentcomIDCardSpecialOperationsOfficer
+
+- type: entity
+  parent: NavyCaptainPDA
+  id: DiplomatPDA
+  name: diplomat's PDA
+  components:
+  - type: Pda
+    id: CentcomIDCardDiplomat
+
+- type: entity
+  parent: NavyCaptainPDA
+  id: InspectorPDA
+  name: auditor's PDA
+  components:
+  - type: Pda
+    id: CentcomIDCardInspector
+
+- type: entity
+  parent: SyndiPDA
+  id: SyndiPDANukie
+  name: syndicate PDA
+  description: Ok, time to be a productive member of- oh cool I'm a bad guy time to kill people!
+  components:
+  - type: Pda
+    id: NukieAgentIDCard
+
+- type: entity
+  parent: NavyCaptainPDA
+  id: HighCommandPDA
+  name: high commander PDA
+  description: An ordinary syndicate PDA, adorned with gilded symbols. It's owner is clearly of a higher standing.
+  components:
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-highcommand
+  - type: PdaBorderColor
+    borderColor: "#891417"
+  - type: Pda
+    id: HighCommandIDCard
+    penSlot:
+      startingItem: CyberPen
+      whitelist:
+        tags:
+        - Write
+  - type: Icon
+    sprite: _Goobstation/Objects/Devices/pda.rsi
+    state: pda-highcommand
+  - type: Sprite
+    sprite: _Goobstation/Objects/Devices/pda.rsi
+    state: pda-highcommand
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+    - NotekeeperCartridge
+    - NanoTaskCartridge
+    - NanoChatCartridge # DeltaV
+
+- type: entity
+  parent: BaseMedicalPDA
+  id: VirologistPDA
+  name: virology PDA
+  description: You're not sure if touching it is safe.
+  components:
+  - type: Pda
+    id: VirologistIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-virology
+  - type: PdaBorderColor
+    borderColor: "#d7d7d0"
+    accentVColor: "#447987"
+  - type: Icon
+    state: pda-virology
+
+# event-resctricted jobs
+- type: entity
+  parent: ClownPDA
+  id: SecurityClownPDA
+  name: security clown PDA
+  description: Who has a pink PDA in security?
+  components:
+  - type: Pda
+    id: SecurityClownIDCard
+
+- type: entity
+  parent: JanitorPDA
+  id: CommandMaidPDA
+  name: command maid PDA
+  components:
+  - type: Pda
+    id: CommandMaidIDCard
+
+- type: entity
+  parent: MusicianPDA
+  id: PartyMakerPDA
+  name: party maker PDA
+  description: The best helper to make a party.
+  components:
+  - type: Pda
+    id: PartyMakerIDCard
+
+- type: entity
+  parent: BasePDA
+  id: RoboticistPDA
+  name: roboticist PDA
+  description: It's covered with failed ambitions.
+  components:
+  - type: Pda
+    id: RoboticistIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-roboticist
+  - type: PdaBorderColor
+    borderColor: "#161616"
+    accentVColor: "#cc4d03"
+  - type: Icon
+    state: pda-roboticist
+
+- type: entity
+  parent: BasePDA
+  id: RadioHostPDA
+  name: radio host PDA
+  description: You're listening to the smooth sounds of 145.9 FM.
+  components:
+  - type: Pda
+    id: RadioHostIDCard
+
+- type: entity
+  parent: CentcomPDA
+  id: OuterCommandPDA
+  name: outer command PDA
+  description: Purple pda for outer command members.
+  components:
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-outcom
+  - type: Icon
+    sprite: _Goobstation/Objects/Devices/pda.rsi
+    state: pda-outcom
+  - type: Sprite
+    sprite: _Goobstation/Objects/Devices/pda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda-outcom"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "insert_overlay"
+      map: [ "enum.PdaVisualLayers.Pen" ]
+  - type: Pda
+    id: OuterCommandIDCard

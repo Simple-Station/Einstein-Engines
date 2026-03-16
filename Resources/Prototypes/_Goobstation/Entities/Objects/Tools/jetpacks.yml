@@ -1,0 +1,74 @@
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: JetpackChrono
+  parent: BaseJetpack
+  name: futuristic jetpack
+  description: Magnetically attached jetpack that holds extreme amount of gas. It is used as an oxygen cylinder.
+  components:
+  - type: Item
+    sprite: _Goobstation/Objects/Tanks/chronojet.rsi
+  - type: Sprite
+    sprite: _Goobstation/Objects/Tanks/chronojet.rsi
+  - type: Clothing
+    sprite: _Goobstation/Objects/Tanks/chronojet.rsi
+    slots:
+      - suitStorage
+  - type: GasTank
+    outputPressure: 1
+    air:
+      volume: 1000
+      temperature: 1
+      moles:
+        - 10000 # oxygen
+        - 10000 # nitrogen
+  - type: Jetpack
+    moleUsage: 0.00002
+  - type: MovementSpeedModifier
+    weightlessAcceleration: 1.5
+    weightlessFriction: 1
+    weightlessModifier: 2.5
+
+- type: entity
+  id: JetpackChronoUnremoveable
+  parent: JetpackChrono
+  suffix: Unremoveable
+  components:
+  - type: Unremoveable
+
+#Empty contractor
+- type: entity
+  id: JetpackContractor
+  parent: BaseJetpack
+  name: contractor's jetpack
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Tanks/contractorpack.rsi
+  - type: Clothing
+    sprite: _Goobstation/Objects/Tanks/contractorpack.rsi
+    slots:
+      - Back
+      - suitStorage
+  - type: Item
+    sprite: _Goobstation/Objects/Tanks/contractorpack.rsi
+    size: Normal
+
+# Filled contractor
+- type: entity
+  id: JetpackContractorFilled
+  parent: JetpackContractor
+  name: contractor's jetpack
+  suffix: Filled
+  components:
+  - type: GasTank
+    outputPressure: 18
+    air:
+      volume: 5
+      temperature: 293.15
+      moles:
+        - 2.05137905 # oxygen

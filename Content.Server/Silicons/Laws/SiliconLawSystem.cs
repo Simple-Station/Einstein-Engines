@@ -1,3 +1,108 @@
+// SPDX-FileCopyrightText: 2023 Bixkitts <72874643+Bixkitts@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 CaasGit <87243814+CaasGit@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <drsmugleaf@gmail.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 EmoGarbage404 <retron404@gmail.com>
+// SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Hrosts <35345601+Hrosts@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ian <ignaz.k@live.de>
+// SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Jajsha <101492056+Zap527@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Jake Huxell <JakeHuxell@pm.me>
+// SPDX-FileCopyrightText: 2024 Joel Zimmerman <JoelZimmerman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 JustCone <141039037+JustCone14@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ko4ergaPunk <62609550+Ko4ergaPunk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kukutis96513 <146854220+Kukutis96513@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Lye <128915833+Lyroth001@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 MerrytheManokit <167581110+MerrytheManokit@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 MureixloI <132683811+MureixloI@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 NakataRin <45946146+NakataRin@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nim <128169402+Nimfar11@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 OrangeMoronage9622 <whyteterry0092@gmail.com>
+// SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 PopGamer46 <yt1popgamer@gmail.com>
+// SPDX-FileCopyrightText: 2024 Preston Smith <92108534+thetolbean@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Repo <47093363+Titian3@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 RiceMar1244 <138547931+RiceMar1244@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ScarKy0 <scarky0@onet.eu>
+// SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Spessmann <156740760+Spessmann@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Stalen <33173619+stalengd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 TakoDragon <69509841+BackeTako@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 The Canned One <greentopcan@gmail.com>
+// SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st <shadowstalkermll@gmail.com>
+// SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2024 Vigers Ray <60344369+VigersRay@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Zachary Higgs <compgeek223@gmail.com>
+// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 coolboy911 <85909253+coolboy911@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 dffdff2423 <dffdff2423@gmail.com>
+// SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 foboscheshir <156405958+foboscheshir@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 lunarcomets <140772713+lunarcomets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2024 saintmuntzer <47153094+saintmuntzer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 shamp <140359015+shampunj@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 strO0pwafel <153459934+strO0pwafel@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 stroopwafel <j.o.luijkx@student.tudelft.nl>
+// SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 ImHoks <142083149+ImHoks@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ImHoks <imhokzzzz@gmail.com>
+// SPDX-FileCopyrightText: 2025 KillanGenifer <killangenifer@gmail.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+// SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Server.Administration;
 using Content.Server.Chat.Managers;
@@ -13,7 +118,8 @@ using Content.Shared.Mind.Components;
 using Content.Shared.Roles;
 using Content.Shared.Silicons.Laws;
 using Content.Shared.Silicons.Laws.Components;
-using Content.Shared.Wires;
+using Content.Shared.Database; // goob logging
+using Content.Server.Administration.Logs; // goob logging
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
@@ -21,12 +127,27 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Toolshed;
 
+// Goobstation usings
+using Content.Goobstation.Common.Silicons.Components;
+using Content.Goobstation.Maths.FixedPoint;
+using Content.Goobstation.Shared.CustomLawboard;
+using Robust.Shared.Random;
+using Content.Shared.Random;
+using Content.Shared.Random.Helpers;
+using Content.Shared.Research.Components;
+using Content.Server.Radio.EntitySystems;
+using Content.Server.Research.Systems;
+
+// Corvax-Next-AiRemoteControl
+using Content.Shared.Silicons.StationAi;
+using Content.Shared.Tag;
+using Content.Shared._CorvaxNext.Silicons.Borgs.Components;
 namespace Content.Server.Silicons.Laws;
 
-/// <inheritdoc/>
 public sealed class SiliconLawSystem : SharedSiliconLawSystem
 {
     [Dependency] private readonly IChatManager _chatManager = default!;
+    [Dependency] private readonly IAdminLogManager _adminLogger = default!; // goob logging
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly SharedRoleSystem _roles = default!;
@@ -34,7 +155,15 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly EmagSystem _emag = default!;
 
-    /// <inheritdoc/>
+    // Goobstation
+    [Dependency] private readonly IRobustRandom _robustRandom = default!;
+    [Dependency] private readonly IonStormSystem _ionStorm = default!;
+    [Dependency] private readonly ResearchSystem _research = default!;
+    [Dependency] private readonly RadioSystem _radio = default!;
+    [Dependency] private readonly TagSystem _tagSystem = default!; // Corvax-Next-AiRemoteControl
+
+
+
     public override void Initialize()
     {
         base.Initialize();
@@ -61,6 +190,17 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
     {
         if (!TryComp<ActorComponent>(uid, out var actor))
             return;
+
+        // Corvax-Next-AiRemoteControl-Start
+        if (HasComp<AiRemoteControllerComponent>(uid)
+            || _tagSystem.HasTag(uid, "StationAi")) // skip a law's notification for remotable and AI
+            return;
+        // Corvax-Next-AiRemoteControl-End
+
+        // Goobstation admin laws logging start
+        var laws = GetLaws(uid, component);
+        _adminLogger.Add(LogType.SiliconLaws, LogImpact.Low, $"{ToPrettyString(uid):entity} joined the round with laws:\n{laws.LoggingString()}");
+        // Goobstation end
 
         var msg = Loc.GetString("laws-notify");
         var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", msg));
@@ -89,6 +229,7 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
         if (!ent.Comp.Subverted)
             return;
         RemoveSubvertedSiliconRole(args.Mind);
+
     }
 
 
@@ -136,7 +277,7 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
             component.Lawset = args.Lawset;
 
             // gotta tell player to check their laws
-            NotifyLawsChanged(uid);
+            NotifyLawsChanged(uid, component.LawUploadSound);
 
             // Show the silicon has been subverted.
             component.Subverted = true;
@@ -152,6 +293,11 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
     {
         if (component.Lawset == null)
             component.Lawset = GetLawset(component.Laws);
+
+        // Corvax-Next-AiRemoteControl-Start
+        if (HasComp<AiRemoteControllerComponent>(uid)) // You can't emag controllable entities
+            return;
+        // Corvax-Next-AiRemoteControl-End
 
         // Show the silicon has been subverted.
         component.Subverted = true;
@@ -170,18 +316,24 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
             LawString = Loc.GetString("law-emag-secrecy", ("faction", Loc.GetString(component.Lawset.ObeysTo))),
             Order = component.Lawset.Laws.Max(law => law.Order) + 1
         });
+
+        _adminLogger.Add(LogType.SiliconLaws, LogImpact.High, $"{ToPrettyString(uid):entity} laws changed due to emag by {ToPrettyString(args.user):user} to:{component.Lawset!.LoggingString()}"); // goob
     }
 
-    private void EnsureSubvertedSiliconRole(EntityUid mindId)
+    protected override void EnsureSubvertedSiliconRole(EntityUid mindId)
     {
+        base.EnsureSubvertedSiliconRole(mindId);
+
         if (!_roles.MindHasRole<SubvertedSiliconRoleComponent>(mindId))
-            _roles.MindAddRole(mindId, "MindRoleSubvertedSilicon");
+            _roles.MindAddRole(mindId, "MindRoleSubvertedSilicon", silent: true);
     }
 
-    private void RemoveSubvertedSiliconRole(EntityUid mindId)
+    protected override void RemoveSubvertedSiliconRole(EntityUid mindId)
     {
+        base.RemoveSubvertedSiliconRole(mindId);
+
         if (_roles.MindHasRole<SubvertedSiliconRoleComponent>(mindId))
-            _roles.MindTryRemoveRole<SubvertedSiliconRoleComponent>(mindId);
+            _roles.MindRemoveRole<SubvertedSiliconRoleComponent>(mindId);
     }
 
     public SiliconLawset GetLaws(EntityUid uid, SiliconLawBoundComponent? component = null)
@@ -239,8 +391,10 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
         return ev.Laws;
     }
 
-    public void NotifyLawsChanged(EntityUid uid, SoundSpecifier? cue = null)
+    public override void NotifyLawsChanged(EntityUid uid, SoundSpecifier? cue = null)
     {
+        base.NotifyLawsChanged(uid, cue);
+
         if (!TryComp<ActorComponent>(uid, out var actor))
             return;
 
@@ -264,7 +418,7 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
         };
         foreach (var law in proto.Laws)
         {
-            laws.Laws.Add(_prototype.Index<SiliconLawPrototype>(law));
+            laws.Laws.Add(_prototype.Index<SiliconLawPrototype>(law).ShallowClone());
         }
         laws.ObeysTo = proto.ObeysTo;
 
@@ -274,19 +428,18 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
     /// <summary>
     /// Set the laws of a silicon entity while notifying the player.
     /// </summary>
-    public bool SetLaws(List<SiliconLaw> newLaws, EntityUid target, SoundSpecifier? cue = null, bool unRemovable = false)
+    public void SetLaws(List<SiliconLaw> newLaws, EntityUid target, SoundSpecifier? cue = null)
     {
-        if (!TryComp<SiliconLawProviderComponent>(target, out var component)
-            || component.UnRemovable)
-            return false;
+        if (!TryComp<SiliconLawProviderComponent>(target, out var component))
+            return;
 
         if (component.Lawset == null)
             component.Lawset = new SiliconLawset();
 
-        component.UnRemovable = unRemovable;
         component.Lawset.Laws = newLaws;
         NotifyLawsChanged(target, cue);
-        return true;
+
+        _adminLogger.Add(LogType.SiliconLaws, LogImpact.Medium, $"{ToPrettyString(target):entity} laws changed to:{component.Lawset.LoggingString()}"); // goob
     }
 
     protected override void OnUpdaterInsert(Entity<SiliconLawUpdaterComponent> ent, ref EntInsertedIntoContainerMessage args)
@@ -295,14 +448,195 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
         if (!TryComp(args.Entity, out SiliconLawProviderComponent? provider))
             return;
 
-        var lawset = GetLawset(provider.Laws).Laws;
+        // Goob edit start
+        if (HasComp<ActiveExperimentalLawProviderComponent>(ent))
+        {
+            var message = Loc.GetString("experimental-law-provider-fail");
+            _radio.SendRadioMessage(ent, message, AnnouncementChannel, ent, escapeMarkup: false);
+            RemComp<ActiveExperimentalLawProviderComponent>(ent);
+        }
+
+        if (TryComp(args.Entity, out ExperimentalLawProviderComponent? experimentalLaws))
+        {
+            ApplyExperimentalLaws(ent, (args.Entity, experimentalLaws, provider));
+            return;
+        }
+
+        // This part is for custom lawboards as there's no lawset prototype for them.
+
+        List<SiliconLaw>? lawset;
+
+        if (TryComp(args.Entity, out CustomLawboardComponent? customLawboard))
+        {
+            lawset = customLawboard.Laws;
+        }
+        else
+        {
+            lawset = GetLawset(provider.Laws).Laws;
+        }
+
+        // Goob edit end
+
         var query = EntityManager.CompRegistryQueryEnumerator(ent.Comp.Components);
 
         while (query.MoveNext(out var update))
         {
-            SetLaws(lawset, update, provider.LawUploadSound, provider.UnRemovable);
+            SetLaws(lawset, update, provider.LawUploadSound);
+
+            // Corvax-Next-AiRemoteControl-Start
+            if (TryComp<StationAiHeldComponent>(update, out var stationAiHeldComp)
+                && stationAiHeldComp.CurrentConnectedEntity != null
+                && HasComp<SiliconLawProviderComponent>(stationAiHeldComp.CurrentConnectedEntity))
+            {
+                SetLaws(lawset, stationAiHeldComp.CurrentConnectedEntity.Value, provider.LawUploadSound);
+            }
+            // Corvax-Next-AiRemoteControl-End
+        }
+
+        ent.Comp.LastLawset = provider.Laws;
+    }
+
+    // Corvax-Next-AiRemoteControl-Start
+    public void SetLawsSilent(List<SiliconLaw> newLaws, EntityUid target, SoundSpecifier? cue = null)
+    {
+        if (!TryComp<SiliconLawProviderComponent>(target, out var component))
+            return;
+
+        if (component.Lawset == null)
+            component.Lawset = new SiliconLawset();
+
+        component.Lawset.Laws = newLaws;
+
+        _adminLogger.Add(LogType.SiliconLaws, LogImpact.Medium, $"{ToPrettyString(target):entity} laws changed silently to:{component.Lawset.LoggingString()}"); // goob
+    }
+    // Corvax-Next-AiRemoteControl-End
+
+    // Goob edit start
+    private void ApplyExperimentalLaws(Entity<SiliconLawUpdaterComponent> ent, Entity<ExperimentalLawProviderComponent, SiliconLawProviderComponent> experiment)
+    {
+        var laws = GetRandomLaws(experiment.Comp1.RandomLawsets);
+        var query = EntityManager.CompRegistryQueryEnumerator(ent.Comp.Components);
+
+        while (query.MoveNext(out var update))
+            SetLaws(laws.Laws, update, experiment.Comp2.LawUploadSound);
+
+        var activeProv = EnsureComp<ActiveExperimentalLawProviderComponent>(ent);
+        activeProv.Timer = experiment.Comp1.RewardTime;
+        activeProv.RewardPoints = experiment.Comp1.RewardPoints;
+        activeProv.OldSiliconLawsetId = ent.Comp.LastLawset;
+
+        var message = Loc.GetString("experimental-law-provider-start", ("timeLeft", (int) experiment.Comp1.RewardTime));
+        _radio.SendRadioMessage(ent, message, AnnouncementChannel, ent, escapeMarkup: false);
+
+        QueueDel(experiment); // Don't need this experimental board anymore
+    }
+
+    private const string AnnouncementChannel = "Science";
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var activeExperimental = EntityQueryEnumerator<ActiveExperimentalLawProviderComponent>();
+        while (activeExperimental.MoveNext(out var uid, out var provider))
+        {
+            provider.Timer -= frameTime;
+            if (provider.Timer >= 0)
+                continue;
+
+            // Reward time!!!
+            if (!TryComp(uid, out ResearchClientComponent? researchClient) ||
+                !researchClient.ConnectedToServer ||
+                researchClient.Server == null)
+                continue;
+
+            if (!TryComp(uid, out SiliconLawUpdaterComponent? updater))
+                continue;
+
+            // Replace laws back
+            var lawset = GetLawset(provider.OldSiliconLawsetId).Laws;
+            var query = EntityManager.CompRegistryQueryEnumerator(updater.Components);
+
+            while (query.MoveNext(out var update))
+                SetLaws(lawset, update, provider.LawRewardSound);
+
+            RemCompDeferred(uid, provider);
+            _research.ModifyServerPoints(researchClient.Server.Value, provider.RewardPoints);
+            var message = Loc.GetString("experimental-law-provider-success", ("amount", provider.RewardPoints));
+            _radio.SendRadioMessage(uid, message, AnnouncementChannel, uid, escapeMarkup: false);
         }
     }
+
+    /// <summary>
+    /// Goob edit: generates random ion storm lawset without an actual silicon.
+    /// </summary>
+    private SiliconLawset GetRandomLaws(ProtoId<WeightedRandomPrototype> availableSetsId)
+    {
+        // try to swap it out with a random lawset
+        var lawsets = _prototype.Index(availableSetsId);
+        var lawset = lawsets.Pick(_robustRandom);
+        var laws = GetLawset(lawset);
+
+        // clone it so not modifying stations lawset
+        laws = laws.Clone();
+
+        // shuffle them all
+        // hopefully work with existing glitched laws if there are multiple ion storms
+        var baseOrder = FixedPoint2.New(1);
+        foreach (var law in laws.Laws)
+            if (law.Order < baseOrder)
+                baseOrder = law.Order;
+
+        _robustRandom.Shuffle(laws.Laws);
+
+        // change order based on shuffled position
+        for (var i = 0; i < laws.Laws.Count; i++)
+            laws.Laws[i].Order = baseOrder + i;
+
+        // remove a random law
+        laws.Laws.RemoveAt(_robustRandom.Next(laws.Laws.Count));
+
+        // generate a new law...
+        var newLaw = _ionStorm.GenerateLaw();
+
+        // see if the law we add will replace a random existing law or be a new glitched order one
+        if (laws.Laws.Count > 0)
+        {
+            var i = _robustRandom.Next(laws.Laws.Count);
+            laws.Laws[i] = new SiliconLaw()
+            {
+                LawString = newLaw,
+                Order = laws.Laws[i].Order
+            };
+        }
+        else
+        {
+            laws.Laws.Insert(0,
+                new SiliconLaw
+                {
+                    LawString = newLaw,
+                    Order = -1,
+                    LawIdentifierOverride = Loc.GetString("ion-storm-law-scrambled-number", ("length", _robustRandom.Next(5, 10)))
+                });
+        }
+
+        // sets all unobfuscated laws' indentifier in order from highest to lowest priority
+        // This could technically override the Obfuscation from the code above, but it seems unlikely enough to basically never happen
+        var orderDeduction = -1;
+
+        for (var i = 0; i < laws.Laws.Count; i++)
+        {
+            var notNullIdentifier = laws.Laws[i].LawIdentifierOverride ?? (i - orderDeduction).ToString();
+
+            if (notNullIdentifier.Any(char.IsSymbol))
+                orderDeduction += 1;
+            else
+                laws.Laws[i].LawIdentifierOverride = (i - orderDeduction).ToString();
+        }
+
+        return laws;
+    }
+    // Goob edit end
 }
 
 [ToolshedCommand, AdminCommand(AdminFlags.Admin)]

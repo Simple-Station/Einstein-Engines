@@ -1,9 +1,0 @@
-- type: entity
-  id: LavalandVigilanteTelepad
-  name: vigilante
-  placement:
-    mode: SnapgridCenter
-  components:
-  - type: Clickable
-  - type: InteractionOutline
-  - type: VigilanteTelepad

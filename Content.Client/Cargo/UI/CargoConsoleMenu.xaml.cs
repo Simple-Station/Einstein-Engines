@@ -1,4 +1,29 @@
+// SPDX-FileCopyrightText: 2022 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 Marat Gadzhiev <15rinkashikachi15@gmail.com>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 corentt <36075110+corentt@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Eoin Mcloughlin <helloworld@eoinrul.es>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2023 eoineoineoin <github@eoinrul.es>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 Flesh <62557990+PolterTzi@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 MODERN <87994977+modern-nm@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 pathetic meowmeow <uhhadd@gmail.com>
+//
+// SPDX-License-Identifier: MIT
+
 using System.Linq;
+using Content.Client.Cargo.Systems;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Cargo;
 using Content.Shared.Cargo.Components;
@@ -8,37 +33,101 @@ using Robust.Client.GameObjects;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 using static Robust.Client.UserInterface.Controls.BaseButton;
+using Robust.Client.Graphics; // Goobstation
+
 
 namespace Content.Client.Cargo.UI
 {
     [GenerateTypedNameReferences]
     public sealed partial class CargoConsoleMenu : FancyWindow
     {
-        private IEntityManager _entityManager;
-        private IPrototypeManager _protoManager;
-        private SpriteSystem _spriteSystem;
+        [Dependency] private readonly IGameTiming _timing = default!;
+
+        private readonly IEntityManager _entityManager;
+        private readonly IPrototypeManager _protoManager;
+        private readonly CargoSystem _cargoSystem;
+        private readonly SpriteSystem _spriteSystem;
         private EntityUid _owner;
+        private EntityUid? _station;
+
+        private readonly EntityQuery<CargoOrderConsoleComponent> _orderConsoleQuery;
+        private readonly EntityQuery<StationBankAccountComponent> _bankQuery;
 
         public event Action<ButtonEventArgs>? OnItemSelected;
         public event Action<ButtonEventArgs>? OnOrderApproved;
         public event Action<ButtonEventArgs>? OnOrderCanceled;
 
+        public event Action<ProtoId<CargoAccountPrototype>?, int>? OnAccountAction;
+
+        public event Action<ButtonEventArgs>? OnToggleUnboundedLimit;
+
         private readonly List<string> _categoryStrings = new();
         private string? _category;
+
+        public List<ProtoId<CargoProductPrototype>> ProductCatalogue = new();
 
         public CargoConsoleMenu(EntityUid owner, IEntityManager entMan, IPrototypeManager protoManager, SpriteSystem spriteSystem)
         {
             RobustXamlLoader.Load(this);
+            IoCManager.InjectDependencies(this);
             _entityManager = entMan;
             _protoManager = protoManager;
+            _cargoSystem = entMan.System<CargoSystem>();
             _spriteSystem = spriteSystem;
             _owner = owner;
 
-            Title = Loc.GetString("cargo-console-menu-title");
+            _orderConsoleQuery = _entityManager.GetEntityQuery<CargoOrderConsoleComponent>();
+            _bankQuery = _entityManager.GetEntityQuery<StationBankAccountComponent>();
+
+            Title = entMan.GetComponent<MetaDataComponent>(owner).EntityName;
 
             SearchBar.OnTextChanged += OnSearchBarTextChanged;
             Categories.OnItemSelected += OnCategoryItemSelected;
+
+            if (entMan.TryGetComponent<CargoOrderConsoleComponent>(owner, out var orderConsole))
+            {
+                var accountProto = _protoManager.Index(orderConsole.Account);
+                AccountNameLabel.Text = Loc.GetString("cargo-console-menu-account-name-format",
+                    ("color", accountProto.Color),
+                    ("name", Loc.GetString(accountProto.Name)),
+                    ("code", Loc.GetString(accountProto.Code)));
+                // Goobstation start - Cargo UI
+                AccountNameLabelFundsTransfer.Text = Loc.GetString("cargo-console-menu-account-name-format",
+                    ("color", accountProto.Color),
+                    ("name", Loc.GetString(accountProto.Name)),
+                    ("code", Loc.GetString(accountProto.Code)));
+                // END
+            }
+
+            TabContainer.SetTabTitle(0, Loc.GetString("cargo-console-menu-tab-title-orders"));
+            TabContainer.SetTabTitle(1, Loc.GetString("cargo-console-menu-tab-title-funds"));
+
+            ActionOptions.OnItemSelected += idx =>
+            {
+                ActionOptions.SelectId(idx.Id);
+            };
+
+            TransferSpinBox.IsValid = val =>
+            {
+                if (!_entityManager.TryGetComponent<CargoOrderConsoleComponent>(owner, out var console) ||
+                    !_entityManager.TryGetComponent<StationBankAccountComponent>(_station, out var bank))
+                    return true;
+
+                return val >= 0 && val <= (int) (console.TransferLimit * bank.Accounts[console.Account]);
+            };
+
+            AccountActionButton.OnPressed += _ =>
+            {
+                var account = (ProtoId<CargoAccountPrototype>?) ActionOptions.SelectedMetadata;
+                OnAccountAction?.Invoke(account, TransferSpinBox.Value);
+            };
+
+            AccountLimitToggleButton.OnPressed += a =>
+            {
+                OnToggleUnboundedLimit?.Invoke(a);
+            };
         }
 
         private void OnCategoryItemSelected(OptionButton.ItemSelectedEventArgs args)
@@ -58,14 +147,16 @@ namespace Content.Client.Cargo.UI
             Categories.SelectId(id);
         }
 
-        public IEnumerable<CargoProductPrototype> ProductPrototypes
+        private IEnumerable<CargoProductPrototype> ProductPrototypes
         {
             get
             {
                 var allowedGroups = _entityManager.GetComponentOrNull<CargoOrderConsoleComponent>(_owner)?.AllowedGroups;
 
-                foreach (var cargoPrototype in _protoManager.EnumeratePrototypes<CargoProductPrototype>())
+                foreach (var cargoPrototypeId in ProductCatalogue)
                 {
+                    var cargoPrototype = _protoManager.Index(cargoPrototypeId);
+
                     if (!allowedGroups?.Contains(cargoPrototype.Group) ?? false)
                         continue;
 
@@ -144,55 +235,136 @@ namespace Content.Client.Cargo.UI
         /// </summary>
         public void PopulateOrders(IEnumerable<CargoOrderData> orders)
         {
-            Orders.DisposeAllChildren();
+            if (!_orderConsoleQuery.TryComp(_owner, out var orderConsole))
+                return;
+
             Requests.DisposeAllChildren();
 
             foreach (var order in orders)
             {
-                var product = _protoManager.Index<EntityPrototype>(order.ProductId);
-                var productName = product.Name;
+                if (order.Approved)
+                    continue;
+
+                var product = _protoManager.Index<EntityPrototype>(order.ProductId); // Goobstation
+                var productName = product.Name; // Goobstation
+                var requester = !string.IsNullOrEmpty(order.Requester) ? // Goobstation
+                    order.Requester : Loc.GetString("cargo-console-menu-order-row-alerts-requester-unknown"); // Goobstation
+                var account = _protoManager.Index(order.Account);
 
                 var row = new CargoOrderRow
                 {
                     Order = order,
+
+                    // Goobstation start - Cargo UI
+
+                    Title =
+                    {
+                        Text = Loc.GetString(
+                            "cargo-console-menu-order-row-title",
+                            ("productName", productName),
+                            ("orderAmount", order.OrderQuantity),
+                            ("orderPrice", order.Price)),
+                    },
+
+                    Stride =
+                    {
+                        PanelOverride = new StyleBoxFlat
+                        {
+                            BackgroundColor = account.Color,
+                            ContentMarginBottomOverride = 2,
+                        },
+                    },
+
+                    // END
+
                     Icon = { Texture = _spriteSystem.Frame0(product) },
+
                     ProductName =
                     {
                         Text = Loc.GetString(
                             "cargo-console-menu-populate-orders-cargo-order-row-product-name-text",
-                            ("productName", productName),
-                            ("orderAmount", order.OrderQuantity),
-                            ("orderRequester", order.Requester))
+                            ("orderRequester", requester), // Goobstation
+                            ("accountColor", account.Color),
+                            ("account", Loc.GetString(account.Code)))
                     },
-                    Description = {Text = Loc.GetString("cargo-console-menu-order-reason-description",
-                                                        ("reason", order.Reason))}
+
+                    Description =
+                    {
+
+                        // Goobstation start - Cargo UI
+
+                        Text = !string.IsNullOrEmpty(order.Reason) ?
+                            Loc.GetString(
+                                "cargo-console-menu-order-row-product-description",
+                                ("orderReason", order.Reason))
+                        :
+                            Loc.GetString(
+                                "cargo-console-menu-order-row-product-description",
+                                ("orderReason", Loc.GetString("cargo-console-menu-order-row-alerts-reason-absent")))
+
+                        // END
+
+                    }
                 };
+
                 row.Cancel.OnPressed += (args) => { OnOrderCanceled?.Invoke(args); };
-                if (order.Approved)
-                {
-                    row.Approve.Visible = false;
-                    row.Cancel.Visible = false;
-                    Orders.AddChild(row);
-                }
-                else
-                {
-                    // TODO: Disable based on access.
-                    row.Approve.OnPressed += (args) => { OnOrderApproved?.Invoke(args); };
-                    Requests.AddChild(row);
-                }
+
+                // TODO: Disable based on access.
+                row.SetApproveVisible(orderConsole.Mode != CargoOrderConsoleMode.SendToPrimary);
+                row.Approve.OnPressed += (args) => { OnOrderApproved?.Invoke(args); };
+                Requests.AddChild(row);
             }
         }
 
-        public void UpdateCargoCapacity(int count, int capacity)
+        public void PopulateAccountActions()
         {
-            // TODO: Rename + Loc.
-            ShuttleCapacityLabel.Text = $"{count}/{capacity}";
+            if (!_entityManager.TryGetComponent<StationBankAccountComponent>(_station, out var bank) ||
+                !_entityManager.TryGetComponent<CargoOrderConsoleComponent>(_owner, out var console))
+                return;
+
+            var i = 0;
+            ActionOptions.Clear();
+            ActionOptions.AddItem(Loc.GetString("cargo-console-menu-account-action-option-withdraw"), i);
+            i++;
+            foreach (var account in bank.Accounts.Keys)
+            {
+                if (account == console.Account)
+                    continue;
+                var accountProto = _protoManager.Index(account);
+                ActionOptions.AddItem(Loc.GetString("cargo-console-menu-account-action-option-transfer",
+                    ("code", Loc.GetString(accountProto.Code))),
+                    i);
+                ActionOptions.SetItemMetadata(i, account);
+                i++;
+            }
         }
 
-        public void UpdateBankData(string name, int points)
+        public void UpdateStation(EntityUid station)
         {
-            AccountNameLabel.Text = name;
-            PointsLabel.Text = Loc.GetString("cargo-console-menu-points-amount", ("amount", points.ToString()));
+            _station = station;
+        }
+
+        protected override void FrameUpdate(FrameEventArgs args)
+        {
+            base.FrameUpdate(args);
+
+            if (!_bankQuery.TryComp(_station, out var bankAccount) ||
+                !_orderConsoleQuery.TryComp(_owner, out var orderConsole))
+            {
+                return;
+            }
+
+            var balance = _cargoSystem.GetBalanceFromAccount((_station.Value, bankAccount), orderConsole.Account);
+            PointsLabel.Text = Loc.GetString("cargo-console-menu-points-amount", ("amount", balance));
+            PointsLabelFundsTransfer.Text = Loc.GetString("cargo-console-menu-points-amount", ("amount", balance)); // Goobstation
+            TransferLimitLabel.Text = Loc.GetString("cargo-console-menu-account-action-transfer-limit-amount", ("amount", Math.Floor(balance * orderConsole.TransferLimit))); // Goobstation
+
+            UnlimitedNotifier.Visible = orderConsole.TransferUnbounded;
+            AccountActionButton.Disabled = TransferSpinBox.Value <= 0 ||
+                                           TransferSpinBox.Value > bankAccount.Accounts[orderConsole.Account] * orderConsole.TransferLimit ||
+                                           _timing.CurTime < orderConsole.NextAccountActionTime;
+
+            RightPart.Visible = orderConsole.Mode != CargoOrderConsoleMode.PrintSlip; // Goobstation
         }
     }
 }

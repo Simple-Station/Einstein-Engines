@@ -1,9 +1,26 @@
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 csqrb <56765288+CaptainSqrBeard@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Humanoid.Markings
 {
-    [Prototype("marking")]
+    [Prototype]
     public sealed partial class MarkingPrototype : IPrototype
     {
         [IdDataField]
@@ -12,40 +29,41 @@ namespace Content.Shared.Humanoid.Markings
         public string Name { get; private set; } = default!;
 
         [DataField("bodyPart", required: true)]
-        public HumanoidVisualLayers BodyPart { get; private set; }
+        public HumanoidVisualLayers BodyPart { get; private set; } = default!;
 
         [DataField("markingCategory", required: true)]
-        public MarkingCategories MarkingCategory { get; private set; }
+        public MarkingCategories MarkingCategory { get; private set; } = default!;
 
         [DataField("speciesRestriction")]
         public List<string>? SpeciesRestrictions { get; private set; }
 
-        [DataField]
-        public bool InvertSpeciesRestriction { get; private set; }
-
-        [DataField]
+        [DataField("sexRestriction")]
         public Sex? SexRestriction { get; private set; }
 
-        [DataField]
-        public bool InvertSexRestriction { get; private set; }
+        [DataField("followSkinColor")]
+        public bool FollowSkinColor { get; private set; } = false;
 
-        [DataField]
-        public bool FollowSkinColor { get; private set; }
+        [DataField("forcedColoring")]
+        public bool ForcedColoring { get; private set; } = false;
 
-        [DataField]
-        public bool ForcedColoring { get; private set; }
-
-        [DataField]
+        [DataField("coloring")]
         public MarkingColors Coloring { get; private set; } = new();
 
+        /// <summary>
+        /// Do we need to apply any displacement maps to this marking? Set to false if your marking is incompatible
+        /// with a standard human doll, and is used for some special races with unusual shapes
+        /// </summary>
         [DataField]
-        public Dictionary<string, string>? Shaders { get; private set; }
-
-        [DataField]
-        public string PreviewDirection { get; private set; } = "South";
+        public bool CanBeDisplaced { get; private set; } = true;
 
         [DataField("sprites", required: true)]
         public List<SpriteSpecifier> Sprites { get; private set; } = default!;
+
+        /// Impstation start
+        [DataField]
+
+        public string? Shader { get; private set; } = null;
+        /// Impstation end
 
         // Corvax-Sponsors-Start
         [DataField("sponsorOnly")]

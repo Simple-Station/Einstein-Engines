@@ -1,6 +1,6 @@
-using Content.Shared.Actions;
-using Content.Shared.FixedPoint;
-using Content.Shared.RadialSelector;
+using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared._White.RadialSelector;
+using Content.Shared.Actions.Components;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._White.Xenomorphs.Evolution;

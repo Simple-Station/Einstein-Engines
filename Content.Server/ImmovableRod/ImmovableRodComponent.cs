@@ -1,3 +1,13 @@
+// SPDX-FileCopyrightText: 2022 Andreas Kämper <andreas.kaemper@5minds.de>
+// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Damage;
 using Robust.Shared.Audio;
 
@@ -42,11 +52,39 @@ public sealed partial class ImmovableRodComponent : Component
     ///     If true, this will gib & delete bodies
     /// </summary>
     [DataField]
-    public bool ShouldGib;
+    public bool ShouldGib = true;
 
     /// <summary>
     ///     Damage done, if not gibbing
     /// </summary>
     [DataField]
     public DamageSpecifier? Damage;
+
+    /// <summary>
+    ///     Goobstation
+    ///     Part damage multiplier done, if not gibbing
+    /// </summary>
+    [DataField]
+    public float PartDamageMultiplier = 2f;
+
+    /// <summary>
+    ///     Goobstation
+    ///     Whether the rod should ignore resistances, if not gibbing
+    /// </summary>
+    [DataField]
+    public bool IgnoreResistances;
+
+    /// <summary>
+    ///     Goobstation
+    ///     List of all mobs that the rod has damaged
+    /// </summary>
+    [DataField]
+    public List<EntityUid> DamagedEntities = new();
+
+    /// <summary>
+    ///     Goobstation
+    ///     If it is above 0, knock down targets when rod hits them
+    /// </summary>
+    [DataField]
+    public TimeSpan KnockdownTime = TimeSpan.Zero;
 }

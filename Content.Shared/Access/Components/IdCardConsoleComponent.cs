@@ -1,3 +1,16 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Jeff <velcroboy333@hotmail.com>
+// SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+// SPDX-FileCopyrightText: 2023 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 moonheart08 <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 c4llv07e <38111072+c4llv07e@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Access.Systems;
 using Content.Shared.Containers.ItemSlots;
 using Robust.Shared.GameStates;
@@ -10,9 +23,6 @@ namespace Content.Shared.Access.Components;
 [Access(typeof(SharedIdCardConsoleSystem))]
 public sealed partial class IdCardConsoleComponent : Component
 {
-    public const int MaxFullNameLength = 30;
-    public const int MaxJobTitleLength = 30;
-
     public static string PrivilegedIdCardSlotId = "IdCardConsole-privilegedId";
     public static string TargetIdCardSlotId = "IdCardConsole-targetId";
 
@@ -47,8 +57,7 @@ public sealed partial class IdCardConsoleComponent : Component
         "Armory",
         "Atmospherics",
         "Bar",
-        //"Brig", Delta V: Removed Brig Access
-        "Boxer",  // DeltaV - Add Boxer access
+        "Brig",
         "Detective",
         "Captain",
         "Cargo",
@@ -56,43 +65,27 @@ public sealed partial class IdCardConsoleComponent : Component
         "Chemistry",
         "ChiefEngineer",
         "ChiefMedicalOfficer",
-        "Clown", // DeltaV - Add Clown access
-        "Corpsman", // DeltaV - Add Corpsman access
         "Command",
         "Cryogenics",
         "Engineering",
         "External",
-        "GenpopEnter",
-        "GenpopLeave",
         "HeadOfPersonnel",
         "HeadOfSecurity",
         "Hydroponics",
         "Janitor",
         "Kitchen",
         "Lawyer",
-        "Library",  // DeltaV - Add Library access
         "Maintenance",
         "Medical",
-        "Mime", // DeltaV - Add Mime access
-        "Musician", // DeltaV - Add Musician access
-        "Paramedic", // DeltaV - Add Paramedic access
-        "Psychologist", // DeltaV - Add Psychologist access
         "Quartermaster",
-        "Reporter", // DeltaV - Add Reporter access
         "Research",
         "ResearchDirector",
         "Salvage",
         "Security",
         "Service",
         "Theatre",
-        "Orders", // DeltaV - Orders, see Resources/Prototypes/DeltaV/Access/cargo.yml
-        "Mail", // Nyanotrasen - Mail, see Resources/Prototypes/Nyanotrasen/Access/cargo.yml
-        "Mantis", // DeltaV - Psionic Mantis, see Resources/Prototypes/DeltaV/Access/epistemics.yml
-        "Zookeeper",  // DeltaV - Add Zookeeper access
-        "ChiefJustice",  // DeltaV - Add Chief Justice access
-        "Justice",  // DeltaV - Add Justice access
-        "Prosecutor", // Delta V - Add Prosecutor access
-        "Clerk", // Delta V - Add Clerk access
+        "Robotics", //Goob
+        "Journalism" //Goob
     };
 
     [Serializable, NetSerializable]

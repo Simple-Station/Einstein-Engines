@@ -1,0 +1,70 @@
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lanse12 <cloudability.ez@gmail.com>
+# SPDX-FileCopyrightText: 2024 yglop <95057024+yglop@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+# SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Marcus F <199992874+thebiggestbruh@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 OnsenCapy <101037138+OnsenCapy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rinary <72972221+Rinary1@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
+# SPDX-FileCopyrightText: 2025 ss14-Starlight <ss14-Starlight@outlook.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: head slug
+  parent: [SimpleSpaceMobBase] # no dying in space
+  id: MobHeadcrab
+  description: You don't want to touch it.
+  components:
+  - type: Sprite
+    drawdepth: SmallMobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: headcrab
+      sprite: _Goobstation/Changeling/headcrab.rsi
+  - type: Physics
+  - type: Bloodstream
+    bloodReagent: BloodChangeling
+    bloodMaxVolume: 60
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: headcrab
+      Dead:
+        Base: headcrab_dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Dead
+  - type: Absorbable
+  - type: NightVision # Goobstation - Nigthvision
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 7
+  - type: ExplosionResistance
+    damageCoefficient: 0
+  - type: VentCrawler
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 15
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: Tag # Removes DoorBumpOpener
+    tags:
+      []

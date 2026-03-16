@@ -1,4 +1,11 @@
-using Robust.Shared.Map;
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.Utility;
 
 namespace Content.Server.Shuttles.Components;
@@ -16,11 +23,7 @@ public sealed partial class StationCentcommComponent : Component
     public float ShuttleIndex;
 
     [DataField]
-    public List<ResPath> Maps = new()
-    {
-        new("/Maps/CentralCommand/main.yml"),
-        new("/Maps/CentralCommand/harmony.yml")
-    };
+    public ResPath Map = new("/Maps/centcomm.yml");
 
     /// <summary>
     /// Centcomm entity that was loaded.

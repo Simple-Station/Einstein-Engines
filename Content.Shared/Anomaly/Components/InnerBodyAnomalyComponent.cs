@@ -1,5 +1,12 @@
-﻿using Content.Shared.Anomaly.Effects;
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Patrik Caes-Sayrs <heartofgoldfish@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.Anomaly.Effects;
 using Content.Shared.Body.Prototypes;
+using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -62,7 +69,7 @@ public sealed partial class InnerBodyAnomalyComponent : Component
     /// Ability to use unique sprites for different body types
     /// </summary>
     [DataField, AutoNetworkedField]
-    public Dictionary<ProtoId<BodyPrototype>, SpriteSpecifier> SpeciesSprites = new();
+    public Dictionary<ProtoId<SpeciesPrototype>, SpriteSpecifier> SpeciesSprites = new();
 
     /// <summary>
     /// The key of the entity layer into which the sprite will be inserted

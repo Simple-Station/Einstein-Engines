@@ -1,4 +1,27 @@
-﻿using Robust.Shared.Prototypes;
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
+// SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Unlumination <144041835+Unlumy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+// SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Lavaland.Procedural.Prototypes;
 
@@ -11,25 +34,25 @@ public sealed partial class LavalandRuinPoolPrototype : IPrototype
     /// Distance in-between ruins.
     /// </summary>
     [DataField]
-    public float RuinDistance = 24;
+    public int RuinDistance = 16;
 
     /// <summary>
     /// Max distance that Ruins can generate.
     /// </summary>
     [DataField]
-    public float MaxDistance = 336;
+    public int MaxDistance = 256; // TODO make this value higher after proper GPS UI is added
 
     /// <summary>
-    /// List of all huge ruins and their count. Should contain only really
-    /// important and big ruins, that have the highest priority.
+    /// List of all grid ruins and their count.
+    /// Used for ruins that are loaded as proper grids.
     /// </summary>
     [DataField]
-    public Dictionary<ProtoId<LavalandRuinPrototype>, ushort> HugeRuins = new();
+    public Dictionary<ProtoId<LavalandGridRuinPrototype>, ushort> GridRuins = new();
 
     /// <summary>
-    /// List of all small ruins and their count. Contains ruins
-    /// that aren't that important and can be easily skipped.
+    /// List of all dungeon ruins and their count.
+    /// Used for ruins that are generated with Dungeon markers.
     /// </summary>
     [DataField]
-    public Dictionary<ProtoId<LavalandRuinPrototype>, ushort> SmallRuins = new();
+    public Dictionary<ProtoId<LavalandDungeonRuinPrototype>, ushort> DungeonRuins = new();
 }

@@ -1,10 +1,10 @@
-armor-coverage-value = - [color=yellow]Данная броня уменьшает наносимый урон на { $type }[/color]
-armor-coverage-type-arm = руки
-armor-coverage-type-hand = кисти
-armor-coverage-type-foot = стопы
-armor-coverage-type-leg = ноги
-armor-coverage-type-chest = туловище
-armor-coverage-type-groin = пах
-armor-coverage-type-head = голова
-armor-coverage-type-tail = хвост
-armor-coverage-type-other = прочие части тела
+armor-coverage-value = - [color=yellow]Эта броня снижает входящий урон { $type }[/color]
+armor-coverage-type-arm = рук
+armor-coverage-type-hand = кистей
+armor-coverage-type-foot = стоп
+armor-coverage-type-leg = ног
+armor-coverage-type-chest = груди
+armor-coverage-type-groin = паха
+armor-coverage-type-head = головы
+armor-coverage-type-tail = хвоста
+armor-coverage-type-other = других частей тела

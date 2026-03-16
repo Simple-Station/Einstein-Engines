@@ -1,81 +1,85 @@
+# SPDX-FileCopyrightText: 2023 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ty Ashley <42426760+TyAshley@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st <shadowstalkermll@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: emote
   id: Sneeze
   name: chat-emote-name-sneeze
   category: Vocal
-  chatMessages: [ "chat-emote-msg-sneeze" ]
+  chatMessages: ["chat-emote-msg-sneeze"]
 
 - type: emote
   id: Cough
   name: chat-emote-name-cough
   icon: Interface/Emotes/cough.png
   category: Vocal
-  chatMessages: [ "chat-emote-msg-cough" ]
   whitelist:
     components:
     - Vocal
   blacklist:
     components:
     - BorgChassis
+  chatMessages: ["chat-emote-msg-cough"]
   chatTriggers:
+    - cough
     - coughs
-    - кашель
-    - кашель.
-    - кашляет
-    - кашляет.
-    - кашлянул
-    - кашлянул.
-    - кашлянула
-    - кашлянула.
-    - кашляет кровью
-    - кашляет кровью.
+    - coughed 
+    - cough.
+    - coughs.
+    - coughed.
+    - cough!
+    - coughs!
+    - coughed!
 
 - type: emote
   id: CatMeow
   name: chat-emote-name-catmeow
   category: Vocal
-  chatMessages: [ "chat-emote-msg-catmeow" ]
+  chatMessages: ["chat-emote-msg-catmeow"]
 
 - type: emote
   id: CatHisses
   name: chat-emote-name-cathisses
   category: Vocal
-  chatMessages: [ "chat-emote-msg-cathisses" ]
+  chatMessages: ["chat-emote-msg-cathisses"]
 
 - type: emote
   id: MonkeyScreeches
   name: chat-emote-name-monkeyscreeches
   category: Vocal
-  chatMessages: [ "chat-emote-msg-monkeyscreeches" ]
+  chatMessages: ["chat-emote-msg-monkeyscreeches"]
 
 - type: emote
   id: RobotBeep
   name: chat-emote-name-robotbeep
   category: Vocal
-  chatMessages: [ "chat-emote-msg-beep" ]
+  chatMessages: ["chat-emote-msg-beep"]
 
 - type: emote
   id: Yawn
   name: chat-emote-name-yawn
   icon: Interface/Emotes/yawn.png
   category: Vocal
-  chatMessages: [ "chat-emote-msg-yawn" ]
   whitelist:
     components:
     - Vocal
   blacklist:
     components:
     - BorgChassis
+  chatMessages: ["chat-emote-msg-yawn"]
   chatTriggers:
+    - yawn
     - yawns
-    - зевнул
-    - зевнул.
-    - зевнула
-    - зевнула.
-    - зевает
-    - зевает.
 
 - type: emote
   id: Snore
   name: chat-emote-name-snore
   category: Vocal
-  chatMessages: [ "chat-emote-msg-snore" ]
+  chatMessages: ["chat-emote-msg-snore"]

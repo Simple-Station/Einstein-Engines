@@ -3,5 +3,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-guide-title = Путеводитель
-guide-description = Баланс между спокойным игровым процессом и динамикой раунда.
+guide-title = Стандартный
+guide-description = В основном спокойный опыт с сочетанием боевых и мирных событий.

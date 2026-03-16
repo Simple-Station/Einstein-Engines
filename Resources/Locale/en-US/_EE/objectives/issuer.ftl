@@ -1,1 +1,0 @@
-objective-issuer-shadowling = Shadowling

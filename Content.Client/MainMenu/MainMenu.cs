@@ -1,3 +1,23 @@
+// SPDX-FileCopyrightText: 2020 DTanxxx <55208219+DTanxxx@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 Exp <theexp111@gmail.com>
+// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr.@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <jmaster9999@gmail.com>
+// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2022 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <wrexbe@protonmail.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Text.RegularExpressions;
 using Content.Client.MainMenu.UI;
 using Content.Client.UserInterface.Systems.EscapeMenu;
@@ -7,7 +27,6 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared;
 using Robust.Shared.Configuration;
-using Robust.Shared.Console;
 using Robust.Shared.Network;
 using Robust.Shared.Utility;
 using UsernameHelpers = Robust.Shared.AuthLib.UsernameHelpers;
@@ -26,11 +45,12 @@ namespace Content.Client.MainMenu
         [Dependency] private readonly IGameController _controllerProxy = default!;
         [Dependency] private readonly IResourceCache _resourceCache = default!;
         [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
-        [Dependency] private readonly IConsoleHost _console = default!;
+        [Dependency] private readonly ILogManager _logManager = default!;
+
+        private ISawmill _sawmill = default!;
 
         private MainMenuControl _mainMenuControl = default!;
         private bool _isConnecting;
-        private bool _shouldGoLobby;
 
         // ReSharper disable once InconsistentNaming
         private static readonly Regex IPv6Regex = new(@"\[(.*:.*:.*)](?::(\d+))?");
@@ -38,28 +58,18 @@ namespace Content.Client.MainMenu
         /// <inheritdoc />
         protected override void Startup()
         {
+            _sawmill = _logManager.GetSawmill("mainmenu");
+
             _mainMenuControl = new MainMenuControl(_resourceCache, _configurationManager);
             _userInterfaceManager.StateRoot.AddChild(_mainMenuControl);
-
-            _client.PlayerJoinedGame += OnPlayerJoinedGame;
 
             _mainMenuControl.QuitButton.OnPressed += QuitButtonPressed;
             _mainMenuControl.OptionsButton.OnPressed += OptionsButtonPressed;
             _mainMenuControl.DirectConnectButton.OnPressed += DirectConnectButtonPressed;
-            _mainMenuControl.GoToLobbyButton.OnPressed += GoToLobbyButtonPressed;
             _mainMenuControl.AddressBox.OnTextEntered += AddressBoxEntered;
             _mainMenuControl.ChangelogButton.OnPressed += ChangelogButtonPressed;
 
             _client.RunLevelChanged += RunLevelChanged;
-        }
-
-        private void OnPlayerJoinedGame(object? sender, PlayerEventArgs e)
-        {
-            if (_shouldGoLobby)
-            {
-                _console.ExecuteCommand("golobby");
-                _shouldGoLobby = false;
-            }
         }
 
         /// <inheritdoc />
@@ -92,18 +102,12 @@ namespace Content.Client.MainMenu
             TryConnect(input.Text);
         }
 
-        private void GoToLobbyButtonPressed(BaseButton.ButtonEventArgs obj)
-        {
-            var input = _mainMenuControl.AddressBox;
-            TryConnect(input.Text);
-
-            _shouldGoLobby = true;
-        }
-
         private void AddressBoxEntered(LineEdit.LineEditEventArgs args)
         {
             if (_isConnecting)
+            {
                 return;
+            }
 
             TryConnect(args.Text);
         }
@@ -137,7 +141,7 @@ namespace Content.Client.MainMenu
             catch (ArgumentException e)
             {
                 _userInterfaceManager.Popup($"Unable to connect: {e.Message}", "Connection error.");
-                Logger.GetSawmill("connection").Warning(e.ToString());
+                _sawmill.Warning(e.ToString());
                 _netManager.ConnectFailed -= _onConnectFailed;
                 _setConnectingState(false);
             }
@@ -206,7 +210,6 @@ namespace Content.Client.MainMenu
         {
             _isConnecting = state;
             _mainMenuControl.DirectConnectButton.Disabled = state;
-            _mainMenuControl.GoToLobbyButton.Disabled = state;
         }
     }
 }

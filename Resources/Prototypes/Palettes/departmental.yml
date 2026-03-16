@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2022 Delete69 <95458399+Delete69@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 moonheart08 <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hanz <41141796+Hanzdegloker@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 - type: palette
   id: Departmental
   name: Departmental
@@ -8,9 +17,8 @@
     engineering: "#EFB34196"
     security: "#DE3A3A96"
     bar: "#79150096"
-    epistemics: "#D381C996" # DeltaV - Epistemics Department replacing Science
-    logistics: "#A4610696" # DeltaV - Logistics Department replacing Cargo
-    justice: "#6b2833DD" #DeltaV - Added Justice Department
+    science: "#D381C996"
+    cargo: "#A4610696"
     janitor: "#8c347f96"
     chemistry: "#fa750096"
     virology: "#43990996"

@@ -1,4 +1,3 @@
-advertisement-dinnerware-0 = Посуда...
 advertisement-dinnerware-1 = Мм, продукты питания!
 advertisement-dinnerware-2 = Продукты питания и пищевые аксессуары.
 advertisement-dinnerware-3 = Берите тарелки!

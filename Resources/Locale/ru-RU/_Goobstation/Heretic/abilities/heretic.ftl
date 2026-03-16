@@ -1,68 +1,92 @@
-heretic-ability-fail = Не удалось кастовать
-heretic-ability-fail-magicitem = Вы не можете кастовать это заклинание без фокуса!
+# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 yglop <95057024+yglop@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+heretic-ability-fail = Не удалось применить способность.
+heretic-ability-fail-magicitem = Невозможно применить способность без фокуса!
 heretic-ability-fail-notarget = Не удалось найти подходящую цель!
-heretic-ability-fail-lowhealth = Это заклинание наносит { $damage } урона, и если вы его произнесете, то окажетесь в критическом состоянии!
-heretic-magicitem-examine = [color=yellow]Позволяет использовать продвинутые заклинания, находясь в руках или снаряжении[/color].
-heretic-ability-fail-tile-not-rusted = Выбранное покрытие должно быть ржавым, чтобы использовать эту способность!
-heretic-ability-fail-tile-underneath-not-rusted = Плитка, на которой вы стоите, должна быть ржавой, чтобы использовать эту способность!
-heretic-ability-fail-tile-occupied = Покрытие занято!
-heretic-ability-fail-rust-stage-low = Вы недостаточно сильны чтобы покрыть ржавчиной данное покрытие!
-heretic-ability-fail-target-ghoul = Цель уже вурдалак!
-heretic-ability-fail-target-no-mind = У цели нет души!
+heretic-ability-fail-lowhealth = Эта спобность нанесет { $damage } урона. Вы впадёте в крит, если попытаетесь её применить!
+heretic-ability-fail-tile-not-rusted = Плитка должна быть ржавой, чтобы использовать эту способность!
+heretic-ability-fail-tile-underneath-not-rusted = Плитка под вами должна быть ржавой, чтобы использовать эту способность!
+heretic-ability-fail-tile-occupied = Плитка занята!
+heretic-ability-fail-rust-stage-low = У вас недостаточно силы, чтобы проржавить эту поверхность!
+heretic-ability-fail-target-ghoul = Цель уже является гулем!
+heretic-ability-fail-target-no-mind = Цель не имеет души!
+heretic-cosmic-rune-fail-star-mark = Заблокировано звездной меткой!
+heretic-cosmic-rune-fail-unlinked = Нет связанной руны!
+heretic-cosmic-rune-fail-range = Слишком далеко!
+heretic-magicitem-examine = [color=yellow]Позволяет использовать продвинутые заклинания, если находится в руках или экипирован.[/color]
+mansus-grasp-trigger-fail = Что-то мешает вам активировать это!
 
 ## blade
 
-mansus-grasp-trigger-fail = Что-то мешает вам активировать это!
-heretic-blade-examine = [color=yellow]Если использовать его, пока он в руке, то клинок сломается и телепортирует вас подальше от опасности[/color].
-heretic-blade-use = Клинок разлетается на куски, и вы чувствуете, как голоса уводят вас прочь.
-heretic-riposte-used = Ответный удар использован!
-heretic-riposte-available = Доступен ответный удар!
-heretic-cant-shoot = Я не могу использовать { THE($entity) } из-за моего священного обещания следовать по пути клинка.
+heretic-blade-examine = [color=yellow]Использование этого предмета в руке разрушит клинок и телепортирует вас подальше от опасности.[/color]
+heretic-blade-break-fail-acended-message = Вы не можете сломать клинок после вознесения!
+heretic-blade-use = Клинок рассыпается, и вы чувствуете, как голоса утаскивают вас.
+heretic-riposte-used = Контратака применена!
+heretic-riposte-available = Контратака доступна!
+heretic-cant-shoot = Я не могу использовать { $entity } из-за своего священного обета следовать пути клинка.
 
 ## paths exclusive
 
-heretic-rust-mark-itembreak = { $name } разбивается в пыль!
-heretic-blade-void-examine = [color=cyan]Пока в непосредственной близости находится хотя бы один отмеченный язычник, телепортируйтесь ему за спину, не сломав клинок[/color].
-mansus-infused-item-examine = [color=purple]От одного только вида этого предмета вас бросает в дрожь. Стоит ли брать его в руки?[/color]
+heretic-rust-mark-itembreak = { $name } рассыпается в пыль!
+mansus-infused-item-examine = [color=purple]Одно лишь присутствие этого предмета бросает вас в дрожь. Стоит ли вообще его поднимать?[/color]
 
 ## mansus link
 
-heretic-manselink-fail-exists = Это существо уже подключено!
+heretic-manselink-fail-exists = Это существо уже связано!
 heretic-manselink-fail-nomind = У этого существа нет разума!
-heretic-manselink-start = Вы начинаете соединять разум этого существа к своему.
-heretic-manselink-start-target = Вы чувствуете, что ваш разум куда-то тянут...
+heretic-manselink-start = Вы начинаете связывать разум этого существа со своим.
+heretic-manselink-start-target = Вы чувствуете, как ваш разум куда-то утягивает...
 
 ## living heart
 
 heretic-livingheart-notargets = Нет доступных целей, посетите руну.
 heretic-livingheart-offstation = Оно { $state }, вне станции, { $direction }!
 heretic-livingheart-onstation = Оно { $state }, { $direction }!
-heretic-livingheart-unknown = Оно... не на этой равнине реальности.
-heretic-livingheart-faraway = Оно { $state }, очень далеко отсюда!
+heretic-livingheart-unknown = Оно... не в этом измерении.
+heretic-livingheart-faraway = Оно { $state }, невероятно далеко!
+heretic-stargaze-obliterate-other = Вы видите, как { $uid } поглощается испепеляющим гневом космоса. На мгновение вы замечаете его силуэт, корчащийся в агонии, прежде чем он рассыпается в атомы.
+heretic-stargaze-obliterate-user = САМА СИЛА КОСМОСА ИЗЛИВАЕТСЯ НА ВАШУ ПЛОТЬ. ОБЖАГИЮЩИЕ ВОЛНЫ ОХВАТЫВАЮТ ВАШЕ ТЕЛО, РАЗДИРАЯ ЕГО НА ЧАСТИ. ВО МГНОВЕНИЕ ВЫ АННИГИЛИРУЕТЕ, ПРЕВРАЩАЕТЕСЬ В ТО, ЧЕМ ВСЕГДА БЫЛИ — В ПЫЛЬ...
+heretic-stargazer-reset-consciousness = ЭТО ДЕЙСТВИЕ НЕОБРАТИМО ИЗМЕНИТ СОЗНАНИЕ ВАШЕГО ЗВЁЗДНОГО НАБЛЮДАТЕЛЯ! Используйте снова, чтобы подтвердить.
+heretic-stargazer-consciousness-reset-fail = Ваш запрос на смену личности звездного наблюдателя, похоже, был отклонён... Вам пока придётся смириться с этим.
+heretic-stargazer-consciousness-reset-target = Ваш призыватель сбросил вас, и тело было захвачено призраком. Похоже, его не устроила ваша работа.
+heretic-stargazer-consciousness-reset-user = Сознание звездного наблюдателя изменилось, чтобы лучше соответствовать вам.
 
 ## speech
 
-heretic-speech-mansusgrasp = УЗ'И ПР'ВДУ!
-heretic-speech-ash-jaunt = ПЕП'Н ПЕ'ЕХОД
+heretic-speech-mansusgrasp = П'СТ'ГН' ИСТ'Н'!
+heretic-speech-ash-jaunt = П'П'ЛЬН'Й Х'Д!
 heretic-speech-ash-volcano = В'ЛК'Н!
-heretic-speech-ash-rebirth = СЛА'А Н'ЧН'МУ НАБ'Л'ДАТ'ЛЮ
-heretic-speech-ash-flame = ПЛ'МЯ!
-heretic-speech-ash-cascade = К'СК'АД!!
-heretic-speech-blade-furioussteel = С'ЕРК'ЮЩ'Е СЕР'БРО!
-heretic-speech-flesh-surgery = ПРИ'И Л'НУ!
-heretic-speech-flesh-worm = РЕ'ЛЬ'О'ТЬ РАЗ'ОР'ЧИВ'ТС'!!
-
-heretic-speech-rust-spread = ЯР'ОСТН'Е РАС'ПР'Р'ЕНИ'!
-heretic-speech-rust-wave = НАС'Т'ГНИ 'ИХ!
-heretic-speech-rust-plume = РА'СС'Л'ИСЬ!
-
-heretic-speech-void-blast = З'СТЫ'НЬ!
-heretic-speech-void-phase = РЕК'ЛТ'ВЫЙ СД'В'Г!
-heretic-speech-void-pull = БР'СЬ ИХ К' МН'!!
-
-heretic-speech-cleave = ОС'РИЁ!
-heretic-speech-bloodsiphon = ГОР'ИЛ'О ВЕЧ'ОС'И!
-heretic-speech-mansuslink = ПРО'З' РА'УМ!
-heretic-speech-realignment = СБ'ОС!
-heretic-speech-fuckoff = ПО'ЁЛ 'Ы!!
-heretic-speech-ice-spear = 'АРА ЛЬ'А!
+heretic-speech-ash-rebirth = С'ЛАВ' Н'ЧНО'М' СТР'ЖУ!
+heretic-speech-ash-flame = ПЛ'МЯ!!
+heretic-speech-ash-cascade = К'СК'Д!!
+heretic-speech-blade-furioussteel = СВ'РК'ЮЩ'Е С'Р'БР'!
+heretic-speech-flesh-surgery = СП'КОЙ'Н'Й Ч'Л'ВЕК!
+heretic-speech-flesh-worm = РАСКОЛЮ РЕАЛЬНОСТЬ!!
+heretic-speech-rust-spread = АГГ'СВН'Й Р'ЗБР'С!
+heretic-speech-rust-wave = Р'СП'СТР'Н' СЛ'В'!
+heretic-speech-rust-plume = 'НТР'И'Н'Й ШЛ''Ф!
+heretic-speech-void-blast = З'МОР'ЗЬ!
+heretic-speech-void-phase = П'РИ'Д Р'ЛЬН'СТ'!
+heretic-speech-void-pull = ПРИВ'Д' 'Х К' М'Н!!
+heretic-speech-cosmic-rune = ЗВ'ЗДН'Я Р'Н'!
+heretic-speech-void-prison = П'СТОТН З'КЛ'Ч'НИЕ!
+heretic-speech-void-conduit = ПКЛ'НС П'СТ'ТЕ!
+heretic-speech-star-touch = ЗВ'ЗДН'Е ПР'К'СН'В'Н'Е!!
+heretic-speech-star-blast = ЗВ'ЗДН'Й ВСТ'Р'Л!!
+heretic-speech-cosmic-expansion = К'СМ'Ч'СК'Я ЭК'СП'НС'Я!
+heretic-speech-stargaze = ЗВ'ЗДН'Й Н'Б'ДТ'Л!
+heretic-speech-cleave = Р'СК'Л!
+heretic-speech-bloodsiphon = ПЛ'МЯ В'ЧН'СТ'!
+heretic-speech-mansuslink = ПРО'Н'КН' В Р'ЗУМ!
+heretic-speech-realignment = СБР'С!
+heretic-speech-fuckoff = П'Ш'Л Н'Х'Й!!
+heretic-speech-ice-spear = Р'ССВ'Т Л'ДА!
+heretic-speech-shapeshft = Р'ВОК

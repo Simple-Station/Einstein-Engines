@@ -1,0 +1,45 @@
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Pspritechologist <naaronn@gmail.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: SeatBase
+  id: ChairBarber
+  name: barbers chair
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Anchorable
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Goobstation/Structures/Specific/barbershop.rsi
+    state: barberchair
+
+- type: entity
+  parent: BaseSign
+  id: BarberSignPole
+  name: barber pole
+  description: Hypnotic.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Structures/Specific/barbershop.rsi
+    state: pole
+    snapCardinals: false
+
+- type: entity
+  parent: BarberSignPole
+  id: BarberSignThesnip
+  name: the snip
+  description: Let's hope it's not a medical practice...
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Structures/Specific/barbershop.rsi
+    state: thesnip
+    snapCardinals: false

@@ -1,3 +1,12 @@
+<!--
+SPDX-FileCopyrightText: 2023 Derby <Derby@ss14>
+SPDX-FileCopyrightText: 2023 DerbyX <50932435+DerbyX@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <Document>
   # Зомби
 
@@ -5,31 +14,31 @@
     <GuideEntityEmbed Entity="SignBiohazard" Caption=""/>
   </Box>
 
-  - Зомби — антагонисты, заражающие всех, кого укусят.
+  - Зомби - это антагонисты, которые заражают всех существ, которых они кусают.
 
   ## Инфекция
 
-  - Заразиться можно тремя способами: начать как первоначально инфицированный, получить укус от зомби или получить инъекцию [color=#a4885c]Ромэролом[/color].
+  - Заразиться можно тремя способами: начав как нулевой зараженный, будучи укушенным зомбированным существом или получив инъекцию [color=#a4885c]Ромерола[/color].
 
   <Box>
-    <GuideReagentEmbed Reagent="Romerol"></GuideReagentEmbed>
+    <GuideReagentEmbed Reagent="Romerol"/>
   </Box>
 
   ## Цели
 
-  - Цель зомби — заразить весь экипаж станции.
+  - Задача зомби - заразить весь экипаж станции.
 
   ## Лечение
 
-  - Если вы уже зомби, единственное «лекарство» — смерть.
-  - Если вы ещё не зомби, [color=#a4885c]Амбузол[/color] остановит инфекцию и отсрочит кончину, но при неосторожности можно заразиться снова. [color=#a4885c]Амбузол Плюс[/color] непрерывно подавляет инфекцию только пока вы живы.
+  - Если вы уже зомбированы, единственное лекарство - смерть.
+  - Если вы еще не зомбированы, использование [color=#a4885c]Амбузола[/color] остановит инфекцию, чтобы не допустить вашей своевременной гибели, но вы всё равно можете заразиться снова, если будете не слишком осторожны. [color=#a4885c]Амбузол Плюс[/color] будет предотвращать заражение постоянно, только пока вы живы.
 
   <Box>
-    <GuideReagentEmbed Reagent="Ambuzol"></GuideReagentEmbed>
+    <GuideReagentEmbed Reagent="Ambuzol"/>
   </Box>
 
   <Box>
-    <GuideReagentEmbed Reagent="AmbuzolPlus"></GuideReagentEmbed>
+    <GuideReagentEmbed Reagent="AmbuzolPlus"/>
   </Box>
 
 </Document>

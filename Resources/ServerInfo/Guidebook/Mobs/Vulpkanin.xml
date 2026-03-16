@@ -1,0 +1,21 @@
+<!--
+SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+SPDX-FileCopyrightText: 2024 BeeRobynn <robynthewarcrime@proton.me>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
+  # Вульпканин
+
+  <Box>
+    <GuideEntityEmbed Entity="MobVulpkanin" Caption=""/>
+  </Box>
+
+  Вульпканины — это гуманоиды, похожие на лис, с характерными ушами и хвостами. Они видят мир в красных и зелёных тонах,
+  наносят урон [color=#ec3a3a]ушибами[/color] и [color=#ec3a3a]режущий[/color] когтями, а их шерсть
+  защищает от воздействия окружающей температуры, но делает их на 15% более уязвимыми к урону от жары.
+
+</Document>

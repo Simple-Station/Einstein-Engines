@@ -1,0 +1,60 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 RatherUncreative <RatherUncreativeName@proton.me>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: seed
+  id: strangeBerries
+  name: seeds-strange-berries-name
+  noun: seeds-noun-seeds
+  displayName: seeds-strange-berries-display-name
+  plantRsi: _Goobstation/Objects/Specific/Hydroponics/strange_berries.rsi
+  packetPrototype: StrangeBerrySeeds
+  productPrototypes:
+    - FoodStrangeBerries
+  harvestRepeat: Repeat
+  lifespan: 50
+  maturation: 6
+  production: 6
+  yield: 4
+  idealLight: 7
+  nutrientConsumption: 0.6
+  chemicals:
+    Artifexium:
+      Min: 2
+      Max: 5
+      PotencyDivisor: 30
+    Vitamin:
+      Min: 1
+      Max: 4
+      PotencyDivisor: 40
+
+- type: seed
+  id: bluespaceTomato
+  name: seeds-bluespace-tomato-name
+  noun: seeds-noun-seeds
+  displayName: seeds-bluespace-tomato-display-name
+  plantRsi: _Goobstation/Objects/Specific/Hydroponics/bluespace_tomato.rsi
+  packetPrototype: BlueTomatoSeeds
+  productPrototypes:
+  - FoodBluespaceTomato
+  harvestRepeat: Repeat
+  lifespan: 25
+  maturation: 8
+  production: 6
+  yield: 2
+  potency: 10
+  waterConsumption: 0.5
+  nutrientConsumption: 0.6
+  idealLight: 8
+  idealHeat: 298
+  splatPrototype: PuddleSplatter
+  chemicals:
+    Nutriment:
+      Min: 1
+      Max: 3
+      PotencyDivisor: 20
+    Singulo:
+      Min: 1
+      Max: 10
+      PotencyDivisor: 10

@@ -1,14 +1,18 @@
-﻿using Content.Server.Anomaly.Components;
-using Content.Server.Construction;
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
+using Content.Server.Anomaly.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Anomaly;
 using Content.Shared.Anomaly.Components;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Research.Components;
-using Content.Server.Psionics.Glimmer;
-using Content.Shared.Radiation.Components;
-
 
 namespace Content.Server.Anomaly;
 
@@ -23,8 +27,6 @@ public sealed partial class AnomalySystem
     {
         SubscribeLocalEvent<AnomalyVesselComponent, ComponentShutdown>(OnVesselShutdown);
         SubscribeLocalEvent<AnomalyVesselComponent, MapInitEvent>(OnVesselMapInit);
-        SubscribeLocalEvent<AnomalyVesselComponent, RefreshPartsEvent>(OnRefreshParts);
-        SubscribeLocalEvent<AnomalyVesselComponent, UpgradeExamineEvent>(OnUpgradeExamine);
         SubscribeLocalEvent<AnomalyVesselComponent, InteractUsingEvent>(OnVesselInteractUsing);
         SubscribeLocalEvent<AnomalyVesselComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<AnomalyVesselComponent, ResearchServerGetPointsPerSecondEvent>(OnVesselGetPointsPerSecond);
@@ -70,22 +72,6 @@ public sealed partial class AnomalySystem
         UpdateVesselAppearance(uid,  component);
     }
 
-    private void OnRefreshParts(EntityUid uid, AnomalyVesselComponent component, RefreshPartsEvent args)
-    {
-        var pointRating = args.PartRatings[component.MachinePartPointMultiplier];
-        var radRating = args.PartRatings[component.MachinePartPointMultiplier];
-
-        component.PointMultiplier = component.BasePointMultiplier + (pointRating - 1) * component.UpgradePointMultiplier;
-
-        if (TryComp<RadiationSourceComponent>(uid, out var radiation))
-            radiation.Intensity = component.BaseRadiation * radRating;
-    }
-
-    private void OnUpgradeExamine(EntityUid uid, AnomalyVesselComponent component, UpgradeExamineEvent args)
-    {
-        args.AddPercentageUpgrade("anomaly-vessel-component-upgrade-output", component.PointMultiplier / component.BasePointMultiplier);
-    }
-
     private void OnVesselInteractUsing(EntityUid uid, AnomalyVesselComponent component, InteractUsingEvent args)
     {
         if (component.Anomaly != null ||
@@ -97,14 +83,6 @@ public sealed partial class AnomalySystem
 
         if (!TryComp<AnomalyComponent>(anomaly, out var anomalyComponent) || anomalyComponent.ConnectedVessel != null)
             return;
-
-        // Nyano - Summary - Begin modified code block: tie anomaly harvesting to glimmer rate.
-        if (this.IsPowered(uid, EntityManager) &&
-            TryComp<GlimmerSourceComponent>(anomaly, out var glimmerSource))
-        {
-            glimmerSource.Active = true;
-        }
-        // Nyano - End modified code block.
 
         component.Anomaly = scanner.ScannedAnomaly;
         anomalyComponent.ConnectedVessel = uid;

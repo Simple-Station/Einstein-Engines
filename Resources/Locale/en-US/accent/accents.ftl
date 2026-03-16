@@ -1,3 +1,23 @@
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 lapatison <100279397+lapatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nim <128169402+Nimfar11@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 RIKELOLDABOSS <122584586+RIKELOLDABOSS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Simon <63975668+Simyon264@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 potato1234_x <79580518+potato1234x@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 reverie collection <revsys413@gmail.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 LankLTE <135308300+LankLTE@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 RobDemo <88208745+MrRobDemo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Cat accent
 accent-words-cat-1 = Meow!
 accent-words-cat-2 = Mow.
@@ -59,7 +79,16 @@ accent-words-zombie-moth-3 = Liiiiight...
 accent-words-zombie-moth-4 = Laaamps...
 accent-words-zombie-moth-5 = Haaaatsss... Hatttssss...
 accent-words-zombie-moth-6 = Scarffsss...
+# goob station edit
+accent-words-zombie-moth-7 = Mangosss...
 
+# Goob
+# Dwarf Zombie
+accent-words-zombie-dwarf-1 = Beeersss...
+accent-words-zombie-dwarf-2 = Ruum...
+accent-words-zombie-dwarf-3 = Boooozze...
+accent-words-zombie-dwarf-4 = Piintsss...
+ 
 # Generic Aggressive
 accent-words-generic-aggressive-1 = Grr!
 accent-words-generic-aggressive-2 = Rrrr!
@@ -98,11 +127,7 @@ accent-words-slimes-4 = Bluuump...
 accent-words-slimes-5 = Blabl blump!
 
 # Mothroach
-accent-words-mothroach-1 = Squeak!
-accent-words-mothroach-2 = Chirp!
-accent-words-mothroach-3 = Peep!
-accent-words-mothroach-4 = Eeee!
-accent-words-mothroach-5 = Eep!
+accent-words-mothroach-1 = Chirp!
 
 # Crab
 accent-words-crab-1 = Click.
@@ -135,3 +160,25 @@ accent-words-tomato-2 = Trotect
 accent-words-tomato-3 = Mastet?
 accent-words-tomato-4 = Reaty!
 accent-words-tomato-5 = Water...
+
+# Scurret
+accent-words-scurret-1 = Wa!
+accent-words-scurret-2 = Wa?
+accent-words-scurret-3 = Wa.
+accent-words-scurret-4 = Wa...
+accent-words-scurret-5 = Wawa!
+accent-words-scurret-6 = Wawa?
+accent-words-scurret-7 = Wawa.
+accent-words-scurret-8 = Wawa...
+accent-words-scurret-9 = Wa wawa!
+accent-words-scurret-10 = Wa wawa?
+accent-words-scurret-11 = Wa wawa.
+accent-words-scurret-12 = Wa wawa...
+accent-words-scurret-13 = Wawa wa!
+accent-words-scurret-14 = Wawa wa?
+accent-words-scurret-15 = Wawa wa.
+accent-words-scurret-16 = Wawa wa...
+accent-words-scurret-17 = Waaaaaa.
+accent-words-scurret-18 = Waaaaaa!
+accent-words-scurret-19 = Waaaaaa?
+accent-words-scurret-20 = Waaaaaa...

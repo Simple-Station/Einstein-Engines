@@ -1,0 +1,70 @@
+# SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BeBright <98597725+be1bright@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: construction
+  id: Molotov
+  graph: MolotovConstruction
+  targetNode: LitMolotov
+  category: construction-category-weapons
+  objectType: Item
+
+- type: construction
+  name: recipes-wooden-wand-name
+  id: woodenWand
+  graph: WoodenWand
+  targetNode: woodenWand
+  category: construction-category-weapons
+  objectType: Item
+
+- type: construction
+  id: BladedPlasmaFlatcapGrey
+  graph: BladedPlasmaFlatcapGrey
+  startNode: start
+  targetNode: icon
+  category: construction-category-weapons
+  objectType: Item
+  
+- type: construction
+  id: BladedUraniumFlatcapGrey
+  graph: BladedUraniumFlatcapGrey
+  startNode: start
+  targetNode: icon
+  category: construction-category-weapons
+  objectType: Item
+  
+- type: construction
+  id: BladedReinforcedFlatcapGrey
+  graph: BladedReinforcedFlatcapGrey
+  startNode: start
+  targetNode: icon
+  category: construction-category-weapons
+  objectType: Item
+  
+- type: construction
+  id: BladedPlasmaFlatcapBrown
+  graph: BladedPlasmaFlatcapBrown
+  startNode: start
+  targetNode: icon
+  category: construction-category-weapons
+  objectType: Item
+  
+- type: construction
+  id: BladedUraniumFlatcapBrown
+  graph: BladedUraniumFlatcapBrown
+  startNode: start
+  targetNode: icon
+  category: construction-category-weapons
+  objectType: Item
+  
+- type: construction
+  id: BladedReinforcedFlatcapBrown
+  graph: BladedReinforcedFlatcapBrown
+  startNode: start
+  targetNode: icon
+  category: construction-category-weapons
+  objectType: Item

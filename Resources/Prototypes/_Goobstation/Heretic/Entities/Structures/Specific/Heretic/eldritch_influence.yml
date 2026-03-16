@@ -1,3 +1,16 @@
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GMWQ <garethquaile@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: EldritchInfluence
   name: reality shift
@@ -7,32 +20,82 @@
   components:
   - type: InteractionOutline
   - type: EldritchInfluence
+    possibleExamineEffects:
+    # Ash
+    - - !type:FlammableReaction
+        multiplier: 5
+        multiplierOnExisting: 5
+      - !type:Ignite
+    # Rust
+    - - !type:ChemVomit
+        thirstAmount: -50
+        hungerAmount: -50
+      - !type:GenericStatusEffect
+        key: KnockedDown
+        component: KnockedDown
+        time: 20
+        type: Add
+      - !type:HealthChange
+        damage:
+          types:
+            Ion: 40
+    # Void
+    - - !type:VoidCurse
+        stacks: 5
+    # Blade
+    - - !type:HealthChange
+        damage:
+          types:
+            Slash: 30
+    # Moon
+    - - !type:GenericStatusEffect
+        key: Pacified
+        component: Pacified
+        time: 60
+        type: Add
+    # Cosmos
+    - - !type:ModifyStatusEffect
+        effectProto: StatusEffectForcedSleeping
+        time: 20
+        type: Add
+    # Flesh
+    - - !type:SpillBlood
+        amount: 100
+    # Lock
+    - - !type:GenericStatusEffect
+        key: TemporaryBlindness
+        component: TemporaryBlindness
+        time: 20
+        type: Add
+      - !type:RemoveAccess
   - type: Sprite
     sprite: _Goobstation/Heretic/reality_fracture.rsi
     state: icon
   - type: Clickable
   - type: Visibility
-    layer: 69
+    layer: 32 # keep in sync with VisibilityFlags.EldritchInfluence for upstream merges
 
 - type: entity
   id: EldritchInfluenceIntermediate
-  #noSpawn: true
   categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
-    lifetime: 30
+    lifetime: 600
   - type: SpawnOnDespawn
     prototype: EldritchInfluenceSpent
 
 - type: entity
+  parent: EldritchInfluence
   id: EldritchInfluenceSpent
   name: reality fracture
   description: A reality fracture. Something keeps leaking out of it, should you really be near this thing?
   placement:
     mode: SnapgridCenter
   components:
-  - type: InteractionOutline
   - type: Sprite
     sprite: _Goobstation/Heretic/reality_fracture.rsi
     state: icon_harvested
-  - type: Clickable
+  - type: Visibility
+    layer: 64 # VisibilityFlags.EldritchInfluence.Spent
+  - type: EldritchInfluence
+    spent: true

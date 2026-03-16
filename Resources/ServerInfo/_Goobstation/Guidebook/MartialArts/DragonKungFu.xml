@@ -1,0 +1,55 @@
+<Document>
+
+  # Стиль Дракона (Кунг-фу)
+
+  <Box>
+    <GuideEntityEmbed Entity="BSOManual" Caption=""/>
+  </Box>
+
+  Стиль Дракона (Кунг-фу) — это шаолиньское [textlink="боевое искусство" link="MartialArts"], сосредоточенное на защите и контроле.
+  Плавные движения и мощные удары сочетаются с терпением и стойкостью. Идеально подходит для телохранителей, укрепляя защиту и обеспечивая точные контратаки.
+  Офицеры Синего Щита могут выбрать руководство по этому боевому искусству в своём оружейном ящике.
+
+  ## Особые способности
+
+  ### Сила дракона
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookDragonPower" Caption=""/>
+  </Box>
+
+  Будучи невооруженным, мгновение неподвижности превращает воина в живую гору, значительно снижая
+  силу входящих ударов в ближнем бою и усиливая его собственные атаки — как с оружием, так и без него.
+
+  ## Комбо-атаки
+
+  ### Коготь дракона
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+  </Box>
+
+  Наносит огромный урон выносливости и значительно замедляет противника.
+
+  ### Хвост дракона
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookGrab" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+  </Box>
+
+  Наносит ушибы и урон выносливости. Сбивает противника с ног, если он стоит, и накладывает кратковременное оглушение в противном случае.
+
+  ### Удар дракона
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+  </Box>
+
+  Наносит 40 урона и оглушает на 2 секунды. Работает только на поверженных противников.
+
+</Document>

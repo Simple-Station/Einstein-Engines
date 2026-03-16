@@ -1,22 +1,3 @@
-## Plushies
-
-- type: entity
-  parent: BasePlushie
-  id: PlushieSanabi
-  name: brigadier plushie
-  description: A small stuffed doll of the brigadier general.
-  components:
-  - type: Item
-    size: Normal
-    inhandVisuals:
-      left:
-      - state: sanabi-inhand-left
-      right:
-      - state: sanabi-inhand-right
-  - type: Sprite
-    sprite: _White/Objects/Fun/sanabi.rsi
-    state: sanabi
-
 # MISC
 
 - type: entity
@@ -28,12 +9,12 @@
   components:
   - type: Sprite
     noRot: true
-    sprite: _White/Mobs/Aliens/Xenomorphs/facehugger.rsi
+    sprite: _White/Mobs/Aliens/Xenomorphs/old_facehugger.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: facehugger
   - type: Clothing
-    sprite: _White/Mobs/Aliens/Xenomorphs/facehugger.rsi
+    sprite: _White/Mobs/Aliens/Xenomorphs/old_facehugger.rsi
     slots: [mask]
   - type: IngestionBlocker
   - type: Blindfold

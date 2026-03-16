@@ -1,9 +1,41 @@
+# SPDX-FileCopyrightText: 2019 Swept <49448379+SweptWasTaken@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Exp <theexp111@gmail.com>
+# SPDX-FileCopyrightText: 2020 V�ctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Paul <ritter.paul1+git@googlemail.com>
+# SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2021 SETh lafuente <cetaciocascarudo@gmail.com>
+# SPDX-FileCopyrightText: 2021 SethLafuente <84478872+SethLafuente@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <zddm@outlook.es>
+# SPDX-FileCopyrightText: 2022 Chris V <HoofedEar@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 Jeff <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+# SPDX-FileCopyrightText: 2023 RiceMar1244 <138547931+RiceMar1244@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 liltenhead <104418166+liltenhead@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Minty642 <42335609+Minty642@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 PECK <74548962+PeccNeck@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: latheRecipe
   id: SheetSteel
   result: SheetSteel1
-  applyMaterialDiscount: false
-  miningPoints: 1
-  completetime: 0.0083 # 0.25 per 30
+  completetime: 0
   materials:
     RawIron: 100
     Coal: 30
@@ -19,9 +51,7 @@
 - type: latheRecipe
   id: SheetGlass1
   result: SheetGlass1
-  applyMaterialDiscount: false
-  miningPoints: 1 # 0.25 per 30
-  completetime: 0.0083
+  completetime: 0
   materials:
     RawQuartz: 100
 
@@ -36,9 +66,7 @@
 - type: latheRecipe
   id: SheetRGlass
   result: SheetRGlass1
-  applyMaterialDiscount: false
-  miningPoints: 1
-  completetime: 0.025 # 0.75 per 30
+  completetime: 0
   materials:
     Glass: 100
     Steel: 50
@@ -65,8 +93,7 @@
 - type: latheRecipe
   id: SheetPGlass1
   result: SheetPGlass1
-  completetime: 0.0083 # 0.75 per 30
-  miningPoints: 16
+  completetime: 0
   materials:
     RawQuartz: 100
     RawPlasma: 100
@@ -82,8 +109,7 @@
 - type: latheRecipe
   id: SheetRPGlass1
   result: SheetRPGlass1
-  completetime: 0.025 # 0.75 per 30
-  miningPoints: 16
+  completetime: 0
   materials:
     RawQuartz: 100
     RawPlasma: 100
@@ -103,8 +129,7 @@
 - type: latheRecipe
   id: SheetPlasma1
   result: SheetPlasma1
-  completetime: 0.0116 # 0.35 per 30
-  miningPoints: 15
+  completetime: 0
   materials:
     RawPlasma: 100
 
@@ -118,8 +143,7 @@
 - type: latheRecipe
   id: SheetPlasteel1
   result: SheetPlasteel1
-  completetime: 0.025 # 0.75 per 30
-  miningPoints: 17
+  completetime: 0
   materials:
     RawPlasma: 100
     RawIron: 200 #Twice as durable as steel, Twice the material cost
@@ -144,8 +168,7 @@
 - type: latheRecipe
   id: SheetUGlass1
   result: SheetUGlass1
-  completetime: 0.0083 # 0.25 per 30
-  miningPoints: 31
+  completetime: 0
   materials:
     RawUranium: 100
     RawQuartz: 100
@@ -161,8 +184,7 @@
 - type: latheRecipe
   id: SheetRUGlass1
   result: SheetRUGlass1
-  completetime: 0.025 # 0.75 per 30
-  miningPoints: 31
+  completetime: 0
   materials:
     RawUranium: 100
     RawQuartz: 100
@@ -203,32 +225,28 @@
 - type: latheRecipe
   id: MaterialDiamond
   result: MaterialDiamond1
-  completetime: 0.026 # 0.8 over 30
-  miningPoints: 50
+  completetime: 0
   materials:
     RawDiamond: 100
 
 - type: latheRecipe
   id: SheetUranium1
   result: SheetUranium1
-  completetime: 0.02 # 0.6 seconds for 30
-  miningPoints: 30
+  completetime: 0
   materials:
     RawUranium: 100
 
 - type: latheRecipe
   id: IngotGold1
   result: IngotGold1
-  completetime: 0.016 # 0.5 over 30
-  miningPoints: 18
+  completetime: 0
   materials:
     RawGold: 100
 
 - type: latheRecipe
   id: IngotSilver1
   result: IngotSilver1
-  completetime: 0.013 # 0.4 over 30
-  miningPoints: 16
+  completetime: 0
   materials:
     RawSilver: 100
 
@@ -243,8 +261,7 @@
 - type: latheRecipe
   id: MaterialBananium1
   result: MaterialBananium1
-  completetime: 0.1 # 1 over 10
-  miningPoints: 60
+  completetime: 0
   materials:
     RawBananium: 100
 
@@ -263,46 +280,8 @@
     Wood: 50
 
 - type: latheRecipe
-  id: CoreSilver
-  icon:
-    sprite: Objects/Misc/guardian_info.rsi
-    state: icon
-  result: CoreSilver
-  completetime: 10
+  id: MaterialClothCotton
+  result: MaterialCloth1
+  completetime: 1
   materials:
-    Bluespace: 500
-    Silver: 1000
-    Plastic: 1000
-
-- type: latheRecipe
-  id: BluespaceCrystal
-  icon:
-    sprite: Objects/Materials/materials.rsi
-    state: bluespace
-  result: MaterialBluespace1
-  applyMaterialDiscount: false
-  completetime: 4
-  materials:
-    RawBluespace: 100
-
-- type: latheRecipe
-  id: NormalityCrystal
-  icon:
-    sprite: Objects/Materials/materials.rsi
-    state: normality
-  result: MaterialNormality1
-  applyMaterialDiscount: false
-  completetime: 4
-  materials:
-    RawNormality: 100
-
-- type: latheRecipe
-  id: IngotTungsten1
-  result: IngotTungsten1
-  applyMaterialDiscount: false
-  miningPoints: 5
-  completetime: 0.13 # Or, 4 seconds over 30 ingots.
-  materials:
-    RawTungsten: 100
-    RawIron: 100
-    Coal: 100
+    Cotton: 200 #my pyrocloth keeps catching on fire whenever I make it!

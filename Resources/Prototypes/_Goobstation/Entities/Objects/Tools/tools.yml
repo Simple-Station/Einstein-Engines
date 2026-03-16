@@ -1,8 +1,118 @@
+# SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Murphy Ibbs <Murphyibbs@gmail.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 acatrw <96485972+acatrw@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 acatrw <wispycat07@gmail.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: sonic screwdriver
+  parent: BaseItem
+  id: SonicScrewdriver
+  suffix: DO NOT MAP
+  description: Wzzzzz....
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Tools/sonic_screwdriver.rsi
+    state: icon
+  - type: Item
+    sprite: _Goobstation/Objects/Tools/sonic_screwdriver.rsi
+    size: Small
+  - type: Tag
+    tags:
+    - Multitool
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    damage:
+      types:
+        Blunt: 0 # melee weapon to allow flashing individual targets
+  - type: Prying
+    enabled: false
+  - type: UseDelay # For insta prying
+    delay: 1
+  - type: Tool
+    qualities:
+      - Screwing
+    useSound: /Audio/Items/drill_use.ogg
+  - type: ToolTileCompatible
+  - type: MultipleTool
+    statusShowBehavior: true
+    entries:
+      - behavior: Screwing
+        sprite:
+          sprite: _Goobstation/Objects/Tools/sonic_screwdriver.rsi
+          state: screw
+        useSound:
+          path: /Audio/Items/drill_use.ogg
+        changeSound:
+          path: /Audio/Effects/Arcade/newgame.ogg
+      - behavior: Prying
+        sprite:
+          sprite: _Goobstation/Objects/Tools/sonic_screwdriver.rsi
+          state: cutter
+        useSound:
+          path: /Audio/Items/jaws_pry.ogg
+        changeSound:
+          path: /Audio/Effects/Arcade/newgame.ogg
+      - behavior: Anchoring
+        sprite:
+          sprite: _Goobstation/Objects/Tools/sonic_screwdriver.rsi
+          state: wrench
+        useSound:
+          path: /Audio/Items/ratchet.ogg
+        changeSound:
+          path: /Audio/Effects/Arcade/newgame.ogg
+      - behavior: Cutting
+        sprite:
+          sprite: _Goobstation/Objects/Tools/sonic_screwdriver.rsi
+          state: crowbar
+        useSound:
+          path: /Audio/Items/jaws_cut.ogg
+        changeSound:
+          path: /Audio/Effects/Arcade/newgame.ogg
+      - behavior: Pulsing
+        sprite:
+          sprite: _Goobstation/Objects/Tools/sonic_screwdriver.rsi
+          state: icon
+        changeSound:
+          path: /Audio/Effects/Arcade/newgame.ogg
+
+
+- type: entity
+  name: futuristic RCD
+  parent: RCD
+  id: RCDChrono
+  description: A tool that can build a station from scratch in minutes.
+  components:
+  - type: LimitedCharges
+    maxCharges: 100
+  - type: UseDelay
+    delay: 0.1
+  - type: AutoRecharge
+    rechargeDuration: 5
+  - type: Sprite
+    sprite: _Goobstation/Objects/Tools/rcd_chrono.rsi
+    state: icon
+  - type: Item
+    sprite: _Goobstation/Objects/Tools/rcd_chrono.rsi
+  - type: RCD
+
 - type: entity
   name: handheld fax
   parent: BaseItem
   id: HandheldFax
-  description: A hand-held fax machine provided to corporate liaisons.
+  description: A tool that can send ton of paper on Centcomm fax.
   components:
   - type: Item
     size: Huge
@@ -54,16 +164,15 @@
   - type: ContainerContainer
     containers:
       Paper: !type:ContainerSlot
-  - type: MultiHandedItem
 
 - type: entity
-  name: corporate liaison handheld fax
+  name: nanotrasen representative handheld fax
   parent: HandheldFax
   id: HandheldFaxNanorep
-  suffix: Corporate Liaison
+  suffix: Nanotrasen Representative
   components:
   - type: FaxMachine
-    name: "Corporate Liaison"
+    name: "Nanotrasen Representative"
   - type: Sprite
     sprite: _Goobstation/Objects/Tools/handheld_fax.rsi
     drawdepth: SmallObjects
@@ -72,3 +181,73 @@
       map: [ "enum.FaxMachineVisuals.VisualState" ]
     - state: scanner
       shader: unshaded
+  - type: Prayable
+    sentMessage: prayer-popup-notify-centcom-sent
+    notificationPrefix: prayer-chat-notify-centcom
+    verb: prayer-verbs-call
+    verbImage: null
+    notificationSound:
+      path: /Audio/_Goobstation/Misc/phone_ring.ogg
+  - type: MultiHandedItem
+
+- type: entity
+  name: CentComm official handheld fax
+  parent: HandheldFax
+  id: HandheldFaxOfficial
+  suffix: CentComm Official
+  components:
+  - type: FaxMachine
+    name: "CentComm Official"
+  - type: Item
+    size: Normal
+    sprite: _Goobstation/Objects/Tools/official_fax.rsi
+  - type: Prayable
+    sentMessage: prayer-popup-notify-centcom-sent
+    notificationPrefix: prayer-chat-notify-centcom
+    verb: prayer-verbs-call
+    verbImage: null
+    notificationSound:
+      path: /Audio/_Goobstation/Misc/phone_ring.ogg
+  - type: Sprite
+    sprite: _Goobstation/Objects/Tools/official_fax.rsi
+    drawdepth: SmallObjects
+    layers:
+    - state: icon
+      map: [ "enum.FaxMachineVisuals.VisualState" ]
+    - state: scanner
+      shader: unshaded
+
+- type: entity
+  name: borg multitool
+  parent: Multitool
+  id: MultitoolBorg
+  description: An advanced tool to copy, store, and send electrical pulses and signals through wires and machines.
+  components:
+  - type: Tool
+    qualities:
+    - Pulsing
+
+
+- type: entity
+  id: RPDRecharging
+  parent: RPD
+  name: experimental RPD
+  description: A bluespace-enhanced rapid piping device that passively generates its own compressed matter.
+  suffix: AutoRecharge
+  components:
+  - type: LimitedCharges
+    maxCharges: 20
+  - type: AutoRecharge
+    rechargeDuration: 10
+
+- type: entity
+  parent: RCD
+  id: RCDRechargingCE
+  name: experimental RCD
+  description: Rapid Construction Device which creates compressed matter on the fly using an internal fabricator.
+  suffix: AutoRecharge
+  components:
+  - type: LimitedCharges
+    maxCharges: 20
+  - type: AutoRecharge
+    rechargeDuration: 10

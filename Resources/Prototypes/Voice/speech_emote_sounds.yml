@@ -1,4 +1,63 @@
-# species
+# SPDX-FileCopyrightText: 2023 Alekshhh <44923899+Alekshhh@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Kevin Zheng <kevinz5000@gmail.com>
+# SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+# SPDX-FileCopyrightText: 2023 PixelTK <85175107+PixelTheKermit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 justproggramer <68664576+Klaypexx@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lzk228 <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Keer-Sar <144283718+Keer-Sar@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 LankLTE <135308300+LankLTE@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Minemoder5000 <minemoder50000@gmail.com>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 RenQ <164364533+ImRenQ@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Truoizys <153248924+Truoizys@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2024 Wertan <48354940+Wertanchik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lanse12 <cloudability.ez@gmail.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 no <165581243+pissdemon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 pocl v <24708225+Pinkbat5@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AsnDen <75905158+AsnDen@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+# SPDX-FileCopyrightText: 2025 Froffy025 <78222136+Froffy025@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Froffy025 <scotttaco025@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 MarkerWicker <markerWicker@proton.me>
+# SPDX-FileCopyrightText: 2025 OnsenCapy <101037138+OnsenCapy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Samuka-C <47865393+Samuka-C@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2025 Tom <t.jans@student.fontys.nl>
+# SPDX-FileCopyrightText: 2025 crasg <109207982+Scruq445@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 grub <unalterableness@gmail.com>
+# SPDX-FileCopyrightText: 2025 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 loltart <159829224+loltart@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 loltart <lo1tartyt@gmail.com>
+# SPDX-FileCopyrightText: 2025 shityaml <unalterableness@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: emoteSounds
   id: MaleHuman
   params:
@@ -40,6 +99,10 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MaleDeathGasp
+    Gulp: # Goob
+      path: /Audio/_Goobstation/Voice/Human/gulp.ogg
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
 
 - type: emoteSounds
   id: FemaleHuman
@@ -82,6 +145,54 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
+    Gulp: # Goob
+      path: /Audio/_Goobstation/Voice/Human/gulp.ogg
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
+
+- type: emoteSounds ## GOOB CONTENT START
+  id: MonkeyMode
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: MonkeyScreeches
+    Laugh:
+      collection: MonkeyScreeches
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: MonkeyScreeches
+    Snore:
+      collection: MonkeyScreeches
+    Honk:
+      collection: BikeHorn
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: MonkeyScreeches
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
+    Gulp: # Goob
+      path: /Audio/_Goobstation/Voice/Human/gulp.ogg ## GOOB CONTENT END
 
 - type: emoteSounds
   id: MaleReptilian
@@ -102,28 +213,22 @@
       collection: Weh
     Hew:
       collection: Hew
-    Sneeze:
-      collection: MaleSneezes
-    Cough:
-      collection: MaleCoughs
     CatMeow:
-      collection: CatMeows
-    CatHisses:
-      collection: CatHisses
-    MonkeyScreeches:
-      collection: MonkeyScreeches
-    RobotBeep:
-      collection: RobotBeeps
-    Yawn:
-      collection: MaleYawn
-    Snore:
-      collection: Snores
-    Sigh:
-      collection: MaleSigh
+      collection: CatMeows # Goobstation - effect standardization
     Gasp:
       collection: MaleGasp
     DefaultDeathgasp:
       collection: DeathGasp
+    # Floof
+    Yip:
+      collection: Yip
+    Hiss:
+      collection: ReptilianHiss
+    # Floof end
+    Gulp: # Goob
+      path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
 
 - type: emoteSounds
   id: FemaleReptilian
@@ -144,36 +249,32 @@
       collection: Weh
     Hew:
       collection: Hew
-    Sneeze:
-      collection: FemaleSneezes
-    Cough:
-      collection: FemaleCoughs
     CatMeow:
-      collection: CatMeows
-    CatHisses:
-      collection: CatHisses
-    MonkeyScreeches:
-      collection: MonkeyScreeches
-    RobotBeep:
-      collection: RobotBeeps
-    Yawn:
-      collection: FemaleYawn
-    Snore:
-      collection: Snores
-    Sigh:
-      collection: FemaleSigh
+      collection: CatMeows # Goobstation - effect standardization
     Gasp:
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
+    # Floof
+    Yip:
+      collection: Yip
+    Hiss:
+      collection: ReptilianHiss
+    # Floof end
+    Gulp: # Goob
+      path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
 
 - type: emoteSounds
   id: MaleSlime
-  params:
-    variation: 0.125
   sounds:
     Squish:
       collection: Squishes
+    Bubble: # Imp
+      collection: Bubbles # Imp
+    Pop: # Imp
+      collection: Pops # Imp
     Scream:
       collection: SlimeMaleScreams
     Laugh:
@@ -210,14 +311,22 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MaleDeathGasp
+    Gulp: # Goob
+      path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
+  params:
+    variation: 0.125
 
 - type: emoteSounds
   id: FemaleSlime
-  params:
-    variation: 0.125
   sounds:
     Squish:
       collection: Squishes
+    Bubble: # Imp
+      collection: Bubbles # Imp
+    Pop: # Imp
+      collection: Pops # Imp
     Scream:
       collection: SlimeFemaleScreams
     Laugh:
@@ -254,118 +363,34 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
-
-- type: emoteSounds
-  id: MaleShadowkin
+    Gulp: # Goob
+      path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
   params:
     variation: 0.125
-  sounds:
-    Scream:
-      collection: SlimeMaleScreams
-    Laugh:
-      collection: MaleLaugh
-    Sneeze:
-      collection: MaleSneezes
-    Cough:
-      collection: MaleCoughs
-    Yawn:
-      collection: MaleYawn
-    Snore:
-      collection: Snores
-    Honk:
-      collection: BikeHorn
-    Sigh:
-      collection: MaleSigh
-    Crying:
-      collection: MaleCry
-    Whistle:
-      collection: Whistles
-    Weh:
-      collection: Weh
-    Hew:
-      collection: Hew
-    Hiss:
-      collection: FelinidHisses
-    Meow:
-      collection: FelinidMeows
-    Mew:
-      collection: FelinidMews
-    Growl:
-      collection: FelinidGrowls
-    Purr:
-      collection: FelinidPurrs
-    Mars:
-      collection: Mars
-    Wurble:
-      collection: Wurble
-    Gasp:
-      collection: MaleGasp
-    DefaultDeathgasp:
-      collection: MaleDeathGasp
-
-- type: emoteSounds
-  id: FemaleShadowkin
-  params:
-    variation: 0.125
-  sounds:
-    Scream:
-      collection: SlimeFemaleScreams
-    Laugh:
-      collection: MaleLaugh
-    Sneeze:
-      collection: FemaleSneezes
-    Cough:
-      collection: FemaleCoughs
-    Yawn:
-      collection: FemaleYawn
-    Snore:
-      collection: Snores
-    Honk:
-      collection: BikeHorn
-    Sigh:
-      collection: FemaleSigh
-    Crying:
-      collection: FemaleCry
-    Whistle:
-      collection: Whistles
-    Weh:
-      collection: Weh
-    Hew:
-      collection: Hew
-    Hiss:
-      collection: FelinidHisses
-    Meow:
-      collection: FelinidMeows
-    Mew:
-      collection: FelinidMews
-    Growl:
-      collection: FelinidGrowls
-    Purr:
-      collection: FelinidPurrs
-    Mars:
-      collection: Mars
-    Wurble:
-      collection: Wurble
-    Gasp:
-      collection: FemaleGasp
-    DefaultDeathgasp:
-      collection: FemaleDeathGasp
 
 - type: emoteSounds
   id: UnisexVox
-  params:
-    variation: 0.125
   sounds:
     Scream:
-      path: /Audio/Voice/Vox/shriek1.ogg
+      collection: VoxScreams
     Laugh:
       path: /Audio/Voice/Vox/vox_laugh.ogg
-    Sneeze:
-      collection: MaleSneezes
-    Cough:
-      collection: MaleCoughs
+    Bagawk: # Mono
+      collection: Bagawk # Mono
+    Honk:
+      collection: BikeHorn
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
     CatMeow:
-      collection: CatMeows
+      collection: CatMeows #Goob content start
+    Sneeze:
+      path: /Audio/_Goobstation/Voice/Vox/vox_sneeze.ogg
+    Cough:
+      collection: VoxCough #goob
     CatHisses:
       collection: CatHisses
     MonkeyScreeches:
@@ -373,30 +398,36 @@
     RobotBeep:
       collection: RobotBeeps
     Yawn:
-      collection: MaleYawn
+      path: /Audio/_Goobstation/Voice/Vox/vox_yawn.ogg
     Snore:
-      collection: Snores
-    Honk:
-      collection: BikeHorn
+      path: /Audio/_Goobstation/Voice/Vox/vox_snore.ogg
     Sigh:
-      collection: MaleSigh
+      path: /Audio/_Goobstation/Voice/Vox/vox_sigh.ogg
     Crying:
-      collection: MaleCry
+      path: /Audio/_Goobstation/Voice/Vox/vox_cry.ogg
     Whistle:
       collection: Whistles
-    Weh:
-      collection: Weh
-    Hew:
-      collection: Hew
     Gasp:
-      collection: FemaleGasp
+      path: /Audio/_Goobstation/Voice/Vox/vox_gasp.ogg
     DefaultDeathgasp:
-      collection: FemaleDeathGasp
+      path: /Audio/_Goobstation/Voice/Vox/vox_deathgasp.ogg
+    Gulp: # Goob
+      path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
+    Click: #imp
+      collection: VoxClick
+    Chitter: #imp
+      collection: VoxChitter
+    Hiss: #imp
+      collection: VoxHiss
+    Caw:
+      collection: HarpyCaws
+  params:
+    variation: 0.125
 
 - type: emoteSounds
   id: UnisexDiona
-  params:
-    variation: 0.125
   sounds:
     Scream:
       path: /Audio/Voice/Diona/diona_scream.ogg
@@ -410,32 +441,28 @@
       collection: Weh
     Hew:
       collection: Hew
-    Sneeze:
-      collection: MaleSneezes
-    Cough:
-      collection: MaleCoughs
     CatMeow:
-      collection: CatMeows
-    CatHisses:
-      collection: CatHisses
-    MonkeyScreeches:
-      collection: MonkeyScreeches
-    RobotBeep:
-      collection: RobotBeeps
-    Yawn:
-      collection: MaleYawn
-    Snore:
-      collection: Snores
-    Sigh:
-      collection: MaleSigh
-    Crying:
-      collection: MaleCry
-    Whistle:
-      collection: Whistles
+      collection: CatMeows # Goobstation - effect standardization
     Gasp:
       collection: MaleGasp
     DefaultDeathgasp:
       collection: DeathGasp
+    Gulp: # Goob
+      path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
+    Crying: #goob
+      collection: Dionacry
+    Whistle: #goob
+      collection: Dionawhistle
+    Cough: #goob
+      collection: Dionacough
+    Yawn: #goob
+      collection: Dionayawn
+    Sigh: #goob
+      collection: Dionasigh
+  params:
+    variation: 0.125
 
 - type: emoteSounds
   id: UnisexArachnid
@@ -450,46 +477,25 @@
       path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
     Click:
       path: /Audio/Voice/Arachnid/arachnid_click.ogg
-    Hiss:
-      path: /Audio/Animals/snake_hiss.ogg
     Weh:
       collection: Weh
     Hew:
       collection: Hew
-    Sneeze:
-      collection: MaleSneezes
-    Cough:
-      collection: MaleCoughs
-    CatMeow:
-      collection: CatMeows
-    CatHisses:
-      collection: CatHisses
-    MonkeyScreeches:
-      collection: MonkeyScreeches
-    RobotBeep:
-      collection: RobotBeeps
-    Yawn:
-      collection: MaleYawn
-    Snore:
-      collection: Snores
     Honk:
       collection: BikeHorn
-    Sigh:
-      collection: MaleSigh
-    Crying:
-      collection: MaleCry
-    Whistle:
-      collection: Whistles
+    CatMeow:
+      collection: CatMeows # Goobstation - effect standardization
     Gasp:
       collection: MaleGasp
     DefaultDeathgasp:
       collection: DeathGasp
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
+    Gulp: # Goob
+      path: /Audio/_Goobstation/Voice/gulpexotic.ogg
 
 - type: emoteSounds
   id: UnisexDwarf
-  params:
-    variation: 0.125
-    pitch: 0.75
   sounds:
     Scream:
       collection: MaleScreams
@@ -527,12 +533,16 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MaleDeathGasp
-
-- type: emoteSounds
-  id: FemaleDwarf
+    Gulp: # Goob
+      path: /Audio/_Goobstation/Voice/Human/gulp.ogg
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
   params:
     variation: 0.125
     pitch: 0.75
+
+- type: emoteSounds
+  id: FemaleDwarf
   sounds:
     Scream:
       collection: FemaleScreams
@@ -570,6 +580,13 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
+    Gulp: # Goob
+      path: /Audio/_Goobstation/Voice/Human/gulp.ogg
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
+  params:
+    variation: 0.125
+    pitch: 0.75
 
 - type: emoteSounds
   id: UnisexMoth
@@ -590,98 +607,136 @@
       collection: Weh
     Hew:
       collection: Hew
-    Sneeze:
-      collection: MaleSneezes
-    Cough:
-      collection: MaleCoughs
+    Honk:
+      collection: BikeHorn
     CatMeow:
-      collection: CatMeows
-    CatHisses:
-      collection: CatHisses
-    MonkeyScreeches:
-      collection: MonkeyScreeches
+      collection: CatMeows # Goobstation - effect standardization
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MothDeathGasp
+    Flap: # Goobstation - Add flap to moths.
+      path: /Audio/_Goobstation/Voice/Moth/moth_flap.ogg
+    Gulp: # Goob
+      path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
     RobotBeep:
       collection: RobotBeeps
     Yawn:
       collection: MaleYawn
     Snore:
       collection: Snores
-    Honk:
-      collection: BikeHorn
     Sigh:
       collection: MaleSigh
     Crying:
       collection: MaleCry
     Whistle:
       collection: Whistles
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+
+- type: emoteSounds
+  id: MaleMoth
+  params:
+    variation: 0.125
+  sounds:
+    Buzz:
+      path: /Audio/Voice/Moth/moth_scream.ogg
+    Scream:
+      path: /Audio/Voice/Moth/moth_scream.ogg
+    Laugh:
+      path: /Audio/Voice/Moth/moth_laugh.ogg
+    Chitter:
+      path: /Audio/Voice/Moth/moth_chitter.ogg
+    Squeak:
+      path: /Audio/Voice/Moth/moth_squeak.ogg
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Honk:
+      collection: BikeHorn
+    CatMeow:
+      collection: CatMeows # Goobstation - effect standardization
     Gasp:
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MothDeathGasp
+    Flap: # Goobstation - Add flap to moths.
+      path: /Audio/_Goobstation/Voice/Moth/moth_flap.ogg
+    Gulp: # Goob
+      path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: MaleCry
+    Whistle:
+      collection: Whistles
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
 
 - type: emoteSounds
-  id: UnisexIPC
+  id: FemaleMoth
   params:
-    variation: 0
+    variation: 0.125
   sounds:
-    Scream:
-      path: /Audio/Voice/IPC/robot-scream.ogg
-      params:
-        variation: 0.125
-    Laugh:
-      path: /Audio/Voice/IPC/robot-laugh_3.ogg
-      params:
-        variation: 0.125
-    Sigh:
-      path: /Audio/Voice/Talk/pai.ogg
-      params:
-        variation: 0.125
-    Crying:
-      path: /Audio/Voice/IPC/cry_robot_1.ogg
-      params:
-        variation: 0.125
-    Whistle:
-      path: /Audio/Voice/IPC/pai_whistle.ogg
-      params:
-        variation: 0.125
-    CatMeow:
-      collection: CatMeows
-      params:
-        variation: 0.125
-    CatHisses:
-      collection: CatHisses
-      params:
-        variation: 0.125
-    MonkeyScreeches:
-      collection: MonkeyScreeches
-      params:
-        variation: 0.125
-    RobotBeep: # disease
-      path: /Audio/Effects/tesla_consume.ogg
-      params:
-        variation: 0.125
-    Beep:      # normal
-      path: /Audio/Voice/IPC/beep_2000.ogg
-    Boop:
-      path: /Audio/Voice/IPC/beep_500.ogg
     Buzz:
-      path: /Audio/Machines/buzz-sigh.ogg
+      path: /Audio/Voice/Moth/moth_scream.ogg
+    Scream:
+      path: /Audio/Voice/Moth/moth_scream.ogg
+    Laugh:
+      path: /Audio/Voice/Moth/moth_laugh.ogg
+    Chitter:
+      path: /Audio/Voice/Moth/moth_chitter.ogg
+    Squeak:
+      path: /Audio/Voice/Moth/moth_squeak.ogg
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
     Honk:
-      path: /Audio/Items/bikehorn.ogg
-      params:
-        variation: 0.125
-    Chime:
-      path: /Audio/Effects/Cargo/ping.ogg
-    Buzz-Two:
-      path: /Audio/Machines/buzz-two.ogg
-    Ping:
-      path: /Audio/Effects/beep1.ogg
-      params: # to prevent it from being definitively read by players as "OH SHIT A GRENADE"
-        variation: 0.125
-    Whirr:
-      collection: IPCWhirrs
-      params:
-        variation: 0
+      collection: BikeHorn
+    CatMeow:
+      collection: CatMeows # Goobstation - effect standardization
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: MothDeathGasp
+    Flap: # Goobstation - Add flap to moths.
+      path: /Audio/_Goobstation/Voice/Moth/moth_flap.ogg
+    Gulp: # Goob
+      path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: FemaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
+      collection: FemaleSigh
+    Crying:
+      collection: FemaleCry
+    Whistle:
+      collection: Whistles
+    Sneeze:
+      collection: FemaleSneezes
+    Cough:
+      collection: FemaleCoughs
 
 - type: emoteSounds
   id: UnisexSilicon
@@ -689,33 +744,9 @@
     variation: 0.05
   sounds:
     Scream:
-      path: /Audio/Voice/IPC/robot-scream.ogg
-      params:
-        variation: 0.125
-    Laugh:
-      path: /Audio/Voice/IPC/robot-laugh_3.ogg
-      params:
-        variation: 0.125
-    Sigh:
-      path: /Audio/Voice/Talk/pai.ogg
-      params:
-        variation: 0.125
-    Crying:
-      path: /Audio/Voice/IPC/cry_robot_1.ogg
-      params:
-        variation: 0.125
-    Whistle:
-      path: /Audio/Voice/IPC/pai_whistle.ogg
-      params:
-        variation: 0.125
+      collection: SiliconScreams
     Beep:
-      path: /Audio/Voice/IPC/beep_2000.ogg
-    Boop:
-      path: /Audio/Voice/IPC/beep_500.ogg
-    Whirr:
-      collection: IPCWhirrs
-      params:
-        variation: 0
+      path: /Audio/Machines/twobeep.ogg
     Chime:
       path: /Audio/Machines/chime.ogg
     Buzz:
@@ -726,38 +757,46 @@
       path: /Audio/Items/bikehorn.ogg
     Ping:
       path: /Audio/Effects/Cargo/ping.ogg
+    Boop: # Goobstation - IPC sounds
+      path: /Audio/_EinsteinEngines/Voice/IPC/beep_500.ogg
+    Whirr: # Goobstation - IPC sounds
+      collection: IPCWhirrs
+      params:
+        variation: 0
+    #Scream: # Goobstation - Cyborg Scream
+    #  path: /Audio/_Goobstation/Voice/Cyborg/borgscream.ogg
+
+    # Goobstation - Cyborg emote sounds
+    Laugh:
+      path: /Audio/_EinsteinEngines/Voice/IPC/robot-laugh_3.ogg
+      params:
+        variation: 0.125
+    Sigh:
+      path: /Audio/Voice/Talk/pai.ogg
+      params:
+        variation: 0.125
+    Crying:
+      path: /Audio/_EinsteinEngines/Voice/IPC/cry_robot_1.ogg
+      params:
+        variation: 0.125
+    Whistle:
+      path: /Audio/_EinsteinEngines/Voice/IPC/pai_whistle.ogg
+      params:
+        variation: 0.125
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
 
 - type: emoteSounds
   id: UnisexSiliconSyndicate
   params:
     variation: 0.05
   sounds:
+    Scream:
+      collection: SiliconScreams
     Laugh:
       path: /Audio/Voice/Silicon/syndieborg_laugh.ogg
-    Scream:
-      path: /Audio/Voice/IPC/robot-scream.ogg
-      params:
-        variation: 0.125
-    Sigh:
-      path: /Audio/Voice/Talk/pai.ogg
-      params:
-        variation: 0.125
-    Crying:
-      path: /Audio/Voice/IPC/cry_robot_1.ogg
-      params:
-        variation: 0.125
-    Whistle:
-      path: /Audio/Voice/IPC/pai_whistle.ogg
-      params:
-        variation: 0.125
     Beep:
-      path: /Audio/Voice/IPC/beep_2000.ogg
-    Boop:
-      path: /Audio/Voice/IPC/beep_500.ogg
-    Whirr:
-      collection: IPCWhirrs
-      params:
-        variation: 0
+      path: /Audio/Machines/twobeep.ogg
     Chime:
       path: /Audio/Machines/chime.ogg
     Buzz:
@@ -768,6 +807,61 @@
       path: /Audio/Items/bikehorn.ogg
     Ping:
       path: /Audio/Effects/Cargo/ping.ogg
+    #Scream: # Goobstation - Cyborg Scream
+    #  path: /Audio/_Goobstation/Voice/Cyborg/borgscream.ogg
+
+    # Goobstation - Cyborg emote sounds
+    Sigh:
+      path: /Audio/Voice/Talk/pai.ogg
+      params:
+        variation: 0.125
+    Crying:
+      path: /Audio/_EinsteinEngines/Voice/IPC/cry_robot_1.ogg
+      params:
+        variation: 0.125
+    Whistle:
+      path: /Audio/_EinsteinEngines/Voice/IPC/pai_whistle.ogg
+      params:
+        variation: 0.125
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
+
+- type: emoteSounds
+  id: UnisexSiliconXenoborg
+  params:
+    variation: 0.05
+  sounds:
+    Scream:
+      collection: XenoborgScream
+    Laugh:
+      collection: XenoborgLaugh
+    Beep:
+      collection: XenoborgBeep
+    Chime:
+      collection: XenoborgChime
+    Buzz:
+      collection: XenoborgBuzz
+    Buzz-Two:
+      collection: XenoborgBuzzTwo
+    Honk:
+      collection: XenoborgBikeHorn
+    Ping:
+      collection: XenoborgPing
+    # Goobstation - Cyborg emote sounds
+    Sigh:
+      path: /Audio/Voice/Xenoborg/xenoborg_buzz-sigh.ogg
+      params:
+        variation: 0.125
+    Crying:
+      path: /Audio/Voice/Xenoborg/cry_robot_xenoborg.ogg
+      params:
+        variation: 0.125
+    Whistle:
+      path: /Audio/Voice/Xenoborg/xenoborg_chime.ogg
+      params:
+        variation: 0.125
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
 
 # body emotes
 - type: emoteSounds
@@ -775,23 +869,20 @@
   sounds:
     Clap:
       collection: Claps
-    ClapSingle:
-      collection: ClapSingle
     Snap:
       collection: Snaps
       params:
         volume: -6
     Salute:
       collection: Salutes
+    Crack: # Imp
+      collection: Cracks # Imp
 
 - type: emoteSounds
   id: DionaBodyEmotes
   sounds:
     Clap:
       path: /Audio/Voice/Diona/diona_clap.ogg
-    # TODO: Replace this with a similar wood themed single clap
-    ClapSingle:
-      collection: ClapSingle
     Snap:
       path: /Audio/Voice/Diona/diona_snap.ogg
       params:
@@ -799,7 +890,9 @@
     Salute:
       path: /Audio/Voice/Diona/diona_salute.ogg
       params:
-        volume: -5
+       volume: -5
+    Crack: # Imp
+      collection: Cracks # Imp
 
 - type: emoteSounds
   id: ReptilianBodyEmotes
@@ -810,14 +903,14 @@
         variation: 0.125
     Clap:
       collection: Claps
-    ClapSingle:
-      collection: ClapSingle
     Snap:
       collection: Snaps
       params:
         volume: -6
     Salute:
       collection: Salutes
+    Crack: # Imp
+      collection: Cracks # Imp
 
 # mobs
 - type: emoteSounds
@@ -852,6 +945,13 @@
   id: Bear
   sound:
     path: /Audio/Animals/bear.ogg
+    params:
+      variation: 0.125
+
+- type: emoteSounds # TODO put into goob
+  id: Brullbar
+  sound:
+    path: /Audio/_Goobstation/Animals/Meatzone_Howl.ogg
     params:
       variation: 0.125
 
@@ -890,11 +990,65 @@
       variation: 0.125
 
 - type: emoteSounds
-  id: UnisexPlasmaman
+  id: Scurret
   params:
     variation: 0.125
   sounds:
+    Thump:
+      path: /Audio/Effects/soft_thump.ogg
+      params:
+        variation: 0.125
+    Clap:
+      collection: Claps
+    Snap:
+      collection: Snaps
+      params:
+        volume: -6
+    Salute:
+      collection: Salutes
+    Laugh:
+      collection: WawaLaugh
+    Sneeze:
+      collection: WawaSneeze
+    Cough:
+      collection: MaleCoughs
+    Whistle:
+      collection: Whistles
+    Sigh:
+      collection: WawaSigh
     Scream:
-      collection: PlasmamanUnisexScreams
-  sound:
-    path: /Audio/Voice/Skeleton/skeleton_scream.ogg
+      collection: WawaScream
+    Yawn:
+      collection: WawaYawn
+    Crying:
+      collection: WawaCry
+    Snore:
+      collection: Snores
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Honk:
+      collection: BikeHorn
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: WawaDeath
+
+- type: emoteSounds #goob edit
+  id: FeroxiBodyEmotes
+  sounds:
+    Thump:
+      path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg
+      params:
+        variation: 0.125
+    Clap:
+      collection: Claps
+    Snap:
+      collection: Snaps
+      params:
+        volume: -6
+    Salute:
+      collection: Salutes
+    Crack: # Imp
+      collection: Cracks # Imp

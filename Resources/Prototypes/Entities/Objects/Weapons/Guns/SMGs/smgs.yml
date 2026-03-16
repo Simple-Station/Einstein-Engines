@@ -1,3 +1,68 @@
+# SPDX-FileCopyrightText: 2019 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+# SPDX-FileCopyrightText: 2020 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Hugo Laloge <hugo.laloge@gmail.com>
+# SPDX-FileCopyrightText: 2020 Metal Gear Sloth <metalgearsloth@gmail.com>
+# SPDX-FileCopyrightText: 2020 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2020 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Ygg01 <daniel.fath7@gmail.com>
+# SPDX-FileCopyrightText: 2020 py01 <pyronetics01@gmail.com>
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Galactic Chimp <GalacticChimpanzee@gmail.com>
+# SPDX-FileCopyrightText: 2021 Paul <ritter.paul1+git@googlemail.com>
+# SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2021 Tarlan2 <76408146+Tarlan2@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 buletsponge <96000213+buletsponge@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 ElectroJr <leonsfriedrich@gmail.com>
+# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 T-Stalker <43253663+DogZeroX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 T-Stalker <le0nel_1van@hotmail.com>
+# SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+# SPDX-FileCopyrightText: 2023 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 TaralGit <76408146+TaralGit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 and_a <and_a@DESKTOP-RJENGIR>
+# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Doomsdrayk <robotdoughnut@comcast.net>
+# SPDX-FileCopyrightText: 2024 EmoGarbage404 <retron404@gmail.com>
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hmeister <nathan.springfredfoxbon4@gmail.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 RiceMar1244 <138547931+RiceMar1244@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ThatGuyUSA <thatguyusa123@gmail.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Avalon <jfbentley1@gmail.com>
+# SPDX-FileCopyrightText: 2025 BramvanZijp <56019239+BramvanZijp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 K-Dynamic <20566341+K-Dynamic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Nox <nebulousnox38@gmail.com>
+# SPDX-FileCopyrightText: 2025 PunishedJoe <PunishedJoeseph@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Theodore Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   name: BaseSMG
   parent: BaseItem
@@ -42,7 +107,7 @@
         priority: 2
         whitelist:
           tags:
-          - MagazinePistolSubMachineGun
+            - MagazinePistolSubMachineGun
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
@@ -50,38 +115,51 @@
         priority: 1
         whitelist:
           tags:
-          - CartridgePistol
+            - CartridgePistol
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
   - type: StaticPrice
     price: 500
-  - type: Execution
+  # Goobstation edit start
+  - type: EmitSoundOnPickup
+    sound:
+      collection: SMGPickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: SMGDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: SMGDrop
+  - type: RestrictGunshotsByUserTag # Goobstation
+    doesntContain:
+    - Oni
+    messages:
+    - oni-cannot-shoot-guns-1
+    - oni-cannot-shoot-guns-2
+    - oni-cannot-shoot-guns-3
+  # Goobstation edit end
+  - type: Multishot # Goobstation V
+    missChance: 0.4
+    spreadMultiplier: 3
+    spreadAddition: 50 #very hard to hold two of these steady let alone steady while shooting them
+  - type: AltFireMelee
+    attackType: Heavy
   - type: MeleeWeapon
-    attackRate: 1.3333
     damage:
       types:
-        Blunt: 9.0
-    bluntStaminaDamageFactor: 1.25
-    swapKeys: true
-    disableHeavy: true
-    animation: WeaponArcThrust
-    wideAnimationRotation: 180
+       Blunt: 10 # lower melee damage for SMGs as they are lighter
+    angle: 0
+    wideAnimationRotation: 90 # -90 if it takes bayonets (hits with muzzle) 90 if not (hits with butt)
     soundHit:
-      collection: MetalThud
-  - type: IncreaseDamageOnWield
-    damage:
-      types:
-        Blunt: 2.5
-  - type: DamageOtherOnHit
-    staminaCost: 8
+      collection: MetalThud # Goobstation ^
 
 - type: entity
   name: Atreides
-  parent: [BaseWeaponSubMachineGun, BaseMajorContraband]
+  parent: [BaseWeaponSubMachineGun, BaseSecurityContraband]
   id: WeaponSubMachineGunAtreides
-  description: Pla-ket-ket-ket-ket! Uses .35 auto ammo.
+  description: A rare, compact machine pistol not often found in the Spinward sector. Being produced during the Corporate Wars and the design specs being long since lost to time, the Atreides excels at CQB due to its overwhelming firerate. Feeds from .35 Auto SMG magazines. # Goobstation
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/SMGs/atreides.rsi
@@ -94,7 +172,6 @@
     fireRate: 10
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
-    fireOnDropChance: 0.3
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -102,10 +179,10 @@
   - type: Appearance
 
 - type: entity
-  name: C-20r submachine gun
+  name: C-20R
   parent: [BaseWeaponSubMachineGun, BaseSyndicateContraband]
   id: WeaponSubMachineGunC20r
-  description: Manufactured by Cybersun-Armaments, the C-20r is one of the most popular personal small-arms in the Coalition of Colonies. Uses .35 auto ammo.
+  description: The right hand of those who fight under the three serpents. A one-handed, bullpup SMG from the Waffle Corporation that sacrifices accuracy for pure firerate. Feeds from .35 Auto SMG magazines.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
@@ -116,22 +193,21 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
     sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
-  - type: Wieldable
-  - type: GunWieldBonus
-    minAngle: -19
-    maxAngle: -16
+#  - type: Wieldable # Goob - one-handed C20R - start
+#    unwieldOnUse: false
+#  - type: GunWieldBonus
+#    minAngle: -19
+#    maxAngle: -16
   - type: Gun
-    minAngle: 21
-    maxAngle: 32
-    fireRate: 10
+#    minAngle: 21 # Base SMG already has minAngle: 2 maxAngle: 16
+#    maxAngle: 32 # Goob - one-handed C20R - end
     shotsPerBurst: 5
     availableModes:
-    - SemiAuto
     - Burst
     - FullAuto
+    - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/c-20r.ogg
-    fireOnDropChance: 0.3
   - type: ChamberMagazineAmmoProvider
     autoEject: true
   - type: MagazineVisuals
@@ -139,185 +215,105 @@
     steps: 6
     zeroVisible: true
   - type: Appearance
-
-- type: entity
-  name: C-20r sub machine gun
-  parent: [WeaponSubMachineGunC20r]
-  id: WeaponSubMachineGunC20rEmpty
-  description: Manufactured by Cybersun-Armaments, the C-20r is one of the most popular personal small-arms in the Coalition of Colonies. Uses .35 auto ammo.
-  components:
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: null
-        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
-        priority: 2
-        whitelist:
-          tags:
-          - MagazinePistolSubMachineGun
-        whitelistFailPopup: gun-magazine-whitelist-fail
-      gun_chamber:
-        name: Chamber
-        startingItem: null
-        priority: 1
-        whitelist:
-          tags:
-          - CartridgePistol
-
-- type: entity
-  name: antique C-20r submachine gun
-  parent: WeaponSubMachineGunC20r
-  id: WeaponSubMachineGunC20rHoS
-  description: This heavily worn submachine gun is engraved with the words, "Remember Mars".
-  components:
-  - type: StealTarget
-    stealGroup: HoSAntiqueWeapon
+  - type: Item # Goobstation
+    shape:
+    - 0,0,2,1
+  - type: StaticPrice
+    price: 5000
 
 - type: entity
   name: Drozd
-  parent: [BaseWeaponSubMachineGun, BaseRestrictedContraband]
+  parent: [BaseWeaponSubMachineGun, BaseSecurityContraband]
   id: WeaponSubMachineGunDrozd
-  description: An excellent fully automatic Heavy SMG.
+  description: A bullpup SMG designed for the narrow and tight corridors common in station warfare. This law-enforcement model is select fire, but the Drozd's burst focused design throttles its full-auto performance massively. Feeds from .35 Auto SMG magazines.
   components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-0
-      map: ["enum.GunVisualLayers.Mag"]
-  - type: Clothing
-    sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
-  - type: Wieldable
-    unwieldOnUse: false
-  - type: GunWieldBonus
-    minAngle: -19
-    maxAngle: -16
-  - type: Gun
-    minAngle: 21
-    maxAngle: 32
-    fireRate: 12
-    burstFireRate: 12
-    selectedMode: FullAuto
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
-    availableModes:
-    - FullAuto
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: MagazinePistolSubMachineGun
-        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
-        priority: 2
-        whitelist:
-          tags:
-          - MagazinePistolSubMachineGun
-        whitelistFailPopup: gun-magazine-whitelist-fail
-      gun_chamber:
-        name: Chamber
-        startingItem: CartridgePistol
-        priority: 1
-        whitelist:
-          tags:
-          - CartridgePistol
-  - type: MagazineVisuals
-    magState: mag
-    steps: 1
-    zeroVisible: true
-  - type: Appearance
-
-#Commented out the Vector, as it is deprecated.
-# - type: entity
-#  name: Vector
-#  parent: BaseWeaponSubMachineGun
-#  id: WeaponSubMachineGunVector
-#  suffix: Deprecated use Drozd
-#  description: An excellent fully automatic Heavy SMG. Uses .45 magnum ammo.
-#  components:
-#  - type: Sprite
-#    sprite: Objects/Weapons/Guns/SMGs/vector.rsi
-#    layers:
-#      - state: base
-#        map: ["enum.GunVisualLayers.Base"]
-#      - state: mag-0
-#        map: ["enum.GunVisualLayers.Mag"]
-#  - type: Clothing
-#    sprite: Objects/Weapons/Guns/SMGs/vector.rsi
-#  - type: Gun
-#    fireRate: 6
-#    selectedMode: FullAuto
-#    soundGunshot:
-#      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
-#    availableModes:
-#    - FullAuto
-#    fireOnDropChance: 0.1
-#  - type: ItemSlots
-#    slots:
-#      gun_magazine:
-#        name: Magazine
-#        startingItem: MagazineMagnumSubMachineGun
-#        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
-#        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
-#        priority: 2
-#       whitelist:
-#          tags:
-#            - MagazineMagnumSubMachineGun
-#      gun_chamber:
-#        name: Chamber
-#        startingItem: CartridgeMagnum
-#        priority: 1
-#        whitelist:
-#          tags:
-#            - CartridgeMagnum
-#        whitelistFailPopup: gun-magazine-whitelist-fail
-#  - type: MagazineVisuals
-#    magState: mag
-#    steps: 1
-#    zeroVisible: true
-#  - type: Appearance
+    - type: Sprite
+      sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
+      layers:
+        - state: base
+          map: ["enum.GunVisualLayers.Base"]
+        - state: mag-0
+          map: ["enum.GunVisualLayers.Mag"]
+    - type: Clothing
+      sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
+    - type: Wieldable
+      unwieldOnUse: false
+    - type: GunWieldBonus
+      minAngle: -19
+      maxAngle: -16
+    - type: Gun
+      minAngle: 21
+      maxAngle: 32
+      fireRate: 6
+      burstFireRate: 18
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+      selectedMode: Burst
+      availableModes:
+      - Burst
+      - FullAuto
+      - SemiAuto
+      shotsPerBurst: 3
+      burstCooldown: 0.375
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: MagazinePistolSubMachineGun
+          insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - MagazinePistolSubMachineGun
+          whitelistFailPopup: gun-magazine-whitelist-fail
+        gun_chamber:
+          name: Chamber
+          startingItem: CartridgePistol
+          priority: 1
+          whitelist:
+            tags:
+              - CartridgePistol
+    - type: MagazineVisuals
+      magState: mag
+      steps: 1
+      zeroVisible: true
+    - type: Appearance
 
 - type: entity
-  name: WT550
-  parent: [ BaseWeaponSubMachineGun, BaseRestrictedContraband ]
+  name: WT550 # Goobstation
+  parent: [BaseWeaponSubMachineGun, BaseSecurityContraband]
   id: WeaponSubMachineGunWt550
-  description: An excellent SMG, produced by NanoTrasen's Small Arms Division. Uses .35 auto ammo.
+  description: A truly unique firearm, the WT550 loads from a proprietary top-mounted magazine parallel to the barrel. While the RPM isn't great, the small package and steady recoil make it fully usable one-handed. Feeds from top-mounted .35 Auto SMG magazines. # Goobstation
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/SMGs/wt550.rsi
     layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: base-unshaded
-      map: ["enum.GunVisualLayers.BaseUnshaded"]
-      shader: unshaded
-    - state: mag-0
-      map: ["enum.GunVisualLayers.Mag"]
-    - state: mag-unshaded-0
-      map: ["enum.GunVisualLayers.MagUnshaded"]
-      shader: unshaded
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: base-unshaded
+        map: ["enum.GunVisualLayers.BaseUnshaded"]
+        shader: unshaded
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+      - state: mag-unshaded-0
+        map: ["enum.GunVisualLayers.MagUnshaded"]
+        shader: unshaded
   - type: Clothing
     sprite: Objects/Weapons/Guns/SMGs/wt550.rsi
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
-  - type: Gun
-    fireRate: 7
-    minAngle: 1
-    maxAngle: 6
-    angleIncrease: 1.5
-    angleDecay: 6
+  - type: Gun # Goobstation - I am the one who nerfs the WT.
+    minAngle: 2
+    maxAngle: 16
+    fireRate: 5
+    burstFireRate: 8
+    angleIncrease: 3
+    angleDecay: 16
     selectedMode: FullAuto
-    shotsPerBurst: 5
-    burstCooldown: 0.2
-    burstFireRate: 7
     availableModes:
-    - SemiAuto
-    - Burst
     - FullAuto
-    fireOnDropChance: 0.1
+    - SemiAuto
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -328,7 +324,7 @@
         priority: 2
         whitelist:
           tags:
-          - MagazinePistolSubMachineGunTopMounted
+            - MagazinePistolSubMachineGunTopMounted
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
@@ -336,18 +332,15 @@
         priority: 1
         whitelist:
           tags:
-          - CartridgePistol
+            - CartridgePistol
   - type: MagazineVisuals
     magState: mag
     steps: 6
     zeroVisible: true
   - type: Appearance
-
-- type: entity
-  name: antique Wt550
-  id: WeaponSubMachineGunWt550HoS
-  parent: WeaponSubMachineGunWt550
-  description: A prized possession of the station's Head of Security. The smell of dried blood lingers on this weapon's muzzle. A small torch with 24 stars surrounding it has been engraved on the grip.
-  components:
-  - type: StealTarget
-    stealGroup: HoSAntiqueWeapon
+  # Goobstation
+  - type: Multishot
+    missChance: 0.3
+  - type: Item
+    shape:
+    - 0,0,2,1

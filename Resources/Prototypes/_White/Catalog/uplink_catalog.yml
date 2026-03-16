@@ -1,4 +1,28 @@
+# SPDX-FileCopyrightText: 2024 Spatison <137375981+spatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 # Weaponry
+
+- type: listing
+  id: UplinkExperimentalSyndicateTeleporter
+  name: uplink-experimental-syndicate-teleporter-name
+  description: uplink-experimental-syndicate-teleporter-desc
+  productEntity: ExperimentalSyndicateTeleporter
+  cost:
+    Telecrystal: 50 # Goob
+  categories:
+    - UplinkDisruption
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - NukeOpsUplink
 
 - type: listing
   id: UplinkBetrayalKnife
@@ -7,11 +31,75 @@
   icon: { sprite: /Textures/_White/Objects/Weapons/Melee/Daggers/betrayal_knife.rsi, state: icon }
   productEntity: BetrayalKnife
   cost:
-    Telecrystal: 40 # goob
+    Telecrystal: 30 # goob
   categories:
   - UplinkWeaponry
   conditions:
   - !type:StoreWhitelistCondition
     blacklist:
+      tags:
+      - NukeOpsUplink
+
+# Night Vision
+
+- type: listing
+  id: UplinkNightGoggles
+  name: uplink-night-vision-name
+  description: uplink-night-vision-desc
+  productEntity: ClothingEyesNightVisionGogglesSyndie
+  cost:
+    Telecrystal: 10 # goob
+  categories:
+  - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - NukeOpsUplink
+
+- type: listing
+  id: UplinkNightGogglesNukie
+  name: uplink-night-vision-name
+  description: uplink-night-vision-desc
+  productEntity: ClothingEyesNightVisionGogglesNukie
+  cost:
+    Telecrystal: 15 # goob
+  categories:
+  - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+
+# Thermal Vision
+
+- type: listing
+  id: UplinkThermalGoggles
+  name: uplink-thermal-vision-name
+  description: uplink-thermal-vision-desc
+  productEntity: ClothingEyesThermalVisionGogglesSyndie
+  cost:
+    Telecrystal: 15 # goob
+  categories:
+  - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - NukeOpsUplink
+
+- type: listing
+  id: UplinkThermalGogglesNukie
+  name: uplink-thermal-vision-name
+  description: uplink-thermal-vision-desc
+  productEntity: ClothingEyesThermalVisionGogglesNukie
+  cost:
+    Telecrystal: 20 # goob
+  categories:
+  - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
       tags:
       - NukeOpsUplink

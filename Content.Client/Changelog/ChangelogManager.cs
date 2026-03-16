@@ -1,6 +1,20 @@
-using System.Globalization;
+// SPDX-FileCopyrightText: 2021 Paul <ritter.paul1+git@googlemail.com>
+// SPDX-FileCopyrightText: 2021 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Ygg01 <y.laughing.man.y@gmail.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Content.Shared.CCVar;
 using Robust.Shared;
@@ -26,8 +40,8 @@ namespace Content.Client.Changelog
         private ISawmill _sawmill = default!;
 
         public bool NewChangelogEntries { get; private set; }
-        public DateTime LastReadTime { get; private set; }
-        public DateTime MaxTime { get; private set; }
+        public int LastReadId { get; private set; }
+        public int MaxId { get; private set; }
 
         public event Action? NewChangelogEntriesChanged;
 
@@ -36,7 +50,7 @@ namespace Content.Client.Changelog
         ///     stores the new ID to disk and clears <see cref="NewChangelogEntries"/>.
         /// </summary>
         /// <remarks>
-        ///     <see cref="MaxTime"/> is NOT cleared
+        ///     <see cref="LastReadId"/> is NOT cleared
         ///     since that's used in the changelog menu to show the "since you last read" bar.
         /// </remarks>
         public void SaveNewReadId()
@@ -44,11 +58,9 @@ namespace Content.Client.Changelog
             NewChangelogEntries = false;
             NewChangelogEntriesChanged?.Invoke();
 
-            using var sw =
-                _resource.UserData.OpenWriteText(
-                    new($"/changelog_last_seen_{_configManager.GetCVar(CCVars.ServerId)}_datetime"));
+            using var sw = _resource.UserData.OpenWriteText(new ($"/changelog_last_seen_{_configManager.GetCVar(CCVars.ServerId)}"));
 
-            sw.Write(MaxTime.ToString("O"));
+            sw.Write(MaxId.ToString());
         }
 
         public async void Initialize()
@@ -83,19 +95,15 @@ namespace Content.Client.Changelog
                 return;
             }
 
-            MaxTime = changelog.Entries.Max(c => c.Time);
+            MaxId = changelog.Entries.Max(c => c.Id);
 
-            var path = new ResPath($"/changelog_last_seen_{_configManager.GetCVar(CCVars.ServerId)}_datetime");
-            if(_resource.UserData.TryReadAllText(path, out var lastReadTimeText))
+            var path = new ResPath($"/changelog_last_seen_{_configManager.GetCVar(CCVars.ServerId)}");
+            if (_resource.UserData.TryReadAllText(path, out var lastReadIdText))
             {
-                if (Regex.IsMatch(lastReadTimeText,
-                        @"^([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$"))
-                {
-                    LastReadTime = DateTime.ParseExact(lastReadTimeText, "O", CultureInfo.InvariantCulture);
-                }
+                LastReadId = int.Parse(lastReadIdText);
             }
 
-            NewChangelogEntries = LastReadTime < MaxTime;
+            NewChangelogEntries = LastReadId < MaxId;
 
             NewChangelogEntriesChanged?.Invoke();
         }

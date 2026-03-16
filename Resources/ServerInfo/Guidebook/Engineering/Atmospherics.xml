@@ -1,67 +1,50 @@
+<!--
+SPDX-FileCopyrightText: 2023 Albert Snow <ajsnow2012@gmail.com>
+SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Warentan <113652968+Warentan@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 end <72604018+laok233@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Iztok Bajcar <50874197+iztokbajcar@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Terraspark4941 <terraspark4941@gmail.com>
+SPDX-FileCopyrightText: 2024 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <Document>
-  # Атмосфера
+	# Атмосфера
+	Атмосферный отдел — это инженерное подразделение, ответственное за поддержание атмосферы станции в безопасном и пригодном для дыхания состоянии для экипажа.
 
-  Атмосферные системы необходимы для долгосрочного комфорта экипажа, но документации по ним обычно мало, из-за чего настройка может показаться непростой. Далее — основы.
+	Атмосферой управляют Атмосферные техники, подчиняющиеся Старшему Инженеру.
 
-  ## Стандартная смесь
-  Дышать чистым O2 или чистым N2 вредно для здоровья экипажа. Рекомендуется смесь [color=#a4885c]78% N2 и 22% O2 при 101.24 кПа[/color]. Также советуем настроить смеситель газов на выход не ниже 300 кПа для ускоренной репрессуризации комнат без чрезмерного риска перепрессовки на случай диверсии в дистросети.
-  <Box>
-    <GuideEntityEmbed Entity="OxygenCanister"/>
-    <GuideEntityEmbed Entity="NitrogenCanister"/>
-    <GuideEntityEmbed Entity="AirCanister"/>
-  </Box>
-  Вариации смеси могут потребоваться для комфорта нетипичных членов экипажа (например, воксов, которым кислород вреден — они дышат азотом). Для таких сотрудников (в будущем) лучше выделять отдельное пространство, изолированное шлюзом или секцией мусоропровода. Помните, оба варианта негерметичны, поэтому поставьте скрубберы по обе стороны от перегородки, чтобы убирать утечки.
-  <Box>
-    <GuideEntityEmbed Entity="NitrogenCanister"/>
-    <GuideEntityEmbed Entity="StorageCanister"/>
-  </Box>
-  ## Венты и скрубберы
-  Венты заполняют комнаты, а скрубберы очищают их. По умолчанию они настроены на стандартное давление (101.24 кПа) и удаление всех газов, кроме O2/N2. Переопределить поведение можно, связав устройства с воздушной тревогой (Air Alarm) и настроив реакцию на разные типы газов и уровни давления.
+	<Box>
+		<GuideEntityEmbed Entity="ToyFigurineAtmosTech" Caption="Атмосиан"/>
+		<GuideEntityEmbed Entity="ToyFigurineChiefEngineer" Caption="ГИ"/>
+	</Box>
+	<Box>
+		[color=#999999][italic][italic][/color]
+	</Box>
 
-  <Box>
-    <GuideEntityEmbed Entity="GasVentPump"/>
-    <GuideEntityEmbed Entity="GasVentScrubber"/>
-  </Box>
-  В штатном режиме, если обычный вент определяет, что снаружи космос, он автоматически выключится, пока давление не достигнет минимума — чтобы не потерять полезные газы. Решение: поднять давление в комнате до минимального, пополнив её газовыми баллонами (возможно, несколькими — для больших помещений).
+	## Обязанности
+	В основном вы будете реагировать на [textlink="атмосферные нарушения" link="AtmosphericUpsets"] по всей станции.
+	Они могут варьироваться от мелких утечек до серьёзных [textlink="пожаров" link="Fires"] или [textlink="разгерметизации" link="Spacing"].
 
-  Если скрубберы не справляются (и даже режим «Siphon» не помогает), используйте переносные скрубберы: перетащите их в зону и закрепите ключом. Они работают заметно быстрее и могут очистить помещение довольно быстро. При крупных разливах может понадобиться несколько штук.
-  <Box>
-    <GuideEntityEmbed Entity="PortableScrubber"/>
-  </Box>
-  # Смеси газов и камеры сгорания
-  Если основные задачи выполнены, можно подзаработать, создавая новые химические газы.
+	Сотрудники других отделов также могут запрашивать [textlink="баллоны с газом" link="GasCanisters"] для выполнения своих обязанностей, например, [textlink="плазму" link="Gasses"] для [textlink="Научного отдела" link="Science"] или [textlink="углекислый газ" link="Gasses"] для [textlink="Химии" link="Chemist"].
 
-  ##Тритий
-  Тритий — прозрачный зеленоватый газ, чрезвычайно огнеопасный и радиоактивный; воспламеняется при контакте с кислородом, что делает его полезным при работе [color=#a4885c]TEG[/color].
-  Его можно получить, сжигая 1% плазмы и 96% и более кислорода в камере сгорания (идеально — 3% плазмы и 97% кислорода). Извлекается скрубберами.
-
-  <Box>
-    <GuideEntityEmbed Entity="PlasmaCanister"/>
-    <GuideEntityEmbed Entity="OxygenCanister"/>
-    <GuideEntityEmbed Entity="GasVentScrubber"/>
-    <GuideEntityEmbed Entity="TritiumCanister"/>
-  </Box>
-
-  ##Фрезон
-  Фрезон — синевато‑зелёный газ, крайне сложный и очень опасный. Чтобы получить фрезон, смешайте тритий, кислород и азот в помещении с температурой около 70 K, запустив реакцию и не дав тритию сгореть в кислороде.
-
-  <Box>
-    <GuideEntityEmbed Entity="TritiumCanister"/>
-    <GuideEntityEmbed Entity="AirCanister"/>
-    <GuideEntityEmbed Entity="GasVentScrubber"/>
-    <GuideEntityEmbed Entity="StorageCanister" Caption="Фрезон (канистра)"/>
-  </Box>
-
-  Важно понимать: утечка фрезона может разорить станцию, превратив её в зимний ад с колючими свитерами и холодовыми ожогами. Он очень холодный и может «заморозить» станцию до смерти даже несколькими молями — поэтому запирайте канистры или сразу относите фрезон в складскую комнату.
-
-  ## Памятка
-  - Стандартная смесь: [color=#a4885c]78% N2 и 22% O2 при 101.24 кПа[/color].
-  - Газы подчиняются реальной физике. Можно использовать уравнение:
-  <Box>
-    [color=cyan]PV = nRT[/color]
-  </Box>
-  <Box>
-    ([color=#a4885c]Давление кПа * Объём л = Моли * R * Температура K[/color])
-  </Box> чтобы выводить необходимые параметры. Постоянная R ≈ 8.31446.
+	Когда работы нет, от вас могут ожидать помощь обычным Инженерам станции с их задачами, а также наставничество новых Технических ассистентов и Атмосферных техников.
+	В свободное время вы можете улучшать станцию, создавая комнаты с разной атмосферой для [textlink="Воксов" link="Vox"] и других видов, или организовывать производство [textlink="экзотических газов" link="Gasses"] для нужд станции.
+	
+	## Справка
+	- Стандартная атмосферная смесь: [color=#a4885c]78% Азота и 22% Кислорода при 101.24 кПа.[/color]
+	- Газы подчиняются реальной математике. Вы можете использовать уравнение:
+	<Box>
+		[color=cyan]PV = nRT[/color]
+	</Box>
+	<Box>
+		([color=#a4885c]Давление kPa * Объём L = Моли * R * Температура K[/color])
+	</Box> для вычисления нужной информации о газе. R примерно равно 8.31446.
 
 </Document>

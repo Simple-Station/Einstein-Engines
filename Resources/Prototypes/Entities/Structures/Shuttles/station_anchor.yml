@@ -1,4 +1,16 @@
-﻿- type: entity
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 EmoGarbage404 <retron404@gmail.com>
+# SPDX-FileCopyrightText: 2024 Julian Giebel <juliangiebel@live.de>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
   id: StationAnchorBase
   abstract: true
   name: station anchor
@@ -39,13 +51,15 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.7,-0.8,0.7,0.8"
+          bounds: "-0.7,-0.7,0.7,0.7"
         density: 190
         mask:
         - LargeMobMask
         layer:
         - WallLayer
-
+  - type: Tag # Goobstation
+    tags:
+    - IgnoreImmovableRod
 
 - type: entity
   id: StationAnchorIndestructible
@@ -55,8 +69,6 @@
 - type: entity
   id: StationAnchor
   parent: [StationAnchorBase, BaseMachinePowered, ConstructibleMachine]
-  name: station anchor
-  description: Prevents stations from moving
   placement:
     mode: AlignTileAny
   components:
@@ -112,6 +124,10 @@
       interfaces:
         enum.PowerChargeUiKey.Key:
           type: PowerChargeBoundUserInterface
+    - type: Tag # Goobstation
+      tags:
+      - Structure
+      - IgnoreImmovableRod
 
 - type: entity
   parent: StationAnchor

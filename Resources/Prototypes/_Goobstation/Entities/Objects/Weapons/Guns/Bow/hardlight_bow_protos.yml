@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2024 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: selectableAmmo
   id: ArrowEnergy
   desc: Regular hardlight arrow. Deals more damage than other types.
@@ -9,7 +17,7 @@
 
 - type: selectableAmmo
   id: ArrowDisabler
-  desc: Disabler hardlight arrow. Deals no damage. Stuns in two hits.
+  desc: Disabler hardlight arrow. Deals no damage. Stuns in three hits.
   icon:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
     state: omnilaser
@@ -54,9 +62,18 @@
 
 - type: selectableAmmo
   id: ArrowBee
-  desc: Bee hardlight arrow. Summons angry bees on hit.
+  desc: Bee hardlight arrow. Summons angry bees when it hits any living entity, except bees themselves.
   icon:
     sprite: _Goobstation/Objects/Weapons/Grenades/beenades.rsi
     state: icon
   color: yellow
   protoId: ArrowBee
+
+- type: selectableAmmo
+  id: ArrowIon
+  desc: Ion hardlight arrow. Deals massive damage to silicons as well as causing small EMP in the area.
+  icon:
+    sprite: Objects/Magic/magicactions.rsi
+    state: shield
+  color: silver
+  protoId: ArrowIon

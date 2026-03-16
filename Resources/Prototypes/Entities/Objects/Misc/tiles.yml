@@ -1,7 +1,114 @@
+# SPDX-FileCopyrightText: 2019 Ephememory <yetanotherscuffed@gmail.com>
+# SPDX-FileCopyrightText: 2020 FL-OZ <58238103+FL-OZ@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 FL-OZ <anotherscuffed@gmail.com>
+# SPDX-FileCopyrightText: 2020 Git-Nivrak <59925169+Git-Nivrak@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Hugo Laloge <hugo.laloge@gmail.com>
+# SPDX-FileCopyrightText: 2020 Swept <jamesurquhartwebb@gmail.com>
+# SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Metal Gear Sloth <metalgearsloth@gmail.com>
+# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2022 Moony <moony@hellomouse.net>
+# SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 ninruB <38016303+asperger-sind@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 NULL882 <104377798+NULL882@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 PixelTK <85175107+PixelTheKermit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 AJCM <AJCM@tutanota.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2024 Alex Pavlenko <diraven@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Alice "Arimah" Heurlin <30327355+arimah@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ArkiveDev <95712736+ArkiveDev@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Doomsdrayk <robotdoughnut@comcast.net>
+# SPDX-FileCopyrightText: 2024 DrEnzyme <DrEnzyme@gmail.com>
+# SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Elysium206 <151651971+Elysium206@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Floofi <126319569+Shadowtheprotogen546@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ghagliiarghii <68826635+Ghagliiarghii@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 HS <81934438+HolySSSS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 K-Dynamic <20566341+K-Dynamic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Kevin Zheng <kevinz5000@gmail.com>
+# SPDX-FileCopyrightText: 2024 Ko4ergaPunk <62609550+Ko4ergaPunk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MACMAN2003 <macman2003c@gmail.com>
+# SPDX-FileCopyrightText: 2024 MetalSage <74924875+MetalSage@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MetalSage <metalsage.official@gmail.com>
+# SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MureixloI <132683811+MureixloI@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+# SPDX-FileCopyrightText: 2024 Partmedia <kevinz5000@gmail.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ps3Moira <113228053+ps3moira@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Redfire1331 <125223432+Redfire1331@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TakoDragon <69509841+BackeTako@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2024 Truoizys <153248924+Truoizys@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2024 WarMechanic <69510347+WarMechanic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+# SPDX-FileCopyrightText: 2024 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lapatison <100279397+lapatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 marbow <152051971+marboww@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 mhamster <81412348+mhamsterr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 neutrino <67447925+neutrino-laser@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 osjarw <62134478+osjarw@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+# SPDX-FileCopyrightText: 2024 redfire1331 <Redfire1331@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Southbridge <7013162+southbridge-fur@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Thomas <87614336+Aeshus@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 TytosB <dunlaintytos@yahoo.com>
+# SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 kosticia <kosticia46@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: BaseItem
   id: FloorTileItemBase
-  description: These could work as a pretty decent throwing weapon.
+  description: The floor was meant to hold this, not you.
   abstract: true
   components:
   - type: Sprite
@@ -9,29 +116,27 @@
   - type: Item
     sprite: Objects/Tiles/tile.rsi
     size: Normal
-  - type: EmbeddableProjectile
   - type: DamageOtherOnHit
     damage:
       types:
-        Blunt: 5.5
-    staminaCost: 5
-    soundHit:
-      collection: MetalThud
+        Blunt: 2
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
   - type: Stack
     count: 1
   - type: Tag
     tags:
-    - NoPaint
+      - DroneUsable # Goobstation
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 30
+        damage: 40 # Goob edit
       behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 20
@@ -47,9 +152,19 @@
     damage:
       types:
         Blunt: 5
+  - type: ThrowableBlocked # Goobstation
+    behavior: Damage
+    damage:
+      types:
+        Blunt: 20
   - type: GuideHelp
     guides:
     - ExpandingRepairingStation
+  - type: Extractable # Goobstation - Tilenol
+    juiceSolution:
+      reagents:
+      - ReagentId: Nostalgia
+        Quantity: 1
 
 - type: entity
   name: steel dark checker tile
@@ -60,8 +175,8 @@
     state: checker-dark
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorSteelCheckerDark
+      - Plating
+      - FloorSteelCheckerDark
   - type: Stack
     stackType: FloorTileSteelCheckerDark
 
@@ -74,8 +189,8 @@
     state: checker-light
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorSteelCheckerLight
+      - Plating
+      - FloorSteelCheckerLight
   - type: Stack
     stackType: FloorTileSteelCheckerLight
 
@@ -90,8 +205,8 @@
     heldPrefix: dark
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorDark
+      - Plating
+      - FloorDark
   - type: Stack
     stackType: FloorTileDark
   - type: Construction
@@ -107,8 +222,8 @@
     state: dark-diagonal-mini
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorDarkDiagonalMini
+      - Plating
+      - FloorDarkDiagonalMini
   - type: Stack
     stackType: FloorTileDarkDiagonalMini
 
@@ -121,8 +236,8 @@
     state: dark-diagonal
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorDarkDiagonal
+      - Plating
+      - FloorDarkDiagonal
   - type: Stack
     stackType: FloorTileDarkDiagonal
 
@@ -135,8 +250,8 @@
     state: dark-herringbone
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorDarkHerringbone
+      - Plating
+      - FloorDarkHerringbone
   - type: Stack
     stackType: FloorTileDarkHerringbone
 
@@ -149,8 +264,8 @@
     state: dark-mini
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorDarkMini
+      - Plating
+      - FloorDarkMini
   - type: Stack
     stackType: FloorTileDarkMini
 
@@ -163,8 +278,8 @@
     state: dark-mono
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorDarkMono
+      - Plating
+      - FloorDarkMono
   - type: Stack
     stackType: FloorTileDarkMono
 
@@ -177,8 +292,8 @@
     state: dark-pavement
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorDarkPavement
+      - Plating
+      - FloorDarkPavement
   - type: Stack
     stackType: FloorTileDarkPavement
 
@@ -191,8 +306,8 @@
     state: dark-pavement-vertical
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorDarkPavementVertical
+      - Plating
+      - FloorDarkPavementVertical
   - type: Stack
     stackType: FloorTileDarkPavementVertical
 
@@ -205,8 +320,8 @@
     state: dark-offset
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorDarkOffset
+      - Plating
+      - FloorDarkOffset
   - type: Stack
     stackType: FloorTileDarkOffset
 
@@ -221,8 +336,8 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorSteel
+      - Plating
+      - FloorSteel
   - type: Stack
     stackType: FloorTileSteel
   - type: Construction
@@ -231,9 +346,9 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Blunt: 9.5 #Metal floor tiles deal more damage than standard
-    staminaCost: 6
-    soundHit: /Audio/Weapons/block_metal1.ogg
+        Blunt: 5 #Metal floor tiles deal more damage than standard
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/block_metal1.ogg
 
 - type: entity
   name: offset steel tile
@@ -244,8 +359,8 @@
     state: steel-offset
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorSteelOffset
+      - Plating
+      - FloorSteelOffset
   - type: Stack
     stackType: FloorTileSteelOffset
 
@@ -258,8 +373,8 @@
     state: steel-diagonal-mini
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorSteelDiagonalMini
+      - Plating
+      - FloorSteelDiagonalMini
   - type: Stack
     stackType: FloorTileSteelDiagonalMini
 
@@ -272,8 +387,8 @@
     state: steel-diagonal
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorSteelDiagonal
+      - Plating
+      - FloorSteelDiagonal
   - type: Stack
     stackType: FloorTileSteelDiagonal
 
@@ -286,8 +401,8 @@
     state: steel-herringbone
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorSteelHerringbone
+      - Plating
+      - FloorSteelHerringbone
   - type: Stack
     stackType: FloorTileSteelHerringbone
 
@@ -300,8 +415,8 @@
     state: steel-mini
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorSteelMini
+      - Plating
+      - FloorSteelMini
   - type: Stack
     stackType: FloorTileSteelMini
 
@@ -314,8 +429,8 @@
     state: steel-mono
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorSteelMono
+      - Plating
+      - FloorSteelMono
   - type: Stack
     stackType: FloorTileSteelMono
 
@@ -328,8 +443,8 @@
     state: steel-pavement
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorSteelPavement
+      - Plating
+      - FloorSteelPavement
   - type: Stack
     stackType: FloorTileSteelPavement
 
@@ -342,8 +457,8 @@
     state: steel-pavement-vertical
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorSteelPavementVertical
+      - Plating
+      - FloorSteelPavementVertical
   - type: Stack
     stackType: FloorTileSteelPavementVertical
 
@@ -358,8 +473,8 @@
     heldPrefix: white
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorWhite
+      - Plating
+      - FloorWhite
   - type: Stack
     stackType: FloorTileWhite
   - type: Construction
@@ -375,8 +490,8 @@
     state: white-offset
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorWhiteOffset
+      - Plating
+      - FloorWhiteOffset
   - type: Stack
     stackType: FloorTileWhiteOffset
 
@@ -389,8 +504,8 @@
     state: white-diagonal-mini
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorWhiteDiagonalMini
+      - Plating
+      - FloorWhiteDiagonalMini
   - type: Stack
     stackType: FloorTileWhiteDiagonalMini
 
@@ -403,8 +518,8 @@
     state: white-diagonal
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorWhiteDiagonal
+      - Plating
+      - FloorWhiteDiagonal
   - type: Stack
     stackType: FloorTileWhiteDiagonal
 
@@ -417,8 +532,8 @@
     state: white-herringbone
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorWhiteHerringbone
+      - Plating
+      - FloorWhiteHerringbone
   - type: Stack
     stackType: FloorTileWhiteHerringbone
 
@@ -431,8 +546,8 @@
     state: white-mini
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorWhiteMini
+      - Plating
+      - FloorWhiteMini
   - type: Stack
     stackType: FloorTileWhiteMini
 
@@ -445,8 +560,8 @@
     state: white-mono
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorWhiteMono
+      - Plating
+      - FloorWhiteMono
   - type: Stack
     stackType: FloorTileWhiteMono
 
@@ -459,8 +574,8 @@
     state: white-pavement
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorWhitePavement
+      - Plating
+      - FloorWhitePavement
   - type: Stack
     stackType: FloorTileWhitePavement
 
@@ -473,14 +588,14 @@
     state: white-pavement-vertical
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorWhitePavementVertical
+      - Plating
+      - FloorWhitePavementVertical
   - type: Stack
     stackType: FloorTileWhitePavementVertical
 
 - type: entity
   name: steel tile
-  parent: FloorTileItemBase
+  parent: FloorTileItemSteel
   id: FloorTileItemMetalDiamond
   components:
   - type: Sprite
@@ -489,8 +604,8 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorMetalDiamond
+      - Plating
+      - FloorMetalDiamond
   - type: Stack
     stackType: FloorTileMetalDiamond
 #  - type: Construction
@@ -508,8 +623,8 @@
     heldPrefix: wood
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorWood
+      - Plating
+      - FloorWood
   - type: Stack
     stackType: FloorTileWood
   - type: Construction
@@ -518,7 +633,7 @@
 
 - type: entity
   name: techmaint floor
-  parent: FloorTileItemBase
+  parent: FloorTileItemSteel
   id: FloorTileItemTechmaint
   components:
   - type: Sprite
@@ -527,10 +642,26 @@
     heldPrefix: dark
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorTechMaint
+      - Plating
+      - FloorTechMaint
   - type: Stack
     stackType: FloorTileTechmaint
+
+- type: entity
+  name: dark techmaint floor
+  parent: FloorTileItemSteel
+  id: FloorTileItemTechmaintDark
+  components:
+  - type: Sprite
+    state: techfloordark
+  - type: Item
+    heldPrefix: dark
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorTechMaintDark
+  - type: Stack
+    stackType: FloorTileTechmaintDark
 
 # TODO add a catwalk tile item once tile smoothing is supported
 
@@ -545,8 +676,8 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorMono
+      - Plating
+      - FloorMono
   - type: Stack
     stackType: FloorTileMono
 
@@ -561,8 +692,8 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorLino
+      - Plating
+      - FloorLino
   - type: Stack
     stackType: FloorTileLino
 
@@ -577,8 +708,8 @@
     heldPrefix: brass
   - type: FloorTile
     outputs:
-    - PlatingBrass
-    - FloorBrassFilled
+      - PlatingBrass
+      - FloorBrassFilled
   - type: Stack
     stackType: FloorTileBrassFilled
   - type: Construction
@@ -596,8 +727,8 @@
     heldPrefix: brass
   - type: FloorTile
     outputs:
-    - PlatingBrass
-    - FloorBrassReebe
+      - PlatingBrass
+      - FloorBrassReebe
   - type: Stack
     stackType: FloorTileBrassReebe
   - type: Construction
@@ -615,14 +746,14 @@
     heldPrefix: dirty
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorSteelDirty
+      - Plating
+      - FloorSteelDirty
   - type: Stack
     stackType: FloorTileDirty
 
 - type: entity
   name: elevator shaft tile
-  parent: FloorTileItemBase
+  parent: FloorTileItemSteel
   id: FloorTileItemElevatorShaft
   components:
   - type: Sprite
@@ -631,8 +762,8 @@
     heldPrefix: dark
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorElevatorShaft
+      - Plating
+      - FloorElevatorShaft
   - type: Stack
     stackType: FloorTileElevatorShaft
 
@@ -647,8 +778,8 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorRockVault
+      - Plating
+      - FloorRockVault
   - type: Stack
     stackType: FloorTileRockVault
 
@@ -663,8 +794,8 @@
     heldPrefix: carpet-blue
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorBlue
+      - Plating
+      - FloorBlue
   - type: Stack
     stackType: FloorTileBlue
 
@@ -679,8 +810,8 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorSteelLime
+      - Plating
+      - FloorSteelLime
   - type: Stack
     stackType: FloorTileLime
 
@@ -695,14 +826,14 @@
     heldPrefix: mining
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorMining
+      - Plating
+      - FloorMining
   - type: Stack
     stackType: FloorTileMining
 
 - type: entity
   name: dark mining tile
-  parent: FloorTileItemBase
+  parent: FloorTileItemSteel
   id: FloorTileItemMiningDark
   components:
   - type: Sprite
@@ -711,14 +842,14 @@
     heldPrefix: miningdark
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorMiningDark
+      - Plating
+      - FloorMiningDark
   - type: Stack
     stackType: FloorTileMiningDark
 
 - type: entity
   name: light mining tile
-  parent: FloorTileItemBase
+  parent: FloorTileItemSteel
   id: FloorTileItemMiningLight
   components:
   - type: Sprite
@@ -727,8 +858,8 @@
     heldPrefix: mininglight
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorMiningLight
+      - Plating
+      - FloorMiningLight
   - type: Stack
     stackType: FloorTileMiningLight
 
@@ -744,8 +875,8 @@
     heldPrefix: showroom
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorFreezer
+      - Plating
+      - FloorFreezer
   - type: Stack
     stackType: FloorTileFreezer
 
@@ -760,8 +891,8 @@
     heldPrefix: showroom
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorShowroom
+      - Plating
+      - FloorShowroom
   - type: Stack
     stackType: FloorTileShowroom
 
@@ -776,8 +907,8 @@
     heldPrefix: hydro
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorHydro
+      - Plating
+      - FloorHydro
   - type: Stack
     stackType: FloorTileHydro
 
@@ -792,8 +923,8 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorBar
+      - Plating
+      - FloorBar
   - type: Stack
     stackType: FloorTileBar
 
@@ -808,8 +939,8 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorClown
+      - Plating
+      - FloorClown
   - type: Stack
     stackType: FloorTileClown
 
@@ -824,8 +955,8 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorMime
+      - Plating
+      - FloorMime
   - type: Stack
     stackType: FloorTileMime
 
@@ -840,8 +971,8 @@
     heldPrefix: dark
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorKitchen
+      - Plating
+      - FloorKitchen
   - type: Stack
     stackType: FloorTileKitchen
 
@@ -856,8 +987,8 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorLaundry
+      - Plating
+      - FloorLaundry
   - type: Stack
     stackType: FloorTileLaundry
 
@@ -887,8 +1018,8 @@
     state: concrete-mono
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorConcreteMono
+      - Plating
+      - FloorConcreteMono
   - type: Stack
     stackType: FloorTileConcreteMono
 
@@ -901,8 +1032,8 @@
     state: concrete-smooth
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorConcreteSmooth
+      - Plating
+      - FloorConcreteSmooth
   - type: Stack
     stackType: FloorTileConcreteSmooth
 
@@ -931,8 +1062,8 @@
     state: grayconcrete-mono
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorGrayConcreteMono
+      - Plating
+      - FloorGrayConcreteMono
   - type: Stack
     stackType: FloorTileGrayConcreteMono
 
@@ -945,8 +1076,8 @@
     state: grayconcrete-smooth
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorGrayConcreteSmooth
+      - Plating
+      - FloorGrayConcreteSmooth
   - type: Stack
     stackType: FloorTileGrayConcreteSmooth
 
@@ -975,8 +1106,8 @@
     state: oldconcrete-mono
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorOldConcreteMono
+      - Plating
+      - FloorOldConcreteMono
   - type: Stack
     stackType: FloorTileOldConcreteMono
 
@@ -989,8 +1120,8 @@
     state: oldconcrete-smooth
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorOldConcreteSmooth
+      - Plating
+      - FloorOldConcreteSmooth
   - type: Stack
     stackType: FloorTileOldConcreteSmooth
 
@@ -1006,8 +1137,8 @@
     heldPrefix: arcadeblue
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorArcadeBlue
+      - Plating
+      - FloorArcadeBlue
   - type: Stack
     stackType: FloorTileStackArcadeBlue
 
@@ -1022,8 +1153,8 @@
     heldPrefix: generic
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorArcadeBlue2
+      - Plating
+      - FloorArcadeBlue2
   - type: Stack
     stackType: FloorTileStackArcadeBlue2
 
@@ -1038,8 +1169,8 @@
     heldPrefix: arcadered
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorArcadeRed
+      - Plating
+      - FloorArcadeRed
   - type: Stack
     stackType: FloorTileStackArcadeRed
 
@@ -1054,8 +1185,8 @@
     heldPrefix: eighties
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorEighties
+      - Plating
+      - FloorEighties
   - type: Stack
     stackType: FloorTileStackEighties
 
@@ -1070,8 +1201,8 @@
     heldPrefix: generic
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorCarpetClown
+      - Plating
+      - FloorCarpetClown
   - type: Stack
     stackType: FloorTileStackCarpetClown
 
@@ -1086,8 +1217,8 @@
     heldPrefix: generic
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorCarpetOffice
+      - Plating
+      - FloorCarpetOffice
   - type: Stack
     stackType: FloorTileStackCarpetOffice
 
@@ -1102,8 +1233,8 @@
     heldPrefix: generic
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorBoxing
+      - Plating
+      - FloorBoxing
   - type: Stack
     stackType: FloorTileStackBoxing
 
@@ -1118,8 +1249,8 @@
     heldPrefix: generic
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorGym
+      - Plating
+      - FloorGym
   - type: Stack
     stackType: FloorTileStackGym
 
@@ -1135,8 +1266,8 @@
     heldPrefix: shuttlewhite
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorShuttleWhite
+      - Plating
+      - FloorShuttleWhite
   - type: Stack
     stackType: FloorTileStackShuttleWhite
 
@@ -1151,8 +1282,8 @@
     heldPrefix: shuttleblue
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorShuttleBlue
+      - Plating
+      - FloorShuttleBlue
   - type: Stack
     stackType: FloorTileStackShuttleBlue
 
@@ -1167,8 +1298,8 @@
     heldPrefix: shuttleorange
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorShuttleOrange
+      - Plating
+      - FloorShuttleOrange
   - type: Stack
     stackType: FloorTileStackShuttleOrange
 
@@ -1183,8 +1314,8 @@
     heldPrefix: shuttlepurple
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorShuttlePurple
+      - Plating
+      - FloorShuttlePurple
   - type: Stack
     stackType: FloorTileStackShuttlePurple
 
@@ -1199,8 +1330,8 @@
     heldPrefix: shuttlered
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorShuttleRed
+      - Plating
+      - FloorShuttleRed
   - type: Stack
     stackType: FloorTileStackShuttleRed
 
@@ -1215,8 +1346,8 @@
     heldPrefix: shuttlegrey
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorShuttleGrey
+      - Plating
+      - FloorShuttleGrey
   - type: Stack
     stackType: FloorTileStackShuttleGrey
 
@@ -1231,8 +1362,8 @@
     heldPrefix: shuttleblack
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorShuttleBlack
+      - Plating
+      - FloorShuttleBlack
   - type: Stack
     stackType: FloorTileStackShuttleBlack
 
@@ -1248,8 +1379,8 @@
     heldPrefix: gold
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorGold
+      - Plating
+      - FloorGold
   - type: Stack
     stackType: FloorTileGold
 
@@ -1264,8 +1395,8 @@
     heldPrefix: silver
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorSilver
+      - Plating
+      - FloorSilver
   - type: Stack
     stackType: FloorTileSilver
 
@@ -1281,8 +1412,8 @@
     heldPrefix: gcircuit
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorGreenCircuit
+      - Plating
+      - FloorGreenCircuit
   - type: Stack
     stackType: FloorTileGCircuit
 
@@ -1297,8 +1428,8 @@
     heldPrefix: bcircuit
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorBlueCircuit
+      - Plating
+      - FloorBlueCircuit
   - type: Stack
     stackType: FloorTileBCircuit
 
@@ -1313,8 +1444,8 @@
     heldPrefix: rcircuit
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorRedCircuit
+      - Plating
+      - FloorRedCircuit
   - type: Stack
     stackType: FloorTileRCircuit
 
@@ -1356,8 +1487,8 @@
     heldPrefix: grass
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorGrass
+      - Plating
+      - FloorGrass
   - type: Stack
     stackType: FloorTileGrass
 
@@ -1372,8 +1503,8 @@
     heldPrefix: grassjungle
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorGrassJungle
+      - Plating
+      - FloorGrassJungle
   - type: Stack
     stackType: FloorTileGrassJungle
 
@@ -1388,8 +1519,8 @@
     heldPrefix: snow
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorSnow
+      - Plating
+      - FloorSnow
   - type: Stack
     stackType: FloorTileSnow
 
@@ -1404,8 +1535,8 @@
     heldPrefix: wood
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorWoodTile
+      - Plating
+      - FloorWoodTile
   - type: Stack
     stackType: FloorTileWoodPattern
 
@@ -1439,8 +1570,8 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorTechMaint2
+      - Plating
+      - FloorTechMaint2
   - type: Stack
     stackType: FloorTileSteelMaint
 
@@ -1455,8 +1586,8 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorTechMaint3
+      - Plating
+      - FloorTechMaint3
   - type: Stack
     stackType: FloorTileGratingMaint
 
@@ -1470,7 +1601,7 @@
     state: icon
   - type: FloorTile
     outputs:
-    - FloorWebTile
+      - FloorWebTile
   - type: Stack
     stackType: FloorTileWeb
   - type: Construction
@@ -1495,6 +1626,9 @@
     - FloorAstroGrass
   - type: Stack
     stackType: FloorTileAstroGrass
+  - type: PhysicalComposition #Goobstation - Recycle update
+    materialComposition:
+      Plastic: 25
 
 - type: entity
   id: FloorTileItemMowedAstroGrass
@@ -1512,6 +1646,9 @@
     - FloorMowedAstroGrass
   - type: Stack
     stackType: FloorTileAstroGrass
+  - type: PhysicalComposition #Goobstation - Recycle update
+    materialComposition:
+      Plastic: 25
 
 - type: entity
   id: FloorTileItemJungleAstroGrass
@@ -1529,23 +1666,9 @@
     - FloorJungleAstroGrass
   - type: Stack
     stackType: FloorTileAstroGrass
-
-- type: entity
-  id: FloorTileItemAstroIce
-  parent: FloorTileItemBase
-  name: astro-ice
-  description: Fake ice that's as slippery as the real thing, while being easily removable!
-  components:
-  - type: Sprite
-    state: astroice
-  - type: Item
-    heldPrefix: snow
-  - type: FloorTile
-    outputs:
-    - Plating
-    - FloorAstroIce
-  - type: Stack
-    stackType: FloorTileAstroIce
+  - type: PhysicalComposition #Goobstation - Recycle update
+    materialComposition:
+      Plastic: 25
 
 - type: entity
   id: FloorTileItemAstroSnow
@@ -1563,11 +1686,51 @@
     - FloorAstroSnow
   - type: Stack
     stackType: FloorTileAstroSnow
+  - type: PhysicalComposition #Goobstation - Recycle update
+    materialComposition:
+      Plastic: 25
+
+- type: entity
+  id: FloorTileItemAstroIce
+  parent: FloorTileItemBase
+  name: astro-ice
+  description: Fake ice that's as slippery as the real thing, while being easily removable!
+  components:
+  - type: Sprite
+    state: astroice
+  - type: Item
+    heldPrefix: snow
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorAstroIce
+  - type: Stack
+    stackType: FloorTileAstroIce
+  - type: PhysicalComposition #Goobstation - Recycle update
+    materialComposition:
+      Plastic: 25
 
 - type: entity
   id: FloorTileItemAstroAsteroidSand
   parent: FloorTileItemBase
   name: asteroid astro-sand
+  description: Fake sand. Luckily, it's not as coarse as the real thing.
+  components:
+  - type: Sprite
+    state: astro-asteroid
+  - type: Item
+    heldPrefix: asteroid
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorAstroAsteroidSand
+  - type: Stack
+    stackType: FloorTileAstroAsteroidSand
+
+- type: entity
+  id: FloorTileItemAstroAsteroidSandBorderless
+  parent: FloorTileItemBase
+  name: borderless asteroid astro-sand
   description: Fake sand. Luckily, it's not as coarse as the real thing.
   components:
   - type: Sprite
@@ -1577,7 +1740,7 @@
   - type: FloorTile
     outputs:
     - Plating
-    - FloorAstroAsteroidSand
+    - FloorAstroAsteroidSandBorderless
   - type: Stack
     stackType: FloorTileAstroAsteroidSand
 
@@ -1592,10 +1755,94 @@
     heldPrefix: wood
   - type: FloorTile
     outputs:
-    - Plating
-    - FloorWoodLarge
+      - Plating
+      - FloorWoodLarge
   - type: Stack
     stackType: FloorTileWoodLarge
   - type: Construction
     graph: TileWoodLarge
     node: woodtilelarge
+
+# Marble
+
+- type: entity
+  name: white marble tile
+  description: A chiseled, polished square of the finest Space Marble. Best not to lose it.
+  parent: FloorTileItemBase
+  id: FloorTileItemWhiteMarble
+  components:
+  - type: Sprite
+    state: white-marble
+  - type: Item
+    heldPrefix: white-marble
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorWhiteMarble
+  - type: Stack
+    stackType: FloorTileWhiteMarble
+
+- type: entity
+  name: dark marble tile
+  description: A chiseled, polished square of the finest Space Marble. Best not to lose it.
+  parent: FloorTileItemWhiteMarble
+  id: FloorTileItemDarkMarble
+  components:
+  - type: Sprite
+    state: dark-marble
+  - type: Item
+    heldPrefix: dark-marble
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorDarkMarble
+  - type: Stack
+    stackType: FloorTileDarkMarble
+
+- type: entity
+  name: plasmarble tile
+  description: A chiseled, polished square of the finest Space Marble. Plasma-infused for extra... something.
+  parent: FloorTileItemWhiteMarble
+  id: FloorTileItemPlasmaMarble
+  components:
+  - type: Sprite
+    state: plasmarble
+  - type: Item
+    heldPrefix: plasmarble
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorPlasmaMarble
+  - type: Stack
+    stackType: FloorTilePlasmaMarble
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 6
+
+- type: entity
+  name: uranium marble tile
+  description: A chiseled, polished square of the finest Space Marble. Uranium-infused to make it extra rad! Pun intended!
+  parent: FloorTileItemWhiteMarble
+  id: FloorTileItemUraniumMarble
+  components:
+  - type: Sprite
+    state: uranium-marble
+  - type: Item
+    heldPrefix: uranium-marble
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorUraniumMarble
+  - type: Stack
+    stackType: FloorTileUraniumMarble
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
+        Radiation: 1
+  - type: PointLight
+    radius: 1.2
+    energy: 0.8
+    castShadows: false
+    color: "#9be792"

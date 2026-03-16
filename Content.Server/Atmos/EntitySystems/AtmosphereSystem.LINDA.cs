@@ -1,3 +1,16 @@
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Kevin Zheng <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 PraxisMapper <praxismapper@gmail.com>
+// SPDX-FileCopyrightText: 2024 drakewill-CRL <46307022+drakewill-CRL@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Atmos.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
@@ -80,11 +93,20 @@ namespace Content.Server.Atmos.EntitySystems
 
                 if (shouldShareAir)
                 {
-                    Share(tile, enemyTile, adjacentTileLength);
+                    var difference = Share(tile, enemyTile, adjacentTileLength);
 
                     // Monstermos already handles this, so let's not handle it ourselves.
                     if (!MonstermosEqualization)
-                        ConsiderPressureDifference(gridAtmosphere, enemyTile);
+                    {
+                        if (difference >= 0)
+                        {
+                            ConsiderPressureDifference(gridAtmosphere, tile, direction, difference);
+                        }
+                        else
+                        {
+                            ConsiderPressureDifference(gridAtmosphere, enemyTile, i.ToOppositeDir(), -difference);
+                        }
+                    }
 
                     LastShareCheck(tile);
                 }
@@ -109,6 +131,7 @@ namespace Content.Server.Atmos.EntitySystems
         {
             if (tile.Air != null)
                 tile.AirArchived = new GasMixture(tile.Air);
+
             tile.ArchivedCycle = fireCount;
         }
 
@@ -184,7 +207,8 @@ namespace Content.Server.Atmos.EntitySystems
         /// </summary>
         public float Share(TileAtmosphere tileReceiver, TileAtmosphere tileSharer, int atmosAdjacentTurfs)
         {
-            if (tileReceiver.Air is not {} receiver || tileSharer.Air is not {} sharer ||  tileReceiver.AirArchived == null || tileSharer.AirArchived == null)
+            if (tileReceiver.Air is not {} receiver || tileSharer.Air is not {} sharer ||
+                    tileReceiver.AirArchived == null || tileSharer.AirArchived == null)
                 return 0f;
 
             var temperatureDelta = tileReceiver.AirArchived.Temperature - tileSharer.AirArchived.Temperature;
@@ -271,7 +295,7 @@ namespace Content.Server.Atmos.EntitySystems
         public float TemperatureShare(TileAtmosphere tileReceiver, TileAtmosphere tileSharer, float conductionCoefficient)
         {
             if (tileReceiver.Air is not { } receiver || tileSharer.Air is not { } sharer ||
-                tileReceiver.AirArchived == null || tileSharer.AirArchived == null)
+                    tileReceiver.AirArchived == null || tileSharer.AirArchived == null)
                 return 0f;
 
             var temperatureDelta = tileReceiver.AirArchived.Temperature - tileSharer.AirArchived.Temperature;

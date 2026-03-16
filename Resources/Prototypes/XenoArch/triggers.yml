@@ -27,6 +27,12 @@
     TriggerThrow: 1
     TriggerDeath: 1
     TriggerMagnet: 1
+    # <Goobstation>
+    TriggerBZ: 0.05
+    TriggerHealium: 0.05
+    TriggerNitrium: 0.05
+    TriggerPluoxium: 0.05
+    # </Goobstation>
 
 - type: xenoArchTrigger
   id: TriggerMusic
@@ -242,6 +248,8 @@
     - Slime
     - AmmoniaBlood
     - ZombieBlood
+    - BlackBlood 
+    - BloodChangeling # Goobstation
 
 - type: xenoArchTrigger
   id: TriggerThrow

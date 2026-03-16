@@ -1,3 +1,26 @@
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <drsmugleaf@gmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Ygg01 <y.laughing.man.y@gmail.com>
+// SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 keronshb <keronshb@live.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using Content.Shared.DoAfter;
 using Content.Client.UserInterface.Systems;
@@ -8,20 +31,22 @@ using Robust.Client.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Robust.Shared.Configuration;
-using Content.Shared.CCVar;
+using Robust.Shared.Containers;
 
 namespace Content.Client.DoAfter;
 
 public sealed class DoAfterOverlay : Overlay
 {
+    private static readonly ProtoId<ShaderPrototype> UnshadedShader = "unshaded";
+
     private readonly IEntityManager _entManager;
     private readonly IGameTiming _timing;
     private readonly IPlayerManager _player;
-    private readonly IConfigurationManager _cfg;
     private readonly SharedTransformSystem _transform;
     private readonly MetaDataSystem _meta;
     private readonly ProgressColorSystem _progressColor;
+    private readonly SharedContainerSystem _container;
+    private readonly SpriteSystem _sprite;
 
     private readonly Texture _barTexture;
     private readonly ShaderInstance _unshadedShader;
@@ -35,8 +60,6 @@ public sealed class DoAfterOverlay : Overlay
     private const float StartX = 2;
     private const float EndX = 22f;
 
-    private bool _useModernHUD = false;
-
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
 
     public DoAfterOverlay(IEntityManager entManager, IPrototypeManager protoManager, IGameTiming timing, IPlayerManager player)
@@ -44,16 +67,15 @@ public sealed class DoAfterOverlay : Overlay
         _entManager = entManager;
         _timing = timing;
         _player = player;
-        _cfg = IoCManager.Resolve<IConfigurationManager>();
         _transform = _entManager.EntitySysManager.GetEntitySystem<SharedTransformSystem>();
         _meta = _entManager.EntitySysManager.GetEntitySystem<MetaDataSystem>();
+        _container = _entManager.EntitySysManager.GetEntitySystem<SharedContainerSystem>();
         _progressColor = _entManager.System<ProgressColorSystem>();
+        _sprite = _entManager.System<SpriteSystem>();
         var sprite = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/progress_bar.rsi"), "icon");
         _barTexture = _entManager.EntitySysManager.GetEntitySystem<SpriteSystem>().Frame0(sprite);
 
-        _unshadedShader = protoManager.Index<ShaderPrototype>("unshaded").Instance();
-        _useModernHUD = _cfg.GetCVar(CCVars.ModernProgressBar);
-        _cfg.OnValueChanged(CCVars.ModernProgressBar, (newValue) => { _useModernHUD = newValue; } );
+        _unshadedShader = protoManager.Index(UnshadedShader).Instance();
     }
 
     protected override void Draw(in OverlayDrawArgs args)
@@ -106,14 +128,17 @@ public sealed class DoAfterOverlay : Overlay
 
             var offset = 0f;
 
+            var isInContainer = _container.IsEntityOrParentInContainer(uid, meta, xform);
+
             foreach (var doAfter in comp.DoAfters.Values)
             {
                 // Hide some DoAfters from other players for stealthy actions (ie: thieving gloves)
                 var alpha = 1f;
-                if (doAfter.Args.Hidden)
+                if (doAfter.Args.Hidden || isInContainer)
                 {
                     // Goobstation - Show doAfter progress bar to another entity
-                    if (uid != localEnt && localEnt != doAfter.Args.ShowTo)
+                    var showTo = doAfter.Args.ShowTo ?? uid;
+                    if (localEnt != showTo)
                         continue;
 
                     // Hints to the local player that this do-after is not visible to other players.
@@ -122,7 +147,7 @@ public sealed class DoAfterOverlay : Overlay
 
                 // Use the sprite itself if we know its bounds. This means short or tall sprites don't get overlapped
                 // by the bar.
-                float yOffset = sprite.Bounds.Height / 2f + 0.05f;
+                var yOffset = _sprite.GetLocalBounds((uid, sprite)).Height / 2f + 0.05f;
 
                 // Position above the entity (we've already applied the matrix transform to the entity itself)
                 // Offset by the texture size for every do_after we have.
@@ -139,7 +164,7 @@ public sealed class DoAfterOverlay : Overlay
                 if (doAfter.CancelledTime != null)
                 {
                     var elapsed = doAfter.CancelledTime.Value - doAfter.StartTime;
-                    elapsedRatio = (float) Math.Min(1, elapsed.TotalSeconds / doAfter.Args.Delay.TotalSeconds);
+                    elapsedRatio = (float)Math.Min(1, elapsed.TotalSeconds / doAfter.Args.Delay.TotalSeconds);
                     var cancelElapsed = (time - doAfter.CancelledTime.Value).TotalSeconds;
                     var flash = Math.Floor(cancelElapsed / FlashTime) % 2 == 0;
                     color = GetProgressColor(0, flash ? alpha : 0);
@@ -147,42 +172,14 @@ public sealed class DoAfterOverlay : Overlay
                 else
                 {
                     var elapsed = time - doAfter.StartTime;
-                    elapsedRatio = (float) Math.Min(1, elapsed.TotalSeconds / doAfter.Args.Delay.TotalSeconds);
-
-                    if (_useModernHUD)
-                    {
-                        if (elapsedRatio < 1.0f)
-                            color = GetProgressColor(elapsedRatio, alpha);
-                        else
-                            color = GetProgressColor(0.35f, alpha); // Make orange/yellow color
-                    }
-                    else
-                    {
-                        color = GetProgressColor(elapsedRatio, alpha);
-                    }
+                    elapsedRatio = (float)Math.Min(1, elapsed.TotalSeconds / doAfter.Args.Delay.TotalSeconds);
+                    color = GetProgressColor(elapsedRatio, alpha);
                 }
 
                 var xProgress = (EndX - StartX) * elapsedRatio + StartX;
-
-                if (_useModernHUD)
-                {
-                    var box = new Box2(new Vector2(StartX, 2f) / EyeManager.PixelsPerMeter, new Vector2(xProgress, 5f) / EyeManager.PixelsPerMeter);
-                    box = box.Translated(position);
-                    // Brighter line, like /tg/station bar
-                    var boxInner = new Box2(new Vector2(StartX, 3f) / EyeManager.PixelsPerMeter, new Vector2(xProgress, 4f) / EyeManager.PixelsPerMeter);
-                    boxInner = boxInner.Translated(position);
-
-                    handle.DrawRect(box, color);
-                    handle.DrawRect(boxInner, Color.InterpolateBetween(color, Color.White, 0.5f));
-                }
-                else
-                {
-                    var box = new Box2(new Vector2(StartX, 3f) / EyeManager.PixelsPerMeter, new Vector2(xProgress, 4f) / EyeManager.PixelsPerMeter);
-                    box = box.Translated(position);
-
-                    handle.DrawRect(box, color);
-                }
-
+                var box = new Box2(new Vector2(StartX, 3f) / EyeManager.PixelsPerMeter, new Vector2(xProgress, 4f) / EyeManager.PixelsPerMeter);
+                box = box.Translated(position);
+                handle.DrawRect(box, doAfter.Args.ColorOverride ?? color); // Goob edit
                 offset += _barTexture.Height / scale;
             }
         }

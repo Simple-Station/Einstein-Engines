@@ -1,4 +1,10 @@
-﻿using System.Text.Json.Nodes;
+// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 c4llv07e <igor@c4llv07e.xyz>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using System.Text.Json.Nodes;
 using Content.Shared.CCVar;
 using Robust.Server.ServerStatus;
 using Robust.Shared.Configuration;
@@ -13,11 +19,12 @@ public sealed class ServerInfoManager
     private static readonly (CVarDef<string> cVar, string icon, string name)[] Vars =
     {
         // @formatter:off
-        (CCVars.InfoLinksDiscord, "discord", "info-link-discord"),
-        (CCVars.InfoLinksForum,   "forum",   "info-link-forum"),
-        (CCVars.InfoLinksGithub,  "github",  "info-link-github"),
-        (CCVars.InfoLinksWebsite, "web",     "info-link-website"),
-        (CCVars.InfoLinksWiki,    "wiki",    "info-link-wiki")
+        (CCVars.InfoLinksDiscord,  "discord",  "info-link-discord"),
+        (CCVars.InfoLinksForum,    "forum",    "info-link-forum"),
+        (CCVars.InfoLinksGithub,   "github",   "info-link-github"),
+        (CCVars.InfoLinksWebsite,  "web",      "info-link-website"),
+        (CCVars.InfoLinksWiki,     "wiki",     "info-link-wiki"),
+        (CCVars.InfoLinksTelegram, "telegram", "info-link-telegram")
         // @formatter:on
     };
 

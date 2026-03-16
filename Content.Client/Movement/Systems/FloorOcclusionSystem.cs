@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 DoutorWhite <68350815+DoutorWhite@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Robust.Client.GameObjects;
@@ -8,53 +15,60 @@ namespace Content.Client.Movement.Systems;
 
 public sealed class FloorOcclusionSystem : SharedFloorOcclusionSystem
 {
+    private static readonly ProtoId<ShaderPrototype> HorizontalCut = "HorizontalCut";
+
     [Dependency] private readonly IPrototypeManager _proto = default!;
+
+    private EntityQuery<SpriteComponent> _spriteQuery;
 
     public override void Initialize()
     {
         base.Initialize();
+
+        _spriteQuery = GetEntityQuery<SpriteComponent>();
+
         SubscribeLocalEvent<FloorOcclusionComponent, ComponentStartup>(OnOcclusionStartup);
+        SubscribeLocalEvent<FloorOcclusionComponent, ComponentShutdown>(OnOcclusionShutdown);
         SubscribeLocalEvent<FloorOcclusionComponent, AfterAutoHandleStateEvent>(OnOcclusionAuto);
     }
 
-    private void OnOcclusionAuto(EntityUid uid, FloorOcclusionComponent component, ref AfterAutoHandleStateEvent args)
+    private void OnOcclusionAuto(Entity<FloorOcclusionComponent> ent, ref AfterAutoHandleStateEvent args)
     {
-        SetEnabled(uid, component, component.Enabled);
+        SetShader(ent.Owner, ent.Comp.Enabled);
     }
 
-    private void OnOcclusionStartup(EntityUid uid, FloorOcclusionComponent component, ComponentStartup args)
+    private void OnOcclusionStartup(Entity<FloorOcclusionComponent> ent, ref ComponentStartup args)
     {
-        if (component.Enabled && TryComp<SpriteComponent>(uid, out var sprite))
-            SetShader(sprite, true);
+        SetShader(ent.Owner, ent.Comp.Enabled);
     }
 
-    protected override void SetEnabled(EntityUid uid, FloorOcclusionComponent component, bool enabled)
+    private void OnOcclusionShutdown(Entity<FloorOcclusionComponent> ent, ref ComponentShutdown args)
     {
-        if (component.Enabled == enabled)
+        SetShader(ent.Owner, false);
+    }
+
+    protected override void SetEnabled(Entity<FloorOcclusionComponent> entity)
+    {
+        SetShader(entity.Owner, entity.Comp.Enabled);
+    }
+
+    private void SetShader(Entity<SpriteComponent?> sprite, bool enabled)
+    {
+        if (!_spriteQuery.Resolve(sprite.Owner, ref sprite.Comp, false))
             return;
 
-        base.SetEnabled(uid, component, enabled);
+        var shader = _proto.Index(HorizontalCut).Instance();
 
-        if (!TryComp<SpriteComponent>(uid, out var sprite))
-            return;
-
-        SetShader(sprite, enabled);
-    }
-
-    private void SetShader(SpriteComponent sprite, bool enabled)
-    {
-        var shader = _proto.Index<ShaderPrototype>("HorizontalCut").Instance();
-
-        if (sprite.PostShader is not null && sprite.PostShader != shader)
+        if (sprite.Comp.PostShader is not null && sprite.Comp.PostShader != shader)
             return;
 
         if (enabled)
         {
-            sprite.PostShader = shader;
+            sprite.Comp.PostShader = shader;
         }
         else
         {
-            sprite.PostShader = null;
+            sprite.Comp.PostShader = null;
         }
     }
 }

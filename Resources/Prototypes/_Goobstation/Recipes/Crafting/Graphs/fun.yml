@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: constructionGraph
+  id: ToyGrenade
+  graph:
+    - node: start
+      edges:
+        - to: toygrenade
+          steps:
+            - tag: SnapPop
+              name: construction-graph-tag-snap-pop
+              icon:
+                sprite: Objects/Fun/snap_pops.rsi
+                state: icon
+              doAfter: 1
+            - tag: MailCapsule
+              name: construction-graph-tag-mail-capsule
+              icon:
+                sprite: _NF/Objects/Misc/mail_capsule.rsi
+                state: icon-empty
+              doAfter: 1
+    - node: toygrenade
+      entity: GrenadeToy

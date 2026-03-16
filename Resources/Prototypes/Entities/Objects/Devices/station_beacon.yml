@@ -1,3 +1,26 @@
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Jeff <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Krunklehorn <42424291+Krunklehorn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nim <128169402+Nimfar11@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Southbridge <7013162+southbridge-fur@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Velcroboy <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 joshepvodka <86210200+joshepvodka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 TytosB <dunlaintytos@yahoo.com>
+# SPDX-FileCopyrightText: 2025 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: BaseItem
   id: DefaultStationBeacon
@@ -24,7 +47,8 @@
   - type: NavMapBeacon
     defaultText: station-beacon-general
     color: "#D4D4D496"
-  #- type: WarpPoint # Delta V - Removes in favor of Warp Point Markers
+  - type: WarpPoint
+  - type: WizardTeleportWarpPoint # Goobstation
   - type: ActivatableUI
     key: enum.NavMapBeaconUiKey.Key
     singleUser: true
@@ -182,6 +206,14 @@
 
 - type: entity
   parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconBrigMed
+  suffix: Brig Med
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-brig-med
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
   id: DefaultStationBeaconWardensOffice
   suffix: Warden's Office
   components:
@@ -229,7 +261,7 @@
     defaultText: station-beacon-courtroom
 
 - type: entity
-  parent: DefaultStationBeaconService #Delta V - Lawer is Service until Justice Dept is a thing
+  parent: DefaultStationBeaconSecurity
   id: DefaultStationBeaconLawOffice
   suffix: Law Office
   components:
@@ -243,6 +275,46 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-security-checkpoint
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconSecurityGorlex
+  suffix: Gorlex Barracks
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-gorlex
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconSecurityGorlexOffice
+  suffix: Gorlex Office
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-gorlex-office
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconSecurityGorlexBreak
+  suffix: Gorlex Breakroom
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-gorlex-breakroom
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconSecurityGorlexHos
+  suffix: Gorlex Command
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-gorlex-hos
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconSecurityCybersunLegal
+  suffix: Cybersun Legal Dept
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-cybersun-legal
 
 - type: entity
   parent: DefaultStationBeacon
@@ -302,12 +374,52 @@
     defaultText: station-beacon-surgery
 
 - type: entity
-  parent: DefaultStationBeacon
-  id: DefaultStationBeaconScience
-  suffix: Epistemics #Delta V - Renamed
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconPsychology
+  suffix: Psychology
   components:
   - type: NavMapBeacon
-    defaultText: station-beacon-epistemics #Delta V - Renamed
+    defaultText: station-beacon-psychology
+
+- type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconClinic
+  suffix: Clinic
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-clinic
+
+- type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconParamedic
+  suffix: Paramedics
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-paramedic
+
+- type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconInterdyne
+  suffix: Interdyne Triage
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-interdyne
+
+- type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconInterdyneFront
+  suffix: Interdyne Reception
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-interdyne-front
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconScience
+  suffix: Science
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-science
     color: "#D381C9"
 
 - type: entity
@@ -329,10 +441,10 @@
 - type: entity
   parent: DefaultStationBeaconScience
   id: DefaultStationBeaconRDRoom
-  suffix: MG's Room
+  suffix: RD's Room
   components:
   - type: NavMapBeacon
-    defaultText: station-beacon-mystagogue  #Delta V - Renamed
+    defaultText: station-beacon-research-director
 
 - type: entity
   parent: DefaultStationBeaconScience
@@ -359,21 +471,29 @@
     defaultText: station-beacon-anomaly-gen
 
 - type: entity
-  parent: DefaultStationBeacon
-  id: DefaultStationBeaconSupply
-  suffix: Logistics #Delta V - Renamed
+  parent: DefaultStationBeaconScience
+  id: DefaultStationBeaconCybersunRD
+  suffix: Cybersun R&D
   components:
   - type: NavMapBeacon
-    defaultText: station-beacon-logistics #Delta V - Renamed
+    defaultText: station-beacon-cybersun-rd
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconSupply
+  suffix: Supply
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-supply
     color: "#A46106"
 
 - type: entity
   parent: DefaultStationBeaconSupply
   id: DefaultStationBeaconCargoReception
-  suffix: Logistics Reception #Delta V - Renamed
+  suffix: Cargo Reception
   components:
   - type: NavMapBeacon
-    defaultText: station-beacon-logistics-reception #Delta V - Renamed
+    defaultText: station-beacon-cargo
 
 - type: entity
   parent: DefaultStationBeaconSupply
@@ -386,10 +506,10 @@
 - type: entity
   parent: DefaultStationBeaconSupply
   id: DefaultStationBeaconQMRoom
-  suffix: LO #Delta V - Renamed
+  suffix: QM's Room
   components:
   - type: NavMapBeacon
-    defaultText: station-beacon-lo #Delta V - Renamed
+    defaultText: station-beacon-qm
 
 - type: entity
   parent: DefaultStationBeaconSupply
@@ -398,6 +518,22 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-salvage
+
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: DefaultStationBeaconDonk
+  suffix: DONK Co. Shipping
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-donk
+
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: DefaultStationBeaconDonkFront
+  suffix: DONK Co. Front
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-donk-front
 
 - type: entity
   parent: DefaultStationBeacon
@@ -431,6 +567,70 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-solars
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconSolarsN
+  suffix: Solars, North
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-solars-N
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconSolarsNE
+  suffix: Solars, Northeast
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-solars-NE
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconSolarsE
+  suffix: Solars, East
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-solars-E
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconSolarsSE
+  suffix: Solars, Southeast
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-solars-SE
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconSolarsS
+  suffix: Solars, South
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-solars-S
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconSolarsSW
+  suffix: Solars, Southwest
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-solars-SW
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconSolarsW
+  suffix: Solars, West
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-solars-W
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconSolarsNW
+  suffix: Solars, Northwest
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-solars-NW
 
 - type: entity
   parent: DefaultStationBeaconEngineering
@@ -497,6 +697,14 @@
     defaultText: station-beacon-tech-vault
 
 - type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconShipyard
+  suffix: Shipyard
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-shipyard
+
+- type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconService
   suffix: Service
@@ -535,7 +743,7 @@
   suffix: Janitor's Closet
   components:
   - type: NavMapBeacon
-    defaultText: station-beacon-janitor-closet #Delta V - Add for closet/outpost
+    defaultText: station-beacon-janitor
 
 - type: entity
   parent: DefaultStationBeacon
@@ -563,6 +771,22 @@
     defaultText: station-beacon-ai-core
 
 - type: entity
+  parent: DefaultStationBeaconAI
+  id: DefaultStationBeaconAIUpload
+  suffix: AI Upload
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-ai-upload
+
+- type: entity
+  parent: DefaultStationBeaconAI
+  id: DefaultStationBeaconAIPower
+  suffix: AI Power
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-ai-power
+
+- type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconArrivals
   suffix: Arrivals
@@ -580,6 +804,14 @@
 
 - type: entity
   parent: DefaultStationBeacon
+  id: DefaultStationBeaconDockingArm
+  suffix: Docking Arm
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-docking-arm
+
+- type: entity
+  parent: DefaultStationBeacon
   id: DefaultStationBeaconEVAStorage
   suffix: EVA Storage
   components:
@@ -587,7 +819,7 @@
     defaultText: station-beacon-eva-storage
 
 - type: entity
-  parent: DefaultStationBeaconScience #Delta V - Chapel in Epi
+  parent: DefaultStationBeacon
   id: DefaultStationBeaconChapel
   suffix: Chapel
   components:
@@ -601,6 +833,14 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-library
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconReporter
+  suffix: Reporter
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-reporter
 
 - type: entity
   parent: DefaultStationBeacon
@@ -649,6 +889,70 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-escape-pod
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconEscapePodN
+  suffix: Escape Pod, North
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-escape-pod-N
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconEscapePodNE
+  suffix: Escape Pod, Northeast
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-escape-pod-NE
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconEscapePodE
+  suffix: Escape Pod, East
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-escape-pod-E
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconEscapePodSE
+  suffix: Escape Pod, Southeast
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-escape-pod-SE
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconEscapePodS
+  suffix: Escape Pod, South
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-escape-pod-S
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconEscapePodSW
+  suffix: Escape Pod, Southwest
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-escape-pod-SW
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconEscapePodW
+  suffix: Escape Pod, West
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-escape-pod-W
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconEscapePodNW
+  suffix: Escape Pod, Northwest
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-escape-pod-NW
 
 - type: entity
   parent: DefaultStationBeacon

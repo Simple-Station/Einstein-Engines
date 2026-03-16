@@ -1,3 +1,26 @@
+# SPDX-FileCopyrightText: 2020 Exp <theexp111@gmail.com>
+# SPDX-FileCopyrightText: 2020 Git-Nivrak <59925169+Git-Nivrak@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 SETh lafuente <cetaciocascarudo@gmail.com>
+# SPDX-FileCopyrightText: 2021 SethLafuente <84478872+SethLafuente@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <zddm@outlook.es>
+# SPDX-FileCopyrightText: 2021 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Júlio César Ueti <52474532+Mirino97@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Lamrr <96937466+Lamrr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 AsikKEsel <115815982+AsikKEsel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MACMAN2003 <macman2003c@gmail.com>
+# SPDX-FileCopyrightText: 2024 cohanna <conornhanna@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: constructionGraph
   id: Window
   start: start
@@ -48,24 +71,24 @@
 
         - to: shuttleWindow
           steps:
-          - material: Plasteel
-            amount: 2
-          - material: ReinforcedGlass
-            amount: 2
-            doAfter: 4
-
+            - material: Plasteel
+              amount: 2
+            - material: ReinforcedGlass
+              amount: 2
+              doAfter: 4
+        
         - to: clockworkWindow
           steps:
-          - material: ClockworkGlass
-            amount: 2
-            doAfter: 3
+            - material: ClockworkGlass
+              amount: 2
+              doAfter: 3
 
     - node: window
       entity: Window
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: SheetGlass1
               amount: 2
             - !type:DeleteEntity {}
@@ -80,7 +103,7 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: SheetRGlass1
               amount: 2
             - !type:DeleteEntity {}
@@ -103,7 +126,7 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: SheetRGlass1
               amount: 2
             - !type:DeleteEntity {}
@@ -122,7 +145,7 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: SheetPGlass1
               amount: 2
             - !type:DeleteEntity {}
@@ -141,7 +164,7 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: SheetRPGlass1
               amount: 2
             - !type:DeleteEntity {}
@@ -164,7 +187,7 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: SheetUGlass1
               amount: 2
             - !type:DeleteEntity {}
@@ -183,7 +206,7 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: SheetRUGlass1
               amount: 2
             - !type:DeleteEntity {}
@@ -204,53 +227,53 @@
     - node: clockworkWindow
       entity: ClockworkWindow
       edges:
-      - to: start
-        completed:
-        - !type:SpawnPrototype
-          prototype: SheetClockworkGlass1
-          amount: 2
-        - !type:DeleteEntity {}
-        steps:
-        - tool: Welding
-          doAfter: 5
-        - tool: Screwing
-          doAfter: 2
-        - tool: Prying
-          doAfter: 3
-        - tool: Welding
-          doAfter: 5
-        - tool: Screwing
-          doAfter: 2
-        - tool: Anchoring
-          doAfter: 3
-
+        - to: start
+          completed:
+            - !type:GivePrototype
+              prototype: SheetClockworkGlass1
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Welding
+              doAfter: 5
+            - tool: Screwing
+              doAfter: 2
+            - tool: Prying
+              doAfter: 3
+            - tool: Welding
+              doAfter: 5
+            - tool: Screwing
+              doAfter: 2
+            - tool: Anchoring
+              doAfter: 3
+    
     - node: shuttleWindow
       entity: ShuttleWindow
       edges:
-      - to: start
-        completed:
-        - !type:SpawnPrototype
-          prototype: SheetRGlass1
-          amount: 2
-        - !type:SpawnPrototype
-          prototype: SheetPlasteel1
-          amount: 2
-        - !type:DeleteEntity {}
-        steps:
-        #To-Do: Add deconstruct visuals
-        - tool: Welding
-          doAfter: 6
-        - tool: Screwing
-          doAfter: 2
-        - tool: Prying
-          doAfter: 3
-        - tool: Welding
-          doAfter: 5
-        - tool: Screwing
-          doAfter: 1
-        - tool: Prying
-          doAfter: 2
-        - tool: Welding
-          doAfter: 4
-        - tool: Anchoring
-          doAfter: 1
+        - to: start
+          completed:
+            - !type:GivePrototype
+              prototype: SheetRGlass1
+              amount: 2
+            - !type:GivePrototype
+              prototype: SheetPlasteel1
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+          #To-Do: Add deconstruct visuals
+            - tool: Welding
+              doAfter: 6
+            - tool: Screwing
+              doAfter: 2
+            - tool: Prying
+              doAfter: 3
+            - tool: Welding
+              doAfter: 5
+            - tool: Screwing
+              doAfter: 1
+            - tool: Prying
+              doAfter: 2
+            - tool: Welding
+              doAfter: 4
+            - tool: Anchoring
+              doAfter: 1

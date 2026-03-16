@@ -1,5 +1,14 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.GameStates;
-using Robust.Shared.Map;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Atmos.Components;
@@ -12,9 +21,6 @@ public sealed partial class GasAnalyzerComponent : Component
 
     [ViewVariables]
     public EntityUid User;
-
-    [ViewVariables(VVAccess.ReadWrite)]
-    public EntityCoordinates? LastPosition;
 
     [DataField("enabled"), ViewVariables(VVAccess.ReadWrite)]
     public bool Enabled;
@@ -97,12 +103,6 @@ public sealed partial class GasAnalyzerComponent : Component
                  ("gasAmount", Amount));
         }
     }
-
-    [Serializable, NetSerializable]
-    public sealed class GasAnalyzerDisableMessage : BoundUserInterfaceMessage
-    {
-
-    }
 }
 
 [Serializable, NetSerializable]
@@ -110,4 +110,3 @@ public enum GasAnalyzerVisuals : byte
 {
     Enabled,
 }
-

@@ -1,8 +1,18 @@
+// SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 PrPleGoo <PrPleGoo@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Rane <60792108+Elijahrane@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Milon <milonpl.git@proton.me>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.Hands; // Goobstation
 using Content.Shared.Inventory.Events;
 using Content.Shared.Overlays;
 using Robust.Client.Graphics;
-using System.Linq;
-using Robust.Client.Player;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client.Overlays;
@@ -17,6 +27,8 @@ public sealed class ShowHealthBarsSystem : EquipmentHudSystem<ShowHealthBarsComp
 
     private EntityHealthBarOverlay _overlay = default!;
 
+    protected override bool WorksInHands => true; // Goobstation
+
     public override void Initialize()
     {
         base.Initialize();
@@ -28,7 +40,7 @@ public sealed class ShowHealthBarsSystem : EquipmentHudSystem<ShowHealthBarsComp
 
     private void OnHandleState(Entity<ShowHealthBarsComponent> ent, ref AfterAutoHandleStateEvent args)
     {
-        RefreshOverlay(ent);
+        RefreshOverlay();
     }
 
     protected override void UpdateInternal(RefreshEquipmentHudEvent<ShowHealthBarsComponent> component)
@@ -57,5 +69,13 @@ public sealed class ShowHealthBarsSystem : EquipmentHudSystem<ShowHealthBarsComp
 
         _overlay.DamageContainers.Clear();
         _overlayMan.RemoveOverlay(_overlay);
+    }
+
+    // Goobstation
+    protected override void OnRefreshEquipmentHud(Entity<ShowHealthBarsComponent> ent,
+        ref HeldRelayedEvent<RefreshEquipmentHudEvent<ShowHealthBarsComponent>> args)
+    {
+        if (ent.Comp.WorksInHands)
+            base.OnRefreshEquipmentHud(ent, ref args);
     }
 }

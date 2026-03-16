@@ -1,18 +1,31 @@
-<Document>
-# Крионика
-Крионика поначалу может казаться сложной, но быстрый разбор этой схемы поможет понять, как она работает. Вот что делает каждая часть системы:
+<!--
+SPDX-FileCopyrightText: 2023 Myakot <30875116+Myakot@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Sir Winters <7543955+Owai-Seek@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Detintinto <101300113+Detintinto@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Ghagliiarghii <68826635+Ghagliiarghii@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Iztok Bajcar <50874197+iztokbajcar@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Repo <47093363+Titian3@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 
-- Подача воздуха: сюда поступает воздух из магистрали или баллона. Пациентам есть чем дышать, а морозильнику — что охлаждать.
-- Газовый насос: ограничивает давление в сети, чтобы тех, кто в капсуле, не раздавило.
-- Морозильник: охлаждает воздух, а значит и пациентов в капсуле — так активируется Cryoxadone.
-- Газовые фильтры: выводят из контура отходы (углекислый газ и закись азота).
-- Отвод воздуха: сюда уходят отработанные газы — в баллон хранения или в сеть утилизации.
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
+# Криогеника
+Криогеника может быть немного сложной для понимания, но, надеемся, быстро просмотрев эту схему, вы узнаете, как с ней работать! Итак, давайте рассмотрим, что делает каждая часть:
+
+- Ввод воздуха: Воздух поступает сюда через дистро или канистру воздуха, давая тем, кто находится внутри, возможность дышать, а морозильной камере - охлаждать.
+- Газовый насос: Ограничивает давление в сети, чтобы не раздавить тех, кто находится в капсуле.
+- Охладитель: Охлаждает воздух и, соответственно, пациентов в капсуле, чтобы криоксадон мог действовать.
+- Газовые фильтры: Удаляют отработанный газ (диоксид углерода и оксид азота) из сети.
+- Вывод воздуха: Отработанные газы уходят здесь либо в канистру, либо в сеть отходов.
 <Box>
 <GuideEntityEmbed Entity="GasPipeBend" Rotation="90"/>
 <GuideEntityEmbed Entity="GasPipeStraight" Rotation="90"/>
 <GuideEntityEmbed Entity="GasPipeStraight" Rotation="90"/>
 <GuideEntityEmbed Entity="GasPipeBend" Rotation="0"/>
-<GuideEntityEmbed Entity="CryoPod" Caption="крио-капсула" Rotation="0"/>
+<GuideEntityEmbed Entity="CryoPod" Caption="cryo pod" Rotation="0"/>
 <GuideEntityEmbed Entity="GasThermoMachineFreezerEnabled" Rotation="0"/>
 </Box>
 <Box>
@@ -24,27 +37,31 @@
 <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="270"/>
 </Box>
 <Box>
-<GuideEntityEmbed Entity="GasPort" Caption="отвод воздуха" Rotation="90"/>
+<GuideEntityEmbed Entity="GasPort" Caption="вывод воздуха" Rotation="90"/>
 <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="180"/>
 <GuideEntityEmbed Entity="GasPipeBend" Rotation="270"/>
-<GuideEntityEmbed Entity="GasPort" Caption="подача воздуха" Rotation="90"/>
+<GuideEntityEmbed Entity="GasPort" Caption="ввод воздуха" Rotation="90"/>
 <GuideEntityEmbed Entity="GasPressurePump" Rotation="90"/>
 <GuideEntityEmbed Entity="GasPipeBend" Rotation="270"/>
 </Box>
 
-Не каждая сеть будет выглядеть так, но этого достаточно, чтобы понять общую логику работы.
+Не каждая сеть будет выглядеть так, но, надеемся, этого достаточно, чтобы дать вам основное представление о том, как она функционирует.
 
-Важно: зимняя одежда (и хардсьюты) ослабляют или даже полностью нивелируют эффект криолечения. Снимайте тёплые вещи перед тем, как помещать человека в капсулу.
+Важно отметить, что зимняя одежда (и скафандры) сделает криогенную обработку менее эффективной или совсем неэффективной. Перед помещением людей в капсулу обязательно снимите одежду с защитой от холода.
 
-## Использование капсулы
-Когда всё настроено, понадобится особый препарат — Cryoxadone. Он лечит все типы урона, если пациент охлаждён, и может быть введён заранее (таблеткой) или залит непосредственно в ячейку мензуркой. Имейте в виду: лечение начнётся только после того, как пациент остынет до нужной температуры, иногда стоит подождать, прежде чем ставить мензурку внутрь.
+## Использования капсулы
+После того как все будет готово, вам потребуется специальный препарат - Криоксадон. Криоксадон исцеляет все типы повреждений, когда пациент охлажден, и его можно либо предварительно ввести в организм (с помощью таблетки), либо загрузить прямо в камеру с помощью мензурки. Обратите внимание, что пациенты не начнут исцеляться, пока не охладятся до соответствующей температуры, поэтому, возможно, стоит немного подождать, прежде чем помещать мензурку внутрь.
 
-## Дополнительные сведения
+## Дополнительная информация:
 
-Стандартное давление для газового насоса — 100,325 кПа. Cryoxadone работает при температуре ниже 170 K, но обычно морозильник выставляют на 100 K — так заморозка идёт быстрее.
+Стандартное давление газового насоса 100.325 кПа. Криоксадон работает при температуре ниже 150К, но обычно параметры охладителя ставят на 100К для ускорения процесса охлаждения.
 
+<GuideReagentEmbed Reagent="Aloxadone"/>
 <GuideReagentEmbed Reagent="Cryoxadone"/>
 <GuideReagentEmbed Reagent="Doxarubixadone"/>
 <GuideReagentEmbed Reagent="Dexalin"/>
+<GuideReagentEmbed Reagent="Leporazine"/>
+<GuideReagentEmbed Reagent="Necrosol"/>
+<GuideReagentEmbed Reagent="Opporozidone"/>
 
 </Document>

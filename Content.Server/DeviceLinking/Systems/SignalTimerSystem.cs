@@ -1,3 +1,22 @@
+// SPDX-FileCopyrightText: 2023 CommieFlowers <rasmus.cedergren@hotmail.com>
+// SPDX-FileCopyrightText: 2023 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2023 rolfero <45628623+rolfero@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 MrFippik <48425912+MrFippik@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 avery <51971268+graevy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.DeviceLinking.Components;
 using Content.Shared.UserInterface;
 using Content.Shared.Access.Systems;
@@ -51,8 +70,7 @@ public sealed class SignalTimerSystem : EntitySystem
         if (_ui.HasUi(uid, SignalTimerUiKey.Key))
         {
             _ui.SetUiState(uid, SignalTimerUiKey.Key, new SignalTimerBoundUserInterfaceState(component.Label,
-                TimeSpan.FromSeconds(component.Delay).Minutes.ToString("D2"),
-                TimeSpan.FromSeconds(component.Delay).Seconds.ToString("D2"),
+                TimeSpan.FromSeconds(component.Delay), // Mono
                 component.CanEditLabel,
                 time,
                 active != null,
@@ -73,8 +91,7 @@ public sealed class SignalTimerSystem : EntitySystem
         if (_ui.HasUi(uid, SignalTimerUiKey.Key))
         {
             _ui.SetUiState(uid, SignalTimerUiKey.Key, new SignalTimerBoundUserInterfaceState(signalTimer.Label,
-                TimeSpan.FromSeconds(signalTimer.Delay).Minutes.ToString("D2"),
-                TimeSpan.FromSeconds(signalTimer.Delay).Seconds.ToString("D2"),
+                TimeSpan.FromSeconds(signalTimer.Delay), // Mono
                 signalTimer.CanEditLabel,
                 TimeSpan.Zero,
                 false,
@@ -152,7 +169,7 @@ public sealed class SignalTimerSystem : EntitySystem
         if (!IsMessageValid(uid, args))
             return;
 
-        component.Delay = args.Delay.TotalSeconds;
+        component.Delay = Math.Min(args.Delay.TotalSeconds, component.MaxDuration);
         _appearanceSystem.SetData(uid, TextScreenVisuals.TargetTime, component.Delay);
     }
 

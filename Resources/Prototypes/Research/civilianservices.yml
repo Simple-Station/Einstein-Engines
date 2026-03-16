@@ -1,17 +1,77 @@
+# SPDX-FileCopyrightText: 2023 Doru991 <75124791+Doru991@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 MishaUnity <81403616+MishaUnity@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 RiceMar1244 <138547931+RiceMar1244@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 T-Stalker <43253663+DogZeroX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lapatison <100279397+lapatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Alchebun <47635328+jimmy12or@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Dvir <39403717+dvir001@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 GitHubUser53123 <110841413+GitHubUser53123@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mangohydra <156087924+Mangohydra@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 amatwiedle <amatwiedle@gmail.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 iNVERTED <alextjorgensen@gmail.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 FaDeOkno <logkedr18@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Nox <nebulousnox38@gmail.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 Southbridge <7013162+southbridge-fur@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Thinbug <101073555+Thinbug0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Thomas <87614336+Aeshus@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 TurboTracker <130304754+TurboTrackerss14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 # Tier 1
+
 - type: technology
-  id: BasicCybernetics
-  name: research-technology-basic-cybernetics
+  id: Hydroponics
+  name: research-technology-basic-hydroponics
   icon:
-    sprite: Mobs/Silicon/chassis.rsi
-    state: robot
+    sprite: Structures/Machines/seed_extractor.rsi
+    state: seedextractor
   discipline: CivilianServices
   tier: 1
-  cost: 15000
+  cost: 7500 # Delta Price. 5000 is pre-adjustment.
   recipeUnlocks:
-  - BorgModuleAdvancedCleaning
-  - BorgModuleGardening
-  - BorgModuleHarvesting
+  - PlantBagOfHolding #DeltaV
+  - SeedExtractorMachineCircuitboard
+  - HydroponicsTrayMachineCircuitboard
+  - ReagentGrinderIndustrialMachineCircuitboard
+  # Goobstation R&D Console rework start
+  position: -3,4
+  technologyPrerequisites:
+  - AdvancedEntertainment
+  # Goobstation R&D Console rework end
+
+- type: technology
+  id: CritterMechs
+  name: research-technology-critter-mechs
+  icon:
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: hamtr
+  discipline: CivilianServices
+  tier: 1
+  cost: 7500
+  recipeUnlocks:
   - HamtrHarness
   - HamtrLArm
   - HamtrRArm
@@ -21,21 +81,22 @@
   - HamtrPeripheralsElectronics
   - MechEquipmentGrabberSmall
   - VimHarness
-  - ProximitySensor
-  - ExosuitFabricatorMachineCircuitboard
-  - BorgModuleArtifact
-  - BorgModuleAnomaly
-  - DroneElectronics
+  # Goobstation R&D Console rework start
+  position: 0,4
+  technologyPrerequisites:
+  - AdvancedEntertainment
+  - RipleyAPLU
+  # Goobstation R&D Console rework end
 
 - type: technology
-  id: BasicElectronics
-  name: research-technology-basic-electronics
+  id: AudioVisualCommunication
+  name: research-technology-audio-visual-communication
   icon:
-    sprite: Structures/Machines/computers.rsi
-    state: television
+    sprite: Structures/Wallmounts/camera.rsi
+    state: cameracase
   discipline: CivilianServices
   tier: 1
-  cost: 12500
+  cost: 5000
   recipeUnlocks:
   - SurveillanceCameraRouterCircuitboard
   - SurveillanceCameraWirelessRouterCircuitboard
@@ -45,71 +106,133 @@
   - SurveillanceWirelessCameraMonitorCircuitboard
   - TelecomServerCircuitboard
   - HolopadMachineCircuitboard
-  - ComputerTelevisionCircuitboard
-  - SynthesizerInstrument
-  - DawInstrumentMachineCircuitboard
-  - MassMediaCircuitboard
-  - JukeboxCircuitBoard
+  # Goobstation R&D Console rework start
+  position: 1,4
+  technologyPrerequisites:
+  - AdvancedEntertainment
+  # Goobstation R&D Console rework end
+
+- type: technology
+  id: AdvancedEntertainment
+  name: research-technology-advanced-entertainment
+  icon:
+    sprite: Structures/Machines/computers.rsi
+    state: television
+  discipline: CivilianServices
+  tier: 1
+  cost: 7500
+  recipeUnlocks:
+    - ComputerTelevisionCircuitboard
+    - SynthesizerInstrument
+    - DawInstrumentMachineCircuitboard
+    - MassMediaCircuitboard
+    - JukeboxCircuitBoard
+    - BorgModuleLollypop # Goobstation
+  position: 0,2
+
+- type: technology
+  id: MeatManipulation
+  name: research-technology-meat-manipulation
+  icon:
+    sprite: Structures/Machines/fat_sucker.rsi
+    state: display
+  discipline: CivilianServices
+  tier: 1
+  cost: 7500
+  recipeUnlocks:
   - FatExtractorMachineCircuitboard
   - BiofabricatorMachineCircuitboard
   - BiomassReclaimerMachineCircuitboard
-
-# TODO: Add recipes to manufacture Vacsuits.
-# - type: technology
-#   id: BasicVacsuits
-#   name: research-technology-basic-vacsuits
-#   icon:
-#     sprite: Clothing/OuterClothing/Suits/eva_emergency.rsi
-#     state: icon
-#   discipline: CivilianServices
-#   tier: 1
-#   cost: 10000
-#   recipeUnlocks:
-#   - ClothingOuterSuitEmergency
+  # Goobstation R&D Console rework start
+  position: -3,5
+  technologyPrerequisites:
+  - Hydroponics
+  # Goobstation R&D Console rework end
 
 # Tier 2
 
-# TODO: Add recipes to manufacture Hardsuits
-# - type: technology
-#   id: BasicHardsuits
-#   name: research-technology-basic-hardsuits
-#   icon:
-#     sprite: Clothing/OuterClothing/Hardsuits/engineering.rsi
-#     state: icon
-#   discipline: CivilianServices
-#   tier: 1
-#   cost: 15000
-#   recipeUnlocks:
-#   - ClothingOuterHardsuitEngineering
+- type: technology
+  id: FauxAstroTiles
+  name: research-technology-faux-astro-tiles
+  icon:
+    sprite: Objects/Tiles/tile.rsi
+    state: astroice
+  discipline: CivilianServices
+  tier: 2
+  cost: 5000
+  recipeUnlocks:
+  - FauxTileAstroGrass
+  - FauxTileMowedAstroGrass
+  - FauxTileJungleAstroGrass
+  - FauxTileAstroIce
+  - FauxTileAstroSnow
+  - FauxTileAstroAsteroidSand
+  # Goobstation R&D Console rework start
+  position: 1,5
+  technologyPrerequisites:
+  - AudioVisualCommunication
+  # Goobstation R&D Console rework end
 
 - type: technology
-  id: BasicLifeImprovements
-  name: research-technology-basic-life-improvements
+  id: BiochemicalStasis
+  name: research-technology-biochemical-stasis
   icon:
     sprite: Structures/Machines/stasis_bed.rsi
     state: icon
   discipline: CivilianServices
   tier: 2
-  cost: 15000
+  cost: 7500
   recipeUnlocks:
+  - StasisBedMachineCircuitboard
+  - StasisOperatingTableCircuitboard # Corvax-Goob-StasisOperatingTable
+  - CryoPodMachineCircuitboard
   - CryostasisBeaker
   - SyringeCryostasis
+  # Goobstation R&D Console rework start
+  position: 3,5
+  technologyPrerequisites:
+  - AccessibilityTech
+  # Goobstation R&D Console rework end
+
+# Goob edit
+#- type: technology # Merge with other T2 medical research if possible!
+#  id: MechanizedTreatment
+#  name: research-technology-mechanized-treatment
+#  icon:
+#    sprite: Mobs/Silicon/chassis.rsi
+#    state: medical
+#  discipline: CivilianServices
+#  tier: 2
+#  cost: 5000
+#  recipeUnlocks:
+#  - BorgModuleAdvancedChemical
+#  # Goobstation R&D Console rework start
+#  position: -1, 4
+#  technologyPrerequisites:
+#  - AdvancedEntertainment
+#  - BasicRobotics
+#  # Goobstation R&D Console rework end
+
+
+- type: technology
+  id: AdvancedCleaning
+  name: research-technology-advanced-cleaning
+  icon:
+    sprite: Objects/Specific/Janitorial/advmop.rsi
+    state: advmop
+  discipline: CivilianServices
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
   - AdvMopItem
   - MegaSprayBottle
-  - WeaponSprayNozzle
-  - ClothingBackpackWaterTank
-  - CargoTelepadMachineCircuitboard
-  - ClothingShoesBootsMag
-  - ClothingShoesBootsMoon
-  - CloningConsoleComputerCircuitboard
-  - MedicalScannerMachineCircuitboard
-  - MetempsychoticMachineCircuitboard
-  - EnvirosuitExtinguisherRefill
-  - StasisBedMachineCircuitboard
-  - CryoPodMachineCircuitboard
-  - ReagentGrinderIndustrialMachineCircuitboard
-  - HydroponicsTrayMachineCircuitboard
-  - SeedExtractorMachineCircuitboard
+  - BorgModuleAdvancedCleaning
+  # Goobstation R&D Console rework start
+  position: -1,4
+  technologyPrerequisites:
+  - AdvancedEntertainment
+  - BasicRobotics
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: HONKMech
@@ -130,57 +253,103 @@
   - HonkerPeripheralsElectronics
   - HonkerTargetingElectronics
   - MechEquipmentHorn
+  # Goobstation R&D Console rework start
+  position: 0,6
+  technologyPrerequisites:
+  - PushHorn
+  - RipleyAPLU
+  # Goobstation R&D Console rework end
+
+- type: technology
+  id: AdvancedSpray
+  name: research-technology-advanced-spray
+  icon:
+    sprite: Objects/Weapons/Guns/Basic/spraynozzle.rsi
+    state: icon
+  discipline: CivilianServices
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - WeaponSprayNozzle
+  - ClothingBackpackWaterTank
+  # Goobstation R&D Console rework start
+  position: -1,6
+  technologyPrerequisites:
+  - AdvancedCleaning
+  # Goobstation R&D Console rework end
+
+- type: technology
+  id: BluespaceCargoTransport
+  name: research-technology-bluespace-cargo-transport
+  icon:
+    sprite: Structures/cargo_telepad.rsi
+    state: display
+  discipline: CivilianServices
+  tier: 2
+  cost: 15000
+  recipeUnlocks:
+  - CargoTelepadMachineCircuitboard
+  # Goobstation R&D Console rework start
+  position: 1,8
+  technologyPrerequisites:
+  - MeatManipulation
+  - FauxAstroTiles
+  # Goobstation R&D Console rework end
+
+- type: technology
+  id: PushHorn
+  name: research-technology-clowning-utilities
+  icon:
+    sprite: Objects/Fun/push_horn.rsi
+    state: icon
+  discipline: CivilianServices
+  tier: 2
+  cost: 4000
+  recipeUnlocks:
+  - PushHorn
+  # - BorgModuleAdvancedClowning # goobedit
+  # Goobstation R&D Console rework start
+  position: 0,5
+  technologyPrerequisites:
+  - CritterMechs
+  # Goobstation R&D Console rework end
 
 # Tier 3
-# TODO: Add recipes to manufacture Advanced Hardsuits
-# - type: technology
-#   id: AdvancedHardsuits
-#   name: research-technology-advanced-hardsuits
-#   icon:
-#     sprite: Clothing/OuterClothing/Hardsuits/engineering-white.rsi
-#     state: icon
-#   discipline: CivilianServices
-#   tier: 1
-#   cost: 15000
-#   recipeUnlocks:
-#   - ClothingOuterHardsuitEngineeringWhite
-#   softCapContribution: 1.5
+
+#- type: technology
+#  id: QuantumFiberWeaving - Goobstation - Nuked due to sprinting.
+#  name: research-technology-quantum-fiber-weaving
+#  icon:
+#    sprite: Clothing/Shoes/Boots/speedboots.rsi
+#    state: icon
+#  discipline: CivilianServices
+#  tier: 3
+#  cost: 15000 # Goobstation 10000 -> 15000
+#  recipeUnlocks:
+#  - ClothingShoesBootsSpeed
+#  # Goobstation R&D Console rework start
+#  position: 1,9
+#  technologyPrerequisites:
+#  - BluespaceCargoTransport
+#  - HighEndSurgery
+#  # Goobstation R&D Console rework end
 
 - type: technology
-  id: AdvancedLifeImprovements
-  name: research-technology-advanced-life-improvements
+  id: BluespaceChemistry
+  name: research-technology-bluespace-chemistry
   icon:
-    sprite: Clothing/Shoes/Boots/speedboots.rsi
-    state: icon
+    sprite: Objects/Specific/Chemistry/beaker_bluespace.rsi
+    state: beakerbluespace
   discipline: CivilianServices
   tier: 3
-  cost: 15000
+  cost: 20000 # Goobstation 10000 -> 20000
   recipeUnlocks:
-  - ClothingShoesBootsMagAdv # TODO: Separate this out from the silly "Steal the CE's Timbs" objective
-  - ClothingShoesBootsSpeed
   - BluespaceBeaker
   - SyringeBluespace
-  # TODO: Add things like frontier's Hyposprays.
-  softCapContribution: 1.5
-
-- type: technology
-  id: AdvancedTranslation
-  name: research-technology-advanced-translation
-  icon:
-    sprite: Objects/Devices/translator.rsi
-    state: icon
-  discipline: CivilianServices
-  tier: 3
-  cost: 15000
-  recipeUnlocks:
-  - XenoTranslator
-  - AdvancedGalaticCommonTranslatorImplanter
-  - BubblishTranslatorImplanter
-  - NekomimeticTranslatorImplanter
-  - DraconicTranslatorImplanter
-  - CanilunztTranslatorImplanter
-  - SolCommonTranslatorImplanter
-  - RootSpeakTranslatorImplanter
-  - AnimalTranslator
-  - MofficTranslatorImplanter
-  softCapContribution: 1.5
+  - MedkitCombat # Goobstation - remove medkitcombat from static to research
+  - VialBluespace # goob edit - bluespace vials
+  # Goobstation R&D Console rework start
+  position: 4,5
+  technologyPrerequisites:
+  - BiochemicalStasis
+  # Goobstation R&D Console rework end

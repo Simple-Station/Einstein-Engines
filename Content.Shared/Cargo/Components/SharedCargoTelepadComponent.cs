@@ -1,4 +1,14 @@
-using Content.Shared.Construction.Prototypes;
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.DeviceLinking;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
@@ -17,47 +27,29 @@ public sealed partial class CargoTelepadComponent : Component
     public List<CargoOrderData> CurrentOrders = new();
 
     /// <summary>
-    ///     The base amount of time it takes to teleport from the telepad
+    /// The actual amount of time it takes to teleport from the telepad
     /// </summary>
-    [DataField]
-    public float BaseDelay = 10f;
+    [DataField("delay"), ViewVariables(VVAccess.ReadWrite)]
+    public float Delay = 5f;
 
     /// <summary>
-    ///     The actual amount of time it takes to teleport from the telepad
+    /// How much time we've accumulated until next teleport.
     /// </summary>
-    [DataField]
-    public float Delay = 10f;
-
-    /// <summary>
-    ///     The machine part that affects <see cref="Delay"/>
-    /// </summary>
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>)), ViewVariables(VVAccess.ReadWrite)]
-    public string MachinePartTeleportDelay = "Capacitor";
-
-    /// <summary>
-    ///     A multiplier applied to <see cref="Delay"/> for each level of <see cref="MachinePartTeleportDelay"/>
-    /// </summary>
-    [DataField]
-    public float PartRatingTeleportDelay = 0.8f;
-
-    /// <summary>
-    ///     How much time we've accumulated until next teleport.
-    /// </summary>
-    [DataField]
+    [DataField("accumulator"), ViewVariables(VVAccess.ReadWrite)]
     public float Accumulator;
 
-    [DataField]
+    [DataField("currentState")]
     public CargoTelepadState CurrentState = CargoTelepadState.Unpowered;
 
-    [DataField]
+    [DataField("teleportSound")]
     public SoundSpecifier TeleportSound = new SoundPathSpecifier("/Audio/Machines/phasein.ogg");
 
     /// <summary>
     ///     The paper-type prototype to spawn with the order information.
     /// </summary>
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>)), ViewVariables(VVAccess.ReadWrite)]
+    [DataField("printerOutput", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>)), ViewVariables(VVAccess.ReadWrite)]
     public string PrinterOutput = "PaperCargoInvoice";
 
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>)), ViewVariables(VVAccess.ReadWrite)]
+    [DataField("receiverPort", customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>)), ViewVariables(VVAccess.ReadWrite)]
     public string ReceiverPort = "OrderReceiver";
 }

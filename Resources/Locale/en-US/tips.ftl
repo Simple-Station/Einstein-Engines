@@ -1,3 +1,16 @@
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <92357316+Piras314@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 K-Dynamic <20566341+K-Dynamic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Simon <63975668+Simyon264@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SpeltIncorrectyl <66873282+SpeltIncorrectyl@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 tips-dataset-1 = If you're on fire, you can click the alert on the right of your screen to stop, drop, and roll.
 tips-dataset-2 = You can view and edit all keybindings used in-game at any time through the Options menu.
 tips-dataset-3 = You can access the in-game guidebook through the escape menu, or by pressing Numpad 0 by default.
@@ -30,7 +43,8 @@ tips-dataset-29 = As a ghost, you can use the Verb Menu to orbit around and foll
 tips-dataset-30 = As a Traitor, you may sometimes be assigned to hunt other traitors, and in turn be hunted by others.
 tips-dataset-31 = As a Traitor, the syndicate encryption key can be used to communicate through a secure channel with any other traitors who have purchased it.
 tips-dataset-32 = As a Traitor, compromising important communications channels like security or engineering can give valuable intelligence. Be aware that this goes in both ways - security can compromise syndicate communications as well!
-tips-dataset-33 = As a Traitor, the syndicate toolbox is extremely versatile. For only 2 telecrystals, you can get a full set of tools to help you in an emergency, insulated combat gloves and a syndicate gas mask.
+# Goobstation - Telecrystal rework
+tips-dataset-33 = As a Traitor, the syndicate toolbox is extremely versatile. For only 10 telecrystals, you can get a full set of tools to help you in an emergency, insulated combat gloves and a syndicate gas mask.
 tips-dataset-34 = As a Traitor, never underestimate the web vest. It may not provide space protection, but its cheap cost and robust protection makes it handy for protecting against trigger-happy foes.
 tips-dataset-35 = As a Traitor, any purchased grenade penguins won't attack you, and will explode if killed.
 tips-dataset-36 = As a Traitor, be careful when using vestine from the chemical synthesis kit. If someone checks your station, they could easily out you.
@@ -46,8 +60,8 @@ tips-dataset-45 = You can examine your headset to see which radio channels you h
 tips-dataset-46 = As a Salvage Specialist, always carry a GPS on you and take note of the station's coordinates in case your salvage is lost to space.
 tips-dataset-47 = As a Salvage Specialist, you can use your proto-kinetic accelerator to move yourself in space when in a pinch. Just be wary that it isn't very effective.
 tips-dataset-48 = As a Salvage Specialist, never forget to mine ore! Ore can be sold to cargo for a pretty penny, be used for construction, and also be used by Scientists for fancy technology.
-tips-dataset-49 = As a Salvage Specialist, try asking science for a tethergun (temporarily deleted). It can be used to grab items off of salvage wrecks extremely efficiently!
-tips-dataset-50 = As a Salvage Specialist, try asking science for a grappling hook (temporarily deleted). It can be used to propel yourself onto wrecks, or if stuck in space you don't have to rely on the proto-kinetic accelerator.
+tips-dataset-49 = As a Salvage Specialist, try asking science for a tethergun. It can be used to grab items off of salvage wrecks extremely efficiently!
+tips-dataset-50 = As a Salvage Specialist, try asking science for a grappling hook. It can be used to propel yourself onto wrecks, or if stuck in space you don't have to rely on the proto-kinetic accelerator.
 tips-dataset-51 = Tip #51 does not exist and has never existed. Ignore any rumors to the contrary.
 tips-dataset-52 = As a Salvage Specialist, consider cooperating with the Cargo Technicians. They can order you a wide variety of useful items, including ones that may be hard to get otherwise, such laser guns and shuttle building materials.
 tips-dataset-53 = As a Cargo Technician, consider asking science for a Ripley APLU. When paired with a hydraulic clamp, you can grab valuable maintenance objects like fuel tanks much more easily, and make deliveries in a swift manner.
@@ -111,7 +125,7 @@ tips-dataset-110 = You can climb onto a table by dragging yourself onto one.
 tips-dataset-111 = You can move an item out of the way by dragging it, and then holding CTRL + right click and moving your mouse into the direction you want it to go.
 tips-dataset-112 = When dealing with security, you can often get your sentence negated entirely through cooperation and deception.
 tips-dataset-113 = Fire can spread to other players through touch! Be careful around flaming bodies or large crowds with people on fire in them.
-tips-dataset-114 = Hull breaches create sudden bursts of Space Wind, which can violently eject people and objects into deep space. Try to avoid standing near hull breaches when they're still new!
+tips-dataset-114 = Hull breaches take a few seconds to fully space an area. You can use this time to patch up the hole if you're confident enough, or just run away.
 tips-dataset-115 = Burn damage, such as that from a welding tool or lightbulb, can be used to cauterize wounds and stop bleeding.
 tips-dataset-116 = Bleeding is no joke! If you've been shot or acquired any other major injury, make sure to treat it quickly.
 tips-dataset-117 = In an emergency, you can butcher a jumpsuit with a sharp object to get cloth, which can be crafted into gauze.
@@ -135,40 +149,5 @@ tips-dataset-134 = You can tell if an area with firelocks up is spaced by lookin
 tips-dataset-135 = Instead of picking it up, you can alt-click food to eat it. This also works for mice and other creatures without hands.
 tips-dataset-136 = If you're trapped behind an electrified door, disable the APC or throw your ID at the door to avoid getting shocked!
 tips-dataset-137 = If the AI electrifies a door and you have insulated gloves, snip and mend the power wire to reset their electrification!
-tips-dataset-138 = Psionic insulation prevents you from using or being targeted by psionic abilities. Look for insulative headgear or cryptobiolin pills.
-tips-dataset-139 = Lotophagoi oil from the oracle will drug you up for a long time, but is one of the most reliable sources of psionics.
-tips-dataset-140 = Turn off glimmer probers when glimmer approaches cautious levels.
-tips-dataset-141 = Glimmer probers power themselves when glimmer gets too high.
-tips-dataset-142 = Oneirophages have psionic invisiblity. Psionic insulation will allow you to see them.
-tips-dataset-143 = Someone who looks just like you may be a paradox anomaly.
-tips-dataset-144 = The reverse engineering machine can't reverse engineer blood red hardsuits.
-tips-dataset-145 = If you have the CPR Training trait, or are any medical doctor, you can perform CPR by right clicking someone who is dead or in critical condition.
-tips-dataset-146 = CPR can occasionally 'defib' dead patients back to critical.
-tips-dataset-147 = Performing CPR on a dead patient will reduce their rot timer, allowing doctors more time to save a patient.
-tips-dataset-148 = Bibles, holy water, and the anti-psychic knife can deal holy damage, which has strong effects against some creatures.
-tips-dataset-149 = Ectoplasm is used in the recipe for normality crystals.
-tips-dataset-150 = As a Security Officer, if you're not sure how to determine the severity of a crime or the appropriate punishment, take a look at the Crime Assist application in your PDA!
-tips-dataset-151 = If you do not take the Latent Psychic trait, you can never be psionic. There may however exist some unusual conditions that can grant this trait during a round.
-tips-dataset-152 = The kitchen Deep Fryer is the most powerful machine ever created by man. It is not merely limited to deep frying food, but can deep fry almost ANYTHING that will fit in the basket. Try deep frying the captain's spare ID!
-tips-dataset-153 = If you see a security officer roaming with his stun baton or gun out on green, you have a moral obligation to steal his baton and feed it to the Deep Fryer.
-tips-dataset-154 = Harpies have the ability to imitate several different instruments, and can 'Sing' by opening an innate midi player.
-tips-dataset-155 = You can see if a Harpy is singing by looking for the musical notes floating around their head.
-tips-dataset-156 = Talking mimes are not legally considered people, and should be killed on sight for their crimes against the mime gods.
-tips-dataset-157 = You can pick up another person by holding Alt, and left clicking on the person. Your ability to carry them is determined by your relative size!
-tips-dataset-158 = Your character's size affects many things in the game, some of which you might not have been aware of. Larger characters experience less gun recoil. Smaller characters can slip handcuffs faster.
-tips-dataset-159 = 'Space Wind' is the term for how flowing air can throw objects or people. A hull breach is typically the most common cause of Space Wind, but it can also be caused by high pressure cannons!
-tips-dataset-160 = Ignore firelock warnings at your own peril. You may find yourself being violently thrown into deep space as soon as you crowbar the firelock open.
-tips-dataset-161 = Your character's Mass determines how resistant they are to being thrown by space wind. A small Felinid or Harpy is easily ejected into space, while an Oni or Diona is usually unaffected.
-tips-dataset-162 = Supermatter engines can be activated and powered by throwing objects into the crystal. Consider using the Clown to activate your station's Supermatter engine.
-tips-dataset-163 = There is no friction in space. Unless you use Newton's 1st Law to save yourself, your corpse will float away from the station forever.
-tips-dataset-164 = Cloning patients come out of the pod with extremely heavy Cellular damage. Consider using Doxarubixadone in a Cryo tube as an affordable means of 'Finishing' clones.
-tips-dataset-165 = Your character's Mood stat influences both your movement speed, and critical injury threshold.
-tips-dataset-166 = The Sanguine trait grants your character a permanent large mood bonus. As a result, they often move faster than other people, and will rarely ever take penalties from a net negative mood.
-tips-dataset-167 = The Saturnine trait gives your character a permanent large mood penalty. As a result, they often move slower than other people, and can have a hard time getting a net positive mood.
-tips-dataset-168 = If you aren't playing any Medical character, consider taking the CPR Training trait! This often highly-underrated trait allows characters to sometimes revive other people without needing medical supplies.
-tips-dataset-169 = If you have the Latent Psychic trait, you can consume hallucinogenic drugs to have a chance to obtain psychic powers.
-tips-dataset-170 = Having the Natural Telepath trait, or rolling the Telepathy Power, allows a person to speak telepathically by starting a message with '='. Telepathy does not require a radio, but is also completely anonymous.
-tips-dataset-171 = Certain crew members, such as the Mystagogue, Cataloguer, and Psionic Mantis, all automatically start with certain Psychic Powers.
-tips-dataset-172 = NanoTrasen prefers to select its command staff for high psychic potential. Thus, all command staff are inherently more likely to obtain Psychic Powers should they also have the Latent Psychic trait.
-tips-dataset-173 = You can craft a tinfoil hat out of sheet metal. Wearing a tinfoil hat provides temporary protection from Psychic Powers! Beware, that it also disrupts the powers of any Psion who wears one.
-tips-dataset-174 = You can press the R key to lay down on the ground. While Laying down, you can crawl underneath certain objects. Additionally, bullets will pass harmlessly over someone laying down, unless the shooter targets them directly.
+tips-dataset-138 = If you want to stop your prisoner from escaping from the cell right after being uncuffed, turn on combat mode while uncuffing - this will shove the prisoner down.
+tips-dataset-139 = Make sure to clean your illegal implanters with a soap or a damp rag after you use them! Detectives can scan used implanters for incriminating DNA evidence, but not if they've been wiped clean.

@@ -1,12 +1,12 @@
 - type: body
   id: XenomorphQueen
   name: xenomorph queen
-  root: torso
+  root: chest
   slots:
     head:
       part: HeadXenomorph
       connections:
-      - torso
+      - chest
       organs:
         brain: OrganXenomorphBrain
         eyes: OrganXenomorphEyes
@@ -14,18 +14,24 @@
         resin_spinner: OrganXenomorphResinSpinner
         neurotoxin_gland: OrganXenomorphNeurotoxinGland
         acid_gland: OrganXenomorphAcidGland
-    torso:
-      part: TorsoXenomorph
+    chest:
+      part: ChestXenomorph
       connections:
       - right arm
       - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphPlasmaVesselLargeQueen
+    groin:
+      part: GroinXenomorph
+      connections:
       - right leg
       - left leg
       - head
       organs:
         stomach: OrganXenomorphStomach
         liver: OrganXenomorphLiver
-        plasma_vessel: OrganXenomorphPlasmaVesselLargeQueen
         egg_sack: OrganXenomorphEggSack
     right arm:
       part: RightArmXenomorph

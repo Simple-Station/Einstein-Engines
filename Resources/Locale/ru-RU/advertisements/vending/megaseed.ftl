@@ -1,4 +1,3 @@
-advertisement-megaseed-0 = Вырасти урожай
 advertisement-megaseed-1 = Мы любим растения!
 advertisement-megaseed-2 = Вырасти урожай
 advertisement-megaseed-3 = Расти, малыш, расти-и-и-и!

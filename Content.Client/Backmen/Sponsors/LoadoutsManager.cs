@@ -1,5 +1,5 @@
 ﻿using Content.Corvax.Interfaces.Shared;
-using Content.Shared.Clothing.Loadouts.Prototypes;
+using Content.Shared.Preferences.Loadouts;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client.Backmen.Sponsors;

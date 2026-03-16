@@ -1,3 +1,17 @@
+// SPDX-FileCopyrightText: 2022 theashtronaut <112137107+theashtronaut@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 qwerltaz <69696513+qwerltaz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Atmos;
@@ -16,6 +30,8 @@ namespace Content.Client.Atmos.UI
     [GenerateTypedNameReferences]
     public sealed partial class GasAnalyzerWindow : DefaultWindow
     {
+        private NetEntity _currentEntity = NetEntity.Invalid;
+
         public GasAnalyzerWindow()
         {
             RobustXamlLoader.Load(this);
@@ -55,6 +71,13 @@ namespace Content.Client.Atmos.UI
             // Device Tab
             if (msg.NodeGasMixes.Length > 1)
             {
+                if (_currentEntity != msg.DeviceUid)
+                {
+                    // when we get new device data switch to the device tab
+                    CTabContainer.CurrentTab = 0;
+                    _currentEntity = msg.DeviceUid;
+                }
+
                 CTabContainer.SetTabVisible(0, true);
                 CTabContainer.SetTabTitle(0, Loc.GetString("gas-analyzer-window-tab-title-capitalized", ("title", msg.DeviceName)));
                 // Set up Grid
@@ -144,6 +167,7 @@ namespace Content.Client.Atmos.UI
                 CTabContainer.SetTabVisible(0, false);
                 CTabContainer.CurrentTab = 1;
                 minSize = new Vector2(CEnvironmentMix.DesiredSize.X + 40, MinSize.Y);
+                _currentEntity = NetEntity.Invalid;
             }
 
             MinSize = minSize;

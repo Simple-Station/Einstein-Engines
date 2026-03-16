@@ -1,3 +1,17 @@
+# SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2023 coolmankid12345 <55817627+coolmankid12345@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 coolmankid12345 <coolmankid12345@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 ## Rev Head
 
 roles-antag-rev-head-name = Head Revolutionary
@@ -14,22 +28,22 @@ head-rev-briefing =
     Use the manifesto to convert people to your cause.
     Get rid of all heads to take over the station.
 
-head-rev-break-mindshield = The Mindshield was destroyed!
+head-rev-break-mindshield = The Mindshield neutralized hypnotic powers, but its functionality has been compromised!
 
 ## Rev
 
 roles-antag-rev-name = Revolutionary
-roles-antag-rev-objective = Your objective is to ensure the safety and follow the orders of the Head Revolutionaries as well as getting rid of all Command staff on station.
+roles-antag-rev-objective = Your objective is to ensure the safety and follow the orders of the Head Revolutionaries as well as getting rid or converting of all Command staff on station.
 
 rev-break-control = {$name} has remembered their true allegiance!
 
 rev-role-greeting =
     You are a Revolutionary.
     You are tasked with taking over the station and protecting the Head Revolutionaries.
-    Get rid of all of the Command staff.
+    Get rid of all of or convert the Command staff.
     Viva la revolución!
 
-rev-briefing = Help your head revolutionaries get rid of every head to take over the station.
+rev-briefing = Help your head revolutionaries convert or get rid of every head to take over the station.
 
 ## General
 
@@ -42,7 +56,7 @@ rev-no-heads = There were no Head Revolutionaries to be selected. Can't start a 
 
 rev-won = The Head Revs survived and successfully seized control of the station.
 
-rev-lost = Command survived and killed all of the Head Revs.
+rev-lost = Command survived and neutralized all of the Head Revs.
 
 rev-stalemate = All of the Head Revs and Command died. It's a draw.
 
@@ -67,7 +81,7 @@ rev-headrev-name = [color=#5e9cff]{$name}[/color] converted {$count} {$count ->
 
 rev-deconverted-title = Deconverted!
 rev-deconverted-text =
-    As the last headrev has died, the revolution is over.
+    As the last headrev was neutralized, the revolution is over.
 
     You are no longer a revolutionary, so be nice.
 rev-deconverted-confirm = Confirm

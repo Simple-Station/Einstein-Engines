@@ -1,8 +1,9 @@
 using System.Linq;
 using System.Numerics;
+using Content.Client.Construction;
 using Content.Client.UserInterface.Controls;
+using Content.Shared._White.RadialSelector;
 using Content.Shared.Construction.Prototypes;
-using Content.Shared.RadialSelector;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
@@ -19,6 +20,7 @@ public abstract class BasedRadialSelectorMenuBUI : BoundUserInterface
     [Dependency] protected readonly IPrototypeManager ProtoManager = default!;
     [Dependency] protected readonly IResourceCache Resources = default!;
 
+    protected readonly ConstructionSystem _constructionSystem;
     protected readonly SpriteSystem _spriteSystem;
 
     // Used to clearing on state changing
@@ -28,6 +30,7 @@ public abstract class BasedRadialSelectorMenuBUI : BoundUserInterface
 
     protected BasedRadialSelectorMenuBUI(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
+        _constructionSystem = EntMan.System<ConstructionSystem>();
         _spriteSystem = EntMan.System<SpriteSystem>();
     }
 
@@ -36,6 +39,7 @@ public abstract class BasedRadialSelectorMenuBUI : BoundUserInterface
         var container = new RadialContainer
         {
             Name = !string.IsNullOrEmpty(parentCategory) ? parentCategory : "Main",
+            InitialRadius = 48f + 24f * MathF.Log(entries.Count),
         };
 
         menu.AddChild(container);
@@ -46,7 +50,7 @@ public abstract class BasedRadialSelectorMenuBUI : BoundUserInterface
             if (entry.Category != null)
             {
                 var button = CreateButton(entry.Category.Name, _spriteSystem.Frame0(entry.Category.Icon));
-                button.TargetLayer = entry.Category.Name;
+                button.TargetLayer = container;
                 CreateMenu(entry.Category.Entries, menu, entry.Category.Name);
                 container.AddChild(button);
             }
@@ -72,7 +76,7 @@ public abstract class BasedRadialSelectorMenuBUI : BoundUserInterface
             return prototype.Name;
 
         if (ProtoManager.TryIndex(proto, out ConstructionPrototype? constructionPrototype))
-            return constructionPrototype.Name;
+            return constructionPrototype.Name ?? proto;
 
         return proto;
     }
@@ -92,9 +96,11 @@ public abstract class BasedRadialSelectorMenuBUI : BoundUserInterface
             return result;
         }
 
-        if (ProtoManager.TryIndex(entry.Prototype!, out ConstructionPrototype? constructionProto))
+        if (ProtoManager.TryIndex(entry.Prototype!, out ConstructionPrototype? constructionProto)
+            && _constructionSystem.TryGetRecipePrototype(constructionProto.ID, out var targetProtoId)
+            && ProtoManager.TryIndex(targetProtoId, out EntityPrototype? proto))
         {
-            result.Add(_spriteSystem.Frame0(constructionProto.Icon));
+            result.AddRange(SpriteComponent.GetPrototypeTextures(proto, Resources).Select(o => o.Default));
             return result;
         }
 

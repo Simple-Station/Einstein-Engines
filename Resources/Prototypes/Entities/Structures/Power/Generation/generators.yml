@@ -1,3 +1,33 @@
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2022 Errant <35878406+dmnct@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Profane McBane <profanedbane+github@gmail.com>
+# SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2022 stopka-html <85645977+stopka-html@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Cody ~ Aexxie <125095677+Aexxie@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+# SPDX-FileCopyrightText: 2023 Tom Leys <tom@crump-leys.com>
+# SPDX-FileCopyrightText: 2023 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 qwerltaz <69696513+qwerltaz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ben Velie <veliebm@gmail.com>
+# SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 # Base Generator
 
 - type: entity
@@ -96,11 +126,9 @@
 - type: entity
   abstract: true
   id: BaseGeneratorWallmount
-  parent: BaseGenerator
+  parent: [ BaseGenerator, BaseWallmount ]
   name: wallmount generator
   description: A high efficiency thermoelectric generator stuffed in a wall cabinet.
-  placement:
-    mode: SnapgridCenter
   components:
   - type: AmbientOnPowered
   - type: AmbientSound
@@ -114,12 +142,6 @@
     color: "#3db83b"
     castShadows: false
     netsync: false
-  - type: Fixtures
-  - type: Transform
-    anchored: true
-  - type: Physics
-    bodyType: Static
-    canCollide: false
   - type: Sprite
     drawdepth: WallMountedItems
     sprite: Structures/Power/Generation/wallmount_generator.rsi
@@ -142,7 +164,6 @@
     supplyRate: 3000
     supplyRampRate: 500
     supplyRampTolerance: 500
-  - type: WallMount
   - type: GuideHelp
     guides:
     - ShuttleCraft
@@ -150,20 +171,12 @@
 # Construction Frames
 
 - type: entity
+  parent: BaseWallmountMetallic
   categories: [ HideSpawnMenu ]
   id: BaseGeneratorWallmountFrame
   name: wallmount generator frame
   description: A construction frame for a wallmount generator.
-  placement:
-    mode: SnapgridCenter
   components:
-  - type: Clickable
-  - type: InteractionOutline
-  - type: Physics
-    canCollide: false
-  - type: Fixtures
-  - type: Transform
-    anchored: true
   - type: Sprite
     drawdepth: WallMountedItems
     sprite: Structures/Power/Generation/wallmount_generator.rsi
@@ -172,7 +185,6 @@
   - type: Construction
     graph: WallmountGenerator
     node: frame
-  - type: WallMount
 
 # Generators in use
 
@@ -256,10 +268,6 @@
     range: 5
     sound:
       path: /Audio/Ambience/Objects/buzzing.ogg
-  - type: RTGHeat
-    heatPerSecond: 0.1
-    heatInterval: 1
-    maxTemperature: 373.15
   - type: GuideHelp
     guides:
     - RTG
@@ -333,8 +341,3 @@
             max: 5
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: RadiationEvent
-    initialIntensity: 2
-    decayDelay: 3600
-    decayRate: 0.1
-    decayRateInterval: 60

@@ -1,3 +1,14 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Shuttles.Systems;
 using Content.Shared.Tag;
 using Content.Shared.Timing;
@@ -51,7 +62,7 @@ public sealed partial class FTLComponent : Component
     public ProtoId<TagPrototype>? PriorityTag;
 
     [ViewVariables(VVAccess.ReadWrite), DataField("soundTravel")]
-    public SoundSpecifier? TravelSound = new SoundPathSpecifier("/Audio/DeltaV/Effects/Shuttle/hyperspace_progress.ogg") // DeltaV - Replace FTL sound
+    public SoundSpecifier? TravelSound = new SoundPathSpecifier("/Audio/Effects/Shuttle/hyperspace_progress.ogg")
     {
         Params = AudioParams.Default.WithVolume(-3f).WithLoop(true)
     };

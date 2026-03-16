@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Fishbait <Fishbait@git.ml>
+// SPDX-FileCopyrightText: 2024 fishbait <gnesse@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 namespace Content.Server.NPC.Pathfinding;
 
 [Flags]
@@ -30,5 +39,5 @@ public enum PathFlags : byte
     /// </summary>
     Interact = 1 << 4,
 
-    Blob = 1 << 5,  // Goobstation - Blob
+     Blob = 1 << 5,  // Goobstation - Blob
 }

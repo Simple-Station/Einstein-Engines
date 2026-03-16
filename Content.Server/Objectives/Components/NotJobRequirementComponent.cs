@@ -1,6 +1,12 @@
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Objectives.Systems;
 using Content.Shared.Roles;
-using Content.Shared.Roles.Jobs;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 /// <summary>
@@ -14,4 +20,8 @@ public sealed partial class NotJobRequirementComponent : Component
     /// </summary>
     [DataField(required: true, customTypeSerializer: typeof(PrototypeIdSerializer<JobPrototype>))]
     public string Job = string.Empty;
+
+    // MisandryBox/JobObjectives - Double negative to not break compatibility
+    [DataField]
+    public bool Inverted = false;
 }

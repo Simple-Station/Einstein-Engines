@@ -1,7 +1,14 @@
-using Content.Shared._Shitmed.Targeting;
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using Robust.Shared.Audio;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Projectiles;
@@ -29,7 +36,7 @@ public sealed partial class EmbeddableProjectileComponent : Component
     /// How long it takes to remove the embedded object.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float? RemovalTime = 5f;
+    public float? RemovalTime = 3f;
 
     /// <summary>
     ///     Whether this entity will embed when thrown, or only when shot as a projectile.
@@ -54,22 +61,4 @@ public sealed partial class EmbeddableProjectileComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public EntityUid? EmbeddedIntoUid;
-
-    /// <summary>
-    ///   How much time before this entity automatically falls off? (0 is never)
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public float AutoRemoveDuration = 40f;
-
-    /// <summary>
-    ///   The time when this entity automatically falls off after being attached.
-    /// </summary>
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField]
-    public TimeSpan? AutoRemoveTime = null;
-
-    /// <summary>
-    ///   The body part of the target this embeddable is attached to.
-    /// </summary>
-    [ViewVariables, AutoNetworkedField]
-    public TargetBodyPart? TargetBodyPart = null;
 }

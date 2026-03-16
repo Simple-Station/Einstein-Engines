@@ -1,0 +1,24 @@
+<!--
+SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+SPDX-FileCopyrightText: 2024 BeeRobynn <robynthewarcrime@proton.me>
+SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
+  # Пряничный человечек
+
+  <Box>
+    <GuideEntityEmbed Entity="MobGingerbread" Caption=""/>
+  </Box>
+
+  Пряничные человечки — это разумный вид кондитерских изделий. У них вместо крови сахар, а при разделке с них можно получить печенье. Так как они сделаны из теста, их вес в два раза меньше, чем у существ из плоти.
+
+  ## Показатели урона
+
+  Пряничные человечки получают в 3 раза меньше урона от огня, чем люди, не получают удушья (хотя всё же дышат и чувствуют дискомфорт без кислорода), кровопотери (но также чувствуют дискомфорт без сахара) и урона от холода (но холод замедляет их), однако получают в 1,5 раза больше дробящего урона и сильный урон от жара при внешнем воздействии воды.
+
+</Document>

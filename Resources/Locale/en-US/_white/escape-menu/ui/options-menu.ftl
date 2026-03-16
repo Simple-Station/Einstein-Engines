@@ -1,2 +1,0 @@
-ui-options-function-look-up = Look up/Take aim
-ui-options-function-toggle-look-up = Hold down the key to aim

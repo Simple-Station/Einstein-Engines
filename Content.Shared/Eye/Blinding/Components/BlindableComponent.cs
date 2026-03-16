@@ -1,3 +1,13 @@
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Moomoobeef <62638182+Moomoobeef@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Eye.Blinding.Systems;
 using Robust.Shared.GameStates;
 
@@ -29,12 +39,6 @@ public sealed partial class BlindableComponent : Component
 
     [ViewVariables(VVAccess.ReadOnly), DataField]
     public int MinDamage = 0;
-
-    /// <summary>
-    /// Whether the minimum eye damage can be modified with surgery.
-    /// </summary>
-    [ViewVariables(VVAccess.ReadWrite), DataField("incurable"), AutoNetworkedField]
-    public bool Incurable = false;
 
     /// <description>
     /// Used to ensure that this doesn't break with sandbox or admin tools.

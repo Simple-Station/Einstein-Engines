@@ -1,0 +1,126 @@
+# SPDX-FileCopyrightText: 2024 Adeinitas <147965189+adeinitas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Danger Revolution! <142105406+DangerRevolution@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Timemaster99 <57200767+Timemaster99@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# All the Harpy customization
+
+- type: marking
+  id: HarpyEarsDefault
+  bodyPart: Head
+  markingCategory: HeadTop
+  speciesRestriction: [Harpy]
+  coloring:
+    default:
+      type: !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SimpleColoring
+        color: "#964b00"
+  sprites:
+  - sprite: _DV/Mobs/Customization/Harpy/harpy_ears.rsi
+    state: harpy_ears_default
+
+- type: marking
+  id: HarpyTailPhoenix
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Harpy]
+  coloring:
+    default:
+      type: !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SimpleColoring
+        color: "#964b00"
+  sprites:
+  - sprite: _DV/Mobs/Customization/Harpy/harpy_tails.rsi
+    state: phoenix_tail
+
+- type: marking
+  id: HarpyTailRooster
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Harpy]
+  coloring:
+    default:
+      type: !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SimpleColoring
+  sprites:
+  - sprite: _DV/Mobs/Customization/Harpy/harpy_tails.rsi
+    state: rooster_tail
+
+- type: marking
+  id: HarpyTailFinch
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Harpy]
+  coloring:
+    default:
+      type: !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SimpleColoring
+  sprites:
+  - sprite: _DV/Mobs/Customization/Harpy/harpy_tails36x32.rsi
+    state: finch_tail
+
+- type: marking
+  id: HarpyChestDefault
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Harpy]
+  coloring:
+    default:
+      type: !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SimpleColoring
+        color: "#964b00"
+  sprites:
+  - sprite: _DV/Mobs/Customization/Harpy/harpy_chest.rsi
+    state: upper
+  - sprite: _DV/Mobs/Customization/Harpy/harpy_chest.rsi
+    state: lower
+
+- type: marking
+  id: HarpyLegsDefault
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Harpy]
+  coloring:
+    default:
+      type: !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SimpleColoring
+        color: "#964b00"
+  sprites:
+  - sprite: _DV/Mobs/Customization/Harpy/harpy_legs.rsi
+    state: thighs
+
+- type: marking
+  id: HarpyFeetDefault
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [Harpy]
+  coloring:
+    default:
+      fallbackTypes:
+      - !type:SimpleColoring
+        color: "#964b00"
+  sprites:
+  - sprite: _DV/Mobs/Customization/Harpy/harpy_legs.rsi
+    state: feet
+  - sprite: _DV/Mobs/Customization/Harpy/harpy_legs.rsi
+    state: talons

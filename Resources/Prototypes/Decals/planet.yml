@@ -1,7 +1,11 @@
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
 # Flowers
 - type: decal
   id: FlowersBROne
-  parent: Flower
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -10,7 +14,6 @@
 
 - type: decal
   id: FlowersBRTwo
-  parent: Flower
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -19,7 +22,6 @@
 
 - type: decal
   id: FlowersBRThree
-  parent: Flower
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -29,7 +31,6 @@
 # Grass
 - type: decal
   id: BushAOne
-  parent: Bush
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -38,7 +39,6 @@
 
 - type: decal
   id: BushATwo
-  parent: Bush
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -47,7 +47,6 @@
 
 - type: decal
   id: BushAThree
-  parent: Bush
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -56,7 +55,6 @@
 
 - type: decal
   id: BushCOne
-  parent: Bush
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -65,7 +63,6 @@
 
 - type: decal
   id: BushCTwo
-  parent: Bush
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -74,7 +71,6 @@
 
 - type: decal
   id: BushCThree
-  parent: Bush
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -83,7 +79,6 @@
 
 - type: decal
   id: BushDOne
-  parent: Bush
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -92,7 +87,6 @@
 
 - type: decal
   id: BushDTwo
-  parent: Bush
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -101,10 +95,8 @@
 
 - type: decal
   id: BushDThree
-  parent: Bush
   snapCardinals: true
   defaultSnap: false
   sprite:
     sprite: /Textures/Decals/Flora/flora_bushes.rsi
     state: bushd3
-

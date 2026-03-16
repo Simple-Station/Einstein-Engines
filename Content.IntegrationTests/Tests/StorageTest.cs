@@ -1,3 +1,21 @@
+// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Metal Gear Sloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2021 Paul <ritter.paul1+git@googlemail.com>
+// SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+// SPDX-FileCopyrightText: 2021 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 #nullable enable
 using System.Collections.Generic;
 using System.Linq;
@@ -85,7 +103,7 @@ namespace Content.IntegrationTests.Tests
             var entMan = server.ResolveDependency<IEntityManager>();
             var protoMan = server.ResolveDependency<IPrototypeManager>();
             var compFact = server.ResolveDependency<IComponentFactory>();
-            var id = compFact.GetComponentName(typeof(StorageFillComponent));
+            var id = compFact.GetComponentName<StorageFillComponent>();
 
             var itemSys = entMan.System<SharedItemSystem>();
 
@@ -94,14 +112,13 @@ namespace Content.IntegrationTests.Tests
 
             await Assert.MultipleAsync(async () =>
             {
-                foreach (var proto in pair.GetPrototypesWithComponent<StorageFillComponent>())
+                foreach (var (proto, fill) in pair.GetPrototypesWithComponent<StorageFillComponent>())
                 {
                     if (proto.HasComponent<EntityStorageComponent>(compFact))
                         continue;
 
                     StorageComponent? storage = null;
                     ItemComponent? item = null;
-                    StorageFillComponent fill = default!;
                     var size = 0;
                     await server.WaitAssertion(() =>
                     {
@@ -112,7 +129,6 @@ namespace Content.IntegrationTests.Tests
                         }
 
                         proto.TryGetComponent("Item", out item);
-                        fill = (StorageFillComponent) proto.Components[id].Component;
                         size = GetFillSize(fill, false, protoMan, itemSys);
                     });
 
@@ -175,11 +191,11 @@ namespace Content.IntegrationTests.Tests
             var entMan = server.ResolveDependency<IEntityManager>();
             var protoMan = server.ResolveDependency<IPrototypeManager>();
             var compFact = server.ResolveDependency<IComponentFactory>();
-            var id = compFact.GetComponentName(typeof(StorageFillComponent));
+            var id = compFact.GetComponentName<StorageFillComponent>();
 
             var itemSys = entMan.System<SharedItemSystem>();
 
-            foreach (var proto in pair.GetPrototypesWithComponent<StorageFillComponent>())
+            foreach (var (proto, fill) in pair.GetPrototypesWithComponent<StorageFillComponent>())
             {
                 if (proto.HasComponent<StorageComponent>(compFact))
                     continue;
@@ -192,7 +208,6 @@ namespace Content.IntegrationTests.Tests
                     if (entStorage == null)
                         return;
 
-                    var fill = (StorageFillComponent) proto.Components[id].Component;
                     var size = GetFillSize(fill, true, protoMan, itemSys);
                     Assert.That(size, Is.LessThanOrEqualTo(entStorage.Capacity),
                         $"{proto.ID} storage fill is too large.");

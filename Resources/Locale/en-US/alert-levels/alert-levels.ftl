@@ -1,38 +1,46 @@
-alert-level-announcement = Attention! Station alert level has been set to {$name}! {$announcement}
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Morbo <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Daniil Sikinami <60344369+VigersRay@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+alert-level-announcement = Attention! Station alert level is now {$name}! {$announcement}
 
 alert-level-unknown = Unknown.
 alert-level-unknown-instructions = Unknown.
 
 alert-level-green = Green
-alert-level-green-announcement = There is no currently known threat to the station, nor the crew. It is safe to return to your workplaces.
+alert-level-green-announcement = It is now safe to return to your workplaces.
 alert-level-green-instructions = Do your job.
 
 alert-level-blue = Blue
-alert-level-blue-announcement = There is an ongoing, known, or suspected security threat to the station or its crew, or another significant security emergency. Crewmembers are advised to follow commands issued by any relevant authority.
-alert-level-blue-instructions = Crewmembers are advised to follow commands issued by any relevant authority.
+alert-level-blue-announcement = There is a confirmed threat to the station. Security should perform random checks. Crewmembers are advised to be vigilant and report suspicious activity to security.
+alert-level-blue-instructions = Crewmembers are advised to be vigilant and report suspicious activity to security.
 
 alert-level-red = Red
-alert-level-red-announcement = There are multiple major emergency situations ongoing, or a major security emergency affecting the station. Crewmembers should find a safe place to shelter in, and are advised to follow any present authorities.
+alert-level-red-announcement = There is an immediate threat to the station. Security should prepare to use lethal force if necessary. Crewmembers should find a safe place to shelter in, and are advised to follow any present authorities.
 alert-level-red-instructions = Crewmembers should find a safe place to shelter in, and are advised to follow any present authorities.
 
 alert-level-violet = Violet
-alert-level-violet-announcement = There is a serious viral outbreak, ongoing major death event, or there is another significant medical emergency. Crewmembers are advised to distance themselves from others and perform safety measures to prevent further spread.
+alert-level-violet-announcement = There is a viral threat on the station. Medical staff are advised to isolate crewmembers with any symptoms. Crewmembers are advised to distance themselves from others and perform safety measures to prevent further spread.
 alert-level-violet-instructions = Crewmembers are advised to distance themselves from others and perform safety measures to prevent further spread.
 
-alert-level-white = White
-alert-level-white-announcement = The station is suffering dangerously high levels of glimmer, there are several active psionic threats, or there is another significant epistemic emergency. Turn off all glimmer probers. Seek psionic insulation. Psychics should report for mindbreaking.
-alert-level-white-instructions = Crewmembers are advised to seek psionic insulation. Psychics should report for mindbreaking or golemization.
-
 alert-level-yellow = Yellow
-alert-level-yellow-announcement = There is a major issue with the atmospheric system, the station has suffered/is about to suffer significant damage, or there is another significant engineering emergency. Crewmembers are advised to stay away from the threat, and stay in their workplaces if necessary.
+alert-level-yellow-announcement = There is a structural or atmospheric threat within the station. Engineering staff are advised to immediately respond and perform safety measures. Crewmembers are advised to stay away from the threat, and stay in their workplaces if necessary.
 alert-level-yellow-instructions = Crewmembers are advised to stay away from the threat, and stay in their workplaces if necessary.
 
 alert-level-gamma = Gamma
-alert-level-gamma-announcement = Central Command has called the Gamma Alert; the Station is on its last legs, almost everyone is dead, or there is another existential crisis affecting the station. Martial Law is now in effect.
+alert-level-gamma-announcement = Central Command has ordered the Gamma security level on the station. Security is to have weapons equipped at all times, and all civilians are to immediately seek their nearest head for transportation to a secure location.
 alert-level-gamma-instructions = All civilians are to immediately seek their nearest head for transportation to a secure location.
 
 alert-level-delta = Delta
-alert-level-delta-announcement = Station scuttling is imminent, or there is another existential crisis affecting the station. All crew and passengers must be evacuated as applicable. Martial Law is now in effect.
+alert-level-delta-announcement = The station is currently under threat of imminent destruction. Crewmembers are advised to listen to heads of staff for more information.
 alert-level-delta-instructions = Crewmembers are advised to listen to heads of staff for more information.
 
 alert-level-epsilon = Epsilon
@@ -47,3 +55,8 @@ alert-level-omicron-instructions = Await further orders.
 alert-level-octarine = Octarine
 alert-level-octarine-announcement = A cataclysmic noospheric event threatens to envelop realspace. Station crew are to contain the event if possible, or else evacuate.
 alert-level-octarine-instructions = Crewmembers are advised to listen to heads of staff for more information.
+
+## GoobStation
+alert-level-honk = Honk
+alert-level-honk-announcement = A devious clown is on the loose and will cause cataclysmic damage if not executed! All crewmembers must collaborate in executing the clown if possible, or else evacuate.
+alert-level-honk-instructions = Crewmembers are advised to execute the clown.

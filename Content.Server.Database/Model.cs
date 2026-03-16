@@ -1,3 +1,137 @@
+// SPDX-FileCopyrightText: 2020 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2020 DamianX <DamianX@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 ike709 <ike709@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Leo <lzimann@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Julian Giebel <j.giebel@netrocks.info>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
+// SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 12rabbits <53499656+12rabbits@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 AJCM <AJCM@tutanota.com>
+// SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2024 Alex Pavlenko <diraven@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Alice "Arimah" Heurlin <30327355+arimah@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ArkiveDev <95712736+ArkiveDev@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Dimastra <65184747+Dimastra@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Dimastra <dimastra@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Doomsdrayk <robotdoughnut@comcast.net>
+// SPDX-FileCopyrightText: 2024 DrEnzyme <DrEnzyme@gmail.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Elysium206 <151651971+Elysium206@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Firewatch <54725557+musicmanvr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Floofi <126319569+Shadowtheprotogen546@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ghagliiarghii <68826635+Ghagliiarghii@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 HS <81934438+HolySSSS@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Hannah Giovanna Dawson <karakkaraz@gmail.com>
+// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 JIPDawg <51352440+JIPDawg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 JIPDawg <JIPDawg93@gmail.com>
+// SPDX-FileCopyrightText: 2024 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2024 K-Dynamic <20566341+K-Dynamic@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kevin Zheng <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2024 Ko4ergaPunk <62609550+Ko4ergaPunk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Krunklehorn <42424291+Krunklehorn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2024 MetalSage <74924875+MetalSage@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 MetalSage <metalsage.official@gmail.com>
+// SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Moomoobeef <62638182+Moomoobeef@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mr. 27 <koolthunder019@gmail.com>
+// SPDX-FileCopyrightText: 2024 MureixloI <132683811+MureixloI@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+// SPDX-FileCopyrightText: 2024 Partmedia <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 PoTeletubby <151896601+PoTeletubby@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 PopGamer46 <yt1popgamer@gmail.com>
+// SPDX-FileCopyrightText: 2024 PursuitInAshes <pursuitinashes@gmail.com>
+// SPDX-FileCopyrightText: 2024 QueerNB <176353696+QueerNB@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Redfire1331 <125223432+Redfire1331@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Saphire Lattice <lattice@saphi.re>
+// SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Spessmann <156740760+Spessmann@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Truoizys <153248924+Truoizys@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2024 WarMechanic <69510347+WarMechanic@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 marbow <152051971+marboww@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 mhamster <81412348+mhamsterr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 neutrino <67447925+neutrino-laser@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 osjarw <62134478+osjarw@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2024 redfire1331 <Redfire1331@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 stellar-novas <stellar_novas@riseup.net>
+// SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 DrSmugleaf <drsmugleaf@gmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Ichaie <167008606+Ichaie@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
+// SPDX-FileCopyrightText: 2025 JORJ949 <159719201+JORJ949@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 MarkerWicker <markerWicker@proton.me>
+// SPDX-FileCopyrightText: 2025 MortalBaguette <169563638+MortalBaguette@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Myra <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2025 PJB3005 <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Poips <Hanakohashbrown@gmail.com>
+// SPDX-FileCopyrightText: 2025 PuroSlavKing <103608145+PuroSlavKing@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Zekins <zekins3366@gmail.com>
+// SPDX-FileCopyrightText: 2025 blobadoodle <me@bloba.dev>
+// SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 kamkoi <poiiiple1@gmail.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 shibe <95730644+shibechef@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 tetra <169831122+Foralemes@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
@@ -7,13 +141,9 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Net;
 using System.Text.Json;
-using Content.Shared._EE.Contractors.Prototypes;
 using Content.Shared.Database;
 using Microsoft.EntityFrameworkCore;
 using NpgsqlTypes;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.Manager.Attributes;
-
 
 namespace Content.Server.Database
 {
@@ -51,9 +181,20 @@ namespace Content.Server.Database
         public DbSet<BanTemplate> BanTemplate { get; set; } = null!;
         public DbSet<IPIntelCache> IPIntelCache { get; set; } = null!;
 
-        // Orehum Start
-        public DbSet<WhiteListedPreset> WhiteListedPresets { get; set; } = null!;
-        // Orehum End
+        // RMC14
+        public DbSet<RMCDiscordAccount> RMCDiscordAccounts { get; set; } = default!;
+        public DbSet<RMCLinkedAccount> RMCLinkedAccounts { get; set; } = default!;
+        public DbSet<RMCPatronTier> RMCPatronTiers { get; set; } = default!;
+        public DbSet<RMCPatron> RMCPatrons { get; set; } = default!;
+        public DbSet<RMCLinkingCodes> RMCLinkingCodes { get; set; } = default!;
+        public DbSet<RMCLinkedAccountLogs> RMCLinkedAccountLogs { get; set; } = default!;
+        public DbSet<RMCPatronLobbyMessage> RMCPatronLobbyMessages { get; set; } = default!;
+        public DbSet<RMCPatronRoundEndNTShoutout> RMCPatronRoundEndNTShoutouts { get; set; } = default!;
+
+        // Goobstation Polls
+        public DbSet<Poll> Polls { get; set; } = default!;
+        public DbSet<PollOption> PollOptions { get; set; } = default!;
+        public DbSet<PollVote> PollVotes { get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -73,9 +214,23 @@ namespace Content.Server.Database
                 .HasIndex(p => new { HumanoidProfileId = p.ProfileId, p.TraitName })
                 .IsUnique();
 
-            modelBuilder.Entity<LoadoutItem>()
-                .HasIndex(p => new { HumanoidProfileId = p.ProfileId, p.LoadoutName })
-                .IsUnique();
+            modelBuilder.Entity<ProfileRoleLoadout>()
+                .HasOne(e => e.Profile)
+                .WithMany(e => e.Loadouts)
+                .HasForeignKey(e => e.ProfileId)
+                .IsRequired();
+
+            modelBuilder.Entity<ProfileLoadoutGroup>()
+                .HasOne(e => e.ProfileRoleLoadout)
+                .WithMany(e => e.Groups)
+                .HasForeignKey(e => e.ProfileRoleLoadoutId)
+                .IsRequired();
+
+            modelBuilder.Entity<ProfileLoadout>()
+                .HasOne(e => e.ProfileLoadoutGroup)
+                .WithMany(e => e.Loadouts)
+                .HasForeignKey(e => e.ProfileLoadoutGroupId)
+                .IsRequired();
 
             modelBuilder.Entity<Job>()
                 .HasIndex(j => j.ProfileId);
@@ -365,6 +520,97 @@ namespace Content.Server.Database
                 .OwnsOne(p => p.HWId)
                 .Property(p => p.Type)
                 .HasDefaultValue(HwidType.Legacy);
+
+            // RMC14
+            modelBuilder.Entity<RMCLinkedAccount>()
+                .HasOne(l => l.Player)
+                .WithOne(p => p.LinkedAccount)
+                .HasForeignKey<RMCLinkedAccount>(l => l.PlayerId)
+                .HasPrincipalKey<Player>(p => p.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<RMCLinkedAccount>()
+                .HasOne(l => l.Discord)
+                .WithOne(d => d.LinkedAccount)
+                .HasForeignKey<RMCLinkedAccount>(l => l.DiscordId)
+                .HasPrincipalKey<RMCDiscordAccount>(d => d.Id)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<RMCPatron>()
+                .HasOne(p => p.Player)
+                .WithOne(p => p.Patron)
+                .HasForeignKey<RMCPatron>(p => p.PlayerId)
+                .HasPrincipalKey<Player>(p => p.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<RMCPatron>()
+                .HasOne(p => p.Tier)
+                .WithMany(t => t.Patrons)
+                .HasForeignKey(p => p.TierId)
+                .HasPrincipalKey(p => p.Id)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<RMCPatronTier>()
+                .HasIndex(t => t.DiscordRole)
+                .IsUnique();
+
+            modelBuilder.Entity<RMCLinkingCodes>()
+                .HasOne(l => l.Player)
+                .WithOne(p => p.LinkingCodes)
+                .HasForeignKey<RMCLinkingCodes>(l => l.PlayerId)
+                .HasPrincipalKey<Player>(p => p.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<RMCLinkedAccountLogs>()
+                .HasOne(l => l.Player)
+                .WithMany(p => p.LinkedAccountLogs)
+                .HasForeignKey(l => l.PlayerId)
+                .HasPrincipalKey(p => p.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<RMCLinkedAccountLogs>()
+                .HasOne(l => l.Discord)
+                .WithMany(p => p.LinkedAccountLogs)
+                .HasForeignKey(l => l.DiscordId)
+                .HasPrincipalKey(p => p.Id)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // Goobstation Polls
+            modelBuilder.Entity<Poll>()
+                .HasOne(p => p.CreatedBy)
+                .WithMany()
+                .HasForeignKey(p => p.CreatedById)
+                .HasPrincipalKey(p => p.UserId)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            modelBuilder.Entity<PollOption>()
+                .HasOne(o => o.Poll)
+                .WithMany(p => p.Options)
+                .HasForeignKey(o => o.PollId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<PollVote>()
+                .HasOne(v => v.Poll)
+                .WithMany(p => p.Votes)
+                .HasForeignKey(v => v.PollId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<PollVote>()
+                .HasOne(v => v.PollOption)
+                .WithMany(o => o.Votes)
+                .HasForeignKey(v => v.PollOptionId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<PollVote>()
+                .HasOne(v => v.Player)
+                .WithMany()
+                .HasForeignKey(v => v.PlayerUserId)
+                .HasPrincipalKey(p => p.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<PollVote>()
+                .HasIndex(v => new { v.PollId, v.PlayerUserId, v.PollOptionId })
+                .IsUnique();
         }
 
         public virtual IQueryable<AdminLog> SearchLogs(IQueryable<AdminLog> query, string searchText)
@@ -386,6 +632,7 @@ namespace Content.Server.Database
         public Guid UserId { get; set; }
         public int SelectedCharacterSlot { get; set; }
         public string AdminOOCColor { get; set; } = null!;
+        public List<string> ConstructionFavorites { get; set; } = new();
         public List<Profile> Profiles { get; } = new();
     }
 
@@ -395,28 +642,17 @@ namespace Content.Server.Database
         public int Slot { get; set; }
         [Column("char_name")] public string CharacterName { get; set; } = null!;
         public string FlavorText { get; set; } = null!;
-        public string CustomSpecieName { get; set; } = null!;
-        public string Nationality { get; set; } = null!;
-        public string Employer { get; set; } = null!;
-        public string Lifepath { get; set; } = null!;
         public int Age { get; set; }
         public string Sex { get; set; } = null!;
-        public string BodyType { get; set; } = null!; // WD EDIT
-        // public string Voice { get; set; } = null!; // WD EDIT
         public string BarkVoice { get; set; } = null!; // WD EDIT
-
         public byte BarkPause { get; set; } = byte.MaxValue / 2; // WD EDIT
         public byte BarkVolume { get; set; } = byte.MaxValue / 2; // WD EDIT
         public byte BarkPitch { get; set; } = byte.MaxValue / 2; // WD EDIT
         public byte BarkPitchVariance { get; set; } = byte.MaxValue / 2; // WD EDIT
-
         public string Gender { get; set; } = null!;
-        public string? DisplayPronouns { get; set; }
-        public string? StationAiName { get; set; }
-        public string? CyborgName { get; set; }
         public string Species { get; set; } = null!;
-        public float Height { get; set; } = 1f;
-        public float Width { get; set; } = 1f;
+        public float Height { get; set; } = 1f; // Goobstation: port EE height/width sliders
+        public float Width { get; set; } = 1f; // Goobstation: port EE height/width sliders
         [Column(TypeName = "jsonb")] public JsonDocument? Markings { get; set; } = null!;
         public string HairName { get; set; } = null!;
         public string HairColor { get; set; } = null!;
@@ -428,7 +664,8 @@ namespace Content.Server.Database
         public List<Job> Jobs { get; } = new();
         public List<Antag> Antags { get; } = new();
         public List<Trait> Traits { get; } = new();
-        public List<LoadoutItem> Loadouts { get; } = new();
+
+        public List<ProfileRoleLoadout> Loadouts { get; } = new();
 
         [Column("pref_unavailable")] public DbPreferenceUnavailableMode PreferenceUnavailable { get; set; }
 
@@ -473,37 +710,84 @@ namespace Content.Server.Database
         public string TraitName { get; set; } = null!;
     }
 
-    [Table("loadout")]
-    public class LoadoutItem
-    {
-        public string LoadoutName { get; set; } = null!;
-        public string? CustomName { get; set; }
-        public string? CustomDescription { get; set; }
-        public string? CustomContent { get; set; } // WD EDIT
-        public string? CustomColorTint { get; set; }
-        public bool? CustomHeirloom { get; set; }
+    #region Loadouts
 
+    /// <summary>
+    /// Corresponds to a single role's loadout inside the DB.
+    /// </summary>
+    public class ProfileRoleLoadout
+    {
         public int Id { get; set; }
-        public Profile Profile { get; set; } = null!;
+
         public int ProfileId { get; set; }
 
-        public LoadoutItem(
-            string loadoutName,
-            string? customName = null,
-            string? customDescription = null,
-            string? customContent = null, // WD EDIT
-            string? customColorTint = null,
-            bool? customHeirloom = null
-        )
-        {
-            LoadoutName = loadoutName;
-            CustomName = customName;
-            CustomDescription = customDescription;
-            CustomContent = customContent;
-            CustomColorTint = customColorTint;
-            CustomHeirloom = customHeirloom;
-        }
+        public Profile Profile { get; set; } = null!;
+
+        /// <summary>
+        /// The corresponding role prototype on the profile.
+        /// </summary>
+        public string RoleName { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Custom name of the role loadout if it supports it.
+        /// </summary>
+        [MaxLength(256)]
+        public string? EntityName { get; set; }
+
+        /// <summary>
+        /// Store the saved loadout groups. These may get validated and removed when loaded at runtime.
+        /// </summary>
+        public List<ProfileLoadoutGroup> Groups { get; set; } = new();
     }
+
+    /// <summary>
+    /// Corresponds to a loadout group prototype with the specified loadouts attached.
+    /// </summary>
+    public class ProfileLoadoutGroup
+    {
+        public int Id { get; set; }
+
+        public int ProfileRoleLoadoutId { get; set; }
+
+        /// <summary>
+        /// The corresponding RoleLoadout that owns this.
+        /// </summary>
+        public ProfileRoleLoadout ProfileRoleLoadout { get; set; } = null!;
+
+        /// <summary>
+        /// The corresponding group prototype.
+        /// </summary>
+        public string GroupName { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Selected loadout prototype. Null if none is set.
+        /// May get validated at runtime and updated to to the default.
+        /// </summary>
+        public List<ProfileLoadout> Loadouts { get; set; } = new();
+    }
+
+    /// <summary>
+    /// Corresponds to a selected loadout.
+    /// </summary>
+    public class ProfileLoadout
+    {
+        public int Id { get; set; }
+
+        public int ProfileLoadoutGroupId { get; set; }
+
+        public ProfileLoadoutGroup ProfileLoadoutGroup { get; set; } = null!;
+
+        /// <summary>
+        /// Corresponding loadout prototype.
+        /// </summary>
+        public string LoadoutName { get; set; } = string.Empty;
+
+        /*
+         * Insert extra data here like custom descriptions or colors or whatever.
+         */
+    }
+
+    #endregion
 
     public enum DbPreferenceUnavailableMode
     {
@@ -539,6 +823,10 @@ namespace Content.Server.Database
         public List<Round> Rounds { get; set; } = null!;
         public List<AdminLogPlayer> AdminLogs { get; set; } = null!;
 
+        public int ServerCurrency { get; set; } // Goobstation - Goob coin
+
+        public TimeSpan? LastRolledAntag { get; set; } // Goobstation
+
         public DateTime? LastReadRules { get; set; }
 
         public List<AdminNote> AdminNotesReceived { get; set; } = null!;
@@ -558,6 +846,12 @@ namespace Content.Server.Database
         public List<ServerRoleBan> AdminServerRoleBansCreated { get; set; } = null!;
         public List<ServerRoleBan> AdminServerRoleBansLastEdited { get; set; } = null!;
         public List<RoleWhitelist> JobWhitelists { get; set; } = null!;
+
+        // RMC14
+        public RMCLinkedAccount? LinkedAccount { get; set; }
+        public RMCPatron? Patron { get; set; }
+        public RMCLinkingCodes? LinkingCodes { get; set; }
+        public List<RMCLinkedAccountLogs> LinkedAccountLogs { get; set; } = default!;
     }
 
     [Table("whitelist")]
@@ -951,6 +1245,8 @@ namespace Content.Server.Database
         BabyJail = 4,
         /// Results from rejected connections with external API checking tools
         IPChecks = 5,
+        /// Results from rejected connections who are authenticated but have no modern hwid associated with them.
+        NoHwid = 6
     }
 
     public class ServerBanHit
@@ -1291,12 +1587,4 @@ namespace Content.Server.Database
         /// </summary>
         public float Score { get; set; }
     }
-
-    // Orehum Start
-    public sealed class WhiteListedPreset
-    {
-        [Key]
-        public string PresetId { get; set; } = default!;
-    }
-    // Orehum end
 }

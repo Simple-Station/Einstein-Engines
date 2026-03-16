@@ -4,32 +4,43 @@
   name: Summon Gun
   description: Use this on a closed container to summon a [color=crimson][bold]dangerous firearm![/bold][/color]
   components:
-    - type: EntityTargetAction
+    - type: Action
+      useDelay: 180
       icon:
         sprite: _Orehum/Interface/extract.rsi
         state: arms-dealer
-      useDelay: 300
+      iconOn:
+        sprite: _Orehum/Interface/extract.rsi
+        state: arms-dealer-on
+    - type: TargetAction
+    - type: EntityTargetAction
       whitelist:
         components:
-          - EntityStorage
+        - EntityStorage
       event: !type:ContainerSummonActionEvent
         table: !type:GroupSelector
           children:
-            - id: WeaponLaserSvalinn
-              weight: 15
-            - id: WeaponPistolMk58
-              weight: 10
-            - id: WeaponPistolCobra
-              weight: 5
-            - id: WeaponShotgunDoubleBarreled
-              weight: 7.5
-            - id: WeaponRevolverK38Master
-              weight: 7.5
-            - id: WeaponSubMachineGunBRDIR25 
-              weight: 3
-            - id: WeaponShotgunKammerer
-              weight: 5
-            - id: WeaponSubMachineGunWt550
-              weight: 4
-            - id: WeaponRifleBurner
-              weight: 0.5
+          - id: WeaponLaserSvalinn
+            weight: 15
+          - id: WeaponPistolMk58
+            weight: 10
+          - id: WeaponPistolViper
+            weight: 5
+          - id: WeaponPistolCobra
+            weight: 5
+          - id: WeaponRevolverPython
+            weight: 15
+          - id: WeaponShotgunDoubleBarreled
+            weight: 7.5
+          - id: WeaponShotgunKammerer
+            weight: 5
+          - id: WeaponSubMachineGunWt550
+            weight: 1
+          - id: WeaponSubMachineGunAtreides
+            weight: 5
+          - id: BoxMagazinePistolSubMachineGun
+            weight: 5
+          - id: BoxMagazinePistolHighCapacity
+            weight: 5
+          - id: BoxMagazinePistol
+            weight: 5

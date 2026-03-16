@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: BaseItem
   id: BaseLockerTeleporter
@@ -22,7 +27,7 @@
   - type: Sprite
     state: bso
   - type: SpawnItemsOnUse
-    items:
+    items: 
     - id: UniqueLockerBlueshieldOfficerFilled
 
 - type: entity
@@ -40,13 +45,13 @@
 - type: entity
   parent: BaseLockerTeleporter
   id: NanorepLockerTeleporter
-  name: corporate liaison locker teleporter
-  description: Device that allows you to request delivery of a locker containing items prepared for the corporate liaison, courtesy of Central Command.
+  name: nanotrasen representative locker teleporter
+  description: Device that allows you to request delivery of nanotrasen representative locker.
   components:
   - type: Sprite
     state: ntr
   - type: SpawnItemsOnUse
-    items:
+    items: 
     - id: UniqueLockerNanorepFilled
 
 - type: entity
@@ -59,28 +64,4 @@
     markerName: NanorepLocker
   - type: UniqueEntityMarker
     markerName: NanorepLocker
-    stationOnly: false
-
-- type: entity
-  parent: BaseLockerTeleporter
-  id: MagistrateLockerTeleporter
-  name: magistrate locker teleporter
-  description: Device that allows you to request delivery of magistrate locker.
-  components:
-  - type: Sprite
-    state: mag
-  - type: SpawnItemsOnUse
-    items:
-    - id: UniqueLockerMagistrateFilled
-
-- type: entity
-  parent: MagistrateLockerTeleporter
-  id: UniqueMagistrateLockerTeleporter
-  suffix: Unique
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: UniqueEntityChecker
-    markerName: MagistrateLocker
-  - type: UniqueEntityMarker
-    markerName: MagistrateLocker
     stationOnly: false

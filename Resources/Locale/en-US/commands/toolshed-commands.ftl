@@ -1,4 +1,15 @@
-﻿command-description-visualize =
+# SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 dffdff2423 <dffdff2423@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+command-description-visualize =
     Takes the input list of entities and puts them into a UI window for easy browsing.
 command-description-runverbas =
     Runs a verb over the input entities with the given user.
@@ -43,11 +54,11 @@ command-description-stations-largestgrid =
 command-description-stations-rerollBounties =
     Clears all the current bounties for the station and gets a new selection.
 command-description-stationevent-lsprob =
-    Lists the probability of different station events occuring out of the entire pool.
-command-description-stationevent-lsprobtime =
-    Lists the probability of different station events occuring based on the specified length of a round.
+    Given a BasicStationEventScheduler prototype, lists the probability of different station events occuring out of the entire pool with current conditions.
+command-description-stationevent-lsprobtheoretical =
+    Given a BasicStationEventScheduler prototype, player count, and round time, lists the probability of different station events occuring based on the specified number of players and round time.
 command-description-stationevent-prob =
-    Returns the probability of a single station event occuring out of the entire pool.
+    Given a BasicStationEventScheduler prototype and an event prototype, returns the probability of a single station event occuring out of the entire pool with current conditions.
 command-description-admins-active =
     Returns a list of active admins.
 command-description-admins-all =
@@ -58,6 +69,8 @@ command-description-rejuvenate =
     Rejuvenates the given entities, restoring them to full health, clearing status effects, etc.
 command-description-tag-list =
     Lists tags on the given entities.
+command-description-tag-with =
+    Returns only the entities with the given tag from the piped list of entities.
 command-description-tag-add =
     Adds a tag to the given entities.
 command-description-tag-rm =
@@ -81,7 +94,7 @@ command-description-mind-control =
 command-description-addaccesslog =
     Adds an access log to this entity. Do note that this bypasses the log's default limit and pause check.
 command-description-stationevent-simulate =
-    Simulates N number of rounds in which events will occur and prints the occurrences of every event after.
+    Given a BasicStationEventScheduler prototype, N Rounds, N Players, mean round end, and stddev of round end, Simulates N number of rounds in which events will occur and prints the occurrences of every event after.
 command-description-xenoartifact-list =
     List all EntityUids of spawned artifacts.
 command-description-xenoartifact-printMatrix =
@@ -100,5 +113,7 @@ command-description-scale-get =
     Get an entity's sprite scale as set by ScaleVisualsComponent. Does not include any changes directly made in the SpriteComponent.
 command-description-scale-multiply =
     Multiply an entity's sprite size with a certain factor (without changing its fixture).
+command-description-scale-multiplyvector =
+    Multiply an entity's sprite size with a certain 2d vector (without changing its fixture).
 command-description-scale-multiplywithfixture =
     Multiply an entity's sprite size with a certain factor (including its fixture).

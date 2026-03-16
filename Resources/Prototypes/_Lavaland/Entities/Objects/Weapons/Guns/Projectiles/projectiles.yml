@@ -1,48 +1,153 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
+# SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Unlumination <144041835+Unlumy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+# SPDX-FileCopyrightText: 2025 thebiggestbruh <marcus2008stoke@gmail.com>
+# SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
-  id: RapidBulletKinetic
-  name: rapid kinetic bolt
-  parent: BulletKinetic
+  id: BulletKinetic
+  name: kinetic bolt
+  parent: BaseBullet
   categories: [ HideSpawnMenu ]
   description: Not too bad, but you still don't want to get hit by it.
   components:
-  - type: Projectile
-    impactEffect: BulletImpactEffectKinetic
-    damage:
-      types:
-        Blunt: 20
-  - type: TimedDespawn
-    lifetime: 0.100 # Lavaland Change
-
-- type: entity
-  id: WeakBulletKinetic
-  name: weak kinetic bolt
-  parent: BulletKinetic
-  categories: [ HideSpawnMenu ]
-  description: Not too bad, but you still don't want to get hit by it.
-  components:
-  - type: Projectile
-    impactEffect: BulletImpactEffectKinetic
-    damage:
-      types:
-        Blunt: 10
-
-- type: entity
-  id: PelletKinetic
-  categories: [ HideSpawnMenu ]
-  parent: BulletKinetic
-  components:
+  - type: Reflective
+    reflective:
+    - NonEnergy
+  - type: Sprite
+    noRot: false
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+    - state: chronobolt
+      shader: unshaded
   - type: Projectile
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
         Blunt: 15
+        Structural: 20
+  # Short lifespan
+  - type: TimedDespawn
+    lifetime: 0.18 # roughly 4 tiles
+  - type: GatheringProjectile
+
+- type: entity
+  id: BulletKineticShuttle
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    noRot: false
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+    - state: chronobolt
+      shader: unshaded
+  - type: Projectile
+    impactEffect: BulletImpactEffectKinetic
+    damage:
+      types:
+        Blunt: 40
+        Structural: 35
+  - type: Ammo
+    muzzleFlash: HitscanEffect
+  - type: TimedDespawn
+    lifetime: 0.3
+  - type: PointLight
+    radius: 2.5
+    color: white
+    energy: 0.5
+  - type: GatheringProjectile
+
+- type: entity
+  id: RapidBulletKinetic # Used for PK repeater and pistol
+  name: rapid kinetic bolt
+  parent: BulletKinetic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 8
+  - type: TimedDespawn
+    lifetime: 0.22 # roughly 5.5 tiles
+
+- type: entity
+  id: WeakBulletKinetic # Used for PK shotgun
+  categories: [ HideSpawnMenu ]
+  parent: RapidBulletKinetic
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 5
+
+- type: entity
+  id: PelletKinetic
+  categories: [ HideSpawnMenu ]
+  parent: WeakBulletKinetic
+  components:
+  - type: GatheringProjectile
+    probability: 0.5
 
 - type: entity
   id: PelletKineticSpread
   categories: [ HideSpawnMenu ]
-  parent: BulletKinetic
+  parent: PelletKinetic
   components:
   - type: ProjectileSpread
     proto: PelletKinetic
     count: 4
-    spread: 40
+    spread: 20
+
+- type: entity
+  id: BulletCharge
+  name: charge bolt
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  description: Marks a target for additional damage.
+  components:
+  - type: Reflective
+    reflective:
+    - NonEnergy
+  - type: Sprite
+    noRot: false
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+    - state: chronobolt
+      shader: unshaded
+  - type: GatheringProjectile
+  - type: DamageMarkerOnCollide
+    whitelist:
+      components:
+      - MobState
+    damage:
+      types:
+        Blunt: 15
+        Slash: 5
+    effect: { sprite: /Textures/Objects/Weapons/effects.rsi, state: shield2 }
+    sound: /Audio/Weapons/Guns/Gunshots/kinetic_accel.ogg
+  - type: Projectile
+    impactEffect: BulletImpactEffectKinetic
+    damage:
+      types:
+        Blunt: 0
+  # Short lifespan
+  - type: TimedDespawn
+    lifetime: 0.4

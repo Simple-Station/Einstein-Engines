@@ -1,21 +1,20 @@
-ui-options-emotes-menu = Тип меню эмоции:
+# SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 ui-options-log-in-chat = Логировать действия в чат
-
-ui-options-function-open-emotions-menu = Открыть меню эмоций
-
-ui-options-tts-volume = Громкость TTS:
-
-ui-options-hud-theme-operative = Оперативник
-ui-options-hud-theme-halloween = Хэллоуин
 ui-options-hud-theme-xenomorph = Ксеноморф
+ui-options-function-auto-get-up = Автоматически вставать после падения
 
-ui-options-film-grain = Зернистость
-ui-options-film-grain-strength = Интенсивность зернистости: { $strength }
-
-ui-options-bark-volume = Громкость лая
-ui-options-bark-limit = Лимит лая
+ui-options-bark-volume = Громкость Bark
+ui-options-bark-limit = Лимит Bark
 char-voice-none = Ничего
-char-voice-bark = Лай
+char-voice-bark = Bark
 char-voice-tts = TTS
 ui-voice-option = Тип голоса персонажей
+
+humanoid-profile-editor-bark-voice-label = Настройки Bark
+humanoid-profile-editor-bark-pitch-label = Тон
+humanoid-profile-editor-bark-pitch-variance-label = Вариативность тона
+humanoid-profile-editor-bark-pause-label = Пауза между букв

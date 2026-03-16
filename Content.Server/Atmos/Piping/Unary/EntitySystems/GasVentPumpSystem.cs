@@ -1,16 +1,80 @@
+// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2021 Bingo Johnson <83136974+BingoJohnson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 E F R <602406+Efruit@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 theashtronaut <112137107+theashtronaut@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 vulppine <vulppine@gmail.com>
+// SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2023 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Kevin Zheng <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2023 Tom Leys <tom@crump-leys.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 faint <46868845+ficcialfaint@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2023 qwerltaz <69696513+qwerltaz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 12rabbits <53499656+12rabbits@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Dimastra <65184747+Dimastra@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Dimastra <dimastra@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 JIPDawg <51352440+JIPDawg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 JIPDawg <JIPDawg93@gmail.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2024 MjrLandWhale <brandonemitch@gmail.com>
+// SPDX-FileCopyrightText: 2024 Moomoobeef <62638182+Moomoobeef@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 PopGamer46 <yt1popgamer@gmail.com>
+// SPDX-FileCopyrightText: 2024 PotentiallyTom <67602105+PotentiallyTom@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 PursuitInAshes <pursuitinashes@gmail.com>
+// SPDX-FileCopyrightText: 2024 QueerNB <176353696+QueerNB@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Saphire Lattice <lattice@saphi.re>
+// SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Spessmann <156740760+Spessmann@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 stellar-novas <stellar_novas@riseup.net>
+// SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Kyle Tyo <36606155+VerinSenpai@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Monitor.Systems;
 using Content.Server.Atmos.Piping.Components;
 using Content.Server.Atmos.Piping.Unary.Components;
 using Content.Server.DeviceLinking.Systems;
-using Content.Server.DeviceNetwork;
-using Content.Server.DeviceNetwork.Components;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.NodeContainer.EntitySystems;
 using Content.Server.NodeContainer.Nodes;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Administration.Logs;
-using Content.Server.Power.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Monitor;
 using Content.Shared.Atmos.Piping.Components;
@@ -21,19 +85,23 @@ using Content.Shared.Audio;
 using Content.Shared.Database;
 using Content.Shared.DeviceLinking.Events;
 using Content.Shared.DeviceNetwork;
+using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.DoAfter;
+using Content.Shared.DeviceNetwork.Events;
 using Content.Shared.Examine;
-using Content.Shared.Interaction;
 using Content.Shared.Power;
 using Content.Shared.Tools.Systems;
+using Content.Shared.Verbs;
 using JetBrains.Annotations;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Atmos.Piping.Unary.EntitySystems
 {
     [UsedImplicitly]
     public sealed class GasVentPumpSystem : EntitySystem
     {
+        [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
         [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
         [Dependency] private readonly DeviceNetworkSystem _deviceNetSystem = default!;
         [Dependency] private readonly DeviceLinkSystem _signalSystem = default!;
@@ -41,9 +109,9 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
         [Dependency] private readonly SharedAmbientSoundSystem _ambientSoundSystem = default!;
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
         [Dependency] private readonly WeldableSystem _weldable = default!;
-        [Dependency] private readonly SharedToolSystem _toolSystem = default!;
         [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
         [Dependency] private readonly IGameTiming _timing = default!;
+        [Dependency] private readonly PowerReceiverSystem _powerReceiverSystem = default!;
         public override void Initialize()
         {
             base.Initialize();
@@ -59,7 +127,7 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
             SubscribeLocalEvent<GasVentPumpComponent, SignalReceivedEvent>(OnSignalReceived);
             SubscribeLocalEvent<GasVentPumpComponent, GasAnalyzerScanEvent>(OnAnalyzed);
             SubscribeLocalEvent<GasVentPumpComponent, WeldableChangedEvent>(OnWeldChanged);
-            SubscribeLocalEvent<GasVentPumpComponent, InteractUsingEvent>(OnInteractUsing);
+            SubscribeLocalEvent<GasVentPumpComponent, GetVerbsEvent<Verb>>(OnGetVerbs);
             SubscribeLocalEvent<GasVentPumpComponent, VentScrewedDoAfterEvent>(OnVentScrewed);
         }
 
@@ -67,9 +135,10 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
         {
             //Bingo waz here
             if (_weldable.IsWelded(uid))
-            {
                 return;
-            }
+
+            if (!_powerReceiverSystem.IsPowered(uid))
+                return;
 
             var nodeName = vent.PumpDirection switch
             {
@@ -211,13 +280,12 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
 
         private void OnPowerChanged(EntityUid uid, GasVentPumpComponent component, ref PowerChangedEvent args)
         {
-            component.Enabled = args.Powered;
             UpdateState(uid, component);
         }
 
         private void OnPacketRecv(EntityUid uid, GasVentPumpComponent component, DeviceNetworkPacketEvent args)
         {
-            if (!EntityManager.TryGetComponent(uid, out DeviceNetworkComponent? netConn)
+            if (!TryComp(uid, out DeviceNetworkComponent? netConn)
                 || !args.Data.TryGetValue(DeviceNetworkConstants.Command, out var cmd))
                 return;
 
@@ -235,6 +303,44 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
                 case DeviceNetworkConstants.CmdSetState:
                     if (!args.Data.TryGetValue(DeviceNetworkConstants.CmdSetState, out GasVentPumpData? setData))
                         break;
+
+                    var previous = component.ToAirAlarmData();
+
+                    if (previous.Enabled != setData.Enabled)
+                    {
+                        string enabled = setData.Enabled ? "enabled" : "disabled" ;
+                        _adminLogger.Add(LogType.AtmosDeviceSetting, LogImpact.Medium, $"{ToPrettyString(uid)} {enabled}");
+                    }
+
+                    if (previous.PumpDirection != setData.PumpDirection)
+                        _adminLogger.Add(LogType.AtmosDeviceSetting, LogImpact.Medium, $"{ToPrettyString(uid)} direction changed to {setData.PumpDirection}");
+
+                    if (previous.PressureChecks != setData.PressureChecks)
+                        _adminLogger.Add(LogType.AtmosDeviceSetting, LogImpact.Medium, $"{ToPrettyString(uid)} pressure check changed to {setData.PressureChecks}");
+
+                    if (previous.ExternalPressureBound != setData.ExternalPressureBound)
+                    {
+                        _adminLogger.Add(
+                            LogType.AtmosDeviceSetting,
+                            LogImpact.Medium,
+                            $"{ToPrettyString(uid)} external pressure bound changed from {previous.ExternalPressureBound} kPa to {setData.ExternalPressureBound} kPa"
+                        );
+                    }
+
+                    if (previous.InternalPressureBound != setData.InternalPressureBound)
+                    {
+                        _adminLogger.Add(
+                            LogType.AtmosDeviceSetting,
+                            LogImpact.Medium,
+                            $"{ToPrettyString(uid)} internal pressure bound changed from {previous.InternalPressureBound} kPa to {setData.InternalPressureBound} kPa"
+                        );
+                    }
+
+                    if (previous.PressureLockoutOverride != setData.PressureLockoutOverride)
+                    {
+                        string enabled = setData.PressureLockoutOverride ? "enabled" : "disabled" ;
+                        _adminLogger.Add(LogType.AtmosDeviceSetting, LogImpact.Medium, $"{ToPrettyString(uid)} pressure lockout override {enabled}");
+                    }
 
                     component.FromAirAlarmData(setData);
                     UpdateState(uid, component);
@@ -281,7 +387,7 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
                 _ambientSoundSystem.SetAmbience(uid, false);
                 _appearance.SetData(uid, VentPumpVisuals.State, VentPumpState.Welded, appearance);
             }
-            else if (!vent.Enabled)
+            else if (!_powerReceiverSystem.IsPowered(uid) || !vent.Enabled)
             {
                 _ambientSoundSystem.SetAmbience(uid, false);
                 _appearance.SetData(uid, VentPumpVisuals.State, VentPumpState.Off, appearance);
@@ -340,23 +446,43 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
         {
             UpdateState(uid, component);
         }
-        private void OnInteractUsing(EntityUid uid, GasVentPumpComponent component, InteractUsingEvent args)
+
+        private void OnGetVerbs(Entity<GasVentPumpComponent> ent, ref GetVerbsEvent<Verb> args)
         {
-            if (args.Handled
-             || component.UnderPressureLockout == false
-             || !_toolSystem.HasQuality(args.Used, "Screwing")
-             || !Transform(uid).Anchored
-            )
-            {
+            if (ent.Comp.UnderPressureLockout == false || !Transform(ent).Anchored)
                 return;
-            }
 
-            args.Handled = true;
+            var user = args.User;
 
-            _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, component.ManualLockoutDisableDoAfter, new VentScrewedDoAfterEvent(), uid, uid, args.Used));
+            var v = new Verb
+            {
+                Priority = 1,
+                Icon = new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/VerbIcons/unlock.svg.192dpi.png")),
+                Text = Loc.GetString("gas-vent-pump-release-lockout"),
+                Impact = LogImpact.Low,
+                DoContactInteraction = true,
+                Act = () =>
+                {
+                    var doAfter = new DoAfterArgs(EntityManager, user, ent.Comp.ManualLockoutDisableDoAfter, new VentScrewedDoAfterEvent(), ent, ent)
+                    {
+                        BreakOnDamage = true,
+                        NeedHand = true,
+                        BreakOnMove = true,
+                        BreakOnWeightlessMove = true,
+                    };
+
+                    _doAfterSystem.TryStartDoAfter(doAfter);
+                },
+            };
+
+            args.Verbs.Add(v);
         }
+
         private void OnVentScrewed(EntityUid uid, GasVentPumpComponent component, VentScrewedDoAfterEvent args)
         {
+            if (args.Cancelled || args.Handled)
+                return;
+
             component.ManualLockoutReenabledAt = _timing.CurTime + component.ManualLockoutDisabledDuration;
             component.IsPressureLockoutManuallyDisabled = true;
         }

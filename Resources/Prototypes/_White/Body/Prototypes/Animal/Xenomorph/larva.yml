@@ -1,18 +1,18 @@
 - type: body
   id: XenomorphLarva
   name: xenomorph larva
-  root: torso
+  root: chest
   slots:
     head:
       part: HeadXenomorph
       connections:
-      - torso
+      - chest
       organs:
         brain: OrganXenomorphBrain
         eyes: OrganXenomorphEyes
         hive_node: OrganXenomorphHiveNode
-    torso:
-      part: TorsoXenomorph
+    chest:
+      part: ChestXenomorph
       connections:
       - head
       organs:

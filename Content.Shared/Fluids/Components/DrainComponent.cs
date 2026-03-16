@@ -1,6 +1,23 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 EnDecc <33369477+Endecc@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Topy <topy72.mine@gmail.com>
+// SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Partmedia <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Tag;
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Fluids.Components;
 
@@ -17,17 +34,19 @@ public sealed partial class DrainComponent : Component
 {
     public const string SolutionName = "drainBuffer";
 
-    [ValidatePrototypeId<TagPrototype>]
-    public const string PlungerTag = "Plunger";
+    public static readonly ProtoId<TagPrototype> PlungerTag = "Plunger";
 
     [ViewVariables]
     public Entity<SolutionComponent>? Solution = null;
 
+    [DataField]
+    public float Accumulator = 0f;
+
     /// <summary>
-    /// Does this drain automatically absorb surrouding puddles? Or is it a drain designed to empty
-    /// solutions in it manually?
+    /// If true, automatically transfers solutions from nearby puddles and drains them. True for floor drains;
+    /// false for things like toilets and sinks.
     /// </summary>
-    [DataField("autoDrain"), ViewVariables(VVAccess.ReadOnly)]
+    [DataField]
     public bool AutoDrain = true;
 
     /// <summary>
@@ -35,40 +54,47 @@ public sealed partial class DrainComponent : Component
     /// Divided by puddles, so if there are 5 puddles this will take 1/5 from each puddle.
     /// This will stay fixed to 1 second no matter what DrainFrequency is.
     /// </summary>
-    [DataField("unitsPerSecond")]
+    [DataField]
     public float UnitsPerSecond = 6f;
 
     /// <summary>
     /// How many units are ejected from the buffer per second.
     /// </summary>
-    [DataField("unitsDestroyedPerSecond")]
+    [DataField]
     public float UnitsDestroyedPerSecond = 3f;
 
     /// <summary>
     /// How many (unobstructed) tiles away the drain will
     /// drain puddles from.
     /// </summary>
-    [DataField("range"), ViewVariables(VVAccess.ReadWrite)]
-    public float Range = 2f;
+    [DataField]
+    public float Range = 2.5f;
+
+    /// <summary>
+    /// How often in seconds the drain checks for puddles around it.
+    /// If the EntityQuery seems a bit unperformant this can be increased.
+    /// </summary>
+    [DataField]
+    public float DrainFrequency = 1f;
 
     /// <summary>
     /// How much time it takes to unclog it with a plunger
     /// </summary>
-    [DataField("unclogDuration"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float UnclogDuration = 1f;
 
     /// <summary>
     /// What's the probability of uncloging on each try
     /// </summary>
-    [DataField("unclogProbability"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float UnclogProbability = 0.75f;
 
-    [DataField("manualDrainSound"), ViewVariables(VVAccess.ReadOnly)]
+    [DataField]
     public SoundSpecifier ManualDrainSound = new SoundPathSpecifier("/Audio/Effects/Fluids/slosh.ogg");
 
-    [DataField("plungerSound"), ViewVariables(VVAccess.ReadOnly)]
+    [DataField]
     public SoundSpecifier PlungerSound = new SoundPathSpecifier("/Audio/Items/Janitor/plunger.ogg");
 
-    [DataField("unclogSound"), ViewVariables(VVAccess.ReadOnly)]
+    [DataField]
     public SoundSpecifier UnclogSound = new SoundPathSpecifier("/Audio/Effects/Fluids/glug.ogg");
 }

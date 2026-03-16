@@ -1,3 +1,39 @@
+# SPDX-FileCopyrightText: 2020 Campbell Suter <znix@znix.xyz>
+# SPDX-FileCopyrightText: 2020 ComicIronic <comicironic@gmail.com>
+# SPDX-FileCopyrightText: 2020 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Exp <theexp111@gmail.com>
+# SPDX-FileCopyrightText: 2020 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2020 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+# SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <zddm@outlook.es>
+# SPDX-FileCopyrightText: 2020 a.rudenko <creadth@gmail.com>
+# SPDX-FileCopyrightText: 2020 creadth <creadth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 silicons <2003111+silicons@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Kevin Zheng <kevinz5000@gmail.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 0tito <147736056+0tito@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 CyberDuck <62076105+sporekto@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 CyberDuck <tsyaslovscky.dima@yandex.by>
+# SPDX-FileCopyrightText: 2024 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 end <72604018+laok233@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 fishbait <gnesse@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
+# SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: gas
   id: 0
   name: gases-oxygen
@@ -6,6 +42,7 @@
   molarMass: 32
   color: 2887E8
   reagent: Oxygen
+  pricePerMole: 0
 
 - type: gas
   id: 1
@@ -15,6 +52,7 @@
   molarMass: 28
   color: DA1010
   reagent: Nitrogen
+  pricePerMole: 0
 
 - type: gas
   id: 2
@@ -24,6 +62,7 @@
   molarMass: 44
   color: 4e4e4e
   reagent: CarbonDioxide
+  pricePerMole: 0
 
 - type: gas
   id: 3
@@ -35,6 +74,7 @@
   gasOverlayState: plasma
   color: FF3300
   reagent: Plasma
+  pricePerMole: 0
 
 - type: gas
   id: 4
@@ -58,6 +98,7 @@
   gasOverlayState: water_vapor
   color: bffffd
   reagent: Water
+  pricePerMole: 0
 
 - type: gas
   id: 6
@@ -71,7 +112,7 @@
   gasVisbilityFactor: 3.5
   color: 56941E
   reagent: Ammonia
-  pricePerMole: 0.15
+  pricePerMole: 1 # Goobstation - Gas Prices
 
 - type: gas
   id: 7
@@ -79,9 +120,9 @@
   specificHeat: 40
   heatCapacityRatio: 1.3
   molarMass: 44
-  color: 2887E8
+  color: 8F00FF
   reagent: NitrousOxide
-  pricePerMole: 1
+  pricePerMole: 0.1 # Goobstation - Gas Prices
 
 - type: gas
   id: 8
@@ -94,143 +135,4 @@
   gasMolesVisible: 0.6
   color: 3a758c
   reagent: Frezon
-  pricePerMole: 0.3 # Goobstation - Gas Prices
-
-- type: gas
-  id: 9
-  name: gases-bz
-  specificHeat: 20
-  heatCapacityRatio: 1.3
-  molarMass: 100
-  color: e69edd
-  reagent: BZ
-  pricePerMole: 3
-
-- type: gas
-  id: 10
-  name: gases-pluoxium
-  specificHeat: 80
-  heatCapacityRatio: 1.3
-  molarMass: 40
-  color: 0054AA
-  reagent: Pluoxium
-  pricePerMole: 5
-
-- type: gas
-  id: 11
-  name: gases-hydrogen
-  specificHeat: 15
-  heatCapacityRatio: 1.4
-  molarMass: 2
-  color: FFFFFF
-  reagent: Hydrogen
-  pricePerMole: 5
-
-- type: gas
-  id: 12
-  name: gases-nitrium
-  specificHeat: 10
-  heatCapacityRatio: 1.3
-  molarMass: 60
-  gasOverlaySprite: /Textures/Effects/atmospherics.rsi
-  gasOverlayState: nitrium
-  gasMolesVisible: 0.1
-  gasVisbilityFactor: 500
-  color: 7E4732
-  reagent: Nitrium
-  pricePerMole: 12
-
-- type: gas
-  id: 13
-  name: gases-healium
-  specificHeat: 10
-  heatCapacityRatio: 1.3
-  molarMass: 40
-  gasOverlaySprite: /Textures/Effects/atmospherics.rsi
-  gasOverlayState: healium
-  gasMolesVisible: 0.1
-  gasVisbilityFactor: 500
-  color: d97e7e
-  reagent: Healium
-  pricePerMole: 12
-
-
-- type: gas
-  id: 14
-  name: gases-hyper-noblium
-  specificHeat: 2000
-  heatCapacityRatio: 1.3
-  molarMass: 150
-  gasOverlaySprite: /Textures/Effects/atmospherics.rsi
-  gasOverlayState: frezon_old
-  gasMolesVisible: 0.1
-  gasVisbilityFactor: 1000
-  color: 33cccc
-  reagent: Hyper-Noblium
-  pricePerMole: 15
-
-- type: gas
-  id: 15
-  name: gases-proto-nitrate
-  specificHeat: 30
-  heatCapacityRatio: 1.3
-  molarMass: 120
-  gasOverlaySprite: /Textures/Effects/atmospherics.rsi
-  gasOverlayState: proto_nitrate
-  gasMolesVisible: 0.1
-  gasVisbilityFactor: 1000
-  color: 009933
-  reagent: Proto-Nitrate
-  pricePerMole: 5
-
-- type: gas
-  id: 16
-  name: gases-zauker
-  specificHeat: 350
-  heatCapacityRatio: 1.3
-  molarMass: 110
-  gasOverlaySprite: /Textures/Effects/atmospherics.rsi
-  gasOverlayState: zauker
-  gasMolesVisible: 0.1
-  gasVisbilityFactor: 250
-  color: 1c1a1a
-  reagent: Zauker
-  pricePerMole: 30
-
-- type: gas
-  id: 17
-  name: gases-halon
-  specificHeat: 1.4
-  heatCapacityRatio: 1.3
-  molarMass: 150
-  gasOverlaySprite: /Textures/Effects/atmospherics.rsi
-  gasOverlayState: halon
-  gasMolesVisible: 0.1
-  gasVisbilityFactor: 500
-  color: e3574d
-  reagent: Halon
-  pricePerMole: 8
-
-- type: gas
-  id: 18
-  name: gases-helium
-  specificHeat: 15
-  heatCapacityRatio: 20
-  molarMass: 4
-  color: 005959
-  reagent: Helium
-  pricePerMole: 7
-
-- type: gas
-  id: 19
-  name: gases-anti-noblium
-  specificHeat: 1
-  heatCapacityRatio: 1
-  molarMass: 200
-  gasOverlaySprite: /Textures/Effects/atmospherics.rsi
-  gasOverlayState: anti_noblium
-  gasMolesVisible: 0.1
-  gasVisbilityFactor: 100
-  color: 525151
-  reagent: Anti-Noblium
-  pricePerMole: 20
+  pricePerMole: 3 # Goobstation - Gas Prices

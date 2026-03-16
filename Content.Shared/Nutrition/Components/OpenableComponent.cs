@@ -1,3 +1,13 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Nutrition.EntitySystems;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
@@ -36,7 +46,7 @@ public sealed partial class OpenableComponent : Component
     /// Text shown when examining and its open.
     /// </summary>
     [DataField]
-    public LocId ExamineText = "drink-component-on-examine-is-opened";
+    public LocId ExamineText = "openable-component-on-examine-is-opened";
 
     /// <summary>
     /// The locale id for the popup shown when IsClosed is called and closed. Needs a "owner" entity argument passed to it.
@@ -44,7 +54,7 @@ public sealed partial class OpenableComponent : Component
     /// It's still generic enough that you should change it if you make openable non-drinks, i.e. unwrap it first, peel it first.
     /// </summary>
     [DataField]
-    public LocId ClosedPopup = "drink-component-try-use-drink-not-open";
+    public LocId ClosedPopup = "openable-component-try-use-closed";
 
     /// <summary>
     /// Text to show in the verb menu for the "Open" action.

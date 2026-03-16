@@ -1,10 +1,29 @@
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kevin Zheng <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 PraxisMapper <praxismapper@gmail.com>
+// SPDX-FileCopyrightText: 2024 drakewill-CRL <46307022+drakewill-CRL@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.Piping.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
-using Content.Shared.Gravity;
 using Content.Shared.Maps;
-using Content.Shared.Projectiles;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
@@ -292,7 +311,7 @@ namespace Content.Server.Atmos.EntitySystems
             }
         }
 
-        private bool ProcessTileEqualize(Entity<GridAtmosphereComponent, GasTileOverlayComponent, MapGridComponent, TransformComponent> ent, float frameTime)
+        private bool ProcessTileEqualize(Entity<GridAtmosphereComponent, GasTileOverlayComponent, MapGridComponent, TransformComponent> ent)
         {
             var atmosphere = ent.Comp1;
             if (!atmosphere.ProcessingPaused)
@@ -301,7 +320,7 @@ namespace Content.Server.Atmos.EntitySystems
             var number = 0;
             while (atmosphere.CurrentRunTiles.TryDequeue(out var tile))
             {
-                EqualizePressureInZone(ent, tile, atmosphere.UpdateCounter, frameTime);
+                EqualizePressureInZone(ent, tile, atmosphere.UpdateCounter);
 
                 if (number++ < LagCheckIterations)
                     continue;
@@ -392,27 +411,18 @@ namespace Content.Server.Atmos.EntitySystems
             // Note: This is still processed even if space wind is turned off since this handles playing the sounds.
 
             var number = 0;
-            var bodies = EntityManager.GetEntityQuery<PhysicsComponent>();
-            var xforms = EntityManager.GetEntityQuery<TransformComponent>();
-            var metas = EntityManager.GetEntityQuery<MetaDataComponent>();
-            var pressureQuery = EntityManager.GetEntityQuery<MovedByPressureComponent>();
-            var projectileQuery = GetEntityQuery<ProjectileComponent>();
-
-            // Doing this here because it's entirely possible the gravity component can be on the Map OR the Grid, and can even be both.
-            // But since we are on a single GridAtmosphere, it's expedient to do this here instead of on every tile.
-            var sumGravity = 0.0;
-            if (TryComp(ent.Owner, out GravityComponent? gridGravity)
-                && gridGravity.Enabled)
-                sumGravity += gridGravity.Acceleration;
-
-            var gridMap = Transform(ent.Owner).MapUid;
-            if (gridMap is not null && TryComp(gridMap, out GravityComponent? mapGravity)
-                && mapGravity.Enabled)
-                sumGravity += mapGravity.Acceleration;
+            var bodies = GetEntityQuery<PhysicsComponent>();
+            var xforms = GetEntityQuery<TransformComponent>();
+            var metas = GetEntityQuery<MetaDataComponent>();
+            var pressureQuery = GetEntityQuery<MovedByPressureComponent>();
 
             while (atmosphere.CurrentRunTiles.TryDequeue(out var tile))
             {
-                HighPressureMovements(ent, tile, bodies, xforms, pressureQuery, metas, projectileQuery, sumGravity);
+                HighPressureMovements(ent, tile, bodies, xforms, pressureQuery, metas);
+                tile.PressureDifference = 0f;
+                tile.LastPressureDirection = tile.PressureDirection;
+                tile.PressureDirection = AtmosDirection.Invalid;
+                tile.PressureSpecificTarget = null;
                 atmosphere.HighPressureDelta.Remove(tile);
 
                 if (number++ < LagCheckIterations)
@@ -572,14 +582,10 @@ namespace Content.Server.Atmos.EntitySystems
                 _currentRunAtmosphereIndex = 0;
                 _currentRunAtmosphere.Clear();
 
-                var query = EntityQueryEnumerator<GridAtmosphereComponent>();
-                while (query.MoveNext(out var uid, out var atmos))
+                var query = EntityQueryEnumerator<GridAtmosphereComponent, GasTileOverlayComponent, MapGridComponent, TransformComponent>();
+                while (query.MoveNext(out var uid, out var atmos, out var overlay, out var grid, out var xform ))
                 {
-                    if (!TryComp(uid, out GasTileOverlayComponent? overlay)
-                        || !TryComp(uid, out MapGridComponent? grid))
-                        continue;
-
-                    _currentRunAtmosphere.Add((uid, atmos, overlay, grid, Transform(uid)));
+                    _currentRunAtmosphere.Add((uid, atmos, overlay, grid, xform));
                 }
             }
 
@@ -631,7 +637,7 @@ namespace Content.Server.Atmos.EntitySystems
                             : AtmosphereProcessingState.ActiveTiles;
                         continue;
                     case AtmosphereProcessingState.TileEqualize:
-                        if (!ProcessTileEqualize(ent, frameTime))
+                        if (!ProcessTileEqualize(ent))
                         {
                             atmosphere.ProcessingPaused = true;
                             return;
@@ -659,6 +665,16 @@ namespace Content.Server.Atmos.EntitySystems
                         }
 
                         atmosphere.ProcessingPaused = false;
+                        atmosphere.State = AtmosphereProcessingState.HighPressureDelta;
+                        continue;
+                    case AtmosphereProcessingState.HighPressureDelta:
+                        if (!ProcessHighPressureDelta((ent, ent)))
+                        {
+                            atmosphere.ProcessingPaused = true;
+                            return;
+                        }
+
+                        atmosphere.ProcessingPaused = false;
                         atmosphere.State = AtmosphereProcessingState.Hotspots;
                         continue;
                     case AtmosphereProcessingState.Hotspots:
@@ -674,20 +690,10 @@ namespace Content.Server.Atmos.EntitySystems
                         //       Therefore, a change to this CVar might only be applied after that step is over.
                         atmosphere.State = Superconduction
                             ? AtmosphereProcessingState.Superconductivity
-                            : AtmosphereProcessingState.HighPressureDelta;
+                            : AtmosphereProcessingState.PipeNet;
                         continue;
                     case AtmosphereProcessingState.Superconductivity:
                         if (!ProcessSuperconductivity(atmosphere))
-                        {
-                            atmosphere.ProcessingPaused = true;
-                            return;
-                        }
-
-                        atmosphere.ProcessingPaused = false;
-                        atmosphere.State = AtmosphereProcessingState.HighPressureDelta;
-                        continue;
-                    case AtmosphereProcessingState.HighPressureDelta:
-                        if (!ProcessHighPressureDelta((ent, ent)))
                         {
                             atmosphere.ProcessingPaused = true;
                             return;

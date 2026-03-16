@@ -1,4 +1,9 @@
-﻿using Content.Server.NPC.Systems;
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
+using Content.Server.NPC.Systems;
 
 namespace Content.Server.NPC.Components;
 
@@ -21,10 +26,4 @@ public sealed partial class NPCRetaliationComponent : Component
     /// todo: this needs to support timeoffsetserializer at some point
     [DataField("attackMemories")]
     public Dictionary<EntityUid, TimeSpan> AttackMemories = new();
-
-    /// <summary>
-    ///     Whether this NPC will retaliate against a "Friendly" NPC.
-    /// </summary>
-    [DataField]
-    public bool RetaliateFriendlies;
 }

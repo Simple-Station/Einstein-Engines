@@ -1,3 +1,18 @@
+// SPDX-FileCopyrightText: 2022 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2022 T-Stalker <43253663+DogZeroX@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 T-Stalker <le0nel_1van@hotmail.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Ygg01 <y.laughing.man.y@gmail.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Jake Huxell <JakeHuxell@pm.me>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Actions;
 using Content.Shared.Examine;
 using Content.Shared.Hands;
@@ -19,21 +34,7 @@ public abstract partial class SharedGunSystem
             args.PushMarkup(Loc.GetString("gun-selected-mode-examine", ("color", ModeExamineColor),
                 ("mode", GetLocSelector(component.SelectedMode))));
             args.PushMarkup(Loc.GetString("gun-fire-rate-examine", ("color", FireRateExamineColor),
-                ("fireRate", $"{(int) (component.FireRate * 60)}")));
-
-            if (component.DamageModifier != 1f)
-                args.PushMarkup(Loc.GetString("gun-damage-modifier-examine", ("color", FireRateExamineColor),
-                    ("damage", $"{component.DamageModifier.ToString("#.##")}")));
-
-            if (!component.AvailableModes.HasFlag(SelectiveFire.Burst))
-                return;
-
-            if (component.FireRate != component.BurstFireRate)
-                args.PushMarkup(Loc.GetString("gun-burst-fire-rate-examine", ("color", FireRateExamineColor),
-                    ("fireRate", $"{(int) (component.BurstFireRate * 60)}")));
-
-            args.PushMarkup(Loc.GetString("gun-burst-fire-burst-count", ("color", FireRateExamineColor),
-                ("burstcount", $"{component.ShotsPerBurst}")));
+                ("fireRate", $"{component.FireRateModified:0.0}")));
         }
     }
 
@@ -44,7 +45,7 @@ public abstract partial class SharedGunSystem
 
     private void OnAltVerb(EntityUid uid, GunComponent component, GetVerbsEvent<AlternativeVerb> args)
     {
-        if (!args.CanAccess || !args.CanInteract || component.SelectedMode == component.AvailableModes)
+        if (!args.CanAccess || !args.CanInteract || !args.CanComplexInteract || args.Hands == null || component.SelectedMode == component.AvailableModes)
             return;
 
         var nextMode = GetNextMode(component);
@@ -126,6 +127,12 @@ public abstract partial class SharedGunSystem
 
     private void OnGunSelected(EntityUid uid, GunComponent component, HandSelectedEvent args)
     {
+        if (Timing.ApplyingState)
+             return;
+
+        if (component.FireRateModified <= 0)
+            return;
+
         var fireDelay = 1f / component.FireRateModified;
         if (fireDelay.Equals(0f))
             return;

@@ -1,18 +1,138 @@
+# SPDX-FileCopyrightText: 2024 Ashley Woodiss-Field <ash@DESKTOP-H64M4AI.localdomain>
+# SPDX-FileCopyrightText: 2024 ColesMagnum <98577947+AW-FulCode@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Speebro <100388782+Speebr0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Speebro <speebro@notreal.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 PunishedJoe <PunishedJoeseph@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 floatingfeeling <karaadastra@gmail.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: reagent
-  id: Tirizene
-  name: reagent-name-tirizene
+  id: Fentanyl
+  name: reagent-name-fentanyl
   group: Narcotics
-  desc: reagent-desc-tirizene
-  physicalDesc: reagent-physical-desc-syrupy
-  color: "#6E2828"
-  boilingPoint: 255.0
-  meltingPoint: 36.0
+  desc: reagent-desc-fentanyl
+  flavor: fentanyl
+  physicalDesc: reagent-physical-desc-murky
+  color: "#6e697d"
   metabolisms:
-    Narcotic:
+    Poison:
+      metabolismRate: 0.05
       effects:
-      - !type:TakeStaminaDamage
-        amount: 15
-        immediate: false
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Yowie
+        damage:
+          groups:
+            Brute: -1
+          types:
+            Heat: -0.5
+            Shock: -0.5
+            Cold: -0.5
+            Radiation: -0.5
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Yowie
+          shouldHave: false
+        damage:
+          types:
+            Poison: 0.25
+      - !type:HealthChange # When overdosing
+        conditions:
+        - !type:OrganType
+          type: Yowie
+          shouldHave: false
+        - !type:ReagentThreshold
+          min: 5
+        damage:
+          types:
+            Poison: 0.25 # effectively 10 poison/u
+            Asphyxiation: 0.75 # more damage, but easier to treat, will rapidly kill in crit probably?
+      - !type:HealthChange # More overdose damage
+        conditions:
+        - !type:OrganType
+          type: Yowie
+          shouldHave: false
+        - !type:ReagentThreshold
+          min: 5
+        probability: 0.05
+        damage:
+          types:
+            Slash: 1 # clawing at your own skin
+    Narcotic:
+      metabolismRate: 0.05
+      effects:
+      - !type:PopupMessage # the usual hallucinations
+        type: Local
+        visualType: Medium
+        messages: ["fentanyl-effect-lostsomething","fentanyl-effect-skincrawl","fentanyl-effect-fakepresence","fentanyl-effect-rushing","fentanyl-effect-giddy"]
+        probability: 0.05
+      - !type:PopupMessage # when you're really tripping balls
+        conditions:
+        - !type:ReagentThreshold
+          min: 5
+        type: Local
+        visualType: Medium
+        messages: ["fentanyl-effect-skinworms","fentanyl-effect-breathingrazors","fentanyl-effect-lungstight","fentanyl-effect-observed"]
+        probability: 0.05
+      - !type:MovespeedModifier # you didn't think this would improve your abilities right?
+        conditions:
+        - !type:OrganType
+          type: Yowie
+          shouldHave: false
+        walkSpeedModifier: 0.8
+        sprintSpeedModifier: 0.8
+      - !type:GenericStatusEffect
+        key: Stutter
+        component: StutteringAccent
+      - !type:Jitter
+      - !type:Paralyze # loss of muscle control
+        conditions:
+        - !type:OrganType
+          type: Yowie
+          shouldHave: false
+        probability: 0.05
+        paralyzeTime: 2
+      - !type:Paralyze # more severe effects when you are overdosing
+        conditions:
+        - !type:OrganType
+          type: Yowie
+          shouldHave: false
+        - !type:ReagentThreshold
+          min: 5
+        probability: 0.05
+        paralyzeTime: 4
+      - !type:GenericStatusEffect # tripping balls, duh
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 20
+        refresh: false
+      - !type:Drunk
+        boozePower: 10
+      - !type:Emote # Now a bunch of emotes
+        emote: Scream
+        probability: 0.05
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:SuppressPain # fent does this
+        amount: 400
+        time: 30
 
 - type: reagent
   id: BlindToxin
@@ -27,12 +147,130 @@
     Narcotic:
       effects:
       - !type:GenericStatusEffect
+        conditions:
+        - !type:OrganType
+          type: Yowie
+          shouldHave: false
         key: TemporaryBlindness
         component: TemporaryBlindness
         type: Add
         time: 3
         refresh: false
 
+- type: reagent
+  id: Amnestizine
+  name: reagent-name-amnestizine
+  group: Narcotics
+  desc: reagent-desc-amnestizine
+  physicalDesc: reagent-physical-desc-milky
+  color: "#FFF1DE"
+  boilingPoint: 255.0
+  meltingPoint: 36.0
+  metabolisms:
+    Narcotic:
+      metabolismRate: 0.05
+      effects:
+      - !type:GenericStatusEffect
+        key: Dementia
+        component: DementiaAccent
+      - !type:GenericStatusEffect
+        key: Stutter
+        component: StutteringAccent
+      - !type:TakeStaminaDamage
+        conditions:
+        - !type:OrganType
+          type: Yowie
+          shouldHave: false
+        amount: 7
+        immediate: false
+      - !type:PopupMessage
+        visualType: MediumCaution
+        type: Local
+        messages: # Flavor text, you're supposed to forget what's happening.
+        - amnestizine-effect-forget
+        - amnestizine-effect-hole
+        - amnestizine-effect-blank
+        - amnestizine-effect-distracted
+        - amnestizine-effect-widen
+        - amnestizine-effect-soul
+        - amnestizine-effect-peaceful
+        - amnestizine-effect-leave
+        - amnestizine-effect-listen
+        conditions:
+        - !type:ReagentThreshold
+          min: 1
+        probability: 0.35
+      - !type:GenericStatusEffect # You can't remember how to fire a gun, or swing a sword.
+        key: Pacified
+        component: Pacified
+        type: Add
+        time: 4
+      - !type:MovespeedModifier # You can't quite remember how to walk properly.
+        conditions:
+        - !type:OrganType
+          type: Yowie
+          shouldHave: false
+        - !type:ReagentThreshold
+          reagent: Amnestizine
+          min: 4
+        walkSpeedModifier: 0.4
+        sprintSpeedModifier: 0.4
+      - !type:GenericStatusEffect
+        conditions:
+        - !type:OrganType
+          type: Yowie
+          shouldHave: false
+        - !type:ReagentThreshold
+          min: 10
+        key: TemporaryBlindness
+        component: TemporaryBlindness
+        type: Add
+        time: 2
+        refresh: false
+      - !type:Jitter
+        conditions:
+        - !type:ReagentThreshold
+          min: 15
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 0.25
+            Asphyxiation: 0.25
+        conditions:
+        - !type:OrganType
+          type: Yowie
+          shouldHave: false
+        - !type:ReagentThreshold
+          min: 15
+      - !type:HealthChange
+        damage:
+          types:
+            Cellular: 1
+            Asphyxiation: 1
+        conditions:
+        - !type:OrganType
+          type: Yowie
+          shouldHave: false
+        - !type:ReagentThreshold
+          min: 30
+      - !type:FlammableReaction
+        multiplier: 0.3
+      - !type:Paralyze
+        conditions:
+        - !type:OrganType
+          type: Yowie
+          shouldHave: false
+        probability: 0.05
+        paralyzeTime: 2
+  reactiveEffects:
+    Flammable:
+      methods: [ Touch ]
+      effects:
+      - !type:FlammableReaction
+        multiplier: 0.4
+
+# Homemade hyperzine, should be worse than it and harder to make, but
+# doesn't require vestine. Should NOT be addictive when we get addictions
 - type: reagent
   id: Aranesp
   name: reagent-name-aranesp
@@ -43,30 +281,38 @@
   color: "#75fff5"
   metabolisms:
     Narcotic:
+      metabolismRate: 0.5
       effects:
-      - !type:GenericStatusEffect
-        key: Stun
-        time: 2
+      - !type:MovespeedModifier
+        walkSpeedModifier: 1.3 # slower than dylometh due to being diluted - still overall stronger due to omni heal
+        sprintSpeedModifier: 1.3
+      - !type:ModifyStatusEffect 
+        effectProto: StatusEffectStunned
+        time: 3
         type: Remove
       - !type:GenericStatusEffect
         key: KnockedDown
-        time: 2
+        time: 3
+        type: Remove
+      - !type:GenericStatusEffect
+        key: Drowsiness
+        time: 10
         type: Remove
       - !type:GenericStatusEffect
         key: Adrenaline
         component: IgnoreSlowOnDamage
         time: 5
-      - !type:MovespeedModifier
-        walkSpeedModifier: 1.25
-        sprintSpeedModifier: 1.25
       - !type:TakeStaminaDamage
-        amount: -20
-      - !type:HealthChange
-        damage:
-          types:
-            Poison: 0.25
-            Asphyxiation: 0.25
-      - !type:HealthChange # intentionally no yowie conditions
+        amount: -5
+        immediate: true
+      - !type:RemoveComponentEffect
+        component: DelayedKnockdown
+        locale: reagent-effect-guidebook-remove-delayed-knockdown
+    Medicine:
+      metabolismRate: 0.5
+      effects:
+      - !type:ResetNarcolepsy
+      - !type:HealthChange # intentionally no yowie conditions (why was this removed)
         damage:
           groups:
             Brute: -1
@@ -75,3 +321,138 @@
             Shock: -0.5
             Cold: -0.5
             Radiation: -0.5
+            Poison: -0.5
+            Asphyxiation: 0.5
+
+- type: reagent
+  id: MouseBites
+  name: reagent-name-mousebites
+  group: Narcotics
+  desc: reagent-desc-mousebites
+  physicalDesc: reagent-physical-desc-oily
+  flavor: oily
+  color: "#ffaa00"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Genetic: -0.2
+      - !type:Polymorph
+        prototype: MouseSentient
+        conditions:
+        - !type:ReagentThreshold
+          min: 50 # raised because mouse retaliation is now a thing
+      - !type:AdjustReagent
+        reagent: MouseBites
+        amount: -20
+        conditions:
+        - !type:ReagentThreshold
+          min: 50 # keep it the same as above
+      - !type:PopupMessage
+        conditions:
+        - !type:ReagentThreshold
+          min: 5
+        type: Local
+        visualType: Medium
+        messages: [ "mousebites-effects-vexes", "mousebites-effects-stupid", "mousebites-effects-metoo" ]
+        probability: 0.10
+
+
+- type: reagent
+  id: OleoresinCapsaicin
+  name: reagent-name-oleoresin-capsaicin
+  group: Narcotics
+  desc: reagent-desc-oleoresin-capsaicin
+  physicalDesc: reagent-physical-desc-reflective
+  flavor: sharp
+  color: "#e32227"
+  reactiveEffects:
+    Acidic:
+      methods: [ Eyes ]
+      effects:
+      - !type:PopupMessage
+        type: Local
+        probability: 0.7
+        messages:
+        - generic-reagent-effect-burning-eyes
+        - generic-reagent-effect-burning-eyes-a-bit
+        - generic-reagent-effect-tearing-up
+        - norepinephricacid-effect-eyelids
+        - norepinephricacid-effect-eyes-itch
+        - norepinephricacid-effect-vision-fade
+        - norepinephricacid-effect-vision-fail
+      - !type:PopupMessage
+        type: Local
+        visualType: MediumCaution
+        probability: 0.7
+        messages:
+        - norepinephricacid-effect-eye-disconnect
+        - norepinephricacid-effect-eye-pain
+        - norepinephricacid-effect-darkness
+        - norepinephricacid-effect-blindness
+      - !type:Emote
+        emote: Scream
+        probability: 0.2
+      - !type:GenericStatusEffect
+        key: TemporaryBlindness
+        component: TemporaryBlindness
+        time: 3.5
+        probability: 1
+      - !type:Jitter
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.3
+        sprintSpeedModifier: 0.3
+
+- type: reagent
+  id: Heroin
+  name: reagent-name-heroin
+  group: Medicine
+  desc: reagent-desc-heroin
+  physicalDesc: reagent-physical-desc-thick
+  flavor: medicine
+  color: "#a8a8af"
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.5
+      effects:
+      - !type:SuppressPain
+        amount: 15
+        time: 30
+      - !type:GenericStatusEffect
+        key: Adrenaline
+        component: IgnoreSlowOnDamage
+        time: 1.5
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 2
+            Cold: 0.25
+            Asphyxiation: 0.75
+        conditions:
+        - !type:ReagentThreshold
+          min: 10.5
+        - !type:OrganType
+          type: Yowie
+          shouldHave: false
+      - !type:GenericStatusEffect # tripping balls
+        conditions:
+        - !type:ReagentThreshold
+          min: 10.5
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 20
+        refresh: false
+      - !type:Drunk
+        boozePower: 10
+        conditions:
+        - !type:ReagentThreshold
+          min: 10.5
+      - !type:AdjustConsciousness
+        allowNewModifiers: true
+        modifierType: Pain
+        identifier: Suffocation
+        amount: -5
+        time: 12

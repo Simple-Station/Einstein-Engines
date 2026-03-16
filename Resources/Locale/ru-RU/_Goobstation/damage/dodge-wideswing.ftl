@@ -4,4 +4,4 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-wideswing-dodge-generic = { THE($target) } быстро уклоняется от размаха!
+wideswing-dodge-generic = { $target } уклоняется!

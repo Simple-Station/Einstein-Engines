@@ -1,4 +1,13 @@
-﻿- type: entity
+# SPDX-FileCopyrightText: 2023 Cody ~ Aexxie <125095677+Aexxie@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
   id: BasePortal
   abstract: true
   name: bluespace portal
@@ -51,7 +60,7 @@
     radius: 3
     energy: 1
     netsync: false
-
+    
 - type: entity
   id: PortalArtifact
   parent: BasePortal
@@ -65,7 +74,7 @@
     energy: 1
     netsync: false
   - type: TimedDespawn
-    lifetime: 120
+    lifetime: 1
   - type: Portal
     canTeleportToOtherMaps: true
 
@@ -123,12 +132,3 @@
     volume: -3
     sound:
       path: /Audio/Ambience/anomaly_scary.ogg
-
-- type: entity
-  name: unstable shadow rift
-  id: ShadowPortalTemp
-  description: Its already closing!
-  parent: ShadowPortal
-  components:
-    - type: TimedDespawn
-      lifetime: 12

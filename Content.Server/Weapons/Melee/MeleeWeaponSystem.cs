@@ -1,51 +1,75 @@
+// SPDX-FileCopyrightText: 2022 CommieFlowers <rasmus.cedergren@hotmail.com>
+// SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2022 rolfero <45628623+rolfero@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 HerCoyote23 <131214189+HerCoyote23@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 I.K <45953835+notquitehadouken@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Ygg01 <y.laughing.man.y@gmail.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2023 notquitehadouken <1isthisameme>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Bixkitts <72874643+Bixkitts@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Callmore <22885888+Callmore@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 Джексон Миссиссиппи <tripwiregamer@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Eagle <lincoln.mcqueen@gmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
+// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+// SPDX-FileCopyrightText: 2025 vanx <61917534+Vaaankas@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Chat.Systems;
-using Content.Server.CombatMode.Disarm;
 using Content.Server.Movement.Systems;
-using Content.Server.Weapons.Ranged.Systems;
-using Content.Shared.Actions.Events;
-using Content.Shared.Administration.Components;
-using Content.Shared.CombatMode;
-using Content.Shared.Contests;
 using Content.Shared.Damage.Events;
 using Content.Shared.Damage.Systems;
-using Content.Shared.Database;
 using Content.Shared.Effects;
-using Content.Shared.Hands.Components;
-using Content.Shared.IdentityManagement;
-using Content.Shared.Mobs.Systems;
 using Content.Shared.Speech.Components;
-using Content.Shared.StatusEffect;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
-using Robust.Shared.Audio;
-using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
-using Robust.Shared.Random;
-using Robust.Shared.Utility;
 using System.Linq;
 using System.Numerics;
-using Content.Shared.Chat;
+using Content.Shared.Chat; // Einstein Engines - Languages
 
 namespace Content.Server.Weapons.Melee;
 
 public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
 {
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly DamageExamineSystem _damageExamine = default!;
     [Dependency] private readonly LagCompensationSystem _lag = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
-    [Dependency] private readonly ContestsSystem _contests = default!;
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<MeleeSpeechComponent, MeleeHitEvent>(OnSpeechHit);
-        SubscribeLocalEvent<MeleeWeaponComponent, DamageExamineEvent>(OnMeleeExamineDamage, after: [typeof(GunSystem)]);
+        SubscribeLocalEvent<MeleeWeaponComponent, DamageExamineEvent>(OnMeleeExamineDamage);
     }
+
 
     private void OnMeleeExamineDamage(EntityUid uid, MeleeWeaponComponent component, ref DamageExamineEvent args)
     {
@@ -53,26 +77,19 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
             return;
 
         var damageSpec = GetDamage(uid, args.User, component);
+
         if (damageSpec.Empty)
             return;
 
-        if (!component.DisableClick)
-            _damageExamine.AddDamageExamine(args.Message, Damageable.ApplyUniversalAllModifiers(damageSpec), Loc.GetString("damage-melee"));
+        _damageExamine.AddDamageExamine(args.Message, Damageable.ApplyUniversalAllModifiers(damageSpec), Loc.GetString("damage-melee"));
 
-        if (component.DisableHeavy)
+        // Goobstation - partial armor penetration
+        var ap = component.ResistanceBypass ? 100 : (int)Math.Round(damageSpec.ArmorPenetration * 100);
+        if (ap == 0)
             return;
 
-        if (damageSpec * component.HeavyDamageBaseModifier != damageSpec)
-            _damageExamine.AddDamageExamine(args.Message, Damageable.ApplyUniversalAllModifiers(damageSpec * component.HeavyDamageBaseModifier), Loc.GetString("damage-melee-heavy"));
-
-        if (component.HeavyStaminaCost == 0)
-            return;
-
-        var staminaCostMarkup = FormattedMessage.FromMarkupOrThrow(
-            Loc.GetString("damage-stamina-cost",
-            ("type", Loc.GetString("damage-melee-heavy")), ("cost", Math.Round(component.HeavyStaminaCost, 2).ToString("0.##"))));
-        args.Message.PushNewline();
-        args.Message.AddMessage(staminaCostMarkup);
+        var abs = Math.Abs(ap);
+        args.Message.AddMarkupPermissive("\n" + Loc.GetString("armor-penetration", ("arg", ap/abs), ("abs", abs)));
     }
 
     protected override bool ArcRaySuccessful(EntityUid targetUid,
@@ -104,122 +121,60 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
         return true;
     }
 
-    protected override bool DoDisarm(EntityUid user, DisarmAttackEvent ev, EntityUid meleeUid, MeleeWeaponComponent component, ICommonSession? session)
-    {
-        if (!base.DoDisarm(user, ev, meleeUid, component, session)
-            || !TryComp<CombatModeComponent>(user, out var combatMode)
-            || combatMode.CanDisarm != true)
-            return false;
-
-        var target = GetEntity(ev.Target!.Value);
-
-        if (_mobState.IsIncapacitated(target)
-            || !TryComp<HandsComponent>(target, out var targetHandsComponent)
-            && (!TryComp<StatusEffectsComponent>(target, out var status) || !status.AllowedEffects.Contains("KnockedDown"))
-            || !InRange(user, target, component.Range * component.DisarmRangeModifier, session))
-            return false;
-
-        EntityUid? inTargetHand = targetHandsComponent?.ActiveHand is { IsEmpty: false }
-            ? targetHandsComponent.ActiveHand.HeldEntity!.Value
-            : null;
-
-        Interaction.DoContactInteraction(user, target);
-
-        var attemptEvent = new DisarmAttemptEvent(target, user, inTargetHand);
-        RaiseLocalEvent(inTargetHand != null ? inTargetHand.Value : target, attemptEvent);
-
-        if (attemptEvent.Cancelled)
-            return false;
-
-        var chance = CalculateDisarmChance(user, target, inTargetHand, combatMode);
-
-        if (_random.Prob(chance))
-        {
-            // Don't play a sound as the swing is already predicted.
-            // Also don't play popups because most disarms will miss.
-            return false;
-        }
-
-        var filterOther = Filter.PvsExcept(user, entityManager: EntityManager);
-        var msgPrefix = "disarm-action-";
-
-        if (inTargetHand == null)
-            msgPrefix = "disarm-action-shove-";
-
-        var msgOther = Loc.GetString(
-                msgPrefix + "popup-message-other-clients",
-                ("performerName", Identity.Entity(user, EntityManager)),
-                ("targetName", Identity.Entity(target, EntityManager)));
-
-        var msgUser = Loc.GetString(msgPrefix + "popup-message-cursor", ("targetName", Identity.Entity(target, EntityManager)));
-
-        PopupSystem.PopupEntity(msgOther, user, filterOther, true);
-        PopupSystem.PopupEntity(msgUser, target, user);
-
-        _audio.PlayPvs(combatMode.DisarmSuccessSound, user, AudioParams.Default.WithVariation(0.025f).WithVolume(5f));
-        AdminLogger.Add(LogType.DisarmedAction, $"{ToPrettyString(user):user} used disarm on {ToPrettyString(target):target}");
-
-        var eventArgs = new DisarmedEvent { Target = target, Source = user, PushProbability = 1 - chance };
-        RaiseLocalEvent(target, eventArgs);
-
-        if (!eventArgs.Handled)
-            return false;
-
-        _audio.PlayPvs(combatMode.DisarmSuccessSound, user, AudioParams.Default.WithVariation(0.025f).WithVolume(5f));
-        AdminLogger.Add(LogType.DisarmedAction, $"{ToPrettyString(user):user} used disarm on {ToPrettyString(target):target}");
-
-        return true;
-    }
-
-    protected override bool InRange(EntityUid user, EntityUid target, float range, ICommonSession? session)
+    public override bool InRange(EntityUid user, EntityUid target, float range, ICommonSession? session) // Goob edit
     {
         EntityCoordinates targetCoordinates;
         Angle targetLocalAngle;
 
-        if (session is not { } pSession)
-            return Interaction.InRangeUnobstructed(user, target, range);
+        if (session is { } pSession)
+        {
+            (targetCoordinates, targetLocalAngle) = _lag.GetCoordinatesAngle(target, pSession);
+            return Interaction.InRangeUnobstructed(user, target, targetCoordinates, targetLocalAngle, range, overlapCheck: false);
+        }
 
-        (targetCoordinates, targetLocalAngle) = _lag.GetCoordinatesAngle(target, pSession);
-        return Interaction.InRangeUnobstructed(user, target, targetCoordinates, targetLocalAngle, range, overlapCheck: false);
+        return Interaction.InRangeUnobstructed(user, target, range);
     }
 
-    protected override void DoDamageEffect(List<EntityUid> targets, EntityUid? user, TransformComponent targetXform) =>
-        _color.RaiseEffect(Color.Red, targets, Filter.Pvs(targetXform.Coordinates, entityMan: EntityManager).RemoveWhereAttachedEntity(o => o == user));
-
-    private float CalculateDisarmChance(EntityUid disarmer, EntityUid disarmed, EntityUid? inTargetHand, CombatModeComponent disarmerComp)
+    protected override void DoDamageEffect(List<EntityUid> targets, EntityUid? user, TransformComponent targetXform)
     {
-        if (HasComp<DisarmProneComponent>(disarmer))
-            return 1.0f;
-
-        if (HasComp<DisarmProneComponent>(disarmed))
-            return 0.0f;
-
-        var chance = disarmerComp.BaseDisarmFailChance;
-
-        if (inTargetHand != null && TryComp<DisarmMalusComponent>(inTargetHand, out var malus))
-            chance += malus.Malus;
-
-        return Math.Clamp(chance
-                        * _contests.MassContest(disarmer, disarmed, false, 0.5f)
-                        * _contests.StaminaContest(disarmer, disarmed, false, 0.5f)
-                        * _contests.HealthContest(disarmer, disarmed, false, 0.5f),
-                        0f, 1f);
+        var filter = Filter.Pvs(targetXform.Coordinates, entityMan: EntityManager).RemoveWhereAttachedEntity(o => o == user);
+        _color.RaiseEffect(Color.Red, targets, filter);
     }
 
-    public override void DoLunge(EntityUid user, EntityUid weapon, Angle angle, Vector2 localPos, string? animation, bool predicted = true) =>
-        RaiseNetworkEvent(new MeleeLungeEvent(
-            GetNetEntity(user),
-            GetNetEntity(weapon),
-            angle,
-            localPos,
-            animation),
-            predicted ? Filter.PvsExcept(user, entityManager: EntityManager) : Filter.Pvs(user, entityManager: EntityManager));
+    public override void DoLunge(EntityUid user, EntityUid weapon, Angle angle, Vector2 localPos, string? animation, Angle spriteRotation, bool flipAnimation, bool predicted = true)
+    {
+        Filter filter;
+
+        if (predicted)
+        {
+            filter = Filter.PvsExcept(user, entityManager: EntityManager);
+        }
+        else
+        {
+            filter = Filter.Pvs(user, entityManager: EntityManager);
+        }
+
+        RaiseNetworkEvent(new MeleeLungeEvent(GetNetEntity(user), GetNetEntity(weapon), angle, localPos, animation, spriteRotation, flipAnimation), filter);
+    }
+
+    // goob edit - more interactivity for battle cries
+    public static readonly Dictionary<char, InGameICChatType> PrefixToChannel = new()
+    {
+        {SharedChatSystem.LocalPrefix, InGameICChatType.Speak},
+        {SharedChatSystem.WhisperPrefix, InGameICChatType.Whisper},
+        {SharedChatSystem.EmotesPrefix, InGameICChatType.Emote},
+        {SharedChatSystem.EmotesAltPrefix, InGameICChatType.Emote},
+    };
 
     private void OnSpeechHit(EntityUid owner, MeleeSpeechComponent comp, MeleeHitEvent args)
     {
-        if (!args.IsHit || !args.HitEntities.Any() || comp.Battlecry is null)
+        if (!args.IsHit || !args.HitEntities.Any() || string.IsNullOrWhiteSpace(comp.Battlecry))
             return;
 
-        _chat.TrySendInGameICMessage(args.User, comp.Battlecry, InGameICChatType.Speak, true, true, checkRadioPrefix: false);  //Speech that isn't sent to chat or adminlogs
+        var chatType = PrefixToChannel.GetValueOrDefault(comp.Battlecry[0]);
+        var message = chatType == InGameICChatType.Speak ? comp.Battlecry : comp.Battlecry[1..]; // [1..] basically means the first char is removed.
+
+        _chat.TrySendInGameICMessage(args.User, message, chatType, true, true, checkRadioPrefix: false, forced: true);
     }
+    // goob edit end
 }

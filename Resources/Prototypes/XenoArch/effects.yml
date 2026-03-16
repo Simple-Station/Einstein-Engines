@@ -105,10 +105,10 @@
       weight: 3.0
     - id: XenoArtifactHealAll
       weight: 1.0
-    #- id: XenoArtifactTesla
-    #  weight: 10.0
-    #- id: XenoArtifactSingularity
-    #  weight: 10.0
+    - id: XenoArtifactTesla # Goob edit - funny
+      weight: 0.1
+    - id: XenoArtifactSingularity
+      weight: 0.1
     - id: XenoArtifactExplosionScary
       weight: 1.0
     - id: XenoArtifactBoom
@@ -125,12 +125,6 @@
       weight: 4.0
     - id: XenoArtifactEffectCreationGasCarbonDioxide
       weight: 4.0
-    # orehum start new effects
-    - id: XenoArtifactIncreaseGlimmer
-      weight: 0.9
-    - id: XenoArtifactDecreaseGlimmer
-      weight: 0.9
-    # orehum end new effects
 
 - type: entityTable
   id: XenoArtifactEffectsHandheldOnlyTable
@@ -681,7 +675,6 @@
     components:
     - type: RadiationSource
       intensity: 1
-      slope: 0.3
 
 - type: entity
   id: XenoArtifactChargeBattery
@@ -886,6 +879,10 @@
           weight: 1.0
         - id: MobCarpHolo
           weight: 1.0
+        - id: MobDragonDungeon
+          weight: 0.01
+        - id: MobShark
+          weight: 0.25
 
 - type: entity
   id: XenoArtifactFaunaSpawn
@@ -908,7 +905,7 @@
         - id: MobAdultSlimesYellowAngry
         - id: MobAngryBee
         - id: MobBearSpace
-        - id: MobXenoRavager
+        - id: CMMobXenoRavager
         - id: MobTick
         - id: MobSpiderSpace
         - id: MobPurpleSnake
@@ -1010,8 +1007,6 @@
     - Kelotane
     - Dexalin
     - Omnizine
-    - PsionicRegenerationEssence # orehum
-    - LotophagoiOil # orehum
 
 - type: entity
   id: XenoArtifactFoamDangerous
@@ -1034,8 +1029,6 @@
     - ChloralHydrate
     - Mold
     - Amatoxin
-    - OusianaDust # orehum
-    - SoulbreakerToxin # orehum
 
 - type: entity
   id: XenoArtifactPuddleRare
@@ -1146,7 +1139,6 @@
     components:
     - type: RadiationSource
       intensity: 2
-      slope: 0.3
 
 - type: entity
   id: XenoArtifactMaterialSpawnGlass

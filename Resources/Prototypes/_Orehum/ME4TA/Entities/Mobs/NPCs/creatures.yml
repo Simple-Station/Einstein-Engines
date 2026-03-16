@@ -2,7 +2,6 @@
   parent: [BaseMob, MobCombat]
   id: MobCryingAngel
   components:
-  - type: TimeDespawnDamage
   - type: NoSlip
   - type: MeleeWeapon
     hidden: true

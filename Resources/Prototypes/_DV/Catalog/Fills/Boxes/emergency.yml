@@ -1,21 +1,7 @@
-
-- type: entity
-  parent: BoxSurvivalBrigmedic
-  id: BoxSurvivalBrigmedicWaterVapor
-  suffix: MedSec H2O
-  components:
-  - type: StorageFill
-    contents:
-    - id: ClothingMaskBreathMedicalSecurity
-    - id: EmergencyWaterVaporTankFilled
-    - id: EmergencyMedipen
-    - id: SpaceMedipen
-    - id: Flare
-    - id: FoodPSB
-    - id: DrinkWaterBottleFull
-  # Intentionally wrong picture on the box. NT did not care enough to change it.
-  - type: Label
-    currentLabel: reagent-name-water
+# SPDX-FileCopyrightText: 2025 AstroDogeDX <48888500+AstroDogeDX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
   parent: BoxSurvival
@@ -27,10 +13,13 @@
     - id: ClothingMaskBreath
     - id: EmergencyWaterVaporTankFilled
     - id: EmergencyMedipen
-    - id: SpaceMedipen
     - id: Flare
-    - id: FoodPSB
+    - id: FoodSnackNutribrick
     - id: DrinkWaterBottleFull
+  - type: Sprite
+    layers:
+    - state: internals
+    - state: watertank
   - type: Label
     currentLabel: reagent-name-water
 
@@ -44,10 +33,13 @@
     - id: ClothingMaskBreath
     - id: ExtendedEmergencyWaterVaporTankFilled
     - id: EmergencyMedipen
-    - id: SpaceMedipen
     - id: Flare
-    - id: FoodPSB
+    - id: FoodSnackNutribrick
     - id: DrinkWaterBottleFull
+  - type: Sprite
+    layers:
+    - state: internals
+    - state: watertank
   - type: Label
     currentLabel: reagent-name-water
 
@@ -61,10 +53,13 @@
     - id: ClothingMaskGasSecurity
     - id: EmergencyWaterVaporTankFilled
     - id: EmergencyMedipen
-    - id: SpaceMedipen
     - id: Flare
-    - id: FoodPSB
+    - id: FoodSnackNutribrick
     - id: DrinkWaterBottleFull
+  - type: Sprite
+    layers:
+    - state: internals
+    - state: watertank
   - type: Label
     currentLabel: reagent-name-water
 
@@ -78,10 +73,13 @@
     - id: ClothingMaskBreathMedical
     - id: EmergencyWaterVaporTankFilled
     - id: EmergencyMedipen
-    - id: SpaceMedipen
     - id: Flare
-    - id: FoodPSB
+    - id: FoodSnackNutribrick
     - id: DrinkWaterBottleFull
+  - type: Sprite
+    layers:
+    - state: internals
+    - state: watertank
   - type: Label
     currentLabel: reagent-name-water
 
@@ -95,26 +93,29 @@
     - id: ClothingMaskBreath
     - id: EmergencyWaterVaporTankFilled
     - id: EmergencyMedipen
-    - id: SpaceMedipen
     - id: Flare
-    - id: FoodPSB
+    - id: FoodSnackNutribrick
     - id: DrinkWaterBottleFull
   - type: Label
     currentLabel: reagent-name-water
 
 - type: entity
-  parent: BoxSurvivalWaterVapor
+  parent: BoxSurvivalNitrogen
   id: BoxMimeWaterVapor
   suffix: Mime, Emergency H2O
   components:
   - type: StorageFill
     contents:
-    - id: SpaceMedipen
+    - id: ClothingMaskBreath
     - id: EmergencyWaterVaporTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodBreadBaguette
+    - id: FoodSnackNutribrick
     - id: DrinkWaterBottleFull
+  - type: Sprite
+    layers:
+    - state: internals
+    - state: watertank
   - type: Label
     currentLabel: reagent-name-water
 
@@ -128,8 +129,11 @@
     - id: ClothingMaskGasSyndicate
     - id: ExtendedEmergencyWaterVaporTankFilled
     - id: EmergencyMedipen
-    - id: SpaceMedipen
-    - id: FoodPSB
-    - id: DrinkWaterBottleFull
+    - id: Flare
+    - id: FoodSnackNutribrick
+  - type: Sprite
+    layers:
+    - state: internals
+    - state: watertank
   - type: Label
     currentLabel: reagent-name-water

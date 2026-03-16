@@ -5,6 +5,27 @@
   - Syndicate
   - Zombie
   - Revolutionary
-#  - Heretic
-#  - Wizard
-#  - Blob
+  - Heretic
+  - Wizard
+  - Blob
+
+- type: npcFaction
+  id: Assistant
+  hostile:
+  - NanoTrasen
+  - Dragon
+  - SimpleHostile
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - Changeling
+  - Heretic
+  - Blob
+  - Shadowling
+  - Wizard
+  - PirateFaction
+  - Wraith
+  - Lavafauna
+  - AllHostile
+  - Xenoborg

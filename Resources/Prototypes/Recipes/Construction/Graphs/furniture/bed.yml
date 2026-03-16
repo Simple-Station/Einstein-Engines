@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2022 Lamrr <96937466+Lamrr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 - type: constructionGraph
   id: bed
   start: start
@@ -31,16 +37,6 @@
               amount: 2
               doAfter: 1
             - material: Durathread
-              amount: 2
-              doAfter: 1
-        - to: operatingtable
-          completed:
-            - !type:SnapToGrid { }
-          steps:
-            - material: Steel
-              amount: 5
-              doAfter: 1
-            - material: Plastic
               amount: 2
               doAfter: 1
     - node: bed
@@ -82,18 +78,3 @@
           steps:
             - tool: Screwing
               doAfter: 1
-    - node: operatingtable
-      entity: OperatingTable
-      edges:
-        - to: start
-          completed:
-            - !type:SpawnPrototype
-              prototype: SheetSteel1
-              amount: 5
-            - !type:SpawnPrototype
-              prototype: SheetPlastic1
-              amount: 2
-          steps:
-            - tool: Screwing
-              doAfter: 1
-

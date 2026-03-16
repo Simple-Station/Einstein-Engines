@@ -1,1 +1,1 @@
-species-name-shadowkin = Порождение тьмы
+species-name-shadowkin = Тенекин

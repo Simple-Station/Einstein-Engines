@@ -1,3 +1,42 @@
+# SPDX-FileCopyrightText: 2020 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 FrostMando <68990565+FrostMando@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2020 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2020 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2021 Mith-randalf <84274729+Mith-randalf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Kai Shiba <100050424+KaiShibaa@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Clon clover <76759079+noudoit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Errant <35878406+dmnct@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 FinnishPaladin <124684359+FinnishPaladin@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Floofi <126319569+Shadowtheprotogen546@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lapatison <100279397+lapatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lzk228 <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 nmajask <nmajask@gmail.com>
+# SPDX-FileCopyrightText: 2023 peptron1 <57651027+peptron1@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 ravage <142820619+ravage123321@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 AJCM <AJCM@tutanota.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 degradka <69397649+degradka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterApron
@@ -8,6 +47,10 @@
     sprite: Clothing/OuterClothing/Misc/apron.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/apron.rsi
+  - type: Tag
+    tags:
+    - Apron
+    - WhitelistChameleon
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -20,6 +63,10 @@
     sprite: Clothing/OuterClothing/Misc/apronbar.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/apronbar.rsi
+  - type: Tag
+    tags:
+    - Apron
+    - WhitelistChameleon
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -32,6 +79,10 @@
     sprite: Clothing/OuterClothing/Misc/apronbotanist.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/apronbotanist.rsi
+  - type: Tag
+    tags:
+    - Apron
+    - WhitelistChameleon
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -44,6 +95,10 @@
     sprite: Clothing/OuterClothing/Misc/apronchef.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/apronchef.rsi
+  - type: Tag
+    tags:
+    - Apron
+    - WhitelistChameleon
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -55,39 +110,6 @@
     sprite: Clothing/OuterClothing/Misc/chef.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/chef.rsi
-
-- type: entity
-  parent: ClothingOuterStorageBase
-  id: ClothingOuterJacketChefNt
-  name: nanotrasen chef jacket
-  description: An apron-jacket used by a high class Nanotrasen Corporation chef.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/chef_nt.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/chef_nt.rsi
-
-- type: entity
-  parent: ClothingOuterStorageBase
-  id: ClothingOuterJacketChefIdris
-  name: idris chef jacket
-  description: An apron-jacket used by a high class Idris Incorporated chef.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/chef_idris.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/chef_idris.rsi
-
-- type: entity
-  parent: ClothingOuterStorageBase
-  id: ClothingOuterJacketChefOrion
-  name: orion chef jacket
-  description: An apron-jacket used by a high class Orion Expresschef.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/chef_orion.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/chef_orion.rsi
 
 - type: entity
   parent: ClothingOuterBase
@@ -126,6 +148,9 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+  - type: HideClothingLayerClothing
+    hiddenSlots:
+    - jumpsuit
 
 - type: entity
   parent: ClothingOuterBaseToggleable
@@ -137,8 +162,9 @@
     sprite: Clothing/OuterClothing/Misc/chaplain_hoodie.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/chaplain_hoodie.rsi
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodChaplainHood
+  - type: ToggleableClothing # Goobstation - Modsuits change
+    clothingPrototypes:
+      head: ClothingHeadHatHoodChaplainHood
 
 - type: entity
   parent: ClothingOuterBase
@@ -163,6 +189,9 @@
     sprite: Clothing/OuterClothing/Misc/cultrobes.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/cultrobes.rsi
+  - type: HideClothingLayerClothing
+    hiddenSlots:
+    - jumpsuit
 
 - type: entity
   parent: ClothingOuterBase
@@ -174,6 +203,9 @@
     sprite: Clothing/OuterClothing/Misc/judge.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/judge.rsi
+  - type: HideClothingLayerClothing
+    hiddenSlots:
+    - jumpsuit
 
 - type: entity
   parent: ClothingOuterBase
@@ -198,17 +230,25 @@
     sprite: Clothing/OuterClothing/Misc/santa.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/santa.rsi
+  - type: HideClothingLayerClothing
+    hiddenSlots:
+    - jumpsuit
 
 - type: entity
   abstract: true
-  parent: [ ClothingOuterBase, BaseMagicalContraband ]
+  parent: [ClothingOuterBase, BaseMagicalContraband, AllowSuitStorageClothing] # Goob edit
   id: ClothingOuterWizardBase
+  suffix: Wizard Clothes # Goobstation
   components:
   - type: WizardClothes
+  - type: Tag # Goobstation
+    tags:
+      - WhitelistChameleon
+      - SyringeArmor
 
 # Is this wizard wearing a fanny pack???
 - type: entity
-  parent: ClothingOuterWizardBase
+  parent: ClothingOuterBase # Goob edit
   id: ClothingOuterWizardViolet
   name: violet wizard robes
   description: A bizarre gem-encrusted violet robe that radiates magical energies.
@@ -217,9 +257,13 @@
     sprite: Clothing/OuterClothing/Misc/violetwizard.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/violetwizard.rsi
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
 
 - type: entity
-  parent: ClothingOuterWizardBase
+  parent: ClothingOuterBase # Goob edit
   id: ClothingOuterWizard
   name: wizard robes
   description: A bizarre gem-encrusted blue robe that radiates magical energies.
@@ -228,17 +272,25 @@
     sprite: Clothing/OuterClothing/Misc/wizard.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/wizard.rsi
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
 
 - type: entity
-  parent: ClothingOuterWizardBase
+  parent: ClothingOuterBase # Goob edit
   id: ClothingOuterWizardRed
   name: red wizard robes
-  description: Strange-looking, red, hat-wear that most certainly belongs to a real magic user.
+  description: A bizarre gem-encrusted red robe that radiates magical energies. # Goob edit
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Misc/redwizard.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/redwizard.rsi
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
 
 - type: entity
   parent: ClothingOuterBase
@@ -261,6 +313,14 @@
     sprite: Clothing/OuterClothing/Misc/plaguedoctorsuit.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/plaguedoctorsuit.rsi
+  # Goobstation
+  - type: DiseaseProtection
+    # the cost of no slowdown
+    incoming:
+      powerModifiers:
+        Blood: -0.8
+      chanceMultipliers:
+        Blood: 0.7
 
 - type: entity
   parent: ClothingOuterBase
@@ -417,197 +477,3 @@
     sprite: Clothing/OuterClothing/Misc/red_racoon.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/red_racoon.rsi
-
-- type: entity
-  parent: ClothingOuterBase
-  id: ClothingOuterUnathiRobe
-  name: roughspun robes
-  description: A traditional Unathi garment.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/unathirobe.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/unathirobe.rsi
-
-# - type: entity # TODO: There no use for it now... but pehaps we could turn it into a Anti-Psionic Clothing like headcage?
-#   parent: ClothingOuterBase
-#   id: ClothingOuterShadowkinRestraints
-#   name: shadowkin restraints
-#   description: One of the first creations after finding Shadowkin, these were used to contain the Shadowkin during research so they didn't teleport away.
-#   components:
-#   - type: Sprite
-#     sprite: Clothing/OuterClothing/Misc/shadowkinrestraints.rsi
-#   - type: Clothing
-#     sprite: Clothing/OuterClothing/Misc/shadowkinrestraints.rsi
-#     equipDelay: 0.5
-#     unequipDelay: 10
-#   - type: GuideHelp
-#     guides:
-#     - Shadowkin
-
-- type: entity
-  parent: ClothingOuterStorageFoldableBase
-  id: ClothingOuterSuitJacket
-  name: suit jacket
-  description: A snappy dress jacket.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/suit_jacket.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/suit_jacket.rsi
-
-- type: entity
-  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterSuitJacket]
-  id: ClothingOuterSuitJacketOpened
-  name: suit jacket
-
-- type: entity
-  parent: ClothingOuterFoldableBase
-  id: ClothingOuterCardigan
-  name: cardigan
-  description: Only slightly worse than a blanket.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/cardigan.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/cardigan.rsi
-
-- type: entity
-  parent: [ClothingOuterFoldableBaseOpened, ClothingOuterCardigan]
-  id: ClothingOuterCardiganOpened
-  name: cardigan
-
-- type: entity
-  parent: ClothingOuterFoldableBase
-  id: ClothingOuterCardiganSweater
-  name: sweater cardigan
-  description: Half as warm as a sweater, and half as fashionable as a cardigan. Not like it matters for coffee-house dwelling beatniks like yourself.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/cardigan_sweater.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/cardigan_sweater.rsi
-
-- type: entity
-  parent: [ClothingOuterFoldableBaseOpened, ClothingOuterCardiganSweater]
-  id: ClothingOuterCardiganSweaterOpened
-  name: sweater cardigan
-
-- type: entity
-  parent: ClothingOuterFoldableBase
-  id: ClothingOuterCardiganArgyle
-  name: argyle cardigan
-  description: You'll never get dumped if you never get in a relationship in the first place. With this, you'll never have to worry again.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/cardigan_argyle.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/cardigan_argyle.rsi
-
-- type: entity
-  parent: [ClothingOuterFoldableBaseOpened, ClothingOuterCardiganArgyle]
-  id: ClothingOuterCardiganArgyleOpened
-  name: argyle cardigan
-
-- type: entity
-  parent: ClothingOuterFoldableBase
-  id: ClothingOuterCardiganSlim
-  name: slim cardigan
-  description: A cozy sleek cardigan in a classic style.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/cardigan_slim.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/cardigan_slim.rsi
-
-- type: entity
-  parent: [ClothingOuterFoldableBaseOpened, ClothingOuterCardiganSlim]
-  id: ClothingOuterCardiganSlimOpened
-  name: slim cardigan
-
-- type: entity
-  parent: ClothingOuterBase
-  id: ClothingOuterCowboyDuster
-  name: cowboy duster
-  description: A duster commonly seen on cowboys from Earth's late 1800's.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/cowboy_duster.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/cowboy_duster.rsi
-
-- type: entity
-  parent: ClothingOuterStorageFoldableBase
-  id: ClothingOuterBlazer
-  name: blazer
-  description: A charming jacket for when you want to play ball sports like an aristocrat.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/blazer.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/blazer.rsi
-
-- type: entity
-  parent: [ClothingOuterFoldableBaseOpened, ClothingOuterBlazer]
-  id: ClothingOuterBlazerOpened
-  name: blazer
-
-- type: entity
-  parent: ClothingOuterStorageFoldableBase
-  id: ClothingOuterBlazerLong
-  name: long blazer
-  description: A charming long jacket that almost substitutes for a coat.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/blazer_long.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/blazer_long.rsi
-
-- type: entity
-  parent: [ClothingOuterFoldableBaseOpened, ClothingOuterBlazerLong]
-  id: ClothingOuterBlazerLongOpened
-  name: long blazer
-
-- type: entity
-  parent: ClothingOuterBase
-  id: ClothingOuterBlazerFormal
-  name: formal blazer
-  description: A slim-fit blazer suitable for both smart casual and formal outfits.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/blazer_formal.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/blazer_formal.rsi
-
-- type: entity
-  parent: ClothingOuterBase
-  id: ClothingOuterBlazerLooseSleeve
-  name: loose sleeve blazer
-  description: One of those hippie-formal wannabe blazers.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/blazer_loose_sleeve.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/blazer_loose_sleeve.rsi
-
-- type: entity
-  parent: ClothingOuterBase
-  id: ClothingOuterBlazerFlatCollar
-  name: flat collar blazer
-  description: For those grown ups that didn't wanna.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/blazer_flat_collar.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/blazer_flat_collar.rsi
-
-- type: entity
-  parent: ClothingOuterBase
-  id: ClothingOuterBlazerPosh
-  name: posh blazer
-  description: This is a bit fancy, like the new service worker in Saltern who is trying too hard to impress the heads.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/blazer_posh.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/blazer_posh.rsi

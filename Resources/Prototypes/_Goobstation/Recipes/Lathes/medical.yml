@@ -1,18 +1,167 @@
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Scruq445 <storchdamien@gmail.com>
+# SPDX-FileCopyrightText: 2024 a_person <40855173+a-person5660@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 IrisTheAmped <iristheamped@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Thom <119594676+ItsMeThom@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 TurboTracker <130304754+TurboTrackerss14@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: latheRecipe
   id: VehicleWheelchairFolded
   result: VehicleWheelchairFolded
-  completetime: 1
   materials:
     Plastic: 500
-    Cloth: 500
-    Steel: 1000
+    Steel: 500
+
+- type: latheRecipe
+  id: PrescriptionGlasses
+  result: ClothingEyesPrescriptionGlasses
+  completetime: 3
+  materials:
+    Steel: 500
+    Glass: 500
+
+- type: latheRecipe
+  id: Cane
+  result: Cane
+  completetime: 3
+  materials:
+    Wood: 100
+
+- type: latheRecipe
+  id: VehicleHoverchairSci
+  result: VehicleHoverchair
+  completetime: 5
+  materials:
+    Steel: 500
+    Gold: 300
+    Plasma: 250
+
+- type: latheRecipe
+  id: TinfoilHats
+  result: ClothingHeadHatTinfoilHat
+  completetime: 5
+  materials:
+    Steel: 500
+
+- type: latheRecipe
+  id: SyringeGun
+  result: SyringeGun
+  completetime: 5
+  materials:
+    Steel: 500
+    Glass: 500
+    Plastic: 500
+    Gold: 100
+    Plasma: 100
 
 - type: latheRecipe
   id: ParamedHypo
   result: ParamedHypo
   completetime: 3
   materials:
-    Steel: 1500
-    Plastic: 800
-    Glass: 1200
-    Gold: 500
+    Steel: 500
+    Plastic: 500
+    Glass: 500
+    Gold: 300
+
+- type: latheRecipe
+  id: HandheldCrewMonitor
+  result: HandheldCrewMonitorEmpty
+  completetime: 5
+  materials:
+    Steel: 500
+    Glass: 200
+    Plastic: 200
+    Gold: 100
+
+- type: latheRecipe
+  id: DefibrillatorCompact
+  result: DefibrillatorCompactEmpty
+  completetime: 5
+  materials:
+    Steel: 250
+    Silver: 50
+
+- type: latheRecipe
+  id: VialBluespace
+  result: BluespaceChemistryVial
+  completetime: 2
+  materials:
+    Steel: 100
+    Plastic: 150
+    Glass: 250
+    Plasma: 100
+    Silver: 50
+
+- type: latheRecipe
+  id: XenoCompatibilityImplanter
+  result: XenoCompatibilityImplanter
+  completetime: 8
+  materials:
+    Steel: 500
+    Glass: 750
+    Plasma: 1500
+    Silver: 300
+
+- type: latheRecipe
+  id: MedicalPatchBasic
+  result: MedicalPatchBasic
+  completetime: 2
+  materials:
+    Plastic: 50 # might be fine as 1 cloth 1 plastic, one textile crate will let chem make like 120 patches.
+    Cloth: 50
+
+- type: latheRecipe
+  id: MedicalPatchRapid
+  result: MedicalPatchRapid
+  completetime: 2
+  materials:
+    Cloth: 50
+    Plastic: 50
+
+- type: latheRecipe
+  id: MedicalPatchTherapeutic
+  result: MedicalPatchTherapeutic
+  completetime: 2
+  materials:
+    Cloth: 50
+    Plastic: 50
+
+- type: latheRecipe
+  id: MedicalPatchLarge
+  result: MedicalPatchLarge
+  completetime: 2
+  materials:
+    Plastic: 50
+    Cloth: 50
+
+- type: latheRecipe
+  id: MedicalCigPack
+  result: CigPackMedical
+  completetime: 8 # slows down mass printing entities
+  materials:
+    Plastic: 500
+    Cloth: 500
+
+- type: latheRecipe
+  id: EnergyChemDispenserMachineCircuitboard
+  parent: BaseGoldCircuitboardRecipe
+  result: EnergyChemDispenserMachineCircuitboard
+  icon:
+    sprite: Structures/dispensers.rsi
+    state: industrial-working

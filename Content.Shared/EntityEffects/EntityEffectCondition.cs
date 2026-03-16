@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Text.Json.Serialization;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
@@ -20,3 +25,10 @@ public abstract partial class EntityEffectCondition
     public abstract string GuidebookExplanation(IPrototypeManager prototype);
 }
 
+[ByRefEvent]
+public struct CheckEntityEffectConditionEvent<T> where T : EntityEffectCondition
+{
+    public T Condition;
+    public EntityEffectBaseArgs Args;
+    public bool Result;
+}

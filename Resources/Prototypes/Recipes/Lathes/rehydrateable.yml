@@ -1,41 +1,44 @@
-# Base prototypes
+# SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Martynas6ha4 <martynashagriefer@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# recipes should generally cost 1.5x to 2x of the biomass output of their mob
 
 - type: latheRecipe
-  abstract: true
-  id: BaseCubeRecipe
+  id: MonkeyCube
+  result: MonkeyCube
   completetime: 30
   materials:
     Biomass: 16
 
-# Recipes
-
-# recipes should generally cost 1.5x to 2x of the biomass output of their mob
 - type: latheRecipe
-  parent: BaseCubeRecipe
-  id: MonkeyCube
-  result: MonkeyCube
-
-- type: latheRecipe
-  parent: BaseCubeRecipe
   id: KoboldCube
   result: KoboldCube
+  completetime: 30
+  materials:
+    Biomass: 16
 
 - type: latheRecipe
-  parent: BaseCubeRecipe
   id: CowCube
   result: CowCube
+  completetime: 30
   materials:
     Biomass: 120
 
 - type: latheRecipe
-  parent: BaseCubeRecipe
   id: GoatCube
   result: GoatCube
+  completetime: 30
   materials:
     Biomass: 35
 
 - type: latheRecipe
-  parent: BaseCubeRecipe
   id: MothroachCube
   result: MothroachCube
   completetime: 45 # prevent biblical floods
@@ -43,7 +46,6 @@
     Biomass: 20 # a lot of materials wasted due to complex genetics
 
 - type: latheRecipe
-  parent: BaseCubeRecipe
   id: MouseCube
   result: MouseCube
   completetime: 15
@@ -51,22 +53,21 @@
     Biomass: 12
 
 - type: latheRecipe
-  parent: MouseCube
   id: CockroachCube
   result: CockroachCube
+  completetime: 15
   materials:
     Biomass: 16
 
 - type: latheRecipe
-  parent: BaseCubeRecipe
   id: SpaceCarpCube
   result: SpaceCarpCube
+  completetime: 30
   materials:
     Biomass: 24
     Plasma: 600
 
 - type: latheRecipe
-  parent: BaseCubeRecipe
   id: SpaceTickCube
   result: SpaceTickCube
   completetime: 15
@@ -75,9 +76,116 @@
     Plasma: 300 # less biomass but more plasma
 
 - type: latheRecipe
-  parent: BaseCubeRecipe
   id: AbominationCube
   result: AbominationCube
+  completetime: 30
   materials: # abominations are slow and essentially worse than even carp
     Biomass: 28
     Plasma: 500 # more biomass but less plasma
+
+# Shitmed Change Start
+- type: latheRecipe
+  id: SynthHeart
+  result: BioSynthHeart
+  completetime: 10
+  materials:
+    Biomass: 10
+
+- type: latheRecipe
+  id: SynthLungs
+  result: BioSynthLungs
+  completetime: 10
+  materials:
+    Biomass: 10
+
+- type: latheRecipe
+  id: SynthLiver
+  result: BioSynthLiver
+  completetime: 10
+  materials:
+    Biomass: 10
+
+- type: latheRecipe
+  id: SynthEyes
+  result: BioSynthEyes
+  completetime: 10
+  materials:
+    Biomass: 10
+
+- type: latheRecipe
+  id: SynthHeadEmpty
+  result: BioSynthHeadEmpty
+  completetime: 10
+  materials:
+    Biomass: 5
+
+- type: latheRecipe
+  id: SynthLeftArm
+  result: BioSynthLeftArm
+  completetime: 5
+  materials:
+    Biomass: 7
+
+- type: latheRecipe
+  id: SynthLeftHand
+  result: BioSynthLeftHand
+  completetime: 5
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthRightArm
+  result: BioSynthRightArm
+  completetime: 5
+  materials:
+    Biomass: 7
+
+- type: latheRecipe
+  id: SynthRightHand
+  result: BioSynthRightHand
+  completetime: 5
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthLeftLeg
+  result: BioSynthLeftLeg
+  completetime: 5
+  materials:
+    Biomass: 7
+
+- type: latheRecipe
+  id: SynthRightLeg
+  result: BioSynthRightLeg
+  completetime: 5
+  materials:
+    Biomass: 7
+
+- type: latheRecipe
+  id: SynthLeftFoot
+  result: BioSynthLeftFoot
+  completetime: 5
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthRightFoot
+  result: BioSynthRightFoot
+  completetime: 5
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: PizzaLeftArm
+  result: PizzaLeftArm
+  completetime: 5
+  materials:
+    Biomass: 5
+
+- type: latheRecipe
+  id: PizzaRightArm
+  result: PizzaRightArm
+  completetime: 5
+  materials:
+    Biomass: 5
+# Shitmed Change End

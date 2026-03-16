@@ -1,3 +1,18 @@
+# SPDX-FileCopyrightText: 2024 AJCM <AJCM@tutanota.com>
+# SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ActiveMammmoth <140334666+ActiveMammmoth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ActiveMammmoth <kmcsmooth@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Scruq445 <storchdamien@gmail.com>
+# SPDX-FileCopyrightText: 2025 crasg <109207982+Scruq445@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+# SPDX-FileCopyrightText: 2025 keronshb <54602815+keronshb@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 # Offensive
 - type: listing
   id: SpellbookFireball
@@ -12,89 +27,73 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+  - !type:BuyBeforeCondition # Goobstation
+    blacklist:
+    - SpellbookFullRandom
+    - SpellbookSemiRandom
 
 - type: listing
   id: SpellbookRodForm
+  productUpgradeId: SpellbookRodFormUpgrade # Goobstation
   name: spellbook-polymorph-rod-name
   description: spellbook-polymorph-rod-desc
   productAction: ActionPolymorphWizardRod
   cost:
-    WizCoin: 3
+    WizCoin: 2 # Goob edit
   categories:
   - SpellbookOffensive
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
-
-- type: listing
-  id: SpellbookSmite
-  name: spellbook-smite-name
-  description: spellbook-smite-desc
-  productAction: ActionSmite
-  cost:
-    WizCoin: 3
-  categories:
-  - SpellbookOffensive
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
-
-- type: listing
-  id: SpellbookCluwne
-  name: spellbook-cluwne-name
-  description: spellbook-cluwne-desc
-  productAction: ActionCluwne
-  cost:
-    WizCoin: 3
-  categories:
-  - SpellbookOffensive
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
-
-- type: listing
-  id: SpellbookSlip
-  name: spellbook-slip-name
-  description: spellbook-slip-desc
-  productAction: ActionSlippery
-  cost:
-    WizCoin: 2
-  categories:
-  - SpellbookOffensive
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
+  - !type:BuyBeforeCondition # Goobstation
+    blacklist:
+    - SpellbookFullRandom
+    - SpellbookSemiRandom
+  - !type:StoreWhitelistCondition # Goobstation
+    blacklist:
+      tags:
+      - GrimoireGhost
 
 # Defensive
 - type: listing
   id: SpellbookForceWall
+  productUpgradeId: SpellbookForceWallUpgrade # Goobstation
   name: spellbook-force-wall-name
   description: spellbook-force-wall-desc
   productAction: ActionForceWall
   cost:
-    WizCoin: 3
+    WizCoin: 1 # Goob edit
   categories:
   - SpellbookDefensive
-
-# Utility
-- type: listing
-  id: SpellbookPolymorphSpider
-  name: spellbook-polymoprh-spider-name
-  description: spellbook-polymorph-spider-desc
-  productAction: ActionPolymorphWizardSpider
-  cost:
-    WizCoin: 2
-  categories:
-  - SpellbookUtility
-  conditions:
+  conditions: # Goobstation
   - !type:ListingLimitedStockCondition
     stock: 1
+  - !type:BuyBeforeCondition # Goobstation
+    blacklist:
+    - SpellbookFullRandom
+    - SpellbookSemiRandom
+
+# Utility
+# Goob edit
+#- type: listing
+#  id: SpellbookPolymorphSpider
+#  name: spellbook-polymoprh-spider-name
+#  description: spellbook-polymorph-spider-desc
+#  productAction: ActionPolymorphWizardSpider
+#  cost:
+#    WizCoin: 2
+#  categories:
+#  - SpellbookUtility
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
 
 - type: listing
   id: SpellbookBlink
+  productUpgradeId: SpellbookBlinkUpgrade # Goobstation
   name: spellbook-blink-name
   description: spellbook-blink-desc
-  productAction: ActionBlink
+  productAction: ActionBlinkSpell # Goob edit
   cost:
     WizCoin: 1
   categories:
@@ -102,23 +101,14 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
-
-# Taking an Eldritch spell, good proof of concept and a way to celebrate everything magic.
-- type: listing
-  id: SpellbookVoidApplause
-  name: spellbook-voidapplause-name
-  description: spellbook-voidapplause-desc
-  productAction: ActionVoidApplause
-  cost:
-    WizCoin: 1
-  categories:
-  - SpellbookUtility
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
+  - !type:BuyBeforeCondition # Goobstation
+    blacklist:
+    - SpellbookFullRandom
+    - SpellbookSemiRandom
 
 - type: listing
   id: SpellbookCharge
+  productUpgradeId: SpellbookChargeUpgrade # Goobstation
   name: spellbook-charge-name
   description: spellbook-charge-desc
   productAction: ActionChargeSpell
@@ -129,6 +119,10 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+  - !type:BuyBeforeCondition # Goobstation
+    blacklist:
+    - SpellbookFullRandom
+    - SpellbookSemiRandom
 
 - type: listing
   id: SpellbookJaunt
@@ -143,9 +137,14 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+  - !type:BuyBeforeCondition # Goobstation
+    blacklist:
+    - SpellbookFullRandom
+    - SpellbookSemiRandom
 
 - type: listing
   id: SpellbookMindSwap
+  productUpgradeId: SpellbookMindSwapUpgrade # Goobstation
   name: spellbook-mind-swap-name
   description: spellbook-mind-swap-description
   productAction: ActionMindSwap
@@ -156,33 +155,35 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+  - !type:BuyBeforeCondition # Goobstation
+    blacklist:
+    - SpellbookFullRandom
+    - SpellbookSemiRandom
 
 # Equipment
 - type: listing
   id: SpellbookWandDoor
   name: spellbook-wand-polymorph-door-name
   description: spellbook-wand-polymorph-door-description
-  productEntity: WeaponWandPolymorphDoor
+  productEntity: WeaponStaffPolymorphDoor # Goob edit
   cost:
-    WizCoin: 3
+    WizCoin: 1 # Goob edit
   categories:
   - SpellbookEquipment
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
 
-- type: listing
-  id: SpellbookWandPolymorphCarp
-  name: spellbook-wand-polymorph-carp-name
-  description: spellbook-wand-polymorph-carp-description
-  productEntity: WeaponWandPolymorphCarp
-  cost:
-    WizCoin: 3
-  categories:
-  - SpellbookEquipment
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
+# Goob edit
+#- type: listing
+#  id: SpellbookWandPolymorphCarp
+#  name: spellbook-wand-polymorph-carp-name
+#  description: spellbook-wand-polymorph-carp-description
+#  productEntity: WeaponWandPolymorphCarp
+#  cost:
+#    WizCoin: 3
+#  categories:
+#  - SpellbookEquipment
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
 
 - type: listing
   id: SpellbookWandLocker
@@ -190,32 +191,54 @@
   description: spellbook-wand-locker-description
   productEntity: WeaponWandLocker
   cost:
-    WizCoin: 3
+    WizCoin: 2 # Goob edit
   categories:
   - SpellbookEquipment
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
 
 - type: listing
-  id: SpellbookStaffAnimation
-  name: spellbook-staff-animation-name
-  description: spellbook-staff-animation-description
-  productEntity: AnimationStaff
+  id: SpellbookHammerMjollnir
+  name: spellbook-hammer-mjollnir-name
+  description: spellbook-hammer-mjollnir-description
+  productEntity: Mjollnir
   cost:
-    WizCoin: 3
+    WizCoin: 2
   categories:
   - SpellbookEquipment
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
+
+- type: listing
+  id: SpellbookHammerSingularity
+  name: spellbook-hammer-singularity-name
+  description: spellbook-hammer-singularity-description
+  productEntity: SingularityHammer
+  cost:
+    WizCoin: 1 # Goob edit
+  categories:
+  - SpellbookEquipment
+
+# Goob edit
+#- type: listing
+#  id: SpellbookStaffAnimation
+#  name: spellbook-staff-animation-name
+#  description: spellbook-staff-animation-description
+#  productEntity: AnimationStaff
+#  cost:
+#    WizCoin: 3
+#  categories:
+#  - SpellbookEquipment
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
 
 # Event
 - type: listing
   id: SpellbookEventSummonGhosts
   name: spellbook-event-summon-ghosts-name
   description: spellbook-event-summon-ghosts-description
-  productAction: ActionSummonGhosts
+  productEvent: !type:SummonGhostsEvent # Goobstation
+  icon: # Goobstation
+    sprite: Mobs/Ghosts/ghost_human.rsi
+    state: icon
+  # productAction: ActionSummonGhosts # Goobstation
   cost:
     WizCoin: 0
   categories:
@@ -223,34 +246,36 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+  disableRefund: true # Goobstation
 
-- type: listing
-  id: SpellbookEventSummonGuns
-  name: spellbook-event-summon-guns-name
-  description: spellbook-event-summon-guns-description
-  productAction: ActionSummonGuns
-  cost:
-    WizCoin: 2
-  categories:
-  - SpellbookEvents
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
-  disableRefund: true
-
-- type: listing
-  id: SpellbookEventSummonMagic
-  name: spellbook-event-summon-magic-name
-  description: spellbook-event-summon-magic-description
-  productAction: ActionSummonMagic
-  cost:
-    WizCoin: 2
-  categories:
-  - SpellbookEvents
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
-  disableRefund: true
+# Goob edit - disable events pending revork
+#- type: listing
+#  id: SpellbookEventSummonGuns
+#  name: spellbook-event-summon-guns-name
+#  description: spellbook-event-summon-guns-description
+#  productAction: ActionSummonGuns
+#  cost:
+#    WizCoin: 2
+#  categories:
+#  - SpellbookEvents
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+#  disableRefund: true
+#
+#- type: listing
+#  id: SpellbookEventSummonMagic
+#  name: spellbook-event-summon-magic-name
+#  description: spellbook-event-summon-magic-description
+#  productAction: ActionSummonMagic
+#  cost:
+#    WizCoin: 2
+#  categories:
+#  - SpellbookEvents
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+#  disableRefund: true
 
 # Upgrades
 - type: listing
@@ -259,8 +284,8 @@
   name: spellbook-upgrade-fireball-name
   description: spellbook-upgrade-fireball-description
   icon:
-    sprite: Objects/Magic/magicactions.rsi
-    state: fireball
+    sprite: _Goobstation/Wizard/actions.rsi # Goob edit
+    state: fireball # Goob edit
   cost:
     WizCoin: 2
   categories:
@@ -269,6 +294,9 @@
   - !type:BuyBeforeCondition
     whitelist:
       - SpellbookFireball
+    blacklist: # Goobstation
+    - SpellbookFullRandom
+    - SpellbookSemiRandom
   # manual for now
   - !type:ListingLimitedStockCondition
     stock: 2
@@ -279,7 +307,7 @@
   name: spellbook-upgrade-jaunt-name
   description: spellbook-upgrade-jaunt-description
   icon:
-    sprite: Objects/Magic/magicactions.rsi
+    sprite: _Goobstation/Wizard/actions.rsi # Goob edit
     state: jaunt
   cost:
     WizCoin: 2
@@ -289,18 +317,8 @@
   - !type:BuyBeforeCondition
     whitelist:
     - SpellbookJaunt
+    blacklist: # Goobstation
+    - SpellbookFullRandom
+    - SpellbookSemiRandom
   - !type:ListingLimitedStockCondition
     stock: 2
-
-- type: listing
-  id: SpellbookItemRecallSwap
-  name: spellbook-item-recall-name
-  description: spellbook-item-recall-description
-  productAction: ActionItemRecall
-  cost:
-    WizCoin: 1
-  categories:
-  - SpellbookUtility
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1

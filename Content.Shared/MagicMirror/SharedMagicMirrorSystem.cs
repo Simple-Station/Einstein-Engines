@@ -1,10 +1,22 @@
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.DoAfter;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Interaction;
 using Content.Shared.UserInterface;
 using Robust.Shared.Serialization;
-using Robust.Shared.Utility;
 
 namespace Content.Shared.MagicMirror;
 
@@ -18,6 +30,7 @@ public abstract class SharedMagicMirrorSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<MagicMirrorComponent, AfterInteractEvent>(OnMagicMirrorInteract);
         SubscribeLocalEvent<MagicMirrorComponent, BeforeActivatableUIOpenEvent>(OnBeforeUIOpen);
+        SubscribeLocalEvent<MagicMirrorComponent, ActivatableUIOpenAttemptEvent>(OnAttemptOpenUI);
         SubscribeLocalEvent<MagicMirrorComponent, BoundUserInterfaceCheckRangeEvent>(OnMirrorRangeCheck);
     }
 
@@ -26,10 +39,8 @@ public abstract class SharedMagicMirrorSystem : EntitySystem
         if (!args.CanReach || args.Target == null)
             return;
 
-        if (!UISystem.TryOpenUi(mirror.Owner, MagicMirrorUiKey.Key, args.User))
-            return;
-
         UpdateInterface(mirror, args.Target.Value, mirror);
+        UISystem.TryOpenUi(mirror.Owner, MagicMirrorUiKey.Key, args.User);
     }
 
     private void OnMirrorRangeCheck(EntityUid uid, MagicMirrorComponent component, ref BoundUserInterfaceCheckRangeEvent args)
@@ -37,17 +48,27 @@ public abstract class SharedMagicMirrorSystem : EntitySystem
         if (args.Result == BoundUserInterfaceRangeResult.Fail)
             return;
 
-        DebugTools.Assert(component.Target != null && Exists(component.Target));
-
-        if (!_interaction.InRangeUnobstructed(uid, component.Target.Value))
+        if (component.Target == null || !Exists(component.Target))
+        {
+            component.Target = null;
             args.Result = BoundUserInterfaceRangeResult.Fail;
+            return;
+        }
+
+        if (!_interaction.InRangeUnobstructed(component.Target.Value, uid))
+            args.Result = BoundUserInterfaceRangeResult.Fail;
+    }
+
+    private void OnAttemptOpenUI(EntityUid uid, MagicMirrorComponent component, ref ActivatableUIOpenAttemptEvent args)
+    {
+        var user = component.Target ?? args.User;
+
+        if (!HasComp<HumanoidAppearanceComponent>(user))
+            args.Cancel();
     }
 
     private void OnBeforeUIOpen(Entity<MagicMirrorComponent> ent, ref BeforeActivatableUIOpenEvent args)
     {
-        if (args.User != ent.Comp.Target && ent.Comp.Target != null)
-            return;
-
         UpdateInterface(ent, args.User, ent);
     }
 
@@ -55,6 +76,7 @@ public abstract class SharedMagicMirrorSystem : EntitySystem
     {
         if (!TryComp<HumanoidAppearanceComponent>(targetUid, out var humanoid))
             return;
+
         component.Target ??= targetUid;
 
         var hair = humanoid.MarkingSet.TryGetCategory(MarkingCategories.Hair, out var hairMarkings)

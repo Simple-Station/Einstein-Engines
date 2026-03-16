@@ -1,8 +1,15 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Radio.EntitySystems;
 using Content.Shared.Chat;
 using Content.Shared.Radio;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Server.Radio.Components;
 
@@ -40,11 +47,4 @@ public sealed partial class RadioMicrophoneComponent : Component
     /// </summary>
     [DataField("unobstructedRequired")]
     public bool UnobstructedRequired = false;
-
-    // Nuclear-14
-    /// <summary>
-    // The radio frequency on which the message will be transmitted
-    /// </summary>
-    [DataField]
-    public int Frequency = 1459; // Common channel frequency
 }

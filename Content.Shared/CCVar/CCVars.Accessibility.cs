@@ -1,4 +1,11 @@
-﻿using Robust.Shared.Configuration;
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 noirogen <raethertechnologies@gmail.com>
+// SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.CCVar;
 
@@ -60,9 +67,5 @@ public sealed partial class CCVars
     public static readonly CVarDef<float> SpeechBubbleBackgroundOpacity =
         CVarDef.Create("accessibility.speech_bubble_background_opacity", 0.75f, CVar.CLIENTONLY | CVar.ARCHIVE);
 
-    /// <summary>
-    /// Disables all vision filters for species like Vulpkanin or Harpies. There are good reasons someone might want to disable these.
-    /// </summary>
-    public static readonly CVarDef<bool> NoVisionFilters =
-        CVarDef.Create("accessibility.no_vision_filters", true, CVar.CLIENTONLY | CVar.ARCHIVE);
+
 }

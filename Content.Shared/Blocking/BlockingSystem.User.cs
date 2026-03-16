@@ -1,6 +1,26 @@
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <drsmugleaf@gmail.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Spatison <137375981+Spatison@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Damage;
-using Content.Shared.Damage.Prototypes;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 
@@ -27,11 +47,7 @@ public sealed partial class BlockingSystem
         UserStopBlocking(uid, component);
     }
 
-    private void OnInsertAttempt(
-        EntityUid uid,
-        BlockingUserComponent component,
-        ContainerGettingInsertedAttemptEvent args
-    )
+    private void OnInsertAttempt(EntityUid uid, BlockingUserComponent component, ContainerGettingInsertedAttemptEvent args)
     {
         UserStopBlocking(uid, component);
     }
@@ -46,30 +62,36 @@ public sealed partial class BlockingSystem
 
     private void OnUserDamageModified(EntityUid uid, BlockingUserComponent component, DamageModifyEvent args)
     {
-        // A shield should only block damage it can itself absorb. To determine that we need the Damageable component on it.
-        if (!TryComp<BlockingComponent>(component.BlockingItem, out var blocking) || args.Damage.GetTotal() <= 0 ||
-            !TryComp<DamageableComponent>(component.BlockingItem, out var dmgComp))
-            return;
+        if (TryComp<BlockingComponent>(component.BlockingItem, out var blocking))
+        {
+            if (args.Damage.GetTotal() <= 0)
+                return;
 
-        if (!_toggle.IsActivated(component.BlockingItem.Value)) // Goobstation
-            return;
+            // A shield should only block damage it can itself absorb. To determine that we need the Damageable component on it.
+            if (!TryComp<DamageableComponent>(component.BlockingItem, out var dmgComp))
+                return;
 
-        var ev = new BeforeBlockingEvent(uid, args.Origin);
-        RaiseLocalEvent(component.BlockingItem.Value, ev);
-        if (ev.Cancelled)
-            return;
+            if (!_toggle.IsActivated(component.BlockingItem.Value)) // Goobstation
+                return;
 
-        var blockFraction = blocking.IsBlocking ? blocking.ActiveBlockFraction : blocking.PassiveBlockFraction;
-        blockFraction = Math.Clamp(blockFraction, 0, 1);
-        _damageable.TryChangeDamage(component.BlockingItem, blockFraction * args.OriginalDamage);
+            var blockFraction = blocking.IsBlocking ? blocking.ActiveBlockFraction : blocking.PassiveBlockFraction;
+            blockFraction = Math.Clamp(blockFraction, 0, 1);
+            _damageable.TryChangeDamage(component.BlockingItem,
+                blockFraction * args.OriginalDamage);
 
-        var modify = new DamageModifierSet();
-        foreach (var key in dmgComp.Damage.DamageDict.Keys)
-            modify.Coefficients.TryAdd(key, 1 - blockFraction);
+            var modify = new DamageModifierSet();
+            foreach (var key in dmgComp.Damage.DamageDict.Keys)
+            {
+                modify.Coefficients.TryAdd(key, 1 - blockFraction);
+            }
 
-        args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, modify);
-        if (blocking.IsBlocking && !args.Damage.Equals(args.OriginalDamage))
-            _audio.PlayPvs(blocking.BlockSound, uid);
+            args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, modify);
+
+            if (blocking.IsBlocking && !args.Damage.Equals(args.OriginalDamage))
+            {
+                _audio.PlayPvs(blocking.BlockSound, uid);
+            }
+        }
     }
 
     private void OnDamageModified(EntityUid uid, BlockingComponent component, DamageModifyEvent args)
@@ -80,7 +102,8 @@ public sealed partial class BlockingSystem
             return;
         }
 
-        args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, modifier);
+        args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage,
+            DamageSpecifier.PenetrateArmor(modifier, args.Damage.ArmorPenetration)); // Goob edit
     }
 
     private void OnEntityTerminating(EntityUid uid, BlockingUserComponent component, ref EntityTerminatingEvent args)
@@ -89,6 +112,7 @@ public sealed partial class BlockingSystem
             return;
 
         StopBlockingHelper(component.BlockingItem.Value, blockingComponent, uid);
+
     }
 
     /// <summary>

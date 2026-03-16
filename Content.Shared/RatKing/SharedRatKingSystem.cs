@@ -1,19 +1,36 @@
-﻿using Content.Shared.Actions;
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 portfiend <109661617+portfiend@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.Abilities;
+using Content.Shared.Actions;
+﻿using Content.Shared.Actions.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Verbs;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
+using Robust.Shared.Timing;
 
 namespace Content.Shared.RatKing;
 
 public abstract class SharedRatKingSystem : EntitySystem
 {
+    [Dependency] private readonly IGameTiming _gameTiming = default!; // Used for rummage cooldown
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] protected readonly IPrototypeManager PrototypeManager = default!;
     [Dependency] protected readonly IRobustRandom Random = default!;
@@ -30,6 +47,7 @@ public abstract class SharedRatKingSystem : EntitySystem
 
         SubscribeLocalEvent<RatKingServantComponent, ComponentShutdown>(OnServantShutdown);
 
+        SubscribeLocalEvent<RatKingRummageableComponent, ComponentInit>(OnComponentInit); // Goobstation
         SubscribeLocalEvent<RatKingRummageableComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerb);
         SubscribeLocalEvent<RatKingRummageableComponent, RatKingRummageDoAfterEvent>(OnDoAfterComplete);
     }
@@ -60,12 +78,13 @@ public abstract class SharedRatKingSystem : EntitySystem
         if (!TryComp(uid, out ActionsComponent? comp))
             return;
 
-        _action.RemoveAction(uid, component.ActionRaiseArmyEntity, comp);
-        _action.RemoveAction(uid, component.ActionDomainEntity, comp);
-        _action.RemoveAction(uid, component.ActionOrderStayEntity, comp);
-        _action.RemoveAction(uid, component.ActionOrderFollowEntity, comp);
-        _action.RemoveAction(uid, component.ActionOrderCheeseEmEntity, comp);
-        _action.RemoveAction(uid, component.ActionOrderLooseEntity, comp);
+        var actions = new Entity<ActionsComponent?>(uid, comp);
+        _action.RemoveAction(actions, component.ActionRaiseArmyEntity);
+        _action.RemoveAction(actions, component.ActionDomainEntity);
+        _action.RemoveAction(actions, component.ActionOrderStayEntity);
+        _action.RemoveAction(actions, component.ActionOrderFollowEntity);
+        _action.RemoveAction(actions, component.ActionOrderCheeseEmEntity);
+        _action.RemoveAction(actions, component.ActionOrderLooseEntity);
     }
 
     private void OnOrderAction(EntityUid uid, RatKingComponent component, RatKingOrderActionEvent args)
@@ -103,9 +122,21 @@ public abstract class SharedRatKingSystem : EntitySystem
         _action.StartUseDelay(component.ActionOrderLooseEntity);
     }
 
+    // Goobstation
+    public void OnComponentInit(EntityUid uid, RatKingRummageableComponent component, ComponentInit args)
+    {
+        component.LastLooted = _gameTiming.CurTime;
+        Dirty(uid, component);
+    }
+
     private void OnGetVerb(EntityUid uid, RatKingRummageableComponent component, GetVerbsEvent<AlternativeVerb> args)
     {
-        if (!HasComp<RatKingComponent>(args.User) || component.Looted)
+        if (!HasComp<RummagerComponent>(args.User)
+            || component.Looted
+            || _gameTiming.CurTime < component.LastLooted + component.RummageCooldown)
+            // DeltaV - Use RummagerComponent instead of RatKingComponent
+            // (This is so we can give Rodentia rummage abilities)
+            // Additionally, adds a cooldown check
             return;
 
         args.Verbs.Add(new AlternativeVerb
@@ -128,10 +159,18 @@ public abstract class SharedRatKingSystem : EntitySystem
 
     private void OnDoAfterComplete(EntityUid uid, RatKingRummageableComponent component, RatKingRummageDoAfterEvent args)
     {
-        if (args.Cancelled || component.Looted)
+        // DeltaV - Rummaging an object updates the looting cooldown rather than a "previously looted" check.
+        // Note that the "Looted" boolean can still be checked (by mappers/admins)
+        // to disable rummaging on the object indefinitely, but rummaging will no
+        // longer permanently prevent future rummaging.
+        var time = _gameTiming.CurTime;
+        if (args.Cancelled
+            || component.Looted
+            || time < component.LastLooted + component.RummageCooldown)
             return;
 
-        component.Looted = true;
+        component.LastLooted = time;
+        // End DeltaV change
         Dirty(uid, component);
         _audio.PlayPredicted(component.Sound, uid, args.User);
 

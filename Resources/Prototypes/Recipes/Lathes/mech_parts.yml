@@ -1,162 +1,162 @@
+# SPDX-FileCopyrightText: 2023 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 crazybrain23 <44417085+crazybrain23@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 NULL882 <gost6865@yandex.ru>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Milon <milonpl.git@proton.me>
+# SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 āda <ss.adasts@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 # Base prototypes
 
 - type: latheRecipe
   abstract: true
   id: BaseMechPartRecipe
-  category: Mech
+  categories:
+  - Mech
   completetime: 10
 
-# Recipes
-
-# Ripley
 - type: latheRecipe
+  abstract: true
   parent: BaseMechPartRecipe
-  id: RipleyHarness
-  result: RipleyHarness
-  category: Ripley # Goobstation
-  materials:
-    Steel: 1500
-    Glass: 1200
-
-- type: latheRecipe
-  parent: BaseMechPartRecipe
-  id: RipleyLArm
-  result: RipleyLArm
-  category: Ripley # Goobstation
+  id: BaseRipleyLimbRecipe
   materials:
     Steel: 1000
     Glass: 750
 
 - type: latheRecipe
-  parent: RipleyLArm
-  id: RipleyLLeg
-  result: RipleyLLeg
-  category: Ripley # Goobstation
-
-- type: latheRecipe
-  parent: RipleyLLeg
-  id: RipleyRLeg
-  result: RipleyRLeg
-  category: Ripley # Goobstation
-
-- type: latheRecipe
-  parent: RipleyLArm
-  id: RipleyRArm
-  result: RipleyRArm
-  category: Ripley # Goobstation
-
-- type: latheRecipe
+  abstract: true
   parent: BaseMechPartRecipe
-  id: MechEquipmentGrabber
-  result: MechEquipmentGrabber
-  category: MechEquipment
+  id: BaseHonkerLimbRecipe
   materials:
-    Steel: 1000
+    Steel: 2000
     Glass: 750
+    Bananium: 250
 
-# H.O.N.K.
 - type: latheRecipe
+  abstract: true
   parent: BaseMechPartRecipe
-  id: HonkerHarness
-  result: HonkerHarness
-  category: Honker # Goobstation
-  materials:
-    Steel: 3000
-    Glass: 1200
-    Bananium: 500
-
-- type: latheRecipe
-  parent: BaseMechPartRecipe
-  id: HonkerLArm
-  result: HonkerLArm
-  category: Honker # Goobstation
-  materials:
-    Steel: 3000
-    Glass: 1200
-    Bananium: 500
-
-- type: latheRecipe
-  parent: HonkerLArm
-  id: HonkerLLeg
-  result: HonkerLLeg
-  category: Honker # Goobstation
-
-- type: latheRecipe
-  parent: HonkerLLeg
-  id: HonkerRLeg
-  result: HonkerRLeg
-  category: Honker # Goobstation
-
-- type: latheRecipe
-  parent: HonkerLArm
-  id: HonkerRArm
-  result: HonkerRArm
-  category: Honker # Goobstation
-
-- type: latheRecipe
-  parent: BaseMechPartRecipe
-  id: MechEquipmentHorn
-  result: MechEquipmentHorn
-  category: MechEquipment # Goobstation
-  completetime: 10
-  materials:
-    Steel: 3000
-    Glass: 1200
-    Bananium: 500
-
-# HAMTR
-- type: latheRecipe
-  parent: BaseMechPartRecipe
-  id: HamtrHarness
-  result: HamtrHarness
-  category: Hamptr # Goobstation
-  materials:
-    Steel: 1200
-    Glass: 1000
-
-- type: latheRecipe
-  parent: BaseMechPartRecipe
-  id: HamtrLArm
-  result: HamtrLArm
-  category: Hamptr # Goobstation
+  id: BaseHamtrLimbRecipe
   materials:
     Steel: 800
     Glass: 600
 
+## Recipes
+
+# Ripley
 - type: latheRecipe
-  parent: HamtrLArm
+  id: RipleyHarness
+  result: RipleyHarness
+  categories:
+  - Ripley # Goobstation
+
+- type: latheRecipe
+  parent: BaseRipleyLimbRecipe
+  id: RipleyLArm
+  result: RipleyLArm
+  categories:
+  - Ripley # Goobstation
+
+- type: latheRecipe
+  parent: BaseRipleyLimbRecipe
+  id: RipleyLLeg
+  result: RipleyLLeg
+  categories:
+  - Ripley # Goobstation
+
+- type: latheRecipe
+  parent: BaseRipleyLimbRecipe
+  id: RipleyRLeg
+  result: RipleyRLeg
+  categories:
+  - Ripley # Goobstation
+
+- type: latheRecipe
+  parent: BaseRipleyLimbRecipe
+  id: RipleyRArm
+  result: RipleyRArm
+  categories:
+  - Ripley # Goobstation
+
+# H.O.N.K.
+- type: latheRecipe
+  id: HonkerHarness
+  result: HonkerHarness
+  categories:
+  - Honker # Goobstation
+  completetime: 10
+  materials:
+    Steel: 3000
+    Glass: 1200
+    Bananium: 500
+
+- type: latheRecipe
+  parent: BaseHonkerLimbRecipe
+  id: HonkerLArm
+  result: HonkerLArm
+  categories:
+  - Honker # Goobstation
+
+- type: latheRecipe
+  parent: BaseHonkerLimbRecipe
+  id: HonkerLLeg
+  result: HonkerLLeg
+  categories:
+  - Honker # Goobstation
+
+- type: latheRecipe
+  parent: BaseHonkerLimbRecipe
+  id: HonkerRLeg
+  result: HonkerRLeg
+  categories:
+  - Honker # Goobstation
+
+- type: latheRecipe
+  parent: BaseHonkerLimbRecipe
+  id: HonkerRArm
+  result: HonkerRArm
+  categories:
+  - Honker # Goobstation
+
+# HAMTR
+- type: latheRecipe
+  id: HamtrHarness
+  result: HamtrHarness
+  categories:
+  - Hamptr # Goobstation
+
+- type: latheRecipe
+  parent: BaseHamtrLimbRecipe
+  id: HamtrLArm
+  result: HamtrLArm
+  categories:
+  - Hamptr # Goobstation
+
+- type: latheRecipe
+  parent: BaseHamtrLimbRecipe
   id: HamtrLLeg
   result: HamtrLLeg
-  category: Hamptr # Goobstation
+  categories:
+  - Hamptr # Goobstation
 
 - type: latheRecipe
-  parent: HamtrLLeg
+  parent: BaseHamtrLimbRecipe
   id: HamtrRLeg
   result: HamtrRLeg
-  category: Hamptr # Goobstation
+  categories:
+  - Hamptr # Goobstation
 
 - type: latheRecipe
-  parent: HamtrLArm
+  parent: BaseHamtrLimbRecipe
   id: HamtrRArm
   result: HamtrRArm
-  category: Hamptr # Goobstation
-
-- type: latheRecipe
-  parent: BaseMechPartRecipe
-  id: MechEquipmentGrabberSmall
-  result: MechEquipmentGrabberSmall
-  category: MechEquipment # Goobstation
-  materials:
-    Steel: 400
-    Plastic: 100
-
-# Vim
-- type: latheRecipe
-  parent: BaseMechPartRecipe
-  id: VimHarness
-  result: VimHarness
-  category: MechEquipment # Goobstation
-  completetime: 5
-  materials:
-    Steel: 400
-    Plastic: 100
+  categories:
+  - Hamptr # Goobstation

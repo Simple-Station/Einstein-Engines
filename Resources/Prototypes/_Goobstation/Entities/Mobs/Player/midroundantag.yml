@@ -1,0 +1,64 @@
+- type: entity
+  parent: MobHuman
+  id: MobHumanSingulothKnight
+  name: Singuloth Knight
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: true
+  - type: Loadout
+    prototypes: [ SingulothKnightsAntagGear ]
+
+- type: entity
+  parent: MobHuman
+  id: MobHumanDarkLord
+  name: The Dark Lord
+  components:
+  - type: ActionGrant
+    actions:
+    - ActionLightningBolt
+  - type: RandomHumanoidAppearance
+    randomizeName: true
+  - type: Loadout
+    prototypes: [ DarkLordAntagGear ]
+  - type: DarkLordMarker
+
+- type: entity
+  parent: MobHuman
+  id: MobHumanChosenOne
+  name: The chosen one
+  components:
+  - type: ActionGrant
+    actions:
+    - ActionRepulseNoRobes
+    - ActionBlindSpell
+  - type: MindShield
+  - type: RandomHumanoidAppearance
+    randomizeName: true
+  - type: Loadout
+    prototypes: [ ChosenOneProtagGear ]
+
+- type: entity
+  parent: MobHuman
+  id: MobHumanMimeAssassin
+  name: Mime assassin
+  components:
+  - type: AutoImplant
+    implants:
+    - FreedomImplanter
+    - DeathAcidifierImplanter
+  - type: MimePowers
+    preventWriting: true
+  - type: RandomHumanoidAppearance
+    randomizeName: true
+  - type: Loadout
+    prototypes: [ MimeAssassinGear ]
+
+- type: entity
+  parent: MobHuman
+  id: MobHumanDarkPriest
+  name: Dark Priest
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: true
+  - type: Loadout
+    prototypes: [ DarkPriestAntagGear ]

@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: CosmicGlyphBase
   name: base glyph
@@ -45,7 +51,7 @@
     requiredCultists: 3
     activationDamage:
       types:
-        Asphyxiation: 30
+        Asphyxiation: 10
   - type: CosmicCultExamine
     cultistText: cosmic-examine-glyph-truth
 
@@ -61,10 +67,10 @@
     drawdepth: Puddles
   - type: CosmicGlyphConversion
   - type: CosmicGlyph
-    requiredCultists: 2
+    requiredCultists: 1
     activationDamage:
       types:
-        Asphyxiation: 30
+        Asphyxiation: 10
   - type: CosmicCultExamine
     cultistText: cosmic-examine-glyph-knowledge
 
@@ -88,7 +94,7 @@
     requiredCultists: 1
     activationDamage:
       types:
-        Asphyxiation: 20
+        Asphyxiation: 10
   - type: CosmicCultExamine
     cultistText: cosmic-examine-glyph-cessation
 
@@ -106,14 +112,15 @@
     transmutations:
     - SwordCosmicCult
     - SpearCosmicCult
+    - ScytheCosmicCult
     whitelist:
       components:
       - Sharp
   - type: CosmicGlyph
-    requiredCultists: 2
+    requiredCultists: 1
     activationDamage:
       types:
-        Asphyxiation: 20
+        Asphyxiation: 10
   - type: CosmicCultExamine
     cultistText: cosmic-examine-glyph-blades
 
@@ -136,10 +143,10 @@
       - ClothingSpeedModifier
       - PressureProtection
   - type: CosmicGlyph
-    requiredCultists: 2
+    requiredCultists: 1
     activationDamage:
       types:
-        Asphyxiation: 30
+        Asphyxiation: 10
   - type: CosmicCultExamine
     cultistText: cosmic-examine-glyph-warding
 

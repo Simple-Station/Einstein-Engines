@@ -1,15 +1,102 @@
+// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2021 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2022 Illiux <newoutlook@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Júlio César Ueti <52474532+Mirino97@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 J�lio C�sar Ueti <52474532+Mirino97@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <drsmugleaf@gmail.com>
+// SPDX-FileCopyrightText: 2023 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 12rabbits <53499656+12rabbits@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 AJCM <AJCM@tutanota.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 AutoOtter <joshuademorris@gmail.com>
+// SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DieselMohawk <gavin.drinka@gmail.com>
+// SPDX-FileCopyrightText: 2024 Dimastra <65184747+Dimastra@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Dimastra <dimastra@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 JIPDawg <51352440+JIPDawg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 JIPDawg <JIPDawg93@gmail.com>
+// SPDX-FileCopyrightText: 2024 JustCone <141039037+JustCone14@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2024 MisterMecky <mrmecky@hotmail.com>
+// SPDX-FileCopyrightText: 2024 Moomoobeef <62638182+Moomoobeef@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+// SPDX-FileCopyrightText: 2024 Partmedia <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 PopGamer46 <yt1popgamer@gmail.com>
+// SPDX-FileCopyrightText: 2024 PursuitInAshes <pursuitinashes@gmail.com>
+// SPDX-FileCopyrightText: 2024 QueerNB <176353696+QueerNB@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 RumiTiger <154005209+RumiTiger@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Saphire Lattice <lattice@saphi.re>
+// SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ShadowCommander <shadowjjt@gmail.com>
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Spessmann <156740760+Spessmann@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Unisol <1929445+Unisol@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 coolboy911 <85909253+coolboy911@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 lunarcomets <140772713+lunarcomets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 osjarw <oskariwjarvinen@gmail.com>
+// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2024 saintmuntzer <47153094+saintmuntzer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 stellar-novas <stellar_novas@riseup.net>
+// SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 J <billsmith116@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 SpaceManiac <tad@platymuus.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using System.Numerics;
+using Content.Server._Goobstation.Wizard.Systems;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.Ghost.Components;
 using Content.Server.Mind;
-using Content.Server.Warps;
-using Content.Server.Preferences.Managers;
-using Content.Server.Roles;
 using Content.Server.Roles.Jobs;
-using Content.Shared._White.Roles;
 using Content.Shared.Actions;
 using Content.Shared.CCVar;
 using Content.Shared.Damage;
@@ -17,7 +104,7 @@ using Content.Shared.Damage.Prototypes;
 using Content.Shared.Database;
 using Content.Shared.Examine;
 using Content.Shared.Eye;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Follower;
 using Content.Shared.Ghost;
 using Content.Shared.Mind;
@@ -27,12 +114,12 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
+using Content.Shared.NameModifier.EntitySystems;
 using Content.Shared.Popups;
-using Content.Shared.SSDIndicator;
 using Content.Shared.Storage.Components;
 using Content.Shared.Tag;
+using Content.Shared._White.Xenomorphs.Infection;
 using Robust.Server.GameObjects;
-using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Components;
@@ -41,6 +128,16 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+
+// Shitmed Change
+using Content.Shared.Body.Components;
+using Content.Shared.Body.Systems;
+using Content.Shared._Shitmed.Body;
+using Content.Shared._Shitmed.Damage;
+using Content.Shared._Shitmed.Targeting;
+using Content.Shared._EinsteinEngines.Silicon.Components;
+using Content.Shared.Warps;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Ghost
 {
@@ -56,7 +153,7 @@ namespace Content.Server.Ghost
         [Dependency] private readonly MindSystem _minds = default!;
         [Dependency] private readonly MobStateSystem _mobState = default!;
         [Dependency] private readonly SharedPhysicsSystem _physics = default!;
-        [Dependency] private readonly IPlayerManager _playerManager = default!;
+        [Dependency] private readonly ISharedPlayerManager _player = default!;
         [Dependency] private readonly TransformSystem _transformSystem = default!;
         [Dependency] private readonly VisibilitySystem _visibilitySystem = default!;
         [Dependency] private readonly MetaDataSystem _metaData = default!;
@@ -70,15 +167,15 @@ namespace Content.Server.Ghost
         [Dependency] private readonly SharedPopupSystem _popup = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly TagSystem _tag = default!;
-        // WD EDIT START
-        [Dependency] private readonly IServerPreferencesManager _prefs = default!;
-        [Dependency] private readonly RoleSystem _roles = default!;
-        // WD EDIT END
-
+        [Dependency] private readonly NameModifierSystem _nameMod = default!;
+        [Dependency] private readonly GhostVisibilitySystem _ghostVisibility = default!;
+        [Dependency] private readonly SharedBodySystem _bodySystem = default!; // Shitmed Change
         private EntityQuery<GhostComponent> _ghostQuery;
         private EntityQuery<PhysicsComponent> _physicsQuery;
 
-        public static readonly Color AntagonistButtonColor = Color.FromHex("#7F4141"); // WWDP EDIT
+        private static readonly ProtoId<TagPrototype> AllowGhostShownByEventTag = "AllowGhostShownByEvent";
+        private static readonly ProtoId<DamageTypePrototype> AsphyxiationDamageType = "Asphyxiation";
+        private static readonly ProtoId<DamageTypePrototype> IonDamageType = "Ion";
 
         public override void Initialize()
         {
@@ -200,7 +297,7 @@ namespace Content.Server.Ghost
             // Allow this entity to be seen by other ghosts.
             var visibility = EnsureComp<VisibilityComponent>(uid);
 
-            if (_gameTicker.RunLevel != GameRunLevel.PostRound)
+            if (_gameTicker.RunLevel != GameRunLevel.PostRound && !_ghostVisibility.IsVisible(component))
             {
                 _visibilitySystem.AddLayer((uid, visibility), (int) VisibilityFlags.Ghost, false);
                 _visibilitySystem.RemoveLayer((uid, visibility), (int) VisibilityFlags.Normal, false);
@@ -242,7 +339,7 @@ namespace Content.Server.Ghost
 
         private void OnGhostExamine(EntityUid uid, GhostComponent component, ExaminedEvent args)
         {
-            var timeSinceDeath = _gameTiming.CurTime.Subtract(component.TimeOfDeath);
+            var timeSinceDeath = _gameTiming.RealTime.Subtract(component.TimeOfDeath);
             var deathTimeInfo = timeSinceDeath.Minutes > 0
                 ? Loc.GetString("comp-ghost-examine-time-minutes", ("minutes", timeSinceDeath.Minutes))
                 : Loc.GetString("comp-ghost-examine-time-seconds", ("seconds", timeSinceDeath.Seconds));
@@ -302,11 +399,7 @@ namespace Content.Server.Ghost
                 return;
             }
 
-            // WWDP-Start
-            var mindContainers = GetMindContainersWarps();
-            var places = GetLocationWarps();
-            var response = new GhostWarpsResponseEvent(mindContainers.Concat(places).ToList());
-            // WWDP-End
+            var response = new GhostWarpsResponseEvent(GetPlayerWarps(entity).Concat(GetLocationWarps()).ToList());
             RaiseNetworkEvent(response, args.SenderSession.Channel);
         }
 
@@ -327,27 +420,19 @@ namespace Content.Server.Ghost
                 return;
             }
 
-            // WWDP EDIT START
-            if (IsHiddenFromGhostWarps(target) || !IsValidWarpTarget(target))
-            {
-                Log.Warning($"User {args.SenderSession.Name} tried to warp to an invalid/hidden target: {ToPrettyString(target)}");
-                return;
-            }
-            // WWDP EDIT END
-
             WarpTo(attached, target);
         }
 
         private void OnGhostnadoRequest(GhostnadoRequestEvent msg, EntitySessionEventArgs args)
         {
-            if (args.SenderSession.AttachedEntity is not { Valid: true } uid // WD EDIT
+            if (args.SenderSession.AttachedEntity is not {} uid
                 || !_ghostQuery.HasComp(uid))
             {
                 Log.Warning($"User {args.SenderSession.Name} tried to ghostnado without being a ghost.");
                 return;
             }
 
-            if (_followerSystem.GetMostGhostFollowed() is not { } target)
+            if (_followerSystem.GetMostGhostFollowed() is not {} target)
                 return;
 
             WarpTo(uid, target);
@@ -370,115 +455,34 @@ namespace Content.Server.Ghost
                 _physics.SetLinearVelocity(uid, Vector2.Zero, body: physics);
         }
 
-        // WD EDIT START
-        private List<GhostWarp> GetMindContainersWarps()
+        private IEnumerable<GhostWarp> GetLocationWarps()
         {
-            var warps = new List<GhostWarp>();
-
-            var query = EntityQueryEnumerator<MindContainerComponent>();
-
-            while (query.MoveNext(out var entity, out var mindContainer))
-            {
-                if(IsHiddenFromGhostWarps(entity) || !IsValidWarpTarget(entity))
-                    continue;
-
-                if (TryComp<RoleCacheComponent>(entity, out var roleCacheComponent))
-                {
-                    if (_prototypeManager.TryIndex(roleCacheComponent.LastJobPrototype, out var jobPrototype) &&
-                        _jobs.TryGetDepartment(jobPrototype.ID, out var departmentPrototype))
-                    {
-                        var warp = SetupWarp(entity, mindContainer, departmentPrototype.Name, departmentPrototype.Color, jobPrototype.Name);
-                        warp.Group |= WarpGroup.Department;
-
-                        warps.Add(warp);
-                    }
-
-                    if (roleCacheComponent.IsAntag &&
-                        _prototypeManager.TryIndex(roleCacheComponent.LastAntagPrototype, out var antagPrototype))
-                    {
-                        var warp = SetupWarp(entity, mindContainer, antagPrototype.Name, AntagonistButtonColor, null);
-                        warp.Group |= WarpGroup.Antag;
-
-                        warps.Add(warp);
-                    }
-                }
-                else
-                {
-                    var warp = SetupWarp(entity, mindContainer, MetaData(entity).EntityPrototype?.Name ?? "", null, null);
-                    warp.Group |= WarpGroup.Other;
-
-                    warps.Add(warp);
-                }
-            }
-
-            return warps;
-        }
-
-        private GhostWarp SetupWarp(EntityUid entity, MindContainerComponent mindContainer, string subGroup, Color? color, string? description)
-        {
-            var hasAnyMind = (mindContainer.Mind ?? mindContainer.OriginalMind) != null;
-            var isDead = _mobState.IsDead(entity);
-            var isLeft = TryComp<SSDIndicatorComponent>(entity, out var indicator) && indicator.IsSSD && !isDead &&
-                hasAnyMind;
-
-            var metadata = Comp<MetaDataComponent>(entity);
-
-            if (string.IsNullOrEmpty(description))
-                description = metadata.EntityDescription;
-
-            var warp = new GhostWarp(GetNetEntity(entity), metadata.EntityName, subGroup, description, color);
-
-            if(isLeft)
-                warp.Group |= WarpGroup.Left;
-
-            if(HasComp<GhostComponent>(entity))
-            {
-                warp.Group |= WarpGroup.Ghost;
-            }
-            else
-            {
-                if(isDead)
-                    warp.Group |= WarpGroup.Dead;
-                else
-                    warp.Group |= WarpGroup.Alive;
-            }
-
-            return warp;
-        }
-
-        private List<GhostWarp> GetLocationWarps()
-        {
-            var warps = new List<GhostWarp>();
             var allQuery = AllEntityQuery<WarpPointComponent>();
 
             while (allQuery.MoveNext(out var uid, out var warp))
             {
-                if(IsHiddenFromGhostWarps(uid))
+                yield return new GhostWarp(GetNetEntity(uid), warp.Location ?? Name(uid), true);
+            }
+        }
+
+        private IEnumerable<GhostWarp> GetPlayerWarps(EntityUid except)
+        {
+            foreach (var player in _player.Sessions)
+            {
+                if (player.AttachedEntity is not {Valid: true} attached)
                     continue;
 
-                var newWarp = new GhostWarp(GetNetEntity(uid), warp.Location ?? Name(uid), "", Description(uid), null);
-                warps.Add(newWarp);
+                if (attached == except) continue;
+
+                TryComp<MindContainerComponent>(attached, out var mind);
+
+                var jobName = _jobs.MindTryGetJobName(mind?.Mind);
+                var playerInfo = $"{Comp<MetaDataComponent>(attached).EntityName} ({jobName})";
+
+                if (_mobState.IsAlive(attached) || _mobState.IsCritical(attached))
+                    yield return new GhostWarp(GetNetEntity(attached), playerInfo, false);
             }
-
-            return warps;
         }
-
-        private bool IsValidWarpTarget(EntityUid entity)
-        {
-            var transform = Transform(entity);
-            if (transform.MapID == MapId.Nullspace)
-                return false;
-
-            return true;
-        }
-
-        private bool IsHiddenFromGhostWarps(EntityUid entity)
-        {
-            return _tag.HasTag(entity, "HideFromGhostWarps");
-        }
-
-        // WD EDIT END
-
 
         #endregion
 
@@ -504,7 +508,7 @@ namespace Content.Server.Ghost
             var entityQuery = EntityQueryEnumerator<GhostComponent, VisibilityComponent>();
             while (entityQuery.MoveNext(out var uid, out var _, out var vis))
             {
-                if (!_tag.HasTag(uid, "AllowGhostShownByEvent"))
+                if (!_tag.HasTag(uid, AllowGhostShownByEventTag))
                     continue;
 
                 if (visible)
@@ -541,7 +545,7 @@ namespace Content.Server.Ghost
             if (spawnPosition?.IsValid(EntityManager) != true)
                 return false;
 
-            var mapUid = spawnPosition?.GetMapUid(EntityManager);
+            var mapUid = _transformSystem.GetMap(spawnPosition.Value);
             var gridUid = spawnPosition?.EntityId;
             // Test if the map is being deleted
             if (mapUid == null || TerminatingOrDeleted(mapUid.Value))
@@ -582,26 +586,30 @@ namespace Content.Server.Ghost
             // If all else fails, it'll default to the default entity prototype name, "observer".
             // However, that should rarely happen.
             if (!string.IsNullOrWhiteSpace(mind.Comp.CharacterName))
-                _metaData.SetEntityName(ghost, mind.Comp.CharacterName);
-            else if (!string.IsNullOrWhiteSpace(mind.Comp.Session?.Name))
-                _metaData.SetEntityName(ghost, mind.Comp.Session.Name);
+                _metaData.SetEntityName(ghost, FormattedMessage.EscapeText(mind.Comp.CharacterName)); // Goob Sanitize Text
+            else if (mind.Comp.UserId is { } userId && _player.TryGetSessionById(userId, out var session))
+                _metaData.SetEntityName(ghost, FormattedMessage.EscapeText(session.Name)); // Goob Sanitize Text
 
             if (mind.Comp.TimeOfDeath.HasValue)
             {
-                SetTimeOfDeath(ghost, mind.Comp.TimeOfDeath!.Value, ghostComponent);
+                SetTimeOfDeath((ghost, ghostComponent), mind.Comp.TimeOfDeath!.Value);
             }
 
-            SetCanReturnToBody(ghostComponent, canReturn);
+            SetCanReturnToBody((ghost, ghostComponent), canReturn);
 
             if (canReturn)
                 _minds.Visit(mind.Owner, ghost, mind.Comp);
             else
                 _minds.TransferTo(mind.Owner, ghost, mind: mind.Comp);
             Log.Debug($"Spawned ghost \"{ToPrettyString(ghost)}\" for {mind.Comp.CharacterName}.");
+
+            // we changed the entity name above
+            // we have to call this after the mind has been transferred since some mind roles modify the ghost's name
+            _nameMod.RefreshNameModifiers(ghost);
             return ghost;
         }
 
-        public bool OnGhostAttempt(EntityUid mindId, bool canReturnGlobal, bool viaCommand = false, MindComponent? mind = null)
+        public bool OnGhostAttempt(EntityUid mindId, bool canReturnGlobal, bool viaCommand = false, bool forced = false, MindComponent? mind = null)
         {
             if (!Resolve(mindId, ref mind))
                 return false;
@@ -609,7 +617,12 @@ namespace Content.Server.Ghost
             var playerEntity = mind.CurrentEntity;
 
             if (playerEntity != null && viaCommand)
-                _adminLog.Add(LogType.Mind, $"{EntityManager.ToPrettyString(playerEntity.Value):player} is attempting to ghost via command");
+            {
+                if (forced)
+                    _adminLog.Add(LogType.Mind, $"{ToPrettyString(playerEntity.Value):player} was forced to ghost via command");
+                else
+                    _adminLog.Add(LogType.Mind, $"{ToPrettyString(playerEntity.Value):player} is attempting to ghost via command");
+            }
 
             var handleEv = new GhostAttemptHandleEvent(mind, canReturnGlobal);
             RaiseLocalEvent(handleEv);
@@ -618,11 +631,11 @@ namespace Content.Server.Ghost
             if (handleEv.Handled)
                 return handleEv.Result;
 
-            if (mind.PreventGhosting)
+            if (mind.PreventGhosting && !forced)
             {
-                if (mind.Session != null) // Logging is suppressed to prevent spam from ghost attempts caused by movement attempts
+                if (_player.TryGetSessionById(mind.UserId, out var session)) // Logging is suppressed to prevent spam from ghost attempts caused by movement attempts
                 {
-                    _chatManager.DispatchServerMessage(mind.Session, Loc.GetString("comp-mind-ghosting-prevented"),
+                    _chatManager.DispatchServerMessage(session, Loc.GetString("comp-mind-ghosting-prevented"),
                         true);
                 }
 
@@ -652,36 +665,49 @@ namespace Content.Server.Ghost
             // + If we're in a mob that is critical, and we're supposed to be able to return if possible,
             //   we're succumbing - the mob is killed. Therefore, character is dead. Ghosting OK.
             //   (If the mob survives, that's a bug. Ghosting is kept regardless.)
-            var canReturn = canReturnGlobal && _mind.IsCharacterDeadPhysically(mind);
+            var canReturn = handleEv.CanReturnGlobal && _mind.IsCharacterDeadPhysically(mind); // Goob edit
 
             if (_configurationManager.GetCVar(CCVars.GhostKillCrit) &&
-                canReturnGlobal &&
+                handleEv.CanReturnGlobal && // Goob edit
                 TryComp(playerEntity, out MobStateComponent? mobState))
             {
                 if (_mobState.IsCritical(playerEntity.Value, mobState))
                 {
                     canReturn = true;
 
-                    //todo: what if they dont breathe lol
-                    //cry deeply
-
-                    FixedPoint2 dealtDamage = 200;
-
-                    if (TryComp<DamageableComponent>(playerEntity, out var damageable)
-                        && TryComp<MobThresholdsComponent>(playerEntity, out var thresholds))
+                    if (!HasComp<XenomorphPreventSuicideComponent>(playerEntity.Value))
                     {
-                        var playerDeadThreshold = _mobThresholdSystem.GetThresholdForState(playerEntity.Value, MobState.Dead, thresholds);
-                        dealtDamage = playerDeadThreshold - damageable.TotalDamage;
+                        FixedPoint2 dealtDamage = 200;
+
+                        if (TryComp<DamageableComponent>(playerEntity, out var damageable)
+                            && TryComp<MobThresholdsComponent>(playerEntity, out var thresholds))
+                        {
+                            var playerDeadThreshold = _mobThresholdSystem.GetThresholdForState(playerEntity.Value, MobState.Dead, thresholds);
+                            dealtDamage = playerDeadThreshold - damageable.TotalDamage;
+                        }
+
+                        // Shitmed Change Start
+                        var damageType = HasComp<SiliconComponent>(playerEntity)
+                            ? IonDamageType
+                            : AsphyxiationDamageType;
+                        DamageSpecifier damage = new(_prototypeManager.Index<DamageTypePrototype>(damageType), dealtDamage);
+
+                        if (TryComp<BodyComponent>(playerEntity, out var body)
+                            && body.BodyType == BodyType.Complex
+                            && body.RootContainer.ContainedEntities.FirstOrNull() is { } root)
+                            _damageable.TryChangeDamage(playerEntity,
+                                damage,
+                                true,
+                                targetPart: TargetBodyPart.All);
+                        else
+                            _damageable.TryChangeDamage(playerEntity, damage, true);
+                        // Shitmed Change End
                     }
-
-                    DamageSpecifier damage = new(_prototypeManager.Index<DamageTypePrototype>("Asphyxiation"), dealtDamage);
-
-                    _damageable.TryChangeDamage(playerEntity, damage, true);
                 }
             }
 
             if (playerEntity != null)
-                _adminLog.Add(LogType.Mind, $"{EntityManager.ToPrettyString(playerEntity.Value):player} ghosted{(!canReturn ? " (non-returnable)" : "")}");
+                _adminLog.Add(LogType.Mind, $"{ToPrettyString(playerEntity.Value):player} ghosted{(!canReturn ? " (non-returnable)" : "")}");
 
             var ghost = SpawnGhost((mindId, mind), position, canReturn);
 
@@ -690,13 +716,12 @@ namespace Content.Server.Ghost
 
             return true;
         }
-
     }
 
     public sealed class GhostAttemptHandleEvent(MindComponent mind, bool canReturnGlobal) : HandledEntityEventArgs
     {
         public MindComponent Mind { get; } = mind;
-        public bool CanReturnGlobal { get; } = canReturnGlobal;
+        public bool CanReturnGlobal { get; set; } = canReturnGlobal; // Goob edit
         public bool Result { get; set; }
     }
 }

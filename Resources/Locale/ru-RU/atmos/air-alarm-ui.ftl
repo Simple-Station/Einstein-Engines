@@ -1,7 +1,9 @@
 # UI
 
+
 ## Window
 
+air-alarm-ui-title = Воздушная сигнализация
 air-alarm-ui-access-denied = Недостаточный уровень доступа!
 air-alarm-ui-window-pressure-label = Давление
 air-alarm-ui-window-temperature-label = Температура
@@ -10,6 +12,7 @@ air-alarm-ui-window-address-label = Адрес
 air-alarm-ui-window-device-count-label = Всего устройств
 air-alarm-ui-window-resync-devices-label = Ресинхр
 air-alarm-ui-window-mode-label = Режим
+air-alarm-ui-window-mode-select-locked-label = [bold][color=red] Ошибка выбора режима! [/color][/bold]
 air-alarm-ui-window-auto-mode-label = Авто-режим
 -air-alarm-state-name =
     { $state ->
@@ -39,6 +42,15 @@ air-alarm-ui-mode-none = Нет
 
 ## Widgets
 
+air-alarm-ui-pump-direction-siphoning = Откачка
+air-alarm-ui-pump-direction-scrubbing = Фильтрация
+air-alarm-ui-pump-direction-releasing = Выпуск
+air-alarm-ui-pressure-bound-nobound = Без ограничений
+air-alarm-ui-pressure-bound-internalbound = Внутреннее ограничение
+air-alarm-ui-pressure-bound-externalbound = Внешнее ограничение
+air-alarm-ui-pressure-bound-both = Оба ограничения
+air-alarm-ui-widget-gas-filters = Фильтр газов
+
 ### General
 
 air-alarm-ui-widget-enable = Включено
@@ -62,6 +74,8 @@ air-alarm-ui-scrubber-wide-net-label = ШирокаяСеть
 
 ### Thresholds
 
+air-alarm-ui-scrubber-select-all-gases-label = Включить все
+air-alarm-ui-scrubber-deselect-all-gases-label = Выключить все
 air-alarm-ui-sensor-gases = Газы
 air-alarm-ui-sensor-thresholds = Границы
 air-alarm-ui-thresholds-pressure-title = Границы (кПа)
@@ -71,3 +85,5 @@ air-alarm-ui-thresholds-upper-bound = Верхняя аварийная гран
 air-alarm-ui-thresholds-lower-bound = Нижняя аварийная граница
 air-alarm-ui-thresholds-upper-warning-bound = Верхняя тревожная граница
 air-alarm-ui-thresholds-lower-warning-bound = Нижняя тревожная граница
+air-alarm-ui-thresholds-copy = Скопировать значение границы на все устройства
+air-alarm-ui-thresholds-copy-tooltip = Скопировать значение границы сенсора этого устройства на все устройства на этой вкладке воздушной сигнализации.

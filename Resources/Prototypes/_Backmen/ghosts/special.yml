@@ -2,128 +2,105 @@
   id: Luna
   name: sponsor-win-manager-ghost-Luna
   components:
-    - type: Sprite
-      noRot: true
-      overrideContainerOcclusion: true # Ghosts always show up regardless of where they're contained.
-      drawdepth: Ghosts
-      sprite: Backmen/Mobs/Ghost/luna.rsi
-      layers:
-        - state: pony
-          shader: unshaded
+  - type: Sprite
+    noRot: true
+    overrideContainerOcclusion: true # Ghosts always show up regardless of where they're contained.
+    drawdepth: Ghosts
+    sprite: Backmen/Mobs/Ghost/luna.rsi
+    layers:
+      - state: pony
+        shader: unshaded
 
 - type: ghostTheme
   id: p03
   name: sponsor-win-manager-ghost-p03
   components:
-    - type: Sprite
-      noRot: true
-      overrideContainerOcclusion: true # Ghosts always show up regardless of where they're contained.
-      drawdepth: Ghosts
-      sprite: Backmen/Mobs/Ghost/p03.rsi
-      layers:
-        - state: p03
-          shader: unshaded
+  - type: Sprite
+    noRot: true
+    overrideContainerOcclusion: true # Ghosts always show up regardless of where they're contained.
+    drawdepth: Ghosts
+    sprite: Backmen/Mobs/Ghost/p03.rsi
+    layers:
+      - state: p03
+        shader: unshaded
 
 - type: ghostTheme
   id: Astronaut
   name: sponsor-win-manager-ghost-astronaut
   components:
-    - type: Sprite
-      noRot: true
-      overrideContainerOcclusion: true
-      drawdepth: Ghosts
-      sprite: Backmen/Mobs/Ghost/astronaut.rsi
-      layers:
-        - state: astronaut
-          shader: unshaded
+  - type: Sprite
+    noRot: true
+    overrideContainerOcclusion: true
+    drawdepth: Ghosts
+    sprite: Backmen/Mobs/Ghost/astronaut.rsi
+    layers:
+      - state: astronaut
+        shader: unshaded
 
 - type: ghostTheme
   id: Boroven
   name: sponsor-win-manager-ghost-Boroven
   components:
-    - type: Sprite
-      noRot: true
-      overrideContainerOcclusion: true
-      drawdepth: Ghosts
-      sprite: Backmen/Mobs/Ghost/Boroven-ghost.rsi
-      layers:
-        - state: animated-Boroven
-          shader: unshaded
+  - type: Sprite
+    noRot: true
+    overrideContainerOcclusion: true
+    drawdepth: Ghosts
+    sprite: Backmen/Mobs/Ghost/Boroven-ghost.rsi
+    layers:
+    - state: animated-Boroven
+      shader: unshaded
 
 - type: ghostTheme
   id: Vetochka
   name: sponsor-win-manager-ghost-Veta
   components:
-    - type: Sprite
-      noRot: true
-      overrideContainerOcclusion: true
-      drawdepth: Ghosts
-      sprite: Backmen/Mobs/Ghost/Vetochka-ghost.rsi
-      layers:
-        - state: animated-Veta
-          shader: unshaded
+  - type: Sprite
+    noRot: true
+    overrideContainerOcclusion: true
+    drawdepth: Ghosts
+    sprite: Backmen/Mobs/Ghost/Vetochka-ghost.rsi
+    layers:
+    - state: animated-Veta
+      shader: unshaded
+
 
 - type: ghostTheme
   id: MemesGhost
   name: sponsor-win-manager-ghost-Memes
   components:
-    - type: Sprite
-      noRot: true
-      overrideContainerOcclusion: true
-      drawdepth: Ghosts
-      sprite: Backmen/Mobs/Ghost/Memes-ghost.rsi
-      layers:
-        - state: animated-Memes
-          shader: unshaded
+  - type: Sprite
+    noRot: true
+    overrideContainerOcclusion: true
+    drawdepth: Ghosts
+    sprite: Backmen/Mobs/Ghost/Memes-ghost.rsi
+    layers:
+    - state: animated-Memes
+      shader: unshaded
 
 - type: ghostTheme
   id: WisdomGhost
   name: sponsor-win-manager-ghost-Wisdom
   components:
-    - type: Sprite
-      noRot: true
-      overrideContainerOcclusion: true
-      drawdepth: Ghosts
-      sprite: Backmen/Mobs/Ghost/Wisdom-ghost.rsi
-      layers:
-        - state: angel_nelle
-          shader: unshaded
+  - type: Sprite
+    noRot: true
+    overrideContainerOcclusion: true
+    drawdepth: Ghosts
+    sprite: Backmen/Mobs/Ghost/Wisdom-ghost.rsi
+    layers:
+    - state: angel_nelle
+      shader: unshaded
+
 
 - type: ghostTheme
   id: WendorGhost
   name: sponsor-win-manager-ghost-Wendor
   components:
-    - type: Sprite
-      noRot: true
-      overrideContainerOcclusion: true
-      drawdepth: Ghosts
-      sprite: Backmen/Mobs/Ghost/Wendor-ghost.rsi
-      layers:
-        - state: Wend
-          shader: unshaded
+  - type: Sprite
+    noRot: true
+    overrideContainerOcclusion: true
+    drawdepth: Ghosts
+    sprite: Backmen/Mobs/Ghost/Wendor-ghost.rsi
+    layers:
+    - state: Wend
+      shader: unshaded
 
-- type: ghostTheme
-  id: AngelGhost
-  name: sponsor-win-manager-ghost-angel
-  components:
-    - type: Sprite
-      noRot: true
-      overrideContainerOcclusion: true
-      drawdepth: Ghosts
-      sprite: Backmen/Mobs/Ghost/angel.rsi
-      layers:
-        - state: angel
-          shader: unshaded
-
-- type: ghostTheme
-  id: EnvoilyGhost
-  name: sponsor-win-manager-ghost-envoily
-  components:
-    - type: Sprite
-      noRot: true
-      overrideContainerOcclusion: true
-      drawdepth: Ghosts
-      sprite: Backmen/Mobs/Ghost/Envoily.rsi
-      layers:
-        - state: kidz
-          shader: unshaded

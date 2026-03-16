@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 Jake Huxell <JakeHuxell@pm.me>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
@@ -16,6 +25,8 @@ public sealed class PersistenceSave : LocalizedEntityCommands
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
 
     public override string Command => "persistencesave";
+    public override string Description => "Saves server data to a persistence file to be loaded later.";
+    public override string Help => "persistencesave [mapId] [filePath - default: game.map (CCVar) ]";
 
     public override void Execute(IConsoleShell shell, string argStr, string[] args)
     {

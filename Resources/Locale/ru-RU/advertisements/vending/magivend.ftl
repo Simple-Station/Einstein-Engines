@@ -1,4 +1,3 @@
-advertisement-magivend-0 = ХОНК!
 advertisement-magivend-1 = Произносите заклинания правильным способом с МагоМатом!
 advertisement-magivend-2 = Станьте Гудини сами! Используйте МагоМат!
 advertisement-magivend-3 = FJKLFJSD

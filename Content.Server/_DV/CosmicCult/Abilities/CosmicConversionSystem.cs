@@ -1,12 +1,14 @@
 // SPDX-FileCopyrightText: 2025 AftrLite <61218133+AftrLite@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 OnsenCapy <101037138+OnsenCapy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common.Religion;
 using Content.Server._DV.CosmicCult.Components;
-using Content.Shared._Goobstation.Bible; // Goobstation - Bible
-using Content.Server.Bible.Components;
 using Content.Server.Popups;
 using Content.Shared._DV.CosmicCult.Components;
 using Content.Shared._DV.CosmicCult;
@@ -61,7 +63,7 @@ public sealed class CosmicConversionSystem : EntitySystem
 
         foreach (var target in possibleTargets)
         {
-            if (_rotting.IsRotten(target))
+            if (_rotting.IsRotten(target)) //Goobstation: Prevents using space corpses.
             {
                 _popup.PopupEntity(Loc.GetString("cult-glyph-target-rotting"), uid, args.User);
                 args.Cancel();
@@ -78,11 +80,10 @@ public sealed class CosmicConversionSystem : EntitySystem
             }
             else
             {
-                _stun.TryStun(target, TimeSpan.FromSeconds(4f), false);
-                _rejuvenateSystem.PerformRejuvenate(target);
+                _stun.TryUpdateStunDuration(target, TimeSpan.FromSeconds(4f));
+                _rejuvenateSystem.PerformRejuvenate(target); //Goobstation: No one likes being brought into the antag gang dead, now do we?
                 _cultRule.CosmicConversion(uid, target);
                 var finaleQuery = EntityQueryEnumerator<CosmicFinaleComponent>(); // Enumerator for The Monument's Finale
-
                 while (finaleQuery.MoveNext(out var monument, out var comp)
                     && comp.CurrentState == FinaleState.ActiveBuffer)
                 {

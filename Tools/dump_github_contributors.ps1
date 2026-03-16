@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 #!/usr/bin/env pwsh
 
 $scriptDir = Split-Path -Path $MyInvocation.MyCommand.Definition -Parent
@@ -113,9 +120,9 @@ function load_contribs([string] $repo)
 }
 
 $engineJson = load_contribs("space-wizards/RobustToolbox")
-$contentJson = load_contribs("Simple-Station/Einstein-Engines")
+$contentJson = load_contribs("Goob-Station/Goob-Station")
 
-($engineJson).login + ($contentJson).login `
+($engineJson).login + ($contentJson).login + ($add) `
     | select -unique `
     | Where-Object { -not $ignore[$_] }`
     | ForEach-Object { if($replacements[$_] -eq $null){ $_ } else { $replacements[$_] }} `

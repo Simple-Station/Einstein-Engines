@@ -1,0 +1,109 @@
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 CMDR-Piboy314 <92357316+CMDR-Piboy314@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <92357316+Piras314@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: Telecrystal
+  id: Telecrystal15
+  suffix: 15 TC
+  components:
+  - type: Stack
+    count: 15
+
+- type: entity
+  parent: Telecrystal
+  id: Telecrystal20
+  suffix: 20 TC
+  components:
+  - type: Stack
+    count: 20
+
+- type: entity
+  parent: Telecrystal
+  id: Telecrystal25
+  suffix: 25 TC
+  components:
+  - type: Stack
+    count: 25
+
+- type: entity
+  parent: Telecrystal
+  id: Telecrystal30
+  suffix: 30 TC
+  components:
+  - type: Stack
+    count: 30
+
+- type: entity
+  parent: Telecrystal
+  id: Telecrystal35
+  suffix: 35 TC
+  components:
+  - type: Stack
+    count: 35
+
+- type: entity
+  parent: Telecrystal
+  id: Telecrystal40
+  suffix: 40 TC
+  components:
+  - type: Stack
+    count: 40
+
+- type: entity
+  parent: Telecrystal
+  id: Telecrystal50
+  suffix: 50 TC
+  components:
+  - type: Stack
+    count: 50
+
+- type: entity
+  parent: Telecrystal
+  id: Telecrystal250
+  suffix: 250 TC
+  components:
+  - type: Stack
+    count: 250
+
+- type: entity
+  parent: Telecrystal
+  id: Telecrystal500
+  suffix: 500 TC
+  components:
+  - type: Stack
+    count: 500
+
+#this uplink MUST be used for nukeops, as it has the tag for filtering the listing.
+- type: entity
+  parent: BaseUplinkRadio
+  id: BaseUplinkRadio225TC
+  suffix: 225 TC, NukeOps
+  components:
+  - type: Store
+    balance:
+      Telecrystal: 225
+  - type: Tag
+    tags:
+    - NukeOpsUplink
+
+- type: entity
+  parent: BaseUplinkRadio
+  id: BaseUplinkRadio225TCMedic
+  suffix: 225 TC, NukeOps medic
+  components:
+  - type: Store
+    balance:
+      Telecrystal: 225
+  - type: Tag
+    tags:
+    - NukeOpsUplink
+    - NukeOpsMedicUplink

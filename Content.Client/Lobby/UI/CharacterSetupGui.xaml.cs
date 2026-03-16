@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2024 dffdff2423 <dffdff2423@gmail.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client.Info;
 using Content.Client.Info.PlaytimeStats;
 using Content.Client.Resources;
@@ -72,18 +78,7 @@ namespace Content.Client.Lobby.UI
             }
             // Corvax-Sponsors-End
 
-            profileEditor.CharacterSpriteView = CharacterSpriteView;
-            CharacterSpriteView.SetEntity(profileEditor.PreviewDummy);
-            PreviewRotateRightButton.OnPressed += args =>
-                CharacterSpriteView.OverrideDirection =
-                    (Direction)(((int)(CharacterSpriteView.OverrideDirection ?? Direction.South) + 2) % 8);
-
-            PreviewRotateLeftButton.OnPressed += args =>
-                CharacterSpriteView.OverrideDirection =
-                    (Direction)(((int)(CharacterSpriteView.OverrideDirection ?? Direction.South) + 6) % 8);
-
             _cfg.OnValueChanged(CCVars.SeeOwnNotes, p => AdminRemarksButton.Visible = p, true);
-
         }
 
         /// <summary>

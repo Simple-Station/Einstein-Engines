@@ -1,4 +1,62 @@
-using Content.Server.Abilities.Psionics;
+// SPDX-FileCopyrightText: 2022 EmoGarbage404 <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2023 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2023 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2023 Doru991 <75124791+Doru991@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <drsmugleaf@gmail.com>
+// SPDX-FileCopyrightText: 2023 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 PixelTK <85175107+PixelTheKermit@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Sirionaut <148076704+Sirionaut@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Tom Leys <tom@crump-leys.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vyacheslav Titov <rincew1nd@ya.ru>
+// SPDX-FileCopyrightText: 2023 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 corentt <36075110+corentt@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Титов Вячеслав Витальевич <rincew1nd@yandex.ru>
+// SPDX-FileCopyrightText: 2024 Arendian <137322659+Arendian@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 Vasilis <vascreeper@yahoo.com>
+// SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+// SPDX-FileCopyrightText: 2024 Łukasz Mędrek <lukasz@lukaszm.xyz>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ethan_k <eknowles27@dtechhs.org>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 J <billsmith116@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyle Tyo <36606155+VerinSenpai@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Milon <milonpl.git@proton.me>
+// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 UpAndLeaves <92269094+Alpha-Two@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Goobstation.Common.Traits;
 using Content.Server.Atmos.Components;
 using Content.Server.Body.Components;
 using Content.Server.Chat;
@@ -8,17 +66,15 @@ using Content.Server.Humanoid;
 using Content.Server.IdentityManagement;
 using Content.Server.Inventory;
 using Content.Server.Mind;
-using Content.Server.Mind.Commands;
 using Content.Server.NPC;
 using Content.Server.NPC.HTN;
 using Content.Server.NPC.Systems;
 using Content.Server.Speech.Components;
 using Content.Server.Temperature.Components;
-using Content.Shared.Abilities.Psionics;
+using Content.Shared.Body.Components;
 using Content.Shared.CombatMode;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage;
-using Content.Shared.Ghost.Roles.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Humanoid;
@@ -27,17 +83,26 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Systems;
+using Content.Shared.NameModifier.EntitySystems;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Nutrition.AnimalHusbandry;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Popups;
-using Content.Shared.Roles;
-using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Zombies;
 using Content.Shared.Prying.Components;
-using Content.Shared.Tag;
+using Content.Shared.Traits.Assorted;
 using Robust.Shared.Audio.Systems;
+using Content.Shared.Ghost.Roles.Components;
+using Content.Shared.Tag;
+using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
+using Content.Shared.Roles;
+using Content.Server.Animals.Components;
+using Content.Shared.Mech.Components;
+using Content.Shared.Rejuvenate; // Shitmed Change
+using Content.Shared.NPC.Prototypes;
+using Content.Shared.Mech.EntitySystems; // Goobstation
 
 namespace Content.Server.Zombies;
 
@@ -49,20 +114,24 @@ namespace Content.Server.Zombies;
 /// </remarks>
 public sealed partial class ZombieSystem
 {
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly ServerInventorySystem _inventory = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly IChatManager _chatMan = default!;
+    [Dependency] private readonly SharedCombatModeSystem _combat = default!;
     [Dependency] private readonly NpcFactionSystem _faction = default!;
-    [Dependency] private readonly NPCSystem _npc = default!;
+    [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidAppearance = default!;
     [Dependency] private readonly IdentitySystem _identity = default!;
-    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
-    [Dependency] private readonly SharedCombatModeSystem _combat = default!;
-    [Dependency] private readonly IChatManager _chatMan = default!;
+    [Dependency] private readonly ServerInventorySystem _inventory = default!;
     [Dependency] private readonly MindSystem _mind = default!;
-    [Dependency] private readonly SharedRoleSystem _roles = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly PsionicAbilitiesSystem _psionic = default!;
+    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
+    [Dependency] private readonly NPCSystem _npc = default!;
+    [Dependency] private readonly NameModifierSystem _nameMod = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly ISharedPlayerManager _player = default!;
+    [Dependency] private readonly SharedMechSystem _mech = default!; // Goobstation
+
+    private static readonly ProtoId<TagPrototype> CannotSuicideTag = "CannotSuicide";
+    private static readonly ProtoId<NpcFactionPrototype> ZombieFaction = "Zombie";
 
     /// <summary>
     /// Handles an entity turning into a zombie when they die or go into crit
@@ -98,6 +167,7 @@ public sealed partial class ZombieSystem
             return;
 
         //you're a real zombie now, son.
+        RaiseLocalEvent(target, new RejuvenateEvent(false, false)); // Shitmed Change
         var zombiecomp = AddComp<ZombieComponent>(target);
 
         //we need to basically remove all of these because zombies shouldn't
@@ -110,11 +180,6 @@ public sealed partial class ZombieSystem
         RemComp<ReproductivePartnerComponent>(target);
         RemComp<LegsParalyzedComponent>(target);
         RemComp<ComplexInteractionComponent>(target);
-
-        if (HasComp<PsionicComponent>(target)) // Prevent psionic zombies
-        {
-            _psionic.RemoveAllPsionicPowers(target, true);
-        }
 
         //funny voice
         var accentType = "zombie";
@@ -138,7 +203,17 @@ public sealed partial class ZombieSystem
         melee.AltDisarm = false;
         melee.Range = 1.2f;
         melee.Angle = 0.0f;
-        melee.SoundHit = zombiecomp.BiteSound;
+        melee.HitSound = zombiecomp.BiteSound;
+
+        DirtyFields(target, melee, null, fields:
+        [
+            nameof(MeleeWeaponComponent.Animation),
+            nameof(MeleeWeaponComponent.WideAnimation),
+            nameof(MeleeWeaponComponent.AltDisarm),
+            nameof(MeleeWeaponComponent.Range),
+            nameof(MeleeWeaponComponent.Angle),
+            nameof(MeleeWeaponComponent.HitSound),
+        ]);
 
         if (mobState.CurrentState == MobState.Alive)
         {
@@ -173,17 +248,7 @@ public sealed partial class ZombieSystem
             _humanoidAppearance.SetBaseLayerId(target, HumanoidVisualLayers.Snout, zombiecomp.BaseLayerExternal, humanoid: huApComp);
 
             //This is done here because non-humanoids shouldn't get baller damage
-            //lord forgive me for the hardcoded damage
-            DamageSpecifier dspec = new()
-            {
-                DamageDict = new()
-                {
-                    { "Slash", 13 },
-                    { "Piercing", 7 },
-                    { "Structural", 10 }
-                }
-            };
-            melee.Damage = dspec;
+            melee.Damage = zombiecomp.DamageOnBite;
 
             // humanoid zombies get to pry open doors and shit
             var pryComp = EnsureComp<PryingComponent>(target);
@@ -214,7 +279,7 @@ public sealed partial class ZombieSystem
         _popup.PopupEntity(Loc.GetString("zombie-transform", ("target", target)), target, PopupType.LargeCaution);
 
         //Make it sentient if it's an animal or something
-        MakeSentientCommand.MakeSentient(target, EntityManager);
+        _mind.MakeSentient(target);
 
         //Make the zombie not die in the cold. Good for space zombies
         if (TryComp<TemperatureComponent>(target, out var tempComp))
@@ -226,7 +291,7 @@ public sealed partial class ZombieSystem
         _mobState.ChangeMobState(target, MobState.Alive);
 
         _faction.ClearFactions(target, dirty: false);
-        _faction.AddFaction(target, "Zombie");
+        _faction.AddFaction(target, ZombieFaction);
 
         //gives it the funny "Zombie ___" name.
         _nameMod.RefreshNameModifiers(target);
@@ -239,11 +304,11 @@ public sealed partial class ZombieSystem
         _npc.SleepNPC(target, htn);
 
         //He's gotta have a mind
-        var hasMind = _mind.TryGetMind(target, out var mindId, out _);
-        if (hasMind && _mind.TryGetSession(mindId, out var session))
+        var hasMind = _mind.TryGetMind(target, out var mindId, out var mind);
+        if (hasMind && mind != null && _player.TryGetSessionById(mind.UserId, out var session))
         {
             //Zombie role for player manifest
-            _roles.MindAddRole(mindId, "MindRoleZombie", mind: null, silent: true);
+            _role.MindAddRole(mindId, "MindRoleZombie", mind: null, silent: true);
 
             //Greeting message for new bebe zombers
             _chatMan.DispatchServerMessage(session, Loc.GetString("zombie-infection-greeting"));
@@ -285,9 +350,7 @@ public sealed partial class ZombieSystem
         RaiseLocalEvent(target, ref ev, true);
         //zombies get slowdown once they convert
         _movementSpeedModifier.RefreshMovementSpeedModifiers(target);
-
-        //Need to prevent them from getting an item, they have no hands.
-        // Also prevents them from becoming a Survivor. They're undead.
-        _tag.AddTag(target, "InvalidForGlobalSpawnSpell");
+        if (TryComp<MechPilotComponent>(target, out var mechPilotComponent)) // Goobstation - kick out zombies from mechs on conversion
+            _mech.TryEject(mechPilotComponent.Mech, null, target);
     }
 }

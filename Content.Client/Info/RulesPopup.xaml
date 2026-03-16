@@ -1,16 +1,32 @@
-﻿<Control xmlns="https://spacestation14.io"
-    xmlns:parallax="clr-namespace:Content.Client.Parallax"
-    xmlns:info="clr-namespace:Content.Client.Info" VerticalExpand="True" HorizontalExpand="True" MouseFilter="Stop">
-    <parallax:ParallaxControl />
-    <Control VerticalExpand="True" MaxWidth="800" MaxHeight="900">
+<!--
+SPDX-FileCopyrightText: 2021 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Control xmlns="https://spacestation14.io"
+         xmlns:parallax="clr-namespace:Content.Client.Parallax"
+         xmlns:info="clr-namespace:Content.Client.Info"
+         VerticalExpand="True" HorizontalExpand="True"
+         MouseFilter="Stop">
+    <parallax:ParallaxControl SpeedX="20"/>
+    <Control VerticalExpand="True"
+             MaxWidth="800"
+             MaxHeight="900">
         <PanelContainer StyleClasses="windowPanel" />
-        <BoxContainer Orientation="Vertical" SeparationOverride="10" Margin="10 10 5 10">
-            <info:RulesControl/>
-            <Label Name="WaitLabel" />
-            <BoxContainer Orientation="Horizontal">
-                <Button Name="AcceptButton" Text="{Loc 'ui-rules-accept'}" Disabled="True" />
-                <Button Name="QuitButton" StyleClasses="Danger" Text="{Loc 'ui-escape-quit'}" />
+            <BoxContainer Orientation="Vertical" SeparationOverride="10" Margin="10 10 5 10">
+                <info:RulesControl/>
+                <Label Name="WaitLabel" />
+                <BoxContainer Orientation="Horizontal">
+                    <Button Name="AcceptButton"
+                            Text="{Loc 'ui-rules-accept'}"
+                            Disabled="True" />
+                    <Button Name="QuitButton"
+                            StyleClasses="Caution"
+                            Text="{Loc 'ui-escape-quit'}" />
+                </BoxContainer>
             </BoxContainer>
-        </BoxContainer>
     </Control>
 </Control>

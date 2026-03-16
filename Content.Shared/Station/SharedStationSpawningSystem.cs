@@ -1,21 +1,105 @@
-using System.Diagnostics.CodeAnalysis;
+// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 CaasGit <87243814+CaasGit@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 EmoGarbage404 <retron404@gmail.com>
+// SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Firewatch <54725557+musicmanvr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Hrosts <35345601+Hrosts@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ian <ignaz.k@live.de>
+// SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Jajsha <101492056+Zap527@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Joel Zimmerman <JoelZimmerman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 JustCone <141039037+JustCone14@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ko4ergaPunk <62609550+Ko4ergaPunk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kukutis96513 <146854220+Kukutis96513@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Lye <128915833+Lyroth001@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 MerrytheManokit <167581110+MerrytheManokit@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2024 MetalSage <74924875+MetalSage@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 MetalSage <metalsage.official@gmail.com>
+// SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mr. 27 <koolthunder019@gmail.com>
+// SPDX-FileCopyrightText: 2024 MureixloI <132683811+MureixloI@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 NakataRin <45946146+NakataRin@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 OrangeMoronage9622 <whyteterry0092@gmail.com>
+// SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 PopGamer46 <yt1popgamer@gmail.com>
+// SPDX-FileCopyrightText: 2024 Preston Smith <92108534+thetolbean@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Repo <47093363+Titian3@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 RiceMar1244 <138547931+RiceMar1244@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Spessmann <156740760+Spessmann@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Stalen <33173619+stalengd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 TakoDragon <69509841+BackeTako@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st <shadowstalkermll@gmail.com>
+// SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2024 Vigers Ray <60344369+VigersRay@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 coolboy911 <85909253+coolboy911@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 dffdff2423 <dffdff2423@gmail.com>
+// SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 foboscheshir <156405958+foboscheshir@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 lunarcomets <140772713+lunarcomets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2024 saintmuntzer <47153094+saintmuntzer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 shamp <140359015+shampunj@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 strO0pwafel <153459934+strO0pwafel@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 stroopwafel <j.o.luijkx@student.tudelft.nl>
+// SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 Theodore Lukin <66275205+pheenty@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
-using Content.Shared.Dataset;
-using Content.Shared.Customization.Systems;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
-using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
-using Robust.Shared.Collections;
-using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Robust.Shared.Utility;
+using Content.Shared._EinsteinEngines.Silicon.IPC; // DeltaV
+using Content.Shared.Whitelist; // Goobstation
 
 namespace Content.Shared.Station;
 
@@ -25,12 +109,11 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] protected readonly InventorySystem InventorySystem = default!;
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
+    [Dependency] private readonly MetaDataSystem _metadata = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
-    [Dependency] private readonly MetaDataSystem _metadata = default!;
-    [Dependency] private readonly IConfigurationManager _configurationManager = default!;
-    [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
-
+    [Dependency] private readonly InternalEncryptionKeySpawner _internalEncryption = default!; // DeltaV
+    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!; // Goobstation
     private EntityQuery<HandsComponent> _handsQuery;
     private EntityQuery<InventoryComponent> _inventoryQuery;
     private EntityQuery<StorageComponent> _storageQuery;
@@ -46,15 +129,41 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     }
 
     /// <summary>
+    ///     Equips the data from a `RoleLoadout` onto an entity.
+    /// </summary>
+    public void EquipRoleLoadout(EntityUid entity, RoleLoadout loadout, RoleLoadoutPrototype roleProto)
+    {
+        // Order loadout selections by the order they appear on the prototype.
+        foreach (var group in loadout.SelectedLoadouts.OrderBy(x => roleProto.Groups.FindIndex(e => e == x.Key)))
+        {
+            foreach (var items in group.Value)
+            {
+                if (!PrototypeManager.TryIndex(items.Prototype, out var loadoutProto))
+                {
+                    Log.Error($"Unable to find loadout prototype for {items.Prototype}");
+                    continue;
+                }
+
+                EquipStartingGear(entity, loadoutProto, raiseEvent: false);
+            }
+        }
+
+        EquipRoleName(entity, loadout, roleProto);
+    }
+
+    /// <summary>
     /// Applies the role's name as applicable to the entity.
     /// </summary>
-    public void EquipJobName(EntityUid entity, JobPrototype job)
+    public void EquipRoleName(EntityUid entity, RoleLoadout loadout, RoleLoadoutPrototype roleProto)
     {
         string? name = null;
 
-        if (string.IsNullOrEmpty(name)
-            && job.NameDataset.HasValue
-            && PrototypeManager.TryIndex(job.NameDataset.Value, out var nameData))
+        if (roleProto.CanCustomizeName)
+        {
+            name = loadout.EntityName;
+        }
+
+        if (string.IsNullOrEmpty(name) && PrototypeManager.TryIndex(roleProto.NameDataset, out var nameData))
         {
             name = Loc.GetString(_random.Pick(nameData.Values));
         }
@@ -65,13 +174,33 @@ public abstract class SharedStationSpawningSystem : EntitySystem
         }
     }
 
+    public void EquipStartingGear(EntityUid entity, LoadoutPrototype loadout, bool raiseEvent = true)
+    {
+        EquipStartingGear(entity, loadout.StartingGear, raiseEvent);
+        EquipStartingGear(entity, (IEquipmentLoadout) loadout, raiseEvent);
+    }
+
     /// <summary>
     /// <see cref="EquipStartingGear(Robust.Shared.GameObjects.EntityUid,System.Nullable{Robust.Shared.Prototypes.ProtoId{Content.Shared.Roles.StartingGearPrototype}},bool)"/>
     /// </summary>
     public void EquipStartingGear(EntityUid entity, ProtoId<StartingGearPrototype>? startingGear, bool raiseEvent = true)
     {
         PrototypeManager.TryIndex(startingGear, out var gearProto);
-        EquipStartingGear(entity, gearProto);
+        EquipStartingGear(entity, gearProto, raiseEvent);
+    }
+
+    /// <summary>
+    /// <see cref="EquipStartingGear(Robust.Shared.GameObjects.EntityUid,System.Nullable{Robust.Shared.Prototypes.ProtoId{Content.Shared.Roles.StartingGearPrototype}},bool)"/>
+    /// </summary>
+    public void EquipStartingGear(EntityUid entity, StartingGearPrototype? startingGear, bool raiseEvent = true)
+    {
+        // Begin DeltaV Additions: Fix nukie IPCs not having comms
+        if (startingGear is not {} proto)
+            return;
+
+        _internalEncryption.TryInsertEncryptionKey(entity, proto);
+        // End DeltaV Additions
+        EquipStartingGear(entity, (IEquipmentLoadout?) startingGear, raiseEvent);
     }
 
     /// <summary>
@@ -80,14 +209,10 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     /// <param name="entity">Entity to load out.</param>
     /// <param name="startingGear">Starting gear to use.</param>
     /// <param name="raiseEvent">Should we raise the event for equipped. Set to false if you will call this manually</param>
-    public void EquipStartingGear(EntityUid entity, StartingGearPrototype? startingGear, bool raiseEvent = true)
+    public void EquipStartingGear(EntityUid entity, IEquipmentLoadout? startingGear, bool raiseEvent = true)
     {
         if (startingGear == null)
             return;
-
-        if (GetProfile(entity, out var profile))
-            // Equip any sub-gears of this starting gear.
-            startingGear = ApplySubGear(startingGear, profile);
 
         var xform = _xformQuery.GetComponent(entity);
 
@@ -96,11 +221,16 @@ public abstract class SharedStationSpawningSystem : EntitySystem
             foreach (var slot in slotDefinitions)
             {
                 var equipmentStr = startingGear.GetGear(slot.Name);
-                if (string.IsNullOrEmpty(equipmentStr))
-                    continue;
-
-                var equipmentEntity = EntityManager.SpawnEntity(equipmentStr, xform.Coordinates);
-                InventorySystem.TryEquip(entity, equipmentEntity, slot.Name, true, force: true);
+                if (!string.IsNullOrEmpty(equipmentStr))
+                {
+                    var equipmentEntity = Spawn(equipmentStr, xform.Coordinates);
+                    if (slot.Whitelist != null && !_whitelist.IsWhitelistPass(slot.Whitelist, equipmentEntity)) // Goob Change - Plasmamen
+                    {
+                        QueueDel(equipmentEntity);
+                        continue;
+                    }
+                    InventorySystem.TryEquip(entity, equipmentEntity, slot.Name, silent: true, force: true);
+                }
             }
         }
 
@@ -110,12 +240,11 @@ public abstract class SharedStationSpawningSystem : EntitySystem
             var coords = xform.Coordinates;
             foreach (var prototype in inhand)
             {
-                var inhandEntity = EntityManager.SpawnEntity(prototype, coords);
+                var inhandEntity = Spawn(prototype, coords);
 
-                if (_handsSystem.TryGetEmptyHand(entity, out var emptyHand, handsComponent))
+                if (_handsSystem.TryGetEmptyHand((entity, handsComponent), out var emptyHand))
                 {
-                    _handsSystem.TryPickup(entity, inhandEntity, emptyHand, checkActionBlocker: false,
-                        handsComp: handsComponent);
+                    _handsSystem.TryPickup(entity, inhandEntity, emptyHand, checkActionBlocker: false, handsComp: handsComponent);
                 }
             }
         }
@@ -125,19 +254,21 @@ public abstract class SharedStationSpawningSystem : EntitySystem
             var coords = _xformSystem.GetMapCoordinates(entity);
             _inventoryQuery.TryComp(entity, out var inventoryComp);
 
-            foreach (var (slot, entProtos) in startingGear.Storage)
+            foreach (var (slotName, entProtos) in startingGear.Storage)
             {
-                if (entProtos.Count == 0)
+                if (entProtos == null || entProtos.Count == 0)
                     continue;
 
                 if (inventoryComp != null &&
-                    InventorySystem.TryGetSlotEntity(entity, slot, out var slotEnt, inventoryComponent: inventoryComp) &&
+                    InventorySystem.TryGetSlotEntity(entity, slotName, out var slotEnt, inventoryComponent: inventoryComp) &&
                     _storageQuery.TryComp(slotEnt, out var storage))
                 {
-                    foreach (var ent in entProtos)
+
+                    foreach (var entProto in entProtos)
                     {
-                        var spawned = Spawn(ent, coords);
-                        _storage.Insert(slotEnt.Value, spawned, out _, storageComp: storage, playSound: false);
+                        var spawnedEntity = Spawn(entProto, coords);
+
+                        _storage.Insert(slotEnt.Value, spawnedEntity, out _, storageComp: storage, playSound: false);
                     }
                 }
             }
@@ -150,97 +281,33 @@ public abstract class SharedStationSpawningSystem : EntitySystem
         }
     }
 
-    public bool GetProfile(EntityUid? uid, [NotNullWhen(true)] out HumanoidCharacterProfile? profile)
+    /// <summary>
+    ///     Gets all the gear for a given slot when passed a loadout.
+    /// </summary>
+    /// <param name="loadout">The loadout to look through.</param>
+    /// <param name="slot">The slot that you want the clothing for.</param>
+    /// <returns>
+    ///     If there is a value for the given slot, it will return the proto id for that slot.
+    ///     If nothing was found, will return null
+    /// </returns>
+    public string? GetGearForSlot(RoleLoadout? loadout, string slot)
     {
-        if (!TryComp(uid, out HumanoidAppearanceComponent? appearance))
+        if (loadout == null)
+            return null;
+
+        foreach (var group in loadout.SelectedLoadouts)
         {
-            profile = null;
-            return false;
-        }
-
-        if (appearance.LastProfileLoaded is { } lastProfileLoaded)
-        {
-            profile = lastProfileLoaded;
-            return true;
-        }
-
-        profile = HumanoidCharacterProfile.DefaultWithSpecies(appearance.Species);
-        return true;
-    }
-
-    // <summary>
-    //   Apply a starting gear's sub-gears to itself, returning a new starting gear prototype with
-    //   replaced equipment.
-    // </summary>
-    public StartingGearPrototype ApplySubGear(StartingGearPrototype startingGear, HumanoidCharacterProfile profile, JobPrototype? job = null)
-    {
-        if (startingGear.SubGears.Count == 0)
-            return startingGear;
-
-        // Job can be null for cases like ghost roles' starting gear which do not have a job definition.
-        job ??= new JobPrototype();
-
-        var newStartingGear = startingGear;
-        var foundConditionalMatch = false;
-
-        foreach (var subGear in startingGear.SubGears)
-        {
-            if (!PrototypeManager.TryIndex<StartingGearPrototype>(subGear.Id, out var subGearProto) ||
-                !_characterRequirements.CheckRequirementsValid(
-                    subGearProto.Requirements, job, profile, new Dictionary<string, TimeSpan>(), false, job,
-                    EntityManager, PrototypeManager, _configurationManager,
-                    out _))
-                continue;
-
-            // Apply the sub-gear's sub-gears if there are any
-            subGearProto = ApplySubGear(subGearProto, profile, job);
-
-            if (!foundConditionalMatch)
+            foreach (var items in group.Value)
             {
-                foundConditionalMatch = true;
-                // Lazy init on making a new starting gear prototype for performance reasons.
-                // We can't just modify the original prototype or it will be modified for everyone.
-                newStartingGear = new StartingGearPrototype()
-                {
-                    Equipment = startingGear.Equipment.ToDictionary(static entry => entry.Key, static entry => entry.Value),
-                    Inhand = new List<EntProtoId>(startingGear.Inhand),
-                    Storage = startingGear.Storage.ToDictionary(
-                        static entry => entry.Key,
-                        static entry => new List<EntProtoId>(entry.Value)
-                    ),
-                };
-            }
+                if (!PrototypeManager.TryIndex(items.Prototype, out var loadoutPrototype))
+                    return null;
 
-            foreach (var (slot, entProtoId) in subGearProto.Equipment)
-            {
-                // Don't remove items in pockets, instead put them in the backpack or hands
-                if (slot == "pocket1" && newStartingGear.Equipment.TryGetValue("pocket1", out var pocket1) ||
-                    slot == "pocket2" && newStartingGear.Equipment.TryGetValue("pocket2", out var pocket2))
-                {
-                    var pocketProtoId = slot == "pocket1" ? pocket1 : pocket2;
-
-                    if (string.IsNullOrEmpty(newStartingGear.GetGear("back")))
-                        newStartingGear.Inhand.Add(pocketProtoId);
-                    else
-                    {
-                        if (!newStartingGear.Storage.ContainsKey("back"))
-                            newStartingGear.Storage["back"] = new();
-                        newStartingGear.Storage["back"].Add(pocketProtoId);
-                    }
-                }
-
-                newStartingGear.Equipment[slot] = entProtoId;
-            }
-
-            newStartingGear.Inhand.AddRange(subGearProto.Inhand);
-
-            foreach (var (slot, entProtoIds) in subGearProto.Storage)
-            {
-                if (!newStartingGear.Storage.TryAdd(slot, entProtoIds))
-                    newStartingGear.Storage[slot].AddRange(entProtoIds);
+                var gear = ((IEquipmentLoadout) loadoutPrototype).GetGear(slot);
+                if (gear != string.Empty)
+                    return gear;
             }
         }
 
-        return newStartingGear;
+        return null;
     }
 }

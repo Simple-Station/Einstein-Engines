@@ -1,3 +1,16 @@
+// SPDX-FileCopyrightText: 2023 08A <git@08a.re>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client.SubFloor;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
@@ -45,7 +58,8 @@ public sealed partial class AtmosPipeAppearanceSystem : SharedAtmosPipeAppearanc
     private void HideAllPipeConnection(Entity<SpriteComponent> entity, AtmosPipeLayersComponent? atmosPipeLayers, int numberOfPipeLayers)
     {
         var sprite = entity.Comp;
-        foreach (PipeConnectionLayer layerKey in Enum.GetValues(typeof(PipeConnectionLayer)))
+
+        foreach (var layerKey in Enum.GetValues<PipeConnectionLayer>())
         {
             for (byte i = 0; i < numberOfPipeLayers; i++)
             {
@@ -88,7 +102,7 @@ public sealed partial class AtmosPipeAppearanceSystem : SharedAtmosPipeAppearanc
             // Extract the cardinal pipe orientations for the current pipe layer
             // '15' is the four bit mask that is used to extract the pipe orientations of interest from 'worldConnectedDirections'
             // Fun fact: a collection of four bits is called a 'nibble'! They aren't natively supported :(
-            var pipeLayerConnectedDirections = (PipeDirection) (15 & (worldConnectedDirections >> (PipeDirectionHelpers.PipeDirections * i)));
+            var pipeLayerConnectedDirections = (PipeDirection)(15 & (worldConnectedDirections >> (PipeDirectionHelpers.PipeDirections * i)));
 
             // Transform the connected directions to local-coordinates
             var connectedDirections = pipeLayerConnectedDirections.RotatePipeDirection(-Transform(uid).LocalRotation);
@@ -101,7 +115,7 @@ public sealed partial class AtmosPipeAppearanceSystem : SharedAtmosPipeAppearanc
                     continue;
 
                 var layer = args.Sprite[key];
-                var dir = (PipeDirection) layerKey;
+                var dir = (PipeDirection)layerKey;
                 var visible = connectedDirections.HasDirection(dir);
 
                 layer.Visible &= visible;
@@ -114,14 +128,16 @@ public sealed partial class AtmosPipeAppearanceSystem : SharedAtmosPipeAppearanc
         }
     }
 
-    private static SpriteComponent.DirectionOffset ToOffset(PipeConnectionLayer layer)
-    => layer switch
+    private SpriteComponent.DirectionOffset ToOffset(PipeConnectionLayer layer)
     {
-        PipeConnectionLayer.NorthConnection => SpriteComponent.DirectionOffset.Flip,
-        PipeConnectionLayer.EastConnection => SpriteComponent.DirectionOffset.CounterClockwise,
-        PipeConnectionLayer.WestConnection => SpriteComponent.DirectionOffset.Clockwise,
-        _ => SpriteComponent.DirectionOffset.None,
-    };
+        return layer switch
+        {
+            PipeConnectionLayer.NorthConnection => SpriteComponent.DirectionOffset.Flip,
+            PipeConnectionLayer.EastConnection => SpriteComponent.DirectionOffset.CounterClockwise,
+            PipeConnectionLayer.WestConnection => SpriteComponent.DirectionOffset.Clockwise,
+            _ => SpriteComponent.DirectionOffset.None,
+        };
+    }
 
     private enum PipeConnectionLayer : byte
     {

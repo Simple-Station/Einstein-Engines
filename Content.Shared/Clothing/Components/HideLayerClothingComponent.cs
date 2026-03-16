@@ -1,4 +1,15 @@
+// SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+// SPDX-FileCopyrightText: 2025 paige404 <59348003+paige404@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.Humanoid;
+using Content.Shared.Inventory;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Clothing.Components;
@@ -11,13 +22,20 @@ namespace Content.Shared.Clothing.Components;
 public sealed partial class HideLayerClothingComponent : Component
 {
     /// <summary>
-    /// The appearance layer to hide.
+    /// The appearance layer(s) to hide. Use <see cref='Layers'>Layers</see> instead.
     /// </summary>
     [DataField]
-    public HashSet<HumanoidVisualLayers> Slots = new();
+    [Obsolete("This attribute is deprecated, please use Layers instead.")]
+    public HashSet<HumanoidVisualLayers>? Slots;
 
     /// <summary>
-    /// The clothing layers to hide.
+    /// A map of the appearance layer(s) to hide, and the equipment slot that should hide them.
+    /// </summary>
+    [DataField]
+    public Dictionary<HumanoidVisualLayers, SlotFlags> Layers = new();
+
+    /// <summary>
+    /// EE Plasmeme Change: The clothing layers to hide.
     /// </summary>
     [DataField]
     public HashSet<string>? ClothingSlots = new();
@@ -27,11 +45,4 @@ public sealed partial class HideLayerClothingComponent : Component
     /// </summary>
     [DataField]
     public bool HideOnToggle = false;
-
-    /// <summary>
-    /// If true, the layer will always be hidden even if the layer
-    /// is not present in the equipee's HumanoidAppearanceComponent.HideLayerOnEquip field.
-    /// </summary>
-    [DataField]
-    public bool Force = false;
 }

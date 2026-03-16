@@ -32,7 +32,6 @@ public sealed class BarkSystem : SharedBarkSystem
         _uiManager.GetUIController<ChatUIController>().MessageAdded += OnMessageAdded;
 
         _cfg.OnValueChanged(WhiteCVars.BarkVolume, OnBarkVolumeChanged, true);
-        _cfg.OnValueChanged(WhiteCVars.VoiceType, OnVoiceTypeChanged, true);
         _cfg.OnValueChanged(WhiteCVars.BarkLimit, OnBarkLimitChanged, true);
         SubscribeNetworkEvent<EntityBarkEvent>(OnEntityBark);
     }
@@ -41,7 +40,6 @@ public sealed class BarkSystem : SharedBarkSystem
     {
         _uiManager.GetUIController<ChatUIController>().MessageAdded -= OnMessageAdded;
         _cfg.UnsubValueChanged(WhiteCVars.BarkVolume, OnBarkVolumeChanged);
-        _cfg.UnsubValueChanged(WhiteCVars.VoiceType, OnVoiceTypeChanged);
         _cfg.UnsubValueChanged(WhiteCVars.BarkLimit, OnBarkLimitChanged);
     }
 
@@ -57,7 +55,6 @@ public sealed class BarkSystem : SharedBarkSystem
         Bark(new(ent, comp), message.Message, message.Channel == ChatChannel.Whisper);
     }
 
-    private void OnVoiceTypeChanged(CharacterVoiceType voice) => _clientSideEnabled = voice == CharacterVoiceType.Bark;
     private void OnBarkVolumeChanged(float volume) => _volume = volume;
     private void OnBarkLimitChanged(int count) => _maxBarkCount = count;
 

@@ -1,5 +1,29 @@
+// SPDX-FileCopyrightText: 2022 Kevin Zheng <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Doru991 <75124791+Doru991@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Flesh <62557990+PolterTzi@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 drakewill-CRL <46307022+drakewill-CRL@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ignaz "Ian" Kraft <ignaz.k@live.de>
+// SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Botany.Components;
-using Content.Shared.Kitchen.Components;
+using Content.Server.Kitchen.Components;
 using Content.Server.Popups;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Botany;
@@ -14,7 +38,11 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using Content.Server.Teleportation;
+using Content.Goobstation.Common.NTR.Scan;
+using Content.Server.EntityEffects; // Goobstation
+using Content.Shared.Administration.Logs;
+using Content.Shared.Database;
+using Content.Shared.EntityEffects;
 
 namespace Content.Server.Botany.Systems;
 
@@ -28,12 +56,15 @@ public sealed partial class BotanySystem : EntitySystem
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly RandomHelperSystem _randomHelper = default!;
+    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly SharedEntityEffectSystem _effect = default!; // goob edit
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<SeedComponent, ExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<ProduceComponent, ExaminedEvent>(OnProduceExamined);
     }
 
     public bool TryGetSeed(SeedComponent comp, [NotNullWhen(true)] out SeedData? seed)
@@ -117,7 +148,12 @@ public sealed partial class BotanySystem : EntitySystem
     {
         if (position.IsValid(EntityManager) &&
             proto.ProductPrototypes.Count > 0)
+        {
+            if (proto.HarvestLogImpact != null)
+                _adminLogger.Add(LogType.Botany, proto.HarvestLogImpact.Value, $"Auto-harvested {Loc.GetString(proto.Name):seed} at Pos:{position}.");
+
             return GenerateProduct(proto, position, yieldMod);
+        }
 
         return Enumerable.Empty<EntityUid>();
     }
@@ -132,12 +168,25 @@ public sealed partial class BotanySystem : EntitySystem
 
         var name = Loc.GetString(proto.DisplayName);
         _popupSystem.PopupCursor(Loc.GetString("botany-harvest-success-message", ("name", name)), user, PopupType.Medium);
+
+        if (proto.HarvestLogImpact != null)
+            _adminLogger.Add(LogType.Botany, proto.HarvestLogImpact.Value, $"{ToPrettyString(user):player} harvested {Loc.GetString(proto.Name):seed} at Pos:{Transform(user).Coordinates}.");
+
         return GenerateProduct(proto, Transform(user).Coordinates, yieldMod);
     }
 
     public IEnumerable<EntityUid> GenerateProduct(SeedData proto, EntityCoordinates position, int yieldMod = 1)
     {
-        var totalYield = CalculateTotalYield(proto.Yield, yieldMod);
+        var totalYield = 0;
+        if (proto.Yield > -1)
+        {
+            if (yieldMod < 0)
+                totalYield = proto.Yield;
+            else
+                totalYield = proto.Yield * yieldMod;
+
+            totalYield = Math.Max(1, totalYield);
+        }
 
         var products = new List<EntityUid>();
 
@@ -151,7 +200,8 @@ public sealed partial class BotanySystem : EntitySystem
             var entity = Spawn(product, position);
             _randomHelper.RandomOffset(entity, 0.25f);
             products.Add(entity);
-
+            if (TryComp<ScannableForPointsComponent>(entity, out var scannable)) // Goobstation
+                scannable.Points = 0; // Goobstation, to prevent ntr duping points with botanists
             var produce = EnsureComp<ProduceComponent>(entity);
 
             produce.Seed = proto;
@@ -166,12 +216,6 @@ public sealed partial class BotanySystem : EntitySystem
                 _metaData.SetEntityDescription(entity,
                     metaData.EntityDescription + " " + Loc.GetString("botany-mysterious-description-addon"), metaData);
             }
-
-            if (proto.Teleporting)
-            {
-                var teleporting = EnsureComp<SquashTeleportComponent>(entity);
-                teleporting.TeleportRadius = proto.Potency / 10f;
-            }
         }
 
         return products;
@@ -181,9 +225,6 @@ public sealed partial class BotanySystem : EntitySystem
     {
         return !proto.Ligneous || proto.Ligneous && held != null && HasComp<SharpComponent>(held);
     }
-
-    public static int CalculateTotalYield(int yield, int yieldMod) =>
-        yield > -1 ? Math.Max(1, yieldMod < 0 ? yield : yield * yieldMod) : 0;
 
     #endregion
 }

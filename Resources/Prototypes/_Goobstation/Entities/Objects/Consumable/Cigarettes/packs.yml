@@ -1,0 +1,32 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: CigPackBlueshield
+  parent: [BaseCentcommContraband, CigPackSyndicate] # Don't tell them
+  name: blueshield cigarette packet
+  description: High-grade cigarettes for a high-grade bodyguard. Infused with a slow-affecting medication to help soothe you.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Consumable/Smokeables/Cigarettes/Packs/blueshield.rsi
+  - type: Item
+    sprite: _Goobstation/Objects/Consumable/Smokeables/Cigarettes/Packs/blueshield.rsi
+
+- type: entity
+  id: CigPackMedical
+  parent: [CigPackBase]
+  name: Chemlab cigarette packet
+  description: Made for and by big pharma. contains 10 super absorbant cigerattes.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Consumable/Smokeables/Cigarettes/Packs/chem.rsi
+  - type: Item
+    sprite: _Goobstation/Objects/Consumable/Smokeables/Cigarettes/Packs/chem.rsi
+  - type: StorageFill
+    contents:
+    - id: CigaretteMedical
+      amount: 10

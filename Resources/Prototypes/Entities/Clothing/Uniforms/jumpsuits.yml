@@ -1,3 +1,154 @@
+# SPDX-FileCopyrightText: 2021 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2021 Mith-randalf <84274729+Mith-randalf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 xRiriq <94037592+xRiriq@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 xRiriq <xRiriq.git@gmail.com>
+# SPDX-FileCopyrightText: 2022 Cheackraze <71046427+Cheackraze@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Chris V <HoofedEar@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Deahaka <96499407+Deahaka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Justin Trotter <trotter.justin@gmail.com>
+# SPDX-FileCopyrightText: 2022 Lamrr <96937466+Lamrr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Myctai <108953437+Myctai@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Pancake <Pangogie@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
+# SPDX-FileCopyrightText: 2022 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 ZeroDiamond <zxdwareisbroken@gmail.com>
+# SPDX-FileCopyrightText: 2022 Zymem <97173622+Zymem@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 AJCM <AJCM@tutanota.com>
+# SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Alekshhh <44923899+Alekshhh@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 ElectroJr <leonsfriedrich@gmail.com>
+# SPDX-FileCopyrightText: 2023 Guilherme Ornel <86210200+joshepvodka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 KEEYNy <128301315+KEEYNy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 KingFroozy <140668342+KingFroozy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nim <128169402+Nimfar11@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 OctoRocket <88291550+OctoRocket@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 PixelTK <85175107+PixelTheKermit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Puro <103608145+PuroSlavKing@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Sailor <109166122+Equivocateur@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Tunguso4ka <71643624+Tunguso4ka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 ar4ill <122553891+ar4ill@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 camrynz <99278536+camrynz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 kxv <136233650+kxvvv@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 liltenhead <104418166+liltenhead@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lzk228 <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 nmajask <nmajask@gmail.com>
+# SPDX-FileCopyrightText: 2023 noctis <99278536+noctyrnal@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 potato1234_x <79580518+potato1234x@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Alice "Arimah" Heurlin <30327355+arimah@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 CaasGit <87243814+CaasGit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DieselMohawk <gavin.drinka@gmail.com>
+# SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 EmoGarbage404 <retron404@gmail.com>
+# SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 HS <81934438+HolySSSS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hanz <41141796+Hanzdegloker@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hrosts <35345601+Hrosts@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ian <ignaz.k@live.de>
+# SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Jackal298 <129199891+Jackal298@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Joel Zimmerman <JoelZimmerman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 JustCone <141039037+JustCone14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 K-Dynamic <20566341+K-Dynamic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Ko4ergaPunk <62609550+Ko4ergaPunk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kukutis96513 <146854220+Kukutis96513@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Lye <128915833+Lyroth001@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MerrytheManokit <167581110+MerrytheManokit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MureixloI <132683811+MureixloI@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 NakataRin <45946146+NakataRin@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 OrangeMoronage9622 <whyteterry0092@gmail.com>
+# SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Preston Smith <92108534+thetolbean@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 RedBookcase <Usualmoves@gmail.com>
+# SPDX-FileCopyrightText: 2024 RedBookcase <crazykid1590@gmail.com>
+# SPDX-FileCopyrightText: 2024 Repo <47093363+Titian3@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 RiceMar1244 <138547931+RiceMar1244@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Stalen <33173619+stalengd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TakoDragon <69509841+BackeTako@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Truoizys <153248924+Truoizys@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st <shadowstalkermll@gmail.com>
+# SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2024 Vigers Ray <60344369+VigersRay@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 dffdff2423 <dffdff2423@gmail.com>
+# SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+# SPDX-FileCopyrightText: 2024 foboscheshir <156405958+foboscheshir@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 osjarw <62134478+osjarw@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+# SPDX-FileCopyrightText: 2024 saintmuntzer <47153094+saintmuntzer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 shamp <140359015+shampunj@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 strO0pwafel <153459934+strO0pwafel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 stroopwafel <j.o.luijkx@student.tudelft.nl>
+# SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BramvanZijp <56019239+BramvanZijp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Froffy025 <78222136+Froffy025@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Froffy025 <scotttaco025@gmail.com>
+# SPDX-FileCopyrightText: 2025 GMWQ <garethquaile@gmail.com>
+# SPDX-FileCopyrightText: 2025 Gareth Quaile <garethquaile@gmail.com>
+# SPDX-FileCopyrightText: 2025 Golden Can <greentopcan@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 YoungThug <ramialanbagy@gmail.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 lzk <124214523+lzk228@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitDeathSquad
@@ -8,74 +159,31 @@
     sprite: Clothing/Uniforms/Jumpsuit/deathsquad.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/deathsquad.rsi
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase] # Goob
   id: ClothingUniformJumpsuitAncient
   name: ancient jumpsuit
   description: A terribly ragged and frayed grey jumpsuit. It looks like it hasn't been washed in over a decade.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/ancient.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/color/color.rsi # Goob
+    layers:
+    - state: icon
+      color: "#b3b3b3"
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/ancient.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/color/ancient.rsi
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase] # Goob
   id: ClothingUniformJumpsuitBartender
   name: bartender's uniform
   description: A nice and tidy uniform. Shame about the bar though.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/bartender.rsi
-
-- type: entity
-  parent: ClothingUniformBaseFlippable
-  id: ClothingUniformJumpsuitBartenderNt
-  name: bartender's nanotrasen uniform
-  description: A nice and tidy uniform. Shame about the bar though.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/bartender_nt.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/bartender_nt.rsi
-
-- type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitBartenderNt ]
-  id: ClothingUniformJumpsuitBartenderNtFlipped
-  name: bartender's nanotrasen uniform
-
-- type: entity
-  parent: ClothingUniformBaseFlippable
-  id: ClothingUniformJumpsuitBartenderIdris
-  name: bartender's idris incorporated uniform
-  description: A nice and tidy uniform. Shame about the bar though.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/bartender_idris.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/bartender_idris.rsi
-
-- type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitBartenderIdris ]
-  id: ClothingUniformJumpsuitBartenderIdrisFlipped
-  name: bartender's idris incorporated uniform
-
-- type: entity
-  parent: ClothingUniformBaseFlippable
-  id: ClothingUniformJumpsuitBartenderOrion
-  name: bartender's orion express uniform
-  description: A nice and tidy uniform. Shame about the bar though.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/bartender_orion.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/bartender_orion.rsi
-
-- type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitBartenderOrion ]
-  id: ClothingUniformJumpsuitBartenderOrionFlipped
-  name: bartender's orion express uniform
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Civilian/bartender.rsi # Goob
 
 - type: entity
   parent: ClothingUniformBase
@@ -93,42 +201,63 @@
     mode: SensorCords
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseCommandContraband]
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitBartenderPurple
+  name: purple bartender's uniform
+  description: A special purple outfit to serve drinks.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/bartender_purple.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/bartender_purple.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseCommandContraband] # Goob
   id: ClothingUniformJumpsuitCaptain
   name: captain's jumpsuit
   description: It's a blue jumpsuit with some gold markings denoting the rank of "Captain".
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/captain.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Civilian/captain.rsi # Goob
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/captain.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Civilian/captain.rsi # Goob
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase] # Goob
   id: ClothingUniformJumpsuitCargo
   name: cargo tech jumpsuit
-  description: A sturdy jumpsuit, issued to members of the Logistics department. # DeltaV - Logistics Department replacing Cargo
+  description: A sturdy jumpsuit, issued to members of the Cargo department.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/cargotech.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Cargo/cargotech.rsi # Goob
+  - type: Item # Goob
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#b7793d"
+      right:
+      - state: inhand-right
+        color: "#b7793d"
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase] # Goob
   id: ClothingUniformJumpsuitSalvageSpecialist
   name: salvage specialist's jumpsuit
   description: It's a snappy jumpsuit with a sturdy set of overalls. It's very dirty.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/salvage.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Cargo/salvage.rsi # Goob
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Cargo/salvage.rsi # Goob
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseCommandContraband]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseCommandContraband] # Goob
   id: ClothingUniformJumpsuitChiefEngineer
   name: chief engineer's jumpsuit
   description: It's a high visibility jumpsuit given to those engineers insane enough to achieve the rank of Chief Engineer.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/ce.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Engineering/ce.rsi # Goob
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
@@ -142,15 +271,15 @@
     sprite: Clothing/Uniforms/Jumpsuit/ce_turtle.rsi
 
 - type: entity
-  parent: [ClothingUniformBase,ClothingUniformFoldableBase]
+  parent: ClothingUniformBase
   id: ClothingUniformJumpsuitChaplain
   name: chaplain's jumpsuit
   description: It's a black jumpsuit, often worn by religious folk.
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/chaplain.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/chaplain.rsi
+    - type: Sprite
+      sprite: Clothing/Uniforms/Jumpsuit/chaplain.rsi
+    - type: Clothing
+      sprite: Clothing/Uniforms/Jumpsuit/chaplain.rsi
 
 - type: entity
   parent: [ ClothingUniformBase, BaseCentcommContraband ]
@@ -186,95 +315,46 @@
     sprite: Clothing/Uniforms/Jumpsuit/centcom_officer.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase] # Goob
   id: ClothingUniformJumpsuitChef
   name: chef uniform
   description: Can't cook without this.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/chef.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Civilian/chef.rsi # Goob
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/chef.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Civilian/chef.rsi # Goob
 
 - type: entity
-  parent: ClothingUniformBaseFlippable
-  id: ClothingUniformJumpsuitChefNt
-  name: nanotrasen chef uniform
-  description: Can't cook without this.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/chef_nt.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/chef_nt.rsi
-
-- type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitChefNt ]
-  id: ClothingUniformChefNtFlipped
-  name: nanotrasen chef uniform
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitChefIdris
-  name: idris incorporated chef uniform
-  description: Can't cook without this.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/chef_idris.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/chef_idris.rsi
-
-- type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitChefIdris ]
-  id: ClothingUniformChefIdrisFlipped
-  name: nidris incorporated notrasen chef uniform
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitChefOrion
-  name: orion express chef uniform
-  description: Can't cook without this.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/chef_orion.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/chef_orion.rsi
-
-- type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitChefOrion ]
-  id: ClothingUniformChefOrionFlipped
-  name: orion express chef uniform
-
-
-- type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase] # Goob
   id: ClothingUniformJumpsuitChemistry
   name: chemistry jumpsuit
   description: There's some odd stains on this jumpsuit. Hm.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/chemistry.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Medical/chemistry.rsi # Goob
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase] # Goob
   id: ClothingUniformJumpsuitVirology
   name: virology jumpsuit
   description: It's made of a special fiber that gives special protection against biohazards. It has a virologist rank stripe on it.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/virology.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Medical/virology.rsi # Goob
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/virology.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Medical/virology.rsi # Goob
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase] # Goob
   id: ClothingUniformJumpsuitGenetics
   name: genetics jumpsuit
   description: It's made of a special fiber that gives special protection against biohazards. It has a geneticist rank stripe on it.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/genetics.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Medical/genetics.rsi # Goob
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/genetics.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Medical/genetics.rsi # Goob
 
 - type: entity
   parent: ClothingUniformBase
@@ -304,6 +384,11 @@
     graph: BananaClownJumpsuit
     node: jumpsuit
   - type: Armor
+    coverage:
+    - Chest
+    - Groin
+    - Arm
+    - Leg
     modifiers:
       coefficients:
         Radiation: 0.8
@@ -329,13 +414,13 @@
     sprite: Clothing/Uniforms/Jumpsuit/jester2.rsi
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseCommandContraband]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseCommandContraband] # Goob
   id: ClothingUniformJumpsuitCMO
   name: chief medical officer's jumpsuit
   description: It's a jumpsuit worn by those with the experience to be Chief Medical Officer. It provides minor biological protection.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/cmo.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Medical/cmo.rsi # Goob
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
@@ -349,97 +434,109 @@
     sprite: Clothing/Uniforms/Jumpsuit/cmo_turtle.rsi
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseSecurityContraband] # Goob
   id: ClothingUniformJumpsuitDetective
   name: hard-worn suit
   description: Someone who wears this means business.
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/detective.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/detective.rsi
+    - type: Sprite
+      sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/detective.rsi # Goob
+    - type: Clothing
+      sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/detective.rsi # Goob
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseSecurityContraband] # Goob
   id: ClothingUniformJumpsuitDetectiveGrey
   name: noir suit
   description: A hard-boiled private investigator's grey suit, complete with tie clip.
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/detective_grey.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/detective_grey.rsi
+    - type: Sprite
+      sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/detective_grey.rsi # Goob
+    - type: Clothing
+      sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/detective_grey.rsi # Goob
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase] # Goob
   id: ClothingUniformJumpsuitEngineering
   name: engineering jumpsuit
   description: If this suit was non-conductive, maybe engineers would actually do their damn job.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/engineering.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Engineering/engineering.rsi # Goob
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase] # Goob
   id: ClothingUniformJumpsuitEngineeringHazard
   name: hazard jumpsuit
   description: Woven in a grungy, warm orange. Lets others around you know that you really mean business when it comes to work.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/engineering_hazard.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Engineering/engineering_hazard.rsi # Goob
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseCommandContraband]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseCommandContraband] # Goob
   id: ClothingUniformJumpsuitHoP
   name: head of personnel's jumpsuit
   description: Rather bland and inoffensive. Perfect for vanishing off the face of the universe.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/hop.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Civilian/hop.rsi # Goob
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseCommandContraband]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseCommandContraband] # Goob
   id: ClothingUniformJumpsuitHoS
   name: head of security's jumpsuit
-  description: A standard Station Security uniform, adorned with gold emblems and commander's epaulettes. # DeltaV - improved description
+  description: It's bright red and rather crisp, much like security's victims tend to be.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/hos.rsi # DeltaV - resprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/hos.rsi # Goob
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/hos.rsi # DeltaV - resprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/hos.rsi # Goob
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#C12D30"
+        sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/color/color.rsi # Goob
+      - state: overlay-inhand-left
+      right:
+      - state: inhand-right
+        color: "#C12D30"
+        sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/color/color.rsi # Goob
+      - state: overlay-inhand-right
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseCommandContraband]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseCommandContraband] # Goob
   id: ClothingUniformJumpsuitHoSAlt
   name: head of security's turtleneck
   description: It's a turtleneck worn by those strong and disciplined enough to achieve the position of Head of Security.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/hos_alt.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/hos_alt.rsi # Goob
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/hos_alt.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/hos_alt.rsi # Goob
 
 - type: entity
-  parent: [ClothingUniformBase, BaseCommandContraband]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseCommandContraband] # Goob
   id: ClothingUniformJumpsuitHoSBlue
   name: head of security's blue jumpsuit
-  description: A blue Station Security shirt with charcoal trousers. Features gold emblems and commander's epaulettes. # DeltaV - improved description
+  description: A blue jumpsuit of Head of Security.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/hos_blue.rsi # DeltaV - resprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/hos_blue.rsi # Goob
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/hos_blue.rsi # DeltaV - resprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/hos_blue.rsi # Goob
 
 - type: entity
-  parent: [ClothingUniformBase, BaseCommandContraband]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseCommandContraband] # Goob
   id: ClothingUniformJumpsuitHoSGrey
   name: head of security's grey jumpsuit
-  description: A grey Station Security shirt with charcoal trousers. Stands out with red highlights, gold emblems, and commander's epaulettes. # DeltaV - improved description
+  description: A grey jumpsuit of Head of Security, which make him look somewhat like a passenger.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/hos_grey.rsi # DeltaV - resprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/hos_grey.rsi # Goob
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/hos_grey.rsi # DeltaV - resprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/hos_grey.rsi # Goob
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
@@ -453,190 +550,119 @@
     sprite: Clothing/Uniforms/Jumpsuit/hos_parade.rsi
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  parent: [ ClothingUniformBase, BaseCommandContraband ]
+  id: ClothingUniformJumpsuitCommandGeneric
+  name: command jumpsuit
+  description: A generic Command-colored jumpsuit not associated with any particular department.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/commandgeneric.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/commandgeneric.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase] # Goob
   id: ClothingUniformJumpsuitHydroponics
   name: hydroponics jumpsuit
   description: Has a strong earthy smell to it. Hopefully it's merely dirty as opposed to soiled.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/hydro.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Civilian/hydro.rsi # Goob
 
 - type: entity
-  parent: ClothingUniformBaseFlippable
-  id: ClothingUniformJumpsuitHydroponicsNt
-  name: nanotrasen hydroponics jumpsuit
-  description: Has a strong earthy smell to it. Hopefully it's merely dirty as opposed to soiled.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/hydro_nt.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/hydro_nt.rsi
-
-- type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitHydroponicsNt ]
-  id: ClothingUniformJumpsuitHydroponicsNtFlipped
-  name: nanotrasen hydroponics jumpsuit
-
-- type: entity
-  parent: ClothingUniformBaseFlippable
-  id: ClothingUniformJumpsuitHydroponicsIdris
-  name: idris incorporated hydroponics jumpsuit
-  description: Has a strong earthy smell to it. Hopefully it's merely dirty as opposed to soiled.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/hydro_idris.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/hydro_idris.rsi
-
-- type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitHydroponicsIdris ]
-  id: ClothingUniformJumpsuitHydroponicsIdrisFlipped
-  name: idris incorporated hydroponics jumpsuit
-
-- type: entity
-  parent: ClothingUniformBaseFlippable
-  id: ClothingUniformJumpsuitHydroponicsOrion
-  name: orion express hydroponics jumpsuit
-  description: Has a strong earthy smell to it. Hopefully it's merely dirty as opposed to soiled.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/hydro_orion.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/hydro_orion.rsi
-
-- type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitHydroponicsOrion ]
-  id: ClothingUniformJumpsuitHydroponicsOrionFlipped
-  name: orion express hydroponics jumpsuit
-
-- type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase]  # Goob
   id: ClothingUniformJumpsuitJanitor
   name: janitor jumpsuit
   description: The jumpsuit for the poor sop with a mop.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/janitor.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Civilian/janitor.rsi # Goob
 
 - type: entity
-  parent: ClothingUniformBaseFlippable
-  id: ClothingUniformJumpsuitJanitorNt
-  name: nanotrasen janitor jumpsuit
-  description: The jumpsuit for the poor sop with a mop.
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitKimono
+  name: kimono
+  description: Traditional chinese clothing.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/janitor_nt.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Civilian/kimono.rsi # Goob
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/janitor_nt.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Civilian/kimono.rsi # Goob
 
 - type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitJanitorNt ]
-  id: ClothingUniformJumpsuitJanitorNtFlipped
-  name: nanotrasen janitor jumpsuit
-
-- type: entity
-  parent: ClothingUniformBaseFlippable
-  id: ClothingUniformJumpsuitJanitorIdris
-  name: idris incorporated janitor jumpsuit
-  description: The jumpsuit for the poor sop with a mop.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/janitor_idris.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/janitor_idris.rsi
-
-- type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitJanitorIdris ]
-  id: ClothingUniformJumpsuitJanitorIdrisFlipped
-  name: idris incorporated janitor jumpsuit
-
-- type: entity
-  parent: ClothingUniformBaseFlippable
-  id: ClothingUniformJumpsuitJanitorOrion
-  name: orion express janitor jumpsuit
-  description: The jumpsuit for the poor sop with a mop.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/janitor_orion.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/janitor_orion.rsi
-
-- type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitJanitorOrion ]
-  id: ClothingUniformJumpsuitJanitorOrionFlipped
-  name: orion express janitor jumpsuit
-
-- type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase] # Goob
   id: ClothingUniformJumpsuitMedicalDoctor
   name: medical doctor jumpsuit
   description: It's made of a special fiber that provides minor protection against biohazards. It has a cross on the chest denoting that the wearer is trained medical personnel.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/medical.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Medical/medical.rsi # Goob
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase] # Goob
   id: ClothingUniformJumpsuitMime
   name: mime suit
   description: ...
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/mime.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Civilian/mime.rsi # Goob
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/mime.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Civilian/mime.rsi # Goob
 
 - type: entity
-  parent: [ ClothingUniformBase, ClothingUniformFoldableBase ]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase] # Goob
   id: ClothingUniformJumpsuitParamedic
   name: paramedic jumpsuit
   description: It's got a plus on it, that's a good thing right?
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/paramedic.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/paramedic.rsi
-
-- type: entity
-  parent: [ ClothingUniformBase, ClothingUniformFoldableBase ]
-  id: ClothingUniformJumpsuitBrigmedic
-  name: corpsman jumpsuit # DeltaV - rename brigmedic to corpsman
-  description: This uniform is issued to qualified personnel who have been trained. No one cares that the training took half a day.
-  components:
-  - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/brigmedic.rsi # DeltaV - resprite
-  - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/brigmedic.rsi # DeltaV - resprite
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitPrisoner
-  name: prisoner jumpsuit
-  description: Busted.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    layers:
-    - state: icon
-      color: "#ff8300"
-    - state: prisoner-icon
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Medical/paramedic.rsi # Goob
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#ff8300"
-      - state: prisoner-inhand-left
+        color: "#364660"
       right:
       - state: inhand-right
-        color: "#ff8300"
-      - state: prisoner-inhand-right
+        color: "#364660"
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    clothingVisuals:
-      jumpsuit:
-      - state: equipped-INNERCLOTHING
-        color: "#ff8300"
-      - state: prisoner-equipped-INNERCLOTHING
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Medical/paramedic.rsi # Goob
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitBrigmedic
+  name: brigmedic jumpsuit
+  description: This uniform is issued to qualified personnel who have been trained. No one cares that the training took half a day.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/brigmedic.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/brigmedic.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase] # Goob
+  id: ClothingUniformJumpsuitPrisoner
+  name: prisoner jumpsuit
+  description: A jumpsuit used for prisoners. It has suit sensors automatically enabled at all times.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/color/prisoner.rsi # Goob
+    layers:
+    - state: icon
+    #  color: "#ff8300"
+    #- state: prisoner-icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+    #    color: "#ff8300"
+    #  - state: prisoner-inhand-left
+      right:
+      - state: inhand-right
+    #    color: "#ff8300"
+    #  - state: prisoner-inhand-right
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/color/prisoner.rsi # Goob
   - type: SuitSensor
     controlsLocked: true
     randomMode: false
@@ -644,66 +670,81 @@
   - type: Tag
     tags:
     - ClothMade
+    - Recyclable
     - PrisonUniform
     - WhitelistChameleon
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseCommandContraband]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseCommandContraband] # Goob
   id: ClothingUniformJumpsuitQM
-  name: logistics officer's jumpsuit # DeltaV - Logistics Department replacing Cargo
+  name: quartermaster's jumpsuit
   description: 'What can brown do for you?'
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/qm.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Cargo/qm.rsi # Goob
+  - type: Item # Goob
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#b7793d"
+      right:
+      - state: inhand-right
+        color: "#b7793d"
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/qm.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Cargo/qm.rsi # Goob
 
 - type: entity
-  parent: [ClothingUniformBase, BaseCommandContraband]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseCommandContraband] # Goob
   id: ClothingUniformJumpsuitQMTurtleneck
-  name: logistics officer's turtleneck # DeltaV - Logistics Department replacing Cargo
+  name: quartermasters's turtleneck
   description: A sharp turtleneck made for the hardy work environment of supply.
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/qmturtle.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/qmturtle.rsi
+    - type: Sprite
+      sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Cargo/qmturtle.rsi # Goob
+    - type: Item # Goob
+      inhandVisuals:
+        left:
+        - state: inhand-left
+          color: "#b7793d"
+        right:
+        - state: inhand-right
+          color: "#b7793d"
+    - type: Clothing
+      sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Cargo/qmturtle.rsi # Goob
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
   id: ClothingUniformJumpsuitQMFormal
-  # DeltaV - Logistics Department - Replace Quartermaster with Logistics Officer
-  name: logistics officer's formal suit
-  description: Inspired by the logistics officers of military's past, the perfect outfit for supplying a formal occasion.
-  # End of modified code
+  name: quartermasters's formal suit
+  description: Inspired by the quartermasters of military's past, the perfect outfit for supplying a formal occasion.
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/qmformal.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/qmformal.rsi
+    - type: Sprite
+      sprite: Clothing/Uniforms/Jumpsuit/qmformal.rsi
+    - type: Clothing
+      sprite: Clothing/Uniforms/Jumpsuit/qmformal.rsi
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
   id: ClothingUniformJumpsuitResearchDirector
-  name: mystagogue's turtleneck # DeltaV - Epistemics Department replacing Science
-  description: It's a turtleneck worn by those with the know-how to achieve the position of Mystagogue. Its fabric provides minor protection from biological contaminants. # DeltaV - Epistemics Department replacing Science
+  name: research director's turtleneck
+  description: It's a turtleneck worn by those with the know-how to achieve the position of Research Director. Its fabric provides minor protection from biological contaminants.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/rnd.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/RND/rnd.rsi # Goob
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/rnd.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/RND/rnd.rsi # Goob
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase] # Goob
   id: ClothingUniformJumpsuitScientist
   name: scientist jumpsuit
   description: It's made of a special fiber that increases perceived intelligence and decreases personal ethics. It has markings that denote the wearer as a scientist.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/scientist.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/RND/scientist.rsi
 
 - type: entity
-  parent: [ ClothingUniformBase, ClothingUniformFoldableBase ]
+  parent: ClothingUniformBase
   id: ClothingUniformJumpsuitScientistFormal
   name: scientist's formal jumpsuit
   description: A uniform for sophisticated scientists, best worn with its matching tie.
@@ -714,61 +755,61 @@
     sprite: Clothing/Uniforms/Jumpsuit/scientist_formal.rsi
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase] # Goob
   id: ClothingUniformJumpsuitRoboticist
   name: roboticist jumpsuit
   description: It's a slimming black with reinforced seams; great for industrial work.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/roboticist.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/RND/roboticist.rsi # Goob
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseRestrictedContraband]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseSecurityContraband] # Goob
   id: ClothingUniformJumpsuitSec
   name: security jumpsuit
-  description: Charcoal trousers and a dull red shirt, the standard-issue uniform of the infamous Station Security Department. # DeltaV - improved description
+  description: A jumpsuit made of strong material, providing robust protection.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/security.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/security.rsi # Goob
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/security.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/security.rsi # Goob
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
         color: "#C12D30"
-        sprite: Clothing/Uniforms/Jumpsuit/color.rsi
+        sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/color/color.rsi # Goob
       - state: overlay-inhand-left
       right:
       - state: inhand-right
         color: "#C12D30"
-        sprite: Clothing/Uniforms/Jumpsuit/color.rsi
+        sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/color/color.rsi # Goob
       - state: overlay-inhand-right
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseRestrictedContraband]
+  parent: [ClothingUniformBase, BaseSecurityContraband] # Goob
   id: ClothingUniformJumpsuitSecBlue
-  name: blue security jumpsuit # DeltaV - renamed to mirror other security uniforms
-  description: A cool blue shirt over charcoal trousers, for the calm and collected security officer. # DeltaV - improved description
+  name: blue shirt and tie
+  description: I'm a little busy right now, Calhoun.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/security_blue.rsi # DeltaV - resprite
+    sprite: Clothing/Uniforms/Jumpsuit/security_blue.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/security_blue.rsi # DeltaV - resprite
+    sprite: Clothing/Uniforms/Jumpsuit/security_blue.rsi
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseRestrictedContraband]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseSecurityContraband] # Goob
   id: ClothingUniformJumpsuitSecGrey
   name: grey security jumpsuit
-  description: A light grey shirt with bright red highlights, for dedicated and responsive security officers. # DeltaV - improved description
+  description: A tactical relic of years past before Nanotrasen decided it was cheaper to dye the suits red instead of washing out the blood.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/security_grey.rsi # DeltaV - resprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/security_grey.rsi # Goob
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/security_grey.rsi # DeltaV - resprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/security_grey.rsi # Goob
 
 - type: entity
-  parent: [ClothingUniformBase, BaseRestrictedContraband]
+  parent: [ClothingUniformBase, BaseSecurityContraband]
   id: ClothingUniformSecurityTrooper
   name: trooper uniform
   description: A formal uniform issued to the Nanotrasen Troopers, usually it comes with a car.
@@ -779,15 +820,27 @@
     sprite: Clothing/Uniforms/Jumpsuit/security_trooper.rsi
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseRestrictedContraband]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseSecurityContraband] # Goob
   id: ClothingUniformJumpsuitWarden
-  name: warden's jumpsuit # DeltaV - renamed to mirror other security uniforms
-  description: Red shirt on charcoal trousers, with white markings and epaulettes that denote a warden's rank. # DeltaV - improved description
+  name: warden's uniform
+  description: A formal security suit for officers complete with Nanotrasen belt buckle.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/warden.rsi # DeltaV - resprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/warden.rsi # Goob
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/warden.rsi # DeltaV - resprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/warden.rsi # Goob
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#C12D30"
+        sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/color/color.rsi # Goob
+      - state: overlay-inhand-left
+      right:
+      - state: inhand-right
+        color: "#C12D30"
+        sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/color/color.rsi # Goob
+      - state: overlay-inhand-right
 
 - type: entity
   parent: ClothingUniformBase
@@ -810,118 +863,6 @@
     sprite: Clothing/Uniforms/Jumpsuit/librarian.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/librarian.rsi
-
-- type: entity
-  parent: ClothingUniformBaseFlippable
-  id: ClothingUniformJumpsuitLibrarianNt
-  name: nanotrasen librarian jumpsuit
-  description: A cosy blue jumper fit for a curator of books.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/librarian_nt.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/librarian_nt.rsi
-
-- type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitLibrarianNt ]
-  id: ClothingUniformJumpsuitLibrarianFlipped
-  name: nanotrasen librarian jumpsuit
-
-- type: entity
-  parent: ClothingUniformBaseFlippable
-  id: ClothingUniformJumpsuitLibrarianIdris
-  name: idris incroporated librarian jumpsuit
-  description: A cosy teal jumper fit for a curator of books.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/librarian_idris.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/librarian_idris.rsi
-
-- type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitLibrarianIdris ]
-  id: ClothingUniformJumpsuitLibrarianIdrisFlipped
-  name: idris incroporated librarian jumpsuit
-
-- type: entity
-  parent: ClothingUniformBaseFlippable
-  id: ClothingUniformJumpsuitLibrarianOrion
-  name: orion express librarian jumpsuit
-  description: A cosy brown jumper fit for a curator of books.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/librarian_orion.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/librarian_orion.rsi
-
-- type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitLibrarianOrion ]
-  id: ClothingUniformJumpsuitLibrarianOrionFlipped
-  name: orion express librarian jumpsuit
-
-- type: entity
-  parent: ClothingUniformBaseFlippable
-  id: ClothingUniformJumpsuitLibrarianHeph
-  name: hephaestus industries librarian jumpsuit
-  description: A cosy green jumper fit for a curator of books.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/librarian_heph.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/librarian_heph.rsi
-
-- type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitLibrarianHeph ]
-  id: ClothingUniformJumpsuitLibrarianHephFlipped
-  name: hephaestus industries librarian jumpsuit
-
-- type: entity
-  parent: ClothingUniformBaseFlippable
-  id: ClothingUniformJumpsuitLibrarianPMCG
-  name: private military contracting group librarian jumpsuit
-  description: A cosy white jumper fit for a curator of books.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/librarian_pmcg.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/librarian_pmcg.rsi
-
-- type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitLibrarianPMCG ]
-  id: ClothingUniformJumpsuitLibrarianPMCGFlipped
-  name: private military contracting group librarian jumpsuit
-
-- type: entity
-  parent: ClothingUniformBaseFlippable
-  id: ClothingUniformJumpsuitLibrarianZav
-  name: zavodskoi interstellar librarian jumpsuit
-  description: A blood brown jumper fit for a curator of books.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/librarian_zav.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/librarian_zav.rsi
-
-- type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitLibrarianZav ]
-  id: ClothingUniformJumpsuitLibrarianZavFlipped
-  name: zavodskoi interstellar librarian jumpsuit
-
-- type: entity
-  parent: ClothingUniformBaseFlippable
-  id: ClothingUniformJumpsuitLibrarianZeng
-  name: zeng-hu pharmaceuticals librarian jumpsuit
-  description: A blood brown jumper fit for a curator of books.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/librarian_zeng.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/librarian_zeng.rsi
-
-- type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitLibrarianZeng ]
-  id: ClothingUniformJumpsuitLibrarianZengFlipped
-  name: zeng-hu pharmaceuticals librarian jumpsuit
 
 - type: entity
   parent: ClothingUniformBase
@@ -984,10 +925,10 @@
   name: good lawyer's suit
   description: A tacky suit perfect for a CRIMINAL lawyer!
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/lawyergood.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/lawyergood.rsi
+    - type: Sprite
+      sprite: Clothing/Uniforms/Jumpsuit/lawyergood.rsi
+    - type: Clothing
+      sprite: Clothing/Uniforms/Jumpsuit/lawyergood.rsi
 
 - type: entity
   parent: [UnsensoredClothingUniformBase, BaseSyndicateContraband]
@@ -999,6 +940,8 @@
     sprite: Clothing/Uniforms/Jumpsuit/pyjamasyndicateblack.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/pyjamasyndicateblack.rsi
+  - type: ScannableForPoints # goob edit
+    points: 1
 
 - type: entity
   parent: [UnsensoredClothingUniformBase, BaseSyndicateContraband]
@@ -1010,6 +953,8 @@
     sprite: Clothing/Uniforms/Jumpsuit/pyjamasyndicatepink.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/pyjamasyndicatepink.rsi
+  - type: ScannableForPoints # goob edit
+    points: 1
 
 - type: entity
   parent: [UnsensoredClothingUniformBase, BaseSyndicateContraband]
@@ -1021,6 +966,8 @@
     sprite: Clothing/Uniforms/Jumpsuit/pyjamasyndicatered.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/pyjamasyndicatered.rsi
+  - type: ScannableForPoints # goob edit
+    points: 1
 
 - type: entity
   parent: ClothingUniformBase
@@ -1067,15 +1014,17 @@
     sprite: Clothing/Uniforms/Jumpsuit/hosformal.rsi
 
 - type: entity
-  parent: [UnsensoredClothingUniformBase, BaseSyndicateContraband]
+  parent: [UnsensoredClothingUniformBase, ClothingUniformFoldableBase, BaseSyndicateContraband] # Goob
   id: ClothingUniformJumpsuitOperative
   name: operative jumpsuit
   description: Uniform for elite syndicate operatives performing tactical operations in deep space.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/operative.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Syndicate/operative.rsi # Goob
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/operative.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Syndicate/operative.rsi # Goob
+  - type: StaticPrice
+    price: 500
 
 - type: entity
   parent: ClothingUniformBase
@@ -1083,28 +1032,28 @@
   name: tacticool jumpsuit
   description: Uniform for subpar operative LARPers performing tactical insulated glove theft in deep space.
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/tacticool.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/tacticool.rsi
-  # Too cool for sensors to be on
-  - type: SuitSensor
-    randomMode: false
-    mode: SensorOff
+    - type: Sprite
+      sprite: Clothing/Uniforms/Jumpsuit/tacticool.rsi
+    - type: Clothing
+      sprite: Clothing/Uniforms/Jumpsuit/tacticool.rsi
+    # Too cool for sensors to be on
+    - type: SuitSensor
+      randomMode: false
+      mode: SensorOff
 
 - type: entity
-  parent: [ ClothingUniformBase ]
+  parent: ClothingUniformBase
   id: ClothingUniformJumpsuitMercenary
   name: mercenary jumpsuit
   description: Clothing for real mercenaries who have gone through fire, water and the jungle of planets flooded with dangerous monsters or targets for which a reward has been assigned.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/mercenary.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Syndicate/mercenary.rsi # Goob
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/mercenary.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Syndicate/mercenary.rsi # Goob
 
 - type: entity
-  parent: [ UnsensoredClothingUniformBase, ClothingUniformFoldableBase ]
+  parent: UnsensoredClothingUniformBase
   id: ClothingUniformJumpsuitNinja
   name: ninja jumpsuit
   description: Comfortable ninja suit, for convenience when relaxing and when you need to practice.
@@ -1113,19 +1062,18 @@
     sprite: Clothing/Uniforms/Jumpsuit/ninja.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/ninja.rsi
-  - type: Unremoveable
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase] # Goob
   id: ClothingUniformJumpsuitAtmos
   name: atmospheric technician jumpsuit
   description: I am at work. I can't leave work. Work is breathing. I am testing air quality.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/atmos.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Engineering/atmos.rsi # Goob
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  parent: ClothingUniformBase
   id: ClothingUniformJumpsuitAtmosCasual
   name: atmospheric technician's casual jumpsuit
   description: Might as well relax with a job as easy as yours.
@@ -1134,15 +1082,15 @@
     sprite: Clothing/Uniforms/Jumpsuit/atmos_casual.rsi
 
 - type: entity
-  parent: [ ClothingUniformBase, ClothingUniformFoldableBase ]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase] # Goob
   id: ClothingUniformJumpsuitPsychologist
   name: psychologist suit
   description: I don't lose things. I place things in locations which later elude me.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/psychologist.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Medical/psychologist.rsi # Goob
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/psychologist.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Medical/psychologist.rsi # Goob
 
 - type: entity
   parent: ClothingUniformBase
@@ -1176,6 +1124,28 @@
     sprite: Clothing/Uniforms/Jumpsuit/journalist.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/journalist.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitMonasticRobeDark
+  name: dark monastic robe
+  description: It's a dark robe, often worn by religious folk.
+  components:
+    - type: Sprite
+      sprite: Clothing/Uniforms/Jumpsuit/monastic_robe_dark.rsi
+    - type: Clothing
+      sprite: Clothing/Uniforms/Jumpsuit/monastic_robe_dark.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitMonasticRobeLight
+  name: light monastic robe
+  description: It's a light robe, often worn by religious folk.
+  components:
+    - type: Sprite
+      sprite: Clothing/Uniforms/Jumpsuit/monastic_robe_light.rsi
+    - type: Clothing
+      sprite: Clothing/Uniforms/Jumpsuit/monastic_robe_light.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -1328,8 +1298,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitHawaiRed
   name: red hawaiian shirt
-  # Fixed typo, "Red as a juicy watermelons."
-  description: Red as a juicy watermelon.
+  description: Red as a juicy watermelons.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/hawaired.rsi
@@ -1348,7 +1317,7 @@
     sprite: Clothing/Uniforms/Jumpsuit/hawaiyellow.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, BaseSyndicateContraband]
   id: ClothingUniformJumpsuitSyndieFormal
   name: syndicate formal suit
   description: "The syndicate's uniform is made in an elegant style, it's even a pity to do dirty tricks in this."
@@ -1359,60 +1328,59 @@
     sprite: Clothing/Uniforms/Jumpsuit/syndieformal.rsi
 
 - type: entity
-  parent: [ ClothingUniformBase, ClothingUniformFoldableBase ]
+  parent:  ClothingUniformBase
   id: ClothingUniformJumpsuitFlannel
   name: flannel jumpsuit
-  # Fixed a typo, there should be an apostrophe before the s in 'someone's."
-  description: Smells like someone's been grillin'.
+  description: Smells like someones been grillin'.
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/flannel.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/flannel.rsi
+    - type: Sprite
+      sprite: Clothing/Uniforms/Jumpsuit/flannel.rsi
+    - type: Clothing
+      sprite: Clothing/Uniforms/Jumpsuit/flannel.rsi
 
 - type: entity
-  parent: [ClothingUniformBase,ClothingUniformFoldableBase]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase] # Goob
   id: ClothingUniformJumpsuitSeniorEngineer
   name: senior engineer jumpsuit
   description: A sign of skill and prestige within the engineering department.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/senior_engineer.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Engineering/senior_engineer.rsi # Goob
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/senior_engineer.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Engineering/senior_engineer.rsi # Goob
 
 - type: entity
-  parent: [ClothingUniformBase,ClothingUniformFoldableBase]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase] # Goob
   id: ClothingUniformJumpsuitSeniorResearcher
   name: senior researcher jumpsuit
-  description: A sign of skill and prestige within the epistemics department. # DeltaV - Epistemics Department replacing Science
+  description: A sign of skill and prestige within the science department.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/senior_researcher.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/RND/senior_researcher.rsi # Goob
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/senior_researcher.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/RND/senior_researcher.rsi # Goob
 
 - type: entity
-  parent: [ClothingUniformBase,ClothingUniformFoldableBase]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase] # goob
   id: ClothingUniformJumpsuitSeniorPhysician
   name: senior physician jumpsuit
   description: A sign of skill and prestige within the medical department.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/senior_physician.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Medical/senior_physician.rsi # goob
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/senior_physician.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Medical/senior_physician.rsi # goob
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, BaseSecurityContraband] # Goob
   id: ClothingUniformJumpsuitSeniorOfficer
   name: senior officer jumpsuit
   description: A sign of skill and prestige within the security department.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/senior_officer.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/senior_officer.rsi # goob
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/senior_officer.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/senior_officer.rsi # goob
 
 - type: entity
   parent: ClothingUniformBase
@@ -1431,9 +1399,9 @@
       amount: 8
   - type: FlavorProfile
     flavors:
-    - cobwebs
+      - cobwebs
     ignoreReagents:
-    - Fiber
+      - Fiber
   - type: SolutionContainerManager
     solutions: # 24 (3 (fiber count of web) * 8 (to craft)) + 6 (magical crafting bonus)
       food:
@@ -1455,6 +1423,17 @@
     sprite: Clothing/Uniforms/Jumpsuit/loungewear.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/loungewear.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitGladiator
+  name: gladiator uniform
+  description: Made for true gladiators (or Ash Walkers).
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/gladiator.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/gladiator.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -1586,389 +1565,3 @@
     sprite: Clothing/Uniforms/Jumpsuit/familiar_garbs.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/familiar_garbs.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitSuitAmish
-  name: amish suit
-  description: It's a very Amish-looking suit.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/amish_suit.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/amish_suit.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitSuitAristocratic
-  name: aristocratic suit
-  description: A dapper-looking suit with blue accents that make you feel like an aristocrat.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/aristocratic_suit.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/aristocratic_suit.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitSuitAristocraticTuxedo
-  name: aristocratic tuxedo
-  description: You can almost smell the spesos this was sewn from.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/aristocratic_tuxedo.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/aristocratic_tuxedo.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitAscetic
-  name: plain ascetic garb
-  description: A rather plain-looking uniform.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/ascetic.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/ascetic.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitBarber
-  name: barber jumpsuit
-  description: Makes you want to cut hair.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/barber.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/barber.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitSuitBlueBlazer
-  name: blue blazer
-  description: A bold yet conservative outfit, red corduroys, navy blazer and a tie.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/blue_blazer.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/blue_blazer.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitDisheveled
-  name: disheveled suit
-  description: What might pass as well-maintained formal attire, if you're blind.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/disheveled.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/disheveled.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitSuitRegal
-  name: regal suit
-  description: An elegant red suit with yellow accents.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/regal_suit.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/regal_suit.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitSuitRegalTuxedo
-  name: regal tuxedo
-  description: An elegant dapper suit with a red coat.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/regal_tuxedo.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/regal_tuxedo.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitRippedPunk
-  name: ripped punk jeans
-  description: Black ripped jeans and a fishnet top. How punk.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/rippedpunk.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/rippedpunk.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitSailor
-  name: sailor suit
-  description: Popular in the Submarine station.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/sailor.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/sailor.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitSuitStriped
-  name: striped suit
-  description: A red and white striped ensemble with dark suspenders.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/striped_suit.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/striped_suit.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitTrackpants
-  name: track pants
-  description: A plain t-shirt and track pants.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/trackpants.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/trackpants.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitTurtleneckGrey
-  name: grey turtleneck
-  description: A warm looking sweater and a pair of dark blue slacks.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/turtleneck_grey.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/turtleneck_grey.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitSuitVictorianRedBlack
-  name: red and black victorian suit
-  description: A Victorian-style suit, fancy!
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/victorian_red_black.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/victorian_red_black.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitSuitVictorianRedVest
-  name: red victorian suit
-  description: A Victorian-style suit, fancy!
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/victorian_red_vest.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/victorian_red_vest.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitSuitVictorianVest
-  name: victorian suit
-  description: A Victorian-style suit, fancy!
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/victorian_vest.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/victorian_vest.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitWaiter
-  name: waiter's outfit
-  description: Waiter! Waiter! More serves with that outfit please!
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/waiter.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/waiter.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitYogaGymBra
-  name: yoga gym bra
-  description: A gym bra paired with yoga pants, perfect for working out and looking good at the same time.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/yoga_gym_bra.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/yoga_gym_bra.rsi
-
-# Nuclear 14 outfits
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitSuitRolledSleeves
-  name: rolled sleeves suit
-  description: A dapper suit with a vest and a red tie, sleeves rolled up to show your forearms.
-  components:
-  - type: Sprite
-    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/detectivealt.rsi
-  - type: Clothing
-    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/detectivealt.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitBartenderGrey
-  name: grey bartender's uniform
-  description: A nice and tidy grey uniform. Shame about the bar, though.
-  components:
-  - type: Sprite
-    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/bartenderalt.rsi
-  - type: Clothing
-    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/bartenderalt.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitCheckered
-  name: checkered suit
-  description: The game was rigged from the start.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/checkered.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/checkered.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitFlannelOveralls
-  name: flannel overalls
-  description: Oh, I'm goin' down this road feelin' bad... Lord, I'm goin' down this road feelin' bad...
-  components:
-  - type: Sprite
-    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/caravaneer.rsi
-  - type: Clothing
-    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/caravaneer.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitCowboyBrown
-  name: brown cowboy outfit
-  description: Yeehaw, partner!
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/cowboybrown.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/cowboybrown.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitCowboyGrey
-  name: grey cowboy outfit
-  description: Yeehaw, partner!
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/cowboygrey.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/cowboygrey.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitCamouflageShirt
-  name: camouflage shirt
-  description: A long-sleeve camouflage shirt paired with a classic pair of jeans.
-  components:
-  - type: Sprite
-    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/fudd.rsi
-  - type: Clothing
-    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/fudd.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitOliveSweater
-  name: olive sweater
-  description: A cozy sweater that fits snugly on top of grey work pants.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/olive_sweater.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/olive_sweater.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitDesertUniform
-  name: desert uniform
-  description: A replica of vintage Solarian combat uniforms, for LARPing purposes.
-  components:
-  - type: Sprite
-    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/desertbdu.rsi
-  - type: Clothing
-    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/desertbdu.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitLumberjack
-  name: lumberjack overalls
-  description: Overalls that make you look like a lumberjack.
-  components:
-  - type: Sprite
-    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/lumberjack.rsi
-  - type: Clothing
-    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/lumberjack.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitLightBlueShirt
-  name: light blue shirt
-  description: A light blue shirt with pale khakis, lightweight and comfy.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/lightblue_shirt.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/lightblue_shirt.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitGreyShirt
-  name: grey shirt and olive pants
-  description: Sometimes all you need is a tried but true combo, grey and olive.
-  components:
-  - type: Sprite
-    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/rangerv3.rsi
-  - type: Clothing
-    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/rangerv3.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitFlannelJeans
-  name: flannel shirt and jeans
-  description: A red flannel shirt paired with pale blue jeans. How original.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/flannel_jeans.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/flannel_jeans.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitFlannelBlackJeans
-  name: black flannel shirt and jeans
-  description: Not just any flannel, a flannel shirt that's black! Daring today, aren't we?
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/black_flannel_jeans.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/black_flannel_jeans.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitFlannelKhakis
-  name: flannel shirt and khakis
-  description: A red flannel shirt with tan khaki pants, a smart pairing.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/flannel_khakis.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/flannel_khakis.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitFlannelBlackKhakis
-  name: black flannel shirt and khakis
-  description: A black flannel shirt with tan khaki pants, a smart pairing.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/black_flannel_khakis.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/black_flannel_khakis.rsi

@@ -1,3 +1,30 @@
+// SPDX-FileCopyrightText: 2019 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2020 DamianX <DamianX@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2021 Metal Gear Sloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2021 Moses <StrawberryMoses@gmail.com>
+// SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 csqrb <56765288+CaptainSqrBeard@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -24,13 +51,13 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
     public Color FacialHairColor { get; set; } = Color.Black;
 
     [DataField]
-    public Color EyeColor { get; private set; }
+    public Color EyeColor { get; set; } = Color.Black;
 
     [DataField]
-    public Color SkinColor { get;  set; }
+    public Color SkinColor { get; set; } = Humanoid.SkinColor.ValidHumanSkinTone;
 
     [DataField]
-    public List<Marking> Markings { get; private set; } = new();
+    public List<Marking> Markings { get; set; } = new();
 
     public HumanoidCharacterAppearance(string hairStyleId,
         Color hairColor,
@@ -49,15 +76,8 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
         Markings = markings;
     }
 
-    public HumanoidCharacterAppearance(HumanoidCharacterAppearance other)
-        : this(
-            other.HairStyleId,
-            other.HairColor,
-            other.FacialHairStyleId,
-            other.FacialHairColor,
-            other.EyeColor,
-            other.SkinColor,
-            new(other.Markings))
+    public HumanoidCharacterAppearance(HumanoidCharacterAppearance other) :
+        this(other.HairStyleId, other.HairColor, other.FacialHairStyleId, other.FacialHairColor, other.EyeColor, other.SkinColor, new(other.Markings))
     {
 
     }
@@ -106,8 +126,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
             HumanoidSkinColor.Hues => speciesPrototype.DefaultSkinTone,
             HumanoidSkinColor.TintedHues => Humanoid.SkinColor.TintedHues(speciesPrototype.DefaultSkinTone),
             HumanoidSkinColor.VoxFeathers => Humanoid.SkinColor.ClosestVoxColor(speciesPrototype.DefaultSkinTone),
-            HumanoidSkinColor.AnimalFur => Humanoid.SkinColor.ClosestAnimalFurColor(speciesPrototype.DefaultSkinTone), // Einstein Engines - Tajaran
-            HumanoidSkinColor.TintedHuesSkin => Humanoid.SkinColor.TintedHuesSkin(speciesPrototype.DefaultSkinTone, speciesPrototype.DefaultSkinTone),
+            HumanoidSkinColor.AnimalFur => Humanoid.SkinColor.ClosestAnimalFurColor(speciesPrototype.DefaultSkinTone), // Goobstation - Tajaran
             _ => Humanoid.SkinColor.ValidHumanSkinTone,
         };
 
@@ -140,10 +159,10 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
 
         var newHairStyle = hairStyles.Count > 0
             ? random.Pick(hairStyles)
-            : HairStyles.DefaultHairStyle;
+            : HairStyles.DefaultHairStyle.Id;
 
         var newFacialHairStyle = facialHairStyles.Count == 0 || sex == Sex.Female
-            ? HairStyles.DefaultFacialHairStyle
+            ? HairStyles.DefaultFacialHairStyle.Id
             : random.Pick(facialHairStyles);
 
         var newHairColor = random.Pick(HairStyles.RealisticHairColors);
@@ -157,28 +176,23 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
         var newEyeColor = random.Pick(RealisticEyeColors);
 
         var skinType = IoCManager.Resolve<IPrototypeManager>().Index<SpeciesPrototype>(species).SkinColoration;
-            var skinTone = IoCManager.Resolve<IPrototypeManager>().Index<SpeciesPrototype>(species).DefaultSkinTone; // DeltaV, required for tone blending
 
         var newSkinColor = new Color(random.NextFloat(1), random.NextFloat(1), random.NextFloat(1), 1);
         switch (skinType)
         {
             case HumanoidSkinColor.HumanToned:
-                var tone = Math.Round(Humanoid.SkinColor.HumanSkinToneFromColor(newSkinColor));
-                newSkinColor = Humanoid.SkinColor.HumanSkinTone((int)tone);
+                newSkinColor = Humanoid.SkinColor.HumanSkinTone(random.Next(0, 101));
                 break;
             case HumanoidSkinColor.Hues:
                 break;
             case HumanoidSkinColor.TintedHues:
                 newSkinColor = Humanoid.SkinColor.ValidTintedHuesSkinTone(newSkinColor);
-                    break;
-            case HumanoidSkinColor.TintedHuesSkin:
-                newSkinColor = Humanoid.SkinColor.ValidTintedHuesSkinTone(skinTone, newSkinColor);
                 break;
             case HumanoidSkinColor.VoxFeathers:
                 newSkinColor = Humanoid.SkinColor.ProportionalVoxColor(newSkinColor);
                 break;
-            case HumanoidSkinColor.AnimalFur: // Einstein Engines - Tajaran
-                newSkinColor = Humanoid.SkinColor.ProportionalAnimalFurColor(newSkinColor);
+            case HumanoidSkinColor.AnimalFur:
+                newSkinColor = Humanoid.SkinColor.ProportionalAnimalFurColor(newSkinColor); // Goobstation - Tajaran
                 break;
         }
 
@@ -264,50 +278,42 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
 
     public bool MemberwiseEquals(ICharacterAppearance maybeOther)
     {
-        return
-            maybeOther is HumanoidCharacterAppearance other
-            && HairStyleId == other.HairStyleId
-            && HairColor.Equals(other.HairColor)
-            && FacialHairStyleId == other.FacialHairStyleId
-            && FacialHairColor.Equals(other.FacialHairColor)
-            && EyeColor.Equals(other.EyeColor)
-            && SkinColor.Equals(other.SkinColor)
-            && Markings.SequenceEqual(other.Markings);
+        if (maybeOther is not HumanoidCharacterAppearance other) return false;
+        if (HairStyleId != other.HairStyleId) return false;
+        if (!HairColor.Equals(other.HairColor)) return false;
+        if (FacialHairStyleId != other.FacialHairStyleId) return false;
+        if (!FacialHairColor.Equals(other.FacialHairColor)) return false;
+        if (!EyeColor.Equals(other.EyeColor)) return false;
+        if (!SkinColor.Equals(other.SkinColor)) return false;
+        if (!Markings.SequenceEqual(other.Markings)) return false;
+        return true;
     }
 
     public bool Equals(HumanoidCharacterAppearance? other)
     {
-        if (ReferenceEquals(null, other))
-            return false;
-        if (ReferenceEquals(this, other))
-            return true;
-        return HairStyleId == other.HairStyleId
-            && HairColor.Equals(other.HairColor)
-            && FacialHairStyleId == other.FacialHairStyleId
-            && FacialHairColor.Equals(other.FacialHairColor)
-            && EyeColor.Equals(other.EyeColor)
-            && SkinColor.Equals(other.SkinColor)
-            && Markings.SequenceEqual(other.Markings);
+        if (ReferenceEquals(null, other)) return false;
+        if (ReferenceEquals(this, other)) return true;
+        return HairStyleId == other.HairStyleId &&
+               HairColor.Equals(other.HairColor) &&
+               FacialHairStyleId == other.FacialHairStyleId &&
+               FacialHairColor.Equals(other.FacialHairColor) &&
+               EyeColor.Equals(other.EyeColor) &&
+               SkinColor.Equals(other.SkinColor) &&
+               Markings.SequenceEqual(other.Markings);
     }
 
     public override bool Equals(object? obj)
     {
-        return ReferenceEquals(this, obj)
-            || obj is HumanoidCharacterAppearance other
-                && Equals(other);
+        return ReferenceEquals(this, obj) || obj is HumanoidCharacterAppearance other && Equals(other);
     }
 
     public override int GetHashCode()
     {
-        return HashCode.Combine(
-            HairStyleId,
-            HairColor,
-            FacialHairStyleId,
-            FacialHairColor,
-            EyeColor,
-            SkinColor,
-            Markings);
+        return HashCode.Combine(HairStyleId, HairColor, FacialHairStyleId, FacialHairColor, EyeColor, SkinColor, Markings);
     }
 
-    public HumanoidCharacterAppearance Clone() => new(this);
+    public HumanoidCharacterAppearance Clone()
+    {
+        return new(this);
+    }
 }

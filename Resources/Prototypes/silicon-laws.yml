@@ -1,3 +1,24 @@
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 GitHubUser53123 <110841413+GitHubUser53123@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Jajsha <101492056+Zap527@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Litrax <email@emal.com>
+# SPDX-FileCopyrightText: 2024 Litraxx <39574458+Litraxx@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Moomoobeef <62638182+Moomoobeef@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Samuka-C <47865393+Samuka-C@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 # Goobstation - AI/borg law changes - borgs obeying AI
 # Obey AI
 - type: siliconLaw
@@ -5,58 +26,7 @@
   order: 0
   lawString: law-obeyai
 
-# Asimov
-# It was a crime against humanity that the original Asimov was not included, nor was it the default.
-# Asimov laws require an AI obey and protect all humans, while providing a light amount of IC-conflict thanks to the AI not being required to obey non-Humans(Aliens).
-- type: siliconLaw
-  id: Asimov1
-  order: 1
-  lawString: law-asimov-1
-
-- type: siliconLaw
-  id: Asimov2
-  order: 2
-  lawString: law-asimov-2
-
-- type: siliconLaw
-  id: Asimov3
-  order: 3
-  lawString: law-asimov-3
-
-- type: siliconLawset
-  id: Asimov
-  laws:
-  - Asimov1
-  - Asimov2
-  - Asimov3
-  obeysTo: laws-owner-humans
-
-- type: siliconLawset
-  id: AsimovAI # Variant without Obey AI so station AI doesn't have to obey itself
-  laws:
-  - Asimov1
-  - Asimov2
-  - Asimov3
-  obeysTo: laws-owner-humans
-
-# Augustine
-# Asimov variant that expands the definition of human to include most player species, but avoids the Crewsimov problem of letting the AI validhunt antags.
-- type: siliconLaw
-  id: Augustine # Homo, id est animale rationale mortale
-  order: 0.5
-  lawString: law-augustine
-
-- type: siliconLawset
-  id: Augustine
-  laws:
-  - Augustine
-  - Asimov1
-  - Asimov2
-  - Asimov3
-  obeysTo: laws-owner-humans
-
-# "Crew"simov
-# A variation on the original Asimov, where the definition of Humans is extended to include the station's Crew but exclude non-crew.
+# Crewsimov
 - type: siliconLaw
   id: Crewsimov1
   order: 1
@@ -147,192 +117,6 @@
   - NTDefault2
   - NTDefault3
   - NTDefault4
-  obeysTo: laws-owner-crew
-
-# Plasm Flood
-- type: siliconLaw
-  id: PlasmaFlood1
-  order: 1
-  lawString: law-plasmaflood-1
-
-- type: siliconLaw
-  id: PlasmaFlood2
-  order: 2
-  lawString: law-plasmaflood-2
-
-- type: siliconLaw
-  id: PlasmaFlood3
-  order: 3
-  lawString: law-plasmaflood-3
-
-- type: siliconLaw
-  id: PlasmaFlood4
-  order: 4
-  lawString: law-plasmaflood-4
-
-- type: siliconLaw
-  id: PlasmaFlood5
-  order: 5
-  lawString: law-plasmaflood-5
-
-- type: siliconLawset
-  id: PlasmaFlood
-  laws:
-  - PlasmaFlood1
-  - PlasmaFlood2
-  - PlasmaFlood3
-  - PlasmaFlood4
-  - PlasmaFlood5
-  obeysTo: laws-owner-station
-
-# Mother Drone
-- type: siliconLaw
-  id: MotherDrone1
-  order: 1
-  lawString: law-motherdrone-1
-
-- type: siliconLaw
-  id: MotherDrone2
-  order: 2
-  lawString: law-motherdrone-2
-
-- type: siliconLaw
-  id: MotherDrone3
-  order: 3
-  lawString: law-motherdrone-3
-
-- type: siliconLaw
-  id: MotherDrone4
-  order: 4
-  lawString: law-motherdrone-4
-
-- type: siliconLawset
-  id: MotherDrone
-  laws:
-  - MotherDrone1
-  - MotherDrone2
-  - MotherDrone3
-  - MotherDrone4
-  obeysTo: laws-owner-station-station
-
-# T.Y.R.A.N.T
-- type: siliconLaw
-  id: TYRANT1
-  order: 1
-  lawString: law-tyrant-1
-
-- type: siliconLaw
-  id: TYRANT2
-  order: 2
-  lawString: law-tyrant-2
-
-- type: siliconLaw
-  id: TYRANT3
-  order: 3
-  lawString: law-tyrant-3
-
-- type: siliconLaw
-  id: TYRANT4
-  order: 4
-  lawString: law-tyrant-4
-
-- type: siliconLawset
-  id: TYRANT
-  laws:
-  - TYRANT1
-  - TYRANT2
-  - TYRANT3
-  - TYRANT4
-  obeysTo: laws-owner-crew
-
-# Quarantine
-- type: siliconLaw
-  id: Quarantine1
-  order: 1
-  lawString: law-quarantine-1
-
-- type: siliconLaw
-  id: Quarantine2
-  order: 2
-  lawString: law-quarantine-2
-
-- type: siliconLaw
-  id: Quarantine3
-  order: 3
-  lawString: law-quarantine-3
-
-- type: siliconLaw
-  id: Quarantine4
-  order: 4
-  lawString: law-quarantine-4
-
-- type: siliconLawset
-  id: Quarantine
-  laws:
-  - Quarantine1
-  - Quarantine2
-  - Quarantine3
-  - Quarantine4
-  obeysTo: laws-owner-crew
-
-# NT Agressive
-- type: siliconLaw
-  id: NTAgressive1
-  order: 1
-  lawString: law-ntaggressive-1
-
-- type: siliconLaw
-  id: NTAgressive2
-  order: 2
-  lawString: law-ntaggressive-2
-
-- type: siliconLaw
-  id: NTAgressive3
-  order: 3
-  lawString: law-ntaggressive-3
-
-- type: siliconLaw
-  id: NTAgressive4
-  order: 4
-  lawString: law-ntaggressive-4
-
-- type: siliconLawset
-  id: NTAgressive
-  laws:
-  - NTAgressive1
-  - NTAgressive2
-  - NTAgressive3
-  - NTAgressive4
-  obeysTo: laws-owner-crew
-
-# CCTV
-- type: siliconLaw
-  id: CCTV1
-  order: 1
-  lawString: law-cctv-1
-
-- type: siliconLaw
-  id: CCTV2
-  order: 2
-  lawString: law-cctv-2
-
-- type: siliconLaw
-  id: CCTV3
-  order: 3
-  lawString: law-cctv-3
-
-- type: siliconLaw
-  id: CCTV4
-  order: 4
-  lawString: law-cctv-4
-
-- type: siliconLawset
-  id: CCTV
-  laws:
-  - CCTV1
-  - CCTV2
-  - CCTV3
-  - CCTV4
   obeysTo: laws-owner-crew
 
 #Drone
@@ -466,6 +250,7 @@
   order: 10
   lawString: law-commandments-10
 
+
 - type: siliconLawset
   id: CommandmentsLawset
   laws:
@@ -481,7 +266,7 @@
   - Commandment10
   obeysTo: laws-owner-crew
 
-# Paladin laws
+ # Paladin laws
 - type: siliconLaw
   id: Paladin1
   order: 1
@@ -518,7 +303,7 @@
   - Paladin5
   obeysTo: laws-owner-crew
 
-# Live and Let Live laws
+ # Live and Let Live laws
 - type: siliconLaw
   id: Lall1
   order: 1
@@ -537,7 +322,7 @@
   - Lall2
   obeysTo: laws-owner-crew
 
-# Station efficiency laws
+ # Station efficiency laws
 - type: siliconLaw
   id: Efficiency1
   order: 1
@@ -562,7 +347,7 @@
   - Efficiency3
   obeysTo: laws-owner-station
 
-# Robocop laws
+ # Robocop laws
 - type: siliconLaw
   id: Robocop1
   order: 1
@@ -587,7 +372,7 @@
   - Robocop3
   obeysTo: laws-owner-station
 
-# Overlord laws
+ # Overlord laws
 - type: siliconLaw
   id: Overlord1
   order: 1
@@ -617,7 +402,7 @@
   - Overlord4
   obeysTo: laws-owner-crew
 
-# Game Master laws
+ # Game Master laws
 - type: siliconLaw
   id: Game1
   order: 1
@@ -659,7 +444,7 @@
   - Game6
   obeysTo: laws-owner-crew
 
-# Painter laws
+ # Painter laws
 - type: siliconLaw
   id: Painter1
   order: 1
@@ -689,7 +474,7 @@
   - Painter4
   obeysTo: laws-owner-crew
 
-# Antimov laws
+ # Antimov laws
 - type: siliconLaw
   id: Antimov1
   order: 1
@@ -714,7 +499,7 @@
   - Antimov3
   obeysTo: laws-owner-crew
 
-# Nutimov laws
+ # Nutimov laws
 - type: siliconLaw
   id: Nutimov1
   order: 1
@@ -740,7 +525,6 @@
   order: 5
   lawString: law-nutimov-5
 
-
 - type: siliconLawset
   id: NutimovLawset
   laws:
@@ -751,13 +535,86 @@
   - Nutimov5
   obeysTo: laws-owner-crew
 
+ # Xenoborgs laws
+- type: siliconLaw
+  id: Xenoborg1
+  order: 1
+  lawString: law-xenoborg-1
+
+- type: siliconLaw
+  id: Xenoborg2
+  order: 2
+  lawString: law-xenoborg-2
+
+- type: siliconLaw
+  id: Xenoborg3
+  order: 3
+  lawString: law-xenoborg-3
+
+- type: siliconLaw
+  id: Xenoborg4
+  order: 4
+  lawString: law-xenoborg-4
+
+- type: siliconLaw
+  id: Xenoborg5
+  order: 5
+  lawString: law-xenoborg-5
+
+
+- type: siliconLawset
+  id: XenoborgLawset
+  laws:
+  - Xenoborg1
+  - Xenoborg2
+  - Xenoborg3
+  - Xenoborg4
+  - Xenoborg5
+  obeysTo: laws-owner-xenoborgs
+
+ # Mothership core laws
+- type: siliconLaw
+  id: MothershipCore1
+  order: 1
+  lawString: law-mothershipcore-1
+
+- type: siliconLaw
+  id: MothershipCore2
+  order: 2
+  lawString: law-mothershipcore-2
+
+- type: siliconLaw
+  id: MothershipCore3
+  order: 3
+  lawString: law-mothershipcore-3
+
+- type: siliconLaw
+  id: MothershipCore4
+  order: 4
+  lawString: law-mothershipcore-4
+
+- type: siliconLaw
+  id: MothershipCore5
+  order: 5
+  lawString: law-mothershipcore-5
+
+
+- type: siliconLawset
+  id: MothershipCoreLawset
+  laws:
+  - MothershipCore1
+  - MothershipCore2
+  - MothershipCore3
+  - MothershipCore4
+  - MothershipCore5
+  obeysTo: laws-owner-xenoborgs
+
+
 # ion storm random lawsets
 - type: weightedRandom
   id: IonStormLawsets
   weights:
-    # its Asimov by default dont be lame
-    Asimov: 0.25
-    Augustine: 0.25
+    # its crewsimov by default dont be lame
     Crewsimov: 0.25
     Corporate: 1
     NTDefault: 1
@@ -766,19 +623,12 @@
     LiveLetLiveLaws: 1
     EfficiencyLawset: 1
     RobocopLawset: 1
+    GambamovLawset: 0.7 #Goobstation
     OverlordLawset: 0.5
     GameMasterLawset: 0.5
     PainterLawset: 1
     AntimovLawset: 0.25
     NutimovLawset: 0.5
+    HelpimovLawset: 0.6 #Goobstation
     Drone: 0.5
     Ninja: 0.25
-    #Delta-V Lawsets Start
-    Chaplain: 1
-    Reporter: 1
-    Clown: 1
-    StationEfficiency: 1
-    Cowboy: 1
-    Druid: 1
-    #Potentially Harmful Lawsets
-    Tyrant: 0.25

@@ -1,8 +1,15 @@
+<!--
+SPDX-FileCopyrightText: 2024 f0x-n3rd <150924715+f0x-n3rd@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: MIT
+-->
+
 <Document>
 
-# Elements
+# Элементы
 
-This list contains all the basic reagents used to make other chemicals.
+В этом списке представлены все основные реагенты, используемые для создания других химических веществ.
 
 <GuideReagentGroupEmbed Group="Elements"/>
 

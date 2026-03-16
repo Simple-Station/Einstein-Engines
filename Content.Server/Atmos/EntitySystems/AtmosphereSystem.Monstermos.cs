@@ -5,13 +5,11 @@ using Content.Server.Doors.Systems;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Database;
-using Content.Shared.Maps;
-using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+
 namespace Content.Server.Atmos.EntitySystems
 {
     public sealed partial class AtmosphereSystem
@@ -31,8 +29,7 @@ namespace Content.Server.Atmos.EntitySystems
         private void EqualizePressureInZone(
             Entity<GridAtmosphereComponent, GasTileOverlayComponent, MapGridComponent, TransformComponent> ent,
             TileAtmosphere tile,
-            int cycleNum,
-            float frameTime)
+            int cycleNum)
         {
             if (tile.Air == null || (tile.MonstermosInfo.LastCycle >= cycleNum))
                 return; // Already done.
@@ -96,7 +93,7 @@ namespace Content.Server.Atmos.EntitySystems
                     {
                         // Looks like someone opened an airlock to space!
 
-                        ExplosivelyDepressurize(ent, tile, cycleNum, frameTime);
+                        ExplosivelyDepressurize(ent, tile, cycleNum);
                         return;
                     }
                 }
@@ -376,8 +373,7 @@ namespace Content.Server.Atmos.EntitySystems
         private void ExplosivelyDepressurize(
             Entity<GridAtmosphereComponent, GasTileOverlayComponent, MapGridComponent, TransformComponent> ent,
             TileAtmosphere tile,
-            int cycleNum,
-            float frameTime)
+            int cycleNum)
         {
             // Check if explosive depressurization is enabled and if the tile is valid.
             if (!MonstermosDepressurization || tile.Air == null)
@@ -386,7 +382,7 @@ namespace Content.Server.Atmos.EntitySystems
             const int limit = Atmospherics.MonstermosHardTileLimit;
 
             var totalMolesRemoved = 0f;
-            var (owner, gridAtmosphere, _, _, _) = ent;
+            var (owner, gridAtmosphere, visuals, mapGrid, _) = ent;
             var queueCycle = ++gridAtmosphere.EqualizationQueueCycleControl;
 
             var tileCount = 0;
@@ -432,6 +428,7 @@ namespace Content.Server.Atmos.EntitySystems
                 else
                 {
                     _depressurizeSpaceTiles[spaceTileCount++] = otherTile;
+                    otherTile.PressureSpecificTarget = otherTile;
                 }
 
                 if (tileCount < limit && spaceTileCount < limit)
@@ -478,6 +475,7 @@ namespace Content.Server.Atmos.EntitySystems
 
                     tile2.MonstermosInfo.CurrentTransferDirection = j.ToOppositeDir();
                     tile2.MonstermosInfo.CurrentTransferAmount = 0.0f;
+                    tile2.PressureSpecificTarget = otherTile.PressureSpecificTarget;
                     tile2.MonstermosInfo.LastSlowQueueCycle = queueCycleSlow;
                     _depressurizeProgressionOrder[progressionCount++] = tile2;
                 }
@@ -500,22 +498,31 @@ namespace Content.Server.Atmos.EntitySystems
                     continue;
                 }
                 var sum = otherTile.Air.TotalMoles;
-
-                sum *= frameTime;
-                if (sum < SpacingMinGas)
+                if (SpacingEscapeRatio < 1f)
                 {
-                    // Boost the last bit of air draining from the tile.
-                    sum = Math.Min(SpacingMinGas, otherTile.Air.TotalMoles);
+                    sum *= SpacingEscapeRatio;
+                    if (sum < SpacingMinGas)
+                    {
+                        // Boost the last bit of air draining from the tile.
+                        sum = Math.Min(SpacingMinGas, otherTile.Air.TotalMoles);
+                    }
+                    if (sum + otherTile.MonstermosInfo.CurrentTransferAmount > SpacingMaxWind)
+                    {
+                        // Limit the flow of air out of tiles which have air flowing into them from elsewhere.
+                        sum = Math.Max(SpacingMinGas, SpacingMaxWind - otherTile.MonstermosInfo.CurrentTransferAmount);
+                    }
                 }
-                if (sum + otherTile.MonstermosInfo.CurrentTransferAmount > SpacingMaxWind)
-                {
-                    // Limit the flow of air out of tiles which have air flowing into them from elsewhere.
-                    sum = Math.Max(SpacingMinGas, SpacingMaxWind - otherTile.MonstermosInfo.CurrentTransferAmount);
-                }
-
                 totalMolesRemoved += sum;
                 otherTile.MonstermosInfo.CurrentTransferAmount += sum;
                 otherTile2.MonstermosInfo.CurrentTransferAmount += otherTile.MonstermosInfo.CurrentTransferAmount;
+                otherTile.PressureDifference = otherTile.MonstermosInfo.CurrentTransferAmount;
+                otherTile.PressureDirection = otherTile.MonstermosInfo.CurrentTransferDirection;
+
+                if (otherTile2.MonstermosInfo.CurrentTransferDirection == AtmosDirection.Invalid)
+                {
+                    otherTile2.PressureDifference = otherTile2.MonstermosInfo.CurrentTransferAmount;
+                    otherTile2.PressureDirection = otherTile.MonstermosInfo.CurrentTransferDirection;
+                }
 
                 if (otherTile.Air != null && otherTile.Air.Pressure - sum > SpacingMinGas * 0.1f)
                 {
@@ -541,6 +548,9 @@ namespace Content.Server.Atmos.EntitySystems
                     // therefore there is no more gas in the tile, therefore the tile should be as cold as space!
                     otherTile.Air.Temperature = Atmospherics.TCMB;
                 }
+
+                InvalidateVisuals(ent, otherTile);
+                HandleDecompressionFloorRip((owner, mapGrid), otherTile, otherTile.MonstermosInfo.CurrentTransferAmount);
             }
 
             if (GridImpulse && tileCount > 0)
@@ -586,8 +596,17 @@ namespace Content.Server.Atmos.EntitySystems
             if (!reconsiderAdjacent)
                 return;
 
+            // Before updating the adjacent tile flags that determine whether air is allowed to flow
+            // or not, we explicitly update airtight data on these tiles right now.
+            // This ensures that UpdateAdjacentTiles has updated data before updating flags.
+            // This allows monstermos' floodfill check that determines if firelocks have dropped
+            // to work correctly.
+            UpdateAirtightData(ent.Owner, ent.Comp1, ent.Comp3, tile);
+            UpdateAirtightData(ent.Owner, ent.Comp1, ent.Comp3, other);
+
             UpdateAdjacentTiles(ent, tile);
             UpdateAdjacentTiles(ent, other);
+
             InvalidateVisuals(ent, tile);
             InvalidateVisuals(ent, other);
         }
@@ -627,7 +646,7 @@ namespace Content.Server.Atmos.EntitySystems
                 Merge(otherTile.Air, tile.Air.Remove(amount));
                 InvalidateVisuals(ent, tile);
                 InvalidateVisuals(ent, otherTile);
-                ConsiderPressureDifference(ent, tile);
+                ConsiderPressureDifference(ent, tile, direction, amount);
             }
         }
 
@@ -672,12 +691,12 @@ namespace Content.Server.Atmos.EntitySystems
             adj.MonstermosInfo[idx.ToOppositeDir()] -= amount;
         }
 
-        private void HandleDecompressionFloorRip(MapGridComponent mapGrid, TileAtmosphere tile, float sum)
+        private void HandleDecompressionFloorRip(Entity<MapGridComponent> mapGrid, TileAtmosphere tile, float sum)
         {
             if (!MonstermosRipTiles)
                 return;
 
-            var chance = MathHelper.Clamp(0.01f + sum / SpacingMaxWind * 0.3f, 0.003f, 0.3f);
+            var chance = MathHelper.Clamp(0.01f + (sum / SpacingMaxWind) * 0.3f, 0.003f, 0.3f);
 
             if (sum > 20 && _random.Prob(chance))
                 PryTile(mapGrid, tile.GridIndices);

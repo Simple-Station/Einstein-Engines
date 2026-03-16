@@ -12,4 +12,5 @@ public sealed partial class WhiteCVars
 
     public static readonly CVarDef<int> BarkLimit =
         CVarDef.Create("bark.limit",12, CVar.CLIENTONLY | CVar.ARCHIVE);
+
 }

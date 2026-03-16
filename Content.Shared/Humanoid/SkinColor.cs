@@ -1,3 +1,17 @@
+// SPDX-FileCopyrightText: 2023 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 BeeRobynn <166929042+BeeRobynn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+
 using System.Numerics;
 using System.Security.Cryptography;
 using Microsoft.VisualBasic.CompilerServices;
@@ -18,13 +32,14 @@ public static class SkinColor
     public const float MinFeathersValue = 36f / 100;
     public const float MaxFeathersValue = 55f / 100;
 
-    // Einstein Engines - Tajaran
+    // Goobstation Section Start - Tajaran
     public const float MinAnimalFurHue = 20f / 360;
-    public const float MaxAnimalFurHue = 60f / 360;
+    public const float MaxAnimalFurHue = 45f / 360;
     public const float MinAnimalFurSaturation = 0f / 100;
     public const float MaxAnimalFurSaturation = 100f / 100;
     public const float MinAnimalFurValue = 0f / 100;
     public const float MaxAnimalFurValue = 100f / 100;
+    // Goobstation Section End - Tajaran
 
     public static Color ValidHumanSkinTone => Color.FromHsv(new Vector4(0.07f, 0.2f, 1f, 1f));
 
@@ -33,9 +48,9 @@ public static class SkinColor
     /// </summary>
     /// <param name="color">The color to validate</param>
     /// <returns>Validated tinted hue skin tone</returns>
-    public static Color ValidTintedHuesSkinTone(Color color, Color? skinTone = null)
+    public static Color ValidTintedHuesSkinTone(Color color)
     {
-        return skinTone != null ? TintedHuesSkin(color, skinTone.Value) : TintedHues(color);
+        return TintedHues(color);
     }
 
     /// <summary>
@@ -149,25 +164,6 @@ public static class SkinColor
     }
 
     /// <summary>
-    ///     DeltaV - Convert a color to the 'tinted hues' skin tone type, and blend it into skinColor
-    /// </summary>
-    /// <param name="color">Color to convert</param>
-    /// <param name="skinColor">The skin color to blend with</param>
-    /// <param name="blendFactor">Blending factor (0.0 to 1.0)</param>
-    /// <returns>Tinted hue color</returns>
-    public static Color TintedHuesSkin(Color color, Color skinColor, float blendFactor = 0.0f)
-    {
-        blendFactor = MathHelper.Clamp(blendFactor, 0.0f, 1.0f);
-
-        var r = MathHelper.Lerp(skinColor.R, color.R, blendFactor);
-        var g = MathHelper.Lerp(skinColor.G, color.G, blendFactor);
-        var b = MathHelper.Lerp(skinColor.B, color.B, blendFactor);
-        var a = color.A;
-
-        return new Color(r, g, b, a);
-    }
-
-    /// <summary>
     ///     Verify if this color is a valid tinted hue color type, or not.
     /// </summary>
     /// <param name="color">The color to verify</param>
@@ -232,12 +228,13 @@ public static class SkinColor
         return true;
     }
 
+    /// Goobstation Section Start - Tajaran
     /// <summary>
     ///     Converts a Color proportionally to the allowed animal fur color range.
     ///     Will NOT preserve the specific input color even if it is within the allowed animal fur color range.
     /// </summary>
     /// <param name="color">Color to convert</param>
-    /// <returns>Vox feather coloration</returns>
+    /// <returns>Animal fur coloration</returns>
     public static Color ProportionalAnimalFurColor(Color color)
     {
         var newColor = Color.ToHsv(color);
@@ -285,6 +282,7 @@ public static class SkinColor
 
         return true;
     }
+    /// Goobstation Section End - Tajaran
 
     /// <summary>
     ///     This takes in a color, and returns a color guaranteed to be above MinHuesLightness
@@ -314,10 +312,9 @@ public static class SkinColor
         {
             HumanoidSkinColor.HumanToned => VerifyHumanSkinTone(color),
             HumanoidSkinColor.TintedHues => VerifyTintedHues(color),
-            HumanoidSkinColor.TintedHuesSkin => true, // DeltaV - Tone blending
             HumanoidSkinColor.Hues => VerifyHues(color),
             HumanoidSkinColor.VoxFeathers => VerifyVoxFeathers(color),
-            HumanoidSkinColor.AnimalFur => VerifyAnimalFur(color), // Einsetin Engines - Tajaran
+            HumanoidSkinColor.AnimalFur => VerifyAnimalFur(color),
             _ => false,
         };
     }
@@ -328,10 +325,9 @@ public static class SkinColor
         {
             HumanoidSkinColor.HumanToned => ValidHumanSkinTone,
             HumanoidSkinColor.TintedHues => ValidTintedHuesSkinTone(color),
-            HumanoidSkinColor.TintedHuesSkin => ValidTintedHuesSkinTone(color), // DeltaV - Tone blending
             HumanoidSkinColor.Hues => MakeHueValid(color),
             HumanoidSkinColor.VoxFeathers => ClosestVoxColor(color),
-            HumanoidSkinColor.AnimalFur => ClosestAnimalFurColor(color), // Einsetin Engines - Tajaran
+            HumanoidSkinColor.AnimalFur => ClosestAnimalFurColor(color),
             _ => color
         };
     }
@@ -343,6 +339,6 @@ public enum HumanoidSkinColor : byte
     Hues,
     VoxFeathers, // Vox feathers are limited to a specific color range
     TintedHues, //This gives a color tint to a humanoid's skin (10% saturation with full hue range).
-    TintedHuesSkin, // DeltaV - Default TintedHues assumes the texture will have the proper skin color, but moths dont
-    AnimalFur, // Einstein Engines - limits coloration to more or less what earthen animals might have
+    NoColor, // Goob #1161
+    AnimalFur, // Goob - Tajaran
 }

@@ -4,16 +4,12 @@
   description: An incomplete wall-mounted assembly for a sentry turret control panel.
   categories: [ HideSpawnMenu ]
   components:
-
-  # Sprites and appearance
   - type: Sprite
     noRot: false
     drawdepth: SmallObjects
     sprite: Structures/Wallmounts/turret_controls.rsi
     layers:
     - state: base
-
-  # Destruction
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallic
@@ -28,33 +24,33 @@
           collection: MetalGlassBreak
           params:
             volume: -4
-      - !type:ChangeConstructionNodeBehavior
-        node: machineFrame
+      #- !type:ChangeConstructionNodeBehavior - To be added in a later PR
+      #  node: machineFrame
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-
-  # General properties
   - type: Transform
     anchored: true
   - type: WallMount
   - type: Clickable
   - type: InteractionOutline
-  - type: Construction
-    graph: WeaponEnergyTurretControlPanel
-    node: frame
+  - type: ContainerContainer
+    containers:
+      board: !type:Container
+  #- type: Construction - To be added in a later PR
+  #  graph: WeaponEnergyTurretControlPanel
+  #  node: frame
   placement:
     mode: SnapgridCenter
     snap:
     - Wallmount
 
 - type: entity
+  abstract: true
   parent: WeaponEnergyTurretControlPanelFrame
-  id: WeaponEnergyTurretStationControlPanel
+  id: WeaponEnergyTurretStationControlPanelBase
   name: sentry turret control panel
   description: A wall-mounted interface for remotely configuring the operational parameters of linked sentry turrets.
   components:
-
-  # Sprites and appearance
   - type: Appearance
   - type: Sprite
     noRot: false
@@ -83,28 +79,11 @@
           -1: { state: safe }
           0: { state: stun }
           1: { state: lethal }
-
-  # Faction / control
   - type: StationAiWhitelist
-  - type: AccessReader
-    access: [["Security"]]
-
-  # Turret related
-  - type: TurretTargetSettings
-    exemptAccessLevels:
-    - Captain
-    - HeadOfSecurity
-    - Security
-    - NanotrasenRepresentative #EE
-    - BlueshieldOfficer #EE
-    - Magistrate #EE
-    - Borg
-    - BasicSilicon
   - type: DeployableTurretController
     accessGroups:
     - Cargo
     - Command
-    - Dignitary #EE
     - Engineering
     - General
     - Medical
@@ -117,8 +96,6 @@
     - Atmospherics
     - Bar
     - BasicSilicon
-    - BlueshieldOfficer #EE
-    - Boxer #EE
     - Borg
     - Brig
     - Detective
@@ -128,9 +105,7 @@
     - Chemistry
     - ChiefEngineer
     - ChiefMedicalOfficer
-    - Clown #EE
     - Command
-    - Corpsman #EE
     - Cryogenics
     - Engineering
     - External
@@ -140,26 +115,15 @@
     - Janitor
     - Kitchen
     - Lawyer
-    - Mail #EE
     - Maintenance
-    - Mantis #EE
-    - Magistrate #EE
     - Medical
-    - Mime #EE
-    - Musician #EE
-    - NanotrasenRepresentative #EE
-    - Paramedic #EE
-    - Psychologist #EE
     - Quartermaster
-    - Reporter #EE
     - Research
     - ResearchDirector
     - Salvage
     - Security
     - Service
     - Theatre
-
-  # Device network
   - type: DeviceList
     isAllowList: true
   - type: DeviceNetwork
@@ -170,19 +134,15 @@
     prefix: device-address-prefix-console
   - type: DeviceNetworkRequiresPower
   - type: WiredNetworkConnection
-
-  # UI
   - type: ActivatableUI
     key: enum.DeployableTurretControllerUiKey.Key
   - type: ActivatableUIRequiresPower
   - type: UserInterface
     interfaces:
       enum.DeployableTurretControllerUiKey.Key:
-        type: TurretControllerBoundUserInterface
+        type: TurretControllerWindowBoundUserInterface
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
-
-  # Wires
   - type: WiresPanel
   - type: WiresVisuals
   - type: Wires
@@ -192,43 +152,74 @@
     locked: true
     unlockOnClick: false
   - type: LockedWiresPanel
-
-  # General properties
   - type: ApcPowerReceiver
   - type: ExtensionCableReceiver
   - type: Electrified
     enabled: false
     usesApcPower: true
-  - type: ContainerFill
-    containers:
-      board: [ WeaponEnergyTurretStationControlPanelElectronics ]
-  - type: ContainerContainer
-    containers:
-      board: !type:Container
-  - type: Construction
-    graph: WeaponEnergyTurretControlPanel
-    node: finish
+  #- type: ContainerFill - Will be added in a later PR
+  #  containers:
+  #    board:
+  #    - WeaponEnergyTurretStationControlPanelElectronics
+  #- type: Construction - Will be added in a later PR
+  #  graph: WeaponEnergyTurretControlPanel
+  #  node: finish
 
 - type: entity
-  parent: WeaponEnergyTurretStationControlPanel
+  parent: WeaponEnergyTurretStationControlPanelBase
   id: WeaponEnergyTurretAIControlPanel
-  name: AI sentry turret control panel
-  description: A wall-mounted interface that allows a local artifical intelligence to adjust the operational parameters of linked sentry turrets.
+  suffix: AI, Silicon
   components:
   - type: AccessReader
-    access: [["StationAi"], ["Captain"], ["ResearchDirector"]]
-  - type: TurretTargetSettings
-    exemptAccessLevels:
-    - Captain
-    - ResearchDirector
-    - NanotrasenRepresentative #EE
-    - BlueshieldOfficer #EE
-    - Magistrate #EE
-    - BasicSilicon
-    - Borg
+    access: [["StationAi"], ["ResearchDirector"]]
+  #- type: ContainerFill - Will be added in a later PR
+  #  containers:
+  #    board:
+  #    - WeaponEnergyTurretAIControlPanelElectronics
   - type: DeviceNetwork
     receiveFrequencyId: TurretAI
     transmitFrequencyId: TurretControlAI
-  - type: ContainerFill
-    containers:
-      board: [ WeaponEnergyTurretAIControlPanelElectronics ]
+  - type: TurretTargetSettings
+    exemptAccessLevels:
+    - BasicSilicon
+    - Borg
+  - type: DeployableTurretController
+    accessGroups:
+    - Silicon
+    accessLevels:
+    - BasicSilicon
+    - Borg
+
+- type: entity
+  parent: WeaponEnergyTurretStationControlPanelBase
+  id: WeaponEnergyTurretSecurityControlPanel
+  suffix: Security
+  components:
+  - type: AccessReader
+    access: [["StationAi"], ["Security"]]
+  #- type: ContainerFill - Will be added in a later PR
+  #  containers:
+  #    board:
+  #    - WeaponEnergyTurretSecurityControlPanelElectronics
+  - type: TurretTargetSettings
+    exemptAccessLevels:
+    - Security
+    - BasicSilicon
+    - Borg
+
+- type: entity
+  parent: WeaponEnergyTurretStationControlPanelBase
+  id: WeaponEnergyTurretCommandControlPanel
+  suffix: Command
+  components:
+  - type: AccessReader
+    access: [["StationAi"], ["Command"]]
+  #- type: ContainerFill - Will be added in a later PR
+  #  containers:
+  #    board:
+  #    - WeaponEnergyTurretCommandControlPanelElectronics
+  - type: TurretTargetSettings
+    exemptAccessLevels:
+    - Command
+    - BasicSilicon
+    - Borg

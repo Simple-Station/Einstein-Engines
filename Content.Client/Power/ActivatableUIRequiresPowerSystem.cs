@@ -1,21 +1,31 @@
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Client.Power.EntitySystems;
+using Content.Shared.Popups;
 using Content.Shared.Power.Components;
+using Content.Shared.Power.EntitySystems;
 using Content.Shared.UserInterface;
-using Content.Shared.Wires;
 
 namespace Content.Client.Power;
 
-public sealed class ActivatableUIRequiresPowerSystem : EntitySystem
+public sealed class ActivatableUIRequiresPowerSystem : SharedActivatableUIRequiresPowerSystem
 {
-    public override void Initialize()
-    {
-        base.Initialize();
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
-        SubscribeLocalEvent<ActivatableUIRequiresPowerComponent, ActivatableUIOpenAttemptEvent>(OnActivate);
-    }
-
-    private void OnActivate(EntityUid uid, ActivatableUIRequiresPowerComponent component, ActivatableUIOpenAttemptEvent args)
+    protected override void OnActivate(Entity<ActivatableUIRequiresPowerComponent> ent, ref ActivatableUIOpenAttemptEvent args)
     {
-        // Client can't predict the power properly at the moment so rely upon the server to do it.
+        if (args.Cancelled || this.IsPowered(ent.Owner, EntityManager))
+        {
+            return;
+        }
+
+        _popup.PopupClient(Loc.GetString("base-computer-ui-component-not-powered", ("machine", ent.Owner)), args.User, args.User);
         args.Cancel();
     }
 }

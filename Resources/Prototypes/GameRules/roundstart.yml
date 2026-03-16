@@ -1,343 +1,542 @@
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2022 TekuNut <13456422+TekuNut@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+# SPDX-FileCopyrightText: 2023 Skye <22365940+Skyedra@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 coolmankid12345 <55817627+coolmankid12345@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 coolmankid12345 <coolmankid12345@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 moonheart08 <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 AJCM <AJCM@tutanota.com>
+# SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Adrian16199 <144424013+Adrian16199@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Alex Pavlenko <diraven@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Alice "Arimah" Heurlin <30327355+arimah@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 CaasGit <87243814+CaasGit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 EmoGarbage404 <retron404@gmail.com>
+# SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
+# SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ghagliiarghii <68826635+Ghagliiarghii@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 HS <81934438+HolySSSS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hrosts <35345601+Hrosts@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ian <ignaz.k@live.de>
+# SPDX-FileCopyrightText: 2024 Jezithyr <jezithyr@gmail.com>
+# SPDX-FileCopyrightText: 2024 Joel Zimmerman <JoelZimmerman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 JustCone <141039037+JustCone14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ko4ergaPunk <62609550+Ko4ergaPunk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kukutis96513 <146854220+Kukutis96513@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Lye <128915833+Lyroth001@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MACMAN2003 <macman2003c@gmail.com>
+# SPDX-FileCopyrightText: 2024 MerrytheManokit <167581110+MerrytheManokit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MureixloI <132683811+MureixloI@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 NakataRin <45946146+NakataRin@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 OrangeMoronage9622 <whyteterry0092@gmail.com>
+# SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Plykiya <plykiya@protonmail.com>
+# SPDX-FileCopyrightText: 2024 PoTeletubby <108604614+PoTeletubby@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Preston Smith <92108534+thetolbean@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Rainfall <rainfey0+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Rainfey <rainfey0+github@gmail.com>
+# SPDX-FileCopyrightText: 2024 Redfire1331 <125223432+Redfire1331@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Repo <47093363+Titian3@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 RiceMar1244 <138547931+RiceMar1244@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Stalen <33173619+stalengd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TakoDragon <69509841+BackeTako@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Truoizys <153248924+Truoizys@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st <shadowstalkermll@gmail.com>
+# SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2024 Vigers Ray <60344369+VigersRay@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 dffdff2423 <dffdff2423@gmail.com>
+# SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+# SPDX-FileCopyrightText: 2024 foboscheshir <156405958+foboscheshir@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lanse12 <cloudability.ez@gmail.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 neutrino <67447925+neutrino-laser@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 osjarw <62134478+osjarw@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+# SPDX-FileCopyrightText: 2024 redfire1331 <Redfire1331@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 saintmuntzer <47153094+saintmuntzer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 shamp <140359015+shampunj@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 strO0pwafel <153459934+strO0pwafel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 stroopwafel <j.o.luijkx@student.tudelft.nl>
+# SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+# SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 August Eymann <august.eymann@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
+# SPDX-FileCopyrightText: 2025 IrisTheAmped <iristheamped@gmail.com>
+# SPDX-FileCopyrightText: 2025 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 PunishedJoe <PunishedJoeseph@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 Southbridge <7013162+southbridge-fur@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+# SPDX-FileCopyrightText: 2025 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 loltart <159829224+loltart@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 loltart <lo1tartyt@gmail.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: BaseGameRule
   abstract: true
   components:
-    - type: GameRule
+  - type: GameRule
 
 - type: entity
   parent: BaseGameRule
   id: RespawnDeadRule
   components:
-    - type: RespawnDeadRule
-      alwaysRespawnDead: true
-    - type: RespawnTracker
-      respawnDelay: 10
-      deleteBody: false
+  - type: RespawnDeadRule
+    alwaysRespawnDead: true
+  - type: RespawnTracker
+    respawnDelay: 10
+    deleteBody: false
 
 - type: entity
   parent: BaseGameRule
   id: SubGamemodesRule
   components:
-    - type: SubGamemodes
-      rules:
-        - id: Thief
-          prob: 0.5
-        - id: SubWizard
-          prob: 0.05
-        - id: Devil # Goob
-          prob: 0.3
-        - id: Heretic # goob edit
-          prob: 0.2
-        - id: ArmsDealer
-          prob: 0.5
+  - type: SubGamemodes
+    rules:
+    - id: Thief
+      prob: 0.5
+    - id: Heretic # goob edit
+      prob: 0.2
+    - id: Devil # Goob
+      prob: 0.02
+    - id: Shadowling # Goob
+      prob: 0.02
 
 - type: entity
   parent: BaseGameRule
-  id: SubGamemodesRuleNoWizard
+  id: DummyNonAntagChance
   components:
-    - type: SubGamemodes
-      rules:
-        - id: Thief
-          prob: 0.5
-        - id: Devil # Goob
-          prob: 0.3
-        - id: ArmsDealer
-          prob: 0.5
+  - type: SubGamemodes
+    rules:
+    - id: DummyNonAntag
+      prob: 0.3
 
 - type: entity
   id: DeathMatch31
   parent: BaseGameRule
   components:
-    - type: DeathMatchRule
-      rewardSpawns:
-        - id: HealingToolbox
-        - id: ClothingOuterArmorBasicSlim
-          orGroup: loot
-        - id: ClothingHeadHelmetBasic
-          orGroup: loot
-        - id: SoapNT
-          orGroup: loot
-        - id: Bola
-          orGroup: loot
-        - id: Spear
-          orGroup: loot
-        - id: ClothingShoesGaloshes
-          orGroup: loot
-        - id: FoodPieBananaCream
-          orGroup: loot
-        - id: Stimpack
-          orGroup: loot
-    - type: KillCalloutRule
-    - type: PointManager
-    - type: RespawnDeadRule
-    - type: RespawnTracker
-      respawnDelay: 5
+  - type: DeathMatchRule
+    rewardSpawns:
+    - id: HealingToolbox
+    - id: ClothingOuterArmorBasicSlim
+      orGroup: loot
+    - id: ClothingHeadHelmetBasic
+      orGroup: loot
+    - id: SoapNT
+      orGroup: loot
+    - id: Bola
+      orGroup: loot
+    - id: Spear
+      orGroup: loot
+    - id: ClothingShoesGaloshes
+      orGroup: loot
+    - id: FoodPieBananaCream
+      orGroup: loot
+    - id: Stimpack
+      orGroup: loot
+  - type: KillCalloutRule
+  - type: PointManager
+  - type: RespawnDeadRule
+  - type: RespawnTracker
+    respawnDelay: 5
 
 - type: entity
   id: InactivityTimeRestart
   parent: BaseGameRule
   components:
-    - type: InactivityRule
-      inactivityMaxTime: 600
-      roundEndDelay: 10
+  - type: InactivityRule
+    inactivityMaxTime: 600
+    roundEndDelay: 10
 
 - type: entity
   id: MaxTimeRestart
   parent: BaseGameRule
   components:
-    - type: MaxTimeRestartRule
-      roundMaxTime: 300
-      roundEndDelay: 10
+  - type: MaxTimeRestartRule
+    roundMaxTime: 300
+    roundEndDelay: 10
 
 - type: entity
   abstract: true
   parent: BaseGameRule
   id: BaseNukeopsRule
   components:
-    - type: RandomMetadata #this generates the random operation name cuz it's cool.
-      nameSegments:
-        - operationPrefix
-        - operationSuffix
-    - type: NukeopsRule
-    - type: RuleGrids
-    - type: AntagSelection
-    - type: AntagLoadProfileRule
-      speciesOverride: Human
-      speciesOverrideBlacklist:
-      #Species that do not work with nukies should be included in this list.
-      #Once the issues are fixed the species should be removed from this list to be enabled.
-      #Balance concerns are not a valid reason to disable a species, except for high-impact Nukie-specific exploits.
-      #- Vox
+  - type: RandomMetadata #this generates the random operation name cuz it's cool.
+    nameSegments:
+    - NamesOperationPrefix
+    - NamesOperationSuffix
+    nameFormat: name-format-nuclear-operation
+  - type: NukeopsRule
+  - type: RuleGrids
+  - type: AntagSelection
+    agentName: nukeops-roundend-name # Goobstation
+  - type: AntagLoadProfileRule
+    speciesOverride: Human
+    speciesOverrideBlacklist:
+    #Species that do not work with nukies should be included in this list.
+    #Once the issues are fixed the species should be removed from this list to be enabled.
+    #Balance concerns are not a valid reason to disable a species, except for high-impact Nukie-specific exploits.
+    #- Vox
+    - Yowie # Goobstation
+    - Plasmaman # EE
+  - type: AntagObjectives # Goobstation
+    objectives:
+    - NukeopsDetonateObjective
+
 
 - type: entity
   parent: BaseNukeopsRule
   id: Nukeops
   components:
-    - type: GameRule
-      minPlayers: 20
-    - type: LoadMapRule
-      mapPath: /Maps/Nonstations/nukieplanet.yml
-    - type: AntagSelection
-      selectionTime: PrePlayerSpawn
-      definitions:
-        - prefRoles: [NukeopsCommander]
-          fallbackRoles: [Nukeops, NukeopsMedic]
-          spawnerPrototype: SpawnPointNukeopsCommander
-          startingGear: SyndicateCommanderGearFull
-          components:
-            - type: NukeOperative
-            - type: RandomMetadata
-              nameSegments:
-                - nukeops-role-commander
-                - SyndicateNamesElite
-            - type: NpcFactionMember
-              factions:
-                - Syndicate
-          mindRoles:
-            - MindRoleNukeopsCommander
-        - prefRoles: [NukeopsMedic]
-          fallbackRoles: [Nukeops, NukeopsCommander]
-          spawnerPrototype: SpawnPointNukeopsMedic
-          startingGear: SyndicateOperativeMedicFull
-          components:
-            - type: NukeOperative
-            - type: RandomMetadata
-              nameSegments:
-                - nukeops-role-agent
-                - SyndicateNamesNormal
-            - type: NpcFactionMember
-              factions:
-                - Syndicate
-          mindRoles:
-            - MindRoleNukeopsMedic
-        - prefRoles: [Nukeops]
-          fallbackRoles: [NukeopsCommander, NukeopsMedic]
-          spawnerPrototype: SpawnPointNukeopsOperative
-          max: 3
-          playerRatio: 10
-          startingGear: SyndicateOperativeGearFull
-          components:
-            - type: NukeOperative
-            - type: RandomMetadata
-              nameSegments:
-                - nukeops-role-operator
-                - SyndicateNamesNormal
-            - type: NpcFactionMember
-              factions:
-                - Syndicate
-          mindRoles:
-            - MindRoleNukeops
+  - type: GameRule
+    minPlayers: 20
+  - type: LoadMapRule
+    mapPath: /Maps/_Goobstation/Nonstations/nukieplanet.yml # goob edit
+  - type: AntagSelection
+    selectionTime: PrePlayerSpawn
+    definitions:
+    - prefRoles: [ NukeopsCommander ]
+      fallbackRoles: [ Nukeops, NukeopsMedic ]
+      spawnerPrototype: SpawnPointNukeopsCommander
+      startingGear: SyndicateCommanderGearFull
+      unequipOldGear: true
+      chaosScore: 300 # Goobstation
+      roleLoadout:
+      - RoleSurvivalNukie
+      components:
+      - type: NukeOperative
+      - type: RandomMetadata
+        nameSegments:
+        - NamesSyndicateElite
+        nameFormat: name-format-nukie-commander
+      - type: NpcFactionMember
+        factions:
+        - Syndicate
+      mindRoles:
+      - MindRoleNukeopsCommander
+    - prefRoles: [ NukeopsMedic ]
+      fallbackRoles: [ Nukeops, NukeopsCommander ]
+      spawnerPrototype: SpawnPointNukeopsMedic
+      startingGear: SyndicateOperativeMedicFull
+      unequipOldGear: true
+      chaosScore: 300 # Goobstation
+      roleLoadout:
+      - RoleSurvivalNukie
+      components:
+      - type: NukeOperative
+      - type: RandomMetadata
+        nameSegments:
+        - NamesSyndicateNormal
+        nameFormat: name-format-nukie-agent
+      - type: NpcFactionMember
+        factions:
+        - Syndicate
+      - type: SurgerySpeedModifier # shitmed
+        speedModifier: 2
+      mindRoles:
+      - MindRoleNukeopsMedic
+    - prefRoles: [ Nukeops ]
+      fallbackRoles: [ NukeopsCommander, NukeopsMedic ]
+      spawnerPrototype: SpawnPointNukeopsOperative
+      max: 10 # Goobstation / 古布空间站 - 没有限制的核特工
+      playerRatio: 16 # Goobstation
+      chaosScore: 300 # Goobstation
+      startingGear: SyndicateOperativeGearFull
+      unequipOldGear: true
+      roleLoadout:
+      - RoleSurvivalNukie
+      components:
+      - type: NukeOperative
+      - type: RandomMetadata
+        nameSegments:
+        - NamesSyndicateNormal
+        nameFormat: name-format-nukie-operator
+      - type: NpcFactionMember
+        factions:
+        - Syndicate
+      mindRoles:
+      - MindRoleNukeops
 
+# Goobstation
 - type: entity
   abstract: true
   parent: BaseGameRule
+  id: BaseTraitorRuleNoObjectives
+  components:
+  - type: TraitorRule
+  # TODO: codewords in yml
+  # TODO: uplink in yml
+  - type: AntagSelection
+    agentName: traitor-round-end-agent-name
+
+- type: entity
+  abstract: true
+  parent: BaseTraitorRuleNoObjectives
   id: BaseTraitorRule
   components:
-    - type: TraitorRule
-    # TODO: codewords in yml
-    # TODO: uplink in yml
-    - type: AntagRandomObjectives
-      sets:
-        - groups: TraitorObjectiveGroups
-      maxDifficulty: 5
-    - type: AntagSelection
-      agentName: traitor-round-end-agent-name
+  - type: AntagRandomObjectives
+    sets:
+    - groups: TraitorObjectiveGroups
+    maxDifficulty: 5
+
+# Goobstation - order swapped since admin verbs use .Last() for some reason
+# TODO: Fix that
+- type: entity
+  id: TraitorReinforcement
+  parent: BaseTraitorRuleNoObjectives # Goobstation
+  components:
+  - type: TraitorRule
+    giveUplink: false
+    giveCodewords: false # It would actually give them a different set of codewords than the regular traitors, anyway
+    giveBriefing: false
+  - type: AntagSelection
+    selectionTime: PostPlayerSpawn # Goobstation
+    definitions:
+    - prefRoles: [ Traitor ]
+      blacklist: # Goobstation
+        components:
+        - CommandStaff
+      mindRoles:
+      - MindRoleTraitorReinforcement
 
 - type: entity
   parent: BaseTraitorRule
   id: Traitor
   components:
-    - type: GameRule
-      minPlayers: 5
-      delay:
-        min: 240
-        max: 420
-    - type: AntagSelection
-      definitions:
-        - prefRoles: [Traitor]
-          max: 8
-          playerRatio: 10
-          blacklist:
-            components:
-              - AntagImmune
-          lateJoinAdditional: true
-          mindRoles:
-            - MindRoleTraitor
-
-- type: entity
-  id: TraitorReinforcement
-  parent: BaseTraitorRule
-  components:
-    - type: TraitorRule
-      giveUplink: false
-      giveCodewords: false # It would actually give them a different set of codewords than the regular traitors, anyway
-      giveBriefing: false
-    - type: AntagSelection
-      definitions:
-        - prefRoles: [Traitor]
-          mindRoles:
-            - MindRoleTraitorReinforcement
+  - type: GameRule
+    minPlayers: 5
+  - type: AntagSelection
+    selectionTime: IntraPlayerSpawn # Goobstation
+    definitions:
+    - prefRoles: [ Traitor ]
+      max: 8
+      playerRatio: 10
+      chaosScore: 150 # Goobstation
+      blacklist:
+        components:
+        - CommandStaff # Goobstation
+        - AntagImmune
+        - Changeling # Goobstation
+      lateJoinAdditional: true
+      mindRoles:
+      - MindRoleTraitor
 
 - type: entity
   id: Revolutionary
   parent: BaseGameRule
   components:
-    - type: GameRule
-      minPlayers: 15
-    - type: RevolutionaryRule
-    - type: AntagSelection
-      definitions:
-        - prefRoles: [HeadRev]
-          max: 2
-          playerRatio: 20
-          briefing:
-            text: head-rev-role-greeting
-            color: CornflowerBlue
-            sound: "/Audio/Ambience/Antag/headrev_start.ogg"
-          startingGear: HeadRevGear
-          components:
-            - type: Revolutionary
-            - type: HeadRevolutionary
-          mindRoles:
-            - MindRoleHeadRevolutionary
+  - type: GameRule
+    minPlayers: 15
+    chaosScore: 1000 # Goobstation - intentionally not per-antag
+  - type: RevolutionaryRule
+  - type: AntagSelection
+    selectionTime: IntraPlayerSpawn # Goobstation
+    definitions:
+    - prefRoles: [ HeadRev ]
+      max: 3
+      playerRatio: 15
+      blacklist:
+        components:
+        - CommandStaff # Goobstation
+      jobBlacklist: [ Mime ] # Goobstation
+      briefing:
+        text: head-rev-role-greeting
+        color: CornflowerBlue
+        sound: "/Audio/Ambience/Antag/headrev_start.ogg"
+      startingGear: HeadRevGear
+      components:
+      - type: Revolutionary
+      - type: HeadRevolutionary
+      mindRoles:
+      - MindRoleHeadRevolutionary
 
 - type: entity
   id: Sandbox
   parent: BaseGameRule
   components:
-    - type: SandboxRule
+  - type: SandboxRule
 
 - type: entity
   id: Secret
   parent: BaseGameRule
   components:
-    - type: SecretRule
+  - type: SecretRule
 
-- type: entity
-  abstract: true
-  parent: BaseGameRule
-  id: BaseWizardRule
-  components:
-    - type: AntagObjectives
-      objectives:
-        - WizardSurviveObjective
-        - WizardDemonstrateObjective
-    - type: LoadMapRule
-      gridPath: /Maps/Shuttles/wizard.yml
-    - type: RuleGrids
-    - type: AntagSelection
-    - type: AntagLoadProfileRule
-      speciesOverride: Human
+# TODO: merg goob and upstream wizards
+#- type: entity
+#  abstract: true
+#  parent: BaseGameRule
+#  id: BaseWizardRule
+#  components:
+#  - type: AntagObjectives
+#    objectives:
+#    - WizardSurviveObjective
+#    - WizardDemonstrateObjective
+#  - type: LoadMapRule
+#    gridPath: /Maps/Shuttles/wizard.yml
+#  - type: RuleGrids
+#  - type: AntagSelection
+#  - type: AntagLoadProfileRule
+#    speciesOverride: Human
 
-- type: entity
-  parent: BaseWizardRule
-  id: Wizard
-  components:
-    - type: GameRule
-      minPlayers: 10
-    - type: AntagSelection
-      agentName: wizard-round-end-name
-      selectionTime: PrePlayerSpawn
-      definitions:
-        - prefRoles: [Wizard]
-          max: 1
-          playerRatio: 1
-          spawnerPrototype: SpawnPointGhostWizard
-          briefing:
-            text: wizard-role-greeting
-            color: Turquoise
-            # TODO: Need Wizard Start sound
-            #sound: "/Audio/Ambience/Antag/wizard_start.ogg"
-          startingGear: WizardBlueGear
-          # TODO: WizardComp as needed
-          components:
-            - type: NpcFactionMember
-              factions:
-                - Wizard
-            - type: RandomMetadata
-              nameSegments:
-                - names_wizard_first
-                - names_wizard_last
-          mindRoles:
-            - MindRoleWizard
+#- type: entity
+#  parent: BaseWizardRule
+#  id: Wizard
+#  components:
+#  - type: GameRule
+#    minPlayers: 10
+#  - type: AntagSelection
+#    agentName: wizard-round-end-name
+#    selectionTime: PrePlayerSpawn
+#    definitions:
+#    - prefRoles: [ Wizard ]
+#      max: 1
+#      playerRatio: 1
+#      spawnerPrototype: SpawnPointGhostWizard
+#      roleLoadout:
+#       - RoleSurvivalExtended
+#      briefing:
+#        text: wizard-role-greeting
+#        color: Turquoise
+#        # TODO: Need Wizard Start sound
+#        #sound: "/Audio/Ambience/Antag/wizard_start.ogg"
+#      startingGear: WizardBlueGear
+#      # TODO: WizardComp as needed
+#      components:
+#      - type: NpcFactionMember
+#        factions:
+#        - Wizard
+#      - type: RandomMetadata
+#        nameSegments:
+#        - names_wizard_first
+#        - names_wizard_last
+#      mindRoles:
+#      - MindRoleWizard
 
 - type: entity
   id: Zombie
   parent: BaseGameRule
   components:
-    - type: GameRule
-      minPlayers: 20
-      delay:
-        min: 600
-        max: 900
-    - type: ZombieRule
-    - type: AntagSelection
-      definitions:
-        - prefRoles: [InitialInfected]
-          max: 6
-          playerRatio: 10
-          blacklist:
-            components:
-              - ZombieImmune
-              - AntagImmune
-          briefing:
-            text: zombie-patientzero-role-greeting
-            color: Plum
-            sound: "/Audio/Ambience/Antag/zombie_start.ogg"
-          components:
-            - type: PendingZombie
-            - type: ZombifyOnDeath
-            - type: IncurableZombie
-            - type: InitialInfected
-          mindRoles:
-            - MindRoleInitialInfected
+  - type: GameRule
+    minPlayers: 20
+    delay:
+      min: 600
+      max: 900
+    # Goobstation
+    chaosScore: 1200
+  # Goobstation
+  - type: Tag
+    tags:
+    - LoneRunRule
+  - type: ZombieRule
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ InitialInfected ]
+      max: 4
+      playerRatio: 15
+      jobBlacklist: [ Chaplain ] # Goobstation
+      blacklist:
+        components:
+        - CommandStaff # Goobstation
+        - ZombieImmune
+        - AntagImmune
+      briefing:
+        text: zombie-patientzero-role-greeting
+        color: Plum
+        sound: "/Audio/Ambience/Antag/zombie_start.ogg"
+      components:
+      - type: PendingZombie
+      - type: ZombifyOnDeath
+      - type: IncurableZombie
+      - type: InitialInfected
+      mindRoles:
+      - MindRoleInitialInfected
+
+# This rule makes the chosen players unable to get other antag rules, as a way to prevent metagaming job rolls.
+# Put this before antags assigned to station jobs, but after non-job antags (NukeOps/Wiz).
+- type: entity
+  id: DummyNonAntag
+  parent: BaseGameRule
+  components:
+  - type: GameRule
+    minPlayers: 5
+  - type: AntagSelection
+    selectionTime: IntraPlayerSpawn # Pre-selection before jobs; assignment doesn't really matter though, we only care about the pre-selection to block other antags.
+    removeUponFailedSpawn: false
+    definitions:
+    - prefRoles: [ InitialInfected, Traitor, Thief, HeadRev ]
+      max: 2
+      playerRatio: 30
 
 # event schedulers
 
+# goob edit - separate event schedulers
 - type: entityTable
   id: BasicGameRulesTable
-  table:
-    !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
+  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
       - !type:NestedSelector
         tableId: BasicCalmEventsTable
@@ -351,9 +550,30 @@
         tableId: SpicyPestEventsTable
 
 - type: entityTable
+  id: BasicGameRulesTableNoAntag
+  table: !type:AllSelector
+    children:
+      - !type:NestedSelector
+        tableId: BasicCalmEventsTable
+      - !type:NestedSelector
+        tableId: CargoGiftsTable
+      - !type:NestedSelector
+        tableId: CalmPestEventsTable
+      - !type:NestedSelector
+        tableId: SpicyPestEventsTable
+
+- type: entityTable
+  id: AllGameRulesTable
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector
+      tableId: BasicGameRulesTableNoAntag
+    - !type:NestedSelector
+      tableId: BasicAntagEventsTable
+
+- type: entityTable
   id: SpaceTrafficControlTable
-  table:
-    !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
+  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
       - !type:NestedSelector
         tableId: UnknownShuttlesFriendlyTable
@@ -366,94 +586,88 @@
   id: BasicStationEventScheduler
   parent: BaseGameRule
   components:
-    - type: BasicStationEventScheduler
-      scheduledGameRules: !type:NestedSelector
-        tableId: BasicGameRulesTable
+  - type: BasicStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: BasicGameRulesTable
+
+- type: entity
+  id: AntagStationEventScheduler
+  parent: BaseGameRule
+  components:
+  - type: BasicStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: BasicAntagEventsTable
+    minMaxEventTiming:
+      min: 600
+      max: 900
 
 - type: entity
   id: RampingStationEventScheduler
   parent: BaseGameRule
   components:
-    - type: RampingStationEventScheduler
-      scheduledGameRules: !type:NestedSelector
-        tableId: BasicGameRulesTable
-
-# - type: entity
-#   id: SpaceTrafficControlEventScheduler # iff we make a selector for EntityTables that can respect StationEventComp restrictions, or somehow impliment them otherwise in said tables,
-#   parent: BaseGameRule                  # we can remerge this with the other schedulers, but it will silently fail due to that limitation without a separate scheduler to balance atm.
-#   components:
-#   - type: BasicStationEventScheduler
-#     minimumTimeUntilFirstEvent: 2700 # 45 mins #shows up like half way through shift.
-#     minMaxEventTiming:
-#       min: 1200 # 20 mins
-#       max: 7200 # 120 mins # you probably arent getting a second visitor shuttle in one round, but it is possible.
-#     scheduledGameRules: !type:NestedSelector
-#       tableId: SpaceTrafficControlTable
-#
-# - type: entity
-#   id: SpaceTrafficControlFriendlyEventScheduler
-#   parent: BaseGameRule
-#   components:
-#   - type: BasicStationEventScheduler
-#     minimumTimeUntilFirstEvent: 1200 # 20 mins
-#     minMaxEventTiming:
-#       min: 600 # 10 mins
-#       max: 1800 # 30 mins
-#     scheduledGameRules: !type:NestedSelector
-#       tableId: UnknownShuttlesFriendlyTable
+  - type: RampingStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: BasicGameRulesTable
 
 - type: entity
-  id: HellshiftStationEventScheduler
+  id: BasicStationEventSchedulerNoAntag
   parent: BaseGameRule
   components:
-    - type: RampingStationEventScheduler
-      chaosModifier: 5 # By default, one event each 30-10 seconds after two hours. Changing CVars will cause this to deviate.
-      startingChaosRatio: 0.1
-      shiftLengthModifier: 2.5
-      scheduledGameRules: !type:NestedSelector
-        tableId: BasicGameRulesTable
+  - type: BasicStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: BasicGameRulesTableNoAntag
+# goob edit end
 
 - type: entity
-  id: IrregularStationEventScheduler
-  parent: BaseGameRule
+  id: SpaceTrafficControlEventScheduler # iff we make a selector for EntityTables that can respect StationEventComp restrictions, or somehow impliment them otherwise in said tables,
+  parent: BaseGameRule                  # we can remerge this with the other schedulers, but it will silently fail due to that limitation without a separate scheduler to balance atm.
   components:
-    - type: OscillatingStationEventScheduler
-      minChaos: 0.8
-      maxChaos: 14
-      startingSlope: 0.2
-      downwardsLimit: -0.35
-      upwardsLimit: 0.4
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 2700 # 45 mins #shows up like half way through shift.
+    minMaxEventTiming:
+      min: 1200 # 20 mins
+      max: 7200 # 120 mins # you probably arent getting a second visitor shuttle in one round, but it is possible.
+    scheduledGameRules: !type:NestedSelector
+      tableId: SpaceTrafficControlTable
 
-# More likely to go down than up, so calmness prevails
 - type: entity
-  id: IrregularExtendedStationEventScheduler
+  id: SpaceTrafficControlFriendlyEventScheduler
   parent: BaseGameRule
   components:
-    - type: OscillatingStationEventScheduler
-      minChaos: 0.8
-      maxChaos: 8
-      startingSlope: -1
-      downwardsLimit: -0.4
-      upwardsLimit: 0.3
-      downwardsBias: -1.1
-      upwardsBias: 0.9
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 1200 # 20 mins
+    minMaxEventTiming:
+      min: 600 # 10 mins
+      max: 1800 # 30 mins
+    scheduledGameRules: !type:NestedSelector
+      tableId: UnknownShuttlesFriendlyTable
 
 # variation passes
 - type: entity
   id: BasicRoundstartVariation
   parent: BaseGameRule
   components:
-    - type: RoundstartStationVariationRule
-      rules:
-        #    - id: BasicPoweredLightVariationPass
-        - id: BasicTrashVariationPass
-        #    - id: SolidWallRustingVariationPass
-        #    - id: ReinforcedWallRustingVariationPass
-        - id: BasicPuddleMessVariationPass
-          prob: 0.99
-          orGroup: puddleMess
-        #    - id: BloodbathPuddleMessVariationPass
-        #      prob: 0.01
-        #      orGroup: puddleMess
-        - id: SmugglerStashVariationPass
-          prob: 0.90
+  - type: RoundstartStationVariationRule
+    rules:
+    - id: BasicPoweredLightVariationPass
+    - id: BasicTrashVariationPass
+    - id: SolidWallRustingVariationPass
+    - id: ReinforcedWallRustingVariationPass
+    - id: BasicPuddleMessVariationPass
+      prob: 0.99
+      orGroup: puddleMess
+    - id: BloodbathPuddleMessVariationPass
+      prob: 0.01
+      orGroup: puddleMess
+    - id: SmugglerStashVariationPass
+      prob: 0.90
+    - id: SolarPanelDamageVariationPass
+    - id: SolarPanelEmptyVariationPass
+    - id: BasicDecalDirtVariationPass
+    - id: BasicDecalGraffitiVariationPass
+    - id: BasicDecalBrunsVariationPass
+      prob: 0.50
+      orGroup: monospaceDecals
+    - id: BasicDecalDirtMonospaceVariationPass
+      prob: 0.50
+      orGroup: monospaceDecals

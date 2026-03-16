@@ -1,3 +1,17 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Menshin <Menshin@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Alert;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -5,6 +19,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.Clothing;
 
 [RegisterComponent, NetworkedComponent]
+[Access(typeof(SharedMagbootsSystem))]
 public sealed partial class MagbootsComponent : Component
 {
     [DataField]
@@ -23,38 +38,8 @@ public sealed partial class MagbootsComponent : Component
     public string Slot = "shoes";
 
     /// <summary>
-    ///     Whether or not activating the magboots changes a sprite.
+    /// Goobstation - EquippedPrefix for enabled state
     /// </summary>
     [DataField]
-    public bool ChangeClothingVisuals;
-
-    /// <summary>
-    ///     Whether or not the magboots are currently Active.
-    /// </summary>
-    [DataField]
-    public bool Active;
-
-    /// <summary>
-    ///     Walk speed modifier to use while the magnets are active.
-    /// </summary>
-    [DataField]
-    public float ActiveWalkModifier = 0.85f;
-
-    /// <summary>
-    ///     Sprint speed modifier to use while the magnets are active.
-    /// </summary>
-    [DataField]
-    public float ActiveSprintModifier = 0.80f;
-
-    /// <summary>
-    ///     Walk speed modifier to use while the magnets are off.
-    /// </summary>
-    [DataField]
-    public float InactiveWalkModifier = 1f;
-
-    /// <summary>
-    ///     Sprint speed modifier to use while the magnets are off.
-    /// </summary>
-    [DataField]
-    public float InactiveSprintModifier = 1f;
+    public string? EnabledPrefix = "on";
 }

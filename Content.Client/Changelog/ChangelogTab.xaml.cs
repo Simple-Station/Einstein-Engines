@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using System.Numerics;
 using Content.Client.Resources;
@@ -7,7 +16,6 @@ using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
-using Robust.Shared.ContentPack;
 using Robust.Shared.Utility;
 using static Content.Client.Changelog.ChangelogManager;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
@@ -35,14 +43,14 @@ public sealed partial class ChangelogTab : Control
             .OrderByDescending(c => c.Key);
 
         var hasRead = changelog.Name != MainChangelogName ||
-                      _changelog.MaxTime <= _changelog.LastReadTime;
+                      _changelog.MaxId <= _changelog.LastReadId;
 
         foreach (var dayEntries in byDay)
         {
             var day = dayEntries.Key;
 
             var groupedEntries = dayEntries
-                .GroupBy(c => (c.Author, Read: c.Time <= _changelog.LastReadTime))
+                .GroupBy(c => (c.Author, Read: c.Id <= _changelog.LastReadId))
                 .OrderBy(c => c.Key.Read)
                 .ThenBy(c => c.Key.Author);
 
@@ -131,13 +139,13 @@ public sealed partial class ChangelogTab : Control
                     Margin = new Thickness(6, 0, 0, 0),
                 };
                 authorLabel.SetMessage(
-                    FormattedMessage.FromMarkupOrThrow(Loc.GetString("changelog-author-changed", ("author", author))));
+                    FormattedMessage.FromMarkupOrThrow(Loc.GetString("changelog-author-changed", ("author", FormattedMessage.EscapeText(author)))));
                 ChangelogBody.AddChild(authorLabel);
 
                 foreach (var change in groupedEntry.SelectMany(c => c.Changes))
                 {
                     var text = new RichTextLabel();
-                    text.SetMessage(FormattedMessage.FromMarkupOrThrow(change.Message));
+                    text.SetMessage(FormattedMessage.FromUnformatted(change.Message));
                     ChangelogBody.AddChild(new BoxContainer
                     {
                         Orientation = LayoutOrientation.Horizontal,

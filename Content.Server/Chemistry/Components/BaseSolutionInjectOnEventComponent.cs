@@ -1,4 +1,14 @@
-﻿using Content.Shared.FixedPoint;
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.Damage; // Goobstation - Armor resisting syringe gun
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Inventory;
 
 namespace Content.Server.Chemistry.Components;
@@ -37,10 +47,17 @@ public abstract partial class BaseSolutionInjectOnEventComponent : Component
     public string Solution = "default";
 
     /// <summary>
-    /// Whether this will inject through hardsuits or not.
+    /// Whether this will inject through armor or not. // Goobstation - Armor resisting syringe gun
     /// </summary>
     [DataField]
     public bool PierceArmor = true;
+
+    // Goobstation - Armor resisting syringe gun
+    /// <summary>
+    /// By how much to downscale the transfer amount by in respect to damage types
+    /// </summary>
+    [DataField]
+    public Dictionary<string, float> DamageModifierResistances = new() {["Piercing"] = 1f}; // lower transfer amount by 1% per 1% piercing resist
 
     /// <summary>
     /// Contents of popup message to display to the attacker when injection
@@ -50,11 +67,27 @@ public abstract partial class BaseSolutionInjectOnEventComponent : Component
     /// Passed values: $weapon and $target
     /// </remarks>
     [DataField]
-    public LocId BlockedByHardsuitPopupMessage = "melee-inject-failed-hardsuit";
+    public LocId BlockedByArmorPopupMessage = "melee-inject-failed-armor"; // Goobstation - Armor resisting syringe gun
 
     /// <summary>
     /// If anything covers any of these slots then the injection fails.
     /// </summary>
     [DataField]
     public SlotFlags BlockSlots = SlotFlags.NONE;
+
+    // <Goobstation>
+    /// <summary>
+    /// State: for the next embed, override whether this pierces armor.
+    /// For setting from other code.
+    /// </summary>
+    [ViewVariables]
+    public bool? PierceArmorOverride;
+
+    /// <summary>
+    /// State: for the next embed, divide injection time by this.
+    /// For setting from other code.
+    /// </summary>
+    [ViewVariables]
+    public float SpeedMultiplier = 1f;
+    // </Goobstation>
 }

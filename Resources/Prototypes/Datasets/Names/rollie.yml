@@ -1,42 +1,5 @@
-- type: dataset
-  id: names_rollie
+- type: localizedDataset
+  id: NamesRollie
   values:
-  - names-rollie-dataset-1 = Бифта
-  - names-rollie-dataset-2 = Бифер
-  - names-rollie-dataset-3 = Птица
-  - names-rollie-dataset-4 = Блант
-  - names-rollie-dataset-5 = Блойт
-  - names-rollie-dataset-6 = Буф
-  - names-rollie-dataset-7 = Буфер
-  - names-rollie-dataset-8 = Бомбер
-  - names-rollie-dataset-9 = Кость
-  - names-rollie-dataset-10 = Булочка
-  - names-rollie-dataset-11 = Доинк
-  - names-rollie-dataset-12 = Дуб
-  - names-rollie-dataset-13 = Дубер
-  - names-rollie-dataset-14 = Дуби
-  - names-rollie-dataset-15 = Датч
-  - names-rollie-dataset-16 = Толстяк
-  - names-rollie-dataset-17 = Хоггер
-  - names-rollie-dataset-18 = Хитер
-  - names-rollie-dataset-19 = Хути
-  - names-rollie-dataset-20 = Джей
-  - names-rollie-dataset-21 = Джимми
-  - names-rollie-dataset-22 = Косяк
-  - names-rollie-dataset-23 = Жужу
-  - names-rollie-dataset-24 = Джиби-Уиби
-  - names-rollie-dataset-25 = Номер
-  - names-rollie-dataset-26 = Сова
-  - names-rollie-dataset-27 = Фэтти
-  - names-rollie-dataset-28 = Паффер
-  - names-rollie-dataset-29 = Риф
-  - names-rollie-dataset-30 = Рифер
-  - names-rollie-dataset-31 = Ролли
-  - names-rollie-dataset-32 = Скооби
-  - names-rollie-dataset-33 = Коротыш
-  - names-rollie-dataset-34 = Спиф
-  - names-rollie-dataset-35 = Сплиф
-  - names-rollie-dataset-36 = Затяжка
-  - names-rollie-dataset-37 = Торпеда
-  - names-rollie-dataset-38 = Зут
-  - names-rollie-dataset-39 = Зутер
+    prefix: names-rollie-dataset-
+    count: 37

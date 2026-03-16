@@ -1,15 +1,29 @@
-using Content.Shared._White.Humanoid.Prototypes;
-// using Content.Shared._White.TTS;
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 csqrb <56765288+CaptainSqrBeard@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 MarkerWicker <markerWicker@proton.me>
+// SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Zekins <zekins3366@gmail.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+// SPDX-FileCopyrightText: 2025 paige404 <59348003+paige404@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
+using Content.Shared._White.Bark;
+using Content.Shared.DisplacementMap;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
-using Content.Shared.Preferences; //DeltaV, used for Metempsychosis, Fugitive, and Paradox Anomaly
+using Content.Shared.Inventory;
 using Robust.Shared.Enums;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
-using Content.Shared.Preferences;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype; //DeltaV, used for Metempsychosis, Fugitive, and Paradox Anomaly
 
 namespace Content.Shared.Humanoid;
 
@@ -33,19 +47,13 @@ public sealed partial class HumanoidAppearanceComponent : Component
     public Gender Gender;
 
     [DataField, AutoNetworkedField]
-    public string? DisplayPronouns;
-
-    [DataField, AutoNetworkedField]
-    public string? StationAiName;
-
-    [DataField, AutoNetworkedField]
-    public string? CyborgName;
-
-    [DataField, AutoNetworkedField]
     public int Age = 18;
 
-    [DataField, AutoNetworkedField]
-    public string CustomSpecieName = "";
+    [DataField("barkVoice")]
+    public string BarkVoice { get; set; } = SharedHumanoidAppearanceSystem.DefaultBarkVoice;
+
+    [DataField("barkSettings")]
+    public BarkPercentageApplyData BarkSettings { get; set; } = BarkPercentageApplyData.Default;
 
     /// <summary>
     ///     Any custom base layers this humanoid might have. See:
@@ -76,11 +84,12 @@ public sealed partial class HumanoidAppearanceComponent : Component
     public Color SkinColor { get; set; } = Color.FromHex("#C0967F");
 
     /// <summary>
-    ///     Visual layers currently hidden. This will affect the base sprite
-    ///     on this humanoid layer, and any markings that sit above it.
+    ///     A map of the visual layers currently hidden to the equipment
+    ///     slots that are currently hiding them. This will affect the base
+    ///     sprite on this humanoid layer, and any markings that sit above it.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public HashSet<HumanoidVisualLayers> HiddenLayers = new();
+    public Dictionary<HumanoidVisualLayers, SlotFlags> HiddenLayers = new();
 
     [DataField, AutoNetworkedField]
     public Sex Sex = Sex.Male;
@@ -107,10 +116,28 @@ public sealed partial class HumanoidAppearanceComponent : Component
     public HashSet<HumanoidVisualLayers> HideLayersOnEquip = [HumanoidVisualLayers.Hair];
 
     /// <summary>
-    /// DeltaV - let paradox anomaly be cloned
+    ///     Which markings the humanoid defaults to when nudity is toggled off.
     /// </summary>
-    [ViewVariables]
-    public HumanoidCharacterProfile? LastProfileLoaded;
+    /// <remarks>Goob - commented out until it's implemented across all specie</remarks>
+    //[DataField]
+    //public ProtoId<MarkingPrototype>? UndergarmentTop = new ProtoId<MarkingPrototype>("UndergarmentTopTanktop");
+    //
+    //[DataField]
+    //public ProtoId<MarkingPrototype>? UndergarmentBottom = new ProtoId<MarkingPrototype>("UndergarmentBottomBoxers");
+
+    /// <summary>
+    ///     The displacement maps that will be applied to specific layers of the humanoid.
+    /// </summary>
+    [DataField]
+    public Dictionary<HumanoidVisualLayers, DisplacementData> MarkingsDisplacement = new();
+
+    /// <summary>
+    ///     Shitmed Change: Used to prevent early additions of BodyPartAppearanceComp with incorrect data from Urists.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool ProfileLoaded;
+
+    // begin Goobstation: port EE height/width sliders
 
     /// <summary>
     ///     The height of this humanoid.
@@ -124,27 +151,19 @@ public sealed partial class HumanoidAppearanceComponent : Component
     [DataField, AutoNetworkedField]
     public float Width = 1f;
 
-    // WD EDIT START
-    /// <summary>
-    ///     Current body type.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public ProtoId<BodyTypePrototype> BodyType { get; set; } = SharedHumanoidAppearanceSystem.DefaultBodyType;
-
-    // [DataField, AutoNetworkedField]
-    // public ProtoId<TTSVoicePrototype> Voice { get; set; } = SharedHumanoidAppearanceSystem.DefaultVoice;
-    // WD EDIT END
+    // end Goobstation: port EE height/width sliders
 }
 
 [DataDefinition]
 [Serializable, NetSerializable]
 public readonly partial struct CustomBaseLayerInfo
 {
-    public CustomBaseLayerInfo(string? id, Color? color = null)
+    public CustomBaseLayerInfo(string? id, Color? color = null, string? shader = null) // Goobstation edit
     {
         DebugTools.Assert(id == null || IoCManager.Resolve<IPrototypeManager>().HasIndex<HumanoidSpeciesSpriteLayer>(id));
         Id = id;
         Color = color;
+        Shader = shader; // Goobtation
     }
 
     /// <summary>
@@ -158,4 +177,8 @@ public readonly partial struct CustomBaseLayerInfo
     /// </summary>
     [DataField]
     public Color? Color { get; init; }
+
+    // Goobstation
+    [DataField]
+    public string? Shader { get; init; }
 }

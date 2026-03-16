@@ -1,4 +1,11 @@
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Palladinium <patrick.chieppe@hotmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.Configuration;
+using Robust.Shared.Maths;
 
 namespace Content.Shared.CCVar;
 
@@ -59,14 +66,6 @@ public sealed partial class CCVars
     public static readonly CVarDef<string> DiscordRoundEndRoleWebhook =
         CVarDef.Create("discord.round_end_role", string.Empty, CVar.SERVERONLY);
 
-    // Orehum start
-    /// <summary>
-    /// Webhook для отправки новостей со станции
-    /// </summary>
-    public static readonly CVarDef<string> DiscordNewNewsletterWebhook =
-        CVarDef.Create("discord.new_newsletter_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
-    // Orehum end
-
     /// <summary>
     ///     URL of the Discord webhook which will relay watchlist connection notifications. If left empty, disables the webhook.
     /// </summary>
@@ -82,20 +81,22 @@ public sealed partial class CCVars
         CVarDef.Create("discord.watchlist_connection_buffer_time", 5f, CVar.SERVERONLY);
 
     /// <summary>
-    ///     Enable Discord linking, show linking button and modal window
+    ///     URL of the Discord webhook which will receive station news acticles at the round end.
+    ///     If left empty, disables the webhook.
     /// </summary>
-    public static readonly CVarDef<bool> DiscordAuthEnabled =
-        CVarDef.Create("discord.auth_enabled", false, CVar.SERVERONLY);
+    public static readonly CVarDef<string> DiscordNewsWebhook =
+        CVarDef.Create("discord.news_webhook", string.Empty, CVar.SERVERONLY);
 
     /// <summary>
-    ///     URL of the Discord auth server API
+    ///     HEX color of station news discord webhook's embed.
     /// </summary>
-    public static readonly CVarDef<string> DiscordAuthApiUrl =
-        CVarDef.Create("discord.auth_api_url", "", CVar.SERVERONLY);
+    public static readonly CVarDef<string> DiscordNewsWebhookEmbedColor =
+        CVarDef.Create("discord.news_webhook_embed_color", Color.LawnGreen.ToHex(), CVar.SERVERONLY);
 
     /// <summary>
-    ///     Secret key of the Discord auth server API
+    ///     Whether or not articles should be sent mid-round instead of all at once at the round's end
     /// </summary>
-    public static readonly CVarDef<string> DiscordAuthApiKey =
-        CVarDef.Create("discord.auth_api_key", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+    public static readonly CVarDef<bool> DiscordNewsWebhookSendDuringRound =
+        CVarDef.Create("discord.news_webhook_send_during_round", false, CVar.SERVERONLY);
+
 }

@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: OrganAnimalBrain
   parent: BaseAnimalOrganUnGibbable
@@ -8,10 +15,12 @@
     state: brain
   - type: Organ
     slotId: brain
-  - type: Food
-    delay: 5
-    forceFeedDelay: 6
-    popupOnEat: true
+    intCap: 28
+    integrity: 28
+    integrityThresholds:
+      Normal: 28
+      Damaged: 16
+      Destroyed: 0
   - type: Input
     context: "ghost"
   - type: Brain
@@ -19,6 +28,11 @@
   - type: Examiner
   - type: BlockMovement
   - type: BadFood
+  - type: Tag
+    tags:
+      - Meat
+      - Organ
+      - Brain
   - type: SolutionContainerManager
     solutions:
       organ:
@@ -33,14 +47,17 @@
   - type: FlavorProfile
     flavors:
       - people
+  - type: FoodSequenceElement
+    entries:
+      Burger: Brain
+      Taco: Brain
   - type: Item
     size: Small
     heldPrefix: brain
-  - type: Tag # goob edit
-    tags:
-    - Meat
-    - Organ
-    - Brain
+  - type: NerveSystem # backmen: wounding
+  - type: ConsciousnessRequired
+    identifier: "nerveSystem"
+    causesDeath: true
 
 - type: entity
   id: OrganAnimalEyes
@@ -48,9 +65,17 @@
   name: animal eyes
   description: "I see you!"
   components:
-  - type: Organ # Shitmed Change
+  # start-backmen: surgery
+  - type: Organ
     slotId: eyes
-  - type: Eyes # Shitmed Change
+    intCap: 12
+    integrity: 12
+    integrityThresholds:
+      Normal: 12
+      Damaged: 6
+      Destroyed: 0
+  - type: Eyes
+  # end-backmen: surgery
   - type: Sprite
     layers:
       - state: eyeball-l
@@ -58,8 +83,8 @@
   - type: Item
     size: Small
     heldPrefix: eyeballs
-  - type: Tag # goob edit
+  - type: Tag
     tags:
-    - Meat
-    - Organ
-    - Eyes
+      - Meat
+      - Organ
+      - Eyes

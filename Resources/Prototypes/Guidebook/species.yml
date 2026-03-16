@@ -1,26 +1,52 @@
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 BeeRobynn <166929042+BeeRobynn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 BeeRobynn <robynthewarcrime@proton.me>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 portfiend <109661617+portfiend@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Ark <189933909+ark1368@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AstroDogeDX <48888500+AstroDogeDX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: guideEntry
   id: Species
   name: guide-entry-species
   text: "/ServerInfo/Guidebook/Mobs/Species.xml"
   children:
-    # - Arachnid
+    - Arachnid
     - Diona
+    - Dwarf
     - Human
-    - Felinid
     - Moth
-    - Oni
     - Reptilian
-    # - SlimePerson
-    - IPC
+    - SlimePerson
+    # Goobstation
+    # - Felinid
+    - Gingerbread
     - Harpy
-    # - Shadowkin
-    - Plasmaman
-#    - Chitinid
+    - Vox
+    - Vulpkanin
+    - Rodentia
+    - Yowie
+    - IPC
+    - Resomi
+    - Oni
     - Tajaran
+    - Chitinid
+    - Plasmaman
     - Feroxi
-    # ImpStation additions
-    - Thaven
-    - Shell
+    - Shadowkin
 
 - type: guideEntry
   id: Arachnid
@@ -33,6 +59,11 @@
   text: "/ServerInfo/Guidebook/Mobs/Diona.xml"
 
 - type: guideEntry
+  id: Dwarf
+  name: species-name-dwarf
+  text: "/ServerInfo/Guidebook/Mobs/Dwarf.xml"
+
+- type: guideEntry
   id: Human
   name: species-name-human
   text: "/ServerInfo/Guidebook/Mobs/Human.xml"
@@ -41,11 +72,6 @@
   id: Moth
   name: species-name-moth
   text: "/ServerInfo/Guidebook/Mobs/Moth.xml"
-
-- type: guideEntry
-  id: Oni
-  name: species-name-oni
-  text: "/ServerInfo/Guidebook/Mobs/Oni.xml"
 
 - type: guideEntry
   id: Reptilian
@@ -57,10 +83,16 @@
   name: species-name-slime
   text: "/ServerInfo/Guidebook/Mobs/SlimePerson.xml"
 
+# Goobstation
+#- type: guideEntry
+#  id: Felinid
+#  name: species-name-felinid
+#  text: "/ServerInfo/Guidebook/Mobs/Felinid.xml"
+
 - type: guideEntry
-  id: IPC
-  name: species-name-ipc
-  text: "/ServerInfo/Guidebook/Mobs/IPC.xml"
+  id: Gingerbread
+  name: species-name-gingerbread
+  text: "/ServerInfo/Guidebook/Mobs/Gingerbread.xml"
 
 - type: guideEntry
   id: Harpy
@@ -68,9 +100,29 @@
   text: "/ServerInfo/Guidebook/Mobs/Harpy.xml"
 
 - type: guideEntry
-  id: Shadowkin
-  name: species-name-shadowkin
-  text: "/ServerInfo/Guidebook/Mobs/Shadowkin.xml"
+  id: Vox
+  name: species-name-vox
+  text: "/ServerInfo/Guidebook/Mobs/Vox.xml"
+
+- type: guideEntry
+  id: Vulpkanin
+  name: species-name-vulpkanin
+  text: "/ServerInfo/Guidebook/Mobs/Vulpkanin.xml"
+
+- type: guideEntry
+  id: Yowie
+  name: species-name-yowie
+  text: "/ServerInfo/Guidebook/Mobs/Yowie.xml"
+
+- type: guideEntry
+  id: IPC
+  name: species-name-ipc
+  text: "/ServerInfo/Guidebook/Mobs/IPCs.xml"
+
+- type: guideEntry
+  id: Resomi
+  name: species-name-resomi
+  text: "/ServerInfo/Guidebook/Mobs/Resomi.xml"
 
 - type: guideEntry
   id: Tajaran
@@ -83,11 +135,6 @@
   text: "/ServerInfo/Guidebook/Mobs/Plasmaman.xml"
 
 - type: guideEntry
-  id: Shell
-  name: species-name-shell
-  text: "/ServerInfo/Guidebook/Mobs/Shell.xml"
-
-- type: guideEntry
-  id: Felinid
-  name: species-name-felinid
-  text: "/ServerInfo/Guidebook/Mobs/Felinid.xml"
+  id: Shadowkin
+  name: species-name-shadowkin
+  text: "/ServerInfo/Guidebook/Mobs/Shadowkin.xml"

@@ -1,3 +1,39 @@
+// SPDX-FileCopyrightText: 2020 Clyybber <darkmine956@gmail.com>
+// SPDX-FileCopyrightText: 2020 ColdAutumnRain <73938872+ColdAutumnRain@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <zddm@outlook.es>
+// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2021 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2021 Metal Gear Sloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <zddm@outlook.es>
+// SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 ScalyChimp <72841710+scaly-chimp@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Fishbait <Fishbait@git.ml>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 fishbait <gnesse@gmail.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 TemporalOroboros <TemporalOroboros@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Buffers;
 using System.Linq;
 using System.Numerics;
@@ -10,7 +46,6 @@ using Content.Shared.Access.Components;
 using Content.Shared.Administration;
 using Content.Shared.Climbing.Components;
 using Content.Shared.Doors.Components;
-using Content.Shared.Gravity;
 using Content.Shared.NPC;
 using Robust.Server.Player;
 using Robust.Shared.Enums;
@@ -76,22 +111,10 @@ namespace Content.Server.NPC.Pathfinding
         private EntityQuery<FixturesComponent> _fixturesQuery;
         private EntityQuery<MapGridComponent> _gridQuery;
         private EntityQuery<TransformComponent> _xformQuery;
-        private EntityQuery<GridPathfindingComponent> _gridPathfindingQuery;
-        private EntityQuery<GravityComponent> _gravityQuery;
-
-        private PathfindingJob _pathfindingJob;
-        private BuildBreadcrumbsJob _buildBreadcrumbsJob;
-        private ClearOldPolysJob _clearOldPolysJob;
-        private BuildNavMeshJob _buildNavMeshJob;
 
         public override void Initialize()
         {
             base.Initialize();
-
-            _pathfindingJob = new(this);
-            _buildBreadcrumbsJob = new(this);
-            _clearOldPolysJob = new(this);
-            _buildNavMeshJob = new(this);
 
             _accessQuery = GetEntityQuery<AccessReaderComponent>();
             _destructibleQuery = GetEntityQuery<DestructibleComponent>();
@@ -100,8 +123,6 @@ namespace Content.Server.NPC.Pathfinding
             _fixturesQuery = GetEntityQuery<FixturesComponent>();
             _gridQuery = GetEntityQuery<MapGridComponent>();
             _xformQuery = GetEntityQuery<TransformComponent>();
-            _gridPathfindingQuery = GetEntityQuery<GridPathfindingComponent>();
-            _gravityQuery = GetEntityQuery<GravityComponent>();
 
             _playerManager.PlayerStatusChanged += OnPlayerChange;
             InitializeGrid();
@@ -119,14 +140,48 @@ namespace Content.Server.NPC.Pathfinding
         public override void Update(float frameTime)
         {
             base.Update(frameTime);
+            var options = new ParallelOptions()
+            {
+                MaxDegreeOfParallelism = _parallel.ParallelProcessCount,
+            };
 
-            UpdateGrid(); // Orehum
+            UpdateGrid(options);
             _stopwatch.Restart();
             var amount = Math.Min(PathTickLimit, _pathRequests.Count);
             var results = ArrayPool<PathResult>.Shared.Rent(amount);
 
-            _pathfindingJob.Results = results; // orehum
-            _parallel.ProcessNow(_pathfindingJob, amount); // orehum
+
+            Parallel.For(0, amount, options, i =>
+            {
+                // If we're over the limit (either time-sliced or hard cap).
+                if (_stopwatch.Elapsed >= PathTime)
+                {
+                    results[i] = PathResult.Continuing;
+                    return;
+                }
+
+                var request = _pathRequests[i];
+
+                try
+                {
+                    switch (request)
+                    {
+                        case AStarPathRequest astar:
+                            results[i] = UpdateAStarPath(astar);
+                            break;
+                        case BFSPathRequest bfs:
+                            results[i] = UpdateBFSPath(_random, bfs);
+                            break;
+                        default:
+                            throw new NotImplementedException();
+                    }
+                }
+                catch (Exception)
+                {
+                    results[i] = PathResult.NoPath;
+                    throw;
+                }
+            });
 
             var offset = 0;
 
@@ -169,8 +224,8 @@ namespace Content.Server.NPC.Pathfinding
         /// </summary>
         public bool TryCreatePortal(EntityCoordinates coordsA, EntityCoordinates coordsB, out int handle)
         {
-            var mapUidA = coordsA.GetMapUid(EntityManager);
-            var mapUidB = coordsB.GetMapUid(EntityManager);
+            var mapUidA = _transform.GetMap(coordsA);
+            var mapUidB = _transform.GetMap(coordsB);
             handle = -1;
 
             if (mapUidA != mapUidB || mapUidA == null)
@@ -178,11 +233,11 @@ namespace Content.Server.NPC.Pathfinding
                 return false;
             }
 
-            var gridUidA = coordsA.GetGridUid(EntityManager);
-            var gridUidB = coordsB.GetGridUid(EntityManager);
+            var gridUidA = _transform.GetGrid(coordsA);
+            var gridUidB = _transform.GetGrid(coordsB);
 
-            if (!_gridPathfindingQuery.TryComp(gridUidA, out var gridA) ||
-                !_gridPathfindingQuery.TryComp(gridUidB, out var gridB))
+            if (!TryComp<GridPathfindingComponent>(gridUidA, out var gridA) ||
+                !TryComp<GridPathfindingComponent>(gridUidB, out var gridB))
             {
                 return false;
             }
@@ -217,11 +272,11 @@ namespace Content.Server.NPC.Pathfinding
 
             _portals.Remove(handle);
 
-            var gridUidA = portal.CoordinatesA.GetGridUid(EntityManager);
-            var gridUidB = portal.CoordinatesB.GetGridUid(EntityManager);
+            var gridUidA = _transform.GetGrid(portal.CoordinatesA);
+            var gridUidB = _transform.GetGrid(portal.CoordinatesB);
 
-            if (!_gridPathfindingQuery.TryComp(gridUidA, out var gridA) ||
-                !_gridPathfindingQuery.TryComp(gridUidB, out var gridB))
+            if (!TryComp<GridPathfindingComponent>(gridUidA, out var gridA) ||
+                !TryComp<GridPathfindingComponent>(gridUidB, out var gridB))
             {
                 return false;
             }
@@ -245,13 +300,13 @@ namespace Content.Server.NPC.Pathfinding
             int limit = 40,
             PathFlags flags = PathFlags.None)
         {
-            if (!_xformQuery.TryComp(entity, out var start))
+            if (!TryComp(entity, out TransformComponent? start))
                 return new PathResultEvent(PathResult.NoPath, new List<PathPoly>());
 
             var layer = 0;
             var mask = 0;
 
-            if (_fixturesQuery.TryComp(entity, out var fixtures))
+            if (TryComp<FixturesComponent>(entity, out var fixtures))
             {
                 (layer, mask) = _physics.GetHardCollision(entity, fixtures);
             }
@@ -275,7 +330,7 @@ namespace Content.Server.NPC.Pathfinding
             CancellationToken cancelToken,
             PathFlags flags = PathFlags.None)
         {
-            if (!_xformQuery.TryComp(entity, out var start))
+            if (!TryComp(entity, out TransformComponent? start))
                 return null;
 
             var request = GetRequest(entity, start.Coordinates, end, range, cancelToken, flags);
@@ -306,8 +361,8 @@ namespace Content.Server.NPC.Pathfinding
             CancellationToken cancelToken,
             PathFlags flags = PathFlags.None)
         {
-            if (!_xformQuery.TryComp(entity, out var xform) ||
-                !_xformQuery.TryComp(target, out var targetXform))
+            if (!TryComp(entity, out TransformComponent? xform) ||
+                !TryComp(target, out TransformComponent? targetXform))
                 return new PathResultEvent(PathResult.NoPath, new List<PathPoly>());
 
             var request = GetRequest(entity, xform.Coordinates, targetXform.Coordinates, range, cancelToken, flags);
@@ -378,22 +433,22 @@ namespace Content.Server.NPC.Pathfinding
         /// </summary>
         public PathPoly? GetPoly(EntityCoordinates coordinates)
         {
-            var gridUid = coordinates.GetGridUid(EntityManager);
+            var gridUid = _transform.GetGrid(coordinates);
 
-            if (!_gridPathfindingQuery.TryComp(gridUid, out var comp) ||
-                !_xformQuery.TryComp(gridUid, out var xform))
+            if (!TryComp<GridPathfindingComponent>(gridUid, out var comp) ||
+                !TryComp(gridUid, out TransformComponent? xform))
             {
                 return null;
             }
 
-            var localPos = Vector2.Transform(coordinates.ToMapPos(EntityManager, _transform), xform.InvWorldMatrix);
+            var localPos = Vector2.Transform(_transform.ToMapCoordinates(coordinates).Position, _transform.GetInvWorldMatrix(xform));
             var origin = GetOrigin(localPos);
 
             if (!TryGetChunk(origin, comp, out var chunk))
                 return null;
 
             var chunkPos = new Vector2(MathHelper.Mod(localPos.X, ChunkSize), MathHelper.Mod(localPos.Y, ChunkSize));
-            var polys = chunk.Polygons[(int) chunkPos.X * ChunkSize + (int) chunkPos.Y];
+            var polys = chunk.Polygons[(int)chunkPos.X * ChunkSize + (int)chunkPos.Y];
 
             foreach (var poly in polys)
             {
@@ -411,7 +466,7 @@ namespace Content.Server.NPC.Pathfinding
             var layer = 0;
             var mask = 0;
 
-            if (_fixturesQuery.TryComp(entity, out var fixtures))
+            if (TryComp<FixturesComponent>(entity, out var fixtures))
             {
                 (layer, mask) = _physics.GetHardCollision(entity, fixtures);
             }
@@ -749,94 +804,5 @@ namespace Content.Server.NPC.Pathfinding
         }
 
         #endregion
-
-        private record struct PathfindingJob(PathfindingSystem System) : IParallelRobustJob
-        {
-            public PathResult[] Results = [];
-
-            public void Execute(int index)
-            {
-                // If we're over the limit (either time-sliced or hard cap).
-                if (System._stopwatch.Elapsed >= PathTime)
-                {
-                    Results[index] = PathResult.Continuing;
-                    return;
-                }
-
-                var request = System._pathRequests[index];
-
-                try
-                {
-                    switch (request)
-                    {
-                        case AStarPathRequest astar:
-                            Results[index] = System.UpdateAStarPath(astar);
-                            break;
-                        case BFSPathRequest bfs:
-                            Results[index] = System.UpdateBFSPath(System._random, bfs);
-                            break;
-                        default:
-                            throw new NotImplementedException();
-                    }
-                }
-                catch (Exception)
-                {
-                    Results[index] = PathResult.NoPath;
-                    throw;
-                }
-            }
-        }
-
-        private record struct BuildBreadcrumbsJob(PathfindingSystem System) : IParallelRobustJob
-        {
-            public GridPathfindingChunk[] Dirt = [];
-            public Entity<MapGridComponent> Grid = (EntityUid.Invalid, null!);
-
-            public void Execute(int index) => System.BuildBreadcrumbs(Dirt[index], Grid);
-        }
-
-        private record struct ClearOldPolysJob(PathfindingSystem System) : IParallelRobustJob
-        {
-            public GridPathfindingChunk[] Dirt = [];
-            public int It1;
-
-            public void Execute(int index)
-            {
-                var chunk = Dirt[index];
-                // Check if the chunk is safe on this iteration.
-                var x = Math.Abs(chunk.Origin.X % 2);
-                var y = Math.Abs(chunk.Origin.Y % 2);
-                var ind = x * 2 + y;
-
-                if (ind != It1)
-                    return;
-
-                System.ClearOldPolys(chunk);
-            }
-        }
-
-        private record struct BuildNavMeshJob(PathfindingSystem System) : IParallelRobustJob
-        {
-            public GridPathfindingChunk[] Dirt = [];
-            public int It1;
-            public Entity<GridPathfindingComponent> Pathfinding;
-
-            public void Execute(int index)
-            {
-                var chunk = Dirt[index];
-                // Check if the chunk is safe on this iteration.
-                var x = Math.Abs(chunk.Origin.X % 2);
-                var y = Math.Abs(chunk.Origin.Y % 2);
-                var ind = x * 2 + y;
-
-                if (ind != It1)
-                    return;
-
-                System.BuildNavmesh(chunk, Pathfinding);
-                #if DEBUG
-                //    Interlocked.Increment(ref updateCount);
-                #endif
-            }
-        }
     }
 }

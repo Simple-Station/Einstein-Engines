@@ -1,4 +1,27 @@
-﻿using Content.Server._Lavaland.Procedural.Systems;
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
+// SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Unlumination <144041835+Unlumy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+// SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Server._Lavaland.Procedural.Systems;
 using Content.Server.Administration;
 using Content.Shared._Lavaland.Procedural.Prototypes;
 using Content.Shared.Administration;
@@ -17,7 +40,7 @@ public sealed class LavalandMappingCommand : IConsoleCommand
 
     public string Description => "Loads lavaland world on a new map. Be careful, this can cause freezes on runtime!";
 
-    public string Help => "mappinglavaland <prototype id> <seed>";
+    public string Help => "mappinglavaland <prototype id> <seed (optional)>";
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)
     {
@@ -26,6 +49,10 @@ public sealed class LavalandMappingCommand : IConsoleCommand
 
         switch (args.Length)
         {
+            case 0:
+                shell.WriteLine(Loc.GetString("Enter Lavaland prototype ID as a first argument"));
+                shell.WriteLine(Help);
+                return;
             case 1:
                 if (!_proto.TryIndex(args[0], out lavalandProto))
                 {
@@ -52,10 +79,14 @@ public sealed class LavalandMappingCommand : IConsoleCommand
                 shell.WriteLine(Help);
                 return;
         }
+        var lavalandSys = _entityManager.System<LavalandSystem>();
 
-        if (!_entityManager.System<LavalandPlanetSystem>().SetupLavalandPlanet(out var lavaland, lavalandProto, lavalandSeed))
-            shell.WriteLine("Failed to load lavaland due to an exception!");
+        if (lavalandSys.GetPreloaderEntity() == null)
+            lavalandSys.EnsurePreloaderMap();
 
-        shell.WriteLine($"Successfully created new lavaland map: {_entityManager.ToPrettyString(lavaland)}");
+        if (!lavalandSys.SetupLavalandPlanet(lavalandProto, out var lavaland, lavalandSeed))
+            shell.WriteLine("Failed to load lavaland! Ensure that lavaland.enabled CVar is set to true and check server-side logs.");
+        else
+            shell.WriteLine($"Successfully created new lavaland map: {_entityManager.ToPrettyString(lavaland)}");
     }
 }

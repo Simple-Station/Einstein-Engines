@@ -1,8 +1,88 @@
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DarkenedSynergy <70016079+DarkenedSynergy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Teapug <159912420+Teapug@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
-  parent: ClothingBackpack
+  parent: [ BaseCentcommContraband , ClothingBackpack ]
+  id: ClothingBackpackCentcomm
+  name: centcomm backpack
+  description: A luxurious backpack, smells like money.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Back/Backpacks/centcom.rsi
+
+- type: entity
+  parent: [ClothingBackpack, BaseCentcommContraband]
   id: ClothingBackpackBlueshield
   name: blueshield backpack
   description: A very protective backpack, smells like energy gun.
   components:
   - type: Sprite
     sprite: _Goobstation/Clothing/Back/Backpacks/blueshield.rsi
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackUnremoveable
+  suffix: Unremoveable
+  components:
+  - type: Unremoveable
+
+- type: entity
+  name: Santa's sack of holding
+  description: All you need to spread christmas cheer is contained inside!
+  parent: ClothingBackpackHolding
+  id: ClothingBackpackSantasSack
+  suffix: Unremoveable
+  components:
+  - type: Unremoveable
+  - type: StorageFill
+    contents: #:godo:
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: PresentRandomUnsafe
+    - id: OxygenTankFilled
+    - id: OxygenTankFilled

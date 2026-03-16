@@ -1,6 +1,21 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BeBright <98597725+be1bright@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Theodore Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 # Abductor's Crowbar
 - type: entity
-  parent: Crowbar
+  parent: [ BaseCrowbar, BaseMajorContraband ]
   id: CrowbarAbductor
   name: high-tech crowbar
   description: Made out of metal more durable than anything Nanotrasen could dream of.
@@ -20,7 +35,7 @@
 
 - type: entity
   name: high-tech wirecutter
-  parent: BaseItem
+  parent: [ BaseItem, BaseMajorContraband]
   id: WirecutterAbductor
   description: Cuts through wires like a hot knife through butter.
   components:
@@ -75,7 +90,7 @@
 
 - type: entity
   name: high-tech screwdriver
-  parent: BaseItem
+  parent: [ BaseItem, BaseMajorContraband ]
   id: ScrewdriverAbductor
   description: More efficient than anything Nanotrasen could dream of. Not to be confused with a sonic screwdriver.
   components:
@@ -124,7 +139,7 @@
 
 - type: entity
   name: high-tech wrench
-  parent: Wrench
+  parent: [ Wrench, BaseMajorContraband ]
   id: WrenchAbductor
   description: Can take a bolt off in a single turn. Not intended for melee combat.
   components:
@@ -150,7 +165,7 @@
 
 - type: entity
   name: high-tech welding tool
-  parent: Welder
+  parent: [ Welder, BaseMajorContraband ]
   id: WelderAbductor
   description: "A highly advanced welder capable of producing infinite fuel."
   components:
@@ -178,14 +193,18 @@
     speedModifier: 2.0
     useSound:
       collection: Welder
-    qualities: Welding
+    qualities:
+    - Welding
+    - Axing # Goobstation
+  - type: ToolTileCompatible # Goobstation
+    delay: 2
   - type: GuideHelp
     guides:
     - Abductors
 
 - type: entity
   name: high-tech multitool
-  parent: BaseItem
+  parent: [BaseItem, BaseMajorContraband]
   id: MultitoolAbductor
   description: A highly advanced hacking tool capable of viewing wire functionality. Can be used as Cryptographic sequencer in its alternate mode.
   components:
@@ -194,6 +213,7 @@
       path: /Audio/Items/multitool_drop.ogg
   - type: Item
     size: Small
+    heldPrefix: link
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
@@ -206,8 +226,8 @@
     layers:
       - state: abductor
   - type: Clothing
-    sprite: _Shitmed/Objects/Specific/Abductor/multitool.rsi
     quickEquip: false
+    equippedPrefix: link
     slots:
     - Belt
   - type: GuideHelp
@@ -226,6 +246,14 @@
       - Multitool
       - DoorElectronicsConfigurator
       - ShowWires
+  - type: Tool
+    qualities:
+      - Pulsing
+  - type: NetworkConfigurator
+    showLabel: false
+  - type: LimitedCharges
+  - type: AutoRecharge
+    rechargeDuration: 20
   - type: ItemSwitch
     state: link
     states:
@@ -252,12 +280,11 @@
           sprite: _Shitmed/Objects/Specific/Abductor/multitool.rsi
           state: override-abductor
         components:
-        - type: LimitedCharges
-          charges: 0
-        - type: AutoRecharge
-          rechargeDuration: 15
         - type: Emag
           emagType: Access
+          validTargets:
+            components:
+            - Airlock
         soundStateActivate:
           collection: sparks
           params:

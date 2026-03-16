@@ -1,28 +1,38 @@
-﻿# Actions
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 PopGamer46 <yt1popgamer@gmail.com>
+# SPDX-FileCopyrightText: 2024 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Actions
 - type: entity
+  parent: BaseAction
   id: ActionJumpToCore
   name: Jump to core
   description: Sends your eye back to the core.
   components:
-  - type: InstantAction
+  - type: Action
     priority: -9
     itemIconStyle: BigAction
     icon:
       sprite: Interface/Actions/actions_ai.rsi
       state: ai_core
+  - type: InstantAction
     event: !type:JumpToCoreEvent
 
 - type: entity
+  parent: BaseAction
   id: ActionSurvCameraLights
   name: Toggle camera lights
   description: Enable surveillance camera lights near wherever you're viewing.
   components:
-  - type: InstantAction
+  - type: Action
     priority: -5
     itemIconStyle: BigAction
     icon:
       sprite: Interface/Actions/actions_ai.rsi
       state: camera_light
+  - type: InstantAction
     event: !type:RelayedActionComponentChangeEvent
       components:
       - type: LightOnCollideCollider
@@ -39,89 +49,17 @@
 
 
 - type: entity
+  parent: BaseMentalAction
   id: ActionAIViewLaws
   name: View Laws
   description: View the laws that you must follow.
   components:
-  - type: InstantAction
-    checkCanInteract: false
-    checkConsciousness: false
+  - type: Action
     priority: -3
     itemIconStyle: NoItem
     icon:
       sprite: Interface/Actions/actions_ai.rsi
       state: state_laws
-    event: !type:ToggleLawsScreenEvent
     useDelay: 0.5
-
-- type: entity
-  id: ActionStationAiInfo
-  name: View Information
-  description: View the information of your chassis and station.
-  components:
   - type: InstantAction
-    itemIconStyle: BigAction
-    icon:
-      sprite: Interface/Actions/actions_ai.rsi
-      state: manifest
-    event: !type:StationAiInfoActionEvent
-
-- type: entity
-  id: ActionStationAiRadar
-  name: Mass Scanner Interface
-  description: View a Mass Scanner Interface.
-  components:
-  - type: InstantAction
-    icon: { sprite: Interface/Actions/actions_ai.rsi, state: mass_scanner }
-    iconOn: { sprite: Interface/Actions/actions_ai.rsi, state: mass_scanner }
-    keywords: [ "AI", "console", "interface" ]
-    priority: -6
-    event: !type:ToggleIntrinsicUIEvent { key: enum.RadarConsoleUiKey.Key }
-
-- type: entity
-  id: ActionStationAiCrewMonitoring
-  name: Crew Monitoring Interface
-  description: View a Crew Monitoring Interface.
-  components:
-  - type: InstantAction
-    icon: { sprite: Interface/Actions/actions_ai.rsi, state: crew_monitor }
-    iconOn: { sprite: Interface/Actions/actions_ai.rsi, state: crew_monitor }
-    keywords: [ "AI", "console", "interface" ]
-    priority: -8
-    event: !type:ToggleIntrinsicUIEvent { key: enum.CrewMonitoringUIKey.Key }
-
-- type: entity
-  id: ActionStationAiStationRecords
-  name: Station Records Interface
-  description: View a Station Records Interface.
-  components:
-  - type: InstantAction
-    icon: { sprite: Interface/Actions/actions_ai.rsi, state: station_records }
-    iconOn: { sprite: Interface/Actions/actions_ai.rsi, state: station_records }
-    keywords: [ "AI", "console", "interface" ]
-    priority: -7
-    event: !type:ToggleIntrinsicUIEvent { key: enum.GeneralStationRecordConsoleKey.Key }
-
-- type: entity
-  id: ActionStationAiCommunications
-  name: Communications Interface
-  description: View a Communications Interface.
-  components:
-  - type: InstantAction
-    icon: { sprite: Interface/Actions/actions_ai.rsi, state: comms_console }
-    iconOn: { sprite: Interface/Actions/actions_ai.rsi, state: comms_console }
-    keywords: [ "AI", "console", "interface" ]
-    priority: -4
-    event: !type:ToggleIntrinsicUIEvent { key: enum.CommunicationsConsoleUiKey.Key }
-
-- type: entity
-  id: ActionStationAiAtmosphericAlerts
-  name: Atmospheric Alerts
-  description: View a Atmospheric Alerts Interface.
-  components:
-  - type: InstantAction
-    icon: { sprite: Interface/Actions/actions_ai.rsi, state: atmos_alerts }
-    iconOn: { sprite: Interface/Actions/actions_ai.rsi, state: atmos_alerts }
-    keywords: [ "AI", "console", "interface" ]
-    priority: -4
-    event: !type:ToggleIntrinsicUIEvent { key: enum.AtmosAlertsComputerUiKey.Key }
+    event: !type:ToggleLawsScreenEvent

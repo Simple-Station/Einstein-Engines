@@ -1,2 +1,2 @@
-admin-smite-thunderstrike-name = Грозовой удар
-admin-smite-thunderstrike-desc = Ударьте молнией этого человека!
+admin-smite-thunderstrike-name = Удар молнией
+admin-smite-thunderstrike-desc = Отправляет игрока в тотальный ахуй

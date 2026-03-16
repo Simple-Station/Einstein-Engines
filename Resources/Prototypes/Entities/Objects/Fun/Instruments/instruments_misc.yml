@@ -1,4 +1,20 @@
-﻿- type: entity
+# SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Clon clover <76759079+noudoit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 K-Dynamic <20566341+K-Dynamic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Bandit <queenjess521@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
   parent: BaseHandheldInstrument
   id: MusicalLungInstrument
   name: musical lung
@@ -24,7 +40,7 @@
   - type: Instrument
     program: 122
   - type: Item
-    size: Normal
+    size: Small
 
 - type: entity
   parent: BaseHandheldInstrument
@@ -41,18 +57,27 @@
     size: Small
     storedRotation: 90
 
-# Entity is renamed to hijack its id
-# ID is redefined in Resources/Prototypes/_Harmony/Entities/Objects/Devices/red_phone.yml
-# child entites: PhoneInstrumentSyndicate, BananaPhoneInstrument
 - type: entity
   parent: BaseHandheldInstrument
-  id: PhoneInstrumentUpstream # Harmony
+  id: PhoneInstrument
   name: red phone
   description: Should anything ever go wrong...
   components:
   - type: Sprite
     sprite: Objects/Fun/Instruments/otherinstruments.rsi
     state: red_phone
+  # Goobstation edit start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/phone_pickup.ogg
+      params:
+        volume: -2
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_Goobstation/Items/handling/phone_drop.ogg
+      params:
+        volume: -2
+  # Goobstation edit end
   - type: EmitSoundOnLand
     sound:
        path: /Audio/Items/ring.ogg
@@ -65,9 +90,11 @@
     notificationPrefix: prayer-chat-notify-centcom
     verb: prayer-verbs-call
     verbImage: null
+    notificationSound: # Goobstation - Admin Notifications
+      path: /Audio/_Goobstation/Misc/phone_ring.ogg
 
 - type: entity
-  parent: PhoneInstrumentUpstream # Harmony, due to hijacked 'PhoneInstrument'
+  parent: PhoneInstrument
   id: PhoneInstrumentSyndicate
   name: blood-red phone
   description: For evil people to call their friends.
@@ -78,6 +105,8 @@
   - type: Prayable
     sentMessage: prayer-popup-notify-syndicate-sent
     notificationPrefix: prayer-chat-notify-syndicate
+    notificationSound: # Goobstation - Admin Notifications
+      path: /Audio/_Goobstation/Misc/phone_ring.ogg
 
 - type: entity
   parent: BaseHandheldInstrument
@@ -118,10 +147,8 @@
     program: 127
   - type: Sprite
     sprite: Objects/Fun/Instruments/gunpet.rsi
-    state: icon
   - type: Item
     size: Small
-    sprite: Objects/Fun/Instruments/gunpet.rsi
     storedRotation: -90
   - type: Tag
     tags:
@@ -136,37 +163,31 @@
   components:
   - type: Instrument
     program: 1
-    bank: 100
+    bank: 1
   - type: Sprite
     sprite: Objects/Fun/Instruments/bike_horn.rsi
-    state: icon
   - type: Tag
     tags:
     - BrassInstrument #Go figure.
   - type: Item
-    sprite: Objects/Fun/Instruments/bike_horn.rsi
     size: Small
     storedRotation: -90
   - type: Clothing
-    sprite: Objects/Fun/Instruments/bike_horn.rsi
     slots: [Belt]
     quickEquip: false
 
 - type: entity
-  parent: PhoneInstrumentUpstream # Harmony, due to hijacked 'PhoneInstrument'
+  parent: PhoneInstrument
   id: BananaPhoneInstrument
   name: banana phone
   description: A direct line to the Honkmother. Seems to always go to voicemail.
   components:
   - type: Sprite
-    sprite: Objects/Fun/Instruments/otherinstruments.rsi
     state: banana_phone
   - type: EmitSoundOnLand
     sound:
        path: /Audio/Items/bikehorn.ogg
   - type: Slippery
-    paralyzeTime: 4
-    launchForwardsMultiplier: 1.5
   - type: StepTrigger
   - type: CollisionWake
     enabled: false
@@ -191,3 +212,5 @@
     notificationPrefix: prayer-chat-notify-honkmother
     verb: prayer-verbs-call
     verbImage: null
+    notificationSound: # Goobstation - Admin Notifications
+      path: /Audio/_Goobstation/Misc/phone_ring.ogg

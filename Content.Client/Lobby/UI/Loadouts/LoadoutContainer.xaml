@@ -1,0 +1,22 @@
+<!--
+SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<BoxContainer Name="Container" xmlns="https://spacestation14.io"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+         Orientation="Horizontal"
+         HorizontalExpand="True"
+         MouseFilter="Ignore"
+         Margin="0 0 0 5">
+    <Button Name="SelectButton" ToggleMode="True" Margin="0 0 5 0" HorizontalExpand="True"/>
+    <PanelContainer SetSize="64 64" HorizontalAlignment="Right">
+        <PanelContainer.PanelOverride>
+            <graphics:StyleBoxFlat BackgroundColor="#1B1B1E" />
+        </PanelContainer.PanelOverride>
+        <SpriteView Name="Sprite" Scale="4 4" MouseFilter="Stop"/>
+    </PanelContainer>
+</BoxContainer>

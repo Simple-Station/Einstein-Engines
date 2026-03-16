@@ -1,8 +1,15 @@
+<!--
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 pathetic meowmeow <uhhadd@gmail.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <Document>
 
-# Medicinal Recipes
+# Медицинские рецепты
 
-These preparations have interesting medical effects, or are just straight-up medicines.
+Эти препараты обладают интересными медицинскими эффектами или являются прямыми лекарствами.
 
 <GuideMicrowaveGroupEmbed Group="Medicinal"/>
 

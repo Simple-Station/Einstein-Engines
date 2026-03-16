@@ -1,7 +1,11 @@
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Station.Systems;
 using Content.Shared.Parallax.Biomes;
-using Content.Shared.Parallax.Biomes.Markers;
-using Content.Shared.Procedural;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Station.Components;
@@ -14,24 +18,6 @@ public sealed partial class StationBiomeComponent : Component
 {
     [DataField(required: true)]
     public ProtoId<BiomeTemplatePrototype> Biome = "Grasslands";
-
-    /// <summary>
-    ///     Adds a list of biome marker layers after creating the planet. Useful if you wish to make your planet station also have ores to mine.
-    /// </summary>
-    [DataField]
-    public List<ProtoId<BiomeMarkerLayerPrototype>> BiomeLayers;
-
-    /// <summary>
-    ///     Whether your station comes with one or more complimentary dungeons somewhere in the world.
-    /// </summary>
-    [DataField]
-    public List<DungeonConfigPrototype> Dungeons;
-
-    [DataField]
-    public float DungeonMinDistance = 100f;
-
-    [DataField]
-    public float DungeonMaxDistance = 500f;
 
     // If null, its random
     [DataField]

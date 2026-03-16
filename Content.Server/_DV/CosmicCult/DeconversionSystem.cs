@@ -1,6 +1,5 @@
+using Content.Goobstation.Common.Religion;
 using Content.Server._DV.CosmicCult.Components;
-using Content.Shared._Goobstation.Bible; // Goobstation - Bible
-using Content.Server.Bible.Components;
 using Content.Shared._DV.CosmicCult;
 using Content.Shared._DV.CosmicCult.Components;
 using Content.Shared._DV.CosmicCult.Components.Examine;

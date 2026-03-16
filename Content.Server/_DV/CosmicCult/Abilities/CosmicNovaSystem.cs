@@ -1,12 +1,13 @@
 // SPDX-FileCopyrightText: 2025 AftrLite <61218133+AftrLite@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 SaffronFennec <firefoxwolf2020@protonmail.com>
+// SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Numerics;
-using Content.Shared._Goobstation.Bible; // Goobstation - Bible
-using Content.Server.Bible.Components;
+using Content.Goobstation.Common.Religion;
 using Content.Shared._DV.CosmicCult.Components;
 using Content.Shared._DV.CosmicCult;
 using Content.Shared.Damage;
@@ -71,7 +72,7 @@ public sealed class CosmicNovaSystem : EntitySystem
             return;
 
         if (uid.Comp.DoStun)
-            _stun.TryParalyze(args.OtherEntity, TimeSpan.FromSeconds(2f), false);
+            _stun.TryUpdateParalyzeDuration(args.OtherEntity, TimeSpan.FromSeconds(0.8f));
 
         _damageable.TryChangeDamage(args.OtherEntity, uid.Comp.CosmicNovaDamage); // This'll probably trigger two or three times because of how collision works. I'm not being lazy here, it's a feature (kinda /s)
         _color.RaiseEffect(Color.Red, new List<EntityUid>() { args.OtherEntity }, Filter.Pvs(args.OtherEntity, entityManager: EntityManager));

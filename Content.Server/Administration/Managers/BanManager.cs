@@ -1,3 +1,19 @@
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vasilis <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Collections.Immutable;
 using System.Linq;
 using System.Net;
@@ -75,7 +91,10 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
         var userRoleBans = new List<ServerRoleBanDef>();
         foreach (var ban in roleBans)
+        {
             userRoleBans.Add(ban);
+        }
+
         cancel.ThrowIfCancellationRequested();
         _cachedBanExemptions[player] = flags;
         _cachedRoleBans[player] = userRoleBans;
@@ -162,6 +181,8 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             null);
 
         await _db.AddServerBanAsync(banDef);
+        if (_cfg.GetCVar(CCVars.ServerBanResetLastReadRules) && target != null)
+            await _db.SetLastReadRules(target.Value, null); // Reset their last read rules. They probably need a refresher!
         var adminName = banningAdmin == null
             ? Loc.GetString("system-user")
             : (await _db.GetPlayerRecordByUserId(banningAdmin.Value))?.LastSeenUserName ?? Loc.GetString("system-user");

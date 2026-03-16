@@ -1,4 +1,35 @@
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2022 ElectroJr <leonsfriedrich@gmail.com>
+# SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 moonheart08 <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Dawid Bla <46636558+DawBla@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Just-a-Unity-Dev <just-a-unity-dev@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 LankLTE <twlowe06@gmail.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Skye <22365940+Skyedra@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 ThunderBear2006 <100388962+ThunderBear2006@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 eclips_e <67359748+Just-a-Unity-Dev@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2024 liltenhead <104418166+liltenhead@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 #  Does not currently support prototype hot-reloading. See comments in c# file.
+
+# Note that for every explosion type you define, explosions & nukes will start performing worse
+# You should only define a new explopsion type if you really need to
+#
+# If you just want to modify properties other than `damagePerIntensity`, it'd be better to
+# split off explosion damage & explosion visuals/effects into their own separate prototypes.
 
 - type: explosion
   id: Default
@@ -6,7 +37,7 @@
     types:
       Heat: 5
       Blunt: 5
-      Piercing: 5
+      Slash: 5 # Goob edit
   tileBreakChance: [0, 0.5, 1]
   tileBreakIntensity: [0, 10, 30]
   tileBreakRerollReduction: 20
@@ -20,7 +51,7 @@
     types:
       Heat: 3
       Blunt: 3
-      Piercing: 3
+      Slash: 3 # Goob edit
       Structural: 50
   tileBreakChance: [ 0, 0.5, 1 ]
   tileBreakIntensity: [ 0, 10, 30 ]
@@ -35,7 +66,7 @@
     types:
       Heat: 6
       Blunt: 6
-      Piercing: 6
+      Slash: 6 # Goob edit
       Structural: 20
   tileBreakChance: [ 0, 0.5, 1 ]
   tileBreakIntensity: [ 1, 10, 15 ]
@@ -43,7 +74,7 @@
   intensityPerState: 20
   lightColor: Orange
   texturePath: /Textures/Effects/fire.rsi
-  fireStates: 6
+  fireStates: 3
 
 - type: explosion
   id: Radioactive
@@ -52,7 +83,7 @@
       Radiation: 5
       Heat: 4
       Blunt: 3
-      Piercing: 3
+      Slash: 3 # Goob edit
   lightColor: Green
   fireColor: Green
   texturePath: /Textures/Effects/fire_greyscale.rsi
@@ -76,9 +107,9 @@
   id: Minibomb
   damagePerIntensity:
     types:
-      Heat: 4
-      Blunt: 7
-      Piercing: 4
+      Heat: 8 # Goob edit
+      Blunt: 14 # Goob edit
+      Slash: 8 # Goob edit
   tileBreakChance: [0, 0.5, 1]
   tileBreakIntensity: [0, 10, 30]
   tileBreakRerollReduction: 20
@@ -90,9 +121,9 @@
   id: PowerSink
   damagePerIntensity:
     types:
-      Heat: 12
-      Blunt: 12
-      Piercing: 12
+      Heat: 24 # Goob edit
+      Blunt: 24 # Goob edit
+      Slash: 24 # Goob edit
       Structural: 30
   tileBreakChance: [ 0, 0.5, 1 ]
   tileBreakIntensity: [ 1, 5, 10 ]
@@ -100,15 +131,15 @@
   intensityPerState: 20
   lightColor: Orange
   texturePath: /Textures/Effects/fire.rsi
-  fireStates: 6
+  fireStates: 3
 
 - type: explosion
   id: HardBomb
   damagePerIntensity:
     types:
-      Heat: 15
-      Blunt: 15
-      Piercing: 6
+      Heat: 30 # Goob edit
+      Blunt: 30 # Goob edit
+      Slash: 12 # Goob edit
       Structural: 40
   tileBreakChance: [ 0, 0.5, 1 ]
   tileBreakIntensity: [ 0, 10, 30 ]
@@ -116,7 +147,7 @@
   intensityPerState: 20
   lightColor: Orange
   texturePath: /Textures/Effects/fire.rsi
-  fireStates: 6
+  fireStates: 3
 
 - type: explosion
   id: FireBomb
@@ -124,10 +155,10 @@
     types:
       Heat: 1
       Blunt: 2
-      Piercing: 3
+      Slash: 3 # Goob edit
   lightColor: Orange
   texturePath: /Textures/Effects/fire.rsi
-  fireStates: 6
+  fireStates: 3
   fireStacks: 2
 
 # STOP

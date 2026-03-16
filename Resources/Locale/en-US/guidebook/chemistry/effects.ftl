@@ -1,3 +1,23 @@
+# SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Sailor <109166122+Equivocateur@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 mhamster <81412348+mhamsterr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Eris <eris@erisws.com>
+# SPDX-FileCopyrightText: 2024 Flesh <62557990+PolterTzi@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Gotimanga <127038462+Gotimanga@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Steve <marlumpy@gmail.com>
+# SPDX-FileCopyrightText: 2024 Zonespace <41448081+Zonespace27@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 alex-georgeff <54858069+taurie@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 -create-3rd-person =
     { $chance ->
         [1] Creates
@@ -36,6 +56,12 @@ reagent-effect-guidebook-emp-reaction-effect =
         [1] Causes
         *[other] cause
     } an electromagnetic pulse
+
+reagent-effect-guidebook-flash-reaction-effect =
+    { $chance ->
+        [1] Causes
+        *[other] cause
+    } a blinding flash
 
 reagent-effect-guidebook-foam-area-reaction-effect =
     { $chance ->
@@ -81,15 +107,28 @@ reagent-effect-guidebook-health-change =
                  }
     } { $changes }
 
+reagent-effect-guidebook-even-health-change =
+    { $chance ->
+        [1] { $healsordeals ->
+            [heals] Evenly heals
+            [deals] Evenly deals
+            *[both] Evenly modifies health by
+        }
+        *[other] { $healsordeals ->
+            [heals] evenly heal
+            [deals] evenly deal
+            *[both] evenly modify health by
+        }
+    } { $changes }
+
+
+
 reagent-effect-guidebook-status-effect =
     { $type ->
         [add]   { $chance ->
                     [1] Causes
                     *[other] cause
-                } {LOC($key)} for at least {NATURALFIXED($time, 3)} {MANY("second", $time)} { $refresh ->
-                    *[true] without accumulation
-                    [false] with accumulation
-                    }
+                } {LOC($key)} for at least {NATURALFIXED($time, 3)} {MANY("second", $time)} with accumulation
         *[set]  { $chance ->
                     [1] Causes
                     *[other] cause
@@ -243,6 +282,12 @@ reagent-effect-guidebook-electrocute =
         *[other] electrocute
     } the metabolizer for {NATURALFIXED($time, 3)} {MANY("second", $time)}
 
+reagent-effect-guidebook-emote =
+    { $chance ->
+        [1] Will force
+        *[other] force
+    } the metabolizer to [bold][color=white]{$emote}[/color][/bold]
+
 reagent-effect-guidebook-extinguish-reaction =
     { $chance ->
         [1] Extinguishes
@@ -363,6 +408,9 @@ reagent-effect-guidebook-artifact-unlock =
         *[other] help
         } unlock an alien artifact.
 
+reagent-effect-guidebook-artifact-durability-restore =
+    Restores {$restored} durability in active alien artifact nodes.
+
 reagent-effect-guidebook-plant-attribute =
     { $chance ->
         [1] Adjusts
@@ -377,21 +425,21 @@ reagent-effect-guidebook-plant-cryoxadone =
 
 reagent-effect-guidebook-plant-phalanximine =
     { $chance ->
-        [1] Makes
-        *[other] make
-    } a plant not viable due to mutation viable again
+        [1] Restores
+        *[other] restore
+    } viability to a plant rendered nonviable by a mutation
 
 reagent-effect-guidebook-plant-diethylamine =
     { $chance ->
         [1] Increases
         *[other] increase
-    } the plant's lifespan and/or base health with 10% chance for each.
+    } the plant's lifespan and/or base health with 10% chance for each
 
 reagent-effect-guidebook-plant-robust-harvest =
     { $chance ->
         [1] Increases
         *[other] increase
-    } the plant's potency by {$increase} up to a maximum of {$limit}. Causes the plant to lose its seeds once the potency reaches {$seedlesstreshold}. Trying to add potency over {$limit} may cause decrease in yield at a 10% chance.
+    } the plant's potency by {$increase} up to a maximum of {$limit}. Causes the plant to lose its seeds once the potency reaches {$seedlesstreshold}. Trying to add potency over {$limit} may cause decrease in yield at a 10% chance
 
 reagent-effect-guidebook-plant-seeds-add =
     { $chance ->
@@ -405,76 +453,6 @@ reagent-effect-guidebook-plant-seeds-remove =
         *[other] remove the
     } seeds of the plant
 
-reagent-effect-guidebook-missing =
-    { $chance ->
-        [1] Causes
-        *[other] cause
-    } an unknown effect as nobody has written this effect yet
-
-reagent-effect-guidebook-change-glimmer-reaction-effect =
-    { $chance ->
-        [1] Modifies
-        *[other] modify
-    } the glimmer count by {$count} points
-
-reagent-effect-guidebook-chem-remove-psionic =
-    { $chance ->
-        [1] Removes
-        *[other] remove
-    } psionic powers
-
-reagent-effect-guidebook-chem-reroll-psionic =
-    { $chance ->
-        [1] Allows
-        *[other] allow
-    } a chance to get a different psionic power
-
-reagent-effect-guidebook-chem-restorereroll-psionic =
-    { $chance ->
-        [1] Restores
-        *[other] restore
-    } one's ability to gain benefit from mind opening reagents
-
-reagent-effect-guidebook-add-moodlet =
-    Modifies mood by {$amount}
-    { $timeout ->
-        [0] indefinitely
-        *[other] for {$timeout} seconds
-    }
-
-reagent-effect-guidebook-remove-moodlet =
-    Removes the {$name} moodlet.
-
-reagent-effect-guidebook-purge-moodlets =
-    Removes all active non-permanent moodlets.
-
-reagent-effect-guidebook-purify-evil = Purifies evil powers
-
-reagent-effect-guidebook-stamina-change =
-    { $chance ->
-        [1] { $deltasign ->
-                [-1] Restores
-                *[1] Deals
-            }
-        *[other] { $deltasign ->
-                    [-1] restore
-                    *[1] deal
-                 }
-    } {$amount} stamina
-
-# Shadowling
-
-reagent-effect-guidebook-blind-non-sling =
-    { $chance ->
-        [1] Blinds any
-        *[other] blind any
-    } non-shadowling
-
-reagent-effect-guidebook-heal-sling =
-    { $chance ->
-        [1] Heals any
-        *[other] heal any
-    } shadowling and thrall
 reagent-effect-guidebook-add-to-chemicals =
     { $chance ->
         [1] { $deltasign ->

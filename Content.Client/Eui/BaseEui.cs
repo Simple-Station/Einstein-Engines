@@ -1,5 +1,13 @@
-﻿using Content.Shared.Eui;
-using Robust.Shared.IoC;
+// SPDX-FileCopyrightText: 2020 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ben <benjaminevanownby@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.Eui;
 using Robust.Shared.Network;
 
 namespace Content.Client.Eui
@@ -55,7 +63,7 @@ namespace Content.Client.Eui
         /// </summary>
         protected void SendMessage(EuiMessageBase msg)
         {
-            var netMsg = _netManager.CreateNetMessage<MsgEuiMessage>();
+            var netMsg = new MsgEuiMessage();
             netMsg.Id = Id;
             netMsg.Message = msg;
 

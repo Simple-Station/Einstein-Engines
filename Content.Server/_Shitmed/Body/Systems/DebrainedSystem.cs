@@ -1,7 +1,12 @@
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server._Shitmed.DelayedDeath;
 using Content.Shared._Shitmed.Body.Organ;
 using Content.Shared.Body.Systems;
-using Content.Shared.Mind;
 using Content.Server.Popups;
 using Content.Shared.Speech;
 using Content.Shared.Standing;
@@ -49,7 +54,7 @@ public sealed class DebrainedSystem : EntitySystem
             RemComp<DelayedDeathComponent>(uid);
     }
 
-    private void OnSpeakAttempt(EntityUid uid, DebrainedComponent _, ref SpeakAttemptEvent args)
+    private void OnSpeakAttempt(EntityUid uid, DebrainedComponent _, SpeakAttemptEvent args)
     {
         _popupSystem.PopupEntity(Loc.GetString("speech-muted"), uid, uid);
         args.Cancel();

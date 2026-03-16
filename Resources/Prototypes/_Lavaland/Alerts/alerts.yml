@@ -11,35 +11,3 @@
     state: hierophant
   name: alerts-hierophantbeat-name
   description: alerts-hierophantbeat-desc
-
-
-
-# але але, че за копирайт сверху? Дальше моё, а не этого айдена с гуситлером
-- type: alert
-  id: IcyLook
-  category: IcyLook
-  icons:
-  - sprite: /Textures/Mobs/Aliens/Lavaland/watcher.rsi
-    state: dead-unshaded
-  name: alerts-icylook-name
-  description: alerts-icylook-desc
-
-
-- type: alert
-  id: CarpBlood
-  category: CarpBlood
-  icons:
-  - sprite: /Textures/_Lavaland/Interface/Alerts/carp_blood.rsi
-    state: carp
-  name: alerts-carpblood-name
-  description: alerts-carpblood-desc
-
-
-- type: alert
-  id: VigilanteEye
-  category: VigilanteEye
-  icons:
-  - sprite: /Textures/_Lavaland/Interface/Alerts/vigilante_eye.rsi
-    state: vigilante
-  name: alerts-vigilanteeye-name
-  description: alerts-vigilanteeye-desc

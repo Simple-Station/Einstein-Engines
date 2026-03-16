@@ -1,7 +1,66 @@
+// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 JustinTime <41876089+JustinTether@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2021 shaeone <60476183+shaeone@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Radrark <76271993+Radrark@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <wrexbe@protonmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 router <messagebus@vk.com>
+// SPDX-FileCopyrightText: 2024 12rabbits <53499656+12rabbits@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Dimastra <65184747+Dimastra@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Dimastra <dimastra@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 JIPDawg <51352440+JIPDawg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 JIPDawg <JIPDawg93@gmail.com>
+// SPDX-FileCopyrightText: 2024 Jake Huxell <JakeHuxell@pm.me>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2024 Moomoobeef <62638182+Moomoobeef@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 PopGamer46 <yt1popgamer@gmail.com>
+// SPDX-FileCopyrightText: 2024 PursuitInAshes <pursuitinashes@gmail.com>
+// SPDX-FileCopyrightText: 2024 QueerNB <176353696+QueerNB@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Saphire Lattice <lattice@saphi.re>
+// SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Spessmann <156740760+Spessmann@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 chavonadelal <156101927+chavonadelal@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 stellar-novas <stellar_novas@riseup.net>
+// SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using Content.Server.Audio;
-using Content.Server.Construction;
-using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Shuttles.Components;
 using Content.Shared.Damage;
@@ -27,13 +86,13 @@ namespace Content.Server.Shuttles.Systems;
 public sealed class ThrusterSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly AmbientSoundSystem _ambient = default!;
     [Dependency] private readonly FixtureSystem _fixtureSystem = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedPointLightSystem _light = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
+    [Dependency] private readonly TurfSystem _turf = default!;
 
     // Essentially whenever thruster enables we update the shuttle's available impulses which are used for movement.
     // This is done for each direction available.
@@ -45,6 +104,7 @@ public sealed class ThrusterSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<ThrusterComponent, ActivateInWorldEvent>(OnActivateThruster);
         SubscribeLocalEvent<ThrusterComponent, ComponentInit>(OnThrusterInit);
+        SubscribeLocalEvent<ThrusterComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<ThrusterComponent, ComponentShutdown>(OnThrusterShutdown);
         SubscribeLocalEvent<ThrusterComponent, PowerChangedEvent>(OnPowerChange);
         SubscribeLocalEvent<ThrusterComponent, AnchorStateChangedEvent>(OnAnchorChange);
@@ -54,9 +114,6 @@ public sealed class ThrusterSystem : EntitySystem
         SubscribeLocalEvent<ThrusterComponent, EndCollideEvent>(OnEndCollide);
 
         SubscribeLocalEvent<ThrusterComponent, ExaminedEvent>(OnThrusterExamine);
-
-        SubscribeLocalEvent<ThrusterComponent, RefreshPartsEvent>(OnRefreshParts);
-        SubscribeLocalEvent<ThrusterComponent, UpgradeExamineEvent>(OnUpgradeExamine);
 
         SubscribeLocalEvent<ShuttleComponent, TileChangedEvent>(OnShuttleTileChange);
     }
@@ -71,7 +128,7 @@ public sealed class ThrusterSystem : EntitySystem
             args.PushMarkup(enabled);
 
             if (component.Type == ThrusterType.Linear &&
-                EntityManager.TryGetComponent(uid, out TransformComponent? xform) &&
+                TryComp(uid, out TransformComponent? xform) &&
                 xform.Anchored)
             {
                 var nozzleLocalization = ContentLocalizationManager.FormatDirection(xform.LocalRotation.Opposite().ToWorldVec().GetDir()).ToLower();
@@ -100,7 +157,7 @@ public sealed class ThrusterSystem : EntitySystem
         foreach (var change in args.Changes)
         {
             // If the old tile was space but the new one isn't then disable all adjacent thrusters
-            if (change.NewTile.IsSpace(_tileDefManager) || !change.OldTile.IsSpace(_tileDefManager))
+            if (_turf.IsSpace(change.NewTile) || !_turf.IsSpace(change.OldTile))
                 continue;
 
             var tilePos = change.GridIndices;
@@ -166,8 +223,8 @@ public sealed class ThrusterSystem : EntitySystem
         // TODO: Don't make them rotatable and make it require anchoring.
 
         if (!component.Enabled ||
-            !EntityManager.TryGetComponent(uid, out TransformComponent? xform) ||
-            !EntityManager.TryGetComponent(xform.GridUid, out ShuttleComponent? shuttleComponent))
+            !TryComp(uid, out TransformComponent? xform) ||
+            !TryComp(xform.GridUid, out ShuttleComponent? shuttleComponent))
         {
             return;
         }
@@ -253,6 +310,11 @@ public sealed class ThrusterSystem : EntitySystem
         }
     }
 
+    private void OnMapInit(Entity<ThrusterComponent> ent, ref MapInitEvent args)
+    {
+        ent.Comp.NextFire = _timing.CurTime + ent.Comp.FireCooldown;
+    }
+
     private void OnThrusterShutdown(EntityUid uid, ThrusterComponent component, ComponentShutdown args)
     {
         DisableThruster(uid, component);
@@ -283,7 +345,7 @@ public sealed class ThrusterSystem : EntitySystem
 
         component.IsOn = true;
 
-        if (!EntityManager.TryGetComponent(xform.GridUid, out ShuttleComponent? shuttleComponent))
+        if (!TryComp(xform.GridUid, out ShuttleComponent? shuttleComponent))
             return;
 
         // Logger.DebugS("thruster", $"Enabled thruster {uid}");
@@ -298,7 +360,7 @@ public sealed class ThrusterSystem : EntitySystem
                 shuttleComponent.LinearThrusters[direction].Add(uid);
 
                 // Don't just add / remove the fixture whenever the thruster fires because perf
-                if (EntityManager.TryGetComponent(uid, out PhysicsComponent? physicsComponent) &&
+                if (TryComp(uid, out PhysicsComponent? physicsComponent) &&
                     component.BurnPoly.Count > 0)
                 {
                     var shape = new PolygonShape();
@@ -316,7 +378,7 @@ public sealed class ThrusterSystem : EntitySystem
                 throw new ArgumentOutOfRangeException();
         }
 
-        if (EntityManager.TryGetComponent(uid, out AppearanceComponent? appearance))
+        if (TryComp(uid, out AppearanceComponent? appearance))
         {
             _appearance.SetData(uid, ThrusterVisualState.State, true, appearance);
         }
@@ -380,7 +442,7 @@ public sealed class ThrusterSystem : EntitySystem
 
         component.IsOn = false;
 
-        if (!EntityManager.TryGetComponent(gridId, out ShuttleComponent? shuttleComponent))
+        if (!TryComp(gridId, out ShuttleComponent? shuttleComponent))
             return;
 
         // Logger.DebugS("thruster", $"Disabled thruster {uid}");
@@ -404,7 +466,7 @@ public sealed class ThrusterSystem : EntitySystem
                 throw new ArgumentOutOfRangeException();
         }
 
-        if (EntityManager.TryGetComponent(uid, out AppearanceComponent? appearance))
+        if (TryComp(uid, out AppearanceComponent? appearance))
         {
             _appearance.SetData(uid, ThrusterVisualState.State, false, appearance);
         }
@@ -416,7 +478,7 @@ public sealed class ThrusterSystem : EntitySystem
 
         _ambient.SetAmbience(uid, false);
 
-        if (EntityManager.TryGetComponent(uid, out PhysicsComponent? physicsComponent))
+        if (TryComp(uid, out PhysicsComponent? physicsComponent))
         {
             _fixtureSystem.DestroyFixture(uid, BurnFixture, body: physicsComponent);
         }
@@ -455,7 +517,7 @@ public sealed class ThrusterSystem : EntitySystem
         var mapGrid = Comp<MapGridComponent>(xform.GridUid.Value);
         var tile = _mapSystem.GetTileRef(xform.GridUid.Value, mapGrid, new Vector2i((int)Math.Floor(x), (int)Math.Floor(y)));
 
-        return tile.Tile.IsSpace();
+        return _turf.IsSpace(tile);
     }
 
     #region Burning
@@ -469,10 +531,13 @@ public sealed class ThrusterSystem : EntitySystem
 
         while (query.MoveNext(out var comp))
         {
-            if (!comp.Firing || comp.Colliding.Count == 0 || comp.Damage == null || comp.NextFire < curTime)
+            if (comp.NextFire > curTime)
                 continue;
 
-            comp.NextFire += TimeSpan.FromSeconds(1);
+            comp.NextFire += comp.FireCooldown;
+
+            if (!comp.Firing || comp.Colliding.Count == 0 || comp.Damage == null)
+                continue;
 
             foreach (var uid in comp.Colliding.ToArray())
             {
@@ -586,24 +651,6 @@ public sealed class ThrusterSystem : EntitySystem
                 _appearance.SetData(uid, ThrusterVisualState.Thrusting, false, appearance);
             }
         }
-    }
-
-    private void OnRefreshParts(EntityUid uid, ThrusterComponent component, RefreshPartsEvent args)
-    {
-        if (component.IsOn) // safely disable thruster to prevent negative thrust
-            DisableThruster(uid, component);
-
-        var thrustRating = args.PartRatings[component.MachinePartThrust];
-
-        component.Thrust = component.BaseThrust * MathF.Pow(component.PartRatingThrustMultiplier, thrustRating - 1);
-
-        if (component.Enabled && CanEnable(uid, component))
-            EnableThruster(uid, component);
-    }
-
-    private void OnUpgradeExamine(EntityUid uid, ThrusterComponent component, UpgradeExamineEvent args)
-    {
-        args.AddPercentageUpgrade("thruster-comp-upgrade-thrust", component.Thrust / component.BaseThrust);
     }
 
     #endregion

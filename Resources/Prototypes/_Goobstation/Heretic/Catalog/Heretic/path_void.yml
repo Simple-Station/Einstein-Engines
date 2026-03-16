@@ -1,3 +1,31 @@
+# SPDX-FileCopyrightText: 2020 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 DamianX <DamianX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Visne <vincefvanwijk@gmail.com>
+# SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2021 RemberBL <timmermanrembrandt@gmail.com>
+# SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: listing
   id: HereticVoidPath1
   name: knowledge-path-void-s1-name
@@ -20,6 +48,8 @@
     - Flesh
     - Lock
     - Void
+    - Rust
+    - Cosmos
 
 - type: listing
   id: HereticVoidPath2
@@ -28,7 +58,7 @@
   icon: { sprite: _Goobstation/Heretic/mansus_grasp.rsi, state: icon }
   productHereticKnowledge: GraspOfVoid
   cost:
-    KnowledgePoint: 2
+    KnowledgePoint: 1
   categories:
   - HereticPathVoid
   conditions:
@@ -39,12 +69,30 @@
     whitelist:
     - Void
 
+#- type: listing
+#  id: HereticVoidPath3
+#  name: knowledge-path-void-s3-name
+#  description: knowledge-path-void-s3-desc
+#  icon: { sprite: Interface/Alerts/temperature.rsi, state: cold1 }
+#  productHereticKnowledge: AristocratWay
+#  cost:
+#    KnowledgePoint: 1
+#  categories:
+#  - HereticPathVoid
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+#  - !type:HereticPathCondition
+#    stage: 2
+#    whitelist:
+#    - Void
+
 - type: listing
   id: HereticVoidPath3
   name: knowledge-path-void-s3-name
   description: knowledge-path-void-s3-desc
-  icon: { sprite: Interface/Alerts/temperature.rsi, state: cold1 }
-  productHereticKnowledge: AristocratWay
+  icon: { sprite: _Goobstation/Heretic/abilities_heretic.rsi, state: void_phase }
+  productHereticKnowledge: VoidPhase
   cost:
     KnowledgePoint: 1
   categories:
@@ -54,12 +102,15 @@
     stock: 1
   - !type:HereticPathCondition
     stage: 2
+    whitelist:
+    - Void
+
 
 - type: listing
   id: HereticVoidPath4
   name: knowledge-path-void-s4-name
   description: knowledge-path-void-s4-desc
-  icon: { sprite: _Goobstation/Heretic/Blades/blade_void.rsi, state: icon }
+  icon: { sprite: _Goobstation/Heretic/mansus_grasp.rsi, state: icon }
   productHereticKnowledge: MarkOfVoid
   cost:
     KnowledgePoint: 2
@@ -73,12 +124,30 @@
     whitelist:
     - Void
 
+#- type: listing
+#  id: HereticVoidPath5
+#  name: knowledge-path-void-s5-name
+#  description: knowledge-path-void-s5-desc
+#  icon: { sprite: _Goobstation/Heretic/abilities_heretic.rsi, state: void_blast }
+#  productHereticKnowledge: VoidBlast
+#  cost:
+#    KnowledgePoint: 2
+#  categories:
+#  - HereticPathVoid
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+#  - !type:HereticPathCondition
+#    stage: 4
+#    whitelist:
+#    - Void
+
 - type: listing
   id: HereticVoidPath5
   name: knowledge-path-void-s5-name
   description: knowledge-path-void-s5-desc
-  icon: { sprite: _Goobstation/Heretic/abilities_heretic.rsi, state: void_blast }
-  productHereticKnowledge: VoidBlast
+  icon: { sprite: _Goobstation/Heretic/abilities_heretic.rsi, state: voidball }
+  productHereticKnowledge: VoidPrison
   cost:
     KnowledgePoint: 2
   categories:
@@ -95,8 +164,8 @@
   id: HereticVoidPath6
   name: knowledge-path-void-s6-name
   description: knowledge-path-void-s6-desc
-  icon: { sprite: _Goobstation/Heretic/abilities_heretic.rsi, state: void_phase }
-  productHereticKnowledge: VoidPhase
+  icon: { sprite: _Goobstation/Heretic/abilities_heretic.rsi, state: void_pull }
+  productHereticKnowledge: VoidPull
   cost:
     KnowledgePoint: 1
   categories:
@@ -106,6 +175,8 @@
     stock: 1
   - !type:HereticPathCondition
     stage: 5
+    whitelist:
+    - Void
 
 - type: listing
   id: HereticVoidPath7
@@ -129,8 +200,8 @@
   id: HereticVoidPath8
   name: knowledge-path-void-s8-name
   description: knowledge-path-void-s8-desc
-  icon: { sprite: _Goobstation/Heretic/abilities_heretic.rsi, state: void_pull }
-  productHereticKnowledge: VoidPull
+  icon: { sprite: _Goobstation/Heretic/abilities_heretic.rsi, state: void_rift }
+  productHereticKnowledge: VoidConduit
   cost:
     KnowledgePoint: 1
   categories:
@@ -140,6 +211,8 @@
     stock: 1
   - !type:HereticPathCondition
     stage: 7
+    whitelist:
+    - Void
 
 - type: listing
   id: HereticVoidPath9
@@ -155,6 +228,7 @@
   - !type:ListingLimitedStockCondition
     stock: 1
   - !type:HereticPathCondition
+    requiresCanAscend: true
     stage: 8
     whitelist:
     - Void

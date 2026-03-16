@@ -1,3 +1,11 @@
+// SPDX-FileCopyrightText: 2023 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+// SPDX-FileCopyrightText: 2023 moonheart08 <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using System.Linq;
 using Content.Server.Worldgen.Components;
 using Content.Server.Worldgen.Prototypes;
@@ -38,18 +46,19 @@ public sealed class BiomeSelectionSystem : BaseWorldSystem
         Log.Error($"Biome selection ran out of biomes to select? See biomes list: {component.Biomes}");
     }
 
-    private void OnBiomeSelectionStartup(EntityUid uid, BiomeSelectionComponent component, ComponentStartup args) =>
-        component.Biomes = component.Biomes
+    private void OnBiomeSelectionStartup(EntityUid uid, BiomeSelectionComponent component, ComponentStartup args)
+    {
+        // surely this can't be THAAAAAAAAAAAAAAAT bad right????
+        var sorted = component.Biomes
             .Select(x => (Id: x, _proto.Index<BiomePrototype>(x).Priority))
             .OrderByDescending(x => x.Priority)
             .Select(x => x.Id)
             .ToList();
 
-    private bool CheckBiomeValidity(EntityUid chunk, BiomePrototype biome, Vector2i coords) =>
-        (biome.MinX is null || biome.MaxX is null || biome.MinY is null || biome.MaxY is null)
-        ? CheckNoiseRanges(chunk, biome, coords) : CheckSpecificChunkRange(biome, coords);
+        component.Biomes = sorted; // my hopes and dreams rely on this being pre-sorted by priority.
+    }
 
-    private bool CheckNoiseRanges(EntityUid chunk, BiomePrototype biome, Vector2i coords)
+    private bool CheckBiomeValidity(EntityUid chunk, BiomePrototype biome, Vector2i coords)
     {
         foreach (var (noise, ranges) in biome.NoiseRanges)
         {
@@ -67,10 +76,7 @@ public sealed class BiomeSelectionSystem : BaseWorldSystem
             if (!anyValid)
                 return false;
         }
+
         return true;
     }
-
-    private bool CheckSpecificChunkRange(BiomePrototype biome, Vector2i coords) =>
-        coords.X >= biome.MinX && coords.X <= biome.MaxX && coords.Y >= biome.MinY && coords.Y <= biome.MaxY;
 }
-

@@ -1,15 +1,16 @@
 using Content.Server._White.Xenomorphs.FaceHugger;
 using Content.Server.Popups;
-using Content.Shared._White.Inventory.Components;
 using Content.Shared._White.Xenomorphs.Egg;
 using Content.Shared._White.Xenomorphs.Xenomorph;
 using Content.Shared.Ghost;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
+using Content.Shared.StepTrigger.Systems;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Random;
+using Robust.Shared.Spawners;
 using Robust.Shared.Timing;
 
 namespace Content.Server._White.Xenomorphs.Egg;
@@ -32,6 +33,7 @@ public sealed class XenomorphEggSystem : EntitySystem
         SubscribeLocalEvent<XenomorphEggComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<XenomorphEggComponent, ActivateInWorldEvent>(OnActivateInWorld);
         SubscribeLocalEvent<XenomorphEggComponent, AttackedEvent>(OnAttacked);
+        SubscribeLocalEvent<XenomorphEggComponent, StepTriggeredOffEvent>(OnStepTriggered);
     }
 
     private void OnInit(EntityUid uid, XenomorphEggComponent component, ComponentInit args)
@@ -103,7 +105,7 @@ public sealed class XenomorphEggSystem : EntitySystem
     {
         _popup.PopupEntity(Loc.GetString("xenomorph-egg-clean-butsting-egg"), user, user);
         _audio.PlayEntity(component.CleaningSound, user, user);
-        QueueDel(uid);
+        EnsureComp<TimedDespawnComponent>(uid).Lifetime = 0.1f;
     }
 
     private void SetBurst(EntityUid uid, XenomorphEggComponent component)
@@ -117,10 +119,26 @@ public sealed class XenomorphEggSystem : EntitySystem
         if (!TryComp<FaceHuggerComponent>(spawned, out var equipOn))
             return;
 
+
+
         foreach (var entity in _entityLookup.GetEntitiesInRange<InventoryComponent>(coordinates, component.BurstRange))
         {
             if (_faceHugger.TryEquipFaceHugger(spawned, entity, equipOn))
                 return;
+        }
+    }
+
+    private void OnStepTriggered(EntityUid uid, XenomorphEggComponent component, ref StepTriggeredOffEvent args)
+    {
+        if (component.Status == XenomorphEggStatus.Grown)
+        {
+            SetBursting(uid, component);
+        }
+        else if (component.Status == XenomorphEggStatus.Growning)
+        {
+            component.Status = XenomorphEggStatus.Grown;
+            _appearance.SetData(uid, XenomorphEggKey.Key, XenomorphEggVisualsStatus.Grown);
+            SetBursting(uid, component);
         }
     }
 

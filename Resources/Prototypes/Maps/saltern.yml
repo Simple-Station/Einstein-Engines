@@ -1,77 +1,100 @@
+# SPDX-FileCopyrightText: 2022 Cheackraze <71046427+Cheackraze@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Checkraze <71046427+Cheackraze@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 moonheart08 <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 BeeRobynn <robynthewarcrime@proton.me>
+# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2024 Icepick <122653407+Icepicked@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Pissachu <161140558+Pissachu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 fishbait <gnesse@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Damn Feds <20566341+K-Dynamic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: gameMap
   id: Saltern
   mapName: 'Saltern'
-  mapPath: /Maps/saltern.yml
+  mapPath: /Maps/_Goobstation/saltern.yml # Goobstation - use custom saltern
   minPlayers: 0
   maxPlayers: 35
   fallback: true
   stations:
     Saltern:
-      stationProto: StandardNanotrasenStationNoShuttles
+      stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
           mapNameTemplate: '{0} Saltern {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
-        - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/DeltaV/NTES_Delta.yml
         - type: StationJobs
           availableJobs:
-          #command
+            #service
+            # Goobstation - TODO: add bso and ntr
+            # Goobstation - Me did it, Icepick - Erm, if you did it, it isn't a todo!!!!
+            StationAi: [ 1, 1 ]
+            NanotrasenRepresentative: [ 1, 1 ] # Goobstation
+            BlueshieldOfficer: [ 1, 1 ] # Goobstation
             Captain: [ 1, 1 ]
-            BlueshieldOfficer: [ 1, 1]
-            NanotrasenRepresentative: [ 1, 1 ]
-            # Magistrate: [ 1, 1 ] # EE: Disabled
-            AdministrativeAssistant: [ 1, 1 ]
-          #service
             HeadOfPersonnel: [ 1, 1 ]
-            Bartender: [ 1, 2 ]
-            Botanist: [ 1, 3 ]
-            Chef: [ 1, 2 ]
-            Janitor: [ 1, 2 ]
-            ServiceWorker: [ 2, 4 ]
-          #engineering
+            Bartender: [ 1, 1 ]
+            Botanist: [ 1, 2 ]
+            Chef: [ 1, 1 ]
+            Janitor: [ 1, 1 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            ServiceWorker: [ 2, 2 ]
+            #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 2, 2 ]
-            StationEngineer: [ 4, 6 ]
-            SeniorEngineer: [ 1, 1 ]
+            StationEngineer: [ 4, 4 ]
             TechnicalAssistant: [ 4, 4 ]
-          #medical
+            #medical
             ChiefMedicalOfficer: [ 1, 1 ]
             Chemist: [ 2, 2 ]
-            SeniorPhysician: [ 1, 1 ]
-            MedicalDoctor: [ 3, 5 ]
-            MedicalIntern: [ 4, 6 ]
-            Paramedic: [ 1, 2 ]
-          #science
+            MedicalDoctor: [ 3, 3 ]
+            MedicalIntern: [ 4, 4 ]
+            Paramedic: [ 1, 1 ]
+            #science
             ResearchDirector: [ 1, 1 ]
-            Scientist: [ 4, 6 ]
-            ResearchAssistant: [ 2, 4 ]
-            SeniorResearcher: [ 1, 1 ]
-            Chaplain: [ 1, 1 ]
-            ForensicMantis: [ 1, 1 ]
-            Librarian: [ 1, 1 ]
-          #security
+            Scientist: [ 4, 4 ]
+            ResearchAssistant: [ 2, 2 ]
+            Borg: [ 2, 2 ]
+            #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
-            SeniorOfficer: [ 1, 1 ]
             Detective: [ 1, 1 ]
-            SecurityOfficer: [ 4, 6 ]
-            SecurityCadet: [ 4, 6 ]
-            Prisoner: [ 1, 1 ]
-          #supply
+            SecurityOfficer: [ 4, 4 ]
+            SecurityCadet: [ 4, 4 ]
+            Brigmedic: [ 1, 1 ]
+            #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 1, 3 ]
-            CargoTechnician: [ 2, 4 ]
-          #civilian
+            CargoTechnician: [ 2, 2 ]
+            #civillian
+            Passenger: [ -1, -1 ]
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
-            Musician: [ 1, 2 ]
-            Passenger: [ -1, -1 ]
-          #silicon
-            StationAi: [ 1, 1 ]
-            Borg: [ 2, 2 ]
+            Musician: [ 1, 1 ]
+
         # Goobstation blob-config-start SMALL+
         - type: StationBlobConfig
           stageBegin: 25

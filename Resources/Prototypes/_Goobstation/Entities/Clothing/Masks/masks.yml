@@ -1,0 +1,209 @@
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nikita Rαmses Abdoelrahman <ramses@starwolves.io>
+# SPDX-FileCopyrightText: 2024 plyush <121322002+toasterpm87@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+# SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 JORJ949 <159719201+JORJ949@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingMaskGasERT
+  id: ClothingMaskGasChrono
+  name: futuristic gasmask
+  description: A futuristic gas mask of unknown design with an unimaginable number of filtration systems
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Mask/chronolegioneer.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Mask/chronolegioneer.rsi
+  - type: VoiceMask
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HidesHair
+    - HidesNose
+
+- type: entity
+  parent: ClothingMaskGasChrono
+  id: ClothingMaskGasChronoUnremoveable
+  suffix: Unremoveable
+  components:
+  - type: Unremoveable
+
+- type: entity
+  parent: ClothingMaskClown
+  id: ClothingMaskClownUnremoveable
+  name: unremoveable banana clown wig and mask
+  components:
+  - type: Unremoveable
+  - type: FlashImmunity
+  - type: EyeProtection
+
+- type: entity
+  parent: [ClothingMaskBase, BaseMinorContraband]
+  id: ClothingMaskGasVoiceCraftable
+  suffix: Voice Mask, Craftable
+  name: Voice Modulator Mask
+  description: A poorly constructed voice modulator made of a gasmask and voice trigger.
+  components:
+    - type: Sprite
+      sprite: Clothing/Mask/gas.rsi
+    - type: Clothing
+      sprite: Clothing/Mask/gas.rsi
+    - type: BreathMask
+    - type: IdentityBlocker
+    - type: VoiceMask
+      voiceMaskSpeechVerb: VoiceModulator
+      enableAction: false
+    - type: HideLayerClothing
+      slots:
+      - Snout
+    - type: UserInterface
+      interfaces:
+        enum.VoiceMaskUIKey.Key:
+          type: VoiceModulatorBoundUserInterface
+    - type: Tag
+      tags:
+      - IPCMaskWearable # EE - IPCs
+    - type: Construction
+      graph: VoiceMaskCraftable
+      node: end
+
+- type: entity
+  parent: ClothingMaskGas
+  id: ClothingMaskGasHalf
+  name: half gas mask
+  description: A gas mask... only the half of it.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Mask/gashalf.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Mask/gashalf.rsi
+  - type: IdentityBlocker
+    coverage: MOUTH
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+    - GasMask
+    - Mask
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    hideOnToggle: true
+  - type: Construction
+    graph: GasMaskHalf
+    node: end
+    deconstructionTarget: null
+
+- type: entity # TODO: Whenever vampirism is ported, make this block it.
+  parent: ClothingMaskBase
+  id: ClothingMaskMuzzleSecure
+  name: secure muzzle
+  description: Can prevent vampires from biting people, or prevent annoying people from talking.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Mask/securemuzzle.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Mask/securemuzzle.rsi
+    equipDelay: 3
+    unequipDelay: 10
+  - type: IngestionBlocker
+  - type: AddAccentClothing
+    accent: MumbleAccent
+  - type: Tag
+    tags:
+    - Muzzle
+
+- type: entity # TODO: Whenever vampirism is ported, make this block it, and shock.
+  parent: ClothingMaskMuzzleSecure
+  id: ClothingMaskMuzzleShock
+  name: shock muzzle
+  description: A muzzle designed to prevent biting. This one is fitted with a behaviour correction system.
+  components:
+  - type: ShockOnTrigger
+  - type: TriggerOnSpeak
+  - type: ActiveListener
+    range: 4
+
+- type: entity
+  parent: ClothingMaskGas
+  id: ClothingMaskGasUnremoveable
+  suffix: Unremoveable
+  components:
+  - type: Unremoveable
+
+- type: entity
+  parent: [ ClothingMaskGas, BaseCentcommContraband ]
+  id: ClothingBSOMaskGasSwat
+  name: Blueshield SWAT gas mask
+  description: A standard issue gas mask for BlueShield Officers
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Mask/bsoswat.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Mask/bsoswat.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - IPCMaskWearable
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide
+    hideOnToggle: true
+  - type: Armor
+    coverage:
+    - Head
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.9
+        Heat: 0.9
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
+
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskGasThunderdome
+  name: Thunderdome gas mask
+  suffix: DONT MAP
+  description: ARE YOU READY TO RUMBLEEEE?
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Clothing/Mask/gassecurity.rsi
+  - type: Clothing
+    sprite: Clothing/Mask/gassecurity.rsi
+  - type: Armor
+    coverage:
+    - Head
+    modifiers: #equalizes the secvest so head targeting doesnt provide an advantage
+      coefficients:
+        Blunt: 0.82 #this turns out them out to be ABOUT equal without being too decimal
+        Slash: 0.82
+        Piercing: 0.82
+        Heat: 0.9 #i didnt precisely tune this because i dont care
+  - type: Tag
+    tags: [] # no whitelist chameleon
+  - type: Hailer # needs its own voicelines for thunderdome eventually but for now its good enough
+  - type: IngestionBlocker
+    blockSmokeIngestion: true
+    enabled: false

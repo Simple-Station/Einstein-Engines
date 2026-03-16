@@ -1,3 +1,19 @@
+# SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Profane McBane <profanedbane+github@gmail.com>
+# SPDX-FileCopyrightText: 2022 T-Stalker <43253663+DogZeroX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
+# SPDX-FileCopyrightText: 2022 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Puro <103608145+PuroSlavKing@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hmeister-real <118129069+Hmeister-real@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aineias1 <142914808+Aineias1@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: BannerBase
   parent: BaseStructureDynamic
@@ -26,6 +42,16 @@
         - HighImpassable
         - BulletImpassable
   - type: InteractionOutline
+  - type: Damageable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 - type: entity
   id: BannerNanotrasen
@@ -36,16 +62,22 @@
   - type: Sprite
     sprite: Structures/Decoration/banner.rsi
     state: banner
+  - type: Construction # Frontier
+    graph: BannersGraph # Frontier
+    node: BannerNanotrasenNode # Frontier    
 
 - type: entity
   id: BannerCargo
   parent: BannerBase
-  name: logistics banner
-  description: A banner displaying the colors of the logistics department. Not. Cargonia. # DeltaV - Logistics Department replacing Cargo
+  name: cargo banner
+  description: A banner displaying the colors of the cargo department. Not. Cargonia.
   components:
   - type: Sprite
     sprite: Structures/Decoration/banner.rsi
     state: banner_cargo
+  - type: Construction # Frontier
+    graph: BannersGraph # Frontier
+    node: BannerCargoNode # Frontier    
 
 - type: entity
   id: BannerEngineering
@@ -56,6 +88,9 @@
   - type: Sprite
     sprite: Structures/Decoration/banner.rsi
     state: banner_engineering
+  - type: Construction # Frontier
+    graph: BannersGraph # Frontier
+    node: BannerEngineeringNode # Frontier
 
 - type: entity
   id: BannerMedical
@@ -66,6 +101,9 @@
   - type: Sprite
     sprite: Structures/Decoration/banner.rsi
     state: banner_medical
+  - type: Construction # Frontier
+    graph: BannersGraph # Frontier
+    node: BannerMedicalNode # Frontier
 
 - type: entity
   id: BannerRevolution
@@ -76,6 +114,9 @@
   - type: Sprite
     sprite: Structures/Decoration/banner.rsi
     state: banner_revolution
+  - type: Construction # Frontier
+    graph: BannersGraph # Frontier
+    node: BannerRevolutionNode # Frontier
 
 - type: entity
   id: BannerSyndicate
@@ -86,26 +127,35 @@
   - type: Sprite
     sprite: Structures/Decoration/banner.rsi
     state: banner_syndicate
+  - type: Construction # Frontier
+    graph: BannersGraph # Frontier
+    node: BannerSyndicateNode # Frontier
 
 - type: entity
   id: BannerScience
   parent: BannerBase
-  name: epistemics banner # DeltaV - Epistemics Department replacing Science
-  description: A banner displaying the colors of the epistemics department. Where stupidity is proven greater than the universe. # DeltaV - Epistemics Department replacing Science
+  name: science banner
+  description: A banner displaying the colors of the science department. Where science has no bounds, and regulations are rarely followed.
   components:
   - type: Sprite
     sprite: Structures/Decoration/banner.rsi
     state: banner_science
+  - type: Construction # Frontier
+    graph: BannersGraph # Frontier
+    node: BannerScienceNode # Frontier
 
 - type: entity
   id: BannerSecurity
   parent: BannerBase
   name: security banner
-  description: A banner displaying the colors of the shitcurity department. Security, my bad.
+  description: A banner displaying the colors of the security department. You're surprised it's not vandalised.
   components:
   - type: Sprite
     sprite: Structures/Decoration/banner.rsi
     state: banner_security
+  - type: Construction # Frontier
+    graph: BannersGraph # Frontier
+    node: BannerSecurityNode # Frontier
 
 - type: entity
   id: BannerBlue
@@ -116,6 +166,9 @@
   - type: Sprite
     sprite: Structures/Decoration/banner.rsi
     state: banner-blue
+  - type: Construction # Frontier
+    graph: BannersGraph # Frontier
+    node: BannerBlueNode # Frontier
 
 - type: entity
   id: BannerRed
@@ -126,6 +179,9 @@
   - type: Sprite
     sprite: Structures/Decoration/banner.rsi
     state: banner-red
+  - type: Construction # Frontier
+    graph: BannersGraph # Frontier
+    node: BannerRedNode # Frontier
 
 - type: entity
   id: BannerYellow
@@ -136,6 +192,9 @@
   - type: Sprite
     sprite: Structures/Decoration/banner.rsi
     state: banner-yellow
+  - type: Construction # Frontier
+    graph: BannersGraph # Frontier
+    node: BannerYellowNode # Frontier
 
 - type: entity
   id: BannerGreen
@@ -146,5 +205,7 @@
   - type: Sprite
     sprite: Structures/Decoration/banner.rsi
     state: banner-green
-
+  - type: Construction # Frontier
+    graph: BannersGraph # Frontier
+    node: BannerGreenNode # Frontier
 

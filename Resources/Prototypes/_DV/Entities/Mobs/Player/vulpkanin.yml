@@ -1,0 +1,43 @@
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  save: false
+  name: Urist McVulp
+  parent: BaseMobVulpkanin
+  id: MobVulpkanin
+  components:
+    - type: CombatMode
+    - type: InteractionPopup
+      successChance: 1
+      interactSuccessString: hugging-success-generic
+      interactSuccessSound: /Audio/Effects/thudswoosh.ogg
+      messagePerceivedByOthers: hugging-success-generic-others
+    - type: MindContainer
+      showExamineInfo: true
+    - type: Input
+      context: "human"
+    - type: MobMover
+    - type: InputMover
+    - type: Alerts
+    - type: Eye
+    - type: CameraRecoil
+    - type: Examiner
+    - type: CanHostGuardian
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    - type: Respirator
+      damage:
+       types:
+        Asphyxiation: 1.0
+      damageRecovery:
+        types:
+          Asphyxiation: -1.0

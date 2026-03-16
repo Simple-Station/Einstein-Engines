@@ -1,23 +1,185 @@
-# Blueshield Armour Vest
+# SPDX-FileCopyrightText: 2024 BoуterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Icepick <122653407+Icepicked@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <92357316+Piras314@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 a_person <40855173+a-person5660@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+# SPDX-FileCopyrightText: 2025 BramvanZijp <56019239+BramvanZijp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Durathred web vest
+- type: entity
+  parent: ClothingOuterVestWeb
+  id: ClothingOuterVestWebDurathread
+  name: durathread web vest
+  description: An improvised armored web vest made from durathread with plasteel plates. It's surprisingly light, despite formidable armor plating.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Armor/durathread_web_vest.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Armor/durathread_web_vest.rsi
+  - type: Armor
+    coverage:
+    - Chest
+    - Groin
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.3
+        Heat: 0.3
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: ModifyDelayedKnockdown # Goobstation
+    delayDelta: 2
+    knockdownTimeDelta: -2
+  - type: StaminaResistance # Goobstation
+    damageCoefficient: 0.7
+
+# Durathread plated vest
 - type: entity
   parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing]
+  id: ClothingOuterArmourDurathread
+  name: durathread armor
+  description: An armored vest created from plasteel plates woven with durathread. It's surprisingly flexible and light, despite formidable armor plating.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Armor/durathread_armour.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Armor/durathread_armour.rsi
+  - type: Armor
+    coverage:
+    - Chest
+    - Groin
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.3
+        Heat: 0.3
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: ModifyDelayedKnockdown # Goobstation
+    delayDelta: 2
+    knockdownTimeDelta: -2
+  - type: StaminaResistance # Goobstation
+    damageCoefficient: 0.7
+
+# Helldiver
+- type: entity
+  parent: [ ClothingOuterArmorRaid, GeigerCounterClothing ]
+  id: ClothingOuterArmorHelldiver
+  name: salvage NT-01 tactical hardsuit
+  description: This armor is the NanoTrasen standard issue, made from the same titanium alloy as the Goliath hull.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/OuterClothing/Armor/helldiver.rsi
+    layers:
+    - state: icon
+    - state: light-overlay
+      visible: false
+      shader: unshaded
+  - type: Clothing
+    sprite: _Goobstation/Clothing/OuterClothing/Armor/helldiver.rsi
+  - type: TemperatureProtection
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
+  - type: PointLight
+    enabled: false
+    color: "#e5af38"
+    radius: 5
+    energy: 2
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    netsync: false
+
+# HoS web vest
+- type: entity
+  parent: [ClothingOuterArmorHoS, ClothingOuterStorageBase, BaseSecurityCommandContraband]
+  id: ClothingOuterArmorHoSVestWeb
+  name: head of security's web vest
+  description: A high-quality armored vest made from a hard synthetic material. It is surprisingly flexible and light, despite formidable armor plating.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/OuterClothing/Armor/web_vest_hos.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/OuterClothing/Armor/web_vest_hos.rsi
+
+# Captain
+- type: entity
+  parent: [ ClothingOuterArmorCaptainCarapace, ClothingOuterStorageBase ]
+  id: ClothingOuterCapJacket
+  name: captain's armored jacket
+  description: An extremely expensive jacket with extra durathread protection at the chest.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/OuterClothing/Armor/captain_jacket.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/OuterClothing/Armor/captain_jacket.rsi
+  - type: Item
+    size: Normal
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.35
+        Slash: 0.35
+        Piercing: 0.45
+        Heat: 0.35
+        Caustic: 0.6
+
+- type: entity
+  parent: [ ClothingOuterArmorCaptainCarapace, ClothingOuterWinterCoatToggleable ]
+  id: ClothingOuterWinterCapArmored
+  name: captain's fancy winter coat
+  description: An ornate winter coat with a ballistic plate made for the station's finest.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/OuterClothing/Wintercoats/cap_armored_winter_coat.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/OuterClothing/Wintercoats/cap_armored_winter_coat.rsi
+  - type: Item
+    size: Normal
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.5
+        Heat: 0.4
+        Caustic: 0.65
+  - type: ToggleableClothing
+    clothingPrototypes:
+      head: ClothingHeadHatHoodWinterCapFancy
+
+# Blueshield Armour Vest
+- type: entity
+  parent: [ BaseCentcommContraband, ClothingOuterArmorCaptainCarapace ]
   id: ClothingBlueshieldArmourVest
   name: blueshield's security armour
-  description: An armoured vest with the badge of the blueshield
+  description: An armoured vest with the badge of the blueshield. Utilizes bluespace technology to be more compact.
   components:
   - type: Sprite
     sprite: _Goobstation/Clothing/Armor/bso_armour.rsi
   - type: Clothing
     sprite: _Goobstation/Clothing/Armor/bso_armour.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.60
-        Slash: 0.60
-        Piercing: 0.65
-        Heat: 0.70
-  - type: ExplosionResistance
-    damageCoefficient: 0.8
+  - type: Item
+    size: Normal
 
 - type: entity
   parent: ClothingBlueshieldArmourVest
@@ -29,8 +191,6 @@
     sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_jacket.rsi
   - type: Clothing
     sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_jacket.rsi
-  - type: Item
-    size: Normal
 
 - type: entity
   parent: ClothingBlueshieldArmourVest
@@ -42,73 +202,352 @@
     sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_cowboy_jacket.rsi
   - type: Clothing
     sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_cowboy_jacket.rsi
-  - type: Item
-    size: Normal
 
 - type: entity
-  parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing, ClothingOuterStorageFoldableBase]
-  id: ClothingBlueshieldArmoredCoat
-  name: blueshield's armored coat
-  description: A coat for cold winter seasons with sewn in plates.
+  parent: [ BaseCentcommContraband, ClothingOuterWinterCapArmored ]
+  id: ClothingOuterWinterBlueshield
+  name: blueshield's armored winter coat
+  description: A blue winter coat reinforced with kevlar in the chest area.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_coat.rsi
+    sprite: _Goobstation/Clothing/OuterClothing/Wintercoats/bso_winter_coat.rsi
   - type: Clothing
-    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_coat.rsi
-  - type: Item
-    size: Normal
+    sprite: _Goobstation/Clothing/OuterClothing/Wintercoats/bso_winter_coat.rsi
+  - type: ToggleableClothing
+    clothingPrototypes:
+      head: ClothingHeadHatHoodWinterBso
+
+# CentralCommand
+
+- type: entity
+  parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing, BaseCentcommContraband]
+  id: ClothingOuterArmourInvisible # I'll be real, this is just invisible armor so it doesn't ruin how fucking AWESOME navy officers look. Bite me.
+  name: bluespace assisted armor
+  description: An armored vest that utilizes bluespace technology, bending light and becoming invisible to the naked eye when worn.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Armor/covert_armor.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Armor/covert_armor.rsi
   - type: Armor
+    coverage:
+    - Chest
     modifiers:
-      coefficients:
-        Blunt: 0.60
-        Slash: 0.60
-        Piercing: 0.65
-        Heat: 0.70
+      coefficients: #hello genius this is an ADMEME item do not TOUCH IT during your BALANCE PATCHES
+        Blunt: 0.35
+        Slash: 0.35
+        Piercing: 0.35
+        Heat: 0.35
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: ModifyDelayedKnockdown
+    delayDelta: 3
+    knockdownTimeDelta: -3
+  - type: StaminaResistance
+    damageCoefficient: 0.5
+  - type: StripMenuInvisible # No peeking!
   - type: TemperatureProtection
-    heatingCoefficient: 0.1
+    heatingCoefficient: 0.8 # Blame it on bluespace.
     coolingCoefficient: 0.1
 
 - type: entity
-  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingBlueshieldArmoredCoat]
-  id: ClothingBlueshieldArmoredCoatOpen
-  name: blueshield's armored coat
-  suffix: Opened
+  parent: ClothingOuterArmourInvisible
+  id: ClothingOuterArmourInvisibleChameleon
+  name: covert armor
+  description: An armored vest that utilizes bluespace technology. Capable of being completely invisible, or appearing as any other outer clothing.
+  components:
+  - type: ChameleonClothing
+    slot: [ outerClothing ]
+    default: ClothingOuterArmourInvisible
+  - type: UserInterface
+    interfaces:
+      enum.ChameleonUiKey.Key:
+        type: ChameleonBoundUserInterface
 
 - type: entity
-  parent: ClothingBlueshieldArmourVest
-  id: ClothingBlueshieldArmoredMarine
-  name: blueshield's armored marine vest
-  description: A vest from the blueshield's time in the marines.
+  parent: [ ClothingOuterBaseMedium, ClothingOuterStorageToggleableBase, AllowSuitStorageClothing, BaseSyndicateContraband ]
+  id: ClothingOuterArmorCloakSith
+  name: dark lord cloak
+  description: What began as a simple cosplay cloak was illegally reinforced with armored plates, transforming it into a functional piece of armor. Looks like it's even capable of protecting the user from the lack of pressure in space.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_marine.rsi
+    sprite: _Goobstation/Heretic/Clothing/OuterClothing/void_cloak.rsi
+    layers:
+    - state: icon
+      map: [ "base" ]
   - type: Clothing
-    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_marine.rsi
-  - type: Item
-    size: Normal
+    sprite: _Goobstation/Heretic/Clothing/OuterClothing/void_cloak.rsi
+  - type: Armor
+    coverage:
+    - Chest
+    - Groin
+    - Arm
+    - Hand
+    - Leg
+    - Foot
+    - Tail
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: ToggleableClothing
+    stripDelay: null
+    clothingPrototypes:
+      head: ClothingHeadHatHoodCloakSith
+  - type: ModifyDelayedKnockdown
+    delayDelta: 3
+    knockdownTimeDelta: -3
+  - type: StaminaResistance
+    damageCoefficient: 0.5
+  - type: PressureProtection
+    lowPressureMultiplier: 1000
+  # Intentionally no temperature or high pressure protection
 
 - type: entity
-  parent: ClothingBlueshieldArmourVest
-  id: ClothingBlueshieldArmoredVest
-  name: blueshield's armored vest
-  description: A vest with sewn-in reinforcement layers.
+  parent: [BaseSyndicateContraband, ClothingOuterArmourInvisible]
+  id: ClothingOuterArmourInvisibleSyndie
+  name: redspace assisted armor
+  description: An armored vest that utilizes redspace technology to appear invisible and not mess with your business style.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_vest.rsi
-  - type: Clothing
-    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_vest.rsi
-  - type: Item
-    size: Normal
+    state: icon-evil
+  - type: ExplosionResistance # Nerfed
+    damageCoefficient: 0.5
+  - type: ModifyDelayedKnockdown # Nerfed
+    delayDelta: 2
+    knockdownTimeDelta: -2
+  - type: TemperatureProtection # No
+    heatingCoefficient: 1
+    coolingCoefficient: 1
 
 - type: entity
-  parent: ClothingBlueshieldArmourVest
-  id: ClothingBlueshieldArmoredKimono
-  name: blueshield's armored kimono
-  description: As times evolve, so must the Blueshield.
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
+  id: ClothingOuterArmorQueenCarapace
+  name: queen's carapace
+  description: The skull of the ancient Xeno Queen, reforged into an imposing chestpiece that turns her former menace into unyielding protection.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_kimono.rsi
+    sprite: _Goobstation/Clothing/OuterClothing/Armor/queen_carapace.rsi
   - type: Clothing
-    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_kimono.rsi
-  - type: Item
-    size: Normal
+    sprite: _Goobstation/Clothing/OuterClothing/Armor/queen_carapace.rsi
+  - type: Armor
+    coverage:
+    - Chest
+    traumaDeductions:
+      Dismemberment: 0.2
+      OrganDamage: 0.4
+      BoneDamage: 0.8
+      VeinsDamage: 0
+      NerveDamage: 0
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 1.2
+        Caustic: 0.1
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: HeldSpeedModifier
+  - type: ExplosionResistance
+    damageCoefficient: 0.65
+  - type: GroupExamine
+  - type: ModifyDelayedKnockdown # Goobstation
+    delayDelta: 2.5
+    knockdownTimeDelta: -2.5
+  - type: StaminaResistance # Goobstation
+    damageCoefficient: 0.6
+  - type: StaticPrice # Goob
+    price: 30000
+
+# Western Undetermined Set
+- type: entity
+  parent: [ClothingOuterPonchoClassic, BaseMajorContraband]
+  id: ClothingOuterPonchoClassicRobust
+  name: authentic cowboys poncho
+  description: A poncho made for real cowboy's.
+  components:
+  - type: Armor
+    coverage:
+    - Chest
+    - Groin
+    traumaDeductions:
+      Dismemberment: 0.2
+      OrganDamage: 0.2
+      BoneDamage: 0.2
+      VeinsDamage: 0
+      NerveDamage: 0
+    modifiers:
+      coefficients:
+        Blunt: 0.55
+        Slash: 0.55
+        Piercing: 0.55
+        Heat: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: ModifyDelayedKnockdown
+    delayDelta: 2
+    knockdownTimeDelta: -2
+  - type: StaminaResistance
+    damageCoefficient: 0.7
+
+#  Shitchap
+- type: entity
+  parent: [ ClothingOuterBaseMedium, AllowSuitStorageClothing ]
+  id: ClothingOuterArmorTemplar
+  name: crusader armour
+  description: God wills it!
+  components:
+  - type: Sprite
+    sprite: _ShitChap/Clothing/OuterClothing/Misc/templar.rsi
+  - type: Clothing
+    sprite: _ShitChap/Clothing/OuterClothing/Misc/templar.rsi
+  - type: Armor
+    coverage:
+    - Chest
+    - Groin
+    - Arm
+    - Leg
+    - Tail
+    - Hand
+    - Foot
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.9
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: FireProtection
+    reduction: 0.6
+
+- type: entity
+  parent: ClothingOuterArmorTemplar
+  id: ClothingOuterArmorStudent
+  name: student robe
+  description: The uniform of a bygone institute of learning.
+  components:
+  - type: Sprite
+    sprite: _ShitChap/Clothing/OuterClothing/Misc/student.rsi
+  - type: Clothing
+    sprite: _ShitChap/Clothing/OuterClothing/Misc/student.rsi
+
+- type: entity
+  parent: ClothingOuterArmorTemplar
+  id: ClothingOuterArmorWitchhunter
+  name: witch hunter garb
+  description: This worn outfit saw much use back in the day.
+  components:
+  - type: Sprite
+    sprite: _ShitChap/Clothing/OuterClothing/Misc/witchhunter.rsi
+  - type: Clothing
+    sprite: _ShitChap/Clothing/OuterClothing/Misc/witchhunter.rsi
+
+- type: entity
+  parent: ClothingOuterArmorTemplar
+  id: ClothingOuterArmorAncient
+  name: ancient armour
+  description: Defend the treasure...
+  components:
+  - type: Sprite
+    sprite: _ShitChap/Clothing/OuterClothing/Misc/ancient.rsi
+  - type: Clothing
+    sprite: _ShitChap/Clothing/OuterClothing/Misc/ancient.rsi
+
+- type: entity
+  parent: [ClothingOuterArmorTemplar, ClothingOuterBaseToggleable]
+  id: ClothingOuterArmorAdept
+  name: adept robes
+  description: The ideal outfit for burning the unfaithful.
+  components:
+  - type: Sprite
+    sprite: _ShitChap/Clothing/OuterClothing/Misc/adept.rsi
+  - type: Clothing
+    sprite: _ShitChap/Clothing/OuterClothing/Misc/adept.rsi
+  - type: ToggleableClothing
+    stripDelay: null
+    clothingPrototypes:
+      head: ClothingHeadHatHelmetAdept
+
+- type: entity
+  parent: ClothingOuterArmorTemplar
+  id: ClothingOuterArmorClock
+  name: forgotten armour
+  description: It sounds like hissing steam, ticking cogs, gone silent, It looks like a dead machine, trying to tick with life.
+  components:
+  - type: Sprite
+    sprite: _ShitChap/Clothing/OuterClothing/Misc/clock.rsi
+  - type: Clothing
+    sprite: _ShitChap/Clothing/OuterClothing/Misc/clock.rsi
+
+- type: entity
+  parent: [ClothingOuterArmorTemplar, ClothingOuterBaseToggleable]
+  id: ClothingOuterArmorMonk
+  name: monk's habit
+  description: A few steps above rended sackcloth.
+  components:
+  - type: Sprite
+    sprite: _ShitChap/Clothing/OuterClothing/Misc/monkrobe.rsi
+  - type: Clothing
+    sprite: _ShitChap/Clothing/OuterClothing/Misc/monkrobe.rsi
+  - type: ToggleableClothing
+    stripDelay: null
+    clothingPrototypes:
+      head: ClothingHeadHatHelmetMonk
+
+- type: entity
+  parent: ClothingOuterArmorTemplar
+  id: ClothingOuterArmorBishop
+  name: bishop's robes
+  description: Glad to see the tithes you collected were well spent.
+  components:
+  - type: Sprite
+    sprite: _ShitChap/Clothing/OuterClothing/Misc/bishop.rsi
+  - type: Clothing
+    sprite: _ShitChap/Clothing/OuterClothing/Misc/bishop.rsi
+
+- type: entity
+  parent: [ClothingOuterArmorTemplar, ClothingOuterBaseToggleable]
+  id: ClothingOuterArmorDragon
+  name: dragon suit
+  description: The scales were ethically sourced, promise.
+  components:
+  - type: Sprite
+    sprite: _ShitChap/Clothing/OuterClothing/Misc/dragonsuit.rsi
+  - type: Clothing
+    sprite: _ShitChap/Clothing/OuterClothing/Misc/dragonsuit.rsi
+  - type: ToggleableClothing
+    stripDelay: null
+    clothingPrototypes:
+      head: ClothingHeadHatHelmetDragon
+  - type: TemperatureProtection
+    heatingCoefficient: 0.001
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.95
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+  - type: FireProtection
+    reduction: 0.8
+
+- type: entity
+  parent: ClothingOuterArmorTemplar
+  id: ClothingOuterArmorInquisitor
+  name: inquisitor armor
+  description: Bulky armor adorned with golden chains and patterns. Show heresy your might!
+  components:
+  - type: Sprite
+    sprite: _ShitChap/Clothing/OuterClothing/Misc/inquisitor.rsi
+  - type: Clothing
+    sprite: _ShitChap/Clothing/OuterClothing/Misc/inquisitor.rsi

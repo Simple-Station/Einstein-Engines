@@ -1,3 +1,14 @@
+// SPDX-FileCopyrightText: 2024 Jake Huxell <JakeHuxell@pm.me>
+// SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 exincore <me@exin.xyz>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Shuttles.Components;
@@ -115,11 +126,19 @@ public partial class BaseShuttleControl : MapGridControl
         }
     }
 
-    protected void DrawGrid(DrawingHandleScreen handle, Matrix3x2 matrix, Entity<MapGridComponent> grid, Color color, float alpha = 0.01f)
+    // Frontier Corvax: north line drawing
+    protected void DrawNorthLine(DrawingHandleScreen handle, Angle angle)
+    {
+        var origin = ScalePosition(-new Vector2(Offset.X, -Offset.Y));
+        var aExtent = (angle - Math.Tau / 4).ToVec() * ScaledMinimapRadius * 1.42f;
+        var lineColor = Color.Red.WithAlpha(0.1f);
+        handle.DrawLine(origin, origin + aExtent, lineColor);
+    }
+    // End Frontier Corvax
+
+    protected void DrawGrid(DrawingHandleScreen handle, Matrix3x2 gridToView, Entity<MapGridComponent> grid, Color color, float alpha = 0.01f)
     {
         var rator = Maps.GetAllTilesEnumerator(grid.Owner, grid.Comp);
-        var minimapScale = MinimapScale;
-        var midpoint = new Vector2(MidPoint, MidPoint);
         var tileSize = grid.Comp.TileSize;
 
         // Check if we even have data
@@ -262,9 +281,7 @@ public partial class BaseShuttleControl : MapGridControl
         var edgeCount = totalData - gridData.EdgeIndex;
         Extensions.EnsureLength(ref _allVertices, totalData);
 
-        _drawJob.MidPoint = midpoint;
-        _drawJob.Matrix = matrix;
-        _drawJob.MinimapScale = minimapScale;
+        _drawJob.Matrix = gridToView;
         _drawJob.Vertices = gridData.Vertices;
         _drawJob.ScaledVertices = _allVertices;
 
@@ -285,10 +302,8 @@ public partial class BaseShuttleControl : MapGridControl
 
     private record struct GridDrawJob : IParallelRobustJob
     {
-        public int BatchSize => 16;
+        public int BatchSize => 64;
 
-        public float MinimapScale;
-        public Vector2 MidPoint;
         public Matrix3x2 Matrix;
 
         public List<Vector2> Vertices;
@@ -296,12 +311,7 @@ public partial class BaseShuttleControl : MapGridControl
 
         public void Execute(int index)
         {
-            var vert = Vertices[index];
-            var adjustedVert = Vector2.Transform(vert, Matrix);
-            adjustedVert = adjustedVert with { Y = -adjustedVert.Y };
-
-            var scaledVert = ScalePosition(adjustedVert, MinimapScale, MidPoint);
-            ScaledVertices[index] = scaledVert;
+            ScaledVertices[index] = Vector2.Transform(Vertices[index], Matrix);
         }
     }
 }

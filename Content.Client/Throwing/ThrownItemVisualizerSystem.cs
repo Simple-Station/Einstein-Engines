@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2024 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Throwing;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
@@ -11,6 +20,7 @@ namespace Content.Client.Throwing;
 public sealed class ThrownItemVisualizerSystem : EntitySystem
 {
     [Dependency] private readonly AnimationPlayerSystem _anim = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     private const string AnimationKey = "thrown-item";
 
@@ -24,8 +34,22 @@ public sealed class ThrownItemVisualizerSystem : EntitySystem
 
     private void OnAutoHandleState(EntityUid uid, ThrownItemComponent component, ref AfterAutoHandleStateEvent args)
     {
-        if (!TryComp<SpriteComponent>(uid, out var sprite))
+        if (!TryComp<SpriteComponent>(uid, out var sprite)) // Goob edit start
             return;
+
+        if (!component.Animate)
+        {
+            if (!_anim.HasRunningAnimation(uid, AnimationKey))
+                return;
+
+            _anim.Stop(uid, AnimationKey);
+
+            if (component.OriginalScale != null)
+                sprite.Scale = component.OriginalScale.Value;
+
+            return;
+        }
+        // Goob edit end
 
         var animationPlayer = EnsureComp<AnimationPlayerComponent>(uid);
 
@@ -46,7 +70,7 @@ public sealed class ThrownItemVisualizerSystem : EntitySystem
             return;
 
         if (TryComp<SpriteComponent>(uid, out var sprite) && component.OriginalScale != null)
-            sprite.Scale = component.OriginalScale.Value;
+            _sprite.SetScale((uid, sprite), component.OriginalScale.Value);
 
         _anim.Stop(uid, AnimationKey);
     }
@@ -61,7 +85,7 @@ public sealed class ThrownItemVisualizerSystem : EntitySystem
 
         length += TimeSpan.FromSeconds(ThrowingSystem.FlyTimePercentage);
         var scale = ent.Comp2.Scale;
-        var lenFloat = (float) length.TotalSeconds;
+        var lenFloat = (float)length.TotalSeconds;
 
         // TODO use like actual easings here
         return new Animation

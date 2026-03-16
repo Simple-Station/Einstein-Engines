@@ -1,8 +1,8 @@
-marking-EyesShadowkin = Тенешкур
-marking-TailShadowkin = Тенешкур
-marking-TailShadowkinBig = Тенешкур (Большие)
-marking-TailShadowkinShorter = Тенешкур (Короткие)
-marking-TailShadowkinMedium = Тенешкур (Средние)
-marking-TailShadowkinBigFluff = Тенешкур (Большие и пушистые)
-marking-EarsShadowkin = Тенешкур
-marking-EarsShadowkinStriped = Тенешкур (Полосатые)
+marking-EyesShadowkin = Тенекин
+marking-TailShadowkin = Тенекин
+marking-TailShadowkinBig = Тенекин (большой)
+marking-TailShadowkinShorter = Тенекин (короткий)
+marking-TailShadowkinMedium = Тенекин (средний)
+marking-TailShadowkinBigFluff = Тенекин (большой и пушистый)
+marking-EarsShadowkin = Тенекин
+marking-EarsShadowkinStriped = Тенекин (полосатый)

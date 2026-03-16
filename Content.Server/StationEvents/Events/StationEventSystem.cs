@@ -1,5 +1,29 @@
+// SPDX-FileCopyrightText: 2022 Morber <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 moonheart08 <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 AJCM <AJCM@tutanota.com>
+// SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Rainfall <rainfey0+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Rainfey <rainfey0+github@gmail.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
+using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Station.Systems;
 using Content.Server.StationEvents.Components;
@@ -8,7 +32,6 @@ using Content.Shared.GameTicking.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Content.Server.Announcements.Systems;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -22,7 +45,6 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
     [Dependency] protected readonly ChatSystem ChatSystem = default!;
     [Dependency] protected readonly SharedAudioSystem Audio = default!;
     [Dependency] protected readonly StationSystem StationSystem = default!;
-    [Dependency] private readonly AnnouncerSystem _announcer = default!;
 
     protected ISawmill Sawmill = default!;
 
@@ -38,10 +60,18 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
     {
         base.Added(uid, component, gameRule, args);
 
-        if (!HasComp<StationEventComponent>(uid))
+        if (!TryComp<StationEventComponent>(uid, out var stationEvent))
             return;
 
         AdminLogManager.Add(LogType.EventAnnounced, $"Event added / announced: {ToPrettyString(uid)}");
+
+        // we don't want to send to players who aren't in game (i.e. in the lobby)
+        Filter allPlayersInGame = Filter.Empty().AddWhere(GameTicker.UserHasJoinedGame);
+
+        if (stationEvent.StartAnnouncement != null)
+            ChatSystem.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(stationEvent.StartAnnouncement), playSound: false, colorOverride: stationEvent.StartAnnouncementColor);
+
+        Audio.PlayGlobal(stationEvent.StartAudio, allPlayersInGame, true);
     }
 
     /// <inheritdoc/>
@@ -53,15 +83,6 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
             return;
 
         AdminLogManager.Add(LogType.EventStarted, LogImpact.High, $"Event started: {ToPrettyString(uid)}");
-
-        if (stationEvent.StartAnnouncement)
-        {
-            _announcer.SendAnnouncement(
-                _announcer.GetAnnouncementId(args.RuleId),
-                _announcer.GetEventLocaleString(_announcer.GetAnnouncementId(args.RuleId)),
-                colorOverride: Color.Gold
-            );
-        }
 
         if (stationEvent.Duration != null)
         {
@@ -83,13 +104,13 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
 
         AdminLogManager.Add(LogType.EventStopped, $"Event ended: {ToPrettyString(uid)}");
 
-        if (stationEvent.EndAnnouncement)
-        {
-            _announcer.SendAnnouncement(
-                _announcer.GetAnnouncementId(args.RuleId, true),
-                _announcer.GetEventLocaleString(_announcer.GetAnnouncementId(args.RuleId, true)),
-                colorOverride: Color.Gold);
-        }
+        // we don't want to send to players who aren't in game (i.e. in the lobby)
+        Filter allPlayersInGame = Filter.Empty().AddWhere(GameTicker.UserHasJoinedGame);
+
+        if (stationEvent.EndAnnouncement != null)
+            ChatSystem.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(stationEvent.EndAnnouncement), playSound: false, colorOverride: stationEvent.EndAnnouncementColor);
+
+        Audio.PlayGlobal(stationEvent.EndAudio, allPlayersInGame, true);
     }
 
     /// <summary>

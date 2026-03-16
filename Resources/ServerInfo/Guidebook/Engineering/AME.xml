@@ -1,25 +1,91 @@
+<!--
+SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Myakot <30875116+Myakot@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+SPDX-FileCopyrightText: 2023 Warentan <113652968+Warentan@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 end <72604018+laok233@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Terraspark4941 <terraspark4941@gmail.com>
+SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <Document>
-  # Антиматериальный двигатель (AME)
+  # Двигатель антиматерии (ДАМ)
+  Двигатель антиматерии — это кратковременный генератор поддержки станции, который обеспечивает значительный объём энергии на ограниченное время.
 
-  AME — один из самых простых двигателей. Собираете многоклеточную конструкцию, заливаете топливо — и готово. Это не значит, что он абсолютно безопасен: иногда придётся иметь дело с перегревом.
+  Его основное применение — помогать инженерам при запуске более крупных двигателей, таких как [textlink="Генератор сингулярности" link="SingularityEngine"] или [textlink="Генератор Теслы" link="TeslaEngine"], пополняя [textlink="СМЭС" link="PowerStorage"] станции энергией для увеличения времени работы.
 
-  ## Сборка
-  <Box>Необходимые компоненты:</Box>
+  ## Конструкция
+  <Box>Необходимые детали:</Box>
   <Box>
   <GuideEntityEmbed Entity="AmeController"/>
   <GuideEntityEmbed Entity="AmePartFlatpack"/>
   <GuideEntityEmbed Entity="AmeJar"/>
   </Box>
 
-  Начните с установки контроллера на конце кабеля HV, закрепив его гаечным ключом. На большинстве станций для этого есть настилы. Затем разложите квадрат 3x3 (или больше) из деталей AME, стараясь максимизировать число «центральных» сегментов, окружённых со всех 8 сторон.
+  Контроллер ДАМ — это часть двигателя, которая выводит энергию в сеть станции через [textlink="ВВ сеть" link="VoltageNetworks"].
+  Поэтому рекомендуется начинать сборку ДАМ с установки контроллера поверх [color=orange]ВВ кабеля[/color].
 
-  После этого с помощью мультитула переведите каждый сегмент AME в режим экранирования — должна получиться законченная конфигурация. Далее вставьте колбу с топливом, установите подачу топлива на [color=#a4885c]величину не более чем вдвое превышающую число ядер[/color] и включите инжекцию. Превышение этого соотношения со временем приведёт к [color=#ff0000]перегреву[/color], а затем к [color=#ff0000]взрыву[/color].
+  На большинстве станций есть открытая [color=orange]ВВ проводка[/color] или специальные места для закрепления контроллера ДАМ, чтобы подключить его к сети.
 
-  ## Экономия топлива
-  Чем ближе вы к идеальному соотношению [color=#a4885c]1:2[/color] (ядра AME : скорость подачи топлива), тем выше эффективность. Если поставить ядер больше, но снизить подачу топлива, эффективность упадёт до [color=#a4885c]50% и ниже[/color].
-  Например, [color=#76db91]3 ядра и подача 6[/color] дадут [color=#76db91]240 кВт[/color], а [color=#f0684d]8 ядер и подача 8[/color] — всего [color=#f0684d]160 кВт[/color]: на 80 кВт меньше при расходе топлива на 2 выше за инжекцию.
+  Экранирование ДАМ — это физическая структура, формирующая двигатель антиматерии. Оно создаётся путём преобразования упаковки ДАМ в экранирование при помощи мультитула.
 
-  ## Модернизация AME
+  Для сборки ДАМ начните с выкладывания квадрата 3x3 или большего из упаковок ДАМ, стараясь максимально увеличить количество "центральных" элементов, окружённых со всех восьми сторон.
+  Чем больше центральных элементов, тем больше ядер будет у ДАМ и тем больше энергии оно сможет безопасно выдавать.
 
-  В целом модернизация сводится к установке дополнительных ядер. Их можно заказать комплектами AME во [color=#a4885c]Logistics[/color].
+  <Box>
+    <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
+    <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
+    <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
+    <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
+    <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
+    <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
+    <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
+  </Box>
+
+  После этого при помощи мультитула можно преобразовать каждую упаковку ДАМ в экранирование, что создаст готовую конфигурацию ДАМ.
+
+  <GuideEntityEmbed Entity="AmeController" Caption=""/>
+  <Box>
+    <GuideEntityEmbed Entity="AmeShielding" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="AmeShielding" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="AmeShielding" Caption="" Margin="0"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="AmeShielding" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="AmeShielding" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="AmeShielding" Caption="" Margin="0"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="AmeShielding" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="AmeShielding" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="AmeShielding" Caption="" Margin="0"/>
+  </Box>
+  <Box>
+    [color=#999999][italic]Пример конфигурации с одним ядром[italic][/color]
+  </Box>
+
+  ## Работа
+  Чтобы запустить ДАМ, вставьте топливный бак в контроллер ДАМ и установите безопасную скорость подачи.
+
+  Безопасная скорость подачи — это уровень, при котором ДАМ может работать без перегрева, одновременно максимизируя выход энергии.
+
+  Эта скорость всегда вдвое превышает количество ядер.
+
+  Например, у ДАМ с одним ядром безопасная скорость подачи равна 2. Для двух ядер — 4, и так далее.
+
+  Любое превышение этого соотношения приведёт к [color=#ff0000]перегреву[/color] двигателя и, вскоре после этого, к его [color=#ff0000]взрыву[/color].
+
+  Контроллер ДАМ будет [textlink="отслеживать" link="InspectingPower"] как количество энергии, которое он выдаёт в сеть, так и теоретический максимальный выход, который двигатель может обеспечить при необходимости.
+
 </Document>

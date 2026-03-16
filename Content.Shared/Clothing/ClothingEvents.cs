@@ -1,14 +1,29 @@
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
 
 using Content.Shared.Actions;
 using Content.Shared.Clothing.Components;
 
 namespace Content.Shared.Clothing;
 
-/// Raised directed at a piece of clothing to get the set of layers to show on the wearer's sprite
-public sealed class GetEquipmentVisualsEvent(EntityUid equipee, string slot) : EntityEventArgs
+/// <summary>
+///     Raised directed at a piece of clothing to get the set of layers to show on the wearer's sprite
+/// </summary>
+public sealed class GetEquipmentVisualsEvent : EntityEventArgs
 {
-    public readonly EntityUid Equipee = equipee;
-    public readonly string Slot = slot;
+    /// <summary>
+    ///     Entity that is wearing the item.
+    /// </summary>
+    public readonly EntityUid Equipee;
+
+    public readonly string Slot;
+
     /// <summary>
     ///     The layers that will be added to the entity that is wearing this item.
     /// </summary>
@@ -16,6 +31,12 @@ public sealed class GetEquipmentVisualsEvent(EntityUid equipee, string slot) : E
     ///     Note that the actual ordering of the layers depends on the order in which they are added to this list;
     /// </remarks>
     public List<(string, PrototypeLayerData)> Layers = new();
+
+    public GetEquipmentVisualsEvent(EntityUid equipee, string slot)
+    {
+        Equipee = equipee;
+        Slot = slot;
+    }
 }
 
 /// <summary>
@@ -24,12 +45,26 @@ public sealed class GetEquipmentVisualsEvent(EntityUid equipee, string slot) : E
 /// <remarks>
 ///     Useful for systems/components that modify the visual layers that an item adds to a player. (e.g. RGB memes)
 /// </remarks>
-public sealed class EquipmentVisualsUpdatedEvent(EntityUid equipee, string slot, HashSet<string> revealedLayers) : EntityEventArgs
+public sealed class EquipmentVisualsUpdatedEvent : EntityEventArgs
 {
-    public readonly EntityUid Equipee = equipee;
-    public readonly string Slot = slot;
-    /// The layers that this item is now revealing.
-    public HashSet<string> RevealedLayers = revealedLayers;
+    /// <summary>
+    ///     Entity that is wearing the item.
+    /// </summary>
+    public readonly EntityUid Equipee;
+
+    public readonly string Slot;
+
+    /// <summary>
+    ///     The layers that this item is now revealing.
+    /// </summary>
+    public HashSet<string> RevealedLayers;
+
+    public EquipmentVisualsUpdatedEvent(EntityUid equipee, string slot, HashSet<string> revealedLayers)
+    {
+        Equipee = equipee;
+        Slot = slot;
+        RevealedLayers = revealedLayers;
+    }
 }
 
 public sealed partial class ToggleMaskEvent : InstantActionEvent { }
@@ -38,13 +73,13 @@ public sealed partial class ToggleMaskEvent : InstantActionEvent { }
 ///     Event raised on the mask entity when it is toggled.
 /// </summary>
 [ByRefEvent]
-public readonly record struct ItemMaskToggledEvent(EntityUid Wearer, string? equippedPrefix, bool IsToggled, bool IsEquip);
+public readonly record struct ItemMaskToggledEvent(Entity<MaskComponent> Mask, EntityUid? Wearer);
 
 /// <summary>
 ///     Event raised on the entity wearing the mask when it is toggled.
 /// </summary>
 [ByRefEvent]
-public readonly record struct WearerMaskToggledEvent(bool IsToggled);
+public readonly record struct WearerMaskToggledEvent(Entity<MaskComponent> Mask);
 
 /// <summary>
 /// Raised on the clothing entity when it is equipped to a valid slot,

@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Atmos.Consoles;
 using Content.Shared.Pinpointer;
 using Content.Shared.Prototypes;
@@ -234,9 +239,9 @@ public struct AtmosMonitoringConsoleEntry
 /// </summary>
 /// <param name="NetId">The associated network ID.</param>
 /// <param name="PipeLayer">The associated pipe layer.</param>
-/// <param name="HexCode">The color of the pipe.</param>
+/// <param name="Color">The color of the pipe.</param>
 [Serializable, NetSerializable]
-public record AtmosMonitoringConsoleSubnet(int NetId, AtmosPipeLayer PipeLayer, string HexCode);
+public record AtmosMonitoringConsoleSubnet(int NetId, AtmosPipeLayer PipeLayer, Color Color);
 
 public enum AtmosPipeChunkDataFacing : byte
 {

@@ -1,44 +1,42 @@
 {
   "version": 1,
-  "license": "CC0-1.0",
-  "copyright": "Mithrandalf Discord 93652604520767488",
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from vgstation13 at https://github.com/vgstation-coders/vgstation13/blob/4d150fd98a7b067305c157ad79431fa150f2c145/icons/obj/objects.dmi, modified and adapted by EmoGarbage404 (github)",
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
     {
-      "name": "black-closed"
+      "name": "waterbarrel"
     },
     {
-      "name": "black-full"
+      "name": "weldbarrel"
     },
-	{
-      "name": "black-open"
+    {
+      "name": "silicatebarrel"
     },
-	{
-      "name": "blue-closed"
+    {
+      "name": "woodenbarrel"
     },
-	{
-      "name": "blue-open"
+    {
+      "name": "metalbarrel"
     },
-	{
-      "name": "red-closed"
+    {
+      "name": "flamingmetalbarrel",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
     },
-	{
-      "name": "red-full"
+    {
+      "name": "iedweldbarrel"
     },
-	{
-      "name": "red-open"
-    },
-	{
-      "name": "yellow-closed"
-    },
-	{
-      "name": "yellow-full"
-    },
-	{
-      "name": "yellow-open"
+    {
+      "name": "radbarrel"
     }
   ]
 }

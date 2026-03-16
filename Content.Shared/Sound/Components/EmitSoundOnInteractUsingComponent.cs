@@ -1,5 +1,11 @@
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 blueDev2 <89804215+blueDev2@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Whitelist;
-using Robust.Shared.Prototypes;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Sound.Components;
@@ -10,6 +16,9 @@ namespace Content.Shared.Sound.Components;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class EmitSoundOnInteractUsingComponent : BaseEmitSoundComponent
 {
+    /// <summary>
+    /// The <see cref="EntityWhitelist"/> for the entities that can use this item.
+    /// </summary>
     [DataField(required: true)]
     public EntityWhitelist Whitelist = new();
 }

@@ -1,4 +1,12 @@
-﻿# Loading Screen
+# SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Loading Screen
 
 replay-loading = Loading ({$cur}/{$total})
 replay-loading-reading = Reading Files
@@ -9,6 +17,7 @@ replay-loading-starting= Starting Entities
 replay-loading-failed = Failed to load replay. Error:
                         {$reason}
 replay-loading-retry = Try load with more exception tolerance - MAY CAUSE BUGS!
+replay-loading-cancel = Cancel
 
 # Main Menu
 replay-menu-subtext = Replay Client
@@ -41,3 +50,5 @@ replay-verb-spectate = Spectate
 cmd-replay-spectate-help = replay_spectate [optional entity]
 cmd-replay-spectate-desc = Attaches or detaches the local player to a given entity uid.
 cmd-replay-spectate-hint = Optional EntityUid
+
+cmd-replay-toggleui-desc = Toggles the replay control UI.

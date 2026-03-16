@@ -1,11 +1,36 @@
+<!--
+SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Myakot <30875116+Myakot@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 end <72604018+laok233@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Terraspark4941 <terraspark4941@gmail.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <Document>
   # Строительство
 
-  Нажмите [color=#a4885c][keybind="OpenCraftingMenu"][/color], чтобы открыть меню строительства — оттуда можно создавать и возводить множество объектов.
+  <Box>
+    <GuideEntityEmbed Entity="Bed" Caption=""/>
+    <GuideEntityEmbed Entity="TableReinforced" Caption=""/>
+    <GuideEntityEmbed Entity="WeaponImprovisedPneumaticCannon" Caption=""/>
+    <GuideEntityEmbed Entity="Chair" Caption=""/>
+  </Box>
 
-  При размещении объектов, которые «прилипают» к сетке, удерживайте [color=#a4885c]Shift[/color], чтобы ставить сразу целую линию, и [color=#a4885c]Ctrl[/color], чтобы заполнять целую область.
+  Меню строительства используется для создания и сборки объектов в игре.
+  Оно открывается нажатием [color=yellow][bold][keybind="OpenCraftingMenu"][/bold][/color].
 
-  Если для создания объекта нужно много компонентов, не обязательно держать всё в руках: достаточно разложить ингредиенты на полу, в рюкзаке или на столе рядом — они израсходуются автоматически.
+  При размещении объектов, которые "прилипают" к сетке, можно удерживать [color=yellow][bold][keybind="EditorLinePlace"][/bold][/color], чтобы разместить целую линию сразу, и [color=yellow][bold][keybind="EditorGridPlace"][/bold][/color], чтобы разместить целую сетку.
 
-  Размещая «призрак постройки» в мире, нажмите [color=#a4885c][keybind="EditorRotateObject"][/color], чтобы повернуть его по часовой стрелке. Если вы строите симметричный компонент (например, газовые смесители/фильтры), нажмите [color=#a4885c][keybind="EditorFlipObject"][/color], чтобы отзеркалить.
+  При создании объектов с большим количеством ингредиентов помните, что не обязательно держать всё сразу; вы можете просто разместить ингредиенты на полу, в рюкзаке или на столе рядом, и они будут использованы при крафте как обычно.
+
+  При размещении "призрака строения" нажмите [color=yellow][bold][keybind="EditorRotateObject"][/bold][/color], чтобы повернуть призрак по часовой стрелке.
+  Если вы строите отзеркаленный компонент (например: Газовые миксеры/фильтры), можно нажать [color=yellow][bold][keybind="EditorFlipObject"][/bold][/color], чтобы отразить призрак.
+
+  Вы также можете использовать [color=yellow][bold][keybind="RotateObjectClockwise"][/bold][/color] и [color=yellow][bold][keybind="RotateObjectCounterclockwise"][/bold][/color], чтобы повернуть объект по часовой или против часовой стрелки, если он уже построен, при условии, что он не закреплен (не прикручен).
+
 </Document>

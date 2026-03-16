@@ -1,4 +1,10 @@
-﻿using Robust.Shared.Configuration;
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 c4llv07e <igor@c4llv07e.xyz>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.CCVar;
 
@@ -16,6 +22,8 @@ public sealed partial class CCVars
     public static readonly CVarDef<bool> RestartSoundsEnabled =
         CVarDef.Create("ambience.restart_sounds_enabled", true, CVar.ARCHIVE | CVar.CLIENTONLY);
 
+
+
     public static readonly CVarDef<bool> AdminSoundsEnabled =
         CVarDef.Create("audio.admin_sounds_enabled", true, CVar.ARCHIVE | CVar.CLIENTONLY);
 
@@ -23,7 +31,9 @@ public sealed partial class CCVars
         CVarDef.Create("audio.bwoink_sound_enabled", true, CVar.ARCHIVE | CVar.CLIENTONLY);
 
     public static readonly CVarDef<string> AdminChatSoundPath =
-        CVarDef.Create("audio.admin_chat_sound_path", "/Audio/Items/pop.ogg", CVar.ARCHIVE | CVar.CLIENT | CVar.REPLICATED);
+        CVarDef.Create("audio.admin_chat_sound_path",
+            "/Audio/Items/pop.ogg",
+            CVar.ARCHIVE | CVar.CLIENT | CVar.REPLICATED);
 
     public static readonly CVarDef<float> AdminChatSoundVolume =
         CVarDef.Create("audio.admin_chat_sound_volume", -5f, CVar.ARCHIVE | CVar.CLIENT | CVar.REPLICATED);

@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2023 Kit0vras <123590995+Kit0vras@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 - type: constructionGraph
   id: Curtains
   start: start
@@ -76,13 +82,13 @@
             - material: FloorCarpetWhite
               amount: 1
               doAfter: 1
-              
+
     - node: Curtains
       entity: HospitalCurtains
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: MaterialCloth1
               amount: 2
           steps:
@@ -93,19 +99,19 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: MaterialCloth1
               amount: 2
           steps:
             - tool: Cutting
               doAfter: 1
-    
+
     - node: CurtainsBlack
       entity: CurtainsBlack
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: FloorCarpetItemBlack
               amount: 1
           steps:
@@ -116,19 +122,19 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: FloorCarpetItemBlack
               amount: 1
           steps:
             - tool: Cutting
-              doAfter: 1    
-              
+              doAfter: 1
+
     - node: CurtainsBlue
       entity: CurtainsBlue
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: FloorCarpetItemBlue
               amount: 1
           steps:
@@ -139,19 +145,19 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: FloorCarpetItemBlue
               amount: 1
           steps:
             - tool: Cutting
               doAfter: 1
-              
+
     - node: CurtainsCyan
       entity: CurtainsCyan
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: FloorCarpetItemCyan
               amount: 1
           steps:
@@ -162,19 +168,19 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: FloorCarpetItemCyan
               amount: 1
           steps:
             - tool: Cutting
               doAfter: 1
-              
+
     - node: CurtainsGreen
       entity: CurtainsGreen
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: FloorCarpetItemGreen
               amount: 1
           steps:
@@ -185,19 +191,19 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: FloorCarpetItemGreen
               amount: 1
           steps:
             - tool: Cutting
               doAfter: 1
-              
+
     - node: CurtainsOrange
       entity: CurtainsOrange
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: FloorCarpetItemOrange
               amount: 1
           steps:
@@ -208,19 +214,19 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: FloorCarpetItemOrange
               amount: 1
           steps:
             - tool: Cutting
               doAfter: 1
-              
+
     - node: CurtainsPink
       entity: CurtainsPink
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: FloorCarpetItemPink
               amount: 1
           steps:
@@ -231,19 +237,19 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: FloorCarpetItemPink
               amount: 1
           steps:
             - tool: Cutting
               doAfter: 1
-              
+
     - node: CurtainsPurple
       entity: CurtainsPurple
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: FloorCarpetItemPurple
               amount: 1
           steps:
@@ -254,19 +260,19 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: FloorCarpetItemPurple
               amount: 1
           steps:
             - tool: Cutting
               doAfter: 1
-              
+
     - node: CurtainsRed
       entity: CurtainsRed
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: FloorCarpetItemRed
               amount: 1
           steps:
@@ -277,19 +283,19 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: FloorCarpetItemRed
               amount: 1
           steps:
             - tool: Cutting
               doAfter: 1
-              
+
     - node: CurtainsWhite
       entity: CurtainsWhite
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: FloorCarpetItemWhite
               amount: 1
           steps:
@@ -300,7 +306,7 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: FloorCarpetItemWhite
               amount: 1
           steps:

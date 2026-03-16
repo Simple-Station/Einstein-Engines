@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2024 LankLTE <135308300+LankLTE@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Mind.Components;
 
 namespace Content.Shared.Mind;
@@ -16,6 +22,6 @@ public sealed class IsDeadICSystem : EntitySystem
 
     private void OnGetDeadIC(EntityUid uid, IsDeadICComponent component, ref GetCharactedDeadIcEvent args)
     {
-        args.Dead = true;
+        args.Dead = component.Dead; // Goob edit
     }
 }

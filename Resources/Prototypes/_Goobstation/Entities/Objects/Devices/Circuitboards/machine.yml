@@ -1,0 +1,166 @@
+# SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: RoboticArmCircuitboard
+  name: robotic arm machine board
+  description: A machine printed circuit board for a robotic arm.
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: RoboticArm
+    stackRequirements:
+      Manipulator: 4
+      Steel: 6
+      Cable: 5
+    tagRequirements:
+      BorgArm:
+        amount: 2
+        defaultPrototype: LeftArmBorg
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: ConstructorCircuitboard
+  name: constructor machine board
+  description: A machine printed circuit board for a constructor.
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: Constructor
+    stackRequirements:
+      Manipulator: 5
+      Steel: 10
+      Cable: 5
+    tagRequirements:
+      BorgArm:
+        amount: 4
+        defaultPrototype: LeftArmBorg
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: StorageBinCircuitboard
+  name: storage bin machine board
+  description: A machine printed circuit board for a storage bin.
+  components:
+  - type: MachineBoard
+    prototype: StorageBin
+    stackRequirements:
+      Manipulator: 4
+      Steel: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: InteractorCircuitboard
+  name: interactor machine board
+  description: A machine printed circuit board for an interactor.
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: Interactor
+    stackRequirements:
+      Manipulator: 4
+      Plastic: 4
+      Cable: 5
+    tagRequirements:
+      BorgArm:
+        amount: 1
+        defaultPrototype: LeftArmBorg
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: VinylPlayerCircuitboard
+  name: vinyl player machine board
+  description: A machine printed circuit board for a vinyl player.
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: VinylPlayer
+    stackRequirements:
+      Manipulator: 1
+      Steel: 1
+      WoodPlank: 3
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: TapeDeckCircuitboard
+  name: tape deck machine board
+  description: A machine printed circuit board for a tape deck.
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: TapeDeck
+    stackRequirements:
+      Manipulator: 2
+      Plastic: 3
+      WoodPlank: 5
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: StationRadioServerCircuitboard
+  name: station radio server machine board
+  description: A machine printed circuit board for a station radio server.
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: StationRadioServer
+    stackRequirements:
+      Manipulator: 1
+      Steel: 10
+      Plastic: 10
+      Plasma: 5
+      CableHV: 4
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: StationRadioRigCircuitboard
+  name: station radio rig machine board
+  description: A machine printed circuit board for a station radio rig.
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: StationRadioRig
+    stackRequirements:
+      Manipulator: 3
+      Steel: 5
+      Glass: 5
+      Cable: 2
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: StationRadioCircuitboard
+  name: station radio machine board
+  description: A machine printed circuit board for a station radio receiver.
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: StationRadioReceiver
+    stackRequirements:
+      Manipulator: 1
+      Cable: 2
+
+- type: entity
+  id: VirologyServerMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: virology server machine board
+  description: A machine printed circuit board for a virology server.
+  components:
+    - type: MachineBoard
+      prototype: VirologyServer
+      stackRequirements:
+        Steel: 1
+        Cable: 2

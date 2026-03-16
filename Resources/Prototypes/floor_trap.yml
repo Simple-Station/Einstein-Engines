@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 Nim <128169402+Nimfar11@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 - type: entity
   id: CollideFloorTrap
   abstract: true
@@ -40,6 +45,7 @@
   components:
     - type: TriggerOnCollide
       fixtureID: floortrap
+      maxTriggers: 1
     - type: ExplodeOnTrigger
     - type: Explosive
       explosionType: Default
@@ -55,6 +61,7 @@
   components:
     - type: TriggerOnCollide
       fixtureID: floortrap
+      maxTriggers: 1
     - type: EmpOnTrigger
       range: 2
       energyConsumption: 5000
@@ -67,6 +74,7 @@
   components:
     - type: TriggerOnCollide
       fixtureID: floortrap
+      maxTriggers: 1
     - type: SpawnOnTrigger
       proto: MobCarp
     - type: DeleteOnTrigger
@@ -78,6 +86,7 @@
   components:
     - type: TriggerOnCollide
       fixtureID: floortrap
+      maxTriggers: 1
     - type: SpawnOnTrigger
       proto: MobBearSpace
     - type: DeleteOnTrigger
@@ -89,6 +98,7 @@
   components:
     - type: TriggerOnCollide
       fixtureID: floortrap
+      maxTriggers: 1
     - type: SpawnOnTrigger
       proto: MobKangarooSpace
     - type: DeleteOnTrigger
@@ -100,8 +110,9 @@
   components:
     - type: TriggerOnCollide
       fixtureID: floortrap
+      maxTriggers: 1
     - type: SpawnOnTrigger
-      proto: MobXenoDrone
+      proto: CMMobXenoDrone # goob CM xenos
     - type: DeleteOnTrigger
 
 - type: entity
@@ -111,6 +122,7 @@
   components:
     - type: TriggerOnCollide
       fixtureID: floortrap
+      maxTriggers: 1
     - type: SpawnOnTrigger
-      proto: MobXeno
+      proto: CMMobXenoDrone # goob CM xenos
     - type: DeleteOnTrigger

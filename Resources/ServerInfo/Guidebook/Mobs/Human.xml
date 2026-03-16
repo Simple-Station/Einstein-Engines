@@ -1,11 +1,17 @@
-<Document>
-  # Человек
+<!--
+SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
+  # Люди
   <Box>
     <GuideEntityEmbed Entity="MobHumanDummy" Caption=""/>
   </Box>
 
-  В зависимости от того, кого вы спрашиваете, люди либо ничем не примечательны, либо являются универсальным стандартом, с которым сравнивается все остальное.
-  У них нет особых механизмов или примечательных атрибутов.
+  Человек разумный (Homo sapiens) – сильно распространённая раса в Галактике. Их родной дом - планета Земля, но они распространились на сотни световых лет от своего дома. Не имеют уникальных особенностей.
 
 </Document>

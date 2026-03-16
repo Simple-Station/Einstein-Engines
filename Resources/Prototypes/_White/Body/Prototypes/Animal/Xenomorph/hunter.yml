@@ -1,28 +1,34 @@
 - type: body
   id: XenomorphHunter
   name: xenomorph hunter
-  root: torso
+  root: chest
   slots:
     head:
       part: HeadXenomorph
       connections:
-      - torso
+      - chest
       organs:
         brain: OrganXenomorphBrain
         eyes: OrganXenomorphEyes
         hive_node: OrganXenomorphHiveNode
-    torso:
-      part: TorsoXenomorph
+    chest:
+      part: ChestXenomorph
       connections:
       - right arm
       - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphPlasmaVesselSmall
+    groin:
+      part: GroinXenomorph
+      connections:
       - right leg
       - left leg
       - head
       organs:
         stomach: OrganXenomorphStomach
         liver: OrganXenomorphLiver
-        plasma_vessel: OrganXenomorphPlasmaVesselSmall
     right arm:
       part: RightArmXenomorph
       connections:

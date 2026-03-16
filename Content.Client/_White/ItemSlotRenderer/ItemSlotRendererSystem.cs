@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client.Hands;
 using Content.Shared.Containers.ItemSlots;
 using Robust.Client.GameObjects;
@@ -63,7 +69,7 @@ public sealed class ItemSlotRendererSystem : EntitySystem
     {
         if(!TryComp<SpriteComponent>(uid, out var sprite))
         {
-            Log.Error($"ItemSlotRendererCompontn requires SpriteComponent to work, but {ToPrettyString(uid)} did not have one. Removing ItemSlotRenderer.");
+            Log.Error($"ItemSlotRendererComponent requires SpriteComponent to work, but {ToPrettyString(uid)} did not have one. Removing ItemSlotRenderer.");
             RemComp<ItemSlotRendererComponent>(uid);
             return;
         }

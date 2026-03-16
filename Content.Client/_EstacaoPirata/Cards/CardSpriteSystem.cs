@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 RadsammyT <32146976+RadsammyT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Shared._EstacaoPirata.Cards.Stack;
 using Robust.Client.GameObjects;
@@ -10,7 +17,10 @@ namespace Content.Client._EstacaoPirata.Cards;
 public sealed class CardSpriteSystem : EntitySystem
 {
     /// <inheritdoc/>
-    public override void Initialize() { }
+    public override void Initialize()
+    {
+
+    }
 
     public bool TryAdjustLayerQuantity(Entity<SpriteComponent, CardStackComponent> uid, int? cardLimit = null)
     {
@@ -31,13 +41,21 @@ public sealed class CardSpriteSystem : EntitySystem
         layerCount = int.Max(1, layerCount); // Frontier: you need one layer.
         //inserts Missing Layers
         if (sprite.AllLayers.Count() < layerCount)
+        {
             for (var i = sprite.AllLayers.Count(); i < layerCount; i++)
+            {
                 sprite.AddBlankLayer(i);
-
+            }
+        }
         //Removes extra layers
         else if (sprite.AllLayers.Count() > layerCount)
+        {
             for (var i = sprite.AllLayers.Count() - 1; i >= layerCount; i--)
+            {
                 sprite.RemoveLayer(i);
+            }
+        }
+
 
         return true;
     }

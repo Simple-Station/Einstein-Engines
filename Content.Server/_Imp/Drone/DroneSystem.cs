@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
+// SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Body.Systems;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Popups;
@@ -9,7 +15,10 @@ using Content.Shared.Emoting;
 using Content.Shared.Examine;
 using Content.Shared.Ghost;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Interaction;
+using Content.Shared.Interaction.Components;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Item;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
@@ -63,7 +72,8 @@ namespace Content.Server._Imp.Drone
                 }
 
                 else if (_whitelist.IsWhitelistPass(component.Whitelist, args.Used)) /// tag whitelist. sends proximity warning popup if the item isn't whitelisted. Doesn't prevent actions.
-                {
+				{
+                    component.NextProximityAlert = _gameTiming.CurTime + component.ProximityDelay;
                     if (_gameTiming.CurTime >= component.NextProximityAlert)
                     {
                         _popupSystem.PopupEntity(Loc.GetString("drone-too-close", ("being", component.NearestEnt)), uid, uid);

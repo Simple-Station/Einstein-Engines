@@ -53,7 +53,7 @@
     - id: SpaceCash100
       weight: 20
     - id: WhoopieCushion
-    - id: PlushieGnome
+    - id: RubberChicken
     - id: PlasticBanana
       amount: !type:RangeNumberSelector
         range: 1, 5
@@ -73,7 +73,7 @@
     - id: Joint
       amount: !type:RangeNumberSelector
         range: 1, 5
-    - id: Blunt
+    - id: BluntCigar # Shitmed Change - Name conflicts!
       amount: !type:RangeNumberSelector
         range: 1, 5
     - id: SmokingPipeFilledCannabis
@@ -106,28 +106,28 @@
     children:
     - id: SpaceCash100
       weight: 20
-    - id: UnstableMutagenChemistryBottle
+    - id: ChemistryBottleUnstableMutagen
       amount: !type:RangeNumberSelector
         range: 1, 5
-    - id: Left4ZedChemistryBottle
+    - id: ChemistryBottleLeft4Zed
       amount: !type:RangeNumberSelector
         range: 1, 5
-    - id: EZNutrientChemistryBottle
+    - id: ChemistryBottleEZNutrient
       amount: !type:RangeNumberSelector
         range: 1, 5
-    - id: RobustHarvestChemistryBottle
+    - id: ChemistryBottleRobustHarvest
       amount: !type:RangeNumberSelector
         range: 1, 5
-    - id: EpinephrineChemistryBottle
+    - id: ChemistryBottleEpinephrine
       amount: !type:RangeNumberSelector
         range: 1, 5
-    - id: EphedrineChemistryBottle
+    - id: ChemistryBottleEphedrine
       amount: !type:RangeNumberSelector
         range: 1, 5
-    - id: OmnizineChemistryBottle
-    - id: CognizineChemistryBottle
-    - id: ToxinChemistryBottle
-    - id: NocturineChemistryBottle
+    - id: ChemistryBottleOmnizine
+    - id: ChemistryBottleCognizine
+    - id: ChemistryBottleToxin
+    - id: ChemistryBottleNocturine
     - id: VestineChemistryVial
 
 - type: entityTable
@@ -155,6 +155,7 @@
       weight: 0.5
     - id: CigCartonGreen
     - id: CigCartonRed
+    - id: CigCartonGreen
     - id: CigCartonBlack
     - id: CigarCase
     - id: CigarGoldCase
@@ -208,7 +209,7 @@
     - id: ChemicalPayload
       amount: !type:RangeNumberSelector
         range: 1, 2
-    - id: ExplosivePayload
+    - id: ShrapnelPayload
       amount: !type:RangeNumberSelector
         range: 1, 2
 
@@ -266,6 +267,8 @@
     - id: ToyFigurineSpaceDragon
     - id: ToyFigurineQueen
     - id: ToyFigurineRatKing
+    - id: PresentRandomUnsafe
+      weight: 0.001
 
 - type: entityTable #1x small
   id: RandomSatchelCashTable
@@ -631,8 +634,8 @@
     - id: DeviceQuantumSpinInverter
       amount: !type:ConstantNumberSelector
         value: 2
-    - id: ClothingEyesGlassesEthereal
-    - id: LampInterrogator
+    - id: SpectralLocator
+    - id: ArabianLamp
       weight: 0.50
     - id: ChameleonProjector
       weight: 0.25

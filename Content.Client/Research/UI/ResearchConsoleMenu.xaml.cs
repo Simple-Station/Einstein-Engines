@@ -1,3 +1,19 @@
+// SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Eoin Mcloughlin <helloworld@eoinrul.es>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 eoineoineoin <github@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using System.Numerics;
 using Content.Client.UserInterface.Controls;
@@ -70,7 +86,7 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
         foreach (var techId in database.CurrentTechnologyCards)
         {
             var tech = _prototype.Index<TechnologyPrototype>(techId);
-            var cardControl = new TechnologyCardControl(tech, _prototype, _sprite, _research.GetTechnologyDescription(tech, includeTier: false, databaseComponent: database), state.Points, hasAccess, database);
+            var cardControl = new TechnologyCardControl(tech, _prototype, _sprite, _research.GetTechnologyDescription(tech, includeTier: false), state.Points, hasAccess);
             cardControl.OnPressed += () => OnTechnologyCardPressed?.Invoke(techId);
             TechnologyCardsContainer.AddChild(cardControl);
         }
@@ -82,7 +98,7 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
     public void UpdateInformationPanel(ResearchConsoleBoundInterfaceState state)
     {
         var amountMsg = new FormattedMessage();
-        amountMsg.AddMarkup(Loc.GetString("research-console-menu-research-points-text",
+        amountMsg.AddMarkupOrThrow(Loc.GetString("research-console-menu-research-points-text",
             ("points", state.Points)));
         ResearchAmountLabel.SetMessage(amountMsg);
 
@@ -99,14 +115,9 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
         }
 
         var msg = new FormattedMessage();
-        msg.AddMarkup(Loc.GetString("research-console-menu-main-discipline",
+        msg.AddMarkupOrThrow(Loc.GetString("research-console-menu-main-discipline",
             ("name", disciplineText), ("color", disciplineColor)));
         MainDisciplineLabel.SetMessage(msg);
-
-        var softcapMsg = new FormattedMessage();
-        softcapMsg.AddMarkupOrThrow(Loc.GetString("research-console-menu-softcap-amount-text",
-            ("softcap", state.SoftCapMultiplier.ToString("#.##"))));
-        SoftcapAmountLabel.SetMessage(softcapMsg);
 
         TierDisplayContainer.Children.Clear();
         foreach (var disciplineId in database.SupportedDisciplines)
@@ -185,4 +196,3 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
         }
     }
 }
-

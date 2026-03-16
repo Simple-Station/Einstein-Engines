@@ -1,4 +1,3 @@
-advertisement-goodcleanfun-0 = Проявите инициативу!
 advertisement-goodcleanfun-1 = Сбегите в фантастический мир!
 advertisement-goodcleanfun-2 = Утолите свою зависимость от азартных игр!
 advertisement-goodcleanfun-3 = Разрушьте вашу дружбу!
@@ -13,4 +12,3 @@ thankyou-goodcleanfun-1 = Развлекайтесь!
 thankyou-goodcleanfun-2 = Теперь вы играете с силой!
 thankyou-goodcleanfun-3 = Приступайте к игре!
 thankyou-goodcleanfun-4 = Начинайте оформлять листы персонажей!
-thankyou-goodcleanfun-0 = Развлекайтесь!

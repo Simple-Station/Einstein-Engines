@@ -1,11 +1,11 @@
 using Content.Server.Atmos.Components;
-using Content.Server.NodeContainer;
 using Content.Server.NodeContainer.EntitySystems;
 using Content.Server.NodeContainer.NodeGroups;
 using Content.Server.NodeContainer.Nodes;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Atmos.EntitySystems;
 using Content.Shared.Construction.Components;
+using Content.Shared.NodeContainer;
 using Content.Shared.Popups;
 
 namespace Content.Server.Atmos.EntitySystems;
@@ -38,7 +38,7 @@ public sealed partial class AtmosPipeLayersSystem : SharedAtmosPipeLayersSystem
         if (ent.Comp.PipeLayersLocked)
             return;
 
-        base.SetPipeLayer(ent, layer);
+        base.SetPipeLayer(ent, layer, user, used);
 
         if (!TryComp<NodeContainerComponent>(ent, out var nodeContainer))
             return;

@@ -1,3 +1,59 @@
+# SPDX-FileCopyrightText: 2019 DamianX <DamianX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Hugo Laloge <hugo.laloge@gmail.com>
+# SPDX-FileCopyrightText: 2021 BulletGrade <66234359+BulletGrade@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Elijahrane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2021 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2022 Andreas Kämper <andreas@kaemper.tech>
+# SPDX-FileCopyrightText: 2022 ChilbroBaggins <107660393+ChilbroBaggins@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Fishfish458 <47410468+Fishfish458@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Jeff <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2022 Kai Shiba <100050424+KaiShibaa@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 ZeroDiamond <zxdwareisbroken@gmail.com>
+# SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
+# SPDX-FileCopyrightText: 2022 wrexbe <wrexbe@protonmail.com>
+# SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Alekshhh <44923899+Alekshhh@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Doru991 <75124791+Doru991@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nim <128169402+Nimfar11@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Puro <103608145+PuroSlavKing@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Skarletto <122584947+Skarletto@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Tunguso4ka <71643624+Tunguso4ka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 kxv <136233650+kxvvv@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 DieselMohawk <gavin.drinka@gmail.com>
+# SPDX-FileCopyrightText: 2024 K-Dynamic <20566341+K-Dynamic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 JustinWinningham <justinmwinningham@gmail.com>
+# SPDX-FileCopyrightText: 2025 LuciferMkshelter <154002422+LuciferEOS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 NathanielJ14 <nathanielalbert1202@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+# SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Smith <182301147+AgentSmithRadio@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: vendingMachineInventory
   id: AutoDrobeInventory
   startingInventory:
@@ -6,7 +62,7 @@
     ClothingHeadHatJesterAlt: 1
     ClothingUniformJumpsuitJesterAlt: 1
     ClothingShoesJester: 2
-    # ClothingOuterWinterClown: 1
+    ClothingOuterWinterClown: 1
     ClothingOuterWinterMime: 1
     ClothingOuterWinterMusician: 1
     ClothingMaskJoy: 2
@@ -14,9 +70,6 @@
     ClothingOuterCardborg: 2
     ClothingHeadHatSombrero: 2
     ClothingOuterPonchoClassic: 2
-    ClothingUniformJumpsuitKilt: 3
-    ClothingEyesEyepatch: 2
-    ClothingUniformJumpsuitBlackTurtleneck : 2
     ClothingHeadHatPwig: 2
     ClothingOuterRobesJudge: 2
     ClothingOuterPoncho: 2
@@ -34,7 +87,7 @@
     Gohei: 2
     ClothingOuterSuitWitchRobes: 2
     ClothingHeadHatWitch1: 2
-    ClothingHeadHatWitch: 2
+    Broomstick: 2 # Goobstation
     ClothingHeadHatRedRacoon: 2
     ClothingOuterRedRacoon: 2
     ClothingHeadPaperSack: 2
@@ -52,38 +105,6 @@
     FoodPoppy: 1
     ClothingHeadHatGladiator: 1
     ClothingUniformJumpsuitGladiator: 1
-    ClothingUniformSkirtTurtle: 2
-    ClothingUniformSwimsuitBlue: 2
-    ClothingCostumeBunnySuit: 2
-    ClothingHeadHatBunny: 2
-    ClothingUniformDressRed: 1
-    ClothingHeadHatCake: 2
-    ClothingUniformSchoolGakuranBlack: 2
-    UniformSchoolgirlBlack: 1
-    UniformSchoolgirlBlue: 1
-    UniformSchoolgirlCyan: 1
-    UniformSchoolgirlGreen: 1
-    UniformSchoolgirlOrange: 1
-    UniformSchoolgirlPink: 1
-    UniformSchoolgirlPurple: 1
-    UniformSchoolgirlRed: 1
-    UniformSchoolgirlDusk: 1
-    UniformSchoolgirlBlazerTan: 1
-    UniformGeisha: 1
-    ClothingKimonoBlue: 2
-    ClothingKimonoPink: 2
-    ClothingKimonoPurple: 2
-    ClothingKimonoSky: 2
-    ClothingKimonoGreen: 2
-    ClothingMaskOniBlue: 1
-    ClothingMaskOniRed: 1
-    ClothingCostumeArcDress: 1
-    ClothingCostumeMioSkirt: 1
-    ClothingCostumeNaota: 1
-    ClothingUniformJumpsuitSober: 1
-    ClothingOuterSuitCarp: 2
-    ClothingShoesBootsWinterClown: 2
-    ClothingShoesBootsWinterMime: 2
     ClothingHeadHatCowboyBrown: 1
     ClothingHeadHatCowboyBlack: 1
     ClothingHeadHatCowboyWhite: 1
@@ -91,57 +112,32 @@
     ClothingShoesBootsCowboyBrown: 1
     ClothingShoesBootsCowboyBlack: 1
     ClothingShoesBootsCowboyWhite: 1
-    ClothingMaskNeckGaiterRed: 2
-    ClothingUniformJumpskirtPerformer: 2
-    ClothingShoesBootsPerformer: 2
-    ClothingNeckCloakMoth: 2
-    ClothingUniformJumpskirtJanimaid: 2
-    ClothingNeckCloakVoid: 2
-    ClothingHeadBandRed: 1
-    ClothingHeadHatPirate: 1
-    ClothingOuterCoatPirate: 1
-    ClothingUniformJumpsuitPirate: 1
-    ClothingShoesBootsLaceup: 2
-    FoamCutlass: 2
-    ClothingHeadSafari: 2
-    ClothingUniformJumpsuitSafari: 2
-    ClothingUniformRandomArmlessNoSkirt: 6
-    ClothingUniformRandomArmless: 6
-    ClothingUniformRandomStandard: 6
-    ClothingUniformRandomBra: 6
-    ClothingUniformRandomShorts: 6
-    ClothingUniformRandomShirt: 6
-    ClothingHandsGlovesBoxingRed: 2
-    ClothingHandsGlovesBoxingBlue: 2
-    ClothingHandsGlovesBoxingYellow: 2
-    ClothingHandsGlovesBoxingGreen: 2
-    UniformShortsRed: 4
-    UniformShortsRedWithTop: 4
-    ClothingBackpackClown: 2
-    ClothingBackpackSatchelClown: 2
-    ClothingBackpackDuffelClown: 2
-    ClothingMaskClown: 2
-    ClothingShoesClown: 2
-    ClothingUniformJumpsuitClown: 2
-    RubberStampClown: 1
-    ClothingBackpackMime: 2
-    ClothingBackpackSatchelMime: 2
-    ClothingBackpackDuffelMime: 2
-    ClothingHeadHatMimesoft: 2
-    ClothingMaskMime: 2
-    ClothingUniformJumpsuitMime: 2
-    ClothingUniformJumpskirtMime: 2
-    ClothingBeltSuspendersRed: 2
-    RubberStampMime: 1
+    ClothingCostumeAbductorHead: 1
+    ClothingCostumeAbductor: 1
+    ClothingHeadSanabi: 1 # Goobstation
+    ClothingNeckCloakSanabi: 1 # Goobstation
+    ClothingCostumeGingerbreadHead: 1 #goob
+    ClothingOuterSuitHotDog: 1 # Goob
+    ClothingOuterSuitPickle: 1
+    ClothingOuterSuitTutu: 2 # Goob
+    ClothingHeadHatTinfoilHat: 2 # Goobstation
   contrabandInventory:
-    ClothingHeadHatMimesoftFlipped: 1
-    BarberScissors: 1
-    ClothingNeckBellCollar: 2
-    ClothingOuterUnathiRobe: 1
-  emaggedInventory:
+    ClothingHeadHatRichard: 1
     ClothingShoesBling: 1
     ClothingShoesBootsCowboyFancy: 1
     ClothingOuterDogi: 1
     ClothingMaskSexyClown: 1
     ClothingMaskSexyMime: 1
     ClothingHeadHatCowboyBountyHunter: 1
+    ToyFigurineBoxer: 1
+    ToyFigurineMusician: 1
+    WeaponLauncherTaiwanPond: 1 # Goobstation
+    GrenadeToy: 5 # Goobstation
+    ClothingShoesResonant: 1 # Goobstation
+    ClothingNeckCloakResonant: 1 # Goobstation
+    ClothingUniformJumpsuitResonant: 1 # Goobstation
+    ClothingOuterArmorHereticCostume: 1 # Goobstation
+    ToyBladeEldritch: 1 # Goobstation
+  emaggedInventory: # goob
+    ClothingOuterPonchoClassicRobust: 1
+    ClothingHeadHatCowboyBrownRobust: 1

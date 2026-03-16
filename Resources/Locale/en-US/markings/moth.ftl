@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 marking-MothAntennasDefault-default = Antennae
 marking-MothAntennasDefault = Antennae (Default)
 
@@ -94,7 +104,8 @@ marking-MothWingsJungle = Wings (Jungle)
 marking-MothWingsLadybug-ladybug = Wing
 marking-MothWingsLadybug = Wings (Ladybug)
 
-marking-MothWingsMaple-maple = Wing
+marking-MothWingsMaple-maple_primary = Primary
+marking-MothWingsMaple-maple_secondary = Secondary
 marking-MothWingsMaple = Wings (Maple)
 
 marking-MothWingsMoffra-moffra_primary = Primary

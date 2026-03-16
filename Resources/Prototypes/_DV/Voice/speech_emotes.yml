@@ -1,8 +1,224 @@
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 GreyMario <mariomister541@gmail.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Harpy
+- type: emote
+  id: Ring
+  name: Ring
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/ring.png
+  whitelist:
+    tags:
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [rings.]
+  chatTriggers:
+    - ring
+    - rings
+    - ringing
+    - ringed
+
+- type: emote
+  id: Pew
+  name: Pew
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/pew.png
+  whitelist:
+    tags:
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [pews.]
+  chatTriggers:
+    - pew
+    - pews
+
+- type: emote
+  id: Bang
+  name: Bang
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/bang.png
+  whitelist:
+    tags:
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [bangs.]
+  chatTriggers:
+    - bangs
+    - bang
+    - banging
+    - banged
+
+#- type: emote
+#  id: Beep
+#  category: Vocal
+#  chatMessages: [beeps.]
+#  chatTriggers:
+#    - beeps
+#    - beep
+#    - beeping
+#    - beeped
+
+- type: emote
+  id: Rev
+  name: Rev
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/rev.png
+  whitelist:
+    tags:
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [revs.]
+  chatTriggers:
+    - revs
+    - rev
+    - revving
+    - revved
+
+#- type: emote
+#  id: Click
+#  category: Vocal
+#  chatMessages: [clicks.]
+#  chatTriggers:
+#    - clicks
+#    - click
+#    - clicking
+#    - clicked
+
+- type: emote
+  id: Caw
+  name: Caw
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/caw.png
+  whitelist:
+    tags:
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [caws.]
+  chatTriggers:
+    - caws
+    - caw
+    - cawing
+    - cawed
+
+#Vulpkanin
+- type: emote
+  id: Bark
+  name: Bark
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/bark.png
+  whitelist:
+    tags:
+    - VulpEmotes
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [barks.]
+  chatTriggers:
+    - bark
+    - barks
+    - barked
+    - barking
+
+- type: emote
+  id: Snarl
+  name: Snarl
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/snarl.png
+  whitelist:
+    tags:
+    - VulpEmotes
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [snarls.]
+  chatTriggers:
+    - snarl
+    - snarls
+    - snarled
+    - snarling
+
+- type: emote
+  id: Whine
+  name: Whine
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/whine.png
+  whitelist:
+    tags:
+    - VulpEmotes
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [whines.]
+  chatTriggers:
+    - whine
+    - whines
+    - whined
+    - whining
+
+- type: emote
+  id: Howl
+  name: Howl
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/howl.png
+  whitelist:
+    tags:
+    - VulpEmotes
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [howls.]
+  chatTriggers:
+    - howl
+    - howls
+    - howling
+    - howled
+
+- type: emote
+  id: Awoo
+  name: Awoo
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/awoo.png
+  whitelist:
+    tags:
+    - VulpEmotes
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [awoos.]
+  chatTriggers:
+    - awoo
+    - awoos
+    - awooing
+    - awooed
 
 # Feroxi
 - type: emote
   id: Gnash
-  name: delta-chat-emote-name-gnash
+  name: chat-emote-name-gnash
   category: Vocal
   available: false
   whitelist:

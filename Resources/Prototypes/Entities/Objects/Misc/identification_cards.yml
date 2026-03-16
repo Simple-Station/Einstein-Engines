@@ -1,3 +1,153 @@
+# SPDX-FileCopyrightText: 2019 DamianX <DamianX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Hugo Laloge <hugo.laloge@gmail.com>
+# SPDX-FileCopyrightText: 2020 Peter Wedder <burneddi@gmail.com>
+# SPDX-FileCopyrightText: 2020 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+# SPDX-FileCopyrightText: 2020 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2020 V�ctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Ygg01 <daniel.fath7@gmail.com>
+# SPDX-FileCopyrightText: 2020 ike709 <ike709@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Elijahrane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Metal Gear Sloth <metalgearsloth@gmail.com>
+# SPDX-FileCopyrightText: 2021 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 SweptWasTaken <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+# SPDX-FileCopyrightText: 2022 Cheackraze <71046427+Cheackraze@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Chris V <HoofedEar@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Lamrr <96937466+Lamrr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Morber <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 lapatison <100279397+lapatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Doru991 <75124791+Doru991@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 MagnusCrowe <whiterider1988@yahoo.com>
+# SPDX-FileCopyrightText: 2023 Maxtone <124747282+MagnusCrowe@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 PrPleGoo <PrPleGoo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Puro <103608145+PuroSlavKing@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Rainfall <rainfey0+git@gmail.com>
+# SPDX-FileCopyrightText: 2023 Rainfey <11758391+Rainfey@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 crazybrain23 <44417085+crazybrain23@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Alice 'Arimah' Heurlin <30327355+arimah@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 CaasGit <87243814+CaasGit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 EmoGarbage404 <retron404@gmail.com>
+# SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hrosts <35345601+Hrosts@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ian <ignaz.k@live.de>
+# SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Joel Zimmerman <JoelZimmerman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 JustCone <141039037+JustCone14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ko4ergaPunk <62609550+Ko4ergaPunk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kukutis96513 <146854220+Kukutis96513@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Lye <128915833+Lyroth001@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MerrytheManokit <167581110+MerrytheManokit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+# SPDX-FileCopyrightText: 2024 Milon <milonpl.git@proton.me>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MureixloI <132683811+MureixloI@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 NakataRin <45946146+NakataRin@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 OrangeMoronage9622 <whyteterry0092@gmail.com>
+# SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 PoTeletubby <108604614+PoTeletubby@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Preston Smith <92108534+thetolbean@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Repo <47093363+Titian3@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 RiceMar1244 <138547931+RiceMar1244@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Skubman <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2024 Stalen <33173619+stalengd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TakoDragon <69509841+BackeTako@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st <shadowstalkermll@gmail.com>
+# SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2024 Vigers Ray <60344369+VigersRay@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 chavonadelal <156101927+chavonadelal@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 degradka <69397649+degradka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 dffdff2423 <dffdff2423@gmail.com>
+# SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+# SPDX-FileCopyrightText: 2024 foboscheshir <156405958+foboscheshir@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+# SPDX-FileCopyrightText: 2024 saintmuntzer <47153094+saintmuntzer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 shamp <140359015+shampunj@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 strO0pwafel <153459934+strO0pwafel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 stroopwafel <j.o.luijkx@student.tudelft.nl>
+# SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GMWQ <garethquaile@gmail.com>
+# SPDX-FileCopyrightText: 2025 Gareth Quaile <garethquaile@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tobias Berger <toby@tobot.dev>
+# SPDX-FileCopyrightText: 2025 Unlumination <144041835+Unlumy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 blobadoodle <me@bloba.dev>
+# SPDX-FileCopyrightText: 2025 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+# SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+# SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: Clothing
   id: IDCardStandard
@@ -25,24 +175,37 @@
     - WhitelistChameleonIdCard
   - type: StealTarget
     stealGroup: IDCard
-  - type: NanoChatCard
-  - type: MiningPoints
+  - type: MiningPoints # DeltaV
+  - type: NanoChatCard # DeltaV
+  # Goobstation edit start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/card_pickup.ogg
+      params:
+        volume: -5
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_Goobstation/Items/handling/card_drop.ogg
+      params:
+        volume: -5
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_Goobstation/Items/handling/card_drop.ogg
+      params:
+        volume: -5
+  # Goobstation edit end
 
 #IDs with layers
 
 - type: entity
   parent: IDCardStandard
   id: PassengerIDCard
-  name: passenger ID card
+  name: assistant ID card
   components:
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#878787"
-    - state: subdepartment
-      color: "#878787"
-    - state: passenger
+    - state: idpassenger
   - type: PresetIdCard
     job: Passenger
 
@@ -56,11 +219,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#F39F27"
-    - state: subdepartment
-      color: "#F39F27"
-    - state: assistant
+    - state: idintern-tech
 
 - type: entity
   parent: PassengerIDCard
@@ -72,11 +231,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#5B97BC"
-    - state: subdepartment
-      color: "#5B97BC"
-    - state: assistant
+    - state: idintern-med
 
 - type: entity
   parent: PassengerIDCard
@@ -88,11 +243,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#C96DBF"
-    - state: subdepartment
-      color: "#C96DBF"
-    - state: assistant
+    - state: idintern-sci
 
 - type: entity
   parent: PassengerIDCard
@@ -104,11 +255,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#CB0000"
-    - state: subdepartment
-      color: "#CB0000"
-    - state: assistant
+    - state: idintern-cadet
 
 - type: entity
   parent: PassengerIDCard
@@ -120,11 +267,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#58C800"
-    - state: subdepartment
-      color: "#58C800"
-    - state: assistant
+    - state: idintern-service
 
 - type: entity
   parent: [IDCardStandard, BaseGrandTheftContraband]
@@ -134,11 +277,7 @@
   - type: Sprite
     layers:
     - state: gold
-    - state: departmenthead
-      color: "#1B67A5"
-    - state: subdepartment
-      color: "#1B67A5"
-    - state: captain
+    - state: idcaptain
   - type: Item
     heldPrefix: gold
   - type: PresetIdCard
@@ -160,11 +299,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#CB0000"
-    - state: subdepartment
-      color: "#CB0000"
-    - state: securityofficer
+    - state: idsecurityofficer
   - type: PresetIdCard
     job: SecurityOfficer
 
@@ -173,16 +308,12 @@
   id: WardenIDCard
   name: warden ID card
   components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: department
-      color: "#CB0000"
-    - state: subdepartment
-      color: "#CB0000"
-    - state: warden
-  - type: PresetIdCard
-    job: Warden
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idwarden
+    - type: PresetIdCard
+      job: Warden
 
 - type: entity
   parent: IDCardStandard
@@ -192,11 +323,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#F39F27"
-    - state: subdepartment
-      color: "#F39F27"
-    - state: stationengineer
+    - state: idstationengineer
   - type: PresetIdCard
     job: StationEngineer
 
@@ -208,11 +335,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#5B97BC"
-    - state: subdepartment
-      color: "#5B97BC"
-    - state: medicaldoctor
+    - state: idmedicaldoctor
   - type: PresetIdCard
     job: MedicalDoctor
 
@@ -224,11 +347,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#5B97BC"
-    - state: subdepartment
-      color: "#5B97BC"
-    - state: paramedic
+    - state: idparamedic
   - type: PresetIdCard
     job: Paramedic
 
@@ -239,28 +358,23 @@
   components:
   - type: Sprite
     layers:
-    - state: default
-    - state: department
-      color: "#5B97BC"
-    - state: subdepartment
-      color: "#5B97BC"
-    - state: chemist
+    - state: chemist # Goobstation - Chemist card
+    - state: idchemist
   - type: PresetIdCard
     job: Chemist
+  - type: Item # Goobstation - Chemist card
+    heldPrefix: chemist
+    sprite: _Goobstation/Objects/Misc/id_cards.rsi
 
 - type: entity
   parent: IDCardStandard
   id: CargoIDCard
-  name: logistics ID card
+  name: cargo ID card
   components:
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#B18644"
-    - state: subdepartment
-      color: "#B18644"
-    - state: cargotechnician
+    - state: idcargotechnician
   - type: PresetIdCard
     job: CargoTechnician
 
@@ -272,31 +386,23 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#B18644"
-    - state: subdepartment
-      color: "#C96DBF"
-    - state: shaftminer
+    - state: idshaftminer
   - type: PresetIdCard
     job: SalvageSpecialist
 
 - type: entity
   parent: IDCardStandard
   id: QuartermasterIDCard
-  name: logistics officer ID card
+  name: quartermaster ID card
   components:
-  - type: Sprite
-    layers:
-    - state: silver
-    - state: departmenthead
-      color: "#1B67A5"
-    - state: subdepartment
-      color: "#B18644"
-    - state: cargotechnician
-  - type: Item
-    heldPrefix: silver
-  - type: PresetIdCard
-    job: Quartermaster
+    - type: Sprite
+      layers:
+        - state: silver
+        - state: idquartermaster
+    - type: Item
+      heldPrefix: silver
+    - type: PresetIdCard
+      job: Quartermaster
 
 - type: entity
   parent: IDCardStandard
@@ -306,29 +412,9 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#C96DBF"
-    - state: subdepartment
-      color: "#C96DBF"
-    - state: scientist
+    - state: idscientist
   - type: PresetIdCard
     job: Scientist
-
-- type: entity
-  parent: IDCardStandard
-  id: RoboticsIDCard
-  name: robotics ID card
-  components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: department
-      color: "#C96DBF"
-    - state: subdepartment
-      color: "#952004"
-    - state: scientist
-  - type: PresetIdCard
-    job: Roboticist
 
 - type: entity
   parent: IDCardStandard
@@ -337,12 +423,8 @@
   components:
   - type: Sprite
     layers:
-    - state: rainbow
-    - state: department
-      color: "#FF00FF"
-    - state: subdepartment
-      color: "#58C800"
-    - state: clown
+    - state: default
+    - state: idclown
   - type: PresetIdCard
     job: Clown
 
@@ -354,10 +436,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#878787"
-    - state: subdepartment
-    - state: mime
+    - state: idmime
   - type: PresetIdCard
     job: Mime
 
@@ -366,14 +445,10 @@
   id: ChaplainIDCard
   name: chaplain ID card
   components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: department
-      color: "#C96DBF"
-    - state: subdepartment
-      color: "#58C800"
-    - state: chaplain
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idchaplain
     - type: PresetIdCard
       job: Chaplain
 
@@ -385,11 +460,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#58C800"
-    - state: subdepartment
-      color: "#58C800"
-    - state: janitor
+    - state: idjanitor
   - type: PresetIdCard
     job: Janitor
 
@@ -401,25 +472,25 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#58C800"
-    - state: subdepartment
-      color: "#58C800"
-    - state: bartender
+    - state: idbartender
   - type: PresetIdCard
     job: Bartender
 
 - type: entity
-  parent: BartenderIDCard
+  parent: IDCardStandard
   id: PunPunIDCard
   name: pun pun ID card
   components:
-  - type: PresetIdCard
-    job: Bartender
-    name: Pun Pun
-  - type: Tag #  Ignore Chameleon tags
-    tags:
-    - DoorBumpOpener
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idbartender
+    - type: PresetIdCard
+      job: Bartender
+      name: Pun Pun
+    - type: Tag #  Ignore Chameleon tags
+      tags:
+      - DoorBumpOpener
 
 - type: entity
   parent: IDCardStandard
@@ -429,11 +500,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#58C800"
-    - state: subdepartment
-      color: "#58C800"
-    - state: cook
+    - state: idcook
   - type: PresetIdCard
     job: Chef
 
@@ -442,97 +509,36 @@
   id: BotanistIDCard
   name: botanist ID card
   components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: department
-      color: "#58C800"
-    - state: subdepartment
-      color: "#58C800"
-    - state: botanist
-  - type: PresetIdCard
-    job: Botanist
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idbotanist
+    - type: PresetIdCard
+      job: Botanist
 
 - type: entity
   parent: IDCardStandard
   id: LibrarianIDCard
   name: librarian ID card
   components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: department
-      color: "#58C800"
-    - state: subdepartment
-      color: "#58C800"
-    - state: curator
-  - type: PresetIdCard
-    job: Librarian
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idcurator
+    - type: PresetIdCard
+      job: Librarian
 
 - type: entity
   parent: IDCardStandard
   id: LawyerIDCard
-  name: attorney ID card
+  name: lawyer ID card
   components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: department
-      color: "#878787"
-    - state: subdepartment
-      color: "#CB0000"
-    - state: lawyer
-  - type: PresetIdCard
-    job: Lawyer
-
-- type: entity
-  parent: IDCardStandard
-  id: ChiefJusticeIDCard
-  name: chief justice ID card
-  components:
-  - type: PresetIdCard
-    job: ChiefJustice
-  - type: Sprite
-    layers:
-    - state: default
-    - state: department
-      color: "#878787"
-    - state: subdepartment
-      color: "#CB0000"
-    - state: lawyer
-
-
-- type: entity
-  parent: IDCardStandard
-  id: ClerkIDCard
-  name: clerk ID card
-  components:
-  - type: PresetIdCard
-    job: Clerk
-  - type: Sprite
-    layers:
-    - state: default
-    - state: department
-      color: "#878787"
-    - state: subdepartment
-      color: "#CB0000"
-    - state: lawyer
-
-- type: entity
-  parent: IDCardStandard
-  id: ProsecutorIDCard
-  name: presecutor ID card
-  components:
-  - type: PresetIdCard
-    job: Prosecutor
-  - type: Sprite
-    layers:
-    - state: default
-    - state: department
-      color: "#878787"
-    - state: subdepartment
-      color: "#CB0000"
-    - state: lawyer
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idlawyer
+    - type: PresetIdCard
+      job: Lawyer
 
 - type: entity
   parent: IDCardStandard
@@ -542,11 +548,7 @@
   - type: Sprite
     layers:
     - state: silver
-    - state: departmenthead
-      color: "#1B67A5"
-    - state: subdepartment
-      color: "#58C800"
-    - state: headofpersonnel
+    - state: idheadofpersonnel
   - type: Item
     heldPrefix: silver
   - type: PresetIdCard
@@ -560,11 +562,7 @@
   - type: Sprite
     layers:
     - state: silver
-    - state: departmenthead
-      color: "#1B67A5"
-    - state: subdepartment
-      color: "#F39F27"
-    - state: stationengineer
+    - state: idchiefengineer
   - type: Item
     heldPrefix: silver
   - type: PresetIdCard
@@ -578,11 +576,7 @@
   - type: Sprite
     layers:
     - state: silver
-    - state: departmenthead
-      color: "#1B67A5"
-    - state: subdepartment
-      color: "#5B97BC"
-    - state: medicaldoctor
+    - state: idchiefmedicalofficer
   - type: Item
     heldPrefix: silver
   - type: PresetIdCard
@@ -591,16 +585,12 @@
 - type: entity
   parent: IDCardStandard
   id: RDIDCard
-  name: mystagogue ID card
+  name: research director ID card
   components:
   - type: Sprite
     layers:
     - state: silver
-    - state: departmenthead
-      color: "#1B67A5"
-    - state: subdepartment
-      color: "#C96DBF"
-    - state: scientist
+    - state: idresearchdirector
   - type: Item
     heldPrefix: silver
   - type: PresetIdCard
@@ -614,11 +604,7 @@
   - type: Sprite
     layers:
     - state: silver
-    - state: departmenthead
-      color: "#1B67A5"
-    - state: subdepartment
-      color: "#CB0000"
-    - state: securityofficer
+    - state: idheadofsecurity
   - type: Item
     heldPrefix: silver
   - type: PresetIdCard
@@ -632,7 +618,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: visitor
+    - state: idvisitor
   - type: IdCard
     jobTitle: job-title-visitor
     jobIcon: JobIconVisitor
@@ -642,17 +628,13 @@
 - type: entity
   parent: IDCardStandard
   id: BrigmedicIDCard
-  name: corpsman ID card
+  name: brigmedic ID card
   components:
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#CB0000"
-    - state: subdepartment
-      color: "#5B97BC"
-    - state: medicaldoctor
-  - type: PresetIdCard
+    - state: idbrigmedic
+  - type: PresetIdCard # goob
     job: Brigmedic
 
 - type: entity
@@ -663,11 +645,12 @@
   - type: Sprite
     layers:
     - state: centcom
+    - state: idcentcom
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
     job: CentralCommandOfficial
-  - type: NanoChatCard
+  - type: NanoChatCard # DeltaV
     listNumber: false
 
 - type: entity
@@ -677,17 +660,13 @@
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: departmenthead
-      color: "#1B67A5"
-    - state: subdepartment
-      color: "#1B67A5"
-    - state: captain
+    - state: gold
+    - state: ert_commander
   - type: PresetIdCard
     job: ERTLeader
   - type: Item
     heldPrefix: gold
-  - type: NanoChatCard
+  - type: NanoChatCard # DeltaV
     listNumber: false
 
 - type: entity
@@ -697,17 +676,13 @@
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: departmenthead
-      color: "#1B67A5"
-    - state: subdepartment
-      color: "#1B67A5"
-    - state: chaplain
+    - state: gold
+    - state: ert_chaplain # we have the sprite for the id but dont have chaplain ERT equipment for now.
   - type: PresetIdCard
     job: ERTChaplain
   - type: Item
     heldPrefix: blue
-  - type: NanoChatCard
+  - type: NanoChatCard # DeltaV
     listNumber: false
 
 - type: entity
@@ -717,15 +692,11 @@
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: departmenthead
-      color: "#1B67A5"
-    - state: subdepartment
-      color: "#F39F27"
-    - state: stationengineer
+    - state: gold
+    - state: ert_engineer
   - type: PresetIdCard
     job: ERTEngineer
-  - type: NanoChatCard
+  - type: NanoChatCard # DeltaV
     listNumber: false
 
 - type: entity
@@ -735,15 +706,11 @@
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: departmenthead
-      color: "#1B67A5"
-    - state: subdepartment
-      color: "#58C800"
-    - state: janitor
+    - state: gold
+    - state: ert_janitor
   - type: PresetIdCard
     job: ERTJanitor
-  - type: NanoChatCard
+  - type: NanoChatCard # DeltaV
     listNumber: false
 
 - type: entity
@@ -753,15 +720,11 @@
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: departmenthead
-      color: "#1B67A5"
-    - state: subdepartment
-      color: "#5B97BC"
-    - state: medicaldoctor
+    - state: gold
+    - state: ert_medic
   - type: PresetIdCard
     job: ERTMedical
-  - type: NanoChatCard
+  - type: NanoChatCard # DeltaV
     listNumber: false
 
 - type: entity
@@ -771,15 +734,11 @@
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: departmenthead
-      color: "#1B67A5"
-    - state: subdepartment
-      color: "#1B67A5"
-    - state: cc
+    - state: gold
+    - state: ert_security
   - type: PresetIdCard
     job: ERTSecurity
-  - type: NanoChatCard
+  - type: NanoChatCard # DeltaV
     listNumber: false
 
 - type: entity
@@ -787,36 +746,29 @@
   id: MusicianIDCard
   name: musician ID card
   components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: department
-      color: "#878787"
-    - state: subdepartment
-      color: "#878787"
-    - state: musician
-  - type: PresetIdCard
-    job: Musician
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idmusician
+    - type: PresetIdCard
+      job: Musician
 
 - type: entity
-  parent: CentcomIDCard
+  parent: IDCardStandard
   id: CentcomIDCardDeathsquad
   name: death squad ID card
   components:
   - type: Sprite
     layers:
     - state: centcom
-    - state: departmenthead
-      color: "#CB0000"
-    - state: subdepartment
-      color: "#CB0000"
-    - state: death
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
     job: DeathSquad
-  - type: NanoChatCard
+  - type: NanoChatCard # DeltaV
     listNumber: false
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag
 
 - type: entity
   name: passenger ID card
@@ -824,8 +776,9 @@
   id: AgentIDCard
   suffix: Agent
   components:
-  - type: PresetIdCard
-    job: Passenger
+  # Goob edit
+  #- type: PresetIdCard
+  #  job: Passenger
   - type: Access
     tags:
     - Maintenance
@@ -833,11 +786,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#878787"
-    - state: subdepartment
-      color: "#878787"
-    - state: passenger
+    - state: idpassenger
   - type: AgentIDCard
   - type: ActivatableUI
     key: enum.AgentIDCardUiKey.Key
@@ -855,9 +804,7 @@
         type: AgentIDCardBoundUserInterface
       enum.ChameleonUiKey.Key:
         type: ChameleonBoundUserInterface
-  - type: ClothingAddFaction
-    faction: Syndicate
-  - type: NanoChatCard
+  - type: NanoChatCard # DeltaV
     listNumber: false
 
 - type: entity
@@ -871,8 +818,6 @@
     - Maintenance
     - SyndicateAgent
     - NuclearOperative
-  - type: ClothingAddFaction
-    faction: Syndicate
 
 - type: entity
   parent: IDCardStandard
@@ -881,57 +826,39 @@
   components:
   - type: Sprite
     layers:
-    - state: default
-    - state: department
-      color: "#F39F27"
-    - state: subdepartment
-      color: "#F39F27"
-    - state: atmospherictechnician
+    - state: orange
+    - state: idatmospherictechnician
   - type: PresetIdCard
     job: AtmosphericTechnician
 
 - type: entity
-  parent: IDCardStandard
+  parent: [ IDCardStandard, BaseSyndicateContraband ]
   id: SyndicateIDCard
   name: syndicate ID card
   components:
   - type: Sprite
     layers:
-    - state: black
-    - state: department
-      color: "#CB0000"
-    - state: subdepartment
-      color: "#CB0000"
-    - state: syndicate
+    - state: syndie
   - type: Access
     tags:
     - NuclearOperative
     - SyndicateAgent
-  - type: ClothingAddFaction
-    faction: Syndicate
-  - type: NanoChatCard
+  - type: NanoChatCard # DeltaV
     listNumber: false
 
 - type: entity
-  parent: IDCardStandard
+  parent: [ IDCardStandard, BaseMajorContraband ]
   id: PirateIDCard
   name: pirate ID card
   components:
   - type: Sprite
     layers:
-    - state: black
-    - state: department
-      color: "#878787"
-    - state: subdepartment
-      color: "#878787"
-    - state: death
+    - state: pirate
   - type: Access
     tags:
     - NuclearOperative
     - SyndicateAgent
-  - type: ClothingAddFaction
-    faction: Syndicate
-  - type: NanoChatCard
+  - type: NanoChatCard # DeltaV
     listNumber: false
 
 - type: entity
@@ -942,11 +869,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#5B97BC"
-    - state: subdepartment
-      color: "#5B97BC"
-    - state: psychologist
+    - state: idpsychologist
   - type: PresetIdCard
     job: Psychologist
 
@@ -958,11 +881,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#58C800"
-    - state: subdepartment
-      color: "#58C800"
-    - state: headofpersonnel
+    - state: idreporter
   - type: PresetIdCard
     job: Reporter
 
@@ -974,11 +893,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#878787"
-    - state: subdepartment
-      color: "#878787"
-    - state: boxer
+    - state: idboxer
   - type: PresetIdCard
     job: Boxer
 
@@ -990,11 +905,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#58C800"
-    - state: subdepartment
-      color: "#58C800"
-    - state: zookeeper
+    - state: idzookeeper
   - type: PresetIdCard
     job: Zookeeper
 
@@ -1006,11 +917,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#CB0000"
-    - state: subdepartment
-      color: "#CB0000"
-    - state: detective
+    - state: iddetective
   - type: PresetIdCard
     job: Detective
 
@@ -1022,7 +929,7 @@
   components:
   - type: Sprite
     layers:
-    - state: prisoner
+    - state: orange
   - type: Item
     heldPrefix: orange
   - type: Access
@@ -1057,16 +964,11 @@
   - type: Sprite
     layers:
     - state: centcom
-    - state: departmenthead
-      color: "#CB0000"
-    - state: subdepartment
-      color: "#CB0000"
-    - state: cc
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
     job: CBURN
-  - type: NanoChatCard
+  - type: NanoChatCard # DeltaV
     listNumber: false
 
 - type: entity
@@ -1077,15 +979,11 @@
   components:
   - type: Sprite
     layers:
-    - state: rainbow
-    - state: department
-      color: "#5DC574"
-    - state: subdepartment
-      color: "#5DC574"
-    - state: clown
-      color: "#7C0A0A"
+    - state: default
+    - state: idcluwne
   - type: IdCard
     jobTitle: job-title-cluwne
+    jobIcon: JobIconCluwne
   - type: Unremoveable
   - type: NanoChatCard # DeltaV
     listNumber: false
@@ -1098,13 +996,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#F39F27"
-    - state: subdepartment
-      color: "#F39F27"
-    - state: senior
-  - type: PresetIdCard
-    job: SeniorEngineer
+    - state: idseniorengineer
 
 - type: entity
   parent: ResearchIDCard
@@ -1114,13 +1006,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#C96DBF"
-    - state: subdepartment
-      color: "#C96DBF"
-    - state: senior
-  - type: PresetIdCard
-    job: SeniorResearcher
+    - state: idseniorresearcher
 
 - type: entity
   parent: MedicalIDCard
@@ -1130,13 +1016,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#5B97BC"
-    - state: subdepartment
-      color: "#5B97BC"
-    - state: senior
-  - type: PresetIdCard
-    job: SeniorPhysician
+    - state: idseniorphysician
 
 - type: entity
   parent: SecurityIDCard
@@ -1146,46 +1026,7 @@
   - type: Sprite
     layers:
     - state: default
-    - state: department
-      color: "#CB0000"
-    - state: subdepartment
-      color: "#CB0000"
-    - state: senior
-  - type: PresetIdCard
-    job: SeniorOfficer
-
-- type: entity
-  parent: IDCardStandard
-  id: AdminAssistantIDCard
-  name: administrative assistant ID card
-  components:
-  - type: Sprite
-    layers:
-    - state: silver
-    - sprite: DeltaV/Objects/Misc/id_cards.rsi
-      state: idadminassistant
-  - type: Item
-    heldPrefix: silver
-  - type: PresetIdCard
-    job: AdministrativeAssistant
-  - type: NanoChatCard
-    notificationsMuted: true
-    listNumber: false
-
-- type: entity
-  parent: IDCardStandard
-  id: WizardIDCard
-  name: wizard ID card
-  components:
-  - type: Sprite
-    layers:
-    - state: wizard
-    - state: idwizard
-  - type: Access
-    tags:
-    - Wizard
-    - External
-    - Maintenance
+    - state: idseniorofficer
 
 - type: entity
   parent: IDCardStandard
@@ -1209,11 +1050,19 @@
   - type: Access
     groups:
     - AllAccess
+    - Silicon
     tags:
     - CentralCommand
     - NuclearOperative
     - SyndicateAgent
     - Wizard
+    - Xenoborg
+    # Goobstation
+    - NanotrasenRepresentative
+    - BlueshieldOfficer
+  - type: NanoChatCard # DeltaV
+    notificationsMuted: true
+    listNumber: false
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener

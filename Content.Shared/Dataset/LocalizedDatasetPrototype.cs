@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Collections;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -47,9 +53,9 @@ public sealed partial class LocalizedDatasetValues : IReadOnlyList<string>
     {
         get
         {
-            if (index > Count || index < 0)
+            if (index >= Count || index < 0)
                 throw new IndexOutOfRangeException();
-            return Prefix + index;
+            return Prefix + (index + 1);
         }
     }
 

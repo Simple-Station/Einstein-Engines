@@ -1,10 +1,10 @@
-﻿- type: decal
-  id: SpaceStationSign
-  abstract: true
+# SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
 
 - type: decal
   id: SpaceStationSign1
-  parent: SpaceStationSign
   tags: ["station"]
   sprite:
     sprite: Decals/ss14sign.rsi
@@ -12,7 +12,6 @@
 
 - type: decal
   id: SpaceStationSign2
-  parent: SpaceStationSign
   tags: ["station"]
   sprite:
     sprite: Decals/ss14sign.rsi
@@ -20,7 +19,6 @@
 
 - type: decal
   id: SpaceStationSign3
-  parent: SpaceStationSign
   tags: ["station"]
   sprite:
     sprite: Decals/ss14sign.rsi
@@ -28,7 +26,6 @@
 
 - type: decal
   id: SpaceStationSign4
-  parent: SpaceStationSign
   tags: ["station"]
   sprite:
     sprite: Decals/ss14sign.rsi
@@ -36,7 +33,6 @@
 
 - type: decal
   id: SpaceStationSign5
-  parent: SpaceStationSign
   tags: ["station"]
   sprite:
     sprite: Decals/ss14sign.rsi
@@ -44,7 +40,6 @@
 
 - type: decal
   id: SpaceStationSign6
-  parent: SpaceStationSign
   tags: ["station"]
   sprite:
     sprite: Decals/ss14sign.rsi
@@ -52,7 +47,6 @@
 
 - type: decal
   id: SpaceStationSign7
-  parent: SpaceStationSign
   tags: ["station"]
   sprite:
     sprite: Decals/ss14sign.rsi

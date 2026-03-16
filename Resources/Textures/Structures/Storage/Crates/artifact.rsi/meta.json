@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "license": "CC-BY-NC-SA 3.0",
-  "copyright": "Sprites by TheGypsyBaron DS:701266770429739008",
   "size": {
     "x": 32,
     "y": 32
   },
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from baystation at commit https://github.com/Baystation12/Baystation12/commit/a929584d9db319eb7484113221be25cfa1d5dc09. Label sprites by Vermidia.",
   "states": [
     {
       "name": "artifact_container"

@@ -1,11 +1,20 @@
-﻿using Content.Shared.StepTrigger.Components;
+// SPDX-FileCopyrightText: 2024 Adeinitas <147965189+adeinitas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Danger Revolution! <142105406+DangerRevolution@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Timemaster99 <57200767+Timemaster99@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.StepTrigger.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.StepTrigger.Prototypes;
 
 /// <summary>
-///     A group of <see cref="StepTriggerTypePrototype">
+///     Goobstation: A group of <see cref="StepTriggerTypePrototype">
 ///     Used to determine StepTriggerTypes like Tags.
 ///     Used for better work with Immunity.
 ///     StepTriggerTypes in StepTriggerTypes.yml
@@ -60,9 +69,9 @@ public sealed partial class StepTriggerGroup
 
     /// <summary>
     ///     Checks validation (if types of this StepTriggerGroup are similar to types of
-    ///     another ProtectedFromStepTriggersComponent.
+    ///     another StepTriggerImmuneComponent.
     /// </summary>
-    public bool IsValid(ProtectedFromStepTriggersComponent component)
+    public bool IsValid(StepTriggerImmuneComponent component)
     {
         if (component.Whitelist is null)
             return false;

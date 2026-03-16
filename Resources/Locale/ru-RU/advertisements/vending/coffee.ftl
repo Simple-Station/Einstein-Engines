@@ -1,4 +1,3 @@
-advertisement-coffee-0 = Кофе помогает работать!
 advertisement-coffee-1 = Выпейте!
 advertisement-coffee-2 = Выпьем!
 advertisement-coffee-3 = На здоровье!
@@ -17,4 +16,3 @@ thankyou-coffee-1 = Наслаждайтесь!
 thankyou-coffee-2 = Пейте пока горячее!
 thankyou-coffee-3 = Приготовление завершено.
 thankyou-coffee-4 = Напиток подан.
-thankyou-coffee-0 = Спасибо что воспользовались { $name }!

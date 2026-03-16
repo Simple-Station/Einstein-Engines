@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Goobstation.Common.Effects;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
 using Content.Shared.Emag.Systems;
@@ -15,11 +24,11 @@ namespace Content.Shared.Ninja.Systems;
 public sealed class EmagProviderSystem : EntitySystem
 {
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly EmagSystem _emag = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SharedNinjaGlovesSystem _gloves = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly SparksSystem _sparks = default!; // goob edit - sparks everywhere
 
     public override void Initialize()
     {
@@ -54,6 +63,7 @@ public sealed class EmagProviderSystem : EntitySystem
             return;
 
         _audio.PlayPredicted(comp.EmagSound, uid, uid);
+        _sparks.DoSparks(Transform(args.Target).Coordinates); // goob edit - sparks everywhere
 
         _adminLogger.Add(LogType.Emag, LogImpact.High, $"{ToPrettyString(uid):player} emagged {ToPrettyString(target):target} with flag(s): {ent.Comp.EmagType}");
         var ev = new EmaggedSomethingEvent(target);

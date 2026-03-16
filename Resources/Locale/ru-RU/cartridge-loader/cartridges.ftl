@@ -1,27 +1,27 @@
 device-pda-slot-component-slot-name-cartridge = Картридж
 default-program-name = Программа
 notekeeper-program-name = Заметки
-nano-task-program-name = НаноДела
-news-read-program-name = Новости станции
-crew-manifest-program-name = Манифест экипажа
-crew-manifest-cartridge-loading = Загрузка...
-net-probe-program-name = Зонд сетей
-net-probe-scan = Просканирован { $device }!
+nano-task-program-name = NanoTask
+news-read-program-name = NanoNews
+crew-manifest-program-name = Манифест
+crew-manifest-cartridge-loading = Загрузка ...
+net-probe-program-name = NetProbe
+net-probe-scan = { $device } просканирован!
 net-probe-label-name = Название
 net-probe-label-address = Адрес
 net-probe-label-frequency = Частота
 net-probe-label-network = Сеть
-log-probe-program-name = Зонд логов
-log-probe-scan = Загружены логи устройства { $device }!
+log-probe-program-name = LogProbe
+log-probe-scan = Логи { $device } скачались!
 log-probe-label-time = Время
-log-probe-label-accessor = Использовано:
+log-probe-label-accessor = Получен доступ
 log-probe-label-number = #
 log-probe-print-button = Распечатать логи
 log-probe-printout-device = Сканированное устройство: { $name }
 log-probe-printout-header = Последние логи:
 log-probe-printout-entry = #{ $number } / { $time } / { $accessor }
-astro-nav-program-name = АстроНав
-med-tek-program-name = МедТек
+astro-nav-program-name = AstroNav
+med-tek-program-name = MedTek
 
 # NanoTask cartridge
 
@@ -59,15 +59,15 @@ nano-task-ui-new-task = Новая задача
 nano-task-ui-description-label = Описание:
 nano-task-ui-description-placeholder = Взять что-то важное
 nano-task-ui-requester-label = Заявитель:
-nano-task-ui-requester-placeholder = Джон Нанотрейзен
+nano-task-ui-requester-placeholder = Иван Иванов
 nano-task-ui-item-title = Редактировать задачу
-nano-task-printed-description = Описание: { $description }
-nano-task-printed-requester = Заявитель: { $requester }
-nano-task-printed-high-priority = Приоритет: Высокий
-nano-task-printed-medium-priority = Приоритет: Средний
-nano-task-printed-low-priority = Приоритет: Низкий
+nano-task-printed-description = [bold]Описание[/bold]: { $description }
+nano-task-printed-requester = [bold]Заявитель[/bold]: { $requester }
+nano-task-printed-high-priority = [bold]Приоритет[/bold]: [color=red]Высокий[/color]
+nano-task-printed-medium-priority = [bold]Приоритет[/bold]: Средний
+nano-task-printed-low-priority = [bold]Приоритет[/bold]: Низкий
 # Wanted list cartridge
-wanted-list-program-name = Список разыскиваемых
+wanted-list-program-name = WatchDog
 wanted-list-label-no-records = Всё спокойно, ковбой.
 wanted-list-search-placeholder = Поиск по имени и статусу
 wanted-list-age-label = [color=darkgray]Возраст:[/color] [color=white]{ $age }[/color]

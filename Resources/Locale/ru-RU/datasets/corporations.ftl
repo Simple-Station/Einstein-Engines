@@ -1,9 +1,9 @@
-traitor-corporations-dataset-1 = Промышленное объединение "Киберсан"
+traitor-corporations-dataset-1 = CyberSun Industries
 traitor-corporations-dataset-2 = Мародёры Горлекса
-traitor-corporations-dataset-3 = МИ-13
-traitor-corporations-dataset-4 = Кооператив "Тигр"
-traitor-corporations-dataset-5 = С.Е.Л.Ф.
-traitor-corporations-dataset-6 = "Консорциум по защите прав животных"
-traitor-corporations-dataset-7 = "Донк ко."
-traitor-corporations-dataset-8 = Корпорация "Ваффля"
-traitor-corporations-dataset-9 = Интердайн Фармасьютикалс
+traitor-corporations-dataset-3 = MI13
+traitor-corporations-dataset-4 = Tiger Cooperative
+traitor-corporations-dataset-5 = S.E.L.F.
+traitor-corporations-dataset-6 = Animal Rights Consortium
+traitor-corporations-dataset-7 = Donk Corporation
+traitor-corporations-dataset-8 = Waffle Corporation
+traitor-corporations-dataset-9 = Interdyne Pharmaceutics

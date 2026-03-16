@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Movement.Components;
 using Robust.Shared.Physics.Events;
 
@@ -15,39 +21,37 @@ public abstract class SharedFloorOcclusionSystem : EntitySystem
         SubscribeLocalEvent<FloorOccluderComponent, EndCollideEvent>(OnEndCollide);
     }
 
-    private void OnStartCollide(EntityUid uid, FloorOccluderComponent component, ref StartCollideEvent args)
+    private void OnStartCollide(Entity<FloorOccluderComponent> entity, ref StartCollideEvent args)
     {
         var other = args.OtherEntity;
 
         if (!TryComp<FloorOcclusionComponent>(other, out var occlusion) ||
-            occlusion.Colliding.Contains(uid))
+            occlusion.Colliding.Contains(entity.Owner))
         {
             return;
         }
 
-        SetEnabled(other, occlusion, true);
-        occlusion.Colliding.Add(uid);
+        occlusion.Colliding.Add(entity.Owner);
+        Dirty(other, occlusion);
+        SetEnabled((other, occlusion));
     }
 
-    private void OnEndCollide(EntityUid uid, FloorOccluderComponent component, ref EndCollideEvent args)
+    private void OnEndCollide(Entity<FloorOccluderComponent> entity, ref EndCollideEvent args)
     {
         var other = args.OtherEntity;
 
         if (!TryComp<FloorOcclusionComponent>(other, out var occlusion))
             return;
 
-        occlusion.Colliding.Remove(uid);
-
-        if (occlusion.Colliding.Count == 0)
-            SetEnabled(other, occlusion, false);
-    }
-
-    protected virtual void SetEnabled(EntityUid uid, FloorOcclusionComponent component, bool enabled)
-    {
-        if (component.Enabled == enabled)
+        if (!occlusion.Colliding.Remove(entity.Owner))
             return;
 
-        component.Enabled = enabled;
-        Dirty(uid, component);
+        Dirty(other, occlusion);
+        SetEnabled((other, occlusion));
+    }
+
+    protected virtual void SetEnabled(Entity<FloorOcclusionComponent> entity)
+    {
+
     }
 }

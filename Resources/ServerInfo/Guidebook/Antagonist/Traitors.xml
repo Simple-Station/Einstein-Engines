@@ -1,76 +1,130 @@
+<!--
+SPDX-FileCopyrightText: 2023 Derby <Derby@ss14>
+SPDX-FileCopyrightText: 2023 DerbyX <50932435+DerbyX@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 liltenhead <104418166+liltenhead@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+SPDX-FileCopyrightText: 2024 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Ghagliiarghii <68826635+Ghagliiarghii@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Piras314 <92357316+Piras314@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <Document>
   # Предатели
 
-  - Предатель — антагонист на службе у Синдиката. У него есть доступ к различным инструментам и оружию Синдиката через [color=#a4885c]аплинк[/color].
-  - Предатели могут использовать кодовые слова, чтобы узнавать друг друга и сотрудничать.
-  - В раунде «Предатели» роль может выпасть любому, кроме руководителей отделов, капитана и сотрудников службы безопасности.
-  - Предателям следует в первую очередь сосредоточиться на успешном выполнении своих целей к концу раунда.
+  - Предатель - это антагонист, нанятый Синдикатом. Они имеют доступ к различным инструментам и оружию Синдиката через [color=#a4885c]Аплинк[/color].
+  - Предатели могут использовать кодовые слова, чтобы идентифицировать себя друг с другом для сотрудничества.
+  - В раунде предателем может стать любой игрок, кроме глав отделов, капитана и сотрудников службы безопасности.
+  - Предатели должны в первую очередь сосредоточиться на том, чтобы успешно выполнить свои задачи к концу раунда.
 
   ## Аплинк
   <Box>
-    <GuideEntityEmbed Entity="BaseUplinkRadio40TC" Caption="Аплинк"/>
+    <GuideEntityEmbed Entity="BaseUplinkRadio100TC" Caption="Аплинк"/>
   </Box>
-  - [color=#a4885c]Аплинк[/color] — ваш ключевой инструмент: в нём за [color=#a4885c]телекристаллы[/color] (TC) можно покупать инструменты и оружие.
+  - [color=#a4885c]Аплинк[/color] - самый важный инструмент Предателя, так как с его помощью можно покупать инструменты и оружие за [color=#a4885c]телекристаллы[/color] (ТК).
   <Box>
     <GuideEntityEmbed Entity="Telecrystal" Caption="Телекристаллы"/>
   </Box>
-  Предатели служат [color=#ff0000]Синдикату[/color]. Вы — «спящий» агент с доступом к различным инструментам и оружию через [bold]аплинк[/bold].
-  Вы также получаете [bold]кодовые слова[/bold] для опознания других агентов, а скоординированная команда предателей способна на [italic]по‑настоящему жёсткие вещи[/italic].
-
-  Предателем может стать любой, кроме [textlink="руководителей отделов" link="Command"] и сотрудников [textlink="Службы безопасности" link="Security"].
-
-  ## Аплинк и активация
-  [color=cyan]Аплинк[/color] — ваш главный инструмент. Обменивайте стартовые 20 [color=red]телекристаллов[/color] (TC) на предметы, которые помогут выполнить цели.
-
-  Нажмите [color=yellow][bold][keybind="OpenCharacterMenu"][/bold][/color], чтобы увидеть личный код аплинка. [bold]Установите его мелодией звонка КПК — это откроет аплинк.[/bold]
-  Та же кнопка показывает ваши цели и кодовые слова.
-
-  Если при активации у вас нет КПК, выдаётся [color=cyan]имплант‑аплинк[/color] [bold]за полную стоимость [color=red]TC[/color] импланта[/bold].
-  Доступ к нему — с панели быстрых слотов.
+  - [color=#a4885c]Телекристаллы[/color] даются в самом начале, чтобы дать предателям преимущество на станции. Другие предатели могут обменивать свои [color=#a4885c]телекристаллы[/color] друг с другом, повышая их обычное количество.
+  - Использование [color=#a4885c]КПК[/color] и установка нужного рингтона-кода к аплинку даёт вам множество возможностей для борьбы со станцией и её экипажем.
   <Box>
-    <GuideEntityEmbed Entity="PassengerPDA" Caption="КПК"/>
-    <GuideEntityEmbed Entity="Telecrystal" Caption="Телекристаллы"/>
-    <GuideEntityEmbed Entity="BaseUplinkRadio" Caption="Имплант‑аплинк"/>
+  <GuideEntityEmbed Entity="PassengerPDA" Caption="КПК"/>
+  </Box>
+  Не забудьте заблокировать свой [color=#a4885c]КПК[/color], чтобы никто не смог увидеть аплинк!
+  - Различные приспособления включают:
+  <Box>
+    <GuideEntityEmbed Entity="WeaponPistolViper" Caption="Пистолеты и винтовки"/>
+    <GuideEntityEmbed Entity="FireAxe" State="icon" Caption="Ближнее оружие"/>
+    <GuideEntityEmbed Entity="C4" Caption=" Взрывчатку"/>
+    <GuideEntityEmbed Entity="Syringe" Caption="Импланты"/>
+    <GuideEntityEmbed Entity="ClothingBackpackDuffelSyndicate" Caption="Различные наборы"/>
   </Box>
 
-  [bold]Не забудьте закрыть аплинк на КПК, чтобы его не увидели посторонние.[/bold] Не дайте [color=#cb0000]СБ[/color] добраться до этой первосортной контрабанды!
+  ## Цели
 
-  Имплант‑аплинки обычно недоступны другим, поэтому лишних мер защиты у них нет. Однако их можно вынуть пустым имплантером.
+  - Став предателем, вы получите список задач, начиная от побега живым, кражи чего-то, и заканчивая убийством. Использование [color=#a4885c]Аплинка[/color] поможет вам справиться с большинством из этих задач.
 
+  ## Список возможных целей
+
+  - Убить или не дать покинуть станцию случайному не предателю.
+  - Убить или не дать покинуть станцию случайному предателю.
+  - Убить или не дать покинуть станцию случайному главе отдела.
+  - Не дать умереть случайно выбранному предателю.
+  - Сбежать на эвакуационном шаттле живым и без наручников.
+  - Помогите случайно выбранному предателю завершить 2/3 его целей.
+  - Умереть славной смертью.
+  - Украсть у Капитана [color=#a4885c]ID карту[/color].
   <Box>
-    <GuideEntityEmbed Entity="Hypospray" Caption="Гипоспрей главврача"/>
+    <GuideEntityEmbed Entity="CaptainIDCard" Caption="ID карта капитана"/>
   </Box>
-  - Украсть [color=#a4885c]скафандр[/color] мистагога.
+
+  Покупки, которые вы делаете, должны помогать вам в выполнении целей. Некоторое снаряжение может быть бесполезным, и вам придётся выбирать между скрытностью и громкой игрой.
+
+  ## Координация
+  Кодовые слова — это слова или фразы, известные каждому предателю. Они предоставляют скрытый способ идентифицировать или установить контакт с другим предателем, что полезно, если ваши задачи включают [italic][color=cyan]помощь с их целями.[/color][/italic]
+
+  Когда находите союзников, [bold]вы можете передавать им [color=red]телекристаллы[/color] со своего аплинка.[/bold] Они могут положить их в свой аплинк для использования.
+
+  Некоторые предметы в аплинке требуют более 100 ТК для покупки, так что для их получения придётся делиться.
+
+  ## Убийство
+  Одной из ваших целей может быть [italic][color=cyan]убийство или изоляция члена экипажа.[/color][/italic]
+
+  Вы можете [color=cyan]изолировать[/color] цель, [bold]не позволив ей добраться до станции ЦК[/bold] через эвакуационный шаттл или спасательный модуль.
+
+  Если цель слишком важна или её нельзя изолировать, придётся действовать радикально и [color=cyan]убить[/color] её. Убедитесь, что цель мертва к моменту прибытия [bold]эвакуационного шаттла на СЦК,[/bold] и не давайте её оживить.
+
+  Помните, Синдикат хочет, чтобы были устранены только ваши цели. [color=red]Старайтесь избегать массовых убийств и серьёзного ущерба станции,[/color] так как чем больше невинных жизней вы заберёте, тем большей угрозой станете для станции.
+
+  ## Уклонение и самоубийство
+  Ваши задачи могут требовать [italic][color=cyan]добраться до СЦК живым, не будучи убитым или захваченным.[/color][/italic] Не позвольте [color=#cb0000]Службе Безопасности[/color] остановить вас, выполняйте остальные задачи и [bold]вернитесь живым.[/bold]
+
+  Также задачи могут требовать [italic][color=cyan]славной смерти.[/color][/italic] [bold]Не возвращайтесь к жизни,[/bold] иначе вы можете проснуться в наручниках.
+
+  ## Кража
+  Часто вам придётся [italic][color=cyan]красть предметы главы отдела.[/color][/italic]
+
+  Цель может находиться в офисе или при себе. Возможно, придётся убить носителя, если не удается выкрасть цель.
+
+  Среди возможных предметов для кражи:
+  - Украсть [color=yellow]ID карту[/color], [bold]антикварный лазерный пистолет[/bold], [bold]джетпак[/bold] или [bold]диск ядерной аутентификации[/bold] у Капитана.
   <Box>
-    <GuideEntityEmbed Entity="ClothingOuterHardsuitRd" Caption="Скафандр мистагога"/>
+    <GuideEntityEmbed Entity="WeaponAntiqueLaser" Caption="Капитанский Антикварный Лазерный Пистолет"/>
   </Box>
-  - Украсть [color=#a4885c]ручной телепортёр[/color] мистагога.
+  - Украсть у Капитана [color=#a4885c]Джетпак[/color].
   <Box>
-    <GuideEntityEmbed Entity="HandTeleporter" Caption="Ручной телепортёр"/>
+    <GuideEntityEmbed Entity="JetpackCaptainFilled" Caption="Джетпак Капитана"/>
   </Box>
-  - Украсть [color=#a4885c]энерговинтовку X‑01 MultiPhase[/color] у начальника СБ.
+  - Украсть у Главного Врача [color=#a4885c]Гипоспрей[/color].
   <Box>
-    <GuideEntityEmbed Entity="WeaponEnergyGunMultiphase" Caption="Личная энерговинтовка начальника СБ"/>
+    <GuideEntityEmbed Entity="Hypospray" Caption="Гипоспрей Главврача"/>
   </Box>
-  - Украсть [color=#a4885c]улучшенные магнитоботы[/color] у главного инженера.
+  - Украсть у Научного Руководителя [color=#a4885c]Скафандр[/color].
   <Box>
-    <GuideEntityEmbed Entity="ClothingShoesBootsMagAdv" Caption="Улучшенные магнитоботы"/>
+    <GuideEntityEmbed Entity="ClothingOuterHardsuitRd" Caption="Скафандр Научрука"/>
   </Box>
-  - Украсть у [color=#cb0000]начальника СБ[/color] [bold]энергодробовик[/bold].
+  - Украсть у Научного Руководителя [color=#a4885c]Ручной Телепорт[/color].
   <Box>
-    <GuideEntityEmbed Entity="WeaponEnergyShotgun" Caption="Энергодробовик"/>
+    <GuideEntityEmbed Entity="HandTeleporter" Caption="Ручной Телепорт"/>
   </Box>
-  - Украсть [color=#a4885c]ядерный диск[/color].
+  - Украсть у Старшего Инженера [color=#a4885c]Продвинутные Магнитные Сапоги[/color].
   <Box>
-    <GuideEntityEmbed Entity="NukeDisk" Caption="Ядерный диск"/>
+    <GuideEntityEmbed Entity="ClothingShoesBootsMagAdv" Caption="Продвинутые Магнитные Сапоги"/>
   </Box>
-  - Украсть [color=#a4885c]счастливую купюру[/color] офицера логистики.
+  - Украсть [color=#a4885c]Диск Ядерной Аутентификации[/color].
   <Box>
-    <GuideEntityEmbed Entity="SpaceCashLuckyBill" Caption="Счастливая купюра офицера логистики"/>
+    <GuideEntityEmbed Entity="NukeDisk" Caption="Диск Ядерной Аутентификации"/>
   </Box>
-  - Украсть [color=#a4885c]фотоальбом Иана[/color] у главы персонала.
+  - Украсть [color=#a4885c]Мясо корги[/color].
   <Box>
-    <GuideEntityEmbed Entity="BookIanDossier" Caption="Фотоальбом Иана (у главы персонала)"/>
+  <GuideEntityEmbed Entity="MobCorgiIan" Caption="Корги"/>
+  <GuideEntityEmbed Entity="FoodMeatCorgi" Caption="Мясо корги"/>
   </Box>
 
 </Document>

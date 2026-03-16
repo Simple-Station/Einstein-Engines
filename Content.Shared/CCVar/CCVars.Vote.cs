@@ -1,4 +1,9 @@
-﻿using Robust.Shared.Configuration;
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.CCVar;
 
@@ -26,19 +31,19 @@ public sealed partial class CCVars
     ///     Config for when the restart vote should be allowed to be called based on percentage of ghosts.
     /// </summary>
     public static readonly CVarDef<int> VoteRestartGhostPercentage =
-        CVarDef.Create("vote.restart_ghost_percentage", 75, CVar.SERVERONLY);
+        CVarDef.Create("vote.restart_ghost_percentage", 55, CVar.SERVERONLY);
 
     /// <summary>
     ///     See vote.enabled, but specific to preset votes
     /// </summary>
     public static readonly CVarDef<bool> VotePresetEnabled =
-        CVarDef.Create("vote.preset_enabled", false, CVar.SERVERONLY);
+        CVarDef.Create("vote.preset_enabled", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     See vote.enabled, but specific to map votes
     /// </summary>
     public static readonly CVarDef<bool> VoteMapEnabled =
-        CVarDef.Create("vote.map_enabled", false, CVar.SERVERONLY);
+        CVarDef.Create("vote.map_enabled", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     The required ratio of the server that must agree for a restart round vote to go through.
@@ -74,7 +79,7 @@ public sealed partial class CCVars
     ///     Sets the duration of the gamemode/preset vote timer.
     /// </summary>
     public static readonly CVarDef<int>
-        VoteTimerPreset = CVarDef.Create("vote.timerpreset", 60, CVar.SERVERONLY);
+        VoteTimerPreset = CVarDef.Create("vote.timerpreset", 30, CVar.SERVERONLY);
 
     /// <summary>
     ///     Sets the duration of the map vote timer when ALONE.
@@ -98,7 +103,7 @@ public sealed partial class CCVars
     ///     Whether a votekick initiator must be a ghost or not.
     /// </summary>
     public static readonly CVarDef<bool> VotekickInitiatorGhostRequirement =
-        CVarDef.Create("votekick.initiator_ghost_requirement", false, CVar.SERVERONLY);
+        CVarDef.Create("votekick.initiator_ghost_requirement", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     Should the initiator be whitelisted to initiate a votekick?
@@ -116,7 +121,7 @@ public sealed partial class CCVars
     ///     Whether a votekick voter must be a ghost or not.
     /// </summary>
     public static readonly CVarDef<bool> VotekickVoterGhostRequirement =
-        CVarDef.Create("votekick.voter_ghost_requirement", false, CVar.SERVERONLY);
+        CVarDef.Create("votekick.voter_ghost_requirement", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     Config for how many hours playtime a player must have to be able to vote on a votekick.
@@ -146,13 +151,13 @@ public sealed partial class CCVars
     ///     The delay for which two votekicks are allowed to be made by separate people, in seconds.
     /// </summary>
     public static readonly CVarDef<float> VotekickTimeout =
-        CVarDef.Create("votekick.timeout", 120f, CVar.SERVERONLY);
+        CVarDef.Create("votekick.timeout", 60f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Sets the duration of the votekick vote timer.
     /// </summary>
     public static readonly CVarDef<int>
-        VotekickTimer = CVarDef.Create("votekick.timer", 60, CVar.SERVERONLY);
+        VotekickTimer = CVarDef.Create("votekick.timer", 45, CVar.SERVERONLY);
 
     /// <summary>
     ///     Config for how many hours playtime a player must have to get protection from the Raider votekick type when playing as an antag.

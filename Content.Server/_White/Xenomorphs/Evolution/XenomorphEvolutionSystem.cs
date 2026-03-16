@@ -11,7 +11,6 @@ using Content.Shared._White.Xenomorphs.Xenomorph;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.Popups;
-using Content.Shared.RadialSelector;
 using Content.Shared.Standing;
 using Robust.Server.Containers;
 using Robust.Server.GameObjects;
@@ -111,7 +110,8 @@ public sealed class XenomorphEvolutionSystem : EntitySystem
         _mind.TransferTo(mindUid, newXeno, mind:mind);
         _mind.UnVisit(mindUid, mind);
 
-        RaiseLocalEvent(uid, new DropHandItemsEvent());
+        var dropHandItemsEvent = new DropHandItemsEvent();
+        RaiseLocalEvent(uid, ref dropHandItemsEvent);
         RaiseLocalEvent(uid, new AfterXenomorphEvolutionEvent(newXeno, mindUid, args.Caste));
 
         _adminLog.Add(LogType.Mind, $"{ToPrettyString(uid)} evolved into {ToPrettyString(newXeno)}");
@@ -147,8 +147,7 @@ public sealed class XenomorphEvolutionSystem : EntitySystem
     {
         if (evolveTo == null
             || !_protoManager.TryIndex(evolveTo, out var xenomorphPrototype)
-            || !xenomorphPrototype.TryGetComponent<XenomorphComponent>(out var xenomorph, _componentFactory)
-            || !_mind.TryGetMind(uid, out _, out _))
+            || !xenomorphPrototype.TryGetComponent<XenomorphComponent>(out var xenomorph, _componentFactory)) // Goobstation
             return false;
 
         var ev = new BeforeXenomorphEvolutionEvent(xenomorph.Caste, checkNeedCasteDeath);

@@ -1,69 +1,75 @@
+# SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 - type: entity
-  name: medibot spawner
+  parent: MarkerBase
   id: SpawnMobMedibot
-  parent: MarkerBase
+  name: medibot spawner
   components:
   - type: Sprite
     layers:
-      - state: green
-      - sprite: Mobs/Silicon/Bots/medibot.rsi
-        state: medibot
+    - state: green
+    - sprite: Mobs/Silicon/Bots/medibot.rsi
+      state: medibot
   - type: ConditionalSpawner
     prototypes:
-      - MobMedibot
+    - MobMedibot
 
 - type: entity
-  name: cleanbot spawner
+  parent: MarkerBase
   id: SpawnMobCleanBot
-  parent: MarkerBase
+  name: cleanbot spawner
   components:
   - type: Sprite
     layers:
-      - state: green
-      - sprite: Mobs/Silicon/Bots/cleanbot.rsi
-        state: cleanbot
+    - state: green
+    - sprite: Mobs/Silicon/Bots/cleanbot.rsi
+      state: cleanbot
   - type: ConditionalSpawner
     prototypes:
-      - MobCleanBot
+    - MobCleanBot
 
 - type: entity
-  name: disablerbot spawner
-  id: SpawnMobDisablerBot
   parent: MarkerBase
+  id: SpawnMobFireBot
+  name: firebot spawner
   components:
   - type: Sprite
     layers:
-      - state: green
-      - sprite: Mobs/Silicon/Bots/disablerbot.rsi
-        state: disablerbot
+    - state: green
+    - sprite: Mobs/Silicon/Bots/firebot.rsi
+      state: firebot
   - type: ConditionalSpawner
     prototypes:
-      - MobDisablerBot
+    - MobFireBot
 
 - type: entity
-  name: batonbot spawner
-  id: SpawnMobBatonBot
   parent: MarkerBase
+  id: SpawnMobSupplyBot
+  name: supplybot spawner
   components:
   - type: Sprite
     layers:
-      - state: green
-      - sprite: Mobs/Silicon/Bots/batonbot.rsi
-        state: batonbot
+    - state: green
+    - sprite: Mobs/Silicon/Bots/supplybot.rsi
+      state: supplybot
   - type: ConditionalSpawner
     prototypes:
-      - MobBatonBot
+    - MobSupplyBot
 
 - type: entity
-  name: plantbot spawner
-  id: SpawnMobPlantbot
   parent: MarkerBase
+  id: SpawnMobHonkBot
+  name: honkbot spawner
   components:
   - type: Sprite
     layers:
-      - state: green
-      - sprite: Mobs/Silicon/Bots/plantbot.rsi
-        state: plantbot
+    - state: green
+    - sprite: Mobs/Silicon/Bots/honkbot.rsi
+      state: honkbot
   - type: ConditionalSpawner
     prototypes:
-      - MobPlantbot
+    - MobHonkBot

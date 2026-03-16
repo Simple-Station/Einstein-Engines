@@ -1,0 +1,56 @@
+<Document>
+
+  # Адский разрыв
+
+  <Box>
+    <GuideEntityEmbed Entity="LegionnaireBonfire" Caption=""/>
+  </Box>
+
+  Адский разрыв — это [textlink="боевое искусство" link="MartialArts"], сосредоточенное на безжалостном уничтожении орд демонов с ужасающей эффективностью. Это искусство могут постичь лишь демоны резни, поскольку для его освоения требуется огромное количество чистой силы и мощи. Полное овладение этим искусством позволит тебе окрасить станцию кровью. Никто не укроется от твоей резни.
+
+  ## Особые способности
+
+  Мастера Адского разрыва наносят колоссальный урон за короткое время, делая их непревзойдёнными в рукопашном бою.
+
+  ## Комбо-атаки
+
+  ### Срыв
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookGrab" Caption=""/>
+  </Box>
+
+  Наносит мощный режущий урон и вызывает кровотечение у цели.
+
+  ### Отвал башки
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookGrab" Caption=""/>
+  </Box>
+
+  Отрывает голову у мёртвого противника — чрезвычайно смертоносно. Невозможно выполнить, если цель жива.
+
+  ### Адский удар
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+  </Box>
+
+  Сбивает противника с ног и наносит сильный урон по выносливости. Если ты упал, то поднимаешься.
+
+  ### Удар с разворота
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+  </Box>
+
+  Отбрасывает поверженного противника. Невозможно выполнить, находясь на земле.
+
+</Document>

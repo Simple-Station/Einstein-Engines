@@ -1,0 +1,48 @@
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 starch <starchpersonal@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: startingGear
+  id: HelldiverGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMercenary
+    back: WeaponRifleM90
+    belt: ClothingBeltMercWebbingHelldiverFilled
+    mask: ClothingMaskGasMerc
+    eyes: ClothingEyesGlassesMercenary # Night Vision when added
+    ears: ClothingHeadsetAltFreelancer
+    gloves: ClothingHandsMercGlovesCombat
+    neck: ClothingNeckCloakHelldiver
+    head: ClothingHeadHelmetHelldiver
+    outerClothing: ClothingOuterArmorHelldiver
+    suitstorage: DoubleEmergencyOxygenTankFilled
+    shoes: ClothingShoesBootsMercFilled
+    id: HelldiverPDA
+    pocket1: ToolDebug
+    pocket2: WeaponPistolEchis
+
+- type: entity
+  parent: ClothingBeltMercWebbing
+  id: ClothingBeltMercWebbingHelldiverFilled
+  suffix: Helldiver, Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: HelldiverBeltFillTable
+
+- type: entityTable
+  id: HelldiverBeltFillTable
+  table: !type:AllSelector
+    children:
+    - id: MagazineRifle
+      amount: !type:ConstantNumberSelector
+        value: 3
+    - id: MagazineBoxRifleBig
+    - id: ExGrenade
+      amount: !type:ConstantNumberSelector
+        value: 2
+    - id: MedkitCombatFilled

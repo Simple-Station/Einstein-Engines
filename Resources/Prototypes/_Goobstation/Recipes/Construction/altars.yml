@@ -1,0 +1,11 @@
+- type: construction
+  id: AltarConvert
+  graph: AltarsGraph
+  targetNode: AltarConvertNode
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked

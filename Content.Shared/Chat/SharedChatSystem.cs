@@ -1,4 +1,36 @@
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2023 HerCoyote23 <131214189+HerCoyote23@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Interrobang01 <113810873+Interrobang01@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 gus <august.eymann@gmail.ccom>
+// SPDX-FileCopyrightText: 2023 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2023 router <messagebus@vk.com>
+// SPDX-FileCopyrightText: 2024 Kot <1192090+koteq@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 CerberusWolfie <wb.johnb.willis@gmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Rinary <72972221+Rinary1@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
+// SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
+// SPDX-FileCopyrightText: 2025 Zekins <zekins3366@gmail.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Collections.Frozen;
+using Content.Shared._Starlight.CollectiveMind; // Goobstation - Starlight collective mind port
 using System.Text.RegularExpressions;
 using Content.Shared.Popups;
 using Content.Shared.Radio;
@@ -6,7 +38,7 @@ using Content.Shared.Speech;
 using Robust.Shared.Console;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization;
+using Robust.Shared.Serialization; // Einstein Engines - Language
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Chat;
@@ -26,15 +58,18 @@ public abstract class SharedChatSystem : EntitySystem
     public const char AdminPrefix = ']';
     public const char WhisperPrefix = ',';
     public const char TelepathicPrefix = '='; //Nyano - Summary: Adds the telepathic channel's prefix.
+    public const char CollectiveMindPrefix = '+'; // Goobstation - Starlight collective mind port
     public const char DefaultChannelKey = 'h';
 
-    [ValidatePrototypeId<RadioChannelPrototype>]
-    public const string CommonChannel = "Common";
+    public const int VoiceRange = 10; // how far voice goes in world units
+    public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
+    public const int WhisperMuffledRange = 5; // how far whisper goes at all, in world units
+    public const string DefaultAnnouncementSound = "/Audio/Announcements/announce.ogg";
 
-    public static string DefaultChannelPrefix = $"{RadioChannelPrefix}{DefaultChannelKey}";
+    public static readonly ProtoId<RadioChannelPrototype> CommonChannel = "Common";
 
-    [ValidatePrototypeId<SpeechVerbPrototype>]
-    public const string DefaultSpeechVerb = "Default";
+    public static readonly string DefaultChannelPrefix = $"{RadioChannelPrefix}{DefaultChannelKey}";
+    public static readonly ProtoId<SpeechVerbPrototype> DefaultSpeechVerb = "Default";
 
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
@@ -44,23 +79,39 @@ public abstract class SharedChatSystem : EntitySystem
     /// </summary>
     private FrozenDictionary<char, RadioChannelPrototype> _keyCodes = default!;
 
+    // Goobstation - Starlight collective mind port
+    private FrozenDictionary<char, CollectiveMindPrototype> _mindKeyCodes = default!;
+
     public override void Initialize()
     {
         base.Initialize();
-        DebugTools.Assert(_prototypeManager.HasIndex<RadioChannelPrototype>(CommonChannel));
+        DebugTools.Assert(_prototypeManager.HasIndex(CommonChannel));
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypeReload);
         CacheRadios();
+        CacheCollectiveMinds(); // Goobstation - Starlight collective mind port
     }
 
     protected virtual void OnPrototypeReload(PrototypesReloadedEventArgs obj)
     {
         if (obj.WasModified<RadioChannelPrototype>())
             CacheRadios();
+
+        // Goobstation - Starlight collective mind port
+        if (obj.WasModified<CollectiveMindPrototype>())
+            CacheCollectiveMinds();
     }
 
     private void CacheRadios()
     {
         _keyCodes = _prototypeManager.EnumeratePrototypes<RadioChannelPrototype>()
+            .ToFrozenDictionary(x => x.KeyCode);
+    }
+
+    // Goobstation - Starlight collective mind port
+    private void CacheCollectiveMinds()
+    {
+        _prototypeManager.PrototypesReloaded -= OnPrototypeReload;
+        _mindKeyCodes = _prototypeManager.EnumeratePrototypes<CollectiveMindPrototype>()
             .ToFrozenDictionary(x => x.KeyCode);
     }
 
@@ -71,7 +122,7 @@ public abstract class SharedChatSystem : EntitySystem
     public SpeechVerbPrototype GetSpeechVerb(EntityUid source, string message, SpeechComponent? speech = null)
     {
         if (!Resolve(source, ref speech, false))
-            return _prototypeManager.Index<SpeechVerbPrototype>(DefaultSpeechVerb);
+            return _prototypeManager.Index(DefaultSpeechVerb);
 
         // check for a suffix-applicable speech verb
         SpeechVerbPrototype? current = null;
@@ -110,7 +161,7 @@ public abstract class SharedChatSystem : EntitySystem
         if (!(input.StartsWith(RadioChannelPrefix) || input.StartsWith(RadioChannelAltPrefix)))
             return;
 
-        if (!_keyCodes.TryGetValue(input[1], out _))
+        if (!_keyCodes.TryGetValue(char.ToLower(input[1]), out _))
             return;
 
         prefix = input[..2];
@@ -181,17 +232,70 @@ public abstract class SharedChatSystem : EntitySystem
         return true;
     }
 
+    // Goobstation - Starlight collective mind port
+    public bool TryProccessCollectiveMindMessage(
+        EntityUid source,
+        string input,
+        out string output,
+        out CollectiveMindPrototype? channel,
+        bool quiet = false)
+    {
+        output = input.Trim();
+        channel = null;
+
+        if (input.Length == 0)
+            return false;
+
+        if (!input.StartsWith(CollectiveMindPrefix))
+            return false;
+
+        ProtoId<CollectiveMindPrototype>? defaultChannel = null;
+        if (TryComp<CollectiveMindComponent>(source, out var mind))
+            defaultChannel = mind.DefaultChannel;
+
+        if (input.Length < 2 || (char.IsWhiteSpace(input[1]) && defaultChannel == null))
+        {
+            output = SanitizeMessageCapital(input[1..].TrimStart());
+            if (!quiet)
+                _popup.PopupEntity(Loc.GetString("chat-manager-no-radio-key"), source, source);
+            return true;
+        }
+
+        var channelKey = input[1];
+        channelKey = char.ToLower(channelKey);
+
+        if (_mindKeyCodes.TryGetValue(channelKey, out channel))
+        {
+            output = SanitizeMessageCapital(input[2..].TrimStart());
+            return true;
+        }
+        else if (defaultChannel != null)
+        {
+            output = SanitizeMessageCapital(input[1..].TrimStart());
+            channel = _prototypeManager.Index<CollectiveMindPrototype>(defaultChannel.Value);
+            return true;
+        }
+
+        if (quiet)
+            return false;
+
+        var msg = Loc.GetString("chat-manager-no-such-channel", ("key", channelKey));
+        _popup.PopupEntity(msg, source, source);
+
+        return false;
+    }
+
     public virtual void TrySendInGameICMessage(
         EntityUid source,
         string message,
         InGameICChatType desiredType,
-        bool hideChat,
-        bool hideLog = false,
+        bool hideChat, bool hideLog = false,
         IConsoleShell? shell = null,
-        ICommonSession? player = null,
-        string? nameOverride = null,
+        ICommonSession? player = null, string? nameOverride = null,
         bool checkRadioPrefix = true,
-        bool ignoreActionBlocker = false
+        bool ignoreActionBlocker = false,
+        Color? colorOverride = null, // Goobstation
+        bool forced = false // goobstation
     ) { }
 
     public string SanitizeMessageCapital(string message)
@@ -237,6 +341,31 @@ public abstract class SharedChatSystem : EntitySystem
 
         return message;
     }
+
+    // Goobstation start - add newlines to string so that it fits in chat if its font is larger than default
+    public static void UpdateFontSize(int fontSize, ref string message, ref string wrappedMessage)
+    {
+        var newLines = GetChatNewLines(message);
+        var ratio = GetFontRatio(fontSize);
+        for (var i = 1; i < newLines * (int) MathF.Round(ratio); i++)
+        {
+            message += '\n';
+            wrappedMessage += '\n';
+        }
+    }
+
+    public static int GetChatNewLines(string message)
+    {
+        const string pattern = @"\r\n|\n|\r";
+        return new Regex(pattern).Matches(message).Count + 1;
+    }
+
+    public static float GetFontRatio(int fontSize)
+    {
+        const int defaultFontSize = 12;
+        return (float) fontSize / defaultFontSize;
+    }
+    // Goobstation end
 
     public static string SanitizeAnnouncement(string message, int maxLength = 0, int maxNewlines = 2)
     {
@@ -308,17 +437,19 @@ public abstract class SharedChatSystem : EntitySystem
     }
 }
 
+// Einstein Engines - Language begin (moves chat types to shared)
 /// <summary>
 ///     InGame IC chat is for chat that is specifically ingame (not lobby) but is also in character, i.e. speaking.
 /// </summary>
 // ReSharper disable once InconsistentNaming
 [Serializable, NetSerializable]
-public enum InGameICChatType : byte
+public enum InGameICChatType : byte // Einstein Engines - Make InGameIIChatType available in Shared
 {
     Speak,
     Emote,
     Whisper,
-    Telepathic
+    Telepathic, // Goobstation Change
+    CollectiveMind // Goobstation - Starlight collective mind port
 }
 
 /// <summary>
@@ -346,3 +477,4 @@ public enum ChatTransmitRange : byte
     /// Ghosts can't hear or see it at all. Regular players can if in-range.
     NoGhosts
 }
+// Einstein Engines - Language end

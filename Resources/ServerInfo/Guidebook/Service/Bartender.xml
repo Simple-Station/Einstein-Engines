@@ -1,11 +1,20 @@
+<!--
+SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 end <72604018+laok233@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 NotSoDana <75203942+NotSoDana@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Tunguso4ka <71643624+Tunguso4ka@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <Document>
 # Бармен
-У бармена работа проста: наливать напитки. Люди будут подходить к тебе и заказывать, а твоя задача — просто подать им то, что они просят.
-
-[textlink="Click here to see a complete list of drinks." link="Drinks"]
+Работа бармена довольно проста: подавайте напитки. Люди будут приходить к вам и просить напитки, а ваша задача - просто передать их им.
 
 <Box>
-Ингредиенты для этих напитков можно найти в разных местах:
+Реагенты для напитков можно найти в разных местах:
 </Box>
 <Box>
 <GuideEntityEmbed Entity="BoozeDispenser"/>
@@ -14,7 +23,7 @@
 </Box>
 
 <Box>
-Не забудь про посуду, в которой всё это подавать!
+Не забудьте сосуды для их подачи!
 </Box>
 <Box>
 <GuideEntityEmbed Entity="DrinkGlass" Caption="Стакан"/>
@@ -24,7 +33,7 @@
 </Box>
 
 ## Напитки
-Важно знать, как приготовить то, что у тебя просят. Ниже перечислены напитки в игре и их рецепты:
+Знание того, как приготовить требуемый напиток, очень важно. Здесь представлены различные напитки, включая их рецепты:
 
 <GuideReagentGroupEmbed Group="Drinks"/>
 </Document>

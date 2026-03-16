@@ -3,5 +3,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-alerts-curse-of-byond-name = Проклято
-alerts-curse-of-byond-desc = Это такой конец.
+alerts-curse-of-byond-name = Проклятие
+alerts-curse-of-byond-desc = Всё кончено.

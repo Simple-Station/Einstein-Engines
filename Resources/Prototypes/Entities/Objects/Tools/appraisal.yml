@@ -1,4 +1,17 @@
-﻿- type: entity
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 crazybrain23 <44417085+crazybrain23@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Magnus Larsen <i.am.larsenml@gmail.com>
+# SPDX-FileCopyrightText: 2024 ike709 <ike709@github.com>
+# SPDX-FileCopyrightText: 2024 ike709 <ike709@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
   parent: BaseItem
   id: AppraisalTool
   name: appraisal tool
@@ -17,9 +30,9 @@
     quickEquip: false
     slots:
     - Belt
-  - type: PhysicalComposition
+  - type: PhysicalComposition #Goobstation - Recycle update
     materialComposition:
-      Steel: 250
+      Steel: 125
   - type: Tag
     tags:
     - AppraisalTool
@@ -27,14 +40,3 @@
   - type: GuideHelp
     guides:
     - Cargo
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.25,-0.25,0.25,0.25"
-        density: 15
-        mask:
-        - ItemMask
-        restitution: 0.3
-        friction: 0.2

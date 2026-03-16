@@ -1,3 +1,23 @@
+# SPDX-FileCopyrightText: 2020 Git-Nivrak <59925169+Git-Nivrak@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <zddm@outlook.es>
+# SPDX-FileCopyrightText: 2021 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MACMAN2003 <macman2003c@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: constructionGraph
   id: Table
   start: start
@@ -55,11 +75,19 @@
             - material: Plasteel
               amount: 1
               doAfter: 1
+            - tool: Welding
+              doAfter: 3
 
         - to: TableGlass
           steps:
             - material: Glass
               amount: 1
+              doAfter: 1
+
+        - to: TableCard
+          steps:
+            - material: Cardboard
+              amount: 3
               doAfter: 1
 
         - to: TableReinforcedGlass
@@ -73,7 +101,7 @@
             - material: PlasmaGlass
               amount: 1
               doAfter: 1
-        
+
         - to: TableBrass
           steps:
             - material: Brass
@@ -143,6 +171,8 @@
               prototype: SheetPlasteel1
               amount: 1
           steps:
+            - tool: Welding
+              doAfter: 3
             - tool: Anchoring
               doAfter: 1
 
@@ -157,6 +187,18 @@
           steps:
             - tool: Anchoring
               doAfter: 1
+
+    - node: TableCard
+      entity: TableCard
+      edges:
+        - to: TableFrame
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialCardboard1
+              amount: 3
+          steps:
+            - tool: Slicing
+              doAfter: 2
 
     - node: TableReinforcedGlass
       entity: TableReinforcedGlass
@@ -211,66 +253,51 @@
             - material: Cloth
               amount: 1
               doAfter: 1
-              
+
         - to: TableFancyBlack
-          steps: 
+          steps:
             - material: FloorCarpetBlack
               amount: 1
-              doAfter: 1
-              
+
         - to: TableFancyBlue
-          steps: 
+          steps:
             - material: FloorCarpetBlue
               amount: 1
-              doAfter: 1
-              
+
         - to: TableFancyCyan
-          steps: 
+          steps:
             - material: FloorCarpetCyan
               amount: 1
-              doAfter: 1
-              
+
         - to: TableFancyGreen
-          steps: 
+          steps:
             - material: FloorCarpetGreen
               amount: 1
-              doAfter: 1
-              
+
         - to: TableFancyOrange
-          steps: 
+          steps:
             - material: FloorCarpetOrange
               amount: 1
-              doAfter: 1
-              
+
         - to: TableFancyPurple
-          steps: 
+          steps:
             - material: FloorCarpetPurple
               amount: 1
-              doAfter: 1
-                
+
         - to: TableFancyPink
-          steps: 
+          steps:
             - material: FloorCarpetPink
               amount: 1
-              doAfter: 1
-              
+
         - to: TableFancyRed
-          steps: 
+          steps:
             - material: FloorCarpetRed
               amount: 1
-              doAfter: 1
-              
+
         - to: TableFancyWhite
-          steps: 
+          steps:
             - material: FloorCarpetWhite
               amount: 1
-              doAfter: 1
-
-        - to: TableWoodReinforced #Nyano - See Resources/Prototypes/Nyanotrasen/Entities/Furniture/Tables/tables.yml
-          steps:
-            - material: WoodPlank
-              amount: 2
-              doAfter: 1
 
     - node: TableCarpet
       entity: TableCarpet
@@ -283,7 +310,7 @@
           steps:
             - tool: Prying
               doAfter: 1
-              
+
     - node: TableFancyBlack
       entity: TableFancyBlack
       edges:
@@ -295,7 +322,7 @@
           steps:
             - tool: Prying
               doAfter: 1
-              
+
     - node: TableFancyBlue
       entity: TableFancyBlue
       edges:
@@ -307,7 +334,7 @@
           steps:
             - tool: Prying
               doAfter: 1
-              
+
     - node: TableFancyCyan
       entity: TableFancyCyan
       edges:
@@ -388,18 +415,6 @@
             - !type:SpawnPrototype
               prototype: FloorCarpetItemWhite
               amount: 1
-          steps:
-            - tool: Prying
-              doAfter: 1
-
-    - node: TableWoodReinforced #Nyano - See Resources/Prototypes/Nyanotrasen/Entities/Furniture/Tables/tables.yml
-      entity: TableWoodReinforced
-      edges:
-        - to: TableWood
-          completed:
-            - !type:SpawnPrototype
-              prototype: MaterialWoodPlank1
-              amount: 2
           steps:
             - tool: Prying
               doAfter: 1

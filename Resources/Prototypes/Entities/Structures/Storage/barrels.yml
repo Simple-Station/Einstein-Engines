@@ -1,286 +1,232 @@
-# Barrels
-# Base
 - type: entity
-  parent: BaseStructureDynamic
-  id: BaseBarrel
-  name: barrel
-  description: This barrel looks like it could contain something.
-  categories: [ HideSpawnMenu ]
+  parent: [ StorageTank ]
+  id: BaseBarrelChem
+  abstract: true
+  name: chemical barrel
+  description: A small metal drum. How tropical.
   components:
   - type: Sprite
     sprite: Structures/Storage/barrels.rsi
-    state: blue-closed
-    netsync: false
+    state: metalbarrel
     noRot: true
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeAabb
-            bounds: "-0.2,-0.2,0.2,0.45"
-        density: 50
+          bounds: "-0.18,-0.48,0.18,0.28"
+        density: 200
         mask:
         - MachineMask
         layer:
-        - WallLayer
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Metallic
+        - MachineLayer
   - type: Destructible
     thresholds:
     - trigger:
-        !type:DamageTypeTrigger
-        damageType: Heat
-        damage: 5
+        !type:DamageTrigger
+        damage: 100
       behaviors:
-      - !type:SolutionExplosionBehavior
-        solution: barrel
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Piercing
-        damage: 5
-      behaviors:
-      - !type:SolutionExplosionBehavior
-        solution: barrel
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 25
       behaviors:
       - !type:SpillBehavior
-        solution: barrel
+        solution: tank
       - !type:PlaySoundBehavior
         sound:
           collection: MetalBreak
       - !type:DoActsBehavior
         acts: ["Destruction"]
-
-# Base Open
-- type: entity
-  parent: BaseBarrel
-  id: BaseBarrelOpen
-  suffix: open
-  categories: [ HideSpawnMenu ]
-  components:
   - type: SolutionContainerManager
     solutions:
-      barrel:
+      tank:
         maxVol: 500
-  - type: DrainableSolution
-    solution: barrel
-  - type: ReagentTank
-
-# Closed
-- type: entity
-  parent: BaseBarrel
-  id: BlackBarrel
-  name: black barrel
-  description: A worn out black barrel. The label is torn off.
-  components:
-  - type: Sprite
-    sprite: Structures/Storage/barrels.rsi
-    state: black-closed
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 3000 # 30 sheets, 1 stack
+  - type: ExaminableSolution
+    solution: tank
+  - type: StaticPrice
+    price: 500
 
 - type: entity
-  parent: BaseBarrel
-  id: BlueBarrel
-  name: blue barrel
-  description: A blue barrel with a warning sign of. Maybe it contains water?
+  parent: BaseBarrelChem
+  id: BaseBarrelChemRadioactive
+  abstract: true
+  name: radioactive barrel
+  description: It seems to be leaking a bit. I don't think you'd want to be around this for long.
   components:
   - type: Sprite
-    sprite: Structures/Storage/barrels.rsi
-    state: blue-closed
-
-- type: entity
-  parent: BaseBarrel
-  id: RedBarrel
-  name: red barrel
-  description: A red barrel with an explosive warning sign on. Better be careful.
-  components:
-  - type: Sprite
-    sprite: Structures/Storage/barrels.rsi
-    state: red-closed
-  - type: Explosive
-    explosionType: Default
-    totalIntensity: 120 # ~ 5 tile radius
-
-- type: entity
-  parent: BaseBarrel
-  id: YellowBarrel
-  name: yellow barrel
-  description: A yellow barrel with a radiation warning sign on. Better be careful.
-  components:
-  - type: Sprite
-    sprite: Structures/Storage/barrels.rsi
-    state: yellow-closed
+    state: radbarrel
   - type: RadiationSource
-    intensity: 2
-    slope: 1
+    intensity: 1.0
 
-# Open
-- type: entity
-  parent: BaseBarrelOpen
-  id: BlackBarrelOpen
-  suffix: open
-  name: black barrel
-  description: A worn out black barrel. The label is torn off. The lid is off and you can see inside.
-  components:
-  - type: Sprite
-    sprite: Structures/Storage/barrels.rsi
-    state: black-open
+- type: entityTable
+  id: RandomChemicalBarrel
+  table: !type:GroupSelector
+    children:
+    - id: BarrelChemFilledIodine
+    - id: BarrelChemFilledFluorine
+    - id: BarrelChemFilledChlorine
+    - id: BarrelChemFilledEthanol
+    - id: BarrelChemFilledPhosphorus
+    - id: BarrelChemFilledSilicon
+    - id: BarrelChemFilledMercury
+    - id: BarrelChemFilledLube # oiled up...
+      weight: 0.1
 
-- type: entity
-  parent: BaseBarrelOpen
-  id: BlueBarrelOpen
-  suffix: open
-  name: blue barrel
-  description: A blue barrel with a warning sign of. The lid is off and you can see inside.
-  components:
-  - type: Sprite
-    sprite: Structures/Storage/barrels.rsi
-    state: blue-open
-
-- type: entity
-  parent: BaseBarrelOpen
-  id: RedBarrelOpen
-  suffix: open
-  name: red barrel
-  description: A red barrel with an explosive warning sign on. The lid is off and you can see inside.
-  components:
-  - type: Sprite
-    sprite: Structures/Storage/barrels.rsi
-    state: red-open
+- type: entityTable
+  id: RandomChemicalBarrelRadioactive
+  table: !type:GroupSelector
+    children:
+    - id: BaseBarrelChemRadioactiveEmpty
+      weight: 2
+    - id: BaseBarrelChemRadioactiveFilledRadium
+    - id: BaseBarrelChemRadioactiveFilledUranium
 
 - type: entity
-  parent: BaseBarrelOpen
-  id: YellowBarrelOpen
-  suffix: open
-  name: yellow barrel
-  description: A yellow barrel with a radiation warning sign on. The lid is off and you can see inside but it still makes you twitch.
-  components:
-  - type: Sprite
-    sprite: Structures/Storage/barrels.rsi
-    state: yellow-open
-  - type: RadiationSource
-    intensity: 1
-    slope: 1
-
-# Full barrels
-- type: entity
-  parent: BlackBarrelOpen
-  id: BlackBarrelFull
-  suffix: full
-  description: A worn out black barrel. This one looks full of some dark liquid.
-  components:
-  - type: Sprite
-    sprite: Structures/Storage/barrels.rsi
-    state: black-full
-    # TODO - fill with some sort of waste product? Maybe just dirty water.
+  parent: BaseBarrelChem
+  id: BarrelChemEmpty
+  suffix: Empty
 
 - type: entity
-  parent: RedBarrelOpen
-  id: RedBarrelFull
-  suffix: full
-  description: A red barrel with an explosive warning sign on. It has a golden liquid inside.
+  parent: BaseBarrelChem
+  id: BarrelChemFilledIodine
+  suffix: Iodine
   components:
-  - type: Sprite
-    sprite: Structures/Storage/barrels.rsi
-    state: red-full
   - type: SolutionContainerManager
     solutions:
-      barrel:
+      tank:
+        maxVol: 500
         reagents:
-        - ReagentId: WeldingFuel
+        - ReagentId: Iodine
           Quantity: 500
-  - type: DamageOnToolInteract
-    tools: Welding
-    weldingDamage:
-      types:
-        Heat: 10
-  - type: Explosive
-    explosionType: Default
-    totalIntensity: 120 # ~ 5 tile radius
 
 - type: entity
-  parent: YellowBarrelOpen
-  id: YellowBarrelFull
-  suffix: full
-  description: A yellow barrel with a radiation warning sign on. You can see the glowing goo bubble.
+  parent: BaseBarrelChem
+  id: BarrelChemFilledFluorine
+  suffix: Fluorine
   components:
-  - type: Sprite
-    sprite: Structures/Storage/barrels.rsi
-    state: yellow-full
-  - type: RadiationSource
-    intensity: 3
-    slope: 1
-  - type: PointLight
-    netsync: false
-    radius: 1.5
-    energy: 1.6
-    color: "#3db83b"
-    castShadows: false
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 1000
-      behaviors:
-      - !type:SpillBehavior
-        solution: barrel
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-    # TODO - fill with some sort of radioactive waste reagent.
-
-# Burning Barrels
-- type: entity
-  parent: BaseStructureDynamic
-  id: BurningBarrel
-  name: burnt barrel
-  description: This barrel looks like it once contained a fire.
-  components:
-  - type: Sprite
-    sprite: Structures/Storage/burningbarrel.rsi
-    state: burnbarrel
-    netsync: false
-    noRot: true
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-            radius: 0.2
-        density: 50
-        mask:
-        - MachineMask
-        layer:
-        - MidImpassable
-        - LowImpassable
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
+        reagents:
+        - ReagentId: Fluorine
+          Quantity: 500
 
 - type: entity
-  parent: BurningBarrel
-  id: BurningBarrelLit
-  name: burning barrel
-  description: This barrel is smoldering. Toasty
+  parent: BaseBarrelChem
+  id: BarrelChemFilledChlorine
+  suffix: Chlorine
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
+        reagents:
+        - ReagentId: Chlorine
+          Quantity: 500
+
+- type: entity
+  parent: BaseBarrelChem
+  id: BarrelChemFilledEthanol
+  suffix: Ethanol
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
+        reagents:
+        - ReagentId: Ethanol
+          Quantity: 500
+
+- type: entity
+  parent: BaseBarrelChem
+  id: BarrelChemFilledPhosphorus
+  suffix: Phosphorus
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
+        reagents:
+        - ReagentId: Phosphorus
+          Quantity: 500
+
+- type: entity
+  parent: BaseBarrelChem
+  id: BarrelChemFilledMercury
+  suffix: Mercury
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
+        reagents:
+        - ReagentId: Mercury
+          Quantity: 500
+
+- type: entity
+  parent: BaseBarrelChem
+  id: BarrelChemFilledSilicon
+  suffix: Silicon
   components:
   - type: Sprite
-    sprite: Structures/Storage/burningbarrel.rsi
-    state: burnbarrel_lit
-    netsync: false
-  - type: PointLight
-    color: "#E25822"
-    radius: 1.0
-    energy: 5.0
-    netsync: false
-  - type: LightBehaviour
-    behaviours:
-      - !type:RandomizeBehaviour # immediately make it bright and flickery
-        id: burnbarrel_lit
-        interpolate: Nearest
-        minDuration: 0.02
-        maxDuration: 0.06
-        startValue: 6.0
-        endValue: 9.0
-        property: Energy
-        isLooped: true
+    state: silicatebarrel
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
+        reagents:
+        - ReagentId: Silicon
+          Quantity: 500
+
+- type: entity
+  parent: BaseBarrelChem
+  id: BarrelChemFilledLube
+  suffix: Lube
+  description: Slippery...
+  components:
+  - type: Sprite
+    state: silicatebarrel
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
+        reagents:
+        - ReagentId: SpaceLube
+          Quantity: 500
+
+- type: entity
+  parent: BaseBarrelChemRadioactive
+  id: BaseBarrelChemRadioactiveEmpty
+  suffix: Empty
+
+- type: entity
+  parent: BaseBarrelChemRadioactive
+  id: BaseBarrelChemRadioactiveFilledRadium
+  suffix: Radium
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
+        reagents:
+        - ReagentId: Radium
+          Quantity: 500
+
+- type: entity
+  parent: BaseBarrelChemRadioactive
+  id: BaseBarrelChemRadioactiveFilledUranium
+  suffix: Uranium
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
+        reagents:
+        - ReagentId: Uranium
+          Quantity: 500

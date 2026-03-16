@@ -1,3 +1,30 @@
+// SPDX-FileCopyrightText: 2020 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 chairbender <kwhipke1@gmail.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2021 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2021 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2022 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2022 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr.@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <jmaster9999@gmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <wrexbe@protonmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Client.UserInterface.Systems.Alerts.Controls;
 using Content.Client.UserInterface.Systems.Alerts.Widgets;
@@ -83,14 +110,16 @@ namespace Content.IntegrationTests.Tests.GameObjects.Components.Mobs
                     return null;
                 }
 
-                // This originally was hardcoded to expect a player character to have a Human Healthbar.
-                // It is no longer hardcoded to demand that.
-                // We should be seeing 2 alerts - the 2 debug alerts, in a specific order.
-                Assert.That(clientAlertsUI.AlertContainer.ChildCount, Is.GreaterThanOrEqualTo(2));
+                // we should be seeing 3 alerts - our health, and the 2 debug alerts, in a specific order.
+                Assert.That(clientAlertsUI.AlertContainer.ChildCount, Is.GreaterThanOrEqualTo(3));
                 var alertControls = clientAlertsUI.AlertContainer.Children.Select(c => (AlertControl) c);
                 var alertIDs = alertControls.Select(ac => ac.Alert.ID).ToArray();
-                var expectedIDs = new[] { "Debug1", "Debug2" };
-                Assert.That(alertIDs, Is.SupersetOf(expectedIDs));
+                // Goobstation - IPC have BorgHealth instead of HumanHealth
+                var expectedDebugIDs = new[] { "Debug1", "Debug2" };
+                var expectedHealthIDs = new[] { "BorgHealth", "HumanHealth" };
+
+                Assert.That(alertIDs, Is.SupersetOf(expectedDebugIDs));
+                Assert.That(alertIDs, Has.Some.Matches<string>(item => expectedHealthIDs.Contains(item)));
             });
 
             await server.WaitAssertion(() =>
@@ -102,12 +131,16 @@ namespace Content.IntegrationTests.Tests.GameObjects.Components.Mobs
 
             await client.WaitAssertion(() =>
             {
-                // We should be seeing 1 alert now because one was cleared
-                Assert.That(clientAlertsUI.AlertContainer.ChildCount, Is.GreaterThanOrEqualTo(1));
+                // we should be seeing 2 alerts now because one was cleared
+                Assert.That(clientAlertsUI.AlertContainer.ChildCount, Is.GreaterThanOrEqualTo(2));
                 var alertControls = clientAlertsUI.AlertContainer.Children.Select(c => (AlertControl) c);
                 var alertIDs = alertControls.Select(ac => ac.Alert.ID).ToArray();
-                var expectedIDs = new[] { "Debug2" };
-                Assert.That(alertIDs, Is.SupersetOf(expectedIDs));
+                // Goobstation - IPC have BorgHealth instead of HumanHealth
+                var expectedDebugIDs = new[] { "Debug2" };
+                var expectedHealthIDs = new[] { "BorgHealth", "HumanHealth" };
+
+                Assert.That(alertIDs, Is.SupersetOf(expectedDebugIDs));
+                Assert.That(alertIDs, Has.Some.Matches<string>(item => expectedHealthIDs.Contains(item)));
             });
 
             await pair.CleanReturnAsync();

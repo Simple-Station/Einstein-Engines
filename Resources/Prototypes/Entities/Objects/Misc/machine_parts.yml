@@ -1,4 +1,21 @@
-﻿# Rating 1
+# SPDX-FileCopyrightText: 2020 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 kxv <136233650+kxvvv@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 RatherUncreative <RatherUncreativeName@proton.me>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Whatstone <whatston3@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
   id: BaseStockPart
@@ -7,240 +24,37 @@
   description: What?
   abstract: true
   components:
+    # Goobstation edit start
+    - type: EmitSoundOnPickup
+      sound:
+        path: /Audio/_Goobstation/Items/handling/component_pickup.ogg
+    - type: EmitSoundOnDrop
+      sound:
+        path: /Audio/_Goobstation/Items/handling/component_drop.ogg
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/_Goobstation/Items/handling/component_drop.ogg
+    # Goobstation edit end
     - type: Sprite
       sprite: Objects/Misc/stock_parts.rsi
-      scale: 0.8, 0.8
     - type: Item
       size: Tiny
     - type: Stack
       count: 1
-    - type: PhysicalComposition
+    - type: PhysicalComposition #Goobstation - Recycle update
       materialComposition:
         Steel: 12
         Plastic: 12
-    - type: StockPart
-
-- type: entity
-  id: CapacitorStockPart
-  name: capacitor
-  parent: BaseStockPart
-  description: A basic capacitor used in the construction of a variety of devices.
-  suffix: Rating 1
-  components:
-    - type: Sprite
-      state: capacitor
-    - type: MachinePart
-      partType: Capacitor
-      rating: 1
-    - type: ReverseEngineering
-      recipes:
-      - CapacitorStockPart
-    - type: Tag
-      tags:
-        - CapacitorStockPart
-    - type: Stack
-      stackType: Capacitor
+    - type: StockPart # Goobstation
 
 - type: entity
   id: MicroManipulatorStockPart
-  name: manipulator
+  name: modular machine part
   parent: BaseStockPart
-  description: A basic manipulator used in the construction of a variety of devices.
+  description: A basic machine part used in the construction of a variety of devices.
   suffix: Rating 1
   components:
     - type: Sprite
       state: micro_mani
-    - type: MachinePart
-      partType: Manipulator
-      rating: 1
-    - type: ReverseEngineering
-      recipes:
-      - MicroManipulatorStockPart
     - type: Stack
       stackType: Manipulator
-
-- type: entity
-  id: MatterBinStockPart
-  name: matter bin
-  parent: BaseStockPart
-  description: A basic matter bin used in the construction of a variety of devices.
-  suffix: Rating 1
-  components:
-    - type: Sprite
-      state: matter_bin
-    - type: MachinePart
-      partType: MatterBin
-      rating: 1
-    - type: ReverseEngineering
-      recipes:
-      - MatterBinStockPart
-    - type: Stack
-      stackType: MatterBin
-
-# Rating 2
-
-- type: entity
-  id: AdvancedCapacitorStockPart
-  name: advanced capacitor
-  parent: CapacitorStockPart
-  description: An advanced capacitor used in the construction of a variety of devices.
-  suffix: Rating 2
-  components:
-  - type: Sprite
-    state: adv_capacitor
-  - type: MachinePart
-    rating: 2
-  - type: ReverseEngineering
-    difficulty: 2
-    recipes:
-    - AdvancedCapacitorStockPart
-  - type: Stack
-    stackType: AdvancedCapacitor
-
-- type: entity
-  id: NanoManipulatorStockPart
-  name: advanced manipulator
-  parent: MicroManipulatorStockPart
-  description: An advanced manipulator used in the construction of a variety of devices.
-  suffix: Rating 2
-  components:
-  - type: Sprite
-    state: nano_mani
-  - type: MachinePart
-    rating: 2
-  - type: ReverseEngineering
-    difficulty: 2
-    recipes:
-    - NanoManipulatorStockPart
-  - type: Stack
-    stackType: AdvancedManipulator
-
-- type: entity
-  id: AdvancedMatterBinStockPart
-  name: advanced matter bin
-  parent: MatterBinStockPart
-  description: An advanced matter bin used in the construction of a variety of devices.
-  suffix: Rating 2
-  components:
-  - type: Sprite
-    state: advanced_matter_bin
-  - type: MachinePart
-    rating: 2
-  - type: ReverseEngineering
-    difficulty: 2
-    recipes:
-    - AdvancedMatterBinStockPart
-  - type: Stack
-    stackType: AdvancedMatterBin
-
-# Rating 3
-
-- type: entity
-  id: SuperCapacitorStockPart
-  name: super capacitor
-  parent: CapacitorStockPart
-  description: A super capacitor used in the construction of a variety of devices.
-  suffix: Rating 3
-  components:
-  - type: Sprite
-    state: super_capacitor
-  - type: MachinePart
-    rating: 3
-  - type: ReverseEngineering
-    difficulty: 3
-    recipes:
-    - SuperCapacitorStockPart
-  - type: Stack
-    stackType: SuperCapacitor
-
-- type: entity
-  id: PicoManipulatorStockPart
-  name: super manipulator
-  parent: MicroManipulatorStockPart
-  description: A super manipulator used in the construction of a variety of devices.
-  suffix: Rating 3
-  components:
-  - type: Sprite
-    state: pico_mani
-  - type: MachinePart
-    rating: 3
-  - type: ReverseEngineering
-    difficulty: 3
-    recipes:
-    - PicoManipulatorStockPart
-  - type: Stack
-    stackType: SuperManipulator
-
-- type: entity
-  id: SuperMatterBinStockPart
-  name: super matter bin
-  parent: MatterBinStockPart
-  description: A super matter bin used in the construction of a variety of devices.
-  suffix: Rating 3
-  components:
-  - type: Sprite
-    state: super_matter_bin
-  - type: MachinePart
-    rating: 3
-  - type: ReverseEngineering
-    difficulty: 3
-    recipes:
-    - SuperMatterBinStockPart
-  - type: Stack
-    stackType: SuperMatterBin
-
-# Rating 4
-
-- type: entity
-  id: BluespaceCapacitorStockPart
-  name: bluespace capacitor
-  parent: CapacitorStockPart
-  description: A bluespace capacitor used in the construction of a variety of devices.
-  suffix: Rating 4
-  components:
-  - type: Sprite
-    state: quadratic_capacitor
-  - type: MachinePart
-    rating: 4
-  - type: ReverseEngineering
-    difficulty: 4
-    recipes:
-    - BluespaceCapacitorStockPart
-  - type: Stack
-    stackType: BluespaceCapacitor
-
-- type: entity
-  id: BluespaceManipulatorStockPart
-  name: bluespace manipulator
-  parent: MicroManipulatorStockPart
-  description: A bluespace manipulator used in the construction of a variety of devices.
-  suffix: Rating 4
-  components:
-  - type: Sprite
-    state: femto_mani
-  - type: MachinePart
-    rating: 4
-  - type: ReverseEngineering
-    difficulty: 4
-    recipes:
-    - BluespaceManipulatorStockPart
-  - type: Stack
-    stackType: BluespaceManipulator
-
-- type: entity
-  id: BluespaceMatterBinStockPart
-  name: bluespace matter bin
-  parent: MatterBinStockPart
-  description: A bluespace matter bin used in the construction of a variety of devices.
-  suffix: Rating 4
-  components:
-  - type: Sprite
-    state: bluespace_matter_bin
-  - type: MachinePart
-    rating: 4
-  - type: ReverseEngineering
-    difficulty: 4
-    recipes:
-    -  BluespaceMatterBinStockPart
-  - type: Stack
-    stackType: BluespaceMatterBin

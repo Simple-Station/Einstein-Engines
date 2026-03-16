@@ -1,13 +1,27 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Tom Leys <tom@crump-leys.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 AJCM <AJCM@tutanota.com>
+// SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 icekot8 <93311212+icekot8@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
-using Content.Server.Announcements.Systems;
 using Content.Server.Cargo.Components;
 using Content.Server.Cargo.Systems;
 using Content.Server.GameTicking;
-using Content.Server.Station.Components;
 using Content.Server.StationEvents.Components;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Station.Components;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Player;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -16,26 +30,17 @@ public sealed class CargoGiftsRule : StationEventSystem<CargoGiftsRuleComponent>
     [Dependency] private readonly CargoSystem _cargoSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly GameTicker _ticker = default!;
-    [Dependency] private readonly AnnouncerSystem _announcer = default!;
 
     protected override void Added(EntityUid uid, CargoGiftsRuleComponent component, GameRuleComponent gameRule, GameRuleAddedEvent args)
     {
-        base.Added(uid, component, gameRule, args);
-
         if (!TryComp<StationEventComponent>(uid, out var stationEvent))
             return;
 
-        _announcer.SendAnnouncement(
-            _announcer.GetAnnouncementId(args.RuleId),
-            component.Announce,
-            colorOverride: stationEvent.StartAnnouncementColor,
-            localeArgs:
-            [
-                ("sender", Loc.GetString(component.Sender)),
-                ("description", Loc.GetString(component.Description)),
-                ("dest", Loc.GetString(component.Dest)),
-            ]
-        );
+        var str = Loc.GetString(component.Announce,
+            ("sender", Loc.GetString(component.Sender)), ("description", Loc.GetString(component.Description)), ("dest", Loc.GetString(component.Dest)));
+        stationEvent.StartAnnouncement = str;
+
+        base.Added(uid, component, gameRule, args);
     }
 
     /// <summary>
@@ -64,7 +69,7 @@ public sealed class CargoGiftsRule : StationEventSystem<CargoGiftsRuleComponent>
         }
 
         // Add some presents
-        var outstanding = CargoSystem.GetOutstandingOrderCount(cargoDb);
+        var outstanding = _cargoSystem.GetOutstandingOrderCount((station.Value, cargoDb), component.Account);
         while (outstanding < cargoDb.Capacity - component.OrderSpaceToLeave && component.Gifts.Count > 0)
         {
             // I wish there was a nice way to pop this
@@ -83,6 +88,7 @@ public sealed class CargoGiftsRule : StationEventSystem<CargoGiftsRuleComponent>
                     Loc.GetString(component.Description),
                     Loc.GetString(component.Dest),
                     cargoDb,
+                    component.Account,
                     (station.Value, stationData)
             ))
             {

@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 moonheart08 <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Client.Guidebook.Richtext;
@@ -42,7 +48,7 @@ public sealed partial class GuideReagentGroupEmbed : BoxContainer, IDocumentTag
         control = null;
         if (!args.TryGetValue("Group", out var group))
         {
-            Logger.GetSawmill("guide.regentgroup.embed").Error("Reagent group embed tag is missing group argument");
+            Logger.Error("Reagent group embed tag is missing group argument");
             return false;
         }
 

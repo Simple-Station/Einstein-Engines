@@ -1,3 +1,168 @@
+# SPDX-FileCopyrightText: 2019 Acruid <shatter66@gmail.com>
+# SPDX-FileCopyrightText: 2019 DamianX <DamianX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2019 L.E.D <10257081+unusualcrow@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 GlassEclipse <tsymall5@gmail.com>
+# SPDX-FileCopyrightText: 2020 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2020 Swept <jamesurquhartwebb@gmail.com>
+# SPDX-FileCopyrightText: 2020 Vince <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Ygg01 <daniel.fath7@gmail.com>
+# SPDX-FileCopyrightText: 2020 py01 <60152240+collinlunn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 py01 <pyronetics01@gmail.com>
+# SPDX-FileCopyrightText: 2020 zionnBE <bennyprofanee@protonmail.com>
+# SPDX-FileCopyrightText: 2020 zionnBE <zionn@tfwno.gf>
+# SPDX-FileCopyrightText: 2020 zumorica <zddm@outlook.es>
+# SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+# SPDX-FileCopyrightText: 2021 BulletGrade <66234359+BulletGrade@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Metal Gear Sloth <metalgearsloth@gmail.com>
+# SPDX-FileCopyrightText: 2021 Moses <StrawberryMoses@gmail.com>
+# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <zddm@outlook.es>
+# SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 Ablankmann <103340990+Ablankmann@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Andreas Kämper <andreas@kaemper.tech>
+# SPDX-FileCopyrightText: 2022 Deahaka <96499407+Deahaka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 EmoGarbage404 <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Fishfish458 <47410468+Fishfish458@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Michael Phillips <1194692+MeltedPixel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Profane McBane <profanedbane+github@gmail.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 corentt <36075110+corentt@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
+# SPDX-FileCopyrightText: 2022 hubismal <47284081+hubismal@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+# SPDX-FileCopyrightText: 2022 theashtronaut <112137107+theashtronaut@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 ChilbroBaggins <107660393+ChilbroBaggins@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Doru991 <75124791+Doru991@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 OctoRocket <88291550+OctoRocket@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Puro <103608145+PuroSlavKing@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Velcroboy <107660393+ChilbroBaggins@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 crazybrain23 <44417085+crazybrain23@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 freeman2651 <104049107+freeman2651@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 potato1234_x <79580518+potato1234x@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 CaasGit <87243814+CaasGit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 EmoGarbage404 <retron404@gmail.com>
+# SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hannah Giovanna Dawson <karakkaraz@gmail.com>
+# SPDX-FileCopyrightText: 2024 Hrosts <35345601+Hrosts@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ian <ignaz.k@live.de>
+# SPDX-FileCopyrightText: 2024 Jeff <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2024 Joel Zimmerman <JoelZimmerman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 JustCone <141039037+JustCone14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ko4ergaPunk <62609550+Ko4ergaPunk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kukutis96513 <146854220+Kukutis96513@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Lye <128915833+Lyroth001@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MerrytheManokit <167581110+MerrytheManokit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MureixloI <132683811+MureixloI@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 NakataRin <45946146+NakataRin@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 OrangeMoronage9622 <whyteterry0092@gmail.com>
+# SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+# SPDX-FileCopyrightText: 2024 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Preston Smith <92108534+thetolbean@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pspritechologist <naaronn@gmail.com>
+# SPDX-FileCopyrightText: 2024 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Repo <47093363+Titian3@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 RiceMar1244 <138547931+RiceMar1244@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Scruq445 <storchdamien@gmail.com>
+# SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Stalen <33173619+stalengd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TakoDragon <69509841+BackeTako@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st <shadowstalkermll@gmail.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2024 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Vigers Ray <60344369+VigersRay@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 degradka <69397649+degradka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 dffdff2423 <dffdff2423@gmail.com>
+# SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+# SPDX-FileCopyrightText: 2024 erohrs2 <157842463+erohrs2@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 foboscheshir <156405958+foboscheshir@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+# SPDX-FileCopyrightText: 2024 saintmuntzer <47153094+saintmuntzer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 shamp <140359015+shampunj@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 strO0pwafel <153459934+strO0pwafel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 stroopwafel <j.o.luijkx@student.tudelft.nl>
+# SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
+# SPDX-FileCopyrightText: 2025 Alpaccalypse <21291379+Alpaccalypse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Dorragon <101672978+Dorragon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
+# SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Southbridge <7013162+southbridge-fur@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Unlumination <144041835+Unlumy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+# SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# base
 - type: entity
   id: VendingMachine
   parent: BaseMachinePowered
@@ -33,7 +198,112 @@
         - MachineMask
         layer:
         - MachineLayer
-        density: 1000
+        density: 200
+  - type: Destructible
+    thresholds:
+    - trigger: # Excess damage, don't do anything
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Breakage"]
+      - !type:EjectVendorItems
+  - type: Repairable
+    doAfterDelay: 8
+  - type: ActivatableUI
+    key: enum.VendingMachineUiKey.Key
+  - type: ActivatableUIRequiresPower
+  - type: UserInterface
+    interfaces:
+      enum.VendingMachineUiKey.Key:
+        type: VendingMachineBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+  - type: WiresPanel
+  - type: Wires
+    boardName: wires-board-name-vendingmachine
+    layoutId: Vending
+  - type: Anchorable
+  - type: TypingIndicator
+    proto: robot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Vending
+  - type: Vocalizer
+    minVocalizeInterval: 8m
+    maxVocalizeInterval: 10m
+    hideChat: true
+  - type: VocalizerRequiresPower
+  - type: SpookySpeaker
+    messageSet: SpookySpeakerMessagesGeneric
+    speakChance: 0.2
+  - type: IntrinsicRadioReceiver
+  #- type: IntrinsicRadioTransmitter
+  #  channels:
+  #  - Binary # Goobstation - replaced with collective mind
+  - type: ActiveRadio
+    channels:
+    # - Binary # Goobstation - replaced with collective mind
+    - Common
+  # Goobstation
+  - type: CollectiveMind
+    defaultChannel: Binary
+    channels:
+    - Binary
+  - type: DoAfter
+  - type: Electrified
+    enabled: false
+    usesApcPower: true
+  - type: PointLight
+    enabled: false
+    castShadows: false
+    radius: 2
+    energy: 1.5
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: LitOnPowered
+  - type: ApcPowerReceiver
+    powerLoad: 200
+  - type: Actions
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-mechanical
+    weight: 0.025 # fuck you in particular (it now needs 40 vending machines to be as likely as 1 interesting animal)
+  - type: StaticPrice
+    price: 100
+  - type: Appearance
+  - type: WiresVisuals
+  - type: LanguageSpeaker # Einstein Engines - Languages
+  - type: LanguageKnowledge # Einstein Engines - Languages
+    speaks:
+    - TauCetiBasic
+    - RobotTalk
+    understands:
+    - TauCetiBasic
+    - RobotTalk
+
+- type: entity
+  id: VendingMachineWallmount
+  parent: BaseWallmountMachine
+  name: vending machine
+  abstract: true
+  components:
+  - type: StationAiWhitelist
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: -9
+    range: 3
+    enabled: false
+    sound:
+      path: /Audio/Ambience/Objects/vending_machine_hum.ogg
   - type: Destructible
     thresholds:
     - trigger:
@@ -72,42 +342,19 @@
   - type: Wires
     boardName: wires-board-name-vendingmachine
     layoutId: Vending
-  - type: Anchorable
-  - type: TypingIndicator
-    proto: robot
-  - type: Speech
-    speechVerb: Robotic
-    speechSounds: Vending
-  - type: SpookySpeaker
-    messageSet: SpookySpeakerMessagesGeneric
-    speakChance: 0.2
-  - type: IntrinsicRadioReceiver
-  - type: ActiveRadio
-    channels:
-    - Common
-  - type: DoAfter
-  - type: Electrified
-    enabled: false
-    usesApcPower: true
-  - type: EtherealLight
   - type: PointLight
     enabled: false
     castShadows: false
-    radius: 2
-    energy: 1.5
-    mask: /Textures/Effects/LightMasks/cone.png
-    autoRot: true
+    radius: 1.5
   - type: LitOnPowered
-  - type: ApcPowerReceiver
-    powerLoad: 200
-  - type: Actions
-  - type: SentienceTarget
-    flavorKind: station-event-random-sentience-flavor-mechanical
-    weight: 0.025 # fuck you in particular (it now needs 40 vending machines to be as likely as 1 interesting animal)
-  - type: StaticPrice
-    price: 100
   - type: Appearance
   - type: WiresVisuals
+  - type: Electrified
+    enabled: false
+    usesApcPower: true
+  - type: Rotatable
+
+# Vending machines
 
 - type: entity
   parent: VendingMachine
@@ -135,11 +382,10 @@
         layer:
         - MachineLayer
         density: 190
-  - type: Advertise
-    pack: CondimentVendAds
+  - type: DatasetVocalizer
+    dataset: CondimentVendAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
-  - type: Speech
   - type: Transform
     noRot: false
 
@@ -154,11 +400,10 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-  - type: Advertise
-    pack: AmmoVendAds
+  - type: DatasetVocalizer
+    dataset: CondimentVendAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
-  - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/ammo.rsi
     layers:
@@ -183,11 +428,10 @@
     normalState: normal-unshaded
     denyState: deny-unshaded
     loopDeny: false
-  - type: Advertise
-    pack: BoozeOMatAds
+  - type: DatasetVocalizer
+    dataset: BoozeOMatAds
   - type: SpeakOnUIClosed
     pack: BoozeOMatGoodbyes
-  - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/boozeomat.rsi
     layers:
@@ -218,11 +462,10 @@
     normalState: normal-unshaded
     denyState: deny-unshaded
     loopDeny: false
-  - type: Advertise
-    pack: BruiseOMatAds
+  - type: DatasetVocalizer
+    dataset: BruiseOMatAds
   - type: SpeakOnUIClosed
     pack: BruiseOMatGoodbyes
-  - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/bruiseomat.rsi
     layers:
@@ -290,8 +533,8 @@
     brokenState: broken
     normalState: normal-unshaded
     ejectState: eject-unshaded
-  - type: Advertise
-    pack: ChefvendAds
+  - type: DatasetVocalizer
+    dataset: ChefvendAds
   - type: SpeakOnUIClosed
     pack: ChefvendGoodbyes
   - type: Sprite
@@ -328,11 +571,10 @@
     normalState: normal-unshaded
     ejectState: eject-unshaded
     denyState: deny-unshaded
-  - type: Advertise
-    pack: CigaretteMachineAds
+  - type: DatasetVocalizer
+    dataset: CigaretteMachineAds
   - type: SpeakOnUIClosed
     pack: CigaretteMachineGoodbyes
-  - type: Speech
   - type: Sprite
     noRot: true
     sprite: Structures/Machines/VendingMachines/cigs.rsi
@@ -354,7 +596,7 @@
   parent: VendingMachine
   id: VendingMachineClothing
   name: ClothesMate
-  description: A vending machine for dispensing the cheapest clothing Nanotrasen can buy.
+  description: A vending machine for clothing.
   components:
   - type: VendingMachine
     pack: ClothesMateInventory
@@ -362,11 +604,10 @@
     brokenState: broken
     normalState: normal-unshaded
     denyState: deny-unshaded
-  - type: Advertise
-    pack: ClothesMateAds
+  - type: DatasetVocalizer
+    dataset: ClothesMateAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
-  - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/clothing.rsi
     layers:
@@ -383,6 +624,9 @@
     color: "#3db83b"
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
+  - type: Tag
+    tags:
+      - DroneUsable # Goobstation
 
 - type: entity
   parent: VendingMachine
@@ -396,11 +640,10 @@
     brokenState: broken
     normalState: normal-unshaded
     denyState: deny-unshaded
-  - type: Advertise
-    pack: ClothesMateAds
+  - type: DatasetVocalizer
+    dataset: ClothesMateAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
-  - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/winterdrobe.rsi
     layers:
@@ -417,6 +660,9 @@
     color: "#3db83b"
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
+  - type: Tag
+    tags:
+    - DroneUsable # Goobstation
 
 - type: entity
   parent: VendingMachine
@@ -437,11 +683,10 @@
     ejectDelay: 5
     soundVend: /Audio/Machines/machine_vend_hot_drink.ogg
     initialStockQuality: 0.33
-  - type: Advertise
-    pack: HotDrinksMachineAds
+  - type: DatasetVocalizer
+    dataset: HotDrinksMachineAds
   - type: SpeakOnUIClosed
     pack: HotDrinksMachineGoodbyes
-  - type: Speech
   - type: Sprite
     noRot: true
     sprite: Structures/Machines/VendingMachines/coffee.rsi
@@ -485,11 +730,10 @@
     denyState: deny-unshaded
     ejectDelay: 1.9
     initialStockQuality: 0.33
-  - type: Advertise
-    pack: RobustSoftdrinksAds
+  - type: DatasetVocalizer
+    dataset: RobustSoftdrinksAds
   - type: SpeakOnUIClosed
     pack: RobustSoftdrinksGoodbyes
-  - type: Speech
   - type: Sprite
     noRot: true
     sprite: Structures/Machines/VendingMachines/cola.rsi
@@ -665,9 +909,8 @@
     denyState: deny-unshaded
     ejectDelay: 1.9
     initialStockQuality: 0.33
-  - type: Advertise
-    pack: RobustSoftdrinksAds
-  - type: Speech
+  - type: DatasetVocalizer
+    dataset: RobustSoftdrinksAds
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/shamblersjuice.rsi
     layers:
@@ -702,11 +945,10 @@
     denyState: deny-unshaded
     ejectDelay: 1.9
     initialStockQuality: 0.33
-  - type: Advertise
-    pack: RobustSoftdrinksAds
+  - type: DatasetVocalizer
+    dataset: RobustSoftdrinksAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
-  - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/pwrgame.rsi
     layers:
@@ -741,11 +983,10 @@
     denyState: deny-unshaded
     ejectDelay: 1.9
     initialStockQuality: 0.33
-  - type: Advertise
-    pack: DrGibbAds
+  - type: DatasetVocalizer
+    dataset: DrGibbAds
   - type: SpeakOnUIClosed
     pack: DrGibbGoodbyes
-  - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/gib.rsi
     layers:
@@ -765,6 +1006,42 @@
 
 - type: entity
   parent: VendingMachine
+  id: VendingMachineSmite
+  name: Smite Vendor
+  description: Popular with the administration.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/smite.rsi
+    layers:
+    - state: "off"
+      map: [ "enum.VendingMachineVisualLayers.Base" ]
+    - state: "off"
+      map: [ "enum.VendingMachineVisualLayers.BaseUnshaded" ]
+      shader: unshaded
+    - state: panel
+      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+  - type: VendingMachine
+    pack: SmiteInventory
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+    ejectDelay: 1.9
+    initialStockQuality: 0.33
+  - type: DatasetVocalizer
+    dataset: SmiteAds
+  - type: SpeakOnUIClosed
+    pack: SmiteGoodbyes
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#00E645"
+
+- type: entity
+  parent: VendingMachine
   id: VendingMachineDinnerware
   name: Plasteel Chef's Dinnerware Vendor
   description: A kitchen and restaurant equipment vendor.
@@ -776,8 +1053,8 @@
     normalState: normal-unshaded
     ejectState: eject-unshaded
     denyState: deny-unshaded
-  - type: Advertise
-    pack: DinnerwareAds
+  - type: DatasetVocalizer
+    dataset: DinnerwareAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
@@ -818,8 +1095,8 @@
     normalState: normal-unshaded
     denyState: deny-unshaded
     ejectState: eject-unshaded
-  - type: Advertise
-    pack: MagiVendAds
+  - type: DatasetVocalizer
+    dataset: MagiVendAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
@@ -859,11 +1136,10 @@
     brokenState: broken
     normalState: normal-unshaded
     initialStockQuality: 0.33
-  - type: Advertise
-    pack: DiscountDansAds
+  - type: DatasetVocalizer
+    dataset: DiscountDansAds
   - type: SpeakOnUIClosed
     pack: DiscountDansGoodbyes
-  - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/discount.rsi
     layers:
@@ -918,6 +1194,9 @@
   - type: Rotatable
     rotateWhileAnchored: false
     rotateWhilePulling: true
+  - type: Tag
+    tags:
+    - DroneUsable # Goobstation
 
 - type: entity
   parent: VendingMachine
@@ -933,8 +1212,8 @@
     ejectState: eject-unshaded
     denyState: deny-unshaded
     ejectDelay: 0.6
-  - type: Advertise
-    pack: NanoMedAds
+  - type: DatasetVocalizer
+    dataset: NanoMedAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
@@ -978,8 +1257,8 @@
     normalState: normal-unshaded
     ejectState: eject-unshaded
     denyState: deny-unshaded
-  - type: Advertise
-    pack: NutriMaxAds
+  - type: DatasetVocalizer
+    dataset: NutriMaxAds
   - type: SpeakOnUIClosed
     pack: NutriMaxGoodbyes
   - type: Sprite
@@ -1014,8 +1293,8 @@
     normalState: normal-unshaded
     ejectState: eject-unshaded
     denyState: deny-unshaded
-  - type: Advertise
-    pack: SecTechAds
+  - type: DatasetVocalizer
+    dataset: SecTechAds
   - type: SpeakOnUIClosed
     pack: SecTechGoodbyes
   - type: Sprite
@@ -1047,6 +1326,7 @@
     rotateWhileAnchored: false
     rotateWhilePulling: true
 
+
 - type: entity
   parent: VendingMachine
   id: VendingMachineSeedsUnlocked
@@ -1061,8 +1341,8 @@
     normalState: normal-unshaded
     ejectState: eject-unshaded
     denyState: deny-unshaded
-  - type: Advertise
-    pack: MegaSeedAds
+  - type: DatasetVocalizer
+    dataset: MegaSeedAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
@@ -1106,11 +1386,10 @@
     ejectState: eject-unshaded
     denyState: deny-unshaded
     initialStockQuality: 0.33
-  - type: Advertise
-    pack: GetmoreChocolateCorpAds
+  - type: DatasetVocalizer
+    dataset: GetmoreChocolateCorpAds
   - type: SpeakOnUIClosed
     pack: GetmoreChocolateCorpGoodbyes
-  - type: Speech
   - type: Sprite
     noRot: true
     sprite: Structures/Machines/VendingMachines/snack.rsi
@@ -1270,11 +1549,10 @@
     ejectState: eject-unshaded
     denyState: deny-unshaded
     initialStockQuality: 0.33
-  - type: Advertise
-    pack: BodaAds
+  - type: DatasetVocalizer
+    dataset: BodaAds
   - type: SpeakOnUIClosed
     pack: BodaGoodbyes
-  - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/sodasoviet.rsi
     noRot: true
@@ -1297,6 +1575,7 @@
   - type: Rotatable
     rotateWhileAnchored: false
     rotateWhilePulling: true
+  - type: RussianAccent
 
 - type: entity
   parent: VendingMachine
@@ -1312,11 +1591,10 @@
     ejectState: eject-unshaded
     denyState: deny-unshaded
     screenState: screen
-  - type: Advertise
-    pack: AutoDrobeAds
+  - type: DatasetVocalizer
+    dataset: AutoDrobeAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
-  - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/theater.rsi
     noRot: true
@@ -1342,6 +1620,9 @@
   - type: Rotatable
     rotateWhileAnchored: false
     rotateWhilePulling: true
+  - type: Tag
+    tags:
+    - DroneUsable # Goobstation
 
 - type: entity
   parent: VendingMachine
@@ -1356,11 +1637,10 @@
     normalState: normal-unshaded
     ejectState: eject-unshaded
     denyState: deny-unshaded
-  - type: Advertise
-    pack: VendomatAds
+  - type: DatasetVocalizer
+    dataset: VendomatAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
-  - type: Speech
   - type: Sprite
     noRot: true
     sprite: Structures/Machines/VendingMachines/vendomat.rsi
@@ -1397,11 +1677,10 @@
     normalState: normal-unshaded
     ejectState: eject-unshaded
     denyState: deny-unshaded
-  - type: Advertise
-    pack: VendomatAds
+  - type: DatasetVocalizer
+    dataset: VendomatAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
-  - type: Speech
   - type: Sprite
     noRot: true
     sprite: Structures/Machines/VendingMachines/robotics.rsi
@@ -1465,6 +1744,9 @@
   - type: Rotatable
     rotateWhileAnchored: false
     rotateWhilePulling: true
+  - type: Tag
+    tags:
+    - DroneUsable # Goobstation
 
 - type: entity
   parent: VendingMachine
@@ -1479,8 +1761,8 @@
     normalState: normal-unshaded
     ejectState: eject-unshaded
     ejectDelay: 1.8
-  - type: Advertise
-    pack: GoodCleanFunAds
+  - type: DatasetVocalizer
+    dataset: GoodCleanFunAds
   - type: SpeakOnUIClosed
     pack: GoodCleanFunGoodbyes
   - type: Sprite
@@ -1522,13 +1804,11 @@
     denyState: deny-unshaded
     ejectState: eject-unshaded
     initialStockQuality: 0.33
-  - type: Advertise
-    pack: ChangAds
+  - type: DatasetVocalizer
+    dataset: ChangAds
   - type: SpeakOnUIClosed
     pack: ChangGoodbyes
-  - type: Speech
   - type: Sprite
-    noRot: true
     sprite: Structures/Machines/VendingMachines/snix.rsi
     layers:
     - state: "off"
@@ -1593,6 +1873,13 @@
         type: WiresBoundUserInterface
       enum.MiningVoucherUiKey.Key:
         type: MiningVoucherBoundUserInterface
+  - type: MiningVendor # Lavaland Change
+    kits:
+    - MiningCombat
+    - MiningExtraction
+    - MiningSurvival
+    - MiningMedical
+    #- MiningDrone
   - type: Wires # DeltaV: Use shop vendor wires layout
     layoutId: ShopVendor
   - type: AccessReader
@@ -1600,14 +1887,6 @@
   - type: GuideHelp
     guides:
     - Salvage
-  - type: MiningVendor # Lavaland Change
-    kits:
-    - MiningCrusher
-    - MiningExtraction
-    #- MiningResonator
-    #- MiningSurvival
-    #- MiningDrone
-    - MiningConscription
 
 - type: entity
   parent: VendingMachine
@@ -1623,11 +1902,10 @@
     brokenState: broken
     normalState: normal-unshaded
     initialStockQuality: 0.33
-  - type: Advertise
-    pack: DonutAds
+  - type: DatasetVocalizer
+    dataset: DonutAds
   - type: SpeakOnUIClosed
     pack: DonutGoodbyes
-  - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/donut.rsi
     layers:
@@ -1645,70 +1923,6 @@
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
 
-# wallmounted machines
-
-- type: entity
-  id: VendingMachineWallmount
-  parent: VendingMachine
-  name: vending machine
-  abstract: true
-  placement:
-    mode: SnapgridCenter
-    snap:
-    - Wallmount
-  components:
-  - type: Sprite
-    drawdepth: WallMountedItems
-    snapCardinals: false
-  - type: WallMount
-    arc: 175
-  - type: Transform
-    noRot: false
-  - type: Rotatable
-    rotateWhileAnchored: false
-    rotateWhilePulling: true
-
-- type: entity
-  parent: VendingMachineWallmount
-  id: VendingMachineWallMedical
-  name: NanoMed
-  description: "It's a wall-mounted medical equipment dispenser. Natural chemicals only!"
-  components:
-  - type: VendingMachine
-    pack: NanoMedInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
-    denyState: deny-unshaded
-    ejectState: eject-unshaded
-  - type: Sprite
-    noRot: true
-    sprite: Structures/Machines/VendingMachines/wallmed.rsi
-    layers:
-    - state: "off"
-      map: ["enum.VendingMachineVisualLayers.Base"]
-    - state: "off"
-      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
-      shader: unshaded
-    - texture: Structures/Machines/VendingMachines/maintenance_panel.png
-      map: ["enum.WiresVisualLayers.MaintenancePanel"]
-  - type: PointLight
-    radius: 2
-    energy: 1.6
-    color: "#9dc5c9"
-    mask: /Textures/Effects/LightMasks/cone.png
-    autoRot: true
-  - type: AccessReader
-    access: [["Medical"]]
-  - type: GuideHelp
-    guides:
-    - Medical
-  - type: Transform
-    noRot: false
-  - type: Rotatable
-    rotateWhileAnchored: false
-    rotateWhilePulling: true
-
 # job clothing
 
 - type: entity
@@ -1722,8 +1936,8 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-  - type: Advertise
-    pack: HyDrobeAds
+  - type: DatasetVocalizer
+    dataset: HyDrobeAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
@@ -1754,8 +1968,8 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-  - type: Advertise
-    pack: LawDrobeAds
+  - type: DatasetVocalizer
+    dataset: LawDrobeAds
   - type: SpeakOnUIClosed
     pack: LawDrobeGoodbyes
   - type: Sprite
@@ -1769,7 +1983,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [["Justice"]]
+    access: [["Lawyer"]]
 
 - type: entity
   parent: VendingMachine
@@ -1782,8 +1996,8 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-  - type: Advertise
-    pack: SecDrobeAds
+  - type: DatasetVocalizer
+    dataset: SecDrobeAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
@@ -1814,8 +2028,8 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-  - type: Advertise
-    pack: BarDrobeAds
+  - type: DatasetVocalizer
+    dataset: BarDrobeAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
@@ -1864,16 +2078,16 @@
 - type: entity
   parent: VendingMachine
   id: VendingMachineCargoDrobe
-  name: LogiDrobe # DeltaV - Logistics Department replacing Cargo
-  description: A highly advanced vending machine for buying logistics related clothing for free. # DeltaV - Logistics Department replacing Cargo
+  name: CargoDrobe
+  description: A highly advanced vending machine for buying cargo related clothing for free.
   components:
   - type: VendingMachine
     pack: CargoDrobeInventory
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-  - type: Advertise
-    pack: CargoDrobeAds
+  - type: DatasetVocalizer
+    dataset: CargoDrobeAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
@@ -1904,8 +2118,8 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-  - type: Advertise
-    pack: MediDrobeAds
+  - type: DatasetVocalizer
+    dataset: MediDrobeAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
@@ -1932,8 +2146,8 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-  - type: Advertise
-    pack: ChemDrobeAds
+  - type: DatasetVocalizer
+    dataset: ChemDrobeAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
@@ -1960,8 +2174,8 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-  - type: Advertise
-    pack: CuraDrobeAds
+  - type: DatasetVocalizer
+    dataset: CuraDrobeAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
@@ -1975,7 +2189,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [["Library"]]
+    access: [["Service"]]
 
 - type: entity
   parent: VendingMachine
@@ -1988,8 +2202,8 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-  - type: Advertise
-    pack: AtmosDrobeAds
+  - type: DatasetVocalizer
+    dataset: AtmosDrobeAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
@@ -2020,8 +2234,8 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-  - type: Advertise
-    pack: EngiDrobeAds
+  - type: DatasetVocalizer
+    dataset: EngiDrobeAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
@@ -2052,8 +2266,8 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-  - type: Advertise
-    pack: ChefDrobeAds
+  - type: DatasetVocalizer
+    dataset: ChefDrobeAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
@@ -2080,8 +2294,8 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-  - type: Advertise
-    pack: DetDrobeAds
+  - type: DatasetVocalizer
+    dataset: DetDrobeAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
@@ -2108,14 +2322,12 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-    denyState: deny-unshaded
-    ejectState: eject-unshaded
-  - type: Advertise
-    pack: JaniDrobeAds
+  - type: DatasetVocalizer
+    dataset: JaniDrobeAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/lavatory.rsi
+    sprite: Structures/Machines/VendingMachines/janidrobe.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
@@ -2124,14 +2336,14 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-  - type: PointLight
-    radius: 2
-    energy: 1.6
-    color: "#9dc5c9"
-    mask: /Textures/Effects/LightMasks/cone.png
-    autoRot: true
   - type: AccessReader
     access: [["Janitor"]]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#6927C5"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachine
@@ -2144,8 +2356,8 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-  - type: Advertise
-    pack: SciDrobeAds
+  - type: DatasetVocalizer
+    dataset: SciDrobeAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
@@ -2172,8 +2384,8 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-  - type: Advertise
-    pack: SyndieDrobeAds
+  - type: DatasetVocalizer
+    dataset: SyndieDrobeAds
   - type: SpeakOnUIClosed
     pack: SyndieDrobeGoodbyes
   - type: Sprite
@@ -2204,8 +2416,8 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-  - type: Advertise
-    pack: RoboDrobeAds
+  - type: DatasetVocalizer
+    dataset: RoboDrobeAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
@@ -2232,8 +2444,8 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-  - type: Advertise
-    pack: GeneDrobeAds
+  - type: DatasetVocalizer
+    dataset: GeneDrobeAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
@@ -2260,8 +2472,8 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-  - type: Advertise
-    pack: ViroDrobeAds
+  - type: DatasetVocalizer
+    dataset: ViroDrobeAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
@@ -2340,12 +2552,45 @@
     color: "#3c5eb5"
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
-  - type: Advertise
-    pack: HappyHonkAds
+  - type: DatasetVocalizer
+    dataset: HappyHonkAds
   - type: SpeakOnUIClosed
     pack: HappyHonkGoodbyes
   - type: AccessReader
     access: [["Kitchen"], ["Theatre"]]
+
+# Pride Vending Machine
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachinePride
+  name: Pride-O-Mat
+  description: A vending machine containing pride.
+  components:
+  - type: VendingMachine
+    pack: PrideDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: PrideDrobeAds
+  - type: SpeakOnUIClosed
+    pack: PrideDrobeGoodbyes
+  - type: Speech
+  - type: PointLight
+    radius: 1.5
+    energy: 1.3 # reduced energy since the color is pure white
+    color: "#FFFFFF"
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/pride.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
 
 # Gas Tank Dispenser
 
@@ -2389,7 +2634,7 @@
     brokenState: broken
     normalState: normal
     denyState: deny
-    ejectDelay: 2
+  # ejectDelay: 2 Goobstation - No reason for the eject delay to be 2 seconds
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/chemvend.rsi
     layers:
@@ -2404,6 +2649,7 @@
   - type: GuideHelp
     guides:
     - Chemicals
+    - Chemist
 
 - type: entity
   parent: VendingMachineChemicals
@@ -2421,181 +2667,35 @@
   - type: AccessReader
     access: [["SyndicateAgent"]]
 
+# wallmount
 - type: entity
-  id: VendingMachineFitness
-  parent: VendingMachine
-  name: SweatMAX
-  description: An exercise aid and nutrition supplement vendor that preys on your inadequacy.
+  parent: VendingMachineWallmount
+  id: VendingMachineWallMedical
+  name: NanoMed
+  description: "It's a wall-mounted medical equipment dispenser. Natural chemicals only!"
   components:
+  - type: VendingMachine
+    pack: NanoMedInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
   - type: Sprite
-    noRot: true
-    sprite: Structures/Machines/VendingMachines/fitness.rsi
+    sprite: Structures/Machines/VendingMachines/wallmed.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
       shader: unshaded
-    - state: "screen"
-      map: ["enum.VendingMachineVisualLayers.Screen"]
-      shader: unshaded
-    - state: panel
+    - texture: Structures/Machines/VendingMachines/maintenance_panel.png
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-  - type: VendingMachine
-    pack: FitnessVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
-    denyState: deny-unshaded
-    ejectState: eject-unshaded
-    screenState: screen
-  - type: Advertise
-    pack: FitnessVendAds
-  - type: SpeakOnUIClosed
-    pack: GenericVendGoodbyes
-  - type: Transform
-    noRot: false
-  - type: Rotatable
-    rotateWhileAnchored: false
-    rotateWhilePulling: true
   - type: PointLight
-    radius: 2
+    radius: 1.3
     energy: 1.6
-    color: "#9dc5c9"
-    mask: /Textures/Effects/LightMasks/cone.png
-    autoRot: true
-
-- type: entity
-  id: VendingMachineHotfood
-  parent: VendingMachine
-  name: hot foods
-  description: An old vending machine promising 'hot foods'. You doubt any of its contents are still edible.
-  components:
-  - type: Sprite
-    noRot: true
-    sprite: Structures/Machines/VendingMachines/hotfood.rsi
-    layers:
-    - state: "off"
-      map: ["enum.VendingMachineVisualLayers.Base"]
-    - state: "off"
-      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
-      shader: unshaded
-    - state: panel
-      map: ["enum.WiresVisualLayers.MaintenancePanel"]
-    - state: heater
-  - type: VendingMachine
-    pack: HotfoodInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
-    denyState: deny-unshaded
-    ejectState: eject-unshaded
-  - type: Rotatable
-    rotateWhileAnchored: false
-    rotateWhilePulling: true
-  - type: Advertise
-    pack: HotfoodAds
-  - type: SpeakOnUIClosed
-    pack: GenericVendGoodbyes
-  - type: PointLight
-    radius: 2
-    energy: 1.6
-    color: "#9dc5c9"
-    mask: /Textures/Effects/LightMasks/cone.png
-    autoRot: true
-  - type: LanguageKnowledge
-    speaks:
-    - SolCommon
-    understands:
-    - SolCommon
-
-- type: entity
-  id: VendingMachineSolsnack
-  parent: VendingMachine
-  name: Mars Mart
-  description: A SolCentric vending machine dispensing treats from home.
-  components:
-  - type: Sprite
-    noRot: true
-    sprite: Structures/Machines/VendingMachines/solsnack.rsi
-    layers:
-    - state: "off"
-      map: ["enum.VendingMachineVisualLayers.Base"]
-    - state: "off"
-      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
-      shader: unshaded
-    - state: panel
-      map: ["enum.WiresVisualLayers.MaintenancePanel"]
-  - type: VendingMachine
-    pack: SolsnackInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
-    ejectState: eject-unshaded
-    denyState: deny-unshaded
-  - type: Advertise
-    pack: SolsnackAds
-  - type: SpeakOnUIClosed
-    pack: GenericVendGoodbyes
-  - type: Transform
-    noRot: false
-  - type: Rotatable
-    rotateWhileAnchored: false
-    rotateWhilePulling: true
-  - type: PointLight
-    radius: 2
-    energy: 1.6
-    color: "#9dc5c9"
-    mask: /Textures/Effects/LightMasks/cone.png
-    autoRot: true
-  - type: LanguageKnowledge
-    speaks:
-    - SolCommon
-    understands:
-    - SolCommon
-
-- type: entity
-  id: VendingMachineWeeb
-  parent: VendingMachine
-  name: Nippon-tan
-  description: A distressingly ethnic vending machine loaded with high sucrose low calorie for lack of better words snacks.
-  components:
-  - type: Sprite
-    noRot: true
-    sprite: Structures/Machines/VendingMachines/weeb.rsi
-    layers:
-    - state: "off"
-      map: ["enum.VendingMachineVisualLayers.Base"]
-    - state: "off"
-      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
-      shader: unshaded
-    - state: panel
-      map: ["enum.WiresVisualLayers.MaintenancePanel"]
-    - state: fan
-  - type: VendingMachine
-    pack: WeebVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
-    denyState: deny-unshaded
-    ejectState: eject-unshaded
-  - type: Advertise
-    pack: WeebVendAds
-  - type: SpeakOnUIClosed
-    pack: GenericVendGoodbyes
-  - type: Transform
-    noRot: false
-  - type: Rotatable
-    rotateWhileAnchored: false
-    rotateWhilePulling: true
-  - type: PointLight
-    radius: 2
-    energy: 1.6
-    color: "#9dc5c9"
-    mask: /Textures/Effects/LightMasks/cone.png
-    autoRot: true
-  - type: LanguageKnowledge
-    speaks:
-    - SolCommon
-    understands:
-    - SolCommon
+    color: "#43ccb5"
+  - type: AccessReader
+    access: [["Medical"]]
+  - type: GuideHelp
+    guides:
+    - Medical

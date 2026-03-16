@@ -1,3 +1,17 @@
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Spartak <artak10t@gmail.com>
+# SPDX-FileCopyrightText: 2021 Ygg01 <y.laughing.man.y@gmail.com>
+# SPDX-FileCopyrightText: 2022 Illiux <newoutlook@gmail.com>
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 Myctai <108953437+Myctai@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Dora <27211909+catdotjs@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 ## Entity
 
 chem-master-component-activate-no-hands = You have no hands.
@@ -10,25 +24,15 @@ chem-master-bound-user-interface-title = ChemMaster 4000
 
 chem-master-window-input-tab = Input
 chem-master-window-output-tab = Output
-chem-master-window-pill-buffer-tab = Pill Buffer
-chem-master-window-container-label =   Container
-chem-master-window-amount-placeholder = Transfer Amount
+chem-master-window-container-label = Container
 chem-master-window-eject-button = Eject
 chem-master-window-no-container-loaded-text = No container loaded.
 chem-master-window-buffer-text = Buffer
 chem-master-window-buffer-label = buffer:
+chem-master-window-buffer-all-amount = All
 chem-master-window-buffer-empty-text = Buffer empty.
 chem-master-window-buffer-low-text = Not enough solution in buffer
-chem-master-window-pill-buffer-text = Pill Buffer
-chem-master-window-pill-buffer-label = pill buffer:
-chem-master-window-pill-buffer-empty-text = Pill buffer empty.
-chem-master-window-pill-buffer-low-text = Not enough solution in pill buffer
-chem-master-window-save-as-frequent-label = Save as Frequent
-chem-master-window-set-amount-label = Set Amount
 chem-master-window-transfer-button = Transfer
-chem-master-window-transferring-label =    Transferring: [color={$color}]{$quantity}[/color]
-chem-master-window-transferring-default-label =    Transferring: [color=#ffffff]50[/color]
-chem-master-window-reagent-move-button = Move
 chem-master-window-discard-button = Discard
 chem-master-window-packaging-text = Packaging
 chem-master-current-text-label = Label:

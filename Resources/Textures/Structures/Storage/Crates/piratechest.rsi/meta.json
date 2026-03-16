@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "license": "CC-BY-NC-SA 3.0",
-  "copyright": "Sprites by TheGypsyBaron DS:701266770429739008",
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by brainfood118 (github) for ss14",
   "size": {
     "x": 32,
     "y": 32
@@ -14,26 +14,27 @@
       "name": "crate_door"
     },
     {
-      "name": "crate_icon"
-    },
-    {
-      "name": "crate_open"
-    },
-    {
       "name": "welded"
     },
     {
-      "name": "sparking",
-      "delays": [
-        [
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1
+      "name": "crate_icon"
+    },
+    {
+        "name": "sparking",
+        "directions": 1,
+        "delays": [
+            [
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1
+            ]
         ]
-      ]
+    },
+    {
+      "name": "crate_open"
     }
   ]
 }

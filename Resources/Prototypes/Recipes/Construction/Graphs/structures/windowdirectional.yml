@@ -1,3 +1,24 @@
+# SPDX-FileCopyrightText: 2020 Exp <theexp111@gmail.com>
+# SPDX-FileCopyrightText: 2020 Git-Nivrak <59925169+Git-Nivrak@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 SETh lafuente <cetaciocascarudo@gmail.com>
+# SPDX-FileCopyrightText: 2021 SethLafuente <84478872+SethLafuente@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <zddm@outlook.es>
+# SPDX-FileCopyrightText: 2021 cheesePizza2 <34486300+cheesePizza2@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MACMAN2003 <macman2003c@gmail.com>
+# SPDX-FileCopyrightText: 2024 Sphiral <145869023+SphiraI@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 cohanna <conornhanna@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: constructionGraph
   id: WindowDirectional
   start: start
@@ -28,7 +49,6 @@
             - material: ReinforcedPlasmaGlass
               amount: 1
               doAfter: 3
-
         - to: uraniumWindowDirectional
           steps:
             - material: UraniumGlass
@@ -52,7 +72,7 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: SheetGlass1
               amount: 1
             - !type:DeleteEntity {}
@@ -67,7 +87,7 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: SheetRGlass1
               amount: 1
             - !type:DeleteEntity {}
@@ -86,7 +106,7 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: SheetPGlass1
               amount: 1
             - !type:DeleteEntity {}
@@ -105,7 +125,7 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: SheetClockworkGlass1
               amount: 1
             - !type:DeleteEntity {}
@@ -124,7 +144,7 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: SheetRPGlass1
               amount: 1
             - !type:DeleteEntity {}
@@ -137,13 +157,12 @@
               doAfter: 2
             - tool: Anchoring
               doAfter: 3
-              
     - node: uraniumWindowDirectional
       entity: UraniumWindowDirectional
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: SheetUGlass1
               amount: 1
             - !type:DeleteEntity {}
@@ -162,7 +181,7 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: SheetRUGlass1
               amount: 1
             - !type:DeleteEntity {}

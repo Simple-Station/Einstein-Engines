@@ -1,3 +1,21 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <deltanedas@laptop>
+// SPDX-FileCopyrightText: 2023 deltanedas <user@zenith>
+// SPDX-FileCopyrightText: 2024 Hannah Giovanna Dawson <karakkaraz@gmail.com>
+// SPDX-FileCopyrightText: 2024 LittleNyanCat <littlenyancat204@gmail.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 goet <6637097+goet@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Actions;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
@@ -104,8 +122,8 @@ namespace Content.Shared.VendingMachines
         ///     Sound that plays when ejecting an item
         /// </summary>
         [DataField]
-        // Grabbed from: https://github.com/discordia-space/CEV-Eris/blob/f702afa271136d093ddeb415423240a2ceb212f0/sound/machines/vending_drop.ogg
-        public SoundSpecifier SoundVend = new SoundPathSpecifier("/Audio/SimpleStation14/Machines/machine_vend.ogg")
+        // Grabbed from: https://github.com/tgstation/tgstation/blob/d34047a5ae911735e35cd44a210953c9563caa22/sound/machines/machine_vend.ogg
+        public SoundSpecifier SoundVend = new SoundPathSpecifier("/Audio/Machines/machine_vend.ogg")
         {
             Params = new AudioParams
             {
@@ -193,15 +211,18 @@ namespace Content.Shared.VendingMachines
         #endregion
     }
 
-    [Serializable, NetSerializable]
-    public sealed class VendingMachineInventoryEntry
+    [Serializable, NetSerializable, DataDefinition]
+    public sealed partial class VendingMachineInventoryEntry
     {
-        [ViewVariables(VVAccess.ReadWrite)]
+        [DataField]
         public InventoryType Type;
-        [ViewVariables(VVAccess.ReadWrite)]
+
+        [DataField]
         public string ID;
-        [ViewVariables(VVAccess.ReadWrite)]
+
+        [DataField]
         public uint Amount;
+
         public VendingMachineInventoryEntry(InventoryType type, string id, uint amount)
         {
             Type = type;

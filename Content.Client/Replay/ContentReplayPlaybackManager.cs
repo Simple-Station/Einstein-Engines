@@ -1,11 +1,22 @@
-using System.IO.Compression;
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client.Administration.Managers;
 using Content.Client.Launcher;
 using Content.Client.MainMenu;
 using Content.Client.Replay.Spectator;
 using Content.Client.Replay.UI.Loading;
-using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.Chat;
+using Content.Shared._Goobstation.Wizard;
 using Content.Shared.Chat;
 using Content.Shared.Effects;
 using Content.Shared.GameTicking;
@@ -26,8 +37,6 @@ using Robust.Client.Replays.Playback;
 using Robust.Client.State;
 using Robust.Client.Timing;
 using Robust.Client.UserInterface;
-using Robust.Client.UserInterface.Controls;
-using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
@@ -60,7 +69,7 @@ public sealed class ContentReplayPlaybackManager
     public bool IsScreenshotMode = false;
 
     private bool _initialized;
-    
+
     /// <summary>
     /// Most recently loaded file, for re-attempting the load with error tolerance.
     /// Required because the zip reader auto-disposes and I'm too lazy to change it so that
@@ -96,32 +105,17 @@ public sealed class ContentReplayPlaybackManager
             return;
         }
 
-        ReturnToDefaultState();
+        if (_client.RunLevel == ClientRunLevel.SinglePlayerGame)
+            _client.StopSinglePlayer();
 
-        // Show a popup window with the error message
-        var text = Loc.GetString("replay-loading-failed", ("reason", exception));
-        var box = new BoxContainer
+        Action? retryAction = null;
+        Action? cancelAction = null;
+
+        if (!_cfg.GetCVar(CVars.ReplayIgnoreErrors) && LastLoad is { } last)
         {
-            Orientation = BoxContainer.LayoutOrientation.Vertical,
-            Children = {new Label {Text = text}}
-        };
-
-        var popup = new DefaultWindow { Title = "Error!" };
-        popup.Contents.AddChild(box);
-
-        // Add button for attempting to re-load the replay while ignoring some errors.
-        if (!_cfg.GetCVar(CVars.ReplayIgnoreErrors) && LastLoad is {} last)
-        {
-            var button = new Button
-            {
-                Text = Loc.GetString("replay-loading-retry"), 
-                StyleClasses = { StyleBase.ButtonCaution }
-            };
-            
-            button.OnPressed += _ =>
+            retryAction = () =>
             {
                 _cfg.SetCVar(CVars.ReplayIgnoreErrors, true);
-                popup.Dispose();
 
                 IReplayFileReader reader = last.Zip == null
                     ? new ReplayFileReaderResources(_resMan, last.Folder)
@@ -129,11 +123,20 @@ public sealed class ContentReplayPlaybackManager
 
                 _loadMan.LoadAndStartReplay(reader);
             };
-            
-            box.AddChild(button);
         }
 
-        popup.OpenCentered();
+        // If we have an explicit menu to get back to (e.g. replay browser UI), show a cancel button.
+        if (DefaultState != null)
+        {
+            cancelAction = () =>
+            {
+                _stateMan.RequestStateChange(DefaultState);
+            };
+        }
+
+        // Switch to a new game state to present the error and cancel/retry options.
+        var state = _stateMan.RequestStateChange<ReplayLoadingFailed>();
+        state.SetData(exception, cancelAction, retryAction);
     }
 
     public void ReturnToDefaultState()
@@ -204,6 +207,7 @@ public sealed class ContentReplayPlaybackManager
             case InstrumentStartMidiEvent:
             case InstrumentMidiEventEvent:
             case InstrumentStopMidiEvent:
+            case ChargeSpellRaysEffectEvent: // Goobstation
                 // Block visual effects, pop-ups, and sounds
                 return true;
         }

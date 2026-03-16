@@ -1,18 +1,56 @@
 {
-  "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from Aurorastation at commit https://github.com/Aurorastation/Aurora.3/commit/fbc78615f34e2fa615b2768487f4011876e803e7",
-  "size": {
-    "x": 32,
-    "y": 32
-  },
-  "states": [
-    {
-      "name": "icon"
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by UBlueberry for SS14",
+    "size": {
+        "x": 32,
+        "y": 32
     },
-    {
-      "name": "equipped-HELMET",
-      "directions": 4
-    }
-  ]
+    "states": [
+        {
+            "name": "body-icon"
+        },
+        {
+            "name": "cuffcrown-icon"
+        },
+        {
+            "name": "pompom-icon"
+        },
+        {
+            "name": "body-equipped-HELMET",
+            "directions": 4
+        },
+        {
+            "name": "cuffcrown-equipped-HELMET",
+            "directions": 4
+        },
+        {
+            "name": "pompom-equipped-HELMET",
+            "directions": 4
+        },
+        {
+            "name": "body-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "cuffcrown-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "pompom-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "body-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "cuffcrown-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "pompom-inhand-right",
+            "directions": 4
+        }
+    ]
 }

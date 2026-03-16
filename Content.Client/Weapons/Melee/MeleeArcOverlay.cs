@@ -1,3 +1,14 @@
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2024 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using Content.Shared.CombatMode;
 using Robust.Client.Graphics;
@@ -62,7 +73,7 @@ public sealed class MeleeArcOverlay : Overlay
         if (diff.Equals(Vector2.Zero))
             return;
 
-        diff = diff.Normalized() * Math.Min(weapon.Range * weapon.HeavyRangeModifier, diff.Length());
+        diff = diff.Normalized() * Math.Min(weapon.Range, diff.Length());
         args.WorldHandle.DrawLine(playerPos.Position, playerPos.Position + diff, Color.Aqua);
 
         if (weapon.Angle.Theta == 0)

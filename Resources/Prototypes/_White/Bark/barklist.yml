@@ -2,48 +2,38 @@
   id: default
   voiceList:
     Meow: []
-    Mtt:
-    - !type:CharacterGenderRequirement
-      gender: Male
+    Mtt: []
     Tem: []
-    Tenna:
-    - !type:CharacterGenderRequirement
-      gender: Male
+    Tenna: []
     Flowey: []
     Txt1: []
     Txt2: []
     TxtAl: []
-    TxtAsg:
-    - !type:CharacterGenderRequirement
-      gender: Male
+    TxtAsg: []
     TxtAsr: []
-    TxtBer:
-    - !type:CharacterGenderRequirement
-      gender: Male
-    TxtJok:
-    - !type:CharacterGenderRequirement
-      gender: Male
-    TxtLan:
-    - !type:CharacterGenderRequirement
-      gender: Male
-    TxtNoe:
-    - !type:CharacterGenderRequirement
-      gender: Female
-    TxtPap:
-    - !type:CharacterGenderRequirement
-      gender: Male
-    TxtQueen:
-    - !type:CharacterGenderRequirement
-      gender: Female
-    TxtSans:
-    - !type:CharacterGenderRequirement
-      gender: Male
-    TxtSpam:
-    - !type:CharacterGenderRequirement
-      gender: Male
+    TxtBer: []
+    TxtJok: []
+    TxtLan: []
+    TxtNoe: []
+    TxtPap: []
+    TxtQueen: []
+    TxtSans: []
+    TxtSpam: []
     TxtSus: []
-    TxtTor:
-    - !type:CharacterGenderRequirement
-      gender: Female
+    TxtTor: []
     TxtUnd: []
     Gav: []
+    Alto: []
+    Baritone: []
+    Bass: []
+    Tenor: []
+    MaleAvali: []
+    FemaleAvali: []
+    Pai: []
+    Borg: []
+    BorgSyndie: []
+    Durk: []
+    Aviu1: []
+    Aviu2: []
+    Aviu3: []
+    Aviu4: []

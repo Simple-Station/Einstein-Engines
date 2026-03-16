@@ -1,3 +1,20 @@
+# SPDX-FileCopyrightText: 2024 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 LuciferEOS <stepanteliatnik2022@gmail.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 ### basic
 # Heartbeat of the Mansus (sacrifice)
 - type: hereticRitual
@@ -19,7 +36,7 @@
     sprite: _Goobstation/Heretic/amber_focus.rsi
     state: icon
   requiredTags:
-    GlassShard: 1
+    SheetGlass: 1
     Eyes: 1
   output:
     ClothingNeckAmberFocus: 1
@@ -32,6 +49,7 @@
     sprite: _Goobstation/Heretic/items.rsi
     state: living_heart
   requiredTags:
+    Paper: 1
     Heart: 1
     Pen: 1
   outputEvent: !type:EventHereticRerollTargets
@@ -44,11 +62,36 @@
     sprite: _Goobstation/Heretic/book.rsi
     state: icon-on
   requiredTags:
-    Eyes: 1
+    Meat: 1
     Book: 1
     Pen: 1
   output:
     CodexCicatrix: 1
+
+- type: hereticRitual
+  id: Reminiscence
+  locName: heretic-ritual-basic-reminiscence
+  locDesc: heretic-ritual-basic-reminiscence-desc
+  icon:
+    sprite: _Goobstation/Heretic/Blades/eldritch_blade.rsi
+    state: icon
+  customBehaviors:
+  - !type:RitualRecallBladeBehavior
+  requiredTags:
+    Chair: 1
+
+- type: hereticRitual
+  id: FeastOfOwls
+  locName: heretic-ritual-basic-owls
+  locDesc: heretic-ritual-basic-owls-desc
+  runeSuccessAnimation: false
+  icon:
+    sprite: _Goobstation/Heretic/abilities_heretic.rsi
+    state: god_transmit
+  customBehaviors:
+  - !type:RitualCanAscend
+    checkObjectives: false
+  - !type:RitualFeastOfOwlsBehavior
 
 ### ash path
 - type: hereticRitual
@@ -63,6 +106,7 @@
     Matchstick: 1
   output:
     HereticBladeAsh: 1
+  limit: 2
 
 - type: hereticRitual
   id: MaskOfMadness
@@ -73,7 +117,9 @@
     state: icon
   requiredTags:
     Mask: 1
-    Candle: 4
+    Flare: 1
+    Lighter: 1
+    Ash: 1
     Stunbaton: 1
   output:
     ClothingMaskMadHeretic: 1
@@ -86,6 +132,7 @@
     sprite: _Goobstation/Heretic/abilities_heretic.rsi
     state: ashlord_rite2
   customBehaviors:
+  - !type:RitualCanAscend
   - !type:RitualAshAscendBehavior
     min: 3
     max: 3
@@ -101,9 +148,10 @@
     sprite: _Goobstation/Heretic/Blades/blade_blade.rsi
     state: icon
   requiredTags:
-    Knife: 4
+    Knife: 2
   output:
     HereticBladeBlade: 1
+  limit: 4
 
 - type: hereticRitual
   id: AscensionBlade
@@ -113,6 +161,7 @@
     sprite: _Goobstation/Heretic/items.rsi
     state: protective_blade
   customBehaviors:
+  - !type:RitualCanAscend
   - !type:RitualBladeAscendBehavior
     min: 3
     max: 3
@@ -134,6 +183,7 @@
     Knife: 1
   output:
     HereticBladeFlesh: 1
+  limit: 2
 
 - type: hereticRitual
   id: ImperfectRitual
@@ -144,8 +194,10 @@
     state: full
   customBehaviors:
   - !type:RitualMuteGhoulifyBehavior
+    onlyHumanoid: false
   requiredTags:
-    Poppy: 1
+    Muzzle: 1
+  limit: 2
 
 - type: hereticRitual
   id: RawRitual
@@ -162,6 +214,7 @@
     Stomach: 1
   output:
     MobGhoulProphet: 1
+  limit: 2
 
 - type: hereticRitual
   id: LonelyRitual
@@ -189,6 +242,7 @@
     sprite: _Goobstation/Heretic/abilities_heretic.rsi
     state: final_hymn
   customBehaviors:
+  - !type:RitualCanAscend
   - !type:RitualSacrificeBehavior
     min: 4
     max: 4
@@ -212,6 +266,7 @@
     Knife: 1
   output:
     HereticBladeVoid: 1
+  limit: 2
 
 - type: hereticRitual
   id: AscensionVoid
@@ -221,6 +276,7 @@
     sprite: Interface/Alerts/temperature.rsi
     state: cold3
   customBehaviors:
+  - !type:RitualCanAscend
   - !type:RitualSacrificeBehavior
     min: 3
     max: 3
@@ -229,7 +285,65 @@
   outputKnowledge: WaltzAtTheEndOfTime
   outputEvent: !type:EventHereticAscension
 
+### rust path
+- type: hereticRitual
+  id: BladeRust
+  locName: knowledge-path-rust-s1-name
+  locDesc: knowledge-path-rust-s1-desc
+  icon:
+    sprite: _Goobstation/Heretic/Blades/blade_rust.rsi
+    state: icon
+  requiredTags:
+    Knife: 1
+    Trash: 1
+  output:
+    HereticBladeRust: 1
+  limit: 2
 
+- type: hereticRitual
+  id: AscensionRust
+  locName: knowledge-path-rust-s9-name
+  locDesc: knowledge-path-rust-s9-desc
+  icon:
+    sprite: _Goobstation/Heretic/abilities_heretic.rsi
+    state: ascension_rust
+  customBehaviors:
+  - !type:RitualCanAscend
+  - !type:RitualRustAscendBehavior
+    min: 3
+    max: 3
+  outputKnowledge: RustbringersOath
+  outputEvent: !type:EventHereticAscension
+
+### cosmic path
+- type: hereticRitual
+  id: BladeCosmos
+  locName: knowledge-path-cosmos-s1-name
+  locDesc: knowledge-path-cosmos-s1-desc
+  icon:
+    sprite: _Goobstation/Heretic/Blades/blade_cosmos.rsi
+    state: icon
+  requiredTags:
+    Knife: 1
+    SheetGlass: 1
+  output:
+    HereticBladeCosmos: 1
+  limit: 2
+
+- type: hereticRitual
+  id: AscensionCosmos
+  locName: knowledge-path-cosmos-s9-name
+  locDesc: knowledge-path-cosmos-s9-desc
+  icon:
+    sprite: _Goobstation/Heretic/abilities_heretic.rsi
+    state: stargazer
+  customBehaviors:
+  - !type:RitualCanAscend
+  - !type:RitualCosmosAscendBehavior
+    min: 3
+    max: 3
+  outputKnowledge: CreatorsGift
+  outputEvent: !type:EventHereticAscension
 
 ### side knowledge
 - type: hereticRitual
@@ -248,13 +362,21 @@
   locName: knowledge-path-side-s3-armor-name
   locDesc: knowledge-path-side-s3-armor-desc
   icon:
-    sprite: _Goobstation/Heretic/eldritch_armor.rsi
+    sprite: _Goobstation/Heretic/Clothing/OuterClothing/eldritch_armor.rsi
     state: icon
   requiredTags:
     Table: 1
     GasMask: 1
-  output:
-    ClothingOuterArmorHeretic: 1
+  customBehaviors:
+  - !type:RitualPathBasedSpawnBehavior
+    fallbackEntity: ClothingOuterArmorHeretic
+    spawnedEntities:
+      Ash: ClothingOuterArmorHereticAsh
+      Void: ClothingOuterArmorHereticVoid
+      Flesh: ClothingOuterArmorHereticFlesh
+      Blade: ClothingOuterArmorHereticBlade
+      Cosmos: ClothingOuterArmorHereticCosmos
+      Rust: ClothingOuterArmorHeretic
 
 - type: hereticRitual
   id: PriestRitual
@@ -283,4 +405,63 @@
   output:
     ClothingEldritchMedalion: 1
 
-## stage 7
+- type: hereticRitual
+  id: VoidCloak
+  locName: knowledge-path-side-s3-void-cloak-name
+  locDesc: knowledge-path-side-s3-void-cloak-desc
+  icon:
+    sprite: _Goobstation/Heretic/Clothing/OuterClothing/void_cloak.rsi
+    state: icon
+  requiredTags:
+    GlassShard: 1
+    Bedsheet: 1
+    WinterCoat: 1
+  output:
+    ClothingOuterArmorCloakVoid: 1
+
+- type: hereticRitual
+  id: ScorchingShark
+  locName: knowledge-path-side-s3-shark-name
+  locDesc: knowledge-path-side-s3-shark-desc
+  icon:
+    sprite: _Goobstation/Heretic/eldritch_mobs.rsi
+    state: fire_shark_icon
+  requiredTags:
+    Ash: 3
+    Liver: 1
+    SheetPlasma: 3
+  output:
+    MobGhoulFireShark: 3
+  limit: 15
+
+## stage 6
+
+- type: hereticRitual
+  id: RustedRitual
+  locName: knowledge-path-side-s6-rustwalker-name
+  locDesc: knowledge-path-side-s6-rustwalker-desc
+  icon:
+    sprite: _Goobstation/Heretic/eldritch_mobs.rsi
+    state: rust_walker
+  customBehaviors:
+  - !type:RitualReagentPuddleBehavior
+    reagent: Vomit
+  requiredTags:
+    Steel: 10
+    CableCoil: 15
+  output:
+    MobGhoulRustWalker: 1
+
+- type: hereticRitual
+  id: CarvingKnife
+  locName: knowledge-path-side-s6-knife-name
+  locDesc: knowledge-path-side-s6-knife-desc
+  icon:
+    sprite: _Goobstation/Heretic/items.rsi
+    state: rune_carver
+  requiredTags:
+    GlassShard: 1
+    Paper: 1
+    Knife: 1
+  output:
+    CarvingKnife: 1

@@ -1,35 +1,116 @@
+// SPDX-FileCopyrightText: 2022 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr.@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <drsmugleaf@gmail.com>
+// SPDX-FileCopyrightText: 2023 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Tom Leys <tom@crump-leys.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 crazybrain23 <44417085+crazybrain23@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 vanx <#vanxxxx>
+// SPDX-FileCopyrightText: 2023 vanx <61917534+Vaaankas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ActiveMammmoth <140334666+ActiveMammmoth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 J. Brown <DrMelon@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 JustCone <141039037+JustCone14@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 PopGamer46 <yt1popgamer@gmail.com>
+// SPDX-FileCopyrightText: 2024 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Spessmann <156740760+Spessmann@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 coolboy911 <85909253+coolboy911@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 lunarcomets <140772713+lunarcomets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 saintmuntzer <47153094+saintmuntzer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Marcus F <199992874+thebiggestbruh@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Milon <milonpl.git@proton.me>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 the biggest bruh <199992874+thebiggestbruh@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Goobstation.Common.Changeling;
+using Content.Shared._EinsteinEngines.Language.Components;
+using Content.Shared._EinsteinEngines.Language.Events;
+using Content.Shared._EinsteinEngines.Language.Systems; // Goobstation
+using Content.Goobstation.Common.Mind;
+using Content.Shared._EinsteinEngines.Silicon.Components; // Goobstation
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
+using Content.Shared.Emoting;
 using Content.Shared.Examine;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Movement.Components;
 using Content.Shared.Mind.Components;
+using Content.Shared.Mind.Filters;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Objectives.Systems;
 using Content.Shared.Players;
-using Content.Shared.Silicon.Components;
+using Content.Shared.Speech;
+
+using Content.Shared.Whitelist;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
+using Robust.Shared.Random;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Mind;
 
-public abstract class SharedMindSystem : EntitySystem
+public abstract partial class SharedMindSystem : EntitySystem
 {
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedObjectivesSystem _objectives = default!;
     [Dependency] private readonly SharedPlayerSystem _player = default!;
+    [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
     [Dependency] private readonly MetaDataSystem _metadata = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
 
     [ViewVariables]
     protected readonly Dictionary<NetUserId, EntityUid> UserMinds = new();
+
+    private HashSet<Entity<MindComponent>> _pickingMinds = new();
+
+    private readonly EntProtoId _mindProto = "MindBase";
 
     public override void Initialize()
     {
@@ -40,7 +121,9 @@ public abstract class SharedMindSystem : EntitySystem
         SubscribeLocalEvent<VisitingMindComponent, EntityTerminatingEvent>(OnVisitingTerminating);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnReset);
         SubscribeLocalEvent<MindComponent, ComponentStartup>(OnMindStartup);
-        SubscribeLocalEvent<MindComponent, EntityRenamedEvent>(OnRenamed);
+        SubscribeLocalEvent<MindContainerComponent, EntityRenamedEvent>(OnRenamed); // Goob edit
+
+        InitializeRelay();
     }
 
     public override void Shutdown()
@@ -145,28 +228,44 @@ public abstract class SharedMindSystem : EntitySystem
             UnVisit(component.MindId.Value);
     }
 
+    // goob start
+    public void SetShowExamineInfo(Entity<MindContainerComponent> ent, bool value)
+    {
+        ent.Comp.ShowExamineInfo = value;
+        Dirty(ent);
+    }
+    // goob end
+
     private void OnExamined(EntityUid uid, MindContainerComponent mindContainer, ExaminedEvent args)
     {
         if (!mindContainer.ShowExamineInfo || !args.IsInDetailsRange)
             return;
 
-        // TODO predict we can't right now because session stuff isnt networked
+        // TODO: Move this out of the SharedMindSystem into its own comp and predict it
         if (_net.IsClient)
             return;
 
         var dead = _mobState.IsDead(uid);
-        var hasUserId = CompOrNull<MindComponent>(mindContainer.Mind)?.UserId;
-        var hasSession = CompOrNull<MindComponent>(mindContainer.Mind)?.Session;
+        var mind = CompOrNull<MindComponent>(mindContainer.Mind);
+        var hasUserId = mind?.UserId;
+        var hasActiveSession = hasUserId != null && _playerManager.ValidSessionId(hasUserId.Value);
+
+        // Scenarios:
+        // 1. Dead + No User ID: Entity is permanently dead with no player ever attached
+        // 2. Dead + Has User ID + No Session: Player died and disconnected
+        // 3. Dead + Has Session: Player is dead but still connected
+        // 4. Alive + No User ID: Entity was never controlled by a player
+        // 5. Alive + No Session: Player disconnected while alive (SSD)
 
         if (dead && hasUserId == null)
             args.PushMarkup($"[color=mediumpurple]{Loc.GetString("comp-mind-examined-dead-and-irrecoverable", ("ent", uid))}[/color]");
-        else if (dead && hasSession == null)
+        else if (dead && !hasActiveSession)
             args.PushMarkup($"[color=yellow]{Loc.GetString("comp-mind-examined-dead-and-ssd", ("ent", uid))}[/color]");
         else if (dead)
             args.PushMarkup($"[color=red]{Loc.GetString("comp-mind-examined-dead", ("ent", uid))}[/color]");
         else if (hasUserId == null)
             args.PushMarkup($"[color=mediumpurple]{Loc.GetString("comp-mind-examined-catatonic", ("ent", uid))}[/color]");
-        else if (hasSession == null)
+        else if (!hasActiveSession)
             args.PushMarkup($"[color=yellow]{Loc.GetString("comp-mind-examined-ssd", ("ent", uid))}[/color]");
     }
 
@@ -183,9 +282,13 @@ public abstract class SharedMindSystem : EntitySystem
             args.Handled = true;
     }
 
-    private void OnRenamed(Entity<MindComponent> ent, ref EntityRenamedEvent args)
+    private void OnRenamed(Entity<MindContainerComponent> ent, ref EntityRenamedEvent args) // Goob edit start
     {
-        ent.Comp.CharacterName = args.NewName;
+        if (!TryComp(ent.Comp.Mind, out MindComponent? mind))
+            return;
+
+        mind.CharacterName = args.NewName;
+        // Goob edit end
         Dirty(ent);
     }
 
@@ -200,9 +303,16 @@ public abstract class SharedMindSystem : EntitySystem
         return null;
     }
 
+    // Goobstation
+    public void SetGhostOnShutdown(EntityUid uid, bool value, MindContainerComponent? mind = null)
+    {
+        if (Resolve(uid, ref mind))
+            mind.GhostOnShutdown = value;
+    }
+
     public Entity<MindComponent> CreateMind(NetUserId? userId, string? name = null)
     {
-        var mindId = Spawn(null, MapCoordinates.Nullspace);
+        var mindId = Spawn(_mindProto, MapCoordinates.Nullspace);
         _metadata.SetEntityName(mindId, name == null ? "mind" : $"mind ({name})");
         var mind = EnsureComp<MindComponent>(mindId);
         mind.CharacterName = name;
@@ -239,6 +349,24 @@ public abstract class SharedMindSystem : EntitySystem
             return true;
         // They might actually be alive.
         return _mobState.IsDead(mind.OwnedEntity.Value, targetMobState);
+    }
+
+    /// <summary>
+    ///     True if the OwnedEntity of this mind is physically unrevivable.
+    ///     This is mainly to check whether a mind is able to inherit their "original" character again without the need for creating a new one.
+    ///     In cases of being a brain, being borged or a zombie they are "unrevivable"
+    /// </summary>
+    public bool IsCharacterUnrevivablePhysically(MindComponent mind)
+    {
+        if (mind.OwnedEntity == null)
+            return true;
+
+        // This entity cannot be dead, alive or crit, so it makes sense it cannot be revived to begin with.
+        if (!HasComp<MobStateComponent>(mind.OwnedEntity))
+            return true;
+
+        // Could use checks for the amount of damage they have, but with chemistry you can never tell what damage means someone is truly "unrevivable".
+        return false;
     }
 
     public virtual void Visit(EntityUid mindId, EntityUid entity, MindComponent? mind = null)
@@ -349,6 +477,9 @@ public abstract class SharedMindSystem : EntitySystem
         var title = Name(objective);
         _adminLogger.Add(LogType.Mind, LogImpact.Low, $"Objective {objective} ({title}) added to mind of {MindOwnerLoggingString(mind)}");
         mind.Objectives.Add(objective);
+        // Shitmed Change - Raise an event on the mind ent with the objective.
+        var ev = new ObjectiveAddedEvent(objective);
+        RaiseLocalEvent(mindId, ev);
     }
 
     /// <summary>
@@ -365,6 +496,16 @@ public abstract class SharedMindSystem : EntitySystem
         var title = Name(objective);
         _adminLogger.Add(LogType.Mind, LogImpact.Low, $"Objective {objective} ({title}) removed from the mind of {MindOwnerLoggingString(mind)}");
         mind.Objectives.Remove(objective);
+
+        // garbage collection - only delete the objective entity if no mind uses it anymore
+        // This comes up for stuff like paradox clones where the objectives share the same entity
+        var mindQuery = AllEntityQuery<MindComponent>();
+        while (mindQuery.MoveNext(out _, out var queryComp))
+        {
+            if (queryComp.Objectives.Contains(objective))
+                return true;
+        }
+
         Del(objective);
         return true;
     }
@@ -412,6 +553,33 @@ public abstract class SharedMindSystem : EntitySystem
     // End DeltaV - Cosmic Cult Deconversion
 
     /// <summary>
+    /// Copies objectives from one mind to another, so that they are shared between two players.
+    /// </summary>
+    /// <remarks>
+    /// Only copies the reference to the objective entity, not the entity itself.
+    /// This relies on the fact that objectives are never changed after spawning them.
+    /// If someone ever changes that, they will have to address this.
+    /// </remarks>
+    /// <param name="source"> mind entity of the player to copy from </param>
+    /// <param name="target"> mind entity of the player to copy to </param>
+    /// <param name="except"> whitelist for objectives that should be copied </param>
+    /// <param name="except"> blacklist for objectives that should not be copied </param>
+    public void CopyObjectives(Entity<MindComponent?> source, Entity<MindComponent?> target, EntityWhitelist? whitelist = null, EntityWhitelist? blacklist = null)
+    {
+        if (!Resolve(source, ref source.Comp) || !Resolve(target, ref target.Comp))
+            return;
+
+        foreach (var objective in source.Comp.Objectives)
+        {
+            if (target.Comp.Objectives.Contains(objective))
+                continue; // target already has this objective
+
+            if (_whitelist.CheckBoth(objective, blacklist, whitelist))
+                AddObjective(target, target.Comp, objective);
+        }
+    }
+
+    /// <summary>
     /// Tries to find an objective that has the same prototype as the argument.
     /// </summary>
     /// <remarks>
@@ -433,12 +601,6 @@ public abstract class SharedMindSystem : EntitySystem
         }
 
         return false;
-    }
-
-    public bool TryGetSession(EntityUid? mindId, [NotNullWhen(true)] out ICommonSession? session)
-    {
-        session = null;
-        return TryComp(mindId, out MindComponent? mind) && (session = mind.Session) != null;
     }
 
     /// <summary>
@@ -529,6 +691,27 @@ public abstract class SharedMindSystem : EntitySystem
     }
 
     /// <summary>
+    ///     True if this Mind is 'sufficiently unrevivable' IC (Objectives, EndText).
+    ///     Note that this is *IC logic*, it's not necessarily tied to any specific truth.
+    ///     "If administrators decide that zombies are unrevivable, this returns true for zombies."
+    ///     Alternative IsCharacterDeadIC that checks for whether they will be able to inherit their body again.
+    ///     State in which they must be given a new body to "live" (borging, being a brain, etc) should count as "unrevivable".
+    /// </summary>
+    public bool IsCharacterUnrevivableIc(MindComponent mind)
+    {
+        if (mind.OwnedEntity is { } owned)
+        {
+            var ev = new GetCharacterUnrevivableIcEvent(null);
+            RaiseLocalEvent(owned, ref ev);
+
+            if (ev.Unrevivable != null)
+                return ev.Unrevivable.Value;
+        }
+
+        return IsCharacterUnrevivablePhysically(mind);
+    }
+
+    /// <summary>
     ///     A string to represent the mind for logging
     /// </summary>
     public string MindOwnerLoggingString(MindComponent mind)
@@ -547,27 +730,119 @@ public abstract class SharedMindSystem : EntitySystem
 
     /// <summary>
     /// Returns a list of every living humanoid player's minds, except for a single one which is exluded.
+    /// A new hashset is allocated for every call, consider using <see cref="AddAliveHumans"/> instead.
     /// </summary>
-    public HashSet<Entity<MindComponent>> GetAliveHumans(EntityUid? exclude = null, bool excludeSilicon = false)
+    public HashSet<Entity<MindComponent>> GetAliveHumans(EntityUid? exclude = null)
     {
         var allHumans = new HashSet<Entity<MindComponent>>();
+        AddAliveHumans(allHumans, exclude);
+        return allHumans;
+    }
+
+    /// <summary>
+    /// Adds to a hashset every living humanoid player's minds, except for a single one which is exluded.
+    /// </summary>
+    public void AddAliveHumans(HashSet<Entity<MindComponent>> allHumans, EntityUid? exclude = null)
+    {
         // HumanoidAppearanceComponent is used to prevent mice, pAIs, etc from being chosen
-        var query = EntityQueryEnumerator<MobStateComponent, HumanoidAppearanceComponent>();
-        while (query.MoveNext(out var uid, out var mobState, out _))
+        var query = EntityQueryEnumerator<HumanoidAppearanceComponent, MobStateComponent>();
+        while (query.MoveNext(out var uid, out _, out var mobState))
         {
             // the player needs to have a mind and not be the excluded one +
             // the player has to be alive
             if (!TryGetMind(uid, out var mind, out var mindComp) || mind == exclude || !_mobState.IsAlive(uid, mobState))
                 continue;
 
-            // Goobstation: Skip IPCs from selections
-            if (excludeSilicon && HasComp<SiliconComponent>(uid))
+            // Goobstation - selection blocker event
+            var blockEv = new GetAntagSelectionBlockerEvent();
+            RaiseLocalEvent(uid, ref blockEv);
+
+            if (blockEv.Blocked)
                 continue;
 
-            allHumans.Add(new Entity<MindComponent>(mind, mindComp));
+            allHumans.Add((mind, mindComp));
+        }
+    }
+
+    /// <summary>
+    /// Picks a random mind from a pool after applying a list of filters.
+    /// Returns null if no valid mind could be found.
+    /// </summary>
+    public Entity<MindComponent>? PickFromPool(IMindPool pool, List<MindFilter> filters, EntityUid? exclude = null)
+    {
+        _pickingMinds.Clear();
+        pool.FindMinds(_pickingMinds, exclude, EntityManager, this);
+        FilterMinds(_pickingMinds, filters, exclude);
+
+        if (_pickingMinds.Count == 0)
+            return null;
+
+        return _random.Pick(_pickingMinds);
+    }
+
+    /// <summary>
+    /// Filters minds from a hashset using a single <see cref="MindFilter"/>.
+    /// </summary>
+    public void FilterMinds(HashSet<Entity<MindComponent>> minds, MindFilter filter, EntityUid? exclude = null)
+    {
+        minds.RemoveWhere(mind => filter.Filter(mind, exclude, EntityManager, this));
+    }
+
+    /// <summary>
+    /// Filters minds from a hashset using a list of <see cref="MindFilter"/>s to apply sequentially.
+    /// </summary>
+    public void FilterMinds(HashSet<Entity<MindComponent>> minds, List<MindFilter> filters, EntityUid? exclude = null)
+    {
+        foreach (var filter in filters)
+        {
+            // no point calling it if there are none left
+            if (minds.Count == 0)
+                break;
+
+            FilterMinds(minds, filter, exclude);
+        }
+    }
+
+    /// <summary>
+    /// Give sentience to a target entity by attaching necessary components.
+    /// </summary>
+    /// <param name="uid">Uid of the target entity.</param>
+    /// <param name="allowMovement">Whether the target entity should be able to move.</param>
+    /// <param name="allowSpeech">Whether the target entity should be able to talk.</param>
+    public void MakeSentient(EntityUid uid, bool allowMovement = true, bool allowSpeech = true)
+    {
+        EnsureComp<MindContainerComponent>(uid);
+        if (allowMovement)
+        {
+            EnsureComp<InputMoverComponent>(uid);
+            EnsureComp<MobMoverComponent>(uid);
+            EnsureComp<MovementSpeedModifierComponent>(uid);
         }
 
-        return allHumans;
+        if (allowSpeech)
+        {
+            EnsureComp<SpeechComponent>(uid);
+            EnsureComp<EmotingComponent>(uid);
+        }
+
+        EnsureComp<ExaminerComponent>(uid);
+
+        // Einstein Engines - Language begin
+        // If the entity already speaks some language (like monkey or robot), we do nothing else.
+        // Otherwise, we give them the fallback language
+
+        // I'm assuming here that if they have languagespeaker, we don't need to do everything else.
+        if (TryComp<LanguageSpeakerComponent>(uid, out var languageSpeaker) &&
+            languageSpeaker.SpokenLanguages.Count > 1)
+            return;
+
+        var newSpeaker = EnsureComp<LanguageSpeakerComponent>(uid);
+
+        newSpeaker.SpokenLanguages.Add(SharedLanguageSystem.FallbackLanguagePrototype);
+        newSpeaker.UnderstoodLanguages.Add(SharedLanguageSystem.FallbackLanguagePrototype);
+        RaiseLocalEvent(uid, new LanguagesUpdateEvent());
+        Dirty(uid, newSpeaker);
+        // Einstein Engines - Language end
     }
 }
 
@@ -584,3 +859,11 @@ public record struct GetCharactedDeadIcEvent(bool? Dead);
 /// </summary>
 /// <param name="Objective"></param>
 public record struct ObjectiveAddedEvent(EntityUid Objective);
+
+/// <summary>
+/// Raised on an entity to determine whether or not they are "unrevivable" in IC-logic.
+/// Used to check for things such as being borged or a zombie.
+/// </summary>
+/// <param name="Unrevivable"></param>
+[ByRefEvent]
+public record struct GetCharacterUnrevivableIcEvent(bool? Unrevivable);

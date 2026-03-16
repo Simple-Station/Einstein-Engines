@@ -1,16 +1,20 @@
-﻿namespace Content.Shared.Speech
-{
-    [ByRefEvent]
-    public record struct SpeakAttemptEvent(EntityUid Uid, bool Cancelled = false)
-    {
-        /// <summary>
-        ///     Cancels the event.
-        /// </summary>
-        public void Cancel() => Cancelled = true;
+// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
 
-        /// <summary>
-        ///     Uncancels the event. Don't call this unless you know what you're doing.
-        /// </summary>
-        public void Uncancel() => Cancelled = false;
+namespace Content.Shared.Speech
+{
+    public sealed class SpeakAttemptEvent : CancellableEntityEventArgs
+    {
+        public SpeakAttemptEvent(EntityUid uid)
+        {
+            Uid = uid;
+        }
+
+        public EntityUid Uid { get; }
     }
 }

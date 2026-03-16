@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 RadsammyT <32146976+RadsammyT@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using System.Numerics;
 using Content.Shared._EstacaoPirata.Cards.Hand;
@@ -48,8 +55,10 @@ public sealed class CardHandSystem : EntitySystem
     private bool TryGetCardLayer(EntityUid card, out SpriteComponent.Layer? layer)
     {
         layer = null;
-        if (!TryComp(card, out SpriteComponent? cardSprite)
-            || !cardSprite.TryGetLayer(0, out var l))
+        if (!TryComp(card, out SpriteComponent? cardSprite))
+            return false;
+
+        if (!cardSprite.TryGetLayer(0, out var l))
             return false;
 
         layer = l;
@@ -58,8 +67,10 @@ public sealed class CardHandSystem : EntitySystem
 
     private void UpdateSprite(EntityUid uid, CardHandComponent comp)
     {
-        if (!TryComp(uid, out SpriteComponent? sprite)
-            || !TryComp(uid, out CardStackComponent? cardStack))
+        if (!TryComp(uid, out SpriteComponent? sprite))
+            return;
+
+        if (!TryComp(uid, out CardStackComponent? cardStack))
             return;
 
         // Prevents error appearing at spawnMenu

@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2024 NULL882 <gost6865@yandex.ru>
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: WeaponMechMeleeDrill
   parent: BaseMechWeaponMelee
@@ -12,18 +18,18 @@
     - Pickaxe
     - IndustrialMech
   - type: MeleeWeapon
-    canWideSwing: true
+    canWideSwing: false
     autoAttack: true
     angle: 0
     wideAnimationRotation: -90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
-    attackRate: 0.25 # Should be better then a normal drill not worse
+    attackRate: 3.5
     damage:
       groups:
-        Brute: 12 # Giant fucking mech drill
+        Brute: 9
       types:
-        Structural: 50 # Giant fucking mech drill
+        Structural: 40 # ~10 seconds for solid wall / ~21 secods for reinforced wall
 
 - type: entity
   id: WeaponMechMeleeDrillDiamond
@@ -39,15 +45,15 @@
     - Pickaxe
     - IndustrialMech
   - type: MeleeWeapon
-    canWideSwing: true
+    canWideSwing: false
     autoAttack: true
     angle: 0
     wideAnimationRotation: -90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
-    attackRate: 0.25 # Should be better then a normal drill not worse
+    attackRate: 4
     damage:
       groups:
-        Brute: 24
+        Brute: 18
       types:
-        Structural: 100 # Giant fucking mech drill
+        Structural: 60 # ~3 seconds for solid wall / 9 seconds for reinforced wall

@@ -1,3 +1,49 @@
+// SPDX-FileCopyrightText: 2019 Ephememory <yetanotherscuffed@gmail.com>
+// SPDX-FileCopyrightText: 2019 Injazz <43905364+Injazz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2019 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2019 PrPleGoo <felix.leeuwen@gmail.com>
+// SPDX-FileCopyrightText: 2019 Silver <Silvertorch5@gmail.com>
+// SPDX-FileCopyrightText: 2020 Rohesie <rohesie@gmail.com>
+// SPDX-FileCopyrightText: 2020 V�ctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2021 Galactic Chimp <GalacticChimpanzee@gmail.com>
+// SPDX-FileCopyrightText: 2021 Kara D <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2021 Metal Gear Sloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2021 Paul <ritter.paul1+git@googlemail.com>
+// SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2021 moonheart08 <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@gmail.com>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Ygg01 <y.laughing.man.y@gmail.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 DoutorWhite <thedoctorwhite@gmail.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Atmos;
 using Content.Shared.Light.Components;
 using Content.Shared.Movement.Systems;
@@ -15,8 +61,7 @@ namespace Content.Shared.Maps
     [Prototype("tile")]
     public sealed partial class ContentTileDefinition : IPrototype, IInheritingPrototype, ITileDefinition
     {
-        [ValidatePrototypeId<ToolQualityPrototype>]
-        public const string PryingToolQuality = "Prying";
+        public static readonly ProtoId<ToolQualityPrototype> PryingToolQuality = "Prying";
 
         public const string SpaceID = "Space";
 
@@ -47,10 +92,13 @@ namespace Content.Shared.Maps
         [DataField]
         public PrototypeFlags<ToolQualityPrototype> DeconstructTools { get; set; } = new();
 
-        // Delta V
-        [DataField("canShovel")] public bool CanShovel { get; private set; }
-        //Delta V
-        
+        /// <summary>
+        /// Goobstation
+        /// Tile deconstruct do-after time multiplier
+        /// </summary>
+        [DataField]
+        public float DeconstructTimeMultiplier { get; private set; }
+
         /// <summary>
         /// Effective mass of this tile for grid impacts.
         /// </summary>
@@ -72,9 +120,17 @@ namespace Content.Shared.Maps
         /// </summary>
         [DataField("barestepSounds")] public SoundSpecifier? BarestepSounds { get; private set; } = new SoundCollectionSpecifier("BarestepHard");
 
-        [DataField("friction")] public float Friction { get; set; } = 0.2f;
+        /// <summary>
+        /// Base friction modifier for this tile.
+        /// </summary>
+        [DataField("friction")] public float Friction { get; set; } = 1f;
 
         [DataField("variants")] public byte Variants { get; set; } = 1;
+
+        /// <summary>
+        ///     Allows the tile to be rotated/mirrored when placed on a grid.
+        /// </summary>
+        [DataField] public bool AllowRotationMirror { get; set; } = false;
 
         /// <summary>
         /// This controls what variants the `variantize` command is allowed to use.
@@ -102,13 +158,6 @@ namespace Content.Shared.Maps
         public float? MobFriction { get; private set; }
 
         /// <summary>
-        ///     "Average" static coefficient of friction for assuming a steel tile. This is only used as a fallback for a fallback for a fallback,
-        ///     except in the case of Space Wind. This default value is assuming an interaction interface of "Rubber on steel tile".
-        /// </summary>
-        [DataField]
-        public float? MobFrictionNoInput;
-
-        /// <summary>
         ///     Accel override for mob mover in <see cref="SharedMoverController"/>
         /// </summary>
         [DataField("mobAcceleration")]
@@ -131,15 +180,10 @@ namespace Content.Shared.Maps
             TileId = id;
         }
 
-        /// <summary>
-        ///     For optionally handling per-tile behavior of airflow simulation. Which is useful for ZAS-like air sim, and for MAS.
-        ///     Intentionally public because I want entities to be able to mess with this, such as ship shielding that prevents air from flowing across a shielded tile.
-        ///     For planet maps, you can instead mark the GridAtmosphere as !Simulated. Which will make the entire atmos system not run on a given grid.
-        /// </summary>
         [DataField]
-        public bool Reinforced;
+        public bool Reinforced = false;
 
         [DataField]
-        public bool SimulatedTurf = true;
+        public float TileRipResistance = 125f;
     }
 }

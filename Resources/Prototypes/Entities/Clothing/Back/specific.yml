@@ -1,3 +1,22 @@
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 crazybrain23 <44417085+crazybrain23@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
+# SPDX-FileCopyrightText: 2025 Terraspark4941 <terraspark4941@gmail.com>
+# SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
+# SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: ClothingBackpack
   id: ClothingBackpackChameleon
@@ -5,25 +24,26 @@
   description: You wear this on your back and put items into it.
   suffix: Chameleon
   components:
-    - type: Tag
-      tags: [] # ignore "WhitelistChameleon" tag
-    - type: Sprite
-      sprite: Clothing/Back/Backpacks/backpack.rsi
-    - type: ChameleonClothing
-      slot: [back]
-      default: ClothingBackpack
-    - type: UserInterface
-      interfaces:
-        enum.StorageUiKey.Key:
-          type: StorageBoundUserInterface
-        enum.ChameleonUiKey.Key:
-          type: ChameleonBoundUserInterface
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/backpack.rsi
+  - type: ChameleonClothing
+    slot: [back]
+    default: ClothingBackpack
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+      enum.ChameleonUiKey.Key:
+        type: ChameleonBoundUserInterface
+  - type: HideContrabandContent #Goobstation-Contraband detector
 
 - type: entity
-  parent: Clothing
+  parent: [Clothing, ClothingSlotBase]
   id: ClothingBackpackWaterTank
   name: backpack water tank
-  description: Holds a large amount of fluids. Supplies to spray nozzles in your hands.
+  description: Holds a large amount of fluids. Supplies to spray nozzles in your hands, and has a slot on the side for said spray nozzles.
   components:
   - type: Tag
     tags:
@@ -35,8 +55,24 @@
   - type: Item
     size: Ginormous
   - type: Clothing
-    slots: BACK
+    slots:
+     - BACK
+     - suitStorage  # Goob edit
     sprite: Clothing/Back/Backpacks/waterbackpack.rsi
+  - type: ItemSlots
+    slots:
+      item:
+        priority: 2
+        whitelist:
+          tags:
+          - SprayNozzle
+  - type: ItemMapper
+    mapLayers:
+      icon-filled:
+        whitelist:
+          tags:
+            - SprayNozzle
+  - type: Appearance
   - type: SolutionAmmoProvider
     solutionId: tank
     proto: BulletWaterShot
@@ -61,25 +97,55 @@
     solution: tank
   - type: ExaminableSolution
     solution: tank
+    exactVolume: true
+  - type: PhysicalComposition #Goobstation - Recycle update
+    materialComposition:
+      Steel: 62
+      Glass: 250
+  - type: StaticPrice #Goobstation - Recycle update
+    price: 50
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBagPet
+  name: pet bag
+  description: A small bag designed for use by pets and small animals.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Specific/petbag.rsi
+  - type: Storage
+    grid:
+    - 1,0,2,0
+    - 0,1,2,3
+    - 6,0,7,0
+    - 6,1,8,3
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - CorgiWearable
+    - PetOnly
+  - type: Construction
+    graph: ClothingBagPet
+    node: bagPet
 
 - type: entity
   parent: Clothing
-  id: ClothingBackpackEtherealTeleporter
-  name: ethereal teleporter
-  description: Originally created while several research facilities were experimenting on Shadowkin, this backpack allows the wearer to jump the gap between the "normal" dimension and The Dark.
+  id: ClothingBackpackHarmpack
+  name: H.A.R.M.P.A.C.K.
+  description: Now you can reload, punch, and eat a snack - simultaneously.
   components:
-    - type: Tag
-      tags:
-        - WhitelistChameleon
-    - type: Sprite
-      sprite: Clothing/Back/etherealteleporter.rsi
-      state: icon
-    - type: Item
-      size: Ginormous
-    - type: Clothing
-      slots: BACK
-      sprite: Clothing/Back/etherealteleporter.rsi
-    # TODO: Uncomment this when ClothingGrantPsionicPower is fixed and back working.
-    # - type: ClothingGrantPsionicPower
-    #   power: DarkSwapPower
-    # - type: Psionic
+  - type: Sprite
+    sprite: Clothing/Back/Specific/harmpack.rsi
+    state: icon
+  - type: Item
+    size: Ginormous
+  - type: Clothing
+    slots: BACK
+  - type: ExtraHandsEquipment
+    hands:
+      # middle hands to prevent overlapping inhand sprites
+      # This can be changed once we have per-hand displacement maps
+      extra_hand_1:
+        location: Middle
+      extra_hand_2:
+        location: Middle

@@ -1,3 +1,3 @@
-cmd-menuvis-desc = Установите ограничения на то, какие сущности показывать в контекстном меню сущностей.
-cmd-menuvis-help = Использование: { Command } [NoFoV] [InContainer] [Invisible] [All]
-cmd-menuvis-error = Неизвестный аргумент видимости '{ $arg }'. Только 'NoFov', 'InContainer', 'Invisible' или 'All' действительны. Не указывайте аргументов, чтобы установить значение по умолчанию.
+cmd-menuvis-desc = Set restrictions about what entities to show on the entity context menu.
+cmd-menuvis-help = Usage: { Command } [NoFoV] [InContainer] [Invisible] [All]
+cmd-menuvis-error = Unknown visibility argument '{ $arg }'. Only 'NoFov', 'InContainer', 'Invisible' or 'All' are valid. Provide no arguments to set to default.

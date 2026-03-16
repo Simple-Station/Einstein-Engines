@@ -1,3 +1,74 @@
+# SPDX-FileCopyrightText: 2020 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Hugo Laloge <hugo.laloge@gmail.com>
+# SPDX-FileCopyrightText: 2020 Jackson Lewis <inquisitivepenguin@protonmail.com>
+# SPDX-FileCopyrightText: 2020 Metal Gear Sloth <metalgearsloth@gmail.com>
+# SPDX-FileCopyrightText: 2020 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2020 V�ctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 py01 <60152240+collinlunn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 py01 <pyronetics01@gmail.com>
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Galactic Chimp <GalacticChimpanzee@gmail.com>
+# SPDX-FileCopyrightText: 2021 Paul <ritter.paul1+git@googlemail.com>
+# SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2022 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Ranger6012 <102882503+Ranger6012@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 ScalyChimp <72841710+scaly-chimp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2022 T-Stalker <43253663+DogZeroX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 T-Stalker <le0nel_1van@hotmail.com>
+# SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 ZeroDayDaemon <60460608+ZeroDayDaemon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 AJCM <AJCM@tutanota.com>
+# SPDX-FileCopyrightText: 2023 ElectroJr <leonsfriedrich@gmail.com>
+# SPDX-FileCopyrightText: 2023 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 TaralGit <76408146+TaralGit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 and_a <and_a@DESKTOP-RJENGIR>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lapatison <100279397+lapatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 liltenhead <104418166+liltenhead@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 vanx <61917534+Vaaankas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 BeeRobynn <166929042+BeeRobynn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 CatMagic <135462166+CatMagic1@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 EmoGarbage404 <retron404@gmail.com>
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hmeister <nathan.springfredfoxbon4@gmail.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 RiceMar1244 <138547931+RiceMar1244@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 S1rFl0 <49481675+S1rFl0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BramvanZijp <56019239+BramvanZijp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 John <35928781+sporkyz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 K-Dynamic <20566341+K-Dynamic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 PunishedJoe <PunishedJoeseph@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   name: BaseWeaponShotgun
   parent: BaseItem
@@ -13,7 +84,7 @@
     # If you update this also update the bulldog's size.
     size: Large
   - type: Clothing
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/db_shotgun.rsi # Delta-V
+    sprite: Objects/Weapons/Guns/Shotguns/db_shotgun.rsi
     quickEquip: false
     slots:
     - Back
@@ -28,48 +99,59 @@
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
-    fireOnDropChance: 0.2
   - type: BallisticAmmoProvider
     whitelist:
       tags:
       - ShellShotgun
-      - Flare
     capacity: 7
     proto: ShellShotgun
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
+    soundRack: #Mono start
+      path: /Audio/_Mono/Weapons/Guns/Cock/shotgun_cock.ogg
+      params:
+        volume: -3 #Mono end
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
         ents: []
   - type: StaticPrice
     price: 500
-  - type: Execution
+  # Goobstation edit start
+  - type: EmitSoundOnPickup
+    sound:
+      collection: ShotgunsPickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: ShotgunsDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: ShotgunsDrop
+  - type: RestrictGunshotsByUserTag
+    doesntContain:
+    - Oni
+    messages:
+    - oni-cannot-shoot-guns-1
+    - oni-cannot-shoot-guns-2
+    - oni-cannot-shoot-guns-3
+  # Goobstation edit end
+  - type: AltFireMelee # Goobstation V
+    attackType: Heavy
   - type: MeleeWeapon
-    attackRate: 1.4
     damage:
       types:
-        Blunt: 10
-    bluntStaminaDamageFactor: 1.3333
-    swapKeys: true
-    disableHeavy: true
-    animation: WeaponArcThrust
-    wideAnimationRotation: 180
+       Blunt: 12
+    angle: 0
+    wideAnimationRotation: 90 # -90 if it takes bayonets (hits with muzzle) 90 if not (hits with butt)
     soundHit:
-      collection: MetalThud
-  - type: IncreaseDamageOnWield
-    damage:
-      types:
-        Blunt: 2.5
-  - type: DamageOtherOnHit
-    staminaCost: 9.5
+      collection: MetalThud # Goobstation ^
 
 - type: entity
   name: Bulldog
   # Don't parent to BaseWeaponShotgun because it differs significantly
   parent: [BaseItem, BaseGunWieldable, BaseSyndicateContraband]
   id: WeaponShotgunBulldog
-  description: It's a magazine-fed shotgun designed for close quarters combat. Uses .50 shotgun shells.
+  description: A fully automatic, bullpup shotgun for when you have three seconds to turn eight people into pasta sauce. Kicks like a mule on steroids. Feeds from 12 Gauge drum magazines. # Goobstation
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/bulldog.rsi
@@ -89,7 +171,7 @@
   - type: AmmoCounter
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
-    fireRate: 2
+    fireRate: 3 # Goobstation edit
     selectedMode: FullAuto
     availableModes:
     - FullAuto
@@ -97,10 +179,6 @@
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
-    fireOnDropChance: 0.3
-    shotgunSpreadMultiplier: 1.5
-    shotgunProjectileCountModifier: 1.33
-  - type: Wieldable
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -124,62 +202,23 @@
     zeroVisible: true
   - type: Appearance
   - type: StaticPrice
-    price: 500
-  - type: Execution
-  - type: MeleeWeapon
-    attackRate: 1.4
-    damage:
-      types:
-        Blunt: 10
-    bluntStaminaDamageFactor: 1.3333
-    swapKeys: true
-    disableHeavy: true
-    animation: WeaponArcThrust
-    wideAnimationRotation: 180
-    soundHit:
-      collection: MetalThud
-  - type: IncreaseDamageOnWield
-    damage:
-      types:
-        Blunt: 2.5
-  - type: DamageOtherOnHit
-    staminaCost: 9.5
-
-- type: entity
-  name: Bulldog
-  parent: [WeaponShotgunBulldog]
-  id: WeaponShotgunBulldogEmpty
-  description: It's a magazine-fed shotgun designed for close quarters combat. Uses .50 shotgun shells.
-  components:
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: null
-        priority: 2
-        whitelist:
-          tags:
-          - MagazineShotgun
-        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
-
-- type: entity
-  name: antique Bulldog
-  parent: WeaponShotgunBulldog
-  id: WeaponShotgunBulldogHoS
-  description: This is a seemingly ordinary shotgun, no different from those issued as standard in the Republic of Biesel Navy. A close inspection reveals that this weapon's serial number is 000000013.
-  components:
-    - type: StealTarget
-      stealGroup: HoSAntiqueWeapon
+    price: 5000
+  - type: RestrictGunshotsByUserTag # Goobstation
+    doesntContain:
+    - Oni
+    messages:
+    - oni-cannot-shoot-guns-1
+    - oni-cannot-shoot-guns-2
+    - oni-cannot-shoot-guns-3
 
 - type: entity
   name: double-barreled shotgun
-  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseSecurityBartenderContraband]
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseSecurityBartenderZookeeperContraband]
   id: WeaponShotgunDoubleBarreled
-  description: An immortal classic. Uses .50 shotgun shells.
+  description: An immortal classic. Uses 12 Gauge shotgun shells.
   components:
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/db_shotgun.rsi # Delta-V
+    sprite: Objects/Weapons/Guns/Shotguns/db_shotgun.rsi
   - type: Item
     size: Normal
     shape:
@@ -187,27 +226,20 @@
     sprite: Objects/Weapons/Guns/Shotguns/db_shotgun_inhands_64x.rsi
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
-    fireRate: 2
-    fireOnDropChance: 0.5
-  - type: Wieldable
+    fireRate: 3
+  - type: GunSpreadModifier
+    spread: 0.6
   - type: BallisticAmmoProvider
     capacity: 2
   - type: Construction
     graph: ShotgunSawn
     node: start
     deconstructionTarget: null
-  - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 8.5
-  - type: DamageOtherOnHit
-    staminaCost: 7.5
 
 - type: entity
   name: double-barreled shotgun
   parent: WeaponShotgunDoubleBarreled
   id: WeaponShotgunDoubleBarreledRubber
-  description: An immortal classic. Uses .50 shotgun shells.
   suffix: Non-Lethal
   components:
   - type: BallisticAmmoProvider
@@ -215,28 +247,22 @@
 
 - type: entity
   name: Enforcer
-  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseRestrictedContraband]
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseSecurityContraband]
   id: WeaponShotgunEnforcer
-  description: A premium combat shotgun based on the Kammerer design, featuring an upgraded clip capacity. .50 shotgun shells.
-  components:
+  description: A premium, semi-automatic shotgun platform designed for law enforcement and counter-terrorism use. Reliable as a pump action, even in extreme conditions. Loads 7 rounds of 12 Gauge. # Goobstation
+  components: # intend for Enforcer to have wider choke for semi-auto function
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/enforcer.rsi
+    sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
   - type: Clothing
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/enforcer.rsi
+    sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
   - type: Item
     sprite: Objects/Weapons/Guns/Shotguns/enforcer_inhands_64x.rsi
+    shape: # Goobstation
+    - 0,0,4,1
   - type: BallisticAmmoProvider
-    capacity: 7
-    autoCycle: false
-  - type: Wieldable
-  - type: GunRequiresWield
-  - type: MeleeWeapon
-    attackRate: 1.4
-    damage:
-      types:
-        Blunt: 9
-  - type: DamageOtherOnHit
-    staminaCost: 8.0
+  - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
+  - type: Gun
+    fireRate: 1.7 # Goobstation
 
 - type: entity
   parent: WeaponShotgunEnforcer
@@ -248,83 +274,60 @@
 
 - type: entity
   name: Kammerer
-  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseRestrictedContraband]
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseSecurityContraband]
   id: WeaponShotgunKammerer
-  description: When an old Remington design meets modern materials, this is the result. A favourite weapon of militia forces throughout many worlds. Uses .50 shotgun shells.
-  components:
+  description: An old and faithful pump action, the Kammerer is cheap, light, and would probably still function if you left it in the burn chamber for a week. Popular for civilian use, and loved by NanoTrasen for its minuscule price tag. Loads 7 rounds of 12 Gauge. # Goobstation
+  components: # intend for Kammerer to have tighter choke for slower fire rate and/or manual cycling
   - type: Item
     size: Normal
     shape:
     - 0,0,4,0
     sprite: Objects/Weapons/Guns/Shotguns/pump_inhands_64x.rsi
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/pump.rsi
+    sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
   - type: Clothing
     sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
-  - type: BallisticAmmoProvider
-    capacity: 4
-    autoCycle: false
+  - type: Gun
+    # fireRate: 1 # goob
+  - type: GunSpreadModifier
+    spread: 0.6
   - type: Tag
     tags:
     - WeaponShotgunKammerer
-  - type: Wieldable
-  - type: Gun
-    shotgunSpreadMultiplier: 0.5
-  - type: ExtendDescription
-    descriptionList:
-      - description: "gun-modifier-choke"
-        fontSize: 12
-        color: "#ff4f00"
-        requireDetailRange: false
+  - type: BallisticAmmoProvider # Goobstation
+    autoCycle: false
 
 - type: entity
   name: sawn-off shotgun
   parent: [ BaseWeaponShotgun, BaseSecurityBartenderContraband ]
   id: WeaponShotgunSawn
-  description: Groovy! Uses .50 shotgun shells.
-  components:
+  description: Groovy! Uses 12 Gauge shotgun shells. # Goob edit
+  components: # needs to be super inaccurate because you don't need to wield it
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/sawn.rsi # Delta-V
+    sprite: Objects/Weapons/Guns/Shotguns/sawn.rsi
   - type: Clothing
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/sawn.rsi # Delta-V
+    sprite: Objects/Weapons/Guns/Shotguns/sawn.rsi
   - type: Item
     size: Small
+    shape: # Goobstation
+    - 0,0,2,0
     sprite: Objects/Weapons/Guns/Shotguns/sawn_inhands_64x.rsi
   - type: Gun
-    fireRate: 4
-    fireOnDropChance: 0.5
-    shotgunSpreadMultiplier: 3
-    damageModifier: 1.5
+    fireRate: 3
+  - type: GunSpreadModifier
+    spread: 1.4
   - type: BallisticAmmoProvider
     capacity: 2
   - type: Construction
     graph: ShotgunSawn
     node: shotgunsawn
     deconstructionTarget: null
-  - type: MeleeWeapon
-    attackRate: 1.2
-    damage:
-      types:
-        Blunt: 7.5
-  - type: DamageOtherOnHit
-    staminaCost: 6
-
-- type: entity
-  parent: WeaponShotgunSawn
-  id: WeaponShotgunSawnLumen
-  suffix: Lumenblast
-  description: Groovy! Uses .50 shotgun shells.
-  components:
-  - type: BallisticAmmoProvider
-    capacity: 2
-    proto: ShellShotgunLumen
 
 - type: entity
   name: sawn-off shotgun
   parent: WeaponShotgunSawn
   id: WeaponShotgunSawnEmpty
-  description: Groovy! Uses .50 shotgun shells.
   suffix: Empty
   components:
   - type: BallisticAmmoProvider
@@ -338,7 +341,7 @@
   name: handmade pistol
   parent: [BaseWeaponShotgun, BaseMinorContraband]
   id: WeaponShotgunHandmade
-  description: Looks unreliable. Uses .50 shotgun shells.
+  description: Looks unreliable. Uses 12 Gauge shotgun shells. # Goob edit
   components:
   - type: Item
     size: Small
@@ -349,7 +352,6 @@
     sprite: Objects/Weapons/Guns/Shotguns/hm_pistol.rsi
   - type: Gun
     fireRate: 4
-    fireOnDropChance: 1
   - type: BallisticAmmoProvider
     capacity: 1
   - type: Construction
@@ -358,14 +360,6 @@
     deconstructionTarget: null
   - type: StaticPrice
     price: 0
-  - type: MeleeWeapon
-    attackRate: 1.2
-    damage:
-      types:
-        Blunt: 7.5
-    wideAnimationRotation: 135
-  - type: DamageOtherOnHit
-    staminaCost: 5
 
 - type: entity
   name: blunderbuss
@@ -383,23 +377,21 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     fireRate: 2
-    fireOnDropChance: 1
   - type: BallisticAmmoProvider
     capacity: 1
   - type: StaticPrice
     price: 0
-  - type: Wieldable
 
 - type: entity
   name: improvised shotgun
   parent: [BaseWeaponShotgun, BaseGunWieldable, BaseMinorContraband]
   id: WeaponShotgunImprovised
-  description: A shitty, hand-made shotgun that uses .50 shotgun shells. It can only hold one round in the chamber.
+  description: A shitty, hand-made shotgun that uses 12 Gauge shotgun shells. It can only hold one round in the chamber. # Goob edit
   components:
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/improvised_shotgun.rsi # Delta-V
+    sprite: Objects/Weapons/Guns/Shotguns/improvised_shotgun.rsi
   - type: Clothing
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/improvised_shotgun.rsi # Delta-V
+    sprite: Objects/Weapons/Guns/Shotguns/improvised_shotgun.rsi
   - type: Item
     size: Normal
     shape:
@@ -408,7 +400,6 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     fireRate: 4 #No reason to stifle the firerate since you have to manually reload every time anyways.
-    fireOnDropChance: 1
   - type: BallisticAmmoProvider
     capacity: 1
     proto: null
@@ -417,6 +408,9 @@
     node: shotgun
   - type: StaticPrice
     price: 20
+  - type: Tag
+    tags:
+    - ImprovisedShotgun # Goobstation
 
 - type: entity
   name: improvised shotgun

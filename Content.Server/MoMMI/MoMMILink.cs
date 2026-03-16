@@ -1,3 +1,17 @@
+// SPDX-FileCopyrightText: 2019 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2020 Tyler Young <tyler.young@impromptu.ninja>
+// SPDX-FileCopyrightText: 2020 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Json;
@@ -18,14 +32,11 @@ namespace Content.Server.MoMMI
         [Dependency] private readonly IStatusHost _statusHost = default!;
         [Dependency] private readonly IChatManager _chatManager = default!;
         [Dependency] private readonly ITaskManager _taskManager = default!;
-        private  ISawmill _sawmill = default!;
-        private readonly HttpClient _httpClient = new();
 
-        
+        private readonly HttpClient _httpClient = new();
 
         void IPostInjectInit.PostInject()
         {
-            _sawmill = Logger.GetSawmill("mommi");
             _statusHost.AddHandler(HandleChatPost);
         }
 
@@ -51,7 +62,7 @@ namespace Content.Server.MoMMI
 
             if (string.IsNullOrWhiteSpace(password))
             {
-                _sawmill.Warning("MoMMI URL specified but not password!");
+                Logger.WarningS("mommi", "MoMMI URL specified but not password!");
                 return;
             }
 

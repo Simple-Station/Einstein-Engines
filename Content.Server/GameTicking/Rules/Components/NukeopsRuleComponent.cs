@@ -1,8 +1,42 @@
-using Content.Server.Maps;
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 TekuNut <13456422+TekuNut@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 2013HORSEMEATSCANDAL <146540817+2013HORSEMEATSCANDAL@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kevin Zheng <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+// SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 OctoRocket <88291550+OctoRocket@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Robert Hardy <robertblake.hardy@outlook.com>
+// SPDX-FileCopyrightText: 2023 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vyacheslav Titov <rincew1nd@ya.ru>
+// SPDX-FileCopyrightText: 2023 Ygg01 <y.laughing.man.y@gmail.com>
+// SPDX-FileCopyrightText: 2023 csqrb <56765288+CaptainSqrBeard@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 faint <46868845+ficcialfaint@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 lzk228 <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 moonheart08 <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Титов Вячеслав Витальевич <rincew1nd@yandex.ru>
+// SPDX-FileCopyrightText: 2024 AJCM <AJCM@tutanota.com>
+// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Rainfall <rainfey0+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Rainfey <rainfey0+github@gmail.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.RoundEnd;
-using Content.Shared.Dataset;
 using Content.Shared.NPC.Prototypes;
-using Content.Shared.Roles;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
@@ -66,6 +100,29 @@ public sealed partial class NukeopsRuleComponent : Component
     [DataField]
     public int WarTcAmountPerNukie = 200;
 
+    // Goobstation start
+    /// <summary>
+    /// The ratio of players per nuclear operative for war declaration scaling.
+    /// Example: A value of 10 means one operative per 10 players.
+    /// </summary>
+    [DataField]
+    public int WarNukiePlayerRatio = 12;
+
+    /// <summary>
+    /// Additional telecrystals granted per player on the server during war.
+    /// Total bonus is divided by number of operatives.
+    /// </summary>
+    [DataField]
+    public int WarTcPerPlayer = 20;
+
+    /// <summary>
+    /// Compensation telecrystals granted per missing nuclear operative.
+    /// Total bonus is divided by number of operatives.
+    /// </summary>
+    [DataField]
+    public int WarTcPerNukieMissing = 100;
+    // Goobstation end
+
     /// <summary>
     ///     Delay between war declaration and nuke ops arrival on station map. Gives crew time to prepare
     /// </summary>
@@ -73,16 +130,22 @@ public sealed partial class NukeopsRuleComponent : Component
     public TimeSpan WarNukieArriveDelay = TimeSpan.FromMinutes(15);
 
     /// <summary>
+    ///     Time crew can't call emergency shuttle after war declaration.
+    /// </summary>
+    [DataField]
+    public TimeSpan WarEvacShuttleDisabled = TimeSpan.FromMinutes(25);
+
+    /// <summary>
     ///     Minimal operatives count for war declaration
     /// </summary>
     [DataField]
-    public int WarDeclarationMinOps = 4;
+    public int WarDeclarationMinOps = 2;
 
     [DataField]
     public WinType WinType = WinType.Neutral;
 
     [DataField]
-    public List<WinCondition> WinConditions = new ();
+    public List<WinCondition> WinConditions = new();
 
     [DataField]
     public EntityUid? TargetStation;
@@ -95,36 +158,10 @@ public sealed partial class NukeopsRuleComponent : Component
     /// </summary>
     [DataField]
     public SoundSpecifier GreetSoundNotification = new SoundPathSpecifier("/Audio/Ambience/Antag/nukeops_start.ogg");
-}
 
-/// <summary>
-/// Stores the presets for each operative type
-/// Ie Commander, Agent and Operative
-/// </summary>
-[DataDefinition, Serializable]
-public sealed partial class NukeopSpawnPreset
-{
-
+    // Goobstation - Honkops
     [DataField]
-    public ProtoId<AntagPrototype> AntagRoleProto = "Nukeops";
-
-    /// <summary>
-    /// The equipment set this operative will be given when spawned
-    /// </summary>
-    [DataField]
-    public ProtoId<StartingGearPrototype> GearProto = "SyndicateOperativeGearFull";
-
-    /// <summary>
-    /// The name prefix, ie "Agent"
-    /// </summary>
-    [DataField]
-    public LocId NamePrefix = "nukeops-role-operator";
-
-    /// <summary>
-    /// The entity name suffix will be chosen from this list randomly
-    /// </summary>
-    [DataField]
-    public ProtoId<DatasetPrototype> NameList = "SyndicateNamesNormal";
+    public string LocalePrefix = "nukeops-";
 }
 
 public enum WinType : byte

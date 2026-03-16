@@ -1,7 +1,26 @@
-using System.Linq;
+// SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <wrexbe@protonmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 keronshb <keronshb@live.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 pubbi <63283968+impubbi@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Goobstation.Common.DoAfter;
+using Content.Shared._Goobstation.Wizard.Mutate;
 using Content.Shared.Alert;
-using Content.Shared.Body.Part;
-using Content.Shared.Body.Systems;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
@@ -11,12 +30,13 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
+using Content.Shared.Projectiles;
 using Content.Shared.StepTrigger.Systems;
 using Content.Shared.Strip.Components;
 using Content.Shared.Throwing;
-using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
+using Robust.Shared.Network;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Ensnaring;
@@ -28,17 +48,17 @@ public sealed partial class EnsnareableDoAfterEvent : SimpleDoAfterEvent
 
 public abstract class SharedEnsnareableSystem : EntitySystem
 {
+    [Dependency] private   readonly INetManager _net = default!; // Goobstation
+    [Dependency] private   readonly SharedHulkSystem _hulk = default!; // Goobstation
     [Dependency] private   readonly AlertsSystem _alerts = default!;
     [Dependency] private   readonly MovementSpeedModifierSystem _speedModifier = default!;
     [Dependency] protected readonly SharedAppearanceSystem Appearance = default!;
     [Dependency] private   readonly SharedAudioSystem _audio = default!;
-    [Dependency] private   readonly SharedBodySystem _body = default!;
     [Dependency] protected readonly SharedContainerSystem Container = default!;
     [Dependency] private   readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private   readonly SharedHandsSystem _hands = default!;
     [Dependency] protected readonly SharedPopupSystem Popup = default!;
-    [Dependency] private   readonly StaminaSystem _stamina = default!;
-    [Dependency] private   readonly EntityWhitelistSystem _entityWhitelist = default!;
+    [Dependency] private   readonly SharedStaminaSystem _stamina = default!;
 
     public override void Initialize()
     {
@@ -58,7 +78,7 @@ public abstract class SharedEnsnareableSystem : EntitySystem
         SubscribeLocalEvent<EnsnaringComponent, StepTriggerAttemptEvent>(AttemptStepTrigger);
         SubscribeLocalEvent<EnsnaringComponent, StepTriggeredOffEvent>(OnStepTrigger);
         SubscribeLocalEvent<EnsnaringComponent, ThrowDoHitEvent>(OnThrowHit);
-        SubscribeLocalEvent<EnsnaringComponent, AttemptPacifiedThrowEvent>(OnAttemptPacifiedThrow);
+        SubscribeLocalEvent<EnsnaringComponent, ProjectileHitEvent>(OnProjectileHit); // Goobstation
     }
 
     protected virtual void OnEnsnareInit(Entity<EnsnareableComponent> ent, ref ComponentInit args)
@@ -93,7 +113,18 @@ public abstract class SharedEnsnareableSystem : EntitySystem
         Dirty(uid, component);
         ensnaring.Ensnared = null;
 
-        _hands.PickupOrDrop(args.Args.User, args.Args.Used.Value);
+        // Goobstation start
+        if (ensnaring.DestroyOnRemove)
+        {
+            if (_net.IsServer)
+                QueueDel(args.Args.Used.Value);
+        }
+        else
+            _hands.PickupOrDrop(args.Args.User, args.Args.Used.Value);
+
+        if (args.User == args.Target && TryComp(args.User, out HulkComponent? hulk))
+            _hulk.Roar((args.User, hulk));
+        // Goobstation end
 
         if (args.User == args.Target)
             Popup.PopupPredicted(Loc.GetString("ensnare-component-try-free-complete", ("ensnare", args.Args.Used)), uid, args.User, PopupType.Medium);
@@ -164,6 +195,9 @@ public abstract class SharedEnsnareableSystem : EntitySystem
         var freeTime = user == target ? component.BreakoutTime : component.FreeTime;
         var breakOnMove = !component.CanMoveBreakout;
 
+        if (user == target && HasComp<HulkComponent>(user)) // Goobstation
+            freeTime = 0f;
+
         var doAfterEventArgs = new DoAfterArgs(EntityManager, user, freeTime, new EnsnareableDoAfterEvent(), target, target: target, used: ensnare)
         {
             BreakOnMove = breakOnMove,
@@ -173,6 +207,9 @@ public abstract class SharedEnsnareableSystem : EntitySystem
         };
 
         if (!_doAfter.TryStartDoAfter(doAfterEventArgs))
+            return;
+
+        if (freeTime == 0f) // Goobstation
             return;
 
         if (user == target)
@@ -191,11 +228,6 @@ public abstract class SharedEnsnareableSystem : EntitySystem
             TryFree(uid, args.Actor, entity, ensnaring);
             return;
         }
-    }
-
-    private void OnAttemptPacifiedThrow(Entity<EnsnaringComponent> ent, ref AttemptPacifiedThrowEvent args)
-    {
-        args.Cancel("pacified-cannot-throw-snare");
     }
 
     private void OnRemoveEnsnareAlert(Entity<EnsnareableComponent> ent, ref RemoveEnsnareAlertEvent args)
@@ -246,36 +278,42 @@ public abstract class SharedEnsnareableSystem : EntitySystem
         }
     }
 
+    // Goobstation
+    private void OnProjectileHit(EntityUid uid, EnsnaringComponent component, ProjectileHitEvent args)
+    {
+        if (!component.CanThrowTrigger)
+            return;
+
+        if (TryEnsnare(args.Target, uid, component))
+        {
+            _audio.PlayPvs(component.EnsnareSound, uid);
+        }
+    }
+
     /// <summary>
     /// Used where you want to try to ensnare an entity with the <see cref="EnsnareableComponent"/>
     /// </summary>
     /// <param name="target">The entity that will be ensnared</param>
-    /// <param name="ensnare"> The entity that is used to ensnare</param>
+    /// <paramref name="ensnare"> The entity that is used to ensnare</param>
     /// <param name="component">The ensnaring component</param>
     public bool TryEnsnare(EntityUid target, EntityUid ensnare, EnsnaringComponent component)
     {
         //Don't do anything if they don't have the ensnareable component.
-        if (!TryComp<EnsnareableComponent>(target, out var ensnareable)
-            || component.IgnoredTargets is not null && _entityWhitelist.IsValid(component.IgnoredTargets, target))
+        if (!TryComp<EnsnareableComponent>(target, out var ensnareable))
             return false;
 
-        // Need to insert before free legs check.
+        var numEnsnares = ensnareable.Container.ContainedEntities.Count;
+
+        //Don't do anything if the maximum number of ensnares is applied.
+        if (numEnsnares >= component.MaxEnsnares)
+            return false;
+
         Container.Insert(ensnare, ensnareable.Container);
 
-        var legs = _body.GetBodyChildrenOfType(target, BodyPartType.Leg).Count();
-        var ensnaredLegs = (2 * ensnareable.Container.ContainedEntities.Count);
-        var freeLegs = legs - ensnaredLegs;
-
-        if (freeLegs > 0)
-            return false;
-
-        // Apply stamina damage to target if they weren't ensnared before.
-        if (ensnareable.IsEnsnared != true)
+        // Apply stamina damage to target
+        if (TryComp<StaminaComponent>(target, out var stamina))
         {
-            if (TryComp<StaminaComponent>(target, out var stamina))
-            {
-                _stamina.TakeStaminaDamage(target, component.StaminaDamage, with: ensnare, component: stamina);
-            }
+            _stamina.TakeStaminaDamage(target, component.StaminaDamage, with: ensnare, component: stamina);
         }
 
         component.Ensnared = target;
@@ -283,6 +321,10 @@ public abstract class SharedEnsnareableSystem : EntitySystem
         Dirty(target, ensnareable);
 
         UpdateAlert(target, ensnareable);
+        // Goobstation start
+        var ensnaredEv = new EnsnaredEvent(target);
+        RaiseLocalEvent(ensnare, ref ensnaredEv);
+        // Goobstation end
         var ev = new EnsnareEvent(component.WalkSpeed, component.SprintSpeed);
         RaiseLocalEvent(target, ev);
         return true;
@@ -301,14 +343,14 @@ public abstract class SharedEnsnareableSystem : EntitySystem
 
         var target = component.Ensnared.Value;
 
-        Container.Remove(ensnare, ensnareable.Container, force: true);
+        Container.TryRemoveFromContainer(ensnare, force: true); // Goobstation - fix on ensnare entity remove
         ensnareable.IsEnsnared = ensnareable.Container.ContainedEntities.Count > 0;
         Dirty(component.Ensnared.Value, ensnareable);
         component.Ensnared = null;
 
         UpdateAlert(target, ensnareable);
         var ev = new EnsnareRemoveEvent(component.WalkSpeed, component.SprintSpeed);
-        RaiseLocalEvent(ensnare, ev);
+        RaiseLocalEvent(target, ev);
     }
 
     /// <summary>

@@ -1,17 +1,40 @@
+// SPDX-FileCopyrightText: 2021 Ygg01 <y.laughing.man.y@gmail.com>
+// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2024 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Kayzel <43700376+KayzelW@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+// SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Trest <144359854+trest100@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+// SPDX-FileCopyrightText: 2025 kurokoTurbo <92106367+kurokoTurbo@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.Body.Components;
 using Content.Server.Body.Systems;
-using Content.Server.Traits.Assorted;
 using Content.Shared.Body.Prototypes;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
-using Content.Server.Limbus.Traits;
 
 namespace Content.Server.Body.Components
 {
     /// <summary>
     ///     Handles metabolizing various reagents with given effects.
     /// </summary>
-    [RegisterComponent, Access(typeof(MetabolizerSystem))]
+    // [RegisterComponent, Access(typeof(MetabolizerSystem))] // Goob edit
+    [RegisterComponent] // Goobstation
     public sealed partial class MetabolizerComponent : Component
     {
         /// <summary>
@@ -26,6 +49,18 @@ namespace Content.Server.Body.Components
         /// <returns></returns>
         [DataField]
         public TimeSpan UpdateInterval = TimeSpan.FromSeconds(1);
+
+        /// <summary>
+        /// Multiplier applied to <see cref="UpdateInterval"/> for adjusting based on metabolic rate multiplier.
+        /// </summary>
+        [DataField]
+        public float UpdateIntervalMultiplier = 1f;
+
+        /// <summary>
+        /// Adjusted update interval based off of the multiplier value.
+        /// </summary>
+        [ViewVariables]
+        public TimeSpan AdjustedUpdateInterval => UpdateInterval * UpdateIntervalMultiplier;
 
         /// <summary>
         ///     From which solution will this metabolizer attempt to metabolize chemicals
@@ -46,29 +81,29 @@ namespace Content.Server.Body.Components
         ///     List of metabolizer types that this organ is. ex. Human, Slime, Felinid, w/e.
         /// </summary>
         [DataField]
-        [Access(typeof(MetabolizerSystem), typeof(LiquorLifelineSystem), typeof(VampirismSystem), Other = AccessPermissions.ReadExecute)] // FIXME Friends
-        public HashSet<ProtoId<MetabolizerTypePrototype>>? MetabolizerTypes = null;
+        // [Access(typeof(MetabolizerSystem), Other = AccessPermissions.ReadExecute)] // FIXME Friends // Goob edit
+        public HashSet<ProtoId<MetabolizerTypePrototype>>? MetabolizerTypes;
 
         /// <summary>
         ///     Should this metabolizer remove chemicals that have no metabolisms defined?
         ///     As a stop-gap, basically.
         /// </summary>
         [DataField]
-        public bool RemoveEmpty = false;
+        public bool RemoveEmpty;
 
         /// <summary>
-        ///     How many reagents can this metabolizer process at once?
+        ///     How many poisons can this metabolizer process at once?
         ///     Used to nerf 'stacked poisons' where having 5+ different poisons in a syringe, even at low
         ///     quantity, would be muuuuch better than just one poison acting.
         /// </summary>
-        [DataField("maxReagents")]
-        public int MaxReagentsProcessable = 3;
+        [DataField]
+        public int MaxPoisonsProcessable = 3;
 
         /// <summary>
         ///     A list of metabolism groups that this metabolizer will act on, in order of precedence.
         /// </summary>
         [DataField("groups")]
-        public List<MetabolismGroupEntry>? MetabolismGroups = default!;
+        public List<MetabolismGroupEntry>? MetabolismGroups;
     }
 
     /// <summary>
@@ -79,7 +114,7 @@ namespace Content.Server.Body.Components
     public sealed partial class MetabolismGroupEntry
     {
         [DataField(required: true)]
-        public ProtoId<MetabolismGroupPrototype> Id = default!;
+        public ProtoId<MetabolismGroupPrototype> Id;
 
         [DataField("rateModifier")]
         public FixedPoint2 MetabolismRateModifier = 1.0;

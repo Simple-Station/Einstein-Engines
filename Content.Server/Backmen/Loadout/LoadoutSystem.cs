@@ -4,7 +4,7 @@ using Content.Server.GameTicking;
 using Content.Server.Hands.Systems;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared.Clothing.Components;
-using Content.Shared.Clothing.Loadouts.Prototypes;
+using Content.Shared.Preferences.Loadouts;
 using Content.Shared.GameTicking;
 using Content.Shared.Inventory;
 using Robust.Shared.Prototypes;
@@ -28,75 +28,54 @@ public sealed class LoadoutSystem : EntitySystem
 
     private void OnPlayerSpawned(PlayerSpawnCompleteEvent ev)
     {
-        return; // disable
-
+        return;
         if (!_sponsorsManager.TryGetServerPrototypes(ev.Player.UserId, out var prototypes))
             return;
 
         foreach (var loadoutId in prototypes)
         {
-            // NOTE: Now is easy to not extract method because event give all info we need
             if (!_prototypeManager.TryIndex<LoadoutPrototype>(loadoutId, out var loadout))
                 continue;
 
-            var isSponsorOnly = loadout.SponsorOnly &&
-                                !prototypes.Contains(loadoutId);
-
-            if (isSponsorOnly)
+            if (loadout.SponsorOnly && !prototypes.Contains(loadoutId))
                 continue;
 
-            foreach (var item in loadout.Items)
+            var xform = Transform(ev.Mob);
+            var coordinates = xform.Coordinates;
+
+            foreach (var (slot, protoId) in loadout.Equipment)
             {
-                var entity = Spawn(item, Transform(ev.Mob).Coordinates);
+                var entity = Spawn(protoId, coordinates);
 
-                // Take in hand if not clothes
-                if (!TryComp<ClothingComponent>(entity, out var clothing) || !TryComp<InventoryComponent>(ev.Mob, out var inventoryComponent))
+                if (!_inventorySystem.TryEquip(ev.Mob, entity, slot, true, force: true))
                 {
-                    if(!_handsSystem.TryPickup(ev.Mob, entity))
+                    if (_inventorySystem.TryGetSlotEntity(ev.Mob, BackpackSlotId, out var backEntity) &&
+                        _storageSystem.CanInsert(backEntity.Value, entity, out _))
+                    {
+                        _storageSystem.Insert(backEntity.Value, entity, out _, playSound: false);
+                    }
+                    else
+                    {
                         QueueDel(entity);
-                    continue;
+                    }
                 }
+            }
 
-                // Automatically search empty slot for clothes to equip
-                var firstSlotName = (string?)null;
-                var isEquiped = false;
+            foreach (var protoId in loadout.Inhand)
+            {
+                var entity = Spawn(protoId, coordinates);
 
-                if (!_inventorySystem.TryGetSlots(ev.Mob, out var slotDefinitions))
-                    return;
-
-                foreach (var slot in slotDefinitions)
+                if (!_handsSystem.TryPickup(ev.Mob, entity))
                 {
-                    if (!clothing.Slots.HasFlag(slot.SlotFlags))
-                        continue;
-
-                    firstSlotName ??= slot.Name;
-
-                    if (_inventorySystem.TryGetSlotEntity(ev.Mob, slot.Name, out var _, inventoryComponent))
-                        continue;
-
-                    if (!_inventorySystem.TryEquip(ev.Mob, entity, slot.Name, true, force: true, clothing: clothing, inventory: inventoryComponent))
-                        continue;
-
-                    isEquiped = true;
-                    break;
-                }
-
-                if (isEquiped || firstSlotName == null)
-                    continue;
-
-                // Force equip to first valid clothes slot
-                // Get occupied entity -> Insert to backpack -> Equip loadout entity
-                if (_inventorySystem.TryGetSlotEntity(ev.Mob, firstSlotName, out var slotEntity) &&
-                    _inventorySystem.TryGetSlotEntity(ev.Mob, BackpackSlotId, out var backEntity) &&
-                    _storageSystem.CanInsert(backEntity.Value, slotEntity.Value, out _))
-                {
-                    if(!_storageSystem.Insert(backEntity.Value, slotEntity.Value, out _, playSound: false))
-                        continue;
-                }
-
-                if (!_inventorySystem.TryEquip(ev.Mob, entity, firstSlotName, true, force: true, clothing: clothing, inventory: inventoryComponent))
-                {
-                    QueueDel(entity);
+                    if (_inventorySystem.TryGetSlotEntity(ev.Mob, BackpackSlotId, out var backEntity) &&
+                        _storageSystem.CanInsert(backEntity.Value, entity, out _))
+                    {
+                        _storageSystem.Insert(backEntity.Value, entity, out _, playSound: false);
+                    }
+                    else
+                    {
+                        QueueDel(entity);
+                    }
                 }
             }
         }

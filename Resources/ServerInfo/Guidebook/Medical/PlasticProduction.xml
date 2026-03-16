@@ -1,0 +1,29 @@
+﻿<Document>
+
+  # Производство Пластиковых листов
+
+  <GuideEntityEmbed Entity="SheetPlastic"/>
+
+  Пластиковый лист — это универсальный синтетический материал, используемый в самых различных рецептах. Хоть их производство и не является сложным, для правильного синтеза требуется высокая температура и несколько реагентов.
+
+  ## Рецепт
+
+  Для производства [bold]10 Пластиковых листов[/bold], combine the following in a chemical mixer and heat to at least [bold]374 Kelvin[/bold]:
+
+  — 10u [bold]Машинного масла[/bold]
+
+  — 6u [bold]Пепла[/bold]
+
+  — 4u [bold]Серной кислоты[/bold]
+
+  ## Components
+
+  <GuideReagentEmbed Reagent="Oil"/>
+  <GuideReagentEmbed Reagent="Ash"/>
+  <GuideReagentEmbed Reagent="SulfuricAcid"/>
+
+  ## Output
+
+  После завершения синтеза пластик появится поверх мензурки или ХимМастера.
+
+</Document>

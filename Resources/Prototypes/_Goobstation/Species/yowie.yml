@@ -1,0 +1,234 @@
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 BeeRobynn <166929042+BeeRobynn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: species
+  id: Yowie
+  name: species-name-yowie
+  roundStart: true
+  prototype: MobYowie
+  sprites: MobYowieSprites
+  markingLimits: MobYowieMarkingLimits
+  dollPrototype: MobYowieDummy
+  skinColoration: NoColor
+  defaultSkinTone: "#7d7d7d" # added here to make skin-tone markings work better
+  naming: First
+  maleFirstNames: NamesYowieMale
+  femaleFirstNames: NamesYowieFemale
+  # begin Goobstation: port EE height/width sliders
+  # yowie were like. 1.3x scale before, which is comical
+  minHeight: 1.10
+  defaultHeight: 1.4
+  maxHeight: 1.3
+  minWidth: 1.15
+  defaultWidth: 1.3
+  maxWidth: 1.35
+  # end Goobstation: port EE height/width sliders
+
+# The lack of a layer means that
+# this person cannot have round-start anything
+# applied to that layer. It has to instead
+# be defined as a 'custom base layer'
+# in either the mob's starting marking prototype,
+# or it has to be added in C#.
+- type: speciesBaseSprites
+  id: MobYowieSprites
+  sprites:
+    Head: MobYowieHead
+    Face: MobHumanoidAnyMarking
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
+    Chest: MobYowieChest
+    Groin: MobYowieGroin
+    Eyes: MobHumanoidEyes
+    LArm: MobYowieLArm
+    RArm: MobYowieRArm
+    LHand: MobYowieLHand
+    RHand: MobYowieRHand
+    LLeg: MobYowieLLeg
+    RLeg: MobYowieRLeg
+    LFoot: MobYowieLFoot
+    RFoot: MobYowieRFoot
+    Tail: MobHumanoidAnyMarking
+    HeadTop: MobHumanoidAnyMarking
+
+- type: markingPoints
+  id: MobYowieMarkingLimits
+  points:
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
+      points: 1
+      required: false
+    Snout:
+      points: 1
+      required: false
+    Tail:
+      points: 1
+      required: false
+    HeadTop:
+      points: 8
+      required: false
+    HeadSide:
+      points: 8
+      required: false
+    Chest:
+      points: 10
+      required: false
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
+      required: false
+    RightLeg:
+      points: 2
+      required: false
+    RightFoot:
+      points: 2
+      required: false
+    LeftLeg:
+      points: 2
+      required: false
+    LeftFoot:
+      points: 2
+      required: false
+    RightArm:
+      points: 2
+      required: false
+    RightHand:
+      points: 3
+      required: false
+    LeftArm:
+      points: 2
+      required: false
+    LeftHand:
+      points: 3
+      required: false
+
+- type: humanoidBaseSprite
+  id: MobYowieEyes
+  baseSprite:
+    sprite: Mobs/Customization/eyes.rsi
+    state: eyes
+
+- type: humanoidBaseSprite
+  id: MobYowieAnyMarking
+
+- type: humanoidBaseSprite
+  id: MobYowieMarkingMatchSkin
+  markingsMatchSkin: true
+
+- type: humanoidBaseSprite
+  id: MobYowieHead
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Yowie/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobYowieHeadMale
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Yowie/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobYowieHeadFemale
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Yowie/parts.rsi
+    state: head_f
+
+- type: humanoidBaseSprite
+  id: MobYowieChest
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Yowie/parts.rsi
+    state: chest_m
+
+- type: humanoidBaseSprite
+  id: MobYowieChestMale
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Yowie/parts.rsi
+    state: chest_m
+
+- type: humanoidBaseSprite
+  id: MobYowieChestFemale
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Yowie/parts.rsi
+    state: chest_f
+
+- type: humanoidBaseSprite
+  id: MobYowieGroin
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Yowie/parts.rsi
+    state: groin_m
+
+- type: humanoidBaseSprite
+  id: MobYowieGroinMale
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Yowie/parts.rsi
+    state: groin_m
+
+- type: humanoidBaseSprite
+  id: MobYowieGroinFemale
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Yowie/parts.rsi
+    state: groin_f
+
+- type: humanoidBaseSprite
+  id: MobYowieLLeg
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Yowie/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: MobYowieLArm
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Yowie/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: MobYowieLHand
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Yowie/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: MobYowieLFoot
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Yowie/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: MobYowieRLeg
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Yowie/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: MobYowieRArm
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Yowie/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: MobYowieRHand
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Yowie/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: MobYowieRFoot
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Yowie/parts.rsi
+    state: r_foot

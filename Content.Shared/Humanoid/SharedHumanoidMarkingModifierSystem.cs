@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 csqrb <56765288+CaptainSqrBeard@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.Humanoid.Markings;
 using Robust.Shared.Serialization;
 
@@ -44,7 +53,6 @@ public sealed class HumanoidMarkingModifierState : BoundUserInterfaceState
     public HumanoidMarkingModifierState(
         MarkingSet markingSet,
         string species,
-        string bodyType, // WD EDIT
         Sex sex,
         Color skinColor,
         Dictionary<HumanoidVisualLayers, CustomBaseLayerInfo> customBaseLayers
@@ -52,7 +60,6 @@ public sealed class HumanoidMarkingModifierState : BoundUserInterfaceState
     {
         MarkingSet = markingSet;
         Species = species;
-        BodyType = bodyType; // WD EDIT
         Sex = sex;
         SkinColor = skinColor;
         CustomBaseLayers = customBaseLayers;
@@ -60,7 +67,6 @@ public sealed class HumanoidMarkingModifierState : BoundUserInterfaceState
 
     public MarkingSet MarkingSet { get; }
     public string Species { get; }
-    public string BodyType { get; } // WD EDIT
     public Sex Sex { get; }
     public Color SkinColor { get; }
     public Color EyeColor { get; }

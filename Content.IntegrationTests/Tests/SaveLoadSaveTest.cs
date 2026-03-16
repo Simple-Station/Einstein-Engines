@@ -1,3 +1,29 @@
+// SPDX-FileCopyrightText: 2020 Tyler Young <tyler.young@impromptu.ninja>
+// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Metal Gear Sloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+// SPDX-FileCopyrightText: 2022 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2022 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Ygg01 <y.laughing.man.y@gmail.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.IO;
 using System.Linq;
 using Content.Shared.CCVar;
@@ -88,13 +114,13 @@ namespace Content.IntegrationTests.Tests
             await pair.CleanReturnAsync();
         }
 
-        private const string TestMap = "Maps/pebble.yml";
+        private const string TestMap = "Maps/_Goobstation/bagel.yml"; // Goob edit - what point is there in testing a map without any goob features??
 
         /// <summary>
         ///     Loads the default map, runs it for 5 ticks, then assert that it did not change.
         /// </summary>
         [Test]
-        public async Task LoadSaveTicksSavePebble()
+        public async Task LoadSaveTicksSaveBagel()
         {
             await using var pair = await PoolManager.GetServerClient();
             var server = pair.Server;
@@ -110,7 +136,7 @@ namespace Content.IntegrationTests.Tests
             var cfg = server.ResolveDependency<IConfigurationManager>();
             Assert.That(cfg.GetCVar(CCVars.GridFill), Is.False);
 
-            // Load pebble.yml as uninitialized map, and save it to ensure it's up to date.
+            // Load bagel.yml as uninitialized map, and save it to ensure it's up to date.
             server.Post(() =>
             {
                 var path = new ResPath(TestMap);
@@ -177,11 +203,11 @@ namespace Content.IntegrationTests.Tests
         /// <remarks>
         ///     Should ensure that entities do not perform randomization prior to initialization and should prevents
         ///     bugs like the one discussed in github.com/space-wizards/RobustToolbox/issues/3870. This test is somewhat
-        ///     similar to <see cref="LoadSaveTicksSavePebble"/> and <see cref="SaveLoadSave"/>, but neither of these
+        ///     similar to <see cref="LoadSaveTicksSaveBagel"/> and <see cref="SaveLoadSave"/>, but neither of these
         ///     caught the mentioned bug.
         /// </remarks>
         [Test]
-        public async Task LoadTickLoadPebble()
+        public async Task LoadTickLoadBagel()
         {
             await using var pair = await PoolManager.GetServerClient();
             var server = pair.Server;

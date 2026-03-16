@@ -1,6 +1,16 @@
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 a_person <40855173+a-person5660@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 PunishedJoe <PunishedJoeseph@proton.me>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   abstract: true
-  parent: BaseItem
+  parent: [ BaseItem, BaseSyndicateContraband ]
   id: BaseMagazineBoxHighCaliber
   name: ammunition box (.50 anti-materiel)
   components:
@@ -29,16 +39,15 @@
     zeroVisible: false
   - type: Appearance
 
-# not used so commenting out rather then fixing errors godo
-# - type: entity
-#  parent: BaseMagazineBoxHighCaliber
-#  id: MagazineBoxHighCaliber
+- type: entity
+  parent: BaseMagazineBoxHighCaliber
+  id: MagazineBoxHighCaliber
 
-# - type: entity
-#  parent: BaseMagazineBoxHighCaliber
-#  id: MagazineBoxHighCaliberExplosive
-#  name: ammunition box (.50 high-explosive)
-#  components:
-#  - type: BallisticAmmoProvider
-#    capacity: 30
-#    proto: CartridgeHighCaliberExplosive
+- type: entity
+  parent: BaseMagazineBoxHighCaliber
+  id: MagazineBoxHighCaliberExplosive
+  name: ammunition box (.50 high-explosive incendiary)
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 30
+    proto: CartridgeHighCaliberExplosive

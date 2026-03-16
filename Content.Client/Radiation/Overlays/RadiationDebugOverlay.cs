@@ -1,3 +1,11 @@
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using System.Numerics;
 using Content.Client.Radiation.Systems;
@@ -11,6 +19,7 @@ namespace Content.Client.Radiation.Overlays;
 public sealed class RadiationDebugOverlay : Overlay
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
+    private readonly SharedMapSystem _mapSystem;
     private readonly RadiationSystem _radiation;
 
     private readonly Font _font;
@@ -21,6 +30,7 @@ public sealed class RadiationDebugOverlay : Overlay
     {
         IoCManager.InjectDependencies(this);
         _radiation = _entityManager.System<RadiationSystem>();
+        _mapSystem = _entityManager.System<SharedMapSystem>();
 
         var cache = IoCManager.Resolve<IResourceCache>();
         _font = new VectorFont(cache.GetResource<FontResource>("/Fonts/NotoSans/NotoSans-Regular.ttf"), 8);
@@ -67,7 +77,7 @@ public sealed class RadiationDebugOverlay : Overlay
 
                 foreach (var (tile, rads) in blockers)
                 {
-                    var worldPos = grid.GridTileToWorldPos(tile);
+                    var worldPos = _mapSystem.GridTileToWorldPos(gridUid, grid, tile);
                     var screenCenter = args.ViewportControl.WorldToScreen(worldPos);
                     handle.DrawString(_font, screenCenter, rads.ToString("F2"), 1.5f, Color.White);
                 }
@@ -95,8 +105,8 @@ public sealed class RadiationDebugOverlay : Overlay
             var offset = new Vector2(grid.TileSize, -grid.TileSize) * 0.25f;
             foreach (var (tile, value) in resMap)
             {
-                var localPos = grid.GridTileToLocal(tile).Position + offset;
-                var worldPos = grid.LocalToWorld(localPos);
+                var localPos = _mapSystem.GridTileToLocal(gridUid, grid, tile).Position + offset;
+                var worldPos = _mapSystem.LocalToWorld(gridUid, grid, localPos);
                 var screenCenter = args.ViewportControl.WorldToScreen(worldPos);
                 handle.DrawString(_font, screenCenter, value.ToString("F2"), color: Color.White);
             }
@@ -129,7 +139,7 @@ public sealed class RadiationDebugOverlay : Overlay
                 if (!_entityManager.TryGetComponent<MapGridComponent>(gridUid, out var grid))
                     continue;
                 var (destTile, _) = blockers.Last();
-                var destWorld = grid.GridTileToWorldPos(destTile);
+                var destWorld = _mapSystem.GridTileToWorldPos(gridUid, grid, destTile);
                 handle.DrawLine(ray.Source, destWorld, Color.Red);
             }
         }

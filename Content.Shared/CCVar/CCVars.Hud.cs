@@ -1,4 +1,10 @@
-﻿using Robust.Shared.Configuration;
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Errant <35878406+Errant-4@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.CCVar;
 
@@ -9,9 +15,6 @@ public sealed partial class CCVars
 
     public static readonly CVarDef<bool> HudHeldItemShow =
         CVarDef.Create("hud.held_item_show", true, CVar.ARCHIVE | CVar.CLIENTONLY);
-
-    public static readonly CVarDef<bool> OfferModeIndicatorsPointShow =
-        CVarDef.Create("hud.offer_mode_indicators_point_show", true, CVar.ARCHIVE | CVar.CLIENTONLY);
 
     public static readonly CVarDef<bool> CombatModeIndicatorsPointShow =
         CVarDef.Create("hud.combat_mode_indicators_point_show", true, CVar.ARCHIVE | CVar.CLIENTONLY);
@@ -33,7 +36,4 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> HudVersionWatermark =
         CVarDef.Create("hud.version_watermark", false, CVar.CLIENTONLY | CVar.ARCHIVE);
-
-    public static readonly CVarDef<bool> ModernProgressBar =
-        CVarDef.Create("hud.modern_progress_bar", true, CVar.CLIENTONLY | CVar.ARCHIVE);
 }

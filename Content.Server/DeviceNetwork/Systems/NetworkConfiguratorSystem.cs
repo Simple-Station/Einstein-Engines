@@ -1,7 +1,35 @@
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 vulppine <vulppine@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2023 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Tyzemol <85772526+Tyzemol@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Ygg01 <y.laughing.man.y@gmail.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Andrew <blackledgecreates@gmail.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 Zachary Yona <58833995+Magicalus@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Zachary Yona <magicalusf@gmail.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.DeviceLinking.Systems;
-using Content.Server.DeviceNetwork.Components;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Database;
@@ -19,6 +47,7 @@ using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Map.Events;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -52,6 +81,10 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
         //Verbs
         SubscribeLocalEvent<NetworkConfiguratorComponent, GetVerbsEvent<UtilityVerb>>(OnAddInteractVerb);
         SubscribeLocalEvent<DeviceNetworkComponent, GetVerbsEvent<AlternativeVerb>>(OnAddAlternativeSaveDeviceVerb);
+        // <Goobstation> - Fix device alt-verbs
+        SubscribeLocalEvent<DeviceLinkSinkComponent, GetVerbsEvent<AlternativeVerb>>(OnAddAlternativeSaveDeviceVerbSink);
+        SubscribeLocalEvent<DeviceLinkSourceComponent, GetVerbsEvent<AlternativeVerb>>(OnAddAlternativeSaveDeviceVerbSource);
+        // </Goobstation>
         SubscribeLocalEvent<NetworkConfiguratorComponent, GetVerbsEvent<AlternativeVerb>>(OnAddSwitchModeVerb);
 
         //UI
@@ -67,10 +100,10 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
 
         SubscribeLocalEvent<DeviceListComponent, ComponentRemove>(OnComponentRemoved);
 
-        SubscribeLocalEvent<BeforeSerializationEvent >(OnMapSave);
+        SubscribeLocalEvent<BeforeSerializationEvent>(OnMapSave);
     }
 
-    private void OnMapSave(BeforeSerializationEvent  ev)
+    private void OnMapSave(BeforeSerializationEvent ev)
     {
         var enumerator = AllEntityQuery<NetworkConfiguratorComponent>();
         while (enumerator.MoveNext(out var uid, out var conf))
@@ -121,10 +154,7 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
     private void OnShutdown(EntityUid uid, NetworkConfiguratorComponent component, ComponentShutdown args)
     {
         ClearDevices(uid, component);
-
-        if (TryComp(component.ActiveDeviceList, out DeviceListComponent? list))
-            list.Configurators.Remove(uid);
-        component.ActiveDeviceList = null;
+        ClearActiveDeviceList(uid, component); // Goobstation - Fix desync of configurator lists
     }
 
     private void OnMapInit(EntityUid uid, NetworkConfiguratorComponent component, MapInitEvent args)
@@ -415,6 +445,22 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
     /// </summary>
     private void OnAddAlternativeSaveDeviceVerb(EntityUid uid, DeviceNetworkComponent component, GetVerbsEvent<AlternativeVerb> args)
     {
+        AddAlternativeVerbs(uid, args); // Goobstation - Fix device alt-verbs; code moved to AddAlternativeVerbs()
+    }
+
+    // <Goobstation> - Fix device alt-verbs
+    private void OnAddAlternativeSaveDeviceVerbSink(EntityUid uid, DeviceLinkSinkComponent component, GetVerbsEvent<AlternativeVerb> args)
+    {
+        AddAlternativeVerbs(uid, args);
+    }
+
+    private void OnAddAlternativeSaveDeviceVerbSource(EntityUid uid, DeviceLinkSourceComponent component, GetVerbsEvent<AlternativeVerb> args)
+    {
+        AddAlternativeVerbs(uid, args);
+    }
+
+    private void AddAlternativeVerbs(EntityUid uid, GetVerbsEvent<AlternativeVerb> args)
+    {
         if (!args.CanAccess || !args.CanInteract || !args.Using.HasValue
             || !TryComp<NetworkConfiguratorComponent>(args.Using.Value, out var configurator))
             return;
@@ -445,6 +491,7 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
             args.Verbs.Add(verb);
         }
     }
+    // </Goobstation>
 
     private void OnAddSwitchModeVerb(EntityUid uid, NetworkConfiguratorComponent configurator, GetVerbsEvent<AlternativeVerb> args)
     {
@@ -497,15 +544,58 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
             return;
 
         var sources = _deviceLinkSystem.GetSourcePorts(sourceUid, sourceComponent);
-        var sinks = _deviceLinkSystem.GetSinkPorts(sinkUid, sinkComponent);
+        var sinks = _deviceLinkSystem.GetSinkPortIds((sinkUid, sinkComponent));
         var links = _deviceLinkSystem.GetLinks(sourceUid, sinkUid, sourceComponent);
         var defaults = _deviceLinkSystem.GetDefaults(sources);
+        var sourceIds = sources.Select(s => (ProtoId<SourcePortPrototype>)s.ID).ToArray();
 
         var sourceAddress = Resolve(sourceUid, ref sourceNetworkComponent, false) ? sourceNetworkComponent.Address : "";
         var sinkAddress = Resolve(sinkUid, ref sinkNetworkComponent, false) ? sinkNetworkComponent.Address : "";
 
-        var state = new DeviceLinkUserInterfaceState(sources, sinks, links, sourceAddress, sinkAddress, defaults);
+        var state = new DeviceLinkUserInterfaceState(sourceIds, sinks, links, sourceAddress, sinkAddress, defaults);
         _uiSystem.SetUiState(configuratorUid, NetworkConfiguratorUiKey.Link, state);
+    }
+
+    /// <summary>
+    /// Goobstation - Fix desync of configurator lists
+    /// Clears the active device list pointed at while maintaining reference tracking on the device itself
+    /// </summary>
+    public void ClearActiveDeviceList(EntityUid configUid, NetworkConfiguratorComponent configComp, EntityUid? prevListUid = null, DeviceListComponent? prevListComp = null)
+    {
+        if (!prevListUid.HasValue)
+        {
+            prevListUid = configComp.ActiveDeviceList;
+            if (!prevListUid.HasValue) return;
+        }
+        // hack to prevent Resolve from null-ing prevListComp if the entity is mid-teardown
+        DebugTools.Assert(prevListUid.Value == configComp.ActiveDeviceList);
+        if (prevListComp != null || Resolve(prevListUid.Value, ref prevListComp))
+        {
+            prevListComp.Configurators.Remove(configUid);
+        }
+        configComp.ActiveDeviceList = null;
+
+        _deviceListSystem.VerifyDeviceList(prevListUid.Value, prevListComp);
+    }
+
+    /// <summary>
+    /// Goobstation - Fix desync of configurator lists
+    /// Sets the active device list pointed at while maintaining reference tracking on the device itself
+    /// </summary>
+    public void SetActiveDeviceList(EntityUid configUid, NetworkConfiguratorComponent configComp, EntityUid? nextListUid = null, DeviceListComponent? nextListComp = null)
+    {
+        // unset previous
+        ClearActiveDeviceList(configUid, configComp, configComp.ActiveDeviceList);
+
+        // set new one
+        if (nextListUid.HasValue && Resolve(nextListUid.Value, ref nextListComp))
+        {
+            _deviceListSystem.VerifyDeviceList(nextListUid); // pre-check
+
+            nextListComp.Configurators.Remove(configUid);
+            configComp.ActiveDeviceList = nextListUid;
+            _deviceListSystem.VerifyDeviceList(nextListUid); // post-check
+        }
     }
 
     /// <summary>
@@ -513,7 +603,7 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
     /// </summary>
     private void OpenDeviceListUi(EntityUid configuratorUid, EntityUid? targetUid, EntityUid userUid, NetworkConfiguratorComponent configurator)
     {
-        if (configurator.ActiveDeviceLink == targetUid)
+        if (configurator.ActiveDeviceList == targetUid) // Goobstation - Fix desync of configurator lists
             return;
 
         if (Delay(configurator))
@@ -570,36 +660,29 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
     }
 
     /// <summary>
+    /// Goobstation - Fix desync of configurator lists
     /// Clears the active device list when the ui is closed
     /// </summary>
     private void OnUiClosed(EntityUid uid, NetworkConfiguratorComponent component, BoundUIClosedEvent args)
     {
-        if (!args.UiKey.Equals(NetworkConfiguratorUiKey.Configure)
-            && !args.UiKey.Equals(NetworkConfiguratorUiKey.Link)
-            && !args.UiKey.Equals(NetworkConfiguratorUiKey.List))
+        if (args.UiKey.Equals(NetworkConfiguratorUiKey.Configure))
         {
-            return;
+            ClearActiveDeviceList(uid, component);
         }
-
-        if (TryComp(component.ActiveDeviceList, out DeviceListComponent? list))
-        {
-            list.Configurators.Remove(uid);
-        }
-
-        component.ActiveDeviceList = null;
-
-        if (args.UiKey is NetworkConfiguratorUiKey.Link)
+        else if (args.UiKey is NetworkConfiguratorUiKey.Link)
         {
             component.ActiveDeviceLink = null;
             component.DeviceLinkTarget = null;
         }
     }
 
-    public void OnDeviceListShutdown(Entity<NetworkConfiguratorComponent?> conf, Entity<DeviceListComponent> list)
+    // Goobstation - Fix desync of configurator lists
+    public void OnDeviceListShutdown(EntityUid confUid, Entity<DeviceListComponent> list)
     {
-        list.Comp.Configurators.Remove(conf.Owner);
-        if (Resolve(conf.Owner, ref conf.Comp))
-            conf.Comp.ActiveDeviceList = null;
+        if (TryComp(confUid, out NetworkConfiguratorComponent? confComp))
+        {
+            ClearActiveDeviceList(confUid, confComp, list.Owner, list.Comp);
+        }
     }
 
     /// <summary>

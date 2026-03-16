@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using System.Diagnostics.CodeAnalysis;
 using Content.Client.Guidebook.Richtext;
 using Content.Client.Message;
@@ -61,13 +66,13 @@ public sealed partial class GuideTechnologyEmbed : BoxContainer, IDocumentTag, I
         control = null;
         if (!args.TryGetValue("Technology", out var id))
         {
-            Logger.GetSawmill("guidetechnology.embed").Error("Technology embed tag is missing technology prototype argument");
+            Logger.Error("Technology embed tag is missing technology prototype argument");
             return false;
         }
 
         if (!_prototype.TryIndex<TechnologyPrototype>(id, out var technology))
         {
-            Logger.GetSawmill("guidetechnology.embed").Error($"Specified technology prototype \"{id}\" is not a valid technology prototype");
+            Logger.Error($"Specified technology prototype \"{id}\" is not a valid technology prototype");
             return false;
         }
 

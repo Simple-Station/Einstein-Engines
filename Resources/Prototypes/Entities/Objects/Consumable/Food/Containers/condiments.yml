@@ -1,3 +1,29 @@
+# SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+# SPDX-FileCopyrightText: 2021 Galactic Chimp <GalacticChimpanzee@gmail.com>
+# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2021 Ygg01 <y.laughing.man.y@gmail.com>
+# SPDX-FileCopyrightText: 2021 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 Jessica M <jessica@jessicamaybe.com>
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <gradientvera@outlook.com>
+# SPDX-FileCopyrightText: 2023 Interrobang01 <113810873+Interrobang01@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Jeff <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2023 MisterMecky <mrmecky@hotmail.com>
+# SPDX-FileCopyrightText: 2023 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Velcroboy <107660393+ChilbroBaggins@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 potato1234_x <79580518+potato1234x@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2024 Verm <32827189+Vermidia@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 # TODO: Removes the icon components from all these when that gets fixed.
 
 - type: entity
@@ -8,6 +34,8 @@
   - type: DrawableSolution
     solution: food
   - type: DrainableSolution
+    solution: food
+  - type: ExaminableSolution
     solution: food
   - type: Sprite
     sprite: Objects/Consumable/Food/condiments.rsi
@@ -69,6 +97,8 @@
   - type: Tag
     tags:
       - Packet
+  - type: ExaminableSolution
+    exactVolume: true
 
 - type: entity
   parent: BaseFoodCondimentPacket
@@ -140,7 +170,7 @@
 
 - type: entity
   parent: BaseFoodCondimentPacket
-  id: FoodCondimentPacketFrostoil
+  id: FoodCondimentPacketColdsauce
   name: coldsauce
   description: Coldsauce. Leaves the tongue numb in its passage.
   components:
@@ -149,7 +179,7 @@
       food:
         maxVol: 10
         reagents:
-        - ReagentId: Frostoil
+        - ReagentId: Coldsauce
           Quantity: 10
   - type: Icon
     state: packet-frostoil
@@ -283,6 +313,16 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 2
     fillBaseName: packet-solid-
+  - type: StatusEffectOnCollideGhost # Goobstation - Wraith
+    whitelist:
+      tags:
+      - WeakToSalt
+    statusEffect: Corporeal
+    duration: 15
+  - type: SaltLinePlacer # Goobstation - Wraith
+    saltLine: SaltLine
+  - type: ConsumeOnSaltLine # Goobstation - Wraith
+    amount: 1
 
 - type: entity
   parent: BaseFoodCondimentPacket
@@ -375,7 +415,7 @@
     solutions:
       food:
         reagents:
-        - ReagentId: Frostoil
+        - ReagentId: Coldsauce
           Quantity: 30
   - type: Sprite
     layers:
@@ -564,7 +604,7 @@
     solution: food
 
 - type: entity
-  parent: BaseFoodShaker
+  parent: FoodShakerSaltEmpty #Goobstation - shaker making
   id: FoodShakerSalt
   name: salt shaker
   description: Salt. From space oceans, presumably.
@@ -575,16 +615,9 @@
         reagents:
         - ReagentId: TableSalt
           Quantity: 20
-  - type: Sprite
-    state: shaker-salt
-  - type: Icon
-    state: shaker-salt
-  - type: Tag
-    tags:
-      - SaltShaker
 
 - type: entity
-  parent: BaseFoodShaker
+  parent: FoodShakerPepperEmpty #Goobstation - shaker making
   id: FoodShakerPepper
   name: pepper shaker
   description: Often used to flavor food or make people sneeze.
@@ -595,10 +628,3 @@
         reagents:
         - ReagentId: Blackpepper
           Quantity: 20
-  - type: Sprite
-    state: shaker-pepper
-  - type: Icon
-    state: shaker-pepper
-  - type: Tag
-    tags:
-      - PepperShaker

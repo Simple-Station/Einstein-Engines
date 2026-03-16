@@ -1,1 +1,1 @@
-chat-language-XenoHivemind-name = Разум Улья
+chat-language-XenoHivemind-name = Разум улья

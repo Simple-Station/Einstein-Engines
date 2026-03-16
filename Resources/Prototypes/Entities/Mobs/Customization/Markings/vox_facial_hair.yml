@@ -1,7 +1,14 @@
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: marking
   id: VoxFacialHairBeard
   bodyPart: FacialHair
   markingCategory: FacialHair
+  canBeDisplaced: false
   speciesRestriction: [Vox]
   sprites:
     - sprite: Mobs/Customization/vox_facial_hair.rsi
@@ -11,6 +18,7 @@
   id: VoxFacialHairColonel
   bodyPart: FacialHair
   markingCategory: FacialHair
+  canBeDisplaced: false
   speciesRestriction: [Vox]
   sprites:
     - sprite: Mobs/Customization/vox_facial_hair.rsi
@@ -20,6 +28,7 @@
   id: VoxFacialHairFu
   bodyPart: FacialHair
   markingCategory: FacialHair
+  canBeDisplaced: false
   speciesRestriction: [Vox]
   sprites:
     - sprite: Mobs/Customization/vox_facial_hair.rsi
@@ -29,16 +38,38 @@
   id: VoxFacialHairMane
   bodyPart: FacialHair
   markingCategory: FacialHair
+  canBeDisplaced: false
   speciesRestriction: [Vox]
   sprites:
     - sprite: Mobs/Customization/vox_facial_hair.rsi
       state: mane_s
 
 - type: marking
+  id: VoxFacialHairManeSmall
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  canBeDisplaced: false
+  speciesRestriction: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_facial_hair.rsi
+      state: manesmall_s
+
+- type: marking
   id: VoxFacialHairNeck
   bodyPart: FacialHair
   markingCategory: FacialHair
+  canBeDisplaced: false
   speciesRestriction: [Vox]
   sprites:
     - sprite: Mobs/Customization/vox_facial_hair.rsi
       state: neck_s
+
+- type: marking
+  id: VoxFacialHairTufts
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  canBeDisplaced: false
+  speciesRestriction: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_facial_hair.rsi
+      state: tuft_s

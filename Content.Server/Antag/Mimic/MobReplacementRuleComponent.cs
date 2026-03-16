@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2024 Hmeister-real <118129069+Hmeister-real@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Antag.Mimic;
@@ -13,33 +20,9 @@ public sealed partial class MobReplacementRuleComponent : Component
     [DataField]
     public EntProtoId Proto = "MobMimic";
 
-    [DataField]
-    public int NumberToReplace { get; set; }
-
-    [DataField]
-    public string Announcement = "station-event-rampant-intelligence-announcement";
-
     /// <summary>
     /// Chance per-entity.
     /// </summary>
     [DataField]
     public float Chance = 0.004f;
-
-    [DataField]
-    public bool DoAnnouncement = true;
-
-    [DataField]
-    public float MimicMeleeDamage = 20f;
-
-    [DataField]
-    public float MimicMoveSpeed = 1f;
-
-    [DataField]
-    public string MimicAIType = "SimpleHostileCompound";
-
-    [DataField]
-    public bool MimicSmashGlass = true;
-
-    [DataField]
-    public bool VendorModify = true;
 }

@@ -1,112 +1,95 @@
-- type: startingGear
-  id: GasTankWaterVaporSuitStorage
-  parent: WaterVaporBreather
+# Species
+- type: loadoutEffectGroup
+  id: WaterBreather
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Feroxi
+
+# Basic
+- type: loadout
+  id: EmergencyWaterVapor
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WaterBreather
+  storage:
+    back:
+    - BoxSurvivalSlotsWaterVapor
+
+# Clown
+- type: loadout
+  id: EmergencyWaterVaporClown
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WaterBreather
+  storage:
+    back:
+    - BoxHugSlotsWaterVapor
+
+# Mime
+- type: loadout
+  id: EmergencyWaterVaporMime
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WaterBreather
+  storage:
+    back:
+    - BoxMimeSlotsWaterVapor
+
+# Engineering / Extended
+- type: loadout
+  id: EmergencyWaterVaporExtended
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WaterBreather
+  storage:
+    back:
+    - BoxSurvivalSlotsEngineeringWaterVapor
+
+# Medical
+- type: loadout
+  id: EmergencyWaterVaporMedical
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WaterBreather
+  storage:
+    back:
+    - BoxSurvivalSlotsMedicalWaterVapor
+
+# Security
+- type: loadout
+  id: EmergencyWaterVaporSecurity
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WaterBreather
+  storage:
+    back:
+    - BoxSurvivalSlotsSecurityWaterVapor
+
+# Syndicate
+- type: loadout
+  id: EmergencyWaterVaporSyndicate
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WaterBreather
+  storage:
+    back:
+    - BoxSurvivalSlotsWaterVapor
+
+# Full EVA Tank, Any Species
+- type: loadout
+  id: LoadoutSpeciesEVAWaterVapor
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WaterBreather
   equipment:
     suitstorage: WaterVaporTankFilled
 
-- type: startingGear
-  id: BoxSurvivalWaterVapor
-  parent: WaterVaporBreather
-  storage:
-    back:
-    - BoxSurvivalWaterVapor
-
-- type: startingGear
-  id: BoxSurvivalClownWaterVapor
-  parent: WaterVaporBreather
-  storage:
-    back:
-    - BoxHugWaterVapor
-
-
-## Mime
-#- type: loadout
-#  id: EmergencyWaterVaporMime
-#  effects:
-#  - !type:GroupLoadoutEffect
-#    proto: WaterBreather
-#  storage:
-#    back:
-#    - BoxMimeWaterVapor
-
-- type: startingGear
-  id: BoxSurvivalEngineeringWaterVapor
-  parent: WaterVaporBreather
-  storage:
-    back:
-    - BoxSurvivalEngineeringWaterVapor
-    
-- type: startingGear
-  id: BoxSurvivalMedicalWaterVapor
-  parent: WaterVaporBreather
-  storage:
-    back:
-    - BoxSurvivalMedicalWaterVapor
-
-- type: startingGear
-  id: BoxSurvivalSecurityWaterVapor
-  parent: WaterVaporBreather
-  storage:
-    back:
-    - BoxSurvivalSecurityWaterVapor
-
-- type: startingGear
-  id: BoxSurvivalSyndicateWaterVapor
-  parent: WaterVaporBreather
-  storage:
-    back:
-    - BoxSurvivalWaterVapor
-
-
-## Full EVA Tank, Any Species
-#- type: loadout
-#  id: LoadoutSpeciesEVAWaterVapor
-#  effects:
-#  - !type:GroupLoadoutEffect
-#    proto: WaterBreather
-#  equipment:
-#    suitstorage: WaterVaporTankFilled
-#
-## Species-appropriate Double Emergency Tank in Pocket 1
-#- type: loadout
-#  id: LoadoutSpeciesPocketDoubleWaterVapor
-#  effects:
-#  - !type:GroupLoadoutEffect
-#    proto: WaterBreather
-#  equipment:
-#    pocket1: DoubleEmergencyWaterVaporTankFilled
-#
-## Corpsman
-#- type: loadout
-#  id: EmergencyOxygenCorpsman
-#  effects:
-#  - !type:GroupLoadoutEffect
-#    proto: OxygenBreather
-#  storage:
-#    back:
-#    - BoxSurvivalBrigmedic
-#
-#- type: loadout
-#  id: EmergencyNitrogenCorpsman
-#  effects:
-#  - !type:GroupLoadoutEffect
-#    proto: NitrogenBreather
-#  storage:
-#    back:
-#    - BoxSurvivalBrigmedicNitrogen
-#
-#- type: loadout
-#  id: EmergencyWaterVaporCorpsman
-#  effects:
-#  - !type:GroupLoadoutEffect
-#    proto: WaterBreather
-#  equipment:
-#    mask: BoxSurvivalBrigmedicWaterVapor
-#
-#- type: loadout
-#  id: LoadoutSpeciesBreathToolCorpsman
-#  effects:
-#  - !type:GroupLoadoutEffect
-#    proto: EffectSpeciesVox
-#  equipment:
-#    mask: ClothingMaskBreathMedicalSecurity
+# Species-appropriate Double Emergency Tank in Pocket 1
+- type: loadout
+  id: LoadoutSpeciesPocketDoubleWaterVapor
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WaterBreather
+  equipment:
+    pocket1: DoubleEmergencyWaterVaporTankFilled

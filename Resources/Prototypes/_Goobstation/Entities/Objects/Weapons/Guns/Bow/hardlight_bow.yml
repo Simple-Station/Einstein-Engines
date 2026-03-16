@@ -1,8 +1,15 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   name: hardlight bow
-  parent: [BaseItem]
+  parent: [BaseItem, BaseSyndicateContraband]
   id: BowHardlight
-  description: A modern bow that can fabricate hardlight arrows using an internal energy. This one is designed by the Syndicate for silent takedowns of targets.
+  description: Being a Donk Co. design based on the DT-12 Lawbringer, this folding bow can generate a multitude of arrow types to fit the user's needs.
   components:
   - type: Sprite
     sprite: _Goobstation/Objects/Weapons/Guns/Bow/hardlight_bow.rsi
@@ -51,6 +58,7 @@
       - ArrowExplosive
       - ArrowXray
       - ArrowBee
+      - ArrowIon
   - type: FoldingWeapon
   - type: UserInterface
     interfaces:
@@ -74,6 +82,7 @@
   - type: ItemToggleSize
     activatedSize: Huge
   - type: ItemTogglePointLight
+    toggleableVisualsColorModulatesLights: true
   - type: ComponentToggler
     components:
     - type: DisarmMalus
@@ -85,7 +94,7 @@
     color: white
     netsync: false
   - type: Appearance
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     spriteLayer: bowstring
     inhandVisuals:
       left:
@@ -117,7 +126,7 @@
         bowstring:
           True: { state: wielded-arrow }
           False: { state: unwielded-arrow }
-      enum.ToggleVisuals.Toggled:
+      enum.ToggleableVisuals.Enabled:
         bowstring:
           True: { visible: true }
           False: { visible: false }
@@ -125,4 +134,7 @@
           True: { state: bow }
           False: { state: bow-folded }
   - type: ToggleableLightWieldable
-  # TODO: Zoom
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 4 # Goobstation - Sniper rifles buff
+    pvsIncrease: 0.4 # Goobstation - Sniper rifles buff

@@ -1,3 +1,40 @@
+# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Darkie <darksaiyanis@gmail.com>
+# SPDX-FileCopyrightText: 2023 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ChaseFlorom <57235581+ChaseFlorom@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2024 LankLTE <135308300+LankLTE@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 NakataRin <45946146+NakataRin@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nim <128169402+Nimfar11@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Velcroboy <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2024 chavonadelal <156101927+chavonadelal@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 degradka <69397649+degradka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 fishbait <gnesse@gmail.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 reverie collection <revsys413@gmail.com>
+# SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Эдуард <36124833+Ertanic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 IrisTheAmped <iristheamped@gmail.com>
+# SPDX-FileCopyrightText: 2025 PunishedJoe <PunishedJoeseph@proton.me>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 # Traitor single items
 
 - type: stealTargetGroup
@@ -7,12 +44,12 @@
     sprite: Objects/Specific/Medical/hypospray.rsi
     state: hypo
 
-- type: stealTargetGroup
-  id: HandheldCrewMonitor
-  name: steal-target-groups-handheld-crew-monitor
-  sprite:
-    sprite: Objects/Specific/Medical/handheldcrewmonitor.rsi
-    state: scanner
+#- type: stealTargetGroup # Goobstation - made this public
+#  id: HandheldCrewMonitor
+#  name: steal-target-groups-handheld-crew-monitor
+#  sprite:
+#    sprite: Objects/Specific/Medical/handheldcrewmonitor.rsi
+#    state: scanner
 
 - type: stealTargetGroup
   id: ClothingOuterHardsuitRd
@@ -43,18 +80,25 @@
     state: qm_clipboard
 
 - type: stealTargetGroup
+  id: ClothingHandsKnuckleDustersQM
+  name: steal-target-groups-clothing-hands-knuckledusters-qm
+  sprite:
+    sprite: _Goobstation/Clothing/Hands/Gloves/knuckleduster.rsi # Goobstation
+    state: goldenknuckleduster
+
+- type: stealTargetGroup
   id: FoodMeatCorgi
   name: steal-target-groups-food-meat-corgi
   sprite:
     sprite: Objects/Consumable/Food/meat.rsi
     state: corgi
-
+    #
 - type: stealTargetGroup
   id: CaptainIDCard
   name: steal-target-groups-captain-id-card
   sprite:
     sprite: Objects/Misc/id_cards.rsi
-    state: gold
+    state: ert_commander #no one will know the difference.
 
 - type: stealTargetGroup
   id: JetpackCaptainFilled
@@ -64,17 +108,10 @@
     state: icon
 
 - type: stealTargetGroup
-  id: WeaponCaptain
-  name: steal-target-groups-captain-weapon
+  id: WeaponAntiqueLaser
+  name: steal-target-groups-weapon-antique-laser
   sprite:
     sprite: Objects/Weapons/Guns/Battery/antiquelasergun.rsi
-    state: base
-
-- type: stealTargetGroup
-  id: NTRepWeapon
-  name: steal-target-groups-corporate-liaison-weapon
-  sprite:
-    sprite: Objects/Weapons/Guns/Battery/ccdisabler.rsi
     state: base
 
 - type: stealTargetGroup
@@ -85,20 +122,13 @@
     state: icon
 
 - type: stealTargetGroup
-  id: HoSAntiqueWeapon
-  name: steal-target-groups-weapon-head-of-security-weapon
+  id: WeaponEnergyShotgun
+  name: steal-target-groups-weapon-energy-shot-gun
   sprite:
-    sprite: Objects/Weapons/Guns/Battery/pulse_pistol.rsi
+    sprite: Objects/Weapons/Guns/Battery/energy_shotgun.rsi
     state: base
 
 # Thief Collection
-
-- type: stealTargetGroup
-  id: Figurines
-  name: steal-target-groups-figurines
-  sprite:
-    sprite: Objects/Fun/figurines.rsi
-    state: figurine_spawner
 
 - type: stealTargetGroup
   id: HeadCloak
@@ -156,6 +186,13 @@
     sprite: Objects/Tools/lantern.rsi
     state: lantern
 
+- type: stealTargetGroup #Goobstation
+  id: Battery
+  name: steal-target-groups-battery
+  sprite:
+    sprite: Objects/Power/power_cells.rsi
+    state: medium
+
 # Thief single item
 
 - type: stealTargetGroup
@@ -169,7 +206,7 @@
   id: FlippoEngravedLighter
   name: steal-target-groups-flippo-engraved-lighter
   sprite:
-    sprite: Objects/Tools/lighters.rsi
+    sprite: Objects/Tools/Lighters/lighters.rsi
     state: zippo_engraved_icon_base
 
 - type: stealTargetGroup
@@ -228,12 +265,12 @@
     sprite: Objects/Devices/flatpack.rsi
     state: ame-part
 
-- type: stealTargetGroup
-  id: SalvageExpeditionsComputerCircuitboard
-  name: steal-target-groups-salvage-expeditions-computer-circuitboard
-  sprite:
-    sprite: Objects/Misc/module.rsi
-    state: cpu_supply
+#- type: stealTargetGroup                                Goob edit - Removed because Lavaland
+#  id: SalvageExpeditionsComputerCircuitboard
+#  name: steal-target-groups-salvage-expeditions-computer-circuitboard
+#  sprite:
+#    sprite: Objects/Misc/module.rsi
+#    state: cpu_supply
 
 - type: stealTargetGroup
   id: CargoShuttleConsoleCircuitboard

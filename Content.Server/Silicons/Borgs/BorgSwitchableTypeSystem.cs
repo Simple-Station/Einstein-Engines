@@ -1,11 +1,21 @@
-﻿using Content.Server.Inventory;
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BeBright <98597725+be1bright@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BeBright <98597725+bebr3ght@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 ImHoks <142083149+ImHoks@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 KillanGenifer <killangenifer@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Server.Inventory;
 using Content.Server.Radio.Components;
-using Content.Server.Silicons.Laws;
+using Content.Shared._CorvaxNext.Silicons.Borgs.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Silicons.Borgs;
 using Content.Shared.Silicons.Borgs.Components;
-using Content.Shared.Silicons.Laws;
-using Content.Shared.Silicons.Laws.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -18,11 +28,11 @@ public sealed partial class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeS
 {
     [Dependency] private readonly BorgSystem _borgSystem = default!;
     [Dependency] private readonly ServerInventorySystem _inventorySystem = default!;
-    [Dependency] private readonly SiliconLawSystem _siliconLawSystem = default!;
 
-    protected override void SelectBorgModule(Entity<BorgSwitchableTypeComponent> ent, ProtoId<BorgTypePrototype> borgType)
+    protected override void SelectBorgModule(Entity<BorgSwitchableTypeComponent> ent, ProtoId<BorgTypePrototype> borgType, ProtoId<BorgSubtypePrototype> borgSubtype)
     {
         var prototype = Prototypes.Index(borgType);
+        var subtypePrototype = Prototypes.Index(borgSubtype); // goob
 
         // Assign radio channels
         string[] radioChannels = [.. ent.Comp.InherentRadioChannels, .. prototype.RadioChannels];
@@ -32,12 +42,29 @@ public sealed partial class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeS
         if (TryComp(ent, out ActiveRadioComponent? activeRadio))
             activeRadio.Channels = [.. radioChannels];
 
+        // Corvax-Next-AiRemoteControl-Start
+        if (TryComp(ent, out AiRemoteControllerComponent? aiRemoteComp))
+        {
+            if (TryComp(aiRemoteComp.AiHolder, out IntrinsicRadioTransmitterComponent? stationAiTransmitter) && transmitter != null)
+            {
+                aiRemoteComp.PreviouslyTransmitterChannels = [.. radioChannels];
+                transmitter.Channels = [.. stationAiTransmitter.Channels];
+            }
+
+            if (TryComp(aiRemoteComp.AiHolder, out ActiveRadioComponent? stationAiActiveRadio) && activeRadio != null)
+            {
+                aiRemoteComp.PreviouslyActiveRadioChannels = [.. radioChannels];
+                activeRadio.Channels = [.. stationAiActiveRadio.Channels];
+            }
+        }
+        // Corvax-Next-AiRemoteControl-End
+
         // Borg transponder for the robotics console
         if (TryComp(ent, out BorgTransponderComponent? transponder))
         {
             _borgSystem.SetTransponderSprite(
                 (ent.Owner, transponder),
-                new SpriteSpecifier.Rsi(new ResPath("Mobs/Silicon/chassis.rsi"), prototype.SpriteBodyState));
+                new SpriteSpecifier.Rsi(subtypePrototype.SpritePath, prototype.SpriteBodyState)); // goob - Use the subtype `SpritePath` instead of a hardcoded rsi
 
             _borgSystem.SetTransponderName(
                 (ent.Owner, transponder),
@@ -64,7 +91,7 @@ public sealed partial class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeS
         }
 
         // Begin DeltaV Code: Custom lawset patching
-        if (prototype.Lawset is {} lawset)
+        if (prototype.Lawset is { } lawset)
             ConfigureLawset(ent, lawset);
         // End DeltaV Code
 
@@ -86,6 +113,6 @@ public sealed partial class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeS
             _inventorySystem.SetTemplateId((ent.Owner, inventory), prototype.InventoryTemplateId);
         }
 
-        base.SelectBorgModule(ent, borgType);
+        base.SelectBorgModule(ent, borgType, borgSubtype);
     }
 }

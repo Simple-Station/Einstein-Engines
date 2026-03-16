@@ -1,3 +1,36 @@
+# SPDX-FileCopyrightText: 2021 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Metal Gear Sloth <metalgearsloth@gmail.com>
+# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2022 Fishfish458 <47410468+Fishfish458@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 I.K <45953835+notquitehadouken@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 RedBookcase <crazykid1590@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   name: mini hoe
   parent: BaseItem
@@ -16,19 +49,12 @@
     swingLeft: true
     damage:
       types:
-        Slash: 3.5
-        Blunt: 4
-    heavyRateModifier: 1.25
-    heavyRangeModifier: 1
-    heavyDamageBaseModifier: 1.25
-    maxTargets: 6
-    angle: 100
-  - type: DamageOtherOnHit
-    staminaCost: 5
-  - type: ThrowingAngle
-    angle: 135
+        Slash: 6
   - type: Item
     sprite: Objects/Tools/Hydroponics/hoe.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 100
 
 - type: entity
   name: plant clippers
@@ -39,36 +65,37 @@
   - type: Tag
     tags:
     - PlantSampleTaker
-    - HydroponicsToolClippers
+    - HydroponicsToolClippers # Einstein Engines
   - type: Sprite
     sprite: Objects/Tools/Hydroponics/clippers.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 90
-    attackRate: 0.9
     damage:
       types:
-        Piercing: 7
-    heavyRateModifier: 1.25
-    heavyRangeModifier: 1.5
-    heavyDamageBaseModifier: 1.25
-    maxTargets: 1
-    angle: 20
-  - type: DamageOtherOnHit
-    staminaCost: 5
+        Slash: 7
   - type: Item
     sprite: Objects/Tools/Hydroponics/clippers.rsi
     storedRotation: -90
-  # Shitmed Change
-  - type: Retractor # Same as wirecutters
+  - type: Retractor # Shitmed: Same as wirecutters
     speed: 0.35
   - type: Hemostat
     speed: 0.6
-  - type: SurgeryTool
+  - type: SurgeryTool # Shitmed
     startSound:
       path: /Audio/_Shitmed/Medical/Surgery/retractor1.ogg
     endSound:
       path: /Audio/_Shitmed/Medical/Surgery/retractor2.ogg
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 100
+  # Goobstation changes
+  - type: Tool
+    qualities:
+    - Cutting
+    useSound:
+      path: /Audio/Items/wirecutter.ogg
+    speedModifier: 0.25    
 
 - type: entity
   name: scythe
@@ -82,23 +109,9 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 135
-    range: 1.25
     damage:
       types:
-        Slash: 7
-    heavyRateModifier: 2
-    heavyRangeModifier: 1.35
-    heavyDamageBaseModifier: 2
-    heavyStaminaCost: 2.5
-    maxTargets: 1
-    angle: 120
-  - type: DamageOtherOnHit
-    staminaCost: 7
-  - type: EmbeddableProjectile
-    sound: /Audio/Weapons/star_hit.ogg
-  - type: EmbedPassiveDamage
-  - type: ThrowingAngle
-    angle: 315
+        Slash: 10
   - type: Item
     size: Normal
   - type: Clothing
@@ -107,6 +120,10 @@
     - back
   - type: StaticPrice
     price: 40
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 100
+      Plastic: 100
 
 - type: entity
   name: hatchet
@@ -124,28 +141,20 @@
   - type: MeleeWeapon
     wideAnimationRotation: 135
     swingLeft: true
-    attackRate: .9
-    range: 1.4
     damage:
       types:
-        Slash: 10
-    heavyRateModifier: 1.25
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 2.5
-  - type: DamageOtherOnHit
-    meleeDamageMultiplier: 1.5
-    staminaCost: 6.5
-  - type: EmbeddableProjectile
-    sound: /Audio/Weapons/star_hit.ogg
-  - type: EmbedPassiveDamage
+        Slash: 8
+        Piercing: 2
   - type: Item
     sprite: Objects/Tools/Hydroponics/hatchet.rsi
-  # Shitmed Change
-  - type: BoneSaw
+  - type: BoneSaw # Shitmed
     speed: 0.35
-  - type: SurgeryTool
+  - type: SurgeryTool # Shitmed
     startSound:
       path: /Audio/_Shitmed/Medical/Surgery/saw.ogg
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 100
 
 - type: entity
   name: spade
@@ -163,23 +172,17 @@
     wideAnimationRotation: 45
     damage:
       types:
-        Blunt: 6
-        Slash: 2 # I guess you can stab it into them?
-    heavyRateModifier: 1.25
-    heavyRangeModifier: 1.25
-    heavyDamageBaseModifier: 1.25
-    heavyStaminaCost: 2.5
-    angle: 80
+        Blunt: 8
+        Piercing: 2 # I guess you can stab it into them?
     soundHit:
       collection: MetalThud
-  - type: DamageOtherOnHit
-    staminaCost: 5
-  - type: ThrowingAngle
-    angle: 45
   - type: Item
     sprite: Objects/Tools/Hydroponics/spade.rsi
   - type: Shovel
-    speedModifier: 0.85 # slower at digging than a full-sized shovel
+    speedModifier: 0.75 # slower at digging than a full-sized shovel
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 100
 
 - type: entity
   name: plant bag
@@ -207,3 +210,7 @@
         - Produce
         - Seed
   - type: Dumpable
+  - type: RelayInteractionStorage # Goobstation
+    whitelist:
+      components:
+      - ProduceMaterialExtractor

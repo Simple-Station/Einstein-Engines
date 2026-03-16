@@ -1,3 +1,14 @@
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 kosticia <kosticia46@gmail.com>
+// SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Goobstation.Common.Flammability;
+using Content.Shared.Armor;
 using Content.Shared.Atmos;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Inventory;
@@ -14,10 +25,26 @@ public sealed class FireProtectionSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<FireProtectionComponent, InventoryRelayedEvent<GetFireProtectionEvent>>(OnGetProtection);
+        SubscribeLocalEvent<FireProtectionComponent, ArmorExamineEvent>(OnArmorExamine);
     }
 
     private void OnGetProtection(Entity<FireProtectionComponent> ent, ref InventoryRelayedEvent<GetFireProtectionEvent> args)
     {
+        // goob edit - VERY flammable component (trademark)
+        if (HasComp<VeryFlammableComponent>(ent))
+            return;
+
         args.Args.Reduce(ent.Comp.Reduction);
+    }
+
+    private void OnArmorExamine(Entity<FireProtectionComponent> ent, ref ArmorExamineEvent args)
+    {
+        var value = MathF.Round(ent.Comp.Reduction * 100, 1);
+
+        if (value == 0)
+            return;
+
+        args.Msg.PushNewline();
+        args.Msg.AddMarkupOrThrow(Loc.GetString(ent.Comp.ExamineMessage, ("value", value)));
     }
 }

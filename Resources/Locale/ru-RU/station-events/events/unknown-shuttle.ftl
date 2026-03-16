@@ -1,15 +1,1 @@
-station-event-unknown-shuttle-traveling-cuisine-announcement = Внимание! Неопознанный космический корабль был замечен на подходе к вашему сектору.
-station-event-unknown-shuttle-disaster-evac-pod-announcement = Внимание! Неопознанный космический корабль был замечен на подходе к вашему сектору.
-station-event-unknown-shuttle-honki-announcement = Внимание! Неопознанный космический корабль был замечен на подходе к вашему сектору.
-station-event-unknown-shuttle-syndie-evac-pod-announcement = Внимание! Неопознанный космический корабль был замечен на подходе к вашему сектору.
-station-event-unknown-shuttle-cruiser-announcement = Внимание! Неопознанный космический корабль был замечен на подходе к вашему сектору
-station-event-unknown-shuttle-cryptid-announcement = Внимание! Неопознанный космический корабль был замечен на подходе к вашему сектору.
-station-event-unknown-shuttle-eternal-announcement = Внимание! Неопознанный космический корабль был замечен на подходе к вашему сектору.
-station-event-unknown-shuttle-flatline-announcement = Внимание! Неопознанный космический корабль был замечен на подходе к вашему сектору.
-station-event-unknown-shuttle-gym-announcement = Внимание! Неопознанный космический корабль был замечен на подходе к вашему сектору.
-station-event-unknown-shuttle-n-t-incorporation-announcement = Внимание! Неопознанный космический корабль был замечен на подходе к вашему сектору.
-station-event-unknown-shuttle-joe-announcement = Внимание! Неопознанный космический корабль был замечен на подходе к вашему сектору.
-station-event-unknown-shuttle-lambordeere-announcement = Внимание! Неопознанный космический корабль был замечен на подходе к вашему сектору.
-station-event-unknown-shuttle-meat-zone-announcement = Внимание! Неопознанный космический корабль был замечен на подходе к вашему сектору.
-station-event-unknown-shuttle-microshuttle-announcement = Внимание! Неопознанный космический корабль был замечен на подходе к вашему сектору.
-station-event-unknown-shuttle-spacebus-announcement = Внимание! Неопознанный космический корабль был замечен на подходе к вашему сектору.
+station-event-unknown-shuttle-incoming = Внимание! Неопознанный космический корабль был замечен на подходе к вашему сектору.

@@ -1,9 +1,22 @@
+// SPDX-FileCopyrightText: 2024 Celene <4323352+CuteMoonGod@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Celene <maurice_riepert94@web.de>
+// SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.ActionBlocker;
 using Content.Shared.Chat;
 using Content.Shared.CombatMode;
 using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
+using Content.Shared.IdentityManagement;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
@@ -13,7 +26,9 @@ using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Interaction.Events;
 using Robust.Shared.Player;
 using Robust.Shared.Audio.Systems;
-
+using Content.Shared.Body.Part; // Goobstation decapitation
+using Content.Shared.Body.Systems; // Goobstation decapitation
+using Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems; // Goobstation decapitation
 namespace Content.Shared.Execution;
 
 /// <summary>
@@ -30,6 +45,8 @@ public sealed class SharedExecutionSystem : EntitySystem
     [Dependency] private readonly SharedCombatModeSystem _combat = default!;
     [Dependency] private readonly SharedExecutionSystem _execution = default!;
     [Dependency] private readonly SharedMeleeWeaponSystem _melee = default!;
+    [Dependency] private readonly WoundSystem _wounds = default!; // Goobstation decapitation
+    [Dependency] private readonly SharedBodySystem _body = default!; // Goobstation decapitation
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -51,7 +68,7 @@ public sealed class SharedExecutionSystem : EntitySystem
         var weapon = args.Using.Value;
         var victim = args.Target;
 
-        if (!CanBeExecuted(victim, attacker, weapon))
+        if (!CanBeExecuted(victim, attacker))
             return;
 
         UtilityVerb verb = new()
@@ -67,7 +84,7 @@ public sealed class SharedExecutionSystem : EntitySystem
 
     private void TryStartExecutionDoAfter(EntityUid weapon, EntityUid victim, EntityUid attacker, ExecutionComponent comp)
     {
-        if (!CanBeExecuted(victim, attacker, weapon))
+        if (!CanBeExecuted(victim, attacker))
             return;
 
         if (attacker == victim)
@@ -86,14 +103,15 @@ public sealed class SharedExecutionSystem : EntitySystem
             {
                 BreakOnMove = true,
                 BreakOnDamage = true,
-                NeedHand = true
+                NeedHand = true,
+                MultiplyDelay = false, // Goobstation
             };
 
         _doAfter.TryStartDoAfter(doAfter);
 
     }
 
-    public bool CanBeExecuted(EntityUid victim, EntityUid attacker, EntityUid weapon)
+    public bool CanBeExecuted(EntityUid victim, EntityUid attacker)
     {
         // No point executing someone if they can't take damage
         if (!HasComp<DamageableComponent>(victim))
@@ -122,13 +140,14 @@ public sealed class SharedExecutionSystem : EntitySystem
     private void OnGetMeleeDamage(Entity<ExecutionComponent> entity, ref GetMeleeDamageEvent args)
     {
         if (!TryComp<MeleeWeaponComponent>(entity, out var melee) || !entity.Comp.Executing)
+        {
             return;
+        }
 
         var bonus = melee.Damage * entity.Comp.DamageMultiplier - melee.Damage;
         args.Damage += bonus;
         args.ResistanceBypass = true;
     }
-
     private void OnSuicideByEnvironment(Entity<ExecutionComponent> entity, ref SuicideByEnvironmentEvent args)
     {
         if (!TryComp<MeleeWeaponComponent>(entity, out var melee))
@@ -142,17 +161,17 @@ public sealed class SharedExecutionSystem : EntitySystem
 
         ShowExecutionInternalPopup(internalMsg, args.Victim, args.Victim, entity, false);
         ShowExecutionExternalPopup(externalMsg, args.Victim, args.Victim, entity);
-        _audio.PlayPredicted(melee.SoundHit, args.Victim, args.Victim);
+        _audio.PlayPredicted(melee.HitSound, args.Victim, args.Victim);
         _suicide.ApplyLethalDamage((args.Victim, damageableComponent), melee.Damage);
         args.Handled = true;
     }
 
-    private void ShowExecutionInternalPopup(string locString, EntityUid attacker, EntityUid victim, EntityUid weapon, bool predict = true)
+    public void ShowExecutionInternalPopup(string locString, EntityUid attacker, EntityUid victim, EntityUid weapon, bool predict = true) // Made public by goobstation
     {
         if (predict)
         {
             _popup.PopupClient(
-               Loc.GetString(locString, ("attacker", attacker), ("victim", victim), ("weapon", weapon)),
+               Loc.GetString(locString, ("attacker", Identity.Entity(attacker, EntityManager)), ("victim", Identity.Entity(victim, EntityManager)), ("weapon", weapon)),
                attacker,
                attacker,
                PopupType.MediumCaution
@@ -161,7 +180,7 @@ public sealed class SharedExecutionSystem : EntitySystem
         else
         {
             _popup.PopupEntity(
-               Loc.GetString(locString, ("attacker", attacker), ("victim", victim), ("weapon", weapon)),
+               Loc.GetString(locString, ("attacker", Identity.Entity(attacker, EntityManager)), ("victim", Identity.Entity(victim, EntityManager)), ("weapon", weapon)),
                attacker,
                attacker,
                PopupType.MediumCaution
@@ -169,10 +188,10 @@ public sealed class SharedExecutionSystem : EntitySystem
         }
     }
 
-    private void ShowExecutionExternalPopup(string locString, EntityUid attacker, EntityUid victim, EntityUid weapon)
+    public void ShowExecutionExternalPopup(string locString, EntityUid attacker, EntityUid victim, EntityUid weapon) // Made public by goobstation
     {
         _popup.PopupEntity(
-            Loc.GetString(locString, ("attacker", attacker), ("victim", victim), ("weapon", weapon)),
+            Loc.GetString(locString, ("attacker", Identity.Entity(attacker, EntityManager)), ("victim", Identity.Entity(victim, EntityManager)), ("weapon", weapon)),
             attacker,
             Filter.PvsExcept(attacker),
             true,
@@ -192,7 +211,7 @@ public sealed class SharedExecutionSystem : EntitySystem
         var victim = args.Target.Value;
         var weapon = args.Used.Value;
 
-        if (!_execution.CanBeExecuted(victim, attacker, weapon))
+        if (!_execution.CanBeExecuted(victim, attacker))
             return;
 
         // This is needed so the melee system does not stop it.
@@ -212,7 +231,11 @@ public sealed class SharedExecutionSystem : EntitySystem
             RaiseLocalEvent(victim, suicideGhostEvent);
         }
         else
+        {
             _melee.AttemptLightAttack(attacker, weapon, meleeWeaponComp, victim);
+            if (entity.Comp.Decapitation)// Goobstation Decapitation
+                Decapitation(victim);
+        }
 
         _combat.SetInCombatMode(attacker, prev);
         entity.Comp.Executing = false;
@@ -224,4 +247,26 @@ public sealed class SharedExecutionSystem : EntitySystem
             _execution.ShowExecutionExternalPopup(externalMsg, attacker, victim, entity);
         }
     }
+    // Goobatation  start Decapitation
+    private void Decapitation(EntityUid victim)
+    {
+        var bodyparts = _body.GetBodyChildren(victim);
+
+        var head = new EntityUid?();
+        var body = new EntityUid?();
+
+        foreach (var bodypart in bodyparts)
+        {
+            if (bodypart.Component.PartType == BodyPartType.Chest)
+                body = bodypart.Id;
+            if (bodypart.Component.PartType == BodyPartType.Head)
+                head = bodypart.Id;
+        }
+
+        if(!head.HasValue || !body.HasValue)
+            return;
+
+        _wounds.AmputateWoundable(body.Value,head.Value);
+    }
+    // Goobstation end
 }

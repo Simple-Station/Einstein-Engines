@@ -1,3 +1,11 @@
+// SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Server.Mech.Systems;
 using Content.Server.Power.Components;
 using Content.Shared.Construction;
@@ -28,7 +36,7 @@ public sealed partial class BuildMech : IGraphAction
     {
         if (!entityManager.TryGetComponent(uid, out ContainerManagerComponent? containerManager))
         {
-            Logger.GetSawmill("buildmech.action").Warning($"Mech construct entity {uid} did not have a container manager! Aborting build mech action.");
+            Logger.Warning($"Mech construct entity {uid} did not have a container manager! Aborting build mech action.");
             return;
         }
 
@@ -37,20 +45,20 @@ public sealed partial class BuildMech : IGraphAction
 
         if (!containerSystem.TryGetContainer(uid, Container, out var container, containerManager))
         {
-            Logger.GetSawmill("buildmech.action").Warning($"Mech construct entity {uid} did not have the specified '{Container}' container! Aborting build mech action.");
+            Logger.Warning($"Mech construct entity {uid} did not have the specified '{Container}' container! Aborting build mech action.");
             return;
         }
 
         if (container.ContainedEntities.Count != 1)
         {
-            Logger.GetSawmill("buildmech.action").Warning($"Mech construct entity {uid} did not have exactly one item in the specified '{Container}' container! Aborting build mech action.");
+            Logger.Warning($"Mech construct entity {uid} did not have exactly one item in the specified '{Container}' container! Aborting build mech action.");
         }
 
         var cell = container.ContainedEntities[0];
 
         if (!entityManager.TryGetComponent<BatteryComponent>(cell, out var batteryComponent))
         {
-            Logger.GetSawmill("buildmech.action").Warning($"Mech construct entity {uid} had an invalid entity in container \"{Container}\"! Aborting build mech action.");
+            Logger.Warning($"Mech construct entity {uid} had an invalid entity in container \"{Container}\"! Aborting build mech action.");
             return;
         }
 
@@ -71,4 +79,3 @@ public sealed partial class BuildMech : IGraphAction
         entityManager.QueueDeleteEntity(uid);
     }
 }
-

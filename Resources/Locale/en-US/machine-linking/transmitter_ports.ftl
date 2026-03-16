@@ -1,3 +1,16 @@
+# SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Kevin Zheng <kevinz5000@gmail.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 0x6273 <0x40@keemail.me>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 signal-port-name-pressed = Pressed
 signal-port-description-pressed = This port is invoked whenever the transmitter is activated.
 
@@ -25,8 +38,11 @@ signal-port-description-dockstatus = This port is invoked with HIGH when docked 
 signal-port-name-middle = Middle
 signal-port-description-middle = This port is invoked whenever the lever is moved to the neutral position.
 
-signal-port-name-timer-trigger = Timer Trigger
-signal-port-description-timer-trigger = This port is invoked whenever the timer triggers.
+signal-port-name-trigger-sender = Trigger
+signal-port-description-trigger-sender = This port is invoked whenever the device triggers.
+
+signal-port-name-timer-trigger = Timer
+signal-port-description-timer-trigger = This port is invoked whenever the timer is up.
 
 signal-port-name-timer-start = Timer Start
 signal-port-description-timer-start = This port is invoked whenever the timer starts.
@@ -70,8 +86,5 @@ signal-port-description-power-charging = This port is invoked with HIGH when the
 signal-port-name-power-discharging = Discharging
 signal-port-description-power-discharging = This port is invoked with HIGH when the battery is losing charge and LOW when not.
 
-signal-port-name-material-silo = Material silo
-signal-port-description-material-silo = Bluespace storage for station materials
-
-signal-port-name-fillitems = Fillbot Items
-signal-port-description-fillitems = Items picked up by the Fillbot.
+signal-port-name-item-detected = Detected
+signal-port-description-item-detected = This port is invoked whenever the transmitter detects an item.

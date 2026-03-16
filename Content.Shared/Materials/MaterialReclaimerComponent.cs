@@ -1,9 +1,20 @@
-using Content.Shared.Construction.Prototypes;
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 LucasTheDrgn <kirbyfan.95@gmail.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Whitelist;
 using JetBrains.Annotations;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
@@ -21,13 +32,13 @@ public sealed partial class MaterialReclaimerComponent : Component
     /// Whether or not the machine has power. We put it here
     /// so we can network and predict it.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
     public bool Powered;
 
     /// <summary>
     /// An "enable" toggle for things like interfacing with machine linking
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
     public bool Enabled = true;
 
     /// <summary>
@@ -40,7 +51,7 @@ public sealed partial class MaterialReclaimerComponent : Component
     /// How efficiently the materials are reclaimed.
     /// In practice, a multiplier per material when calculating the output of the reclaimer.
     /// </summary>
-    [DataField]
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float Efficiency = 1f;
 
     /// <summary>
@@ -55,33 +66,14 @@ public sealed partial class MaterialReclaimerComponent : Component
     /// How quickly it takes to consume X amount of materials per second.
     /// For example, with a rate of 50, an entity with 100 total material takes 2 seconds to process.
     /// </summary>
-    [DataField]
-    public float BaseMaterialProcessRate = 100f;
-
-    /// <summary>
-    /// How quickly it takes to consume X amount of materials per second.
-    /// For example, with a rate of 50, an entity with 100 total material takes 2 seconds to process.
-    /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
     public float MaterialProcessRate = 100f;
-
-    /// <summary>
-    /// Machine part whose rating modifies <see cref="MaterialProcessRate"/>
-    /// </summary>
-    [DataField]
-    public ProtoId<MachinePartPrototype> MachinePartProcessRate = "Manipulator";
-
-    /// <summary>
-    /// How much the machine part quality affects the <see cref="MaterialProcessRate"/>
-    /// </summary>
-    [DataField]
-    public float PartRatingProcessRateMultiplier = 1.5f;
 
     /// <summary>
     /// The minimum amount fo time it can take to process an entity.
     /// this value supercedes the calculated one using <see cref="MaterialProcessRate"/>
     /// </summary>
-    [DataField]
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan MinimumProcessDuration = TimeSpan.FromSeconds(0.5f);
 
     /// <summary>
@@ -89,6 +81,13 @@ public sealed partial class MaterialReclaimerComponent : Component
     /// </summary>
     [DataField]
     public string? SolutionContainerId;
+
+    /// <summary>
+    /// If the reclaimer should attempt to reclaim all solutions or just drainable ones
+    /// Difference between Recycler and Industrial Reagent Grinder
+    /// </summary>
+    [DataField]
+    public bool OnlyReclaimDrainable = true;
 
     /// <summary>
     /// a whitelist for what entities can be inserted into this reclaimer

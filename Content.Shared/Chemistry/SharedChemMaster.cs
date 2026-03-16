@@ -1,5 +1,18 @@
+// SPDX-FileCopyrightText: 2022 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Illiux <newoutlook@gmail.com>
+// SPDX-FileCopyrightText: 2023 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Dora <27211909+catdotjs@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Chemistry.Reagent;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Chemistry
@@ -11,7 +24,6 @@ namespace Content.Shared.Chemistry
     {
         public const uint PillTypes = 20;
         public const string BufferSolutionName = "buffer";
-        public const string PillBufferSolutionName = "pillBuffer";
         public const string InputSlotName = "beakerSlot";
         public const string OutputSlotName = "outputSlot";
         public const string PillSolutionName = "food";
@@ -45,16 +57,14 @@ namespace Content.Shared.Chemistry
     public sealed class ChemMasterReagentAmountButtonMessage : BoundUserInterfaceMessage
     {
         public readonly ReagentId ReagentId;
-        public readonly int Amount;
+        public readonly ChemMasterReagentAmount Amount;
         public readonly bool FromBuffer;
-        public readonly bool IsOutput;
 
-        public ChemMasterReagentAmountButtonMessage(ReagentId reagentId, int amount, bool fromBuffer, bool isOutput)
+        public ChemMasterReagentAmountButtonMessage(ReagentId reagentId, ChemMasterReagentAmount amount, bool fromBuffer)
         {
             ReagentId = reagentId;
             Amount = amount;
             FromBuffer = fromBuffer;
-            IsOutput = isOutput;
         }
     }
 
@@ -86,18 +96,6 @@ namespace Content.Shared.Chemistry
         }
     }
 
-    [Serializable, NetSerializable]
-    public sealed class ChemMasterTransferringAmountUpdated(int transferringAmount) : BoundUserInterfaceMessage
-    {
-        public readonly int TransferringAmount = transferringAmount;
-    }
-
-    [Serializable, NetSerializable]
-    public sealed class ChemMasterAmountsUpdated(List<int> amounts) : BoundUserInterfaceMessage
-    {
-        public readonly List<int> Amounts = amounts;
-    }
-
     public enum ChemMasterMode
     {
         Transfer,
@@ -114,6 +112,32 @@ namespace Content.Shared.Chemistry
 
     [Serializable, NetSerializable]
     public sealed class ChemMasterSortingTypeCycleMessage : BoundUserInterfaceMessage;
+
+
+    public enum ChemMasterReagentAmount
+    {
+        U1 = 1,
+        U5 = 5,
+        U10 = 10,
+        U15 = 15,
+        U20 = 20,
+        U25 = 25,
+        U30 = 30,
+        U50 = 50,
+        U100 = 100,
+        All,
+    }
+
+    public static class ChemMasterReagentAmountToFixedPoint
+    {
+        public static FixedPoint2 GetFixedPoint(this ChemMasterReagentAmount amount)
+        {
+            if (amount == ChemMasterReagentAmount.All)
+                return FixedPoint2.MaxValue;
+            else
+                return FixedPoint2.New((int)amount);
+        }
+    }
 
     /// <summary>
     /// Information about the capacity and contents of a container for display in the UI
@@ -152,48 +176,42 @@ namespace Content.Shared.Chemistry
     }
 
     [Serializable, NetSerializable]
-    public sealed class ChemMasterBoundUserInterfaceState(
-        ChemMasterMode mode,
-        ChemMasterSortingType sortingType,
-        ContainerInfo? containerInfo,
-        IReadOnlyList<ReagentQuantity> bufferReagents,
-        IReadOnlyList<ReagentQuantity> pillBufferReagents,
-        FixedPoint2 bufferCurrentVolume,
-        FixedPoint2 pillBufferCurrentVolume,
-        uint selectedPillType,
-        uint pillDosageLimit,
-        bool updateLabel,
-        int transferringAmount,
-        List<int> amounts)
-        : BoundUserInterfaceState
+    public sealed class ChemMasterBoundUserInterfaceState : BoundUserInterfaceState
     {
-        public readonly ContainerInfo? ContainerInfo = containerInfo;
+        public readonly ContainerInfo? InputContainerInfo;
+        public readonly ContainerInfo? OutputContainerInfo;
 
         /// <summary>
         /// A list of the reagents and their amounts within the buffer, if applicable.
         /// </summary>
-        public readonly IReadOnlyList<ReagentQuantity> BufferReagents = bufferReagents;
+        public readonly IReadOnlyList<ReagentQuantity> BufferReagents;
 
-        /// <summary>
-        /// A list of the reagents and their amounts within the buffer, if applicable.
-        /// </summary>
-        public readonly IReadOnlyList<ReagentQuantity> PillBufferReagents = pillBufferReagents;
+        public readonly ChemMasterMode Mode;
 
-        public readonly ChemMasterMode Mode = mode;
+        public readonly ChemMasterSortingType SortingType;
 
-        public readonly ChemMasterSortingType SortingType = sortingType;
+        public readonly FixedPoint2? BufferCurrentVolume;
+        public readonly uint SelectedPillType;
 
-        public readonly FixedPoint2? BufferCurrentVolume = bufferCurrentVolume;
-        public readonly FixedPoint2? PillBufferCurrentVolume = pillBufferCurrentVolume;
-        public readonly uint SelectedPillType = selectedPillType;
+        public readonly uint PillDosageLimit;
 
-        public readonly uint PillDosageLimit = pillDosageLimit;
+        public readonly bool UpdateLabel;
 
-        public readonly bool UpdateLabel = updateLabel;
-
-        public readonly int TransferringAmount = transferringAmount;
-
-        public readonly List<int> Amounts = amounts;
+        public ChemMasterBoundUserInterfaceState(
+            ChemMasterMode mode, ChemMasterSortingType sortingType, ContainerInfo? inputContainerInfo, ContainerInfo? outputContainerInfo,
+            IReadOnlyList<ReagentQuantity> bufferReagents, FixedPoint2 bufferCurrentVolume,
+            uint selectedPillType, uint pillDosageLimit, bool updateLabel)
+        {
+            InputContainerInfo = inputContainerInfo;
+            OutputContainerInfo = outputContainerInfo;
+            BufferReagents = bufferReagents;
+            Mode = mode;
+            SortingType = sortingType;
+            BufferCurrentVolume = bufferCurrentVolume;
+            SelectedPillType = selectedPillType;
+            PillDosageLimit = pillDosageLimit;
+            UpdateLabel = updateLabel;
+        }
     }
 
     [Serializable, NetSerializable]

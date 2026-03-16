@@ -1,14 +1,26 @@
-﻿using Content.Server.Explosion.EntitySystems;
+// SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 Skye <22365940+Skyedra@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Mono <182929384+Monotheonist@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Server.Explosion.EntitySystems;
 using Content.Server.Power.Components;
 using Content.Shared.Examine;
 using Robust.Shared.Utility;
 using Content.Server.Chat.Systems;
 using Content.Server.Station.Systems;
 using Robust.Shared.Timing;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Content.Server.Power.EntitySystems;
-using Content.Server.Announcements.Systems;
 
 namespace Content.Server.PowerSink
 {
@@ -34,7 +46,6 @@ namespace Content.Server.PowerSink
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly StationSystem _station = default!;
         [Dependency] private readonly BatterySystem _battery = default!;
-        [Dependency] private readonly AnnouncerSystem _announcer = default!;
 
         public override void Initialize()
         {
@@ -113,7 +124,7 @@ namespace Content.Server.PowerSink
             foreach (var (entity, component) in toRemove)
             {
                 _explosionSystem.QueueExplosion(entity, "PowerSink", 2000f, 4f, 20f, canCreateVacuum: true);
-                EntityManager.RemoveComponent(entity, component);
+                RemComp(entity, component);
             }
         }
 
@@ -128,12 +139,12 @@ namespace Content.Server.PowerSink
             if (station == null)
                 return;
 
-            _announcer.SendAnnouncement(
-                _announcer.GetAnnouncementId("PowerSinkExplosion"),
-                 "powersink-immiment-explosion-announcement",
-                filter: _station.GetInOwningStation(station.Value),
-                colorOverride: Color.Yellow,
-                station: station.Value);
+            _chat.DispatchStationAnnouncement(
+                station.Value,
+                Loc.GetString("powersink-imminent-explosion-announcement"),
+                playDefaultSound: true,
+                colorOverride: Color.Yellow
+            );
         }
     }
 }

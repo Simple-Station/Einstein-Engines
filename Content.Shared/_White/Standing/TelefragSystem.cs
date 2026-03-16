@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Shared.Standing;
 using Content.Shared.Stunnable;
@@ -9,10 +18,14 @@ public sealed class TelefragSystem : EntitySystem
 {
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly StandingStateSystem _standing = default!;
-    [Dependency] private readonly SharedLayingDownSystem _layingDown = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
 
-    public void DoTelefrag(EntityUid uid, EntityCoordinates coords, TimeSpan knockdownTime, float range = 0.4f)
+    public void DoTelefrag(EntityUid uid,
+        EntityCoordinates coords,
+        TimeSpan knockdownTime,
+        float range = 0.3f,
+        bool behavior = false,
+        bool autoStandUp = false)
     {
         if (range <= 0f)
             return;
@@ -20,10 +33,11 @@ public sealed class TelefragSystem : EntitySystem
         var entities = _lookup.GetEntitiesInRange(coords, range, LookupFlags.Dynamic);
         foreach (var ent in entities.Where(ent => ent != uid && !_standing.IsDown(ent)))
         {
-            if (knockdownTime > TimeSpan.Zero && _stun.TryKnockdown(ent, knockdownTime, true))
+            if (knockdownTime > TimeSpan.Zero && _stun.TryKnockdown(ent, knockdownTime))
                 continue;
 
-            _layingDown.TryLieDown(ent, behavior: DropHeldItemsBehavior.DropIfStanding);
+            if (_stun.TryCrawling(ent) && autoStandUp)
+                _stun.TryStand(ent!);
         }
     }
 }

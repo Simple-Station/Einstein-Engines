@@ -18,6 +18,8 @@
       - AnchoredStorageFilter
   - type: Visibility
     layer: 1
+  - type: HideContrabandContent #Goobstation Contraband detector
+  - type: UndetectableContraband #Goobstation Contraband detector
 
 - type: entity
   abstract: true
@@ -33,29 +35,29 @@
     bodyType: Static
 
 - type: entity
-  parent: [ BaseSubfloorAnchorStorageAnchored, ClothingBackpackSatchel ]
+  parent: [ BaseSubfloorAnchorStorageAnchored, ClothingBackpackSatchel, BaseMinorContraband ]
   id: ClothingBackpackSatchelSmuggler
   name: smuggler's satchel
   suffix: Empty
-  description: A dingy, suspicious looking satchel.
+  description: A handy, suspicious looking satchel. Just flat enough to fit underneath floor tiles.
   components:
   - type: Sprite
     sprite: Clothing/Back/Satchels/smuggler.rsi
     state: icon
 
 - type: entity
-  parent: [ BaseSubfloorAnchorStorage, ClothingBackpackSatchel ]
+  parent: [ BaseSubfloorAnchorStorage, ClothingBackpackSatchel, BaseMinorContraband ]
   id: ClothingBackpackSatchelSmugglerUnanchored
   name: smuggler's satchel
   suffix: Empty, Unanchored
-  description: A dingy, suspicious looking satchel.
+  description: A handy, suspicious looking satchel. Just flat enough to fit underneath floor tiles.
   components:
   - type: Sprite
     sprite: Clothing/Back/Satchels/smuggler.rsi
     state: icon
 
 - type: entity
-  parent: [ BaseSubfloorAnchorStorageAnchored, BriefcaseSyndie ]
+  parent: [ BaseSubfloorAnchorStorageAnchored, BriefcaseSyndie, BaseMinorContraband ]
   id: BriefcaseSmugglerCash
   name: smuggler's briefcase
   suffix: Smuggler, Do Not Map
@@ -69,7 +71,7 @@
             range: 1, 11
 
 - type: entity
-  parent: [ BaseSubfloorAnchorStorageAnchored, ClothingBackpackDuffelClown ]
+  parent: [ BaseSubfloorAnchorStorageAnchored, ClothingBackpackDuffelClown, BaseMinorContraband ]
   id: ClothingBackpackDuffelClownSmuggler
   name: smuggler's clown duffel bag
   suffix: Smuggler, Do Not Map
@@ -80,16 +82,16 @@
         children:
         - id: SpeedLoaderCap
           amount: !type:RangeNumberSelector
-            range: 4, 8
+            range: 4, 5
         - !type:GroupSelector
           children:
           - id: RevolverCapGun
             amount: !type:RangeNumberSelector
-              range: 4, 8
+              range: 4, 5
             weight: 95
           - id: RevolverCapGunFake
             amount: !type:RangeNumberSelector
-              range: 1, 8
+              range: 1, 2
             weight: 5
 
 - type: entity

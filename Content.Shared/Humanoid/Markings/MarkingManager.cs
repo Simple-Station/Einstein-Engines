@@ -1,7 +1,14 @@
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 csqrb <56765288+CaptainSqrBeard@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Collections.Frozen;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using Content.Shared._White.Humanoid.Prototypes;
 using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.Prototypes;
 
@@ -63,12 +70,16 @@ namespace Content.Shared.Humanoid.Markings
             string species)
         {
             var speciesProto = _prototypeManager.Index<SpeciesPrototype>(species);
-            var onlyWhitelisted = _prototypeManager.Index<MarkingPointsPrototype>(speciesProto.MarkingPoints).OnlyWhitelisted;
+            var markingPoints = _prototypeManager.Index(speciesProto.MarkingPoints);
             var res = new Dictionary<string, MarkingPrototype>();
 
             foreach (var (key, marking) in MarkingsByCategory(category))
             {
-                if (onlyWhitelisted && marking.SpeciesRestrictions == null)
+                // Goobstation - species without hair or other markings
+                if (!markingPoints.Points.ContainsKey(category))
+                    continue;
+
+                if ((markingPoints.OnlyWhitelisted || markingPoints.Points[category].OnlyWhitelisted) && marking.SpeciesRestrictions == null)
                 {
                     continue;
                 }
@@ -122,23 +133,29 @@ namespace Content.Shared.Humanoid.Markings
         ///     Please make a pull request if you find a use case for that behavior.
         /// </remarks>
         /// <returns></returns>
-        public IReadOnlyDictionary<string, MarkingPrototype> MarkingsByCategoryAndSpeciesAndSex(
-            MarkingCategories category,
-            string species,
-            Sex sex
-            )
+        public IReadOnlyDictionary<string, MarkingPrototype> MarkingsByCategoryAndSpeciesAndSex(MarkingCategories category,
+            string species, Sex sex)
         {
             var speciesProto = _prototypeManager.Index<SpeciesPrototype>(species);
-            var onlyWhitelisted = _prototypeManager.Index<MarkingPointsPrototype>(speciesProto.MarkingPoints).OnlyWhitelisted;
+            var onlyWhitelisted = _prototypeManager.Index(speciesProto.MarkingPoints).OnlyWhitelisted;
             var res = new Dictionary<string, MarkingPrototype>();
 
             foreach (var (key, marking) in MarkingsByCategory(category))
             {
                 if (onlyWhitelisted && marking.SpeciesRestrictions == null)
+                {
                     continue;
+                }
 
-                if (!IsSpeciesWhitelisted(species, marking) || !IsSexWhitelisted(sex, marking))
+                if (marking.SpeciesRestrictions != null && !marking.SpeciesRestrictions.Contains(species))
+                {
                     continue;
+                }
+
+                if (marking.SexRestriction != null && marking.SexRestriction != sex)
+                {
+                    continue;
+                }
 
                 res.Add(key, marking);
             }
@@ -146,8 +163,10 @@ namespace Content.Shared.Humanoid.Markings
             return res;
         }
 
-        public bool TryGetMarking(Marking marking, [NotNullWhen(true)] out MarkingPrototype? markingResult) =>
-            Markings.TryGetValue(marking.MarkingId, out markingResult);
+        public bool TryGetMarking(Marking marking, [NotNullWhen(true)] out MarkingPrototype? markingResult)
+        {
+            return Markings.TryGetValue(marking.MarkingId, out markingResult);
+        }
 
         /// <summary>
         ///     Check if a marking is valid according to the category, species, and current data this marking has.
@@ -160,15 +179,21 @@ namespace Content.Shared.Humanoid.Markings
         public bool IsValidMarking(Marking marking, MarkingCategories category, string species, Sex sex)
         {
             if (!TryGetMarking(marking, out var proto))
+            {
                 return false;
+            }
 
             if (proto.MarkingCategory != category ||
-                !IsSpeciesWhitelisted(species, proto) ||
-                !IsSexWhitelisted(sex, proto))
+                proto.SpeciesRestrictions != null && !proto.SpeciesRestrictions.Contains(species) ||
+                proto.SexRestriction != null && proto.SexRestriction != sex)
+            {
                 return false;
+            }
 
             if (marking.MarkingColors.Count != proto.Sprites.Count)
+            {
                 return false;
+            }
 
             return true;
         }
@@ -184,16 +209,28 @@ namespace Content.Shared.Humanoid.Markings
             IoCManager.Resolve(ref prototypeManager);
 
             var speciesProto = prototypeManager.Index<SpeciesPrototype>(species);
-            var onlyWhitelisted = prototypeManager.Index<MarkingPointsPrototype>(speciesProto.MarkingPoints).OnlyWhitelisted;
+            var onlyWhitelisted = prototypeManager.Index(speciesProto.MarkingPoints).OnlyWhitelisted;
 
             if (!TryGetMarking(marking, out var prototype))
+            {
                 return false;
+            }
 
             if (onlyWhitelisted && prototype.SpeciesRestrictions == null)
+            {
                 return false;
+            }
 
-            if (!IsSpeciesWhitelisted(species, prototype) || !IsSexWhitelisted(sex, prototype))
+            if (prototype.SpeciesRestrictions != null
+                && !prototype.SpeciesRestrictions.Contains(species))
+            {
                 return false;
+            }
+
+            if (prototype.SexRestriction != null && prototype.SexRestriction != sex)
+            {
+                return false;
+            }
 
             return true;
         }
@@ -203,13 +240,23 @@ namespace Content.Shared.Humanoid.Markings
             IoCManager.Resolve(ref prototypeManager);
 
             var speciesProto = prototypeManager.Index<SpeciesPrototype>(species);
-            var onlyWhitelisted = prototypeManager.Index<MarkingPointsPrototype>(speciesProto.MarkingPoints).OnlyWhitelisted;
+            var onlyWhitelisted = prototypeManager.Index(speciesProto.MarkingPoints).OnlyWhitelisted;
 
             if (onlyWhitelisted && prototype.SpeciesRestrictions == null)
+            {
                 return false;
+            }
 
-            if (!IsSpeciesWhitelisted(species, prototype) || !IsSexWhitelisted(sex, prototype))
+            if (prototype.SpeciesRestrictions != null &&
+                !prototype.SpeciesRestrictions.Contains(species))
+            {
                 return false;
+            }
+
+            if (prototype.SexRestriction != null && prototype.SexRestriction != sex)
+            {
+                return false;
+            }
 
             return true;
         }
@@ -219,9 +266,10 @@ namespace Content.Shared.Humanoid.Markings
             IoCManager.Resolve(ref prototypeManager);
             var speciesProto = prototypeManager.Index<SpeciesPrototype>(species);
             if (
-                !prototypeManager.TryIndex(speciesProto.BodyTypes.First(), out BodyTypePrototype? baseBodyType) || // WD EDIT
-                !baseBodyType.Sprites.TryGetValue(layer, out var spriteName) || // WD EDIT
+                !prototypeManager.TryIndex(speciesProto.SpriteSet, out var baseSprites) ||
+                !baseSprites.Sprites.TryGetValue(layer, out var spriteName) ||
                 !prototypeManager.TryIndex(spriteName, out HumanoidSpeciesSpriteLayer? sprite) ||
+                sprite == null ||
                 !sprite.MarkingsMatchSkin
             )
             {
@@ -231,22 +279,6 @@ namespace Content.Shared.Humanoid.Markings
 
             alpha = sprite.LayerAlpha;
             return true;
-        }
-
-        public bool IsSpeciesWhitelisted(string species, MarkingPrototype prototype)
-        {
-            if (prototype.SpeciesRestrictions == null)
-                return true;
-
-            return prototype.InvertSpeciesRestriction ? !prototype.SpeciesRestrictions.Contains(species) : prototype.SpeciesRestrictions.Contains(species);
-        }
-
-        public bool IsSexWhitelisted(Sex sex, MarkingPrototype prototype)
-        {
-            if (prototype.SexRestriction == null)
-                return true;
-
-            return prototype.InvertSexRestriction ? sex != prototype.SexRestriction.Value : sex == prototype.SexRestriction.Value;
         }
     }
 }

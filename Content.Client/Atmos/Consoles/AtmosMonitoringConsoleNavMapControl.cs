@@ -1,3 +1,11 @@
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client.Pinpointer.UI;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Pinpointer;
@@ -162,10 +170,10 @@ public sealed partial class AtmosMonitoringConsoleNavMapControl : NavMapControl
         {
             var list = new List<AtmosMonitoringConsoleLine>();
 
-            foreach (var ((netId, layer, hexColor), atmosPipeData) in chunk.AtmosPipeData)
+            foreach (var ((netId, layer, pipeColor), atmosPipeData) in chunk.AtmosPipeData)
             {
                 // Determine the correct coloration for the pipe
-                var color = Color.FromHex(hexColor) * _basePipeNetColor;
+                var color = pipeColor * _basePipeNetColor;
 
                 if (FocusNetId != null && FocusNetId != netId)
                     color *= _unfocusedPipeNetColor;
