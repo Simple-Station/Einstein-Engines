@@ -64,9 +64,7 @@
 
 using Content.Client.Administration.Managers;
 using Content.Client.Audio;
-using Content.Shared._White.Bark;
-using Content.Shared._White.Bark.Systems;
-using Content.Shared._White.CCVar;
+using Content.Goobstation.Common.CCVar;
 using Content.Shared.CCVar;
 using Content.Goobstation.Common.CCVar; // Goob Station - Barks
 using Robust.Client.Audio;
@@ -90,24 +88,18 @@ public sealed partial class AudioTab : Control
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
 
-        CharVoiceType.AddItem(Loc.GetString("char-voice-none"), (int) CharacterVoiceType.None); // WD EDIT
-        CharVoiceType.AddItem(Loc.GetString("char-voice-bark"), (int) CharacterVoiceType.Bark); // WD EDIT
-
         var masterVolume = Control.AddOptionPercentSlider(
             CVars.AudioMasterVolume,
             SliderVolumeMaster,
             scale: ContentAudioSystem.MasterVolumeMultiplier);
         masterVolume.ImmediateValueChanged += OnMasterVolumeSliderChanged;
 
+        // Goob Station - Barks-start
         Control.AddOptionPercentSlider(
-            WhiteCVars.BarkVolume,
-            BarkVolumeSlider,
-            scale: 1.0f);
-
-        Control.AddOptionSlider(
-            WhiteCVars.BarkLimit,
-            BarkLimitSlider,
-            0, 10);
+            GoobCVars.BarksVolume,
+            SliderVolumeBarks,
+            scale: ContentAudioSystem.BarksMultiplier);
+        // Goob Station - Barks-end
 
         Control.AddOptionPercentSlider(
             CVars.MidiVolume,

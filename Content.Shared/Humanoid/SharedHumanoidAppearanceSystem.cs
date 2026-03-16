@@ -45,6 +45,7 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Inventory;
 using Content.Shared.Preferences;
 using Content.Shared._EinsteinEngines.HeightAdjust;
+using Content.Goobstation.Common.Barks; // Goob Station - Barks
 using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.GameObjects.Components.Localization;
@@ -55,7 +56,6 @@ using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Serialization.Markdown;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
-using Content.Shared._White.Bark.Systems;
 using Robust.Shared.Enums;
 
 namespace Content.Shared.Humanoid;
@@ -79,10 +79,9 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     [Dependency] private readonly MarkingManager _markingManager = default!;
     [Dependency] private readonly GrammarSystem _grammarSystem = default!;
     [Dependency] private readonly SharedIdentitySystem _identity = default!;
-    [Dependency] private readonly SharedBarkSystem _barkSystem = default!; // WWDP EDIT
 
     public static readonly ProtoId<SpeciesPrototype> DefaultSpecies = "Human";
-    public const string DefaultBarkVoice = "Txt1";
+    public static readonly ProtoId<BarkPrototype> DefaultBarkVoice = "Alto"; // Goob Station - Barks
 
     private ISharedSponsorsManager? _sponsors;
 
@@ -214,11 +213,9 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     /// <param name="target">Target entity to apply the source entity's appearance to.</param>
     /// <param name="sourceHumanoid">Source entity's humanoid component.</param>
     /// <param name="targetHumanoid">Target entity's humanoid component.</param>
-    public void CloneAppearance(EntityUid source, EntityUid target,
-        HumanoidAppearanceComponent? sourceHumanoid = null,
+    public void CloneAppearance(EntityUid source, EntityUid target, HumanoidAppearanceComponent? sourceHumanoid = null,
         HumanoidAppearanceComponent? targetHumanoid = null)
     {
-
         if (!Resolve(source, ref sourceHumanoid, false) || !Resolve(target, ref targetHumanoid, false))
             return;
 
@@ -229,7 +226,6 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         targetHumanoid.Height = sourceHumanoid.Height; // Goobstation: port EE height/width sliders
         targetHumanoid.Width = sourceHumanoid.Width; // Goobstation: port EE height/width sliders
         SetSex(target, sourceHumanoid.Sex, false, targetHumanoid);
-        _barkSystem.ApplyBark(target, sourceHumanoid.BarkVoice, sourceHumanoid.BarkSettings);
         targetHumanoid.CustomBaseLayers = new(sourceHumanoid.CustomBaseLayers);
         targetHumanoid.MarkingSet = new(sourceHumanoid.MarkingSet);
 
@@ -592,6 +588,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         EnsureDefaultMarkings(uid, humanoid);
+        SetBarkVoice(uid, profile.BarkVoice, humanoid); // Goob Station - Barks
 
         humanoid.Gender = profile.Gender;
         if (TryComp<GrammarComponent>(uid, out var grammar))
@@ -682,6 +679,35 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (sync)
             Dirty(uid, humanoid);
     }
+
+    //  Goob Station - Barks Start
+    #region Goob - Barks
+    public void SetBarkVoice(EntityUid uid, string? barkvoiceId, HumanoidAppearanceComponent humanoid)
+    {
+        var voicePrototypeId = DefaultBarkVoice;
+
+        if (barkvoiceId != null &&
+            _proto.TryIndex<BarkPrototype>(barkvoiceId, out var bark) &&
+            (bark.SpeciesWhitelist == null || bark.SpeciesWhitelist.Contains(humanoid.Species)))
+        {
+            voicePrototypeId = barkvoiceId;
+        }
+        else
+        {
+            var barks = _proto.EnumeratePrototypes<BarkPrototype>()
+                .Where(o => o.RoundStart && (o.SpeciesWhitelist is null || o.SpeciesWhitelist.Contains(humanoid.Species)))
+                .ToList();
+
+            voicePrototypeId = _proto.Index(barks.Count > 0 ? barks[0] : DefaultBarkVoice);
+        }
+
+        EnsureComp<SpeechSynthesisComponent>(uid, out var comp);
+        comp.VoicePrototypeId = voicePrototypeId;
+        humanoid.BarkVoice = voicePrototypeId;
+        Dirty(uid, comp);
+    }
+    #endregion
+    // Goob Station - Barks End
 
     /// <summary>
     /// Takes ID of the species prototype, returns UI-friendly name of the species.

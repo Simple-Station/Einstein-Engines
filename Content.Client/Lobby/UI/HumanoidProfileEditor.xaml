@@ -24,7 +24,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
          xmlns:humanoid="clr-namespace:Content.Client.Humanoid"
          xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
          xmlns:ui="clr-namespace:Content.Client.Lobby.UI"
-         xmlns:controls="clr-namespace:Content.Client._White.UI.Controls"
          HorizontalExpand="True">
         <!-- Left side -->
         <BoxContainer Orientation="Vertical" Margin="10 10 10 10" HorizontalExpand="True">
@@ -101,28 +100,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                                     <Control HorizontalExpand="True"/>
                                     <OptionButton Name="PronounsButton" HorizontalAlignment="Right" />
                                 </BoxContainer>
-                                <!--BARK-->
-                                <BoxContainer HorizontalExpand="True" Orientation="Horizontal">
-                                    <Label Text="{Loc 'humanoid-profile-editor-bark-voice-label'}" />
-                                    <Control HorizontalExpand="True"/>
-                                    <OptionButton Name="VoiceBarkButton" HorizontalAlignment="Right" />
-                                    <Button Name="VoiceBarkPlayButton" Text="▶" MaxWidth="80" />
-                                </BoxContainer>
-
-                                <BoxContainer HorizontalExpand="True" Orientation="Horizontal">
-                                    <BoxContainer HorizontalExpand="True" Orientation="Vertical">
-                                        <controls:Knob Name="BarkPitchSlider" MinValue="0" MaxValue="255" HorizontalExpand="True" Margin="5 0 5 0" />
-                                        <Label Text="{Loc 'humanoid-profile-editor-bark-pitch-label'}" HorizontalAlignment="Center"/>
-                                    </BoxContainer>
-                                    <BoxContainer HorizontalExpand="True" Orientation="Vertical">
-                                        <controls:Knob Name="BarkPitchVarianceSlider" MinValue="0" MaxValue="255" HorizontalExpand="True" Margin="5 0 5 0" />
-                                        <Label Text="{Loc 'humanoid-profile-editor-bark-pitch-variance-label'}" HorizontalAlignment="Center"/>
-                                    </BoxContainer>
-                                    <BoxContainer HorizontalExpand="True" Orientation="Vertical">
-                                        <controls:Knob Name="BarkPauseSlider" MinValue="0" MaxValue="255" HorizontalExpand="True" Margin="5 0 5 0" />
-                                        <Label Text="{Loc 'humanoid-profile-editor-bark-pause-label'}" HorizontalAlignment="Center"/>
-                                    </BoxContainer>
-                                </BoxContainer>
                                 <!-- Show clothing -->
                                 <BoxContainer HorizontalExpand="True">
                                     <Label Text="{Loc 'humanoid-profile-editor-clothing'}" />
@@ -152,6 +129,14 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                                     <Label Name="WeightLabel" />
                                 </BoxContainer>
                                 <!-- end Goobstation: port EE height/width sliders -->
+                                <!-- Corvax-Frontier-Barks-Start -->
+                                <BoxContainer HorizontalExpand="True" Visible="False" Name="BarksContainer">
+                                    <Label Text="{Loc 'humanoid-profile-editor-voice-label'}" />
+                                    <Control HorizontalExpand="True"/>
+                                    <OptionButton Name="BarkVoiceButton" HorizontalAlignment="Right" />
+                                    <Button Name="BarkVoicePlayButton" Text="{Loc 'humanoid-profile-editor-voice-play'}" MaxWidth="80" />
+                                </BoxContainer>
+                                <!-- Corvax-Frontier-Barks-End -->
                             </BoxContainer>
                             <!-- Skin -->
                             <BoxContainer Margin="10" HorizontalExpand="True" Orientation="Vertical">

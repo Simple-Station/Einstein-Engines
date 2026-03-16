@@ -137,7 +137,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
-using Content.Shared._White.Bark;
 using Content.Shared._RMC14.LinkAccount;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Construction.Prototypes;
@@ -390,6 +389,8 @@ namespace Content.Server.Database
                 loadouts[role.RoleName] = loadout;
             }
 
+            var barkVoice = profile.BarkVoice ?? SharedHumanoidAppearanceSystem.DefaultBarkVoice; // Goob Station - Barks
+
             return new HumanoidCharacterProfile(
                 profile.CharacterName,
                 profile.FlavorText,
@@ -398,16 +399,6 @@ namespace Content.Server.Database
                 profile.Width, // Goobstation: port EE height/width sliders
                 profile.Age,
                 sex,
-                profile.BarkVoice, // WD EDIT
-                // WD EDIT START
-                new BarkPercentageApplyData()
-                {
-                    Pause = profile.BarkPause,
-                    Pitch = profile.BarkPitch,
-                    PitchVariance = profile.BarkPitchVariance,
-                    Volume = profile.BarkVolume,
-                },
-                // WD EDIT END
                 gender,
                 new HumanoidCharacterAppearance
                 (
@@ -424,7 +415,8 @@ namespace Content.Server.Database
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
-                loadouts
+                loadouts,
+                barkVoice // Goob Station - Barks
             );
         }
 
@@ -446,7 +438,6 @@ namespace Content.Server.Database
             profile.Width = humanoid.Width; // Goobstation: port EE height/width sliders
             profile.Age = humanoid.Age;
             profile.Sex = humanoid.Sex.ToString();
-            profile.BarkVoice = humanoid.BarkVoice; // WD EDIT
             profile.Gender = humanoid.Gender.ToString();
             profile.HairName = appearance.HairStyleId;
             profile.HairColor = appearance.HairColor.ToHex();
@@ -478,6 +469,8 @@ namespace Content.Server.Database
                         .Select(t => new Trait { TraitName = t })
             );
 
+            profile.BarkVoice = humanoid.BarkVoice; // Goob Station - Barks
+
             profile.Loadouts.Clear();
 
             foreach (var (role, loadouts) in humanoid.Loadouts)
@@ -508,13 +501,6 @@ namespace Content.Server.Database
 
                 profile.Loadouts.Add(dz);
             }
-
-            // WWDP EDIT START
-            profile.BarkPause = humanoid.BarkSettings.Pause;
-            profile.BarkPitch = humanoid.BarkSettings.Pitch;
-            profile.BarkPitchVariance = humanoid.BarkSettings.PitchVariance;
-            profile.BarkVolume = humanoid.BarkSettings.Volume;
-            // WWDP EDIT END
 
             return profile;
         }

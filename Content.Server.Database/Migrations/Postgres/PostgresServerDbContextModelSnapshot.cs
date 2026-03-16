@@ -977,26 +977,10 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("integer")
                         .HasColumnName("age");
 
-                    b.Property<byte>("BarkPause")
-                        .HasColumnType("smallint")
-                        .HasColumnName("bark_pause");
-
-                    b.Property<byte>("BarkPitch")
-                        .HasColumnType("smallint")
-                        .HasColumnName("bark_pitch");
-
-                    b.Property<byte>("BarkPitchVariance")
-                        .HasColumnType("smallint")
-                        .HasColumnName("bark_pitch_variance");
-
                     b.Property<string>("BarkVoice")
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("bark_voice");
-
-                    b.Property<byte>("BarkVolume")
-                        .HasColumnType("smallint")
-                        .HasColumnName("bark_volume");
 
                     b.Property<string>("CharacterName")
                         .IsRequired()

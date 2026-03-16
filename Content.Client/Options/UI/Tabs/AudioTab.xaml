@@ -29,10 +29,10 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                 <ui:OptionSlider Name="SliderVolumeMidi" Title="{Loc 'ui-options-midi-volume'}" />
                 <ui:OptionSlider Name="SliderVolumeAmbientMusic" Title="{Loc 'ui-options-ambient-music-volume'}" />
                 <ui:OptionSlider Name="SliderVolumeAmbience" Title="{Loc 'ui-options-ambience-volume'}" />
-                <ui:OptionSlider Name="BarkVolumeSlider" Title="{Loc 'ui-options-bark-volume'}" />
-                <ui:OptionSlider Name="BarkLimitSlider" Title="{Loc 'ui-options-bark-limit'}" />                <ui:OptionSlider Name="SliderVolumeLobby" Title="{Loc 'ui-options-lobby-volume'}" />
+                <ui:OptionSlider Name="SliderVolumeLobby" Title="{Loc 'ui-options-lobby-volume'}" />
                 <ui:OptionSlider Name="SliderVolumeInterface" Title="{Loc 'ui-options-interface-volume'}" />
                 <ui:OptionSlider Name="SliderVolumeVoiceChat" Title="{Loc 'ui-options-voice-chat-volume'}" />
+                <ui:OptionSlider Name="SliderVolumeBarks" Title="{Loc 'ui-options-barks-volume'}" /><!-- Goob Station - Barks -->
                 <ui:OptionSlider Name="SliderMaxAmbienceSounds" Title="{Loc 'ui-options-ambience-max-sounds'}"
                                  Margin="0 0 0 8" />
                 <ui:OptionSlider Name="SliderHighlightVolume" Title="{Loc 'ui-options-highlight-volume'}" /> <!-- Goobstation - Highlight chat Ping/Audio! -->
@@ -43,12 +43,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                 <CheckBox Name="EventMusicCheckBox" Text="{Loc 'ui-options-event-music'}" />
                 <CheckBox Name="AdminSoundsCheckBox" Text="{Loc 'ui-options-admin-sounds'}" />
                 <CheckBox Name="BwoinkSoundCheckBox" Text="{Loc 'ui-options-bwoink-sound'}" />
-                <!--WD EDIT START-->
-                <BoxContainer Orientation="Horizontal" SeparationOverride="5">
-                    <Label Text="{Loc 'ui-voice-option'}"/>
-                    <OptionButton Name="CharVoiceType"/>
-                </BoxContainer>
-                <!--WD EDIT END-->
             </BoxContainer>
         </BoxContainer>
         <ui:OptionsTabControlRow Name="Control" Access="Public" />

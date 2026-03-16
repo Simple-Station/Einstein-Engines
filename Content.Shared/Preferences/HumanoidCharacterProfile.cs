@@ -51,8 +51,6 @@
 
 using System.Linq;
 using System.Text.RegularExpressions;
-using Content.Shared._White.Bark;
-using Content.Shared._White.Bark.Systems;
 using Content.Shared.CCVar;
 using Content.Shared.Dataset;
 using Content.Shared.GameTicking;
@@ -61,6 +59,7 @@ using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Roles;
+using Content.Goobstation.Common.Barks; // Goob Station - Barks
 using Content.Shared.Traits;
 using Robust.Shared.Collections;
 using Robust.Shared.Configuration;
@@ -129,17 +128,14 @@ namespace Content.Shared.Preferences
         [DataField]
         public ProtoId<SpeciesPrototype> Species { get; set; } = SharedHumanoidAppearanceSystem.DefaultSpecies;
 
+        [DataField] // Goob Station - Barks
+        public ProtoId<BarkPrototype> BarkVoice { get; set; } = SharedHumanoidAppearanceSystem.DefaultBarkVoice; // Goob Station - Barks
+
         [DataField]
         public int Age { get; set; } = 18;
 
         [DataField]
         public Sex Sex { get; private set; } = Sex.Male;
-
-        [DataField]
-        public string BarkVoice { get; set; } = SharedHumanoidAppearanceSystem.DefaultBarkVoice;
-
-        [DataField("barkSettings")]
-        public BarkPercentageApplyData BarkSettings { get; set; } = BarkPercentageApplyData.Default;
 
         [DataField]
         public Gender Gender { get; private set; } = Gender.Male;
@@ -198,8 +194,6 @@ namespace Content.Shared.Preferences
             float width, // Goobstation: port EE height/width sliders
             int age,
             Sex sex,
-            string barkVoice, // WD EDIT
-            BarkPercentageApplyData barkSettings, // WD EDIT
             Gender gender,
             HumanoidCharacterAppearance appearance,
             SpawnPriorityPreference spawnPriority,
@@ -207,7 +201,8 @@ namespace Content.Shared.Preferences
             PreferenceUnavailableMode preferenceUnavailable,
             HashSet<ProtoId<AntagPrototype>> antagPreferences,
             HashSet<ProtoId<TraitPrototype>> traitPreferences,
-            Dictionary<string, RoleLoadout> loadouts)
+            Dictionary<string, RoleLoadout> loadouts,
+            ProtoId<BarkPrototype> barkVoice) // Goob Station - Barks
         {
             Name = name;
             FlavorText = flavortext;
@@ -216,8 +211,6 @@ namespace Content.Shared.Preferences
             Width = width; // Goobstation: port EE height/width sliders
             Age = age;
             Sex = sex;
-            BarkVoice = barkVoice; // WD EDIT
-            BarkSettings = barkSettings.Clone(); // WD EDIT
             Gender = gender;
             Appearance = appearance;
             SpawnPriority = spawnPriority;
@@ -226,6 +219,7 @@ namespace Content.Shared.Preferences
             _antagPreferences = antagPreferences;
             _traitPreferences = traitPreferences;
             _loadouts = loadouts;
+            BarkVoice = barkVoice; // Goob Station - Barks
 
             var hasHighPrority = false;
             foreach (var (key, value) in _jobPriorities)
@@ -251,8 +245,6 @@ namespace Content.Shared.Preferences
                 other.Width, // Goobstation: port EE height/width sliders
                 other.Age,
                 other.Sex,
-                other.BarkVoice, // WD EDIT
-                other.BarkSettings.Clone(), // WD EDIT
                 other.Gender,
                 other.Appearance.Clone(),
                 other.SpawnPriority,
@@ -260,7 +252,8 @@ namespace Content.Shared.Preferences
                 other.PreferenceUnavailable,
                 new HashSet<ProtoId<AntagPrototype>>(other.AntagPreferences),
                 new HashSet<ProtoId<TraitPrototype>>(other.TraitPreferences),
-                new Dictionary<string, RoleLoadout>(other.Loadouts))
+                new Dictionary<string, RoleLoadout>(other.Loadouts),
+                other.BarkVoice) // Goob Station - Barks
         {
         }
 
@@ -322,6 +315,14 @@ namespace Content.Shared.Preferences
                 width = random.NextFloat(speciesPrototype.MinWidth, speciesPrototype.MaxWidth); // Goobstation: port EE height/width sliders
             }
 
+            // Goob Station - Barks Start
+            var barkvoiceId = random.Pick(prototypeManager
+                .EnumeratePrototypes<BarkPrototype>()
+                .Where(o => o.RoundStart && (o.SpeciesWhitelist is null || o.SpeciesWhitelist.Contains(species)))
+                .ToArray()
+            );
+            //  Goob Station - Barks End
+
             var gender = Gender.Epicene;
 
             switch (sex)
@@ -337,7 +338,7 @@ namespace Content.Shared.Preferences
             var name = GetName(species, gender);
 
 
-            var profile = new HumanoidCharacterProfile()
+            return new HumanoidCharacterProfile()
             {
                 Name = name,
                 Sex = sex,
@@ -347,22 +348,8 @@ namespace Content.Shared.Preferences
                 Width = width, // Goobstation: port EE height/width sliders
                 Height = height, // Goobstation: port EE height/width sliders
                 Appearance = HumanoidCharacterAppearance.Random(species, sex),
+                BarkVoice = barkvoiceId, // Goob Station - Barks
             };
-
-            // WD EDIT START
-            var barkSystem = IoCManager.Resolve<IEntityManager>().System<SharedBarkSystem>();
-            var barkVoiceList = barkSystem.GetVoiceList(profile);
-
-            var barkVoice = SharedHumanoidAppearanceSystem.DefaultBarkVoice;
-            if (barkVoiceList.Any())
-            {
-                barkVoice = random.Pick(barkVoiceList).ID;
-            }
-
-            profile.BarkVoice = barkVoice;
-
-            return profile;
-            // WD EDIT END
         }
 
         public HumanoidCharacterProfile WithName(string name)
@@ -374,9 +361,6 @@ namespace Content.Shared.Preferences
         {
             return new(this) { FlavorText = flavorText };
         }
-
-        public HumanoidCharacterProfile WithBarkVoice(string barkVoice, BarkPercentageApplyData setting) =>
-            new(this) { BarkVoice = barkVoice, BarkSettings = setting.Clone() }; // WD EDIT
 
         public HumanoidCharacterProfile WithAge(int age)
         {
@@ -418,6 +402,14 @@ namespace Content.Shared.Preferences
         {
             return new(this) { SpawnPriority = spawnPriority };
         }
+
+        // Goob Station - Barks Start
+        public HumanoidCharacterProfile WithBarkVoice(BarkPrototype barkVoice)
+        {
+            return new(this) { BarkVoice = barkVoice };
+        }
+        // Goob Station - Barks End
+
         public HumanoidCharacterProfile WithJobPriorities(IEnumerable<KeyValuePair<ProtoId<JobPrototype>, JobPriority>> jobPriorities)
         {
             var dictionary = new Dictionary<ProtoId<JobPrototype>, JobPriority>(jobPriorities);
@@ -575,11 +567,11 @@ namespace Content.Shared.Preferences
             if (Name != other.Name) return false;
             if (Age != other.Age) return false;
             if (Sex != other.Sex) return false;
-            if (BarkVoice != other.BarkVoice) return false;
             if (Gender != other.Gender) return false;
             if (Species != other.Species) return false;
             if (Height != other.Height) return false; // Goobstation: port EE height/width sliders
             if (Width != other.Width) return false; // Goobstation: port EE height/width sliders
+            if (BarkVoice != other.BarkVoice) return false; // Goob Station - Barks
             if (PreferenceUnavailable != other.PreferenceUnavailable) return false;
             if (SpawnPriority != other.SpawnPriority) return false;
             if (!_jobPriorities.SequenceEqual(other._jobPriorities)) return false;
@@ -759,9 +751,6 @@ namespace Content.Shared.Preferences
             _traitPreferences.Clear();
             _traitPreferences.UnionWith(GetValidTraits(traits, prototypeManager));
 
-            if(!CanHaveBark(prototypeManager, collection))
-                BarkVoice = SharedHumanoidAppearanceSystem.DefaultBarkVoice;
-
             // Checks prototypes exist for all loadouts and dump / set to default if not.
             var toRemove = new ValueList<string>();
 
@@ -822,46 +811,6 @@ namespace Content.Shared.Preferences
             return result;
         }
 
-        public bool CanHaveBark(
-            IPrototypeManager prototypeManager,IDependencyCollection collection,
-            ProtoId<BarkListPrototype>? id = null
-        )
-        {
-            var voice = BarkVoice;
-            if(
-                !prototypeManager.TryIndex<BarkListPrototype>(id ?? "default", out var barkList) ||
-                !barkList.VoiceList.TryGetValue(voice, out var voiceRequirements) ||
-                !prototypeManager.TryIndex<BarkVoicePrototype>(voice, out var voicePrototype))
-            {
-                return false;
-            }
-
-            var isValid = true;
-            var reason = "";
-
-            foreach (var requirement in voiceRequirements)
-            {
-                var passes = requirement.IsValid(
-                    default!,
-                    this,
-                    new Dictionary<string, TimeSpan>(),
-                    false,
-                    voicePrototype,
-                    collection.Resolve<IEntityManager>(),
-                    prototypeManager,
-                    collection.Resolve<IConfigurationManager>(),
-                    out reason);
-
-                if (passes == !requirement.Inverted)
-                    continue;
-
-                isValid = false;
-                break;
-            }
-
-            return isValid;
-        }
-
         public ICharacterProfile Validated(ICommonSession session, IDependencyCollection collection, string[] sponsorPrototypes)
         {
             var profile = new HumanoidCharacterProfile(this);
@@ -904,9 +853,8 @@ namespace Content.Shared.Preferences
             hashCode.Add(Age);
             hashCode.Add((int) Sex);
             hashCode.Add((int) Gender);
-            hashCode.Add(BarkVoice); // WD EDIT
-            hashCode.Add(BarkSettings); // WD EDIT
             hashCode.Add(Appearance);
+            hashCode.Add(BarkVoice); // Goob Station - Barks
             hashCode.Add((int) SpawnPriority);
             hashCode.Add((int) PreferenceUnavailable);
             return hashCode.ToHashCode();
