@@ -19,6 +19,6 @@ jobs:
       run: Tools/actions_changelogs_since_last_run.py
       env:
         CHANGELOG_DIR: ${{ vars.CHANGELOG_DIR }}
-        CHANGELOG_WEBHOOK: ${{ secrets.CHANGELOG_WEBHOOK }}
+        DISCORD_WEBHOOK_URLL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
     continue-on-error: true
