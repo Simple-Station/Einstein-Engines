@@ -65,7 +65,7 @@ public sealed partial class LocalizedDatasetValues : IReadOnlyList<string>
 
     public sealed class Enumerator : IEnumerator<string>
     {
-        private int _index = 1; // Whee, 1-indexing
+        private int _index = 0; // Whee, 1-indexing
 
         private readonly LocalizedDatasetValues _values;
 
@@ -88,7 +88,7 @@ public sealed partial class LocalizedDatasetValues : IReadOnlyList<string>
 
         public void Reset()
         {
-            _index = 1;
+            _index = 0;
         }
     }
 }
