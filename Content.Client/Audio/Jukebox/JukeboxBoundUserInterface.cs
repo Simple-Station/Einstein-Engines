@@ -44,6 +44,11 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
             }
         };
 
+        _menu.OnLoopPressed += () =>
+        {
+            SendMessage(new JukeboxToggleLoopMessage());
+        };
+
         _menu.OnStopPressed += () =>
         {
             SendMessage(new JukeboxStopMessage());
@@ -52,6 +57,7 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
         _menu.OnSongSelected += SelectSong;
 
         _menu.SetTime += SetTime;
+        _menu.SetVolume += SetVolume;
         PopulateMusic();
         Reload();
     }
@@ -65,11 +71,13 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
             return;
 
         _menu.SetAudioStream(jukebox.AudioStream);
+        _menu.SetVolumeSlider(jukebox.Volume);
+        _menu.SetLoopButton(jukebox.Loop);
 
         if (_protoManager.TryIndex(jukebox.SelectedSongId, out var songProto))
         {
             var length = EntMan.System<AudioSystem>().GetAudioLength(songProto.Path.Path.ToString());
-            _menu.SetSelectedSong(songProto.Name, (float) length.TotalSeconds);
+            _menu.SetSelectedSong(songProto.Name, (float)length.TotalSeconds);
         }
         else
         {
@@ -104,5 +112,25 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
         }
 
         SendMessage(new JukeboxSetTimeMessage(sentTime));
+    }
+
+    /// First applies the volume locally for prediction (if components are available),
+    /// then sends a message to the server for synchronization.
+    /// Uses MapToRange to convert the slider value to the actual audio component volume range.
+    /// </summary>
+    /// <param name="volume">Volume value from the UI slider (typically from 0 to 1).</param>
+
+    public void SetVolume(float volume)
+    {
+         var sentVolume = volume;
+
+         if (EntMan.TryGetComponent(Owner, out JukeboxComponent? jukebox) &&
+            EntMan.TryGetComponent(jukebox.AudioStream, out AudioComponent? audioComp))
+        {
+            audioComp.Volume = SharedJukeboxSystem.MapToRange(volume, jukebox.MinSlider, jukebox.MaxSlider, jukebox.MinVolume, jukebox.MaxVolume);
+        }
+
+        SendMessage(new JukeboxSetVolumeMessage(sentVolume));
+
     }
 }

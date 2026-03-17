@@ -1,0 +1,18 @@
+<controls:SpeciesGroupContainer
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._White.UserInterface.Controls"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client">
+    <BoxContainer HorizontalExpand="True" Orientation="Vertical" SeparationOverride="5" Margin="0,0,0,15">
+        <Label HorizontalAlignment="Center" Name="GroupLabel"/>
+        <PanelContainer HorizontalExpand="True" SetHeight="5">
+            <PanelContainer.PanelOverride>
+                <graphics:StyleBoxFlat BackgroundColor="#aaaaaa" />
+            </PanelContainer.PanelOverride>
+        </PanelContainer>
+        <BoxContainer
+            SeparationOverride="5"
+            HorizontalAlignment="Stretch"
+            Orientation="Vertical"
+            Name="SpeciesButtonContainer"/>
+    </BoxContainer>
+</controls:SpeciesGroupContainer>

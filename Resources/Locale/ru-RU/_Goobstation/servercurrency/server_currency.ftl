@@ -5,8 +5,8 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-server-currency-name-singular = Орешек
-server-currency-name-plural = Орешек
+server-currency-name-singular = Орешков
+server-currency-name-plural = Орешков
 
 ## Команды
 

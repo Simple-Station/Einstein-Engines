@@ -1,0 +1,9 @@
+﻿ghost-teleport-menu-antagonists-label = Антагонисты
+ghost-teleport-menu-dead-antagonists-label = Мертвые антагонисты
+ghost-teleport-menu-alive-label = Живые
+ghost-teleport-menu-dead-label = Мертвые
+ghost-teleport-menu-ghosts-label = Призраки
+ghost-teleport-menu-left-label = Вышедшие из тела
+ghost-teleport-menu-locations-label = Локации и объекты
+ghost-teleport-menu-other-label = Другие
+ghost-teleport-menu-count-label = Количество

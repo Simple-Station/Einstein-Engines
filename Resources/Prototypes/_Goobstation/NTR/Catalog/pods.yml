@@ -304,14 +304,14 @@
   - type: SpawnOnDespawn
     prototype: SoapCentcomm
 
-- type: entity
-  id: SpawnPodCargoBingle
-  categories: [ HideSpawnMenu ]
-  name: SpawnPodCargoBingle
-  parent: SpawnSupplyEmpty
-  components:
-  - type: SpawnOnDespawn
-    prototype: CargoBingleSpawnCoin
+#- type: entity
+#  id: SpawnPodCargoBingle
+#  categories: [ HideSpawnMenu ]
+#  name: SpawnPodCargoBingle
+#  parent: SpawnSupplyEmpty
+#  components:
+#  - type: SpawnOnDespawn
+#    prototype: CargoBingleSpawnCoin
 
 
 - type: entity
@@ -331,4 +331,4 @@
   components:
   - type: SpawnOnDespawn
     prototype: ExecutiveCassette
-    
+

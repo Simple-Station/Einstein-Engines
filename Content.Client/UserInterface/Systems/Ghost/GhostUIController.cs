@@ -122,7 +122,7 @@ public sealed class GhostUIController : UIController, IOnSystemChanged<GhostSyst
         if (Gui?.TargetWindow is not { } window)
             return;
 
-        window.UpdateWarps(msg.Warps);
+        window.UpdateWarps(msg.Warps); // WD EDIT
         window.Populate();
     }
 

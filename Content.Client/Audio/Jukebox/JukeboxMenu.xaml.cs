@@ -22,7 +22,7 @@ public sealed partial class JukeboxMenu : FancyWindow
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
     private AudioSystem _audioSystem;
-
+    private readonly List<(string Name, ProtoId<JukeboxPrototype> Id)> _allSongs = new();
     /// <summary>
     /// Are we currently 'playing' or paused for the play / pause button.
     /// </summary>
@@ -32,9 +32,11 @@ public sealed partial class JukeboxMenu : FancyWindow
     /// True if playing, false if paused.
     /// </summary>
     public event Action<bool>? OnPlayPressed;
+    public event Action? OnLoopPressed;
     public event Action? OnStopPressed;
     public event Action<ProtoId<JukeboxPrototype>>? OnSongSelected;
     public event Action<float>? SetTime;
+    public event Action<float>? SetVolume;
 
     private EntityUid? _audio;
 
@@ -48,25 +50,20 @@ public sealed partial class JukeboxMenu : FancyWindow
 
         MusicList.OnItemSelected += args =>
         {
-            var entry = MusicList[args.ItemIndex];
-
-            if (entry.Metadata is not string juke)
-                return;
-
-            OnSongSelected?.Invoke(juke);
+            if (MusicList[args.ItemIndex].Metadata is ProtoId<JukeboxPrototype> songId)
+            {
+                OnSongSelected?.Invoke(songId);
+            }
         };
 
-        PlayButton.OnPressed += args =>
-        {
-            OnPlayPressed?.Invoke(!_playState);
-        };
+        PlayButton.OnPressed += _ => OnPlayPressed?.Invoke(!_playState);
+        LoopButton.OnPressed += _ => OnLoopPressed?.Invoke();
+        StopButton.OnPressed += _ => OnStopPressed?.Invoke();
+        PlaybackSlider.OnReleased += _ => SetTime?.Invoke(PlaybackSlider.Value);
+        SearchBar.OnTextChanged += _ => FilterSongs();
+        VolumeSlider.OnReleased += VolumeSliderKeyUp;
 
-        StopButton.OnPressed += args =>
-        {
-            OnStopPressed?.Invoke();
-        };
-        PlaybackSlider.OnReleased += PlaybackSliderKeyUp;
-
+        VolumeSlider.MaxValue = 100f;
         SetPlayPauseButton(_audioSystem.IsPlaying(_audio), force: true);
     }
 
@@ -86,16 +83,58 @@ public sealed partial class JukeboxMenu : FancyWindow
         _lockTimer = 0.5f;
     }
 
+    public void SetLoopButton(bool loop)
+    {
+        LoopButton.Text = Loc.GetString(loop ? "jukebox-menu-buttonloop-on" : "jukebox-menu-buttonloop-off");
+    }
+
+    private void VolumeSliderKeyUp(Slider args)
+    {
+        SetVolume?.Invoke(VolumeSlider.Value);
+        _lockTimer = 0.5f;
+    }
+
     /// <summary>
     /// Re-populates the list of jukebox prototypes available.
     /// </summary>
     public void Populate(IEnumerable<JukeboxPrototype> jukeboxProtos)
     {
+        _allSongs.Clear();
+        foreach (var proto in jukeboxProtos)
+        {
+            _allSongs.Add((proto.Name, proto.ID));
+        }
+        FilterSongs();
+        MusicList.SortItemsByText();
+    }
+
+    private void FilterSongs()
+    {
+        MusicList.Clear();
+        var filter = SearchBar.Text.Trim().ToLowerInvariant();
+        foreach (var song in _allSongs)
+        {
+            if (string.IsNullOrEmpty(filter) || song.Name.ToLowerInvariant().Contains(filter))
+            {
+                MusicList.AddItem(song.Name, metadata: song.Id);
+            }
+        }
+    }
+
+    private void OnSearchTextChanged(LineEdit.LineEditEventArgs args)
+    {
+        if (SearchBar == null || MusicList == null)
+            return;
+
+        var filter = SearchBar.Text.Trim().ToLowerInvariant();
         MusicList.Clear();
 
-        foreach (var entry in jukeboxProtos)
+        foreach (var (name, id) in _allSongs)
         {
-            MusicList.AddItem(entry.Name, metadata: entry.ID);
+            if (string.IsNullOrEmpty(filter) || name.ToLowerInvariant().Contains(filter))
+            {
+                MusicList.AddItem(name, metadata: id);
+            }
         }
     }
 
@@ -122,6 +161,12 @@ public sealed partial class JukeboxMenu : FancyWindow
         PlaybackSlider.SetValueWithoutEvent(0);
     }
 
+    public void SetVolumeSlider(float volume)
+    {
+        VolumeSlider.Value = volume;
+    }
+
+
     protected override void FrameUpdate(FrameEventArgs args)
     {
         base.FrameUpdate(args);
@@ -132,6 +177,7 @@ public sealed partial class JukeboxMenu : FancyWindow
         }
 
         PlaybackSlider.Disabled = _lockTimer > 0f;
+        VolumeSlider.Disabled = _lockTimer > 0f;
 
         if (_entManager.TryGetComponent(_audio, out AudioComponent? audio))
         {
@@ -142,7 +188,12 @@ public sealed partial class JukeboxMenu : FancyWindow
             DurationLabel.Text = $"00:00 / 00:00";
         }
 
+        VolumeNumberLabel.Text = $"{VolumeSlider.Value.ToString("0.##")} %";
+
         if (PlaybackSlider.Grabbed)
+            return;
+
+        if (VolumeSlider.Grabbed)
             return;
 
         if (audio != null || _entManager.TryGetComponent(_audio, out audio))

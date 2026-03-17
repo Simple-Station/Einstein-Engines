@@ -1,1 +1,1 @@
-credits-window-corvax-contributors-section-title = Контрибьюторы Corvax
+credits-window-corvax-contributors-section-title = Контрибьюторы Space Station 14

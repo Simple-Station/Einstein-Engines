@@ -1,9 +1,3 @@
-ent-MachineBluespaceHarvesterCircuitboard = блюспейс харвестер (машинная плата)
-    .desc = { ent-BaseMachineCircuitboard.desc }
-    .suffix = { ent-BaseMachineCircuitboard.suffix }
-ent-MachineBluespaceTransitorCircuitboard = блюспейс Т.Р.А.Н.З.И.Т. (машинная плата)
-    .desc = { ent-BaseMachineCircuitboard.desc }
-    .suffix = { ent-BaseMachineCircuitboard.suffix }
 ent-PrinterDocMachineCircuitboard = принтер документов (машинная плата)
     .desc = Машинная плата принтера документов.
 ent-StasisOperatingTableCircuitboard = стазисный операционный стол (машинная плата)

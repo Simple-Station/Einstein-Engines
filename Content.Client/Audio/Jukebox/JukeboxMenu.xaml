@@ -4,22 +4,49 @@ SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 
 SPDX-License-Identifier: MIT
 -->
-
+<!-- Orehum edit-->
 <ui:FancyWindow xmlns="https://spacestation14.io" xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
                 SetSize="400 500" Title="{Loc 'jukebox-menu-title'}">
     <BoxContainer Margin="4 0" Orientation="Vertical">
+        <LineEdit Name="SearchBar" PlaceHolder="{Loc 'jukebox-search-placeholder'}" HorizontalExpand="True"  Margin ="4 4"/>
         <ItemList Name="MusicList" SelectMode="Button" Margin="3 3 3 3"
         HorizontalExpand="True" VerticalExpand="True" SizeFlagsStretchRatio="8"/>
         <BoxContainer Orientation="Vertical">
             <Label Name="SongSelected" Text="{Loc 'jukebox-menu-selectedsong'}" />
-            <Label Name="SongName" Text="---" />
+            <BoxContainer
+                Orientation="Horizontal"
+                HorizontalExpand="True"
+                VerticalExpand="False"
+                SizeFlagsStretchRatio="1"
+            >
+                <Label Name="SongName" Text="---" />
+                <Label Name="DurationLabel" Text="00:00 / 00:00" HorizontalAlignment="Right" HorizontalExpand="True" />
+            </BoxContainer>
             <Slider Name="PlaybackSlider" HorizontalExpand="True" />
+            <Label Name="VolumeNumberLabel" Text="0" HorizontalAlignment="Right" HorizontalExpand="True" />
+            <BoxContainer
+                Orientation="Horizontal"
+                HorizontalExpand="True"
+                VerticalExpand="False"
+                SizeFlagsStretchRatio="1"
+            >
+                <Label Name="VolumeLabel" Text="{Loc 'jukebox-menu-volume'} " />
+                <Slider Name="VolumeSlider" HorizontalExpand="True" />
+            </BoxContainer>
         </BoxContainer>
-        <BoxContainer Orientation="Horizontal" HorizontalExpand="True"
-        VerticalExpand="False" SizeFlagsStretchRatio="1">
-            <Button Name="PlayButton" Text="{Loc 'jukebox-menu-buttonplay'}" />
-            <Button Name="StopButton" Text="{Loc 'jukebox-menu-buttonstop'}" />
-            <Label Name="DurationLabel" Text="00:00 / 00:00" HorizontalAlignment="Right" HorizontalExpand="True"/>
+        <BoxContainer Orientation="Vertical">
+            <PanelContainer StyleClasses="LowDivider" />
+            <BoxContainer
+                Orientation="Horizontal"
+                HorizontalExpand="True"
+                VerticalExpand="False"
+                SizeFlagsStretchRatio="1"
+            >
+                <Button Name="PlayButton" Text="{Loc 'jukebox-menu-buttonplay'}" />
+                <Button Name="StopButton" Text="{Loc 'jukebox-menu-buttonstop'}" />
+                <Button Name="LoopButton" Text="{Loc 'jukebox-menu-buttonloop-off'}" />
+            </BoxContainer>
         </BoxContainer>
     </BoxContainer>
 </ui:FancyWindow>
+<!--Orehum edit-->

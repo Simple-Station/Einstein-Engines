@@ -104,6 +104,7 @@
   name: department-Cargo
   description: department-Cargo-description
   color: "#A46106"
+  weight: -5 # WD EDIT
   roles:
   - CargoTechnician
   - Quartermaster
@@ -115,7 +116,7 @@
   name: department-Civilian
   description: department-Civilian-description
   color: "#9FED58"
-  weight: -10
+  weight: -4 # WD EDIT
   roles:
   - Bartender
   - Botanist
@@ -141,6 +142,7 @@
   name: department-CentralCommand
   description: department-CentralCommand-description
   color: "#0c344d"
+  weight: -1 # WD EDIT
   roles:
   - CentralCommandOfficial
   - CBURN
@@ -162,13 +164,13 @@
   - Diplomat
   - GovernmentMan # Goobstation - End
   editorHidden: true
-  weight: 120
 
 - type: department
   id: Command
   name: department-Command
   description: department-Command-description
   color: "#334E6D"
+  weight: -2 # WD EDIT
   roles:
   - Captain
   - ChiefEngineer
@@ -192,13 +194,13 @@
   - HecuOperative
   - CommandMaid # event-restricted, Goobstation
   primary: false
-  weight: 100
 
 - type: department
   id: Engineering
   name: department-Engineering
   description: department-Engineering-description
   color: "#EFB341"
+  weight: -6 # WD EDIT
   roles:
   - AtmosphericTechnician
   - ChiefEngineer
@@ -210,6 +212,7 @@
   name: department-Medical
   description: department-Medical-description
   color: "#52B4E9"
+  weight: -7 # WD EDIT
   roles:
   - Chemist
   - ChiefMedicalOfficer
@@ -224,7 +227,7 @@
   name: department-Security
   description: department-Security-description
   color: "#DE3A3A"
-  weight: 20
+  weight: -3 # WD EDIT
   roles:
   - HeadOfSecurity
   - SecurityCadet
@@ -239,6 +242,7 @@
   name: department-Science
   description: department-Science-description
   color: "#D381C9"
+  weight: -8 # WD EDIT
   roles:
   - ResearchDirector
   - Scientist
@@ -250,6 +254,7 @@
   name: department-Silicon
   description: department-Silicon-description
   color: "#D381C9"
+  weight: -9 # WD EDIT
   roles:
   - Borg
   - StationAi
@@ -258,8 +263,8 @@
   id: Specific
   name: department-Specific
   description: department-Specific-description
-  color: "#9FED58"
-  weight: 10
+  color: "#29282f"
+  weight: -10 # WD EDIT
   roles:
   - RadioHost # Goobstation
   - Boxer

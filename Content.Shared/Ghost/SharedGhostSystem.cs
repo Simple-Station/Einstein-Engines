@@ -160,36 +160,57 @@ namespace Content.Shared.Ghost
     {
     }
 
+    // WWDP-Start
     /// <summary>
-    /// An individual place a ghost can warp to.
+    /// An player body a ghost can warp to.
     /// This is used as part of <see cref="GhostWarpsResponseEvent"/>
     /// </summary>
     [Serializable, NetSerializable]
     public struct GhostWarp
     {
-        public GhostWarp(NetEntity entity, string displayName, bool isWarpPoint)
+        public GhostWarp(NetEntity entity, string displayName, string subGroup, string description, Color? color)
         {
             Entity = entity;
             DisplayName = displayName;
-            IsWarpPoint = isWarpPoint;
+            SubGroup = subGroup;
+            Color = color;
+            Description = description;
         }
 
-        /// <summary>
-        /// The entity representing the warp point.
-        /// This is passed back to the server in <see cref="GhostWarpToTargetRequestEvent"/>
-        /// </summary>
         public NetEntity Entity { get; }
 
-        /// <summary>
-        /// The display name to be surfaced in the ghost warps menu
-        /// </summary>
         public string DisplayName { get; }
+        public string SubGroup { get; }
+        public string Description { get; }
 
-        /// <summary>
-        /// Whether this warp represents a warp point or a player
-        /// </summary>
-        public bool IsWarpPoint { get;  }
+        public Color? Color { get; }
+
+        public WarpGroup Group { get; set; } = WarpGroup.Location;
     }
+
+    [Serializable, NetSerializable, Flags]
+    public enum WarpGroup
+    {
+    Location = 0,
+    Ghost = 1 << 0,
+    Alive = 1 << 1,
+    Dead =  1 << 2,
+    Left =  1 << 3,
+    Antag = 1 << 4,
+    Department = 1 << 5,
+    Other = 1 << 6,
+
+    AliveAntag = Alive | Antag,
+    DeadAntag = Dead | Antag,
+
+    AliveDepartment = Alive | Department,
+    DeadDepartment = Dead | Department,
+    LeftDepartment = Left | Department,
+
+    AliveOther = Alive | Other
+
+    }
+
 
     /// <summary>
     /// A server to client response for a <see cref="GhostWarpsRequestEvent"/>.
@@ -204,7 +225,7 @@ namespace Content.Shared.Ghost
         }
 
         /// <summary>
-        /// A list of warp points.
+        /// A list of warps to teleport.
         /// </summary>
         public List<GhostWarp> Warps { get; }
     }

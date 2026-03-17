@@ -43,6 +43,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Linq;
 using System.Text;
+using Content.Shared._DV.CustomObjectiveSummary; // DeltaV
+using Content.Shared._DV.CCVars;
 using Content.Goobstation.Common.CCVar;
 using Content.Goobstation.Common.ServerCurrency;
 using Content.Goobstation.Shared.ManifestListings;
@@ -79,6 +81,8 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
 
     private bool _showGreentext;
 
+    private int _maxLengthSummaryLength; // DeltaV
+
     private int _goobcoinsServerMultiplier = 1;
     public override void Initialize()
     {
@@ -87,6 +91,7 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
         SubscribeLocalEvent<RoundEndTextAppendEvent>(OnRoundEndText);
 
         Subs.CVar(_cfg, CCVars.GameShowGreentext, value => _showGreentext = value, true);
+        Subs.CVar(_cfg, DCCVars.MaxObjectiveSummaryLength, len => _maxLengthSummaryLength = len, true); // DeltaV
 
         _prototypeManager.PrototypesReloaded += CreateCompletions;
         Subs.CVar(_cfg, GoobCVars.GoobcoinServerMultiplier, value => _goobcoinsServerMultiplier = value, true);
@@ -258,25 +263,14 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
                                     $"{username:subject} achieved {progress}% of objective {objectiveTitle}");
 
                     agentSummary.Append("- ");
-                    if (!_showGreentext)
+                    agentSummary.AppendLine(objectiveTitle);
+                    if (_showGreentext && progress > 0.99f && userid.HasValue)
                     {
-                        agentSummary.AppendLine(objectiveTitle);
-                    }
-                    else if (progress > 0.99f)
-                    {
-                        agentSummary.AppendLine(Loc.GetString(
-                            "objectives-objective-success",
-                            ("objective", objectiveTitle),
-                            ("progress", progress)
-                        ));
                         completedObjectives++;
-
-                        // Easiest place to give people points for completing objectives lol
-                        if (userid.HasValue)
-                            if (currencyStorage.ContainsKey(userid.Value))
-                                currencyStorage[userid.Value] += reward;
-                            else
-                                currencyStorage.Add(userid.Value, reward);
+                        if (currencyStorage.ContainsKey(userid.Value))
+                            currencyStorage[userid.Value] += reward;
+                        else
+                            currencyStorage.Add(userid.Value, reward);
                     }
                     else if (progress <= 0.99f && progress >= 0.5f)
                     {
@@ -312,6 +306,29 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
             }
 
             var successRate = totalObjectives > 0 ? (float)completedObjectives / totalObjectives : 0f;
+            // Begin DeltaV Additions - custom objective response.
+            if (TryComp<CustomObjectiveSummaryComponent>(mindId, out var customComp) &&
+                customComp.ObjectiveSummary.Length <= _maxLengthSummaryLength)
+            {
+                // We have to spit it like this to make it readable. Yeah, it sucks but for some reason the entire thing
+                // is just one long string...
+                var words = customComp.ObjectiveSummary.Split(" ");
+                var currentLine = "";
+                foreach (var word in words)
+                {
+                    currentLine += word + " ";
+
+                    // magic number
+                    if (currentLine.Length <= 50)
+                        continue;
+
+                    agentSummary.AppendLine(Loc.GetString("custom-objective-format", ("line", currentLine)));
+                    currentLine = "";
+                }
+
+                agentSummary.AppendLine(Loc.GetString("custom-objective-format", ("line", currentLine)));
+            }
+            // End DeltaV Additions
             agentSummaries.Add((agentSummary.ToString(), successRate, completedObjectives));
         }
 
