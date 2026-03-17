@@ -17072,3 +17072,11 @@ Entries:
       message: Черты персонажей были упразднены
   id: 7335
   time: '2026-03-16T13:36:35.0000000+00:00'
+- author: IsNotAcceptable
+  changes:
+    - type: Tweak
+      message: Харвестер был оптимизирован под билд
+    - type: Add
+      message: Добавлен ТРАНЗИТ
+  id: 7336
+  time: '2026-03-17T15:26:44.0000000+00:00'
