@@ -71,5 +71,3 @@ lobby-splash-text-40 = The game was rigged from the start (to never give you ant
     )
 }
 
-
-
