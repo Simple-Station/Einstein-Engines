@@ -103,14 +103,12 @@
     #gloves: ClothingHandsGlovesForensic - Goobstation, moved to loadouts
     ears: ClothingHeadsetAltSecurityRegular # Goobstation
     belt: ClothingBeltHolsterFilled
-    pocket1: WeaponRevolverInspector
   storage:
     back:
     - Flash
     - ForensicPad
     - ForensicScanner
     - ClothingMaskGasSecurity # Goobstation
-    - SpeedLoaderMagnum
 
 - type: chameleonOutfit
   id: DetectiveChameleonOutfit
