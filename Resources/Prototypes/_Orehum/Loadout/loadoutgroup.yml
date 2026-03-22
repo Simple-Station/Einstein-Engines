@@ -1,0 +1,55 @@
+# Cargo
+
+#Techni
+- type: loadoutGroup
+  id: CargoTechnicianItem
+  name: loadout-group-cargo-technician-item
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - WeaponMailLake
+  - MailCapsulePrimed
+  - MailMetricsCartridge
+
+- type: loadoutGroup
+  id: CargoTechnicianBelt
+  name: loadout-group-cargo-technician-belt
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - MailBag
+
+- type: loadoutGroup
+  id: CargoTechnicianNeck
+  name: loadout-group-cargo-technician-neck
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingNeckScarfStripedBrown
+  - ClothingNeckCloakVoid
+
+# Quarter
+- type: loadoutGroup
+  id: CargoQuarterItem
+  name: loadout-group-quartermaster-item
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - HahahaCash
+
+# Salvage
+- type: loadoutGroup
+  id: SalvageItem
+  name: loadout-group-salvage-specialist-item
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - MineralScannerEmpty
+
+- type: loadoutGroup
+  id: SalvageBelt
+  name: loadout-group-salvage-specialist-belt
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingBeltSalvageWebbing

@@ -926,6 +926,7 @@
   - CargoTechnicianSatchel
   - CargoTechnicianDuffel
   - CargoTechnicianMessenger # Frontier
+  - CargoTechnicianMessengerMailman
 
 - type: loadoutGroup
   id: CargoTechnicianOuterClothing

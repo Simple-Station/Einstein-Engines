@@ -6,6 +6,6 @@ REM SPDX-License-Identifier: AGPL-3.0-or-later
 @echo off
 cd ../../
 
-call dotnet run --project Content.Server --no-build %*
+call dotnet run --project Content.Trauma.Server --no-build %*
 
 pause

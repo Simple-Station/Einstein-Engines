@@ -57,6 +57,9 @@ public sealed class SprintingSystem : SharedSprintingSystem
     {
         base.Update(frameTime);
 
+        if (!SprintEnabled) // Traumastation
+            return;
+
         var query = EntityQueryEnumerator<SprinterComponent>();
         while (query.MoveNext(out var uid, out var component))
         {

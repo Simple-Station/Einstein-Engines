@@ -205,10 +205,12 @@ public abstract partial class SharedMartialArtsSystem
         if (args.Performer == args.Weapon)
             _stamina.TakeStaminaDamage(args.Target, 30f, applyResistances: true);
         var fireRate = TimeSpan.FromSeconds(1f / _melee.GetAttackRate(args.Weapon, args.Performer, melee));
+        /* Trauma edit
         var minFireRate = TimeSpan.FromSeconds(1f / 8f); // This is basically the attack speed of a HF Blade.
 
         if (fireRate.TotalSeconds - fireRate.TotalSeconds / 2f <= minFireRate.TotalSeconds)
             return;
+       */
 
         melee.NextAttack -= fireRate / 2f;
         Dirty(args.Weapon, melee);

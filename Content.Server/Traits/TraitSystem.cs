@@ -57,8 +57,7 @@ public sealed class TraitSystem : EntitySystem
                 return;
             }
 
-            if (_whitelistSystem.IsWhitelistFail(traitPrototype.Whitelist, args.Mob) ||
-                _whitelistSystem.IsBlacklistPass(traitPrototype.Blacklist, args.Mob))
+            if (_whitelistSystem.IsWhitelistFail(traitPrototype.Whitelist, args.Mob))
                 continue;
 
             // Begin Goobstation: Species trait support

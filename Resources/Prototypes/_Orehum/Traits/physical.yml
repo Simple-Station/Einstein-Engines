@@ -1,0 +1,127 @@
+- type: trait
+  id: WheelchairBound
+  name: trait-wheelchair-bound-name
+  description: trait-wheelchair-bound-desc
+  category: Physical
+  cost: -16
+  blacklist:
+    - MovementImpaired
+  components:
+  - type: BuckleOnMapInit
+    prototype: VehicleWheelchair
+  - type: LegsStartParalyzed
+  - type: LegsParalyzed
+
+- type: trait
+  id: MovementImpaired
+  name: trait-movement-impaired-name
+  description: trait-movement-impaired-desc
+  traitGear: Cane
+  category: Physical
+  cost: -11
+  blacklist:
+    - WheelchairBound
+  components:
+  - type: MovementImpaired
+    impairedSpeedMultiplier: 0.6
+
+- type: trait
+  id: PainNumbness
+  name: trait-painnumbness-name
+  description: trait-painnumbness-desc
+  category: Physical
+  cost: -8
+  components:
+  - type: PainNumbness
+
+- type: trait
+  id: Unrevivable
+  name: trait-unrevivable-name
+  description: trait-unrevivable-desc
+  category: Physical
+  cost: -6
+  components:
+  - type: Unrevivable
+    cloneable: true
+
+- type: trait
+  id: LightweightDrunk
+  name: trait-lightweight-name
+  description: trait-lightweight-desc
+  category: Physical
+  cost: -1
+  components:
+  - type: LightweightDrunk
+    boozeStrengthMultiplier: 2
+
+- type: trait
+  id: Snoring
+  name: trait-snoring-name
+  description: trait-snoring-desc
+  category: Physical
+  cost: 0
+  components:
+  - type: Snoring
+
+- type: trait
+  id: WillToLive
+  name: trait-will-to-live-name
+  description: trait-will-to-live-desc
+  cost: 14
+  category: Physical
+  blacklist:
+    - Redshirt
+  components:
+  - type: DeadModifier
+    deadThresholdModifier: 20
+
+- type: trait
+  id: Tenacity
+  name: trait-tenacity-name
+  description: trait-tenacity-desc
+  cost: 10
+  category: Physical
+  blacklist:
+    - GlassJaw
+  components:
+  - type: CritModifier
+    critThresholdModifier: 15
+
+- type: trait
+  id: GlassJaw
+  name: trait-glass-jaw-name
+  description: trait-glass-jaw-desc
+  cost: -8
+  category: Physical
+  blacklist:
+    - Tenacity
+  components:
+  - type: CritModifier
+    critThresholdModifier: -15
+
+- type: trait
+  id: TemperatureTolerance
+  name: trait-temperature-tolerance-name
+  description: trait-temperature-tolerance-desc
+  cost: 16
+  category: Physical
+  blacklist:
+    - Vulpkanin
+    - Plasmaman
+    - IPC
+  components:
+  - type: TemperatureProtection
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
+
+- type: trait
+  id: Redshirt
+  name: trait-redshirt-name
+  description: trait-redshirt-desc
+  cost: -25
+  category: Physical
+  blacklist:
+    - WillToLive
+  components:
+  - type: DeadModifier
+    deadThresholdModifier: -99

@@ -461,6 +461,9 @@
   components:
   - type: AccessReader
     access: [["Armory"]]
+  - type: Damageable # WWDP
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
 
 # Genpop Storage
 - type: entity

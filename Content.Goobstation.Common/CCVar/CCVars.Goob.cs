@@ -676,4 +676,15 @@ public sealed partial class GoobCVars
     /// </summary>
     public static readonly CVarDef<float> GpsUpdateRate =
         CVarDef.Create("gps.update_rate", 1f, CVar.SERVER | CVar.REPLICATED);
+
+    // TODO: Move trauma cvars to traumamod when it's real
+    #region Trauma
+
+    /// <summary>
+    ///     Is sprinting enabled
+    /// </summary>
+    public static readonly CVarDef<bool> SprintEnabled =
+        CVarDef.Create("trauma.sprint_enabled", false, CVar.SERVER | CVar.REPLICATED);
+
+    #endregion
 }

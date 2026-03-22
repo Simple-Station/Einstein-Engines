@@ -15,6 +15,7 @@
   name: chat-emote-name-fart
   category: Farts
   icon: _Goobstation/Interface/Emotes/fart.png
+  available: false
   whitelist:
     components:
     - Vocal
@@ -70,6 +71,7 @@
   name: chat-emote-name-fart-inhale
   category: Farts
   icon: _Goobstation/Interface/Emotes/fart-in.png
+  available: false
   whitelist:
     components:
     - Vocal
@@ -111,6 +113,7 @@
   name: chat-emote-name-fart-super
   category: Farts
   icon: _Goobstation/Interface/Emotes/fart-super.png
+  available: false
   whitelist:
     components:
     - Vocal

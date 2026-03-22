@@ -1,0 +1,19 @@
+- type: trait
+  id: Muted
+  name: trait-muted-name
+  description: trait-muted-desc
+  category: Speach
+  cost: -14
+  blacklist:
+    - BorgChassis
+  components:
+  - type: Muted
+
+- type: trait
+  id: SocialAnxietyTrait
+  name: trait-social-anxiety-name
+  description: trait-social-anxiety-disc
+  category: Speach
+  cost: -5
+  components:
+  - type: SocialAnxiety

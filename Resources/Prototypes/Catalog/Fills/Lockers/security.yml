@@ -310,9 +310,10 @@
       amount: 8
 
 - type: entity
-  parent: [GunSafeBaseSecure, BaseSecurityContraband]
+  parent: [GunSafeBaseSecure, BaseSecurityContraband, AlertLevelLock] # WWDP
   id: GunSafeRifleLecter
   name: lecter safe
+  suffix: Alert Level Lock # WWDP
   components:
   - type: EntityTableContainerFill
     containers:
@@ -329,9 +330,10 @@
       amount: 4
 
 - type: entity
-  parent: [GunSafeBaseSecure, BaseSecurityContraband]
+  parent: [GunSafeBaseSecure, BaseSecurityContraband, AlertLevelLock] # WWDP
   id: GunSafeSubMachineGunDrozd
   name: drozd safe
+  suffix: Alert Level Lock # WWDP
   components:
   - type: EntityTableContainerFill
     containers:
@@ -348,9 +350,10 @@
       amount: 4
 
 - type: entity
-  parent: [GunSafeBaseSecure, BaseSecurityContraband]
+  parent: [GunSafeBaseSecure, BaseSecurityContraband, AlertLevelLock] # WWDP
   id: GunSafeShotgunEnforcer
   name: enforcer safe
+  suffix: Alert Level Lock # WWDP
   components:
   - type: EntityTableContainerFill
     containers:
@@ -367,9 +370,10 @@
       amount: 4
 
 - type: entity
-  parent: [GunSafeBaseSecure, BaseSecurityContraband]
+  parent: [GunSafeBaseSecure, BaseSecurityContraband, AlertLevelLock] # WWDP
   id: GunSafeShotgunKammerer
   name: kammerer safe
+  suffix: Alert Level Lock # WWDP
   components:
   - type: EntityTableContainerFill
     containers:
@@ -387,9 +391,9 @@
 
 - type: entity
   id: GunSafeSubMachineGunWt550
-  suffix: Wt550
-  parent: [GunSafeBaseSecure, BaseSecurityContraband]
+  parent: [GunSafeBaseSecure, BaseSecurityContraband, AlertLevelLock] # WWDP
   name: wt550 safe
+  suffix: Alert Level Lock # WWDP
   components:
   - type: EntityTableContainerFill
     containers:
@@ -406,9 +410,10 @@
       amount: 4
 
 - type: entity
-  parent: [GunSafeBaseSecure, BaseSecurityContraband]
+  parent: [GunSafeBaseSecure, BaseSecurityContraband, AlertLevelLock] # WWDP
   id: GunSafeLaserCarbine
   name: laser safe
+  suffix: Alert Level Lock # WWDP
   components:
   - type: EntityTableContainerFill
     containers:

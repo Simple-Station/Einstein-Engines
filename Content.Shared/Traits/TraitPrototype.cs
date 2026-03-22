@@ -50,14 +50,14 @@ public sealed partial class TraitPrototype : IPrototype
     /// <summary>
     /// Don't apply this trait to entities this whitelist IS valid for. (hence, a blacklist)
     /// </summary>
-    [DataField]
-    public EntityWhitelist? Blacklist;
+    [DataField("blacklist")]
+    public List<string> Blacklist { get; private set; } = new();
 
     /// <summary>
     /// The components that get added to the player, when they pick this trait.
     /// </summary>
     [DataField]
-    public ComponentRegistry Components { get; private set; } = default!;
+    public ComponentRegistry Components { get; private set; } = new();
 
     /// <summary>
     /// Gear that is given to the player, when they pick this trait.

@@ -30,11 +30,6 @@
   rule: BlobSpawn
 
 - type: ninjaHackingThreat
-  id: LaughterDemon
-  announcement: terror-slaughter-demon
-  rule: LaughterDemonSummon
-
-- type: ninjaHackingThreat
   id: ShuttleInstigator
   announcement: terror-lone-operative
   rule: UnknownShuttleInstigator

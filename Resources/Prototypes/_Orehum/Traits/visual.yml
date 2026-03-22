@@ -1,0 +1,53 @@
+- type: trait
+  id: Blindness
+  name: trait-blindness-name
+  description: trait-blindness-desc
+  traitGear: WhiteCane
+  category: Visual
+  cost: -21
+  whitelist:
+    components:
+    - Blindable
+  components:
+  - type: PermanentBlindness
+
+- type: trait
+  id: PoorVision
+  name: trait-poor-vision-name
+  description: trait-poor-vision-desc
+  traitGear: ClothingEyesPrescriptionGlasses # Goobstation
+  category: Visual
+  cost: -10
+  whitelist:
+    components:
+    - Blindable
+  components:
+  - type: PermanentBlindness
+    blindness: 4
+
+- type: trait
+  id: DogVision
+  name: trait-deuteranopia-name
+  description: trait-deuteranopia-desc
+  category: Visual
+  cost: 0
+  components:
+  - type: DogVision
+
+- type: trait
+  id: UltraVision
+  name: trait-ultravision-name
+  description: trait-ultravision-desc
+  category: Visual
+  cost: 0
+  components:
+  - type: UltraVision
+
+- type: trait
+  id: Monochromacy
+  name: trait-monochromacy-name
+  description: trait-monochromacy-desc
+  category: Visual
+  cost: -7
+  components:
+  - type: BlackAndWhiteOverlay

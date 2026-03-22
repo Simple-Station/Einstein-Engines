@@ -1,0 +1,24 @@
+- type: trait
+  id: DeafTrait
+  name: trait-deaf-name
+  description: trait-deaf-disc
+  category: Auditory
+  cost: -18
+  blacklist:
+    - BorgChassis
+  components:
+  - type: Deaf
+
+- type: trait
+  id: Paracusia
+  name: trait-paracusia-name
+  description: trait-paracusia-desc
+  category: Auditory
+  cost: -8
+  components:
+  - type: Paracusia
+    minTimeBetweenIncidents: 0.1
+    maxTimeBetweenIncidents: 300
+    maxSoundDistance: 7
+    sounds:
+      collection: Paracusia

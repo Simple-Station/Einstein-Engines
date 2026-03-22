@@ -33,6 +33,8 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using System.Numerics;
+using Content.Goobstation.Common.CCVar;
+using Robust.Shared.Configuration;
 
 namespace Content.Goobstation.Shared.Sprinting;
 public abstract class SharedSprintingSystem : EntitySystem
@@ -47,6 +49,10 @@ public abstract class SharedSprintingSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedMoverController _moverController = default!;
     [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!; // Traumastation
+
+    protected bool SprintEnabled; // Traumastation
+
     public override void Initialize()
     {
         SubscribeLocalEvent<SprinterComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshSpeed);
@@ -69,6 +75,9 @@ public abstract class SharedSprintingSystem : EntitySystem
         SubscribeLocalEvent<BuckleComponent, SprintAttemptEvent>(OnBuckleSprintAttempt);
         SubscribeLocalEvent<SprinterComponent, EntityZombifiedEvent>(OnZombified);
         SubscribeLocalEvent<SprinterComponent, DisarmedEvent>(OnDisarm);
+
+        // Traumastation
+        Subs.CVar(_cfg, GoobCVars.SprintEnabled, value => SprintEnabled = value, true);
     }
 
     #region Core Functions
@@ -88,6 +97,9 @@ public abstract class SharedSprintingSystem : EntitySystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
+
+        if (!SprintEnabled) // Traumastation
+            return;
 
         // We dont add it to the EQE since the comp might get added as this runs.
         var query = EntityQueryEnumerator<SprinterComponent, StaminaModifierComponent>();
@@ -114,6 +126,9 @@ public abstract class SharedSprintingSystem : EntitySystem
 
     private void HandleSprintInput(ICommonSession? session, IFullInputCmdMessage message)
     {
+        if (!SprintEnabled) // Traumastation
+            return;
+
         if (session?.AttachedEntity == null
             || !TryComp<SprinterComponent>(session.AttachedEntity, out var sprinterComponent)
             || !TryComp<InputMoverComponent>(session.AttachedEntity, out var inputMoverComponent)

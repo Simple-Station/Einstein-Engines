@@ -1,0 +1,28 @@
+- type: trait
+  id: Pacifist
+  name: trait-pacifist-name
+  description: trait-pacifist-desc
+  category: Mental
+  cost: -11
+  components:
+  - type: Pacified
+
+- type: trait
+  id: Narcolepsy
+  name: trait-narcolepsy-name
+  description: trait-narcolepsy-desc
+  category: Mental
+  cost: -6
+  components:
+  - type: Narcolepsy
+    timeBetweenIncidents: 300, 600
+    durationOfIncident: 10, 30
+
+- type: trait
+  id: ByondYourPrime
+  name: trait-tile-movement-name
+  description: trait-tile-movement-desc
+  category: Mental
+  cost: -4
+  components:
+  - type: TileMovement

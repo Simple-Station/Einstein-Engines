@@ -58,7 +58,7 @@ public sealed class SurgeryToolExamineSystem : EntitySystem
 
         _examine.AddDetailedExamineVerb(args, ent.Comp, ev.Message,
             Loc.GetString("surgery-tool-examinable-verb-text"),
-            "/Textures/Objects/Specific/Medical/Surgery/scalpel.rsi/scalpel.png",
+            "/Textures/Interface/VerbIcons/rejuvenate.svg.192dpi.png",
             Loc.GetString("surgery-tool-examinable-verb-message"));
     }
 

@@ -20,7 +20,7 @@
     raiseOnUser: true
     checkCanInteract: false
     checkConsciousness: false
-    useDelay: 15
+    useDelay: 10 # Trauma edit
     itemIconStyle: NoItem
     icon:
       sprite: _Goobstation/Heretic/abilities_heretic.rsi

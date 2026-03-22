@@ -1,0 +1,78 @@
+- type: loadoutEffectGroup
+  id: MasterCargoTech
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobCargoTechnician
+      time: 72000 #20 hours
+
+# Technician
+
+# Item
+- type: loadout
+  id: WeaponMailLake
+  storage:
+    back:
+    - WeaponMailLake
+
+- type: loadout
+  id: MailCapsulePrimed
+  storage:
+    back:
+    - BoxMailCapsulePrimed
+
+- type: loadout
+  id: MailMetricsCartridge
+  storage:
+    back:
+    - MailMetricsCartridge
+
+# Backpack
+- type: loadout
+  id: CargoTechnicianMessengerMailman
+  equipment:
+    back: ClothingBackpackMessengerMailman
+
+# Belt
+- type: loadout
+  id: MailBag
+  equipment:
+    belt: MailBag
+
+# Neck
+- type: loadout
+  id: ClothingNeckScarfStripedBrown
+  equipment:
+    neck: ClothingNeckScarfStripedBrown
+
+- type: loadout
+  id: ClothingNeckCloakVoid
+  equipment:
+    neck: ClothingNeckCloakVoid
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MasterCargoTech
+
+# Quarter
+
+#Item
+- type: loadout
+  id: HahahaCash
+  storage:
+    back:
+    - SpaceCash1000
+
+# Salvage
+
+# Belt
+- type: loadout
+  id: ClothingBeltSalvageWebbing
+  equipment:
+    belt: ClothingBeltSalvageWebbing
+#Item
+- type: loadout
+  id: MineralScannerEmpty
+  storage:
+    back:
+    - MineralScannerEmpty

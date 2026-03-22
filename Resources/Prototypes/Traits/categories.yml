@@ -16,3 +16,23 @@
 - type: traitCategory
   id: Quirks
   name: trait-category-quirks
+
+- type: traitCategory
+  id: Visual
+  name: trait-category-visual
+
+- type: traitCategory
+  id: Auditory
+  name: trait-category-auditory
+
+- type: traitCategory
+  id: Speach
+  name: trait-category-speach
+
+- type: traitCategory
+  id: Physical
+  name: trait-category-physical
+
+- type: traitCategory
+  id: Mental
+  name: trait-category-mental

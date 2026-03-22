@@ -92,7 +92,7 @@ public abstract partial class SharedMartialArtsSystem
 
         _status.TryRemoveStatusEffect(ent, "KnockedDown");
         _standingState.Stand(ent);
-        //_stamina.TryTakeStamina(ent, args.StaminaToHeal);
+        _stamina.TryTakeStamina(ent, args.StaminaToHeal); // Trauma edit
         ent.Comp.LastAttacks.Clear();
     }
 
@@ -257,7 +257,7 @@ public abstract partial class SharedMartialArtsSystem
         if (ev.MinVelocity <= velocity)
         {
             power = GetCapoeiraPower(ev, velocity);
-            _stamina.TryTakeStamina(uid, ev.StaminaToHeal);
+            _stamina.TryTakeStamina(uid, ev.StaminaToHeal); // Trauma edit
             return true;
         }
 
