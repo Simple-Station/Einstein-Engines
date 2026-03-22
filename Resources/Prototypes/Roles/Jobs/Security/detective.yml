@@ -103,6 +103,7 @@
     #gloves: ClothingHandsGlovesForensic - Goobstation, moved to loadouts
     ears: ClothingHeadsetAltSecurityRegular # Goobstation
     belt: ClothingBeltHolsterFilled
+    pocket1: WeaponRevolverInspector
   storage:
     back:
     - Flash
