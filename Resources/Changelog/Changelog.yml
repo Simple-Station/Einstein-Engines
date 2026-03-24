@@ -17090,3 +17090,11 @@ Entries:
       message: запрещен пердеж
   id: 7337
   time: '2026-03-22T17:06:04.0000000+00:00'
+- author: IsNotAcceptable
+  changes:
+    - type: Add
+      message: Лекарство от Спокойствие
+    - type: Tweak
+      message: 'Переделана система эксклюзивов '
+  id: 7338
+  time: '2026-03-24T07:04:41.0000000+00:00'
