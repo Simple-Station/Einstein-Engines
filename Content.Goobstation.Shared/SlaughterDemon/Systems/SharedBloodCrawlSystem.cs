@@ -52,7 +52,7 @@ public abstract class SharedBloodCrawlSystem : EntitySystem
     {
         if (!IsStandingOnBlood((uid, component)))
         {
-            _popup.PopupPredicted(Loc.GetString("slaughter-blood-jaunt-fail"), uid, uid);
+            _popup.PopupClient(Loc.GetString("slaughter-blood-jaunt-fail"), uid, uid);
             _actions.SetCooldown(args.Action.Owner, component.ActionCooldown);
             return;
         }

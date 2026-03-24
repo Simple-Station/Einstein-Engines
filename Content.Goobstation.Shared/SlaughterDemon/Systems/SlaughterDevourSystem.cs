@@ -127,16 +127,16 @@ public sealed class SlaughterDevourSystem : EntitySystem
         var toHeal = component.ToHeal;
         if (HasComp<HumanoidAppearanceComponent>(target) && !HasComp<SiliconComponent>(target))
         {
-            _popup.PopupEntity(Loc.GetString("slaughter-devour-humanoid"), devourer);
+            _popup.PopupClient(Loc.GetString("slaughter-devour-humanoid"), devourer);
         }
         else if (HasComp<BorgChassisComponent>(target) || HasComp<SiliconComponent>(target))
         {
-            _popup.PopupEntity(Loc.GetString("slaughter-devour-robot"), devourer);
+            _popup.PopupClient(Loc.GetString("slaughter-devour-robot"), devourer);
             toHeal = component.ToHealNonCrew;
         }
         else
         {
-            _popup.PopupEntity(Loc.GetString("slaughter-devour-other"), devourer);
+            _popup.PopupClient(Loc.GetString("slaughter-devour-other"), devourer);
             toHeal = component.ToHealAnythingElse;
         }
 

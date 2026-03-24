@@ -1,0 +1,16 @@
+#GUIDs
+- type: loadoutEffectGroup
+  id: ME4TA
+  effects:
+  - !type:PlayerGUIDLoadoutEffect
+    guid: e0544f2e-3c2a-456b-affd-1a622f367e78
+
+#Items
+- type: loadout
+  id: RubberPig
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ME4TA
+  storage:
+    back:
+    - RubberPig

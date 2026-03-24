@@ -1,0 +1,15 @@
+- type: reaction # "Cure" to the gondola infection, TGstation used pepper spray, but I like the idea of service getting to do something
+  id: TranqulityNeutralizationHotsauce
+  reactants:
+    Tranquility:
+      amount: 1
+    Hotsauce:
+      amount: 1
+
+- type: reaction
+  id: TranqulityNeutralizationCapsaicin
+  reactants:
+    Tranquility:
+      amount: 1
+    CapsaicinOil:
+      amount: 1

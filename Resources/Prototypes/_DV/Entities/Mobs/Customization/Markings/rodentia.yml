@@ -17,7 +17,7 @@
   id: RodentiaHeadTopEarDefault
   markingCategory: HeadTop
   bodyPart: HeadTop
-  speciesRestriction: [Rodentia, Human]
+  speciesRestriction: [Rodentia]
   coloring:
     default:
       type: !type:TattooColoring

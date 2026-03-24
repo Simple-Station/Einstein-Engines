@@ -109,6 +109,7 @@
   - NanotrasenRepresentativeEnvirohelm
   - NanotrasenRepresentativeEnvirosuit
   - NanotrasenRepresentativeEnvirogloves
+  - ExclusiveItems
 
 - type: roleLoadout
   id: JobBlueshieldOfficer
@@ -129,6 +130,7 @@
   - BlueshieldOfficerEnvirosuit
   - BlueshieldOfficerEnvirogloves
   - BlueshieldOfficerGloves
+  - ExclusiveItems
 
 - type: roleLoadout
   id: JobNanotrasenCareerTrainer
@@ -149,6 +151,7 @@
   - CentComOfficerEnvirohelm
   - CentComOfficerEnvirosuit
   - CentComOfficerEnvirogloves
+  - ExclusiveItems
 
 - type: roleLoadout
   id: JobRoboticist
@@ -170,6 +173,7 @@
   - ScientistEnvirohelm
   - ScientistEnvirosuit
   - ScientistEnvirogloves
+  - ExclusiveItems
 
 - type: roleLoadout
   id: JobBrigmedic
@@ -192,6 +196,7 @@
   - BrigmedicEnvirohelm
   - BrigmedicEnvirosuit
   - BrigmedicEnvirogloves
+  - ExclusiveItems
 
 - type: roleLoadout
   id: JobRadioHost
@@ -207,6 +212,7 @@
   - ServiceWorkerEnvirohelm
   - ServiceWorkerEnvirosuit
   - ServiceWorkerEnvirogloves
+  - ExclusiveItems
 
 # gives plasmaman a plasma breathing tank
 # other species get nothing
@@ -257,3 +263,4 @@
    - VirologyEnvirohelm
    - VirologyEnvirosuit
    - VirologyEnvirogloves
+   - ExclusiveItems
