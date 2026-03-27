@@ -4,7 +4,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTLeader
     back: ClothingBackpackERTLeader
-    shoes: ClothingShoesBootsMagSec
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskNeckGaiter
     eyes: ClothingEyesNightVisionSecurityGoggles
     neck: ClothingNeckMantleHOS # Corvax-Clothing
@@ -40,7 +40,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTEngineer
     back: ClothingBackpackERTEngineer
-    shoes: ClothingShoesBootsMagSec
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskNeckGaiter
     eyes: ClothingEyesThermalVisionGoggles
     gloves: ClothingHandsGlovesCombat
@@ -72,7 +72,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTSecurity
     back: ClothingBackpackERTSecurity
-    shoes: ClothingShoesBootsMagSec
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskNeckGaiter
     eyes: ClothingEyesGlassesSecurity
     neck: SecurityWhistle
@@ -103,7 +103,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTMedic
     back: ClothingBackpackERTMedical
-    shoes: ClothingShoesBootsMagSec
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskNeckGaiter
     eyes: ClothingEyesNightVisionMedicalGoggles
     gloves: ClothingHandsGlovesNitrile
@@ -133,7 +133,6 @@
     - PillCanisterHyronalin
     - AirTankFilled
     - DefibrillatorCompact
-    - FieldSurgeryKit
   inhand:
   - WeaponPulseCarbine
 
@@ -158,7 +157,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTJanitor
     back: ClothingBackpackERTJanitor
-    shoes: ClothingShoesBootsMagSec
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskNeckGaiter
     eyes: ClothingEyesGlassesSecurity
     gloves: ClothingHandsGlovesColorPurple
@@ -184,7 +183,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTLeader
     back: ClothingBackpackERTLeader
-    shoes: ClothingShoesBootsMagSec
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskNeckGaiter
     eyes: ClothingEyesNightVisionSecurityGoggles
     outerClothing: ClothingOuterHardsuitERTLeader
@@ -221,7 +220,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTSecurity
     back: ClothingBackpackERTSecurity
-    shoes: ClothingShoesBootsMagSec
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam
     eyes: ClothingEyesNightVisionSecurityGoggles
     mask: ClothingMaskNeckGaiter
     neck: SecurityWhistle
@@ -251,7 +250,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTEngineer
     back: ClothingBackpackERTEngineer
-    shoes: ClothingShoesBootsMagSec
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskNeckGaiter
     eyes: ClothingEyesThermalVisionGoggles
     gloves: ClothingHandsGlovesCombat
@@ -284,7 +283,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTMedic
     back: ClothingBackpackERTMedical
-    shoes: ClothingShoesBootsMagSec
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskNeckGaiter
     eyes: ClothingEyesNightVisionMedicalGoggles
     gloves: ClothingHandsGlovesNitrile
@@ -307,7 +306,6 @@
     - BoxLethalshot
     - AirTankFilled
     - DefibrillatorCompact
-    - FieldSurgeryKit
   inhand:
   - WeaponShotgunEnforcer
 
@@ -317,7 +315,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTJanitor
     back: ClothingBackpackERTJanitor
-    shoes: ClothingShoesBootsMagSec
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskNeckGaiter
     eyes: ClothingEyesGlassesSecurity
     gloves: ClothingHandsGlovesColorPurple
@@ -343,7 +341,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTJanitor
     back: ClothingBackpackERTJanitor
-    shoes: ClothingShoesBootsMagSec
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskGasERT
     eyes: ClothingEyesGlassesSecurity
     head: ClothingHeadHelmetERTJanitor
@@ -352,7 +350,6 @@
     id: ERTJanitorPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltJanitorFilled
-    pocket1: WeaponEnergyGunPistolSecurity
     pocket2: GlowstickBlue
   storage:
     back:
@@ -369,7 +366,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTLeader
     back: ClothingBackpackERTLeader
-    shoes: ClothingShoesBootsMagSec
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskNeckGaiter
     eyes: ClothingEyesNightVisionSecurityGoggles
     neck: ClothingNeckMantleHOS
@@ -394,12 +391,9 @@
     - LogProbeCartridge
     - PhoneInstrument
     - PinpointerNuclear
-    - MagazinePistolSubMachineGunTopMounted
-    - MagazinePistolSubMachineGunTopMounted
     - MagazineBoxPistol
     - BSOManual
-  inhand:
-  - WeaponSubMachineGunWt550
+    - ERTSecurityUndeterminedWeapon
 
 # Security AMBER Equipment
 - type: startingGear
@@ -407,7 +401,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTSecurity
     back: ClothingBackpackERTSecurity
-    shoes: ClothingShoesBootsMagSec
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam
     eyes: ClothingEyesNightVisionSecurityGoggles
     mask: ClothingMaskGasERT
     neck: SecurityWhistle
@@ -417,17 +411,14 @@
     id: ERTSecurityPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityWebbingFilled
-    pocket1: WeaponEnergyGunPistolSecurity
     pocket2: GlowstickBlue
   storage:
     back:
     - WeaponDisabler
     - MedkitCombatFilled
     - CrowbarRed
-    - BoxMagazinePistolSubMachineGun
+    - ERTSecurityUndeterminedWeapon
     - SmokeGrenade
-  inhand:
-  - WeaponSubMachineGunDrozd
 
 # Engineer AMBER Equipment
 - type: startingGear
@@ -435,7 +426,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTEngineer
     back: ClothingBackpackERTEngineer
-    shoes: ClothingShoesBootsMagSec
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskGasERT
     eyes: ClothingEyesThermalVisionGoggles
     head: ClothingHeadHelmetERTEngineer
@@ -444,7 +435,6 @@
     id: ERTEngineerPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltChiefEngineerFilled
-    pocket1: WeaponEnergyGunPistolSecurity
     pocket2: GlowstickBlue
   storage:
     back:
@@ -459,8 +449,7 @@
     - BoxLethalshot
     - WeaponFlareGunSecurity
     - BoxShotgunFlare
-  inhand:
-  - WeaponShotgunEnforcer
+    - ERTSecurityUndeterminedWeapon
 
 # Medic AMBER Equipment
 - type: startingGear
@@ -468,7 +457,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTMedic
     back: ClothingBackpackERTMedical
-    shoes: ClothingShoesBootsMagSec
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskGasERT
     eyes: ClothingEyesNightVisionMedicalGoggles
     head: ClothingHeadHelmetERTMedic
@@ -477,7 +466,6 @@
     id: ERTMedicPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltMedicalFilled
-    pocket1: WeaponEnergyGunPistolSecurity
     pocket2: GlowstickBlue
   storage:
     back:
@@ -495,10 +483,7 @@
     - PillCanisterHyronalin
     - PillCanisterIron
     - DefibrillatorCompact
-    - FieldSurgeryKit
-  inhand:
-  - WeaponShotgunEnforcer
-
+    - ERTSecurityUndeterminedWeapon
 
 ## ERT Leader Gamma
 
@@ -1740,7 +1725,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTLeader
     back: ClothingBackpackERTLeader
-    shoes: ClothingShoesBootsMagSec
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskNeckGaiter
     eyes: ClothingEyesNightVisionSecurityGoggles
     outerClothing: ClothingOuterHardsuitERTLeader
@@ -1866,7 +1851,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTSecurity
     back: ClothingBackpackERTSecurity
-    shoes: ClothingShoesBootsMagSec
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam
     eyes: ClothingEyesNightVisionSecurityGoggles
     mask: ClothingMaskNeckGaiter
     neck: SecurityWhistle
@@ -1987,7 +1972,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTMedic
     back: ClothingBackpackERTMedical
-    shoes: ClothingShoesBootsMagSec
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskNeckGaiter
     eyes: ClothingEyesNightVisionMedicalGoggles
     gloves: ClothingHandsGlovesNitrile
@@ -2019,7 +2004,6 @@
     - Tourniquet
     - AirTankFilled
     - DefibrillatorCompact
-    - FieldSurgeryKit
   inhand:
   - WeaponShotgunEnforcer
 
@@ -2105,7 +2089,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTEngineer
     back: ClothingBackpackERTEngineer
-    shoes: ClothingShoesBootsMagSec
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskNeckGaiter
     eyes: ClothingEyesThermalVisionGoggles
     gloves: ClothingHandsGlovesCombat
@@ -2219,11 +2203,11 @@
     jumpsuit: ClothingUniformJumpsuitColorBrown
     back: ClothingBackpackDuffelCBURN
     mask: ClothingMaskNeckGaiter
-    eyes: ClothingEyesGlassesSecurity
+    eyes: ClothingEyesGlassesMedSec
     ears: ClothingHeadsetAltCentCom
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitCBURN
-    shoes: ClothingShoesBootsMagSec
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam
     id: CBURNPDA
     pocket1: GlowstickYellow
     pocket2: ExtendedEmergencyOxygenTankFilled
@@ -2234,8 +2218,9 @@
     - BoxShotgunIncendiary
     - GrenadeIncendiary
     - GrenadeIncendiary
-    - PillAmbuzolPlus
-    - PillAmbuzol
+    - AmbuzolPlusMedipen
+    - AmbuzolMedipen
+    - AmbuzolMedipen
     - Flare
     - Flare
     - EmergencyMedipen
@@ -2243,6 +2228,8 @@
     - MedicatedSuture
     - RegenerativeMesh
     - Truncheon
+    - СburnSpear
+    - InfectionScannerCburn
   inhand:
   - WeaponShotgunEnforcer
 

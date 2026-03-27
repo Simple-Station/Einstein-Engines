@@ -98,6 +98,20 @@
     - yells
     - yelled
     - yelling
+    # Corvax-Localization-Start
+    - кричит
+    - кричит.
+    - кричит!
+    - орёт
+    - орёт.
+    - орёт!
+    - орет
+    - орет.
+    - орет!
+    - визжит
+    - визжит.
+    - визжит!
+    # Corvax-Localization-End
 
 - type: emote
   id: Laugh
@@ -124,6 +138,22 @@
     - chortle
     - chortles
     - chortling
+    # Corvax-Localization-Start
+    - смеется
+    - смеется.
+    - смеётся
+    - смеётся.
+    - хохочет
+    - хохочет.
+    - хихикает
+    - хихикает.
+    - хихикнул
+    - хихикнул.
+    - хихикнула
+    - хихикнула.
+    - ржёт
+    - ржёт.
+    # Corvax-Localization-End
 
 - type: emote
   id: Honk
@@ -142,6 +172,8 @@
     - honks
     - honked
     - honking
+    - хонкает
+    - хонкает.
 
 - type: emote
   id: Sigh
@@ -159,6 +191,12 @@
     - sigh
     - sighs
     - sighed
+    - вздыхает
+    - вздыхает.
+    - вздохнул
+    - вздохнул.
+    - вздохнула
+    - вздохнула.
 
 - type: emote
   id: Whistle
@@ -176,6 +214,12 @@
     - whistle
     - whistles
     - whistleblowing
+    - свистит
+    - свистит.
+    - свистнул
+    - свистнул.
+    - свистнула
+    - свистнула.
 
 - type: emote
   id: Crying
@@ -196,6 +240,14 @@
     - sob
     - sobs
     - sobbing
+    # Corvax-Localization-Start
+    - плачет
+    - плачет.
+    - рыдает
+    - рыдает.
+    - ноет
+    - ноет.
+    # Corvax-Localization-End
 
 - type: emote
   id: Squish
@@ -214,6 +266,8 @@
     - squish
     - squishing
     - squishes
+    - хлюпает
+    - хлюпает.
 
 - type: emote
   id: Chitter
@@ -232,6 +286,10 @@
    - chitter
    - chitters
    - chittered
+   - щебечет
+   - щебечет.
+   - стрекочет
+   - стрекочет.
 
 - type: emote
   id: Squeak
@@ -250,6 +308,8 @@
    - squeak
    - squeaks
    - squeaked
+   - пищит
+   - пищит.
 
 - type: emote
   id: Click
@@ -267,6 +327,8 @@
   chatTriggers:
    - click
    - clicks
+   - клацает
+   - клацает.
 
 # hand emotes
 - type: emote
@@ -285,6 +347,20 @@
     - claps
     - clapping
     - clapped
+    - хлопает
+    - хлопает.
+    - аплодирует
+    - аплодирует.
+    - хлопнул
+    - хлопнул.
+    - хлопнула
+    - хлопнула.
+    - хлопает в ладоши
+    - хлопает в ладоши.
+    - хлопнул в ладоши
+    - хлопнул в ладоши.
+    - хлопнула в ладоши
+    - хлопнула в ладоши.
 
 - type: emote
   id: Snap
@@ -308,6 +384,30 @@
     - snaps their fingers
     - snapping fingers
     - snapped fingers
+    - щелкает
+    - щелкает.
+    - щелкнул
+    - щелкнул.
+    - щелкнула
+    - щелкнула.
+    - щёлкает
+    - щёлкает.
+    - щёлкнул
+    - щёлкнул.
+    - щёлкнула
+    - щёлкнула.
+    - щелкает пальцами
+    - щелкает пальцами.
+    - щелкнул пальцами
+    - щелкнул пальцами.
+    - щелкнула пальцами
+    - щелкнула пальцами.
+    - щёлкает пальцами
+    - щёлкает пальцами.
+    - щёлкнул пальцами
+    - щёлкнул пальцами.
+    - щёлкнула пальцами
+    - щёлкнула пальцами.
 
 - type: emote
   id: Thump
@@ -333,6 +433,12 @@
     - thumps her tail
     - thumps his tail
     - thumps its tail
+    - виляет хвостом
+    - виляет хвостом.
+    - вильнул хвостом
+    - вильнул хвостом.
+    - вильнула хвостом
+    - вильнула хвостом.
 
 - type: emote
   id: Salute
@@ -349,6 +455,16 @@
   chatTriggers:
     - salute
     - salutes
+    - салютует
+    - салютует.
+    - отдает честь
+    - отдает честь.
+    - отдаёт честь
+    - отдаёт честь.
+    - отдал честь
+    - отдал честь.
+    - отдала честь
+    - отдала честь.
 
 - type: emote
   id: Gasp
@@ -361,6 +477,8 @@
    - gasp
    - gasps
    - gasped
+   - задыхается
+   - задыхается.
 
 - type: emote
   id: DefaultDeathgasp
@@ -406,6 +524,9 @@
     - buzz
     - buzzed
     - buzzes
+    - жужжит.
+    - зажужжал.
+    - зажужжала.
 
 - type: emote
   id: Weh
@@ -449,6 +570,8 @@
     - chirps
     - chirped
     - chirping
+    - чирикает
+    - чирикает.
 
 # Machine Emotes
 - type: emote
@@ -468,6 +591,8 @@
     - beeps
     - beeped
     - beeping
+    - бип
+    - бип.
 
 - type: emote
   id: Chime
@@ -485,6 +610,8 @@
     - chimes
     - chimed
     - chiming
+    - дзынь
+    - дзынь.
 
 - type: emote
   id: Buzz-Two
@@ -508,6 +635,18 @@
     - buzzes twice
     - buzzing twice
     - buzzed twice
+    - бипбуп
+    - бипбуп.
+    - бип буп
+    - бип буп.
+    - бип-буп
+    - бип-буп.
+    - бипбип
+    - бипбип.
+    - бип бип
+    - бип бип.
+    - бип-бип
+    - бип-бип.
 
 - type: emote
   id: Ping
@@ -525,3 +664,5 @@
     - pings
     - pinged
     - pinging
+    - пинг
+    - пинг.

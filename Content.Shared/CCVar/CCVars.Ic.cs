@@ -49,7 +49,7 @@ public sealed partial class CCVars
     ///     Adds a period at the end of a sentence if the sentence ends in a letter.
     /// </summary>
     public static readonly CVarDef<bool> ChatPunctuation =
-        CVarDef.Create("ic.punctuation", false, CVar.SERVER);
+        CVarDef.Create("ic.punctuation", true, CVar.SERVER);
 
     /// <summary>
     ///     Enables automatically forcing IC name rules. Uppercases the first letter of the first and last words of the name
