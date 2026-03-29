@@ -32,7 +32,7 @@ public sealed partial class ShadowlingCollectiveMindComponent : Component
     /// Used to inform the Shadowling how many thralls they need to unlock the final ability.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public int ThrallsRequiredForAscension = 20;
+    public int ThrallsRequiredForAscension = 10;
 
     /// <summary>
     /// How long the Thralls get stunned once the Shadowling gains a new ability
