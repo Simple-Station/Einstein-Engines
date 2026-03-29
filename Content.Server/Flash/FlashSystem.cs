@@ -49,7 +49,7 @@ namespace Content.Server.Flash
 
             SubscribeLocalEvent<FlashComponent, MeleeHitEvent>(OnFlashMeleeHit);
             // ran before toggling light for extra-bright lantern
-            SubscribeLocalEvent<FlashComponent, UseInHandEvent>(OnFlashUseInHand, before: new []{ typeof(HandheldLightSystem) });
+            SubscribeLocalEvent<FlashComponent, UseInHandEvent>(OnFlashUseInHand, before: new[] { typeof(HandheldLightSystem) });
             SubscribeLocalEvent<FlashComponent, ThrowDoHitEvent>(OnFlashThrowHitEvent);
             SubscribeLocalEvent<InventoryComponent, FlashAttemptEvent>(OnInventoryFlashAttempt);
             SubscribeLocalEvent<FlashImmunityComponent, FlashAttemptEvent>(OnFlashImmunityFlashAttempt);
@@ -118,37 +118,42 @@ namespace Content.Server.Flash
             return true;
         }
 
-        public void Flash(EntityUid target,
+        /// <summary>
+        /// Cause an entity to be flashed, obstructing their vision, slowing them down and stunning them.
+        /// In case of a melee attack this will do a check for revolutionary conversion.
+        /// </summary>
+        /// <param name="target">The mob to be flashed.</param>
+        /// <param name="user">The mob causing the flash, if any.</param>
+        /// <param name="used">The item causing the flash, if any.</param>
+        /// <param name="flashDuration">The time target will be affected by the flash.</param>
+        /// <param name="slowTo">Movement speed modifier applied to the flashed target. Between 0 and 1.</param>
+        /// <param name="displayPopup">Whether or not to show a popup to the target player.</param>
+        /// <param name="melee">Was this flash caused by a melee attack? Used for checking for revolutionary conversion.</param>
+        /// <param name="stunDuration">The time the target will be stunned. If null the target will be slowed down instead.</param>
+        public void Flash(
+            EntityUid target,
             EntityUid? user,
             EntityUid? used,
-            float flashDuration,
+            TimeSpan flashDuration,
             float slowTo,
             bool displayPopup = true,
             bool melee = false,
             TimeSpan? stunDuration = null)
         {
-            var attempt = new FlashAttemptEvent(target, user, used);
-            RaiseLocalEvent(target, ref attempt, true);
-
-            if (attempt.Cancelled)
-                return;
+            // Goobstation start
+            var multiplierEv = new FlashDurationMultiplierEvent();
+            RaiseLocalEvent(target, multiplierEv);
+            var multiplier = multiplierEv.Multiplier;
+            // Goobstation end
 
             // don't paralyze, slowdown or convert to rev if the target is immune to flashes
-            if (!_statusEffectsSystem.TryAddStatusEffect<FlashedComponent>(target, FlashedKey, TimeSpan.FromSeconds(flashDuration / 1000f), true))
+            if (!_statusEffectsSystem.TryAddStatusEffect<FlashedComponent>(target, FlashedKey, flashDuration, true))
                 return;
 
-            if (attempt.EyeDamage > 0)
-                _blindingSystem.AdjustEyeDamage((target, null), attempt.EyeDamage);
-
             if (stunDuration != null)
-            {
-                _stun.TryKnockdown(target, stunDuration.Value, true);
-            }
+                _stun.TryParalyze(target, stunDuration.Value * multiplier, true); // Goob edit
             else
-            {
-                _stun.TrySlowdown(target, TimeSpan.FromSeconds(flashDuration / 1000f), true,
-                slowTo, slowTo);
-            }
+                _stun.TrySlowdown(target, flashDuration * multiplier, true, slowTo, slowTo); // Goob edit
 
             if (displayPopup && user != null && target != user && Exists(user.Value))
             {
@@ -157,7 +162,7 @@ namespace Content.Server.Flash
             }
         }
 
-        public override void FlashArea(Entity<FlashComponent?> source, EntityUid? user, float range, float duration, float slowTo = 0.8f, bool displayPopup = false, float probability = 1f, SoundSpecifier? sound = null)
+        public void FlashArea(EntityUid source, EntityUid? user, float range, TimeSpan flashDuration, float slowTo = 0.8f, bool displayPopup = false, float probability = 1f, SoundSpecifier? sound = null)
         {
             var transform = Transform(source);
             var mapPosition = _transform.GetMapCoordinates(transform);
@@ -179,7 +184,7 @@ namespace Content.Server.Flash
                     continue;
 
                 // They shouldn't have flash removed in between right?
-                Flash(entity, user, source, duration, slowTo, displayPopup);
+                Flash(entity, user, source, flashDuration, slowTo, displayPopup);
 
                 var distance = (mapPosition.Position - _transform.GetMapCoordinates(entity).Position).Length();
                 RaiseLocalEvent(source, new AreaFlashEvent(range, distance, entity));

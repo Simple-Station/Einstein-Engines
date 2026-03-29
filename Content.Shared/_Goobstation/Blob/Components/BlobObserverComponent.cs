@@ -1,7 +1,7 @@
 using Content.Shared.Actions;
 using Content.Shared.Antag;
 using Content.Shared.Damage;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;

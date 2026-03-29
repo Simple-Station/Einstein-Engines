@@ -6,7 +6,7 @@ using Content.Server.DoAfter;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.DoAfter;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Popups;
 using Content.Shared.Psionics.Events;
 using Content.Shared.Examine;

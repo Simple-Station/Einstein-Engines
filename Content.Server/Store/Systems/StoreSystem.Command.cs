@@ -1,6 +1,6 @@
 using System.Linq;
 using Content.Server.Store.Components;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Server.Administration;
 using Content.Shared.Administration;
 using Content.Shared.Store.Components;

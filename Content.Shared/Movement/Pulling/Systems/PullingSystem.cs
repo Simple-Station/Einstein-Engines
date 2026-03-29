@@ -684,8 +684,12 @@ public sealed class PullingSystem : EntitySystem
         return TogglePull((puller.Pulling.Value, pullable), pullerUid);
     }
 
-    public bool TryStartPull(EntityUid pullerUid, EntityUid pullableUid,
-        PullerComponent? pullerComp = null, PullableComponent? pullableComp = null)
+    public bool TryStartPull(EntityUid pullerUid,
+        EntityUid pullableUid,
+        PullerComponent? pullerComp = null,
+        PullableComponent? pullableComp = null,
+        GrabStage? grabStageOverride = null,
+        float escapeAttemptModifier = 1.0f) // Goob edit
     {
         if (!Resolve(pullerUid, ref pullerComp, false) ||
             !Resolve(pullableUid, ref pullableComp, false))
@@ -809,6 +813,10 @@ public sealed class PullingSystem : EntitySystem
         if (_combatMode.IsInCombatMode(pullerUid))
             TryGrab(pullableUid, pullerUid);
 
+        if (_combatMode.IsInCombatMode(pullerUid) && grabStageOverride == null) // Goobstation
+            TryGrab(pullableUid, pullerUid, escapeAttemptModifier: escapeAttemptModifier); // Goobstation
+        if (_combatMode.IsInCombatMode(pullerUid) && grabStageOverride != null)
+            TryGrab(pullableUid, pullerUid, grabStageOverride: grabStageOverride, escapeAttemptModifier: escapeAttemptModifier);
         return true;
     }
 
@@ -864,6 +872,16 @@ public sealed class PullingSystem : EntitySystem
         return true;
     }
 
+    public void StopAllPulls(EntityUid uid, bool stopPullable = true, bool stopPuller = true) // Goobstation
+    {
+        if (stopPullable && TryComp<PullableComponent>(uid, out var pullable) && IsPulled(uid, pullable))
+            TryStopPull(uid, pullable);
+
+        if (stopPuller && TryComp<PullerComponent>(uid, out var puller) &&
+            TryComp(puller.Pulling, out PullableComponent? pullableEnt))
+            TryStopPull(puller.Pulling.Value, pullableEnt);
+    }
+
     /// <summary>
     /// Trying to grab the target
     /// </summary>
@@ -872,7 +890,7 @@ public sealed class PullingSystem : EntitySystem
     /// <param name="ignoreCombatMode">If true, will ignore disabled combat mode</param>
     /// <exception cref="ArgumentOutOfRangeException"></exception>
     /// <returns></returns>
-    public bool TryGrab(Entity<PullableComponent?> pullable, Entity<PullerComponent?, MeleeWeaponComponent?> puller, bool ignoreCombatMode = false)
+    public bool TryGrab(Entity<PullableComponent?> pullable, Entity<PullerComponent?, MeleeWeaponComponent?> puller, bool ignoreCombatMode = false, GrabStage? grabStageOverride = null, float escapeAttemptModifier = 1f)
     {
         if (!Resolve(pullable.Owner, ref pullable.Comp)
             || !Resolve(puller.Owner, ref puller.Comp1, ref puller.Comp2)
@@ -937,6 +955,11 @@ public sealed class PullingSystem : EntitySystem
             var ev = new CheckGrabOverridesEvent(newStage);
             RaiseLocalEvent(puller, ev);
             newStage = ev.Stage;
+        }
+
+        if (grabStageOverride != null)
+        {
+            newStage = grabStageOverride.Value;
         }
 
         if (!TrySetGrabStages((puller, puller.Comp1), (pullable, pullable.Comp), newStage))

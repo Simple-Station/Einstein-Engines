@@ -1,3 +1,19 @@
+// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Nim <128169402+Nimfar11@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
+// SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
@@ -11,12 +27,14 @@ namespace Content.Shared.Stealth.Components;
 /// </summary>
 [RegisterComponent, NetworkedComponent]
 [Access(typeof(SharedStealthSystem))]
+[AutoGenerateComponentState] // Goobstation
 public sealed partial class StealthComponent : Component
 {
     /// <summary>
     /// Whether or not the stealth effect should currently be applied.
     /// </summary>
     [DataField("enabled")]
+    [AutoNetworkedField] // Goobstation
     public bool Enabled = true;
 
     /// <summary>
@@ -24,6 +42,12 @@ public sealed partial class StealthComponent : Component
     /// </summary>
     [DataField("enabledOnDeath")]
     public bool EnabledOnDeath = true;
+
+    /// <summary>
+    /// The creature will continue invisible at Crit.
+    /// </summary>
+    [DataField("enabledOnCrit")]
+    public bool EnabledOnCrit = true; // Goobstation - Stealth change
 
     /// <summary>
     /// Whether or not the entity previously had an interaction outline prior to cloaking.
@@ -38,13 +62,14 @@ public sealed partial class StealthComponent : Component
     public float ExamineThreshold = 0.5f;
 
     /// <summary>
-    /// Last set level of visibility. The visual effect ranges from 1 (fully visible) and -1 (fully hidden). Values
+    /// Last set level of visibility. The visual effect ranges from 1 (fully visible) and -1.5 (fully hidden). Values // Goobstation - Proper invisibility
     /// outside of this range simply act as a buffer for the visual effect (i.e., a delay before turning invisible). To
     /// get the actual current visibility, use <see cref="SharedStealthSystem.GetVisibility(EntityUid, StealthComponent?)"/>
     /// If you don't have anything else updating the stealth, this will just stay at a constant value, which can be useful.
     /// </summary>
     [DataField("lastVisibility")]
     [Access(typeof(SharedStealthSystem), Other = AccessPermissions.None)]
+    [AutoNetworkedField] // Goobstation
     public float LastVisibility = 1;
 
 
@@ -53,18 +78,22 @@ public sealed partial class StealthComponent : Component
     /// accumulating any visibility change.
     /// </summary>
     [DataField("lastUpdate", customTypeSerializer:typeof(TimeOffsetSerializer))]
+    [AutoNetworkedField] // Goobstation
     public TimeSpan? LastUpdated;
 
+    // Goobstation - Proper invisibility
     /// <summary>
-    /// Minimum visibility. Note that the visual effect caps out at -1, but this value is allowed to be larger or smaller.
+    /// Minimum visibility. Note that the visual effect caps out at -1.5, but this value is allowed to be larger or smaller.
     /// </summary>
     [DataField("minVisibility")]
-    public float MinVisibility = -1f;
+    [AutoNetworkedField] // Goobstation
+    public float MinVisibility = -1.5f;
 
     /// <summary>
     /// Maximum visibility. Note that the visual effect caps out at +1, but this value is allowed to be larger or smaller.
     /// </summary>
     [DataField("maxVisibility")]
+    [AutoNetworkedField] // Goobstation
     public float MaxVisibility = 1.5f;
 
     /// <summary>
@@ -72,20 +101,29 @@ public sealed partial class StealthComponent : Component
     /// </summary>
     [DataField("examinedDesc")]
     public string ExaminedDesc = "stealth-visual-effect";
-}
 
-[Serializable, NetSerializable]
-public sealed class StealthComponentState : ComponentState
-{
-    public readonly float Visibility;
-    public readonly TimeSpan? LastUpdated;
-    public readonly bool Enabled;
-    public readonly float MaxVisibility; // Shitmed Change
-    public StealthComponentState(float stealthLevel, TimeSpan? lastUpdated, bool enabled, float maxVisibility)
-    {
-        Visibility = stealthLevel;
-        LastUpdated = lastUpdated;
-        Enabled = enabled;
-        MaxVisibility = maxVisibility; // Shitmed Change
-    }
+    /// <summary>
+    /// Remove stealth if an attack is made
+    /// </summary>
+    [DataField]
+    public bool RevealOnAttack = true; // Goobstation - Stealth change
+
+    /// <summary>
+    /// Remove stealth if an attack is made
+    /// </summary>
+    [DataField]
+    public bool RevealOnDamage = true; // Goobstation - Stealth change
+    /// <summary>
+    ///
+    ///  adds a threshold for whn taking damage so you dont get reveled from taking airloss or bleed
+    /// </summary>
+    [DataField]
+    public float Threshold = 5;// Goobstation - Stealth change
+
+    /// <summary>
+    /// Is detectable by thermals?
+    /// </summary>
+    [DataField]
+    [AutoNetworkedField]
+    public bool ThermalsImmune = false; // Goobstation - Stealth change
 }

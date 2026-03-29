@@ -1,7 +1,7 @@
 ﻿using System.Numerics;
 using Content.Client.Popups;
 using Content.Client.UserInterface.Controls;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.WhiteDream.BloodCult.UI;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
