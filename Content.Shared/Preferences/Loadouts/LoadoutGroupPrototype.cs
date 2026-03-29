@@ -46,6 +46,11 @@ public sealed partial class LoadoutGroupPrototype : IPrototype
     [IdDataField]
     public string ID { get; private set; } = string.Empty;
 
+    /// <inheritdoc />
+    [NeverPushInheritance]
+    [AbstractDataField]
+    public bool Abstract { get; private set; }
+
     /// <summary>
     /// User-friendly name for the group.
     /// </summary>

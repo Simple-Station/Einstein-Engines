@@ -123,7 +123,7 @@ public partial class SharedMartialArtsSystem
             var beingPerformedEv = new ComboBeingPerformedEvent(proto.ID);
             var ev = proto.ResultEvent;
 
-            RaiseLocalEvent(uid, beingPerformedEv);
+            RaiseLocalEvent(uid, ref beingPerformedEv);
             RaiseLocalEvent(uid, ev);
         }
     }

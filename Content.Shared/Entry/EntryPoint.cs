@@ -47,7 +47,6 @@ using Robust.Shared.Serialization.Markdown;
 using Robust.Shared.Serialization.Markdown.Sequence;
 using Robust.Shared.Serialization.Markdown.Value;
 using Robust.Shared.Utility;
-using Serilog;
 
 namespace Content.Shared.Entry
 {

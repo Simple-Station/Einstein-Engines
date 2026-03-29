@@ -23,15 +23,15 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
 {
     /// <inheritdoc />
     [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<InteractionVerbPrototype>))]
-    public string[]? Parents { get; }
+    public string[]? Parents { get; private set; }
 
     /// <inheritdoc />
     [NeverPushInheritance]
     [AbstractDataField]
-    public bool Abstract { get; }
+    public bool Abstract { get; private set; }
 
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { get; private set; } = default!;
 
     // Locale getters
     public string Name => Loc.TryGetString($"interaction-{ID}-name", out var loc) ? loc : ID;

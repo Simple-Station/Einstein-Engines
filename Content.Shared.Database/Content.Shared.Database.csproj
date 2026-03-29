@@ -8,8 +8,9 @@ SPDX-License-Identifier: MIT
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <Import Project="../MSBuild/Content.props" />
 
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
 </Project>

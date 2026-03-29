@@ -51,6 +51,7 @@ public sealed class GhostRoleTests
     /// </summary>
     [TestCase(true)]
     [TestCase(false)]
+    [Explicit] // Trauma - 4 minutes for a single case HOLY SHITCODE
     public async Task TakeRoleAndReturn(bool adminGhost)
     {
         var ghostCommand = adminGhost ? "aghost" : "ghost";

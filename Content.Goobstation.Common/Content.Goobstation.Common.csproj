@@ -8,21 +8,19 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>$(TargetFramework)</TargetFramework>
-        <LangVersion>12</LangVersion>
-        <IsPackable>false</IsPackable>
-        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-        <WarningsAsErrors>nullable</WarningsAsErrors>
-        <Nullable>enable</Nullable>
-    </PropertyGroup>
+  <PropertyGroup>
+      <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+      <WarningsAsErrors>nullable</WarningsAsErrors>
+  </PropertyGroup>
+  <Import Project="../MSBuild/Content.props" />
 
-    <ItemGroup>
-      <ProjectReference Include="..\Content.ModuleManager\Content.ModuleManager.csproj" />
-      <ProjectReference Include="..\RobustToolbox\Robust.Shared\Robust.Shared.csproj" />
-    </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Content.ModuleManager\Content.ModuleManager.csproj" />
+  </ItemGroup>
 
-    <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
-    <Import Project="..\RobustToolbox\MSBuild\Robust.CompNetworkGenerator.targets" />
+  <Import Project="..\RobustToolbox\Imports\Shared.props" />
+
+  <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
+  <Import Project="..\RobustToolbox\MSBuild\Robust.CompNetworkGenerator.targets" />
 
 </Project>

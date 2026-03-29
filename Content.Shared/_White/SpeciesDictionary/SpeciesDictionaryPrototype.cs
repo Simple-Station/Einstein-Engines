@@ -6,7 +6,7 @@ namespace Content.Shared._White.SpeciesDictionary;
 
 
 [Prototype]
-public sealed class SpeciesDictionaryPrototype : IPrototype
+public sealed partial class SpeciesDictionaryPrototype : IPrototype
 {
     [IdDataField] public string ID { get; private set; } = default!;
 
@@ -15,7 +15,7 @@ public sealed class SpeciesDictionaryPrototype : IPrototype
 }
 
 [Prototype]
-public sealed class SpeciesDictionaryGroupPrototype : IPrototype
+public sealed partial class SpeciesDictionaryGroupPrototype : IPrototype
 {
     [IdDataField] public string ID { get; private set; } = default!;
     [DataField] public Color? Color { get; private set; }

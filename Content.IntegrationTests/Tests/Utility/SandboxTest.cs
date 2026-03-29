@@ -30,7 +30,7 @@ public sealed class SandboxTest
 
         // To hell with creating a pair. Sandbox is client only  -Misandrie
 
-        var asm = PoolManager.GetAssemblies(true, false);
+        var asm = PoolManager.GetAssemblies(client: true, false);
 
         var logHandler = new PoolTestLogHandler("CLIENT");
         logHandler.ActivateContext(TestContext.Out);

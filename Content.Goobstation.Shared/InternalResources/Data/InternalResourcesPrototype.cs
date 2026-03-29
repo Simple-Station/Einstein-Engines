@@ -7,7 +7,7 @@ namespace Content.Goobstation.Shared.InternalResources.Data;
 /// Prototype for internal resources type. Mostly contain visualization and information data.
 /// </summary>
 [Prototype]
-public sealed class InternalResourcesPrototype : IPrototype
+public sealed partial class InternalResourcesPrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;
@@ -21,8 +21,8 @@ public sealed class InternalResourcesPrototype : IPrototype
     /// <summary>
     /// The alert prototype to be shown.
     /// </summary>
-    [DataField("alert", required: true)]
-    public ProtoId<AlertPrototype> AlertPrototype;
+    [DataField("alert")]
+    public ProtoId<AlertPrototype> AlertPrototype = "ChangelingChemicals";
 
     /// <summary>
     /// The thresholds proto used for raising InternalResourcesThresholdMetEvent.
