@@ -1,7 +1,14 @@
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 #nullable enable
-// <Trauma>
-using Content.Trauma.Common.CCVar;
-// </Trauma>
 using Content.Shared.CCVar;
 using Robust.Shared;
 using Robust.Shared.Configuration;
@@ -12,19 +19,17 @@ namespace Content.IntegrationTests;
 // Partial class containing cvar logic
 public static partial class PoolManager
 {
-    public static readonly (string cvar, string value)[] TestCvars =
+    private static readonly (string cvar, string value)[] TestCvars =
     {
         // @formatter:off
-        // <Trauma>
-        (CCVars.LavalandEnabled.Name, "false"),
-        (TraumaCVars.GhostBarEnabled.Name, "false"),
-        // </Trauma>
         (CCVars.DatabaseSynchronous.Name,     "true"),
         (CCVars.DatabaseSqliteDelay.Name,     "0"),
         (CCVars.HolidaysEnabled.Name,         "false"),
         (CCVars.GameMap.Name,                 TestMap),
         (CCVars.AdminLogsQueueSendDelay.Name, "0"),
+        (CVars.NetPVS.Name,                   "false"),
         (CCVars.NPCMaxUpdates.Name,           "999999"),
+        (CVars.ThreadParallelCount.Name,      "1"),
         (CCVars.GameRoleTimers.Name,          "false"),
         (CCVars.GameRoleWhitelist.Name,       "false"),
         (CCVars.GridFill.Name,                "false"),
@@ -34,13 +39,50 @@ public static partial class PoolManager
         (CCVars.ProcgenPreload.Name,          "false"),
         (CCVars.WorldgenEnabled.Name,         "false"),
         (CCVars.GatewayGeneratorEnabled.Name, "false"),
+        (CVars.ReplayClientRecordingEnabled.Name, "false"),
+        (CVars.ReplayServerRecordingEnabled.Name, "false"),
         (CCVars.GameDummyTicker.Name, "true"),
         (CCVars.GameLobbyEnabled.Name, "false"),
         (CCVars.ConfigPresetDevelopment.Name, "false"),
         (CCVars.AdminLogsEnabled.Name, "false"),
         (CCVars.AutosaveEnabled.Name, "false"),
+        (CVars.NetBufferSize.Name, "0"),
         (CCVars.InteractionRateLimitCount.Name, "9999999"),
         (CCVars.InteractionRateLimitPeriod.Name, "0.1"),
         (CCVars.MovementMobPushing.Name, "false"),
+        (CCVars.LavalandEnabled.Name, "false"), // Lavaland Change
     };
+
+    public static async Task SetupCVars(RobustIntegrationTest.IntegrationInstance instance, PoolSettings settings)
+    {
+        var cfg = instance.ResolveDependency<IConfigurationManager>();
+        await instance.WaitPost(() =>
+        {
+            if (cfg.IsCVarRegistered(CCVars.GameDummyTicker.Name))
+                cfg.SetCVar(CCVars.GameDummyTicker, settings.UseDummyTicker);
+
+            if (cfg.IsCVarRegistered(CCVars.GameLobbyEnabled.Name))
+                cfg.SetCVar(CCVars.GameLobbyEnabled, settings.InLobby);
+
+            if (cfg.IsCVarRegistered(CVars.NetInterp.Name))
+                cfg.SetCVar(CVars.NetInterp, settings.DisableInterpolate);
+
+            if (cfg.IsCVarRegistered(CCVars.GameMap.Name))
+                cfg.SetCVar(CCVars.GameMap, settings.Map);
+
+            if (cfg.IsCVarRegistered(CCVars.AdminLogsEnabled.Name))
+                cfg.SetCVar(CCVars.AdminLogsEnabled, settings.AdminLogsEnabled);
+
+            if (cfg.IsCVarRegistered(CVars.NetInterp.Name))
+                cfg.SetCVar(CVars.NetInterp, !settings.DisableInterpolate);
+        });
+    }
+
+    private static void SetDefaultCVars(RobustIntegrationTest.IntegrationOptions options)
+    {
+        foreach (var (cvar, value) in TestCvars)
+        {
+            options.CVarOverrides[cvar] = value;
+        }
+    }
 }

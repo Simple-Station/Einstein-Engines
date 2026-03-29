@@ -20,11 +20,11 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Shared.MartialArts;
 
-[Prototype]
-public sealed partial class MartialArtPrototype : IPrototype
+[Prototype("martialArt")]
+public sealed class MartialArtPrototype : IPrototype
 {
     [IdDataField]
-    public string ID { get; private set; } = default!;
+    public string ID { get; private init; } = default!;
 
     [DataField]
     public MartialArtsForms MartialArtsForm = MartialArtsForms.CloseQuartersCombat;

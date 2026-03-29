@@ -10,10 +10,10 @@ namespace Content.Shared.Mail;
 /// <summary>
 /// Generic random weighting dataset to use.
 /// </summary>
-[Prototype]
-public sealed partial class MailDeliveryPoolPrototype : IPrototype
+[Prototype("mailDeliveryPool")]
+public sealed class MailDeliveryPoolPrototype : IPrototype
 {
-    [IdDataFieldAttribute] public string ID { get; private set; } = default!;
+    [IdDataFieldAttribute] public string ID { get; } = default!;
 
     /// <summary>
     /// Mail that can be sent to everyone.

@@ -10,7 +10,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Shared.Changeling;
 
-[Prototype]
+[Prototype("reagentStingConfiguration")]
 public sealed partial class ReagentStingConfigurationPrototype : IPrototype
 {
     [IdDataField]

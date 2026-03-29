@@ -40,7 +40,7 @@ public sealed partial class GameDirectorComponent : Component
     ///   The story we are currently executing from stories (for easier debugging). Since it is for
     ///   debugging, it does not need a DataField.
     /// </summary>
-    [DataField]
+    [ViewVariables(VVAccess.ReadOnly)]
     public ProtoId<StoryPrototype> CurrentStoryName;
 
     /// <summary>
@@ -91,17 +91,19 @@ public sealed partial class GameDirectorComponent : Component
 ///   A series of named StoryBeats which we want to take the station through in the given sequence.
 ///   Gated by various settings such as the number of players
 /// </summary>
-[Prototype]
+[DataDefinition]
+[Prototype("story")]
 public sealed partial class StoryPrototype : IPrototype
 {
+    [ViewVariables]
     [IdDataField]
     public string ID { get; private set; } = default!;
 
     /// <summary>
     ///   A human-readable description string for logging / admins
     /// </summary>
-    [DataField(required: true)]
-    public string Description = string.Empty;
+    [DataField]
+    public string Description;
 
     /// <summary>
     ///   Minimum number of players on the station to pick this story
@@ -138,6 +140,7 @@ public sealed partial class StoryPrototype : IPrototype
 [Prototype("storyBeat")]
 public sealed partial class StoryBeatPrototype : IPrototype
 {
+    [ViewVariables]
     [IdDataField]
     public string ID { get; private set; } = default!;
 
@@ -219,7 +222,7 @@ public sealed partial class PossibleEvent
     /// <summary>
     ///   ID of a station event prototype (anomaly, spiders, pizzas, etc) that could occur
     /// </summary>
-    [ViewVariables]
+    [ViewVariables(VVAccess.ReadWrite)]
     public EntProtoId StationEvent;
 
     /// <summary>

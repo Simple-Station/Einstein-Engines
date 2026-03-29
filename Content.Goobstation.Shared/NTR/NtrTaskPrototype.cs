@@ -11,14 +11,14 @@ namespace Content.Goobstation.Shared.NTR;
 /// to receive a monetary reward.
 /// </summary>
 [Prototype, Serializable, NetSerializable]
-public sealed partial class NtrTaskPrototype : IPrototype
+public sealed class NtrTaskPrototype : IPrototype
 {
+    [DataField]
+    public string Proto { get; init; } = default!;
+
     /// <inheritdoc/>
     [IdDataField]
     public string ID { get; private set; } = default!;
-
-    [DataField(required: true)]
-    public EntProtoId Proto;
 
     /// <summary>
     /// The monetary reward for completing the bounty
@@ -30,7 +30,7 @@ public sealed partial class NtrTaskPrototype : IPrototype
     /// A description for flava purposes.
     /// </summary>
     [DataField]
-    public LocId Description;
+    public LocId Description = string.Empty;
 
     /// <summary>
     /// The entries that must be satisfied for the ntr bounty to be complete.
@@ -54,44 +54,44 @@ public sealed partial class NtrTaskPrototype : IPrototype
     public float Cooldown; //in seconds
 
     [DataField]
-    public Dictionary<ProtoId<ReagentPrototype>, FixedPoint2> Reagents = new();
+    public Dictionary<ProtoId<ReagentPrototype>, FixedPoint2> Reagents { get; init; } = new();
 
     [DataField]
-    public string SolutionName = "drink"; // i want to end it all already
+    public string SolutionName { get; private set; } = "drink"; // i want to end it all already
 
     [DataField("reagentTask")] // shitcod
-    public bool IsReagentTask;
+    public bool IsReagentTask { get; init; }
 
     [DataField]
-    public int Penalty = 1;
+    public int Penalty { get; } = 1;
 }
 
 [DataDefinition, Serializable, NetSerializable]
-public partial record struct NtrTaskItemEntry()
+public readonly partial record struct NtrTaskItemEntry()
 {
     [DataField]
-    public List<string> Stamps = new();
+    public List<string> Stamps { get; init; } = new();
 
     /// <summary>
     /// A whitelist for determining what items satisfy the entry.
     /// </summary>
-    [DataField(required: true)]
-    public EntityWhitelist Whitelist = default!;
+    [DataField]
+    public EntityWhitelist Whitelist { get; init; } = default!;
 
     /// <summary>
     /// How much of the item must be present to satisfy the entry
     /// </summary>
     [DataField]
-    public int Amount = 1;
+    public int Amount { get; init; } = 1;
 
     [DataField]
-    public bool InstantCompletion;
+    public bool InstantCompletion { get; init; } = false;
 
     /// <summary>
     /// A player-facing name for the item.
     /// </summary>
     [DataField]
-    public LocId Name;
+    public LocId Name { get; init; } = string.Empty;
 }
 
 // [DataDefinition, Serializable, NetSerializable]

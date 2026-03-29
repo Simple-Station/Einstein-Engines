@@ -24,6 +24,7 @@ using Content.Shared.Stacks;
 using Content.Shared.Tag;
 using Content.Shared.Weapons.Ranged;
 using Content.Shared.Weapons.Ranged.Components;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;

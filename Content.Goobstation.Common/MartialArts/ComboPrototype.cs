@@ -9,12 +9,11 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Common.MartialArts;
 using Robust.Shared.Prototypes;
 
-namespace Content.Goobstation.Shared.MartialArts;
+namespace Content.Goobstation.Common.MartialArts;
 
-[Prototype]
+[Prototype("combo")]
 public sealed partial class ComboPrototype : IPrototype
 {
     [IdDataField] public string ID { get; private set; } = default!;
@@ -85,11 +84,11 @@ public sealed partial class ComboPrototype : IPrototype
     public bool PerformOnSelf;
 }
 
-[Prototype]
+[Prototype("comboList")]
 public sealed partial class ComboListPrototype : IPrototype
 {
-    [IdDataField] public string ID { get; private set; } = default!;
+    [IdDataField] public string ID { get; private init; } = default!;
 
-    [DataField(required: true)]
+    [DataField( required: true)]
     public List<ProtoId<ComboPrototype>> Combos = new();
 }

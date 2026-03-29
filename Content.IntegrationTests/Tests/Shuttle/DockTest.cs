@@ -151,7 +151,6 @@ public sealed class DockTest : ContentUnitTest
     }
 
     [Test]
-    [Explicit] // Trauma - wastes 50s
     public async Task TestPlanetDock()
     {
         await using var pair = await PoolManager.GetServerClient();

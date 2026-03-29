@@ -20,7 +20,6 @@ namespace Content.IntegrationTests.Tests.Lathe;
 public sealed class LatheTest
 {
     [Test]
-    [Explicit] // Trauma - 10 MINUTE TEST GG SPED
     public async Task TestLatheRecipeIngredientsFitLathe()
     {
         await using var pair = await PoolManager.GetServerClient();

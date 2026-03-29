@@ -9,8 +9,8 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Shared.ServerCurrency;
 
-[Prototype]
-public sealed partial class TokenListingPrototype : IPrototype
+[Prototype("tokenListing")]
+public sealed class TokenListingPrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;

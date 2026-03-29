@@ -6,6 +6,7 @@
 
 using Content.Goobstation.Shared.Silicon.AiCameraWarping;
 using Robust.Client.UserInterface;
+using Serilog;
 
 namespace Content.Goobstation.Client.Silicon.AiCameraWarping.Ui;
 

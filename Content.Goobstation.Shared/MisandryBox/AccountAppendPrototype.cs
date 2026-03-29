@@ -12,15 +12,16 @@ using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Goobstation.Shared.MisandryBox;
 
-[Prototype]
-public sealed partial class AccountAppendPrototype : IPrototype
+[Prototype("AccountAppend")]
+public sealed class AccountAppendPrototype : IPrototype
 {
     [IdDataField]
-    public string ID { get; private set; } = null!;
+    public string ID { get; private init; } = null!;
 
-    [DataField(required: true, customTypeSerializer: typeof(GuidSerializer))]
-    public Guid Userid = Guid.Empty;
+    [DataField("userid", customTypeSerializer: typeof(GuidSerializer))]
+    public Guid Userid { get; private init; } = Guid.Empty;
 
-    [DataField(required: true)]
-    public ComponentRegistry Components = default!;
+    // I am not dragging the whole compReg for this
+    [DataField("AppendComps")]
+    public List<string> Components { get; init; } = [];
 }

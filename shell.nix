@@ -7,14 +7,13 @@ in import (builtins.fetchTarball {
 
 let
   dependencies = with pkgs; [
-    dotnet-sdk_10
+    dotnetCorePackages.sdk_9_0
     dotnet-ef
     icu
     glfw
     SDL2
     libGL
     openal
-    fontconfig
     freetype
     fluidsynth
     soundfont-fluid
@@ -45,7 +44,6 @@ let
     at-spi2-core
     cups
     python3
-    pipewire
   ];
 in pkgs.mkShell {
   name = "space-station-14-devshell";
