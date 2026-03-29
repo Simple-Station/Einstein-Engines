@@ -72,7 +72,7 @@ public sealed class ShipyardSystem : EntitySystem
         if (!Resolve(station, ref station.Comp))
             return null;
 
-        if (_station.GetLargestGrid(station.Comp) is not {} grid)
+        if (_station.GetLargestGrid(station) is not {} grid)
         {
             Log.Error($"Station {ToPrettyString(station):station} had no largest grid to FTL to");
             return null;

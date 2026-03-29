@@ -46,7 +46,7 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
 
         foreach (var stations in station)
         {
-            if (TryComp<StationDataComponent>(stations, out var data) && _station.GetLargestGrid(data) is { } grid)
+            if (_station.GetLargestGrid(stations) is { } grid)
                 stationGrids.Add(grid);
         }
 

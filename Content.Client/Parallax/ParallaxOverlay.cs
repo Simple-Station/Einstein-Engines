@@ -1,5 +1,7 @@
 using System.Numerics;
 using Content.Client.Parallax.Managers;
+using Content.Client.Viewport;
+using Content.Shared._CE.ZLevels.Core.EntitySystems;
 using Content.Shared.CCVar;
 using Content.Shared.Parallax.Biomes;
 using Robust.Client.Graphics;
@@ -20,6 +22,7 @@ public sealed class ParallaxOverlay : Overlay
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IParallaxManager _manager = default!;
     private readonly ParallaxSystem _parallax;
+    private readonly CESharedZLevelsSystem _zLevel; //CrystallEdge
     private Dictionary<ParallaxLayerPrepared, ShaderInstance?> _layerShaders;
 
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowWorld;
@@ -29,6 +32,7 @@ public sealed class ParallaxOverlay : Overlay
         ZIndex = ParallaxSystem.ParallaxZIndex;
         IoCManager.InjectDependencies(this);
         _parallax = _entManager.System<ParallaxSystem>();
+        _zLevel = _entManager.System<CESharedZLevelsSystem>(); //CrystallEdge
         _layerShaders = new();
     }
 
@@ -37,7 +41,12 @@ public sealed class ParallaxOverlay : Overlay
         if (args.MapId == MapId.Nullspace || _entManager.HasComponent<BiomeComponent>(_mapManager.GetMapEntityId(args.MapId)))
             return false;
 
-        return true;
+        //CrystallEdge draw parallax only for lowest zlevel
+        if (args.Viewport.Eye is ScalingViewport.ZEye zEye)
+            return zEye.LowestDepth == zEye.Depth;
+        else
+            return !_zLevel.TryMapDown(args.MapUid, out _);
+        //CrystallEdge end
     }
 
     protected override void Draw(in OverlayDrawArgs args)

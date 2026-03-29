@@ -154,12 +154,15 @@ public sealed class StationSystem : EntitySystem
     /// <summary>
     /// Gets the largest member grid from a station.
     /// </summary>
-    public EntityUid? GetLargestGrid(StationDataComponent component)
+    public EntityUid? GetLargestGrid(Entity<StationDataComponent?> ent)
     {
+        if (!Resolve(ent, ref ent.Comp))
+            return null;
+
         EntityUid? largestGrid = null;
         Box2 largestBounds = new Box2();
 
-        foreach (var gridUid in component.Grids)
+        foreach (var gridUid in ent.Comp.Grids)
         {
             if (!TryComp<MapGridComponent>(gridUid, out var grid) ||
                 grid.LocalAABB.Size.LengthSquared() < largestBounds.Size.LengthSquared())

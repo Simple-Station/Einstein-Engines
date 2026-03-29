@@ -26,10 +26,7 @@ public sealed partial class StationBiomeSystem : EntitySystem
 
     private void OnStationPostInit(Entity<StationBiomeComponent> map, ref StationPostInitEvent args)
     {
-        if (!TryComp(map, out StationDataComponent? dataComp))
-            return;
-
-        var station = _station.GetLargestGrid(dataComp);
+        var station = _station.GetLargestGrid(map.Owner);
         if (station == null) return;
 
         var mapId = Transform(station.Value).MapID;

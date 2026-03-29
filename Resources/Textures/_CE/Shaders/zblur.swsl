@@ -1,0 +1,22 @@
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp vec3 BLUR_COLOR;
+
+const highp float darken_strength = 0.3; // Darkness level 0.0 to 1.0
+const highp float blur_radius = 2.0; // Blur radius from 0.0 to 10.0
+
+void fragment() {
+    highp vec4 color = texture(SCREEN_TEXTURE, UV);
+
+    highp vec4 blurred_color = vec4(0.0);
+    for (int x = -1; x <= 1; x++) {
+        for (int y = -1; y <= 1; y++) {
+            blurred_color += texture(SCREEN_TEXTURE, UV + vec2(x, y) * SCREEN_PIXEL_SIZE * blur_radius);
+        }
+    }
+    blurred_color /= 9.0;
+
+    highp vec3 shadow = mix(vec3(1.0), BLUR_COLOR, darken_strength);
+    blurred_color.rgb *= shadow;
+
+    COLOR = blurred_color;
+}

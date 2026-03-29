@@ -8,6 +8,7 @@
   - type: Sprite
     noRot: true
     drawdepth: Mobs
+  - type: GravityAffected
   - type: Physics
     bodyType: KinematicController
   - type: Fixtures
@@ -49,6 +50,8 @@
   - type: AnimatedEmotes
   - type: OwnInteractionVerbs
     allowedVerbs: [] # TODO: define something here, or don't.
+  - type: CEZPhysics
+
 
 - type: entity
   save: false

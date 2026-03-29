@@ -35,22 +35,22 @@ namespace Content.Shared.Movement.Systems;
 /// </summary>
 public abstract partial class SharedMoverController : VirtualController
 {
-    [Dependency] private   readonly IConfigurationManager _configManager = default!;
-    [Dependency] private   readonly IEntityManager _entities = default!;
+    [Dependency] private readonly IConfigurationManager _configManager = default!;
+    [Dependency] private readonly IEntityManager _entities = default!;
     [Dependency] protected readonly IGameTiming Timing = default!;
-    [Dependency] private   readonly IMapManager _mapManager = default!;
-    [Dependency] private   readonly ITileDefinitionManager _tileDefinitionManager = default!;
-    [Dependency] private   readonly AlertsSystem _alerts = default!;
-    [Dependency] private   readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private   readonly InventorySystem _inventory = default!;
-    [Dependency] private   readonly MobStateSystem _mobState = default!;
-    [Dependency] private   readonly SharedAudioSystem _audio = default!;
-    [Dependency] private   readonly SharedContainerSystem _container = default!;
-    [Dependency] private   readonly SharedMapSystem _mapSystem = default!;
-    [Dependency] private   readonly SharedGravitySystem _gravity = default!;
+    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly ITileDefinitionManager _tileDefinitionManager = default!;
+    [Dependency] private readonly AlertsSystem _alerts = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
+    [Dependency] private readonly SharedGravitySystem _gravity = default!;
     [Dependency] protected readonly SharedPhysicsSystem Physics = default!;
-    [Dependency] private   readonly SharedTransformSystem _transform = default!;
-    [Dependency] private   readonly TagSystem _tags = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly TagSystem _tags = default!;
 
     protected EntityQuery<InputMoverComponent> MoverQuery;
     protected EntityQuery<MobMoverComponent> MobMoverQuery;
@@ -178,10 +178,21 @@ public abstract partial class SharedMoverController : VirtualController
             return;
         }
 
+        // If the body is in air but isn't weightless then it can't move
+        var weightless = _gravity.IsWeightless(uid);
+        var inAirHelpless = false;
+
+        if (physicsComponent.BodyStatus != BodyStatus.OnGround && !CanMoveInAirQuery.HasComponent(uid))
+        {
+            if (!weightless)
+            {
+                UsedMobMovement[uid] = false;
+                return;
+            }
+            inAirHelpless = true;
+        }
 
         UsedMobMovement[uid] = true;
-        // Specifically don't use mover.Owner because that may be different to the actual physics body being moved.
-        var weightless = _gravity.IsWeightless(physicsUid, physicsComponent, xform);
         var (walkDir, sprintDir) = GetVelocityInput(mover);
         var touching = false;
 
@@ -353,27 +364,29 @@ public abstract partial class SharedMoverController : VirtualController
         }
     }
 
-    private void Friction(float minimumFrictionSpeed, float frameTime, float friction, ref Vector2 velocity)
+    public void Friction(float minimumFrictionSpeed, float frameTime, float friction, ref Vector2 velocity)
     {
         var speed = velocity.Length();
 
         if (speed < minimumFrictionSpeed)
             return;
 
-        var drop = 0f;
+        // This equation is lifted from the Physics Island solver.
+        // We re-use it here because Kinematic Controllers can't/shouldn't use the Physics Friction
+        velocity *= Math.Clamp(1.0f - frameTime * friction, 0.0f, 1.0f);
 
-        var control = MathF.Max(_stopSpeed, speed);
-        drop += control * friction * frameTime;
-
-        var newSpeed = MathF.Max(0f, speed - drop);
-
-        if (newSpeed.Equals(speed))
-            return;
-
-        newSpeed /= speed;
-        velocity *= newSpeed;
     }
 
+    public void Friction(float minimumFrictionSpeed, float frameTime, float friction, ref float velocity)
+    {
+        if (Math.Abs(velocity) < minimumFrictionSpeed)
+            return;
+
+        // This equation is lifted from the Physics Island solver.
+        // We re-use it here because Kinematic Controllers can't/shouldn't use the Physics Friction
+        velocity *= Math.Clamp(1.0f - frameTime * friction, 0.0f, 1.0f);
+
+    }
     private void Accelerate(ref Vector2 currentVelocity, in Vector2 velocity, float accel, float frameTime)
     {
         var wishDir = velocity != Vector2.Zero ? velocity.Normalized() : Vector2.Zero;
@@ -554,5 +567,30 @@ public abstract partial class SharedMoverController : VirtualController
 
         sound = haveShoes ? tileDef.FootstepSounds : tileDef.BarestepSounds;
         return sound != null;
+    }
+
+    private Vector2 AssertValidWish(InputMoverComponent mover, float walkSpeed, float sprintSpeed)
+    {
+        var (walkDir, sprintDir) = GetVelocityInput(mover);
+
+        var total = walkDir * walkSpeed + sprintDir * sprintSpeed;
+
+        var parentRotation = GetParentGridAngle(mover);
+        var wishDir = _relativeMovement ? parentRotation.RotateVec(total) : total;
+
+        DebugTools.Assert(MathHelper.CloseToPercent(total.Length(), wishDir.Length()));
+
+        return wishDir;
+    }
+
+    private void OnTileFriction(Entity<MovementSpeedModifierComponent> ent, ref TileFrictionEvent args)
+    {
+        if (!TryComp<PhysicsComponent>(ent, out var physicsComponent) || !XformQuery.TryComp(ent, out var xform))
+            return;
+
+        if (physicsComponent.BodyStatus != BodyStatus.OnGround || _gravity.IsWeightless(ent.Owner))
+            args.Modifier *= ent.Comp.BaseWeightlessFriction;
+        else
+            args.Modifier *= ent.Comp.BaseFriction;
     }
 }
