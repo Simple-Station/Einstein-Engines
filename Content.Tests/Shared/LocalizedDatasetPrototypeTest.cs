@@ -50,10 +50,10 @@ public sealed class LocalizedDatasetPrototypeTest : ContentUnitTest
         Assert.That(values[1], Is.EqualTo("test-dataset-2"));
         Assert.That(values[2], Is.EqualTo("test-dataset-3"));
         Assert.That(values[3], Is.EqualTo("test-dataset-4"));
-        Assert.Throws<IndexOutOfRangeException>(() => { var x = values[4]; });
-        Assert.Throws<IndexOutOfRangeException>(() => { var x = values[-1]; });
+        Assert.Throws<IndexOutOfRangeException>(() => { var x = testPrototype.Values[4]; });
+        Assert.Throws<IndexOutOfRangeException>(() => { var x = testPrototype.Values[-1]; });
 
         // Make sure that the enumerator gets all of the values
-        Assert.That(testPrototype.Values[testPrototype.Values.Count], Is.EqualTo("test-dataset-4"));
+        Assert.That(testPrototype.Values[testPrototype.Values.Count-1], Is.EqualTo("test-dataset-4"));
     }
 }

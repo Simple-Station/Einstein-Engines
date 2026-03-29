@@ -103,4 +103,10 @@ public sealed partial class CCVars
 
     public static readonly CVarDef<bool> AllowScreamAction =
         CVarDef.Create("vocal.allow_scream_action", true, CVar.SERVERONLY);
+    
+    /// <summary>
+    ///     Toggles the display of splash text in lobby.
+    /// </summary>
+    public static readonly CVarDef<bool> EnableSplash =
+        CVarDef.Create("splash_text.enabled", true, CVar.SERVER | CVar.REPLICATED);
 }
