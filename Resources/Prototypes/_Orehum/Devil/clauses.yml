@@ -17,17 +17,6 @@
       4: Dead
 
 - type: clause
-  id: flammable
-  name: Боязнь огня
-  clauseWeight: 20
-  addedComponents:
-  - type: Flammable
-    firestackFade: -0.05
-    damage:
-      types:
-        Heat: 40
-
-- type: clause
   id: cancer
   name: Рак
   clauseWeight: 60
@@ -97,14 +86,14 @@
 
 - type: clause
   id: ultravision
-  name: Ультра зрения
+  name: Ультра зрение
   clauseWeight: -20
   addedComponents:
   - type: UltraVision
 
 - type: clause
   id: thermalvision
-  name: Тепловое зрения
+  name: Тепловое зрение
   clauseWeight: -20
   addedComponents:
   - type: ThermalVision
@@ -137,19 +126,19 @@
   - type: IgnoreSpiderWeb
 
 - type: clause
-  id: zhivuchi
-  name: Живучий
-  clauseWeight: -60
-  addedComponents:
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      250: Critical
-      300: Dead
-
-- type: clause
   id: firestarter
   name: Поджигатель
   clauseWeight: -60
   addedComponents:
   - type: Firestarter
+
+- type: clause
+  id: berserk
+  name: Берсерк
+  clauseWeight: -60
+  addedComponents:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      300: Critical
+      401: Dead
