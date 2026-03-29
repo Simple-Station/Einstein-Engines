@@ -37,6 +37,10 @@
   id: AirlockScience
 
 - type: wireLayout
+  parent: Airlock
+  id: AirlockScienceMed
+
+- type: wireLayout
   parent: HighSec
   id: AirlockCommand
 
