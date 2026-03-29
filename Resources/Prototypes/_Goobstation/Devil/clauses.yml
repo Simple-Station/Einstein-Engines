@@ -9,7 +9,7 @@
 
 - type: clause
   id: soulownership
-  name: Право владения душой
+  name: Владение душой
   clauseWeight: 25
   event: !type:DevilContractSoulOwnershipEvent
 
@@ -90,25 +90,19 @@
   - type: Thirst
 
 - type: clause
-  id: fearofdrowning
-  name: Страх удушья
-  clauseWeight: -10
+  id: fearofspace
+  name: Страх космоса
+  clauseWeight: -30
   addedComponents:
   - type: SpecialBreathingImmunity
+  - type: SpecialPressureImmunity
 
 - type: clause
   id: fearofclowns
-  name: Страх клоунов
+  name: Равновесие
   clauseWeight: -10
   addedComponents:
   - type: NoSlip
-
-- type: clause
-  id: fearofcrushing
-  name: Страх давления
-  clauseWeight: -10
-  addedComponents:
-  - type: SpecialPressureImmunity
 
 - type: clause
   id: fearoffreezing
