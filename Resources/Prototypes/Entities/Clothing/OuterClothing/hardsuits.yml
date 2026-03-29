@@ -730,6 +730,7 @@
     - Hardsuit
     - WhitelistChameleon
     - HidesHarpyWings
+
   - type: StaminaDamageResistance
     coefficient: 0.5 # 50%
 
