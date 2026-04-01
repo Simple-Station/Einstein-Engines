@@ -495,9 +495,9 @@
       color: "#87011c"
     - state: icon_law
       color: "#f7d61a"
-  - type: GuideHelp
-    guides:
-    - SpaceLaw
+#  - type: GuideHelp
+#    guides:
+#    - SpaceLaw
 
 - type: entity
   parent: BookBase
