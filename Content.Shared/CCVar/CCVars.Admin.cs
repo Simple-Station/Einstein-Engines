@@ -138,7 +138,7 @@ public sealed partial class CCVars
     ///     de-admin them.
     /// </summary>
     public static readonly CVarDef<bool> AdminDeadminOnJoin =
-        CVarDef.Create("admin.deadmin_on_join", false, CVar.SERVERONLY);
+        CVarDef.Create("admin.deadmin_on_join", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     Overrides the name the client sees in ahelps. Set empty to disable.

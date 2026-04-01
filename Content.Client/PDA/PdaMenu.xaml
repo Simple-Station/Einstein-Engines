@@ -69,6 +69,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
             <ContainerButton Name="StationTimeButton">
                 <RichTextLabel Name="StationTimeLabel" Access="Public"/>
             </ContainerButton>
+            <ContainerButton Name="StationDateButton">
+                <RichTextLabel Name="StationDateLabel" Access="Public"/>
+            </ContainerButton>
             <ContainerButton Name="StationAlertLevelInstructionsButton">
                 <RichTextLabel Name="StationAlertLevelInstructions" Access="Public"/>
             </ContainerButton>

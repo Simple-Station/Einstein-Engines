@@ -25,6 +25,7 @@
 
 using Content.Client.GameTicking.Managers;
 using Content.Shared.PDA;
+using Content.Shared._Orehum.Time;
 using Robust.Shared.Utility;
 using Content.Shared.CartridgeLoader;
 using Content.Client.Message;
@@ -144,6 +145,11 @@ namespace Content.Client.PDA
                 var stationTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
                 _clipboard.SetText((stationTime.ToString("hh\\:mm\\:ss")));
             };
+            StationTimeButton.OnPressed += _ =>
+            {
+                var stationDate = _entitySystem.GetEntitySystem<TimeSystem>().GetDate();
+                _clipboard.SetText((stationDate));
+            };
 
             StationAlertLevelInstructionsButton.OnPressed += _ =>
             {
@@ -193,9 +199,12 @@ namespace Content.Client.PDA
             
 
             var stationTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
+            var stationDate = _entitySystem.GetEntitySystem<TimeSystem>().GetDate();
 
             StationTimeLabel.SetMarkup(Loc.GetString("comp-pda-ui-station-time",
                 ("time", stationTime.ToString("hh\\:mm\\:ss"))));
+            StationDateLabel.SetMarkup(Loc.GetString("comp-pda-ui-station-date",
+                ("date", stationDate)));
 
             var alertLevel = state.PdaOwnerInfo.StationAlertLevel;
             var alertColor = state.PdaOwnerInfo.StationAlertColor;

@@ -97,6 +97,6 @@ public sealed partial class CCVars
     ///     Whether or not articles should be sent mid-round instead of all at once at the round's end
     /// </summary>
     public static readonly CVarDef<bool> DiscordNewsWebhookSendDuringRound =
-        CVarDef.Create("discord.news_webhook_send_during_round", false, CVar.SERVERONLY);
+        CVarDef.Create("discord.news_webhook_send_during_round", true, CVar.SERVERONLY);
 
 }

@@ -31,7 +31,7 @@ public sealed partial class CCVars
     /// <seealso cref="AdminUseCustomNamesAdminRank"/>
     /// <seealso cref="AhelpAdminPrefixWebhook"/>
     public static readonly CVarDef<bool> AhelpAdminPrefix =
-        CVarDef.Create("ahelp.admin_prefix", false, CVar.SERVERONLY);
+        CVarDef.Create("ahelp.admin_prefix", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     Should the administrator's position be displayed in the webhook.
