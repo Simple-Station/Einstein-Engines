@@ -14,7 +14,8 @@
   event: !type:DevilContractSoulOwnershipEvent
 
 - type: clause
-  id: Слабость
+  id: weakness
+  name: Слабость
   clauseWeight: -35
   damageModifierSet: DevilDealPositive
 
@@ -43,7 +44,8 @@
 #      - Wall
 
 - type: clause
-  id: Боязнь огня
+  id: fearoffire
+  name: Боязнь огня
   clauseWeight: -20
   damageModifierSet: HellSpawn
   addedComponents:
