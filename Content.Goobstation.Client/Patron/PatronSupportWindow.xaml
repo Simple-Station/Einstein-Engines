@@ -37,9 +37,6 @@
                             <RichTextLabel Text="{Loc 'patron-support-window-tier1-perk1'}" HorizontalExpand="True" />
                             <RichTextLabel Text="{Loc 'patron-support-window-tier1-perk2'}" HorizontalExpand="True" />
                             <RichTextLabel Text="{Loc 'patron-support-window-tier1-perk3'}" HorizontalExpand="True" />
-                            <RichTextLabel Text="{Loc 'patron-support-window-tier1-perk4'}" HorizontalExpand="True" />
-                            <RichTextLabel Text="{Loc 'patron-support-window-tier1-perk5'}" HorizontalExpand="True" />
-                            <RichTextLabel Text="{Loc 'patron-support-window-tier1-perk6'}" HorizontalExpand="True" />
                         </BoxContainer>
                     </PanelContainer>
 
