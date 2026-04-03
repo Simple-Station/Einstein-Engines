@@ -9,25 +9,33 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: tokenListing
-  id: HighTierAntagToken
+  id: AntagToken
   name: gs-balanceui-shop-buy-token-antag
   label: gs-balanceui-shop-token-antag
   description: gs-balanceui-shop-buy-token-antag-desc
-  price: 3000
+  price: 1500
   adminNote: gs-balanceui-remark-token-antag
 
 - type: tokenListing
-  id: AdminAbuseToken
-  name: gs-balanceui-shop-buy-token-admin-abuse
-  label: gs-balanceui-shop-token-admin-abuse
-  description: gs-balanceui-shop-buy-token-admin-abuse-desc
-  price: 1000
-  adminNote: gs-balanceui-remark-token-admin-abuse
+  id: RevivalToken
+  name: gs-balanceui-shop-buy-token-revival
+  label: gs-balanceui-shop-token-revival
+  description: gs-balanceui-shop-buy-token-revival-desc
+  price: 100
+  adminNote: gs-balanceui-remark-token-revival
 
 - type: tokenListing
-  id: HatToken
-  name: gs-balanceui-shop-buy-token-hat
-  label: gs-balanceui-shop-token-hat
-  description: gs-balanceui-shop-buy-token-hat-desc
-  price: 750
-  adminNote: gs-balanceui-remark-token-hat
+  id: AccessoryToken
+  name: gs-balanceui-shop-buy-token-accessory
+  label: gs-balanceui-shop-token-accessory
+  description: gs-balanceui-shop-buy-token-accessory-desc
+  price: 250
+  adminNote: gs-balanceui-remark-token-accessory
+
+- type: tokenListing
+  id: ScenarioToken
+  name: gs-balanceui-shop-buy-token-scenario
+  label: gs-balanceui-shop-token-scenario
+  description: gs-balanceui-shop-buy-token-scenario-desc
+  price: 500
+  adminNote: gs-balanceui-remark-token-scenario
