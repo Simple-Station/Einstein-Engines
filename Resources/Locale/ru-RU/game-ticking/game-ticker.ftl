@@ -39,7 +39,7 @@ latejoin-arrival-announcement =
         [epicene] прибыли
        *[neuter] прибыло
     } на станцию!
-latejoin-arrival-announcement-special = { $job } { $character } на палубе!
+latejoin-arrival-announcement-special = { $job } { $character } направляется на станцию!
 latejoin-arrival-sender = Станции
 latejoin-arrivals-direction = Вскоре прибудет шаттл, который доставит вас на станцию.
 latejoin-arrivals-direction-time = Шаттл, который доставит вас на станцию, прибудет через { $time }.
