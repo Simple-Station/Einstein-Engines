@@ -1,0 +1,32 @@
+- type: entity
+  name: scribe
+  parent: Paper
+  id: PaperScribeBook
+  description: "A page of the captain's journal. In luxurious lavender."
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: "#e6e6fa"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#e6e6fa"
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperLabelType
+    paperType: CaptainsPaper
+  - type: PaperVisuals
+    headerImagePath: "/Textures/Interface/Paper/paper_heading_captains_thoughts.svg.96dpi.png"
+    backgroundImagePath: "/Textures/Interface/Paper/paper_background_default.svg.96dpi.png"
+    backgroundModulate: "#e6e6fa"
+    backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
+    contentMargin: 32.0, 16.0, 32.0, 0.0
+  - type: ScribeBook
+    webhookKey: librarian
+    nameFormat: scribe-name-format
+    contentFormat: scribe-content-format
+    footer: scribe-footer-format
+    color: 2019829
