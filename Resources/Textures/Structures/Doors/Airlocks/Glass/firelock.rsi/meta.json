@@ -46,9 +46,6 @@
       ]
     },
     {
-      "name": "deny"
-    },
-    {
       "name": "deny_unlit",
       "delays": [
         [
@@ -57,21 +54,6 @@
           0.1
         ]
       ]
-    },
-    {
-      "name": "frame1"
-    },
-    {
-      "name": "frame2"
-    },
-    {
-      "name": "frame3"
-    },
-    {
-      "name": "frame4"
-    },
-    {
-      "name": "locked"
     },
     {
       "name": "open"

@@ -9,44 +9,44 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-# - type: entity
-#   id: TidemindDevelop
-#   parent: BaseGameRule
-#   components:
-#   - type: GameRule
-#     chaosScore: 150
-#   - type: StationEvent
-#     weight: 3 # rare
-#     duration: 1
-#     # no occurences limit so newly arriving tiders can also get it
-#   - type: JobAddCollectiveMindRule
-#     message: station-event-tidemind-message
-#     affected:
-#       - Passenger
-#     channel: Tidemind
+- type: entity
+  id: TidemindDevelop
+  parent: BaseGameRule
+  components:
+  - type: GameRule
+    chaosScore: 150
+  - type: StationEvent
+    weight: 3 # rare
+    duration: 1
+    # no occurences limit so newly arriving tiders can also get it
+  - type: JobAddCollectiveMindRule
+    message: station-event-tidemind-message
+    affected:
+      - Passenger
+    channel: Tidemind
 
-# - type: entity
-#   parent: BaseGameRule
-#   id: DerelictCyborgSyndicateSpawn
-#   components:
-#   - type: GameRule
-#     chaosScore: 150
-#   - type: StationEvent
-#     weight: 4.5 # Uncommon
-#     earliestStart: 30
-#     reoccurrenceDelay: 30
-#     minimumPlayers: 4
-#     duration: null
-#   - type: SpaceSpawnRule
-#     spawnDistance: 0
-#   - type: AntagSpawner
-#     prototype: PlayerBorgDerelictSyndicateAssaultBattery
-#   - type: AntagSelection
-#     definitions:
-#     - spawnerPrototype: SpawnPointGhostDerelictCyborgSyndicate
-#       min: 1
-#       max: 1
-#       pickPlayer: false
+- type: entity
+  parent: BaseGameRule
+  id: DerelictCyborgSyndicateSpawn
+  components:
+  - type: GameRule
+    chaosScore: 150
+  - type: StationEvent
+    weight: 4.5 # Uncommon
+    earliestStart: 30
+    reoccurrenceDelay: 30
+    minimumPlayers: 4
+    duration: null
+  - type: SpaceSpawnRule
+    spawnDistance: 0
+  - type: AntagSpawner
+    prototype: PlayerBorgDerelictSyndicateAssaultBattery
+  - type: AntagSelection
+    definitions:
+    - spawnerPrototype: SpawnPointGhostDerelictCyborgSyndicate
+      min: 1
+      max: 1
+      pickPlayer: false
 
 - type: entity # Goobstation
   id: JobDistributionError

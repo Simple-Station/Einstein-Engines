@@ -86,7 +86,6 @@ namespace Content.Server.Entry
             "ToggleableLightWieldable", // Goobstation
             "HideClothingLayerClothing", // Goobstation
             "ItemSlotRenderer", // WWDP EDIT
-            "ESInherentLight", //ES EDIT
         };
     }
 }

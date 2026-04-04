@@ -283,20 +283,6 @@ namespace Content.Shared.Interaction
             InitializeBlocking();
         }
 
-        // ES START
-        private bool ESHandleEntityMenuRotate(ICommonSession? session, EntityCoordinates coords, EntityUid uid)
-        {
-            if (!ValidateClientInput(session, coords, uid, out var user))
-                return true;
-
-            // clientside handles opening the menu, but we want to rotate to it also
-            // // which we do in shared
-            ValidateInteractAndFace(user.Value, coords);
-
-            return false;
-        }
-        // ES END
-
         private void RateLimitAlertAdmins(ICommonSession session)
         {
             _chat.SendAdminAlert(Loc.GetString("interaction-rate-limit-admin-announcement", ("player", session.Name)));
@@ -353,6 +339,9 @@ namespace Content.Shared.Interaction
 
         private bool UiRangeCheck(Entity<TransformComponent?> user, Entity<TransformComponent?> target, float range)
         {
+            if (range < 0) // Goobstation
+                return true;
+
             if (!Resolve(target, ref target.Comp))
                 return false;
 

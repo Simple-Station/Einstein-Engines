@@ -116,7 +116,7 @@
   name: department-Civilian
   description: department-Civilian-description
   color: "#9FED58"
-  weight: -4 # WD EDIT
+  weight: -10
   roles:
   - Bartender
   - Botanist
@@ -142,7 +142,6 @@
   name: department-CentralCommand
   description: department-CentralCommand-description
   color: "#0c344d"
-  weight: -1 # WD EDIT
   roles:
   - CentralCommandOfficial
   - CBURN
@@ -164,6 +163,7 @@
   - Diplomat
   - GovernmentMan # Goobstation - End
   editorHidden: true
+  weight: 120
 
 - type: department
   id: Command
@@ -194,6 +194,7 @@
   - HecuOperative
   - CommandMaid # event-restricted, Goobstation
   primary: false
+  weight: 100
 
 - type: department
   id: Engineering
@@ -227,7 +228,7 @@
   name: department-Security
   description: department-Security-description
   color: "#DE3A3A"
-  weight: -3 # WD EDIT
+  weight: 20
   roles:
   - HeadOfSecurity
   - SecurityCadet
@@ -254,7 +255,6 @@
   name: department-Silicon
   description: department-Silicon-description
   color: "#D381C9"
-  weight: -9 # WD EDIT
   roles:
   - Borg
   - StationAi
@@ -263,8 +263,8 @@
   id: Specific
   name: department-Specific
   description: department-Specific-description
-  color: "#29282f"
-  weight: -10 # WD EDIT
+  color: "#9FED58"
+  weight: 10
   roles:
   - RadioHost # Goobstation
   - Boxer

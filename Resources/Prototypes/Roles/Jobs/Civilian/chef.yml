@@ -92,6 +92,7 @@
   - Chef
   - FoodRecipes
   - CQC
+  goobcoins: 15 #Goob content
   access:
   - Service
   - Maintenance

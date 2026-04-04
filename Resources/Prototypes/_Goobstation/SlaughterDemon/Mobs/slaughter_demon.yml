@@ -1,8 +1,3 @@
-# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-# SPDX-FileCopyrightText: 2025 Lumminal <81829924+Lumminal@users.noreply.github.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 - type: entity
   parent:
     - SimpleSpaceMobBase
@@ -43,6 +38,9 @@
   - type: InteractionOutline
   - type: NoSlip
   - type: Clickable
+  - type: Butcherable
+    butcherDelay: 15
+    spawned: [ ]
   - type: GhostRole
     allowMovement: true
     allowSpeech: true
@@ -185,6 +183,57 @@
         Heat: 0
     heatDamageThreshold: 666
     coldDamageThreshold: 66
+  - type: LanguageKnowledge # Einstein Engines - Language
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
+
+# laughter demon
+- type: entity
+  parent: BaseMobSlaughterDemon
+  id: MobLaughterDemon
+  name: laughter demon
+  description: A large, adorable creature covered in armor with pink bows.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/SlaughterDemon/demon.rsi
+    state: bowmon
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      190: Dead
+  - type: SlaughterDevour
+    feastSound: /Audio/_Goobstation/Misc/scary_horn2.ogg
+  - type: SlaughterDemon
+    isLaughter: true
+  - type: Speech
+    speechVerb: Cluwne
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Items/bikehorn.ogg
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Slash: 20
+        Structural: 50
+  - type: GhostRole
+    allowMovement: true
+    allowSpeech: true
+    makeSentient: true
+    name: ghost-role-information-laughter-demon-name
+    description: ghost-role-information-laughter-demon-description
+    rules: ghost-role-information-slaughter-demon-rules
+    mindRoles:
+    - MindRoleGhostRoleSoloAntagonist
+    raffle:
+      settings: default
+    requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 18000
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Effects/sadtrombone.ogg
 
 # midround roll
 - type: entity

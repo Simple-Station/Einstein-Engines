@@ -43,4 +43,13 @@ SPDX-License-Identifier: MIT
 
 Есть возможность получить несколько фрагментов артефактов и собрать их в рабочий артефакт. Их можно попросить у утилизаторов, которые обычно находят их во время добычи на астероидах или во время экспедиций.
 
+## Traversal Bias
+<Box>
+  <GuideEntityEmbed Entity="MachineArtifactAnalyzer"/>
+</Box>
+Artifacts placed on top of a powered artifact analyzer are subjected to a bias which affects which node they will move to after being activated. The bias can be set in the artifact console.
+
+There are two types of biases:
+- [color=#a4885c]Up:[/color] favors nodes closer to the origin. Results in a decrease of depth.
+- [color=#a4885c]Down:[/color] favors nodes farther away from the origin. Results in an increase of depth.
 </Document>

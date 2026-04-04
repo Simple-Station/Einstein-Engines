@@ -1,4 +1,23 @@
 - type: entity
+  parent: BaseMobHuman
+  id: MobHumanGreyTide
+  name: The Greytide
+  components:
+  - type: Loadout
+    prototypes: [ GreyTideAntagGear ]
+
+- type: entity
+  parent: MobHuman
+  id: MobHumanTunnelClown
+  name: Tunnel clown
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: true
+  - type: Loadout
+    prototypes: [ TunnelClownAntagGear ]
+  - type: Clumsy
+
+- type: entity
   parent: MobHuman
   id: MobHumanSingulothKnight
   name: Singuloth Knight
@@ -62,3 +81,39 @@
     randomizeName: true
   - type: Loadout
     prototypes: [ DarkPriestAntagGear ]
+
+- type: entity
+  parent: MobVox
+  id: MobVoxRaider
+  name: Vox Raider
+  components:
+  - type: AutoImplant
+    implants:
+    - DeathAcidifierImplant
+  - type: RandomHumanoidAppearance
+    randomizeName: true
+  - type: Loadout
+    prototypes: [ VoxRaiderAntagGear ]
+  - type: Thieving
+    stripTimeReduction: 1
+    stealthy: true
+
+- type: entity
+  parent: BaseMobHuman
+  id: SantaClaus
+  name: Santa Claus
+  components:
+  - type: Loadout
+    prototypes: [ SantaGear ]
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-santa-name
+    description: ghost-role-information-santa-description
+    rules: ghost-role-information-nonantagonist-rules
+    mindRoles:
+    - MindRoleGhostRoleNeutral
+    raffle:
+      settings: default

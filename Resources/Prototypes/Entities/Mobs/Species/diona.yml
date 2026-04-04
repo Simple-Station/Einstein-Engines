@@ -164,7 +164,7 @@
     whitelist:
       types:
       - Shard
-  # - type: SpeedModifierImmunity # Trauma edit
+  - type: SpeedModifierImmunity
   - type: Rootable
 
 - type: entity

@@ -44,11 +44,82 @@ public sealed class ExaminableCharacterSystem : EntitySystem
         var selfaware = args.Examiner == args.Examined;
         var logLines = new List<string>();
 
+        string canseeloc = "examine-can-see";
+        string nameloc = "examine-name";
+
+        if (selfaware)
+        {
+            canseeloc += "-selfaware";
+            nameloc += "-selfaware";
+        }
+        var identity = _identitySystem.GetEntityIdentity(uid);
+        var name = Loc.GetString(nameloc, ("name", identity));
+        var cansee = Loc.GetString(canseeloc, ("ent", uid));
+        logLines.Add($"[color=DarkGray][font size=10]{cansee}[/font][/color]");
+
+        var slotLabels = new Dictionary<string, string>
+        {
+            { "head", "head-" },
+            { "eyes", "eyes-" },
+            { "mask", "mask-" },
+            { "neck", "neck-" },
+            { "ears", "ears-" },
+            { "jumpsuit", "jumpsuit-" },
+            { "outerClothing", "outer-" },
+            { "back", "back-" },
+            { "gloves", "gloves-" },
+            { "belt", "belt-" },
+            { "id", "id-" },
+            { "shoes", "shoes-" },
+            { "suitstorage", "suitstorage-" }
+        };
+
         var priority = 13;
+
+        foreach (var slotEntry in slotLabels)
+        {
+            var slotName = slotEntry.Key;
+            var slotLabel = slotEntry.Value;
+
+            slotLabel += "examine";
+
+            if (selfaware)
+                slotLabel += "-selfaware";
+
+            if (!_inventorySystem.TryGetSlotEntity(uid, slotName, out var slotEntity))
+                continue;
+
+            if (_entityManager.TryGetComponent<MetaDataComponent>(slotEntity, out var metaData)
+                && !HasComp<StripMenuInvisibleComponent>(slotEntity))
+            {
+                var itemTex = Loc.GetString(slotLabel, ("item", metaData.EntityName), ("ent", uid), ("id", GetNetEntity(slotEntity.Value).Id), ("size", 14));
+                if (showExamine)
+                    args.PushMarkup($"[font size=10]{Loc.GetString(slotLabel, ("item", metaData.EntityName), ("ent", uid), ("id", "empty"))}[/font]", priority);
+                logLines.Add($"[color=DarkGray][font size=10]{itemTex}[/font][/color]");
+                priority--;
+            }
+        }
+
+        if (priority < 13) // If nothing is worn dont show
+        {
+            if (showExamine)
+                args.PushMarkup($"[font size=10]{cansee}[/font]", 14);
+        }
+        else
+        {
+            string canseenothingloc = "examine-can-see-nothing";
+
+            if (selfaware)
+                canseenothingloc += "-selfaware";
+
+            var canseenothing = Loc.GetString(canseenothingloc, ("ent", uid));
+            logLines.Add($"[color=DarkGray][font size=10]{canseenothing}[/font][/color]");
+        }
 
         FormattedMessage message = new();
         message.PushTag(new MarkupNode("examineborder", null, null)); // border
         message.PushNewline();
+        message.AddText($"[color=DarkGray][font size=11]{name}[/font][/color]");
         message.PushNewline();
         AddLine(message);
         foreach (var line in logLines)
@@ -58,6 +129,10 @@ public sealed class ExaminableCharacterSystem : EntitySystem
         }
         AddLine(message);
         message.Pop();
+        if (showExamine && _netConfigManager.GetClientCVar(actorComponent.PlayerSession.Channel, GoobCVars.LogInChat))
+        {
+            _chatManager.ChatMessageToOne(ChatChannel.Emotes, message.ToString(), message.ToMarkup(), EntityUid.Invalid, false, actorComponent.PlayerSession.Channel, recordReplay: false, canCoalesce: false); // Goobstation Edit
+        }
     }
 
     private void HandleExamine(EntityUid uid, MetaDataComponent metaData, ExamineCompletedEvent args)
@@ -90,6 +165,7 @@ public sealed class ExaminableCharacterSystem : EntitySystem
             AddLine(message);
             message.Pop();
 
+            _chatManager.ChatMessageToOne(ChatChannel.Emotes, message.ToString(), message.ToMarkup(), EntityUid.Invalid, false, actorComponent.PlayerSession.Channel, recordReplay: false, canCoalesce: false); // Goobstation Edit
         }
     }
 

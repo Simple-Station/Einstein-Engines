@@ -8,7 +8,6 @@ in import (builtins.fetchTarball {
 let
   dependencies = with pkgs; [
     dotnetCorePackages.sdk_9_0
-    dotnet-ef
     icu
     glfw
     SDL2

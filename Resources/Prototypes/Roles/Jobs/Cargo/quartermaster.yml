@@ -154,6 +154,7 @@
   - QuartermasterSOP
   - CargoSOP
   - Command
+  goobcoins: 40 #Goob content
   access:
   - Cargo
   - Salvage

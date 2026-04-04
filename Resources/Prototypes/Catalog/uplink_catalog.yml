@@ -1667,16 +1667,16 @@
     - UplinkImplants
 
 
-#- type: listing - Trauma
-#  id: UplinkScramImplanter
-#  name: uplink-scram-implanter-name
-#  description: uplink-scram-implanter-desc
-#  icon: { sprite: /Textures/Structures/Specific/anomaly.rsi, state: anom4 }
-#  productEntity: ScramImplanter
-#  cost:
-#    Telecrystal: 15 # goob - can be useful, but does nothing on its own
-#  categories:
-#    - UplinkImplants
+- type: listing
+  id: UplinkScramImplanter
+  name: uplink-scram-implanter-name
+  description: uplink-scram-implanter-desc
+  icon: { sprite: /Textures/Structures/Specific/anomaly.rsi, state: anom4 }
+  productEntity: ScramImplanter
+  cost:
+    Telecrystal: 15 # goob - can be useful, but does nothing on its own
+  categories:
+    - UplinkImplants
 
 
 - type: listing
@@ -2171,15 +2171,15 @@
   - UplinkPointless
 
 
-#- type: listing - Trauma
-#  id: UplinkCatEars
-#  name: uplink-cat-ears-name
-#  description: uplink-cat-ears-desc
-#  productEntity: ClothingHeadHatCatEars
-#  cost:
-#    Telecrystal: 130 # goob
-#  categories:
-#  - UplinkPointless
+- type: listing
+  id: UplinkCatEars
+  name: uplink-cat-ears-name
+  description: uplink-cat-ears-desc
+  productEntity: ClothingHeadHatCatEars
+  cost:
+    Telecrystal: 130 # goob
+  categories:
+  - UplinkPointless
 
 
 - type: listing

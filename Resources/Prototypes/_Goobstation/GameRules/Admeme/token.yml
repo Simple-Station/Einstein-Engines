@@ -1,9 +1,9 @@
-# # SPDX-FileCopyrightText: 2025 GMWQ <garethquaile@gmail.com>
-# # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-# # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
-# # SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
-# #
-# # SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-FileCopyrightText: 2025 GMWQ <garethquaile@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 # These are the gamerules to spawn antags for tokens.
 - type: entity
@@ -96,20 +96,20 @@
   - type: StationEvent
     isSelectable: false
 
-# - type: entity
-#   parent: DerelictCyborgSyndicateSpawn
-#   id: TokenDerelictCyborgSyndicateSpawn
-#   components:
-#   - type: AntagSpawner
-#     prototype: PlayerBorgDerelictSyndicateAssaultBattery
-#   - type: AntagSelection
-#     definitions:
-#     - spawnerPrototype: SpawnPointGhostDerelictCyborgSyndicateToken
-#       min: 1
-#       max: 1
-#       pickPlayer: false
-#   - type: StationEvent
-#     isSelectable: false
+- type: entity
+  parent: DerelictCyborgSyndicateSpawn
+  id: TokenDerelictCyborgSyndicateSpawn
+  components:
+  - type: AntagSpawner
+    prototype: PlayerBorgDerelictSyndicateAssaultBattery
+  - type: AntagSelection
+    definitions:
+    - spawnerPrototype: SpawnPointGhostDerelictCyborgSyndicateToken
+      min: 1
+      max: 1
+      pickPlayer: false
+  - type: StationEvent
+    isSelectable: false
 
 # - type: entity
 #   parent: BingleSpawn
@@ -309,18 +309,25 @@
       - type: Slasher
       - type: SlasherSummonMachete
       - type: SlasherStaggerArea
+      - type: SlasherRelentlessGrab
       - type: SlasherRegenerate
-      - type: SlasherPossession
       - type: SlasherBloodTrail
       - type: SlasherIncorporeal
       - type: SlasherSoulSteal
       - type: SlasherSummonMeatSpike
-      - type: BreathingImmunity
-      - type: GunBlocked
-      - type: WeakToHoly
       - type: NightVision
-        activateSound: null
-        deactivateSound: null
+        color: "#FF0000"
+        toggleAction: ActionSlasherNightVision
+        activateSound: !type:SoundCollectionSpecifier
+          collection: EyeOpen
+        deactivateSound: !type:SoundCollectionSpecifier
+          collection: EyeClose
+      - type: Puller
+        grabThrownSpeed: 10
+        throwingDistance: 8
+        softGrabSpeedModifier: 1
+        hardGrabSpeedModifier: 1
+        chokeGrabSpeedModifier: 1
       - type: Hunger
         baseDecayRate: 0
       - type: Thirst

@@ -29,7 +29,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   <Box>
     <GuideEntityEmbed Entity="Stunbaton"/>
     <GuideEntityEmbed Entity="Handcuffs"/>
-    <GuideEntityEmbed Entity="WeaponDisabler"/>
+   <GuideEntityEmbed Entity="WeaponDisabler"/>
   </Box>
 
   ## Вспышки

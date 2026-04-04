@@ -432,13 +432,10 @@
   groups:
   - GroupTankHarness
   - CargoTechnicianHead
-  - CargoTechnicianNeck
   - CargoTechnicianJumpsuit
   - CargoTechnicianBackpack
-  - CargoTechnicianBelt
   - CargoTechnicianOuterClothing
   - CargoTechnicianShoes
-  - CargoTechnicianItem
   - Glasses
   - Survival
   - Trinkets
@@ -456,11 +453,9 @@
   - GroupTankHarness
   - SalvageSpecialistNeck # Goobstation
   - SalvageSpecialistBackpack
-  - SalvageBelt
   - SalvageSpecialistJumpsuit # Goobstation
   - SalvageSpecialistOuterClothing
   - SalvageSpecialistShoes
-  - SalvageItem
   - Glasses
   - Survival
   - Trinkets

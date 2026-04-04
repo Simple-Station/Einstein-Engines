@@ -32,4 +32,9 @@ SPDX-License-Identifier: MIT
 </Box>
 Чтобы облегчить себе эту задачу, печатайте отчёты, записывайте детали, открывшиеся в ходе исследований, или храните их под рукой в папке.
 
+  Reports are a helpful tool in manipulating an artifact, especially in the later stages where you are traversing nodes that have already been activated.
+  <Box>
+  <GuideEntityEmbed Entity="PaperArtifactAnalyzer"/>
+  </Box>
+  To help with this process, consider printing out reports, writing down details uncovered during activation, or storing them in a folder nearby.
 </Document>

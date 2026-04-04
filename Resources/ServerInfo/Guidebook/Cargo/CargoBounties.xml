@@ -14,6 +14,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   <Box>
     <GuideEntityEmbed Entity="ComputerCargoBounty"/>
+    <GuideEntityEmbed Entity="PaperCargoBountyManifest"/>
   </Box>
   На каждой станции есть определённое количество доступных запросов. Их можно проверить на [color=#a4885c]консоли запросов[/color], которая показывает следующую информацию о них:
   - Какие предметы нужны для выполнения запроса
@@ -26,7 +27,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   <Box>
     <GuideEntityEmbed Entity="PaperCargoBountyManifest"/>
     <GuideEntityEmbed Entity="CrateGenericSteel"/>
-    <GuideEntityEmbed Entity="CargoPallet"/>
+    <GuideEntityEmbed Entity="AppraisalTool"/>
   </Box>
   Как только вы соберёте предметы, необходимые для запроса, завершить его будет проще простого.:
   - Поместите все предметы в ящик и [bold]закройте его![/bold].

@@ -23,7 +23,7 @@ public abstract partial class BaseCapoeiraEvent : EntityEventArgs
     public virtual float MinPower { get; set; } = 1f;
 
     [DataField]
-    public virtual float MaxPower { get; set; } = 5f; // Trauma edit
+    public virtual float MaxPower { get; set; } = 4f;
 
     [DataField]
     public virtual float MinVelocity { get; set; }

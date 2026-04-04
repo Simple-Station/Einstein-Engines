@@ -1,4 +1,38 @@
 - type: startingGear
+  id: GreyTideAntagGear
+  equipment:
+    mask: ClothingMaskGasUnremoveable
+    jumpsuit: ClothingUniformJumpsuitAncientUnremoveable
+    shoes: ClothingShoesColorBlackUnremoveable
+    id: PassengerPDA
+    ears: ClothingHeadsetGrey
+    belt: ClothingBeltUtilityFilledUnremoveable
+    gloves: ClothingHandsGlovesColorYellowUnremovable
+    back: ClothingBackpackUnremoveable
+  inhand:
+  - Toolboxrobust
+
+- type: startingGear
+  id: TunnelClownAntagGear
+  equipment:
+    mask: ClothingMaskClownUnremoveable
+    jumpsuit: ClothingUniformJumpsuitClown
+    outerClothing: ClothingOuterCoatJacketBiker
+    shoes: ClothingShoesClownUnremoveable
+    id: ClownPDA
+    ears: ClothingHeadsetService
+    gloves: ClothingHandsGlovesCombat
+    back: ClothingBackpackClown
+  inhand:
+  - FireAxe
+  - Stunprod
+  storage:
+    back:
+    - ClownRecorder
+    - FoodMeatClown
+    - TunnelClownBusinessCard
+
+- type: startingGear
   id: SingulothKnightsAntagGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorBlack
@@ -85,6 +119,28 @@
     - ClothingHeadHatHoodVoidCloak
     - ClothingOuterHoodieChaplain
     - BoxSurvivalSlots
+
+- type: startingGear
+  id: VoxRaiderAntagGear
+  equipment:
+    ears: ClothingHeadsetAltSyndicate
+    jumpsuit: ClothingUniformJumpsuitTacticool
+    eyes: ClothingEyesGlassesSunglasses
+    shoes: ClothingShoesColorBlack
+    id: AgentIDCard
+    gloves: ClothingHandsChameleonThief
+    outerClothing: ClothingOuterHardsuitVoxRaiderStealth
+    suitstorage: ExtendedEmergencyNitrogenTankFilled
+    back: ClothingBackpack
+  storage:
+    back:
+    - BoxSurvivalSlotsNitrogen
+    - ExtendedEmergencyNitrogenTankFilled
+    - ChameleonProjector
+    - DartGun
+    - ChemistryBottleNocturine
+    - ChemistryBottleNocturine
+    - HypopenBox
 
 # christmas
 

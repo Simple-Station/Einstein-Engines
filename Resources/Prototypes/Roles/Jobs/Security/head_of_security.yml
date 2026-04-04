@@ -173,6 +173,7 @@
   - HeadOfSecuritySOP
   - SecuritySOP
   - AlertLevels
+  goobcoins: 45 #Goob content
   access:
   - HeadOfSecurity
   - Command

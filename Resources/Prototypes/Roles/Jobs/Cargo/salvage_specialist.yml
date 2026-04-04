@@ -82,6 +82,7 @@
   guides: # goobstation
   - Salvage
   - Cargo
+  goobcoins: 20 #Goob content
   supervisors: job-supervisors-qm
   access:
   - Cargo

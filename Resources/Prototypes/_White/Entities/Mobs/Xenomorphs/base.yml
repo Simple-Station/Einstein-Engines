@@ -147,13 +147,10 @@
     defaultChannel: Xenomorphivemind
     channels:
     - Xenomorphivemind
+  - type: SSDIndicator
   - type: Emoting
   - type: BodyEmotes
     soundsId: GeneralBodyEmotes
-  - type: Access # Goobstation - xeno doors
-    enabled: true
-    groups:
-    - XenomorphAccess
 
 
 - type: entity

@@ -310,7 +310,7 @@
       amount: 8
 
 - type: entity
-  parent: [GunSafeBaseSecure, BaseSecurityContraband, AlertLevelLock] # WWDP
+  parent: [GunSafeBaseSecure, BaseSecurityContraband]
   id: GunSafeRifleLecter
   name: lecter safe
   suffix: Alert Level Lock # WWDP
@@ -330,7 +330,7 @@
       amount: 4
 
 - type: entity
-  parent: [GunSafeBaseSecure, BaseSecurityContraband, AlertLevelLock] # WWDP
+  parent: [GunSafeBaseSecure, BaseSecurityContraband]
   id: GunSafeSubMachineGunDrozd
   name: drozd safe
   suffix: Alert Level Lock # WWDP
@@ -350,7 +350,7 @@
       amount: 4
 
 - type: entity
-  parent: [GunSafeBaseSecure, BaseSecurityContraband, AlertLevelLock] # WWDP
+  parent: [GunSafeBaseSecure, BaseSecurityContraband]
   id: GunSafeShotgunEnforcer
   name: enforcer safe
   suffix: Alert Level Lock # WWDP
@@ -370,7 +370,7 @@
       amount: 4
 
 - type: entity
-  parent: [GunSafeBaseSecure, BaseSecurityContraband, AlertLevelLock] # WWDP
+  parent: [GunSafeBaseSecure, BaseSecurityContraband]
   id: GunSafeShotgunKammerer
   name: kammerer safe
   suffix: Alert Level Lock # WWDP
@@ -391,7 +391,8 @@
 
 - type: entity
   id: GunSafeSubMachineGunWt550
-  parent: [GunSafeBaseSecure, BaseSecurityContraband, AlertLevelLock] # WWDP
+  suffix: Wt550
+  parent: [GunSafeBaseSecure, BaseSecurityContraband]
   name: wt550 safe
   suffix: Alert Level Lock # WWDP
   components:
@@ -410,7 +411,7 @@
       amount: 4
 
 - type: entity
-  parent: [GunSafeBaseSecure, BaseSecurityContraband, AlertLevelLock] # WWDP
+  parent: [GunSafeBaseSecure, BaseSecurityContraband]
   id: GunSafeLaserCarbine
   name: laser safe
   suffix: Alert Level Lock # WWDP

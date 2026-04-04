@@ -11,6 +11,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   # Зомби
 
   <Box>
+    [color=#999999][italic]"They're coming to get you, Barbara!"[/italic][/color]
+  </Box>
+  <Box>
     <GuideEntityEmbed Entity="SignBiohazard" Caption=""/>
   </Box>
 
@@ -36,7 +39,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   <Box>
     <GuideReagentEmbed Reagent="Ambuzol"/>
   </Box>
-
   <Box>
     <GuideReagentEmbed Reagent="AmbuzolPlus"/>
   </Box>

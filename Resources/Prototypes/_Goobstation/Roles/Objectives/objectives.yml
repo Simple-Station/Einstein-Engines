@@ -14,6 +14,20 @@
 
 - type: entity
   parent: BaseObjective
+  name: Protect maintenance.
+  description: This stations maintenance has been your home for as long as you can remember, hiding from the crew in lockers is all that you've known, until now. Thoses station goers have invaded your home for the last time, kill anyone who dares to distrupt your home.
+  id: TunnelClownProtectMaintenanceObjective
+  components:
+  - type: Objective
+    icon:
+      sprite: Clothing/Mask/clown.rsi
+      state: icon
+    difficulty: 1
+    issuer: objective-issuer-unknown
+  - type: RoleplayObjective
+
+- type: entity
+  parent: BaseObjective
   name: Preach the word of Lord Singuloth!
   description: Thou art to locateth this stations engineering department and conv'rt those folk into fellow followeth'rs of singuloth, if 't those gents refuseth those gents art to beest execut'd mercilessly.
   id: SingulothKnightPreachObjective

@@ -341,16 +341,16 @@
   - !type:ListingLimitedStockCondition
     stock: 1
 
-#- type: listing - Trauma, need to be readable for how strong it is, read: northstars
-#  id: UplinkGlovesKnuckleDusters
-#  name: uplink-gloves-knuckleduster-name
-#  description: uplink-gloves-knuckleduster-desc
-#  icon: { sprite: _Goobstation/Clothing/Hands/Gloves/knuckleduster.rsi, state: syndicateknuckleduster }
-#  productEntity: ClothingHandsKnuckleDustersSyndicate
-#  cost:
-#    Telecrystal: 20
-#  categories:
-#  - UplinkWeaponry
+- type: listing
+  id: UplinkGlovesKnuckleDusters
+  name: uplink-gloves-knuckleduster-name
+  description: uplink-gloves-knuckleduster-desc
+  icon: { sprite: _Goobstation/Clothing/Hands/Gloves/knuckleduster.rsi, state: syndicateknuckleduster }
+  productEntity: ClothingHandsKnuckleDustersSyndicate
+  cost:
+    Telecrystal: 20
+  categories:
+  - UplinkWeaponry
 
 - type: listing
   id: UplinkM90
@@ -363,16 +363,16 @@
   categories:
   - UplinkWeaponry
 
-#- type: listing - Trauma, slop item
-#  id: UplinkSyndicateDisabler
-#  name: uplink-syndicate-disabler-name
-#  description: uplink-syndicate-disabler-desc
-#  icon: { sprite: _EinsteinEngines/Objects/Weapons/Guns/Battery/syndicate-disabler.rsi, state: base }
-#  productEntity: WeaponDisablerSyndicate
-#  cost:
-#    Telecrystal: 20
-#  categories:
-#  - UplinkWeaponry
+- type: listing
+  id: UplinkSyndicateDisabler
+  name: uplink-syndicate-disabler-name
+  description: uplink-syndicate-disabler-desc
+  icon: { sprite: _EinsteinEngines/Objects/Weapons/Guns/Battery/syndicate-disabler.rsi, state: base }
+  productEntity: WeaponDisablerSyndicate
+  cost:
+    Telecrystal: 20
+  categories:
+  - UplinkWeaponry
 
 - type: listing
   id: UplinkFireAxeFlaming
@@ -436,16 +436,21 @@
       tags:
       - ContractorUplink
 
-#- type: listing - Trauma, does not fit server vision
-#  id: UplinkWeaponShotgunHeavy
-#  name: uplink-weapon-heavy-shotgun-name
-#  description: uplink-weapon-heavy-shotgun-desc
-#  icon: { sprite: /Textures/_Goobstation/Objects/Weapons/Guns/Shotguns/magshot.rsi, state: icon }
-#  productEntity: WeaponShotgunHeavy
-#  cost:
-#    Telecrystal: 200
-#  categories:
-#  - UplinkWeaponry
+- type: listing
+  id: UplinkWeaponShotgunHeavy
+  name: uplink-weapon-heavy-shotgun-name
+  description: uplink-weapon-heavy-shotgun-desc
+  icon: { sprite: /Textures/_Goobstation/Objects/Weapons/Guns/Shotguns/magshot.rsi, state: icon }
+  productEntity: WeaponShotgunHeavy
+  cost:
+    Telecrystal: 175
+  categories:
+  - UplinkWeaponry
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - ContractorUplink
 
 - type: listing
   id: UplinkBowHardlight
@@ -510,15 +515,20 @@
       tags:
       - ContractorUplink
 
-#- type: listing - Trauma, slop weapon
-#  id: UplinkWeaponM7S
-#  name: uplink-m7s-name
-#  description: uplink-m7s-desc
-#  productEntity: WeaponSubMachineGunM7S
-#  cost:
-#    Telecrystal: 60
-#  categories:
-#    -  UplinkWeaponry
+- type: listing
+  id: UplinkWeaponM7S
+  name: uplink-m7s-name
+  description: uplink-m7s-desc
+  productEntity: WeaponSubMachineGunM7S
+  cost:
+    Telecrystal: 60
+  categories:
+    -  UplinkWeaponry
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - ContractorUplink
 
 - type: listing
   id: UplinkWeaponHE1SG8
@@ -874,6 +884,7 @@
   - !type:BuyerJobCondition
     whitelist:
     - SalvageSpecialist
+    - ShaftMiner
 
 - type: listing
   id: UplinkGreyTide
@@ -1043,16 +1054,16 @@
 #  categories:
 #  - UplinkImplants
 
-#- type: listing - Warden exclusive martial art
-#  id: UplinkKravMagaImplanter
-#  name: uplink-krav-maga-implant-name
-#  description: uplink-krav-maga-implant-desc
-#  icon: { sprite: /Textures/_Goobstation/Clothing/Hands/Gloves/kravgloves.rsi, state: icon }
-#  productEntity: KravMagaImplanter
-#  cost:
-#    Telecrystal: 40
-#  categories:
-#    - UplinkImplants
+- type: listing
+  id: UplinkKravMagaImplanter
+  name: uplink-krav-maga-implant-name
+  description: uplink-krav-maga-implant-desc
+  icon: { sprite: /Textures/_Goobstation/Clothing/Hands/Gloves/kravgloves.rsi, state: icon }
+  productEntity: KravMagaImplanter
+  cost:
+    Telecrystal: 40
+  categories:
+    - UplinkImplants
 
 - type: listing
   id: UplinkBinaryImplant
@@ -1361,6 +1372,38 @@
 #  - UplinkAmmo
 
 - type: listing
+  id: UplinkMagazineShotgunHeavy
+  name: uplink-heavy-shotgun-magazine-name
+  description: uplink-heavy-shotgun-magazine-desc
+  icon: { sprite: _Goobstation/Objects/Weapons/Guns/Ammunition/Magazine/heavy_shotgun.rsi, state: icon }
+  productEntity: MagazineShotgunHeavy
+  cost:
+    Telecrystal: 20
+  categories:
+  - UplinkAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - ContractorUplink
+
+- type: listing
+  id: UplinkMagazineShotgunHeavySlug
+  name: uplink-heavy-shotgun-magazine-slug-name
+  description: uplink-heavy-shotgun-magazine-slug-desc
+  icon: { sprite: _Goobstation/Objects/Weapons/Guns/Ammunition/Magazine/heavy_shotgun.rsi, state: icon2 }
+  productEntity: MagazineShotgunHeavySlug
+  cost:
+    Telecrystal: 25
+  categories:
+  - UplinkAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - ContractorUplink
+
+- type: listing
   id: UplinkM90Ammo
   name: uplink-m90-ammo-name
   description: uplink-m90-ammo-desc
@@ -1369,28 +1412,6 @@
     Telecrystal: 5
   categories:
   - UplinkAmmo
-
-#- type: listing Trauma, removed with the shotgun
-#  id: UplinkMagazineShotgunHeavy
-#  name: uplink-heavy-shotgun-magazine-name
-#  description: uplink-heavy-shotgun-magazine-desc
-#  icon: { sprite: _Goobstation/Objects/Weapons/Guns/Ammunition/Magazine/heavy_shotgun.rsi, state: icon }
-#  productEntity: MagazineShotgunHeavy
-#  cost:
-#    Telecrystal: 30
-#  categories:
-#  - UplinkAmmo
-
-#- type: listing Trauma, removed with the shotgun
-#  id: UplinkMagazineShotgunHeavySlug
-#  name: uplink-heavy-shotgun-magazine-slug-name
-#  description: uplink-heavy-shotgun-magazine-slug-desc
-#  icon: { sprite: _Goobstation/Objects/Weapons/Guns/Ammunition/Magazine/heavy_shotgun.rsi, state: icon2 }
-#  productEntity: MagazineShotgunHeavySlug
-#  cost:
-#    Telecrystal: 40
-#  categories:
-#  - UplinkAmmo
 
 # 弾薬
 - type: listing
@@ -1472,16 +1493,21 @@
       tags:
       - ContractorUplink
 
-#- type: listing - Trauma, removed with the SMG
-#  id: UplinkMagazineM7S
-#  name: uplink-m7s-mag-name
-#  description: uplink-m7s-mag-desc
-#  icon: { sprite: _Goobstation/Objects/Weapons/Guns/Ammunition/Magazine/M7S_magazine.rsi, state: icon }
-#  productEntity: MagazineLowCaliberM7S
-#  cost:
-#    Telecrystal: 5 # 105 dmg per TC which seems huge, but you're missing half of your shots
-#  categories:
-#  - UplinkAmmo
+- type: listing
+  id: UplinkMagazineM7S
+  name: uplink-m7s-mag-name
+  description: uplink-m7s-mag-desc
+  icon: { sprite: _Goobstation/Objects/Weapons/Guns/Ammunition/Magazine/M7S_magazine.rsi, state: icon }
+  productEntity: MagazineLowCaliberM7S
+  cost:
+    Telecrystal: 5 # 105 dmg per TC which seems huge, but you're missing half of your shots
+  categories:
+  - UplinkAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - ContractorUplink
 
 - type: listing
   id: UplinkCartridgeG8Demolishing

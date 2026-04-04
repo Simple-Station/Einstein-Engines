@@ -164,7 +164,7 @@
   - greenshift
   - shittersafarideluxeedition
   name: greenshift-title
-  showInVote: false
+  showInVote: false #4boring4vote
   description: greenshift-description
   rules:
   - SpaceTrafficControlFriendlyEventScheduler
@@ -176,7 +176,7 @@
     - secret
     - sekrit
   name: secret-title
-  showInVote: true
+  showInVote: false # Goob - Game Director
   description: secret-description
   rules:
     - Secret
@@ -228,7 +228,6 @@
   rules:
   - DummyNonAntagChance
   - Traitor
-  - CalmTraitor
   - SubGamemodesRule
   - BasicStationEventScheduler
   - MeteorSwarmScheduler

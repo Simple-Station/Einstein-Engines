@@ -62,7 +62,7 @@ namespace Content.Server.Voting.Managers
         /// If null it is assumed to be an automatic vote by the server.
         /// </param>
         /// <param name="voteType">The type of standard vote to make.</param>
-        IVoteHandle CreateStandardVote(ICommonSession? initiator, StandardVoteType voteType, string[]? args = null);
+        void CreateStandardVote(ICommonSession? initiator, StandardVoteType voteType, string[]? args = null);
 
         /// <summary>
         /// Create a non-standard vote with special parameters.

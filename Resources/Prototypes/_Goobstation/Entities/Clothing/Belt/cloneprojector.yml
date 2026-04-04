@@ -93,6 +93,7 @@
     - type: AtmosExposed
     - type: MovedByPressure
     - type: ThermalRegulator
+    - type: SSDIndicator
     - type: Condemned # Disgusting silicon.
       soulOwnedNotDevil: true
     - type: Flammable

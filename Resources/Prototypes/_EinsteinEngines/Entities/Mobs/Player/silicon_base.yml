@@ -245,8 +245,6 @@
           type: StrippableBoundUserInterface
         enum.StoreUiKey.Key: # Goobstation - changelings
           type: StoreBoundUserInterface
-        enum.HereticLivingHeartKey.Key: # goob edit - heretics
-          type: LivingHeartMenuBoundUserInterface
         enum.WizardTeleportUiKey.Key: # Goobstation - wizard
           type: WizardTeleportBoundUserInterface
           requireInputValidation: false
@@ -260,6 +258,7 @@
     - type: StandingState
     - type: MindContainer
       showExamineInfo: true
+    - type: SSDIndicator
     - type: CanEscapeInventory
     - type: HumanoidAppearance
       species: IPC
@@ -341,6 +340,8 @@
       lightningExplode: false
     - type: ComplexInteraction
     - type: Carriable
+    - type: GrabIntent # wilted rose
+    - type: Grabbable 
     - type: Targeting
     - type: Crawler
     - type: Consciousness

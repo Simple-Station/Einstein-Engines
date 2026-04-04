@@ -90,7 +90,6 @@
     green:
       announcement: alert-level-green-announcement
       color: Green
-      sound: /Audio/Announcements/Alerts/code_green.ogg
       emergencyLightColor: LawnGreen
       shuttleTime: 600
     blue:
@@ -125,7 +124,7 @@
       announcement: alert-level-gamma-announcement
       selectable: false
       sound:
-        path: /Audio/Announcements/Alerts/code_gamma.ogg
+        path: /Audio/Misc/gamma.ogg
         params:
           volume: -2
       disableSelection: true
@@ -160,7 +159,7 @@
       announcement: alert-level-omicron-announcement
       selectable: false
       sound:
-        path: /Audio/Announcements/Alerts/code_omicron.ogg
+        path: /Audio/_Goobstation/Misc/omicron.ogg
       disableSelection: true
       color: Ivory
       emergencyLightColor: Ivory
@@ -171,8 +170,8 @@
       selectable: false
       sound: /Audio/Announcements/Alerts/code_octarine.ogg
       disableSelection: true
-      color: '#5A4B4B'
-      emergencyLightColor: '#5A4B4B'
+      color: CadetBlue
+      emergencyLightColor: CadetBlue
       forceEnableEmergencyLights: true
       shuttleTime: 600
     honk: # Goobstation
@@ -185,12 +184,3 @@
       emergencyLightColor: Magenta
       forceEnableEmergencyLights: true
       shuttleTime: 600
-    enigma:
-      announcement: alert-level-enigma-announcement
-      selectable: false
-      sound: /Audio/Announcements/Alerts/code_enigma.ogg # DS14 alert sound
-      disableSelection: true
-      color: "#EF7200"
-      emergencyLightColor: "#EF7200"
-      forceEnableEmergencyLights: true
-      shuttleTime: 240

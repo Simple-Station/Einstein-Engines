@@ -339,6 +339,24 @@
     - SpellbookFullRandom
     - SpellbookSemiRandom
 
+- type: listing
+  id: SpellbookRathen
+  productUpgradeId: SpellbookRathenUpgrade
+  name: spellbook-rathen-name
+  description: spellbook-rathen-desc
+  productAction: ActionRathenSpell
+  cost:
+    WizCoin: 2
+  categories:
+  - SpellbookOffensive
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyBeforeCondition
+    blacklist:
+    - SpellbookFullRandom
+    - SpellbookSemiRandom
+
 # Defensive
 - type: listing
   id: SpellbookMagicMissile
@@ -886,6 +904,27 @@
     state: vial
   cost:
     WizCoin: 2
+  categories:
+  - SpellbookSummons
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - GrimoireGhost
+  disableRefund: true
+
+- type: listing
+  id: SpellbookBottleOfTickles
+  name: spellbook-bottle-tickles-name
+  description: spellbook-bottle-tickles-desc
+  productEntity: BottleOfTickles
+  icon:
+    sprite: _Goobstation/Wizard/Objects/vials.rsi
+    state: vialtickles
+  cost:
+    WizCoin: 1
   categories:
   - SpellbookSummons
   conditions:

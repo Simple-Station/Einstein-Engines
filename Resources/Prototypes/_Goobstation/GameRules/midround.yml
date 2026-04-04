@@ -305,6 +305,54 @@
     - EscapeShuttleObjective
 
 - type: entity
+  parent: BaseGameRule
+  id: VoxRaidersMidround
+  components:
+  - type: AntagObjectives
+    objectives:
+    - EscapeThiefShuttleObjective
+  - type: AntagRandomObjectives
+    sets:
+    - groups: ThiefBigObjectiveGroups
+      prob: 1
+      maxPicks: 2
+    - groups: ThiefObjectiveGroups
+      maxPicks: 5
+    maxDifficulty: 10
+  - type: StationEvent
+    earliestStart: 35
+    weight: 2.5
+    minimumPlayers: 50
+    duration: 1
+    chaos:
+      Hostile: 300
+      Medical: 200
+      Death: 300
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 800
+  - type: AntagSpawner
+    prototype: MobVoxRaider
+  - type: RuleGrids
+  - type: LoadMapRule
+    gridPath: /Maps/_Goobstation/Shuttles/VoxRaiderShuttle.yml
+  - type: AntagSelection
+    agentName: ghost-role-information-vox-raider-name
+    definitions:
+    - spawnerPrototype: SpawnPointGhostVoxRaider
+      min: 3
+      max: 4
+      pickPlayer: false
+      mindRoles:
+      - MindRoleGhostRoleTeamAntagonist
+      - MindRoleThief
+      briefing:
+        text: vox-raider-role-greeting
+        color: Purple
+        sound: /Audio/Misc/thief_greeting.ogg
+
+
+- type: entity
   id: ClownGoblinMigration
   parent: BaseGameRule
   components:
@@ -339,7 +387,7 @@
     eventType: HostilesSpawn
   - type: GameRule
     chaosScore: 600
-  - type: AntagRandomSpawn
+  - type: AntagLockerSpawn
   - type: AntagLoadProfileRule
     speciesOverride: Human
     speciesOverrideBlacklist:
@@ -348,6 +396,7 @@
     - Diona
     - Harpy
     - Plasmaman
+    forceMaxSize: true
   - type: AntagObjectives
     objectives:
     - SlasherSurviveObjective
@@ -371,19 +420,29 @@
       - type: Slasher
       - type: SlasherSummonMachete
       - type: SlasherStaggerArea
+      - type: SlasherRelentlessGrab
       - type: SlasherRegenerate
-      - type: SlasherPossession
       - type: SlasherBloodTrail
       - type: SlasherIncorporeal
       - type: SlasherSoulSteal
       - type: SlasherSummonMeatSpike
+      - type: NightVision
+        color: "#FF0000"
+        toggleAction: ActionSlasherNightVision
+        activateSound: !type:SoundCollectionSpecifier
+          collection: EyeOpen
+        deactivateSound: !type:SoundCollectionSpecifier
+          collection: EyeClose
+      - type: Puller
+        grabThrownSpeed: 10
+        throwingDistance: 8
+        softGrabSpeedModifier: 1
+        hardGrabSpeedModifier: 1
+        chokeGrabSpeedModifier: 1
       - type: BreathingImmunity
       - type: GunBlocked
         PopupText: slasher-cannot-use-guns # Seems to be broken inside AntagSelection
       - type: WeakToHoly
-      - type: NightVision
-        activateSound: null
-        deactivateSound: null
       - type: Hunger
         baseDecayRate: 0
       - type: Thirst
@@ -397,6 +456,13 @@
         - NamesSlasherTitle
         - NamesSlasher
         nameFormat: name-format-slasher
+      - type: GhostRole
+        name: ghost-role-information-slasher-name
+        description: ghost-role-information-slasher-description
+        rules: ghost-role-information-antagonist-rules
+        mindRoles:
+        - MindRoleGhostRoleSoloAntagonist
+      - type: GhostTakeoverAvailable
   - type: Tag
     tags:
     - MidroundAntag

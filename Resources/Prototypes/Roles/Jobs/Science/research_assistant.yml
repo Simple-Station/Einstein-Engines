@@ -63,6 +63,7 @@
   icon: "JobIconResearchAssistant"
   supervisors: job-supervisors-science
   guides: [ Science ] # goobstation
+  goobcoins: 20 #Goob content
   access:
   - Research
   - Maintenance

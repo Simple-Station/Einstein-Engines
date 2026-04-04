@@ -25,8 +25,8 @@
     alwaysTakeHoly: true
   - type: Ghoul
   - type: MovementSpeedModifier
-    baseWalkSpeed: 4.5 # Trauma edit
-    baseSprintSpeed: 4.5 # Trauma edit
+    baseWalkSpeed: 5
+    baseSprintSpeed: 5
   - type: InputMover
   - type: MobMover
   - type: Reactive
@@ -125,8 +125,8 @@
     energyConsumption: 50000
     disableDuration: 20
   - type: MovementSpeedModifier
-    baseWalkSpeed: 4.5 # Trauma edit
-    baseSprintSpeed: 4.5 # Trauma edit
+    baseWalkSpeed: 5
+    baseSprintSpeed: 5
   - type: FlashImmunity
   - type: ThermalVision
     thermalShader: null
@@ -177,7 +177,7 @@
   - type: HealingAura
     selfHealMultiplier: 2
     componentHealMultipliers:
-      Heretic: 1
+      FleshPassive: 1
       Ghoul: 2
   - type: NightVision
     color: white
@@ -384,8 +384,8 @@
     group: GenericNumber
   - type: Insulated
   - type: MovementSpeedModifier
-    baseWalkSpeed: 4.5 # Trauma edit
-    baseSprintSpeed: 4.5 # Trauma edit
+    baseWalkSpeed: 5
+    baseSprintSpeed: 5
   - type: FlashImmunity
   - type: HTN
     rootTask:

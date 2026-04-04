@@ -81,6 +81,7 @@
   icon: "JobIconStationEngineer"
   supervisors: job-supervisors-ce
   guides: [ Engineering ] # goobstation
+  goobcoins: 20 #Goob content
   access:
   - Maintenance
   - Engineering

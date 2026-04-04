@@ -1,0 +1,63 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: startingGear
+  id: SyndicateOperativeGearFullNoUplinkHonkops
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitClown
+    back: ClothingBackpackDuffelSyndicate
+    mask: ClothingMaskClownUnremoveable
+    eyes: ClothingEyesHudSyndicate
+    ears: ClothingHeadsetAltSyndicate
+    gloves: ClothingHandsGlovesCombat
+    shoes: ClothingShoesClownLarge
+    id: SyndiPDA
+    pocket1: BikeHorn
+    belt: ClothingBeltMilitaryWebbing
+  storage:
+    back:
+    - WeaponPistolViper
+    - PinpointerSyndicateNuclear
+    - DeathAcidifierImplanter
+
+#Nuclear Operative Gear
+- type: startingGear
+  id: SyndicateOperativeGearFullHonkops
+  parent: SyndicateOperativeGearFullNoUplinkHonkops
+  equipment:
+    pocket2: BaseUplinkRadio225TC
+
+#Nuclear Operative Commander Gear
+- type: startingGear
+  id: SyndicateCommanderGearFullHonkops
+  parent: SyndicateOperativeGearFullNoUplinkHonkops
+  equipment:
+    neck: SyndicateWhistle
+    pocket2: BaseUplinkRadio350TC
+  inhand:
+  - NukeOpsDeclarationOfWar
+
+#Nuclear Operative Medic Gear
+- type: startingGear
+  id: SyndicateOperativeMedicFullHonkops
+  parent: SyndicateOperativeGearFullNoUplinkHonkops
+  equipment:
+    back: ClothingBackpackDuffelSyndicateMedical
+    eyes: ClothingEyesHudSyndicateAgent
+    id: SyndiAgentPDA
+    belt: ClothingBeltChemBagSyndiFilled
+    pocket2: BaseUplinkRadio225TCMedic
+  storage:
+    back:
+    - SyndiHypo
+    - CombatKnife
+    - WeaponPistolViper
+    - PinpointerSyndicateNuclear
+    - CombatMedipen
+    - DeathAcidifierImplanter
+    - MedkitCombatFilled

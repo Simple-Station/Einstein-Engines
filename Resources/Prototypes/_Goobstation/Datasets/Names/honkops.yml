@@ -1,0 +1,28 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: localizedDataset
+  id: NamesHonkopsElite
+  values:
+    prefix: names-honkops-elite-dataset-
+    count: 13
+
+- type: localizedDataset
+  id: NamesHonkopsPrefix
+  values:
+    prefix: names-honkops-prefix-dataset-
+    count: 1 # tbqh could be naming convention instead but lazy
+
+- type: localizedDataset
+  id: OperationPrefixHonkops
+  values:
+    prefix: operation-prefix-honkops-dataset-
+    count: 13
+
+- type: localizedDataset
+  id: OperationSuffixHonkops
+  values:
+    prefix: operation-suffix-honkops-dataset-
+    count: 5

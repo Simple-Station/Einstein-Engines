@@ -49,6 +49,27 @@
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
+  name: tunnel clown antag spawn
+  parent: BaseAntagSpawner
+  id: SpawnPointGhostTunnelClown
+  components:
+  - type: GhostRole
+    name: ghost-role-information-tunnel-clown-name
+    description: ghost-role-information-tunnel-clown-description
+    rules: ghost-role-information-antagonist-rules
+    mindRoles:
+    - MindRoleGhostRoleSoloAntagonist
+    raffle:
+      settings: default
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Clothing/Mask/clown.rsi
+      state: icon
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
   name: Singuloth Knights antag spawn
   parent: BaseAntagSpawner
   id: SpawnPointGhostSingulothKnight
@@ -151,6 +172,27 @@
     layers:
     - state: green
     - sprite: _ShitChap/Objects/Weapons/Nullrod/nullrod.rsi
+      state: icon
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  name: Vox Raider Spawner
+  parent: BaseAntagSpawner
+  id: SpawnPointGhostVoxRaider
+  components:
+  - type: GhostRole
+    name: ghost-role-information-vox-raider-name
+    description: ghost-role-information-vox-raider-description
+    rules: ghost-role-information-antagonist-rules
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+    raffle:
+      settings: default
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/vox-raiders-stealth.rsi
       state: icon
 
 - type: entity
