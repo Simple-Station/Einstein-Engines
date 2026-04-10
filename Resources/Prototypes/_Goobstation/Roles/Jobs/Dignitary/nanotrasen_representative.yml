@@ -95,7 +95,6 @@
 
 - type: job
   id: NanotrasenRepresentative
-  enabled: false
   name: job-name-ntr
   description: "Представляйте NT, отправляйте им отчеты о ситуации на станции, информируйте руководителей обо всех приказах Центрального Командования."
   playTimeTracker: JobNanotrasenRepresentative
@@ -119,7 +118,6 @@
   guides:
   - NanotrasenRepSOP
   - SOP
-  - SpaceLaw
   - Writing
   goobcoins: 40
   access:

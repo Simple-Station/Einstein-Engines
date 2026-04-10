@@ -1,9 +1,9 @@
-#Goob start
-#Central Command
+# Goob start
+# Central Command
 # Command
 highlights-captain = Капитан, "Кэп", Мостик, Командование
 highlights-head-of-personnel = Глава Персонала, "ГП", "ХОП", Сервис, Мостик, Командование
-#Goob end
+# Goob end
 
 highlights-chief-engineer = Старший инженер, "СИ", Атмос, Атмосия, Атмосферный, Инженер, Инженерия, Инженерный, Мостик, Командование
 highlights-chief-medical-officer = Главный врач, "ГВ", "СМО", Доктор, "Док", "Медик", Медбей, "Мед", Медицинский, Химик, "Химка", Химия, Химическая лаборатория, Мостик, Командование

@@ -66,7 +66,7 @@
   alias:
     - survival
   name: survival-title
-  showInVote: true
+  showInVote: false
   description: survival-description
   rules:
     - MeteorSwarmScheduler
@@ -253,7 +253,7 @@
     - nukeops
   name: nukeops-title
   description: nukeops-description
-  showInVote: false
+  showInVote: true
   rules:
   - Nukeops
   - DummyNonAntagChance

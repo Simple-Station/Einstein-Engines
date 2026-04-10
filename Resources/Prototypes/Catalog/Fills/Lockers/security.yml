@@ -390,27 +390,6 @@
       amount: 4
 
 - type: entity
-  id: GunSafeSubMachineGunWt550
-  suffix: Wt550
-  parent: [GunSafeBaseSecure, BaseSecurityContraband]
-  name: wt550 safe
-  suffix: Alert Level Lock # WWDP
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:NestedSelector
-        tableId: FillGunSafeSubMachineGunWt550
-
-- type: entityTable
-  id: FillGunSafeSubMachineGunWt550
-  table: !type:AllSelector
-    children:
-    - id: WeaponSubMachineGunWt550
-      amount: 2
-    - id: MagazinePistolSubMachineGunTopMounted
-      amount: 4
-
-- type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband]
   id: GunSafeLaserCarbine
   name: laser safe

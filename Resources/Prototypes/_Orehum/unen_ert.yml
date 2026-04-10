@@ -6,7 +6,6 @@
     back: ClothingBackpackERTLeader
     shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskNeckGaiter
-    eyes: ClothingEyesNightVisionSecurityGoggles
     neck: ClothingNeckMantleHOS # Corvax-Clothing
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitERTLeader
@@ -105,7 +104,6 @@
     back: ClothingBackpackERTMedical
     shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskNeckGaiter
-    eyes: ClothingEyesNightVisionMedicalGoggles
     gloves: ClothingHandsGlovesNitrile
     outerClothing: ClothingOuterHardsuitERTMedical
     id: ERTMedicPDA
@@ -117,9 +115,6 @@
     back:
     - Hypospray
     - CrowbarRed
-    - OmnizineChemistryBottle
-    - EpinephrineChemistryBottle
-    - EpinephrineChemistryBottle
     - MedkitCombatFilled
     - MedkitCombatFilled
     - AntiPoisonMedipen
@@ -185,7 +180,6 @@
     back: ClothingBackpackERTLeader
     shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskNeckGaiter
-    eyes: ClothingEyesNightVisionSecurityGoggles
     outerClothing: ClothingOuterHardsuitERTLeader
     neck: ClothingNeckMantleHOS
     gloves: ClothingHandsGlovesCombat
@@ -221,7 +215,6 @@
     jumpsuit: ClothingUniformJumpsuitERTSecurity
     back: ClothingBackpackERTSecurity
     shoes: ClothingShoesBootsMagEmergencyResponseTeam
-    eyes: ClothingEyesNightVisionSecurityGoggles
     mask: ClothingMaskNeckGaiter
     neck: SecurityWhistle
     outerClothing: ClothingOuterHardsuitERTSecurity
@@ -285,7 +278,6 @@
     back: ClothingBackpackERTMedical
     shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskNeckGaiter
-    eyes: ClothingEyesNightVisionMedicalGoggles
     gloves: ClothingHandsGlovesNitrile
     outerClothing: ClothingOuterHardsuitERTMedical
     id: ERTMedicPDA
@@ -297,9 +289,6 @@
     back:
     - Hypospray
     - CrowbarRed
-    - OmnizineChemistryBottle
-    - EpinephrineChemistryBottle
-    - EpinephrineChemistryBottle
     - MedkitCombatFilled
     - MedkitCombatFilled
     - BoxLethalshot
@@ -368,11 +357,8 @@
     back: ClothingBackpackERTLeader
     shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskNeckGaiter
-    eyes: ClothingEyesNightVisionSecurityGoggles
     neck: ClothingNeckMantleHOS
-    head: ClothingHeadHatBeretNavy
     gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterArmorSwat
     id: ERTLeaderPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityWebbingFilled
@@ -402,11 +388,9 @@
     jumpsuit: ClothingUniformJumpsuitERTSecurity
     back: ClothingBackpackERTSecurity
     shoes: ClothingShoesBootsMagEmergencyResponseTeam
-    eyes: ClothingEyesNightVisionSecurityGoggles
     mask: ClothingMaskGasERT
     neck: SecurityWhistle
     head: ClothingHeadHelmetERTSecurity
-    outerClothing: ClothingOuterArmorSwat
     gloves: ClothingHandsGlovesCombat
     id: ERTSecurityPDA
     ears: ClothingHeadsetAltCentCom
@@ -431,7 +415,6 @@
     eyes: ClothingEyesThermalVisionGoggles
     head: ClothingHeadHelmetERTEngineer
     gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterArmorSwat
     id: ERTEngineerPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltChiefEngineerFilled
@@ -459,10 +442,8 @@
     back: ClothingBackpackERTMedical
     shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskGasERT
-    eyes: ClothingEyesNightVisionMedicalGoggles
     head: ClothingHeadHelmetERTMedic
     gloves: ClothingHandsGlovesNitrile
-    outerClothing: ClothingOuterArmorSwat
     id: ERTMedicPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltMedicalFilled
@@ -471,9 +452,6 @@
     back:
     - Hypospray
     - CrowbarRed
-    - OmnizineChemistryBottle
-    - EpinephrineChemistryBottle
-    - EpinephrineChemistryBottle
     - BoxLethalshot
     - BoxLethalshot
     - PillCanisterBicaridine
@@ -1727,7 +1705,6 @@
     back: ClothingBackpackERTLeader
     shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskNeckGaiter
-    eyes: ClothingEyesNightVisionSecurityGoggles
     outerClothing: ClothingOuterHardsuitERTLeader
     neck: ClothingNeckMantleHOS
     gloves: ClothingHandsGlovesCombat
@@ -1852,7 +1829,6 @@
     jumpsuit: ClothingUniformJumpsuitERTSecurity
     back: ClothingBackpackERTSecurity
     shoes: ClothingShoesBootsMagEmergencyResponseTeam
-    eyes: ClothingEyesNightVisionSecurityGoggles
     mask: ClothingMaskNeckGaiter
     neck: SecurityWhistle
     outerClothing: ClothingOuterHardsuitERTSecurity
@@ -1974,7 +1950,6 @@
     back: ClothingBackpackERTMedical
     shoes: ClothingShoesBootsMagEmergencyResponseTeam
     mask: ClothingMaskNeckGaiter
-    eyes: ClothingEyesNightVisionMedicalGoggles
     gloves: ClothingHandsGlovesNitrile
     outerClothing: ClothingOuterHardsuitERTMedical
     id: ERTMedicPDA
@@ -1986,9 +1961,6 @@
     back:
     - Hypospray
     - CrowbarRed
-    - OmnizineChemistryBottle
-    - EpinephrineChemistryBottle
-    - EpinephrineChemistryBottle
     - MedkitCombatFilled
     - MedkitCombatFilled
     - MedicatedSuture
@@ -2228,7 +2200,6 @@
     - MedicatedSuture
     - RegenerativeMesh
     - Truncheon
-    - СburnSpear
     - InfectionScannerCburn
   inhand:
   - WeaponShotgunEnforcer

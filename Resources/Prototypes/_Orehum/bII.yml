@@ -27,9 +27,6 @@
 - type: startingGear
   id: BIIEchoGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSuitBlackAlt
-    head: ClothingHeadHatTCFLBeretSentinel
-    back: ClothingModsuitEcho
     shoes: ClothingShoesSwat
     mask: ClothingMaskNeckGaiter
     eyes: ClothingEyesGlassesSunglasses

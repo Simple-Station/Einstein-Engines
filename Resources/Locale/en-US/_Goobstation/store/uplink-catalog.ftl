@@ -372,7 +372,7 @@ uplink-cddisknumber-desc = Call in a threat to distract the station... good luck
 uplink-box-xenobio-name = Xenobiology slimes box
 uplink-box-xenobio-desc = Slimes for your xenobiology needs. Contains 9 random T1 slimes.
 
-#Contractor
+# Contractor
 
 uplink-moduist-contractor-name = Contractor Modsuit
 uplink-moduist-contractor-desc = This lightweight modsuit was made specifically for The Guild! Made using plastitanium for extreme durability but light-weight, comes packed with servos to to help you grab harder, critical damage detecting injectors, and a built in chameleon tech! To keep it ultra light-weight this modsuit has no storage capabilities.

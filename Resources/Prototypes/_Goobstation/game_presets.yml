@@ -138,21 +138,6 @@
   - SubGamemodesRule
 
 - type: gamePreset
-  id: Honkops
-  alias:
-    - honkops
-  name: honkops-title
-  description: honkops-description
-  showInVote: false
-  rules:
-    - Honkops
-    - SubGamemodesRule
-    - BasicStationEventScheduler
-    - MeteorSwarmScheduler
-    - SpaceTrafficControlEventScheduler
-    - BasicRoundstartVariation
-
-- type: gamePreset
   id: TheGhost
   alias:
     - calm
@@ -160,9 +145,8 @@
   name: sleeper-title
   description: sleeper-description
   showInVote: true
-  minPlayers: 5
   rules:
-    - CalmDynamic
+    # - CalmDynamic
     - SubGamemodesRule
     - RareIonStormScheduler
     - SpaceTrafficControlFriendlyEventScheduler
@@ -190,7 +174,7 @@
     - turbulence
   name: secretplus-low-title
   description: secretplus-low-description
-  showInVote: true
+  showInVote: false
   rules:
     - SecretPlusLow
 
@@ -200,8 +184,8 @@
     - secretplusmid
     - secretplus
     - entropy
-  name: secretplus-mid-title
-  description: secretplus-mid-description
+  name: secret-title #secretplus-mid-title
+  description: secret-description #secretplus-mid-description
   showInVote: true
   rules:
     - SecretPlusMid
@@ -225,8 +209,8 @@
     - survivalplus
     - newsurvival
     - survivalnew
-  name: survivalplus-title
-  description: survivalplus-description
+  name: survival-title #survivalplus-title
+  description: survival-description #survivalplus-description
   showInVote: true
   rules:
     - SecretPlusRampingMid

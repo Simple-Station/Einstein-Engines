@@ -35112,13 +35112,6 @@ entities:
     - type: Transform
       pos: 42.5,-4.5
       parent: 2
-- proto: GunSafeSubMachineGunWt550
-  entities:
-  - uid: 7652
-    components:
-    - type: Transform
-      pos: 44.5,-4.5
-      parent: 2
 - proto: Handcuffs
   entities:
   - uid: 1509

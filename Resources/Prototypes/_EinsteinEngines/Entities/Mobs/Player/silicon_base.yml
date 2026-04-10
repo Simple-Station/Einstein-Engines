@@ -258,7 +258,6 @@
     - type: StandingState
     - type: MindContainer
       showExamineInfo: true
-    - type: SSDIndicator
     - type: CanEscapeInventory
     - type: HumanoidAppearance
       species: IPC
@@ -341,7 +340,7 @@
     - type: ComplexInteraction
     - type: Carriable
     - type: GrabIntent # wilted rose
-    - type: Grabbable 
+    - type: Grabbable
     - type: Targeting
     - type: Crawler
     - type: Consciousness

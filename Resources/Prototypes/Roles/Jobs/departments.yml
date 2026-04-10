@@ -194,7 +194,6 @@
   - HecuOperative
   - CommandMaid # event-restricted, Goobstation
   primary: false
-  weight: 100
 
 - type: department
   id: Engineering

@@ -108,7 +108,6 @@
       - id: CrusherUpgradeMainMarker
     deleteOnDeath: true
   - type: MegafaunaAi
-    actionDelay: 0.5
     selector: !type:NestedMegafaunaSelector
       id: Hierophant
   - type: AngerPlayerScaling

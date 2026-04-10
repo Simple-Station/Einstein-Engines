@@ -147,7 +147,6 @@
     defaultChannel: Xenomorphivemind
     channels:
     - Xenomorphivemind
-  - type: SSDIndicator
   - type: Emoting
   - type: BodyEmotes
     soundsId: GeneralBodyEmotes

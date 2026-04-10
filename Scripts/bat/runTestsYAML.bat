@@ -5,9 +5,6 @@ REM SPDX-License-Identifier: AGPL-3.0-or-later
 
 cd ..\..\
 
-mkdir Scripts\logs
-
-del Scripts\logs\Content.YAMLLinter.log
-dotnet run --project Content.YAMLLinter/Content.YAMLLinter.csproj -c DebugOpt -- NUnit.ConsoleOut=0 > Scripts\logs\Content.YAMLLinter.log
+dotnet run --project Content.YAMLLinter/Content.YAMLLinter.csproj --no-build %*
 
 pause

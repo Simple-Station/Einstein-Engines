@@ -224,8 +224,6 @@ namespace Content.Server.Nuke
         public float RequiredFloorRadius = 5;
 
         // Goobstation start
-        [DataField("honkopsArmMusic")]
-        public SoundSpecifier HonkopsArmMusic = new SoundCollectionSpecifier("HonkopsNukeMusic");
 
         [DataField("loneopArmMusic")]
         public SoundSpecifier LoneopArmMusic = new SoundCollectionSpecifier("LoneopNukeMusic");

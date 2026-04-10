@@ -132,6 +132,7 @@ namespace Content.Server.Forensics
         public override void Initialize()
         {
             SubscribeLocalEvent<HandsComponent, ContactInteractionEvent>(OnInteract);
+            SubscribeLocalEvent<FiberComponent, MapInitEvent>(OnFiberInit, after: new[] { typeof(BloodstreamSystem) });
             SubscribeLocalEvent<FingerprintComponent, MapInitEvent>(OnFingerprintInit, after: new[] { typeof(BloodstreamSystem) });
             SubscribeLocalEvent<ScentComponent, DidEquipEvent>(OnEquip); // Einstein Engines
             // The solution entities are spawned on MapInit as well, so we have to wait for that to be able to set the DNA in the bloodstream correctly without ResolveSolution failing
@@ -169,6 +170,11 @@ namespace Content.Server.Forensics
         private void OnEquip(EntityUid uid, ScentComponent component, DidEquipEvent args) // Einstein Engines
         {
             ApplyScent(uid, args.Equipment);
+        }
+
+        private void OnFiberInit(EntityUid uid, FiberComponent component, MapInitEvent args)
+        {
+            component.Fiberprint = GenerateFingerprint(length: 7);
         }
 
         private void OnFingerprintInit(Entity<FingerprintComponent> ent, ref MapInitEvent args)
@@ -452,9 +458,13 @@ namespace Content.Server.Forensics
             if (_inventory.TryGetSlotEntity(user, "gloves", out var gloves))
             {
                 if (TryComp<FiberComponent>(gloves, out var fiber) && !string.IsNullOrEmpty(fiber.FiberMaterial))
-                    component.Fibers.Add(string.IsNullOrEmpty(fiber.FiberColor) ? Loc.GetString("forensic-fibers", ("material", fiber.FiberMaterial)) : Loc.GetString("forensic-fibers-colored", ("color", fiber.FiberColor), ("material", fiber.FiberMaterial)));
+                {
+                    var fiberLocale = string.IsNullOrEmpty(fiber.FiberColor)
+                        ? Loc.GetString("forensic-fibers", ("material", fiber.FiberMaterial))
+                        : Loc.GetString("forensic-fibers-colored", ("color", fiber.FiberColor), ("material", fiber.FiberMaterial));
+                    component.Fibers.Add(fiberLocale + " ; " + fiber.Fiberprint);
+                }
             }
-
             if (TryComp<FingerprintComponent>(user, out var fingerprint) && CanAccessFingerprint(user, out _))
                 component.Fingerprints.Add(fingerprint.Fingerprint ?? "");
         }

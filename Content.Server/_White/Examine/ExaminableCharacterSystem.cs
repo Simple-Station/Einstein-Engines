@@ -131,7 +131,7 @@ public sealed class ExaminableCharacterSystem : EntitySystem
         message.Pop();
         if (showExamine && _netConfigManager.GetClientCVar(actorComponent.PlayerSession.Channel, GoobCVars.LogInChat))
         {
-            _chatManager.ChatMessageToOne(ChatChannel.Emotes, message.ToString(), message.ToMarkup(), EntityUid.Invalid, false, actorComponent.PlayerSession.Channel, recordReplay: false, canCoalesce: false); // Goobstation Edit
+            //_chatManager.ChatMessageToOne(ChatChannel.Emotes, message.ToString(), message.ToMarkup(), EntityUid.Invalid, false, actorComponent.PlayerSession.Channel, recordReplay: false, canCoalesce: false); // Goobstation Edit
         }
     }
 
@@ -145,27 +145,27 @@ public sealed class ExaminableCharacterSystem : EntitySystem
             && _netConfigManager.GetClientCVar(actorComponent.PlayerSession.Channel, GoobCVars.DetailedExamine)
             && _netConfigManager.GetClientCVar(actorComponent.PlayerSession.Channel, GoobCVars.LogInChat))
         {
-            var logLines = new List<string>();
+            // var logLines = new List<string>();
 
-            FormattedMessage message = new();
-            message.PushTag(new MarkupNode("examineborder", null, null)); // border
-            message.PushNewline();
-            message.Pop();
+            // FormattedMessage message = new();
+            // message.PushTag(new MarkupNode("examineborder", null, null)); // border
+            // message.PushNewline();
+            // message.Pop();
 
-            if (!args.IsSecondaryInfo)
-            {
-                TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-                var item = Loc.GetString("examine-present-tex", ("name", textInfo.ToTitleCase(metaData.EntityName)), ("id", GetNetEntity(uid).Id), ("size", 14));
-                message.AddText($"[color=DarkGray][font size=11]{item}[/font][/color]");
-                message.PushNewline();
-            }
-            AddLine(message);
-            message.AddText($"[font size=10]{args.Message}[/font]");
-            message.PushNewline();
-            AddLine(message);
-            message.Pop();
+            // if (!args.IsSecondaryInfo)
+            // {
+            //     TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+            //     var item = Loc.GetString("examine-present-tex", ("name", textInfo.ToTitleCase(metaData.EntityName)), ("id", GetNetEntity(uid).Id), ("size", 14));
+            //     message.AddText($"[color=DarkGray][font size=11]{item}[/font][/color]");
+            //     message.PushNewline();
+            // }
+            // AddLine(message);
+            // message.AddText($"[font size=10]{args.Message}[/font]");
+            // message.PushNewline();
+            // AddLine(message);
+            // message.Pop();
 
-            _chatManager.ChatMessageToOne(ChatChannel.Emotes, message.ToString(), message.ToMarkup(), EntityUid.Invalid, false, actorComponent.PlayerSession.Channel, recordReplay: false, canCoalesce: false); // Goobstation Edit
+            // _chatManager.ChatMessageToOne(ChatChannel.Emotes, message.ToString(), message.ToMarkup(), EntityUid.Invalid, false, actorComponent.PlayerSession.Channel, recordReplay: false, canCoalesce: false); // Goobstation Edit
         }
     }
 

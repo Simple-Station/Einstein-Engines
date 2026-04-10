@@ -32,3 +32,4 @@ sponsor-win-manager-ghost-Boroven = Кор
 sponsor-win-manager-ghost-Memes = Memes
 sponsor-win-manager-ghost-Wisdom = Nelle
 sponsor-win-manager-ghost-Wendor = Wendor
+sponsor-win-manager-ghost-Envoily = Envoily

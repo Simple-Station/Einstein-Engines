@@ -154,7 +154,6 @@
   supervisors: job-supervisors-hos
   canBeAntag: false
   guides: # goobstation
-  - SpaceLaw
   - LegalSOP
   - Security
   - WardenSOP

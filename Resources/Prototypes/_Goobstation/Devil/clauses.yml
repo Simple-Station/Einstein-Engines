@@ -9,11 +9,13 @@
 
 - type: clause
   id: soulownership
+  name: Владение душой
   clauseWeight: 25
   event: !type:DevilContractSoulOwnershipEvent
 
 - type: clause
   id: weakness
+  name: Слабость плоти
   clauseWeight: -35
   damageModifierSet: DevilDealPositive
 
@@ -43,6 +45,7 @@
 
 - type: clause
   id: fearoffire
+  name: Страх огня
   clauseWeight: -20
   damageModifierSet: HellSpawn
   addedComponents:
@@ -50,12 +53,14 @@
 
 - type: clause
   id: brokeness
+  name: Модный приговор
   clauseWeight: -20
   spawnedItems:
   - ClothingShoesRealJordansAutographed
 
 - type: clause
   id: fearofdeath
+  name: Страх смерти
   clauseWeight: -25
   addedComponents:
   - type: MobThresholds
@@ -66,18 +71,21 @@
 
 - type: clause
   id: fearoflight
+  name: Страх света
   clauseWeight: -15
   addedComponents:
   - type: FlashImmunity
 
 - type: clause
   id: fearofelectricity
+  name: Страх электричества
   clauseWeight: -15
   addedComponents:
   - type: Insulated
 
 - type: clause
   id: gluttony
+  name: Чревоугодие
   clauseWeight: -10
   removedComponents:
   - type: Hunger
@@ -85,36 +93,42 @@
 
 - type: clause
   id: fearofdrowning
+  name: Страх утопления
   clauseWeight: -10
   addedComponents:
   - type: SpecialBreathingImmunity
 
 - type: clause
   id: fearofclowns
+  name: Коулрофобия
   clauseWeight: -10
   addedComponents:
   - type: NoSlip
 
 - type: clause
   id: fearofcrushing
+  name: Страх давления
   clauseWeight: -10
   addedComponents:
   - type: SpecialPressureImmunity
 
 - type: clause
   id: fearoffreezing
+  name: Страх обморожения
   clauseWeight: -10
   addedComponents:
   - type: SpecialLowTempImmunity
 
 - type: clause
   id: greed
+  name: Алчность
   clauseWeight: -10
   spawnedItems:
   - SpaceCash30000
 
 - type: clause
   id: pain
+  name: Онемение
   clauseWeight: -5
   addedComponents:
   - type: PainNumbness
@@ -125,11 +139,13 @@
 
 - type: clause
   id: chance
+  name: Азартная игра
   clauseWeight: -20
   event: !type:DevilContractChanceEvent
 
 - type: clause
   id: shadows
+  name: Покров тени
   clauseWeight: -25
   addedComponents:
   - type: Stealth
@@ -137,28 +153,33 @@
 
 - type: clause
   id: humanity
+  name: Покров тени
   clauseWeight: 80
   polymorph: MobFrogPolymorph
 
 - type: clause
   id: strength
+  name: Сила
   clauseWeight: 30
   damageModifierSet: DevilDealNegative
 
 - type: clause
   id: willtofight
+  name: Воля к миру
   clauseWeight: 60
   addedComponents:
   - type: Pacified
 
 - type: clause
   id: sight
+  name: Зрение
   clauseWeight: 60
   addedComponents:
   - type: PermanentBlindness
 
 - type: clause
   id: coherence
+  name: Косноязычие
   clauseWeight: 30
   addedComponents:
   - type: BackwardsAccent
@@ -166,22 +187,26 @@
 
 - type: clause
   id: voice
+  name: Голос
   clauseWeight: 20
   addedComponents:
   - type: Muted
 
 - type: clause
   id: aleg
+  name: Лишняя нога
   clauseWeight: 20
   event: !type:DevilContractLoseLegEvent
 
 - type: clause
   id: ahand
+  name: Лишняя рука
   clauseWeight: 20
   event: !type:DevilContractLoseHandEvent
 
 - type: clause
   id: awake
+  name: Бодрость
   clauseWeight: 35
   addedComponents:
   - type: Narcolepsy
@@ -190,23 +215,27 @@
 
 - type: clause
   id: anorgan
+  name: Органодонорство
   clauseWeight: 30
   event: !type:DevilContractLoseOrganEvent
 
 - type: clause
   id: legs
+  name: Ноги
   clauseWeight: 40
   addedComponents:
   - type: LegsParalyzed
 
 - type: clause
   id: innerpeace
+  name: Внутренний покой
   clauseWeight: 5
   addedComponents:
   - type: TileMovement
 
 - type: clause
   id: death
+  name: Смерть
   clauseWeight: -25
   addedComponents:
   - type: CheatDeath
@@ -214,6 +243,7 @@
 
 - type: clause
   id: mortality
+  name: Бессмертие
   clauseWeight: -135
   addedComponents:
   - type: CheatDeath
@@ -221,6 +251,7 @@
 
 - type: clause
   id: time
+  name: Время
   clauseWeight: 150
   addedComponents:
   - type: DelayedDeath
