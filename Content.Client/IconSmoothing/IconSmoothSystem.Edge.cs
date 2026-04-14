@@ -1,49 +1,52 @@
 using System.Numerics;
 using Content.Shared.IconSmoothing;
 using Robust.Client.GameObjects;
+using Robust.Shared.Map.Components;
 
 namespace Content.Client.IconSmoothing;
 
 public sealed partial class IconSmoothSystem
 {
-    // Handles drawing edge sprites on the non-smoothed edges.
+//    private void OnEdgeShutdown(EntityUid uid, SmoothEdgeComponent component, ComponentShutdown args)
+//    {
+//        if (!TryComp<SpriteComponent>(uid, out var sprite))
+//            return;
+//
+//        sprite.LayerMapRemove(EdgeLayer.South);
+//        sprite.LayerMapRemove(EdgeLayer.East);
+//        sprite.LayerMapRemove(EdgeLayer.North);
+//        sprite.LayerMapRemove(EdgeLayer.West);
+//    }
 
-    private void InitializeEdge()
+    private void CalculateEdge(EntityUid uid, SpriteComponent? sprite = null, IconSmoothComponent? smooth = null)
     {
-        SubscribeLocalEvent<SmoothEdgeComponent, ComponentStartup>(OnEdgeStartup);
-        SubscribeLocalEvent<SmoothEdgeComponent, ComponentShutdown>(OnEdgeShutdown);
-    }
-
-    private void OnEdgeStartup(EntityUid uid, SmoothEdgeComponent component, ComponentStartup args)
-    {
-        if (!TryComp<SpriteComponent>(uid, out var sprite))
+        if (!Resolve(uid, ref sprite, ref smooth, false))
             return;
 
-        sprite.LayerSetOffset(EdgeLayer.South, new Vector2(0, -1f));
-        sprite.LayerSetOffset(EdgeLayer.East, new Vector2(1f, 0f));
-        sprite.LayerSetOffset(EdgeLayer.North, new Vector2(0, 1f));
-        sprite.LayerSetOffset(EdgeLayer.West, new Vector2(-1f, 0f));
+        var xform = Transform(uid);
 
-        sprite.LayerSetVisible(EdgeLayer.South, false);
-        sprite.LayerSetVisible(EdgeLayer.East, false);
-        sprite.LayerSetVisible(EdgeLayer.North, false);
-        sprite.LayerSetVisible(EdgeLayer.West, false);
+        var directions = DirectionFlag.None;
+        
+        if (xform.GridUid is EntityUid gridUid && TryComp<MapGridComponent>(gridUid, out var grid))
+        {
+            var pos = _map.TileIndicesFor(gridUid, grid, xform.Coordinates);
+
+            if (MatchingEntity(smooth, _map.GetAnchoredEntitiesEnumerator(gridUid, grid, pos.Offset(Direction.North))))
+                directions |= DirectionFlag.North;
+            if (MatchingEntity(smooth, _map.GetAnchoredEntitiesEnumerator(gridUid, grid, pos.Offset(Direction.South))))
+                directions |= DirectionFlag.South;
+            if (MatchingEntity(smooth, _map.GetAnchoredEntitiesEnumerator(gridUid, grid, pos.Offset(Direction.East))))
+                directions |= DirectionFlag.East;
+            if (MatchingEntity(smooth, _map.GetAnchoredEntitiesEnumerator(gridUid, grid, pos.Offset(Direction.West))))
+                directions |= DirectionFlag.West;
+        }
+
+        UpdateEdge(uid, directions, sprite, smooth);
     }
 
-    private void OnEdgeShutdown(EntityUid uid, SmoothEdgeComponent component, ComponentShutdown args)
+    private void UpdateEdge(EntityUid uid, DirectionFlag directions, SpriteComponent? sprite = null, IconSmoothComponent? smooth = null)
     {
-        if (!TryComp<SpriteComponent>(uid, out var sprite))
-            return;
-
-        sprite.LayerMapRemove(EdgeLayer.South);
-        sprite.LayerMapRemove(EdgeLayer.East);
-        sprite.LayerMapRemove(EdgeLayer.North);
-        sprite.LayerMapRemove(EdgeLayer.West);
-    }
-
-    private void CalculateEdge(EntityUid uid, DirectionFlag directions, SpriteComponent? sprite = null, SmoothEdgeComponent? component = null)
-    {
-        if (!Resolve(uid, ref sprite, ref component, false))
+        if (!Resolve(uid, ref sprite, ref smooth, false))
             return;
 
         for (var i = 0; i < 4; i++)
@@ -51,13 +54,7 @@ public sealed partial class IconSmoothSystem
             var dir = (DirectionFlag) Math.Pow(2, i);
             var edge = GetEdge(dir);
 
-            if ((dir & directions) != 0x0)
-            {
-                sprite.LayerSetVisible(edge, false);
-                continue;
-            }
-
-            sprite.LayerSetVisible(edge, true);
+            _sprite.LayerSetVisible((uid, sprite), edge, (dir & directions) == 0x0);
         }
     }
 

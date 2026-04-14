@@ -3,7 +3,7 @@ using Robust.Shared.Random;
 
 namespace Content.Server.IconSmoothing;
 
-public sealed partial class RandomIconSmoothSystem : SharedRandomIconSmoothSystem
+public sealed partial class RandomIconSmoothSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
