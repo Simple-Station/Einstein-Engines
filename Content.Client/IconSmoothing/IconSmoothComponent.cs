@@ -1,4 +1,6 @@
+using System.Collections.Immutable;
 using JetBrains.Annotations;
+using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
@@ -18,11 +20,11 @@ namespace Content.Client.IconSmoothing
         [DataField]
         public bool Enabled = true;
 
-        [DataField]
-        public bool SmoothEdges = true;
+        [ViewVariables(VVAccess.ReadOnly)]
+        public ImmutableArray<EdgeLayer> SmoothEdgeLayers;
 
-
-        public (EntityUid?, Vector2i)? LastPosition;
+        // a GridCoordinates struct would be nice here
+        public (EntityUid, Vector2i)? GridPosition = null;
 
         /// <summary>
         ///     We will smooth with other objects with the same key.
@@ -76,8 +78,28 @@ namespace Content.Client.IconSmoothing
         Diagonal,
 
         /// <summary>
+        ///     Uses same icon state format as <see cref="CardinalFlags"/>.
+        ///     Will only connect entities to the *left* and *right* of this entity. (As opposed to east and west) 
+        /// </summary>
+        Horizontal,
+
+        /// <summary>
+        ///     Uses same icon state format as <see cref="CardinalFlags"/>.
+        ///     Will only connect entities to the *front* and *back* of this entity. (As opposed to north and south) 
+        /// </summary>
+        Vertical,
+
+        /// <summary>
         ///     Where this component contributes to our neighbors being calculated but we do not update our own sprite.
         /// </summary>
         NoSprite,
     }
+}
+
+public enum EdgeLayer : byte
+{
+    South,
+    East,
+    North,
+    West
 }

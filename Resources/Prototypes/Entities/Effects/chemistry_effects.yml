@@ -68,7 +68,6 @@
       state: foam-north
     - map: [ "enum.EdgeLayer.West" ]
       state: foam-west
-  - type: SmoothEdge
   - type: IconSmooth
     mode: NoSprite
   - type: FoamVisuals
@@ -156,7 +155,6 @@
         - WallLayer
   - type: Occluder
   - type: Appearance
-  - type: SmoothEdge
   - type: IconSmooth
     key: walls
     mode: NoSprite
