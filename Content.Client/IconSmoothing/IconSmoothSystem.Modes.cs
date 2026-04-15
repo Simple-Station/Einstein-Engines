@@ -113,8 +113,8 @@ public sealed partial class IconSmoothSystem : EntitySystem
             cornerNW |= CornerFill.Diagonal;
         }
 
-                        return (cornerNE, cornerNW, cornerSW, cornerSE);
-                }
+        return (cornerNE, cornerNW, cornerSW, cornerSE);
+    }
 
     private void CalculateNewSpriteCardinal(Entity<IconSmoothComponent, SpriteComponent> entity, MapGridComponent? grid, TransformComponent xform)
     {
@@ -189,4 +189,73 @@ public sealed partial class IconSmoothSystem : EntitySystem
         else
             sprite.LayerSetState(0, $"{smooth.StateBase}0");
     }
+
+    private void CalculateNewSpriteHorizontal(Entity<IconSmoothComponent, SpriteComponent> entity, MapGridComponent? grid, TransformComponent xform)
+    {
+        var dirs = CardinalConnectDirs.None;
+        var smooth = entity.Comp1;
+        var sprite = entity.Comp2;
+
+        if (grid == null)
+        {
+            sprite.LayerSetState(0, $"{smooth.StateBase}{(int) dirs}");
+            UpdateEdge(entity, DirectionFlag.None, sprite);
+            return;
+        }
+        var ourDir = xform.LocalRotation.GetDir();
+
+        var pos = grid.TileIndicesFor(xform.Coordinates);
+        if (MatchingEntity(smooth, grid, pos, Direction.East, xform.LocalRotation, sameRotPredicate))
+            dirs |= CardinalConnectDirs.East;
+        if (MatchingEntity(smooth, grid, pos, Direction.West, xform.LocalRotation, sameRotPredicate))
+            dirs |= CardinalConnectDirs.West;
+
+        sprite.LayerSetState(0, $"{smooth.StateBase}{(int) dirs}");
+
+        var directions = DirectionFlag.None;
+
+        if ((dirs & CardinalConnectDirs.East) != 0x0)
+            directions |= DirectionFlag.East;
+        if ((dirs & CardinalConnectDirs.West) != 0x0)
+            directions |= DirectionFlag.West;
+
+        UpdateEdge(entity, directions, sprite);
+
+        bool sameRotPredicate(EntityUid uid) => Transform(uid).LocalRotation.GetDir() == ourDir;
+    }
+
+    private void CalculateNewSpriteVertical(Entity<IconSmoothComponent, SpriteComponent> entity, MapGridComponent? grid, TransformComponent xform)
+    {
+        var dirs = CardinalConnectDirs.None;
+        var smooth = entity.Comp1;
+        var sprite = entity.Comp2;
+
+        if (grid == null)
+        {
+            sprite.LayerSetState(0, $"{smooth.StateBase}{(int) dirs}");
+            UpdateEdge(entity, DirectionFlag.None, sprite);
+            return;
+        }
+        var ourDir = xform.LocalRotation.GetDir();
+
+        var pos = grid.TileIndicesFor(xform.Coordinates);
+        if (MatchingEntity(smooth, grid, pos, Direction.North, xform.LocalRotation, sameRotPredicate))
+            dirs |= CardinalConnectDirs.North;
+        if (MatchingEntity(smooth, grid, pos, Direction.South, xform.LocalRotation, sameRotPredicate))
+            dirs |= CardinalConnectDirs.South;
+
+        sprite.LayerSetState(0, $"{smooth.StateBase}{(int) dirs}");
+
+        var directions = DirectionFlag.None;
+
+        if ((dirs & CardinalConnectDirs.South) != 0x0)
+            directions |= DirectionFlag.South;
+        if ((dirs & CardinalConnectDirs.North) != 0x0)
+            directions |= DirectionFlag.North;
+
+        UpdateEdge(entity, directions, sprite);
+
+        bool sameRotPredicate(EntityUid uid) => Transform(uid).LocalRotation.GetDir() == ourDir;
+    }
+
 }

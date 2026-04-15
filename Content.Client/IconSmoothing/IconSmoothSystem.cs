@@ -281,10 +281,10 @@ namespace Content.Client.IconSmoothing
                     CalculateNewSpriteDiagonal((uid, smooth, sprite), gridEntity, xform);
                     break;
                 case IconSmoothingMode.Horizontal:
-                    CalculateNewSpriteDiagonal((uid, smooth, sprite), gridEntity, xform);
+                    CalculateNewSpriteHorizontal((uid, smooth, sprite), gridEntity, xform);
                     break;
                 case IconSmoothingMode.Vertical:
-                    CalculateNewSpriteDiagonal((uid, smooth, sprite), gridEntity, xform);
+                    CalculateNewSpriteVertical((uid, smooth, sprite), gridEntity, xform);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
