@@ -53,14 +53,14 @@ public sealed partial class IconSmoothSystem : EntitySystem
     private (CornerFill ne, CornerFill nw, CornerFill sw, CornerFill se) CalculateCornerFill(MapGridComponent grid, IconSmoothComponent smooth, TransformComponent xform)
     {
         var pos = grid.TileIndicesFor(xform.Coordinates);
-        var n = MatchingEntity(smooth, grid, pos, Direction.North);
-        var ne = MatchingEntity(smooth, grid, pos, Direction.NorthEast);
-        var e = MatchingEntity(smooth, grid, pos, Direction.East);
-        var se = MatchingEntity(smooth, grid, pos, Direction.SouthEast);
-        var s = MatchingEntity(smooth, grid, pos, Direction.South);
-        var sw = MatchingEntity(smooth, grid, pos, Direction.SouthWest);
-        var w = MatchingEntity(smooth, grid, pos, Direction.West);
-        var nw = MatchingEntity(smooth, grid, pos, Direction.NorthWest);
+        var n = MatchingEntity(smooth, grid, pos, Direction.North, xform.LocalRotation);
+        var ne = MatchingEntity(smooth, grid, pos, Direction.NorthEast, xform.LocalRotation);
+        var e = MatchingEntity(smooth, grid, pos, Direction.East, xform.LocalRotation);
+        var se = MatchingEntity(smooth, grid, pos, Direction.SouthEast, xform.LocalRotation);
+        var s = MatchingEntity(smooth, grid, pos, Direction.South, xform.LocalRotation);
+        var sw = MatchingEntity(smooth, grid, pos, Direction.SouthWest, xform.LocalRotation);
+        var w = MatchingEntity(smooth, grid, pos, Direction.West, xform.LocalRotation);
+        var nw = MatchingEntity(smooth, grid, pos, Direction.NorthWest, xform.LocalRotation);
 
         // ReSharper disable InconsistentNaming
         var cornerNE = CornerFill.None;
@@ -113,19 +113,8 @@ public sealed partial class IconSmoothSystem : EntitySystem
             cornerNW |= CornerFill.Diagonal;
         }
 
-        // Local is fine as we already know it's parented to the grid (due to the way anchoring works).
-        switch (xform.LocalRotation.GetCardinalDir())
-        {
-            case Direction.North:
-                return (cornerSW, cornerSE, cornerNE, cornerNW);
-            case Direction.West:
-                return (cornerSE, cornerNE, cornerNW, cornerSW);
-            case Direction.South:
-                return (cornerNE, cornerNW, cornerSW, cornerSE);
-            default:
-                return (cornerNW, cornerSW, cornerSE, cornerNE);
-        }
-    }
+                        return (cornerNE, cornerNW, cornerSW, cornerSE);
+                }
 
     private void CalculateNewSpriteCardinal(Entity<IconSmoothComponent, SpriteComponent> entity, MapGridComponent? grid, TransformComponent xform)
     {
