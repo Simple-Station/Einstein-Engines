@@ -162,7 +162,8 @@ namespace Content.Client.IconSmoothing
             // Performance: This could be spread over multiple updates, or made parallel.
             foreach (var uid in _dirtyEntities)
             {
-                CalculateNewSprite(uid);
+                if(!TerminatingOrDeleted(uid))
+                    CalculateNewSprite(uid);
             }
             _dirtyEntities.Clear();
         }
@@ -182,9 +183,7 @@ namespace Content.Client.IconSmoothing
             if (!TryComp<MapGridComponent>(gridId, out var grid))
                 return;
 
-            // don't mark us dirty if we're about to get taken behind the methaphorical shed
-            if (!TerminatingOrDeleted(uid))
-                _dirtyEntities.Add(uid);
+            _dirtyEntities.Add(uid);
 
             // Yes, we updates ALL smoothing entities surrounding us even if they would never smooth with us.
             // // Why?
@@ -210,8 +209,7 @@ namespace Content.Client.IconSmoothing
             // require one less component fetch/check.
             while (entities.MoveNext(out var entity))
             {
-                if(!TerminatingOrDeleted(entity.Value))
-                    _dirtyEntities.Add(entity.Value);
+                _dirtyEntities.Add(entity.Value);
             }
         }
 
