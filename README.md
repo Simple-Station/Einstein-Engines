@@ -1,69 +1,68 @@
-# Einstein Engines
+# NSV Nevada
 
-<p align="center"><img src="https://raw.githubusercontent.com/Simple-Station/Einstein-Engines/master/Resources/Textures/Logo/splashlogo.png" width="512px" /></p>
+<p align="center">
+  <img src="https://i.ibb.co/YTbmmB2Q/image.png" alt="NSV Nevada Banner" width="800">
+</p>
 
 ---
 
-Einstein Engines is a hard fork of [Space Station 14](https://github.com/space-wizards/space-station-14) built around the ideals and design inspirations of the Baystation family of servers from Space Station 13 with a focus on having modular code that anyone can use to make the RP server of their dreams.
-Our founding organization is based on a democratic system whereby our mutual contributors and downstreams have a say in what code goes into their own upstream.
-If you are a representative of a former downstream of Delta-V, we would like to invite you to contact us for an opportunity to represent your fork in this new upstream.
+## О Проекте
 
-Space Station 14 is inspired heavily by Space Station 13 and runs on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), a homegrown engine written in C#.
+**NSV Nevada** — это хард-форк [Einstein Engines](https://github.com/Simple-Station/Einstein-Engines), созданный на базе движка [Robust Toolbox](https://github.com/space-wizards/RobustToolbox). 
 
-As a hard fork, any code sourced from a different upstream cannot ever be merged directly here, and must instead be ported.
-All code present in this repository is subject to change as desired by the council of maintainers.
+Этот проект - попытка переосмыслить SS14, вдохновляясь **Baystation12**, и форками: **SierraBay** и **Infinity**.
 
-## Official Server Policy
+# НА ДАННЫЙ МОМЕНТ НИЧЕГО ИЛИ ПОЧТИ НИЧЕГО НЕ РЕАЛИЗОВАНО!!!
 
-**No official servers will ever be made for Einstein-Engines**.
+### Наша Философия
 
-In order to prevent a potential conflict of interest, we will never open any server directly using the Einstein Engines codebase itself.
-Any server claiming to be an official representation of this fork is not endorsed in any way by this organization.
-We however would like to invite anyone wishing to create a server to make a fork of Einstein Engines.
+Я глубоко ценю техническое наследие Baystation, каким бы не было качество кода, но во многом разочарован текущим направлением развития оригинального проекта и его руководством. Кроме того я считаю, что фокус игры должен быть смещен с бесконечной повестки и излишнего административного регулирования поведения к **геймплейным механикам, атмосфере выживания и настоящему ролевому взаимодействию, поощряемому механиками**.
 
-## Links
+**Принципы:**
+*   **Правила через механики и полная свобода внутри жёстких рамок:** Поведение игроков должно регулироваться игровыми системами, где это возможно, а не бесконечным списком OOC-запретов. Игра обязана интуитивно подталкивать игрока к правильной модели поведения. Хотелось бы довести билд до состояния, когда вмешательство администрации в решение внутриигровых конфликтов будет минимальным.
+*   **Атмосфера грязного космоса:** Я стараюсь сделать атмосферу более серьёзной, вырезав из билда рофлоконтент, и воссоздать атмосферу грязного, промышленного футуризма, вдохновлённого первым фильмом Alien.
+*   **Ценность жизни:** Если твой персонаж погиб - его не поднять в течении игрового раунда. Это финита, конец, финал. Это заставляет думать, прежде чем действовать.
+---
 
-[Website](https://simplestation.org) | [Discord](https://discord.gg/X4QEXxUrsJ) | [Steam(SSMV Launcher)](https://store.steampowered.com/app/2585480/Space_Station_Multiverse/) | [Steam(WizDen Launcher)](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Standalone](https://spacestationmultiverse.com/downloads/)
+## Сеттинг: Экспедиция в Ничейный Космос
 
-## Contributing
+Действие разворачивается на борту **ИКН Невада** — старого фрегата класса «Леттеркенни», превращенного корпорацией NanoTrasen в исследовательское судно. 
 
-We are happy to accept contributions from anybody, come join our Discord if you want to help.
-We've got a [list of issues](https://github.com/Simple-Station/Einstein-Engines/issues) that need to be done and anybody can pick them up. Don't be afraid to ask for help in Discord either!
+Вы находитесь на самом краю человеческой экскумены. Здесь законы звучат лишь эхом из динамиков, часто противореча истинным интересам корпорации. Корабль укомплектован смешанным составом: корпоративными сотрудниками NT и контрактниками правительственной Организации Экспедиционного Корпуса. Этот хрупкий союз - всё, что стоит между вами и неизвестностью.
 
-We are currently accepting translations of the game on our main repository.
-If you would like to translate the game into another language check the #contributor-general channel in our Discord.
+---
 
-## Building
+## Особенности разработки
 
-Refer to [the Space Wizards' guide](https://docs.spacestation14.com/en/general-development/setup/setting-up-a-development-environment.html) on setting up a development environment for general information, but keep in mind that Einstein Engines is not the same and many things may not apply.
-We provide some scripts shown below to make the job easier.
+Как **Hard Fork**, мы не мерджим код из сторонних апстримов напрямую. Любая фича портируется и адаптируется под наше видение баланса и производительности.
 
-### Build dependencies
+**Ключевые фичи, которые запланированы или находятся в разработке:**
+- [ ] **Overmap:** Громадная космическая сетка с объектами интереса.
+- [ ] **NTSL 2.0:** Изолированная среда скриптинга для телекоммуникаций.
+- [ ] **MultiZ:** Многопалубные корабли и вертикальный геймплей.
+- [ ] **Система навыков:** Персонаж определяется не тем, что он может, а тем, чего он не может.
+- [ ] **Persistency:** Глубокая интеграция с БД для сохранения состояния персонажей и гридов.
 
-> - Git
-> - .NET SDK 9.0.101
+---
 
+## Contributing / Вклад в разработку
+
+Мы рады любому, кто разделяет наши взгляды на Hard-RP. Если вы устали от современных трендов в разработке SS14 и хотите помочь в создании суровой и последовательной ролевой игры - добро пожаловать.
+
+!!!ПЛЕЙСХОЛДЕР ПОД ССЫЛКИ!!!
+
+---
+
+## Building / Сборка
+
+Инструкции по сборке аналогичны стандартным для SS14/Einstein-Engines.
 
 ### Windows
+1. Склонируйте репозиторий.
+2. Запустите `git submodule update --init --recursive`.
+3. Используйте `Scripts/bat/buildAllDebug.bat` для компиляции.
+4. Запустите сервер и клиент через `Scripts/bat/runQuickAll.bat`.
 
-> 1. Clone this repository
-> 2. Run `git submodule update --init --recursive` in a terminal to download the engine
-> 3. Run `Scripts/bat/buildAllDebug.bat` after making any changes to the source
-> 4. Run `Scripts/bat/runQuickAll.bat` to launch the client and the server
-> 5. Connect to localhost in the client and play
+## Лицензия
 
-### Linux
-
-> 1. Clone this repository
-> 2. Run `git submodule update --init --recursive` in a terminal to download the engine
-> 3. Run `Scripts/sh/buildAllDebug.sh` after making any changes to the source
-> 4. Run `Scripts/sh/runQuickAll.sh` to launch the client and the server
-> 5. Connect to localhost in the client and play
-
-### MacOS
-
-> I don't know anybody using MacOS to test this, but it's probably roughly the same steps as Linux
-
-## License
-
-Please read the [LEGAL.md](./LEGAL.md) file for information on the licenses of the code and assets in this repository.
+Смотрите файл [LEGAL.md](./LEGAL.md) для получения информации о лицензиях кода и ассетов. Мы сохраняем приверженность Open Source, однако все ассеты, созданные для NSV Nevada (исключая те, что были портированы с других проектов) является интеллектуальной собственностью проекта.
