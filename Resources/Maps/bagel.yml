@@ -60139,7 +60139,7 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
-- proto: ClothingNeckCloakTrans
+- proto: ClothingNeckScarfStripedRed
   entities:
   - uid: 9310
     components:
@@ -60172,7 +60172,7 @@ entities:
     - type: Transform
       pos: -10.308835,13.564301
       parent: 2
-- proto: ClothingNeckLGBTPin
+- proto: ClothingNeckScarfStripedRed
   entities:
   - uid: 9315
     components:

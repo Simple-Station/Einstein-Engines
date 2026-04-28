@@ -60539,7 +60539,7 @@ entities:
     - type: Transform
       pos: -31.430737,31.650105
       parent: 2
-- proto: ClothingNeckCloakTrans
+- proto: ClothingNeckScarfStripedRed
   entities:
   - uid: 8664
     components:
@@ -60560,7 +60560,7 @@ entities:
     - type: Transform
       pos: -36.040855,-45.058273
       parent: 2
-- proto: ClothingNeckLGBTPin
+- proto: ClothingNeckScarfStripedRed
   entities:
   - uid: 8667
     components:

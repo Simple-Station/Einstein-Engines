@@ -38,26 +38,6 @@
     - type: loadout
       id: LoadoutNeckTieRibbon
     - type: loadout
-      id: LoadoutItemsPrideLGBTPin
-    - type: loadout
-      id: LoadoutItemsPrideAromanticPin
-    - type: loadout
-      id: LoadoutItemsPrideAsexualPin
-    - type: loadout
-      id: LoadoutItemsPrideBisexualPin
-    - type: loadout
-      id: LoadoutItemsPrideGayPin
-    - type: loadout
-      id: LoadoutItemsPrideIntersexPin
-    - type: loadout
-      id: LoadoutItemsPrideLesbianPin
-    - type: loadout
-      id: LoadoutItemsPrideNonBinaryPin
-    - type: loadout
-      id: LoadoutItemsPridePansexualPin
-    - type: loadout
-      id: LoadoutItemsPrideTransPin
-    - type: loadout
       id: LoadoutNeckCrucifixColor
     - type: loadout
       id: LoadoutNeckCrucifixColorSaintPeter

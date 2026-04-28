@@ -19224,7 +19224,7 @@ entities:
     - type: Transform
       pos: -28.440887,17.64114
       parent: 2
-- proto: ClothingNeckLGBTPin
+- proto: ClothingNeckScarfStripedRed
   entities:
   - uid: 3127
     components:
@@ -44344,7 +44344,7 @@ entities:
     - type: Transform
       pos: -13.5,-3.5
       parent: 2
-- proto: VendingMachinePride
+- proto: VendingMachineClothing
   entities:
   - uid: 7036
     components:

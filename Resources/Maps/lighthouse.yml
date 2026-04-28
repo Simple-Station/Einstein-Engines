@@ -46757,7 +46757,7 @@ entities:
     - type: Transform
       pos: -54.295135,50.98366
       parent: 2
-- proto: ClothingNeckCloakTrans
+- proto: ClothingNeckScarfStripedRed
   entities:
   - uid: 7006
     components:
@@ -124107,7 +124107,7 @@ entities:
     - type: Transform
       pos: -31.5,33.5
       parent: 2
-- proto: VendingMachinePride
+- proto: VendingMachineClothing
   entities:
   - uid: 18760
     components:

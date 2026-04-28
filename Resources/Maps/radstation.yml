@@ -59332,14 +59332,14 @@ entities:
     - type: Transform
       pos: 36.19758,26.417822
       parent: 2
-- proto: ClothingNeckCloakAce
+- proto: ClothingNeckScarfStripedRed
   entities:
   - uid: 8844
     components:
     - type: Transform
       pos: 36.222733,26.699072
       parent: 2
-- proto: ClothingNeckCloakTrans
+- proto: ClothingNeckScarfStripedRed
   entities:
   - uid: 8845
     components:

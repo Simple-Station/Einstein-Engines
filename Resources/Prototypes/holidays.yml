@@ -266,12 +266,6 @@
     dayOfYear: 256
 
 - type: holiday
-  id: BisexualPrideDay
-  name: holiday-name-bisexual-pride-day
-  beginDay: 23
-  beginMonth: September
-
-- type: holiday
   id: StupidQuestionsDay
   name: holiday-name-stupid-questions-day
   beginDay: 28

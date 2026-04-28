@@ -65249,7 +65249,7 @@ entities:
     - type: Transform
       pos: 13.5,-20.5
       parent: 2
-- proto: VendingMachinePride
+- proto: VendingMachineClothing
   entities:
   - uid: 9924
     components:

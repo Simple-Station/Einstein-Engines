@@ -563,7 +563,7 @@ entities:
     - canCollide: False
       type: Physics
     - type: InsideEntityStorage
-- proto: ClothingNeckCloakTrans
+- proto: ClothingNeckScarfStripedRed
   entities:
   - uid: 332
     components:

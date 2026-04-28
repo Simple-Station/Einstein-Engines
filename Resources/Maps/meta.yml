@@ -152315,7 +152315,7 @@ entities:
     - type: Transform
       pos: 28.5,-19.5
       parent: 2
-- proto: VendingMachinePride
+- proto: VendingMachineClothing
   entities:
   - uid: 23221
     components:

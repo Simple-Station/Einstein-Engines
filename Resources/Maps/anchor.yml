@@ -77519,7 +77519,7 @@ entities:
     - type: Transform
       pos: -31.286428,-54.622658
       parent: 2
-- proto: ClothingNeckCloakAce
+- proto: ClothingNeckScarfStripedRed
   entities:
   - uid: 12074
     components:
