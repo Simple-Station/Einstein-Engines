@@ -5,12 +5,13 @@ on:
     branches: [ staging, trying ]
   merge_group:
   pull_request:
-    paths:
-      - '**.rsi/**'
+    types: [ opened, reopened, synchronize, ready_for_review ]
+    branches: [ master ]
 
 jobs:
   validate_rsis:
     name: Validate RSIs
+    if: github.actor != 'PJBot' && github.event.pull_request.draft == false && github.actor != 'DeltaV-Bot' && github.actor != 'SimpleStation14'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.6.0
@@ -18,9 +19,33 @@ jobs:
         run: git submodule update --init
       - name: Pull engine updates
         uses: space-wizards/submodule-dependency@v0.1.5
+      - name: Detect RSI changes
+        id: rsi_changes
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            RANGE="${{ github.event.pull_request.base.sha }}...${{ github.sha }}"
+          else
+            RANGE="${{ github.event.before }}...${{ github.sha }}"
+          fi
+
+          HAS_RSI=false
+          while IFS= read -r file; do
+            if [[ "$file" == *.rsi/* ]]; then
+              HAS_RSI=true
+              break
+            fi
+          done < <(git diff --name-only "$RANGE")
+
+          echo "has_rsi=$HAS_RSI" >> "$GITHUB_OUTPUT"
       - name: Install Python dependencies
+        if: steps.rsi_changes.outputs.has_rsi == 'true'
         run: |
           pip3 install --ignore-installed --user pillow jsonschema
       - name: Validate RSIs
+        if: steps.rsi_changes.outputs.has_rsi == 'true'
         run: |
           python3 RobustToolbox/Schemas/validate_rsis.py Resources/
+      - name: Skip when no RSI changes
+        if: steps.rsi_changes.outputs.has_rsi != 'true'
+        run: echo "No .rsi files changed; skipping RSI validation."
