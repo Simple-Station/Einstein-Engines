@@ -1,0 +1,10 @@
+
+- type: cargoProduct
+  id: HydratedScurret
+  icon:
+    sprite: Structures/Wallmounts/posters.rsi
+    state: poster54_legit
+  product: CrateFunScurret
+  cost: 25000 # You will surely not regret buying this
+  category: cargoproduct-category-name-fun
+  group: market

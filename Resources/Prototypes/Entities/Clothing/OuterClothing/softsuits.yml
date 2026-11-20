@@ -60,6 +60,9 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:Container {}
+  - type: Tag
+    tags: # if YOU want to make scurret displacements for the regular EVA suit. be my guest. until then. sorgy.
+    - ScurretWearable
 
 #Prisoner EVA
 - type: entity

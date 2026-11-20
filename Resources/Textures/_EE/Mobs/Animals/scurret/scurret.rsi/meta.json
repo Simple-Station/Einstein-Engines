@@ -1,0 +1,77 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "Original sprite by Very-Soft (https://github.com/Very-Soft), edits by Hannah 'FairlySadPanda' Dawson. Displacement maps by Hannah 'FairlySadPanda' Dawson. Original creature concept by VIDEOCULT, and used with kind permission.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "scurret",
+            "directions": 4
+        },
+        {
+            "name": "scurret_rip"
+        },
+        {
+            "name": "scurret_oof"
+        },
+        {
+            "name": "head_f",
+            "directions": 4
+        },
+        {
+            "name": "head_m",
+            "directions": 4
+        },
+        {
+            "name": "l_arm",
+            "directions": 4
+        },
+        {
+            "name": "l_foot",
+            "directions": 4
+        },
+        {
+            "name": "l_hand",
+            "directions": 4
+        },
+        {
+            "name": "l_leg",
+            "directions": 4
+        },
+        {
+            "name": "r_arm",
+            "directions": 4
+        },
+        {
+            "name": "r_foot",
+            "directions": 4
+        },
+        {
+            "name": "r_hand",
+            "directions": 4
+        },
+        {
+            "name": "r_leg",
+            "directions": 4
+        },
+        {
+            "name": "torso_f",
+            "directions": 4
+        },
+        {
+            "name": "torso_m",
+            "directions": 4
+        },
+        {
+            "name": "tail",
+            "directions": 4
+        },
+        {
+            "name": "eyes",
+            "directions": 4
+        }
+    ]
+}
