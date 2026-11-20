@@ -6,7 +6,7 @@ using Content.Shared.ActionBlocker;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Damage;
 using Content.Shared.Damage.ForceSay;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Instruments;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;

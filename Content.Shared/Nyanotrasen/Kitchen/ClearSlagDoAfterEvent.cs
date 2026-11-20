@@ -1,6 +1,6 @@
 using Content.Shared.Chemistry.Components;
 using Content.Shared.DoAfter;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Nyanotrasen.Kitchen

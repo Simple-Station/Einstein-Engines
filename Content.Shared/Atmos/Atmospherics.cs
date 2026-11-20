@@ -41,6 +41,11 @@ namespace Content.Shared.Atmos
         public const float T20C = 293.15f;
 
         /// <summary>
+        ///     37ºC in K --GOOB EDIT--
+        /// </summary>
+        public const float T37C = 310.1f;
+
+        /// <summary>
         ///     Do not allow any gas mixture temperatures to exceed this number. It is occasionally possible
         ///     to have very small heat capacity (e.g. room that was just unspaced) and for large amounts of
         ///     energy to be transferred to it, even for a brief moment. However, this messes up subsequent

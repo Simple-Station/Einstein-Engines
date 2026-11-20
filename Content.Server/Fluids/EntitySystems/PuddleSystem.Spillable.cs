@@ -7,7 +7,7 @@ using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Clothing;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Database;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Fluids.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Nutrition.EntitySystems;

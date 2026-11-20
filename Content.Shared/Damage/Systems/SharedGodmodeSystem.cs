@@ -2,7 +2,8 @@ using Content.Shared.Damage.Components;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Slippery;
 using Content.Shared.StatusEffect;
-using Content.Shared.Body.Systems; // Shitmed Change
+using Content.Shared.Body.Systems;
+using Content.Shared.StatusEffectNew; // Shitmed Change
 
 namespace Content.Shared.Damage.Systems;
 
@@ -52,7 +53,7 @@ public abstract class SharedGodmodeSystem : EntitySystem
         }
 
         // Rejuv to cover other stuff
-        
+
         RaiseLocalEvent(uid, new RejuvenateEvent());
         foreach (var (id, _) in _bodySystem.GetBodyChildren(uid)) // Shitmed Change
             EnableGodmode(id);

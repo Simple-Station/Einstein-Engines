@@ -22,6 +22,11 @@ public sealed partial class ReactiveComponent : Component
     /// </summary>
     [DataField("reactions", true, serverOnly: true)]
     public List<ReactiveReagentEffectEntry>? Reactions;
+
+    /// <summary>
+    ///     Goobstation - should 15 units of whatchamacallit get clamped into one?
+    /// </summary>
+    [DataField] public bool OneUnitReaction = false;
 }
 
 [DataDefinition]

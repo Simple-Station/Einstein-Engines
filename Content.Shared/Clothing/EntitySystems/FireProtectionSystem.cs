@@ -1,3 +1,4 @@
+using Content.Goobstation.Common.Flammability;
 using Content.Shared.Atmos;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Inventory;
@@ -18,6 +19,10 @@ public sealed class FireProtectionSystem : EntitySystem
 
     private void OnGetProtection(Entity<FireProtectionComponent> ent, ref InventoryRelayedEvent<GetFireProtectionEvent> args)
     {
+        // goob edit - VERY flammable component (trademark)
+        if (HasComp<VeryFlammableComponent>(ent))
+            return;
+
         args.Args.Reduce(ent.Comp.Reduction);
     }
 }

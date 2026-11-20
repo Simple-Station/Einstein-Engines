@@ -1,6 +1,6 @@
 using Content.Shared.FootPrint;
 using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Fluids.Components;
 using Content.Shared.Forensics;
 using Robust.Shared.Physics.Events;

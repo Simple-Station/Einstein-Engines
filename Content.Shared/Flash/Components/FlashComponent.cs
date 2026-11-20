@@ -10,7 +10,7 @@ namespace Content.Shared.Flash.Components
 
         [DataField("duration")]
         [ViewVariables(VVAccess.ReadWrite)]
-        public int FlashDuration { get; set; } = 5000;
+        public TimeSpan FlashDuration { get; set; } = TimeSpan.FromSeconds(5);
 
         /// <summary>
         /// How long a target is stunned when a melee flash is used.

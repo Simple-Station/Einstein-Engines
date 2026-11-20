@@ -1,7 +1,7 @@
 using Content.Server.Body.Components;
 using Content.Server.Body.Events;
 using Content.Server.Traits.Assorted;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 
 namespace Content.Server.Traits;
 

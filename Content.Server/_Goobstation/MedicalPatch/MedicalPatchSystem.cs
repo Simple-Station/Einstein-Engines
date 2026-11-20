@@ -1,7 +1,7 @@
 using Content.Shared.Administration.Logs;
 using Content.Server.Medical.Components;
 using Content.Server.Popups;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Sticky;
 using Content.Shared.Sticky.Systems;
 using Content.Shared.Sticky.Components;

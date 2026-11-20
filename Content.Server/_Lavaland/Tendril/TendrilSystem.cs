@@ -2,7 +2,7 @@ using System.Linq;
 using Content.Server._Lavaland.Tendril.Components;
 using Content.Shared.Damage;
 using Content.Shared.Destructible;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Mobs;
 using Content.Shared.Popups;
 using Robust.Server.GameObjects;
