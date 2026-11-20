@@ -1994,7 +1994,7 @@ namespace Content.Client.Lobby.UI
             // Reset the whole UI and delete caches
             if (reload)
             {
-                foreach (var tab in TraitsTabs.Tabs)
+                foreach (var tab in TraitsTabs.TabContainer.Children)
                     TraitsTabs.RemoveTab(tab);
                 _loadoutPreferences.Clear();
             }
@@ -2328,13 +2328,12 @@ namespace Content.Client.Lobby.UI
             // Reset the whole UI and delete caches
             if (reload)
             {
-                foreach (var tab in LoadoutsTabs.Tabs)
+                foreach (var tab in LoadoutsTabs.TabContainer.Children)
                     LoadoutsTabs.RemoveTab(tab);
                 foreach (var uid in _dummyLoadouts)
                     _entManager.QueueDeleteEntity(uid.Value);
                 _loadoutPreferences.Clear();
             }
-
 
             // Get the highest priority job to use for loadout filtering
             var highJob = _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies());
@@ -2355,13 +2354,6 @@ namespace Content.Client.Lobby.UI
                     out _
                 );
                 _loadouts.Add(loadout, usable);
-
-                var list = _loadoutPreferences.ToList();
-                if (list.FindIndex(lps => lps.Loadout.ID == loadout.ID) is not (not -1 and var i))
-                    continue;
-
-                var selector = list[i];
-                UpdateSelector(selector, usable);
             }
 
             if (_loadouts.Count == 0)
@@ -2371,39 +2363,33 @@ namespace Content.Client.Lobby.UI
                 return;
             }
 
-
             var uncategorized = LoadoutsTabs.Contents.FirstOrDefault(c => c.Name == "Uncategorized");
-            if (uncategorized == null)
+            uncategorized ??= new BoxContainer
             {
-                uncategorized = new BoxContainer
+                Name = "Uncategorized",
+                Orientation = LayoutOrientation.Vertical,
+                HorizontalExpand = true,
+                VerticalExpand = true,
+                // I hate ScrollContainers
+                Children =
                 {
-                    Name = "Uncategorized",
-                    Orientation = LayoutOrientation.Vertical,
-                    HorizontalExpand = true,
-                    VerticalExpand = true,
-                    // I hate ScrollContainers
-                    Children =
+                    new ScrollContainer
                     {
-                        new ScrollContainer
+                        HScrollEnabled = false,
+                        HorizontalExpand = true,
+                        VerticalExpand = true,
+                        Children =
                         {
-                            HScrollEnabled = false,
-                            HorizontalExpand = true,
-                            VerticalExpand = true,
-                            Children =
+                            new BoxContainer
                             {
-                                new BoxContainer
-                                {
-                                    Orientation = LayoutOrientation.Vertical,
-                                    HorizontalExpand = true,
-                                    VerticalExpand = true,
-                                },
+                                Orientation = LayoutOrientation.Vertical,
+                                HorizontalExpand = true,
+                                VerticalExpand = true,
                             },
                         },
                     },
-                };
-
-                LoadoutsTabs.AddTab(uncategorized, Loc.GetString("loadout-category-Uncategorized"));
-            }
+                },
+            };
 
             // Create a Dictionary/tree of categories and subcategories
             var cats = CreateTree(_prototypeManager.EnumeratePrototypes<LoadoutCategoryPrototype>()
@@ -2415,75 +2401,19 @@ namespace Content.Client.Lobby.UI
                 categories.Add(key, value);
 
             // Create the UI elements for the category tree
-            CreateCategoryUI(categories, LoadoutsTabs);
-
-            // Fill categories with loadouts
-            foreach (var (loadout, usable) in _loadouts
+            var sortedLoadouts = _loadouts
                 .OrderBy(l => l.Key.ID)
                 .ThenBy(l => Loc.GetString($"loadout-name-{l.Key.ID}"))
-                .ThenBy(l => l.Key.Cost))
-            {
-                if (_loadoutPreferences.Select(lps => lps.Loadout.ID).Contains(loadout.ID))
-                {
-                    var first = _loadoutPreferences.First(lps => lps.Loadout.ID == loadout.ID);
-                    var prof = Profile?.LoadoutPreferences.FirstOrDefault(lp => lp.LoadoutName == loadout.ID);
-                    first.Preference = new(loadout.ID, prof?.CustomName, prof?.CustomDescription, prof?.CustomColorTint, prof?.CustomHeirloom);
-                    UpdateSelector(first, usable);
-                    continue;
-                }
+                .ThenBy(l => l.Key.Cost);
+            LoadoutsTabs.AddTab(uncategorized, Loc.GetString("loadout-category-Uncategorized"),
+                false, () => LoadCategoryLoadouts((BoxContainer) uncategorized, "Uncategorized"));
+            CreateCategoryUI(categories, LoadoutsTabs);
 
-                var selector = new LoadoutPreferenceSelector(
-                    loadout, highJob ?? new JobPrototype(),
-                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), ref _dummyLoadouts,
-                    _entManager, _prototypeManager, _cfgManager, _characterRequirementsSystem, _requirements)
-                    { Preference = new(loadout.ID) };
-                UpdateSelector(selector, usable);
-                AddSelector(selector);
-
-                // Look for an existing category tab
-                var match = FindCategory(loadout.Category, LoadoutsTabs);
-
-                // If there is no category put it in Uncategorized (this shouldn't happen)
-                (match ?? uncategorized).Children.First().Children.First().AddChild(selector);
-            }
-
-            // Hide any empty tabs
-            HideEmptyTabs(_prototypeManager.EnumeratePrototypes<LoadoutCategoryPrototype>().ToList());
+            // Hide any empty tabs //TODO: This is broken
+            // HideEmptyTabs(_prototypeManager.EnumeratePrototypes<LoadoutCategoryPrototype>().ToList());
 
             UpdateLoadoutPreferences();
             return;
-
-
-            void UpdateSelector(LoadoutPreferenceSelector selector, bool usable)
-            {
-                selector.Valid = usable;
-                selector.ShowUnusable = showUnusable.Value;
-
-                foreach (var item in selector.Loadout.Items)
-                {
-                    if (_dummyLoadouts.TryGetValue(selector.Loadout.ID + selector.Loadout.Items.IndexOf(item), out var entity)
-                        && _entManager.GetComponent<MetaDataComponent>(entity).EntityPrototype!.ID == item)
-                    {
-                        if (!_entManager.HasComponent<ClothingComponent>(entity))
-                        {
-                            selector.Wearable = true;
-                            continue;
-                        }
-                        selector.Wearable = _characterRequirementsSystem.CanEntityWearItem(PreviewDummy, entity);
-                        continue;
-                    }
-
-                    entity = _entManager.SpawnEntity(item, MapCoordinates.Nullspace);
-                    _dummyLoadouts[selector.Loadout.ID + selector.Loadout.Items.IndexOf(item)] = entity;
-
-                    if (!_entManager.HasComponent<ClothingComponent>(entity))
-                    {
-                        selector.Wearable = true;
-                        continue;
-                    }
-                    selector.Wearable = _characterRequirementsSystem.CanEntityWearItem(PreviewDummy, entity);
-                }
-            }
 
             void CreateCategoryUI(Dictionary<string, object> tree, NeoTabContainer parent)
             {
@@ -2522,7 +2452,8 @@ namespace Content.Client.Lobby.UI
                             },
                         };
 
-                        parent.AddTab(category, Loc.GetString($"loadout-category-{key}"));
+                        parent.AddTab(category, Loc.GetString($"loadout-category-{key}"),
+                            initialize: () => LoadCategoryLoadouts(category, key));
                     }
                     // If the value is a dictionary, create a new tab for it and recursively call this function to fill it
                     else
@@ -2532,12 +2463,68 @@ namespace Content.Client.Lobby.UI
                             Name = key,
                             HorizontalExpand = true,
                             VerticalExpand = true,
-                            SeparatorMargin = new Thickness(0),
+                            SeparatorMargin = new(0),
                         };
 
-                        parent.AddTab(category, Loc.GetString($"loadout-category-{key}"));
-                        CreateCategoryUI((Dictionary<string, object>) value, category);
+                        parent.AddTab(category, Loc.GetString($"loadout-category-{key}"),
+                            initialize: () => CreateCategoryUI((Dictionary<string, object>) value, category));
                     }
+                }
+            }
+
+            void LoadCategoryLoadouts(BoxContainer category, string key)
+            {
+                foreach (var (loadout, usable) in sortedLoadouts.Where(l => l.Key.Category == key))
+                {
+                    if (_loadoutPreferences.Select(lps => lps.Loadout.ID).Contains(loadout.ID))
+                    {
+                        var first = _loadoutPreferences.First(lps => lps.Loadout.ID == loadout.ID);
+                        var prof = Profile?.LoadoutPreferences.FirstOrDefault(lp => lp.LoadoutName == loadout.ID);
+                        first.Preference = new(loadout.ID, prof?.CustomName, prof?.CustomDescription, prof?.CustomColorTint, prof?.CustomHeirloom);
+                        UpdateSelector(first, usable);
+                        continue;
+                    }
+
+                    var selector = new LoadoutPreferenceSelector(
+                        loadout, highJob ?? new JobPrototype(),
+                        Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), ref _dummyLoadouts,
+                        _entManager, _prototypeManager, _cfgManager, _characterRequirementsSystem, _requirements)
+                        { Preference = new(loadout.ID), };
+                    UpdateSelector(selector, usable);
+                    AddSelector(selector);
+
+                    category.Children.First().Children.First().AddChild(selector);
+                }
+            }
+
+            void UpdateSelector(LoadoutPreferenceSelector selector, bool usable)
+            {
+                selector.Valid = usable;
+                selector.ShowUnusable = showUnusable.Value;
+
+                foreach (var item in selector.Loadout.Items)
+                {
+                    if (_dummyLoadouts.TryGetValue(selector.Loadout.ID + selector.Loadout.Items.IndexOf(item), out var entity)
+                        && _entManager.GetComponent<MetaDataComponent>(entity).EntityPrototype!.ID == item)
+                    {
+                        if (!_entManager.HasComponent<ClothingComponent>(entity))
+                        {
+                            selector.Wearable = true;
+                            continue;
+                        }
+                        selector.Wearable = _characterRequirementsSystem.CanEntityWearItem(PreviewDummy, entity);
+                        continue;
+                    }
+
+                    entity = _entManager.SpawnEntity(item, MapCoordinates.Nullspace);
+                    _dummyLoadouts[selector.Loadout.ID + selector.Loadout.Items.IndexOf(item)] = entity;
+
+                    if (!_entManager.HasComponent<ClothingComponent>(entity))
+                    {
+                        selector.Wearable = true;
+                        continue;
+                    }
+                    selector.Wearable = _characterRequirementsSystem.CanEntityWearItem(PreviewDummy, entity);
                 }
             }
 

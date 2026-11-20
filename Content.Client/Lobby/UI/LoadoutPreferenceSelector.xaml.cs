@@ -2,7 +2,6 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using Content.Client.Guidebook;
-using Content.Client.Paint;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.Guidebook;
@@ -112,9 +111,9 @@ public sealed partial class LoadoutPreferenceSelector : Control
             entities.Add(loadout.ID + 0, dummyLoadoutItem);
 
             // Create a sprite preview of the loadout item
-            previewLoadout = new SpriteView
+            previewLoadout = new()
             {
-                Scale = new Vector2(1, 1),
+                Scale = new(1, 1),
                 OverrideDirection = Direction.South,
                 VerticalAlignment = VAlignment.Center,
                 SizeFlagsStretchRatio = 1,
@@ -124,9 +123,9 @@ public sealed partial class LoadoutPreferenceSelector : Control
         else
         {
             // Create a sprite preview of the loadout item
-            previewLoadout = new SpriteView
+            previewLoadout = new()
             {
-                Scale = new Vector2(1, 1),
+                Scale = new(1, 1),
                 OverrideDirection = Direction.South,
                 VerticalAlignment = VAlignment.Center,
                 SizeFlagsStretchRatio = 1,
@@ -316,9 +315,9 @@ public sealed partial class LoadoutPreferenceSelector : Control
         // Move the special editor
         var heading = SpecialMenu.Heading;
         heading.Orphan();
-        ButtonGroup.AddChild(heading);
+        ButtonGroup.AddButton(heading, false);
         GuidebookButton.Orphan();
-        ButtonGroup.AddChild(GuidebookButton);
+        ButtonGroup.AddButton(GuidebookButton);
 
         // These guys are here too for reasons
         HeadingButton.SetHeight = HeirloomButton.SetHeight = GuidebookButton.SetHeight = PreferenceButton.Size.Y;
