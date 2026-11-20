@@ -22,6 +22,7 @@
     soundHit:
       collection: MetalThud
   - type: CollisionWake
+  - type: GravityAffected
   - type: Physics
     bodyType: Dynamic
     fixedRotation: false
@@ -41,6 +42,7 @@
     noRot: false
   - type: Pullable
   - type: DamageExaminable
+  - type: CEZPhysics
 
 - type: entity
   name: "storage item"

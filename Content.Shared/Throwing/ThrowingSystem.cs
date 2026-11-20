@@ -28,6 +28,8 @@ public sealed class ThrowingSystem : EntitySystem
 
     public const float FlyTimePercentage = 0.8f;
 
+    private const float TileFrictionMod = 1.5f;
+
     private float _frictionModifier;
 
     [Dependency] private readonly IGameTiming _gameTiming = default!;
@@ -160,7 +162,7 @@ public sealed class ThrowingSystem : EntitySystem
         };
 
         // if not given, get the default friction value for distance calculation
-        var tileFriction = friction ?? _frictionModifier * TileFrictionController.DefaultFriction;
+        var tileFriction = friction ?? _frictionModifier * TileFrictionMod;
 
         if (tileFriction == 0f)
             compensateFriction = false; // cannot calculate this if there is no friction
@@ -226,13 +228,19 @@ public sealed class ThrowingSystem : EntitySystem
         if (pushbackRatio != 0.0f &&
             physics.Mass > 0f &&
             TryComp(user.Value, out PhysicsComponent? userPhysics) &&
-            _gravity.IsWeightless(user.Value, userPhysics))
+            _gravity.IsWeightless(user.Value))
         {
             var msg = new ThrowPushbackAttemptEvent();
             RaiseLocalEvent(uid, msg);
             const float massLimit = 5f;
 
-            if (!msg.Cancelled)
+            if (msg.Cancelled)
+                return;
+
+            var pushEv = new ThrowerImpulseEvent();
+            RaiseLocalEvent(user.Value, ref pushEv);
+
+            if (pushEv.Push)
                 _physics.ApplyLinearImpulse(user.Value, -impulseVector / physics.Mass * pushbackRatio * MathF.Min(massLimit, physics.Mass), body: userPhysics);
         }
     }

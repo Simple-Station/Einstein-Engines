@@ -50,7 +50,7 @@ namespace Content.Shared.Maps
         // Delta V
         [DataField("canShovel")] public bool CanShovel { get; private set; }
         //Delta V
-        
+
         /// <summary>
         /// Effective mass of this tile for grid impacts.
         /// </summary>
@@ -141,5 +141,11 @@ namespace Content.Shared.Maps
 
         [DataField]
         public bool SimulatedTurf = true;
+
+        /// <summary>
+        /// CrystallEdge: used for lightning calculation through zlevels
+        /// </summary>
+        [DataField]
+        public bool Transparent = false;
     }
 }

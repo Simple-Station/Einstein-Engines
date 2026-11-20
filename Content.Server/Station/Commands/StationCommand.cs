@@ -54,7 +54,7 @@ public sealed class StationsCommand : ToolshedCommand
     public EntityUid? LargestGrid([PipedArgument] EntityUid input)
     {
         _station ??= GetSys<StationSystem>();
-        return _station.GetLargestGrid(Comp<StationDataComponent>(input));
+        return _station.GetLargestGrid(input);
     }
 
     [CommandImplementation("largestgrid")]

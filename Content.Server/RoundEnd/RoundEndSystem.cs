@@ -100,10 +100,10 @@ namespace Content.Server.RoundEnd
         /// </summary>
         public EntityUid? GetStation()
         {
-            AllEntityQuery<StationEmergencyShuttleComponent, StationDataComponent>().MoveNext(out _, out _, out var data);
+            AllEntityQuery<StationEmergencyShuttleComponent, StationDataComponent>().MoveNext(out var ent, out _, out var data);
             if (data == null)
                 return null;
-            var targetGrid = _stationSystem.GetLargestGrid(data);
+            var targetGrid = _stationSystem.GetLargestGrid(ent);
             return targetGrid == null ? null : Transform(targetGrid.Value).MapUid;
         }
 

@@ -119,5 +119,23 @@ namespace Content.Shared.Movement.Components
         public float CurrentWalkSpeed => WalkSpeedModifier * BaseWalkSpeed;
         [ViewVariables]
         public float CurrentSprintSpeed => SprintSpeedModifier * BaseSprintSpeed;
+
+        /// <summary>
+        /// These base values should be defined in yaml and rarely if ever modified directly.
+        /// </summary>
+        [AutoNetworkedField, DataField]
+        public float BaseWeightlessFriction = DefaultWeightlessFriction;
+
+        [AutoNetworkedField, DataField]
+        public float BaseWeightlessModifier = DefaultWeightlessModifier;
+
+        [AutoNetworkedField, DataField]
+        public float BaseWeightlessAcceleration = DefaultWeightlessAcceleration;
+
+        /// <summary>
+        /// The body's base friction modifier that is applied in *all* circumstances.
+        /// </summary>
+        [AutoNetworkedField, DataField]
+        public float BaseFriction = DefaultFriction;
     }
 }

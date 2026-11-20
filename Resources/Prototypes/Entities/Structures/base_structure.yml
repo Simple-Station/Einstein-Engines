@@ -7,6 +7,7 @@
   - type: Transform
     anchored: true
   - type: Clickable
+  - type: GravityAffected
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -32,6 +33,7 @@
     staminaCost: 50
     soundHit:
       collection: MetalThud
+  - type: CEZPhysics
 
 - type: entity
   # This means that it's not anchored on spawn.

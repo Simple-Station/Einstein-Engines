@@ -1,0 +1,25 @@
+- type: shader
+  id: CEWave
+  kind: source
+  path: "/Textures/_CE/Shaders/wave.swsl"
+
+- type: shader
+  id: CEPostProcess
+  kind: source
+  path: "/Textures/_CE/Shaders/post_process.swsl"
+  params:
+    CircleRadius: 420.0
+    CircleMinDist: 0.0
+    CirclePow: 1.0
+    CircleMax: 4.0
+    CircleMult: 0.25
+    FalloffClampMin: 0.075
+    FalloffClampMax: 1.0
+    FalloffStrength: 0.75
+    FalloffPow: 3.0
+    HDR: 1.5
+
+- type: shader
+  id: CEZBlur
+  kind: source
+  path: "/Textures/_CE/Shaders/zblur.swsl"

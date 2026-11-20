@@ -1,0 +1,24 @@
+preset raw;
+
+varying highp vec2 Pos;
+varying highp vec4 VtxModulate;
+
+uniform highp float Speed;
+uniform highp float Dis;
+uniform highp float Offset;
+
+void fragment() {
+    // Re-create base mvp
+    COLOR = zTexture(UV) * VtxModulate;
+}
+
+void vertex() {
+    vec2 pos = aPos;
+    pos.x += sin(TIME * Speed + Offset) * Dis * (UV2.y - 1.0);
+    VERTEX = apply_mvp(pos);
+
+    Pos = (VERTEX + 1.0) / 2.0;
+    UV = mix(modifyUV.xy, modifyUV.zw, tCoord);
+    UV2 = tCoord2;
+    VtxModulate = zFromSrgb(modulate);
+}

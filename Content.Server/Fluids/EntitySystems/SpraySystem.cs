@@ -128,7 +128,7 @@ public sealed class SpraySystem : EntitySystem
 
                 if (TryComp<PhysicsComponent>(user, out var body))
                 {
-                    if (_gravity.IsWeightless(user, body))
+                    if (_gravity.IsWeightless(user))
                         _physics.ApplyLinearImpulse(user, -impulseDirection.Normalized() * entity.Comp.PushbackAmount, body: body);
                 }
 
@@ -204,8 +204,22 @@ public sealed class SpraySystem : EntitySystem
 
             if (TryComp<PhysicsComponent>(user, out var body))
             {
-                if (_gravity.IsWeightless(user, body))
-                    _physics.ApplyLinearImpulse(user, -impulseDirection.Normalized() * entity.Comp.PushbackAmount, body: body);
+                if (_gravity.IsWeightless(user))
+                {
+                    // push back the player
+                    _physics.ApplyLinearImpulse(user, -impulseDirection * entity.Comp.PushbackAmount, body: body);
+                }
+                else
+                {
+                    // push back the grid the player is standing on
+                    var userTransform = Transform(user);
+                    if (userTransform.GridUid == userTransform.ParentUid)
+                    {
+                        // apply both linear and angular momentum depending on the player position
+                        // multiply by a cvar because grid mass is currently extremely small compared to all other masses
+                        _physics.ApplyLinearImpulse(userTransform.GridUid.Value, -impulseDirection * entity.Comp.PushbackAmount, userTransform.LocalPosition);
+                    }
+                }
             }
         }
 
