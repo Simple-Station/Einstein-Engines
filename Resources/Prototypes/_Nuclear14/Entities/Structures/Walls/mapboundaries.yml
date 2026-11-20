@@ -21,7 +21,6 @@
     - type: IconSmooth
       key: walls
       mode: NoSprite
-    - type: SmoothEdge
     - type: Sprite
       sprite: Structures/Walls/rock.rsi
       layers:

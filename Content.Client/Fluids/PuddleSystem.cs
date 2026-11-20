@@ -49,7 +49,6 @@ public sealed class PuddleSystem : SharedPuddleSystem
                 {
                     args.Sprite.LayerSetState(0, $"{smooth.StateBase}0");
                     _smooth.SetEnabled(uid, true, smooth);
-                    _smooth.DirtyNeighbours(uid);
                 }
             }
         }

@@ -17,7 +17,6 @@
   - type: IconSmooth
     key: walls
     mode: NoSprite
-  - type: SmoothEdge
   - type: Icon
     sprite: Structures/Walls/rock.rsi
     state: rock_asteroid
@@ -518,7 +517,6 @@
   - type: Icon
     sprite: Structures/Walls/rock.rsi
     state: ironrock
-  - type: SmoothEdge
   - type: Sprite
     sprite: Structures/Walls/rock.rsi
     layers:
@@ -967,7 +965,6 @@
     sprite: Structures/Walls/rock.rsi
     state: rock
   - type: MiningScannerViewable
-  - type: SmoothEdge
   - type: Sprite
     sprite: Structures/Walls/rock.rsi
     layers:
