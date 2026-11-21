@@ -54,7 +54,7 @@
     outerClothing: ClothingOuterCoatRnd
     id: LibrarianPDA
     ears: ClothingHeadsetScience
-    pocket1: BookPsionicsGuidebook
+    pocket1: PaperScribeBook
     pocket2: HandLabeler
   storage:
     back:
