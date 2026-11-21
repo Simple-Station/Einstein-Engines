@@ -1,0 +1,96 @@
+- type: department
+  id: WoFCrown
+  name: wof-department-crown
+  description: wof-department-crown-description
+  color: "#7D3C98"
+  weight: 30
+  primary: false # Department heads count under their own department first, like upstream Command.
+  roles:
+  - WoFQueen
+  - WoFRoyalAdvisor
+  - WoFCaptainOfTheGuard
+  - WoFMasterOfStores
+  - WoFChiefHealer
+
+- type: department
+  id: WoFRoyalGuard
+  name: wof-department-royal-guard
+  description: wof-department-royal-guard-description
+  color: "#B03A2E"
+  weight: 20
+  roles:
+  - WoFCaptainOfTheGuard
+  - WoFRoyalGuard
+
+- type: department
+  id: WoFStores
+  name: wof-department-stores
+  description: wof-department-stores-description
+  color: "#6E8B3D"
+  roles:
+  - WoFMasterOfStores
+  - WoFFarmer
+  - WoFHunter
+  - WoFRoyalCook
+
+- type: department
+  id: WoFHealers
+  name: wof-department-healers
+  description: wof-department-healers-description
+  color: "#3D9DB0"
+  roles:
+  - WoFChiefHealer
+  - WoFHealer
+
+- type: department
+  id: WoFTrade
+  name: wof-department-trade
+  description: wof-department-trade-description
+  color: "#C48A1F"
+  roles:
+  - WoFMerchant
+
+- type: department
+  id: WoFCitizens
+  name: wof-department-citizens
+  description: wof-department-citizens-description
+  color: "#9FED58"
+  weight: -10
+  roles:
+  - WoFCitizen
+
+- type: playTimeTracker
+  id: WoFJobQueen
+
+- type: playTimeTracker
+  id: WoFJobRoyalAdvisor
+
+- type: playTimeTracker
+  id: WoFJobCaptainOfTheGuard
+
+- type: playTimeTracker
+  id: WoFJobRoyalGuard
+
+- type: playTimeTracker
+  id: WoFJobMasterOfStores
+
+- type: playTimeTracker
+  id: WoFJobFarmer
+
+- type: playTimeTracker
+  id: WoFJobHunter
+
+- type: playTimeTracker
+  id: WoFJobRoyalCook
+
+- type: playTimeTracker
+  id: WoFJobChiefHealer
+
+- type: playTimeTracker
+  id: WoFJobHealer
+
+- type: playTimeTracker
+  id: WoFJobMerchant
+
+- type: playTimeTracker
+  id: WoFJobCitizen

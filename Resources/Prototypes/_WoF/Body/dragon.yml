@@ -1,0 +1,85 @@
+# Placeholder dragon body: the reptilian body with a winged right arm.
+# The wing grants flight. If the arm is severed or disabled by damage, flight is removed
+# (and an airborne dragon falls), which gives "broken wing" gameplay through the existing surgery system.
+# Replace with a proper quadruped dragon body (wings, tail, four legs) once dragon sprites exist.
+
+- type: body
+  name: "dragon"
+  id: WoFDragon
+  root: torso
+  slots:
+    head:
+      part: HeadReptilian
+      connections:
+      - torso
+      organs:
+        brain: OrganHumanBrain
+        eyes: OrganHumanEyes
+    torso:
+      part: TorsoReptilian
+      organs:
+        heart: OrganAnimalHeart
+        lungs: OrganHumanLungs
+        stomach: OrganReptilianStomach
+        liver: OrganAnimalLiver
+        kidneys: OrganHumanKidneys
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+    right arm:
+      part: WoFRightArmDragon
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmReptilian
+      connections:
+      - left hand
+    right hand:
+      part: RightHandReptilian
+    left hand:
+      part: LeftHandReptilian
+    right leg:
+      part: RightLegReptilian
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegReptilian
+      connections:
+      - left foot
+    right foot:
+      part: RightFootReptilian
+    left foot:
+      part: LeftFootReptilian
+
+- type: entity
+  id: WoFRightArmDragon
+  name: "right dragon wing-arm"
+  parent: RightArmReptilian
+  components:
+  - type: BodyPart
+    partType: Arm
+    symmetry: Right
+    toolName: "a right wing"
+    onAdd:
+    - type: Flight
+      # Flight is weightless movement, so how it feels is tuned per tribe with the mob's
+      # MovementSpeedModifier weightless values. This is the shared cruise multiplier.
+      speedModifier: 1.6
+      activationDelay: 0.6
+      staminaDrainRate: 0 # Normal flying is free. Climbing and boosting will cost stamina later.
+      needsHands: false
+      flapInterval: 1.2
+      isLayerAnimated: true
+      layer: "/Textures/Mobs/Customization/Harpy/harpy_wings.rsi"
+      animationKey: "Flap"
+    - type: DragonFlight
+      highSpeedModifier: 1.35
+      highFallDamage:
+        types:
+          Blunt: 20
+      lowFallDamage:
+        types:
+          Blunt: 4

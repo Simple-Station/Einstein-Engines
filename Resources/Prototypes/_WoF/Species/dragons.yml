@@ -1,0 +1,156 @@
+# Vertical-slice tribes: RainWing, NightWing, MudWing.
+# All three borrow reptilian body sprites and lizard/bat-wing markings as placeholders until
+# original dragon sprites are drawn. Do not trace official Wings of Fire art for the replacements.
+
+- type: species
+  id: RainWing
+  name: species-name-rainwing
+  roundStart: true
+  prototype: WoFMobRainWing
+  sprites: WoFDragonSprites
+  defaultSkinTone: "#3fbf6f"
+  markingLimits: WoFDragonMarkingLimits
+  dollPrototype: WoFMobRainWingDummy
+  skinColoration: Hues
+  maleFirstNames: WoFNamesRainWing
+  femaleFirstNames: WoFNamesRainWing
+  naming: First
+  minAge: 6
+  youngAge: 10
+  oldAge: 60
+  maxAge: 120
+  minHeight: 0.8
+  defaultHeight: 1.0
+  maxHeight: 1.2
+  minWidth: 0.75
+  defaultWidth: 0.95
+  maxWidth: 1.2
+
+- type: species
+  id: NightWing
+  name: species-name-nightwing
+  roundStart: true
+  prototype: WoFMobNightWing
+  sprites: WoFDragonSprites
+  defaultSkinTone: "#2a2140"
+  markingLimits: WoFDragonMarkingLimits
+  dollPrototype: WoFMobNightWingDummy
+  skinColoration: Hues
+  maleFirstNames: WoFNamesNightWing
+  femaleFirstNames: WoFNamesNightWing
+  naming: First
+  minAge: 6
+  youngAge: 10
+  oldAge: 60
+  maxAge: 120
+  minHeight: 0.85
+  defaultHeight: 1.05
+  maxHeight: 1.25
+  minWidth: 0.75
+  defaultWidth: 0.95
+  maxWidth: 1.2
+
+- type: species
+  id: MudWing
+  name: species-name-mudwing
+  roundStart: true
+  prototype: WoFMobMudWing
+  sprites: WoFDragonSprites
+  defaultSkinTone: "#7a5230"
+  markingLimits: WoFDragonMarkingLimits
+  dollPrototype: WoFMobMudWingDummy
+  skinColoration: Hues
+  maleFirstNames: WoFNamesMudWing
+  femaleFirstNames: WoFNamesMudWing
+  naming: First
+  minAge: 6
+  youngAge: 10
+  oldAge: 60
+  maxAge: 120
+  minHeight: 0.9
+  defaultHeight: 1.1
+  maxHeight: 1.3
+  minWidth: 0.9
+  defaultWidth: 1.1
+  maxWidth: 1.35
+
+- type: speciesBaseSprites
+  id: WoFDragonSprites
+  sprites:
+    Head: MobReptilianHead
+    Face: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
+    Chest: MobReptilianTorso
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
+    Eyes: MobHumanoidEyes
+    LArm: MobReptilianLArm
+    RArm: MobReptilianRArm
+    LHand: MobReptilianLHand
+    RHand: MobReptilianRHand
+    LLeg: MobReptilianLLeg
+    RLeg: MobReptilianRLeg
+    LFoot: MobReptilianLFoot
+    RFoot: MobReptilianRFoot
+
+- type: markingPoints
+  id: WoFDragonMarkingLimits
+  onlyWhitelisted: true
+  points:
+    Hair:
+      points: 0
+      required: false
+    FacialHair:
+      points: 0
+      required: false
+    Tail:
+      points: 1
+      required: true
+      defaultMarkings: [ WoFDragonTailSmooth ]
+    Snout:
+      points: 1
+      required: true
+      defaultMarkings: [ WoFDragonSnoutRound ]
+    RightArm:
+      points: 1
+      required: true
+      defaultMarkings: [ WoFDragonWingsMembrane ]
+    HeadTop:
+      points: 2
+      required: false
+    HeadSide:
+      points: 2
+      required: false
+    Chest:
+      points: 6
+      required: false
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
+      required: false
+    RightLeg:
+      points: 6
+      required: false
+    RightFoot:
+      points: 6
+      required: false
+    LeftLeg:
+      points: 6
+      required: false
+    LeftFoot:
+      points: 6
+      required: false
+    RightHand:
+      points: 6
+      required: false
+    LeftArm:
+      points: 6
+      required: false
+    LeftHand:
+      points: 6
+      required: false

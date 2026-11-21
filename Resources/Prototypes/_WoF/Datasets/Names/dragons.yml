@@ -1,0 +1,77 @@
+# Original single-word dragon names in each tribe's naming style.
+# Everyday words, with known canon character names left out. Check new additions against the books.
+
+- type: dataset
+  id: WoFNamesRainWing
+  values:
+  - Bromeliad
+  - Cacao
+  - Canopy
+  - Durian
+  - Fig
+  - Guava
+  - Hibiscus
+  - Jackfruit
+  - Liana
+  - Lychee
+  - Mangosteen
+  - Monstera
+  - Nectar
+  - Orchid
+  - Papaya
+  - Passionflower
+  - Plumeria
+  - Rambutan
+  - Sapodilla
+  - Tamarind
+  - Toucan
+  - Vanilla
+
+- type: dataset
+  id: WoFNamesNightWing
+  values:
+  - Altitude
+  - Comet
+  - Darkvision
+  - Eclipse
+  - Equinox
+  - Farsight
+  - Gloaming
+  - Insight
+  - Lodestar
+  - Meteor
+  - Midnight
+  - Nebula
+  - Nightfall
+  - Parallax
+  - Penumbra
+  - Quasar
+  - Shadowfall
+  - Solstice
+  - Stargazer
+  - Twilight
+  - Umbral
+  - Zenith
+
+- type: dataset
+  id: WoFNamesMudWing
+  values:
+  - Adobe
+  - Bayou
+  - Bog
+  - Bulrush
+  - Cattail
+  - Clayfoot
+  - Delta
+  - Fen
+  - Loam
+  - Mire
+  - Ochre
+  - Peat
+  - Quagmire
+  - Rush
+  - Silt
+  - Slough
+  - Sorghum
+  - Tule
+  - Wallow

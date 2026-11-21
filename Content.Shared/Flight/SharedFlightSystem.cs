@@ -47,6 +47,10 @@ public abstract class SharedFlightSystem : EntitySystem
         if (component.NeedsHands == true)
             UpdateHands(uid, active);
         Dirty(uid, component);
+        // WoF start
+        var toggled = new FlightToggledEvent(active);
+        RaiseLocalEvent(uid, ref toggled);
+        // WoF end
     }
 
     private void UpdateHands(EntityUid uid, bool flying)

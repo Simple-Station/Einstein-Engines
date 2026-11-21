@@ -1,0 +1,188 @@
+# Playable dragon mobs for the vertical slice.
+# Flight comes from the wing-arm body part (see _WoF/Body/dragon.yml). Because flight is weightless
+# movement, each tribe's flying style is tuned with MovementSpeedModifier's weightless values:
+#   weightlessAcceleration    - how quickly a dragon turns and gets up to speed (agility)
+#   weightlessModifier        - top flying speed relative to walking
+#   weightlessFriction        - braking while steering (precision)
+#   weightlessFrictionNoInput - how long a dragon glides after letting go of the keys
+
+- type: entity
+  save: false
+  abstract: true
+  parent: BaseMobSpeciesOrganic
+  id: WoFBaseMobDragon
+  name: Urist McDragon
+  components:
+  - type: HumanoidAppearance
+    species: MudWing
+    hideLayersOnEquip:
+    - Snout
+    - HeadTop
+    - HeadSide
+  - type: Hunger
+  - type: Thirst
+  - type: Puller
+    needsHands: false
+  - type: Carriable
+  - type: Icon
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: full
+  - type: Body
+    prototype: WoFDragon
+    requiredLegs: 2
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeatLizard
+      amount: 5
+  - type: Speech
+    speechSounds: Lizard
+    speechVerb: Reptilian
+    allowedEmotes: ['Thump']
+  - type: TypingIndicator
+    proto: lizard
+  - type: Vocal
+    sounds:
+      Male: MaleReptilian
+      Female: FemaleReptilian
+      Unsexed: MaleReptilian
+  - type: BodyEmotes
+    soundsId: ReptilianBodyEmotes
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Scale
+  - type: MeleeWeapon
+    soundHit:
+      collection: AlienClaw
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 6
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.7
+    baseSprintSpeed: 4.5
+    weightlessAcceleration: 2.5
+    weightlessModifier: 1.25
+    weightlessFriction: 1.5
+    weightlessFrictionNoInput: 0.4
+  - type: CanMoveInAir
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Draconic
+    understands:
+    - TauCetiBasic
+    - Draconic
+  - type: FootPrints
+    leftBarePrint: "footprint-left-bare-lizard"
+    rightBarePrint: "footprint-right-bare-lizard"
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - UnathiEmotes
+  - type: Inventory
+    speciesId: reptilian
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+
+# RainWing: agile and precise in the canopy, a slower glider.
+- type: entity
+  save: false
+  parent: WoFBaseMobDragon
+  id: WoFMobRainWing
+  name: Urist McRainWing
+  components:
+  - type: HumanoidAppearance
+    species: RainWing
+  - type: MovementSpeedModifier
+    weightlessAcceleration: 3.2
+    weightlessModifier: 1.2
+    weightlessFriction: 2.2
+    weightlessFrictionNoInput: 0.6
+
+# NightWing: fast, smooth flier that holds a glide well.
+- type: entity
+  save: false
+  parent: WoFBaseMobDragon
+  id: WoFMobNightWing
+  name: Urist McNightWing
+  components:
+  - type: HumanoidAppearance
+    species: NightWing
+  - type: MovementSpeedModifier
+    weightlessAcceleration: 2.5
+    weightlessModifier: 1.3
+    weightlessFrictionNoInput: 0.3
+
+# MudWing: heavy and sturdy. Slow to turn in the air, hits harder, takes a beating.
+- type: entity
+  save: false
+  parent: WoFBaseMobDragon
+  id: WoFMobMudWing
+  name: Urist McMudWing
+  components:
+  - type: HumanoidAppearance
+    species: MudWing
+  - type: MovementSpeedModifier
+    weightlessAcceleration: 1.8
+    weightlessModifier: 1.15
+    weightlessFrictionNoInput: 0.5
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 4
+        Slash: 5
+
+# Character-creator dolls
+- type: entity
+  parent: BaseSpeciesDummy
+  id: WoFMobDragonDummyBase
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  description: A dummy dragon meant to be used in character setup.
+  components:
+  - type: HumanoidAppearance
+    species: MudWing
+    hideLayersOnEquip:
+    - Snout
+    - HeadTop
+    - HeadSide
+  - type: Inventory
+    speciesId: reptilian
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+
+- type: entity
+  parent: WoFMobDragonDummyBase
+  id: WoFMobRainWingDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HumanoidAppearance
+    species: RainWing
+
+- type: entity
+  parent: WoFMobDragonDummyBase
+  id: WoFMobNightWingDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HumanoidAppearance
+    species: NightWing
+
+- type: entity
+  parent: WoFMobDragonDummyBase
+  id: WoFMobMudWingDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HumanoidAppearance
+    species: MudWing

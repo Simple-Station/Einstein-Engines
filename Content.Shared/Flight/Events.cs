@@ -9,6 +9,14 @@ public sealed partial class DashDoAfterEvent : SimpleDoAfterEvent { }
 [Serializable, NetSerializable]
 public sealed partial class FlightDoAfterEvent : SimpleDoAfterEvent { }
 
+// WoF start - local event so other systems (dragon altitude) can react to takeoff and landing
+/// <summary>
+///     Raised directed at an entity on the server after its flight is turned on or off.
+/// </summary>
+[ByRefEvent]
+public readonly record struct FlightToggledEvent(bool Active);
+// WoF end
+
 [Serializable, NetSerializable]
 public sealed class FlightEvent : EntityEventArgs
 {

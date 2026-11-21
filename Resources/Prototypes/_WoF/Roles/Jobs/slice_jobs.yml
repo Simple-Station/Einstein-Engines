@@ -1,0 +1,205 @@
+# Vertical-slice jobs (12 of the GDD's 36). Starting gear, job icons and access levels are borrowed
+# from existing station jobs as placeholders; they get swapped for kingdom items (royal seals,
+# satchels, healer's kits) once those exist. Access levels keep their station names for now.
+
+# --- Tier I: The Crown ---
+
+- type: job
+  id: WoFQueen
+  name: wof-job-name-queen
+  description: wof-job-description-queen
+  playTimeTracker: WoFJobQueen
+  weight: 20
+  startingGear: CaptainGear
+  icon: "JobIconCaptain"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  supervisors: wof-job-supervisors-none
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: CommandStaff
+
+- type: job
+  id: WoFRoyalAdvisor
+  name: wof-job-name-royal-advisor
+  description: wof-job-description-royal-advisor
+  playTimeTracker: WoFJobRoyalAdvisor
+  weight: 10
+  startingGear: HoPGear
+  icon: "JobIconHeadOfPersonnel"
+  supervisors: wof-job-supervisors-queen
+  canBeAntag: false
+  access:
+  - Command
+  - HeadOfPersonnel
+  - Service
+  - Kitchen
+  - Hydroponics
+  - Bar
+  - Cargo
+  - Maintenance
+  - External
+
+# --- Tier II: Royal Security ---
+
+- type: job
+  id: WoFCaptainOfTheGuard
+  name: wof-job-name-captain-of-the-guard
+  description: wof-job-description-captain-of-the-guard
+  playTimeTracker: WoFJobCaptainOfTheGuard
+  weight: 10
+  startingGear: HoSGear
+  icon: "JobIconHeadOfSecurity"
+  supervisors: wof-job-supervisors-queen
+  canBeAntag: false
+  access:
+  - HeadOfSecurity
+  - Command
+  - Security
+  - Brig
+  - Maintenance
+  - External
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: CommandStaff
+
+- type: job
+  id: WoFRoyalGuard
+  name: wof-job-name-royal-guard
+  description: wof-job-description-royal-guard
+  playTimeTracker: WoFJobRoyalGuard
+  startingGear: SecurityOfficerGear
+  icon: "JobIconSecurityOfficer"
+  supervisors: wof-job-supervisors-captain-of-the-guard
+  canBeAntag: false
+  access:
+  - Security
+  - Brig
+  - Maintenance
+  - External
+
+# --- Tier III: Agriculture and Food ---
+
+- type: job
+  id: WoFMasterOfStores
+  name: wof-job-name-master-of-stores
+  description: wof-job-description-master-of-stores
+  playTimeTracker: WoFJobMasterOfStores
+  weight: 10
+  startingGear: QuartermasterGear
+  icon: "JobIconCargoTechnician"
+  supervisors: wof-job-supervisors-queen
+  access:
+  - Quartermaster
+  - Command
+  - Cargo
+  - Salvage
+  - Kitchen
+  - Hydroponics
+  - Service
+  - Maintenance
+
+- type: job
+  id: WoFFarmer
+  name: wof-job-name-farmer
+  description: wof-job-description-farmer
+  playTimeTracker: WoFJobFarmer
+  startingGear: BotanistGear
+  icon: "JobIconBotanist"
+  supervisors: wof-job-supervisors-master-of-stores
+  access:
+  - Hydroponics
+  - Service
+  - Maintenance
+
+- type: job
+  id: WoFHunter
+  name: wof-job-name-hunter
+  description: wof-job-description-hunter
+  playTimeTracker: WoFJobHunter
+  startingGear: SalvageSpecialistGear
+  icon: "JobIconPassenger"
+  supervisors: wof-job-supervisors-master-of-stores
+  access:
+  - Salvage
+  - Cargo
+  - Kitchen
+  - Maintenance
+  - External
+
+- type: job
+  id: WoFRoyalCook
+  name: wof-job-name-royal-cook
+  description: wof-job-description-royal-cook
+  playTimeTracker: WoFJobRoyalCook
+  startingGear: ChefGear
+  icon: "JobIconChef"
+  supervisors: wof-job-supervisors-master-of-stores
+  access:
+  - Kitchen
+  - Service
+  - Maintenance
+
+# --- Tier IV: Medicine ---
+
+- type: job
+  id: WoFChiefHealer
+  name: wof-job-name-chief-healer
+  description: wof-job-description-chief-healer
+  playTimeTracker: WoFJobChiefHealer
+  weight: 10
+  startingGear: CMOGear
+  icon: "JobIconChiefMedicalOfficer"
+  supervisors: wof-job-supervisors-queen
+  access:
+  - ChiefMedicalOfficer
+  - Command
+  - Medical
+  - Chemistry
+  - Maintenance
+
+- type: job
+  id: WoFHealer
+  name: wof-job-name-healer
+  description: wof-job-description-healer
+  playTimeTracker: WoFJobHealer
+  startingGear: DoctorGear
+  icon: "JobIconMedicalDoctor"
+  supervisors: wof-job-supervisors-chief-healer
+  access:
+  - Medical
+  - Chemistry
+  - Maintenance
+
+# --- Tier VI: Trade ---
+
+- type: job
+  id: WoFMerchant
+  name: wof-job-name-merchant
+  description: wof-job-description-merchant
+  playTimeTracker: WoFJobMerchant
+  startingGear: CargoTechGear
+  icon: "JobIconCargoTechnician"
+  supervisors: wof-job-supervisors-advisor
+  access:
+  - Cargo
+  - Service
+  - Maintenance
+
+# --- Tier VIII: Civilian Life ---
+
+- type: job
+  id: WoFCitizen
+  name: wof-job-name-citizen
+  description: wof-job-description-citizen
+  playTimeTracker: WoFJobCitizen
+  startingGear: PassengerGear
+  icon: "JobIconPassenger"
+  supervisors: wof-job-supervisors-everyone
+  access:
+  - Maintenance

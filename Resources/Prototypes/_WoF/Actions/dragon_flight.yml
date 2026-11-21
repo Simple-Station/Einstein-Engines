@@ -1,0 +1,25 @@
+# Altitude actions granted by DragonFlightComponent. Icons are placeholders borrowed from the harpy flight action.
+
+- type: entity
+  id: ActionDragonClimb
+  name: Climb
+  description: Beat your wings and rise to high altitude. Faster, but you can't reach anything on the ground.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    checkCanInteract: false
+    useDelay: 1
+    icon: { sprite: Interface/Actions/flight.rsi, state: flight_on }
+    event: !type:DragonClimbActionEvent
+
+- type: entity
+  id: ActionDragonDescend
+  name: Descend
+  description: Drop to low altitude, or land if you're already low.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    checkCanInteract: false
+    useDelay: 1
+    icon: { sprite: Interface/Actions/flight.rsi, state: flight_off }
+    event: !type:DragonDescendActionEvent
