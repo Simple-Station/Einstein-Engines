@@ -327,7 +327,7 @@
 
 # Maintenance Hatches
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintService
   id: AirlockMaintBoxerLocked
   suffix: Boxer, Locked
   components:
@@ -336,7 +336,7 @@
       board: [ DoorElectronicsBoxer ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintService
   id: AirlockMaintClownLocked
   suffix: Clown, Locked
   components:
@@ -345,7 +345,7 @@
       board: [ DoorElectronicsClown ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintService
   id: AirlockMaintMimeLocked
   suffix: Mime, Locked
   components:
@@ -354,7 +354,7 @@
       board: [ DoorElectronicsMime ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintService
   id: AirlockMaintMusicianLocked
   suffix: Musician, Locked
   components:
@@ -363,7 +363,7 @@
       board: [ DoorElectronicsMusician ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintService
   id: AirlockMaintReporterLocked
   suffix: Reporter, Locked
   components:
@@ -372,7 +372,7 @@
       board: [ DoorElectronicsReporter ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintService
   id: AirlockMaintLibraryLocked
   suffix: Library, Locked
   components:
@@ -381,7 +381,7 @@
       board: [ DoorElectronicsLibrary ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintService
   id: AirlockMaintZookeeperLocked
   suffix: Zookeeper, Locked
   components:
@@ -390,7 +390,7 @@
       board: [ DoorElectronicsZookeeper ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintMed
   id: AirlockMaintPsychologistLocked
   suffix: Psychologist, Locked
   components:
@@ -399,7 +399,7 @@
       board: [ DoorElectronicsPsychologist ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintSec
   id: AirlockMaintSecurityLawyerLocked
   suffix: Security/Lawyer, Locked
   components:
